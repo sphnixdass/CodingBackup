@@ -1,0 +1,795 @@
+{
+  "meta": {
+    "index": 2566,
+    "hitid": "33Q5P9PUSPGM7I0K7ELOSSSPCZ4ZCX",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "160A",
+    "subid": "48981450"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create integers t , sum , total , c with sum = 0 , total = 0 , c = 0",
+      "code": "int t , sum = 0 , total = 0 , c = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read t",
+      "code": "cin >> t ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "create long integer array a with size t + 1",
+      "code": "long int a [ t + 1 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for i = 0 to t exclusive",
+      "code": "for ( int i = 0 ; i < t ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "read a [ i ]",
+      "code": "cin >> a [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 6,
+      "text": "set total to total + a [ i ]",
+      "code": "total = total + a [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "sort elements from a to a + t",
+      "code": "sort ( a , a + t ) ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "for i = t - 1 to 0 inclusive , decrementing i",
+      "code": "for ( int i = t - 1 ; i >= 0 ; i -- )",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "set sum to sum + a [ i ]",
+      "code": "sum = sum + a [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "increment c",
+      "code": "c ++ ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "set total to total - a [ i ]",
+      "code": "total = total - a [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "if total is less than sum , break loop",
+      "code": "if ( total < sum ) { break ; }",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "print c print newline",
+      "code": "cout << c << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < t ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "a >> a [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid operands of types ‘long int [(t + 1)]’ and ‘long int’ to binary ‘operator>>’"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "for ( i = t - 1 ; i >= 0 ; i -- )"
+      ],
+      "err_line": 9,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        4,
+        8
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < t ; i ++ )",
+        "sort ( a , a + t + t ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        8,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < t ; i ++ )",
+        "sort ( a , a + t + t ) ;",
+        "for ( i = t - 1 ; i >= 0 ; i -- )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        8,
+        9,
+        5
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < t ; i ++ )",
+        "sort ( a , a + t + t ) ;",
+        "for ( i = t - 1 ; i >= 0 ; i -- )",
+        "a >> a [ i ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        8,
+        9,
+        2
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < t ; i ++ )",
+        "sort ( a , a + t + t ) ;",
+        "for ( i = t - 1 ; i >= 0 ; i -- )",
+        "{ t ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        8,
+        9,
+        15
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < t ; i ++ )",
+        "sort ( a , a + t + t ) ;",
+        "for ( i = t - 1 ; i >= 0 ; i -- )",
+        "cout << c ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        8,
+        5
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < t ; i ++ )",
+        "sort ( a , a + t + t ) ;",
+        "a >> a [ i ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        8,
+        5,
+        2
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < t ; i ++ )",
+        "sort ( a , a + t + t ) ;",
+        "a >> a [ i ] ;",
+        "{ t ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        8,
+        5,
+        15
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < t ; i ++ )",
+        "sort ( a , a + t + t ) ;",
+        "a >> a [ i ] ;",
+        "cout << c ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        8,
+        2
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < t ; i ++ )",
+        "sort ( a , a + t + t ) ;",
+        "{ t ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        8,
+        2,
+        15
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < t ; i ++ )",
+        "sort ( a , a + t + t ) ;",
+        "{ t ; }",
+        "cout << c ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        8,
+        15
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < t ; i ++ )",
+        "sort ( a , a + t + t ) ;",
+        "cout << c ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < t ; i ++ )",
+        "for ( i = t - 1 ; i >= 0 ; i -- )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        9,
+        5
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < t ; i ++ )",
+        "for ( i = t - 1 ; i >= 0 ; i -- )",
+        "a >> a [ i ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        9,
+        5,
+        2
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < t ; i ++ )",
+        "for ( i = t - 1 ; i >= 0 ; i -- )",
+        "a >> a [ i ] ;",
+        "{ t ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        9,
+        5,
+        15
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < t ; i ++ )",
+        "for ( i = t - 1 ; i >= 0 ; i -- )",
+        "a >> a [ i ] ;",
+        "cout << c ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        9,
+        2
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < t ; i ++ )",
+        "for ( i = t - 1 ; i >= 0 ; i -- )",
+        "{ t ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        9,
+        2,
+        15
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < t ; i ++ )",
+        "for ( i = t - 1 ; i >= 0 ; i -- )",
+        "{ t ; }",
+        "cout << c ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        9,
+        15
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < t ; i ++ )",
+        "for ( i = t - 1 ; i >= 0 ; i -- )",
+        "cout << c ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        5
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < t ; i ++ )",
+        "a >> a [ i ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        2
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < t ; i ++ )",
+        "a >> a [ i ] ;",
+        "{ t ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        2,
+        15
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < t ; i ++ )",
+        "a >> a [ i ] ;",
+        "{ t ; }",
+        "cout << c ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        15
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < t ; i ++ )",
+        "a >> a [ i ] ;",
+        "cout << c ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        2
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < t ; i ++ )",
+        "{ t ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        2,
+        15
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < t ; i ++ )",
+        "{ t ; }",
+        "cout << c ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        15
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < t ; i ++ )",
+        "cout << c ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        9
+      ],
+      "mod_code": [
+        "sort ( a , a + t + t ) ;",
+        "for ( i = t - 1 ; i >= 0 ; i -- )"
+      ],
+      "err_line": 9,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        8,
+        9,
+        5
+      ],
+      "mod_code": [
+        "sort ( a , a + t + t ) ;",
+        "for ( i = t - 1 ; i >= 0 ; i -- )",
+        "a >> a [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid operands of types ‘long int [(t + 1)]’ and ‘long int’ to binary ‘operator>>’"
+    },
+    {
+      "mod_line": [
+        8,
+        9,
+        5,
+        2
+      ],
+      "mod_code": [
+        "sort ( a , a + t + t ) ;",
+        "for ( i = t - 1 ; i >= 0 ; i -- )",
+        "a >> a [ i ] ;",
+        "{ t ; }"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid operands of types ‘long int [(t + 1)]’ and ‘long int’ to binary ‘operator>>’"
+    },
+    {
+      "mod_line": [
+        8,
+        9,
+        5,
+        15
+      ],
+      "mod_code": [
+        "sort ( a , a + t + t ) ;",
+        "for ( i = t - 1 ; i >= 0 ; i -- )",
+        "a >> a [ i ] ;",
+        "cout << c ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid operands of types ‘long int [(t + 1)]’ and ‘long int’ to binary ‘operator>>’"
+    },
+    {
+      "mod_line": [
+        8,
+        9,
+        2
+      ],
+      "mod_code": [
+        "sort ( a , a + t + t ) ;",
+        "for ( i = t - 1 ; i >= 0 ; i -- )",
+        "{ t ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        8,
+        9,
+        2,
+        15
+      ],
+      "mod_code": [
+        "sort ( a , a + t + t ) ;",
+        "for ( i = t - 1 ; i >= 0 ; i -- )",
+        "{ t ; }",
+        "cout << c ;"
+      ],
+      "err_line": 9,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        8,
+        9,
+        15
+      ],
+      "mod_code": [
+        "sort ( a , a + t + t ) ;",
+        "for ( i = t - 1 ; i >= 0 ; i -- )",
+        "cout << c ;"
+      ],
+      "err_line": 9,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        8,
+        5
+      ],
+      "mod_code": [
+        "sort ( a , a + t + t ) ;",
+        "a >> a [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid operands of types ‘long int [(t + 1)]’ and ‘long int’ to binary ‘operator>>’"
+    },
+    {
+      "mod_line": [
+        8,
+        5,
+        2
+      ],
+      "mod_code": [
+        "sort ( a , a + t + t ) ;",
+        "a >> a [ i ] ;",
+        "{ t ; }"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid operands of types ‘long int [(t + 1)]’ and ‘long int’ to binary ‘operator>>’"
+    },
+    {
+      "mod_line": [
+        8,
+        5,
+        2,
+        15
+      ],
+      "mod_code": [
+        "sort ( a , a + t + t ) ;",
+        "a >> a [ i ] ;",
+        "{ t ; }",
+        "cout << c ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid operands of types ‘long int [(t + 1)]’ and ‘long int’ to binary ‘operator>>’"
+    },
+    {
+      "mod_line": [
+        8,
+        5,
+        15
+      ],
+      "mod_code": [
+        "sort ( a , a + t + t ) ;",
+        "a >> a [ i ] ;",
+        "cout << c ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid operands of types ‘long int [(t + 1)]’ and ‘long int’ to binary ‘operator>>’"
+    },
+    {
+      "mod_line": [
+        9,
+        5
+      ],
+      "mod_code": [
+        "for ( i = t - 1 ; i >= 0 ; i -- )",
+        "a >> a [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid operands of types ‘long int [(t + 1)]’ and ‘long int’ to binary ‘operator>>’"
+    },
+    {
+      "mod_line": [
+        9,
+        5,
+        2
+      ],
+      "mod_code": [
+        "for ( i = t - 1 ; i >= 0 ; i -- )",
+        "a >> a [ i ] ;",
+        "{ t ; }"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid operands of types ‘long int [(t + 1)]’ and ‘long int’ to binary ‘operator>>’"
+    },
+    {
+      "mod_line": [
+        9,
+        5,
+        2,
+        15
+      ],
+      "mod_code": [
+        "for ( i = t - 1 ; i >= 0 ; i -- )",
+        "a >> a [ i ] ;",
+        "{ t ; }",
+        "cout << c ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid operands of types ‘long int [(t + 1)]’ and ‘long int’ to binary ‘operator>>’"
+    },
+    {
+      "mod_line": [
+        9,
+        5,
+        15
+      ],
+      "mod_code": [
+        "for ( i = t - 1 ; i >= 0 ; i -- )",
+        "a >> a [ i ] ;",
+        "cout << c ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid operands of types ‘long int [(t + 1)]’ and ‘long int’ to binary ‘operator>>’"
+    },
+    {
+      "mod_line": [
+        9,
+        2
+      ],
+      "mod_code": [
+        "for ( i = t - 1 ; i >= 0 ; i -- )",
+        "{ t ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        2,
+        15
+      ],
+      "mod_code": [
+        "for ( i = t - 1 ; i >= 0 ; i -- )",
+        "{ t ; }",
+        "cout << c ;"
+      ],
+      "err_line": 9,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        15
+      ],
+      "mod_code": [
+        "for ( i = t - 1 ; i >= 0 ; i -- )",
+        "cout << c ;"
+      ],
+      "err_line": 9,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        2
+      ],
+      "mod_code": [
+        "a >> a [ i ] ;",
+        "{ t ; }"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid operands of types ‘long int [(t + 1)]’ and ‘long int’ to binary ‘operator>>’"
+    },
+    {
+      "mod_line": [
+        5,
+        2,
+        15
+      ],
+      "mod_code": [
+        "a >> a [ i ] ;",
+        "{ t ; }",
+        "cout << c ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid operands of types ‘long int [(t + 1)]’ and ‘long int’ to binary ‘operator>>’"
+    },
+    {
+      "mod_line": [
+        5,
+        15
+      ],
+      "mod_code": [
+        "a >> a [ i ] ;",
+        "cout << c ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid operands of types ‘long int [(t + 1)]’ and ‘long int’ to binary ‘operator>>’"
+    }
+  ]
+}

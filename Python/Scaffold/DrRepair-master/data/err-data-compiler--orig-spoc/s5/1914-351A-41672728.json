@@ -1,0 +1,577 @@
+{
+  "meta": {
+    "index": 1914,
+    "hitid": "33NKDW9FFXCX2N056WX3V7CE4Z7XCZ",
+    "workerid": "A1R0Q9CUUBSM5F",
+    "probid": "351A",
+    "subid": "41672728"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create constant double eps = 1e - 6",
+      "code": "const double eps = 1e-6 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "let const int MAXN = 8000",
+      "code": "const int MAXN = 8000 ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "let double array a of size MAXN",
+      "code": "double a [ MAXN ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "create int n",
+      "code": "int n ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "let double x",
+      "code": "double x ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for i = 0 to 2 exclusive , read a [ i ]",
+      "code": "for ( int i = 0 ; i < 2 * n ; i ++ ) cin >> a [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "let double sum = 0",
+      "code": "double sum = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "create int num = 0",
+      "code": "int num = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "for i = 0 to 2 exclusive",
+      "code": "for ( int i = 0 ; i < 2 * n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "set x to ( ( int ) a [ i ] + 1 ) * 1 . 0 - a [ i ]",
+      "code": "x = ( ( int ) a [ i ] + 1 ) * 1.0 - a [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "if ( fabs ( x - 1 ) < = eps",
+      "code": "if ( fabs ( x - 1 ) <= eps )",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "increment num + +",
+      "code": "num ++ ;",
+      "indent": 3
+    },
+    {
+      "line": 14,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "set sum to sum + x",
+      "code": "sum += x ;",
+      "indent": 3
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "create integer m = 0",
+      "code": "int m = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "if num is less than 0 , set m to n - num",
+      "code": "if ( num < n ) m = n - num ;",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "let double res = 0x3f3f3f3f * 1 . 0",
+      "code": "double res = 0x3f3f3f3f * 1.0 ;",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "loop until m < = min ( 2 * n - num , n ) , set res to min of res and fabs ( sum - m )",
+      "code": "for ( ; m <= min ( 2 * n - num , n ) ; m ++ ) res = min ( res , fabs ( sum - m ) ) ;",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "print fixed , setprecision ( 3 ) , and res",
+      "code": "cout << fixed << setprecision ( 3 ) << res << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 22,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        20
+      ],
+      "mod_code": [
+        "for ( ; m <= min ( 2 * n - num , n ) , res = min ( sum - m ) ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no matching function for call to ‘min(double)’"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "char n ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no matching function for call to ‘min(int, char&)’"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "while ( cin >> n )"
+      ],
+      "err_line": 11,
+      "err_msg": "‘x’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "double n ;"
+      ],
+      "err_line": 6,
+      "err_msg": "conflicting declaration ‘double n’"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < 2 ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        20
+      ],
+      "mod_code": [
+        "for ( ; m <= min ( 2 * n - num , n ) , res = min ( res - m ) ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no matching function for call to ‘min(double)’"
+    },
+    {
+      "mod_line": [
+        7,
+        10,
+        11,
+        20
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < 2 ; i ++ ) { cin >> a [ i ] ; }",
+        "for ( int i = 0 ; i < 2 ; i ++ )",
+        "x = ( ( int ) a [ i ] + 1 ) * 0.5 - 1.0 - a [ i ] ;",
+        "for ( ; m <= min ( 2 * n - num , n ) , res = min ( sum - m ) ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no matching function for call to ‘min(double)’"
+    },
+    {
+      "mod_line": [
+        7,
+        10,
+        12,
+        20
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < 2 ; i ++ ) { cin >> a [ i ] ; }",
+        "for ( int i = 0 ; i < 2 ; i ++ )",
+        "if ( fabs ( x - 1 ) <= ' eps ' )",
+        "for ( ; m <= min ( 2 * n - num , n ) , res = min ( sum - m ) ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no matching function for call to ‘min(double)’"
+    },
+    {
+      "mod_line": [
+        7,
+        10,
+        20
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < 2 ; i ++ ) { cin >> a [ i ] ; }",
+        "for ( int i = 0 ; i < 2 ; i ++ )",
+        "for ( ; m <= min ( 2 * n - num , n ) , res = min ( sum - m ) ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no matching function for call to ‘min(double)’"
+    },
+    {
+      "mod_line": [
+        7,
+        10,
+        20,
+        21
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < 2 ; i ++ ) { cin >> a [ i ] ; }",
+        "for ( int i = 0 ; i < 2 ; i ++ )",
+        "for ( ; m <= min ( 2 * n - num , n ) , res = min ( sum - m ) ;",
+        "cout << fixed << setprecision ( 3 ) , res ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no matching function for call to ‘min(double)’"
+    },
+    {
+      "mod_line": [
+        7,
+        11,
+        12,
+        20
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < 2 ; i ++ ) { cin >> a [ i ] ; }",
+        "x = ( ( int ) a [ i ] + 1 ) * 0.5 - 1.0 - a [ i ] ;",
+        "if ( fabs ( x - 1 ) <= ' eps ' )",
+        "for ( ; m <= min ( 2 * n - num , n ) , res = min ( sum - m ) ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no matching function for call to ‘min(double)’"
+    },
+    {
+      "mod_line": [
+        7,
+        11,
+        20
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < 2 ; i ++ ) { cin >> a [ i ] ; }",
+        "x = ( ( int ) a [ i ] + 1 ) * 0.5 - 1.0 - a [ i ] ;",
+        "for ( ; m <= min ( 2 * n - num , n ) , res = min ( sum - m ) ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no matching function for call to ‘min(double)’"
+    },
+    {
+      "mod_line": [
+        7,
+        11,
+        20,
+        21
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < 2 ; i ++ ) { cin >> a [ i ] ; }",
+        "x = ( ( int ) a [ i ] + 1 ) * 0.5 - 1.0 - a [ i ] ;",
+        "for ( ; m <= min ( 2 * n - num , n ) , res = min ( sum - m ) ;",
+        "cout << fixed << setprecision ( 3 ) , res ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no matching function for call to ‘min(double)’"
+    },
+    {
+      "mod_line": [
+        7,
+        12,
+        20
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < 2 ; i ++ ) { cin >> a [ i ] ; }",
+        "if ( fabs ( x - 1 ) <= ' eps ' )",
+        "for ( ; m <= min ( 2 * n - num , n ) , res = min ( sum - m ) ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no matching function for call to ‘min(double)’"
+    },
+    {
+      "mod_line": [
+        7,
+        12,
+        20,
+        21
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < 2 ; i ++ ) { cin >> a [ i ] ; }",
+        "if ( fabs ( x - 1 ) <= ' eps ' )",
+        "for ( ; m <= min ( 2 * n - num , n ) , res = min ( sum - m ) ;",
+        "cout << fixed << setprecision ( 3 ) , res ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no matching function for call to ‘min(double)’"
+    },
+    {
+      "mod_line": [
+        7,
+        20
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < 2 ; i ++ ) { cin >> a [ i ] ; }",
+        "for ( ; m <= min ( 2 * n - num , n ) , res = min ( sum - m ) ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no matching function for call to ‘min(double)’"
+    },
+    {
+      "mod_line": [
+        7,
+        20,
+        21
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < 2 ; i ++ ) { cin >> a [ i ] ; }",
+        "for ( ; m <= min ( 2 * n - num , n ) , res = min ( sum - m ) ;",
+        "cout << fixed << setprecision ( 3 ) , res ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no matching function for call to ‘min(double)’"
+    },
+    {
+      "mod_line": [
+        10,
+        11,
+        12,
+        20
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < 2 ; i ++ )",
+        "x = ( ( int ) a [ i ] + 1 ) * 0.5 - 1.0 - a [ i ] ;",
+        "if ( fabs ( x - 1 ) <= ' eps ' )",
+        "for ( ; m <= min ( 2 * n - num , n ) , res = min ( sum - m ) ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no matching function for call to ‘min(double)’"
+    },
+    {
+      "mod_line": [
+        10,
+        11,
+        20
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < 2 ; i ++ )",
+        "x = ( ( int ) a [ i ] + 1 ) * 0.5 - 1.0 - a [ i ] ;",
+        "for ( ; m <= min ( 2 * n - num , n ) , res = min ( sum - m ) ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no matching function for call to ‘min(double)’"
+    },
+    {
+      "mod_line": [
+        10,
+        11,
+        20,
+        21
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < 2 ; i ++ )",
+        "x = ( ( int ) a [ i ] + 1 ) * 0.5 - 1.0 - a [ i ] ;",
+        "for ( ; m <= min ( 2 * n - num , n ) , res = min ( sum - m ) ;",
+        "cout << fixed << setprecision ( 3 ) , res ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no matching function for call to ‘min(double)’"
+    },
+    {
+      "mod_line": [
+        10,
+        12,
+        20
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < 2 ; i ++ )",
+        "if ( fabs ( x - 1 ) <= ' eps ' )",
+        "for ( ; m <= min ( 2 * n - num , n ) , res = min ( sum - m ) ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no matching function for call to ‘min(double)’"
+    },
+    {
+      "mod_line": [
+        10,
+        12,
+        20,
+        21
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < 2 ; i ++ )",
+        "if ( fabs ( x - 1 ) <= ' eps ' )",
+        "for ( ; m <= min ( 2 * n - num , n ) , res = min ( sum - m ) ;",
+        "cout << fixed << setprecision ( 3 ) , res ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no matching function for call to ‘min(double)’"
+    },
+    {
+      "mod_line": [
+        10,
+        20
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < 2 ; i ++ )",
+        "for ( ; m <= min ( 2 * n - num , n ) , res = min ( sum - m ) ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no matching function for call to ‘min(double)’"
+    },
+    {
+      "mod_line": [
+        10,
+        20,
+        21
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < 2 ; i ++ )",
+        "for ( ; m <= min ( 2 * n - num , n ) , res = min ( sum - m ) ;",
+        "cout << fixed << setprecision ( 3 ) , res ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no matching function for call to ‘min(double)’"
+    },
+    {
+      "mod_line": [
+        11,
+        12,
+        20
+      ],
+      "mod_code": [
+        "x = ( ( int ) a [ i ] + 1 ) * 0.5 - 1.0 - a [ i ] ;",
+        "if ( fabs ( x - 1 ) <= ' eps ' )",
+        "for ( ; m <= min ( 2 * n - num , n ) , res = min ( sum - m ) ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no matching function for call to ‘min(double)’"
+    },
+    {
+      "mod_line": [
+        11,
+        12,
+        20,
+        21
+      ],
+      "mod_code": [
+        "x = ( ( int ) a [ i ] + 1 ) * 0.5 - 1.0 - a [ i ] ;",
+        "if ( fabs ( x - 1 ) <= ' eps ' )",
+        "for ( ; m <= min ( 2 * n - num , n ) , res = min ( sum - m ) ;",
+        "cout << fixed << setprecision ( 3 ) , res ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no matching function for call to ‘min(double)’"
+    },
+    {
+      "mod_line": [
+        11,
+        20
+      ],
+      "mod_code": [
+        "x = ( ( int ) a [ i ] + 1 ) * 0.5 - 1.0 - a [ i ] ;",
+        "for ( ; m <= min ( 2 * n - num , n ) , res = min ( sum - m ) ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no matching function for call to ‘min(double)’"
+    },
+    {
+      "mod_line": [
+        11,
+        20,
+        21
+      ],
+      "mod_code": [
+        "x = ( ( int ) a [ i ] + 1 ) * 0.5 - 1.0 - a [ i ] ;",
+        "for ( ; m <= min ( 2 * n - num , n ) , res = min ( sum - m ) ;",
+        "cout << fixed << setprecision ( 3 ) , res ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no matching function for call to ‘min(double)’"
+    },
+    {
+      "mod_line": [
+        12,
+        20
+      ],
+      "mod_code": [
+        "if ( fabs ( x - 1 ) <= ' eps ' )",
+        "for ( ; m <= min ( 2 * n - num , n ) , res = min ( sum - m ) ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no matching function for call to ‘min(double)’"
+    },
+    {
+      "mod_line": [
+        12,
+        20,
+        21
+      ],
+      "mod_code": [
+        "if ( fabs ( x - 1 ) <= ' eps ' )",
+        "for ( ; m <= min ( 2 * n - num , n ) , res = min ( sum - m ) ;",
+        "cout << fixed << setprecision ( 3 ) , res ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no matching function for call to ‘min(double)’"
+    },
+    {
+      "mod_line": [
+        20,
+        21
+      ],
+      "mod_code": [
+        "for ( ; m <= min ( 2 * n - num , n ) , res = min ( sum - m ) ;",
+        "cout << fixed << setprecision ( 3 ) , res ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no matching function for call to ‘min(double)’"
+    }
+  ]
+}

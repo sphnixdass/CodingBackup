@@ -1,0 +1,69 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse a linked list</title>
+    <script>
+
+        // JavaScript program for reversing the linked list
+        
+        var head;
+        
+            class Node {
+                constructor(val) {
+                    this.data = val;
+                    this.next = null;
+                }
+            }
+        
+            /* Function to reverse the linked list */
+            function reverse(node) {
+            var prev = null;
+            var current = node;
+            var next = null;
+                while (current != null) {
+                    next = current.next;
+                    current.next = prev;
+                    prev = current;
+                    current = next;
+                }
+                node = prev;
+                return node;
+            }
+        
+            // prints content of var linked list
+            function printList(node) {
+                while (node != null) {
+                    document.write(node.data + " ");
+                    node = node.next;
+                }
+            }
+        
+            
+        
+        </script>
+        
+</head>
+<body>
+    <h1>Reverse a linked list --- By Gnanadass S.</h1>
+
+    <script>
+        // Driver Code
+            
+        head = new Node(15);
+                head.next = new Node(25);
+                head.next.next = new Node(4);
+                head.next.next.next = new Node(20);
+        
+                document.write("Given Linked list<br/>");
+                printList(head);
+                head = reverse(head);
+                document.write("<br/>");
+                document.write("Reversed linked list<br/> ");
+                printList(head);
+        
+     
+    </script>
+</body>
+</html>

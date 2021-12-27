@@ -1,0 +1,177 @@
+{
+  "meta": {
+    "index": 2650,
+    "hitid": "3SZYX62S5GUIONLZ996XN2TG92D752",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "768A",
+    "subid": "45555641"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create integers n , sum with sum = 0 , create integer array a with size 100000",
+      "code": "int n , a [ 100000 ] , sum = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "for i = 0 to n exclusive , read a [ i ]",
+      "code": "for ( int i = 0 ; i < n ; i ++ ) { cin >> a [ i ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "create integers max , min with max = a [ 0 ] , min = a [ 0 ]",
+      "code": "int max = a [ 0 ] , min = a [ 0 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for j = 0 to n exclusive",
+      "code": "for ( int j = 0 ; j < n ; j ++ )",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "if max is less than a [ j ] , set max to a [ j ]",
+      "code": "if ( max < a [ j ] ) max = a [ j ] ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "if min is greater than a [ j ] , set min to a [ j ]",
+      "code": "if ( min > a [ j ] ) min = a [ j ] ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "for t = 0 to n exclusive",
+      "code": "for ( int t = 0 ; t < n ; t ++ )",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "if a [ t ] is less than max and a [ t ] is greater than min , increment sum",
+      "code": "if ( a [ t ] < max && a [ t ] > min ) sum ++ ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "print sum print newline",
+      "code": "cout << sum << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int a , a [ 100000 ] , sum = 0 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int a [100000]’"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j < n ; j ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "for ( t = 0 ; t < n ; t ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        1
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j < n ; j ++ )",
+        "int a , a [ 100000 ] , sum = 0 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int a [100000]’"
+    },
+    {
+      "mod_line": [
+        5,
+        1,
+        9
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j < n ; j ++ )",
+        "int a , a [ 100000 ] , sum = 0 ;",
+        "for ( t = 0 ; t < n ; t ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int a [100000]’"
+    },
+    {
+      "mod_line": [
+        5,
+        9
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j < n ; j ++ )",
+        "for ( t = 0 ; t < n ; t ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        9
+      ],
+      "mod_code": [
+        "int a , a [ 100000 ] , sum = 0 ;",
+        "for ( t = 0 ; t < n ; t ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int a [100000]’"
+    }
+  ]
+}

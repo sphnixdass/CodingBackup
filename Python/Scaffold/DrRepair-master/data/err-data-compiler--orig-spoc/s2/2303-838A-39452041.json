@@ -1,0 +1,1649 @@
+{
+  "meta": {
+    "index": 2303,
+    "hitid": "3H5TOKO3D9DHO43UCUIVCWN6FIV645",
+    "workerid": "A1EKVUFWL7OJMO",
+    "probid": "838A",
+    "subid": "39452041"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "db = string of size 2501",
+      "code": "string db [ 2501 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "n , m , ans , prf = integers with ans = 6250000 , prf = array of size [ 2 * 2501 ] [ 2 * 2501 ]",
+      "code": "int n , m , ans = 6250000 , prf [ 2 * 2501 ] [ 2 * 2501 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "read n , m",
+      "code": "cin >> n >> m ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for i = 0 to n exclusive , read db [ i ]",
+      "code": "for ( int i = 0 ; i < n ; i ++ ) { cin >> db [ i ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i = 0 to 2 * 2501 exclusive",
+      "code": "for ( int i = 0 ; i < 2 * 2501 ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for j = 0 to 2 * 2501 exclusive",
+      "code": "for ( int j = 0 ; j < 2 * 2501 ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "if ( i < n and j < m and db [ i ] [ j ] is 1 ) , prf [ i ] [ j ] = 1",
+      "code": "if ( i < n && j < m && db [ i ] [ j ] == ' 1 ' ) prf [ i ] [ j ] = 1 ;",
+      "indent": 3
+    },
+    {
+      "line": 8,
+      "text": "if ( i ) , prf [ i ] [ j ] = prf [ i ] [ j ] + prf [ i - 1 ] [ j ]",
+      "code": "if ( i ) prf [ i ] [ j ] += prf [ i - 1 ] [ j ] ;",
+      "indent": 3
+    },
+    {
+      "line": 9,
+      "text": "if ( j ) , prf [ i ] [ j ] = prf [ i ] [ j ] + prf [ i ] [ j - 1 ]",
+      "code": "if ( j ) prf [ i ] [ j ] += prf [ i ] [ j - 1 ] ;",
+      "indent": 3
+    },
+    {
+      "line": 10,
+      "text": "if ( i and j ) , prf [ i ] [ j ] = prf [ i ] [ j ] - prf [ i - 1 ] [ j - 1 ]",
+      "code": "if ( i && j ) prf [ i ] [ j ] -= prf [ i - 1 ] [ j - 1 ] ;",
+      "indent": 3
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "maxk = integer with maxk = min of n and m",
+      "code": "int maxk = min ( n , m ) ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "for k = 2 to maxk",
+      "code": "for ( int k = 2 ; k <= maxk ; k ++ )",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "tmp_ans = integer with tmp_ans = 0",
+      "code": "int tmp_ans = 0 ;",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "for i = 0 to n exclusvie , i = i + k",
+      "code": "for ( int i = 0 ; i < n ; i += k )",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "for j = 0 to m exclusive , j = j + k",
+      "code": "for ( int j = 0 ; j < m ; j += k )",
+      "indent": 3
+    },
+    {
+      "line": 18,
+      "text": "solve = integer with solve = prf [ i + k - 1 ] [ j + k - 1 ]",
+      "code": "int solve = prf [ i + k - 1 ] [ j + k - 1 ] ;",
+      "indent": 4
+    },
+    {
+      "line": 19,
+      "text": "if ( i ) , solve = solve - prf [ i - 1 ] [ j + k - 1 ]",
+      "code": "if ( i ) solve -= prf [ i - 1 ] [ j + k - 1 ] ;",
+      "indent": 4
+    },
+    {
+      "line": 20,
+      "text": "if ( j ) , solve = solve - prf [ i + k - 1 ] [ j - 1 ]",
+      "code": "if ( j ) solve -= prf [ i + k - 1 ] [ j - 1 ] ;",
+      "indent": 4
+    },
+    {
+      "line": 21,
+      "text": "if ( i and j ) , solve = solve + prf [ i - 1 ] [ j - 1 ]",
+      "code": "if ( i && j ) solve += prf [ i - 1 ] [ j - 1 ] ;",
+      "indent": 4
+    },
+    {
+      "line": 22,
+      "text": "tmp_ans = tmp_ans + min ( solve , k * k - solve )",
+      "code": "tmp_ans += min ( solve , k * k - solve ) ;",
+      "indent": 4
+    },
+    {
+      "line": 23,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 24,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 25,
+      "text": "ans = min of ans and tmp_ans",
+      "code": "ans = min ( ans , tmp_ans ) ;",
+      "indent": 2
+    },
+    {
+      "line": 26,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 27,
+      "text": "print ans",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 28,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int n , m , ans = 6250000 [ 2 * 2501 ] [ 2 * 2501 ] [ 2 * 2501 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "if ( j ) prf [ i ] [ j ] += prf [ i ] [ j - 1 ] [ j - 1 ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        19
+      ],
+      "mod_code": [
+        "if ( i ) solve ( i ) = solve ( solve - prf [ i - 1 ] [ j + k ] ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "‘solve’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        20
+      ],
+      "mod_code": [
+        "if ( j ) solve ( j ) ;"
+      ],
+      "err_line": 20,
+      "err_msg": "‘solve’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        21
+      ],
+      "mod_code": [
+        "if ( i & j ) solve ( i ) , solve ( prf [ i - 1 ] [ j - 1 ] ) ;"
+      ],
+      "err_line": 21,
+      "err_msg": "‘solve’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        22
+      ],
+      "mod_code": [
+        "tmp_ans = tmp_ans + min ( solve ( k , k * k ) ) ;"
+      ],
+      "err_line": 22,
+      "err_msg": "‘solve’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "string a [ 2501 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘db’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int n , m [ 2 * 2501 ] [ 2 * 2501 ] [ 2 * 2501 ] [ 2 * 2501 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘int [5002][5002][5002][5002]’)"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "if ( i && j ) prf [ i ] [ j ] /= prf [ i - 1 ] [ j - 1 ] [ j - 1 ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "long long tmp_ans = 0 ;"
+      ],
+      "err_line": 25,
+      "err_msg": "no matching function for call to ‘min(int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < m ; j += k ) { j += k ; }"
+      ],
+      "err_line": 18,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        18
+      ],
+      "mod_code": [
+        "int solve = prf [ i + k - 1 ] [ ( j + k - 1 ] ) ;"
+      ],
+      "err_line": 18,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        19
+      ],
+      "mod_code": [
+        "if ( i ) solve ( i ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "‘solve’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        20
+      ],
+      "mod_code": [
+        "if ( j ) solve ( j ) = solve ( - prf [ i + k - 1 ] [ j - 1 ] ) ;"
+      ],
+      "err_line": 20,
+      "err_msg": "‘solve’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        21
+      ],
+      "mod_code": [
+        "if ( i && j ) solve ( i ) , solve ( prf [ i - 1 ] [ j - 1 ] ) ;"
+      ],
+      "err_line": 21,
+      "err_msg": "‘solve’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        22
+      ],
+      "mod_code": [
+        "tmp_ans += min ( solve ( solve ) k * k - solve ) ;"
+      ],
+      "err_line": 22,
+      "err_msg": "‘solve’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        1,
+        7
+      ],
+      "mod_code": [
+        "int n , m , ans = 6250000 [ 2 * 2501 ] [ 2 * 2501 ] [ 2 * 2501 ] ;",
+        "if ( i < n && j < m && db [ i ] [ j ] == 1 ) prf [ i ] [ j ] = 1 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        9
+      ],
+      "mod_code": [
+        "int n , m , ans = 6250000 [ 2 * 2501 ] [ 2 * 2501 ] [ 2 * 2501 ] ;",
+        "if ( i < n && j < m && db [ i ] [ j ] == 1 ) prf [ i ] [ j ] = 1 ;",
+        "if ( j ) prf [ i ] [ j ] += prf [ i ] [ j - 1 ] [ j - 1 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        9,
+        19
+      ],
+      "mod_code": [
+        "int n , m , ans = 6250000 [ 2 * 2501 ] [ 2 * 2501 ] [ 2 * 2501 ] ;",
+        "if ( i < n && j < m && db [ i ] [ j ] == 1 ) prf [ i ] [ j ] = 1 ;",
+        "if ( j ) prf [ i ] [ j ] += prf [ i ] [ j - 1 ] [ j - 1 ] ;",
+        "if ( i ) solve ( i ) = solve ( solve - prf [ i - 1 ] [ j + k ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        9,
+        20
+      ],
+      "mod_code": [
+        "int n , m , ans = 6250000 [ 2 * 2501 ] [ 2 * 2501 ] [ 2 * 2501 ] ;",
+        "if ( i < n && j < m && db [ i ] [ j ] == 1 ) prf [ i ] [ j ] = 1 ;",
+        "if ( j ) prf [ i ] [ j ] += prf [ i ] [ j - 1 ] [ j - 1 ] ;",
+        "if ( j ) solve ( j ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        9,
+        21
+      ],
+      "mod_code": [
+        "int n , m , ans = 6250000 [ 2 * 2501 ] [ 2 * 2501 ] [ 2 * 2501 ] ;",
+        "if ( i < n && j < m && db [ i ] [ j ] == 1 ) prf [ i ] [ j ] = 1 ;",
+        "if ( j ) prf [ i ] [ j ] += prf [ i ] [ j - 1 ] [ j - 1 ] ;",
+        "if ( i & j ) solve ( i ) , solve ( prf [ i - 1 ] [ j - 1 ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        9,
+        22
+      ],
+      "mod_code": [
+        "int n , m , ans = 6250000 [ 2 * 2501 ] [ 2 * 2501 ] [ 2 * 2501 ] ;",
+        "if ( i < n && j < m && db [ i ] [ j ] == 1 ) prf [ i ] [ j ] = 1 ;",
+        "if ( j ) prf [ i ] [ j ] += prf [ i ] [ j - 1 ] [ j - 1 ] ;",
+        "tmp_ans = tmp_ans + min ( solve ( k , k * k ) ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        19
+      ],
+      "mod_code": [
+        "int n , m , ans = 6250000 [ 2 * 2501 ] [ 2 * 2501 ] [ 2 * 2501 ] ;",
+        "if ( i < n && j < m && db [ i ] [ j ] == 1 ) prf [ i ] [ j ] = 1 ;",
+        "if ( i ) solve ( i ) = solve ( solve - prf [ i - 1 ] [ j + k ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        19,
+        20
+      ],
+      "mod_code": [
+        "int n , m , ans = 6250000 [ 2 * 2501 ] [ 2 * 2501 ] [ 2 * 2501 ] ;",
+        "if ( i < n && j < m && db [ i ] [ j ] == 1 ) prf [ i ] [ j ] = 1 ;",
+        "if ( i ) solve ( i ) = solve ( solve - prf [ i - 1 ] [ j + k ] ) ;",
+        "if ( j ) solve ( j ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        19,
+        21
+      ],
+      "mod_code": [
+        "int n , m , ans = 6250000 [ 2 * 2501 ] [ 2 * 2501 ] [ 2 * 2501 ] ;",
+        "if ( i < n && j < m && db [ i ] [ j ] == 1 ) prf [ i ] [ j ] = 1 ;",
+        "if ( i ) solve ( i ) = solve ( solve - prf [ i - 1 ] [ j + k ] ) ;",
+        "if ( i & j ) solve ( i ) , solve ( prf [ i - 1 ] [ j - 1 ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        19,
+        22
+      ],
+      "mod_code": [
+        "int n , m , ans = 6250000 [ 2 * 2501 ] [ 2 * 2501 ] [ 2 * 2501 ] ;",
+        "if ( i < n && j < m && db [ i ] [ j ] == 1 ) prf [ i ] [ j ] = 1 ;",
+        "if ( i ) solve ( i ) = solve ( solve - prf [ i - 1 ] [ j + k ] ) ;",
+        "tmp_ans = tmp_ans + min ( solve ( k , k * k ) ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        20
+      ],
+      "mod_code": [
+        "int n , m , ans = 6250000 [ 2 * 2501 ] [ 2 * 2501 ] [ 2 * 2501 ] ;",
+        "if ( i < n && j < m && db [ i ] [ j ] == 1 ) prf [ i ] [ j ] = 1 ;",
+        "if ( j ) solve ( j ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        20,
+        21
+      ],
+      "mod_code": [
+        "int n , m , ans = 6250000 [ 2 * 2501 ] [ 2 * 2501 ] [ 2 * 2501 ] ;",
+        "if ( i < n && j < m && db [ i ] [ j ] == 1 ) prf [ i ] [ j ] = 1 ;",
+        "if ( j ) solve ( j ) ;",
+        "if ( i & j ) solve ( i ) , solve ( prf [ i - 1 ] [ j - 1 ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        20,
+        22
+      ],
+      "mod_code": [
+        "int n , m , ans = 6250000 [ 2 * 2501 ] [ 2 * 2501 ] [ 2 * 2501 ] ;",
+        "if ( i < n && j < m && db [ i ] [ j ] == 1 ) prf [ i ] [ j ] = 1 ;",
+        "if ( j ) solve ( j ) ;",
+        "tmp_ans = tmp_ans + min ( solve ( k , k * k ) ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        21
+      ],
+      "mod_code": [
+        "int n , m , ans = 6250000 [ 2 * 2501 ] [ 2 * 2501 ] [ 2 * 2501 ] ;",
+        "if ( i < n && j < m && db [ i ] [ j ] == 1 ) prf [ i ] [ j ] = 1 ;",
+        "if ( i & j ) solve ( i ) , solve ( prf [ i - 1 ] [ j - 1 ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        21,
+        22
+      ],
+      "mod_code": [
+        "int n , m , ans = 6250000 [ 2 * 2501 ] [ 2 * 2501 ] [ 2 * 2501 ] ;",
+        "if ( i < n && j < m && db [ i ] [ j ] == 1 ) prf [ i ] [ j ] = 1 ;",
+        "if ( i & j ) solve ( i ) , solve ( prf [ i - 1 ] [ j - 1 ] ) ;",
+        "tmp_ans = tmp_ans + min ( solve ( k , k * k ) ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        22
+      ],
+      "mod_code": [
+        "int n , m , ans = 6250000 [ 2 * 2501 ] [ 2 * 2501 ] [ 2 * 2501 ] ;",
+        "if ( i < n && j < m && db [ i ] [ j ] == 1 ) prf [ i ] [ j ] = 1 ;",
+        "tmp_ans = tmp_ans + min ( solve ( k , k * k ) ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        9
+      ],
+      "mod_code": [
+        "int n , m , ans = 6250000 [ 2 * 2501 ] [ 2 * 2501 ] [ 2 * 2501 ] ;",
+        "if ( j ) prf [ i ] [ j ] += prf [ i ] [ j - 1 ] [ j - 1 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        19
+      ],
+      "mod_code": [
+        "int n , m , ans = 6250000 [ 2 * 2501 ] [ 2 * 2501 ] [ 2 * 2501 ] ;",
+        "if ( j ) prf [ i ] [ j ] += prf [ i ] [ j - 1 ] [ j - 1 ] ;",
+        "if ( i ) solve ( i ) = solve ( solve - prf [ i - 1 ] [ j + k ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        19,
+        20
+      ],
+      "mod_code": [
+        "int n , m , ans = 6250000 [ 2 * 2501 ] [ 2 * 2501 ] [ 2 * 2501 ] ;",
+        "if ( j ) prf [ i ] [ j ] += prf [ i ] [ j - 1 ] [ j - 1 ] ;",
+        "if ( i ) solve ( i ) = solve ( solve - prf [ i - 1 ] [ j + k ] ) ;",
+        "if ( j ) solve ( j ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        19,
+        21
+      ],
+      "mod_code": [
+        "int n , m , ans = 6250000 [ 2 * 2501 ] [ 2 * 2501 ] [ 2 * 2501 ] ;",
+        "if ( j ) prf [ i ] [ j ] += prf [ i ] [ j - 1 ] [ j - 1 ] ;",
+        "if ( i ) solve ( i ) = solve ( solve - prf [ i - 1 ] [ j + k ] ) ;",
+        "if ( i & j ) solve ( i ) , solve ( prf [ i - 1 ] [ j - 1 ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        19,
+        22
+      ],
+      "mod_code": [
+        "int n , m , ans = 6250000 [ 2 * 2501 ] [ 2 * 2501 ] [ 2 * 2501 ] ;",
+        "if ( j ) prf [ i ] [ j ] += prf [ i ] [ j - 1 ] [ j - 1 ] ;",
+        "if ( i ) solve ( i ) = solve ( solve - prf [ i - 1 ] [ j + k ] ) ;",
+        "tmp_ans = tmp_ans + min ( solve ( k , k * k ) ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        20
+      ],
+      "mod_code": [
+        "int n , m , ans = 6250000 [ 2 * 2501 ] [ 2 * 2501 ] [ 2 * 2501 ] ;",
+        "if ( j ) prf [ i ] [ j ] += prf [ i ] [ j - 1 ] [ j - 1 ] ;",
+        "if ( j ) solve ( j ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        20,
+        21
+      ],
+      "mod_code": [
+        "int n , m , ans = 6250000 [ 2 * 2501 ] [ 2 * 2501 ] [ 2 * 2501 ] ;",
+        "if ( j ) prf [ i ] [ j ] += prf [ i ] [ j - 1 ] [ j - 1 ] ;",
+        "if ( j ) solve ( j ) ;",
+        "if ( i & j ) solve ( i ) , solve ( prf [ i - 1 ] [ j - 1 ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        20,
+        22
+      ],
+      "mod_code": [
+        "int n , m , ans = 6250000 [ 2 * 2501 ] [ 2 * 2501 ] [ 2 * 2501 ] ;",
+        "if ( j ) prf [ i ] [ j ] += prf [ i ] [ j - 1 ] [ j - 1 ] ;",
+        "if ( j ) solve ( j ) ;",
+        "tmp_ans = tmp_ans + min ( solve ( k , k * k ) ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        21
+      ],
+      "mod_code": [
+        "int n , m , ans = 6250000 [ 2 * 2501 ] [ 2 * 2501 ] [ 2 * 2501 ] ;",
+        "if ( j ) prf [ i ] [ j ] += prf [ i ] [ j - 1 ] [ j - 1 ] ;",
+        "if ( i & j ) solve ( i ) , solve ( prf [ i - 1 ] [ j - 1 ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        21,
+        22
+      ],
+      "mod_code": [
+        "int n , m , ans = 6250000 [ 2 * 2501 ] [ 2 * 2501 ] [ 2 * 2501 ] ;",
+        "if ( j ) prf [ i ] [ j ] += prf [ i ] [ j - 1 ] [ j - 1 ] ;",
+        "if ( i & j ) solve ( i ) , solve ( prf [ i - 1 ] [ j - 1 ] ) ;",
+        "tmp_ans = tmp_ans + min ( solve ( k , k * k ) ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        22
+      ],
+      "mod_code": [
+        "int n , m , ans = 6250000 [ 2 * 2501 ] [ 2 * 2501 ] [ 2 * 2501 ] ;",
+        "if ( j ) prf [ i ] [ j ] += prf [ i ] [ j - 1 ] [ j - 1 ] ;",
+        "tmp_ans = tmp_ans + min ( solve ( k , k * k ) ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        19
+      ],
+      "mod_code": [
+        "int n , m , ans = 6250000 [ 2 * 2501 ] [ 2 * 2501 ] [ 2 * 2501 ] ;",
+        "if ( i ) solve ( i ) = solve ( solve - prf [ i - 1 ] [ j + k ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        19,
+        20
+      ],
+      "mod_code": [
+        "int n , m , ans = 6250000 [ 2 * 2501 ] [ 2 * 2501 ] [ 2 * 2501 ] ;",
+        "if ( i ) solve ( i ) = solve ( solve - prf [ i - 1 ] [ j + k ] ) ;",
+        "if ( j ) solve ( j ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        19,
+        20,
+        21
+      ],
+      "mod_code": [
+        "int n , m , ans = 6250000 [ 2 * 2501 ] [ 2 * 2501 ] [ 2 * 2501 ] ;",
+        "if ( i ) solve ( i ) = solve ( solve - prf [ i - 1 ] [ j + k ] ) ;",
+        "if ( j ) solve ( j ) ;",
+        "if ( i & j ) solve ( i ) , solve ( prf [ i - 1 ] [ j - 1 ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        19,
+        20,
+        22
+      ],
+      "mod_code": [
+        "int n , m , ans = 6250000 [ 2 * 2501 ] [ 2 * 2501 ] [ 2 * 2501 ] ;",
+        "if ( i ) solve ( i ) = solve ( solve - prf [ i - 1 ] [ j + k ] ) ;",
+        "if ( j ) solve ( j ) ;",
+        "tmp_ans = tmp_ans + min ( solve ( k , k * k ) ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        19,
+        21
+      ],
+      "mod_code": [
+        "int n , m , ans = 6250000 [ 2 * 2501 ] [ 2 * 2501 ] [ 2 * 2501 ] ;",
+        "if ( i ) solve ( i ) = solve ( solve - prf [ i - 1 ] [ j + k ] ) ;",
+        "if ( i & j ) solve ( i ) , solve ( prf [ i - 1 ] [ j - 1 ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        19,
+        21,
+        22
+      ],
+      "mod_code": [
+        "int n , m , ans = 6250000 [ 2 * 2501 ] [ 2 * 2501 ] [ 2 * 2501 ] ;",
+        "if ( i ) solve ( i ) = solve ( solve - prf [ i - 1 ] [ j + k ] ) ;",
+        "if ( i & j ) solve ( i ) , solve ( prf [ i - 1 ] [ j - 1 ] ) ;",
+        "tmp_ans = tmp_ans + min ( solve ( k , k * k ) ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        19,
+        22
+      ],
+      "mod_code": [
+        "int n , m , ans = 6250000 [ 2 * 2501 ] [ 2 * 2501 ] [ 2 * 2501 ] ;",
+        "if ( i ) solve ( i ) = solve ( solve - prf [ i - 1 ] [ j + k ] ) ;",
+        "tmp_ans = tmp_ans + min ( solve ( k , k * k ) ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        20
+      ],
+      "mod_code": [
+        "int n , m , ans = 6250000 [ 2 * 2501 ] [ 2 * 2501 ] [ 2 * 2501 ] ;",
+        "if ( j ) solve ( j ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        20,
+        21
+      ],
+      "mod_code": [
+        "int n , m , ans = 6250000 [ 2 * 2501 ] [ 2 * 2501 ] [ 2 * 2501 ] ;",
+        "if ( j ) solve ( j ) ;",
+        "if ( i & j ) solve ( i ) , solve ( prf [ i - 1 ] [ j - 1 ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        20,
+        21,
+        22
+      ],
+      "mod_code": [
+        "int n , m , ans = 6250000 [ 2 * 2501 ] [ 2 * 2501 ] [ 2 * 2501 ] ;",
+        "if ( j ) solve ( j ) ;",
+        "if ( i & j ) solve ( i ) , solve ( prf [ i - 1 ] [ j - 1 ] ) ;",
+        "tmp_ans = tmp_ans + min ( solve ( k , k * k ) ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        20,
+        22
+      ],
+      "mod_code": [
+        "int n , m , ans = 6250000 [ 2 * 2501 ] [ 2 * 2501 ] [ 2 * 2501 ] ;",
+        "if ( j ) solve ( j ) ;",
+        "tmp_ans = tmp_ans + min ( solve ( k , k * k ) ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        21
+      ],
+      "mod_code": [
+        "int n , m , ans = 6250000 [ 2 * 2501 ] [ 2 * 2501 ] [ 2 * 2501 ] ;",
+        "if ( i & j ) solve ( i ) , solve ( prf [ i - 1 ] [ j - 1 ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        21,
+        22
+      ],
+      "mod_code": [
+        "int n , m , ans = 6250000 [ 2 * 2501 ] [ 2 * 2501 ] [ 2 * 2501 ] ;",
+        "if ( i & j ) solve ( i ) , solve ( prf [ i - 1 ] [ j - 1 ] ) ;",
+        "tmp_ans = tmp_ans + min ( solve ( k , k * k ) ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        22
+      ],
+      "mod_code": [
+        "int n , m , ans = 6250000 [ 2 * 2501 ] [ 2 * 2501 ] [ 2 * 2501 ] ;",
+        "tmp_ans = tmp_ans + min ( solve ( k , k * k ) ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        7,
+        9
+      ],
+      "mod_code": [
+        "if ( i < n && j < m && db [ i ] [ j ] == 1 ) prf [ i ] [ j ] = 1 ;",
+        "if ( j ) prf [ i ] [ j ] += prf [ i ] [ j - 1 ] [ j - 1 ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        7,
+        9,
+        19
+      ],
+      "mod_code": [
+        "if ( i < n && j < m && db [ i ] [ j ] == 1 ) prf [ i ] [ j ] = 1 ;",
+        "if ( j ) prf [ i ] [ j ] += prf [ i ] [ j - 1 ] [ j - 1 ] ;",
+        "if ( i ) solve ( i ) = solve ( solve - prf [ i - 1 ] [ j + k ] ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        7,
+        9,
+        19,
+        20
+      ],
+      "mod_code": [
+        "if ( i < n && j < m && db [ i ] [ j ] == 1 ) prf [ i ] [ j ] = 1 ;",
+        "if ( j ) prf [ i ] [ j ] += prf [ i ] [ j - 1 ] [ j - 1 ] ;",
+        "if ( i ) solve ( i ) = solve ( solve - prf [ i - 1 ] [ j + k ] ) ;",
+        "if ( j ) solve ( j ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        7,
+        9,
+        19,
+        21
+      ],
+      "mod_code": [
+        "if ( i < n && j < m && db [ i ] [ j ] == 1 ) prf [ i ] [ j ] = 1 ;",
+        "if ( j ) prf [ i ] [ j ] += prf [ i ] [ j - 1 ] [ j - 1 ] ;",
+        "if ( i ) solve ( i ) = solve ( solve - prf [ i - 1 ] [ j + k ] ) ;",
+        "if ( i & j ) solve ( i ) , solve ( prf [ i - 1 ] [ j - 1 ] ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        7,
+        9,
+        19,
+        22
+      ],
+      "mod_code": [
+        "if ( i < n && j < m && db [ i ] [ j ] == 1 ) prf [ i ] [ j ] = 1 ;",
+        "if ( j ) prf [ i ] [ j ] += prf [ i ] [ j - 1 ] [ j - 1 ] ;",
+        "if ( i ) solve ( i ) = solve ( solve - prf [ i - 1 ] [ j + k ] ) ;",
+        "tmp_ans = tmp_ans + min ( solve ( k , k * k ) ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        7,
+        9,
+        20
+      ],
+      "mod_code": [
+        "if ( i < n && j < m && db [ i ] [ j ] == 1 ) prf [ i ] [ j ] = 1 ;",
+        "if ( j ) prf [ i ] [ j ] += prf [ i ] [ j - 1 ] [ j - 1 ] ;",
+        "if ( j ) solve ( j ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        7,
+        9,
+        20,
+        21
+      ],
+      "mod_code": [
+        "if ( i < n && j < m && db [ i ] [ j ] == 1 ) prf [ i ] [ j ] = 1 ;",
+        "if ( j ) prf [ i ] [ j ] += prf [ i ] [ j - 1 ] [ j - 1 ] ;",
+        "if ( j ) solve ( j ) ;",
+        "if ( i & j ) solve ( i ) , solve ( prf [ i - 1 ] [ j - 1 ] ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        7,
+        9,
+        20,
+        22
+      ],
+      "mod_code": [
+        "if ( i < n && j < m && db [ i ] [ j ] == 1 ) prf [ i ] [ j ] = 1 ;",
+        "if ( j ) prf [ i ] [ j ] += prf [ i ] [ j - 1 ] [ j - 1 ] ;",
+        "if ( j ) solve ( j ) ;",
+        "tmp_ans = tmp_ans + min ( solve ( k , k * k ) ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        7,
+        9,
+        21
+      ],
+      "mod_code": [
+        "if ( i < n && j < m && db [ i ] [ j ] == 1 ) prf [ i ] [ j ] = 1 ;",
+        "if ( j ) prf [ i ] [ j ] += prf [ i ] [ j - 1 ] [ j - 1 ] ;",
+        "if ( i & j ) solve ( i ) , solve ( prf [ i - 1 ] [ j - 1 ] ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        7,
+        9,
+        21,
+        22
+      ],
+      "mod_code": [
+        "if ( i < n && j < m && db [ i ] [ j ] == 1 ) prf [ i ] [ j ] = 1 ;",
+        "if ( j ) prf [ i ] [ j ] += prf [ i ] [ j - 1 ] [ j - 1 ] ;",
+        "if ( i & j ) solve ( i ) , solve ( prf [ i - 1 ] [ j - 1 ] ) ;",
+        "tmp_ans = tmp_ans + min ( solve ( k , k * k ) ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        7,
+        9,
+        22
+      ],
+      "mod_code": [
+        "if ( i < n && j < m && db [ i ] [ j ] == 1 ) prf [ i ] [ j ] = 1 ;",
+        "if ( j ) prf [ i ] [ j ] += prf [ i ] [ j - 1 ] [ j - 1 ] ;",
+        "tmp_ans = tmp_ans + min ( solve ( k , k * k ) ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        7,
+        19
+      ],
+      "mod_code": [
+        "if ( i < n && j < m && db [ i ] [ j ] == 1 ) prf [ i ] [ j ] = 1 ;",
+        "if ( i ) solve ( i ) = solve ( solve - prf [ i - 1 ] [ j + k ] ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "‘solve’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        7,
+        19,
+        20
+      ],
+      "mod_code": [
+        "if ( i < n && j < m && db [ i ] [ j ] == 1 ) prf [ i ] [ j ] = 1 ;",
+        "if ( i ) solve ( i ) = solve ( solve - prf [ i - 1 ] [ j + k ] ) ;",
+        "if ( j ) solve ( j ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "‘solve’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        7,
+        19,
+        20,
+        21
+      ],
+      "mod_code": [
+        "if ( i < n && j < m && db [ i ] [ j ] == 1 ) prf [ i ] [ j ] = 1 ;",
+        "if ( i ) solve ( i ) = solve ( solve - prf [ i - 1 ] [ j + k ] ) ;",
+        "if ( j ) solve ( j ) ;",
+        "if ( i & j ) solve ( i ) , solve ( prf [ i - 1 ] [ j - 1 ] ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "‘solve’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        7,
+        19,
+        20,
+        22
+      ],
+      "mod_code": [
+        "if ( i < n && j < m && db [ i ] [ j ] == 1 ) prf [ i ] [ j ] = 1 ;",
+        "if ( i ) solve ( i ) = solve ( solve - prf [ i - 1 ] [ j + k ] ) ;",
+        "if ( j ) solve ( j ) ;",
+        "tmp_ans = tmp_ans + min ( solve ( k , k * k ) ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "‘solve’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        7,
+        19,
+        21
+      ],
+      "mod_code": [
+        "if ( i < n && j < m && db [ i ] [ j ] == 1 ) prf [ i ] [ j ] = 1 ;",
+        "if ( i ) solve ( i ) = solve ( solve - prf [ i - 1 ] [ j + k ] ) ;",
+        "if ( i & j ) solve ( i ) , solve ( prf [ i - 1 ] [ j - 1 ] ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "‘solve’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        7,
+        19,
+        21,
+        22
+      ],
+      "mod_code": [
+        "if ( i < n && j < m && db [ i ] [ j ] == 1 ) prf [ i ] [ j ] = 1 ;",
+        "if ( i ) solve ( i ) = solve ( solve - prf [ i - 1 ] [ j + k ] ) ;",
+        "if ( i & j ) solve ( i ) , solve ( prf [ i - 1 ] [ j - 1 ] ) ;",
+        "tmp_ans = tmp_ans + min ( solve ( k , k * k ) ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "‘solve’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        7,
+        19,
+        22
+      ],
+      "mod_code": [
+        "if ( i < n && j < m && db [ i ] [ j ] == 1 ) prf [ i ] [ j ] = 1 ;",
+        "if ( i ) solve ( i ) = solve ( solve - prf [ i - 1 ] [ j + k ] ) ;",
+        "tmp_ans = tmp_ans + min ( solve ( k , k * k ) ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "‘solve’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        7,
+        20
+      ],
+      "mod_code": [
+        "if ( i < n && j < m && db [ i ] [ j ] == 1 ) prf [ i ] [ j ] = 1 ;",
+        "if ( j ) solve ( j ) ;"
+      ],
+      "err_line": 20,
+      "err_msg": "‘solve’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        7,
+        20,
+        21
+      ],
+      "mod_code": [
+        "if ( i < n && j < m && db [ i ] [ j ] == 1 ) prf [ i ] [ j ] = 1 ;",
+        "if ( j ) solve ( j ) ;",
+        "if ( i & j ) solve ( i ) , solve ( prf [ i - 1 ] [ j - 1 ] ) ;"
+      ],
+      "err_line": 20,
+      "err_msg": "‘solve’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        7,
+        20,
+        21,
+        22
+      ],
+      "mod_code": [
+        "if ( i < n && j < m && db [ i ] [ j ] == 1 ) prf [ i ] [ j ] = 1 ;",
+        "if ( j ) solve ( j ) ;",
+        "if ( i & j ) solve ( i ) , solve ( prf [ i - 1 ] [ j - 1 ] ) ;",
+        "tmp_ans = tmp_ans + min ( solve ( k , k * k ) ) ;"
+      ],
+      "err_line": 20,
+      "err_msg": "‘solve’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        7,
+        20,
+        22
+      ],
+      "mod_code": [
+        "if ( i < n && j < m && db [ i ] [ j ] == 1 ) prf [ i ] [ j ] = 1 ;",
+        "if ( j ) solve ( j ) ;",
+        "tmp_ans = tmp_ans + min ( solve ( k , k * k ) ) ;"
+      ],
+      "err_line": 20,
+      "err_msg": "‘solve’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        7,
+        21
+      ],
+      "mod_code": [
+        "if ( i < n && j < m && db [ i ] [ j ] == 1 ) prf [ i ] [ j ] = 1 ;",
+        "if ( i & j ) solve ( i ) , solve ( prf [ i - 1 ] [ j - 1 ] ) ;"
+      ],
+      "err_line": 21,
+      "err_msg": "‘solve’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        7,
+        21,
+        22
+      ],
+      "mod_code": [
+        "if ( i < n && j < m && db [ i ] [ j ] == 1 ) prf [ i ] [ j ] = 1 ;",
+        "if ( i & j ) solve ( i ) , solve ( prf [ i - 1 ] [ j - 1 ] ) ;",
+        "tmp_ans = tmp_ans + min ( solve ( k , k * k ) ) ;"
+      ],
+      "err_line": 21,
+      "err_msg": "‘solve’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        7,
+        22
+      ],
+      "mod_code": [
+        "if ( i < n && j < m && db [ i ] [ j ] == 1 ) prf [ i ] [ j ] = 1 ;",
+        "tmp_ans = tmp_ans + min ( solve ( k , k * k ) ) ;"
+      ],
+      "err_line": 22,
+      "err_msg": "‘solve’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        9,
+        19
+      ],
+      "mod_code": [
+        "if ( j ) prf [ i ] [ j ] += prf [ i ] [ j - 1 ] [ j - 1 ] ;",
+        "if ( i ) solve ( i ) = solve ( solve - prf [ i - 1 ] [ j + k ] ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9,
+        19,
+        20
+      ],
+      "mod_code": [
+        "if ( j ) prf [ i ] [ j ] += prf [ i ] [ j - 1 ] [ j - 1 ] ;",
+        "if ( i ) solve ( i ) = solve ( solve - prf [ i - 1 ] [ j + k ] ) ;",
+        "if ( j ) solve ( j ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9,
+        19,
+        20,
+        21
+      ],
+      "mod_code": [
+        "if ( j ) prf [ i ] [ j ] += prf [ i ] [ j - 1 ] [ j - 1 ] ;",
+        "if ( i ) solve ( i ) = solve ( solve - prf [ i - 1 ] [ j + k ] ) ;",
+        "if ( j ) solve ( j ) ;",
+        "if ( i & j ) solve ( i ) , solve ( prf [ i - 1 ] [ j - 1 ] ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9,
+        19,
+        20,
+        22
+      ],
+      "mod_code": [
+        "if ( j ) prf [ i ] [ j ] += prf [ i ] [ j - 1 ] [ j - 1 ] ;",
+        "if ( i ) solve ( i ) = solve ( solve - prf [ i - 1 ] [ j + k ] ) ;",
+        "if ( j ) solve ( j ) ;",
+        "tmp_ans = tmp_ans + min ( solve ( k , k * k ) ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9,
+        19,
+        21
+      ],
+      "mod_code": [
+        "if ( j ) prf [ i ] [ j ] += prf [ i ] [ j - 1 ] [ j - 1 ] ;",
+        "if ( i ) solve ( i ) = solve ( solve - prf [ i - 1 ] [ j + k ] ) ;",
+        "if ( i & j ) solve ( i ) , solve ( prf [ i - 1 ] [ j - 1 ] ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9,
+        19,
+        21,
+        22
+      ],
+      "mod_code": [
+        "if ( j ) prf [ i ] [ j ] += prf [ i ] [ j - 1 ] [ j - 1 ] ;",
+        "if ( i ) solve ( i ) = solve ( solve - prf [ i - 1 ] [ j + k ] ) ;",
+        "if ( i & j ) solve ( i ) , solve ( prf [ i - 1 ] [ j - 1 ] ) ;",
+        "tmp_ans = tmp_ans + min ( solve ( k , k * k ) ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9,
+        19,
+        22
+      ],
+      "mod_code": [
+        "if ( j ) prf [ i ] [ j ] += prf [ i ] [ j - 1 ] [ j - 1 ] ;",
+        "if ( i ) solve ( i ) = solve ( solve - prf [ i - 1 ] [ j + k ] ) ;",
+        "tmp_ans = tmp_ans + min ( solve ( k , k * k ) ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9,
+        20
+      ],
+      "mod_code": [
+        "if ( j ) prf [ i ] [ j ] += prf [ i ] [ j - 1 ] [ j - 1 ] ;",
+        "if ( j ) solve ( j ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9,
+        20,
+        21
+      ],
+      "mod_code": [
+        "if ( j ) prf [ i ] [ j ] += prf [ i ] [ j - 1 ] [ j - 1 ] ;",
+        "if ( j ) solve ( j ) ;",
+        "if ( i & j ) solve ( i ) , solve ( prf [ i - 1 ] [ j - 1 ] ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9,
+        20,
+        21,
+        22
+      ],
+      "mod_code": [
+        "if ( j ) prf [ i ] [ j ] += prf [ i ] [ j - 1 ] [ j - 1 ] ;",
+        "if ( j ) solve ( j ) ;",
+        "if ( i & j ) solve ( i ) , solve ( prf [ i - 1 ] [ j - 1 ] ) ;",
+        "tmp_ans = tmp_ans + min ( solve ( k , k * k ) ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9,
+        20,
+        22
+      ],
+      "mod_code": [
+        "if ( j ) prf [ i ] [ j ] += prf [ i ] [ j - 1 ] [ j - 1 ] ;",
+        "if ( j ) solve ( j ) ;",
+        "tmp_ans = tmp_ans + min ( solve ( k , k * k ) ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9,
+        21
+      ],
+      "mod_code": [
+        "if ( j ) prf [ i ] [ j ] += prf [ i ] [ j - 1 ] [ j - 1 ] ;",
+        "if ( i & j ) solve ( i ) , solve ( prf [ i - 1 ] [ j - 1 ] ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9,
+        21,
+        22
+      ],
+      "mod_code": [
+        "if ( j ) prf [ i ] [ j ] += prf [ i ] [ j - 1 ] [ j - 1 ] ;",
+        "if ( i & j ) solve ( i ) , solve ( prf [ i - 1 ] [ j - 1 ] ) ;",
+        "tmp_ans = tmp_ans + min ( solve ( k , k * k ) ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9,
+        22
+      ],
+      "mod_code": [
+        "if ( j ) prf [ i ] [ j ] += prf [ i ] [ j - 1 ] [ j - 1 ] ;",
+        "tmp_ans = tmp_ans + min ( solve ( k , k * k ) ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        19,
+        20
+      ],
+      "mod_code": [
+        "if ( i ) solve ( i ) = solve ( solve - prf [ i - 1 ] [ j + k ] ) ;",
+        "if ( j ) solve ( j ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "‘solve’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        19,
+        20,
+        21
+      ],
+      "mod_code": [
+        "if ( i ) solve ( i ) = solve ( solve - prf [ i - 1 ] [ j + k ] ) ;",
+        "if ( j ) solve ( j ) ;",
+        "if ( i & j ) solve ( i ) , solve ( prf [ i - 1 ] [ j - 1 ] ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "‘solve’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        19,
+        20,
+        21,
+        22
+      ],
+      "mod_code": [
+        "if ( i ) solve ( i ) = solve ( solve - prf [ i - 1 ] [ j + k ] ) ;",
+        "if ( j ) solve ( j ) ;",
+        "if ( i & j ) solve ( i ) , solve ( prf [ i - 1 ] [ j - 1 ] ) ;",
+        "tmp_ans = tmp_ans + min ( solve ( k , k * k ) ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "‘solve’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        19,
+        20,
+        22
+      ],
+      "mod_code": [
+        "if ( i ) solve ( i ) = solve ( solve - prf [ i - 1 ] [ j + k ] ) ;",
+        "if ( j ) solve ( j ) ;",
+        "tmp_ans = tmp_ans + min ( solve ( k , k * k ) ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "‘solve’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        19,
+        21
+      ],
+      "mod_code": [
+        "if ( i ) solve ( i ) = solve ( solve - prf [ i - 1 ] [ j + k ] ) ;",
+        "if ( i & j ) solve ( i ) , solve ( prf [ i - 1 ] [ j - 1 ] ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "‘solve’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        19,
+        21,
+        22
+      ],
+      "mod_code": [
+        "if ( i ) solve ( i ) = solve ( solve - prf [ i - 1 ] [ j + k ] ) ;",
+        "if ( i & j ) solve ( i ) , solve ( prf [ i - 1 ] [ j - 1 ] ) ;",
+        "tmp_ans = tmp_ans + min ( solve ( k , k * k ) ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "‘solve’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        19,
+        22
+      ],
+      "mod_code": [
+        "if ( i ) solve ( i ) = solve ( solve - prf [ i - 1 ] [ j + k ] ) ;",
+        "tmp_ans = tmp_ans + min ( solve ( k , k * k ) ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "‘solve’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        20,
+        21
+      ],
+      "mod_code": [
+        "if ( j ) solve ( j ) ;",
+        "if ( i & j ) solve ( i ) , solve ( prf [ i - 1 ] [ j - 1 ] ) ;"
+      ],
+      "err_line": 20,
+      "err_msg": "‘solve’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        20,
+        21,
+        22
+      ],
+      "mod_code": [
+        "if ( j ) solve ( j ) ;",
+        "if ( i & j ) solve ( i ) , solve ( prf [ i - 1 ] [ j - 1 ] ) ;",
+        "tmp_ans = tmp_ans + min ( solve ( k , k * k ) ) ;"
+      ],
+      "err_line": 20,
+      "err_msg": "‘solve’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        20,
+        22
+      ],
+      "mod_code": [
+        "if ( j ) solve ( j ) ;",
+        "tmp_ans = tmp_ans + min ( solve ( k , k * k ) ) ;"
+      ],
+      "err_line": 20,
+      "err_msg": "‘solve’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        21,
+        22
+      ],
+      "mod_code": [
+        "if ( i & j ) solve ( i ) , solve ( prf [ i - 1 ] [ j - 1 ] ) ;",
+        "tmp_ans = tmp_ans + min ( solve ( k , k * k ) ) ;"
+      ],
+      "err_line": 21,
+      "err_msg": "‘solve’ cannot be used as a function"
+    }
+  ]
+}

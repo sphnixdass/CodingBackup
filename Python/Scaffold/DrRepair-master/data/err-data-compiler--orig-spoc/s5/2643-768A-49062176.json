@@ -1,0 +1,615 @@
+{
+  "meta": {
+    "index": 2643,
+    "hitid": "33KMQD9OFJ8XBRZIX2LULM7C08877H",
+    "workerid": "A1NBHCFZKJGHKW",
+    "probid": "768A",
+    "subid": "49062176"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "n = int",
+      "code": "int n ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "a = int array of size n",
+      "code": "int a [ n ] ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "cnt = int with cnt = 0",
+      "code": "int cnt = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i = 1 to n inclusive read a [ i ]",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) { cin >> a [ i ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "call sort on a + 1 and a + 1 + n",
+      "code": "sort ( a + 1 , a + 1 + n ) ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "if n equals 1 or 2",
+      "code": "if ( n == 1 || n == 2 )",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "print 0",
+      "code": "cout << 0 << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "else if n is greater than 2",
+      "code": "else if ( n >= 3 )",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "minn = int with minn = a [ 1 ]",
+      "code": "int minn = a [ 1 ] ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "mixx = int with mixx = a [ n ]",
+      "code": "int mixx = a [ n ] ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "for i = 2 to n - 1 inclusive",
+      "code": "for ( int i = 2 ; i <= n - 1 ; i ++ )",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "if a [ i ] is between minn and mixx then increment cnt",
+      "code": "if ( a [ i ] > minn && a [ i ] < mixx ) cnt ++ ;",
+      "indent": 3
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "print cnt",
+      "code": "cout << cnt << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "while ( cin >> n )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "sort ( a + 1 , a + 1 ) + n ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid operands of types ‘void’ and ‘int’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "int * mixx = a [ n ] ;"
+      ],
+      "err_line": 11,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n - 1 ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        6
+      ],
+      "mod_code": [
+        "if ( a [ i ] > minn && a [ i ] > mixx ) { cnt ++ ; }",
+        "sort ( a + 1 , a + 1 ) + n ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid operands of types ‘void’ and ‘int’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        13,
+        6,
+        11
+      ],
+      "mod_code": [
+        "if ( a [ i ] > minn && a [ i ] > mixx ) { cnt ++ ; }",
+        "sort ( a + 1 , a + 1 ) + n ;",
+        "int * mixx = a [ n ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid operands of types ‘void’ and ‘int’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        13,
+        6,
+        11,
+        15
+      ],
+      "mod_code": [
+        "if ( a [ i ] > minn && a [ i ] > mixx ) { cnt ++ ; }",
+        "sort ( a + 1 , a + 1 ) + n ;",
+        "int * mixx = a [ n ] ;",
+        "cout << cnt ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid operands of types ‘void’ and ‘int’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        13,
+        6,
+        11,
+        1
+      ],
+      "mod_code": [
+        "if ( a [ i ] > minn && a [ i ] > mixx ) { cnt ++ ; }",
+        "sort ( a + 1 , a + 1 ) + n ;",
+        "int * mixx = a [ n ] ;",
+        "char n ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid operands of types ‘void’ and ‘char’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        13,
+        6,
+        15
+      ],
+      "mod_code": [
+        "if ( a [ i ] > minn && a [ i ] > mixx ) { cnt ++ ; }",
+        "sort ( a + 1 , a + 1 ) + n ;",
+        "cout << cnt ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid operands of types ‘void’ and ‘int’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        13,
+        6,
+        15,
+        1
+      ],
+      "mod_code": [
+        "if ( a [ i ] > minn && a [ i ] > mixx ) { cnt ++ ; }",
+        "sort ( a + 1 , a + 1 ) + n ;",
+        "cout << cnt ;",
+        "char n ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid operands of types ‘void’ and ‘char’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        13,
+        6,
+        1
+      ],
+      "mod_code": [
+        "if ( a [ i ] > minn && a [ i ] > mixx ) { cnt ++ ; }",
+        "sort ( a + 1 , a + 1 ) + n ;",
+        "char n ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid operands of types ‘void’ and ‘char’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        13,
+        11
+      ],
+      "mod_code": [
+        "if ( a [ i ] > minn && a [ i ] > mixx ) { cnt ++ ; }",
+        "int * mixx = a [ n ] ;"
+      ],
+      "err_line": 11,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        11,
+        15
+      ],
+      "mod_code": [
+        "if ( a [ i ] > minn && a [ i ] > mixx ) { cnt ++ ; }",
+        "int * mixx = a [ n ] ;",
+        "cout << cnt ;"
+      ],
+      "err_line": 11,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        11,
+        15,
+        1
+      ],
+      "mod_code": [
+        "if ( a [ i ] > minn && a [ i ] > mixx ) { cnt ++ ; }",
+        "int * mixx = a [ n ] ;",
+        "cout << cnt ;",
+        "char n ;"
+      ],
+      "err_line": 11,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        11,
+        1
+      ],
+      "mod_code": [
+        "if ( a [ i ] > minn && a [ i ] > mixx ) { cnt ++ ; }",
+        "int * mixx = a [ n ] ;",
+        "char n ;"
+      ],
+      "err_line": 11,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        13
+      ],
+      "mod_code": [
+        "sort ( a + 1 , a + 1 ) + n ;",
+        "if ( a [ i ] > minn && a [ i ] > mixx ) cnt ++ ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid operands of types ‘void’ and ‘int’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        6,
+        13,
+        11
+      ],
+      "mod_code": [
+        "sort ( a + 1 , a + 1 ) + n ;",
+        "if ( a [ i ] > minn && a [ i ] > mixx ) cnt ++ ;",
+        "int * mixx = a [ n ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid operands of types ‘void’ and ‘int’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        6,
+        13,
+        11,
+        15
+      ],
+      "mod_code": [
+        "sort ( a + 1 , a + 1 ) + n ;",
+        "if ( a [ i ] > minn && a [ i ] > mixx ) cnt ++ ;",
+        "int * mixx = a [ n ] ;",
+        "cout << cnt ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid operands of types ‘void’ and ‘int’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        6,
+        13,
+        11,
+        1
+      ],
+      "mod_code": [
+        "sort ( a + 1 , a + 1 ) + n ;",
+        "if ( a [ i ] > minn && a [ i ] > mixx ) cnt ++ ;",
+        "int * mixx = a [ n ] ;",
+        "char n ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid operands of types ‘void’ and ‘char’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        6,
+        13,
+        15
+      ],
+      "mod_code": [
+        "sort ( a + 1 , a + 1 ) + n ;",
+        "if ( a [ i ] > minn && a [ i ] > mixx ) cnt ++ ;",
+        "cout << cnt ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid operands of types ‘void’ and ‘int’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        6,
+        13,
+        15,
+        1
+      ],
+      "mod_code": [
+        "sort ( a + 1 , a + 1 ) + n ;",
+        "if ( a [ i ] > minn && a [ i ] > mixx ) cnt ++ ;",
+        "cout << cnt ;",
+        "char n ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid operands of types ‘void’ and ‘char’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        6,
+        13,
+        1
+      ],
+      "mod_code": [
+        "sort ( a + 1 , a + 1 ) + n ;",
+        "if ( a [ i ] > minn && a [ i ] > mixx ) cnt ++ ;",
+        "char n ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid operands of types ‘void’ and ‘char’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        6,
+        11
+      ],
+      "mod_code": [
+        "sort ( a + 1 , a + 1 ) + n ;",
+        "int * mixx = a [ n ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid operands of types ‘void’ and ‘int’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        6,
+        11,
+        15
+      ],
+      "mod_code": [
+        "sort ( a + 1 , a + 1 ) + n ;",
+        "int * mixx = a [ n ] ;",
+        "cout << cnt ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid operands of types ‘void’ and ‘int’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        6,
+        11,
+        15,
+        1
+      ],
+      "mod_code": [
+        "sort ( a + 1 , a + 1 ) + n ;",
+        "int * mixx = a [ n ] ;",
+        "cout << cnt ;",
+        "char n ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid operands of types ‘void’ and ‘char’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        6,
+        11,
+        1
+      ],
+      "mod_code": [
+        "sort ( a + 1 , a + 1 ) + n ;",
+        "int * mixx = a [ n ] ;",
+        "char n ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid operands of types ‘void’ and ‘char’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        6,
+        15
+      ],
+      "mod_code": [
+        "sort ( a + 1 , a + 1 ) + n ;",
+        "cout << cnt ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid operands of types ‘void’ and ‘int’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        6,
+        15,
+        1
+      ],
+      "mod_code": [
+        "sort ( a + 1 , a + 1 ) + n ;",
+        "cout << cnt ;",
+        "char n ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid operands of types ‘void’ and ‘char’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        6,
+        1
+      ],
+      "mod_code": [
+        "sort ( a + 1 , a + 1 ) + n ;",
+        "char n ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid operands of types ‘void’ and ‘char’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        13,
+        11
+      ],
+      "mod_code": [
+        "if ( a [ i ] > minn && a [ i ] > mixx ) cnt ++ ;",
+        "int * mixx = a [ n ] ;"
+      ],
+      "err_line": 11,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        11,
+        15
+      ],
+      "mod_code": [
+        "if ( a [ i ] > minn && a [ i ] > mixx ) cnt ++ ;",
+        "int * mixx = a [ n ] ;",
+        "cout << cnt ;"
+      ],
+      "err_line": 11,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        11,
+        15,
+        1
+      ],
+      "mod_code": [
+        "if ( a [ i ] > minn && a [ i ] > mixx ) cnt ++ ;",
+        "int * mixx = a [ n ] ;",
+        "cout << cnt ;",
+        "char n ;"
+      ],
+      "err_line": 11,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        11,
+        1
+      ],
+      "mod_code": [
+        "if ( a [ i ] > minn && a [ i ] > mixx ) cnt ++ ;",
+        "int * mixx = a [ n ] ;",
+        "char n ;"
+      ],
+      "err_line": 11,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        15
+      ],
+      "mod_code": [
+        "int * mixx = a [ n ] ;",
+        "cout << cnt ;"
+      ],
+      "err_line": 11,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        15,
+        1
+      ],
+      "mod_code": [
+        "int * mixx = a [ n ] ;",
+        "cout << cnt ;",
+        "char n ;"
+      ],
+      "err_line": 11,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        1
+      ],
+      "mod_code": [
+        "int * mixx = a [ n ] ;",
+        "char n ;"
+      ],
+      "err_line": 11,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    }
+  ]
+}

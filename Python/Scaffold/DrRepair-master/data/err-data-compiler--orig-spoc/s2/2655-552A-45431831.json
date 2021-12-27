@@ -1,0 +1,873 @@
+{
+  "meta": {
+    "index": 2655,
+    "hitid": "3UZUVSO3P7P159LFOG1PAEWJI72MEZ",
+    "workerid": "A2QLFQ2ZYR6B7M",
+    "probid": "552A",
+    "subid": "45431831"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "maxs = 110",
+      "code": "const int maxs = 110 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "table = array of maxs by maxs int",
+      "code": "int table [ maxs ] [ maxs ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "n = int",
+      "code": "int n ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "x1 , y1 , x2 , y2 = int",
+      "code": "int x1 , y1 , x2 , y2 ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "maxx , maxy = 0",
+      "code": "int maxx = 0 , maxy = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "while decrementing n remains > 0",
+      "code": "while ( n -- )",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "read x1 , y1 , x2 , y2",
+      "code": "cin >> x1 >> y1 >> x2 >> y2 ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "maxx = max ( maxx , max ( x1 , x2 ) )",
+      "code": "maxx = max ( maxx , max ( x1 , x2 ) ) ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "maxy = max ( maxy , max ( y1 , y2 ) )",
+      "code": "maxy = max ( maxy , max ( y1 , y2 ) ) ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "increment table [ x1 ] [ y2 ]",
+      "code": "table [ x1 ] [ y2 ] += 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "decrement table [ x1 ] [ y1 - 1 ]",
+      "code": "table [ x1 ] [ y1 - 1 ] -= 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "decrement table [ x2 + 1 ] [ y2 ]",
+      "code": "table [ x2 + 1 ] [ y2 ] -= 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "increment table [ x1 + 1 ] [ y1 - 1 ]",
+      "code": "table [ x2 + 1 ] [ y1 - 1 ] += 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "for y = maxy down to 0 exclusive",
+      "code": "for ( int y = maxy ; y > 0 ; y -- )",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "for x = 2 to maxx inclusive add table [ x - 1 ] [ y ] to table [ x ] [ y ]",
+      "code": "for ( int x = 2 ; x <= maxx ; x ++ ) { table [ x ] [ y ] += table [ x - 1 ] [ y ] ; }",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "for x = 1 to maxx inclusive",
+      "code": "for ( int x = 1 ; x <= maxx ; x ++ )",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "for y = maxy down to 2 inclusive add table [ x ] [ y ] to table [ x ] [ y - 1 ]",
+      "code": "for ( int y = maxy ; y >= 2 ; y -- ) { table [ x ] [ y - 1 ] += table [ x ] [ y ] ; }",
+      "indent": 2
+    },
+    {
+      "line": 21,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 22,
+      "text": "ans = 0",
+      "code": "int ans = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "for x = 1 to maxx inclusive",
+      "code": "for ( int x = 1 ; x <= maxx ; x ++ )",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "for y = 1 to maxy inclusive add table [ x ] [ y ] to ans",
+      "code": "for ( int y = 1 ; y <= maxy ; y ++ ) { ans += table [ x ] [ y ] ; }",
+      "indent": 2
+    },
+    {
+      "line": 25,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 26,
+      "text": "print ans",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 27,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 28,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int maxs = 110 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        20
+      ],
+      "mod_code": [
+        "for ( int y = maxy ; y >= 2 ; y -- ) table [ x ] [ y - x ] += table [ x ] ;"
+      ],
+      "err_line": 20,
+      "err_msg": "invalid use of non-lvalue array"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "maxs = 110 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxs’ does not name a type"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int table [ maxs ] , maxs ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int maxs’"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "bool n ;"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid use of Boolean expression as operand to ‘operator--’"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "int x1 , y1 , x2 , y2 , y2 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int y2’"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "maxx = 0 , maxy = 0 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘maxx’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "while ( l -- )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "table [ ++ x1 [ y2 ] ++ ;"
+      ],
+      "err_line": 11,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "table [ x1 ] [ j - 1 ] -- ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "table [ -- + 1 ] [ y2 ] -- ;"
+      ],
+      "err_line": 13,
+      "err_msg": "lvalue required as decrement operand"
+    },
+    {
+      "mod_line": [
+        19
+      ],
+      "mod_code": [
+        "for ( x = 1 ; x <= maxx ; x ++ )"
+      ],
+      "err_line": 19,
+      "err_msg": "‘x’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        20
+      ],
+      "mod_code": [
+        "for ( int y = maxy ; y >= 2 ; y -- ) { table [ x ] [ y - x ] += table [ x ] ; }"
+      ],
+      "err_line": 20,
+      "err_msg": "invalid use of non-lvalue array"
+    },
+    {
+      "mod_line": [
+        22
+      ],
+      "mod_code": [
+        "ans = 0 ;"
+      ],
+      "err_line": 22,
+      "err_msg": "‘ans’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        23
+      ],
+      "mod_code": [
+        "for ( x = 1 ; x <= maxx ; x ++ )"
+      ],
+      "err_line": 23,
+      "err_msg": "name lookup of ‘x’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        0,
+        14
+      ],
+      "mod_code": [
+        "int maxs = 110 ;",
+        "table [ x1 + 1 ] [ y1 - 1 ] ++ ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        14,
+        20
+      ],
+      "mod_code": [
+        "int maxs = 110 ;",
+        "table [ x1 + 1 ] [ y1 - 1 ] ++ ;",
+        "for ( int y = maxy ; y >= 2 ; y -- ) table [ x ] [ y - x ] += table [ x ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        14,
+        20,
+        7
+      ],
+      "mod_code": [
+        "int maxs = 110 ;",
+        "table [ x1 + 1 ] [ y1 - 1 ] ++ ;",
+        "for ( int y = maxy ; y >= 2 ; y -- ) table [ x ] [ y - x ] += table [ x ] ;",
+        "while ( l -- )"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        14,
+        20,
+        5
+      ],
+      "mod_code": [
+        "int maxs = 110 ;",
+        "table [ x1 + 1 ] [ y1 - 1 ] ++ ;",
+        "for ( int y = maxy ; y >= 2 ; y -- ) table [ x ] [ y - x ] += table [ x ] ;",
+        "int x1 , y1 , x2 , y2 , y2 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        14,
+        7
+      ],
+      "mod_code": [
+        "int maxs = 110 ;",
+        "table [ x1 + 1 ] [ y1 - 1 ] ++ ;",
+        "while ( l -- )"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        14,
+        7,
+        5
+      ],
+      "mod_code": [
+        "int maxs = 110 ;",
+        "table [ x1 + 1 ] [ y1 - 1 ] ++ ;",
+        "while ( l -- )",
+        "int x1 , y1 , x2 , y2 , y2 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        14,
+        5
+      ],
+      "mod_code": [
+        "int maxs = 110 ;",
+        "table [ x1 + 1 ] [ y1 - 1 ] ++ ;",
+        "int x1 , y1 , x2 , y2 , y2 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        20
+      ],
+      "mod_code": [
+        "int maxs = 110 ;",
+        "for ( int y = maxy ; y >= 2 ; y -- ) table [ x ] [ y - x ] += table [ x ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        20,
+        7
+      ],
+      "mod_code": [
+        "int maxs = 110 ;",
+        "for ( int y = maxy ; y >= 2 ; y -- ) table [ x ] [ y - x ] += table [ x ] ;",
+        "while ( l -- )"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        20,
+        7,
+        5
+      ],
+      "mod_code": [
+        "int maxs = 110 ;",
+        "for ( int y = maxy ; y >= 2 ; y -- ) table [ x ] [ y - x ] += table [ x ] ;",
+        "while ( l -- )",
+        "int x1 , y1 , x2 , y2 , y2 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        20,
+        5
+      ],
+      "mod_code": [
+        "int maxs = 110 ;",
+        "for ( int y = maxy ; y >= 2 ; y -- ) table [ x ] [ y - x ] += table [ x ] ;",
+        "int x1 , y1 , x2 , y2 , y2 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        7
+      ],
+      "mod_code": [
+        "int maxs = 110 ;",
+        "while ( l -- )"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        7,
+        5
+      ],
+      "mod_code": [
+        "int maxs = 110 ;",
+        "while ( l -- )",
+        "int x1 , y1 , x2 , y2 , y2 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        5
+      ],
+      "mod_code": [
+        "int maxs = 110 ;",
+        "int x1 , y1 , x2 , y2 , y2 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        20
+      ],
+      "mod_code": [
+        "table [ x1 + 1 ] [ y1 - 1 ] ++ ;",
+        "for ( int y = maxy ; y >= 2 ; y -- ) table [ x ] [ y - x ] += table [ x ] ;"
+      ],
+      "err_line": 20,
+      "err_msg": "invalid use of non-lvalue array"
+    },
+    {
+      "mod_line": [
+        14,
+        20,
+        7
+      ],
+      "mod_code": [
+        "table [ x1 + 1 ] [ y1 - 1 ] ++ ;",
+        "for ( int y = maxy ; y >= 2 ; y -- ) table [ x ] [ y - x ] += table [ x ] ;",
+        "while ( l -- )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        20,
+        7,
+        5
+      ],
+      "mod_code": [
+        "table [ x1 + 1 ] [ y1 - 1 ] ++ ;",
+        "for ( int y = maxy ; y >= 2 ; y -- ) table [ x ] [ y - x ] += table [ x ] ;",
+        "while ( l -- )",
+        "int x1 , y1 , x2 , y2 , y2 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int y2’"
+    },
+    {
+      "mod_line": [
+        14,
+        20,
+        7,
+        0
+      ],
+      "mod_code": [
+        "table [ x1 + 1 ] [ y1 - 1 ] ++ ;",
+        "for ( int y = maxy ; y >= 2 ; y -- ) table [ x ] [ y - x ] += table [ x ] ;",
+        "while ( l -- )",
+        "maxs = 110 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxs’ does not name a type"
+    },
+    {
+      "mod_line": [
+        14,
+        20,
+        5
+      ],
+      "mod_code": [
+        "table [ x1 + 1 ] [ y1 - 1 ] ++ ;",
+        "for ( int y = maxy ; y >= 2 ; y -- ) table [ x ] [ y - x ] += table [ x ] ;",
+        "int x1 , y1 , x2 , y2 , y2 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int y2’"
+    },
+    {
+      "mod_line": [
+        14,
+        20,
+        5,
+        0
+      ],
+      "mod_code": [
+        "table [ x1 + 1 ] [ y1 - 1 ] ++ ;",
+        "for ( int y = maxy ; y >= 2 ; y -- ) table [ x ] [ y - x ] += table [ x ] ;",
+        "int x1 , y1 , x2 , y2 , y2 ;",
+        "maxs = 110 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxs’ does not name a type"
+    },
+    {
+      "mod_line": [
+        14,
+        20,
+        0
+      ],
+      "mod_code": [
+        "table [ x1 + 1 ] [ y1 - 1 ] ++ ;",
+        "for ( int y = maxy ; y >= 2 ; y -- ) table [ x ] [ y - x ] += table [ x ] ;",
+        "maxs = 110 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxs’ does not name a type"
+    },
+    {
+      "mod_line": [
+        14,
+        7
+      ],
+      "mod_code": [
+        "table [ x1 + 1 ] [ y1 - 1 ] ++ ;",
+        "while ( l -- )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        7,
+        5
+      ],
+      "mod_code": [
+        "table [ x1 + 1 ] [ y1 - 1 ] ++ ;",
+        "while ( l -- )",
+        "int x1 , y1 , x2 , y2 , y2 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int y2’"
+    },
+    {
+      "mod_line": [
+        14,
+        7,
+        5,
+        0
+      ],
+      "mod_code": [
+        "table [ x1 + 1 ] [ y1 - 1 ] ++ ;",
+        "while ( l -- )",
+        "int x1 , y1 , x2 , y2 , y2 ;",
+        "maxs = 110 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxs’ does not name a type"
+    },
+    {
+      "mod_line": [
+        14,
+        7,
+        0
+      ],
+      "mod_code": [
+        "table [ x1 + 1 ] [ y1 - 1 ] ++ ;",
+        "while ( l -- )",
+        "maxs = 110 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxs’ does not name a type"
+    },
+    {
+      "mod_line": [
+        14,
+        5
+      ],
+      "mod_code": [
+        "table [ x1 + 1 ] [ y1 - 1 ] ++ ;",
+        "int x1 , y1 , x2 , y2 , y2 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int y2’"
+    },
+    {
+      "mod_line": [
+        14,
+        5,
+        0
+      ],
+      "mod_code": [
+        "table [ x1 + 1 ] [ y1 - 1 ] ++ ;",
+        "int x1 , y1 , x2 , y2 , y2 ;",
+        "maxs = 110 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxs’ does not name a type"
+    },
+    {
+      "mod_line": [
+        14,
+        0
+      ],
+      "mod_code": [
+        "table [ x1 + 1 ] [ y1 - 1 ] ++ ;",
+        "maxs = 110 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxs’ does not name a type"
+    },
+    {
+      "mod_line": [
+        20,
+        7
+      ],
+      "mod_code": [
+        "for ( int y = maxy ; y >= 2 ; y -- ) table [ x ] [ y - x ] += table [ x ] ;",
+        "while ( l -- )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        20,
+        7,
+        5
+      ],
+      "mod_code": [
+        "for ( int y = maxy ; y >= 2 ; y -- ) table [ x ] [ y - x ] += table [ x ] ;",
+        "while ( l -- )",
+        "int x1 , y1 , x2 , y2 , y2 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int y2’"
+    },
+    {
+      "mod_line": [
+        20,
+        7,
+        5,
+        0
+      ],
+      "mod_code": [
+        "for ( int y = maxy ; y >= 2 ; y -- ) table [ x ] [ y - x ] += table [ x ] ;",
+        "while ( l -- )",
+        "int x1 , y1 , x2 , y2 , y2 ;",
+        "maxs = 110 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxs’ does not name a type"
+    },
+    {
+      "mod_line": [
+        20,
+        7,
+        0
+      ],
+      "mod_code": [
+        "for ( int y = maxy ; y >= 2 ; y -- ) table [ x ] [ y - x ] += table [ x ] ;",
+        "while ( l -- )",
+        "maxs = 110 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxs’ does not name a type"
+    },
+    {
+      "mod_line": [
+        20,
+        5
+      ],
+      "mod_code": [
+        "for ( int y = maxy ; y >= 2 ; y -- ) table [ x ] [ y - x ] += table [ x ] ;",
+        "int x1 , y1 , x2 , y2 , y2 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int y2’"
+    },
+    {
+      "mod_line": [
+        20,
+        5,
+        0
+      ],
+      "mod_code": [
+        "for ( int y = maxy ; y >= 2 ; y -- ) table [ x ] [ y - x ] += table [ x ] ;",
+        "int x1 , y1 , x2 , y2 , y2 ;",
+        "maxs = 110 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxs’ does not name a type"
+    },
+    {
+      "mod_line": [
+        20,
+        0
+      ],
+      "mod_code": [
+        "for ( int y = maxy ; y >= 2 ; y -- ) table [ x ] [ y - x ] += table [ x ] ;",
+        "maxs = 110 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxs’ does not name a type"
+    },
+    {
+      "mod_line": [
+        7,
+        5
+      ],
+      "mod_code": [
+        "while ( l -- )",
+        "int x1 , y1 , x2 , y2 , y2 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int y2’"
+    },
+    {
+      "mod_line": [
+        7,
+        5,
+        0
+      ],
+      "mod_code": [
+        "while ( l -- )",
+        "int x1 , y1 , x2 , y2 , y2 ;",
+        "maxs = 110 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxs’ does not name a type"
+    },
+    {
+      "mod_line": [
+        7,
+        0
+      ],
+      "mod_code": [
+        "while ( l -- )",
+        "maxs = 110 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxs’ does not name a type"
+    },
+    {
+      "mod_line": [
+        5,
+        0
+      ],
+      "mod_code": [
+        "int x1 , y1 , x2 , y2 , y2 ;",
+        "maxs = 110 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxs’ does not name a type"
+    }
+  ]
+}

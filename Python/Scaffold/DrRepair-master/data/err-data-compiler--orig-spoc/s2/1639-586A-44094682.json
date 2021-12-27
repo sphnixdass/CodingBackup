@@ -1,0 +1,791 @@
+{
+  "meta": {
+    "index": 1639,
+    "hitid": "3IVEC1GSLPTCK0LI9VTIN2L8P48J1E",
+    "workerid": "A1C6BNLZXBOMT7",
+    "probid": "586A",
+    "subid": "44094682"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "n = integer",
+      "code": "int n ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "Read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "a = array of n + 1 integers",
+      "code": "int a [ n + 1 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "set a [ 0 ] to 0",
+      "code": "a [ 0 ] = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "Read n values into array a",
+      "code": "for ( int j = 1 ; j <= n ; ++ j ) { cin >> a [ j ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 1 to n exclusive",
+      "code": "for ( int i = 1 ; i <= n ; ++ i )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "if a [ i ] is 0 and a [ i + 1 ] is 1 and a [ i - 1 ] is 1 , set a [ i ] to 1",
+      "code": "if ( a [ i ] == 0 && a [ i + 1 ] == 1 && a [ i - 1 ] == 1 ) a [ i ] = 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "counter = integer with 0",
+      "code": "int counter = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "for k = 1 to n exclusive , set counter to counter + a [ k ]",
+      "code": "for ( int k = 1 ; k <= n ; ++ k ) { counter += a [ k ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "print counter and a new line",
+      "code": "cout << counter << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "cin >> t ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "a [ n + 1 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "int a [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int a [0]’"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i < n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "counter = 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘counter’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) cin >> a [ i ] ;",
+        "for ( int k = 1 ; k < n ; k ++ ) { counter += a [ k ] ; }",
+        "int a [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int a [0]’"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        4,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) cin >> a [ i ] ;",
+        "for ( int k = 1 ; k < n ; k ++ ) { counter += a [ k ] ; }",
+        "int a [ 0 ] = { 0 } ;",
+        "a [ n + 1 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        4,
+        11
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) cin >> a [ i ] ;",
+        "for ( int k = 1 ; k < n ; k ++ ) { counter += a [ k ] ; }",
+        "int a [ 0 ] = { 0 } ;",
+        "cout << \" counter \" << endl ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int a [0]’"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        4,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) cin >> a [ i ] ;",
+        "for ( int k = 1 ; k < n ; k ++ ) { counter += a [ k ] ; }",
+        "int a [ 0 ] = { 0 } ;",
+        "counter = 0 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int a [0]’"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) cin >> a [ i ] ;",
+        "for ( int k = 1 ; k < n ; k ++ ) { counter += a [ k ] ; }",
+        "a [ n + 1 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        3,
+        11
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) cin >> a [ i ] ;",
+        "for ( int k = 1 ; k < n ; k ++ ) { counter += a [ k ] ; }",
+        "a [ n + 1 ] ;",
+        "cout << \" counter \" << endl ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        3,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) cin >> a [ i ] ;",
+        "for ( int k = 1 ; k < n ; k ++ ) { counter += a [ k ] ; }",
+        "a [ n + 1 ] ;",
+        "counter = 0 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        11,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) cin >> a [ i ] ;",
+        "for ( int k = 1 ; k < n ; k ++ ) { counter += a [ k ] ; }",
+        "cout << \" counter \" << endl ;",
+        "counter = 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘counter’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) cin >> a [ i ] ;",
+        "for ( int k = 1 ; k < n ; k ++ ) { counter += a [ k ] ; }",
+        "counter = 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘counter’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) cin >> a [ i ] ;",
+        "int a [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int a [0]’"
+    },
+    {
+      "mod_line": [
+        5,
+        4,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) cin >> a [ i ] ;",
+        "int a [ 0 ] = { 0 } ;",
+        "a [ n + 1 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        4,
+        3,
+        11
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) cin >> a [ i ] ;",
+        "int a [ 0 ] = { 0 } ;",
+        "a [ n + 1 ] ;",
+        "cout << \" counter \" << endl ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        4,
+        3,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) cin >> a [ i ] ;",
+        "int a [ 0 ] = { 0 } ;",
+        "a [ n + 1 ] ;",
+        "counter = 0 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        4,
+        11
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) cin >> a [ i ] ;",
+        "int a [ 0 ] = { 0 } ;",
+        "cout << \" counter \" << endl ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int a [0]’"
+    },
+    {
+      "mod_line": [
+        5,
+        4,
+        11,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) cin >> a [ i ] ;",
+        "int a [ 0 ] = { 0 } ;",
+        "cout << \" counter \" << endl ;",
+        "counter = 0 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int a [0]’"
+    },
+    {
+      "mod_line": [
+        5,
+        4,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) cin >> a [ i ] ;",
+        "int a [ 0 ] = { 0 } ;",
+        "counter = 0 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int a [0]’"
+    },
+    {
+      "mod_line": [
+        5,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) cin >> a [ i ] ;",
+        "a [ n + 1 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        3,
+        11
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) cin >> a [ i ] ;",
+        "a [ n + 1 ] ;",
+        "cout << \" counter \" << endl ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        3,
+        11,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) cin >> a [ i ] ;",
+        "a [ n + 1 ] ;",
+        "cout << \" counter \" << endl ;",
+        "counter = 0 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        3,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) cin >> a [ i ] ;",
+        "a [ n + 1 ] ;",
+        "counter = 0 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        11,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) cin >> a [ i ] ;",
+        "cout << \" counter \" << endl ;",
+        "counter = 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘counter’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) cin >> a [ i ] ;",
+        "counter = 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘counter’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        4
+      ],
+      "mod_code": [
+        "for ( int k = 1 ; k < n ; k ++ ) { counter += a [ k ] ; }",
+        "int a [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int a [0]’"
+    },
+    {
+      "mod_line": [
+        10,
+        4,
+        3
+      ],
+      "mod_code": [
+        "for ( int k = 1 ; k < n ; k ++ ) { counter += a [ k ] ; }",
+        "int a [ 0 ] = { 0 } ;",
+        "a [ n + 1 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        4,
+        3,
+        11
+      ],
+      "mod_code": [
+        "for ( int k = 1 ; k < n ; k ++ ) { counter += a [ k ] ; }",
+        "int a [ 0 ] = { 0 } ;",
+        "a [ n + 1 ] ;",
+        "cout << \" counter \" << endl ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        4,
+        3,
+        9
+      ],
+      "mod_code": [
+        "for ( int k = 1 ; k < n ; k ++ ) { counter += a [ k ] ; }",
+        "int a [ 0 ] = { 0 } ;",
+        "a [ n + 1 ] ;",
+        "counter = 0 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        4,
+        11
+      ],
+      "mod_code": [
+        "for ( int k = 1 ; k < n ; k ++ ) { counter += a [ k ] ; }",
+        "int a [ 0 ] = { 0 } ;",
+        "cout << \" counter \" << endl ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int a [0]’"
+    },
+    {
+      "mod_line": [
+        10,
+        4,
+        11,
+        9
+      ],
+      "mod_code": [
+        "for ( int k = 1 ; k < n ; k ++ ) { counter += a [ k ] ; }",
+        "int a [ 0 ] = { 0 } ;",
+        "cout << \" counter \" << endl ;",
+        "counter = 0 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int a [0]’"
+    },
+    {
+      "mod_line": [
+        10,
+        4,
+        9
+      ],
+      "mod_code": [
+        "for ( int k = 1 ; k < n ; k ++ ) { counter += a [ k ] ; }",
+        "int a [ 0 ] = { 0 } ;",
+        "counter = 0 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int a [0]’"
+    },
+    {
+      "mod_line": [
+        10,
+        3
+      ],
+      "mod_code": [
+        "for ( int k = 1 ; k < n ; k ++ ) { counter += a [ k ] ; }",
+        "a [ n + 1 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        11
+      ],
+      "mod_code": [
+        "for ( int k = 1 ; k < n ; k ++ ) { counter += a [ k ] ; }",
+        "a [ n + 1 ] ;",
+        "cout << \" counter \" << endl ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        11,
+        9
+      ],
+      "mod_code": [
+        "for ( int k = 1 ; k < n ; k ++ ) { counter += a [ k ] ; }",
+        "a [ n + 1 ] ;",
+        "cout << \" counter \" << endl ;",
+        "counter = 0 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        9
+      ],
+      "mod_code": [
+        "for ( int k = 1 ; k < n ; k ++ ) { counter += a [ k ] ; }",
+        "a [ n + 1 ] ;",
+        "counter = 0 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        11,
+        9
+      ],
+      "mod_code": [
+        "for ( int k = 1 ; k < n ; k ++ ) { counter += a [ k ] ; }",
+        "cout << \" counter \" << endl ;",
+        "counter = 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘counter’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        9
+      ],
+      "mod_code": [
+        "for ( int k = 1 ; k < n ; k ++ ) { counter += a [ k ] ; }",
+        "counter = 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘counter’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        3
+      ],
+      "mod_code": [
+        "int a [ 0 ] = { 0 } ;",
+        "a [ n + 1 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        3,
+        11
+      ],
+      "mod_code": [
+        "int a [ 0 ] = { 0 } ;",
+        "a [ n + 1 ] ;",
+        "cout << \" counter \" << endl ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        3,
+        11,
+        9
+      ],
+      "mod_code": [
+        "int a [ 0 ] = { 0 } ;",
+        "a [ n + 1 ] ;",
+        "cout << \" counter \" << endl ;",
+        "counter = 0 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        3,
+        9
+      ],
+      "mod_code": [
+        "int a [ 0 ] = { 0 } ;",
+        "a [ n + 1 ] ;",
+        "counter = 0 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        11
+      ],
+      "mod_code": [
+        "int a [ 0 ] = { 0 } ;",
+        "cout << \" counter \" << endl ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int a [0]’"
+    },
+    {
+      "mod_line": [
+        4,
+        11,
+        9
+      ],
+      "mod_code": [
+        "int a [ 0 ] = { 0 } ;",
+        "cout << \" counter \" << endl ;",
+        "counter = 0 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int a [0]’"
+    },
+    {
+      "mod_line": [
+        4,
+        9
+      ],
+      "mod_code": [
+        "int a [ 0 ] = { 0 } ;",
+        "counter = 0 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int a [0]’"
+    },
+    {
+      "mod_line": [
+        3,
+        11
+      ],
+      "mod_code": [
+        "a [ n + 1 ] ;",
+        "cout << \" counter \" << endl ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        11,
+        9
+      ],
+      "mod_code": [
+        "a [ n + 1 ] ;",
+        "cout << \" counter \" << endl ;",
+        "counter = 0 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        9
+      ],
+      "mod_code": [
+        "a [ n + 1 ] ;",
+        "counter = 0 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        9
+      ],
+      "mod_code": [
+        "cout << \" counter \" << endl ;",
+        "counter = 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘counter’ was not declared in this scope"
+    }
+  ]
+}

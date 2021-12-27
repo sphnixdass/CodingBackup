@@ -1,0 +1,853 @@
+{
+  "meta": {
+    "index": 1651,
+    "hitid": "3UUIU9GZC5Z5MLI6MC9YSYLYZM4T5B",
+    "workerid": "A1R0Q9CUUBSM5F",
+    "probid": "586A",
+    "subid": "45040593"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create integer number_of_lessons",
+      "code": "int number_of_lessons ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read number_of_lessons",
+      "code": "cin >> number_of_lessons ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "make integer cnt = 0",
+      "code": "int cnt = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "make bool array lessons of size 100",
+      "code": "bool lessons [ 100 ] { } ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i = 0 to number_of_lessons exclusive , read lessons [ i ]",
+      "code": "for ( int i = 0 ; i < number_of_lessons ; i ++ ) { cin >> lessons [ i ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 1 to number_of_lessons - 1",
+      "code": "for ( int i = 1 ; i < number_of_lessons - 1 ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "if lessons [ i ] is falsy and lessons [ i - 1 ] and lessons [ i + 1 ] are truthy , set lessons [ i ] to 1",
+      "code": "if ( ! lessons [ i ] && lessons [ i - 1 ] && lessons [ i + 1 ] ) lessons [ i ] = 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "for i = 0 to number_of_lessons exclusive",
+      "code": "for ( int i = 0 ; i < number_of_lessons ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "if lessons [ i ] is truthy , increment cnt",
+      "code": "if ( lessons [ i ] ) cnt ++ ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "show cnt",
+      "code": "cout << cnt << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘number_of_lessons’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "cnt = 0 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "bool a [ 100 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘lessons’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= number_of_lessons - 1 ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < number_of_lessons ; i ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        6
+      ],
+      "mod_code": [
+        "cnt = 0 ;",
+        "for ( i = 1 ; i <= number_of_lessons - 1 ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        6,
+        9
+      ],
+      "mod_code": [
+        "cnt = 0 ;",
+        "for ( i = 1 ; i <= number_of_lessons - 1 ; i ++ )",
+        "for ( i = 0 ; i < number_of_lessons ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        6,
+        9,
+        4
+      ],
+      "mod_code": [
+        "cnt = 0 ;",
+        "for ( i = 1 ; i <= number_of_lessons - 1 ; i ++ )",
+        "for ( i = 0 ; i < number_of_lessons ; i ++ )",
+        "bool a [ 100 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        6,
+        9,
+        1
+      ],
+      "mod_code": [
+        "cnt = 0 ;",
+        "for ( i = 1 ; i <= number_of_lessons - 1 ; i ++ )",
+        "for ( i = 0 ; i < number_of_lessons ; i ++ )",
+        "int n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘number_of_lessons’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        6,
+        9,
+        2
+      ],
+      "mod_code": [
+        "cnt = 0 ;",
+        "for ( i = 1 ; i <= number_of_lessons - 1 ; i ++ )",
+        "for ( i = 0 ; i < number_of_lessons ; i ++ )",
+        "number_of_lessons >> number_of_lessons ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        6,
+        4
+      ],
+      "mod_code": [
+        "cnt = 0 ;",
+        "for ( i = 1 ; i <= number_of_lessons - 1 ; i ++ )",
+        "bool a [ 100 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        6,
+        4,
+        1
+      ],
+      "mod_code": [
+        "cnt = 0 ;",
+        "for ( i = 1 ; i <= number_of_lessons - 1 ; i ++ )",
+        "bool a [ 100 ] ;",
+        "int n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘number_of_lessons’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        6,
+        4,
+        2
+      ],
+      "mod_code": [
+        "cnt = 0 ;",
+        "for ( i = 1 ; i <= number_of_lessons - 1 ; i ++ )",
+        "bool a [ 100 ] ;",
+        "number_of_lessons >> number_of_lessons ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        6,
+        1
+      ],
+      "mod_code": [
+        "cnt = 0 ;",
+        "for ( i = 1 ; i <= number_of_lessons - 1 ; i ++ )",
+        "int n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘number_of_lessons’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        6,
+        1,
+        2
+      ],
+      "mod_code": [
+        "cnt = 0 ;",
+        "for ( i = 1 ; i <= number_of_lessons - 1 ; i ++ )",
+        "int n ;",
+        "number_of_lessons >> number_of_lessons ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘number_of_lessons’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        6,
+        2
+      ],
+      "mod_code": [
+        "cnt = 0 ;",
+        "for ( i = 1 ; i <= number_of_lessons - 1 ; i ++ )",
+        "number_of_lessons >> number_of_lessons ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        9
+      ],
+      "mod_code": [
+        "cnt = 0 ;",
+        "for ( i = 0 ; i < number_of_lessons ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        9,
+        4
+      ],
+      "mod_code": [
+        "cnt = 0 ;",
+        "for ( i = 0 ; i < number_of_lessons ; i ++ )",
+        "bool a [ 100 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        9,
+        4,
+        1
+      ],
+      "mod_code": [
+        "cnt = 0 ;",
+        "for ( i = 0 ; i < number_of_lessons ; i ++ )",
+        "bool a [ 100 ] ;",
+        "int n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘number_of_lessons’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        9,
+        4,
+        2
+      ],
+      "mod_code": [
+        "cnt = 0 ;",
+        "for ( i = 0 ; i < number_of_lessons ; i ++ )",
+        "bool a [ 100 ] ;",
+        "number_of_lessons >> number_of_lessons ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        9,
+        1
+      ],
+      "mod_code": [
+        "cnt = 0 ;",
+        "for ( i = 0 ; i < number_of_lessons ; i ++ )",
+        "int n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘number_of_lessons’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        9,
+        1,
+        2
+      ],
+      "mod_code": [
+        "cnt = 0 ;",
+        "for ( i = 0 ; i < number_of_lessons ; i ++ )",
+        "int n ;",
+        "number_of_lessons >> number_of_lessons ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘number_of_lessons’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        9,
+        2
+      ],
+      "mod_code": [
+        "cnt = 0 ;",
+        "for ( i = 0 ; i < number_of_lessons ; i ++ )",
+        "number_of_lessons >> number_of_lessons ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        4
+      ],
+      "mod_code": [
+        "cnt = 0 ;",
+        "bool a [ 100 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        4,
+        1
+      ],
+      "mod_code": [
+        "cnt = 0 ;",
+        "bool a [ 100 ] ;",
+        "int n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘number_of_lessons’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        4,
+        1,
+        2
+      ],
+      "mod_code": [
+        "cnt = 0 ;",
+        "bool a [ 100 ] ;",
+        "int n ;",
+        "number_of_lessons >> number_of_lessons ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘number_of_lessons’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        4,
+        2
+      ],
+      "mod_code": [
+        "cnt = 0 ;",
+        "bool a [ 100 ] ;",
+        "number_of_lessons >> number_of_lessons ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        1
+      ],
+      "mod_code": [
+        "cnt = 0 ;",
+        "int n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘number_of_lessons’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        1,
+        2
+      ],
+      "mod_code": [
+        "cnt = 0 ;",
+        "int n ;",
+        "number_of_lessons >> number_of_lessons ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘number_of_lessons’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        2
+      ],
+      "mod_code": [
+        "cnt = 0 ;",
+        "number_of_lessons >> number_of_lessons ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= number_of_lessons - 1 ; i ++ )",
+        "for ( i = 0 ; i < number_of_lessons ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        9,
+        4
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= number_of_lessons - 1 ; i ++ )",
+        "for ( i = 0 ; i < number_of_lessons ; i ++ )",
+        "bool a [ 100 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘lessons’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        9,
+        4,
+        1
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= number_of_lessons - 1 ; i ++ )",
+        "for ( i = 0 ; i < number_of_lessons ; i ++ )",
+        "bool a [ 100 ] ;",
+        "int n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘number_of_lessons’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        9,
+        4,
+        2
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= number_of_lessons - 1 ; i ++ )",
+        "for ( i = 0 ; i < number_of_lessons ; i ++ )",
+        "bool a [ 100 ] ;",
+        "number_of_lessons >> number_of_lessons ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘lessons’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        9,
+        1
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= number_of_lessons - 1 ; i ++ )",
+        "for ( i = 0 ; i < number_of_lessons ; i ++ )",
+        "int n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘number_of_lessons’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        9,
+        1,
+        2
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= number_of_lessons - 1 ; i ++ )",
+        "for ( i = 0 ; i < number_of_lessons ; i ++ )",
+        "int n ;",
+        "number_of_lessons >> number_of_lessons ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘number_of_lessons’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        9,
+        2
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= number_of_lessons - 1 ; i ++ )",
+        "for ( i = 0 ; i < number_of_lessons ; i ++ )",
+        "number_of_lessons >> number_of_lessons ;"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        4
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= number_of_lessons - 1 ; i ++ )",
+        "bool a [ 100 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘lessons’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        4,
+        1
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= number_of_lessons - 1 ; i ++ )",
+        "bool a [ 100 ] ;",
+        "int n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘number_of_lessons’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        4,
+        1,
+        2
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= number_of_lessons - 1 ; i ++ )",
+        "bool a [ 100 ] ;",
+        "int n ;",
+        "number_of_lessons >> number_of_lessons ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘number_of_lessons’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        4,
+        2
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= number_of_lessons - 1 ; i ++ )",
+        "bool a [ 100 ] ;",
+        "number_of_lessons >> number_of_lessons ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘lessons’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        1
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= number_of_lessons - 1 ; i ++ )",
+        "int n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘number_of_lessons’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        1,
+        2
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= number_of_lessons - 1 ; i ++ )",
+        "int n ;",
+        "number_of_lessons >> number_of_lessons ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘number_of_lessons’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        2
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= number_of_lessons - 1 ; i ++ )",
+        "number_of_lessons >> number_of_lessons ;"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        4
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < number_of_lessons ; i ++ )",
+        "bool a [ 100 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘lessons’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        4,
+        1
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < number_of_lessons ; i ++ )",
+        "bool a [ 100 ] ;",
+        "int n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘number_of_lessons’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        4,
+        1,
+        2
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < number_of_lessons ; i ++ )",
+        "bool a [ 100 ] ;",
+        "int n ;",
+        "number_of_lessons >> number_of_lessons ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘number_of_lessons’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        4,
+        2
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < number_of_lessons ; i ++ )",
+        "bool a [ 100 ] ;",
+        "number_of_lessons >> number_of_lessons ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘lessons’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        1
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < number_of_lessons ; i ++ )",
+        "int n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘number_of_lessons’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        1,
+        2
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < number_of_lessons ; i ++ )",
+        "int n ;",
+        "number_of_lessons >> number_of_lessons ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘number_of_lessons’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        2
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < number_of_lessons ; i ++ )",
+        "number_of_lessons >> number_of_lessons ;"
+      ],
+      "err_line": 9,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        4,
+        1
+      ],
+      "mod_code": [
+        "bool a [ 100 ] ;",
+        "int n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘number_of_lessons’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        1,
+        2
+      ],
+      "mod_code": [
+        "bool a [ 100 ] ;",
+        "int n ;",
+        "number_of_lessons >> number_of_lessons ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘number_of_lessons’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        2
+      ],
+      "mod_code": [
+        "bool a [ 100 ] ;",
+        "number_of_lessons >> number_of_lessons ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘lessons’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        2
+      ],
+      "mod_code": [
+        "int n ;",
+        "number_of_lessons >> number_of_lessons ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘number_of_lessons’ was not declared in this scope"
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "meta": {
+    "index": 2012,
+    "hitid": "3INZSNUD80KH6JOL3CM0ZA8EIWTD9X",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "389A",
+    "subid": "41951235"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare integer array a size 110",
+      "code": "int a [ 110 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare gcd with integers a , b as arguments , returning integer",
+      "code": "int gcd ( int a , int b )",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "if b is 0 , return a from function",
+      "code": "if ( b == 0 ) return a ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "return gcd with b , a % b as arguments",
+      "code": "return gcd ( b , a % b ) ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 6,
+      "text": "declare integer n",
+      "code": "int n ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "while read n is true",
+      "code": "while ( cin >> n )",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "for i = 0 to n exclusive , read a [ i ]",
+      "code": "for ( int i = 0 ; i < n ; i ++ ) { cin >> a [ i ] ; }",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "declare mgcd = a [ 0 ]",
+      "code": "int mgcd = a [ 0 ] ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "for i = 1 to n exclusive , let mgcd = result of run gcd with mgcd , a [ i ] as arguments",
+      "code": "for ( int i = 1 ; i < n ; i ++ ) { mgcd = gcd ( mgcd , a [ i ] ) ; }",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "print mgcd * n , newline",
+      "code": "cout << mgcd * n << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int gcd ( int a , int b ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "mgcd = a [ 0 ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘mgcd’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        9
+      ],
+      "mod_code": [
+        "int gcd ( int a , int b ) ;",
+        "mgcd = a [ 0 ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        7
+      ],
+      "mod_code": [
+        "int gcd ( int a , int b ) ;",
+        "mgcd = a [ 0 ] ;",
+        "while ( n -- )"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        7
+      ],
+      "mod_code": [
+        "int gcd ( int a , int b ) ;",
+        "while ( n -- )"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        9,
+        7
+      ],
+      "mod_code": [
+        "mgcd = a [ 0 ] ;",
+        "while ( n -- )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘mgcd’ was not declared in this scope"
+    }
+  ]
+}

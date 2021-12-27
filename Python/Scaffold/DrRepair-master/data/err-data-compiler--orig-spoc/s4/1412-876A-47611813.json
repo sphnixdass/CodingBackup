@@ -1,0 +1,813 @@
+{
+  "meta": {
+    "index": 1412,
+    "hitid": "3SV8KD29L4M4QGC8ZR2MGB5XH8IZKF",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "876A",
+    "subid": "47611813"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare integers n , a , b , c",
+      "code": "int n , a , b , c ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read n and a and b and c",
+      "code": "cin >> n >> a >> b >> c ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "declare integer mini = minimum of ( a and minimum of ( b and c ) )",
+      "code": "int mini = min ( a , min ( b , c ) ) ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "if n is 1",
+      "code": "if ( n == 1 )",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "print 0 and newline",
+      "code": "cout << 0 << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 6,
+      "text": "else if n is 2",
+      "code": "else if ( n == 2 )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "print minimum of ( a and b ) and newline",
+      "code": "cout << min ( a , b ) << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "else if n is greater than or equal to 3",
+      "code": "else if ( n >= 3 )",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "print minimum of ( a and b ) + ( n - 2 ) * mini and newline",
+      "code": "cout << min ( a , b ) + ( n - 2 ) * mini << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int n , a , b , c , c ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int c’"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "int mini = min ( a , mini ( b , c ) ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘mini’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "cout << min ( a ) << endl ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘min(int&)’"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "cout << min ( a ) + ( n - 2 ) * mini << endl ;"
+      ],
+      "err_line": 9,
+      "err_msg": "no matching function for call to ‘min(int&)’"
+    },
+    {
+      "mod_line": [
+        9,
+        3
+      ],
+      "mod_code": [
+        "cout << min ( a ) + ( n - 2 ) * mini << endl ;",
+        "int mini = min ( a , mini ( b , c ) ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘mini’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        1
+      ],
+      "mod_code": [
+        "cout << min ( a ) + ( n - 2 ) * mini << endl ;",
+        "int mini = min ( a , mini ( b , c ) ) ;",
+        "int n , a , b , c , c ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int c’"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        1,
+        2
+      ],
+      "mod_code": [
+        "cout << min ( a ) + ( n - 2 ) * mini << endl ;",
+        "int mini = min ( a , mini ( b , c ) ) ;",
+        "int n , a , b , c , c ;",
+        "n >> n >> a >> b >> c ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int c’"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        1,
+        4
+      ],
+      "mod_code": [
+        "cout << min ( a ) + ( n - 2 ) * mini << endl ;",
+        "int mini = min ( a , mini ( b , c ) ) ;",
+        "int n , a , b , c , c ;",
+        "if ( ! n )"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int c’"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        1,
+        7
+      ],
+      "mod_code": [
+        "cout << min ( a ) + ( n - 2 ) * mini << endl ;",
+        "int mini = min ( a , mini ( b , c ) ) ;",
+        "int n , a , b , c , c ;",
+        "cout << min ( a ) << endl ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int c’"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        2
+      ],
+      "mod_code": [
+        "cout << min ( a ) + ( n - 2 ) * mini << endl ;",
+        "int mini = min ( a , mini ( b , c ) ) ;",
+        "n >> n >> a >> b >> c ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘mini’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        2,
+        4
+      ],
+      "mod_code": [
+        "cout << min ( a ) + ( n - 2 ) * mini << endl ;",
+        "int mini = min ( a , mini ( b , c ) ) ;",
+        "n >> n >> a >> b >> c ;",
+        "if ( ! n )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘mini’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        2,
+        7
+      ],
+      "mod_code": [
+        "cout << min ( a ) + ( n - 2 ) * mini << endl ;",
+        "int mini = min ( a , mini ( b , c ) ) ;",
+        "n >> n >> a >> b >> c ;",
+        "cout << min ( a ) << endl ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘mini’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        4
+      ],
+      "mod_code": [
+        "cout << min ( a ) + ( n - 2 ) * mini << endl ;",
+        "int mini = min ( a , mini ( b , c ) ) ;",
+        "if ( ! n )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘mini’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        4,
+        7
+      ],
+      "mod_code": [
+        "cout << min ( a ) + ( n - 2 ) * mini << endl ;",
+        "int mini = min ( a , mini ( b , c ) ) ;",
+        "if ( ! n )",
+        "cout << min ( a ) << endl ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘mini’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        7
+      ],
+      "mod_code": [
+        "cout << min ( a ) + ( n - 2 ) * mini << endl ;",
+        "int mini = min ( a , mini ( b , c ) ) ;",
+        "cout << min ( a ) << endl ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘mini’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        9,
+        1
+      ],
+      "mod_code": [
+        "cout << min ( a ) + ( n - 2 ) * mini << endl ;",
+        "int n , a , b , c , c ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int c’"
+    },
+    {
+      "mod_line": [
+        9,
+        1,
+        2
+      ],
+      "mod_code": [
+        "cout << min ( a ) + ( n - 2 ) * mini << endl ;",
+        "int n , a , b , c , c ;",
+        "n >> n >> a >> b >> c ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int c’"
+    },
+    {
+      "mod_line": [
+        9,
+        1,
+        2,
+        4
+      ],
+      "mod_code": [
+        "cout << min ( a ) + ( n - 2 ) * mini << endl ;",
+        "int n , a , b , c , c ;",
+        "n >> n >> a >> b >> c ;",
+        "if ( ! n )"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int c’"
+    },
+    {
+      "mod_line": [
+        9,
+        1,
+        2,
+        7
+      ],
+      "mod_code": [
+        "cout << min ( a ) + ( n - 2 ) * mini << endl ;",
+        "int n , a , b , c , c ;",
+        "n >> n >> a >> b >> c ;",
+        "cout << min ( a ) << endl ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int c’"
+    },
+    {
+      "mod_line": [
+        9,
+        1,
+        4
+      ],
+      "mod_code": [
+        "cout << min ( a ) + ( n - 2 ) * mini << endl ;",
+        "int n , a , b , c , c ;",
+        "if ( ! n )"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int c’"
+    },
+    {
+      "mod_line": [
+        9,
+        1,
+        4,
+        7
+      ],
+      "mod_code": [
+        "cout << min ( a ) + ( n - 2 ) * mini << endl ;",
+        "int n , a , b , c , c ;",
+        "if ( ! n )",
+        "cout << min ( a ) << endl ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int c’"
+    },
+    {
+      "mod_line": [
+        9,
+        1,
+        7
+      ],
+      "mod_code": [
+        "cout << min ( a ) + ( n - 2 ) * mini << endl ;",
+        "int n , a , b , c , c ;",
+        "cout << min ( a ) << endl ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int c’"
+    },
+    {
+      "mod_line": [
+        9,
+        2
+      ],
+      "mod_code": [
+        "cout << min ( a ) + ( n - 2 ) * mini << endl ;",
+        "n >> n >> a >> b >> c ;"
+      ],
+      "err_line": 9,
+      "err_msg": "no matching function for call to ‘min(int&)’"
+    },
+    {
+      "mod_line": [
+        9,
+        2,
+        4
+      ],
+      "mod_code": [
+        "cout << min ( a ) + ( n - 2 ) * mini << endl ;",
+        "n >> n >> a >> b >> c ;",
+        "if ( ! n )"
+      ],
+      "err_line": 9,
+      "err_msg": "no matching function for call to ‘min(int&)’"
+    },
+    {
+      "mod_line": [
+        9,
+        2,
+        4,
+        7
+      ],
+      "mod_code": [
+        "cout << min ( a ) + ( n - 2 ) * mini << endl ;",
+        "n >> n >> a >> b >> c ;",
+        "if ( ! n )",
+        "cout << min ( a ) << endl ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘min(int&)’"
+    },
+    {
+      "mod_line": [
+        9,
+        2,
+        7
+      ],
+      "mod_code": [
+        "cout << min ( a ) + ( n - 2 ) * mini << endl ;",
+        "n >> n >> a >> b >> c ;",
+        "cout << min ( a ) << endl ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘min(int&)’"
+    },
+    {
+      "mod_line": [
+        9,
+        4
+      ],
+      "mod_code": [
+        "cout << min ( a ) + ( n - 2 ) * mini << endl ;",
+        "if ( ! n )"
+      ],
+      "err_line": 9,
+      "err_msg": "no matching function for call to ‘min(int&)’"
+    },
+    {
+      "mod_line": [
+        9,
+        4,
+        7
+      ],
+      "mod_code": [
+        "cout << min ( a ) + ( n - 2 ) * mini << endl ;",
+        "if ( ! n )",
+        "cout << min ( a ) << endl ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘min(int&)’"
+    },
+    {
+      "mod_line": [
+        9,
+        7
+      ],
+      "mod_code": [
+        "cout << min ( a ) + ( n - 2 ) * mini << endl ;",
+        "cout << min ( a ) << endl ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘min(int&)’"
+    },
+    {
+      "mod_line": [
+        3,
+        1
+      ],
+      "mod_code": [
+        "int mini = min ( a , mini ( b , c ) ) ;",
+        "int n , a , b , c , c ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int c’"
+    },
+    {
+      "mod_line": [
+        3,
+        1,
+        2
+      ],
+      "mod_code": [
+        "int mini = min ( a , mini ( b , c ) ) ;",
+        "int n , a , b , c , c ;",
+        "n >> n >> a >> b >> c ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int c’"
+    },
+    {
+      "mod_line": [
+        3,
+        1,
+        2,
+        4
+      ],
+      "mod_code": [
+        "int mini = min ( a , mini ( b , c ) ) ;",
+        "int n , a , b , c , c ;",
+        "n >> n >> a >> b >> c ;",
+        "if ( ! n )"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int c’"
+    },
+    {
+      "mod_line": [
+        3,
+        1,
+        2,
+        7
+      ],
+      "mod_code": [
+        "int mini = min ( a , mini ( b , c ) ) ;",
+        "int n , a , b , c , c ;",
+        "n >> n >> a >> b >> c ;",
+        "cout << min ( a ) << endl ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int c’"
+    },
+    {
+      "mod_line": [
+        3,
+        1,
+        4
+      ],
+      "mod_code": [
+        "int mini = min ( a , mini ( b , c ) ) ;",
+        "int n , a , b , c , c ;",
+        "if ( ! n )"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int c’"
+    },
+    {
+      "mod_line": [
+        3,
+        1,
+        4,
+        7
+      ],
+      "mod_code": [
+        "int mini = min ( a , mini ( b , c ) ) ;",
+        "int n , a , b , c , c ;",
+        "if ( ! n )",
+        "cout << min ( a ) << endl ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int c’"
+    },
+    {
+      "mod_line": [
+        3,
+        1,
+        7
+      ],
+      "mod_code": [
+        "int mini = min ( a , mini ( b , c ) ) ;",
+        "int n , a , b , c , c ;",
+        "cout << min ( a ) << endl ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int c’"
+    },
+    {
+      "mod_line": [
+        3,
+        2
+      ],
+      "mod_code": [
+        "int mini = min ( a , mini ( b , c ) ) ;",
+        "n >> n >> a >> b >> c ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘mini’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        3,
+        2,
+        4
+      ],
+      "mod_code": [
+        "int mini = min ( a , mini ( b , c ) ) ;",
+        "n >> n >> a >> b >> c ;",
+        "if ( ! n )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘mini’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        3,
+        2,
+        4,
+        7
+      ],
+      "mod_code": [
+        "int mini = min ( a , mini ( b , c ) ) ;",
+        "n >> n >> a >> b >> c ;",
+        "if ( ! n )",
+        "cout << min ( a ) << endl ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘mini’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        3,
+        2,
+        7
+      ],
+      "mod_code": [
+        "int mini = min ( a , mini ( b , c ) ) ;",
+        "n >> n >> a >> b >> c ;",
+        "cout << min ( a ) << endl ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘mini’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        3,
+        4
+      ],
+      "mod_code": [
+        "int mini = min ( a , mini ( b , c ) ) ;",
+        "if ( ! n )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘mini’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        3,
+        4,
+        7
+      ],
+      "mod_code": [
+        "int mini = min ( a , mini ( b , c ) ) ;",
+        "if ( ! n )",
+        "cout << min ( a ) << endl ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘mini’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        3,
+        7
+      ],
+      "mod_code": [
+        "int mini = min ( a , mini ( b , c ) ) ;",
+        "cout << min ( a ) << endl ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘mini’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        1,
+        2
+      ],
+      "mod_code": [
+        "int n , a , b , c , c ;",
+        "n >> n >> a >> b >> c ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int c’"
+    },
+    {
+      "mod_line": [
+        1,
+        2,
+        4
+      ],
+      "mod_code": [
+        "int n , a , b , c , c ;",
+        "n >> n >> a >> b >> c ;",
+        "if ( ! n )"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int c’"
+    },
+    {
+      "mod_line": [
+        1,
+        2,
+        4,
+        7
+      ],
+      "mod_code": [
+        "int n , a , b , c , c ;",
+        "n >> n >> a >> b >> c ;",
+        "if ( ! n )",
+        "cout << min ( a ) << endl ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int c’"
+    },
+    {
+      "mod_line": [
+        1,
+        2,
+        7
+      ],
+      "mod_code": [
+        "int n , a , b , c , c ;",
+        "n >> n >> a >> b >> c ;",
+        "cout << min ( a ) << endl ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int c’"
+    },
+    {
+      "mod_line": [
+        1,
+        4
+      ],
+      "mod_code": [
+        "int n , a , b , c , c ;",
+        "if ( ! n )"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int c’"
+    },
+    {
+      "mod_line": [
+        1,
+        4,
+        7
+      ],
+      "mod_code": [
+        "int n , a , b , c , c ;",
+        "if ( ! n )",
+        "cout << min ( a ) << endl ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int c’"
+    },
+    {
+      "mod_line": [
+        1,
+        7
+      ],
+      "mod_code": [
+        "int n , a , b , c , c ;",
+        "cout << min ( a ) << endl ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int c’"
+    },
+    {
+      "mod_line": [
+        2,
+        4,
+        7
+      ],
+      "mod_code": [
+        "n >> n >> a >> b >> c ;",
+        "if ( ! n )",
+        "cout << min ( a ) << endl ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘min(int&)’"
+    },
+    {
+      "mod_line": [
+        2,
+        7
+      ],
+      "mod_code": [
+        "n >> n >> a >> b >> c ;",
+        "cout << min ( a ) << endl ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘min(int&)’"
+    },
+    {
+      "mod_line": [
+        4,
+        7
+      ],
+      "mod_code": [
+        "if ( ! n )",
+        "cout << min ( a ) << endl ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘min(int&)’"
+    }
+  ]
+}

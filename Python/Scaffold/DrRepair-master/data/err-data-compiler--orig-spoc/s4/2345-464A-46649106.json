@@ -1,0 +1,1059 @@
+{
+  "meta": {
+    "index": 2345,
+    "hitid": "3O2Y2UIUCQOYLZL8YF8FDJPF53HFK0",
+    "workerid": "A1EKVUFWL7OJMO",
+    "probid": "464A",
+    "subid": "46649106"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "in the function makeChanges that takes character pointer s , integers whichPosn , size , p , characters adj , nadj and returns bool",
+      "code": "bool makeChanges ( char * s , int whichPosn , int size , int p , char adj , char nadj )",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "if whichPosn is - 1 , return false",
+      "code": "if ( whichPosn == - 1 ) { return false ; }",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "thisChar = character with thisChar = s [ whichPosn ]",
+      "code": "char thisChar = s [ whichPosn ] ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "for x = thisChar + 1 to a + p exclusive",
+      "code": "for ( char x = thisChar + 1 ; x < ' a ' + p ; x ++ )",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "if x is adj or x is nadj , continue next iteration",
+      "code": "if ( x == adj || x == nadj ) { continue ; }",
+      "indent": 2
+    },
+    {
+      "line": 5,
+      "text": "s [ whichPosn ] = x",
+      "code": "s [ whichPosn ] = x ;",
+      "indent": 2
+    },
+    {
+      "line": 6,
+      "text": "if whichPosn is size - 1 , return true",
+      "code": "if ( whichPosn == size - 1 ) { return true ; }",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "xx = character with xx = s [ whichPosn + 1 ]",
+      "code": "char xx = s [ whichPosn + 1 ] ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "s [ whichPosn + 1 ] = a - 1",
+      "code": "s [ whichPosn + 1 ] = ' a ' - 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "if makeChanges ( s , whichPosn + 1 , size , p , x , adj )",
+      "code": "if ( makeChanges ( s , whichPosn + 1 , size , p , x , adj ) )",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "return true",
+      "code": "return true ;",
+      "indent": 3
+    },
+    {
+      "line": 11,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "s [ whichPosn + 1 ] = xx",
+      "code": "s [ whichPosn + 1 ] = xx ;",
+      "indent": 3
+    },
+    {
+      "line": 13,
+      "text": "continue next iteration",
+      "code": "continue ;",
+      "indent": 3
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "s [ whichPosn ] = thisChar",
+      "code": "s [ whichPosn ] = thisChar ;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "nadj = if whichPosn > = 3 , s [ whichPosn - 3 ] else 0",
+      "code": "nadj = whichPosn >= 3 ? s [ whichPosn - 3 ] : 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "adj = if whichPosn > = 2 , s [ whichPosn - 2 ] else 0",
+      "code": "adj = whichPosn >= 2 ? s [ whichPosn - 2 ] : 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "return makeChanges ( s , whichPosn - 1 , size , p , adj , nadj )",
+      "code": "return ( makeChanges ( s , whichPosn - 1 , size , p , adj , nadj ) ) ;",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 21,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 22,
+      "text": "n , p = integers",
+      "code": "int n , p ;",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "read n , p",
+      "code": "cin >> n >> p ;",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "s = character array of size 1005",
+      "code": "char s [ 1005 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 25,
+      "text": "read s",
+      "code": "cin >> s ;",
+      "indent": 1
+    },
+    {
+      "line": 26,
+      "text": "whichPosn = integer with whichPosn = n - 1",
+      "code": "int whichPosn = n - 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 27,
+      "text": "nadj = character with nadj = if whichPosn > = 2 , s [ whichPosn - 2 ] else 0",
+      "code": "char nadj = whichPosn >= 2 ? s [ whichPosn - 2 ] : 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 28,
+      "text": "adj = character with adj = if whichPosn > = 1 , s [ whichPosn - 1 ] else 0",
+      "code": "char adj = whichPosn >= 1 ? s [ whichPosn - 1 ] : 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 29,
+      "text": "if makeChanges ( s , whichPosn , n , p , adj , nadj )",
+      "code": "if ( makeChanges ( s , whichPosn , n , p , adj , nadj ) )",
+      "indent": 1
+    },
+    {
+      "line": 30,
+      "text": "print s",
+      "code": "cout << s << ' \\n ' ;",
+      "indent": 2
+    },
+    {
+      "line": 31,
+      "text": "else",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 32,
+      "text": "print NO",
+      "code": "cout << \" NO\\n \" ;",
+      "indent": 2
+    },
+    {
+      "line": 33,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 34,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 35,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "bool makeChanges ( char * s , char * whichPosn , char p , char p )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘char p’"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "for ( int x = thisChar + 1 ; x < a + p ; x ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "s [ whichPosn + 1 ] = a - 1 ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        28
+      ],
+      "mod_code": [
+        "adj = 1 >= 1 ? s [ whichPosn - 1 ] : 0 ;"
+      ],
+      "err_line": 28,
+      "err_msg": "‘adj’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "bool makeChanges ( char * s , char * whichPosn , char p , char nadj )"
+      ],
+      "err_line": 1,
+      "err_msg": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "character = s [ whichPosn ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘character’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "for ( x = thisChar + 1 ; x < a + p ; x ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘x’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "char xx = s [ whichPosn + 1 ] ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected ‘,’ or ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "s [ ' whichPosn ' ] = a - 1 ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "if ( makeChanges ( s , whichPosn + 1 , size , p , x , adj , adj ) )"
+      ],
+      "err_line": 9,
+      "err_msg": "too many arguments to function ‘bool makeChanges(char*, int, int, int, char, char)’"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "else else"
+      ],
+      "err_line": 11,
+      "err_msg": "expected primary-expression before ‘else’"
+    },
+    {
+      "mod_line": [
+        25
+      ],
+      "mod_code": [
+        "s >> s ;"
+      ],
+      "err_line": 25,
+      "err_msg": "invalid operands of types ‘char [1005]’ and ‘char [1005]’ to binary ‘operator>>’"
+    },
+    {
+      "mod_line": [
+        31
+      ],
+      "mod_code": [
+        "else else"
+      ],
+      "err_line": 31,
+      "err_msg": "expected primary-expression before ‘else’"
+    },
+    {
+      "mod_line": [
+        0,
+        3
+      ],
+      "mod_code": [
+        "bool makeChanges ( char * s , char * whichPosn , char p , char p )",
+        "for ( int x = thisChar + 1 ; x < a + p ; x ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘char p’"
+    },
+    {
+      "mod_line": [
+        0,
+        3,
+        8
+      ],
+      "mod_code": [
+        "bool makeChanges ( char * s , char * whichPosn , char p , char p )",
+        "for ( int x = thisChar + 1 ; x < a + p ; x ++ )",
+        "s [ whichPosn + 1 ] = a - 1 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘char p’"
+    },
+    {
+      "mod_line": [
+        0,
+        3,
+        8,
+        28
+      ],
+      "mod_code": [
+        "bool makeChanges ( char * s , char * whichPosn , char p , char p )",
+        "for ( int x = thisChar + 1 ; x < a + p ; x ++ )",
+        "s [ whichPosn + 1 ] = a - 1 ;",
+        "adj = 1 >= 1 ? s [ whichPosn - 1 ] : 0 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘char p’"
+    },
+    {
+      "mod_line": [
+        0,
+        3,
+        8,
+        4
+      ],
+      "mod_code": [
+        "bool makeChanges ( char * s , char * whichPosn , char p , char p )",
+        "for ( int x = thisChar + 1 ; x < a + p ; x ++ )",
+        "s [ whichPosn + 1 ] = a - 1 ;",
+        "if ( x == ' adj ' || x == ' nadj ' ) continue ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘char p’"
+    },
+    {
+      "mod_line": [
+        0,
+        3,
+        8,
+        31
+      ],
+      "mod_code": [
+        "bool makeChanges ( char * s , char * whichPosn , char p , char p )",
+        "for ( int x = thisChar + 1 ; x < a + p ; x ++ )",
+        "s [ whichPosn + 1 ] = a - 1 ;",
+        "else else"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘char p’"
+    },
+    {
+      "mod_line": [
+        0,
+        3,
+        28
+      ],
+      "mod_code": [
+        "bool makeChanges ( char * s , char * whichPosn , char p , char p )",
+        "for ( int x = thisChar + 1 ; x < a + p ; x ++ )",
+        "adj = 1 >= 1 ? s [ whichPosn - 1 ] : 0 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘char p’"
+    },
+    {
+      "mod_line": [
+        0,
+        3,
+        28,
+        4
+      ],
+      "mod_code": [
+        "bool makeChanges ( char * s , char * whichPosn , char p , char p )",
+        "for ( int x = thisChar + 1 ; x < a + p ; x ++ )",
+        "adj = 1 >= 1 ? s [ whichPosn - 1 ] : 0 ;",
+        "if ( x == ' adj ' || x == ' nadj ' ) continue ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘char p’"
+    },
+    {
+      "mod_line": [
+        0,
+        3,
+        28,
+        31
+      ],
+      "mod_code": [
+        "bool makeChanges ( char * s , char * whichPosn , char p , char p )",
+        "for ( int x = thisChar + 1 ; x < a + p ; x ++ )",
+        "adj = 1 >= 1 ? s [ whichPosn - 1 ] : 0 ;",
+        "else else"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘char p’"
+    },
+    {
+      "mod_line": [
+        0,
+        3,
+        4
+      ],
+      "mod_code": [
+        "bool makeChanges ( char * s , char * whichPosn , char p , char p )",
+        "for ( int x = thisChar + 1 ; x < a + p ; x ++ )",
+        "if ( x == ' adj ' || x == ' nadj ' ) continue ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘char p’"
+    },
+    {
+      "mod_line": [
+        0,
+        3,
+        4,
+        31
+      ],
+      "mod_code": [
+        "bool makeChanges ( char * s , char * whichPosn , char p , char p )",
+        "for ( int x = thisChar + 1 ; x < a + p ; x ++ )",
+        "if ( x == ' adj ' || x == ' nadj ' ) continue ;",
+        "else else"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘char p’"
+    },
+    {
+      "mod_line": [
+        0,
+        3,
+        31
+      ],
+      "mod_code": [
+        "bool makeChanges ( char * s , char * whichPosn , char p , char p )",
+        "for ( int x = thisChar + 1 ; x < a + p ; x ++ )",
+        "else else"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘char p’"
+    },
+    {
+      "mod_line": [
+        0,
+        8
+      ],
+      "mod_code": [
+        "bool makeChanges ( char * s , char * whichPosn , char p , char p )",
+        "s [ whichPosn + 1 ] = a - 1 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘char p’"
+    },
+    {
+      "mod_line": [
+        0,
+        8,
+        28
+      ],
+      "mod_code": [
+        "bool makeChanges ( char * s , char * whichPosn , char p , char p )",
+        "s [ whichPosn + 1 ] = a - 1 ;",
+        "adj = 1 >= 1 ? s [ whichPosn - 1 ] : 0 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘char p’"
+    },
+    {
+      "mod_line": [
+        0,
+        8,
+        28,
+        4
+      ],
+      "mod_code": [
+        "bool makeChanges ( char * s , char * whichPosn , char p , char p )",
+        "s [ whichPosn + 1 ] = a - 1 ;",
+        "adj = 1 >= 1 ? s [ whichPosn - 1 ] : 0 ;",
+        "if ( x == ' adj ' || x == ' nadj ' ) continue ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘char p’"
+    },
+    {
+      "mod_line": [
+        0,
+        8,
+        28,
+        31
+      ],
+      "mod_code": [
+        "bool makeChanges ( char * s , char * whichPosn , char p , char p )",
+        "s [ whichPosn + 1 ] = a - 1 ;",
+        "adj = 1 >= 1 ? s [ whichPosn - 1 ] : 0 ;",
+        "else else"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘char p’"
+    },
+    {
+      "mod_line": [
+        0,
+        8,
+        4
+      ],
+      "mod_code": [
+        "bool makeChanges ( char * s , char * whichPosn , char p , char p )",
+        "s [ whichPosn + 1 ] = a - 1 ;",
+        "if ( x == ' adj ' || x == ' nadj ' ) continue ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘char p’"
+    },
+    {
+      "mod_line": [
+        0,
+        8,
+        4,
+        31
+      ],
+      "mod_code": [
+        "bool makeChanges ( char * s , char * whichPosn , char p , char p )",
+        "s [ whichPosn + 1 ] = a - 1 ;",
+        "if ( x == ' adj ' || x == ' nadj ' ) continue ;",
+        "else else"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘char p’"
+    },
+    {
+      "mod_line": [
+        0,
+        8,
+        31
+      ],
+      "mod_code": [
+        "bool makeChanges ( char * s , char * whichPosn , char p , char p )",
+        "s [ whichPosn + 1 ] = a - 1 ;",
+        "else else"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘char p’"
+    },
+    {
+      "mod_line": [
+        0,
+        28
+      ],
+      "mod_code": [
+        "bool makeChanges ( char * s , char * whichPosn , char p , char p )",
+        "adj = 1 >= 1 ? s [ whichPosn - 1 ] : 0 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘char p’"
+    },
+    {
+      "mod_line": [
+        0,
+        28,
+        4
+      ],
+      "mod_code": [
+        "bool makeChanges ( char * s , char * whichPosn , char p , char p )",
+        "adj = 1 >= 1 ? s [ whichPosn - 1 ] : 0 ;",
+        "if ( x == ' adj ' || x == ' nadj ' ) continue ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘char p’"
+    },
+    {
+      "mod_line": [
+        0,
+        28,
+        4,
+        31
+      ],
+      "mod_code": [
+        "bool makeChanges ( char * s , char * whichPosn , char p , char p )",
+        "adj = 1 >= 1 ? s [ whichPosn - 1 ] : 0 ;",
+        "if ( x == ' adj ' || x == ' nadj ' ) continue ;",
+        "else else"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘char p’"
+    },
+    {
+      "mod_line": [
+        0,
+        28,
+        31
+      ],
+      "mod_code": [
+        "bool makeChanges ( char * s , char * whichPosn , char p , char p )",
+        "adj = 1 >= 1 ? s [ whichPosn - 1 ] : 0 ;",
+        "else else"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘char p’"
+    },
+    {
+      "mod_line": [
+        0,
+        4
+      ],
+      "mod_code": [
+        "bool makeChanges ( char * s , char * whichPosn , char p , char p )",
+        "if ( x == ' adj ' || x == ' nadj ' ) continue ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘char p’"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        31
+      ],
+      "mod_code": [
+        "bool makeChanges ( char * s , char * whichPosn , char p , char p )",
+        "if ( x == ' adj ' || x == ' nadj ' ) continue ;",
+        "else else"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘char p’"
+    },
+    {
+      "mod_line": [
+        0,
+        31
+      ],
+      "mod_code": [
+        "bool makeChanges ( char * s , char * whichPosn , char p , char p )",
+        "else else"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘char p’"
+    },
+    {
+      "mod_line": [
+        3,
+        8
+      ],
+      "mod_code": [
+        "for ( int x = thisChar + 1 ; x < a + p ; x ++ )",
+        "s [ whichPosn + 1 ] = a - 1 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        8,
+        28
+      ],
+      "mod_code": [
+        "for ( int x = thisChar + 1 ; x < a + p ; x ++ )",
+        "s [ whichPosn + 1 ] = a - 1 ;",
+        "adj = 1 >= 1 ? s [ whichPosn - 1 ] : 0 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        8,
+        28,
+        4
+      ],
+      "mod_code": [
+        "for ( int x = thisChar + 1 ; x < a + p ; x ++ )",
+        "s [ whichPosn + 1 ] = a - 1 ;",
+        "adj = 1 >= 1 ? s [ whichPosn - 1 ] : 0 ;",
+        "if ( x == ' adj ' || x == ' nadj ' ) continue ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        8,
+        28,
+        31
+      ],
+      "mod_code": [
+        "for ( int x = thisChar + 1 ; x < a + p ; x ++ )",
+        "s [ whichPosn + 1 ] = a - 1 ;",
+        "adj = 1 >= 1 ? s [ whichPosn - 1 ] : 0 ;",
+        "else else"
+      ],
+      "err_line": 3,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        8,
+        4
+      ],
+      "mod_code": [
+        "for ( int x = thisChar + 1 ; x < a + p ; x ++ )",
+        "s [ whichPosn + 1 ] = a - 1 ;",
+        "if ( x == ' adj ' || x == ' nadj ' ) continue ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        8,
+        4,
+        31
+      ],
+      "mod_code": [
+        "for ( int x = thisChar + 1 ; x < a + p ; x ++ )",
+        "s [ whichPosn + 1 ] = a - 1 ;",
+        "if ( x == ' adj ' || x == ' nadj ' ) continue ;",
+        "else else"
+      ],
+      "err_line": 3,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        8,
+        31
+      ],
+      "mod_code": [
+        "for ( int x = thisChar + 1 ; x < a + p ; x ++ )",
+        "s [ whichPosn + 1 ] = a - 1 ;",
+        "else else"
+      ],
+      "err_line": 3,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        28
+      ],
+      "mod_code": [
+        "for ( int x = thisChar + 1 ; x < a + p ; x ++ )",
+        "adj = 1 >= 1 ? s [ whichPosn - 1 ] : 0 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        28,
+        4
+      ],
+      "mod_code": [
+        "for ( int x = thisChar + 1 ; x < a + p ; x ++ )",
+        "adj = 1 >= 1 ? s [ whichPosn - 1 ] : 0 ;",
+        "if ( x == ' adj ' || x == ' nadj ' ) continue ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        28,
+        4,
+        31
+      ],
+      "mod_code": [
+        "for ( int x = thisChar + 1 ; x < a + p ; x ++ )",
+        "adj = 1 >= 1 ? s [ whichPosn - 1 ] : 0 ;",
+        "if ( x == ' adj ' || x == ' nadj ' ) continue ;",
+        "else else"
+      ],
+      "err_line": 3,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        28,
+        31
+      ],
+      "mod_code": [
+        "for ( int x = thisChar + 1 ; x < a + p ; x ++ )",
+        "adj = 1 >= 1 ? s [ whichPosn - 1 ] : 0 ;",
+        "else else"
+      ],
+      "err_line": 3,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        4
+      ],
+      "mod_code": [
+        "for ( int x = thisChar + 1 ; x < a + p ; x ++ )",
+        "if ( x == ' adj ' || x == ' nadj ' ) continue ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        4,
+        31
+      ],
+      "mod_code": [
+        "for ( int x = thisChar + 1 ; x < a + p ; x ++ )",
+        "if ( x == ' adj ' || x == ' nadj ' ) continue ;",
+        "else else"
+      ],
+      "err_line": 3,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        31
+      ],
+      "mod_code": [
+        "for ( int x = thisChar + 1 ; x < a + p ; x ++ )",
+        "else else"
+      ],
+      "err_line": 3,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        28
+      ],
+      "mod_code": [
+        "s [ whichPosn + 1 ] = a - 1 ;",
+        "adj = 1 >= 1 ? s [ whichPosn - 1 ] : 0 ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        28,
+        4
+      ],
+      "mod_code": [
+        "s [ whichPosn + 1 ] = a - 1 ;",
+        "adj = 1 >= 1 ? s [ whichPosn - 1 ] : 0 ;",
+        "if ( x == ' adj ' || x == ' nadj ' ) continue ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        28,
+        4,
+        31
+      ],
+      "mod_code": [
+        "s [ whichPosn + 1 ] = a - 1 ;",
+        "adj = 1 >= 1 ? s [ whichPosn - 1 ] : 0 ;",
+        "if ( x == ' adj ' || x == ' nadj ' ) continue ;",
+        "else else"
+      ],
+      "err_line": 8,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        28,
+        31
+      ],
+      "mod_code": [
+        "s [ whichPosn + 1 ] = a - 1 ;",
+        "adj = 1 >= 1 ? s [ whichPosn - 1 ] : 0 ;",
+        "else else"
+      ],
+      "err_line": 8,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        4
+      ],
+      "mod_code": [
+        "s [ whichPosn + 1 ] = a - 1 ;",
+        "if ( x == ' adj ' || x == ' nadj ' ) continue ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        4,
+        31
+      ],
+      "mod_code": [
+        "s [ whichPosn + 1 ] = a - 1 ;",
+        "if ( x == ' adj ' || x == ' nadj ' ) continue ;",
+        "else else"
+      ],
+      "err_line": 8,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        31
+      ],
+      "mod_code": [
+        "s [ whichPosn + 1 ] = a - 1 ;",
+        "else else"
+      ],
+      "err_line": 8,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        28,
+        4
+      ],
+      "mod_code": [
+        "adj = 1 >= 1 ? s [ whichPosn - 1 ] : 0 ;",
+        "if ( x == ' adj ' || x == ' nadj ' ) continue ;"
+      ],
+      "err_line": 28,
+      "err_msg": "‘adj’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        28,
+        4,
+        31
+      ],
+      "mod_code": [
+        "adj = 1 >= 1 ? s [ whichPosn - 1 ] : 0 ;",
+        "if ( x == ' adj ' || x == ' nadj ' ) continue ;",
+        "else else"
+      ],
+      "err_line": 28,
+      "err_msg": "‘adj’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        28,
+        31
+      ],
+      "mod_code": [
+        "adj = 1 >= 1 ? s [ whichPosn - 1 ] : 0 ;",
+        "else else"
+      ],
+      "err_line": 28,
+      "err_msg": "‘adj’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        31
+      ],
+      "mod_code": [
+        "if ( x == ' adj ' || x == ' nadj ' ) continue ;",
+        "else else"
+      ],
+      "err_line": 31,
+      "err_msg": "expected primary-expression before ‘else’"
+    }
+  ]
+}

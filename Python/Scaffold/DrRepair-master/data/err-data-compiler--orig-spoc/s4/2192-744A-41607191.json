@@ -1,0 +1,1057 @@
+{
+  "meta": {
+    "index": 2192,
+    "hitid": "3Y40HMYLL1CTOHH5SNI3PDYKBZFUX7",
+    "workerid": "A1R0Q9CUUBSM5F",
+    "probid": "744A",
+    "subid": "41607191"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create int array num of size 1005",
+      "code": "int num [ 1005 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "make integer array r of size 1005",
+      "code": "int r [ 1005 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "declare fast taking in int x and returning int",
+      "code": "int find ( int x )",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "if r [ x ] is equal to x , return x",
+      "code": "if ( r [ x ] == x ) return x ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "return r [ x ] = find ( r [ x ] )",
+      "code": "return r [ x ] = find ( r [ x ] ) ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 6,
+      "text": "declare setunion taking in ints x and y",
+      "code": "void setunion ( int x , int y )",
+      "indent": 0
+    },
+    {
+      "line": 7,
+      "text": "create int rx = find ( x )",
+      "code": "int rx = find ( x ) ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "make int ry = find ( y )",
+      "code": "int ry = find ( y ) ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "if rx is not equal to ry , set r [ rx ] to ry",
+      "code": "if ( rx != ry ) r [ rx ] = ry ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 12,
+      "text": "create ints n , m , and k",
+      "code": "int n , m , k ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "make int array gov of size 1005",
+      "code": "int gov [ 1005 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "make ints x and y",
+      "code": "int x , y ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "read n , m , and k and while they are truthy",
+      "code": "while ( cin >> n >> m >> k )",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "set all contents of num to 0",
+      "code": "memset ( num , 0 , sizeof ( num ) ) ;",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "for i = 0 to n , set r [ i ] to i",
+      "code": "for ( int i = 0 ; i <= n ; i ++ ) { r [ i ] = i ; }",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "for i = 0 to k , read gov [ i ]",
+      "code": "for ( int i = 1 ; i <= k ; i ++ ) { cin >> gov [ i ] ; }",
+      "indent": 2
+    },
+    {
+      "line": 19,
+      "text": "for i = 1 to m",
+      "code": "for ( int i = 1 ; i <= m ; i ++ )",
+      "indent": 2
+    },
+    {
+      "line": 20,
+      "text": "read x and y",
+      "code": "cin >> x >> y ;",
+      "indent": 3
+    },
+    {
+      "line": 21,
+      "text": "call setunion with arguments x and y",
+      "code": "setunion ( x , y ) ;",
+      "indent": 3
+    },
+    {
+      "line": 22,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 23,
+      "text": "for i = 1 to n , increment num [ find ( i ) ]",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) { num [ find ( i ) ] ++ ; }",
+      "indent": 2
+    },
+    {
+      "line": 24,
+      "text": "create int maxs = 0",
+      "code": "int maxs = 0 ;",
+      "indent": 2
+    },
+    {
+      "line": 25,
+      "text": "make integer left = n",
+      "code": "int left = n ;",
+      "indent": 2
+    },
+    {
+      "line": 26,
+      "text": "let int re = 0",
+      "code": "int re = 0 ;",
+      "indent": 2
+    },
+    {
+      "line": 27,
+      "text": "for i = 1 to k",
+      "code": "for ( int i = 1 ; i <= k ; i ++ )",
+      "indent": 2
+    },
+    {
+      "line": 28,
+      "text": "set num [ gov [ i ] ] to num [ find ( gov [ i ] )",
+      "code": "num [ gov [ i ] ] = num [ find ( gov [ i ] ) ] ;",
+      "indent": 3
+    },
+    {
+      "line": 29,
+      "text": "set maxs to max of maxs and num [ gov [ i ] ]",
+      "code": "maxs = max ( maxs , num [ gov [ i ] ] ) ;",
+      "indent": 3
+    },
+    {
+      "line": 30,
+      "text": "subtract num [ gov [ i ] ] from left",
+      "code": "left -= num [ gov [ i ] ] ;",
+      "indent": 3
+    },
+    {
+      "line": 31,
+      "text": "add ( num [ gov [ i ] ] - 1 ) * num [ gov [ i ] ] / 2 to re",
+      "code": "re += ( num [ gov [ i ] ] - 1 ) * num [ gov [ i ] ] / 2 ;",
+      "indent": 3
+    },
+    {
+      "line": 32,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 33,
+      "text": "set re to re + ( left + maxs ) * ( left + maxs - 1 ) / 2",
+      "code": "re += ( left + maxs ) * ( left + maxs - 1 ) / 2 ;",
+      "indent": 2
+    },
+    {
+      "line": 34,
+      "text": "set re to re - maxs * ( maxs - 1 ) / 2 + m",
+      "code": "re -= maxs * ( maxs - 1 ) / 2 + m ;",
+      "indent": 2
+    },
+    {
+      "line": 35,
+      "text": "print re",
+      "code": "cout << re << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 36,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 37,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 38,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "int fast ( int x ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        28
+      ],
+      "mod_code": [
+        "num [ gov [ i ] ] = num [ find ( gov [ i ] ) ;"
+      ],
+      "err_line": 28,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        31
+      ],
+      "mod_code": [
+        "re [ num [ gov [ i ] ] - 1 ) * num [ gov [ i ] ] / 2 ;"
+      ],
+      "err_line": 31,
+      "err_msg": "expected ‘]’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "char num [ 1005 ] ;"
+      ],
+      "err_line": 29,
+      "err_msg": "no matching function for call to ‘max(int&, char&)’"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "int fast ( int x )"
+      ],
+      "err_line": 4,
+      "err_msg": "no matching function for call to ‘find(int&)’"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "return r [ x ] = r ( r [ x ] ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘r’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "bool setunion ( int x , int y ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "int n , m , k , k ;"
+      ],
+      "err_line": 12,
+      "err_msg": "redeclaration of ‘int k’"
+    },
+    {
+      "mod_line": [
+        19
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= m ; i ++ )"
+      ],
+      "err_line": 19,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        21
+      ],
+      "mod_code": [
+        "setunion ( ( x , y ) ) ;"
+      ],
+      "err_line": 21,
+      "err_msg": "too few arguments to function ‘void setunion(int, int)’"
+    },
+    {
+      "mod_line": [
+        25
+      ],
+      "mod_code": [
+        "left = n ;"
+      ],
+      "err_line": 25,
+      "err_msg": "assignment of function ‘std::ios_base& std::left(std::ios_base&)’"
+    },
+    {
+      "mod_line": [
+        27
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 27,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        28
+      ],
+      "mod_code": [
+        "num [ gov [ i ] ] = num [ find ( gov [ i ] ) ) ;"
+      ],
+      "err_line": 28,
+      "err_msg": "expected ‘]’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        29
+      ],
+      "mod_code": [
+        "char maxs = max ( maxs , num [ gov [ i ] ] ) ;"
+      ],
+      "err_line": 29,
+      "err_msg": "no matching function for call to ‘max(char&, int&)’"
+    },
+    {
+      "mod_line": [
+        30
+      ],
+      "mod_code": [
+        "left -= num [ gov [ gov ] ] ;"
+      ],
+      "err_line": 30,
+      "err_msg": "invalid types ‘int [1005][int [1005]]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        31
+      ],
+      "mod_code": [
+        "re [ gov [ gov [ i ] ] - 1 ) * num [ gov [ i ] ] / 2 ;"
+      ],
+      "err_line": 31,
+      "err_msg": "expected ‘]’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        18
+      ],
+      "mod_code": [
+        "int fast ( int x ) ;",
+        "for ( int i = 0 ; i < k ; i ++ ) cin >> gov [ i ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        18,
+        28
+      ],
+      "mod_code": [
+        "int fast ( int x ) ;",
+        "for ( int i = 0 ; i < k ; i ++ ) cin >> gov [ i ] ;",
+        "num [ gov [ i ] ] = num [ find ( gov [ i ] ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        18,
+        28,
+        31
+      ],
+      "mod_code": [
+        "int fast ( int x ) ;",
+        "for ( int i = 0 ; i < k ; i ++ ) cin >> gov [ i ] ;",
+        "num [ gov [ i ] ] = num [ find ( gov [ i ] ) ;",
+        "re [ num [ gov [ i ] ] - 1 ) * num [ gov [ i ] ] / 2 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        18,
+        28,
+        34
+      ],
+      "mod_code": [
+        "int fast ( int x ) ;",
+        "for ( int i = 0 ; i < k ; i ++ ) cin >> gov [ i ] ;",
+        "num [ gov [ i ] ] = num [ find ( gov [ i ] ) ;",
+        "re = re - maxs * ( maxs - 1 ) / 2 + m ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        18,
+        28,
+        15
+      ],
+      "mod_code": [
+        "int fast ( int x ) ;",
+        "for ( int i = 0 ; i < k ; i ++ ) cin >> gov [ i ] ;",
+        "num [ gov [ i ] ] = num [ find ( gov [ i ] ) ;",
+        "while ( cin >> n >> k >> k )"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        18,
+        31
+      ],
+      "mod_code": [
+        "int fast ( int x ) ;",
+        "for ( int i = 0 ; i < k ; i ++ ) cin >> gov [ i ] ;",
+        "re [ num [ gov [ i ] ] - 1 ) * num [ gov [ i ] ] / 2 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        18,
+        31,
+        34
+      ],
+      "mod_code": [
+        "int fast ( int x ) ;",
+        "for ( int i = 0 ; i < k ; i ++ ) cin >> gov [ i ] ;",
+        "re [ num [ gov [ i ] ] - 1 ) * num [ gov [ i ] ] / 2 ;",
+        "re = re - maxs * ( maxs - 1 ) / 2 + m ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        18,
+        31,
+        15
+      ],
+      "mod_code": [
+        "int fast ( int x ) ;",
+        "for ( int i = 0 ; i < k ; i ++ ) cin >> gov [ i ] ;",
+        "re [ num [ gov [ i ] ] - 1 ) * num [ gov [ i ] ] / 2 ;",
+        "while ( cin >> n >> k >> k )"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        18,
+        34
+      ],
+      "mod_code": [
+        "int fast ( int x ) ;",
+        "for ( int i = 0 ; i < k ; i ++ ) cin >> gov [ i ] ;",
+        "re = re - maxs * ( maxs - 1 ) / 2 + m ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        18,
+        34,
+        15
+      ],
+      "mod_code": [
+        "int fast ( int x ) ;",
+        "for ( int i = 0 ; i < k ; i ++ ) cin >> gov [ i ] ;",
+        "re = re - maxs * ( maxs - 1 ) / 2 + m ;",
+        "while ( cin >> n >> k >> k )"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        18,
+        15
+      ],
+      "mod_code": [
+        "int fast ( int x ) ;",
+        "for ( int i = 0 ; i < k ; i ++ ) cin >> gov [ i ] ;",
+        "while ( cin >> n >> k >> k )"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        28
+      ],
+      "mod_code": [
+        "int fast ( int x ) ;",
+        "num [ gov [ i ] ] = num [ find ( gov [ i ] ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        28,
+        31
+      ],
+      "mod_code": [
+        "int fast ( int x ) ;",
+        "num [ gov [ i ] ] = num [ find ( gov [ i ] ) ;",
+        "re [ num [ gov [ i ] ] - 1 ) * num [ gov [ i ] ] / 2 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        28,
+        31,
+        34
+      ],
+      "mod_code": [
+        "int fast ( int x ) ;",
+        "num [ gov [ i ] ] = num [ find ( gov [ i ] ) ;",
+        "re [ num [ gov [ i ] ] - 1 ) * num [ gov [ i ] ] / 2 ;",
+        "re = re - maxs * ( maxs - 1 ) / 2 + m ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        28,
+        31,
+        15
+      ],
+      "mod_code": [
+        "int fast ( int x ) ;",
+        "num [ gov [ i ] ] = num [ find ( gov [ i ] ) ;",
+        "re [ num [ gov [ i ] ] - 1 ) * num [ gov [ i ] ] / 2 ;",
+        "while ( cin >> n >> k >> k )"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        28,
+        34
+      ],
+      "mod_code": [
+        "int fast ( int x ) ;",
+        "num [ gov [ i ] ] = num [ find ( gov [ i ] ) ;",
+        "re = re - maxs * ( maxs - 1 ) / 2 + m ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        28,
+        34,
+        15
+      ],
+      "mod_code": [
+        "int fast ( int x ) ;",
+        "num [ gov [ i ] ] = num [ find ( gov [ i ] ) ;",
+        "re = re - maxs * ( maxs - 1 ) / 2 + m ;",
+        "while ( cin >> n >> k >> k )"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        28,
+        15
+      ],
+      "mod_code": [
+        "int fast ( int x ) ;",
+        "num [ gov [ i ] ] = num [ find ( gov [ i ] ) ;",
+        "while ( cin >> n >> k >> k )"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        31
+      ],
+      "mod_code": [
+        "int fast ( int x ) ;",
+        "re [ num [ gov [ i ] ] - 1 ) * num [ gov [ i ] ] / 2 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        31,
+        34
+      ],
+      "mod_code": [
+        "int fast ( int x ) ;",
+        "re [ num [ gov [ i ] ] - 1 ) * num [ gov [ i ] ] / 2 ;",
+        "re = re - maxs * ( maxs - 1 ) / 2 + m ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        31,
+        34,
+        15
+      ],
+      "mod_code": [
+        "int fast ( int x ) ;",
+        "re [ num [ gov [ i ] ] - 1 ) * num [ gov [ i ] ] / 2 ;",
+        "re = re - maxs * ( maxs - 1 ) / 2 + m ;",
+        "while ( cin >> n >> k >> k )"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        31,
+        15
+      ],
+      "mod_code": [
+        "int fast ( int x ) ;",
+        "re [ num [ gov [ i ] ] - 1 ) * num [ gov [ i ] ] / 2 ;",
+        "while ( cin >> n >> k >> k )"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        34
+      ],
+      "mod_code": [
+        "int fast ( int x ) ;",
+        "re = re - maxs * ( maxs - 1 ) / 2 + m ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        34,
+        15
+      ],
+      "mod_code": [
+        "int fast ( int x ) ;",
+        "re = re - maxs * ( maxs - 1 ) / 2 + m ;",
+        "while ( cin >> n >> k >> k )"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        15
+      ],
+      "mod_code": [
+        "int fast ( int x ) ;",
+        "while ( cin >> n >> k >> k )"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        18,
+        28
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < k ; i ++ ) cin >> gov [ i ] ;",
+        "num [ gov [ i ] ] = num [ find ( gov [ i ] ) ;"
+      ],
+      "err_line": 28,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        18,
+        28,
+        31
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < k ; i ++ ) cin >> gov [ i ] ;",
+        "num [ gov [ i ] ] = num [ find ( gov [ i ] ) ;",
+        "re [ num [ gov [ i ] ] - 1 ) * num [ gov [ i ] ] / 2 ;"
+      ],
+      "err_line": 28,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        18,
+        28,
+        31,
+        34
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < k ; i ++ ) cin >> gov [ i ] ;",
+        "num [ gov [ i ] ] = num [ find ( gov [ i ] ) ;",
+        "re [ num [ gov [ i ] ] - 1 ) * num [ gov [ i ] ] / 2 ;",
+        "re = re - maxs * ( maxs - 1 ) / 2 + m ;"
+      ],
+      "err_line": 28,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        18,
+        28,
+        31,
+        15
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < k ; i ++ ) cin >> gov [ i ] ;",
+        "num [ gov [ i ] ] = num [ find ( gov [ i ] ) ;",
+        "re [ num [ gov [ i ] ] - 1 ) * num [ gov [ i ] ] / 2 ;",
+        "while ( cin >> n >> k >> k )"
+      ],
+      "err_line": 28,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        18,
+        28,
+        34
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < k ; i ++ ) cin >> gov [ i ] ;",
+        "num [ gov [ i ] ] = num [ find ( gov [ i ] ) ;",
+        "re = re - maxs * ( maxs - 1 ) / 2 + m ;"
+      ],
+      "err_line": 28,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        18,
+        28,
+        34,
+        15
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < k ; i ++ ) cin >> gov [ i ] ;",
+        "num [ gov [ i ] ] = num [ find ( gov [ i ] ) ;",
+        "re = re - maxs * ( maxs - 1 ) / 2 + m ;",
+        "while ( cin >> n >> k >> k )"
+      ],
+      "err_line": 28,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        18,
+        28,
+        15
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < k ; i ++ ) cin >> gov [ i ] ;",
+        "num [ gov [ i ] ] = num [ find ( gov [ i ] ) ;",
+        "while ( cin >> n >> k >> k )"
+      ],
+      "err_line": 28,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        18,
+        31
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < k ; i ++ ) cin >> gov [ i ] ;",
+        "re [ num [ gov [ i ] ] - 1 ) * num [ gov [ i ] ] / 2 ;"
+      ],
+      "err_line": 31,
+      "err_msg": "expected ‘]’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        18,
+        31,
+        34
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < k ; i ++ ) cin >> gov [ i ] ;",
+        "re [ num [ gov [ i ] ] - 1 ) * num [ gov [ i ] ] / 2 ;",
+        "re = re - maxs * ( maxs - 1 ) / 2 + m ;"
+      ],
+      "err_line": 31,
+      "err_msg": "expected ‘]’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        18,
+        31,
+        34,
+        15
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < k ; i ++ ) cin >> gov [ i ] ;",
+        "re [ num [ gov [ i ] ] - 1 ) * num [ gov [ i ] ] / 2 ;",
+        "re = re - maxs * ( maxs - 1 ) / 2 + m ;",
+        "while ( cin >> n >> k >> k )"
+      ],
+      "err_line": 31,
+      "err_msg": "expected ‘]’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        18,
+        31,
+        15
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < k ; i ++ ) cin >> gov [ i ] ;",
+        "re [ num [ gov [ i ] ] - 1 ) * num [ gov [ i ] ] / 2 ;",
+        "while ( cin >> n >> k >> k )"
+      ],
+      "err_line": 31,
+      "err_msg": "expected ‘]’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        28,
+        31
+      ],
+      "mod_code": [
+        "num [ gov [ i ] ] = num [ find ( gov [ i ] ) ;",
+        "re [ num [ gov [ i ] ] - 1 ) * num [ gov [ i ] ] / 2 ;"
+      ],
+      "err_line": 28,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        28,
+        31,
+        34
+      ],
+      "mod_code": [
+        "num [ gov [ i ] ] = num [ find ( gov [ i ] ) ;",
+        "re [ num [ gov [ i ] ] - 1 ) * num [ gov [ i ] ] / 2 ;",
+        "re = re - maxs * ( maxs - 1 ) / 2 + m ;"
+      ],
+      "err_line": 28,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        28,
+        31,
+        34,
+        15
+      ],
+      "mod_code": [
+        "num [ gov [ i ] ] = num [ find ( gov [ i ] ) ;",
+        "re [ num [ gov [ i ] ] - 1 ) * num [ gov [ i ] ] / 2 ;",
+        "re = re - maxs * ( maxs - 1 ) / 2 + m ;",
+        "while ( cin >> n >> k >> k )"
+      ],
+      "err_line": 28,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        28,
+        31,
+        15
+      ],
+      "mod_code": [
+        "num [ gov [ i ] ] = num [ find ( gov [ i ] ) ;",
+        "re [ num [ gov [ i ] ] - 1 ) * num [ gov [ i ] ] / 2 ;",
+        "while ( cin >> n >> k >> k )"
+      ],
+      "err_line": 28,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        28,
+        34
+      ],
+      "mod_code": [
+        "num [ gov [ i ] ] = num [ find ( gov [ i ] ) ;",
+        "re = re - maxs * ( maxs - 1 ) / 2 + m ;"
+      ],
+      "err_line": 28,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        28,
+        34,
+        15
+      ],
+      "mod_code": [
+        "num [ gov [ i ] ] = num [ find ( gov [ i ] ) ;",
+        "re = re - maxs * ( maxs - 1 ) / 2 + m ;",
+        "while ( cin >> n >> k >> k )"
+      ],
+      "err_line": 28,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        28,
+        15
+      ],
+      "mod_code": [
+        "num [ gov [ i ] ] = num [ find ( gov [ i ] ) ;",
+        "while ( cin >> n >> k >> k )"
+      ],
+      "err_line": 28,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        31,
+        34
+      ],
+      "mod_code": [
+        "re [ num [ gov [ i ] ] - 1 ) * num [ gov [ i ] ] / 2 ;",
+        "re = re - maxs * ( maxs - 1 ) / 2 + m ;"
+      ],
+      "err_line": 31,
+      "err_msg": "expected ‘]’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        31,
+        34,
+        15
+      ],
+      "mod_code": [
+        "re [ num [ gov [ i ] ] - 1 ) * num [ gov [ i ] ] / 2 ;",
+        "re = re - maxs * ( maxs - 1 ) / 2 + m ;",
+        "while ( cin >> n >> k >> k )"
+      ],
+      "err_line": 31,
+      "err_msg": "expected ‘]’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        31,
+        15
+      ],
+      "mod_code": [
+        "re [ num [ gov [ i ] ] - 1 ) * num [ gov [ i ] ] / 2 ;",
+        "while ( cin >> n >> k >> k )"
+      ],
+      "err_line": 31,
+      "err_msg": "expected ‘]’ before ‘)’ token"
+    }
+  ]
+}

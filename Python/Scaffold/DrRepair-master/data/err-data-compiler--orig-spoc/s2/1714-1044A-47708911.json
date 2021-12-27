@@ -1,0 +1,861 @@
+{
+  "meta": {
+    "index": 1714,
+    "hitid": "3EGKVCRQFWM3SNY9XSNA31D5OK4YB2",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "1044A",
+    "subid": "47708911"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare constant integer MAXN = 200005",
+      "code": "const int MAXN = 200005 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare constant integer INFTY = 1000000000",
+      "code": "const int INFTY = 1000000000 ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "declare integers N , M",
+      "code": "int N , M ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "declare integer array V size MAXN",
+      "code": "int V [ MAXN ] ;",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "declare pair of integer and integer array H size MAXN",
+      "code": "pair < int , int > H [ MAXN ] ;",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 6,
+      "text": "read N and M",
+      "code": "cin >> N >> M ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for i = 0 to N exclusive , read V [ i ]",
+      "code": "for ( int i = 0 ; i < N ; i ++ ) cin >> V [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "for i = 0 , x1 , x2 , y to i is less than M , incrementing i",
+      "code": "for ( int i = 0 , x1 , x2 , y ; i < M ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "read x1 , x2 , y",
+      "code": "cin >> x1 >> x2 >> y ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "let H [ i ] be make pair with x2 , x1",
+      "code": "H [ i ] = make_pair ( x2 , x1 ) ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "sort from V to V + N",
+      "code": "sort ( V , V + N ) ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "let V [ N ] be INFTY",
+      "code": "V [ N ] = INFTY ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "sort from H to H + M",
+      "code": "sort ( H , H + M ) ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "declare integers ans = M , cur = N",
+      "code": "int ans = M , cur = N ;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "for i = N , j = M - 1 to 0 inclusive , decrementing i",
+      "code": "for ( int i = N , j = M - 1 ; i >= 0 ; i -- )",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "while j is greater than or equal to 0 and V [ i ] is less than or equal to first element of H [ j ]",
+      "code": "while ( j >= 0 && V [ i ] <= H [ j ] . first )",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "increment cur by ( second element of H [ j ] ) is 1",
+      "code": "cur += H [ j ] . second == 1 ;",
+      "indent": 3
+    },
+    {
+      "line": 19,
+      "text": "decrement j",
+      "code": "j -- ;",
+      "indent": 3
+    },
+    {
+      "line": 20,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 21,
+      "text": "let ans be minimum of ans and cur",
+      "code": "ans = min ( ans , cur ) ;",
+      "indent": 2
+    },
+    {
+      "line": 22,
+      "text": "decrement cur",
+      "code": "cur -- ;",
+      "indent": 2
+    },
+    {
+      "line": 23,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "print ans and \" \\ n \"",
+      "code": "cout << ans << \" \\n \" ;",
+      "indent": 1
+    },
+    {
+      "line": 25,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 26,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < x1 , y <= M ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘x1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "H [ i ] = pair < x2 , x1 : x1 ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘x2’ cannot appear in a constant-expression"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "while ( j >= 0 && V [ i ] <= H [ j ] )"
+      ],
+      "err_line": 17,
+      "err_msg": "no match for ‘operator<=’ (operand types are ‘int’ and ‘std::pair<int, int>’)"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "int n , M ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘N’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "int arr [ MAXN ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘V’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "pair < int , H [ MAXN ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘H’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "cin >> n >> M ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < x1 , x2 <= M ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘x1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "H [ i ] = pair < int , x1 : x1 ;"
+      ],
+      "err_line": 10,
+      "err_msg": "found ‘:’ in nested-name-specifier, expected ‘::’"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "sort ( V . begin ( ) , V + N ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "request for member ‘begin’ in ‘V’, which is of non-class type ‘int [200005]’"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "int V [ N ] = INFTY ;"
+      ],
+      "err_line": 13,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "sort ( H + H , H + M ) ;"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid operands of types ‘std::pair<int, int> [200005]’ and ‘std::pair<int, int> [200005]’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "int ans = M + cur , cur = N ;"
+      ],
+      "err_line": 15,
+      "err_msg": "‘cur’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "for ( i = N , j = M - 1 ; i >= 0 ; i -- )"
+      ],
+      "err_line": 16,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        24
+      ],
+      "mod_code": [
+        "\" cout << ans << \" \\n \" ;"
+      ],
+      "err_line": 24,
+      "err_msg": "stray ‘\\’ in program"
+    },
+    {
+      "mod_line": [
+        8,
+        10
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < x1 , y <= M ; i ++ )",
+        "H [ i ] = pair < x2 , x1 : x1 ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘x1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        17
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < x1 , y <= M ; i ++ )",
+        "H [ i ] = pair < x2 , x1 : x1 ;",
+        "while ( j >= 0 && V [ i ] <= H [ j ] )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘x1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        17,
+        16
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < x1 , y <= M ; i ++ )",
+        "H [ i ] = pair < x2 , x1 : x1 ;",
+        "while ( j >= 0 && V [ i ] <= H [ j ] )",
+        "for ( i = N , j = M - 1 ; i >= 0 ; i -- )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘x1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        17,
+        15
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < x1 , y <= M ; i ++ )",
+        "H [ i ] = pair < x2 , x1 : x1 ;",
+        "while ( j >= 0 && V [ i ] <= H [ j ] )",
+        "int ans = M + cur , cur = N ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘x1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        16
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < x1 , y <= M ; i ++ )",
+        "H [ i ] = pair < x2 , x1 : x1 ;",
+        "for ( i = N , j = M - 1 ; i >= 0 ; i -- )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘x1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        16,
+        15
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < x1 , y <= M ; i ++ )",
+        "H [ i ] = pair < x2 , x1 : x1 ;",
+        "for ( i = N , j = M - 1 ; i >= 0 ; i -- )",
+        "int ans = M + cur , cur = N ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘x1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        15
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < x1 , y <= M ; i ++ )",
+        "H [ i ] = pair < x2 , x1 : x1 ;",
+        "int ans = M + cur , cur = N ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘x1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        17
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < x1 , y <= M ; i ++ )",
+        "while ( j >= 0 && V [ i ] <= H [ j ] )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘x1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        17,
+        16
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < x1 , y <= M ; i ++ )",
+        "while ( j >= 0 && V [ i ] <= H [ j ] )",
+        "for ( i = N , j = M - 1 ; i >= 0 ; i -- )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘x1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        17,
+        16,
+        15
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < x1 , y <= M ; i ++ )",
+        "while ( j >= 0 && V [ i ] <= H [ j ] )",
+        "for ( i = N , j = M - 1 ; i >= 0 ; i -- )",
+        "int ans = M + cur , cur = N ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘x1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        17,
+        15
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < x1 , y <= M ; i ++ )",
+        "while ( j >= 0 && V [ i ] <= H [ j ] )",
+        "int ans = M + cur , cur = N ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘x1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        16
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < x1 , y <= M ; i ++ )",
+        "for ( i = N , j = M - 1 ; i >= 0 ; i -- )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘x1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        16,
+        15
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < x1 , y <= M ; i ++ )",
+        "for ( i = N , j = M - 1 ; i >= 0 ; i -- )",
+        "int ans = M + cur , cur = N ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘x1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        15
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < x1 , y <= M ; i ++ )",
+        "int ans = M + cur , cur = N ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘x1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        17
+      ],
+      "mod_code": [
+        "H [ i ] = pair < x2 , x1 : x1 ;",
+        "while ( j >= 0 && V [ i ] <= H [ j ] )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘x2’ cannot appear in a constant-expression"
+    },
+    {
+      "mod_line": [
+        10,
+        17,
+        16
+      ],
+      "mod_code": [
+        "H [ i ] = pair < x2 , x1 : x1 ;",
+        "while ( j >= 0 && V [ i ] <= H [ j ] )",
+        "for ( i = N , j = M - 1 ; i >= 0 ; i -- )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘x2’ cannot appear in a constant-expression"
+    },
+    {
+      "mod_line": [
+        10,
+        17,
+        16,
+        15
+      ],
+      "mod_code": [
+        "H [ i ] = pair < x2 , x1 : x1 ;",
+        "while ( j >= 0 && V [ i ] <= H [ j ] )",
+        "for ( i = N , j = M - 1 ; i >= 0 ; i -- )",
+        "int ans = M + cur , cur = N ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘x2’ cannot appear in a constant-expression"
+    },
+    {
+      "mod_line": [
+        10,
+        17,
+        16,
+        8
+      ],
+      "mod_code": [
+        "H [ i ] = pair < x2 , x1 : x1 ;",
+        "while ( j >= 0 && V [ i ] <= H [ j ] )",
+        "for ( i = N , j = M - 1 ; i >= 0 ; i -- )",
+        "for ( int i = 0 ; i < x1 , x2 <= M ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘x1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        17,
+        15
+      ],
+      "mod_code": [
+        "H [ i ] = pair < x2 , x1 : x1 ;",
+        "while ( j >= 0 && V [ i ] <= H [ j ] )",
+        "int ans = M + cur , cur = N ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘x2’ cannot appear in a constant-expression"
+    },
+    {
+      "mod_line": [
+        10,
+        17,
+        15,
+        8
+      ],
+      "mod_code": [
+        "H [ i ] = pair < x2 , x1 : x1 ;",
+        "while ( j >= 0 && V [ i ] <= H [ j ] )",
+        "int ans = M + cur , cur = N ;",
+        "for ( int i = 0 ; i < x1 , x2 <= M ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘x1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        17,
+        8
+      ],
+      "mod_code": [
+        "H [ i ] = pair < x2 , x1 : x1 ;",
+        "while ( j >= 0 && V [ i ] <= H [ j ] )",
+        "for ( int i = 0 ; i < x1 , x2 <= M ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘x1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        16
+      ],
+      "mod_code": [
+        "H [ i ] = pair < x2 , x1 : x1 ;",
+        "for ( i = N , j = M - 1 ; i >= 0 ; i -- )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘x2’ cannot appear in a constant-expression"
+    },
+    {
+      "mod_line": [
+        10,
+        16,
+        15
+      ],
+      "mod_code": [
+        "H [ i ] = pair < x2 , x1 : x1 ;",
+        "for ( i = N , j = M - 1 ; i >= 0 ; i -- )",
+        "int ans = M + cur , cur = N ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘x2’ cannot appear in a constant-expression"
+    },
+    {
+      "mod_line": [
+        10,
+        16,
+        15,
+        8
+      ],
+      "mod_code": [
+        "H [ i ] = pair < x2 , x1 : x1 ;",
+        "for ( i = N , j = M - 1 ; i >= 0 ; i -- )",
+        "int ans = M + cur , cur = N ;",
+        "for ( int i = 0 ; i < x1 , x2 <= M ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘x1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        16,
+        8
+      ],
+      "mod_code": [
+        "H [ i ] = pair < x2 , x1 : x1 ;",
+        "for ( i = N , j = M - 1 ; i >= 0 ; i -- )",
+        "for ( int i = 0 ; i < x1 , x2 <= M ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘x1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        15
+      ],
+      "mod_code": [
+        "H [ i ] = pair < x2 , x1 : x1 ;",
+        "int ans = M + cur , cur = N ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘x2’ cannot appear in a constant-expression"
+    },
+    {
+      "mod_line": [
+        10,
+        15,
+        8
+      ],
+      "mod_code": [
+        "H [ i ] = pair < x2 , x1 : x1 ;",
+        "int ans = M + cur , cur = N ;",
+        "for ( int i = 0 ; i < x1 , x2 <= M ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘x1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        8
+      ],
+      "mod_code": [
+        "H [ i ] = pair < x2 , x1 : x1 ;",
+        "for ( int i = 0 ; i < x1 , x2 <= M ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘x1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17,
+        16
+      ],
+      "mod_code": [
+        "while ( j >= 0 && V [ i ] <= H [ j ] )",
+        "for ( i = N , j = M - 1 ; i >= 0 ; i -- )"
+      ],
+      "err_line": 16,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        17,
+        16,
+        15
+      ],
+      "mod_code": [
+        "while ( j >= 0 && V [ i ] <= H [ j ] )",
+        "for ( i = N , j = M - 1 ; i >= 0 ; i -- )",
+        "int ans = M + cur , cur = N ;"
+      ],
+      "err_line": 15,
+      "err_msg": "‘cur’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17,
+        16,
+        15,
+        8
+      ],
+      "mod_code": [
+        "while ( j >= 0 && V [ i ] <= H [ j ] )",
+        "for ( i = N , j = M - 1 ; i >= 0 ; i -- )",
+        "int ans = M + cur , cur = N ;",
+        "for ( int i = 0 ; i < x1 , x2 <= M ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘x1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17,
+        16,
+        8
+      ],
+      "mod_code": [
+        "while ( j >= 0 && V [ i ] <= H [ j ] )",
+        "for ( i = N , j = M - 1 ; i >= 0 ; i -- )",
+        "for ( int i = 0 ; i < x1 , x2 <= M ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘x1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17,
+        15
+      ],
+      "mod_code": [
+        "while ( j >= 0 && V [ i ] <= H [ j ] )",
+        "int ans = M + cur , cur = N ;"
+      ],
+      "err_line": 15,
+      "err_msg": "‘cur’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17,
+        15,
+        8
+      ],
+      "mod_code": [
+        "while ( j >= 0 && V [ i ] <= H [ j ] )",
+        "int ans = M + cur , cur = N ;",
+        "for ( int i = 0 ; i < x1 , x2 <= M ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘x1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17,
+        8
+      ],
+      "mod_code": [
+        "while ( j >= 0 && V [ i ] <= H [ j ] )",
+        "for ( int i = 0 ; i < x1 , x2 <= M ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘x1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        15
+      ],
+      "mod_code": [
+        "for ( i = N , j = M - 1 ; i >= 0 ; i -- )",
+        "int ans = M + cur , cur = N ;"
+      ],
+      "err_line": 15,
+      "err_msg": "‘cur’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        15,
+        8
+      ],
+      "mod_code": [
+        "for ( i = N , j = M - 1 ; i >= 0 ; i -- )",
+        "int ans = M + cur , cur = N ;",
+        "for ( int i = 0 ; i < x1 , x2 <= M ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘x1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        8
+      ],
+      "mod_code": [
+        "for ( i = N , j = M - 1 ; i >= 0 ; i -- )",
+        "for ( int i = 0 ; i < x1 , x2 <= M ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘x1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        8
+      ],
+      "mod_code": [
+        "int ans = M + cur , cur = N ;",
+        "for ( int i = 0 ; i < x1 , x2 <= M ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘x1’ was not declared in this scope"
+    }
+  ]
+}

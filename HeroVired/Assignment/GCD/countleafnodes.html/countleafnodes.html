@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>count leaf nodes</title>
+    <script>
+        // Javascript implementation to find leaf count of a given Binary tree
+        
+        /* A binary tree node has data,
+        pointer to left child and
+        a pointer to right child */
+        class node
+        {
+            constructor(data) {
+            this.left = null;
+            this.right = null;
+            this.data = data;
+            }
+        }
+        
+        /* Function to get the count
+        of leaf nodes in a binary tree*/
+        function getLeafCount(node)
+        {
+            if(node == null)	
+                return 0;
+            if(node.left == null && node.right == null)
+                return 1;		
+            else
+                return getLeafCount(node.left)+
+                    getLeafCount(node.right);
+        }
+    
+        /* Helper function that allocates a new node with the
+        given data and NULL left and right pointers. */
+        function newNode(data)
+        {
+            let Node = new node(data);
+            return(Node);
+        }
+        
+        
+        
+        
+    </script>
+    
+</head>
+<body>
+    <h1>count the number of leaves in a binary tree</h1>
+
+    <script>
+        let root = newNode(1);
+        root.left = newNode(2);
+        root.right = newNode(3);
+        root.left.left = newNode(4);
+        root.left.right = newNode(5);
+        
+        /*get leaf count of the above created tree*/
+        document.write("The leaf count of binary tree is : " + getLeafCount(root));
+</script>
+</body>
+</html>

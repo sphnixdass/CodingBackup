@@ -1,0 +1,921 @@
+{
+  "meta": {
+    "index": 126,
+    "hitid": "3U18MJKL1UGSQTM14QAUX5LG2LWNC4",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "354A",
+    "subid": "47714129"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create long longs n , l , r , ql , qr and ans",
+      "code": "long long n , l , r , ql , qr , ans ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read n , l , r , ql and qr",
+      "code": "cin >> n >> l >> r >> ql >> qr ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "create long long vector w with n + 1 element",
+      "code": "vector < long long > w ( n + 1 ) ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "set w [ 0 ] to 0",
+      "code": "w [ 0 ] = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i from 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "read w [ i ]",
+      "code": "cin >> w [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "increase w [ i ] by w [ i - 1 ]",
+      "code": "w [ i ] += w [ i - 1 ] ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "loop i from 0 to n inclusive",
+      "code": "for ( int i = 0 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "create long long cans = l * w [ i ] + r * ( w [ n ] - w [ i ] )",
+      "code": "long long cans = l * w [ i ] + r * ( w [ n ] - w [ i ] ) ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "if i is greater than n - i",
+      "code": "if ( i > n - i )",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "add max of 0LL and ( 2 * i - n - 1 ) * ql to cans",
+      "code": "cans += max ( 0LL , ( 2 * i - n - 1 ) * ql ) ;",
+      "indent": 3
+    },
+    {
+      "line": 13,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "add max of 0LL and ( n - 2 * i - 1 ) * qr to cans",
+      "code": "cans += max ( 0LL , ( n - 2 * i - 1 ) * qr ) ;",
+      "indent": 3
+    },
+    {
+      "line": 15,
+      "text": "if i is true",
+      "code": "if ( i )",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "set ans to min of ans and cans",
+      "code": "ans = min ( ans , cans ) ;",
+      "indent": 3
+    },
+    {
+      "line": 17,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "set ans to cans",
+      "code": "ans = cans ;",
+      "indent": 3
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "print ans",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 22,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "int w [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int w [0]’"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::vector<long long int>’ and ‘long long int’)"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= n ; i ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "cans += max ( 0LL - i - n - 1 ) * ql ;"
+      ],
+      "err_line": 12,
+      "err_msg": "no matching function for call to ‘max(long long int)’"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "if ( i ) i ++ ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "int ans = min ( ans , cans ) ;"
+      ],
+      "err_line": 16,
+      "err_msg": "no matching function for call to ‘min(int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        4,
+        12
+      ],
+      "mod_code": [
+        "int w [ 0 ] = { 0 } ;",
+        "cans += max ( 0LL - i - n - 1 ) * ql ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int w [0]’"
+    },
+    {
+      "mod_line": [
+        4,
+        12,
+        5
+      ],
+      "mod_code": [
+        "int w [ 0 ] = { 0 } ;",
+        "cans += max ( 0LL - i - n - 1 ) * ql ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int w [0]’"
+    },
+    {
+      "mod_line": [
+        4,
+        12,
+        5,
+        16
+      ],
+      "mod_code": [
+        "int w [ 0 ] = { 0 } ;",
+        "cans += max ( 0LL - i - n - 1 ) * ql ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int ans = min ( ans , cans ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int w [0]’"
+    },
+    {
+      "mod_line": [
+        4,
+        12,
+        5,
+        15
+      ],
+      "mod_code": [
+        "int w [ 0 ] = { 0 } ;",
+        "cans += max ( 0LL - i - n - 1 ) * ql ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "if ( i ) i ++ ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int w [0]’"
+    },
+    {
+      "mod_line": [
+        4,
+        12,
+        5,
+        9
+      ],
+      "mod_code": [
+        "int w [ 0 ] = { 0 } ;",
+        "cans += max ( 0LL - i - n - 1 ) * ql ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "for ( i = 0 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int w [0]’"
+    },
+    {
+      "mod_line": [
+        4,
+        12,
+        16
+      ],
+      "mod_code": [
+        "int w [ 0 ] = { 0 } ;",
+        "cans += max ( 0LL - i - n - 1 ) * ql ;",
+        "int ans = min ( ans , cans ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int w [0]’"
+    },
+    {
+      "mod_line": [
+        4,
+        12,
+        16,
+        15
+      ],
+      "mod_code": [
+        "int w [ 0 ] = { 0 } ;",
+        "cans += max ( 0LL - i - n - 1 ) * ql ;",
+        "int ans = min ( ans , cans ) ;",
+        "if ( i ) i ++ ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int w [0]’"
+    },
+    {
+      "mod_line": [
+        4,
+        12,
+        16,
+        9
+      ],
+      "mod_code": [
+        "int w [ 0 ] = { 0 } ;",
+        "cans += max ( 0LL - i - n - 1 ) * ql ;",
+        "int ans = min ( ans , cans ) ;",
+        "for ( i = 0 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int w [0]’"
+    },
+    {
+      "mod_line": [
+        4,
+        12,
+        15
+      ],
+      "mod_code": [
+        "int w [ 0 ] = { 0 } ;",
+        "cans += max ( 0LL - i - n - 1 ) * ql ;",
+        "if ( i ) i ++ ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int w [0]’"
+    },
+    {
+      "mod_line": [
+        4,
+        12,
+        15,
+        9
+      ],
+      "mod_code": [
+        "int w [ 0 ] = { 0 } ;",
+        "cans += max ( 0LL - i - n - 1 ) * ql ;",
+        "if ( i ) i ++ ;",
+        "for ( i = 0 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int w [0]’"
+    },
+    {
+      "mod_line": [
+        4,
+        12,
+        9
+      ],
+      "mod_code": [
+        "int w [ 0 ] = { 0 } ;",
+        "cans += max ( 0LL - i - n - 1 ) * ql ;",
+        "for ( i = 0 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int w [0]’"
+    },
+    {
+      "mod_line": [
+        4,
+        5
+      ],
+      "mod_code": [
+        "int w [ 0 ] = { 0 } ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int w [0]’"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        16
+      ],
+      "mod_code": [
+        "int w [ 0 ] = { 0 } ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int ans = min ( ans , cans ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int w [0]’"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        16,
+        15
+      ],
+      "mod_code": [
+        "int w [ 0 ] = { 0 } ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int ans = min ( ans , cans ) ;",
+        "if ( i ) i ++ ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int w [0]’"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        16,
+        9
+      ],
+      "mod_code": [
+        "int w [ 0 ] = { 0 } ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int ans = min ( ans , cans ) ;",
+        "for ( i = 0 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int w [0]’"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        15
+      ],
+      "mod_code": [
+        "int w [ 0 ] = { 0 } ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "if ( i ) i ++ ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int w [0]’"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        15,
+        9
+      ],
+      "mod_code": [
+        "int w [ 0 ] = { 0 } ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "if ( i ) i ++ ;",
+        "for ( i = 0 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int w [0]’"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        9
+      ],
+      "mod_code": [
+        "int w [ 0 ] = { 0 } ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "for ( i = 0 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int w [0]’"
+    },
+    {
+      "mod_line": [
+        4,
+        16
+      ],
+      "mod_code": [
+        "int w [ 0 ] = { 0 } ;",
+        "int ans = min ( ans , cans ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int w [0]’"
+    },
+    {
+      "mod_line": [
+        4,
+        16,
+        15
+      ],
+      "mod_code": [
+        "int w [ 0 ] = { 0 } ;",
+        "int ans = min ( ans , cans ) ;",
+        "if ( i ) i ++ ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int w [0]’"
+    },
+    {
+      "mod_line": [
+        4,
+        16,
+        15,
+        9
+      ],
+      "mod_code": [
+        "int w [ 0 ] = { 0 } ;",
+        "int ans = min ( ans , cans ) ;",
+        "if ( i ) i ++ ;",
+        "for ( i = 0 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int w [0]’"
+    },
+    {
+      "mod_line": [
+        4,
+        16,
+        9
+      ],
+      "mod_code": [
+        "int w [ 0 ] = { 0 } ;",
+        "int ans = min ( ans , cans ) ;",
+        "for ( i = 0 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int w [0]’"
+    },
+    {
+      "mod_line": [
+        4,
+        15
+      ],
+      "mod_code": [
+        "int w [ 0 ] = { 0 } ;",
+        "if ( i ) i ++ ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int w [0]’"
+    },
+    {
+      "mod_line": [
+        4,
+        15,
+        9
+      ],
+      "mod_code": [
+        "int w [ 0 ] = { 0 } ;",
+        "if ( i ) i ++ ;",
+        "for ( i = 0 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int w [0]’"
+    },
+    {
+      "mod_line": [
+        4,
+        9
+      ],
+      "mod_code": [
+        "int w [ 0 ] = { 0 } ;",
+        "for ( i = 0 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int w [0]’"
+    },
+    {
+      "mod_line": [
+        12,
+        5
+      ],
+      "mod_code": [
+        "cans += max ( 0LL - i - n - 1 ) * ql ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        5,
+        16
+      ],
+      "mod_code": [
+        "cans += max ( 0LL - i - n - 1 ) * ql ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int ans = min ( ans , cans ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        5,
+        16,
+        15
+      ],
+      "mod_code": [
+        "cans += max ( 0LL - i - n - 1 ) * ql ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int ans = min ( ans , cans ) ;",
+        "if ( i ) i ++ ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        5,
+        16,
+        9
+      ],
+      "mod_code": [
+        "cans += max ( 0LL - i - n - 1 ) * ql ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int ans = min ( ans , cans ) ;",
+        "for ( i = 0 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        5,
+        15
+      ],
+      "mod_code": [
+        "cans += max ( 0LL - i - n - 1 ) * ql ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "if ( i ) i ++ ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        5,
+        15,
+        9
+      ],
+      "mod_code": [
+        "cans += max ( 0LL - i - n - 1 ) * ql ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "if ( i ) i ++ ;",
+        "for ( i = 0 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        5,
+        9
+      ],
+      "mod_code": [
+        "cans += max ( 0LL - i - n - 1 ) * ql ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "for ( i = 0 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        16
+      ],
+      "mod_code": [
+        "cans += max ( 0LL - i - n - 1 ) * ql ;",
+        "int ans = min ( ans , cans ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "no matching function for call to ‘max(long long int)’"
+    },
+    {
+      "mod_line": [
+        12,
+        16,
+        15
+      ],
+      "mod_code": [
+        "cans += max ( 0LL - i - n - 1 ) * ql ;",
+        "int ans = min ( ans , cans ) ;",
+        "if ( i ) i ++ ;"
+      ],
+      "err_line": 12,
+      "err_msg": "no matching function for call to ‘max(long long int)’"
+    },
+    {
+      "mod_line": [
+        12,
+        16,
+        15,
+        9
+      ],
+      "mod_code": [
+        "cans += max ( 0LL - i - n - 1 ) * ql ;",
+        "int ans = min ( ans , cans ) ;",
+        "if ( i ) i ++ ;",
+        "for ( i = 0 ; i <= n ; i ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        16,
+        9
+      ],
+      "mod_code": [
+        "cans += max ( 0LL - i - n - 1 ) * ql ;",
+        "int ans = min ( ans , cans ) ;",
+        "for ( i = 0 ; i <= n ; i ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        15
+      ],
+      "mod_code": [
+        "cans += max ( 0LL - i - n - 1 ) * ql ;",
+        "if ( i ) i ++ ;"
+      ],
+      "err_line": 12,
+      "err_msg": "no matching function for call to ‘max(long long int)’"
+    },
+    {
+      "mod_line": [
+        12,
+        15,
+        9
+      ],
+      "mod_code": [
+        "cans += max ( 0LL - i - n - 1 ) * ql ;",
+        "if ( i ) i ++ ;",
+        "for ( i = 0 ; i <= n ; i ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        9
+      ],
+      "mod_code": [
+        "cans += max ( 0LL - i - n - 1 ) * ql ;",
+        "for ( i = 0 ; i <= n ; i ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        16
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int ans = min ( ans , cans ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        16,
+        15
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int ans = min ( ans , cans ) ;",
+        "if ( i ) i ++ ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        16,
+        15,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int ans = min ( ans , cans ) ;",
+        "if ( i ) i ++ ;",
+        "for ( i = 0 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        16,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int ans = min ( ans , cans ) ;",
+        "for ( i = 0 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        15
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "if ( i ) i ++ ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        15,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "if ( i ) i ++ ;",
+        "for ( i = 0 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "for ( i = 0 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        15
+      ],
+      "mod_code": [
+        "int ans = min ( ans , cans ) ;",
+        "if ( i ) i ++ ;"
+      ],
+      "err_line": 16,
+      "err_msg": "no matching function for call to ‘min(int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        16,
+        15,
+        9
+      ],
+      "mod_code": [
+        "int ans = min ( ans , cans ) ;",
+        "if ( i ) i ++ ;",
+        "for ( i = 0 ; i <= n ; i ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        16,
+        9
+      ],
+      "mod_code": [
+        "int ans = min ( ans , cans ) ;",
+        "for ( i = 0 ; i <= n ; i ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        15,
+        9
+      ],
+      "mod_code": [
+        "if ( i ) i ++ ;",
+        "for ( i = 0 ; i <= n ; i ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    }
+  ]
+}

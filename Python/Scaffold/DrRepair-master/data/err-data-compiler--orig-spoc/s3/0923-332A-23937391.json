@@ -1,0 +1,231 @@
+{
+  "meta": {
+    "index": 923,
+    "hitid": "3OCZWXS7ZO1H38A1D37767BH4MGL5N",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "332A",
+    "subid": "23937391"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create integer n",
+      "code": "int n ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare solve with constant string address s as argument , returning integer",
+      "code": "int solve ( const string & s )",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "create integer ans with ans = 0",
+      "code": "int ans = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "for i = n to length of s exclusive , setting i to i + n",
+      "code": "for ( int i = n ; i < s . length ( ) ; i = i + n )",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "if s [ i - 1 ] is s [ i - 2 ] and s [ i - 2 ] is s [ i - 3 ] , increment ans",
+      "code": "if ( s [ i - 1 ] == s [ i - 2 ] && s [ i - 2 ] == s [ i - 3 ] ) ans ++ ;",
+      "indent": 2
+    },
+    {
+      "line": 5,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "return ans",
+      "code": "return ans ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 8,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 9,
+      "text": "create string s",
+      "code": "string s ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "read n read s",
+      "code": "cin >> n >> s ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "create integer ans with ans = result of run solve with s as argument",
+      "code": "int ans = solve ( s ) ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "print ans print newline",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "for ( int i = n ; i < s . length ( ) ; i ++ ) { i = i + n ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "for ( int i = n ; i < s . size ( ) ; i ++ ) { i = i + n ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "int s ;"
+      ],
+      "err_line": 11,
+      "err_msg": "invalid initialization of reference of type ‘const string& {aka const std::__cxx11::basic_string<char>&}’ from expression of type ‘int’"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "while ( cin >> n >> s )"
+      ],
+      "err_line": 12,
+      "err_msg": "‘ans’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        10
+      ],
+      "mod_code": [
+        "for ( int i = n ; i < s . length ( ) ; i ++ ) { i = i + n ; }",
+        "while ( cin >> n >> s )"
+      ],
+      "err_line": 4,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        10,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = n ; i < s . length ( ) ; i ++ ) { i = i + n ; }",
+        "while ( cin >> n >> s )",
+        "int s ;"
+      ],
+      "err_line": 4,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = n ; i < s . length ( ) ; i ++ ) { i = i + n ; }",
+        "int s ;"
+      ],
+      "err_line": 4,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        9
+      ],
+      "mod_code": [
+        "while ( cin >> n >> s )",
+        "int s ;"
+      ],
+      "err_line": 11,
+      "err_msg": "invalid initialization of reference of type ‘const string& {aka const std::__cxx11::basic_string<char>&}’ from expression of type ‘int’"
+    },
+    {
+      "mod_line": [
+        10,
+        9,
+        3
+      ],
+      "mod_code": [
+        "while ( cin >> n >> s )",
+        "int s ;",
+        "for ( int i = n ; i < s . size ( ) ; i ++ ) { i = i + n ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        3
+      ],
+      "mod_code": [
+        "while ( cin >> n >> s )",
+        "for ( int i = n ; i < s . size ( ) ; i ++ ) { i = i + n ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        3
+      ],
+      "mod_code": [
+        "int s ;",
+        "for ( int i = n ; i < s . size ( ) ; i ++ ) { i = i + n ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    }
+  ]
+}

@@ -1,0 +1,843 @@
+{
+  "meta": {
+    "index": 897,
+    "hitid": "3VIVIU06FK6DLEN1KZRGVTUBA04IMZ",
+    "workerid": "A1C5H6OY3HGO4U",
+    "probid": "252A",
+    "subid": "36572413"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "num = integer array of length 100",
+      "code": "int num [ 100 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "count = integer with value of 0",
+      "code": "int count = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "read count",
+      "code": "cin >> count ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for i = 0 to count exclusive read num [ i ]",
+      "code": "for ( int i = 0 ; i < count ; i ++ ) { cin >> num [ i ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "max_tmp = integer with value of - 1 and max_sum = integer with value of 0",
+      "code": "int max_tmp = - 1 , max_sum = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 0 to count exclusive",
+      "code": "for ( int i = 0 ; i < count ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "sum , tmp = integer with both having value of num [ i ]",
+      "code": "int sum = num [ i ] , tmp = num [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "if tmp is greater than max_tmp then set max_tmp to tmp",
+      "code": "if ( tmp > max_tmp ) { max_tmp = tmp ; }",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "for j = 1 to i + j is less than count",
+      "code": "for ( int j = 1 ; i + j < count ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "set tmp to tmp bitwise exclusive or with num [ i + j ]",
+      "code": "tmp ^= num [ i + j ] ;",
+      "indent": 3
+    },
+    {
+      "line": 11,
+      "text": "if tmp is greater than max_tmp then set max_tmp to tmp",
+      "code": "if ( tmp > max_tmp ) { max_tmp = tmp ; }",
+      "indent": 3
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "print max_tmp",
+      "code": "cout << max_tmp << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "int sum = num [ i ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘tmp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < count ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "for ( j = 1 ; i + j < count ; j ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "tmp = num | num [ i + j ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid operands of types ‘int [100]’ and ‘int’ to binary ‘operator|’"
+    },
+    {
+      "mod_line": [
+        7,
+        14
+      ],
+      "mod_code": [
+        "int sum = num [ i ] ;",
+        "cout << max_tmp ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘tmp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        14,
+        3
+      ],
+      "mod_code": [
+        "int sum = num [ i ] ;",
+        "cout << max_tmp ;",
+        "cout << count << endl ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘tmp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        14,
+        3,
+        10
+      ],
+      "mod_code": [
+        "int sum = num [ i ] ;",
+        "cout << max_tmp ;",
+        "cout << count << endl ;",
+        "tmp = num | num [ i + j ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘tmp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        14,
+        3,
+        9
+      ],
+      "mod_code": [
+        "int sum = num [ i ] ;",
+        "cout << max_tmp ;",
+        "cout << count << endl ;",
+        "for ( j = 1 ; i + j < count ; j ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘tmp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        14,
+        3,
+        6
+      ],
+      "mod_code": [
+        "int sum = num [ i ] ;",
+        "cout << max_tmp ;",
+        "cout << count << endl ;",
+        "for ( i = 0 ; i < count ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7,
+        14,
+        10
+      ],
+      "mod_code": [
+        "int sum = num [ i ] ;",
+        "cout << max_tmp ;",
+        "tmp = num | num [ i + j ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘tmp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        14,
+        10,
+        9
+      ],
+      "mod_code": [
+        "int sum = num [ i ] ;",
+        "cout << max_tmp ;",
+        "tmp = num | num [ i + j ] ;",
+        "for ( j = 1 ; i + j < count ; j ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘tmp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        14,
+        10,
+        6
+      ],
+      "mod_code": [
+        "int sum = num [ i ] ;",
+        "cout << max_tmp ;",
+        "tmp = num | num [ i + j ] ;",
+        "for ( i = 0 ; i < count ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7,
+        14,
+        9
+      ],
+      "mod_code": [
+        "int sum = num [ i ] ;",
+        "cout << max_tmp ;",
+        "for ( j = 1 ; i + j < count ; j ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘tmp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        14,
+        9,
+        6
+      ],
+      "mod_code": [
+        "int sum = num [ i ] ;",
+        "cout << max_tmp ;",
+        "for ( j = 1 ; i + j < count ; j ++ )",
+        "for ( i = 0 ; i < count ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7,
+        14,
+        6
+      ],
+      "mod_code": [
+        "int sum = num [ i ] ;",
+        "cout << max_tmp ;",
+        "for ( i = 0 ; i < count ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7,
+        3
+      ],
+      "mod_code": [
+        "int sum = num [ i ] ;",
+        "cout << count << endl ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘tmp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        3,
+        10
+      ],
+      "mod_code": [
+        "int sum = num [ i ] ;",
+        "cout << count << endl ;",
+        "tmp = num | num [ i + j ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘tmp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        3,
+        10,
+        9
+      ],
+      "mod_code": [
+        "int sum = num [ i ] ;",
+        "cout << count << endl ;",
+        "tmp = num | num [ i + j ] ;",
+        "for ( j = 1 ; i + j < count ; j ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘tmp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        3,
+        10,
+        6
+      ],
+      "mod_code": [
+        "int sum = num [ i ] ;",
+        "cout << count << endl ;",
+        "tmp = num | num [ i + j ] ;",
+        "for ( i = 0 ; i < count ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7,
+        3,
+        9
+      ],
+      "mod_code": [
+        "int sum = num [ i ] ;",
+        "cout << count << endl ;",
+        "for ( j = 1 ; i + j < count ; j ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘tmp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        3,
+        9,
+        6
+      ],
+      "mod_code": [
+        "int sum = num [ i ] ;",
+        "cout << count << endl ;",
+        "for ( j = 1 ; i + j < count ; j ++ )",
+        "for ( i = 0 ; i < count ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7,
+        3,
+        6
+      ],
+      "mod_code": [
+        "int sum = num [ i ] ;",
+        "cout << count << endl ;",
+        "for ( i = 0 ; i < count ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7,
+        10
+      ],
+      "mod_code": [
+        "int sum = num [ i ] ;",
+        "tmp = num | num [ i + j ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘tmp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        10,
+        9
+      ],
+      "mod_code": [
+        "int sum = num [ i ] ;",
+        "tmp = num | num [ i + j ] ;",
+        "for ( j = 1 ; i + j < count ; j ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘tmp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        10,
+        9,
+        6
+      ],
+      "mod_code": [
+        "int sum = num [ i ] ;",
+        "tmp = num | num [ i + j ] ;",
+        "for ( j = 1 ; i + j < count ; j ++ )",
+        "for ( i = 0 ; i < count ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7,
+        10,
+        6
+      ],
+      "mod_code": [
+        "int sum = num [ i ] ;",
+        "tmp = num | num [ i + j ] ;",
+        "for ( i = 0 ; i < count ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7,
+        9
+      ],
+      "mod_code": [
+        "int sum = num [ i ] ;",
+        "for ( j = 1 ; i + j < count ; j ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘tmp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        9,
+        6
+      ],
+      "mod_code": [
+        "int sum = num [ i ] ;",
+        "for ( j = 1 ; i + j < count ; j ++ )",
+        "for ( i = 0 ; i < count ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7,
+        6
+      ],
+      "mod_code": [
+        "int sum = num [ i ] ;",
+        "for ( i = 0 ; i < count ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        14,
+        3,
+        10
+      ],
+      "mod_code": [
+        "cout << max_tmp ;",
+        "cout << count << endl ;",
+        "tmp = num | num [ i + j ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid operands of types ‘int [100]’ and ‘int’ to binary ‘operator|’"
+    },
+    {
+      "mod_line": [
+        14,
+        3,
+        10,
+        9
+      ],
+      "mod_code": [
+        "cout << max_tmp ;",
+        "cout << count << endl ;",
+        "tmp = num | num [ i + j ] ;",
+        "for ( j = 1 ; i + j < count ; j ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        3,
+        10,
+        6
+      ],
+      "mod_code": [
+        "cout << max_tmp ;",
+        "cout << count << endl ;",
+        "tmp = num | num [ i + j ] ;",
+        "for ( i = 0 ; i < count ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        14,
+        3,
+        9
+      ],
+      "mod_code": [
+        "cout << max_tmp ;",
+        "cout << count << endl ;",
+        "for ( j = 1 ; i + j < count ; j ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        3,
+        9,
+        6
+      ],
+      "mod_code": [
+        "cout << max_tmp ;",
+        "cout << count << endl ;",
+        "for ( j = 1 ; i + j < count ; j ++ )",
+        "for ( i = 0 ; i < count ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        14,
+        3,
+        6
+      ],
+      "mod_code": [
+        "cout << max_tmp ;",
+        "cout << count << endl ;",
+        "for ( i = 0 ; i < count ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        14,
+        10
+      ],
+      "mod_code": [
+        "cout << max_tmp ;",
+        "tmp = num | num [ i + j ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid operands of types ‘int [100]’ and ‘int’ to binary ‘operator|’"
+    },
+    {
+      "mod_line": [
+        14,
+        10,
+        9
+      ],
+      "mod_code": [
+        "cout << max_tmp ;",
+        "tmp = num | num [ i + j ] ;",
+        "for ( j = 1 ; i + j < count ; j ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        10,
+        9,
+        6
+      ],
+      "mod_code": [
+        "cout << max_tmp ;",
+        "tmp = num | num [ i + j ] ;",
+        "for ( j = 1 ; i + j < count ; j ++ )",
+        "for ( i = 0 ; i < count ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        14,
+        10,
+        6
+      ],
+      "mod_code": [
+        "cout << max_tmp ;",
+        "tmp = num | num [ i + j ] ;",
+        "for ( i = 0 ; i < count ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        14,
+        9
+      ],
+      "mod_code": [
+        "cout << max_tmp ;",
+        "for ( j = 1 ; i + j < count ; j ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        9,
+        6
+      ],
+      "mod_code": [
+        "cout << max_tmp ;",
+        "for ( j = 1 ; i + j < count ; j ++ )",
+        "for ( i = 0 ; i < count ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        14,
+        6
+      ],
+      "mod_code": [
+        "cout << max_tmp ;",
+        "for ( i = 0 ; i < count ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        10
+      ],
+      "mod_code": [
+        "cout << count << endl ;",
+        "tmp = num | num [ i + j ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid operands of types ‘int [100]’ and ‘int’ to binary ‘operator|’"
+    },
+    {
+      "mod_line": [
+        3,
+        10,
+        9
+      ],
+      "mod_code": [
+        "cout << count << endl ;",
+        "tmp = num | num [ i + j ] ;",
+        "for ( j = 1 ; i + j < count ; j ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        10,
+        9,
+        6
+      ],
+      "mod_code": [
+        "cout << count << endl ;",
+        "tmp = num | num [ i + j ] ;",
+        "for ( j = 1 ; i + j < count ; j ++ )",
+        "for ( i = 0 ; i < count ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        10,
+        6
+      ],
+      "mod_code": [
+        "cout << count << endl ;",
+        "tmp = num | num [ i + j ] ;",
+        "for ( i = 0 ; i < count ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        9
+      ],
+      "mod_code": [
+        "cout << count << endl ;",
+        "for ( j = 1 ; i + j < count ; j ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        9,
+        6
+      ],
+      "mod_code": [
+        "cout << count << endl ;",
+        "for ( j = 1 ; i + j < count ; j ++ )",
+        "for ( i = 0 ; i < count ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        6
+      ],
+      "mod_code": [
+        "cout << count << endl ;",
+        "for ( i = 0 ; i < count ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        9
+      ],
+      "mod_code": [
+        "tmp = num | num [ i + j ] ;",
+        "for ( j = 1 ; i + j < count ; j ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        9,
+        6
+      ],
+      "mod_code": [
+        "tmp = num | num [ i + j ] ;",
+        "for ( j = 1 ; i + j < count ; j ++ )",
+        "for ( i = 0 ; i < count ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        6
+      ],
+      "mod_code": [
+        "tmp = num | num [ i + j ] ;",
+        "for ( i = 0 ; i < count ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        6
+      ],
+      "mod_code": [
+        "for ( j = 1 ; i + j < count ; j ++ )",
+        "for ( i = 0 ; i < count ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    }
+  ]
+}

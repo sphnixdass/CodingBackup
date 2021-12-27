@@ -1,0 +1,943 @@
+{
+  "meta": {
+    "index": 1250,
+    "hitid": "3HEA4ZVWVDG31J7GLGR0PIFKJJC55Q",
+    "workerid": "A2QLFQ2ZYR6B7M",
+    "probid": "496A",
+    "subid": "41259988"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "INF = 2 ^ 30",
+      "code": "const int INF = 1 << 30 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "MAXN = 1005",
+      "code": "const int MAXN = 1005 ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "myset = multiset of int",
+      "code": "multiset < int > myset ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "a = array of MAXN int",
+      "code": "int a [ MAXN ] ;",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "n = int",
+      "code": "int n ;",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 6,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for i = 1 to n inclusive read a [ i ]",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "for i = 1 to n exclusive insert a [ i + 1 ] - a [ i ] into myset",
+      "code": "for ( int i = 1 ; i < n ; i ++ ) myset . insert ( a [ i + 1 ] - a [ i ] ) ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "res = INF",
+      "code": "int res = INF ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "for i = 2 to n exclusive",
+      "code": "for ( int i = 2 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "erase a [ i ] - a [ i - 1 ] from myset",
+      "code": "myset . erase ( a [ i ] - a [ i - 1 ] ) ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "erase a [ i + 1 ] - a [ i ] from myset",
+      "code": "myset . erase ( a [ i + 1 ] - a [ i ] ) ;",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "insert a [ i + 1 ] - a [ i - 1 ] into myset",
+      "code": "myset . insert ( a [ i + 1 ] - a [ i - 1 ] ) ;",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "res = min ( res , int pointed by last item of myset )",
+      "code": "res = min ( res , * myset . rbegin ( ) ) ;",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "erase a [ i + 1 ] - a [ i - 1 ] from myset",
+      "code": "myset . erase ( a [ i + 1 ] - a [ i - 1 ] ) ;",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "insert a [ i ] - a [ i - 1 ] into myset",
+      "code": "myset . insert ( a [ i ] - a [ i - 1 ] ) ;",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "insert a [ i + 1 ] - a [ i ] into myset",
+      "code": "myset . insert ( a [ i + 1 ] - a [ i ] ) ;",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "print res",
+      "code": "cout << res << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "const int res = INF ;"
+      ],
+      "err_line": 14,
+      "err_msg": "assignment of read-only variable ‘res’"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "myset [ i + 1 ] - a [ i ] ;"
+      ],
+      "err_line": 12,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::multiset<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "res = min ( res , myset . end ( ) ) ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(int&, std::multiset<int>::iterator)’"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "myset [ i + 1 ] - a [ i - 1 ] ;"
+      ],
+      "err_line": 15,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::multiset<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "multiset < char > myset ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(int&, const char&)’"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "const long long res = INF ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(const long long int&, const int&)’"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "myset [ i ] - a [ i - 1 ] ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::multiset<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "myset . insert ( a [ i + 1 ] - a [ i - 1 ] ] ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "res = min ( res , int ( myset . end ( ) ) ;"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid cast from type ‘std::multiset<int>::iterator {aka std::_Rb_tree_const_iterator<int>}’ to type ‘int’"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "myset . push ( a [ i ] - a [ i - 1 ] ) ;"
+      ],
+      "err_line": 16,
+      "err_msg": "‘class std::multiset<int>’ has no member named ‘push’"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "myset . push ( a [ i + 1 ] - a [ i ] ) ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘class std::multiset<int>’ has no member named ‘push’"
+    },
+    {
+      "mod_line": [
+        0,
+        9
+      ],
+      "mod_code": [
+        "const long long INF = 1e18 ;",
+        "const int res = INF ;"
+      ],
+      "err_line": 14,
+      "err_msg": "assignment of read-only variable ‘res’"
+    },
+    {
+      "mod_line": [
+        0,
+        9,
+        12
+      ],
+      "mod_code": [
+        "const long long INF = 1e18 ;",
+        "const int res = INF ;",
+        "myset [ i + 1 ] - a [ i ] ;"
+      ],
+      "err_line": 12,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::multiset<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        0,
+        9,
+        12,
+        14
+      ],
+      "mod_code": [
+        "const long long INF = 1e18 ;",
+        "const int res = INF ;",
+        "myset [ i + 1 ] - a [ i ] ;",
+        "res = min ( res , myset . end ( ) ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::multiset<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        0,
+        9,
+        12,
+        15
+      ],
+      "mod_code": [
+        "const long long INF = 1e18 ;",
+        "const int res = INF ;",
+        "myset [ i + 1 ] - a [ i ] ;",
+        "myset [ i + 1 ] - a [ i - 1 ] ;"
+      ],
+      "err_line": 12,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::multiset<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        0,
+        9,
+        12,
+        3
+      ],
+      "mod_code": [
+        "const long long INF = 1e18 ;",
+        "const int res = INF ;",
+        "myset [ i + 1 ] - a [ i ] ;",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 12,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::multiset<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        0,
+        9,
+        14
+      ],
+      "mod_code": [
+        "const long long INF = 1e18 ;",
+        "const int res = INF ;",
+        "res = min ( res , myset . end ( ) ) ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(const int&, std::multiset<int>::iterator)’"
+    },
+    {
+      "mod_line": [
+        0,
+        9,
+        14,
+        15
+      ],
+      "mod_code": [
+        "const long long INF = 1e18 ;",
+        "const int res = INF ;",
+        "res = min ( res , myset . end ( ) ) ;",
+        "myset [ i + 1 ] - a [ i - 1 ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(const int&, std::multiset<int>::iterator)’"
+    },
+    {
+      "mod_line": [
+        0,
+        9,
+        14,
+        3
+      ],
+      "mod_code": [
+        "const long long INF = 1e18 ;",
+        "const int res = INF ;",
+        "res = min ( res , myset . end ( ) ) ;",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(const int&, std::multiset<int>::iterator)’"
+    },
+    {
+      "mod_line": [
+        0,
+        9,
+        15
+      ],
+      "mod_code": [
+        "const long long INF = 1e18 ;",
+        "const int res = INF ;",
+        "myset [ i + 1 ] - a [ i - 1 ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "assignment of read-only variable ‘res’"
+    },
+    {
+      "mod_line": [
+        0,
+        9,
+        15,
+        3
+      ],
+      "mod_code": [
+        "const long long INF = 1e18 ;",
+        "const int res = INF ;",
+        "myset [ i + 1 ] - a [ i - 1 ] ;",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "assignment of read-only variable ‘res’"
+    },
+    {
+      "mod_line": [
+        0,
+        9,
+        3
+      ],
+      "mod_code": [
+        "const long long INF = 1e18 ;",
+        "const int res = INF ;",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "assignment of read-only variable ‘res’"
+    },
+    {
+      "mod_line": [
+        0,
+        12
+      ],
+      "mod_code": [
+        "const long long INF = 1e18 ;",
+        "myset [ i + 1 ] - a [ i ] ;"
+      ],
+      "err_line": 12,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::multiset<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        0,
+        12,
+        14
+      ],
+      "mod_code": [
+        "const long long INF = 1e18 ;",
+        "myset [ i + 1 ] - a [ i ] ;",
+        "res = min ( res , myset . end ( ) ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::multiset<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        0,
+        12,
+        14,
+        15
+      ],
+      "mod_code": [
+        "const long long INF = 1e18 ;",
+        "myset [ i + 1 ] - a [ i ] ;",
+        "res = min ( res , myset . end ( ) ) ;",
+        "myset [ i + 1 ] - a [ i - 1 ] ;"
+      ],
+      "err_line": 12,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::multiset<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        0,
+        12,
+        14,
+        3
+      ],
+      "mod_code": [
+        "const long long INF = 1e18 ;",
+        "myset [ i + 1 ] - a [ i ] ;",
+        "res = min ( res , myset . end ( ) ) ;",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 12,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::multiset<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        0,
+        12,
+        15
+      ],
+      "mod_code": [
+        "const long long INF = 1e18 ;",
+        "myset [ i + 1 ] - a [ i ] ;",
+        "myset [ i + 1 ] - a [ i - 1 ] ;"
+      ],
+      "err_line": 12,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::multiset<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        0,
+        12,
+        15,
+        3
+      ],
+      "mod_code": [
+        "const long long INF = 1e18 ;",
+        "myset [ i + 1 ] - a [ i ] ;",
+        "myset [ i + 1 ] - a [ i - 1 ] ;",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 12,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::multiset<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        0,
+        12,
+        3
+      ],
+      "mod_code": [
+        "const long long INF = 1e18 ;",
+        "myset [ i + 1 ] - a [ i ] ;",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 12,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::multiset<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        0,
+        14
+      ],
+      "mod_code": [
+        "const long long INF = 1e18 ;",
+        "res = min ( res , myset . end ( ) ) ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(int&, std::multiset<int>::iterator)’"
+    },
+    {
+      "mod_line": [
+        0,
+        14,
+        15
+      ],
+      "mod_code": [
+        "const long long INF = 1e18 ;",
+        "res = min ( res , myset . end ( ) ) ;",
+        "myset [ i + 1 ] - a [ i - 1 ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(int&, std::multiset<int>::iterator)’"
+    },
+    {
+      "mod_line": [
+        0,
+        14,
+        15,
+        3
+      ],
+      "mod_code": [
+        "const long long INF = 1e18 ;",
+        "res = min ( res , myset . end ( ) ) ;",
+        "myset [ i + 1 ] - a [ i - 1 ] ;",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(int&, std::multiset<int>::iterator)’"
+    },
+    {
+      "mod_line": [
+        0,
+        14,
+        3
+      ],
+      "mod_code": [
+        "const long long INF = 1e18 ;",
+        "res = min ( res , myset . end ( ) ) ;",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(int&, std::multiset<int>::iterator)’"
+    },
+    {
+      "mod_line": [
+        0,
+        15
+      ],
+      "mod_code": [
+        "const long long INF = 1e18 ;",
+        "myset [ i + 1 ] - a [ i - 1 ] ;"
+      ],
+      "err_line": 15,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::multiset<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        0,
+        15,
+        3
+      ],
+      "mod_code": [
+        "const long long INF = 1e18 ;",
+        "myset [ i + 1 ] - a [ i - 1 ] ;",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 15,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::multiset<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        9,
+        12
+      ],
+      "mod_code": [
+        "const int res = INF ;",
+        "myset [ i + 1 ] - a [ i ] ;"
+      ],
+      "err_line": 12,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::multiset<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        14
+      ],
+      "mod_code": [
+        "const int res = INF ;",
+        "myset [ i + 1 ] - a [ i ] ;",
+        "res = min ( res , myset . end ( ) ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::multiset<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        14,
+        15
+      ],
+      "mod_code": [
+        "const int res = INF ;",
+        "myset [ i + 1 ] - a [ i ] ;",
+        "res = min ( res , myset . end ( ) ) ;",
+        "myset [ i + 1 ] - a [ i - 1 ] ;"
+      ],
+      "err_line": 12,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::multiset<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        14,
+        3
+      ],
+      "mod_code": [
+        "const int res = INF ;",
+        "myset [ i + 1 ] - a [ i ] ;",
+        "res = min ( res , myset . end ( ) ) ;",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 12,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::multiset<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        15
+      ],
+      "mod_code": [
+        "const int res = INF ;",
+        "myset [ i + 1 ] - a [ i ] ;",
+        "myset [ i + 1 ] - a [ i - 1 ] ;"
+      ],
+      "err_line": 12,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::multiset<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        15,
+        3
+      ],
+      "mod_code": [
+        "const int res = INF ;",
+        "myset [ i + 1 ] - a [ i ] ;",
+        "myset [ i + 1 ] - a [ i - 1 ] ;",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 12,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::multiset<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        3
+      ],
+      "mod_code": [
+        "const int res = INF ;",
+        "myset [ i + 1 ] - a [ i ] ;",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 12,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::multiset<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        9,
+        14
+      ],
+      "mod_code": [
+        "const int res = INF ;",
+        "res = min ( res , myset . end ( ) ) ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(const int&, std::multiset<int>::iterator)’"
+    },
+    {
+      "mod_line": [
+        9,
+        14,
+        15
+      ],
+      "mod_code": [
+        "const int res = INF ;",
+        "res = min ( res , myset . end ( ) ) ;",
+        "myset [ i + 1 ] - a [ i - 1 ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(const int&, std::multiset<int>::iterator)’"
+    },
+    {
+      "mod_line": [
+        9,
+        14,
+        15,
+        3
+      ],
+      "mod_code": [
+        "const int res = INF ;",
+        "res = min ( res , myset . end ( ) ) ;",
+        "myset [ i + 1 ] - a [ i - 1 ] ;",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(const int&, std::multiset<int>::iterator)’"
+    },
+    {
+      "mod_line": [
+        9,
+        14,
+        3
+      ],
+      "mod_code": [
+        "const int res = INF ;",
+        "res = min ( res , myset . end ( ) ) ;",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(const int&, std::multiset<int>::iterator)’"
+    },
+    {
+      "mod_line": [
+        9,
+        15
+      ],
+      "mod_code": [
+        "const int res = INF ;",
+        "myset [ i + 1 ] - a [ i - 1 ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "assignment of read-only variable ‘res’"
+    },
+    {
+      "mod_line": [
+        9,
+        15,
+        3
+      ],
+      "mod_code": [
+        "const int res = INF ;",
+        "myset [ i + 1 ] - a [ i - 1 ] ;",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "assignment of read-only variable ‘res’"
+    },
+    {
+      "mod_line": [
+        9,
+        3
+      ],
+      "mod_code": [
+        "const int res = INF ;",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "assignment of read-only variable ‘res’"
+    },
+    {
+      "mod_line": [
+        12,
+        14
+      ],
+      "mod_code": [
+        "myset [ i + 1 ] - a [ i ] ;",
+        "res = min ( res , myset . end ( ) ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::multiset<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        12,
+        14,
+        15
+      ],
+      "mod_code": [
+        "myset [ i + 1 ] - a [ i ] ;",
+        "res = min ( res , myset . end ( ) ) ;",
+        "myset [ i + 1 ] - a [ i - 1 ] ;"
+      ],
+      "err_line": 12,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::multiset<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        12,
+        14,
+        15,
+        3
+      ],
+      "mod_code": [
+        "myset [ i + 1 ] - a [ i ] ;",
+        "res = min ( res , myset . end ( ) ) ;",
+        "myset [ i + 1 ] - a [ i - 1 ] ;",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 12,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::multiset<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        12,
+        14,
+        3
+      ],
+      "mod_code": [
+        "myset [ i + 1 ] - a [ i ] ;",
+        "res = min ( res , myset . end ( ) ) ;",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 12,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::multiset<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        12,
+        15
+      ],
+      "mod_code": [
+        "myset [ i + 1 ] - a [ i ] ;",
+        "myset [ i + 1 ] - a [ i - 1 ] ;"
+      ],
+      "err_line": 12,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::multiset<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        12,
+        15,
+        3
+      ],
+      "mod_code": [
+        "myset [ i + 1 ] - a [ i ] ;",
+        "myset [ i + 1 ] - a [ i - 1 ] ;",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 12,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::multiset<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        12,
+        3
+      ],
+      "mod_code": [
+        "myset [ i + 1 ] - a [ i ] ;",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 12,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::multiset<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        14,
+        15
+      ],
+      "mod_code": [
+        "res = min ( res , myset . end ( ) ) ;",
+        "myset [ i + 1 ] - a [ i - 1 ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(int&, std::multiset<int>::iterator)’"
+    },
+    {
+      "mod_line": [
+        14,
+        15,
+        3
+      ],
+      "mod_code": [
+        "res = min ( res , myset . end ( ) ) ;",
+        "myset [ i + 1 ] - a [ i - 1 ] ;",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(int&, std::multiset<int>::iterator)’"
+    },
+    {
+      "mod_line": [
+        14,
+        3
+      ],
+      "mod_code": [
+        "res = min ( res , myset . end ( ) ) ;",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(int&, std::multiset<int>::iterator)’"
+    },
+    {
+      "mod_line": [
+        15,
+        3
+      ],
+      "mod_code": [
+        "myset [ i + 1 ] - a [ i - 1 ] ;",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 15,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::multiset<int>’ and ‘int’)"
+    }
+  ]
+}

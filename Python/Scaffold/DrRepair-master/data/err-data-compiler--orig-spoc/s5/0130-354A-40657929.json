@@ -1,0 +1,761 @@
+{
+  "meta": {
+    "index": 130,
+    "hitid": "3W3RSPVVGSLYON0GE4FFEJ3X4Q3ULJ",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "354A",
+    "subid": "40657929"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "long long function bigmod with long long arguments a , b and m",
+      "code": "long long bigmod ( long long a , long long b , long long m )",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "if b = 0 , return 1 modulo m",
+      "code": "if ( b == 0 ) return 1 % m ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "create long long x = bigmod ( a , b / 2 , m )",
+      "code": "long long x = bigmod ( a , b / 2 , m ) ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "change x to x squared modulo m",
+      "code": "x = ( x * x ) % m ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "if b is odd , change x to ( x * a ) modulo m",
+      "code": "if ( b % 2 ) x = ( x * a ) % m ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "return x",
+      "code": "return x ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 7,
+      "text": "create long longs lc , lp , rc , rp , n , l , r and c where c = INT_MAX ; an array of long longs w with 100001 elements",
+      "code": "long long w [ 100001 ] , lp , lc , rc , rp , n , l , r , c = INT_MAX ;",
+      "indent": 0
+    },
+    {
+      "line": 8,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 9,
+      "text": "read n , lc , rc , lp and rp",
+      "code": "cin >> n >> lc >> rc >> lp >> rp ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "read n elements into w",
+      "code": "for ( int i = 0 ; i < n ; i ++ ) cin >> w [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": ";",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "assign 0 to l",
+      "code": "l = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "assign 0 to r",
+      "code": "r = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "loop i from 0 to n exclusive , increase r by w [ i ] * rc",
+      "code": "for ( int i = 0 ; i < n ; i ++ ) r += ( w [ i ] * rc ) ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "for i from 0 to n + 1 exclusive",
+      "code": "for ( int i = 0 ; i < n + 1 ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "create long long d = max of 0ll and abs ( ( n - i ) - i ) - 1",
+      "code": "long long d = max ( 0ll , abs ( ( n - i ) - i ) - 1 ) ;",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "if n - i is greater than i",
+      "code": "if ( n - i > i )",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "multiply d by rp",
+      "code": "d *= rp ;",
+      "indent": 3
+    },
+    {
+      "line": 19,
+      "text": "else if n - i < i",
+      "code": "else if ( n - i < i )",
+      "indent": 2
+    },
+    {
+      "line": 20,
+      "text": "multiply d by lp",
+      "code": "d *= lp ;",
+      "indent": 3
+    },
+    {
+      "line": 21,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 22,
+      "text": "multiply d by min of lp and rp",
+      "code": "d *= min ( lp , rp ) ;",
+      "indent": 3
+    },
+    {
+      "line": 23,
+      "text": "assign min of c and l + r + d to c",
+      "code": "c = min ( c , l + r + d ) ;",
+      "indent": 2
+    },
+    {
+      "line": 24,
+      "text": "add w [ i ] * lc to l",
+      "code": "l += ( w [ i ] * lc ) ;",
+      "indent": 2
+    },
+    {
+      "line": 25,
+      "text": "subtract w [ i ] * rc from r",
+      "code": "r -= ( w [ i ] * rc ) ;",
+      "indent": 2
+    },
+    {
+      "line": 26,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 27,
+      "text": "print c",
+      "code": "cout << c << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 28,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "long long lc , lp , rc [ 100001 ] , rc [ 100001 ] , rc = INT_MAX , l , c ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redefinition of ‘long long int rc [100001]’"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "long long bigmod ( long long a , long long b , long long b )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int b’"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "long long lc , lp , rc [ 100001 ] , rc = INT_MAX , rc = INT_MAX , r , c ;"
+      ],
+      "err_line": 7,
+      "err_msg": "conflicting declaration ‘long long int rc’"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "int n , lc , rc , lp , rp ;"
+      ],
+      "err_line": 16,
+      "err_msg": "no matching function for call to ‘max(long long int, int)’"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n + 1 ; i ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7,
+        16
+      ],
+      "mod_code": [
+        "long long lc , lp , rc [ 100001 ] , rc [ 100001 ] , rc = INT_MAX , l , c ;",
+        "long long d = max ( 0ll , abs ( n - i ) - i ) - 1 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redefinition of ‘long long int rc [100001]’"
+    },
+    {
+      "mod_line": [
+        7,
+        16,
+        0
+      ],
+      "mod_code": [
+        "long long lc , lp , rc [ 100001 ] , rc [ 100001 ] , rc = INT_MAX , l , c ;",
+        "long long d = max ( 0ll , abs ( n - i ) - i ) - 1 ;",
+        "long long bigmod ( long long a , long long b , long long b )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int b’"
+    },
+    {
+      "mod_line": [
+        7,
+        16,
+        0,
+        23
+      ],
+      "mod_code": [
+        "long long lc , lp , rc [ 100001 ] , rc [ 100001 ] , rc = INT_MAX , l , c ;",
+        "long long d = max ( 0ll , abs ( n - i ) - i ) - 1 ;",
+        "long long bigmod ( long long a , long long b , long long b )",
+        "c = min ( c , l + r ) + d ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int b’"
+    },
+    {
+      "mod_line": [
+        7,
+        16,
+        0,
+        9
+      ],
+      "mod_code": [
+        "long long lc , lp , rc [ 100001 ] , rc [ 100001 ] , rc = INT_MAX , l , c ;",
+        "long long d = max ( 0ll , abs ( n - i ) - i ) - 1 ;",
+        "long long bigmod ( long long a , long long b , long long b )",
+        "int n , lc , rc , lp , rp ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int b’"
+    },
+    {
+      "mod_line": [
+        7,
+        16,
+        23
+      ],
+      "mod_code": [
+        "long long lc , lp , rc [ 100001 ] , rc [ 100001 ] , rc = INT_MAX , l , c ;",
+        "long long d = max ( 0ll , abs ( n - i ) - i ) - 1 ;",
+        "c = min ( c , l + r ) + d ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redefinition of ‘long long int rc [100001]’"
+    },
+    {
+      "mod_line": [
+        7,
+        16,
+        23,
+        9
+      ],
+      "mod_code": [
+        "long long lc , lp , rc [ 100001 ] , rc [ 100001 ] , rc = INT_MAX , l , c ;",
+        "long long d = max ( 0ll , abs ( n - i ) - i ) - 1 ;",
+        "c = min ( c , l + r ) + d ;",
+        "int n , lc , rc , lp , rp ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redefinition of ‘long long int rc [100001]’"
+    },
+    {
+      "mod_line": [
+        7,
+        16,
+        9
+      ],
+      "mod_code": [
+        "long long lc , lp , rc [ 100001 ] , rc [ 100001 ] , rc = INT_MAX , l , c ;",
+        "long long d = max ( 0ll , abs ( n - i ) - i ) - 1 ;",
+        "int n , lc , rc , lp , rp ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redefinition of ‘long long int rc [100001]’"
+    },
+    {
+      "mod_line": [
+        7,
+        0
+      ],
+      "mod_code": [
+        "long long lc , lp , rc [ 100001 ] , rc [ 100001 ] , rc = INT_MAX , l , c ;",
+        "long long bigmod ( long long a , long long b , long long b )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int b’"
+    },
+    {
+      "mod_line": [
+        7,
+        0,
+        23
+      ],
+      "mod_code": [
+        "long long lc , lp , rc [ 100001 ] , rc [ 100001 ] , rc = INT_MAX , l , c ;",
+        "long long bigmod ( long long a , long long b , long long b )",
+        "c = min ( c , l + r ) + d ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int b’"
+    },
+    {
+      "mod_line": [
+        7,
+        0,
+        23,
+        9
+      ],
+      "mod_code": [
+        "long long lc , lp , rc [ 100001 ] , rc [ 100001 ] , rc = INT_MAX , l , c ;",
+        "long long bigmod ( long long a , long long b , long long b )",
+        "c = min ( c , l + r ) + d ;",
+        "int n , lc , rc , lp , rp ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int b’"
+    },
+    {
+      "mod_line": [
+        7,
+        0,
+        9
+      ],
+      "mod_code": [
+        "long long lc , lp , rc [ 100001 ] , rc [ 100001 ] , rc = INT_MAX , l , c ;",
+        "long long bigmod ( long long a , long long b , long long b )",
+        "int n , lc , rc , lp , rp ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int b’"
+    },
+    {
+      "mod_line": [
+        7,
+        23
+      ],
+      "mod_code": [
+        "long long lc , lp , rc [ 100001 ] , rc [ 100001 ] , rc = INT_MAX , l , c ;",
+        "c = min ( c , l + r ) + d ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redefinition of ‘long long int rc [100001]’"
+    },
+    {
+      "mod_line": [
+        7,
+        23,
+        9
+      ],
+      "mod_code": [
+        "long long lc , lp , rc [ 100001 ] , rc [ 100001 ] , rc = INT_MAX , l , c ;",
+        "c = min ( c , l + r ) + d ;",
+        "int n , lc , rc , lp , rp ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redefinition of ‘long long int rc [100001]’"
+    },
+    {
+      "mod_line": [
+        7,
+        9
+      ],
+      "mod_code": [
+        "long long lc , lp , rc [ 100001 ] , rc [ 100001 ] , rc = INT_MAX , l , c ;",
+        "int n , lc , rc , lp , rp ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redefinition of ‘long long int rc [100001]’"
+    },
+    {
+      "mod_line": [
+        7,
+        16
+      ],
+      "mod_code": [
+        "long long lc , lp , rc [ 100001 ] , rc = INT_MAX , rc = INT_MAX , r , c ;",
+        "long long d = max ( 0ll , abs ( n - i ) - i ) - 1 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "conflicting declaration ‘long long int rc’"
+    },
+    {
+      "mod_line": [
+        7,
+        16,
+        0
+      ],
+      "mod_code": [
+        "long long lc , lp , rc [ 100001 ] , rc = INT_MAX , rc = INT_MAX , r , c ;",
+        "long long d = max ( 0ll , abs ( n - i ) - i ) - 1 ;",
+        "long long bigmod ( long long a , long long b , long long b )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int b’"
+    },
+    {
+      "mod_line": [
+        7,
+        16,
+        0,
+        23
+      ],
+      "mod_code": [
+        "long long lc , lp , rc [ 100001 ] , rc = INT_MAX , rc = INT_MAX , r , c ;",
+        "long long d = max ( 0ll , abs ( n - i ) - i ) - 1 ;",
+        "long long bigmod ( long long a , long long b , long long b )",
+        "c = min ( c , l + r ) + d ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int b’"
+    },
+    {
+      "mod_line": [
+        7,
+        16,
+        0,
+        9
+      ],
+      "mod_code": [
+        "long long lc , lp , rc [ 100001 ] , rc = INT_MAX , rc = INT_MAX , r , c ;",
+        "long long d = max ( 0ll , abs ( n - i ) - i ) - 1 ;",
+        "long long bigmod ( long long a , long long b , long long b )",
+        "int n , lc , rc , lp , rp ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int b’"
+    },
+    {
+      "mod_line": [
+        7,
+        16,
+        23
+      ],
+      "mod_code": [
+        "long long lc , lp , rc [ 100001 ] , rc = INT_MAX , rc = INT_MAX , r , c ;",
+        "long long d = max ( 0ll , abs ( n - i ) - i ) - 1 ;",
+        "c = min ( c , l + r ) + d ;"
+      ],
+      "err_line": 7,
+      "err_msg": "conflicting declaration ‘long long int rc’"
+    },
+    {
+      "mod_line": [
+        7,
+        16,
+        23,
+        9
+      ],
+      "mod_code": [
+        "long long lc , lp , rc [ 100001 ] , rc = INT_MAX , rc = INT_MAX , r , c ;",
+        "long long d = max ( 0ll , abs ( n - i ) - i ) - 1 ;",
+        "c = min ( c , l + r ) + d ;",
+        "int n , lc , rc , lp , rp ;"
+      ],
+      "err_line": 7,
+      "err_msg": "conflicting declaration ‘long long int rc’"
+    },
+    {
+      "mod_line": [
+        7,
+        16,
+        9
+      ],
+      "mod_code": [
+        "long long lc , lp , rc [ 100001 ] , rc = INT_MAX , rc = INT_MAX , r , c ;",
+        "long long d = max ( 0ll , abs ( n - i ) - i ) - 1 ;",
+        "int n , lc , rc , lp , rp ;"
+      ],
+      "err_line": 7,
+      "err_msg": "conflicting declaration ‘long long int rc’"
+    },
+    {
+      "mod_line": [
+        7,
+        0
+      ],
+      "mod_code": [
+        "long long lc , lp , rc [ 100001 ] , rc = INT_MAX , rc = INT_MAX , r , c ;",
+        "long long bigmod ( long long a , long long b , long long b )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int b’"
+    },
+    {
+      "mod_line": [
+        7,
+        0,
+        23
+      ],
+      "mod_code": [
+        "long long lc , lp , rc [ 100001 ] , rc = INT_MAX , rc = INT_MAX , r , c ;",
+        "long long bigmod ( long long a , long long b , long long b )",
+        "c = min ( c , l + r ) + d ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int b’"
+    },
+    {
+      "mod_line": [
+        7,
+        0,
+        23,
+        9
+      ],
+      "mod_code": [
+        "long long lc , lp , rc [ 100001 ] , rc = INT_MAX , rc = INT_MAX , r , c ;",
+        "long long bigmod ( long long a , long long b , long long b )",
+        "c = min ( c , l + r ) + d ;",
+        "int n , lc , rc , lp , rp ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int b’"
+    },
+    {
+      "mod_line": [
+        7,
+        0,
+        9
+      ],
+      "mod_code": [
+        "long long lc , lp , rc [ 100001 ] , rc = INT_MAX , rc = INT_MAX , r , c ;",
+        "long long bigmod ( long long a , long long b , long long b )",
+        "int n , lc , rc , lp , rp ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int b’"
+    },
+    {
+      "mod_line": [
+        7,
+        23
+      ],
+      "mod_code": [
+        "long long lc , lp , rc [ 100001 ] , rc = INT_MAX , rc = INT_MAX , r , c ;",
+        "c = min ( c , l + r ) + d ;"
+      ],
+      "err_line": 7,
+      "err_msg": "conflicting declaration ‘long long int rc’"
+    },
+    {
+      "mod_line": [
+        7,
+        23,
+        9
+      ],
+      "mod_code": [
+        "long long lc , lp , rc [ 100001 ] , rc = INT_MAX , rc = INT_MAX , r , c ;",
+        "c = min ( c , l + r ) + d ;",
+        "int n , lc , rc , lp , rp ;"
+      ],
+      "err_line": 7,
+      "err_msg": "conflicting declaration ‘long long int rc’"
+    },
+    {
+      "mod_line": [
+        7,
+        9
+      ],
+      "mod_code": [
+        "long long lc , lp , rc [ 100001 ] , rc = INT_MAX , rc = INT_MAX , r , c ;",
+        "int n , lc , rc , lp , rp ;"
+      ],
+      "err_line": 7,
+      "err_msg": "conflicting declaration ‘long long int rc’"
+    },
+    {
+      "mod_line": [
+        16,
+        0
+      ],
+      "mod_code": [
+        "long long d = max ( 0ll , abs ( n - i ) - i ) - 1 ;",
+        "long long bigmod ( long long a , long long b , long long b )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int b’"
+    },
+    {
+      "mod_line": [
+        16,
+        0,
+        23
+      ],
+      "mod_code": [
+        "long long d = max ( 0ll , abs ( n - i ) - i ) - 1 ;",
+        "long long bigmod ( long long a , long long b , long long b )",
+        "c = min ( c , l + r ) + d ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int b’"
+    },
+    {
+      "mod_line": [
+        16,
+        0,
+        23,
+        9
+      ],
+      "mod_code": [
+        "long long d = max ( 0ll , abs ( n - i ) - i ) - 1 ;",
+        "long long bigmod ( long long a , long long b , long long b )",
+        "c = min ( c , l + r ) + d ;",
+        "int n , lc , rc , lp , rp ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int b’"
+    },
+    {
+      "mod_line": [
+        16,
+        0,
+        9
+      ],
+      "mod_code": [
+        "long long d = max ( 0ll , abs ( n - i ) - i ) - 1 ;",
+        "long long bigmod ( long long a , long long b , long long b )",
+        "int n , lc , rc , lp , rp ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int b’"
+    },
+    {
+      "mod_line": [
+        16,
+        23,
+        9
+      ],
+      "mod_code": [
+        "long long d = max ( 0ll , abs ( n - i ) - i ) - 1 ;",
+        "c = min ( c , l + r ) + d ;",
+        "int n , lc , rc , lp , rp ;"
+      ],
+      "err_line": 16,
+      "err_msg": "no matching function for call to ‘max(long long int, int)’"
+    },
+    {
+      "mod_line": [
+        16,
+        9
+      ],
+      "mod_code": [
+        "long long d = max ( 0ll , abs ( n - i ) - i ) - 1 ;",
+        "int n , lc , rc , lp , rp ;"
+      ],
+      "err_line": 16,
+      "err_msg": "no matching function for call to ‘max(long long int, int)’"
+    },
+    {
+      "mod_line": [
+        0,
+        23
+      ],
+      "mod_code": [
+        "long long bigmod ( long long a , long long b , long long b )",
+        "c = min ( c , l + r ) + d ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int b’"
+    },
+    {
+      "mod_line": [
+        0,
+        23,
+        9
+      ],
+      "mod_code": [
+        "long long bigmod ( long long a , long long b , long long b )",
+        "c = min ( c , l + r ) + d ;",
+        "int n , lc , rc , lp , rp ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int b’"
+    },
+    {
+      "mod_line": [
+        0,
+        9
+      ],
+      "mod_code": [
+        "long long bigmod ( long long a , long long b , long long b )",
+        "int n , lc , rc , lp , rp ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int b’"
+    },
+    {
+      "mod_line": [
+        23,
+        9
+      ],
+      "mod_code": [
+        "c = min ( c , l + r ) + d ;",
+        "int n , lc , rc , lp , rp ;"
+      ],
+      "err_line": 16,
+      "err_msg": "no matching function for call to ‘max(long long int, int)’"
+    }
+  ]
+}

@@ -1,0 +1,717 @@
+{
+  "meta": {
+    "index": 180,
+    "hitid": "3IZVJEBJ6AEXR1RJXN8L6S0FGDYZ6A",
+    "workerid": "A1R0Q9CUUBSM5F",
+    "probid": "875A",
+    "subid": "48462205"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create const int N = 2e5 + 100",
+      "code": "const int N = 2e5 + 100 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create maps ma and mb from long long ints to bools",
+      "code": "map < long long , bool > ma , mb ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "create long long array a of size N",
+      "code": "long long a [ N ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "make pair array of int and int of size N",
+      "code": "pair < int , int > p [ N ] ;",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "create integer vectors v and v1",
+      "code": "vector < int > v , v1 ;",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "create long long set s",
+      "code": "set < long long > s ;",
+      "indent": 0
+    },
+    {
+      "line": 6,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 7,
+      "text": "make long long integer n",
+      "code": "long long n ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "for i = n - 1 to n - 100000 exclusive by decreasing by 1",
+      "code": "for ( int i = n - 1 ; i > n - 10000 ; i -- )",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "make long long ints j = i and d = 0",
+      "code": "long long j = i , d = 0 ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "while j is greater than 0 , set d to d + ( j % 10 ) and j to j / 10",
+      "code": "while ( j > 0 ) d += ( j % 10 ) , j /= 10 ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "if d + i is equal to n , append i to v",
+      "code": "if ( d + i == n ) { v . push_back ( i ) ; }",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "sort vector v",
+      "code": "sort ( v . begin ( ) , v . end ( ) ) ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "output size of v",
+      "code": "cout << v . size ( ) << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "for i = 0 to size of v exclusive , output v [ i ]",
+      "code": "for ( int i = 0 ; i < v . size ( ) ; i ++ ) cout << v [ i ] << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "pair < int , int > int [ N ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘[’ token"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "const int const N = 2e5 + 100 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "duplicate ‘const’"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "vector < int > s , v1 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "conflicting declaration ‘std::set<long long int> s’"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "sort ( v , v + n ) ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no match for ‘operator+’ (operand types are ‘std::vector<int>’ and ‘long long int’)"
+    },
+    {
+      "mod_line": [
+        3,
+        11
+      ],
+      "mod_code": [
+        "pair < int , int > int [ N ] ;",
+        "while ( j > 0 ) d = d + ( j % 10 , j ) / 10 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘[’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        11,
+        16
+      ],
+      "mod_code": [
+        "pair < int , int > int [ N ] ;",
+        "while ( j > 0 ) d = d + ( j % 10 , j ) / 10 ;",
+        "for ( int i = 0 ; i < v . size ( ) ; i ++ ) cout << v [ i ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘[’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        11,
+        16,
+        4
+      ],
+      "mod_code": [
+        "pair < int , int > int [ N ] ;",
+        "while ( j > 0 ) d = d + ( j % 10 , j ) / 10 ;",
+        "for ( int i = 0 ; i < v . size ( ) ; i ++ ) cout << v [ i ] ;",
+        "vector < int > s , v1 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘[’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        11,
+        16,
+        15
+      ],
+      "mod_code": [
+        "pair < int , int > int [ N ] ;",
+        "while ( j > 0 ) d = d + ( j % 10 , j ) / 10 ;",
+        "for ( int i = 0 ; i < v . size ( ) ; i ++ ) cout << v [ i ] ;",
+        "cout << v . size ( ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘[’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        11,
+        16,
+        10
+      ],
+      "mod_code": [
+        "pair < int , int > int [ N ] ;",
+        "while ( j > 0 ) d = d + ( j % 10 , j ) / 10 ;",
+        "for ( int i = 0 ; i < v . size ( ) ; i ++ ) cout << v [ i ] ;",
+        "long long j = 0 , d = 0 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘[’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        11,
+        4
+      ],
+      "mod_code": [
+        "pair < int , int > int [ N ] ;",
+        "while ( j > 0 ) d = d + ( j % 10 , j ) / 10 ;",
+        "vector < int > s , v1 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘[’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        11,
+        4,
+        15
+      ],
+      "mod_code": [
+        "pair < int , int > int [ N ] ;",
+        "while ( j > 0 ) d = d + ( j % 10 , j ) / 10 ;",
+        "vector < int > s , v1 ;",
+        "cout << v . size ( ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘[’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        11,
+        4,
+        10
+      ],
+      "mod_code": [
+        "pair < int , int > int [ N ] ;",
+        "while ( j > 0 ) d = d + ( j % 10 , j ) / 10 ;",
+        "vector < int > s , v1 ;",
+        "long long j = 0 , d = 0 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘[’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        11,
+        15
+      ],
+      "mod_code": [
+        "pair < int , int > int [ N ] ;",
+        "while ( j > 0 ) d = d + ( j % 10 , j ) / 10 ;",
+        "cout << v . size ( ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘[’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        11,
+        15,
+        10
+      ],
+      "mod_code": [
+        "pair < int , int > int [ N ] ;",
+        "while ( j > 0 ) d = d + ( j % 10 , j ) / 10 ;",
+        "cout << v . size ( ) ;",
+        "long long j = 0 , d = 0 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘[’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        11,
+        10
+      ],
+      "mod_code": [
+        "pair < int , int > int [ N ] ;",
+        "while ( j > 0 ) d = d + ( j % 10 , j ) / 10 ;",
+        "long long j = 0 , d = 0 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘[’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        16
+      ],
+      "mod_code": [
+        "pair < int , int > int [ N ] ;",
+        "for ( int i = 0 ; i < v . size ( ) ; i ++ ) cout << v [ i ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘[’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        16,
+        4
+      ],
+      "mod_code": [
+        "pair < int , int > int [ N ] ;",
+        "for ( int i = 0 ; i < v . size ( ) ; i ++ ) cout << v [ i ] ;",
+        "vector < int > s , v1 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘[’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        16,
+        4,
+        15
+      ],
+      "mod_code": [
+        "pair < int , int > int [ N ] ;",
+        "for ( int i = 0 ; i < v . size ( ) ; i ++ ) cout << v [ i ] ;",
+        "vector < int > s , v1 ;",
+        "cout << v . size ( ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘[’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        16,
+        4,
+        10
+      ],
+      "mod_code": [
+        "pair < int , int > int [ N ] ;",
+        "for ( int i = 0 ; i < v . size ( ) ; i ++ ) cout << v [ i ] ;",
+        "vector < int > s , v1 ;",
+        "long long j = 0 , d = 0 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘[’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        16,
+        15
+      ],
+      "mod_code": [
+        "pair < int , int > int [ N ] ;",
+        "for ( int i = 0 ; i < v . size ( ) ; i ++ ) cout << v [ i ] ;",
+        "cout << v . size ( ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘[’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        16,
+        15,
+        10
+      ],
+      "mod_code": [
+        "pair < int , int > int [ N ] ;",
+        "for ( int i = 0 ; i < v . size ( ) ; i ++ ) cout << v [ i ] ;",
+        "cout << v . size ( ) ;",
+        "long long j = 0 , d = 0 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘[’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        16,
+        10
+      ],
+      "mod_code": [
+        "pair < int , int > int [ N ] ;",
+        "for ( int i = 0 ; i < v . size ( ) ; i ++ ) cout << v [ i ] ;",
+        "long long j = 0 , d = 0 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘[’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        4
+      ],
+      "mod_code": [
+        "pair < int , int > int [ N ] ;",
+        "vector < int > s , v1 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘[’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        4,
+        15
+      ],
+      "mod_code": [
+        "pair < int , int > int [ N ] ;",
+        "vector < int > s , v1 ;",
+        "cout << v . size ( ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘[’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        4,
+        15,
+        10
+      ],
+      "mod_code": [
+        "pair < int , int > int [ N ] ;",
+        "vector < int > s , v1 ;",
+        "cout << v . size ( ) ;",
+        "long long j = 0 , d = 0 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘[’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        4,
+        10
+      ],
+      "mod_code": [
+        "pair < int , int > int [ N ] ;",
+        "vector < int > s , v1 ;",
+        "long long j = 0 , d = 0 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘[’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        15
+      ],
+      "mod_code": [
+        "pair < int , int > int [ N ] ;",
+        "cout << v . size ( ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘[’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        15,
+        10
+      ],
+      "mod_code": [
+        "pair < int , int > int [ N ] ;",
+        "cout << v . size ( ) ;",
+        "long long j = 0 , d = 0 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘[’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        10
+      ],
+      "mod_code": [
+        "pair < int , int > int [ N ] ;",
+        "long long j = 0 , d = 0 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘[’ token"
+    },
+    {
+      "mod_line": [
+        11,
+        16,
+        4
+      ],
+      "mod_code": [
+        "while ( j > 0 ) d = d + ( j % 10 , j ) / 10 ;",
+        "for ( int i = 0 ; i < v . size ( ) ; i ++ ) cout << v [ i ] ;",
+        "vector < int > s , v1 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "conflicting declaration ‘std::set<long long int> s’"
+    },
+    {
+      "mod_line": [
+        11,
+        16,
+        4,
+        15
+      ],
+      "mod_code": [
+        "while ( j > 0 ) d = d + ( j % 10 , j ) / 10 ;",
+        "for ( int i = 0 ; i < v . size ( ) ; i ++ ) cout << v [ i ] ;",
+        "vector < int > s , v1 ;",
+        "cout << v . size ( ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "conflicting declaration ‘std::set<long long int> s’"
+    },
+    {
+      "mod_line": [
+        11,
+        16,
+        4,
+        10
+      ],
+      "mod_code": [
+        "while ( j > 0 ) d = d + ( j % 10 , j ) / 10 ;",
+        "for ( int i = 0 ; i < v . size ( ) ; i ++ ) cout << v [ i ] ;",
+        "vector < int > s , v1 ;",
+        "long long j = 0 , d = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "conflicting declaration ‘std::set<long long int> s’"
+    },
+    {
+      "mod_line": [
+        11,
+        4
+      ],
+      "mod_code": [
+        "while ( j > 0 ) d = d + ( j % 10 , j ) / 10 ;",
+        "vector < int > s , v1 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "conflicting declaration ‘std::set<long long int> s’"
+    },
+    {
+      "mod_line": [
+        11,
+        4,
+        15
+      ],
+      "mod_code": [
+        "while ( j > 0 ) d = d + ( j % 10 , j ) / 10 ;",
+        "vector < int > s , v1 ;",
+        "cout << v . size ( ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "conflicting declaration ‘std::set<long long int> s’"
+    },
+    {
+      "mod_line": [
+        11,
+        4,
+        15,
+        10
+      ],
+      "mod_code": [
+        "while ( j > 0 ) d = d + ( j % 10 , j ) / 10 ;",
+        "vector < int > s , v1 ;",
+        "cout << v . size ( ) ;",
+        "long long j = 0 , d = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "conflicting declaration ‘std::set<long long int> s’"
+    },
+    {
+      "mod_line": [
+        11,
+        4,
+        10
+      ],
+      "mod_code": [
+        "while ( j > 0 ) d = d + ( j % 10 , j ) / 10 ;",
+        "vector < int > s , v1 ;",
+        "long long j = 0 , d = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "conflicting declaration ‘std::set<long long int> s’"
+    },
+    {
+      "mod_line": [
+        16,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < v . size ( ) ; i ++ ) cout << v [ i ] ;",
+        "vector < int > s , v1 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "conflicting declaration ‘std::set<long long int> s’"
+    },
+    {
+      "mod_line": [
+        16,
+        4,
+        15
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < v . size ( ) ; i ++ ) cout << v [ i ] ;",
+        "vector < int > s , v1 ;",
+        "cout << v . size ( ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "conflicting declaration ‘std::set<long long int> s’"
+    },
+    {
+      "mod_line": [
+        16,
+        4,
+        15,
+        10
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < v . size ( ) ; i ++ ) cout << v [ i ] ;",
+        "vector < int > s , v1 ;",
+        "cout << v . size ( ) ;",
+        "long long j = 0 , d = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "conflicting declaration ‘std::set<long long int> s’"
+    },
+    {
+      "mod_line": [
+        16,
+        4,
+        10
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < v . size ( ) ; i ++ ) cout << v [ i ] ;",
+        "vector < int > s , v1 ;",
+        "long long j = 0 , d = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "conflicting declaration ‘std::set<long long int> s’"
+    },
+    {
+      "mod_line": [
+        4,
+        15
+      ],
+      "mod_code": [
+        "vector < int > s , v1 ;",
+        "cout << v . size ( ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "conflicting declaration ‘std::set<long long int> s’"
+    },
+    {
+      "mod_line": [
+        4,
+        15,
+        10
+      ],
+      "mod_code": [
+        "vector < int > s , v1 ;",
+        "cout << v . size ( ) ;",
+        "long long j = 0 , d = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "conflicting declaration ‘std::set<long long int> s’"
+    },
+    {
+      "mod_line": [
+        4,
+        10
+      ],
+      "mod_code": [
+        "vector < int > s , v1 ;",
+        "long long j = 0 , d = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "conflicting declaration ‘std::set<long long int> s’"
+    }
+  ]
+}

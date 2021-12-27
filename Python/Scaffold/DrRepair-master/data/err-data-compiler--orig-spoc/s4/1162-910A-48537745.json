@@ -1,0 +1,855 @@
+{
+  "meta": {
+    "index": 1162,
+    "hitid": "3EKZL9T8Y8G0GX0Q1SFHSLOKFMSCHE",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "910A",
+    "subid": "48537745"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare recurse with string s , integers n , d , i , integer array dp as arguments , returning integer",
+      "code": "int recurse ( string s , int n , int d , int i , int dp [ ] )",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "for i = 1 to n exclusive",
+      "code": "for ( int i = 1 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "if s [ i ] is ' 1 '",
+      "code": "if ( s [ i ] == ' 1 ' )",
+      "indent": 2
+    },
+    {
+      "line": 3,
+      "text": "for j = i - 1 to maximum of 0 and i - d inclusive , decrementing j",
+      "code": "for ( int j = i - 1 ; j >= max ( 0 , i - d ) ; j -- )",
+      "indent": 3
+    },
+    {
+      "line": 4,
+      "text": "for s [ j ] is ' 1 '",
+      "code": "if ( s [ j ] == ' 1 ' )",
+      "indent": 4
+    },
+    {
+      "line": 5,
+      "text": "if dp [ j ] is INT_MAX",
+      "code": "if ( dp [ j ] == INT_MAX )",
+      "indent": 5
+    },
+    {
+      "line": 6,
+      "text": "set dp [ i ] to minimum of dp [ j ] and dp [ i ]",
+      "code": "dp [ i ] = min ( dp [ j ] , dp [ i ] ) ;",
+      "indent": 6
+    },
+    {
+      "line": 7,
+      "text": "else",
+      "code": "else",
+      "indent": 5
+    },
+    {
+      "line": 8,
+      "text": "set dp [ i ] to minimum of dp [ j ] + 1 and dp [ i ]",
+      "code": "dp [ i ] = min ( dp [ j ] + 1 , dp [ i ] ) ;",
+      "indent": 6
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 5
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 4
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "return dp [ n - 1 ]",
+      "code": "return dp [ n - 1 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 17,
+      "text": "create integers n , d",
+      "code": "int n , d ;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "read n read d",
+      "code": "cin >> n >> d ;",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "create string s",
+      "code": "string s ;",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "create integer array dp with size n",
+      "code": "int dp [ n ] ;",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "for i = 0 to n exclusive , set dp [ i ] to INT_MAX",
+      "code": "for ( int i = 0 ; i < n ; i ++ ) { dp [ i ] = INT_MAX ; }",
+      "indent": 1
+    },
+    {
+      "line": 22,
+      "text": "set dp [ 0 ] to 0",
+      "code": "dp [ 0 ] = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "read s",
+      "code": "cin >> s ;",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "create integer ans with ans = result of run recurse with s , n , d , 0 , dp as arguments",
+      "code": "int ans = recurse ( s , n , d , 0 , dp ) ;",
+      "indent": 1
+    },
+    {
+      "line": 25,
+      "text": "if ans is INT_MAX",
+      "code": "if ( ans == INT_MAX )",
+      "indent": 1
+    },
+    {
+      "line": 26,
+      "text": "print - 1 print newline",
+      "code": "cout << - 1 << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 27,
+      "text": "else",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 28,
+      "text": "print ans print newline",
+      "code": "cout << ans << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 29,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 30,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int recurse ( string s , string n , string d , int i , int i )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int i’"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "string recurse ( string s , string n , string d , int i , int i )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int i’"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "for ( j = i - 1 ; j >= max ( 0 , i - d ) ; j -- )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "for ( ; s [ j ] == ' 1 ' ; s ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "no ‘operator++(int)’ declared for postfix ‘++’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "dp [ i ] = min ( dp [ j ] + 1 + dp [ i ] ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "no matching function for call to ‘min(int)’"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "return dp [ n - 1 ] ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        18
+      ],
+      "mod_code": [
+        "cin >> n >> k ;"
+      ],
+      "err_line": 18,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        19
+      ],
+      "mod_code": [
+        "string n ;"
+      ],
+      "err_line": 19,
+      "err_msg": "conflicting declaration ‘std::__cxx11::string n’"
+    },
+    {
+      "mod_line": [
+        20
+      ],
+      "mod_code": [
+        "long int dp [ n ] ;"
+      ],
+      "err_line": 24,
+      "err_msg": "cannot convert ‘long int*’ to ‘int*’ for argument ‘5’ to ‘int recurse(std::__cxx11::string, int, int, int, int*)’"
+    },
+    {
+      "mod_line": [
+        23
+      ],
+      "mod_code": [
+        "gets ( s ) ;"
+      ],
+      "err_line": 23,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    },
+    {
+      "mod_line": [
+        0,
+        4
+      ],
+      "mod_code": [
+        "int recurse ( string s , string n , string d , int i , int i )",
+        "for ( ; s [ j ] == ' 1 ' ; j ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int i’"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        24
+      ],
+      "mod_code": [
+        "int recurse ( string s , string n , string d , int i , int i )",
+        "for ( ; s [ j ] == ' 1 ' ; j ++ )",
+        "int ans = recurse ( s , d , d , 0 , dp ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int i’"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        24,
+        22
+      ],
+      "mod_code": [
+        "int recurse ( string s , string n , string d , int i , int i )",
+        "for ( ; s [ j ] == ' 1 ' ; j ++ )",
+        "int ans = recurse ( s , d , d , 0 , dp ) ;",
+        "dp [ 0 ] = ' 0 ' ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int i’"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        24,
+        14
+      ],
+      "mod_code": [
+        "int recurse ( string s , string n , string d , int i , int i )",
+        "for ( ; s [ j ] == ' 1 ' ; j ++ )",
+        "int ans = recurse ( s , d , d , 0 , dp ) ;",
+        "return dp [ n - 1 ] ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int i’"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        24,
+        28
+      ],
+      "mod_code": [
+        "int recurse ( string s , string n , string d , int i , int i )",
+        "for ( ; s [ j ] == ' 1 ' ; j ++ )",
+        "int ans = recurse ( s , d , d , 0 , dp ) ;",
+        "cout << ans ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int i’"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        22
+      ],
+      "mod_code": [
+        "int recurse ( string s , string n , string d , int i , int i )",
+        "for ( ; s [ j ] == ' 1 ' ; j ++ )",
+        "dp [ 0 ] = ' 0 ' ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int i’"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        22,
+        14
+      ],
+      "mod_code": [
+        "int recurse ( string s , string n , string d , int i , int i )",
+        "for ( ; s [ j ] == ' 1 ' ; j ++ )",
+        "dp [ 0 ] = ' 0 ' ;",
+        "return dp [ n - 1 ] ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int i’"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        22,
+        28
+      ],
+      "mod_code": [
+        "int recurse ( string s , string n , string d , int i , int i )",
+        "for ( ; s [ j ] == ' 1 ' ; j ++ )",
+        "dp [ 0 ] = ' 0 ' ;",
+        "cout << ans ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int i’"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        14
+      ],
+      "mod_code": [
+        "int recurse ( string s , string n , string d , int i , int i )",
+        "for ( ; s [ j ] == ' 1 ' ; j ++ )",
+        "return dp [ n - 1 ] ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int i’"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        14,
+        28
+      ],
+      "mod_code": [
+        "int recurse ( string s , string n , string d , int i , int i )",
+        "for ( ; s [ j ] == ' 1 ' ; j ++ )",
+        "return dp [ n - 1 ] ] ;",
+        "cout << ans ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int i’"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        28
+      ],
+      "mod_code": [
+        "int recurse ( string s , string n , string d , int i , int i )",
+        "for ( ; s [ j ] == ' 1 ' ; j ++ )",
+        "cout << ans ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int i’"
+    },
+    {
+      "mod_line": [
+        0,
+        24
+      ],
+      "mod_code": [
+        "int recurse ( string s , string n , string d , int i , int i )",
+        "int ans = recurse ( s , d , d , 0 , dp ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int i’"
+    },
+    {
+      "mod_line": [
+        0,
+        24,
+        22
+      ],
+      "mod_code": [
+        "int recurse ( string s , string n , string d , int i , int i )",
+        "int ans = recurse ( s , d , d , 0 , dp ) ;",
+        "dp [ 0 ] = ' 0 ' ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int i’"
+    },
+    {
+      "mod_line": [
+        0,
+        24,
+        22,
+        14
+      ],
+      "mod_code": [
+        "int recurse ( string s , string n , string d , int i , int i )",
+        "int ans = recurse ( s , d , d , 0 , dp ) ;",
+        "dp [ 0 ] = ' 0 ' ;",
+        "return dp [ n - 1 ] ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int i’"
+    },
+    {
+      "mod_line": [
+        0,
+        24,
+        22,
+        28
+      ],
+      "mod_code": [
+        "int recurse ( string s , string n , string d , int i , int i )",
+        "int ans = recurse ( s , d , d , 0 , dp ) ;",
+        "dp [ 0 ] = ' 0 ' ;",
+        "cout << ans ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int i’"
+    },
+    {
+      "mod_line": [
+        0,
+        24,
+        14
+      ],
+      "mod_code": [
+        "int recurse ( string s , string n , string d , int i , int i )",
+        "int ans = recurse ( s , d , d , 0 , dp ) ;",
+        "return dp [ n - 1 ] ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int i’"
+    },
+    {
+      "mod_line": [
+        0,
+        24,
+        14,
+        28
+      ],
+      "mod_code": [
+        "int recurse ( string s , string n , string d , int i , int i )",
+        "int ans = recurse ( s , d , d , 0 , dp ) ;",
+        "return dp [ n - 1 ] ] ;",
+        "cout << ans ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int i’"
+    },
+    {
+      "mod_line": [
+        0,
+        24,
+        28
+      ],
+      "mod_code": [
+        "int recurse ( string s , string n , string d , int i , int i )",
+        "int ans = recurse ( s , d , d , 0 , dp ) ;",
+        "cout << ans ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int i’"
+    },
+    {
+      "mod_line": [
+        0,
+        22
+      ],
+      "mod_code": [
+        "int recurse ( string s , string n , string d , int i , int i )",
+        "dp [ 0 ] = ' 0 ' ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int i’"
+    },
+    {
+      "mod_line": [
+        0,
+        22,
+        14
+      ],
+      "mod_code": [
+        "int recurse ( string s , string n , string d , int i , int i )",
+        "dp [ 0 ] = ' 0 ' ;",
+        "return dp [ n - 1 ] ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int i’"
+    },
+    {
+      "mod_line": [
+        0,
+        22,
+        14,
+        28
+      ],
+      "mod_code": [
+        "int recurse ( string s , string n , string d , int i , int i )",
+        "dp [ 0 ] = ' 0 ' ;",
+        "return dp [ n - 1 ] ] ;",
+        "cout << ans ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int i’"
+    },
+    {
+      "mod_line": [
+        0,
+        22,
+        28
+      ],
+      "mod_code": [
+        "int recurse ( string s , string n , string d , int i , int i )",
+        "dp [ 0 ] = ' 0 ' ;",
+        "cout << ans ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int i’"
+    },
+    {
+      "mod_line": [
+        0,
+        14
+      ],
+      "mod_code": [
+        "int recurse ( string s , string n , string d , int i , int i )",
+        "return dp [ n - 1 ] ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int i’"
+    },
+    {
+      "mod_line": [
+        0,
+        14,
+        28
+      ],
+      "mod_code": [
+        "int recurse ( string s , string n , string d , int i , int i )",
+        "return dp [ n - 1 ] ] ;",
+        "cout << ans ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int i’"
+    },
+    {
+      "mod_line": [
+        0,
+        28
+      ],
+      "mod_code": [
+        "int recurse ( string s , string n , string d , int i , int i )",
+        "cout << ans ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int i’"
+    },
+    {
+      "mod_line": [
+        4,
+        24,
+        22,
+        14
+      ],
+      "mod_code": [
+        "for ( ; s [ j ] == ' 1 ' ; j ++ )",
+        "int ans = recurse ( s , d , d , 0 , dp ) ;",
+        "dp [ 0 ] = ' 0 ' ;",
+        "return dp [ n - 1 ] ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        24,
+        14
+      ],
+      "mod_code": [
+        "for ( ; s [ j ] == ' 1 ' ; j ++ )",
+        "int ans = recurse ( s , d , d , 0 , dp ) ;",
+        "return dp [ n - 1 ] ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        24,
+        14,
+        28
+      ],
+      "mod_code": [
+        "for ( ; s [ j ] == ' 1 ' ; j ++ )",
+        "int ans = recurse ( s , d , d , 0 , dp ) ;",
+        "return dp [ n - 1 ] ] ;",
+        "cout << ans ;"
+      ],
+      "err_line": 14,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        22,
+        14
+      ],
+      "mod_code": [
+        "for ( ; s [ j ] == ' 1 ' ; j ++ )",
+        "dp [ 0 ] = ' 0 ' ;",
+        "return dp [ n - 1 ] ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        22,
+        14,
+        28
+      ],
+      "mod_code": [
+        "for ( ; s [ j ] == ' 1 ' ; j ++ )",
+        "dp [ 0 ] = ' 0 ' ;",
+        "return dp [ n - 1 ] ] ;",
+        "cout << ans ;"
+      ],
+      "err_line": 14,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        14
+      ],
+      "mod_code": [
+        "for ( ; s [ j ] == ' 1 ' ; j ++ )",
+        "return dp [ n - 1 ] ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        14,
+        28
+      ],
+      "mod_code": [
+        "for ( ; s [ j ] == ' 1 ' ; j ++ )",
+        "return dp [ n - 1 ] ] ;",
+        "cout << ans ;"
+      ],
+      "err_line": 14,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        24,
+        22,
+        14
+      ],
+      "mod_code": [
+        "int ans = recurse ( s , d , d , 0 , dp ) ;",
+        "dp [ 0 ] = ' 0 ' ;",
+        "return dp [ n - 1 ] ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        24,
+        22,
+        14,
+        28
+      ],
+      "mod_code": [
+        "int ans = recurse ( s , d , d , 0 , dp ) ;",
+        "dp [ 0 ] = ' 0 ' ;",
+        "return dp [ n - 1 ] ] ;",
+        "cout << ans ;"
+      ],
+      "err_line": 14,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        24,
+        14
+      ],
+      "mod_code": [
+        "int ans = recurse ( s , d , d , 0 , dp ) ;",
+        "return dp [ n - 1 ] ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        24,
+        14,
+        28
+      ],
+      "mod_code": [
+        "int ans = recurse ( s , d , d , 0 , dp ) ;",
+        "return dp [ n - 1 ] ] ;",
+        "cout << ans ;"
+      ],
+      "err_line": 14,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        22,
+        14
+      ],
+      "mod_code": [
+        "dp [ 0 ] = ' 0 ' ;",
+        "return dp [ n - 1 ] ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        22,
+        14,
+        28
+      ],
+      "mod_code": [
+        "dp [ 0 ] = ' 0 ' ;",
+        "return dp [ n - 1 ] ] ;",
+        "cout << ans ;"
+      ],
+      "err_line": 14,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        28
+      ],
+      "mod_code": [
+        "return dp [ n - 1 ] ] ;",
+        "cout << ans ;"
+      ],
+      "err_line": 14,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    }
+  ]
+}

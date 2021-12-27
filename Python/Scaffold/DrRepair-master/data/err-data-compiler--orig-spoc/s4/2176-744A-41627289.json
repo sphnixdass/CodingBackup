@@ -1,0 +1,1215 @@
+{
+  "meta": {
+    "index": 2176,
+    "hitid": "3BVS8WK9Q0PH2NJ4TA17HDJHY14IBE",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "744A",
+    "subid": "41627289"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare new int variables n , m and k",
+      "code": "int n , m , k ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare an arrays of integers pre , tree and ki with 1005 elements each",
+      "code": "int pre [ 1005 ] , tree [ 1005 ] , ki [ 1005 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "gover is a new array of booleans with 1005 elements",
+      "code": "bool gover [ 1005 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "declare vector of integers nogover",
+      "code": "vector < int > nogover ;",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "define function init",
+      "code": "void init ( )",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "for integer i = 1 to n inclusive , change the value of pre [ i ] to i",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) pre [ i ] = i ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 7,
+      "text": "int function find with int argument x",
+      "code": "int find ( int x )",
+      "indent": 0
+    },
+    {
+      "line": 8,
+      "text": "return x if pre [ x ] = x or set value of pre [ x ] to find ( pre [ x ] ) and return it",
+      "code": "return pre [ x ] == x ? x : pre [ x ] = find ( pre [ x ] ) ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 10,
+      "text": "Union is a void function with int arguments x and y",
+      "code": "void Union ( int x , int y )",
+      "indent": 0
+    },
+    {
+      "line": 11,
+      "text": "create integer variables fa = find ( x ) and fb = find ( y )",
+      "code": "int fa = find ( x ) , fb = find ( y ) ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "if fa ! = fb , set pre [ fa ] to fb",
+      "code": "if ( fa != fb ) { pre [ fa ] = fb ; }",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 15,
+      "text": "create integers a , b , ans and max",
+      "code": "int a , b , ans , max ;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "loop , reading n , m and k from the input",
+      "code": "while ( cin >> n >> m >> k )",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "init ( )",
+      "code": "init ( ) ;",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "change the values of first sizeof ( tree ) bytes at the pointer tree to 0",
+      "code": "memset ( tree , 0 , sizeof ( tree ) ) ;",
+      "indent": 2
+    },
+    {
+      "line": 19,
+      "text": "set first sizeof ( gover ) bytes at the pointer gover to false",
+      "code": "memset ( gover , false , sizeof ( gover ) ) ;",
+      "indent": 2
+    },
+    {
+      "line": 20,
+      "text": "clear nogover",
+      "code": "nogover . clear ( ) ;",
+      "indent": 2
+    },
+    {
+      "line": 21,
+      "text": "in a for loop , change i from 0 to k exclusive , read standard input to ki [ i ] on each loop",
+      "code": "for ( int i = 0 ; i < k ; i ++ ) { cin >> ki [ i ] ; }",
+      "indent": 2
+    },
+    {
+      "line": 22,
+      "text": "for integer i = 0 to m exclusive",
+      "code": "for ( int i = 0 ; i < m ; i ++ )",
+      "indent": 2
+    },
+    {
+      "line": 23,
+      "text": "read a and b from the input",
+      "code": "cin >> a >> b ;",
+      "indent": 3
+    },
+    {
+      "line": 24,
+      "text": "call Union ( a , b )",
+      "code": "Union ( a , b ) ;",
+      "indent": 3
+    },
+    {
+      "line": 25,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 26,
+      "text": "for integer i = 0 to k exclusive , set gover [ find ( ki [ i ] ) ] to true",
+      "code": "for ( int i = 0 ; i < k ; i ++ ) gover [ find ( ki [ i ] ) ] = true ;",
+      "indent": 2
+    },
+    {
+      "line": 27,
+      "text": "for i from 1 to n inclusive , increment tree [ find ( i ) ] by one",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) { tree [ find ( i ) ] ++ ; }",
+      "indent": 2
+    },
+    {
+      "line": 28,
+      "text": "assign the new value = 0 to ans and max",
+      "code": "ans = 0 , max = 0 ;",
+      "indent": 2
+    },
+    {
+      "line": 29,
+      "text": "for i = 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 2
+    },
+    {
+      "line": 30,
+      "text": "if find ( i ) returned i",
+      "code": "if ( find ( i ) == i )",
+      "indent": 3
+    },
+    {
+      "line": 31,
+      "text": "if gover [ i ] is true",
+      "code": "if ( gover [ i ] )",
+      "indent": 4
+    },
+    {
+      "line": 32,
+      "text": "change max to i if tree [ i ] > tree [ max ] or max otherwise",
+      "code": "max = tree [ i ] > tree [ max ] ? i : max ;",
+      "indent": 5
+    },
+    {
+      "line": 33,
+      "text": "else",
+      "code": "else",
+      "indent": 4
+    },
+    {
+      "line": 34,
+      "text": "push tree [ i ] to nogover",
+      "code": "nogover . push_back ( tree [ i ] ) ;",
+      "indent": 5
+    },
+    {
+      "line": 35,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 4
+    },
+    {
+      "line": 36,
+      "text": "change ans to the sum of ans and tree [ i ] * ( tree [ i ] - 1 ) / 2",
+      "code": "ans += tree [ i ] * ( tree [ i ] - 1 ) / 2 ;",
+      "indent": 4
+    },
+    {
+      "line": 37,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 38,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 39,
+      "text": "for integer i = 0 to length of nogover exclusive",
+      "code": "for ( int i = 0 ; i < nogover . size ( ) ; i ++ )",
+      "indent": 2
+    },
+    {
+      "line": 40,
+      "text": "start the loop for the variable j from i + 1 to length of nogover exclusive , changing ans to ans + nogover [ i ] * nogover [ j ] on each iteration",
+      "code": "for ( int j = i + 1 ; j < nogover . size ( ) ; j ++ ) ans += nogover [ i ] * nogover [ j ] ;",
+      "indent": 3
+    },
+    {
+      "line": 41,
+      "text": "change ans to ans + nogover [ i ] * tree [ max ]",
+      "code": "ans += nogover [ i ] * tree [ max ] ;",
+      "indent": 3
+    },
+    {
+      "line": 42,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 43,
+      "text": "print ans - m to the standard output",
+      "code": "cout << ans - m << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 44,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 45,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 46,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int pre [ 1005 ] , tree [ 1005 ] , ki ;"
+      ],
+      "err_line": 21,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "int find ( int x ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "void function ( int x , int y )"
+      ],
+      "err_line": 24,
+      "err_msg": "‘Union’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        26
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < k ; i ++ ) { gover [ find ( ki ] ) ; }"
+      ],
+      "err_line": 26,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        34
+      ],
+      "mod_code": [
+        "nogover . push ( tree [ i ] ) ;"
+      ],
+      "err_line": 34,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘push’"
+    },
+    {
+      "mod_line": [
+        39
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < nogover . length ( ) ; i ++ )"
+      ],
+      "err_line": 39,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int n , m , k , k ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int k’"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int pre [ 1005 ] , tree [ 1005 ] , tree [ 1005 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int tree [1005]’"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "void init ( ) { }"
+      ],
+      "err_line": 5,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "return pre [ x ] == x ? x [ x ] = find ( pre [ x ] ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "int fa = find ( x ) = find ( y ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "int a , b , ans = max ;"
+      ],
+      "err_line": 15,
+      "err_msg": "cannot resolve overloaded function ‘max’ based on conversion to type ‘int’"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "while ( cin >> n >> m >> k ;"
+      ],
+      "err_line": 16,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "init ( ) << ;"
+      ],
+      "err_line": 17,
+      "err_msg": "expected primary-expression before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        18
+      ],
+      "mod_code": [
+        "memset ( tree = 0 , sizeof ( tree ) ) ;"
+      ],
+      "err_line": 18,
+      "err_msg": "incompatible types in assignment of ‘int’ to ‘int [1005]’"
+    },
+    {
+      "mod_line": [
+        19
+      ],
+      "mod_code": [
+        "memset ( gover , false ( gover ) ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "expression cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        21
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < k ; i ++ ) cin >> ki [ i ] ;"
+      ],
+      "err_line": 21,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        24
+      ],
+      "mod_code": [
+        "Union ( a , b ) ) ;"
+      ],
+      "err_line": 24,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        26
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < k ; i ++ ) gover [ find ( ki ] ) ] = true ;"
+      ],
+      "err_line": 26,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        28
+      ],
+      "mod_code": [
+        "ans = max ( ans ) ;"
+      ],
+      "err_line": 28,
+      "err_msg": "‘max’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        29
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 29,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        40
+      ],
+      "mod_code": [
+        "for ( int j = i + 1 ; j < nogover . length ( ) ; j ++ ) { ans += nogover [ i ] * nogover [ j ] ; }"
+      ],
+      "err_line": 40,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        1,
+        7
+      ],
+      "mod_code": [
+        "int pre [ 1005 ] , tree [ 1005 ] , ki ;",
+        "int find ( int x ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        10
+      ],
+      "mod_code": [
+        "int pre [ 1005 ] , tree [ 1005 ] , ki ;",
+        "int find ( int x ) ;",
+        "void function ( int x , int y )"
+      ],
+      "err_line": 8,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        10,
+        26
+      ],
+      "mod_code": [
+        "int pre [ 1005 ] , tree [ 1005 ] , ki ;",
+        "int find ( int x ) ;",
+        "void function ( int x , int y )",
+        "for ( int i = 0 ; i < k ; i ++ ) { gover [ find ( ki ] ) ; }"
+      ],
+      "err_line": 8,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        10,
+        34
+      ],
+      "mod_code": [
+        "int pre [ 1005 ] , tree [ 1005 ] , ki ;",
+        "int find ( int x ) ;",
+        "void function ( int x , int y )",
+        "nogover . push ( tree [ i ] ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        10,
+        39
+      ],
+      "mod_code": [
+        "int pre [ 1005 ] , tree [ 1005 ] , ki ;",
+        "int find ( int x ) ;",
+        "void function ( int x , int y )",
+        "for ( int i = 0 ; i < nogover . length ( ) ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        26
+      ],
+      "mod_code": [
+        "int pre [ 1005 ] , tree [ 1005 ] , ki ;",
+        "int find ( int x ) ;",
+        "for ( int i = 0 ; i < k ; i ++ ) { gover [ find ( ki ] ) ; }"
+      ],
+      "err_line": 8,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        26,
+        34
+      ],
+      "mod_code": [
+        "int pre [ 1005 ] , tree [ 1005 ] , ki ;",
+        "int find ( int x ) ;",
+        "for ( int i = 0 ; i < k ; i ++ ) { gover [ find ( ki ] ) ; }",
+        "nogover . push ( tree [ i ] ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        26,
+        39
+      ],
+      "mod_code": [
+        "int pre [ 1005 ] , tree [ 1005 ] , ki ;",
+        "int find ( int x ) ;",
+        "for ( int i = 0 ; i < k ; i ++ ) { gover [ find ( ki ] ) ; }",
+        "for ( int i = 0 ; i < nogover . length ( ) ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        34
+      ],
+      "mod_code": [
+        "int pre [ 1005 ] , tree [ 1005 ] , ki ;",
+        "int find ( int x ) ;",
+        "nogover . push ( tree [ i ] ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        34,
+        39
+      ],
+      "mod_code": [
+        "int pre [ 1005 ] , tree [ 1005 ] , ki ;",
+        "int find ( int x ) ;",
+        "nogover . push ( tree [ i ] ) ;",
+        "for ( int i = 0 ; i < nogover . length ( ) ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        39
+      ],
+      "mod_code": [
+        "int pre [ 1005 ] , tree [ 1005 ] , ki ;",
+        "int find ( int x ) ;",
+        "for ( int i = 0 ; i < nogover . length ( ) ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        10
+      ],
+      "mod_code": [
+        "int pre [ 1005 ] , tree [ 1005 ] , ki ;",
+        "void function ( int x , int y )"
+      ],
+      "err_line": 21,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        10,
+        26
+      ],
+      "mod_code": [
+        "int pre [ 1005 ] , tree [ 1005 ] , ki ;",
+        "void function ( int x , int y )",
+        "for ( int i = 0 ; i < k ; i ++ ) { gover [ find ( ki ] ) ; }"
+      ],
+      "err_line": 21,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        10,
+        26,
+        34
+      ],
+      "mod_code": [
+        "int pre [ 1005 ] , tree [ 1005 ] , ki ;",
+        "void function ( int x , int y )",
+        "for ( int i = 0 ; i < k ; i ++ ) { gover [ find ( ki ] ) ; }",
+        "nogover . push ( tree [ i ] ) ;"
+      ],
+      "err_line": 21,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        10,
+        26,
+        39
+      ],
+      "mod_code": [
+        "int pre [ 1005 ] , tree [ 1005 ] , ki ;",
+        "void function ( int x , int y )",
+        "for ( int i = 0 ; i < k ; i ++ ) { gover [ find ( ki ] ) ; }",
+        "for ( int i = 0 ; i < nogover . length ( ) ; i ++ )"
+      ],
+      "err_line": 21,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        10,
+        34
+      ],
+      "mod_code": [
+        "int pre [ 1005 ] , tree [ 1005 ] , ki ;",
+        "void function ( int x , int y )",
+        "nogover . push ( tree [ i ] ) ;"
+      ],
+      "err_line": 21,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        10,
+        34,
+        39
+      ],
+      "mod_code": [
+        "int pre [ 1005 ] , tree [ 1005 ] , ki ;",
+        "void function ( int x , int y )",
+        "nogover . push ( tree [ i ] ) ;",
+        "for ( int i = 0 ; i < nogover . length ( ) ; i ++ )"
+      ],
+      "err_line": 21,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        10,
+        39
+      ],
+      "mod_code": [
+        "int pre [ 1005 ] , tree [ 1005 ] , ki ;",
+        "void function ( int x , int y )",
+        "for ( int i = 0 ; i < nogover . length ( ) ; i ++ )"
+      ],
+      "err_line": 21,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        26
+      ],
+      "mod_code": [
+        "int pre [ 1005 ] , tree [ 1005 ] , ki ;",
+        "for ( int i = 0 ; i < k ; i ++ ) { gover [ find ( ki ] ) ; }"
+      ],
+      "err_line": 21,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        26,
+        34
+      ],
+      "mod_code": [
+        "int pre [ 1005 ] , tree [ 1005 ] , ki ;",
+        "for ( int i = 0 ; i < k ; i ++ ) { gover [ find ( ki ] ) ; }",
+        "nogover . push ( tree [ i ] ) ;"
+      ],
+      "err_line": 21,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        26,
+        34,
+        39
+      ],
+      "mod_code": [
+        "int pre [ 1005 ] , tree [ 1005 ] , ki ;",
+        "for ( int i = 0 ; i < k ; i ++ ) { gover [ find ( ki ] ) ; }",
+        "nogover . push ( tree [ i ] ) ;",
+        "for ( int i = 0 ; i < nogover . length ( ) ; i ++ )"
+      ],
+      "err_line": 21,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        26,
+        39
+      ],
+      "mod_code": [
+        "int pre [ 1005 ] , tree [ 1005 ] , ki ;",
+        "for ( int i = 0 ; i < k ; i ++ ) { gover [ find ( ki ] ) ; }",
+        "for ( int i = 0 ; i < nogover . length ( ) ; i ++ )"
+      ],
+      "err_line": 21,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        34
+      ],
+      "mod_code": [
+        "int pre [ 1005 ] , tree [ 1005 ] , ki ;",
+        "nogover . push ( tree [ i ] ) ;"
+      ],
+      "err_line": 21,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        34,
+        39
+      ],
+      "mod_code": [
+        "int pre [ 1005 ] , tree [ 1005 ] , ki ;",
+        "nogover . push ( tree [ i ] ) ;",
+        "for ( int i = 0 ; i < nogover . length ( ) ; i ++ )"
+      ],
+      "err_line": 21,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        39
+      ],
+      "mod_code": [
+        "int pre [ 1005 ] , tree [ 1005 ] , ki ;",
+        "for ( int i = 0 ; i < nogover . length ( ) ; i ++ )"
+      ],
+      "err_line": 21,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        7,
+        10
+      ],
+      "mod_code": [
+        "int find ( int x ) ;",
+        "void function ( int x , int y )"
+      ],
+      "err_line": 8,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        10,
+        26
+      ],
+      "mod_code": [
+        "int find ( int x ) ;",
+        "void function ( int x , int y )",
+        "for ( int i = 0 ; i < k ; i ++ ) { gover [ find ( ki ] ) ; }"
+      ],
+      "err_line": 8,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        10,
+        26,
+        34
+      ],
+      "mod_code": [
+        "int find ( int x ) ;",
+        "void function ( int x , int y )",
+        "for ( int i = 0 ; i < k ; i ++ ) { gover [ find ( ki ] ) ; }",
+        "nogover . push ( tree [ i ] ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        10,
+        26,
+        39
+      ],
+      "mod_code": [
+        "int find ( int x ) ;",
+        "void function ( int x , int y )",
+        "for ( int i = 0 ; i < k ; i ++ ) { gover [ find ( ki ] ) ; }",
+        "for ( int i = 0 ; i < nogover . length ( ) ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        10,
+        34
+      ],
+      "mod_code": [
+        "int find ( int x ) ;",
+        "void function ( int x , int y )",
+        "nogover . push ( tree [ i ] ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        10,
+        34,
+        39
+      ],
+      "mod_code": [
+        "int find ( int x ) ;",
+        "void function ( int x , int y )",
+        "nogover . push ( tree [ i ] ) ;",
+        "for ( int i = 0 ; i < nogover . length ( ) ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        10,
+        39
+      ],
+      "mod_code": [
+        "int find ( int x ) ;",
+        "void function ( int x , int y )",
+        "for ( int i = 0 ; i < nogover . length ( ) ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        26
+      ],
+      "mod_code": [
+        "int find ( int x ) ;",
+        "for ( int i = 0 ; i < k ; i ++ ) { gover [ find ( ki ] ) ; }"
+      ],
+      "err_line": 8,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        26,
+        34
+      ],
+      "mod_code": [
+        "int find ( int x ) ;",
+        "for ( int i = 0 ; i < k ; i ++ ) { gover [ find ( ki ] ) ; }",
+        "nogover . push ( tree [ i ] ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        26,
+        34,
+        39
+      ],
+      "mod_code": [
+        "int find ( int x ) ;",
+        "for ( int i = 0 ; i < k ; i ++ ) { gover [ find ( ki ] ) ; }",
+        "nogover . push ( tree [ i ] ) ;",
+        "for ( int i = 0 ; i < nogover . length ( ) ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        26,
+        39
+      ],
+      "mod_code": [
+        "int find ( int x ) ;",
+        "for ( int i = 0 ; i < k ; i ++ ) { gover [ find ( ki ] ) ; }",
+        "for ( int i = 0 ; i < nogover . length ( ) ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        34
+      ],
+      "mod_code": [
+        "int find ( int x ) ;",
+        "nogover . push ( tree [ i ] ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        34,
+        39
+      ],
+      "mod_code": [
+        "int find ( int x ) ;",
+        "nogover . push ( tree [ i ] ) ;",
+        "for ( int i = 0 ; i < nogover . length ( ) ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        39
+      ],
+      "mod_code": [
+        "int find ( int x ) ;",
+        "for ( int i = 0 ; i < nogover . length ( ) ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        26
+      ],
+      "mod_code": [
+        "void function ( int x , int y )",
+        "for ( int i = 0 ; i < k ; i ++ ) { gover [ find ( ki ] ) ; }"
+      ],
+      "err_line": 24,
+      "err_msg": "‘Union’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        26,
+        34
+      ],
+      "mod_code": [
+        "void function ( int x , int y )",
+        "for ( int i = 0 ; i < k ; i ++ ) { gover [ find ( ki ] ) ; }",
+        "nogover . push ( tree [ i ] ) ;"
+      ],
+      "err_line": 24,
+      "err_msg": "‘Union’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        26,
+        34,
+        39
+      ],
+      "mod_code": [
+        "void function ( int x , int y )",
+        "for ( int i = 0 ; i < k ; i ++ ) { gover [ find ( ki ] ) ; }",
+        "nogover . push ( tree [ i ] ) ;",
+        "for ( int i = 0 ; i < nogover . length ( ) ; i ++ )"
+      ],
+      "err_line": 24,
+      "err_msg": "‘Union’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        26,
+        39
+      ],
+      "mod_code": [
+        "void function ( int x , int y )",
+        "for ( int i = 0 ; i < k ; i ++ ) { gover [ find ( ki ] ) ; }",
+        "for ( int i = 0 ; i < nogover . length ( ) ; i ++ )"
+      ],
+      "err_line": 24,
+      "err_msg": "‘Union’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        34
+      ],
+      "mod_code": [
+        "void function ( int x , int y )",
+        "nogover . push ( tree [ i ] ) ;"
+      ],
+      "err_line": 24,
+      "err_msg": "‘Union’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        34,
+        39
+      ],
+      "mod_code": [
+        "void function ( int x , int y )",
+        "nogover . push ( tree [ i ] ) ;",
+        "for ( int i = 0 ; i < nogover . length ( ) ; i ++ )"
+      ],
+      "err_line": 24,
+      "err_msg": "‘Union’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        39
+      ],
+      "mod_code": [
+        "void function ( int x , int y )",
+        "for ( int i = 0 ; i < nogover . length ( ) ; i ++ )"
+      ],
+      "err_line": 24,
+      "err_msg": "‘Union’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        26,
+        34
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < k ; i ++ ) { gover [ find ( ki ] ) ; }",
+        "nogover . push ( tree [ i ] ) ;"
+      ],
+      "err_line": 26,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        26,
+        34,
+        39
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < k ; i ++ ) { gover [ find ( ki ] ) ; }",
+        "nogover . push ( tree [ i ] ) ;",
+        "for ( int i = 0 ; i < nogover . length ( ) ; i ++ )"
+      ],
+      "err_line": 26,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        26,
+        39
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < k ; i ++ ) { gover [ find ( ki ] ) ; }",
+        "for ( int i = 0 ; i < nogover . length ( ) ; i ++ )"
+      ],
+      "err_line": 26,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        34,
+        39
+      ],
+      "mod_code": [
+        "nogover . push ( tree [ i ] ) ;",
+        "for ( int i = 0 ; i < nogover . length ( ) ; i ++ )"
+      ],
+      "err_line": 34,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘push’"
+    }
+  ]
+}

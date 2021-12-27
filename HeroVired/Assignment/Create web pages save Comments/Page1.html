@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page1</title>
+    <link rel="stylesheet" href="/css/main.css">
+    
+    <script>
+
+
+        function sayHello() {
+
+
+            var data = {
+                        "Data" : document.getElementById("comment").value
+                    }
+
+            var http = new XMLHttpRequest();
+            var url = 'postdata';
+            http.open('POST', url, true);
+            http.setRequestHeader('Content-type', 'text/html');
+
+            http.onreadystatechange = function() {//Call a function when the state changes.
+                if(http.readyState == 4 && http.status == 200) {
+                    alert(http.responseText.toString());
+                   console.log(http.responseText.toString());
+                }
+            }
+            http.send(JSON.stringify(data));
+        
+                    }
+        </script>
+        
+
+    
+</head>
+<body>
+    <h1>Assignment - user comments --- by S. Gnanadass</h1>
+    <div class="container">
+    
+    <textarea id="comment" rows="4" cols="50" name="comment" form="usrform">Enter text here...</textarea>
+
+    <input id="submitBtn" type="button" onclick="sayHello()" value="WriteToFile" />
+    <br>
+    
+    <div id="id01"></div>
+      
+    </div>
+</body>
+</html>

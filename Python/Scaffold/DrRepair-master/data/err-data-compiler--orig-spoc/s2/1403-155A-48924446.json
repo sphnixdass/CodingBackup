@@ -1,0 +1,809 @@
+{
+  "meta": {
+    "index": 1403,
+    "hitid": "3D0LPO3EABTNBHNI1XSW9LD4VJPYO8",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "155A",
+    "subid": "48924446"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create integer variable with name n",
+      "code": "int n ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "create new array of integers arr with size n",
+      "code": "int arr [ n ] ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "read n elements from the input into arr",
+      "code": "for ( int i = 0 ; i < n ; i ++ ) cin >> arr [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "define integer maxx = arr [ 0 ]",
+      "code": "int maxx = arr [ 0 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "create integer variable minn with value arr [ 0 ]",
+      "code": "int minn = arr [ 0 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "create integer c = 0",
+      "code": "int c = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "for i from 1 to n exclusive incrementing i",
+      "code": "for ( int i = 1 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "increment c by one if arr [ i ] > maxx or arr [ i ] < minn",
+      "code": "if ( arr [ i ] > maxx || arr [ i ] < minn ) c ++ ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "change maxx to max of maxx and arr [ i ]",
+      "code": "maxx = max ( maxx , arr [ i ] ) ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "set minn to min of minn and arr [ i ]",
+      "code": "minn = min ( minn , arr [ i ] ) ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "print c",
+      "code": "cout << c << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "arr [ n ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘arr’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "maxx = arr [ 0 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘maxx’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "int minn [ 0 ] = arr [ 0 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i < n ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "maxx = max ( maxx [ i ] , arr [ i ] ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        11,
+        6
+      ],
+      "mod_code": [
+        "int minn = min ( minn , arr [ i ] ) ;",
+        "int minn [ 0 ] = arr [ 0 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        11,
+        6,
+        5
+      ],
+      "mod_code": [
+        "int minn = min ( minn , arr [ i ] ) ;",
+        "int minn [ 0 ] = arr [ 0 ] ;",
+        "maxx = arr [ 0 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘maxx’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        6,
+        5,
+        7
+      ],
+      "mod_code": [
+        "int minn = min ( minn , arr [ i ] ) ;",
+        "int minn [ 0 ] = arr [ 0 ] ;",
+        "maxx = arr [ 0 ] ;",
+        "int c = 1 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘maxx’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        6,
+        5,
+        2
+      ],
+      "mod_code": [
+        "int minn = min ( minn , arr [ i ] ) ;",
+        "int minn [ 0 ] = arr [ 0 ] ;",
+        "maxx = arr [ 0 ] ;",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘maxx’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        6,
+        5,
+        10
+      ],
+      "mod_code": [
+        "int minn = min ( minn , arr [ i ] ) ;",
+        "int minn [ 0 ] = arr [ 0 ] ;",
+        "maxx = arr [ 0 ] ;",
+        "maxx = max ( maxx [ i ] , arr [ i ] ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘maxx’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        6,
+        7
+      ],
+      "mod_code": [
+        "int minn = min ( minn , arr [ i ] ) ;",
+        "int minn [ 0 ] = arr [ 0 ] ;",
+        "int c = 1 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        11,
+        6,
+        7,
+        2
+      ],
+      "mod_code": [
+        "int minn = min ( minn , arr [ i ] ) ;",
+        "int minn [ 0 ] = arr [ 0 ] ;",
+        "int c = 1 ;",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        11,
+        6,
+        7,
+        10
+      ],
+      "mod_code": [
+        "int minn = min ( minn , arr [ i ] ) ;",
+        "int minn [ 0 ] = arr [ 0 ] ;",
+        "int c = 1 ;",
+        "maxx = max ( maxx [ i ] , arr [ i ] ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        11,
+        6,
+        2
+      ],
+      "mod_code": [
+        "int minn = min ( minn , arr [ i ] ) ;",
+        "int minn [ 0 ] = arr [ 0 ] ;",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        11,
+        6,
+        2,
+        10
+      ],
+      "mod_code": [
+        "int minn = min ( minn , arr [ i ] ) ;",
+        "int minn [ 0 ] = arr [ 0 ] ;",
+        "n = getchar ( ) ;",
+        "maxx = max ( maxx [ i ] , arr [ i ] ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        11,
+        6,
+        10
+      ],
+      "mod_code": [
+        "int minn = min ( minn , arr [ i ] ) ;",
+        "int minn [ 0 ] = arr [ 0 ] ;",
+        "maxx = max ( maxx [ i ] , arr [ i ] ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        11,
+        5
+      ],
+      "mod_code": [
+        "int minn = min ( minn , arr [ i ] ) ;",
+        "maxx = arr [ 0 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘maxx’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        5,
+        7
+      ],
+      "mod_code": [
+        "int minn = min ( minn , arr [ i ] ) ;",
+        "maxx = arr [ 0 ] ;",
+        "int c = 1 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘maxx’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        5,
+        7,
+        2
+      ],
+      "mod_code": [
+        "int minn = min ( minn , arr [ i ] ) ;",
+        "maxx = arr [ 0 ] ;",
+        "int c = 1 ;",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘maxx’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        5,
+        7,
+        10
+      ],
+      "mod_code": [
+        "int minn = min ( minn , arr [ i ] ) ;",
+        "maxx = arr [ 0 ] ;",
+        "int c = 1 ;",
+        "maxx = max ( maxx [ i ] , arr [ i ] ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘maxx’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        5,
+        2
+      ],
+      "mod_code": [
+        "int minn = min ( minn , arr [ i ] ) ;",
+        "maxx = arr [ 0 ] ;",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘maxx’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        5,
+        2,
+        10
+      ],
+      "mod_code": [
+        "int minn = min ( minn , arr [ i ] ) ;",
+        "maxx = arr [ 0 ] ;",
+        "n = getchar ( ) ;",
+        "maxx = max ( maxx [ i ] , arr [ i ] ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘maxx’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        5,
+        10
+      ],
+      "mod_code": [
+        "int minn = min ( minn , arr [ i ] ) ;",
+        "maxx = arr [ 0 ] ;",
+        "maxx = max ( maxx [ i ] , arr [ i ] ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘maxx’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        7,
+        2,
+        10
+      ],
+      "mod_code": [
+        "int minn = min ( minn , arr [ i ] ) ;",
+        "int c = 1 ;",
+        "n = getchar ( ) ;",
+        "maxx = max ( maxx [ i ] , arr [ i ] ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        11,
+        7,
+        10
+      ],
+      "mod_code": [
+        "int minn = min ( minn , arr [ i ] ) ;",
+        "int c = 1 ;",
+        "maxx = max ( maxx [ i ] , arr [ i ] ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        11,
+        2,
+        10
+      ],
+      "mod_code": [
+        "int minn = min ( minn , arr [ i ] ) ;",
+        "n = getchar ( ) ;",
+        "maxx = max ( maxx [ i ] , arr [ i ] ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        11,
+        10
+      ],
+      "mod_code": [
+        "int minn = min ( minn , arr [ i ] ) ;",
+        "maxx = max ( maxx [ i ] , arr [ i ] ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        6,
+        5
+      ],
+      "mod_code": [
+        "int minn [ 0 ] = arr [ 0 ] ;",
+        "maxx = arr [ 0 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘maxx’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        5,
+        7
+      ],
+      "mod_code": [
+        "int minn [ 0 ] = arr [ 0 ] ;",
+        "maxx = arr [ 0 ] ;",
+        "int c = 1 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘maxx’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        5,
+        7,
+        2
+      ],
+      "mod_code": [
+        "int minn [ 0 ] = arr [ 0 ] ;",
+        "maxx = arr [ 0 ] ;",
+        "int c = 1 ;",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘maxx’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        5,
+        7,
+        10
+      ],
+      "mod_code": [
+        "int minn [ 0 ] = arr [ 0 ] ;",
+        "maxx = arr [ 0 ] ;",
+        "int c = 1 ;",
+        "maxx = max ( maxx [ i ] , arr [ i ] ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘maxx’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        5,
+        2
+      ],
+      "mod_code": [
+        "int minn [ 0 ] = arr [ 0 ] ;",
+        "maxx = arr [ 0 ] ;",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘maxx’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        5,
+        2,
+        10
+      ],
+      "mod_code": [
+        "int minn [ 0 ] = arr [ 0 ] ;",
+        "maxx = arr [ 0 ] ;",
+        "n = getchar ( ) ;",
+        "maxx = max ( maxx [ i ] , arr [ i ] ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘maxx’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        5,
+        10
+      ],
+      "mod_code": [
+        "int minn [ 0 ] = arr [ 0 ] ;",
+        "maxx = arr [ 0 ] ;",
+        "maxx = max ( maxx [ i ] , arr [ i ] ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘maxx’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        7
+      ],
+      "mod_code": [
+        "int minn [ 0 ] = arr [ 0 ] ;",
+        "int c = 1 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        2
+      ],
+      "mod_code": [
+        "int minn [ 0 ] = arr [ 0 ] ;",
+        "int c = 1 ;",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        2,
+        10
+      ],
+      "mod_code": [
+        "int minn [ 0 ] = arr [ 0 ] ;",
+        "int c = 1 ;",
+        "n = getchar ( ) ;",
+        "maxx = max ( maxx [ i ] , arr [ i ] ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        10
+      ],
+      "mod_code": [
+        "int minn [ 0 ] = arr [ 0 ] ;",
+        "int c = 1 ;",
+        "maxx = max ( maxx [ i ] , arr [ i ] ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        6,
+        2
+      ],
+      "mod_code": [
+        "int minn [ 0 ] = arr [ 0 ] ;",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        6,
+        2,
+        10
+      ],
+      "mod_code": [
+        "int minn [ 0 ] = arr [ 0 ] ;",
+        "n = getchar ( ) ;",
+        "maxx = max ( maxx [ i ] , arr [ i ] ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        6,
+        10
+      ],
+      "mod_code": [
+        "int minn [ 0 ] = arr [ 0 ] ;",
+        "maxx = max ( maxx [ i ] , arr [ i ] ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        5,
+        7
+      ],
+      "mod_code": [
+        "maxx = arr [ 0 ] ;",
+        "int c = 1 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘maxx’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        7,
+        2
+      ],
+      "mod_code": [
+        "maxx = arr [ 0 ] ;",
+        "int c = 1 ;",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘maxx’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        7,
+        2,
+        10
+      ],
+      "mod_code": [
+        "maxx = arr [ 0 ] ;",
+        "int c = 1 ;",
+        "n = getchar ( ) ;",
+        "maxx = max ( maxx [ i ] , arr [ i ] ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘maxx’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        7,
+        10
+      ],
+      "mod_code": [
+        "maxx = arr [ 0 ] ;",
+        "int c = 1 ;",
+        "maxx = max ( maxx [ i ] , arr [ i ] ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘maxx’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        2
+      ],
+      "mod_code": [
+        "maxx = arr [ 0 ] ;",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘maxx’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        2,
+        10
+      ],
+      "mod_code": [
+        "maxx = arr [ 0 ] ;",
+        "n = getchar ( ) ;",
+        "maxx = max ( maxx [ i ] , arr [ i ] ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘maxx’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        10
+      ],
+      "mod_code": [
+        "maxx = arr [ 0 ] ;",
+        "maxx = max ( maxx [ i ] , arr [ i ] ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘maxx’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        2,
+        10
+      ],
+      "mod_code": [
+        "int c = 1 ;",
+        "n = getchar ( ) ;",
+        "maxx = max ( maxx [ i ] , arr [ i ] ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        7,
+        10
+      ],
+      "mod_code": [
+        "int c = 1 ;",
+        "maxx = max ( maxx [ i ] , arr [ i ] ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        10
+      ],
+      "mod_code": [
+        "n = getchar ( ) ;",
+        "maxx = max ( maxx [ i ] , arr [ i ] ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    }
+  ]
+}

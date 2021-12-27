@@ -1,0 +1,853 @@
+{
+  "meta": {
+    "index": 270,
+    "hitid": "3BO3NEOQM0BCJDECNW1BM2ZBGJGAI8",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "209A",
+    "subid": "45394013"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create long longs n , i , j , k , ans , s0 , s1",
+      "code": "long long n , i , j , k , ans , s0 , s1 ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "create long long vector dp initialized with ( n , 0 )",
+      "code": "vector < long long > dp ( n , 0 ) ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "set s0 to 0",
+      "code": "s0 = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "set s1 to 0",
+      "code": "s1 = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "set ans to 0",
+      "code": "ans = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "if i % 2 is 0",
+      "code": "if ( i % 2 == 0 )",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "set dp [ i ] to 1 + s1 , set s0 to ( s0 + dp [ i ] ) % 1000000007",
+      "code": "dp [ i ] = 1 + s1 , s0 = ( s0 + dp [ i ] ) % 1000000007 ;",
+      "indent": 3
+    },
+    {
+      "line": 10,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "set dp [ i ] to 1 + s0 , set s1 to ( s1 + dp [ i ] ) % 1000000007",
+      "code": "dp [ i ] = 1 + s0 , s1 = ( s1 + dp [ i ] ) % 1000000007 ;",
+      "indent": 3
+    },
+    {
+      "line": 12,
+      "text": "set ans to ( ans + dp [ i ] ) % 1000000007",
+      "code": "ans = ( ans + dp [ i ] ) % 1000000007 ;",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "print ans print \" \\ n \"",
+      "code": "cout << ans << \" \\n \" ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "while ( cin >> n )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘dp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "vector < long long ) ( n , 0 ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "int s0 = 0 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int s0’"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "int s1 = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "conflicting declaration ‘int s1’"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "int ans = 0 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "conflicting declaration ‘int ans’"
+    },
+    {
+      "mod_line": [
+        9,
+        4
+      ],
+      "mod_code": [
+        "dp [ i ] = 1 + s1 , s0 % s1 , s0 % 1000000007 , 1000000007 % 1000000007 ;",
+        "int s0 = 0 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int s0’"
+    },
+    {
+      "mod_line": [
+        9,
+        4,
+        3
+      ],
+      "mod_code": [
+        "dp [ i ] = 1 + s1 , s0 % s1 , s0 % 1000000007 , 1000000007 % 1000000007 ;",
+        "int s0 = 0 ;",
+        "vector < long long ) ( n , 0 ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        9,
+        4,
+        3,
+        5
+      ],
+      "mod_code": [
+        "dp [ i ] = 1 + s1 , s0 % s1 , s0 % 1000000007 , 1000000007 % 1000000007 ;",
+        "int s0 = 0 ;",
+        "vector < long long ) ( n , 0 ) ;",
+        "int s1 = 0 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        9,
+        4,
+        3,
+        2
+      ],
+      "mod_code": [
+        "dp [ i ] = 1 + s1 , s0 % s1 , s0 % 1000000007 , 1000000007 % 1000000007 ;",
+        "int s0 = 0 ;",
+        "vector < long long ) ( n , 0 ) ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 3,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        9,
+        4,
+        3,
+        14
+      ],
+      "mod_code": [
+        "dp [ i ] = 1 + s1 , s0 % s1 , s0 % 1000000007 , 1000000007 % 1000000007 ;",
+        "int s0 = 0 ;",
+        "vector < long long ) ( n , 0 ) ;",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 3,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        9,
+        4,
+        5
+      ],
+      "mod_code": [
+        "dp [ i ] = 1 + s1 , s0 % s1 , s0 % 1000000007 , 1000000007 % 1000000007 ;",
+        "int s0 = 0 ;",
+        "int s1 = 0 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int s0’"
+    },
+    {
+      "mod_line": [
+        9,
+        4,
+        5,
+        2
+      ],
+      "mod_code": [
+        "dp [ i ] = 1 + s1 , s0 % s1 , s0 % 1000000007 , 1000000007 % 1000000007 ;",
+        "int s0 = 0 ;",
+        "int s1 = 0 ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int s0’"
+    },
+    {
+      "mod_line": [
+        9,
+        4,
+        5,
+        14
+      ],
+      "mod_code": [
+        "dp [ i ] = 1 + s1 , s0 % s1 , s0 % 1000000007 , 1000000007 % 1000000007 ;",
+        "int s0 = 0 ;",
+        "int s1 = 0 ;",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int s0’"
+    },
+    {
+      "mod_line": [
+        9,
+        4,
+        2
+      ],
+      "mod_code": [
+        "dp [ i ] = 1 + s1 , s0 % s1 , s0 % 1000000007 , 1000000007 % 1000000007 ;",
+        "int s0 = 0 ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int s0’"
+    },
+    {
+      "mod_line": [
+        9,
+        4,
+        2,
+        14
+      ],
+      "mod_code": [
+        "dp [ i ] = 1 + s1 , s0 % s1 , s0 % 1000000007 , 1000000007 % 1000000007 ;",
+        "int s0 = 0 ;",
+        "while ( cin >> n )",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int s0’"
+    },
+    {
+      "mod_line": [
+        9,
+        4,
+        14
+      ],
+      "mod_code": [
+        "dp [ i ] = 1 + s1 , s0 % s1 , s0 % 1000000007 , 1000000007 % 1000000007 ;",
+        "int s0 = 0 ;",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int s0’"
+    },
+    {
+      "mod_line": [
+        9,
+        3
+      ],
+      "mod_code": [
+        "dp [ i ] = 1 + s1 , s0 % s1 , s0 % 1000000007 , 1000000007 % 1000000007 ;",
+        "vector < long long ) ( n , 0 ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        5
+      ],
+      "mod_code": [
+        "dp [ i ] = 1 + s1 , s0 % s1 , s0 % 1000000007 , 1000000007 % 1000000007 ;",
+        "vector < long long ) ( n , 0 ) ;",
+        "int s1 = 0 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        5,
+        2
+      ],
+      "mod_code": [
+        "dp [ i ] = 1 + s1 , s0 % s1 , s0 % 1000000007 , 1000000007 % 1000000007 ;",
+        "vector < long long ) ( n , 0 ) ;",
+        "int s1 = 0 ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 3,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        5,
+        14
+      ],
+      "mod_code": [
+        "dp [ i ] = 1 + s1 , s0 % s1 , s0 % 1000000007 , 1000000007 % 1000000007 ;",
+        "vector < long long ) ( n , 0 ) ;",
+        "int s1 = 0 ;",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 3,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        2
+      ],
+      "mod_code": [
+        "dp [ i ] = 1 + s1 , s0 % s1 , s0 % 1000000007 , 1000000007 % 1000000007 ;",
+        "vector < long long ) ( n , 0 ) ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 3,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        2,
+        14
+      ],
+      "mod_code": [
+        "dp [ i ] = 1 + s1 , s0 % s1 , s0 % 1000000007 , 1000000007 % 1000000007 ;",
+        "vector < long long ) ( n , 0 ) ;",
+        "while ( cin >> n )",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 3,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        14
+      ],
+      "mod_code": [
+        "dp [ i ] = 1 + s1 , s0 % s1 , s0 % 1000000007 , 1000000007 % 1000000007 ;",
+        "vector < long long ) ( n , 0 ) ;",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 3,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        9,
+        5
+      ],
+      "mod_code": [
+        "dp [ i ] = 1 + s1 , s0 % s1 , s0 % 1000000007 , 1000000007 % 1000000007 ;",
+        "int s1 = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "conflicting declaration ‘int s1’"
+    },
+    {
+      "mod_line": [
+        9,
+        5,
+        2
+      ],
+      "mod_code": [
+        "dp [ i ] = 1 + s1 , s0 % s1 , s0 % 1000000007 , 1000000007 % 1000000007 ;",
+        "int s1 = 0 ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 5,
+      "err_msg": "conflicting declaration ‘int s1’"
+    },
+    {
+      "mod_line": [
+        9,
+        5,
+        2,
+        14
+      ],
+      "mod_code": [
+        "dp [ i ] = 1 + s1 , s0 % s1 , s0 % 1000000007 , 1000000007 % 1000000007 ;",
+        "int s1 = 0 ;",
+        "while ( cin >> n )",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 5,
+      "err_msg": "conflicting declaration ‘int s1’"
+    },
+    {
+      "mod_line": [
+        9,
+        5,
+        14
+      ],
+      "mod_code": [
+        "dp [ i ] = 1 + s1 , s0 % s1 , s0 % 1000000007 , 1000000007 % 1000000007 ;",
+        "int s1 = 0 ;",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 5,
+      "err_msg": "conflicting declaration ‘int s1’"
+    },
+    {
+      "mod_line": [
+        9,
+        2
+      ],
+      "mod_code": [
+        "dp [ i ] = 1 + s1 , s0 % s1 , s0 % 1000000007 , 1000000007 % 1000000007 ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘dp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        2,
+        14
+      ],
+      "mod_code": [
+        "dp [ i ] = 1 + s1 , s0 % s1 , s0 % 1000000007 , 1000000007 % 1000000007 ;",
+        "while ( cin >> n )",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘dp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        3
+      ],
+      "mod_code": [
+        "int s0 = 0 ;",
+        "vector < long long ) ( n , 0 ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        4,
+        3,
+        5
+      ],
+      "mod_code": [
+        "int s0 = 0 ;",
+        "vector < long long ) ( n , 0 ) ;",
+        "int s1 = 0 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        4,
+        3,
+        5,
+        2
+      ],
+      "mod_code": [
+        "int s0 = 0 ;",
+        "vector < long long ) ( n , 0 ) ;",
+        "int s1 = 0 ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 3,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        4,
+        3,
+        5,
+        14
+      ],
+      "mod_code": [
+        "int s0 = 0 ;",
+        "vector < long long ) ( n , 0 ) ;",
+        "int s1 = 0 ;",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 3,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        4,
+        3,
+        2
+      ],
+      "mod_code": [
+        "int s0 = 0 ;",
+        "vector < long long ) ( n , 0 ) ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 3,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        4,
+        3,
+        2,
+        14
+      ],
+      "mod_code": [
+        "int s0 = 0 ;",
+        "vector < long long ) ( n , 0 ) ;",
+        "while ( cin >> n )",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 3,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        4,
+        3,
+        14
+      ],
+      "mod_code": [
+        "int s0 = 0 ;",
+        "vector < long long ) ( n , 0 ) ;",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 3,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        4,
+        5
+      ],
+      "mod_code": [
+        "int s0 = 0 ;",
+        "int s1 = 0 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int s0’"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        2
+      ],
+      "mod_code": [
+        "int s0 = 0 ;",
+        "int s1 = 0 ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int s0’"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        2,
+        14
+      ],
+      "mod_code": [
+        "int s0 = 0 ;",
+        "int s1 = 0 ;",
+        "while ( cin >> n )",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int s0’"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        14
+      ],
+      "mod_code": [
+        "int s0 = 0 ;",
+        "int s1 = 0 ;",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int s0’"
+    },
+    {
+      "mod_line": [
+        4,
+        2
+      ],
+      "mod_code": [
+        "int s0 = 0 ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int s0’"
+    },
+    {
+      "mod_line": [
+        4,
+        2,
+        14
+      ],
+      "mod_code": [
+        "int s0 = 0 ;",
+        "while ( cin >> n )",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int s0’"
+    },
+    {
+      "mod_line": [
+        4,
+        14
+      ],
+      "mod_code": [
+        "int s0 = 0 ;",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int s0’"
+    },
+    {
+      "mod_line": [
+        3,
+        5
+      ],
+      "mod_code": [
+        "vector < long long ) ( n , 0 ) ;",
+        "int s1 = 0 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        3,
+        5,
+        2
+      ],
+      "mod_code": [
+        "vector < long long ) ( n , 0 ) ;",
+        "int s1 = 0 ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 3,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        3,
+        5,
+        2,
+        14
+      ],
+      "mod_code": [
+        "vector < long long ) ( n , 0 ) ;",
+        "int s1 = 0 ;",
+        "while ( cin >> n )",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 3,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        3,
+        5,
+        14
+      ],
+      "mod_code": [
+        "vector < long long ) ( n , 0 ) ;",
+        "int s1 = 0 ;",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 3,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        3,
+        2
+      ],
+      "mod_code": [
+        "vector < long long ) ( n , 0 ) ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 3,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        3,
+        2,
+        14
+      ],
+      "mod_code": [
+        "vector < long long ) ( n , 0 ) ;",
+        "while ( cin >> n )",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 3,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        3,
+        14
+      ],
+      "mod_code": [
+        "vector < long long ) ( n , 0 ) ;",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 3,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        5,
+        2
+      ],
+      "mod_code": [
+        "int s1 = 0 ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 5,
+      "err_msg": "conflicting declaration ‘int s1’"
+    },
+    {
+      "mod_line": [
+        5,
+        2,
+        14
+      ],
+      "mod_code": [
+        "int s1 = 0 ;",
+        "while ( cin >> n )",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 5,
+      "err_msg": "conflicting declaration ‘int s1’"
+    },
+    {
+      "mod_line": [
+        5,
+        14
+      ],
+      "mod_code": [
+        "int s1 = 0 ;",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 5,
+      "err_msg": "conflicting declaration ‘int s1’"
+    },
+    {
+      "mod_line": [
+        2,
+        14
+      ],
+      "mod_code": [
+        "while ( cin >> n )",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘dp’ was not declared in this scope"
+    }
+  ]
+}

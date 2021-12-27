@@ -1,0 +1,871 @@
+{
+  "meta": {
+    "index": 1622,
+    "hitid": "3YOAVL4CA0BJCEN5EZF69UG1JKD4ZA",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "17A",
+    "subid": "40221724"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create integers n , k , ans",
+      "code": "int n , k , ans ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create integer vector primes",
+      "code": "vector < int > primes ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "declare isp with integer x as argument , returning boolean",
+      "code": "bool isp ( int x )",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "if x is less than 2 , return false from function",
+      "code": "if ( x < 2 ) return false ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for i = 2 to i * i is less than or equal to x , incrementing i",
+      "code": "for ( int i = 2 ; i * i <= x ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "if x % i is 0 , return false from function",
+      "code": "if ( x % i == 0 ) return false ;",
+      "indent": 2
+    },
+    {
+      "line": 6,
+      "text": "return true from function",
+      "code": "return true ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 8,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 9,
+      "text": "read n read k",
+      "code": "cin >> n >> k ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "for i = 2 to n inclusive",
+      "code": "for ( int i = 2 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "if result of run isp with i as argument is true , add element i to end of primes",
+      "code": "if ( isp ( i ) ) primes . push_back ( i ) ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "for i = 0 to size of primes - 1 exclusive",
+      "code": "for ( int i = 0 ; i < primes . size ( ) - 1 ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "if result of run isp with argument primes [ i ] + primes [ i + 1 ] + 1 and primes [ i ] + primes [ i + 1 ] + 1 is less than or equal to n , increment ans",
+      "code": "if ( isp ( primes [ i ] + primes [ i + 1 ] + 1 ) && primes [ i ] + primes [ i + 1 ] + 1 <= n ) ans ++ ;",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "if ans is greater than or equal to k",
+      "code": "if ( ans >= k )",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "print \" YES \" print newline",
+      "code": "cout << \" YES \" << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "else",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "print \" NO \" print newline",
+      "code": "cout << \" NO \" << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "bool isp ( int x ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i * i <= x ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "continue ;"
+      ],
+      "err_line": 6,
+      "err_msg": "continue statement not within a loop"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < primes . size ( ) - 1 ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        6
+      ],
+      "mod_code": [
+        "if ( isp ( primes [ i ] + primes [ i + 1 ] + 1 ) <= n && primes [ i ] + primes [ i + 1 ] + 1 <= n ) { ans ++ ; }",
+        "continue ;"
+      ],
+      "err_line": 6,
+      "err_msg": "continue statement not within a loop"
+    },
+    {
+      "mod_line": [
+        13,
+        6,
+        12
+      ],
+      "mod_code": [
+        "if ( isp ( primes [ i ] + primes [ i + 1 ] + 1 ) <= n && primes [ i ] + primes [ i + 1 ] + 1 <= n ) { ans ++ ; }",
+        "continue ;",
+        "for ( i = 0 ; i < primes . size ( ) - 1 ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "continue statement not within a loop"
+    },
+    {
+      "mod_line": [
+        13,
+        6,
+        12,
+        10
+      ],
+      "mod_code": [
+        "if ( isp ( primes [ i ] + primes [ i + 1 ] + 1 ) <= n && primes [ i ] + primes [ i + 1 ] + 1 <= n ) { ans ++ ; }",
+        "continue ;",
+        "for ( i = 0 ; i < primes . size ( ) - 1 ; i ++ )",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "continue statement not within a loop"
+    },
+    {
+      "mod_line": [
+        13,
+        6,
+        12,
+        4
+      ],
+      "mod_code": [
+        "if ( isp ( primes [ i ] + primes [ i + 1 ] + 1 ) <= n && primes [ i ] + primes [ i + 1 ] + 1 <= n ) { ans ++ ; }",
+        "continue ;",
+        "for ( i = 0 ; i < primes . size ( ) - 1 ; i ++ )",
+        "for ( i = 2 ; i * i <= x ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        6,
+        12,
+        15
+      ],
+      "mod_code": [
+        "if ( isp ( primes [ i ] + primes [ i + 1 ] + 1 ) <= n && primes [ i ] + primes [ i + 1 ] + 1 <= n ) { ans ++ ; }",
+        "continue ;",
+        "for ( i = 0 ; i < primes . size ( ) - 1 ; i ++ )",
+        "cout << \" YES\\n \" << endl ;"
+      ],
+      "err_line": 6,
+      "err_msg": "continue statement not within a loop"
+    },
+    {
+      "mod_line": [
+        13,
+        6,
+        10
+      ],
+      "mod_code": [
+        "if ( isp ( primes [ i ] + primes [ i + 1 ] + 1 ) <= n && primes [ i ] + primes [ i + 1 ] + 1 <= n ) { ans ++ ; }",
+        "continue ;",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "continue statement not within a loop"
+    },
+    {
+      "mod_line": [
+        13,
+        6,
+        10,
+        4
+      ],
+      "mod_code": [
+        "if ( isp ( primes [ i ] + primes [ i + 1 ] + 1 ) <= n && primes [ i ] + primes [ i + 1 ] + 1 <= n ) { ans ++ ; }",
+        "continue ;",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "for ( i = 2 ; i * i <= x ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        6,
+        10,
+        15
+      ],
+      "mod_code": [
+        "if ( isp ( primes [ i ] + primes [ i + 1 ] + 1 ) <= n && primes [ i ] + primes [ i + 1 ] + 1 <= n ) { ans ++ ; }",
+        "continue ;",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "cout << \" YES\\n \" << endl ;"
+      ],
+      "err_line": 6,
+      "err_msg": "continue statement not within a loop"
+    },
+    {
+      "mod_line": [
+        13,
+        6,
+        4
+      ],
+      "mod_code": [
+        "if ( isp ( primes [ i ] + primes [ i + 1 ] + 1 ) <= n && primes [ i ] + primes [ i + 1 ] + 1 <= n ) { ans ++ ; }",
+        "continue ;",
+        "for ( i = 2 ; i * i <= x ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        6,
+        4,
+        15
+      ],
+      "mod_code": [
+        "if ( isp ( primes [ i ] + primes [ i + 1 ] + 1 ) <= n && primes [ i ] + primes [ i + 1 ] + 1 <= n ) { ans ++ ; }",
+        "continue ;",
+        "for ( i = 2 ; i * i <= x ; i ++ )",
+        "cout << \" YES\\n \" << endl ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        6,
+        15
+      ],
+      "mod_code": [
+        "if ( isp ( primes [ i ] + primes [ i + 1 ] + 1 ) <= n && primes [ i ] + primes [ i + 1 ] + 1 <= n ) { ans ++ ; }",
+        "continue ;",
+        "cout << \" YES\\n \" << endl ;"
+      ],
+      "err_line": 6,
+      "err_msg": "continue statement not within a loop"
+    },
+    {
+      "mod_line": [
+        13,
+        12
+      ],
+      "mod_code": [
+        "if ( isp ( primes [ i ] + primes [ i + 1 ] + 1 ) <= n && primes [ i ] + primes [ i + 1 ] + 1 <= n ) { ans ++ ; }",
+        "for ( i = 0 ; i < primes . size ( ) - 1 ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        12,
+        10
+      ],
+      "mod_code": [
+        "if ( isp ( primes [ i ] + primes [ i + 1 ] + 1 ) <= n && primes [ i ] + primes [ i + 1 ] + 1 <= n ) { ans ++ ; }",
+        "for ( i = 0 ; i < primes . size ( ) - 1 ; i ++ )",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        12,
+        10,
+        4
+      ],
+      "mod_code": [
+        "if ( isp ( primes [ i ] + primes [ i + 1 ] + 1 ) <= n && primes [ i ] + primes [ i + 1 ] + 1 <= n ) { ans ++ ; }",
+        "for ( i = 0 ; i < primes . size ( ) - 1 ; i ++ )",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "for ( i = 2 ; i * i <= x ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        12,
+        10,
+        15
+      ],
+      "mod_code": [
+        "if ( isp ( primes [ i ] + primes [ i + 1 ] + 1 ) <= n && primes [ i ] + primes [ i + 1 ] + 1 <= n ) { ans ++ ; }",
+        "for ( i = 0 ; i < primes . size ( ) - 1 ; i ++ )",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "cout << \" YES\\n \" << endl ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        12,
+        4
+      ],
+      "mod_code": [
+        "if ( isp ( primes [ i ] + primes [ i + 1 ] + 1 ) <= n && primes [ i ] + primes [ i + 1 ] + 1 <= n ) { ans ++ ; }",
+        "for ( i = 0 ; i < primes . size ( ) - 1 ; i ++ )",
+        "for ( i = 2 ; i * i <= x ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        12,
+        4,
+        15
+      ],
+      "mod_code": [
+        "if ( isp ( primes [ i ] + primes [ i + 1 ] + 1 ) <= n && primes [ i ] + primes [ i + 1 ] + 1 <= n ) { ans ++ ; }",
+        "for ( i = 0 ; i < primes . size ( ) - 1 ; i ++ )",
+        "for ( i = 2 ; i * i <= x ; i ++ )",
+        "cout << \" YES\\n \" << endl ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        12,
+        15
+      ],
+      "mod_code": [
+        "if ( isp ( primes [ i ] + primes [ i + 1 ] + 1 ) <= n && primes [ i ] + primes [ i + 1 ] + 1 <= n ) { ans ++ ; }",
+        "for ( i = 0 ; i < primes . size ( ) - 1 ; i ++ )",
+        "cout << \" YES\\n \" << endl ;"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        10
+      ],
+      "mod_code": [
+        "if ( isp ( primes [ i ] + primes [ i + 1 ] + 1 ) <= n && primes [ i ] + primes [ i + 1 ] + 1 <= n ) { ans ++ ; }",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        10,
+        4
+      ],
+      "mod_code": [
+        "if ( isp ( primes [ i ] + primes [ i + 1 ] + 1 ) <= n && primes [ i ] + primes [ i + 1 ] + 1 <= n ) { ans ++ ; }",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "for ( i = 2 ; i * i <= x ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        10,
+        4,
+        15
+      ],
+      "mod_code": [
+        "if ( isp ( primes [ i ] + primes [ i + 1 ] + 1 ) <= n && primes [ i ] + primes [ i + 1 ] + 1 <= n ) { ans ++ ; }",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "for ( i = 2 ; i * i <= x ; i ++ )",
+        "cout << \" YES\\n \" << endl ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        10,
+        15
+      ],
+      "mod_code": [
+        "if ( isp ( primes [ i ] + primes [ i + 1 ] + 1 ) <= n && primes [ i ] + primes [ i + 1 ] + 1 <= n ) { ans ++ ; }",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "cout << \" YES\\n \" << endl ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        4
+      ],
+      "mod_code": [
+        "if ( isp ( primes [ i ] + primes [ i + 1 ] + 1 ) <= n && primes [ i ] + primes [ i + 1 ] + 1 <= n ) { ans ++ ; }",
+        "for ( i = 2 ; i * i <= x ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        4,
+        15
+      ],
+      "mod_code": [
+        "if ( isp ( primes [ i ] + primes [ i + 1 ] + 1 ) <= n && primes [ i ] + primes [ i + 1 ] + 1 <= n ) { ans ++ ; }",
+        "for ( i = 2 ; i * i <= x ; i ++ )",
+        "cout << \" YES\\n \" << endl ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        12
+      ],
+      "mod_code": [
+        "continue ;",
+        "for ( i = 0 ; i < primes . size ( ) - 1 ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "continue statement not within a loop"
+    },
+    {
+      "mod_line": [
+        6,
+        12,
+        10
+      ],
+      "mod_code": [
+        "continue ;",
+        "for ( i = 0 ; i < primes . size ( ) - 1 ; i ++ )",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "continue statement not within a loop"
+    },
+    {
+      "mod_line": [
+        6,
+        12,
+        10,
+        4
+      ],
+      "mod_code": [
+        "continue ;",
+        "for ( i = 0 ; i < primes . size ( ) - 1 ; i ++ )",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "for ( i = 2 ; i * i <= x ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        12,
+        10,
+        15
+      ],
+      "mod_code": [
+        "continue ;",
+        "for ( i = 0 ; i < primes . size ( ) - 1 ; i ++ )",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "cout << \" YES\\n \" << endl ;"
+      ],
+      "err_line": 6,
+      "err_msg": "continue statement not within a loop"
+    },
+    {
+      "mod_line": [
+        6,
+        12,
+        4
+      ],
+      "mod_code": [
+        "continue ;",
+        "for ( i = 0 ; i < primes . size ( ) - 1 ; i ++ )",
+        "for ( i = 2 ; i * i <= x ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        12,
+        4,
+        15
+      ],
+      "mod_code": [
+        "continue ;",
+        "for ( i = 0 ; i < primes . size ( ) - 1 ; i ++ )",
+        "for ( i = 2 ; i * i <= x ; i ++ )",
+        "cout << \" YES\\n \" << endl ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        12,
+        15
+      ],
+      "mod_code": [
+        "continue ;",
+        "for ( i = 0 ; i < primes . size ( ) - 1 ; i ++ )",
+        "cout << \" YES\\n \" << endl ;"
+      ],
+      "err_line": 6,
+      "err_msg": "continue statement not within a loop"
+    },
+    {
+      "mod_line": [
+        6,
+        10
+      ],
+      "mod_code": [
+        "continue ;",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "continue statement not within a loop"
+    },
+    {
+      "mod_line": [
+        6,
+        10,
+        4
+      ],
+      "mod_code": [
+        "continue ;",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "for ( i = 2 ; i * i <= x ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        10,
+        4,
+        15
+      ],
+      "mod_code": [
+        "continue ;",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "for ( i = 2 ; i * i <= x ; i ++ )",
+        "cout << \" YES\\n \" << endl ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        10,
+        15
+      ],
+      "mod_code": [
+        "continue ;",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "cout << \" YES\\n \" << endl ;"
+      ],
+      "err_line": 6,
+      "err_msg": "continue statement not within a loop"
+    },
+    {
+      "mod_line": [
+        6,
+        4
+      ],
+      "mod_code": [
+        "continue ;",
+        "for ( i = 2 ; i * i <= x ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        4,
+        15
+      ],
+      "mod_code": [
+        "continue ;",
+        "for ( i = 2 ; i * i <= x ; i ++ )",
+        "cout << \" YES\\n \" << endl ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        15
+      ],
+      "mod_code": [
+        "continue ;",
+        "cout << \" YES\\n \" << endl ;"
+      ],
+      "err_line": 6,
+      "err_msg": "continue statement not within a loop"
+    },
+    {
+      "mod_line": [
+        12,
+        10
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < primes . size ( ) - 1 ; i ++ )",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        10,
+        4
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < primes . size ( ) - 1 ; i ++ )",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "for ( i = 2 ; i * i <= x ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        10,
+        4,
+        15
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < primes . size ( ) - 1 ; i ++ )",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "for ( i = 2 ; i * i <= x ; i ++ )",
+        "cout << \" YES\\n \" << endl ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        10,
+        15
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < primes . size ( ) - 1 ; i ++ )",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "cout << \" YES\\n \" << endl ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        4
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < primes . size ( ) - 1 ; i ++ )",
+        "for ( i = 2 ; i * i <= x ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        4,
+        15
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < primes . size ( ) - 1 ; i ++ )",
+        "for ( i = 2 ; i * i <= x ; i ++ )",
+        "cout << \" YES\\n \" << endl ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        15
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < primes . size ( ) - 1 ; i ++ )",
+        "cout << \" YES\\n \" << endl ;"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        4
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "for ( i = 2 ; i * i <= x ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        4,
+        15
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "for ( i = 2 ; i * i <= x ; i ++ )",
+        "cout << \" YES\\n \" << endl ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        15
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "cout << \" YES\\n \" << endl ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        15
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i * i <= x ; i ++ )",
+        "cout << \" YES\\n \" << endl ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    }
+  ]
+}

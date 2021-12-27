@@ -1,0 +1,873 @@
+{
+  "meta": {
+    "index": 2409,
+    "hitid": "38O9DZ0A62H7LQO78GZ7JHQ8V4T26Z",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "13A",
+    "subid": "40256079"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare sum with integers n , b as arguments , returning integer",
+      "code": "int sum ( int n , int b )",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create integer ret with ret = 0",
+      "code": "int ret = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "while n is true",
+      "code": "while ( n )",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "increment ret by n % b",
+      "code": "ret += n % b ;",
+      "indent": 2
+    },
+    {
+      "line": 4,
+      "text": "set n to n / b",
+      "code": "n /= b ;",
+      "indent": 2
+    },
+    {
+      "line": 5,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "return ret from function",
+      "code": "return ret ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 8,
+      "text": "declare gcd with integers a , b as arguments , returning integer",
+      "code": "int gcd ( int a , int b )",
+      "indent": 0
+    },
+    {
+      "line": 9,
+      "text": "if b is 0",
+      "code": "if ( b == 0 )",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "return a from function",
+      "code": "return a ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "else",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "return result of run gcd with b , a % b as arguments , from function",
+      "code": "return gcd ( b , a % b ) ;",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 15,
+      "text": "create integers n , i , cnt , g with cnt = 0",
+      "code": "int n , i , cnt = 0 , g ;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "for i = 2 to n exclusive , increment cnt by result of run sum with n , i as arguments",
+      "code": "for ( i = 2 ; i < n ; i ++ ) { cnt += sum ( n , i ) ; }",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "set g to result of run gcd with cnt , ( n - 2 ) as arguments",
+      "code": "g = gcd ( cnt , ( n - 2 ) ) ;",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "print cnt / g print ' / ' print ( n - 2 ) / g print newline",
+      "code": "cout << cnt / g << ' / ' << ( n - 2 ) / g << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int sum ( int n , int b ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "while ( ret )"
+      ],
+      "err_line": 7,
+      "err_msg": "expected primary-expression before ‘}’ token"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "int gcd ( int a , int b ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "return ;"
+      ],
+      "err_line": 10,
+      "err_msg": "return-statement with no value, in function returning ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2,
+        4,
+        10
+      ],
+      "mod_code": [
+        "while ( n -- )",
+        "long long n = n / b ;",
+        "return ;"
+      ],
+      "err_line": 10,
+      "err_msg": "return-statement with no value, in function returning ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2,
+        4,
+        10,
+        8
+      ],
+      "mod_code": [
+        "while ( n -- )",
+        "long long n = n / b ;",
+        "return ;",
+        "int gcd ( int a , int b ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        4,
+        10,
+        6
+      ],
+      "mod_code": [
+        "while ( n -- )",
+        "long long n = n / b ;",
+        "return ;",
+        "while ( ret )"
+      ],
+      "err_line": 7,
+      "err_msg": "expected primary-expression before ‘}’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        4,
+        10,
+        0
+      ],
+      "mod_code": [
+        "while ( n -- )",
+        "long long n = n / b ;",
+        "return ;",
+        "int sum ( int n , int b ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        4,
+        8
+      ],
+      "mod_code": [
+        "while ( n -- )",
+        "long long n = n / b ;",
+        "int gcd ( int a , int b ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        4,
+        8,
+        6
+      ],
+      "mod_code": [
+        "while ( n -- )",
+        "long long n = n / b ;",
+        "int gcd ( int a , int b ) ;",
+        "while ( ret )"
+      ],
+      "err_line": 7,
+      "err_msg": "expected primary-expression before ‘}’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        4,
+        8,
+        0
+      ],
+      "mod_code": [
+        "while ( n -- )",
+        "long long n = n / b ;",
+        "int gcd ( int a , int b ) ;",
+        "int sum ( int n , int b ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        4,
+        6
+      ],
+      "mod_code": [
+        "while ( n -- )",
+        "long long n = n / b ;",
+        "while ( ret )"
+      ],
+      "err_line": 7,
+      "err_msg": "expected primary-expression before ‘}’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        4,
+        6,
+        0
+      ],
+      "mod_code": [
+        "while ( n -- )",
+        "long long n = n / b ;",
+        "while ( ret )",
+        "int sum ( int n , int b ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        4,
+        0
+      ],
+      "mod_code": [
+        "while ( n -- )",
+        "long long n = n / b ;",
+        "int sum ( int n , int b ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        10
+      ],
+      "mod_code": [
+        "while ( n -- )",
+        "return ;"
+      ],
+      "err_line": 10,
+      "err_msg": "return-statement with no value, in function returning ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2,
+        10,
+        8
+      ],
+      "mod_code": [
+        "while ( n -- )",
+        "return ;",
+        "int gcd ( int a , int b ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        10,
+        8,
+        6
+      ],
+      "mod_code": [
+        "while ( n -- )",
+        "return ;",
+        "int gcd ( int a , int b ) ;",
+        "while ( ret )"
+      ],
+      "err_line": 7,
+      "err_msg": "expected primary-expression before ‘}’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        10,
+        8,
+        0
+      ],
+      "mod_code": [
+        "while ( n -- )",
+        "return ;",
+        "int gcd ( int a , int b ) ;",
+        "int sum ( int n , int b ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        10,
+        6
+      ],
+      "mod_code": [
+        "while ( n -- )",
+        "return ;",
+        "while ( ret )"
+      ],
+      "err_line": 7,
+      "err_msg": "expected primary-expression before ‘}’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        10,
+        6,
+        0
+      ],
+      "mod_code": [
+        "while ( n -- )",
+        "return ;",
+        "while ( ret )",
+        "int sum ( int n , int b ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        10,
+        0
+      ],
+      "mod_code": [
+        "while ( n -- )",
+        "return ;",
+        "int sum ( int n , int b ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        8
+      ],
+      "mod_code": [
+        "while ( n -- )",
+        "int gcd ( int a , int b ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        8,
+        6
+      ],
+      "mod_code": [
+        "while ( n -- )",
+        "int gcd ( int a , int b ) ;",
+        "while ( ret )"
+      ],
+      "err_line": 7,
+      "err_msg": "expected primary-expression before ‘}’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        8,
+        6,
+        0
+      ],
+      "mod_code": [
+        "while ( n -- )",
+        "int gcd ( int a , int b ) ;",
+        "while ( ret )",
+        "int sum ( int n , int b ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        8,
+        0
+      ],
+      "mod_code": [
+        "while ( n -- )",
+        "int gcd ( int a , int b ) ;",
+        "int sum ( int n , int b ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        6
+      ],
+      "mod_code": [
+        "while ( n -- )",
+        "while ( ret )"
+      ],
+      "err_line": 7,
+      "err_msg": "expected primary-expression before ‘}’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        0
+      ],
+      "mod_code": [
+        "while ( n -- )",
+        "while ( ret )",
+        "int sum ( int n , int b ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        0
+      ],
+      "mod_code": [
+        "while ( n -- )",
+        "int sum ( int n , int b ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        10
+      ],
+      "mod_code": [
+        "long long n = n / b ;",
+        "return ;"
+      ],
+      "err_line": 10,
+      "err_msg": "return-statement with no value, in function returning ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        4,
+        10,
+        8
+      ],
+      "mod_code": [
+        "long long n = n / b ;",
+        "return ;",
+        "int gcd ( int a , int b ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        10,
+        8,
+        6
+      ],
+      "mod_code": [
+        "long long n = n / b ;",
+        "return ;",
+        "int gcd ( int a , int b ) ;",
+        "while ( ret )"
+      ],
+      "err_line": 7,
+      "err_msg": "expected primary-expression before ‘}’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        10,
+        8,
+        0
+      ],
+      "mod_code": [
+        "long long n = n / b ;",
+        "return ;",
+        "int gcd ( int a , int b ) ;",
+        "int sum ( int n , int b ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        10,
+        6
+      ],
+      "mod_code": [
+        "long long n = n / b ;",
+        "return ;",
+        "while ( ret )"
+      ],
+      "err_line": 7,
+      "err_msg": "expected primary-expression before ‘}’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        10,
+        6,
+        0
+      ],
+      "mod_code": [
+        "long long n = n / b ;",
+        "return ;",
+        "while ( ret )",
+        "int sum ( int n , int b ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        10,
+        0
+      ],
+      "mod_code": [
+        "long long n = n / b ;",
+        "return ;",
+        "int sum ( int n , int b ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        8
+      ],
+      "mod_code": [
+        "long long n = n / b ;",
+        "int gcd ( int a , int b ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        8,
+        6
+      ],
+      "mod_code": [
+        "long long n = n / b ;",
+        "int gcd ( int a , int b ) ;",
+        "while ( ret )"
+      ],
+      "err_line": 7,
+      "err_msg": "expected primary-expression before ‘}’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        8,
+        6,
+        0
+      ],
+      "mod_code": [
+        "long long n = n / b ;",
+        "int gcd ( int a , int b ) ;",
+        "while ( ret )",
+        "int sum ( int n , int b ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        8,
+        0
+      ],
+      "mod_code": [
+        "long long n = n / b ;",
+        "int gcd ( int a , int b ) ;",
+        "int sum ( int n , int b ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        6
+      ],
+      "mod_code": [
+        "long long n = n / b ;",
+        "while ( ret )"
+      ],
+      "err_line": 7,
+      "err_msg": "expected primary-expression before ‘}’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        0
+      ],
+      "mod_code": [
+        "long long n = n / b ;",
+        "while ( ret )",
+        "int sum ( int n , int b ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        0
+      ],
+      "mod_code": [
+        "long long n = n / b ;",
+        "int sum ( int n , int b ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        8
+      ],
+      "mod_code": [
+        "return ;",
+        "int gcd ( int a , int b ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        8,
+        6
+      ],
+      "mod_code": [
+        "return ;",
+        "int gcd ( int a , int b ) ;",
+        "while ( ret )"
+      ],
+      "err_line": 7,
+      "err_msg": "expected primary-expression before ‘}’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        8,
+        6,
+        0
+      ],
+      "mod_code": [
+        "return ;",
+        "int gcd ( int a , int b ) ;",
+        "while ( ret )",
+        "int sum ( int n , int b ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        8,
+        0
+      ],
+      "mod_code": [
+        "return ;",
+        "int gcd ( int a , int b ) ;",
+        "int sum ( int n , int b ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        6
+      ],
+      "mod_code": [
+        "return ;",
+        "while ( ret )"
+      ],
+      "err_line": 7,
+      "err_msg": "expected primary-expression before ‘}’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        6,
+        0
+      ],
+      "mod_code": [
+        "return ;",
+        "while ( ret )",
+        "int sum ( int n , int b ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        0
+      ],
+      "mod_code": [
+        "return ;",
+        "int sum ( int n , int b ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        6
+      ],
+      "mod_code": [
+        "int gcd ( int a , int b ) ;",
+        "while ( ret )"
+      ],
+      "err_line": 7,
+      "err_msg": "expected primary-expression before ‘}’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        6,
+        0
+      ],
+      "mod_code": [
+        "int gcd ( int a , int b ) ;",
+        "while ( ret )",
+        "int sum ( int n , int b ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        0
+      ],
+      "mod_code": [
+        "int gcd ( int a , int b ) ;",
+        "int sum ( int n , int b ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        0
+      ],
+      "mod_code": [
+        "while ( ret )",
+        "int sum ( int n , int b ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    }
+  ]
+}

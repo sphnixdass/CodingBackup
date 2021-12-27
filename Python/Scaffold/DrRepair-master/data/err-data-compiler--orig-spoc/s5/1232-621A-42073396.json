@@ -1,0 +1,717 @@
+{
+  "meta": {
+    "index": 1232,
+    "hitid": "3FI30CQHVKD193O3R9SIKATCONFB68",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "621A",
+    "subid": "42073396"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare integer variables n and x",
+      "code": "int n , x ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "declare long long res = 0",
+      "code": "long long res = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "declare integer vector v",
+      "code": "vector < int > v ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for integer i = 0 to n exclusive",
+      "code": "for ( int i = 0 ; i < n ; ++ i )",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "read x",
+      "code": "cin >> x ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "if ( x & 1 ) = 0",
+      "code": "if ( ( x & 1 ) == 0 )",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "increase res by x",
+      "code": "res += x ;",
+      "indent": 3
+    },
+    {
+      "line": 9,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "push x to v",
+      "code": "v . push_back ( x ) ;",
+      "indent": 3
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "sort v",
+      "code": "sort ( v . begin ( ) , v . end ( ) ) ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "for i = 0 if ( length of v & 1 ) = 0 or 1 otherwise to length of v exclusive , increase res by v [ i ]",
+      "code": "for ( int i = ( ( v . size ( ) & 1 ) == 0 ? 0 : 1 ) ; i < v . size ( ) ; ++ i ) { res += v [ i ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "print res",
+      "code": "cout << res << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < v . length ( ) ; i ++ ) res += v [ i ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "while ( cin >> n )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘v’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "vector < vector < int > v ;"
+      ],
+      "err_line": 4,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "v . push ( x ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘push’"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "sort ( v , v + n ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "no match for ‘operator+’ (operand types are ‘std::vector<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < v . length ( ) ; i ++ ) { res += v [ i ] ; }"
+      ],
+      "err_line": 14,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        7,
+        14
+      ],
+      "mod_code": [
+        "if ( x & 1 )",
+        "for ( int i = 0 ; i < v . length ( ) ; i ++ ) res += v [ i ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        7,
+        14,
+        3
+      ],
+      "mod_code": [
+        "if ( x & 1 )",
+        "for ( int i = 0 ; i < v . length ( ) ; i ++ ) res += v [ i ] ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘v’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        14,
+        3,
+        4
+      ],
+      "mod_code": [
+        "if ( x & 1 )",
+        "for ( int i = 0 ; i < v . length ( ) ; i ++ ) res += v [ i ] ;",
+        "while ( cin >> n )",
+        "vector < vector < int > v ;"
+      ],
+      "err_line": 4,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        7,
+        14,
+        3,
+        13
+      ],
+      "mod_code": [
+        "if ( x & 1 )",
+        "for ( int i = 0 ; i < v . length ( ) ; i ++ ) res += v [ i ] ;",
+        "while ( cin >> n )",
+        "sort ( v , v + n ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘v’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        14,
+        4
+      ],
+      "mod_code": [
+        "if ( x & 1 )",
+        "for ( int i = 0 ; i < v . length ( ) ; i ++ ) res += v [ i ] ;",
+        "vector < vector < int > v ;"
+      ],
+      "err_line": 4,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        7,
+        14,
+        4,
+        13
+      ],
+      "mod_code": [
+        "if ( x & 1 )",
+        "for ( int i = 0 ; i < v . length ( ) ; i ++ ) res += v [ i ] ;",
+        "vector < vector < int > v ;",
+        "sort ( v , v + n ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        7,
+        14,
+        13
+      ],
+      "mod_code": [
+        "if ( x & 1 )",
+        "for ( int i = 0 ; i < v . length ( ) ; i ++ ) res += v [ i ] ;",
+        "sort ( v , v + n ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "no match for ‘operator+’ (operand types are ‘std::vector<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        7,
+        14
+      ],
+      "mod_code": [
+        "if ( x & 1 )",
+        "for ( int i = 0 ; i < v . length ( ) ; i ++ ) { res += v [ i ] ; }"
+      ],
+      "err_line": 14,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        7,
+        14,
+        3
+      ],
+      "mod_code": [
+        "if ( x & 1 )",
+        "for ( int i = 0 ; i < v . length ( ) ; i ++ ) { res += v [ i ] ; }",
+        "while ( cin >> n )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘v’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        14,
+        3,
+        4
+      ],
+      "mod_code": [
+        "if ( x & 1 )",
+        "for ( int i = 0 ; i < v . length ( ) ; i ++ ) { res += v [ i ] ; }",
+        "while ( cin >> n )",
+        "vector < vector < int > v ;"
+      ],
+      "err_line": 4,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        7,
+        14,
+        3,
+        13
+      ],
+      "mod_code": [
+        "if ( x & 1 )",
+        "for ( int i = 0 ; i < v . length ( ) ; i ++ ) { res += v [ i ] ; }",
+        "while ( cin >> n )",
+        "sort ( v , v + n ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘v’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        14,
+        4
+      ],
+      "mod_code": [
+        "if ( x & 1 )",
+        "for ( int i = 0 ; i < v . length ( ) ; i ++ ) { res += v [ i ] ; }",
+        "vector < vector < int > v ;"
+      ],
+      "err_line": 4,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        7,
+        14,
+        4,
+        13
+      ],
+      "mod_code": [
+        "if ( x & 1 )",
+        "for ( int i = 0 ; i < v . length ( ) ; i ++ ) { res += v [ i ] ; }",
+        "vector < vector < int > v ;",
+        "sort ( v , v + n ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        7,
+        14,
+        13
+      ],
+      "mod_code": [
+        "if ( x & 1 )",
+        "for ( int i = 0 ; i < v . length ( ) ; i ++ ) { res += v [ i ] ; }",
+        "sort ( v , v + n ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "no match for ‘operator+’ (operand types are ‘std::vector<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        7,
+        3
+      ],
+      "mod_code": [
+        "if ( x & 1 )",
+        "while ( cin >> n )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘v’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        3,
+        4
+      ],
+      "mod_code": [
+        "if ( x & 1 )",
+        "while ( cin >> n )",
+        "vector < vector < int > v ;"
+      ],
+      "err_line": 4,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        7,
+        3,
+        4,
+        13
+      ],
+      "mod_code": [
+        "if ( x & 1 )",
+        "while ( cin >> n )",
+        "vector < vector < int > v ;",
+        "sort ( v , v + n ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        7,
+        3,
+        13
+      ],
+      "mod_code": [
+        "if ( x & 1 )",
+        "while ( cin >> n )",
+        "sort ( v , v + n ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘v’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        4
+      ],
+      "mod_code": [
+        "if ( x & 1 )",
+        "vector < vector < int > v ;"
+      ],
+      "err_line": 4,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        7,
+        4,
+        13
+      ],
+      "mod_code": [
+        "if ( x & 1 )",
+        "vector < vector < int > v ;",
+        "sort ( v , v + n ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        7,
+        13
+      ],
+      "mod_code": [
+        "if ( x & 1 )",
+        "sort ( v , v + n ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "no match for ‘operator+’ (operand types are ‘std::vector<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        14,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < v . length ( ) ; i ++ ) res += v [ i ] ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘v’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        3,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < v . length ( ) ; i ++ ) res += v [ i ] ;",
+        "while ( cin >> n )",
+        "vector < vector < int > v ;"
+      ],
+      "err_line": 4,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        14,
+        3,
+        4,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < v . length ( ) ; i ++ ) res += v [ i ] ;",
+        "while ( cin >> n )",
+        "vector < vector < int > v ;",
+        "sort ( v , v + n ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        14,
+        3,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < v . length ( ) ; i ++ ) res += v [ i ] ;",
+        "while ( cin >> n )",
+        "sort ( v , v + n ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘v’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < v . length ( ) ; i ++ ) res += v [ i ] ;",
+        "vector < vector < int > v ;"
+      ],
+      "err_line": 4,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        14,
+        4,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < v . length ( ) ; i ++ ) res += v [ i ] ;",
+        "vector < vector < int > v ;",
+        "sort ( v , v + n ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        14,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < v . length ( ) ; i ++ ) res += v [ i ] ;",
+        "sort ( v , v + n ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "no match for ‘operator+’ (operand types are ‘std::vector<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        14,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < v . length ( ) ; i ++ ) { res += v [ i ] ; }",
+        "while ( cin >> n )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘v’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        3,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < v . length ( ) ; i ++ ) { res += v [ i ] ; }",
+        "while ( cin >> n )",
+        "vector < vector < int > v ;"
+      ],
+      "err_line": 4,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        14,
+        3,
+        4,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < v . length ( ) ; i ++ ) { res += v [ i ] ; }",
+        "while ( cin >> n )",
+        "vector < vector < int > v ;",
+        "sort ( v , v + n ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        14,
+        3,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < v . length ( ) ; i ++ ) { res += v [ i ] ; }",
+        "while ( cin >> n )",
+        "sort ( v , v + n ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘v’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < v . length ( ) ; i ++ ) { res += v [ i ] ; }",
+        "vector < vector < int > v ;"
+      ],
+      "err_line": 4,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        14,
+        4,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < v . length ( ) ; i ++ ) { res += v [ i ] ; }",
+        "vector < vector < int > v ;",
+        "sort ( v , v + n ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        14,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < v . length ( ) ; i ++ ) { res += v [ i ] ; }",
+        "sort ( v , v + n ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "no match for ‘operator+’ (operand types are ‘std::vector<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        3,
+        4
+      ],
+      "mod_code": [
+        "while ( cin >> n )",
+        "vector < vector < int > v ;"
+      ],
+      "err_line": 4,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        3,
+        4,
+        13
+      ],
+      "mod_code": [
+        "while ( cin >> n )",
+        "vector < vector < int > v ;",
+        "sort ( v , v + n ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        3,
+        13
+      ],
+      "mod_code": [
+        "while ( cin >> n )",
+        "sort ( v , v + n ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘v’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        13
+      ],
+      "mod_code": [
+        "vector < vector < int > v ;",
+        "sort ( v , v + n ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "template argument 1 is invalid"
+    }
+  ]
+}

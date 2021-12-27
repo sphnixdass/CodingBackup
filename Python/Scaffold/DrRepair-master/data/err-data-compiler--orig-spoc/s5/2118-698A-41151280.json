@@ -1,0 +1,1057 @@
+{
+  "meta": {
+    "index": 2118,
+    "hitid": "33N1S8XHHMF2KFQMRHW4BW9Y82F1ZB",
+    "workerid": "A2QLFQ2ZYR6B7M",
+    "probid": "698A",
+    "subid": "41151280"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "INF = 3f3f3f3f in exadecimal",
+      "code": "const int INF = 0x3f3f3f3f ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "function read ( no args , return long long )",
+      "code": "inline long long read ( )",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "X , w = 0",
+      "code": "long long X = 0 , w = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "ch = char 0",
+      "code": "char ch = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "while ch is not a digit",
+      "code": "while ( ! isdigit ( ch ) )",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "w = w | ch = = ' - '",
+      "code": "w |= ch == ' - ' ;",
+      "indent": 2
+    },
+    {
+      "line": 6,
+      "text": "ch = getchar ( )",
+      "code": "ch = getchar ( ) ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "while ch is a digit X = 8 * X + 2 * X + ch ^ 48 , ch = getchar ( )",
+      "code": "while ( isdigit ( ch ) ) X = ( X << 3 ) + ( X << 1 ) + ( ch ^ 48 ) , ch = getchar ( ) ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "return - X if w else X",
+      "code": "return w ? - X : X ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 11,
+      "text": "function write ( get long long x , return nothing )",
+      "code": "inline void write ( long long x )",
+      "indent": 0
+    },
+    {
+      "line": 12,
+      "text": "if x < 0 putchar ( ' - ' ) , x = - x",
+      "code": "if ( x < 0 ) putchar ( ' - ' ) , x = - x ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "if x > 9 write ( x / 10 )",
+      "code": "if ( x > 9 ) write ( x / 10 ) ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "putchar ( x modulo 10 + ' 0 ' )",
+      "code": "putchar ( x % 10 + ' 0 ' ) ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 16,
+      "text": "maxn = 1000010",
+      "code": "const int maxn = 1e6 + 10 ;",
+      "indent": 0
+    },
+    {
+      "line": 17,
+      "text": "function solve ( no args , return nothing )",
+      "code": "void solve ( )",
+      "indent": 0
+    },
+    {
+      "line": 18,
+      "text": "t = int",
+      "code": "int t ;",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "while read t",
+      "code": "while ( cin >> t )",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "a = array of 101 int",
+      "code": "int a [ 101 ] ;",
+      "indent": 2
+    },
+    {
+      "line": 21,
+      "text": "dp = array of 101 by 101 int",
+      "code": "int dp [ 101 ] [ 101 ] ;",
+      "indent": 2
+    },
+    {
+      "line": 22,
+      "text": "fill dp with INF",
+      "code": "memset ( dp , INF , sizeof ( dp ) ) ;",
+      "indent": 2
+    },
+    {
+      "line": 23,
+      "text": "dp [ 0 ] [ 0 ] = 0",
+      "code": "dp [ 0 ] [ 0 ] = 0 ;",
+      "indent": 2
+    },
+    {
+      "line": 24,
+      "text": "for i = 1 to t inclusive",
+      "code": "for ( int i = 1 ; i <= t ; ++ i )",
+      "indent": 2
+    },
+    {
+      "line": 25,
+      "text": "m = int",
+      "code": "int m ;",
+      "indent": 3
+    },
+    {
+      "line": 26,
+      "text": "read m",
+      "code": "cin >> m ;",
+      "indent": 3
+    },
+    {
+      "line": 27,
+      "text": "dp [ i ] [ 0 ] = min ( min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 1 ] ) , dp [ i - 1 ] [ 2 ] ) + 1",
+      "code": "dp [ i ] [ 0 ] = min ( min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 1 ] ) , dp [ i - 1 ] [ 2 ] ) + 1 ;",
+      "indent": 3
+    },
+    {
+      "line": 28,
+      "text": "if m is 1",
+      "code": "if ( m == 1 )",
+      "indent": 3
+    },
+    {
+      "line": 29,
+      "text": "dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] )",
+      "code": "dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;",
+      "indent": 4
+    },
+    {
+      "line": 30,
+      "text": "else if m is 2",
+      "code": "else if ( m == 2 )",
+      "indent": 3
+    },
+    {
+      "line": 31,
+      "text": "dp [ i ] [ 2 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 1 ] )",
+      "code": "dp [ i ] [ 2 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 1 ] ) ;",
+      "indent": 4
+    },
+    {
+      "line": 32,
+      "text": "else if m is 3",
+      "code": "else if ( m == 3 )",
+      "indent": 3
+    },
+    {
+      "line": 33,
+      "text": "dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] )",
+      "code": "dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;",
+      "indent": 4
+    },
+    {
+      "line": 34,
+      "text": "dp [ i ] [ 2 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 1 ] )",
+      "code": "dp [ i ] [ 2 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 1 ] ) ;",
+      "indent": 4
+    },
+    {
+      "line": 35,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 36,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 37,
+      "text": "print min ( min ( dp [ t ] [ 1 ] , dp [ t ] [ 2 ] ) , dp [ t ] [ 0 ] )",
+      "code": "cout << min ( min ( dp [ t ] [ 1 ] , dp [ t ] [ 2 ] ) , dp [ t ] [ 0 ] ) << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 38,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 39,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 40,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 41,
+      "text": "solve ( )",
+      "code": "solve ( ) ;",
+      "indent": 1
+    },
+    {
+      "line": 42,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 43,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "w = w | ch = ' - ' ;"
+      ],
+      "err_line": 5,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "char ch = \" 0 \" ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid conversion from ‘const char*’ to ‘char’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "putchar ( x % 10 + ' 0 ' ) ) ;"
+      ],
+      "err_line": 14,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "void solve ( ) { }"
+      ],
+      "err_line": 18,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        19
+      ],
+      "mod_code": [
+        "while ( { cin >> t )"
+      ],
+      "err_line": 19,
+      "err_msg": "expected primary-expression before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        24
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= t ; i ++ )"
+      ],
+      "err_line": 24,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        26
+      ],
+      "mod_code": [
+        "cin >> n ;"
+      ],
+      "err_line": 26,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27
+      ],
+      "mod_code": [
+        "dp [ i ] [ 0 ] = min ( min ( dp [ i - 1 ] [ 0 ] ) , dp [ i - 1 ] [ 1 ] ) , dp [ i - 1 ] [ 2 ] + 1 ;"
+      ],
+      "err_line": 27,
+      "err_msg": "no matching function for call to ‘min(int&)’"
+    },
+    {
+      "mod_line": [
+        29
+      ],
+      "mod_code": [
+        "int dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 29,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        31
+      ],
+      "mod_code": [
+        "int dp [ i ] [ 2 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 1 ] ) ;"
+      ],
+      "err_line": 31,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        33
+      ],
+      "mod_code": [
+        "int dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 33,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        34
+      ],
+      "mod_code": [
+        "int dp [ i ] [ 2 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 1 ] ) ;"
+      ],
+      "err_line": 34,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        41
+      ],
+      "mod_code": [
+        "inline solve ( ) ;"
+      ],
+      "err_line": 41,
+      "err_msg": "ISO C++ forbids declaration of ‘solve’ with no type [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        41
+      ],
+      "mod_code": [
+        "w = w | ch = ' - ' ;",
+        "inline solve ( ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        5,
+        41,
+        22
+      ],
+      "mod_code": [
+        "w = w | ch = ' - ' ;",
+        "inline solve ( ) ;",
+        "memset ( dp , INF , sizeof ( INF ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        5,
+        41,
+        22,
+        32
+      ],
+      "mod_code": [
+        "w = w | ch = ' - ' ;",
+        "inline solve ( ) ;",
+        "memset ( dp , INF , sizeof ( INF ) ) ;",
+        "else if ( m == 1 )"
+      ],
+      "err_line": 5,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        5,
+        41,
+        22,
+        33
+      ],
+      "mod_code": [
+        "w = w | ch = ' - ' ;",
+        "inline solve ( ) ;",
+        "memset ( dp , INF , sizeof ( INF ) ) ;",
+        "int dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        5,
+        41,
+        22,
+        37
+      ],
+      "mod_code": [
+        "w = w | ch = ' - ' ;",
+        "inline solve ( ) ;",
+        "memset ( dp , INF , sizeof ( INF ) ) ;",
+        "cout << min ( min ( dp [ t ] [ 1 ] , dp [ t ] [ 2 ] ) , dp [ t ] [ 2 ] ) << endl ;"
+      ],
+      "err_line": 5,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        5,
+        41,
+        32
+      ],
+      "mod_code": [
+        "w = w | ch = ' - ' ;",
+        "inline solve ( ) ;",
+        "else if ( m == 1 )"
+      ],
+      "err_line": 5,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        5,
+        41,
+        32,
+        33
+      ],
+      "mod_code": [
+        "w = w | ch = ' - ' ;",
+        "inline solve ( ) ;",
+        "else if ( m == 1 )",
+        "int dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        5,
+        41,
+        32,
+        37
+      ],
+      "mod_code": [
+        "w = w | ch = ' - ' ;",
+        "inline solve ( ) ;",
+        "else if ( m == 1 )",
+        "cout << min ( min ( dp [ t ] [ 1 ] , dp [ t ] [ 2 ] ) , dp [ t ] [ 2 ] ) << endl ;"
+      ],
+      "err_line": 5,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        5,
+        41,
+        33
+      ],
+      "mod_code": [
+        "w = w | ch = ' - ' ;",
+        "inline solve ( ) ;",
+        "int dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        5,
+        41,
+        33,
+        37
+      ],
+      "mod_code": [
+        "w = w | ch = ' - ' ;",
+        "inline solve ( ) ;",
+        "int dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;",
+        "cout << min ( min ( dp [ t ] [ 1 ] , dp [ t ] [ 2 ] ) , dp [ t ] [ 2 ] ) << endl ;"
+      ],
+      "err_line": 5,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        5,
+        41,
+        37
+      ],
+      "mod_code": [
+        "w = w | ch = ' - ' ;",
+        "inline solve ( ) ;",
+        "cout << min ( min ( dp [ t ] [ 1 ] , dp [ t ] [ 2 ] ) , dp [ t ] [ 2 ] ) << endl ;"
+      ],
+      "err_line": 5,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        5,
+        22
+      ],
+      "mod_code": [
+        "w = w | ch = ' - ' ;",
+        "memset ( dp , INF , sizeof ( INF ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        5,
+        22,
+        32
+      ],
+      "mod_code": [
+        "w = w | ch = ' - ' ;",
+        "memset ( dp , INF , sizeof ( INF ) ) ;",
+        "else if ( m == 1 )"
+      ],
+      "err_line": 5,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        5,
+        22,
+        32,
+        33
+      ],
+      "mod_code": [
+        "w = w | ch = ' - ' ;",
+        "memset ( dp , INF , sizeof ( INF ) ) ;",
+        "else if ( m == 1 )",
+        "int dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        5,
+        22,
+        32,
+        37
+      ],
+      "mod_code": [
+        "w = w | ch = ' - ' ;",
+        "memset ( dp , INF , sizeof ( INF ) ) ;",
+        "else if ( m == 1 )",
+        "cout << min ( min ( dp [ t ] [ 1 ] , dp [ t ] [ 2 ] ) , dp [ t ] [ 2 ] ) << endl ;"
+      ],
+      "err_line": 5,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        5,
+        22,
+        33
+      ],
+      "mod_code": [
+        "w = w | ch = ' - ' ;",
+        "memset ( dp , INF , sizeof ( INF ) ) ;",
+        "int dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        5,
+        22,
+        33,
+        37
+      ],
+      "mod_code": [
+        "w = w | ch = ' - ' ;",
+        "memset ( dp , INF , sizeof ( INF ) ) ;",
+        "int dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;",
+        "cout << min ( min ( dp [ t ] [ 1 ] , dp [ t ] [ 2 ] ) , dp [ t ] [ 2 ] ) << endl ;"
+      ],
+      "err_line": 5,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        5,
+        22,
+        37
+      ],
+      "mod_code": [
+        "w = w | ch = ' - ' ;",
+        "memset ( dp , INF , sizeof ( INF ) ) ;",
+        "cout << min ( min ( dp [ t ] [ 1 ] , dp [ t ] [ 2 ] ) , dp [ t ] [ 2 ] ) << endl ;"
+      ],
+      "err_line": 5,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        5,
+        32
+      ],
+      "mod_code": [
+        "w = w | ch = ' - ' ;",
+        "else if ( m == 1 )"
+      ],
+      "err_line": 5,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        5,
+        32,
+        33
+      ],
+      "mod_code": [
+        "w = w | ch = ' - ' ;",
+        "else if ( m == 1 )",
+        "int dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        5,
+        32,
+        33,
+        37
+      ],
+      "mod_code": [
+        "w = w | ch = ' - ' ;",
+        "else if ( m == 1 )",
+        "int dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;",
+        "cout << min ( min ( dp [ t ] [ 1 ] , dp [ t ] [ 2 ] ) , dp [ t ] [ 2 ] ) << endl ;"
+      ],
+      "err_line": 5,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        5,
+        32,
+        37
+      ],
+      "mod_code": [
+        "w = w | ch = ' - ' ;",
+        "else if ( m == 1 )",
+        "cout << min ( min ( dp [ t ] [ 1 ] , dp [ t ] [ 2 ] ) , dp [ t ] [ 2 ] ) << endl ;"
+      ],
+      "err_line": 5,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        5,
+        33
+      ],
+      "mod_code": [
+        "w = w | ch = ' - ' ;",
+        "int dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        5,
+        33,
+        37
+      ],
+      "mod_code": [
+        "w = w | ch = ' - ' ;",
+        "int dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;",
+        "cout << min ( min ( dp [ t ] [ 1 ] , dp [ t ] [ 2 ] ) , dp [ t ] [ 2 ] ) << endl ;"
+      ],
+      "err_line": 5,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        5,
+        37
+      ],
+      "mod_code": [
+        "w = w | ch = ' - ' ;",
+        "cout << min ( min ( dp [ t ] [ 1 ] , dp [ t ] [ 2 ] ) , dp [ t ] [ 2 ] ) << endl ;"
+      ],
+      "err_line": 5,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        41,
+        22
+      ],
+      "mod_code": [
+        "inline solve ( ) ;",
+        "memset ( dp , INF , sizeof ( INF ) ) ;"
+      ],
+      "err_line": 41,
+      "err_msg": "ISO C++ forbids declaration of ‘solve’ with no type [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        41,
+        22,
+        32
+      ],
+      "mod_code": [
+        "inline solve ( ) ;",
+        "memset ( dp , INF , sizeof ( INF ) ) ;",
+        "else if ( m == 1 )"
+      ],
+      "err_line": 41,
+      "err_msg": "ISO C++ forbids declaration of ‘solve’ with no type [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        41,
+        22,
+        32,
+        33
+      ],
+      "mod_code": [
+        "inline solve ( ) ;",
+        "memset ( dp , INF , sizeof ( INF ) ) ;",
+        "else if ( m == 1 )",
+        "int dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 33,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        41,
+        22,
+        32,
+        37
+      ],
+      "mod_code": [
+        "inline solve ( ) ;",
+        "memset ( dp , INF , sizeof ( INF ) ) ;",
+        "else if ( m == 1 )",
+        "cout << min ( min ( dp [ t ] [ 1 ] , dp [ t ] [ 2 ] ) , dp [ t ] [ 2 ] ) << endl ;"
+      ],
+      "err_line": 41,
+      "err_msg": "ISO C++ forbids declaration of ‘solve’ with no type [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        41,
+        22,
+        33
+      ],
+      "mod_code": [
+        "inline solve ( ) ;",
+        "memset ( dp , INF , sizeof ( INF ) ) ;",
+        "int dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 33,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        41,
+        22,
+        33,
+        37
+      ],
+      "mod_code": [
+        "inline solve ( ) ;",
+        "memset ( dp , INF , sizeof ( INF ) ) ;",
+        "int dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;",
+        "cout << min ( min ( dp [ t ] [ 1 ] , dp [ t ] [ 2 ] ) , dp [ t ] [ 2 ] ) << endl ;"
+      ],
+      "err_line": 33,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        41,
+        22,
+        37
+      ],
+      "mod_code": [
+        "inline solve ( ) ;",
+        "memset ( dp , INF , sizeof ( INF ) ) ;",
+        "cout << min ( min ( dp [ t ] [ 1 ] , dp [ t ] [ 2 ] ) , dp [ t ] [ 2 ] ) << endl ;"
+      ],
+      "err_line": 41,
+      "err_msg": "ISO C++ forbids declaration of ‘solve’ with no type [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        41,
+        32
+      ],
+      "mod_code": [
+        "inline solve ( ) ;",
+        "else if ( m == 1 )"
+      ],
+      "err_line": 41,
+      "err_msg": "ISO C++ forbids declaration of ‘solve’ with no type [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        41,
+        32,
+        33
+      ],
+      "mod_code": [
+        "inline solve ( ) ;",
+        "else if ( m == 1 )",
+        "int dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 33,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        41,
+        32,
+        33,
+        37
+      ],
+      "mod_code": [
+        "inline solve ( ) ;",
+        "else if ( m == 1 )",
+        "int dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;",
+        "cout << min ( min ( dp [ t ] [ 1 ] , dp [ t ] [ 2 ] ) , dp [ t ] [ 2 ] ) << endl ;"
+      ],
+      "err_line": 33,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        41,
+        32,
+        37
+      ],
+      "mod_code": [
+        "inline solve ( ) ;",
+        "else if ( m == 1 )",
+        "cout << min ( min ( dp [ t ] [ 1 ] , dp [ t ] [ 2 ] ) , dp [ t ] [ 2 ] ) << endl ;"
+      ],
+      "err_line": 41,
+      "err_msg": "ISO C++ forbids declaration of ‘solve’ with no type [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        41,
+        33
+      ],
+      "mod_code": [
+        "inline solve ( ) ;",
+        "int dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 33,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        41,
+        33,
+        37
+      ],
+      "mod_code": [
+        "inline solve ( ) ;",
+        "int dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;",
+        "cout << min ( min ( dp [ t ] [ 1 ] , dp [ t ] [ 2 ] ) , dp [ t ] [ 2 ] ) << endl ;"
+      ],
+      "err_line": 33,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        41,
+        37
+      ],
+      "mod_code": [
+        "inline solve ( ) ;",
+        "cout << min ( min ( dp [ t ] [ 1 ] , dp [ t ] [ 2 ] ) , dp [ t ] [ 2 ] ) << endl ;"
+      ],
+      "err_line": 41,
+      "err_msg": "ISO C++ forbids declaration of ‘solve’ with no type [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        22,
+        32,
+        33
+      ],
+      "mod_code": [
+        "memset ( dp , INF , sizeof ( INF ) ) ;",
+        "else if ( m == 1 )",
+        "int dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 33,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        22,
+        32,
+        33,
+        37
+      ],
+      "mod_code": [
+        "memset ( dp , INF , sizeof ( INF ) ) ;",
+        "else if ( m == 1 )",
+        "int dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;",
+        "cout << min ( min ( dp [ t ] [ 1 ] , dp [ t ] [ 2 ] ) , dp [ t ] [ 2 ] ) << endl ;"
+      ],
+      "err_line": 33,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        22,
+        33
+      ],
+      "mod_code": [
+        "memset ( dp , INF , sizeof ( INF ) ) ;",
+        "int dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 33,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        22,
+        33,
+        37
+      ],
+      "mod_code": [
+        "memset ( dp , INF , sizeof ( INF ) ) ;",
+        "int dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;",
+        "cout << min ( min ( dp [ t ] [ 1 ] , dp [ t ] [ 2 ] ) , dp [ t ] [ 2 ] ) << endl ;"
+      ],
+      "err_line": 33,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        32,
+        33
+      ],
+      "mod_code": [
+        "else if ( m == 1 )",
+        "int dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 33,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        32,
+        33,
+        37
+      ],
+      "mod_code": [
+        "else if ( m == 1 )",
+        "int dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;",
+        "cout << min ( min ( dp [ t ] [ 1 ] , dp [ t ] [ 2 ] ) , dp [ t ] [ 2 ] ) << endl ;"
+      ],
+      "err_line": 33,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        33,
+        37
+      ],
+      "mod_code": [
+        "int dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;",
+        "cout << min ( min ( dp [ t ] [ 1 ] , dp [ t ] [ 2 ] ) , dp [ t ] [ 2 ] ) << endl ;"
+      ],
+      "err_line": 33,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    }
+  ]
+}

@@ -1,0 +1,951 @@
+{
+  "meta": {
+    "index": 2400,
+    "hitid": "3VQTAXTYN3FMBEE4NRQL0G7SR9UUBQ",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "543A",
+    "subid": "48413199"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create 2d long long integer array dp with size 502 by 502",
+      "code": "long long int dp [ 502 ] [ 502 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create long long integers n , m , mod , b",
+      "code": "long long int n , m , mod , b ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "create long long integer array a with size 502",
+      "code": "long long int a [ 502 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "declare inline solve with no arguments , returning void",
+      "code": "inline void solve ( )",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "read n read m read b read mod",
+      "code": "cin >> n >> m >> b >> mod ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i = 0 to n exclusive , read a [ i ]",
+      "code": "for ( long long int i = 0 ; i < n ; i ++ ) { cin >> a [ i ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "set dp [ 0 ] [ 0 ] to 1",
+      "code": "dp [ 0 ] [ 0 ] = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "create long long integer ans with ans = 0",
+      "code": "long long int ans = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( long long int i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "for j = 1 to m + 1 exclusive",
+      "code": "for ( long long int j = 1 ; j < m + 1 ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "for k = 0 to b + 1 exclusive",
+      "code": "for ( long long int k = 0 ; k < b + 1 ; k ++ )",
+      "indent": 3
+    },
+    {
+      "line": 11,
+      "text": "if k - a [ i ] is greater than or equal to 0",
+      "code": "if ( k - a [ i ] >= 0 )",
+      "indent": 4
+    },
+    {
+      "line": 12,
+      "text": "set dp [ j ] [ k ] to ( dp [ j ] [ k ] + dp [ j - 1 ] [ k - a [ i ] ] ) % mod",
+      "code": "dp [ j ] [ k ] = ( dp [ j ] [ k ] + dp [ j - 1 ] [ k - a [ i ] ] ) % mod ;",
+      "indent": 5
+    },
+    {
+      "line": 13,
+      "text": "set dp [ j ] [ k ] to dp [ j ] [ k ] % mod",
+      "code": "dp [ j ] [ k ] %= mod ;",
+      "indent": 5
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 4
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "for k = 1 to b + 1 exclusive",
+      "code": "for ( long long int k = 1 ; k < b + 1 ; k ++ )",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "set dp [ m ] [ k ] to dp [ m ] [ k ] + dp [ m ] [ k - 1 ]",
+      "code": "dp [ m ] [ k ] = dp [ m ] [ k ] + dp [ m ] [ k - 1 ] ;",
+      "indent": 2
+    },
+    {
+      "line": 20,
+      "text": "set dp [ m ] [ k ] to dp [ m ] [ k ] % mod",
+      "code": "dp [ m ] [ k ] %= mod ;",
+      "indent": 2
+    },
+    {
+      "line": 21,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 22,
+      "text": "print dp [ m ] [ b ] print ' \\ n '",
+      "code": "cout << dp [ m ] [ b ] << ' \\n ' ;",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 24,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 25,
+      "text": "create integer tests with tests = 1",
+      "code": "int tests = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 26,
+      "text": "while decrement tests is true , run solve",
+      "code": "while ( tests -- ) { solve ( ) ; }",
+      "indent": 1
+    },
+    {
+      "line": 27,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "int dp [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "for ( j = 1 ; j < m + 1 ; j ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "for ( k = 0 ; k < b + 1 ; k ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "dp [ j ] [ k ] = ( dp [ j ] [ k ] + dp [ j - 1 ] [ k - a [ i ] ) % mod ;"
+      ],
+      "err_line": 12,
+      "err_msg": "expected ‘]’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        18
+      ],
+      "mod_code": [
+        "for ( k = 1 ; k < b + 1 ; k ++ )"
+      ],
+      "err_line": 18,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        25
+      ],
+      "mod_code": [
+        "tests = 1 ;"
+      ],
+      "err_line": 25,
+      "err_msg": "‘tests’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        18,
+        9
+      ],
+      "mod_code": [
+        "for ( k = 1 ; k < b + 1 ; k ++ )",
+        "for ( j = 1 ; j < m + 1 ; j ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        18,
+        9,
+        8
+      ],
+      "mod_code": [
+        "for ( k = 1 ; k < b + 1 ; k ++ )",
+        "for ( j = 1 ; j < m + 1 ; j ++ )",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        18,
+        9,
+        8,
+        25
+      ],
+      "mod_code": [
+        "for ( k = 1 ; k < b + 1 ; k ++ )",
+        "for ( j = 1 ; j < m + 1 ; j ++ )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "tests = 1 ;"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        18,
+        9,
+        8,
+        10
+      ],
+      "mod_code": [
+        "for ( k = 1 ; k < b + 1 ; k ++ )",
+        "for ( j = 1 ; j < m + 1 ; j ++ )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( k = 0 ; k < b + 1 ; k ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        18,
+        9,
+        8,
+        12
+      ],
+      "mod_code": [
+        "for ( k = 1 ; k < b + 1 ; k ++ )",
+        "for ( j = 1 ; j < m + 1 ; j ++ )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "dp [ j ] [ k ] = ( dp [ j ] [ k ] + dp [ j - 1 ] [ k - a [ i ] ) % mod ;"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        18,
+        9,
+        25
+      ],
+      "mod_code": [
+        "for ( k = 1 ; k < b + 1 ; k ++ )",
+        "for ( j = 1 ; j < m + 1 ; j ++ )",
+        "tests = 1 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        18,
+        9,
+        25,
+        10
+      ],
+      "mod_code": [
+        "for ( k = 1 ; k < b + 1 ; k ++ )",
+        "for ( j = 1 ; j < m + 1 ; j ++ )",
+        "tests = 1 ;",
+        "for ( k = 0 ; k < b + 1 ; k ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        18,
+        9,
+        25,
+        12
+      ],
+      "mod_code": [
+        "for ( k = 1 ; k < b + 1 ; k ++ )",
+        "for ( j = 1 ; j < m + 1 ; j ++ )",
+        "tests = 1 ;",
+        "dp [ j ] [ k ] = ( dp [ j ] [ k ] + dp [ j - 1 ] [ k - a [ i ] ) % mod ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        18,
+        9,
+        10
+      ],
+      "mod_code": [
+        "for ( k = 1 ; k < b + 1 ; k ++ )",
+        "for ( j = 1 ; j < m + 1 ; j ++ )",
+        "for ( k = 0 ; k < b + 1 ; k ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        18,
+        9,
+        10,
+        12
+      ],
+      "mod_code": [
+        "for ( k = 1 ; k < b + 1 ; k ++ )",
+        "for ( j = 1 ; j < m + 1 ; j ++ )",
+        "for ( k = 0 ; k < b + 1 ; k ++ )",
+        "dp [ j ] [ k ] = ( dp [ j ] [ k ] + dp [ j - 1 ] [ k - a [ i ] ) % mod ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        18,
+        9,
+        12
+      ],
+      "mod_code": [
+        "for ( k = 1 ; k < b + 1 ; k ++ )",
+        "for ( j = 1 ; j < m + 1 ; j ++ )",
+        "dp [ j ] [ k ] = ( dp [ j ] [ k ] + dp [ j - 1 ] [ k - a [ i ] ) % mod ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        18,
+        8
+      ],
+      "mod_code": [
+        "for ( k = 1 ; k < b + 1 ; k ++ )",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        18,
+        8,
+        25
+      ],
+      "mod_code": [
+        "for ( k = 1 ; k < b + 1 ; k ++ )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "tests = 1 ;"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        18,
+        8,
+        25,
+        10
+      ],
+      "mod_code": [
+        "for ( k = 1 ; k < b + 1 ; k ++ )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "tests = 1 ;",
+        "for ( k = 0 ; k < b + 1 ; k ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        18,
+        8,
+        25,
+        12
+      ],
+      "mod_code": [
+        "for ( k = 1 ; k < b + 1 ; k ++ )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "tests = 1 ;",
+        "dp [ j ] [ k ] = ( dp [ j ] [ k ] + dp [ j - 1 ] [ k - a [ i ] ) % mod ;"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        18,
+        8,
+        10
+      ],
+      "mod_code": [
+        "for ( k = 1 ; k < b + 1 ; k ++ )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( k = 0 ; k < b + 1 ; k ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        18,
+        8,
+        10,
+        12
+      ],
+      "mod_code": [
+        "for ( k = 1 ; k < b + 1 ; k ++ )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( k = 0 ; k < b + 1 ; k ++ )",
+        "dp [ j ] [ k ] = ( dp [ j ] [ k ] + dp [ j - 1 ] [ k - a [ i ] ) % mod ;"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        18,
+        8,
+        12
+      ],
+      "mod_code": [
+        "for ( k = 1 ; k < b + 1 ; k ++ )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "dp [ j ] [ k ] = ( dp [ j ] [ k ] + dp [ j - 1 ] [ k - a [ i ] ) % mod ;"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        18,
+        25
+      ],
+      "mod_code": [
+        "for ( k = 1 ; k < b + 1 ; k ++ )",
+        "tests = 1 ;"
+      ],
+      "err_line": 18,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        18,
+        25,
+        10
+      ],
+      "mod_code": [
+        "for ( k = 1 ; k < b + 1 ; k ++ )",
+        "tests = 1 ;",
+        "for ( k = 0 ; k < b + 1 ; k ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        18,
+        25,
+        10,
+        12
+      ],
+      "mod_code": [
+        "for ( k = 1 ; k < b + 1 ; k ++ )",
+        "tests = 1 ;",
+        "for ( k = 0 ; k < b + 1 ; k ++ )",
+        "dp [ j ] [ k ] = ( dp [ j ] [ k ] + dp [ j - 1 ] [ k - a [ i ] ) % mod ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        18,
+        25,
+        12
+      ],
+      "mod_code": [
+        "for ( k = 1 ; k < b + 1 ; k ++ )",
+        "tests = 1 ;",
+        "dp [ j ] [ k ] = ( dp [ j ] [ k ] + dp [ j - 1 ] [ k - a [ i ] ) % mod ;"
+      ],
+      "err_line": 12,
+      "err_msg": "expected ‘]’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        18,
+        10
+      ],
+      "mod_code": [
+        "for ( k = 1 ; k < b + 1 ; k ++ )",
+        "for ( k = 0 ; k < b + 1 ; k ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        18,
+        10,
+        12
+      ],
+      "mod_code": [
+        "for ( k = 1 ; k < b + 1 ; k ++ )",
+        "for ( k = 0 ; k < b + 1 ; k ++ )",
+        "dp [ j ] [ k ] = ( dp [ j ] [ k ] + dp [ j - 1 ] [ k - a [ i ] ) % mod ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        18,
+        12
+      ],
+      "mod_code": [
+        "for ( k = 1 ; k < b + 1 ; k ++ )",
+        "dp [ j ] [ k ] = ( dp [ j ] [ k ] + dp [ j - 1 ] [ k - a [ i ] ) % mod ;"
+      ],
+      "err_line": 12,
+      "err_msg": "expected ‘]’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        9,
+        8
+      ],
+      "mod_code": [
+        "for ( j = 1 ; j < m + 1 ; j ++ )",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        8,
+        25
+      ],
+      "mod_code": [
+        "for ( j = 1 ; j < m + 1 ; j ++ )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "tests = 1 ;"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        8,
+        25,
+        10
+      ],
+      "mod_code": [
+        "for ( j = 1 ; j < m + 1 ; j ++ )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "tests = 1 ;",
+        "for ( k = 0 ; k < b + 1 ; k ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        8,
+        25,
+        12
+      ],
+      "mod_code": [
+        "for ( j = 1 ; j < m + 1 ; j ++ )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "tests = 1 ;",
+        "dp [ j ] [ k ] = ( dp [ j ] [ k ] + dp [ j - 1 ] [ k - a [ i ] ) % mod ;"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        8,
+        10
+      ],
+      "mod_code": [
+        "for ( j = 1 ; j < m + 1 ; j ++ )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( k = 0 ; k < b + 1 ; k ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        8,
+        10,
+        12
+      ],
+      "mod_code": [
+        "for ( j = 1 ; j < m + 1 ; j ++ )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( k = 0 ; k < b + 1 ; k ++ )",
+        "dp [ j ] [ k ] = ( dp [ j ] [ k ] + dp [ j - 1 ] [ k - a [ i ] ) % mod ;"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        8,
+        12
+      ],
+      "mod_code": [
+        "for ( j = 1 ; j < m + 1 ; j ++ )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "dp [ j ] [ k ] = ( dp [ j ] [ k ] + dp [ j - 1 ] [ k - a [ i ] ) % mod ;"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        25
+      ],
+      "mod_code": [
+        "for ( j = 1 ; j < m + 1 ; j ++ )",
+        "tests = 1 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        25,
+        10
+      ],
+      "mod_code": [
+        "for ( j = 1 ; j < m + 1 ; j ++ )",
+        "tests = 1 ;",
+        "for ( k = 0 ; k < b + 1 ; k ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        25,
+        10,
+        12
+      ],
+      "mod_code": [
+        "for ( j = 1 ; j < m + 1 ; j ++ )",
+        "tests = 1 ;",
+        "for ( k = 0 ; k < b + 1 ; k ++ )",
+        "dp [ j ] [ k ] = ( dp [ j ] [ k ] + dp [ j - 1 ] [ k - a [ i ] ) % mod ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        25,
+        12
+      ],
+      "mod_code": [
+        "for ( j = 1 ; j < m + 1 ; j ++ )",
+        "tests = 1 ;",
+        "dp [ j ] [ k ] = ( dp [ j ] [ k ] + dp [ j - 1 ] [ k - a [ i ] ) % mod ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        10
+      ],
+      "mod_code": [
+        "for ( j = 1 ; j < m + 1 ; j ++ )",
+        "for ( k = 0 ; k < b + 1 ; k ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        10,
+        12
+      ],
+      "mod_code": [
+        "for ( j = 1 ; j < m + 1 ; j ++ )",
+        "for ( k = 0 ; k < b + 1 ; k ++ )",
+        "dp [ j ] [ k ] = ( dp [ j ] [ k ] + dp [ j - 1 ] [ k - a [ i ] ) % mod ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        12
+      ],
+      "mod_code": [
+        "for ( j = 1 ; j < m + 1 ; j ++ )",
+        "dp [ j ] [ k ] = ( dp [ j ] [ k ] + dp [ j - 1 ] [ k - a [ i ] ) % mod ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        25
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "tests = 1 ;"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        8,
+        25,
+        10
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "tests = 1 ;",
+        "for ( k = 0 ; k < b + 1 ; k ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        8,
+        25,
+        10,
+        12
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "tests = 1 ;",
+        "for ( k = 0 ; k < b + 1 ; k ++ )",
+        "dp [ j ] [ k ] = ( dp [ j ] [ k ] + dp [ j - 1 ] [ k - a [ i ] ) % mod ;"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        8,
+        25,
+        12
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "tests = 1 ;",
+        "dp [ j ] [ k ] = ( dp [ j ] [ k ] + dp [ j - 1 ] [ k - a [ i ] ) % mod ;"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        8,
+        10
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( k = 0 ; k < b + 1 ; k ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        12
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( k = 0 ; k < b + 1 ; k ++ )",
+        "dp [ j ] [ k ] = ( dp [ j ] [ k ] + dp [ j - 1 ] [ k - a [ i ] ) % mod ;"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        8,
+        12
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "dp [ j ] [ k ] = ( dp [ j ] [ k ] + dp [ j - 1 ] [ k - a [ i ] ) % mod ;"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        25,
+        10
+      ],
+      "mod_code": [
+        "tests = 1 ;",
+        "for ( k = 0 ; k < b + 1 ; k ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        25,
+        10,
+        12
+      ],
+      "mod_code": [
+        "tests = 1 ;",
+        "for ( k = 0 ; k < b + 1 ; k ++ )",
+        "dp [ j ] [ k ] = ( dp [ j ] [ k ] + dp [ j - 1 ] [ k - a [ i ] ) % mod ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        25,
+        12
+      ],
+      "mod_code": [
+        "tests = 1 ;",
+        "dp [ j ] [ k ] = ( dp [ j ] [ k ] + dp [ j - 1 ] [ k - a [ i ] ) % mod ;"
+      ],
+      "err_line": 12,
+      "err_msg": "expected ‘]’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        12
+      ],
+      "mod_code": [
+        "for ( k = 0 ; k < b + 1 ; k ++ )",
+        "dp [ j ] [ k ] = ( dp [ j ] [ k ] + dp [ j - 1 ] [ k - a [ i ] ) % mod ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘k’ was not declared in this scope"
+    }
+  ]
+}

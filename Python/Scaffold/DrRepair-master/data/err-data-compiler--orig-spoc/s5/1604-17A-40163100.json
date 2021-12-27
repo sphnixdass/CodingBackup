@@ -1,0 +1,859 @@
+{
+  "meta": {
+    "index": 1604,
+    "hitid": "3XBXDSS888DQ5RUBJ9Q2YQ21X69XLY",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "17A",
+    "subid": "40163100"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "integer arrays num and prime with size 1000 + 10",
+      "code": "int num [ 1000 + 10 ] , prime [ 1000 + 10 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "num [ 0 ] and num [ 1 ] = 1",
+      "code": "num [ 0 ] = num [ 1 ] = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "for integer i = 2 to i * i < = 1000",
+      "code": "for ( int i = 2 ; i * i <= 1000 ; ++ i )",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "if num [ i ] is equal to 0",
+      "code": "if ( num [ i ] == 0 )",
+      "indent": 2
+    },
+    {
+      "line": 5,
+      "text": "for j = i * i to 1000 inclusive incrementing by i , set num [ j ] to 1",
+      "code": "for ( int j = i * i ; j <= 1000 ; j += i ) { num [ j ] = 1 ; }",
+      "indent": 3
+    },
+    {
+      "line": 6,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "create integer j with value 0",
+      "code": "int j = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "for integer i = 0 to 1000 inclusive",
+      "code": "for ( int i = 0 ; i <= 1000 ; ++ i )",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "if num [ i ] is 0 , set prime [ j ] to i and increment j",
+      "code": "if ( ! num [ i ] ) prime [ j ++ ] = i ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "create integers n and k",
+      "code": "int n , k ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "while can read n and k",
+      "code": "while ( cin >> n >> k )",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "sum and cnt are integers = 0",
+      "code": "int sum = 0 , cnt = 0 ;",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "for i = 2 to j & & prime [ i - 1 ] + prime [ i - 2 ] + 1 < = n inclusive",
+      "code": "for ( int i = 2 ; i < j && prime [ i - 1 ] + prime [ i - 2 ] + 1 <= n ; ++ i )",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "sum = 1 + prime [ i - 1 ] + prime [ i - 2 ]",
+      "code": "sum = 1 + prime [ i - 1 ] + prime [ i - 2 ] ;",
+      "indent": 3
+    },
+    {
+      "line": 17,
+      "text": "if num [ sum ] is 0 , increment cnt",
+      "code": "if ( ! num [ sum ] ) cnt ++ ;",
+      "indent": 3
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 19,
+      "text": "if cnt > = k",
+      "code": "if ( cnt >= k )",
+      "indent": 2
+    },
+    {
+      "line": 20,
+      "text": "print \" YES \\ n \"",
+      "code": "cout << \" YES\\n \" ;",
+      "indent": 3
+    },
+    {
+      "line": 21,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 22,
+      "text": "print \" NO \\ n \"",
+      "code": "cout << \" NO\\n \" ;",
+      "indent": 3
+    },
+    {
+      "line": 23,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 25,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "int num [ 0 ] = { 1 } , num [ 1 ] = 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too many initializers for ‘int [0]’"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "int * j = 0 ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid types ‘int [1010][int*]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= prime && prime [ i - 1 ] + prime [ i - 2 ] + 1 <= n ; i ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        19
+      ],
+      "mod_code": [
+        "if ( cnt >= k ) k ++ ;"
+      ],
+      "err_line": 21,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        10,
+        19
+      ],
+      "mod_code": [
+        "if ( num [ i ] == 0 ) prime [ j ] = i ;",
+        "if ( cnt >= k ) k ++ ;"
+      ],
+      "err_line": 21,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        10,
+        19,
+        15
+      ],
+      "mod_code": [
+        "if ( num [ i ] == 0 ) prime [ j ] = i ;",
+        "if ( cnt >= k ) k ++ ;",
+        "for ( int i = 2 ; i <= prime && prime [ i - 1 ] + prime [ i - 2 ] + 1 <= n ; i ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        19,
+        15,
+        4
+      ],
+      "mod_code": [
+        "if ( num [ i ] == 0 ) prime [ j ] = i ;",
+        "if ( cnt >= k ) k ++ ;",
+        "for ( int i = 2 ; i <= prime && prime [ i - 1 ] + prime [ i - 2 ] + 1 <= n ; i ++ )",
+        "if ( num [ i ] == ' 0 ' )"
+      ],
+      "err_line": 15,
+      "err_msg": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        19,
+        15,
+        2
+      ],
+      "mod_code": [
+        "if ( num [ i ] == 0 ) prime [ j ] = i ;",
+        "if ( cnt >= k ) k ++ ;",
+        "for ( int i = 2 ; i <= prime && prime [ i - 1 ] + prime [ i - 2 ] + 1 <= n ; i ++ )",
+        "int num [ 0 ] = { 1 } , num [ 1 ] = 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too many initializers for ‘int [0]’"
+    },
+    {
+      "mod_line": [
+        10,
+        19,
+        15,
+        13
+      ],
+      "mod_code": [
+        "if ( num [ i ] == 0 ) prime [ j ] = i ;",
+        "if ( cnt >= k ) k ++ ;",
+        "for ( int i = 2 ; i <= prime && prime [ i - 1 ] + prime [ i - 2 ] + 1 <= n ; i ++ )",
+        "while ( n >> k )"
+      ],
+      "err_line": 15,
+      "err_msg": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        19,
+        4
+      ],
+      "mod_code": [
+        "if ( num [ i ] == 0 ) prime [ j ] = i ;",
+        "if ( cnt >= k ) k ++ ;",
+        "if ( num [ i ] == ' 0 ' )"
+      ],
+      "err_line": 21,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        10,
+        19,
+        4,
+        2
+      ],
+      "mod_code": [
+        "if ( num [ i ] == 0 ) prime [ j ] = i ;",
+        "if ( cnt >= k ) k ++ ;",
+        "if ( num [ i ] == ' 0 ' )",
+        "int num [ 0 ] = { 1 } , num [ 1 ] = 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too many initializers for ‘int [0]’"
+    },
+    {
+      "mod_line": [
+        10,
+        19,
+        4,
+        13
+      ],
+      "mod_code": [
+        "if ( num [ i ] == 0 ) prime [ j ] = i ;",
+        "if ( cnt >= k ) k ++ ;",
+        "if ( num [ i ] == ' 0 ' )",
+        "while ( n >> k )"
+      ],
+      "err_line": 21,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        10,
+        19,
+        2
+      ],
+      "mod_code": [
+        "if ( num [ i ] == 0 ) prime [ j ] = i ;",
+        "if ( cnt >= k ) k ++ ;",
+        "int num [ 0 ] = { 1 } , num [ 1 ] = 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too many initializers for ‘int [0]’"
+    },
+    {
+      "mod_line": [
+        10,
+        19,
+        2,
+        13
+      ],
+      "mod_code": [
+        "if ( num [ i ] == 0 ) prime [ j ] = i ;",
+        "if ( cnt >= k ) k ++ ;",
+        "int num [ 0 ] = { 1 } , num [ 1 ] = 1 ;",
+        "while ( n >> k )"
+      ],
+      "err_line": 2,
+      "err_msg": "too many initializers for ‘int [0]’"
+    },
+    {
+      "mod_line": [
+        10,
+        19,
+        13
+      ],
+      "mod_code": [
+        "if ( num [ i ] == 0 ) prime [ j ] = i ;",
+        "if ( cnt >= k ) k ++ ;",
+        "while ( n >> k )"
+      ],
+      "err_line": 21,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        10,
+        15
+      ],
+      "mod_code": [
+        "if ( num [ i ] == 0 ) prime [ j ] = i ;",
+        "for ( int i = 2 ; i <= prime && prime [ i - 1 ] + prime [ i - 2 ] + 1 <= n ; i ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        15,
+        4
+      ],
+      "mod_code": [
+        "if ( num [ i ] == 0 ) prime [ j ] = i ;",
+        "for ( int i = 2 ; i <= prime && prime [ i - 1 ] + prime [ i - 2 ] + 1 <= n ; i ++ )",
+        "if ( num [ i ] == ' 0 ' )"
+      ],
+      "err_line": 15,
+      "err_msg": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        15,
+        4,
+        2
+      ],
+      "mod_code": [
+        "if ( num [ i ] == 0 ) prime [ j ] = i ;",
+        "for ( int i = 2 ; i <= prime && prime [ i - 1 ] + prime [ i - 2 ] + 1 <= n ; i ++ )",
+        "if ( num [ i ] == ' 0 ' )",
+        "int num [ 0 ] = { 1 } , num [ 1 ] = 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too many initializers for ‘int [0]’"
+    },
+    {
+      "mod_line": [
+        10,
+        15,
+        4,
+        13
+      ],
+      "mod_code": [
+        "if ( num [ i ] == 0 ) prime [ j ] = i ;",
+        "for ( int i = 2 ; i <= prime && prime [ i - 1 ] + prime [ i - 2 ] + 1 <= n ; i ++ )",
+        "if ( num [ i ] == ' 0 ' )",
+        "while ( n >> k )"
+      ],
+      "err_line": 15,
+      "err_msg": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        15,
+        2
+      ],
+      "mod_code": [
+        "if ( num [ i ] == 0 ) prime [ j ] = i ;",
+        "for ( int i = 2 ; i <= prime && prime [ i - 1 ] + prime [ i - 2 ] + 1 <= n ; i ++ )",
+        "int num [ 0 ] = { 1 } , num [ 1 ] = 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too many initializers for ‘int [0]’"
+    },
+    {
+      "mod_line": [
+        10,
+        15,
+        2,
+        13
+      ],
+      "mod_code": [
+        "if ( num [ i ] == 0 ) prime [ j ] = i ;",
+        "for ( int i = 2 ; i <= prime && prime [ i - 1 ] + prime [ i - 2 ] + 1 <= n ; i ++ )",
+        "int num [ 0 ] = { 1 } , num [ 1 ] = 1 ;",
+        "while ( n >> k )"
+      ],
+      "err_line": 2,
+      "err_msg": "too many initializers for ‘int [0]’"
+    },
+    {
+      "mod_line": [
+        10,
+        15,
+        13
+      ],
+      "mod_code": [
+        "if ( num [ i ] == 0 ) prime [ j ] = i ;",
+        "for ( int i = 2 ; i <= prime && prime [ i - 1 ] + prime [ i - 2 ] + 1 <= n ; i ++ )",
+        "while ( n >> k )"
+      ],
+      "err_line": 15,
+      "err_msg": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        4,
+        2
+      ],
+      "mod_code": [
+        "if ( num [ i ] == 0 ) prime [ j ] = i ;",
+        "if ( num [ i ] == ' 0 ' )",
+        "int num [ 0 ] = { 1 } , num [ 1 ] = 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too many initializers for ‘int [0]’"
+    },
+    {
+      "mod_line": [
+        10,
+        4,
+        2,
+        13
+      ],
+      "mod_code": [
+        "if ( num [ i ] == 0 ) prime [ j ] = i ;",
+        "if ( num [ i ] == ' 0 ' )",
+        "int num [ 0 ] = { 1 } , num [ 1 ] = 1 ;",
+        "while ( n >> k )"
+      ],
+      "err_line": 2,
+      "err_msg": "too many initializers for ‘int [0]’"
+    },
+    {
+      "mod_line": [
+        10,
+        2
+      ],
+      "mod_code": [
+        "if ( num [ i ] == 0 ) prime [ j ] = i ;",
+        "int num [ 0 ] = { 1 } , num [ 1 ] = 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too many initializers for ‘int [0]’"
+    },
+    {
+      "mod_line": [
+        10,
+        2,
+        13
+      ],
+      "mod_code": [
+        "if ( num [ i ] == 0 ) prime [ j ] = i ;",
+        "int num [ 0 ] = { 1 } , num [ 1 ] = 1 ;",
+        "while ( n >> k )"
+      ],
+      "err_line": 2,
+      "err_msg": "too many initializers for ‘int [0]’"
+    },
+    {
+      "mod_line": [
+        19,
+        15
+      ],
+      "mod_code": [
+        "if ( cnt >= k ) k ++ ;",
+        "for ( int i = 2 ; i <= prime && prime [ i - 1 ] + prime [ i - 2 ] + 1 <= n ; i ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        19,
+        15,
+        4
+      ],
+      "mod_code": [
+        "if ( cnt >= k ) k ++ ;",
+        "for ( int i = 2 ; i <= prime && prime [ i - 1 ] + prime [ i - 2 ] + 1 <= n ; i ++ )",
+        "if ( num [ i ] == ' 0 ' )"
+      ],
+      "err_line": 15,
+      "err_msg": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        19,
+        15,
+        4,
+        2
+      ],
+      "mod_code": [
+        "if ( cnt >= k ) k ++ ;",
+        "for ( int i = 2 ; i <= prime && prime [ i - 1 ] + prime [ i - 2 ] + 1 <= n ; i ++ )",
+        "if ( num [ i ] == ' 0 ' )",
+        "int num [ 0 ] = { 1 } , num [ 1 ] = 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too many initializers for ‘int [0]’"
+    },
+    {
+      "mod_line": [
+        19,
+        15,
+        4,
+        13
+      ],
+      "mod_code": [
+        "if ( cnt >= k ) k ++ ;",
+        "for ( int i = 2 ; i <= prime && prime [ i - 1 ] + prime [ i - 2 ] + 1 <= n ; i ++ )",
+        "if ( num [ i ] == ' 0 ' )",
+        "while ( n >> k )"
+      ],
+      "err_line": 15,
+      "err_msg": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        19,
+        15,
+        2
+      ],
+      "mod_code": [
+        "if ( cnt >= k ) k ++ ;",
+        "for ( int i = 2 ; i <= prime && prime [ i - 1 ] + prime [ i - 2 ] + 1 <= n ; i ++ )",
+        "int num [ 0 ] = { 1 } , num [ 1 ] = 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too many initializers for ‘int [0]’"
+    },
+    {
+      "mod_line": [
+        19,
+        15,
+        2,
+        13
+      ],
+      "mod_code": [
+        "if ( cnt >= k ) k ++ ;",
+        "for ( int i = 2 ; i <= prime && prime [ i - 1 ] + prime [ i - 2 ] + 1 <= n ; i ++ )",
+        "int num [ 0 ] = { 1 } , num [ 1 ] = 1 ;",
+        "while ( n >> k )"
+      ],
+      "err_line": 2,
+      "err_msg": "too many initializers for ‘int [0]’"
+    },
+    {
+      "mod_line": [
+        19,
+        15,
+        13
+      ],
+      "mod_code": [
+        "if ( cnt >= k ) k ++ ;",
+        "for ( int i = 2 ; i <= prime && prime [ i - 1 ] + prime [ i - 2 ] + 1 <= n ; i ++ )",
+        "while ( n >> k )"
+      ],
+      "err_line": 15,
+      "err_msg": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        19,
+        4
+      ],
+      "mod_code": [
+        "if ( cnt >= k ) k ++ ;",
+        "if ( num [ i ] == ' 0 ' )"
+      ],
+      "err_line": 21,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        19,
+        4,
+        2
+      ],
+      "mod_code": [
+        "if ( cnt >= k ) k ++ ;",
+        "if ( num [ i ] == ' 0 ' )",
+        "int num [ 0 ] = { 1 } , num [ 1 ] = 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too many initializers for ‘int [0]’"
+    },
+    {
+      "mod_line": [
+        19,
+        4,
+        2,
+        13
+      ],
+      "mod_code": [
+        "if ( cnt >= k ) k ++ ;",
+        "if ( num [ i ] == ' 0 ' )",
+        "int num [ 0 ] = { 1 } , num [ 1 ] = 1 ;",
+        "while ( n >> k )"
+      ],
+      "err_line": 2,
+      "err_msg": "too many initializers for ‘int [0]’"
+    },
+    {
+      "mod_line": [
+        19,
+        4,
+        13
+      ],
+      "mod_code": [
+        "if ( cnt >= k ) k ++ ;",
+        "if ( num [ i ] == ' 0 ' )",
+        "while ( n >> k )"
+      ],
+      "err_line": 21,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        19,
+        2
+      ],
+      "mod_code": [
+        "if ( cnt >= k ) k ++ ;",
+        "int num [ 0 ] = { 1 } , num [ 1 ] = 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too many initializers for ‘int [0]’"
+    },
+    {
+      "mod_line": [
+        19,
+        2,
+        13
+      ],
+      "mod_code": [
+        "if ( cnt >= k ) k ++ ;",
+        "int num [ 0 ] = { 1 } , num [ 1 ] = 1 ;",
+        "while ( n >> k )"
+      ],
+      "err_line": 2,
+      "err_msg": "too many initializers for ‘int [0]’"
+    },
+    {
+      "mod_line": [
+        19,
+        13
+      ],
+      "mod_code": [
+        "if ( cnt >= k ) k ++ ;",
+        "while ( n >> k )"
+      ],
+      "err_line": 21,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        15,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= prime && prime [ i - 1 ] + prime [ i - 2 ] + 1 <= n ; i ++ )",
+        "if ( num [ i ] == ' 0 ' )"
+      ],
+      "err_line": 15,
+      "err_msg": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        15,
+        4,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= prime && prime [ i - 1 ] + prime [ i - 2 ] + 1 <= n ; i ++ )",
+        "if ( num [ i ] == ' 0 ' )",
+        "int num [ 0 ] = { 1 } , num [ 1 ] = 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too many initializers for ‘int [0]’"
+    },
+    {
+      "mod_line": [
+        15,
+        4,
+        2,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= prime && prime [ i - 1 ] + prime [ i - 2 ] + 1 <= n ; i ++ )",
+        "if ( num [ i ] == ' 0 ' )",
+        "int num [ 0 ] = { 1 } , num [ 1 ] = 1 ;",
+        "while ( n >> k )"
+      ],
+      "err_line": 2,
+      "err_msg": "too many initializers for ‘int [0]’"
+    },
+    {
+      "mod_line": [
+        15,
+        4,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= prime && prime [ i - 1 ] + prime [ i - 2 ] + 1 <= n ; i ++ )",
+        "if ( num [ i ] == ' 0 ' )",
+        "while ( n >> k )"
+      ],
+      "err_line": 15,
+      "err_msg": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        15,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= prime && prime [ i - 1 ] + prime [ i - 2 ] + 1 <= n ; i ++ )",
+        "int num [ 0 ] = { 1 } , num [ 1 ] = 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too many initializers for ‘int [0]’"
+    },
+    {
+      "mod_line": [
+        15,
+        2,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= prime && prime [ i - 1 ] + prime [ i - 2 ] + 1 <= n ; i ++ )",
+        "int num [ 0 ] = { 1 } , num [ 1 ] = 1 ;",
+        "while ( n >> k )"
+      ],
+      "err_line": 2,
+      "err_msg": "too many initializers for ‘int [0]’"
+    },
+    {
+      "mod_line": [
+        15,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= prime && prime [ i - 1 ] + prime [ i - 2 ] + 1 <= n ; i ++ )",
+        "while ( n >> k )"
+      ],
+      "err_line": 15,
+      "err_msg": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        4,
+        2
+      ],
+      "mod_code": [
+        "if ( num [ i ] == ' 0 ' )",
+        "int num [ 0 ] = { 1 } , num [ 1 ] = 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too many initializers for ‘int [0]’"
+    },
+    {
+      "mod_line": [
+        4,
+        2,
+        13
+      ],
+      "mod_code": [
+        "if ( num [ i ] == ' 0 ' )",
+        "int num [ 0 ] = { 1 } , num [ 1 ] = 1 ;",
+        "while ( n >> k )"
+      ],
+      "err_line": 2,
+      "err_msg": "too many initializers for ‘int [0]’"
+    },
+    {
+      "mod_line": [
+        2,
+        13
+      ],
+      "mod_code": [
+        "int num [ 0 ] = { 1 } , num [ 1 ] = 1 ;",
+        "while ( n >> k )"
+      ],
+      "err_line": 2,
+      "err_msg": "too many initializers for ‘int [0]’"
+    }
+  ]
+}

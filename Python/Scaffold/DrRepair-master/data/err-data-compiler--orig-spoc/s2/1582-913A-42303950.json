@@ -1,0 +1,631 @@
+{
+  "meta": {
+    "index": 1582,
+    "hitid": "3566S7OX5DDJ05KG8M4LKCGZY9117I",
+    "workerid": "A1NBHCFZKJGHKW",
+    "probid": "913A",
+    "subid": "42303950"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "in function pangkat taking a long int a and an int n and returning an unsigned long int",
+      "code": "unsigned long int pangkat ( long int a , int n )",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "if n is 0 return 1",
+      "code": "if ( n == 0 ) return 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "temp = unsigned long int",
+      "code": "unsigned long int temp ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "set temp to pangkat of a and n / 2",
+      "code": "temp = pangkat ( a , n / 2 ) ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "set temp to temp * temp",
+      "code": "temp *= temp ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "if n is uneven then set temp to temp * a",
+      "code": "if ( n % 2 == 1 ) { temp *= a ; }",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "return temp",
+      "code": "return temp ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 8,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 9,
+      "text": "a , b = unsigned long int",
+      "code": "unsigned long int a , b ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "read a then b",
+      "code": "cin >> a >> b ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "if a is greater than 31",
+      "code": "if ( a >= 32 )",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "print b",
+      "code": "cout << b ;",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "else",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "temp = unsigned long int",
+      "code": "unsigned long int temp ;",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "set temp to pangkat of 2 and a",
+      "code": "temp = pangkat ( 2 , a ) ;",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "print b mod temp",
+      "code": "cout << b % temp ;",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "print newline",
+      "code": "cout << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "temp = pangkat + n , n / 2 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid conversion from ‘long unsigned int (*)(long int, int)’ to ‘long unsigned int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "temp = pangkat + 2 ;"
+      ],
+      "err_line": 15,
+      "err_msg": "invalid conversion from ‘long unsigned int (*)(long int, int)’ to ‘long unsigned int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "unsigned unsigned int temp ;"
+      ],
+      "err_line": 2,
+      "err_msg": "duplicate ‘unsigned’"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "n"
+      ],
+      "err_line": 13,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "unsigned unsigned int temp ;"
+      ],
+      "err_line": 14,
+      "err_msg": "duplicate ‘unsigned’"
+    },
+    {
+      "mod_line": [
+        3,
+        12
+      ],
+      "mod_code": [
+        "temp = pangkat + n , n / 2 ;",
+        "cout << b << endl ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid conversion from ‘long unsigned int (*)(long int, int)’ to ‘long unsigned int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        12,
+        15
+      ],
+      "mod_code": [
+        "temp = pangkat + n , n / 2 ;",
+        "cout << b << endl ;",
+        "temp = pangkat + 2 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid conversion from ‘long unsigned int (*)(long int, int)’ to ‘long unsigned int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        12,
+        15,
+        16
+      ],
+      "mod_code": [
+        "temp = pangkat + n , n / 2 ;",
+        "cout << b << endl ;",
+        "temp = pangkat + 2 ;",
+        "cout << b % temp << endl ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid conversion from ‘long unsigned int (*)(long int, int)’ to ‘long unsigned int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        12,
+        15,
+        16
+      ],
+      "mod_code": [
+        "temp = pangkat + n , n / 2 ;",
+        "cout << b << endl ;",
+        "temp = pangkat + 2 ;",
+        "cout << ( b % temp ) << endl ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid conversion from ‘long unsigned int (*)(long int, int)’ to ‘long unsigned int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        12,
+        15,
+        6
+      ],
+      "mod_code": [
+        "temp = pangkat + n , n / 2 ;",
+        "cout << b << endl ;",
+        "temp = pangkat + 2 ;",
+        "temp = temp ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid conversion from ‘long unsigned int (*)(long int, int)’ to ‘long unsigned int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        12,
+        16
+      ],
+      "mod_code": [
+        "temp = pangkat + n , n / 2 ;",
+        "cout << b << endl ;",
+        "cout << b % temp << endl ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid conversion from ‘long unsigned int (*)(long int, int)’ to ‘long unsigned int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        12,
+        16,
+        6
+      ],
+      "mod_code": [
+        "temp = pangkat + n , n / 2 ;",
+        "cout << b << endl ;",
+        "cout << b % temp << endl ;",
+        "temp = temp ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid conversion from ‘long unsigned int (*)(long int, int)’ to ‘long unsigned int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        12,
+        16
+      ],
+      "mod_code": [
+        "temp = pangkat + n , n / 2 ;",
+        "cout << b << endl ;",
+        "cout << ( b % temp ) << endl ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid conversion from ‘long unsigned int (*)(long int, int)’ to ‘long unsigned int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        12,
+        16,
+        6
+      ],
+      "mod_code": [
+        "temp = pangkat + n , n / 2 ;",
+        "cout << b << endl ;",
+        "cout << ( b % temp ) << endl ;",
+        "temp = temp ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid conversion from ‘long unsigned int (*)(long int, int)’ to ‘long unsigned int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        12,
+        6
+      ],
+      "mod_code": [
+        "temp = pangkat + n , n / 2 ;",
+        "cout << b << endl ;",
+        "temp = temp ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid conversion from ‘long unsigned int (*)(long int, int)’ to ‘long unsigned int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        15
+      ],
+      "mod_code": [
+        "temp = pangkat + n , n / 2 ;",
+        "temp = pangkat + 2 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid conversion from ‘long unsigned int (*)(long int, int)’ to ‘long unsigned int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        15,
+        16
+      ],
+      "mod_code": [
+        "temp = pangkat + n , n / 2 ;",
+        "temp = pangkat + 2 ;",
+        "cout << b % temp << endl ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid conversion from ‘long unsigned int (*)(long int, int)’ to ‘long unsigned int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        15,
+        16,
+        6
+      ],
+      "mod_code": [
+        "temp = pangkat + n , n / 2 ;",
+        "temp = pangkat + 2 ;",
+        "cout << b % temp << endl ;",
+        "temp = temp ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid conversion from ‘long unsigned int (*)(long int, int)’ to ‘long unsigned int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        15,
+        16
+      ],
+      "mod_code": [
+        "temp = pangkat + n , n / 2 ;",
+        "temp = pangkat + 2 ;",
+        "cout << ( b % temp ) << endl ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid conversion from ‘long unsigned int (*)(long int, int)’ to ‘long unsigned int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        15,
+        16,
+        6
+      ],
+      "mod_code": [
+        "temp = pangkat + n , n / 2 ;",
+        "temp = pangkat + 2 ;",
+        "cout << ( b % temp ) << endl ;",
+        "temp = temp ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid conversion from ‘long unsigned int (*)(long int, int)’ to ‘long unsigned int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        15,
+        6
+      ],
+      "mod_code": [
+        "temp = pangkat + n , n / 2 ;",
+        "temp = pangkat + 2 ;",
+        "temp = temp ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid conversion from ‘long unsigned int (*)(long int, int)’ to ‘long unsigned int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        16
+      ],
+      "mod_code": [
+        "temp = pangkat + n , n / 2 ;",
+        "cout << b % temp << endl ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid conversion from ‘long unsigned int (*)(long int, int)’ to ‘long unsigned int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        16,
+        6
+      ],
+      "mod_code": [
+        "temp = pangkat + n , n / 2 ;",
+        "cout << b % temp << endl ;",
+        "temp = temp ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid conversion from ‘long unsigned int (*)(long int, int)’ to ‘long unsigned int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        16
+      ],
+      "mod_code": [
+        "temp = pangkat + n , n / 2 ;",
+        "cout << ( b % temp ) << endl ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid conversion from ‘long unsigned int (*)(long int, int)’ to ‘long unsigned int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        16,
+        6
+      ],
+      "mod_code": [
+        "temp = pangkat + n , n / 2 ;",
+        "cout << ( b % temp ) << endl ;",
+        "temp = temp ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid conversion from ‘long unsigned int (*)(long int, int)’ to ‘long unsigned int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        6
+      ],
+      "mod_code": [
+        "temp = pangkat + n , n / 2 ;",
+        "temp = temp ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid conversion from ‘long unsigned int (*)(long int, int)’ to ‘long unsigned int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        15
+      ],
+      "mod_code": [
+        "cout << b << endl ;",
+        "temp = pangkat + 2 ;"
+      ],
+      "err_line": 15,
+      "err_msg": "invalid conversion from ‘long unsigned int (*)(long int, int)’ to ‘long unsigned int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        15,
+        16
+      ],
+      "mod_code": [
+        "cout << b << endl ;",
+        "temp = pangkat + 2 ;",
+        "cout << b % temp << endl ;"
+      ],
+      "err_line": 15,
+      "err_msg": "invalid conversion from ‘long unsigned int (*)(long int, int)’ to ‘long unsigned int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        15,
+        16,
+        6
+      ],
+      "mod_code": [
+        "cout << b << endl ;",
+        "temp = pangkat + 2 ;",
+        "cout << b % temp << endl ;",
+        "temp = temp ;"
+      ],
+      "err_line": 15,
+      "err_msg": "invalid conversion from ‘long unsigned int (*)(long int, int)’ to ‘long unsigned int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        15,
+        16
+      ],
+      "mod_code": [
+        "cout << b << endl ;",
+        "temp = pangkat + 2 ;",
+        "cout << ( b % temp ) << endl ;"
+      ],
+      "err_line": 15,
+      "err_msg": "invalid conversion from ‘long unsigned int (*)(long int, int)’ to ‘long unsigned int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        15,
+        16,
+        6
+      ],
+      "mod_code": [
+        "cout << b << endl ;",
+        "temp = pangkat + 2 ;",
+        "cout << ( b % temp ) << endl ;",
+        "temp = temp ;"
+      ],
+      "err_line": 15,
+      "err_msg": "invalid conversion from ‘long unsigned int (*)(long int, int)’ to ‘long unsigned int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        15,
+        6
+      ],
+      "mod_code": [
+        "cout << b << endl ;",
+        "temp = pangkat + 2 ;",
+        "temp = temp ;"
+      ],
+      "err_line": 15,
+      "err_msg": "invalid conversion from ‘long unsigned int (*)(long int, int)’ to ‘long unsigned int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        15,
+        16
+      ],
+      "mod_code": [
+        "temp = pangkat + 2 ;",
+        "cout << b % temp << endl ;"
+      ],
+      "err_line": 15,
+      "err_msg": "invalid conversion from ‘long unsigned int (*)(long int, int)’ to ‘long unsigned int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        15,
+        16,
+        6
+      ],
+      "mod_code": [
+        "temp = pangkat + 2 ;",
+        "cout << b % temp << endl ;",
+        "temp = temp ;"
+      ],
+      "err_line": 15,
+      "err_msg": "invalid conversion from ‘long unsigned int (*)(long int, int)’ to ‘long unsigned int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        15,
+        16
+      ],
+      "mod_code": [
+        "temp = pangkat + 2 ;",
+        "cout << ( b % temp ) << endl ;"
+      ],
+      "err_line": 15,
+      "err_msg": "invalid conversion from ‘long unsigned int (*)(long int, int)’ to ‘long unsigned int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        15,
+        16,
+        6
+      ],
+      "mod_code": [
+        "temp = pangkat + 2 ;",
+        "cout << ( b % temp ) << endl ;",
+        "temp = temp ;"
+      ],
+      "err_line": 15,
+      "err_msg": "invalid conversion from ‘long unsigned int (*)(long int, int)’ to ‘long unsigned int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        15,
+        6
+      ],
+      "mod_code": [
+        "temp = pangkat + 2 ;",
+        "temp = temp ;"
+      ],
+      "err_line": 15,
+      "err_msg": "invalid conversion from ‘long unsigned int (*)(long int, int)’ to ‘long unsigned int’ [-fpermissive]"
+    }
+  ]
+}

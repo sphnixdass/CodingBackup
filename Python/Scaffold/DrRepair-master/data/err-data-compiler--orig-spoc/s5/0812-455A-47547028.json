@@ -1,0 +1,415 @@
+{
+  "meta": {
+    "index": 812,
+    "hitid": "3BCRDCM0ODO226SXXM5BJDC2BHM6KL",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "455A",
+    "subid": "47547028"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create long long n",
+      "code": "long long n ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create long long maxn",
+      "code": "long long maxn ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "create unsigned long long array a with size 100001",
+      "code": "unsigned long long a [ 100001 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "create 2d unsigned long long array dp of size [ 100001 ] [ 2 ]",
+      "code": "unsigned long long dp [ 100001 ] [ 2 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "create integer x",
+      "code": "int x ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "read x",
+      "code": "cin >> x ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "set a [ x ] to x",
+      "code": "a [ x ] += x ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "if x is greater than maxn , set maxn to x",
+      "code": "if ( x > maxn ) { maxn = x ; }",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "for i = 1 to maxn inclusive",
+      "code": "for ( int i = 1 ; i <= maxn ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "if dp [ i - 1 ] [ 0 ] is greater than dp [ i - 1 ] [ 1 ]",
+      "code": "if ( dp [ i - 1 ] [ 0 ] > dp [ i - 1 ] [ 1 ] )",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "set dp [ i ] [ 0 ] to dp [ i - 1 ] [ 0 ]",
+      "code": "dp [ i ] [ 0 ] = dp [ i - 1 ] [ 0 ] ;",
+      "indent": 3
+    },
+    {
+      "line": 15,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "set dp [ i ] [ 0 ] to dp [ i - 1 ] [ 1 ]",
+      "code": "dp [ i ] [ 0 ] = dp [ i - 1 ] [ 1 ] ;",
+      "indent": 3
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "set dp [ i ] [ 1 ] to dp [ i - 1 ] [ 0 ] + a [ i ]",
+      "code": "dp [ i ] [ 1 ] = dp [ i - 1 ] [ 0 ] + a [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "if dp [ maxn ] [ 0 ] is greater than dp [ maxn ] [ 1 ]",
+      "code": "if ( dp [ maxn ] [ 0 ] > dp [ maxn ] [ 1 ] )",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "print dp [ maxn ] [ 0 ] print newline",
+      "code": "cout << dp [ maxn ] [ 0 ] << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 22,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 2
+    },
+    {
+      "line": 23,
+      "text": "else",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "print dp [ maxn ] [ 1 ] print newline",
+      "code": "cout << dp [ maxn ] [ 1 ] << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 25,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 2
+    },
+    {
+      "line": 26,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 27,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= maxn ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        12
+      ],
+      "mod_code": [
+        "a [ x ] = x ;",
+        "for ( i = 1 ; i <= maxn ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        6
+      ],
+      "mod_code": [
+        "a [ x ] = x ;",
+        "for ( i = 1 ; i <= maxn ; i ++ )",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        6,
+        8
+      ],
+      "mod_code": [
+        "a [ x ] = x ;",
+        "for ( i = 1 ; i <= maxn ; i ++ )",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "cin >> n ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        8
+      ],
+      "mod_code": [
+        "a [ x ] = x ;",
+        "for ( i = 1 ; i <= maxn ; i ++ )",
+        "cin >> n ;"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        6
+      ],
+      "mod_code": [
+        "a [ x ] = x ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        6,
+        8
+      ],
+      "mod_code": [
+        "a [ x ] = x ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "cin >> n ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= maxn ; i ++ )",
+        "a [ ' x ' ] = x ;"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        9,
+        6
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= maxn ; i ++ )",
+        "a [ ' x ' ] = x ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        9,
+        6,
+        8
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= maxn ; i ++ )",
+        "a [ ' x ' ] = x ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "cin >> n ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        9,
+        8
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= maxn ; i ++ )",
+        "a [ ' x ' ] = x ;",
+        "cin >> n ;"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        6
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= maxn ; i ++ )",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        6,
+        8
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= maxn ; i ++ )",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "cin >> n ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        8
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= maxn ; i ++ )",
+        "cin >> n ;"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        6
+      ],
+      "mod_code": [
+        "a [ ' x ' ] = x ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        6,
+        8
+      ],
+      "mod_code": [
+        "a [ ' x ' ] = x ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "cin >> n ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        8
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "cin >> n ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    }
+  ]
+}

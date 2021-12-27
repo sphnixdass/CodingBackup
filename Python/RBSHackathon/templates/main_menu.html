@@ -1,0 +1,89 @@
+<html>
+
+<head>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'jquery-3.5.1.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'socket.io.js') }}"></script>
+    
+    <script type="text/javascript" src="{{ url_for('static', filename = 'bootstrap.bundle.min.js') }}"></script>
+
+    <script type="text/javascript" src="{{ url_for('static', filename = 'bootstrap.min.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'dstyle.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-6 col-md-8 login-box">
+                <div class="col-lg-12 login-title">
+                    Welcome Dass
+                </div>
+
+                <div>
+                    <div class="row row-center">
+                        <div class="button-container">
+                        <a href = "{{ url_for('get_api') }}" class="btn-img btn-img-gradient btn-img-combo">Payment
+                            <img src="{{ url_for('static', filename = 'payment.png') }}" alt="" 
+                                style="width:75px;height:75px;" class="img-fluid">
+                        </a>
+
+                        </div>
+                        <a id="speakiconid" href="#" class="btn-img btn-img-gradient btn-img-combo">
+                            <img src="{{ url_for('static', filename = 'speak.jpeg') }}" alt=""
+                                style="width:75px;height:75px;" class="img-fluid">
+                        </a>
+
+                    </div>
+
+                    <div class="row row-center">
+
+                        <a href="#" class="btn-img btn-img-gradient btn-img-combo">
+                            <img src="{{ url_for('static', filename = 'payment.png') }}" alt=""
+                                style="width:75px;height:75px;" class="img-fluid">
+                        </a>
+
+
+                        <a href="#" class="btn-img btn-img-gradient btn-img-combo">
+                            <img src="{{ url_for('static', filename = 'payment.png') }}" alt=""
+                                style="width:75px;height:75px;" class="img-fluid">
+                        </a>
+
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+
+
+</body>
+<script type="text/javascript">
+
+        $(document).ready(function () {
+            $("#speakiconid").click(function () {
+                console.debug("sssssss");
+                //alert($(this));
+                var socket = io();
+                socket.emit('speakresponse', { data: 'speak' });
+
+            });
+        });
+
+    document.getElementById("speakiconid").onclick = function () {
+        console.log("speak pressed")
+        
+      
+    };
+    
+    // document.getElementById("btnlogin").onclick = function () {
+    //     location.href = "{{ url_for('main_webpage') }}";
+    // };
+</script>
+
+</html>

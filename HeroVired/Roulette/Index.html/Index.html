@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>Document</title>
+
+    <script>
+        let rotation = 0;
+
+        function sleep(milliseconds) {
+            const date = Date.now();
+            let currentDate = null;
+            do {
+                currentDate = Date.now();
+            } while (currentDate - date < milliseconds);
+            }
+
+
+        var degree =0;
+        var timeinterval = 1;
+        var rannum = 0;
+        var ranmatch = false;
+        var spinval =0;
+
+        
+
+        //['UserNumer', 4, 'UserName', 'Unknown','SpinPredict', 0, 'Method', 'oddOreven', 'UserPredict', '', 'PredictValue',0, 'BetValue', 3, 'UserScore', 10]
+        //    0         1     2           3         4           5     6         7             8           9       10        11    12       13   14          15
+        var userData = [
+            ['UserNumer', 1, 'UserName', 'Unknown','SpinPredict', 0, 'Method', 'oddOreven', 'UserPredict', 'Even', 'PredictValue',0, 'BetValue', 3, 'UserScore', 10, 'Yes'],
+            ['UserNumer', 2, 'UserName', 'Unknown','SpinPredict', 0, 'Method', 'oddOreven', 'UserPredict', 'Odd', 'PredictValue',0, 'BetValue', 3, 'UserScore', 10, 'Yes'],
+            ['UserNumer', 3, 'UserName', 'Unknown','SpinPredict', 0, 'Method', 'DirectNumber', 'UserPredict', '0', 'PredictValue',13, 'BetValue', 3, 'UserScore', 10, 'Yes'],
+            ['UserNumer', 4, 'UserName', 'Unknown','SpinPredict', 0, 'Method', 'DirectNumber', 'UserPredict', '2', 'PredictValue',15, 'BetValue', 3, 'UserScore', 10, 'Yes'],
+            ['UserNumer', 5, 'UserName', 'Unknown','SpinPredict', 0, 'Method', 'DirectNumber', 'UserPredict', '30', 'PredictValue',15, 'BetValue', 3, 'UserScore', 10, 'Yes'],
+            ['UserNumer', 6, 'UserName', 'Unknown','SpinPredict', 0, 'Method', 'DirectNumber', 'UserPredict', '22', 'PredictValue',15, 'BetValue', 3, 'UserScore', 10, 'Yes'],
+        ]
+
+
+
+        var wheelval = [
+
+        ['SpinNumber', 26, 'StartCoordinate',0, 'EndCorrdinate',10],
+['SpinNumber', 3, 'StartCoordinate',11, 'EndCorrdinate',19],
+['SpinNumber', 35, 'StartCoordinate',20, 'EndCorrdinate',29],
+['SpinNumber', 12, 'StartCoordinate',30, 'EndCorrdinate',39],
+['SpinNumber', 28, 'StartCoordinate',40, 'EndCorrdinate',49],
+['SpinNumber', 7, 'StartCoordinate',50, 'EndCorrdinate',58],
+['SpinNumber', 29, 'StartCoordinate',59, 'EndCorrdinate',68],
+['SpinNumber', 18, 'StartCoordinate',69, 'EndCorrdinate',78],
+['SpinNumber', 22, 'StartCoordinate',79, 'EndCorrdinate',88],
+['SpinNumber', 9, 'StartCoordinate',89, 'EndCorrdinate',97],
+['SpinNumber', 31, 'StartCoordinate',98, 'EndCorrdinate',107],
+['SpinNumber', 14, 'StartCoordinate',108, 'EndCorrdinate',117],
+['SpinNumber', 20, 'StartCoordinate',118, 'EndCorrdinate',126],
+['SpinNumber', 1, 'StartCoordinate',127, 'EndCorrdinate',136],
+['SpinNumber', 33, 'StartCoordinate',137, 'EndCorrdinate',146],
+['SpinNumber', 16, 'StartCoordinate',147, 'EndCorrdinate',156],
+['SpinNumber', 24, 'StartCoordinate',157, 'EndCorrdinate',165],
+['SpinNumber', 5, 'StartCoordinate',166, 'EndCorrdinate',175],
+['SpinNumber', 10, 'StartCoordinate',176, 'EndCorrdinate',185],
+['SpinNumber', 23, 'StartCoordinate',186, 'EndCorrdinate',195],
+['SpinNumber', 8, 'StartCoordinate',196, 'EndCorrdinate',204],
+['SpinNumber', 30, 'StartCoordinate',205, 'EndCorrdinate',214],
+['SpinNumber', 11, 'StartCoordinate',215, 'EndCorrdinate',224],
+['SpinNumber', 36, 'StartCoordinate',225, 'EndCorrdinate',234],
+['SpinNumber', 13, 'StartCoordinate',235, 'EndCorrdinate',243],
+['SpinNumber', 27, 'StartCoordinate',244, 'EndCorrdinate',253],
+['SpinNumber', 6, 'StartCoordinate',254, 'EndCorrdinate',263],
+['SpinNumber', 34, 'StartCoordinate',264, 'EndCorrdinate',272],
+['SpinNumber', 17, 'StartCoordinate',273, 'EndCorrdinate',282],
+['SpinNumber', 25, 'StartCoordinate',283, 'EndCorrdinate',292],
+['SpinNumber', 2, 'StartCoordinate',293, 'EndCorrdinate',302],
+['SpinNumber', 21, 'StartCoordinate',303, 'EndCorrdinate',311],
+['SpinNumber', 4, 'StartCoordinate',312, 'EndCorrdinate',321],
+['SpinNumber', 19, 'StartCoordinate',322, 'EndCorrdinate',331],
+['SpinNumber', 15, 'StartCoordinate',332, 'EndCorrdinate',341],
+['SpinNumber', 32, 'StartCoordinate',342, 'EndCorrdinate',350],
+['SpinNumber', 0, 'StartCoordinate',351, 'EndCorrdinate',360],
+
+
+          ]
+
+//['UserNumer', 4, 'UserName', 'Unknown','SpinPredict', 0, 'Method', 'oddOreven', 'UserPredict', '', 'PredictValue',0, 'BetValue', 3, 'UserScore', 10]
+//    0         1     2           3         4           5     6         7             8           9       10        11    12       13   14          15
+
+
+function updateOutput(){
+
+userData.forEach(element => {
+
+  if (element[1] == 1 && element[16] == 'Yes')
+      {
+        document.getElementById("id1Total").innerHTML = "Score : " + (parseInt(element[15]) + parseInt(document.getElementById("id1Total").innerHTML.toString().replace("Score : ", "")));
+        
+      }else if (element[1] == 2  && element[16] == 'Yes')
+      {
+        document.getElementById("id2Total").innerHTML = "Score : " + (parseInt(element[15]) + parseInt(document.getElementById("id2Total").innerHTML.toString().replace("Score : ", "")));
+        
+      }else if (element[1] == 3 && element[16] == 'Yes')
+      {
+        document.getElementById("id3Total").innerHTML = "Score : " + (parseInt(element[15]) + parseInt(document.getElementById("id3Total").innerHTML.toString().replace("Score : ", "")));
+
+      }else if (element[1] == 4 && element[16] == 'Yes')
+      {
+        document.getElementById("id4Total").innerHTML = "Score : " + (parseInt(element[15]) + parseInt(document.getElementById("id4Total").innerHTML.toString().replace("Score : ", "")));
+
+      }else if (element[1] == 5 && element[16] == 'Yes')
+      {
+        document.getElementById("id5Total").innerHTML = "Score : " + (parseInt(element[15]) + parseInt(document.getElementById("id5Total").innerHTML.toString().replace("Score : ", "")));
+
+      }else if (element[1] == 6 && element[16] == 'Yes')
+      {
+        document.getElementById("id6Total").innerHTML = "Score : " + (parseInt(element[15]) + parseInt(document.getElementById("id6Total").innerHTML.toString().replace("Score : ", "")));
+      }
+
+});
+
+
+}
+
+function updateArray(){
+
+  userData.forEach(element => {
+      if (element[1] == 1)
+      {
+        element[3] = document.getElementById("Id1UserName").value;
+        element[7] = document.getElementById("id1Method").value;
+        element[9] = document.getElementById("id1Value").value;
+        element[13] = document.getElementById("id1BetValue").value;
+        element[16] = document.getElementById("id1Enable").value;
+
+      }else if (element[1] == 2)
+      {
+        element[3] = document.getElementById("Id2UserName").value;
+        element[7] = document.getElementById("id2Method").value;
+        element[9] = document.getElementById("id2Value").value;
+        element[13] = document.getElementById("id2BetValue").value;
+        element[16] = document.getElementById("id2Enable").value;
+      }else if (element[1] == 3)
+      {
+        element[3] = document.getElementById("Id3UserName").value;
+        element[7] = document.getElementById("id3Method").value;
+        element[9] = document.getElementById("id3Value").value;
+        element[13] = document.getElementById("id3BetValue").value;
+        element[16] = document.getElementById("id3Enable").value;
+      }else if (element[1] == 4)
+      {
+        element[3] = document.getElementById("Id4UserName").value;
+        element[7] = document.getElementById("id4Method").value;
+        element[9] = document.getElementById("id4Value").value;
+        element[13] = document.getElementById("id4BetValue").value;
+        element[16] = document.getElementById("id3Enable").value;
+      }else if (element[1] == 5)
+      {
+        element[3] = document.getElementById("Id5UserName").value;
+        element[7] = document.getElementById("id5Method").value;
+        element[9] = document.getElementById("id5Value").value;
+        element[13] = document.getElementById("id5BetValue").value;
+        element[16] = document.getElementById("id5Enable").value;
+      }else if (element[1] == 6)
+      {
+        element[3] = document.getElementById("Id6UserName").value;
+        element[7] = document.getElementById("id6Method").value;
+        element[9] = document.getElementById("id6Value").value;
+        element[13] = document.getElementById("id6BetValue").value;
+        element[16] = document.getElementById("id6Enable").value;
+      }
+
+
+  });
+
+
+}
+
+
+
+function CalculateResult(spinvalue){
+
+  userData.forEach(element => {
+    //finding bet method
+    if (element[7] == 'oddOreven') {
+        if (element[9] == 'Even') {
+            if ((parseInt(spinvalue) % 2) == 0){
+              element[15] = parseInt(element[15]) + (parseInt(element[13]) * 2);
+            } else {
+              element[15] = parseInt(element[15]) + parseInt(element[13]);
+            }
+
+        }
+    } else {
+          
+          if (parseInt(spinvalue) == element[11]){
+              element[15] = parseInt(element[15]) + (parseInt(element[11]) * 30);
+            } else {
+              element[15] = parseInt(element[15]) + parseInt(element[13]);
+            }
+    }
+    
+  });
+  console.log("element =>", userData);
+
+}
+
+        function mainprogram() {
+
+        degree =0;
+        timeinterval = 1;
+        rannum = Math.floor(Math.random() * 360) + 1;
+        console.log ("start degree => ", degree, "degree ", degree % 360, "result number =>",  parseInt((degree % 360)/ 10) ,"rannum =>", rannum);
+        rotateimg2();
+
+        }
+
+
+        function rotateimg2()
+        {
+            setTimeout(() => {  document.querySelector("#img").style.transform = `rotate(${degree}deg)`;
+        
+            ++degree;
+
+            if (parseInt(rannum/2) == parseInt((Math.floor(Math.random() * 360) + 1)/2))
+            {
+              timeinterval = timeinterval + 2;
+              
+            }
+
+            if (timeinterval < 20)
+            {
+              rotateimg2();
+            } else {
+
+              wheelval.forEach(element => {
+
+                //console.log("element =>", element, parseInt(element[3]) >= (degree % 360), parseInt(element[5]) <= (degree % 360), (degree % 360), parseInt(element[3]), parseInt(element[5]));
+                if (parseInt(element[3]) <= (degree % 360) && parseInt(element[5]) >= (degree % 360)){
+                  spinval = element[1];
+                  CalculateResult(spinval);
+                  console.log("element =>", element[1]);
+                  updateOutput();
+                }
+
+              });
+              console.log ("degree => ", degree, "degree ", degree % 360, "result number =>",  parseInt((degree % 360)/ 10) , "  ", (degree % 360)/ 10, "rannum =>", rannum);
+
+            }
+        }, timeinterval);
+
+
+        }
+
+        
+      </script>
+
+</head>
+<body>
+  <div class="grid-container">
+    <!-- <div class="grid-item">1</div>
+    <div class="grid-item">2</div>
+    <div class="grid-item">3</div>
+    <div class="grid-item">4</div>
+    <div class="grid-item">5</div>
+    <div class="grid-item">6</div>
+    <div class="grid-item">7</div>
+    <div class="grid-item">8</div>
+    <div class="grid-item">9</div> -->
+  <div class="grid-item">
+    <img id="imgarrow" class=" centerArrow" src="Arrow.png" />
+      <div class="center">  
+        <img onClick="mainprogram()" id="img" src="wheel3.png" />
+          <button onClick="mainprogram()">Start</button>
+      </div>
+    </div>
+  <div class="grid-item">
+      <h4>Player Details</h4>
+      <!-- <form > -->
+
+
+        <label for="id1Enable">Enable User:</label>
+        <select id="id1Enable" name="id1Enable">
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+
+        <label for="Id1UserName">First UserName:</label>
+        <input size="10px" type="text" id="Id1UserName" name="Id1UserName" value="Dass">
+        <label for="id1Method">Choose Mothod:</label>
+        <select id="id1Method" name="id1Method">
+          <option value="OddorEven">OddorEven</option>
+          <option value="DirectNumber">DirectNumber</option>
+        </select><br>        
+        <label for="id1Value">Choose Mothod:</label>
+        <select id="id1Value" name="id1Value">
+          <option value="Odd">Odd</option>
+          <option value="Even">Even</option>
+        </select>
+        <label for="id1DirectValue">Direct Value (only for Direct Method) :</label>
+        <select id="id1DirectValue" name="id1DirectValue">
+          <option value='32'>32</option>
+          <option value='15'>15</option>
+          <option value='19'>19</option>
+          <option value='4'>4</option>
+          <option value='21'>21</option>
+          <option value='2'>2</option>
+          <option value='25'>25</option>
+          <option value='17'>17</option>
+          <option value='34'>34</option>
+          <option value='6'>6</option>
+          <option value='27'>27</option>
+          <option value='13'>13</option>
+          <option value='36'>36</option>
+          <option value='11'>11</option>
+          <option value='30'>30</option>
+          <option value='8'>8</option>
+          <option value='23'>23</option>
+          <option value='10'>10</option>
+          <option value='5'>5</option>
+          <option value='24'>24</option>
+          <option value='16'>16</option>
+          <option value='33'>33</option>
+          <option value='1'>1</option>
+          <option value='20'>20</option>
+          <option value='14'>14</option>
+          <option value='31'>31</option>
+          <option value='9'>9</option>
+          <option value='22'>22</option>
+          <option value='18'>18</option>
+          <option value='29'>29</option>
+          <option value='7'>7</option>
+          <option value='28'>28</option>
+          <option value='12'>12</option>
+          <option value='35'>35</option>
+          <option value='3'>3</option>
+          <option value='26'>26</option>
+          
+        </select>
+
+        <label for="id1BetValue">Bet Value:</label>
+        <input type="text" size="10px" id="id1BetValue" name="id1BetValue" value="3">
+        <label id="id1Total">Score : 0</label>
+        <br><br>
+
+
+
+        <label for="id2Enable">Enable User:</label>
+        <select id="id2Enable" name="id2Enable">
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+
+        <label for="Id2UserName">Second UserName:</label>
+        <input size="10px" type="text" id="Id2UserName" name="Id2UserName" value="Dass">
+        <label for="id2Method">Choose Mothod:</label>
+        <select id="id2Method" name="id2Method">
+          <option value="OddorEven">OddorEven</option>
+          <option value="DirectNumber">DirectNumber</option>
+        </select><br>        
+        <label for="id2Value">Choose Mothod:</label>
+        <select id="id2Value" name="id2Value">
+          <option value="Odd">Odd</option>
+          <option value="Even">Even</option>
+        </select>
+        <label for="id2DirectValue">Direct Value (only for Direct Method) :</label>
+        <select id="id2DirectValue" name="id2DirectValue">
+          <option value='32'>32</option>
+          <option value='15'>15</option>
+          <option value='19'>19</option>
+          <option value='4'>4</option>
+          <option value='21'>21</option>
+          <option value='2'>2</option>
+          <option value='25'>25</option>
+          <option value='17'>17</option>
+          <option value='34'>34</option>
+          <option value='6'>6</option>
+          <option value='27'>27</option>
+          <option value='13'>13</option>
+          <option value='36'>36</option>
+          <option value='11'>11</option>
+          <option value='30'>30</option>
+          <option value='8'>8</option>
+          <option value='23'>23</option>
+          <option value='10'>10</option>
+          <option value='5'>5</option>
+          <option value='24'>24</option>
+          <option value='16'>16</option>
+          <option value='33'>33</option>
+          <option value='1'>1</option>
+          <option value='20'>20</option>
+          <option value='14'>14</option>
+          <option value='31'>31</option>
+          <option value='9'>9</option>
+          <option value='22'>22</option>
+          <option value='18'>18</option>
+          <option value='29'>29</option>
+          <option value='7'>7</option>
+          <option value='28'>28</option>
+          <option value='12'>12</option>
+          <option value='35'>35</option>
+          <option value='3'>3</option>
+          <option value='26'>26</option>
+          
+        </select>
+        <label for="id2BetValue">Bet Value:</label>
+        <input type="text" size="10px" id="id2BetValue" name="id2BetValue" value="3">
+        <label id="id2Total">Score : 0</label>
+        <br><br>
+
+
+
+        <label for="id3Enable">Enable User:</label>
+        <select id="id3Enable" name="id3Enable">
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+
+        <label for="Id3UserName">Third UserName:</label>
+        <input size="10px" type="text" id="Id3UserName" name="Id3UserName" value="Dass">
+        <label for="Id3Method">Choose Mothod:</label>
+        <select id="Id3Method" name="Id3Method">
+          <option value="OddorEven">OddorEven</option>
+          <option value="DirectNumber">DirectNumber</option>
+        </select><br>        
+        <label for="Id3Value">Choose Mothod:</label>
+        <select id="Id3Value" name="Id3Value">
+          <option value="Odd">Odd</option>
+          <option value="Even">Even</option>
+        </select>
+        <label for="id3DirectValue">Direct Value (only for Direct Method) :</label>
+        <select id="id3DirectValue" name="id3DirectValue">
+          <option value='32'>32</option>
+          <option value='15'>15</option>
+          <option value='19'>19</option>
+          <option value='4'>4</option>
+          <option value='21'>21</option>
+          <option value='2'>2</option>
+          <option value='25'>25</option>
+          <option value='17'>17</option>
+          <option value='34'>34</option>
+          <option value='6'>6</option>
+          <option value='27'>27</option>
+          <option value='13'>13</option>
+          <option value='36'>36</option>
+          <option value='11'>11</option>
+          <option value='30'>30</option>
+          <option value='8'>8</option>
+          <option value='23'>23</option>
+          <option value='10'>10</option>
+          <option value='5'>5</option>
+          <option value='24'>24</option>
+          <option value='16'>16</option>
+          <option value='33'>33</option>
+          <option value='1'>1</option>
+          <option value='20'>20</option>
+          <option value='14'>14</option>
+          <option value='31'>31</option>
+          <option value='9'>9</option>
+          <option value='22'>22</option>
+          <option value='18'>18</option>
+          <option value='29'>29</option>
+          <option value='7'>7</option>
+          <option value='28'>28</option>
+          <option value='12'>12</option>
+          <option value='35'>35</option>
+          <option value='3'>3</option>
+          <option value='26'>26</option>
+          
+        </select>
+        <label for="Id3BetValue">Bet Value:</label>
+        <input type="text" size="10px" id="Id3BetValue" name="Id3BetValue" value="3">
+        <label id="id3Total">Score : 0</label>
+        <br><br>
+
+
+        <label for="id4Enable">Enable User:</label>
+        <select id="id4Enable" name="id4Enable">
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+
+        <label for="Id4UserName">Fourth UserName:</label>
+        <input size="10px" type="text" id="Id4UserName" name="Id4UserName" value="Dass">
+        <label for="Id4Method">Choose Mothod:</label>
+        <select id="Id4Method" name="Id4Method">
+          <option value="OddorEven">OddorEven</option>
+          <option value="DirectNumber">DirectNumber</option>
+        </select><br>        
+        <label for="Id4Value">Choose Mothod:</label>
+        <select id="Id4Value" name="Id4Value">
+          <option value="Odd">Odd</option>
+          <option value="Even">Even</option>
+        </select>
+        <label for="id4DirectValue">Direct Value (only for Direct Method) :</label>
+        <select id="id4DirectValue" name="id4DirectValue">
+          <option value='32'>32</option>
+          <option value='15'>15</option>
+          <option value='19'>19</option>
+          <option value='4'>4</option>
+          <option value='21'>21</option>
+          <option value='2'>2</option>
+          <option value='25'>25</option>
+          <option value='17'>17</option>
+          <option value='34'>34</option>
+          <option value='6'>6</option>
+          <option value='27'>27</option>
+          <option value='13'>13</option>
+          <option value='36'>36</option>
+          <option value='11'>11</option>
+          <option value='30'>30</option>
+          <option value='8'>8</option>
+          <option value='23'>23</option>
+          <option value='10'>10</option>
+          <option value='5'>5</option>
+          <option value='24'>24</option>
+          <option value='16'>16</option>
+          <option value='33'>33</option>
+          <option value='1'>1</option>
+          <option value='20'>20</option>
+          <option value='14'>14</option>
+          <option value='31'>31</option>
+          <option value='9'>9</option>
+          <option value='22'>22</option>
+          <option value='18'>18</option>
+          <option value='29'>29</option>
+          <option value='7'>7</option>
+          <option value='28'>28</option>
+          <option value='12'>12</option>
+          <option value='35'>35</option>
+          <option value='3'>3</option>
+          <option value='26'>26</option>
+          
+        </select>
+        <label for="Id4BetValue">Bet Value:</label>
+        <input type="text" size="10px" id="Id4BetValue" name="Id4BetValue" value="3">
+        <label id="id4Total">Score : 0</label>
+        <br><br>
+
+
+        <label for="id5Enable">Enable User:</label>
+        <select id="id5Enable" name="id5Enable">
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+
+        <label for="Id5UserName">Fifth UserName:</label>
+        <input size="10px" type="text" id="Id5UserName" name="Id5UserName" value="Dass">
+        <label for="Id5Method">Choose Mothod:</label>
+        <select id="Id5Method" name="Id5Method">
+          <option value="OddorEven">OddorEven</option>
+          <option value="DirectNumber">DirectNumber</option>
+        </select><br>        
+        <label for="Id5Value">Choose Mothod:</label>
+        <select id="Id5Value" name="Id5Value">
+          <option value="Odd">Odd</option>
+          <option value="Even">Even</option>
+        </select>
+        <label for="id5DirectValue">Direct Value (only for Direct Method) :</label>
+        <select id="id5DirectValue" name="id5DirectValue">
+          <option value='32'>32</option>
+          <option value='15'>15</option>
+          <option value='19'>19</option>
+          <option value='4'>4</option>
+          <option value='21'>21</option>
+          <option value='2'>2</option>
+          <option value='25'>25</option>
+          <option value='17'>17</option>
+          <option value='34'>34</option>
+          <option value='6'>6</option>
+          <option value='27'>27</option>
+          <option value='13'>13</option>
+          <option value='36'>36</option>
+          <option value='11'>11</option>
+          <option value='30'>30</option>
+          <option value='8'>8</option>
+          <option value='23'>23</option>
+          <option value='10'>10</option>
+          <option value='5'>5</option>
+          <option value='24'>24</option>
+          <option value='16'>16</option>
+          <option value='33'>33</option>
+          <option value='1'>1</option>
+          <option value='20'>20</option>
+          <option value='14'>14</option>
+          <option value='31'>31</option>
+          <option value='9'>9</option>
+          <option value='22'>22</option>
+          <option value='18'>18</option>
+          <option value='29'>29</option>
+          <option value='7'>7</option>
+          <option value='28'>28</option>
+          <option value='12'>12</option>
+          <option value='35'>35</option>
+          <option value='3'>3</option>
+          <option value='26'>26</option>
+          
+        </select>
+        <label for="Id5BetValue">Bet Value:</label>
+        <input type="text" size="10px" id="Id5BetValue" name="Id5BetValue" value="3">
+        <label id="id5Total">Score : 0</label>
+        <br><br>
+
+
+        <label for="id6Enable">Enable User:</label>
+        <select id="id6Enable" name="id6Enable">
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+        <label for="Id6UserName">Sixth UserName:</label>
+        <input size="10px" type="text" id="Id6UserName" name="Id6UserName" value="Dass">
+        <label for="Id6Method">Choose Mothod:</label>
+        <select id="Id6Method" name="Id6Method">
+          <option value="OddorEven">OddorEven</option>
+          <option value="DirectNumber">DirectNumber</option>
+        </select><br>        
+        <label for="Id6Value">Choose Mothod:</label>
+        <select id="Id6Value" name="Id6Value">
+          <option value="Odd">Odd</option>
+          <option value="Even">Even</option>
+        </select>
+        <label for="id6DirectValue">Direct Value (only for Direct Method) :</label>
+        <select id="id6DirectValue" name="id6DirectValue">
+          <option value='32'>32</option>
+          <option value='15'>15</option>
+          <option value='19'>19</option>
+          <option value='4'>4</option>
+          <option value='21'>21</option>
+          <option value='2'>2</option>
+          <option value='25'>25</option>
+          <option value='17'>17</option>
+          <option value='34'>34</option>
+          <option value='6'>6</option>
+          <option value='27'>27</option>
+          <option value='13'>13</option>
+          <option value='36'>36</option>
+          <option value='11'>11</option>
+          <option value='30'>30</option>
+          <option value='8'>8</option>
+          <option value='23'>23</option>
+          <option value='10'>10</option>
+          <option value='5'>5</option>
+          <option value='24'>24</option>
+          <option value='16'>16</option>
+          <option value='33'>33</option>
+          <option value='1'>1</option>
+          <option value='20'>20</option>
+          <option value='14'>14</option>
+          <option value='31'>31</option>
+          <option value='9'>9</option>
+          <option value='22'>22</option>
+          <option value='18'>18</option>
+          <option value='29'>29</option>
+          <option value='7'>7</option>
+          <option value='28'>28</option>
+          <option value='12'>12</option>
+          <option value='35'>35</option>
+          <option value='3'>3</option>
+          <option value='26'>26</option>
+          
+        </select>
+        <label for="Id6BetValue">Bet Value:</label>
+        <input type="text" size="10px" id="Id6BetValue" name="Id6BetValue" value="3">
+        <label id="id6Total">Score : 0</label>
+        <br><br>
+
+        
+      <!-- </form>  -->
+      <button onClick="updateArray()">Update Value</button>
+    
+    </div>
+  </div> 
+</body>
+</html>

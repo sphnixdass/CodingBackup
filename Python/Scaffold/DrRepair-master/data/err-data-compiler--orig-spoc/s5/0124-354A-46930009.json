@@ -1,0 +1,929 @@
+{
+  "meta": {
+    "index": 124,
+    "hitid": "3PA41K45VNYMHX3ITOFBL8YX1P6P79",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "354A",
+    "subid": "46930009"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create constant long long integer mod with mod = 1000000007",
+      "code": "const long long int mod = 1000000007 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "create long long integers , n , l , r , ql , qr",
+      "code": "long long int n , l , r , ql , qr ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "read n read l read r read ql read qr",
+      "code": "cin >> n >> l >> r >> ql >> qr ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "create long long integer array w with size n + 1 with w = { 0 }",
+      "code": "long long int w [ n + 1 ] = { 0 } ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i = 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "read w [ i ]",
+      "code": "cin >> w [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "increment w [ i ] by w [ i - 1 ]",
+      "code": "w [ i ] += w [ i - 1 ] ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "create long long integer ans with ans = LLONG_MAX",
+      "code": "long long int ans = LLONG_MAX ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "or taken = 0 to n inclusive",
+      "code": "for ( long long int taken = 0 ; taken <= n ; taken ++ )",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "create long long integer left with left = taken",
+      "code": "long long int left = taken ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "create long long integer right with right = n - taken",
+      "code": "long long int right = n - taken ;",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "create long long integer suml with suml = w [ left ]",
+      "code": "long long int suml = w [ left ] ;",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "create long long integer sumr with rumr = w [ n ] - w [ left ]",
+      "code": "long long int sumr = w [ n ] - w [ left ] ;",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "create long long integer curans with curans = l * suml + r * sumr",
+      "code": "long long int curans = l * suml + r * sumr ;",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "if left is less than right",
+      "code": "if ( left < right )",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "increment curans by qr * ( right - left - 1 )",
+      "code": "curans += qr * ( right - left - 1 ) ;",
+      "indent": 3
+    },
+    {
+      "line": 18,
+      "text": "else if left is greater than right",
+      "code": "else if ( left > right )",
+      "indent": 2
+    },
+    {
+      "line": 19,
+      "text": "increment curans by ql * ( left - right - 1 )",
+      "code": "curans += ql * ( left - right - 1 ) ;",
+      "indent": 3
+    },
+    {
+      "line": 20,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 21,
+      "text": "set ans to minimum of ans and curans",
+      "code": "ans = min ( ans , curans ) ;",
+      "indent": 2
+    },
+    {
+      "line": 22,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "print ans print newline",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 25,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "while ( taken == 0 || taken == n )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘taken’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "cin >> n read l >> r >> ql >> qr ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid operands of types ‘long long int [(((ssizetype)n) + 1)]’ and ‘long long int’ to binary ‘operator>>’"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "int int ans = LLONG_MAX ;"
+      ],
+      "err_line": 9,
+      "err_msg": "two or more data types in declaration of ‘ans’"
+    },
+    {
+      "mod_line": [
+        21
+      ],
+      "mod_code": [
+        "int ans = min ( ans , curans ) ;"
+      ],
+      "err_line": 21,
+      "err_msg": "no matching function for call to ‘min(int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        10,
+        16
+      ],
+      "mod_code": [
+        "while ( taken == 0 || taken == n )",
+        "if ( left <= right )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘taken’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        16,
+        5
+      ],
+      "mod_code": [
+        "while ( taken == 0 || taken == n )",
+        "if ( left <= right )",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        16,
+        5,
+        3
+      ],
+      "mod_code": [
+        "while ( taken == 0 || taken == n )",
+        "if ( left <= right )",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "cin >> n read l >> r >> ql >> qr ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        10,
+        16,
+        5,
+        21
+      ],
+      "mod_code": [
+        "while ( taken == 0 || taken == n )",
+        "if ( left <= right )",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int ans = min ( ans , curans ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        16,
+        5,
+        6
+      ],
+      "mod_code": [
+        "while ( taken == 0 || taken == n )",
+        "if ( left <= right )",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        16,
+        3
+      ],
+      "mod_code": [
+        "while ( taken == 0 || taken == n )",
+        "if ( left <= right )",
+        "cin >> n read l >> r >> ql >> qr ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        10,
+        16,
+        3,
+        21
+      ],
+      "mod_code": [
+        "while ( taken == 0 || taken == n )",
+        "if ( left <= right )",
+        "cin >> n read l >> r >> ql >> qr ;",
+        "int ans = min ( ans , curans ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        10,
+        16,
+        3,
+        6
+      ],
+      "mod_code": [
+        "while ( taken == 0 || taken == n )",
+        "if ( left <= right )",
+        "cin >> n read l >> r >> ql >> qr ;",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        10,
+        16,
+        21
+      ],
+      "mod_code": [
+        "while ( taken == 0 || taken == n )",
+        "if ( left <= right )",
+        "int ans = min ( ans , curans ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘taken’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        16,
+        21,
+        6
+      ],
+      "mod_code": [
+        "while ( taken == 0 || taken == n )",
+        "if ( left <= right )",
+        "int ans = min ( ans , curans ) ;",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid operands of types ‘long long int [(((ssizetype)n) + 1)]’ and ‘long long int’ to binary ‘operator>>’"
+    },
+    {
+      "mod_line": [
+        10,
+        16,
+        6
+      ],
+      "mod_code": [
+        "while ( taken == 0 || taken == n )",
+        "if ( left <= right )",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid operands of types ‘long long int [(((ssizetype)n) + 1)]’ and ‘long long int’ to binary ‘operator>>’"
+    },
+    {
+      "mod_line": [
+        10,
+        5
+      ],
+      "mod_code": [
+        "while ( taken == 0 || taken == n )",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        5,
+        3
+      ],
+      "mod_code": [
+        "while ( taken == 0 || taken == n )",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "cin >> n read l >> r >> ql >> qr ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        10,
+        5,
+        3,
+        21
+      ],
+      "mod_code": [
+        "while ( taken == 0 || taken == n )",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "cin >> n read l >> r >> ql >> qr ;",
+        "int ans = min ( ans , curans ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        10,
+        5,
+        3,
+        6
+      ],
+      "mod_code": [
+        "while ( taken == 0 || taken == n )",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "cin >> n read l >> r >> ql >> qr ;",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        10,
+        5,
+        21
+      ],
+      "mod_code": [
+        "while ( taken == 0 || taken == n )",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int ans = min ( ans , curans ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        5,
+        21,
+        6
+      ],
+      "mod_code": [
+        "while ( taken == 0 || taken == n )",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int ans = min ( ans , curans ) ;",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        5,
+        6
+      ],
+      "mod_code": [
+        "while ( taken == 0 || taken == n )",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        3
+      ],
+      "mod_code": [
+        "while ( taken == 0 || taken == n )",
+        "cin >> n read l >> r >> ql >> qr ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        21
+      ],
+      "mod_code": [
+        "while ( taken == 0 || taken == n )",
+        "cin >> n read l >> r >> ql >> qr ;",
+        "int ans = min ( ans , curans ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        21,
+        6
+      ],
+      "mod_code": [
+        "while ( taken == 0 || taken == n )",
+        "cin >> n read l >> r >> ql >> qr ;",
+        "int ans = min ( ans , curans ) ;",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        6
+      ],
+      "mod_code": [
+        "while ( taken == 0 || taken == n )",
+        "cin >> n read l >> r >> ql >> qr ;",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        10,
+        21
+      ],
+      "mod_code": [
+        "while ( taken == 0 || taken == n )",
+        "int ans = min ( ans , curans ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘taken’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        21,
+        6
+      ],
+      "mod_code": [
+        "while ( taken == 0 || taken == n )",
+        "int ans = min ( ans , curans ) ;",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid operands of types ‘long long int [(((ssizetype)n) + 1)]’ and ‘long long int’ to binary ‘operator>>’"
+    },
+    {
+      "mod_line": [
+        10,
+        6
+      ],
+      "mod_code": [
+        "while ( taken == 0 || taken == n )",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid operands of types ‘long long int [(((ssizetype)n) + 1)]’ and ‘long long int’ to binary ‘operator>>’"
+    },
+    {
+      "mod_line": [
+        16,
+        5
+      ],
+      "mod_code": [
+        "if ( left <= right )",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        5,
+        3
+      ],
+      "mod_code": [
+        "if ( left <= right )",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "cin >> n read l >> r >> ql >> qr ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        16,
+        5,
+        3,
+        21
+      ],
+      "mod_code": [
+        "if ( left <= right )",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "cin >> n read l >> r >> ql >> qr ;",
+        "int ans = min ( ans , curans ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        16,
+        5,
+        3,
+        6
+      ],
+      "mod_code": [
+        "if ( left <= right )",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "cin >> n read l >> r >> ql >> qr ;",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        16,
+        5,
+        21
+      ],
+      "mod_code": [
+        "if ( left <= right )",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int ans = min ( ans , curans ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        5,
+        21,
+        6
+      ],
+      "mod_code": [
+        "if ( left <= right )",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int ans = min ( ans , curans ) ;",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        5,
+        6
+      ],
+      "mod_code": [
+        "if ( left <= right )",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        3
+      ],
+      "mod_code": [
+        "if ( left <= right )",
+        "cin >> n read l >> r >> ql >> qr ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        16,
+        3,
+        21
+      ],
+      "mod_code": [
+        "if ( left <= right )",
+        "cin >> n read l >> r >> ql >> qr ;",
+        "int ans = min ( ans , curans ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        16,
+        3,
+        21,
+        6
+      ],
+      "mod_code": [
+        "if ( left <= right )",
+        "cin >> n read l >> r >> ql >> qr ;",
+        "int ans = min ( ans , curans ) ;",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        16,
+        3,
+        6
+      ],
+      "mod_code": [
+        "if ( left <= right )",
+        "cin >> n read l >> r >> ql >> qr ;",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        16,
+        21
+      ],
+      "mod_code": [
+        "if ( left <= right )",
+        "int ans = min ( ans , curans ) ;"
+      ],
+      "err_line": 21,
+      "err_msg": "no matching function for call to ‘min(int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        16,
+        21,
+        6
+      ],
+      "mod_code": [
+        "if ( left <= right )",
+        "int ans = min ( ans , curans ) ;",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid operands of types ‘long long int [(((ssizetype)n) + 1)]’ and ‘long long int’ to binary ‘operator>>’"
+    },
+    {
+      "mod_line": [
+        16,
+        6
+      ],
+      "mod_code": [
+        "if ( left <= right )",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid operands of types ‘long long int [(((ssizetype)n) + 1)]’ and ‘long long int’ to binary ‘operator>>’"
+    },
+    {
+      "mod_line": [
+        5,
+        3
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "cin >> n read l >> r >> ql >> qr ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        5,
+        3,
+        21
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "cin >> n read l >> r >> ql >> qr ;",
+        "int ans = min ( ans , curans ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        5,
+        3,
+        21,
+        6
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "cin >> n read l >> r >> ql >> qr ;",
+        "int ans = min ( ans , curans ) ;",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        5,
+        3,
+        6
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "cin >> n read l >> r >> ql >> qr ;",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        5,
+        21
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int ans = min ( ans , curans ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        21,
+        6
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int ans = min ( ans , curans ) ;",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        6
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        21
+      ],
+      "mod_code": [
+        "cin >> n read l >> r >> ql >> qr ;",
+        "int ans = min ( ans , curans ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        3,
+        21,
+        6
+      ],
+      "mod_code": [
+        "cin >> n read l >> r >> ql >> qr ;",
+        "int ans = min ( ans , curans ) ;",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        3,
+        6
+      ],
+      "mod_code": [
+        "cin >> n read l >> r >> ql >> qr ;",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        21,
+        6
+      ],
+      "mod_code": [
+        "int ans = min ( ans , curans ) ;",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid operands of types ‘long long int [(((ssizetype)n) + 1)]’ and ‘long long int’ to binary ‘operator>>’"
+    }
+  ]
+}

@@ -1,0 +1,269 @@
+{
+  "meta": {
+    "index": 2397,
+    "hitid": "3S37Y8CWI8UFIJI03CVZAQMJ2XOW4L",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "543A",
+    "subid": "41827370"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create integers n , m , b , mod",
+      "code": "int n , m , b , mod ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create integer array a with size 501 , create 2d integer array dp with size 501 by 501",
+      "code": "int a [ 501 ] , dp [ 501 ] [ 501 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "read n read m read b read mod",
+      "code": "cin >> n >> m >> b >> mod ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for i = 1 to n inclusive , read a [ i ]",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i = 0 to b inclusive , set dp [ 0 ] [ i ] to 1",
+      "code": "for ( int i = 0 ; i <= b ; i ++ ) dp [ 0 ] [ i ] = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for j = 1 to m inclusive",
+      "code": "for ( int j = 1 ; j <= m ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "for k = a [ i ] to b inclusive , set dp [ j ] [ k ] to ( dp [ j ] [ k ] + dp [ j - 1 ] [ k - a [ i ] ] ) % mod",
+      "code": "for ( int k = a [ i ] ; k <= b ; k ++ ) dp [ j ] [ k ] = ( dp [ j ] [ k ] + dp [ j - 1 ] [ k - a [ i ] ] ) % mod ;",
+      "indent": 3
+    },
+    {
+      "line": 9,
+      "text": "print dp [ m ] [ b ] print newline",
+      "code": "cout << dp [ m ] [ b ] << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "n , m , b , mod ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int a [ 501 ] [ 501 ] , dp [ 501 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [501]’)"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        0
+      ],
+      "mod_code": [
+        "int a [ 501 ] [ 501 ] , dp [ 501 ] ;",
+        "n , m , b , mod ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        1,
+        0,
+        7
+      ],
+      "mod_code": [
+        "int a [ 501 ] [ 501 ] , dp [ 501 ] ;",
+        "n , m , b , mod ;",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        1,
+        0,
+        7,
+        6
+      ],
+      "mod_code": [
+        "int a [ 501 ] [ 501 ] , dp [ 501 ] ;",
+        "n , m , b , mod ;",
+        "for ( j = 1 ; j <= m ; j ++ )",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        1,
+        0,
+        6
+      ],
+      "mod_code": [
+        "int a [ 501 ] [ 501 ] , dp [ 501 ] ;",
+        "n , m , b , mod ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        1,
+        7
+      ],
+      "mod_code": [
+        "int a [ 501 ] [ 501 ] , dp [ 501 ] ;",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [501]’)"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        6
+      ],
+      "mod_code": [
+        "int a [ 501 ] [ 501 ] , dp [ 501 ] ;",
+        "for ( j = 1 ; j <= m ; j ++ )",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [501]’)"
+    },
+    {
+      "mod_line": [
+        1,
+        6
+      ],
+      "mod_code": [
+        "int a [ 501 ] [ 501 ] , dp [ 501 ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [501]’)"
+    },
+    {
+      "mod_line": [
+        0,
+        7
+      ],
+      "mod_code": [
+        "n , m , b , mod ;",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        7,
+        6
+      ],
+      "mod_code": [
+        "n , m , b , mod ;",
+        "for ( j = 1 ; j <= m ; j ++ )",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        6
+      ],
+      "mod_code": [
+        "n , m , b , mod ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        7,
+        6
+      ],
+      "mod_code": [
+        "for ( j = 1 ; j <= m ; j ++ )",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    }
+  ]
+}

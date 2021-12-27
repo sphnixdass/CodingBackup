@@ -1,0 +1,767 @@
+{
+  "meta": {
+    "index": 127,
+    "hitid": "3UQ1LLR26A2E9EMI8ZYOEIR3XNBALN",
+    "workerid": "A24WRPQYGMQLGF",
+    "probid": "354A",
+    "subid": "38996978"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "w = integer array of size 100002 , sum = integer array of size 100002 , sumr = integer array of size 100002 , ans = max value of an integer",
+      "code": "int w [ 100002 ] , sum [ 100002 ] , sumr [ 100002 ] , ans = INT_MAX ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "n , l , r , q1 , qr = integer",
+      "code": "int n , l , r , ql , qr ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "read n , l , r , ql , qr",
+      "code": "cin >> n >> l >> r >> ql >> qr ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( int i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "read w [ i ]",
+      "code": "cin >> w [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 6,
+      "text": "if i is 0",
+      "code": "if ( i == 0 )",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "sum [ i ] = w [ i ]",
+      "code": "sum [ i ] = w [ i ] ;",
+      "indent": 3
+    },
+    {
+      "line": 8,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "sum [ i ] = w [ i ] + sum [ i - 1 ]",
+      "code": "sum [ i ] = w [ i ] + sum [ i - 1 ] ;",
+      "indent": 3
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "for i = n - 1 to 0 inclusive",
+      "code": "for ( int i = n - 1 ; i >= 0 ; i -- )",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "if i is n - 1",
+      "code": "if ( i == n - 1 )",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "sumr [ i ] = w [ i ]",
+      "code": "sumr [ i ] = w [ i ] ;",
+      "indent": 3
+    },
+    {
+      "line": 14,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "sumr [ i ] = w [ i ] + sumr [ i + 1 ]",
+      "code": "sumr [ i ] = w [ i ] + sumr [ i + 1 ] ;",
+      "indent": 3
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "ans = sumr [ 0 ] * r + qr * ( n - 1 )",
+      "code": "ans = sumr [ 0 ] * r + qr * ( n - 1 ) ;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( int i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "cur = integer = sum [ i ] * l + sumr [ i + 1 ] * r",
+      "code": "int cur = sum [ i ] * l + sumr [ i + 1 ] * r ;",
+      "indent": 2
+    },
+    {
+      "line": 20,
+      "text": "if i + 1 > n - 1 - i",
+      "code": "if ( i + 1 > n - 1 - i )",
+      "indent": 2
+    },
+    {
+      "line": 21,
+      "text": "cur = cur + ( 2 * i - n + 1 ) * ql",
+      "code": "cur += ( 2 * i - n + 1 ) * ql ;",
+      "indent": 3
+    },
+    {
+      "line": 22,
+      "text": "else if i + 1 < n - 1 - i",
+      "code": "else if ( i + 1 < n - 1 - i )",
+      "indent": 2
+    },
+    {
+      "line": 23,
+      "text": "cur = cur + ( n - 1 - i - ( i + 1 ) - 1 ) * qr",
+      "code": "cur += ( n - 1 - i - ( i + 1 ) - 1 ) * qr ;",
+      "indent": 3
+    },
+    {
+      "line": 24,
+      "text": "ans = lowest value between ans and cur",
+      "code": "ans = min ( ans , cur ) ;",
+      "indent": 2
+    },
+    {
+      "line": 25,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 26,
+      "text": "print ans",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 27,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int w [ 100002 ] , sum = max [ 100002 ] , ans = max ( 100002 ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "int n , l , r , q1 , qr ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘ql’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int w [ 100002 ] , sumr = max [ 100002 ] , ans = max ( 100002 ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "long long n , l , r , q1 , qr ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘ql’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid operands of types ‘int [100002]’ and ‘int’ to binary ‘operator>>’"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "for ( i = n - 1 ; i >= 0 ; i -- )"
+      ],
+      "err_line": 11,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "sumr [ i ] -= w ;"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid use of non-lvalue array"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "ans += ( ] * r ) + qr * ( n - 1 ) ;"
+      ],
+      "err_line": 17,
+      "err_msg": "expected primary-expression before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        18
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 18,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        0,
+        2
+      ],
+      "mod_code": [
+        "int w [ 100002 ] , sum = max [ 100002 ] , ans = max ( 100002 ) ;",
+        "int n , l , r , q1 , qr ;"
+      ],
+      "err_line": 0,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        9
+      ],
+      "mod_code": [
+        "int w [ 100002 ] , sum = max [ 100002 ] , ans = max ( 100002 ) ;",
+        "int n , l , r , q1 , qr ;",
+        "sum [ i ] += sum [ i - 1 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        9,
+        15
+      ],
+      "mod_code": [
+        "int w [ 100002 ] , sum = max [ 100002 ] , ans = max ( 100002 ) ;",
+        "int n , l , r , q1 , qr ;",
+        "sum [ i ] += sum [ i - 1 ] ;",
+        "sumr [ i ] += sumr [ i + 1 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        9,
+        3
+      ],
+      "mod_code": [
+        "int w [ 100002 ] , sum = max [ 100002 ] , ans = max ( 100002 ) ;",
+        "int n , l , r , q1 , qr ;",
+        "sum [ i ] += sum [ i - 1 ] ;",
+        "cin >> n >> l >> r >> ql ;"
+      ],
+      "err_line": 0,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        15
+      ],
+      "mod_code": [
+        "int w [ 100002 ] , sum = max [ 100002 ] , ans = max ( 100002 ) ;",
+        "int n , l , r , q1 , qr ;",
+        "sumr [ i ] += sumr [ i + 1 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        15,
+        3
+      ],
+      "mod_code": [
+        "int w [ 100002 ] , sum = max [ 100002 ] , ans = max ( 100002 ) ;",
+        "int n , l , r , q1 , qr ;",
+        "sumr [ i ] += sumr [ i + 1 ] ;",
+        "cin >> n >> l >> r >> ql ;"
+      ],
+      "err_line": 0,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        3
+      ],
+      "mod_code": [
+        "int w [ 100002 ] , sum = max [ 100002 ] , ans = max ( 100002 ) ;",
+        "int n , l , r , q1 , qr ;",
+        "cin >> n >> l >> r >> ql ;"
+      ],
+      "err_line": 0,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        9
+      ],
+      "mod_code": [
+        "int w [ 100002 ] , sum = max [ 100002 ] , ans = max ( 100002 ) ;",
+        "sum [ i ] += sum [ i - 1 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        9,
+        15
+      ],
+      "mod_code": [
+        "int w [ 100002 ] , sum = max [ 100002 ] , ans = max ( 100002 ) ;",
+        "sum [ i ] += sum [ i - 1 ] ;",
+        "sumr [ i ] += sumr [ i + 1 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        9,
+        15,
+        3
+      ],
+      "mod_code": [
+        "int w [ 100002 ] , sum = max [ 100002 ] , ans = max ( 100002 ) ;",
+        "sum [ i ] += sum [ i - 1 ] ;",
+        "sumr [ i ] += sumr [ i + 1 ] ;",
+        "cin >> n >> l >> r >> ql ;"
+      ],
+      "err_line": 0,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        9,
+        3
+      ],
+      "mod_code": [
+        "int w [ 100002 ] , sum = max [ 100002 ] , ans = max ( 100002 ) ;",
+        "sum [ i ] += sum [ i - 1 ] ;",
+        "cin >> n >> l >> r >> ql ;"
+      ],
+      "err_line": 0,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        15
+      ],
+      "mod_code": [
+        "int w [ 100002 ] , sum = max [ 100002 ] , ans = max ( 100002 ) ;",
+        "sumr [ i ] += sumr [ i + 1 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        15,
+        3
+      ],
+      "mod_code": [
+        "int w [ 100002 ] , sum = max [ 100002 ] , ans = max ( 100002 ) ;",
+        "sumr [ i ] += sumr [ i + 1 ] ;",
+        "cin >> n >> l >> r >> ql ;"
+      ],
+      "err_line": 0,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        3
+      ],
+      "mod_code": [
+        "int w [ 100002 ] , sum = max [ 100002 ] , ans = max ( 100002 ) ;",
+        "cin >> n >> l >> r >> ql ;"
+      ],
+      "err_line": 0,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        9
+      ],
+      "mod_code": [
+        "int n , l , r , q1 , qr ;",
+        "sum [ i ] += sum [ i - 1 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘ql’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        9,
+        15
+      ],
+      "mod_code": [
+        "int n , l , r , q1 , qr ;",
+        "sum [ i ] += sum [ i - 1 ] ;",
+        "sumr [ i ] += sumr [ i + 1 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘ql’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        9,
+        15,
+        3
+      ],
+      "mod_code": [
+        "int n , l , r , q1 , qr ;",
+        "sum [ i ] += sum [ i - 1 ] ;",
+        "sumr [ i ] += sumr [ i + 1 ] ;",
+        "cin >> n >> l >> r >> ql ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘ql’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        9,
+        15,
+        0
+      ],
+      "mod_code": [
+        "int n , l , r , q1 , qr ;",
+        "sum [ i ] += sum [ i - 1 ] ;",
+        "sumr [ i ] += sumr [ i + 1 ] ;",
+        "int w [ 100002 ] , sumr = max [ 100002 ] , ans = max ( 100002 ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        9,
+        3
+      ],
+      "mod_code": [
+        "int n , l , r , q1 , qr ;",
+        "sum [ i ] += sum [ i - 1 ] ;",
+        "cin >> n >> l >> r >> ql ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘ql’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        9,
+        3,
+        0
+      ],
+      "mod_code": [
+        "int n , l , r , q1 , qr ;",
+        "sum [ i ] += sum [ i - 1 ] ;",
+        "cin >> n >> l >> r >> ql ;",
+        "int w [ 100002 ] , sumr = max [ 100002 ] , ans = max ( 100002 ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        9,
+        0
+      ],
+      "mod_code": [
+        "int n , l , r , q1 , qr ;",
+        "sum [ i ] += sum [ i - 1 ] ;",
+        "int w [ 100002 ] , sumr = max [ 100002 ] , ans = max ( 100002 ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        15
+      ],
+      "mod_code": [
+        "int n , l , r , q1 , qr ;",
+        "sumr [ i ] += sumr [ i + 1 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘ql’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        15,
+        3
+      ],
+      "mod_code": [
+        "int n , l , r , q1 , qr ;",
+        "sumr [ i ] += sumr [ i + 1 ] ;",
+        "cin >> n >> l >> r >> ql ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘ql’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        15,
+        3,
+        0
+      ],
+      "mod_code": [
+        "int n , l , r , q1 , qr ;",
+        "sumr [ i ] += sumr [ i + 1 ] ;",
+        "cin >> n >> l >> r >> ql ;",
+        "int w [ 100002 ] , sumr = max [ 100002 ] , ans = max ( 100002 ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        15,
+        0
+      ],
+      "mod_code": [
+        "int n , l , r , q1 , qr ;",
+        "sumr [ i ] += sumr [ i + 1 ] ;",
+        "int w [ 100002 ] , sumr = max [ 100002 ] , ans = max ( 100002 ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        3
+      ],
+      "mod_code": [
+        "int n , l , r , q1 , qr ;",
+        "cin >> n >> l >> r >> ql ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘ql’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        0
+      ],
+      "mod_code": [
+        "int n , l , r , q1 , qr ;",
+        "cin >> n >> l >> r >> ql ;",
+        "int w [ 100002 ] , sumr = max [ 100002 ] , ans = max ( 100002 ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        0
+      ],
+      "mod_code": [
+        "int n , l , r , q1 , qr ;",
+        "int w [ 100002 ] , sumr = max [ 100002 ] , ans = max ( 100002 ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9,
+        15,
+        3,
+        0
+      ],
+      "mod_code": [
+        "sum [ i ] += sum [ i - 1 ] ;",
+        "sumr [ i ] += sumr [ i + 1 ] ;",
+        "cin >> n >> l >> r >> ql ;",
+        "int w [ 100002 ] , sumr = max [ 100002 ] , ans = max ( 100002 ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9,
+        15,
+        0
+      ],
+      "mod_code": [
+        "sum [ i ] += sum [ i - 1 ] ;",
+        "sumr [ i ] += sumr [ i + 1 ] ;",
+        "int w [ 100002 ] , sumr = max [ 100002 ] , ans = max ( 100002 ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        0
+      ],
+      "mod_code": [
+        "sum [ i ] += sum [ i - 1 ] ;",
+        "cin >> n >> l >> r >> ql ;",
+        "int w [ 100002 ] , sumr = max [ 100002 ] , ans = max ( 100002 ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9,
+        0
+      ],
+      "mod_code": [
+        "sum [ i ] += sum [ i - 1 ] ;",
+        "int w [ 100002 ] , sumr = max [ 100002 ] , ans = max ( 100002 ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        15,
+        3,
+        0
+      ],
+      "mod_code": [
+        "sumr [ i ] += sumr [ i + 1 ] ;",
+        "cin >> n >> l >> r >> ql ;",
+        "int w [ 100002 ] , sumr = max [ 100002 ] , ans = max ( 100002 ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        15,
+        0
+      ],
+      "mod_code": [
+        "sumr [ i ] += sumr [ i + 1 ] ;",
+        "int w [ 100002 ] , sumr = max [ 100002 ] , ans = max ( 100002 ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        3,
+        0
+      ],
+      "mod_code": [
+        "cin >> n >> l >> r >> ql ;",
+        "int w [ 100002 ] , sumr = max [ 100002 ] , ans = max ( 100002 ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    }
+  ]
+}

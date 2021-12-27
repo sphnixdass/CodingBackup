@@ -1,0 +1,243 @@
+{
+  "meta": {
+    "index": 1083,
+    "hitid": "3VDI8GSXAFNK4YF20AHU5ZG0AGF8GW",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "11A",
+    "subid": "48598164"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create constant integer Max_N with Max_N = 1e5 + 5",
+      "code": "const int Max_N = 1e5 + 5 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create constant integer mod with mod = 1e9 + 7",
+      "code": "const int mod = 1e9 + 7 ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "create 2d integer array bord with size 6 by 2 , with bord = { - 1 , 0 , 0 , 1 , 1 , 0 , 0 , - 1 }",
+      "code": "int bord [ 6 ] [ 2 ] = { - 1 , 0 , 0 , 1 , 1 , 0 , 0 , - 1 } ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "create integers n , d",
+      "code": "int n , d ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "create integer array a with size 2005",
+      "code": "int a [ 2005 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "read n read d",
+      "code": "cin >> n >> d ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for i = 1 to n inclusive , read [ i ]",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "create integer ant with ant = 0",
+      "code": "int ant = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "for i = 2 to n inclusive",
+      "code": "for ( int i = 2 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "if a [ i ] is greater than a [ i - 1 ] , break current loop iteration",
+      "code": "if ( a [ i ] > a [ i - 1 ] ) continue ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "increment ant by ( absolute value of ( a [ i ] - a [ i - 1 ] ) ) / d + 1",
+      "code": "ant += ( abs ( a [ i ] - a [ i - 1 ] ) ) / d + 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "increment a [ i ] by ( ( absolute value of ( a [ i ] - a [ i - 1 ] ) ) / d + 1 ) * d",
+      "code": "a [ i ] += ( ( abs ( a [ i ] - a [ i - 1 ] ) ) / d + 1 ) * d ;",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "print ant print newline",
+      "code": "cout << ant << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) { cin >> read [ i ] ; }"
+      ],
+      "err_line": 7,
+      "err_msg": "‘read’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "const Max_N = 1e5 + 5 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘Max_N’ does not name a type"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) { cin >> ar [ i ] ; }"
+      ],
+      "err_line": 7,
+      "err_msg": "‘ar’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) { cin >> read [ i ] ; }",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘read’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        9,
+        0
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) { cin >> read [ i ] ; }",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "const Max_N = 1e5 + 5 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘Max_N’ does not name a type"
+    },
+    {
+      "mod_line": [
+        7,
+        0
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) { cin >> read [ i ] ; }",
+        "const Max_N = 1e5 + 5 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘Max_N’ does not name a type"
+    },
+    {
+      "mod_line": [
+        7,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) { cin >> ar [ i ] ; }",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘ar’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        9,
+        0
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) { cin >> ar [ i ] ; }",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "const Max_N = 1e5 + 5 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘Max_N’ does not name a type"
+    },
+    {
+      "mod_line": [
+        7,
+        0
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) { cin >> ar [ i ] ; }",
+        "const Max_N = 1e5 + 5 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘Max_N’ does not name a type"
+    },
+    {
+      "mod_line": [
+        9,
+        0
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "const Max_N = 1e5 + 5 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘Max_N’ does not name a type"
+    }
+  ]
+}

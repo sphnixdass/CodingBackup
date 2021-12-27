@@ -1,0 +1,673 @@
+{
+  "meta": {
+    "index": 881,
+    "hitid": "32L724R85LEJ6HKECFJ8CXO6F5FIPV",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "252A",
+    "subid": "44542094"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare constant int maxn = 4e5 + 10",
+      "code": "const int maxn = 4e5 + 10 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare constant int maxm = 2e5 + 10",
+      "code": "const int maxm = 2e5 + 10 ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "declare constant int INF = 0x3f3f3f3f",
+      "code": "const int INF = 0x3f3f3f3f ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "declare integer variables n and m",
+      "code": "int n , m ;",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "create integer array a with 110 elements",
+      "code": "int a [ 110 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 6,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for i from 0 to n exclusive incrementing i , read a [ i ]",
+      "code": "for ( int i = 0 ; i < n ; i ++ ) cin >> a [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "declare integer ans = - INF",
+      "code": "int ans = - INF ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "loop i from 0 to n exclusive",
+      "code": "for ( int i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "for j = i to n exclusive",
+      "code": "for ( int j = i ; j < n ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "declare int variable res = a [ i ]",
+      "code": "int res = a [ i ] ;",
+      "indent": 3
+    },
+    {
+      "line": 12,
+      "text": "for integer k = i + 1 to j inclusive , change res to res ^ a [ k ]",
+      "code": "for ( int k = i + 1 ; k <= j ; k ++ ) res ^= a [ k ] ;",
+      "indent": 3
+    },
+    {
+      "line": 13,
+      "text": "assign max of ans and res to ans",
+      "code": "ans = max ( ans , res ) ;",
+      "indent": 3
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "print ans",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "constant int INF = 0x3f3f3f3f ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘constant’ does not name a type"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "int ans = - \" INF ;"
+      ],
+      "err_line": 8,
+      "err_msg": "missing terminating \" character"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        13,
+        8
+      ],
+      "mod_code": [
+        "for ( int k = i + 1 ; k <= j ; k ++ ) res *= a [ k ] ;",
+        "int ans = max ( ans , res ) ;",
+        "int ans = - \" INF ;"
+      ],
+      "err_line": 8,
+      "err_msg": "missing terminating \" character"
+    },
+    {
+      "mod_line": [
+        12,
+        13,
+        8,
+        9
+      ],
+      "mod_code": [
+        "for ( int k = i + 1 ; k <= j ; k ++ ) res *= a [ k ] ;",
+        "int ans = max ( ans , res ) ;",
+        "int ans = - \" INF ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "missing terminating \" character"
+    },
+    {
+      "mod_line": [
+        12,
+        13,
+        8,
+        10
+      ],
+      "mod_code": [
+        "for ( int k = i + 1 ; k <= j ; k ++ ) res *= a [ k ] ;",
+        "int ans = max ( ans , res ) ;",
+        "int ans = - \" INF ;",
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "missing terminating \" character"
+    },
+    {
+      "mod_line": [
+        12,
+        13,
+        9
+      ],
+      "mod_code": [
+        "for ( int k = i + 1 ; k <= j ; k ++ ) res *= a [ k ] ;",
+        "int ans = max ( ans , res ) ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        13,
+        9,
+        10
+      ],
+      "mod_code": [
+        "for ( int k = i + 1 ; k <= j ; k ++ ) res *= a [ k ] ;",
+        "int ans = max ( ans , res ) ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        13,
+        10
+      ],
+      "mod_code": [
+        "for ( int k = i + 1 ; k <= j ; k ++ ) res *= a [ k ] ;",
+        "int ans = max ( ans , res ) ;",
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        8
+      ],
+      "mod_code": [
+        "for ( int k = i + 1 ; k <= j ; k ++ ) res *= a [ k ] ;",
+        "int ans = - \" INF ;"
+      ],
+      "err_line": 8,
+      "err_msg": "missing terminating \" character"
+    },
+    {
+      "mod_line": [
+        12,
+        8,
+        9
+      ],
+      "mod_code": [
+        "for ( int k = i + 1 ; k <= j ; k ++ ) res *= a [ k ] ;",
+        "int ans = - \" INF ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "missing terminating \" character"
+    },
+    {
+      "mod_line": [
+        12,
+        8,
+        9,
+        10
+      ],
+      "mod_code": [
+        "for ( int k = i + 1 ; k <= j ; k ++ ) res *= a [ k ] ;",
+        "int ans = - \" INF ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "missing terminating \" character"
+    },
+    {
+      "mod_line": [
+        12,
+        8,
+        10
+      ],
+      "mod_code": [
+        "for ( int k = i + 1 ; k <= j ; k ++ ) res *= a [ k ] ;",
+        "int ans = - \" INF ;",
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "missing terminating \" character"
+    },
+    {
+      "mod_line": [
+        12,
+        9
+      ],
+      "mod_code": [
+        "for ( int k = i + 1 ; k <= j ; k ++ ) res *= a [ k ] ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        9,
+        10
+      ],
+      "mod_code": [
+        "for ( int k = i + 1 ; k <= j ; k ++ ) res *= a [ k ] ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        10
+      ],
+      "mod_code": [
+        "for ( int k = i + 1 ; k <= j ; k ++ ) res *= a [ k ] ;",
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        12,
+        8
+      ],
+      "mod_code": [
+        "int ans = max ( ans , res ) ;",
+        "for ( int k = i + 1 ; k <= j ; k ++ ) { res = res [ a ] ; }",
+        "int ans = - \" INF ;"
+      ],
+      "err_line": 8,
+      "err_msg": "missing terminating \" character"
+    },
+    {
+      "mod_line": [
+        13,
+        12,
+        8,
+        9
+      ],
+      "mod_code": [
+        "int ans = max ( ans , res ) ;",
+        "for ( int k = i + 1 ; k <= j ; k ++ ) { res = res [ a ] ; }",
+        "int ans = - \" INF ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "missing terminating \" character"
+    },
+    {
+      "mod_line": [
+        13,
+        12,
+        8,
+        10
+      ],
+      "mod_code": [
+        "int ans = max ( ans , res ) ;",
+        "for ( int k = i + 1 ; k <= j ; k ++ ) { res = res [ a ] ; }",
+        "int ans = - \" INF ;",
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "missing terminating \" character"
+    },
+    {
+      "mod_line": [
+        13,
+        12,
+        9
+      ],
+      "mod_code": [
+        "int ans = max ( ans , res ) ;",
+        "for ( int k = i + 1 ; k <= j ; k ++ ) { res = res [ a ] ; }",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        12,
+        9,
+        10
+      ],
+      "mod_code": [
+        "int ans = max ( ans , res ) ;",
+        "for ( int k = i + 1 ; k <= j ; k ++ ) { res = res [ a ] ; }",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        12,
+        10
+      ],
+      "mod_code": [
+        "int ans = max ( ans , res ) ;",
+        "for ( int k = i + 1 ; k <= j ; k ++ ) { res = res [ a ] ; }",
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        8
+      ],
+      "mod_code": [
+        "int ans = max ( ans , res ) ;",
+        "int ans = - \" INF ;"
+      ],
+      "err_line": 8,
+      "err_msg": "missing terminating \" character"
+    },
+    {
+      "mod_line": [
+        13,
+        8,
+        9
+      ],
+      "mod_code": [
+        "int ans = max ( ans , res ) ;",
+        "int ans = - \" INF ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "missing terminating \" character"
+    },
+    {
+      "mod_line": [
+        13,
+        8,
+        9,
+        10
+      ],
+      "mod_code": [
+        "int ans = max ( ans , res ) ;",
+        "int ans = - \" INF ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "missing terminating \" character"
+    },
+    {
+      "mod_line": [
+        13,
+        8,
+        10
+      ],
+      "mod_code": [
+        "int ans = max ( ans , res ) ;",
+        "int ans = - \" INF ;",
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "missing terminating \" character"
+    },
+    {
+      "mod_line": [
+        13,
+        9
+      ],
+      "mod_code": [
+        "int ans = max ( ans , res ) ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        9,
+        10
+      ],
+      "mod_code": [
+        "int ans = max ( ans , res ) ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        10
+      ],
+      "mod_code": [
+        "int ans = max ( ans , res ) ;",
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        8
+      ],
+      "mod_code": [
+        "for ( int k = i + 1 ; k <= j ; k ++ ) { res = res [ a ] ; }",
+        "int ans = - \" INF ;"
+      ],
+      "err_line": 8,
+      "err_msg": "missing terminating \" character"
+    },
+    {
+      "mod_line": [
+        12,
+        8,
+        9
+      ],
+      "mod_code": [
+        "for ( int k = i + 1 ; k <= j ; k ++ ) { res = res [ a ] ; }",
+        "int ans = - \" INF ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "missing terminating \" character"
+    },
+    {
+      "mod_line": [
+        12,
+        8,
+        9,
+        10
+      ],
+      "mod_code": [
+        "for ( int k = i + 1 ; k <= j ; k ++ ) { res = res [ a ] ; }",
+        "int ans = - \" INF ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "missing terminating \" character"
+    },
+    {
+      "mod_line": [
+        12,
+        8,
+        10
+      ],
+      "mod_code": [
+        "for ( int k = i + 1 ; k <= j ; k ++ ) { res = res [ a ] ; }",
+        "int ans = - \" INF ;",
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "missing terminating \" character"
+    },
+    {
+      "mod_line": [
+        12,
+        9
+      ],
+      "mod_code": [
+        "for ( int k = i + 1 ; k <= j ; k ++ ) { res = res [ a ] ; }",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        9,
+        10
+      ],
+      "mod_code": [
+        "for ( int k = i + 1 ; k <= j ; k ++ ) { res = res [ a ] ; }",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        10
+      ],
+      "mod_code": [
+        "for ( int k = i + 1 ; k <= j ; k ++ ) { res = res [ a ] ; }",
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        9
+      ],
+      "mod_code": [
+        "int ans = - \" INF ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "missing terminating \" character"
+    },
+    {
+      "mod_line": [
+        8,
+        9,
+        10
+      ],
+      "mod_code": [
+        "int ans = - \" INF ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "missing terminating \" character"
+    },
+    {
+      "mod_line": [
+        8,
+        10
+      ],
+      "mod_code": [
+        "int ans = - \" INF ;",
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "missing terminating \" character"
+    },
+    {
+      "mod_line": [
+        9,
+        10
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    }
+  ]
+}

@@ -1,0 +1,803 @@
+{
+  "meta": {
+    "index": 1240,
+    "hitid": "30Z7M1Q8UYEJU72ZEAPK9D5XDNIA87",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "1042A",
+    "subid": "48502115"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare can with integer lim , integer vector v , integer m as arguments , returning boolean",
+      "code": "bool can ( int lim , vector < int > v , int m )",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "for i = 0 to size of v exclusive",
+      "code": "for ( int i = 0 ; i < v . size ( ) ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "while v [ i ] is less than lim and m is greater than 0",
+      "code": "while ( v [ i ] < lim && m > 0 )",
+      "indent": 2
+    },
+    {
+      "line": 3,
+      "text": "increment v [ i ]",
+      "code": "v [ i ] ++ ;",
+      "indent": 3
+    },
+    {
+      "line": 4,
+      "text": "decrement m",
+      "code": "m -- ;",
+      "indent": 3
+    },
+    {
+      "line": 5,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 6,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "return m is 0",
+      "code": "return m == 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 10,
+      "text": "declare integers n , m",
+      "code": "int n , m ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "read n and m",
+      "code": "cin >> n >> m ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "declare integer vector v initialized with n",
+      "code": "vector < int > v ( n ) ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "for i = 0 to n exclusive , read v [ i ]",
+      "code": "for ( int i = 0 ; i < n ; i ++ ) cin >> v [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "declare integers low = value of largest element between beginning of v and end of v , high = 1e8",
+      "code": "int low = * max_element ( v . begin ( ) , v . end ( ) ) , high = 1e8 ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "while low is less than or equal to high",
+      "code": "while ( low <= high )",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "declare integer mid = ( low + high ) / 2",
+      "code": "int mid = ( low + high ) / 2 ;",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "if result of run can ( mid , v , m ) is true",
+      "code": "if ( can ( mid , v , m ) )",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "let high be mid - 1",
+      "code": "high = mid - 1 ;",
+      "indent": 3
+    },
+    {
+      "line": 19,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 20,
+      "text": "let low be mid + 1",
+      "code": "low = mid + 1 ;",
+      "indent": 3
+    },
+    {
+      "line": 21,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 22,
+      "text": "print low , \" \" , m + value of largest element between beginning of v and end of v , newline",
+      "code": "cout << low << \" \" << m + * max_element ( v . begin ( ) , v . end ( ) ) << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "bool can ( int lim , int v , int m )"
+      ],
+      "err_line": 1,
+      "err_msg": "request for member ‘size’ in ‘v’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        22
+      ],
+      "mod_code": [
+        "cout << low << \" \" << m + min ( v . begin ( ) , v . end ( ) ) << endl ;"
+      ],
+      "err_line": 22,
+      "err_msg": "no match for ‘operator<<’ (operand types are ‘std::basic_ostream<char>’ and ‘__gnu_cxx::__normal_iterator<int*, std::vector<int> >’)"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "bool can ( int lim , int m , int m )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int m’"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "s1 [ i ] ++ ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘s1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 13,
+      "err_msg": "‘v’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "vector < long > v ( n ) ;"
+      ],
+      "err_line": 17,
+      "err_msg": "could not convert ‘v’ from ‘std::vector<long int>’ to ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "int low = min ( v . begin ( ) , v . end ( ) , high ) , high = 1e8 ;"
+      ],
+      "err_line": 14,
+      "err_msg": "‘high’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "int mid = ( long low + high ) / 2 ;"
+      ],
+      "err_line": 16,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        19
+      ],
+      "mod_code": [
+        "do"
+      ],
+      "err_line": 21,
+      "err_msg": "expected ‘while’ before ‘}’ token"
+    },
+    {
+      "mod_line": [
+        20
+      ],
+      "mod_code": [
+        "low = mid + l ;"
+      ],
+      "err_line": 20,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        22
+      ],
+      "mod_code": [
+        "cout << low << \" \" << m + min ( v . begin ( ) ) << endl ;"
+      ],
+      "err_line": 22,
+      "err_msg": "no matching function for call to ‘min(std::vector<int>::iterator)’"
+    },
+    {
+      "mod_line": [
+        0,
+        22
+      ],
+      "mod_code": [
+        "bool can ( int lim , int v , int m )",
+        "cout << low << \" \" << m + min ( v . begin ( ) , v . end ( ) ) << endl ;"
+      ],
+      "err_line": 1,
+      "err_msg": "request for member ‘size’ in ‘v’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        0,
+        22,
+        16
+      ],
+      "mod_code": [
+        "bool can ( int lim , int v , int m )",
+        "cout << low << \" \" << m + min ( v . begin ( ) , v . end ( ) ) << endl ;",
+        "int mid = ( long low + high ) / 2 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "request for member ‘size’ in ‘v’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        0,
+        22,
+        16,
+        18
+      ],
+      "mod_code": [
+        "bool can ( int lim , int v , int m )",
+        "cout << low << \" \" << m + min ( v . begin ( ) , v . end ( ) ) << endl ;",
+        "int mid = ( long low + high ) / 2 ;",
+        "int high = mid - 1 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "request for member ‘size’ in ‘v’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        0,
+        22,
+        16,
+        11
+      ],
+      "mod_code": [
+        "bool can ( int lim , int v , int m )",
+        "cout << low << \" \" << m + min ( v . begin ( ) , v . end ( ) ) << endl ;",
+        "int mid = ( long low + high ) / 2 ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 1,
+      "err_msg": "request for member ‘size’ in ‘v’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        0,
+        22,
+        18
+      ],
+      "mod_code": [
+        "bool can ( int lim , int v , int m )",
+        "cout << low << \" \" << m + min ( v . begin ( ) , v . end ( ) ) << endl ;",
+        "int high = mid - 1 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "request for member ‘size’ in ‘v’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        0,
+        22,
+        18,
+        11
+      ],
+      "mod_code": [
+        "bool can ( int lim , int v , int m )",
+        "cout << low << \" \" << m + min ( v . begin ( ) , v . end ( ) ) << endl ;",
+        "int high = mid - 1 ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 1,
+      "err_msg": "request for member ‘size’ in ‘v’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        0,
+        22,
+        11
+      ],
+      "mod_code": [
+        "bool can ( int lim , int v , int m )",
+        "cout << low << \" \" << m + min ( v . begin ( ) , v . end ( ) ) << endl ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 1,
+      "err_msg": "request for member ‘size’ in ‘v’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        0,
+        22
+      ],
+      "mod_code": [
+        "bool can ( int lim , int v , int m )",
+        "cout << low << \" \" << m + min ( v . begin ( ) ) << endl ;"
+      ],
+      "err_line": 1,
+      "err_msg": "request for member ‘size’ in ‘v’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        0,
+        22,
+        16
+      ],
+      "mod_code": [
+        "bool can ( int lim , int v , int m )",
+        "cout << low << \" \" << m + min ( v . begin ( ) ) << endl ;",
+        "int mid = ( long low + high ) / 2 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "request for member ‘size’ in ‘v’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        0,
+        22,
+        16,
+        18
+      ],
+      "mod_code": [
+        "bool can ( int lim , int v , int m )",
+        "cout << low << \" \" << m + min ( v . begin ( ) ) << endl ;",
+        "int mid = ( long low + high ) / 2 ;",
+        "int high = mid - 1 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "request for member ‘size’ in ‘v’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        0,
+        22,
+        16,
+        11
+      ],
+      "mod_code": [
+        "bool can ( int lim , int v , int m )",
+        "cout << low << \" \" << m + min ( v . begin ( ) ) << endl ;",
+        "int mid = ( long low + high ) / 2 ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 1,
+      "err_msg": "request for member ‘size’ in ‘v’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        0,
+        22,
+        18
+      ],
+      "mod_code": [
+        "bool can ( int lim , int v , int m )",
+        "cout << low << \" \" << m + min ( v . begin ( ) ) << endl ;",
+        "int high = mid - 1 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "request for member ‘size’ in ‘v’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        0,
+        22,
+        18,
+        11
+      ],
+      "mod_code": [
+        "bool can ( int lim , int v , int m )",
+        "cout << low << \" \" << m + min ( v . begin ( ) ) << endl ;",
+        "int high = mid - 1 ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 1,
+      "err_msg": "request for member ‘size’ in ‘v’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        0,
+        22,
+        11
+      ],
+      "mod_code": [
+        "bool can ( int lim , int v , int m )",
+        "cout << low << \" \" << m + min ( v . begin ( ) ) << endl ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 1,
+      "err_msg": "request for member ‘size’ in ‘v’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        0,
+        16
+      ],
+      "mod_code": [
+        "bool can ( int lim , int v , int m )",
+        "int mid = ( long low + high ) / 2 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "request for member ‘size’ in ‘v’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        18
+      ],
+      "mod_code": [
+        "bool can ( int lim , int v , int m )",
+        "int mid = ( long low + high ) / 2 ;",
+        "int high = mid - 1 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "request for member ‘size’ in ‘v’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        18,
+        11
+      ],
+      "mod_code": [
+        "bool can ( int lim , int v , int m )",
+        "int mid = ( long low + high ) / 2 ;",
+        "int high = mid - 1 ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 1,
+      "err_msg": "request for member ‘size’ in ‘v’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        11
+      ],
+      "mod_code": [
+        "bool can ( int lim , int v , int m )",
+        "int mid = ( long low + high ) / 2 ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 1,
+      "err_msg": "request for member ‘size’ in ‘v’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        0,
+        18
+      ],
+      "mod_code": [
+        "bool can ( int lim , int v , int m )",
+        "int high = mid - 1 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "request for member ‘size’ in ‘v’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        0,
+        18,
+        11
+      ],
+      "mod_code": [
+        "bool can ( int lim , int v , int m )",
+        "int high = mid - 1 ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 1,
+      "err_msg": "request for member ‘size’ in ‘v’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        0,
+        11
+      ],
+      "mod_code": [
+        "bool can ( int lim , int v , int m )",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 1,
+      "err_msg": "request for member ‘size’ in ‘v’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        22,
+        16
+      ],
+      "mod_code": [
+        "cout << low << \" \" << m + min ( v . begin ( ) , v . end ( ) ) << endl ;",
+        "int mid = ( long low + high ) / 2 ;"
+      ],
+      "err_line": 16,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        22,
+        16,
+        18
+      ],
+      "mod_code": [
+        "cout << low << \" \" << m + min ( v . begin ( ) , v . end ( ) ) << endl ;",
+        "int mid = ( long low + high ) / 2 ;",
+        "int high = mid - 1 ;"
+      ],
+      "err_line": 16,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        22,
+        16,
+        18,
+        11
+      ],
+      "mod_code": [
+        "cout << low << \" \" << m + min ( v . begin ( ) , v . end ( ) ) << endl ;",
+        "int mid = ( long low + high ) / 2 ;",
+        "int high = mid - 1 ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 13,
+      "err_msg": "‘v’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        22,
+        16,
+        11
+      ],
+      "mod_code": [
+        "cout << low << \" \" << m + min ( v . begin ( ) , v . end ( ) ) << endl ;",
+        "int mid = ( long low + high ) / 2 ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 13,
+      "err_msg": "‘v’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        22,
+        18
+      ],
+      "mod_code": [
+        "cout << low << \" \" << m + min ( v . begin ( ) , v . end ( ) ) << endl ;",
+        "int high = mid - 1 ;"
+      ],
+      "err_line": 22,
+      "err_msg": "no match for ‘operator<<’ (operand types are ‘std::basic_ostream<char>’ and ‘__gnu_cxx::__normal_iterator<int*, std::vector<int> >’)"
+    },
+    {
+      "mod_line": [
+        22,
+        18,
+        11
+      ],
+      "mod_code": [
+        "cout << low << \" \" << m + min ( v . begin ( ) , v . end ( ) ) << endl ;",
+        "int high = mid - 1 ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 13,
+      "err_msg": "‘v’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        22,
+        11
+      ],
+      "mod_code": [
+        "cout << low << \" \" << m + min ( v . begin ( ) , v . end ( ) ) << endl ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 13,
+      "err_msg": "‘v’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        22,
+        16
+      ],
+      "mod_code": [
+        "cout << low << \" \" << m + min ( v . begin ( ) ) << endl ;",
+        "int mid = ( long low + high ) / 2 ;"
+      ],
+      "err_line": 16,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        22,
+        16,
+        18
+      ],
+      "mod_code": [
+        "cout << low << \" \" << m + min ( v . begin ( ) ) << endl ;",
+        "int mid = ( long low + high ) / 2 ;",
+        "int high = mid - 1 ;"
+      ],
+      "err_line": 16,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        22,
+        16,
+        18,
+        11
+      ],
+      "mod_code": [
+        "cout << low << \" \" << m + min ( v . begin ( ) ) << endl ;",
+        "int mid = ( long low + high ) / 2 ;",
+        "int high = mid - 1 ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 13,
+      "err_msg": "‘v’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        22,
+        16,
+        11
+      ],
+      "mod_code": [
+        "cout << low << \" \" << m + min ( v . begin ( ) ) << endl ;",
+        "int mid = ( long low + high ) / 2 ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 13,
+      "err_msg": "‘v’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        22,
+        18
+      ],
+      "mod_code": [
+        "cout << low << \" \" << m + min ( v . begin ( ) ) << endl ;",
+        "int high = mid - 1 ;"
+      ],
+      "err_line": 22,
+      "err_msg": "no matching function for call to ‘min(std::vector<int>::iterator)’"
+    },
+    {
+      "mod_line": [
+        22,
+        18,
+        11
+      ],
+      "mod_code": [
+        "cout << low << \" \" << m + min ( v . begin ( ) ) << endl ;",
+        "int high = mid - 1 ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 13,
+      "err_msg": "‘v’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        22,
+        11
+      ],
+      "mod_code": [
+        "cout << low << \" \" << m + min ( v . begin ( ) ) << endl ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 13,
+      "err_msg": "‘v’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        18
+      ],
+      "mod_code": [
+        "int mid = ( long low + high ) / 2 ;",
+        "int high = mid - 1 ;"
+      ],
+      "err_line": 16,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        16,
+        18,
+        11
+      ],
+      "mod_code": [
+        "int mid = ( long low + high ) / 2 ;",
+        "int high = mid - 1 ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 13,
+      "err_msg": "‘v’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        11
+      ],
+      "mod_code": [
+        "int mid = ( long low + high ) / 2 ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 13,
+      "err_msg": "‘v’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        18,
+        11
+      ],
+      "mod_code": [
+        "int high = mid - 1 ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 13,
+      "err_msg": "‘v’ was not declared in this scope"
+    }
+  ]
+}

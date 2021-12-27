@@ -1,0 +1,4213 @@
+{
+  "meta": {
+    "index": 2300,
+    "hitid": "35ZRNT9RUISMVEQUCCZ6JRHRMIT3O6",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "838A",
+    "subid": "44968330"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare integer array at size 5001 by 5001",
+      "code": "int mat [ 5001 ] [ 5001 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare integer array psum size 5001 by 5001",
+      "code": "int psum [ 5001 ] [ 5001 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "declare sum with integers fi , li , fj , lj as arguments , returning integer",
+      "code": "int sum ( int fi , int li , int fj , int lj )",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "declare integer big = psum [ li ] [ lj ]",
+      "code": "int big = psum [ li ] [ lj ] ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "declare integer smol = psum [ fi - 1 ] [ fj - 1 ] if fi and fj , else 0",
+      "code": "int smol = ( fi and fj ? psum [ fi - 1 ] [ fj - 1 ] : 0 ) ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "declare integer lat1 = psum [ li ] [ fj - 1 ] if fj is true , else 0",
+      "code": "int lat1 = ( fj ? psum [ li ] [ fj - 1 ] : 0 ) ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "declare integer lat2 = psum [ fi - 1 ] [ lj ] if fi is true , else 0",
+      "code": "int lat2 = ( fi ? psum [ fi - 1 ] [ lj ] : 0 ) ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "return big + smol - lat1 - lat2 from function",
+      "code": "return big + smol - lat1 - lat2 ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 10,
+      "text": "declare integers n , m",
+      "code": "int n , m ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "read n and m",
+      "code": "cin >> n >> m ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "for i = 0 to 5001 exclusive",
+      "code": "for ( int i = 0 ; i < 5001 ; ++ i )",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "for j = 0 to 5001 exclusive , let mat [ i ] [ j ] be 0",
+      "code": "for ( int j = 0 ; j < 5001 ; ++ j ) { mat [ i ] [ j ] = 0 ; }",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( int i = 0 ; i < n ; ++ i )",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "declare string s",
+      "code": "string s ;",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "read s",
+      "code": "cin >> s ;",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "for j = 0 to m exclusive , let max [ i ] [ j ] be s [ j ] - ' 0 '",
+      "code": "for ( int j = 0 ; j < m ; ++ j ) { mat [ i ] [ j ] = s [ j ] - ' 0 ' ; }",
+      "indent": 2
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "let psum [ 0 ] [ 0 ] be mat [ 0 ] [ 0 ]",
+      "code": "psum [ 0 ] [ 0 ] = mat [ 0 ] [ 0 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "for i = 1 to 5001 exclusive , let psum [ 0 ] [ i ] be psum [ 0 ] [ i - 1 ] + mat [ 0 ] [ i ]",
+      "code": "for ( int i = 1 ; i < 5001 ; ++ i ) { psum [ 0 ] [ i ] = psum [ 0 ] [ i - 1 ] + mat [ 0 ] [ i ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 22,
+      "text": "for i = 1 to 5001 exclusive , let psum [ i ] [ 0 ] be psum [ i - 1 ] [ 0 ] + mat [ i ] [ 0 ]",
+      "code": "for ( int i = 1 ; i < 5001 ; ++ i ) { psum [ i ] [ 0 ] = psum [ i - 1 ] [ 0 ] + mat [ i ] [ 0 ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "for i = 1 to 5001 exclusive",
+      "code": "for ( int i = 1 ; i < 5001 ; ++ i )",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "for j = 1 to 5001 exclusive , let psum [ i ] [ j ] be psum [ i ] [ j - 1 ] + psum [ i - 1 ] [ j ] - psum [ i - 1 ] [ j - 1 ] + mat [ i ] [ j ]",
+      "code": "for ( int j = 1 ; j < 5001 ; ++ j ) { psum [ i ] [ j ] = psum [ i ] [ j - 1 ] + psum [ i - 1 ] [ j ] - psum [ i - 1 ] [ j - 1 ] + mat [ i ] [ j ] ; }",
+      "indent": 2
+    },
+    {
+      "line": 25,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 26,
+      "text": "declare integer ans = 1e9",
+      "code": "int ans = 1e9 ;",
+      "indent": 1
+    },
+    {
+      "line": 27,
+      "text": "for k = 2 to 2500 inclusive",
+      "code": "for ( int k = 2 ; k <= 2500 ; ++ k )",
+      "indent": 1
+    },
+    {
+      "line": 28,
+      "text": "end statement",
+      "code": ";",
+      "indent": 2
+    },
+    {
+      "line": 29,
+      "text": "declare integer pans = 0",
+      "code": "int pans = 0 ;",
+      "indent": 2
+    },
+    {
+      "line": 30,
+      "text": "for i = 0 to ( n + k - 1 ) / k exclusive",
+      "code": "for ( int i = 0 ; i < ( n + k - 1 ) / k ; ++ i )",
+      "indent": 2
+    },
+    {
+      "line": 31,
+      "text": "for j = t0 to ( m + k - 1 ) / k excclusive",
+      "code": "for ( int j = 0 ; j < ( m + k - 1 ) / k ; ++ j )",
+      "indent": 3
+    },
+    {
+      "line": 32,
+      "text": "declare integer c1 = result of run sum with i * k , ( i + 1 ) * k - 1 , j * k , ( j + 1 ) * k - 1 as arguments",
+      "code": "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , ( j + 1 ) * k - 1 ) ;",
+      "indent": 4
+    },
+    {
+      "line": 33,
+      "text": "declare integer c0 = k * k - c1",
+      "code": "int c0 = k * k - c1 ;",
+      "indent": 4
+    },
+    {
+      "line": 34,
+      "text": "end statement",
+      "code": ";",
+      "indent": 4
+    },
+    {
+      "line": 35,
+      "text": "end statement",
+      "code": ";",
+      "indent": 4
+    },
+    {
+      "line": 36,
+      "text": "end statement",
+      "code": ";",
+      "indent": 4
+    },
+    {
+      "line": 37,
+      "text": "end statement",
+      "code": ";",
+      "indent": 4
+    },
+    {
+      "line": 38,
+      "text": "increment pans by minimum of c0 and c1",
+      "code": "pans += min ( c0 , c1 ) ;",
+      "indent": 4
+    },
+    {
+      "line": 39,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 40,
+      "text": "end statement",
+      "code": ";",
+      "indent": 2
+    },
+    {
+      "line": 41,
+      "text": "let ans be minimum of ans and pans",
+      "code": "ans = min ( ans , pans ) ;",
+      "indent": 2
+    },
+    {
+      "line": 42,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 43,
+      "text": "print ans and ' \\ n '",
+      "code": "cout << ans << ' \\n ' ;",
+      "indent": 1
+    },
+    {
+      "line": 44,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 45,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘mat’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        18
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;"
+      ],
+      "err_line": 18,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        24
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }"
+      ],
+      "err_line": 24,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        31
+      ],
+      "mod_code": [
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )"
+      ],
+      "err_line": 31,
+      "err_msg": "‘t0’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        40
+      ],
+      "mod_code": [
+        ";"
+      ],
+      "err_line": 45,
+      "err_msg": "expected ‘}’ at end of input"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int a [ 5001 ] [ 5001 ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘mat’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int a [ 5001 ] [ 5001 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘psum’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ 0 - 1 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "int lat1 = ( fj ? psum ) ? psum [ li ] [ fj - 1 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘:’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "int l , m ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < 5001 ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "char s ;"
+      ],
+      "err_line": 18,
+      "err_msg": "invalid types ‘char[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "s >> s ;"
+      ],
+      "err_line": 17,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        18
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < m ; j ++ ) { max [ i ] [ j ] = s [ j ] - ' 0 ' ; }"
+      ],
+      "err_line": 18,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        23
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i < 5001 ; i ++ )"
+      ],
+      "err_line": 23,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26
+      ],
+      "mod_code": [
+        "const int ans = 1e9 ;"
+      ],
+      "err_line": 41,
+      "err_msg": "assignment of read-only variable ‘ans’"
+    },
+    {
+      "mod_line": [
+        27
+      ],
+      "mod_code": [
+        "for ( k = 2 ; k <= 2500 ; k ++ )"
+      ],
+      "err_line": 27,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        28
+      ],
+      "mod_code": [
+        "<< endl ;"
+      ],
+      "err_line": 28,
+      "err_msg": "expected primary-expression before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        29
+      ],
+      "mod_code": [
+        "pans = 0 ;"
+      ],
+      "err_line": 29,
+      "err_msg": "‘pans’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        30
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < ( n + k - 1 ) / k ; i ++ )"
+      ],
+      "err_line": 30,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        31
+      ],
+      "mod_code": [
+        "for ( int j = t0 ; j < ( m + k - 1 ) / k ; j ++ )"
+      ],
+      "err_line": 31,
+      "err_msg": "‘t0’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        34
+      ],
+      "mod_code": [
+        "<< endl ;"
+      ],
+      "err_line": 34,
+      "err_msg": "expected primary-expression before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        35
+      ],
+      "mod_code": [
+        "<< endl ;"
+      ],
+      "err_line": 35,
+      "err_msg": "expected primary-expression before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        36
+      ],
+      "mod_code": [
+        "<< endl ;"
+      ],
+      "err_line": 36,
+      "err_msg": "expected primary-expression before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        37
+      ],
+      "mod_code": [
+        "<< endl ;"
+      ],
+      "err_line": 37,
+      "err_msg": "expected primary-expression before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        40
+      ],
+      "mod_code": [
+        "<< endl ;"
+      ],
+      "err_line": 40,
+      "err_msg": "expected primary-expression before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        2
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int sum ( int fi , int li , int fj , lj )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        4
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int sum ( int fi , int li , int fj , lj )",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        4,
+        6
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int sum ( int fi , int li , int fj , lj )",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        4,
+        18
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int sum ( int fi , int li , int fj , lj )",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        4,
+        24
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int sum ( int fi , int li , int fj , lj )",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        4,
+        31
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int sum ( int fi , int li , int fj , lj )",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        4,
+        32
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int sum ( int fi , int li , int fj , lj )",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        4,
+        40
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int sum ( int fi , int li , int fj , lj )",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        ";"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        6
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int sum ( int fi , int li , int fj , lj )",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        6,
+        18
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int sum ( int fi , int li , int fj , lj )",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        6,
+        24
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int sum ( int fi , int li , int fj , lj )",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        6,
+        31
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int sum ( int fi , int li , int fj , lj )",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        6,
+        32
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int sum ( int fi , int li , int fj , lj )",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        6,
+        40
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int sum ( int fi , int li , int fj , lj )",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        ";"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        18
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int sum ( int fi , int li , int fj , lj )",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        18,
+        24
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int sum ( int fi , int li , int fj , lj )",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        18,
+        31
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int sum ( int fi , int li , int fj , lj )",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        18,
+        32
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int sum ( int fi , int li , int fj , lj )",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        18,
+        40
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int sum ( int fi , int li , int fj , lj )",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        ";"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        24
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int sum ( int fi , int li , int fj , lj )",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        24,
+        31
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int sum ( int fi , int li , int fj , lj )",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        24,
+        32
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int sum ( int fi , int li , int fj , lj )",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        24,
+        40
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int sum ( int fi , int li , int fj , lj )",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        ";"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        31
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int sum ( int fi , int li , int fj , lj )",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        31,
+        32
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int sum ( int fi , int li , int fj , lj )",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        31,
+        40
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int sum ( int fi , int li , int fj , lj )",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        ";"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        32
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int sum ( int fi , int li , int fj , lj )",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        32,
+        40
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int sum ( int fi , int li , int fj , lj )",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;",
+        ";"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        40
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int sum ( int fi , int li , int fj , lj )",
+        ";"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        0,
+        4
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        6
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        6,
+        18
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        6,
+        24
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        6,
+        31
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        6,
+        32
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        6,
+        40
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        ";"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        18
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        18,
+        24
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        18,
+        31
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        18,
+        32
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        18,
+        40
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        ";"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        24
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        24,
+        31
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        24,
+        32
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        24,
+        40
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        ";"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        31
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        31,
+        32
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        31,
+        40
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        ";"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        32
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        32,
+        40
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;",
+        ";"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        40
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        ";"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        6
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        6,
+        18
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        6,
+        18,
+        24
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        6,
+        18,
+        31
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        6,
+        18,
+        32
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        6,
+        18,
+        40
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        ";"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        6,
+        24
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        6,
+        24,
+        31
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        6,
+        24,
+        32
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        6,
+        24,
+        40
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        ";"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        6,
+        31
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        6,
+        31,
+        32
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        6,
+        31,
+        40
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        ";"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        6,
+        32
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        6,
+        32,
+        40
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;",
+        ";"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        6,
+        40
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        ";"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        18
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘mat’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        18,
+        24
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }"
+      ],
+      "err_line": 13,
+      "err_msg": "‘mat’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        18,
+        24,
+        31
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "‘mat’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        18,
+        24,
+        32
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘mat’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        18,
+        24,
+        40
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        ";"
+      ],
+      "err_line": 13,
+      "err_msg": "‘mat’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        18,
+        31
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "‘mat’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        18,
+        31,
+        32
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘mat’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        18,
+        31,
+        40
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        ";"
+      ],
+      "err_line": 13,
+      "err_msg": "‘mat’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        18,
+        32
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘mat’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        18,
+        32,
+        40
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;",
+        ";"
+      ],
+      "err_line": 13,
+      "err_msg": "‘mat’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        18,
+        40
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        ";"
+      ],
+      "err_line": 13,
+      "err_msg": "‘mat’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        24
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }"
+      ],
+      "err_line": 13,
+      "err_msg": "‘mat’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        24,
+        31
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "‘mat’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        24,
+        31,
+        32
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘mat’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        24,
+        31,
+        40
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        ";"
+      ],
+      "err_line": 13,
+      "err_msg": "‘mat’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        24,
+        32
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘mat’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        24,
+        32,
+        40
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;",
+        ";"
+      ],
+      "err_line": 13,
+      "err_msg": "‘mat’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        24,
+        40
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        ";"
+      ],
+      "err_line": 13,
+      "err_msg": "‘mat’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        31
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "‘mat’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        31,
+        32
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘mat’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        31,
+        32,
+        40
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;",
+        ";"
+      ],
+      "err_line": 13,
+      "err_msg": "‘mat’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        31,
+        40
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        ";"
+      ],
+      "err_line": 13,
+      "err_msg": "‘mat’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        32
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘mat’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        32,
+        40
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;",
+        ";"
+      ],
+      "err_line": 13,
+      "err_msg": "‘mat’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        40
+      ],
+      "mod_code": [
+        "int at [ 5001 ] [ 5001 ] ;",
+        ";"
+      ],
+      "err_line": 13,
+      "err_msg": "‘mat’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        4
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        4,
+        6
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        4,
+        6,
+        18
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        4,
+        6,
+        24
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        4,
+        6,
+        31
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        4,
+        6,
+        32
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        4,
+        6,
+        40
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        ";"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        4,
+        18
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        4,
+        18,
+        24
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        4,
+        18,
+        31
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        4,
+        18,
+        32
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        4,
+        18,
+        40
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        ";"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        4,
+        24
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        4,
+        24,
+        31
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        4,
+        24,
+        32
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        4,
+        24,
+        40
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        ";"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        4,
+        31
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        4,
+        31,
+        32
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        4,
+        31,
+        40
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        ";"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        4,
+        32
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        4,
+        32,
+        40
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;",
+        ";"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        4,
+        40
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        ";"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        6
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        18
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        18,
+        24
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        18,
+        31
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        18,
+        32
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        18,
+        40
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        ";"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        24
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        24,
+        31
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        24,
+        32
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        24,
+        40
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        ";"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        31
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        31,
+        32
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        31,
+        40
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        ";"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        32
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        32,
+        40
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;",
+        ";"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        40
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        ";"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        18
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        18,
+        24
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        18,
+        24,
+        31
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        18,
+        24,
+        32
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        18,
+        24,
+        40
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        ";"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        18,
+        31
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        18,
+        31,
+        32
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        18,
+        31,
+        40
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        ";"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        18,
+        32
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        18,
+        32,
+        40
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;",
+        ";"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        18,
+        40
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        ";"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        24
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        24,
+        31
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        24,
+        31,
+        32
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        24,
+        31,
+        40
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        ";"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        24,
+        32
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        24,
+        32,
+        40
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;",
+        ";"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        24,
+        40
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        ";"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        31
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        31,
+        32
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        31,
+        32,
+        40
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;",
+        ";"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        31,
+        40
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        ";"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        32
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        32,
+        40
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;",
+        ";"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        2,
+        40
+      ],
+      "mod_code": [
+        "int sum ( int fi , int li , int fj , lj )",
+        ";"
+      ],
+      "err_line": 2,
+      "err_msg": "‘lj’ has not been declared"
+    },
+    {
+      "mod_line": [
+        4,
+        6
+      ],
+      "mod_code": [
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        18
+      ],
+      "mod_code": [
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        18,
+        24
+      ],
+      "mod_code": [
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        18,
+        31
+      ],
+      "mod_code": [
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        18,
+        32
+      ],
+      "mod_code": [
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        18,
+        40
+      ],
+      "mod_code": [
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        ";"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        24
+      ],
+      "mod_code": [
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        24,
+        31
+      ],
+      "mod_code": [
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        24,
+        32
+      ],
+      "mod_code": [
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        24,
+        40
+      ],
+      "mod_code": [
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        ";"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        31
+      ],
+      "mod_code": [
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        31,
+        32
+      ],
+      "mod_code": [
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        31,
+        40
+      ],
+      "mod_code": [
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        ";"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        32
+      ],
+      "mod_code": [
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        32,
+        40
+      ],
+      "mod_code": [
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;",
+        ";"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        40
+      ],
+      "mod_code": [
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        ";"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        18
+      ],
+      "mod_code": [
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        18,
+        24
+      ],
+      "mod_code": [
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        18,
+        24,
+        31
+      ],
+      "mod_code": [
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        18,
+        24,
+        32
+      ],
+      "mod_code": [
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        18,
+        24,
+        40
+      ],
+      "mod_code": [
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        ";"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        18,
+        31
+      ],
+      "mod_code": [
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        18,
+        31,
+        32
+      ],
+      "mod_code": [
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        18,
+        31,
+        40
+      ],
+      "mod_code": [
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        ";"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        18,
+        32
+      ],
+      "mod_code": [
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        18,
+        32,
+        40
+      ],
+      "mod_code": [
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;",
+        ";"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        18,
+        40
+      ],
+      "mod_code": [
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        ";"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        24
+      ],
+      "mod_code": [
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        24,
+        31
+      ],
+      "mod_code": [
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        24,
+        31,
+        32
+      ],
+      "mod_code": [
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        24,
+        31,
+        40
+      ],
+      "mod_code": [
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        ";"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        24,
+        32
+      ],
+      "mod_code": [
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        24,
+        32,
+        40
+      ],
+      "mod_code": [
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;",
+        ";"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        24,
+        40
+      ],
+      "mod_code": [
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        ";"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        31
+      ],
+      "mod_code": [
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        31,
+        32
+      ],
+      "mod_code": [
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        31,
+        32,
+        40
+      ],
+      "mod_code": [
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;",
+        ";"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        31,
+        40
+      ],
+      "mod_code": [
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        ";"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        32
+      ],
+      "mod_code": [
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        32,
+        40
+      ],
+      "mod_code": [
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;",
+        ";"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        40
+      ],
+      "mod_code": [
+        "int smol = fi [ fi - 1 ] [ fj - 1 ] ? fi [ fi - 1 ] ;",
+        ";"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        6,
+        18
+      ],
+      "mod_code": [
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        18,
+        24
+      ],
+      "mod_code": [
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        18,
+        24,
+        31
+      ],
+      "mod_code": [
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        18,
+        24,
+        32
+      ],
+      "mod_code": [
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        18,
+        24,
+        40
+      ],
+      "mod_code": [
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        ";"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        18,
+        31
+      ],
+      "mod_code": [
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        18,
+        31,
+        32
+      ],
+      "mod_code": [
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        18,
+        31,
+        40
+      ],
+      "mod_code": [
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        ";"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        18,
+        32
+      ],
+      "mod_code": [
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        18,
+        32,
+        40
+      ],
+      "mod_code": [
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;",
+        ";"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        18,
+        40
+      ],
+      "mod_code": [
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        ";"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        24
+      ],
+      "mod_code": [
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        24,
+        31
+      ],
+      "mod_code": [
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        24,
+        31,
+        32
+      ],
+      "mod_code": [
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        24,
+        31,
+        40
+      ],
+      "mod_code": [
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        ";"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        24,
+        32
+      ],
+      "mod_code": [
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        24,
+        32,
+        40
+      ],
+      "mod_code": [
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;",
+        ";"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        24,
+        40
+      ],
+      "mod_code": [
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        ";"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        31
+      ],
+      "mod_code": [
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        31,
+        32
+      ],
+      "mod_code": [
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        31,
+        32,
+        40
+      ],
+      "mod_code": [
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;",
+        ";"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        31,
+        40
+      ],
+      "mod_code": [
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        ";"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        32
+      ],
+      "mod_code": [
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        32,
+        40
+      ],
+      "mod_code": [
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;",
+        ";"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        40
+      ],
+      "mod_code": [
+        "int lat2 = fi ? psum [ fi - 1 ] [ lj ] ;",
+        ";"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        18,
+        24
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }"
+      ],
+      "err_line": 18,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        18,
+        24,
+        31
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )"
+      ],
+      "err_line": 18,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        18,
+        24,
+        31,
+        32
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 18,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        18,
+        24,
+        31,
+        40
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        ";"
+      ],
+      "err_line": 18,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        18,
+        24,
+        32
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 18,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        18,
+        24,
+        32,
+        40
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;",
+        ";"
+      ],
+      "err_line": 18,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        18,
+        24,
+        40
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        ";"
+      ],
+      "err_line": 18,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        18,
+        31
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )"
+      ],
+      "err_line": 18,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        18,
+        31,
+        32
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 18,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        18,
+        31,
+        32,
+        40
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;",
+        ";"
+      ],
+      "err_line": 18,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        18,
+        31,
+        40
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        ";"
+      ],
+      "err_line": 18,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        18,
+        32
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 18,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        18,
+        32,
+        40
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;",
+        ";"
+      ],
+      "err_line": 18,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        18,
+        40
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < m ; j ++ ) max [ i ] [ j ] = s [ j ] - ' 0 ' ;",
+        ";"
+      ],
+      "err_line": 18,
+      "err_msg": "invalid types ‘<unresolved overloaded function type>[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        24,
+        31
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )"
+      ],
+      "err_line": 24,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        24,
+        31,
+        32
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 24,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        24,
+        31,
+        32,
+        40
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;",
+        ";"
+      ],
+      "err_line": 24,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        24,
+        31,
+        40
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        ";"
+      ],
+      "err_line": 24,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        24,
+        32
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 24,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        24,
+        32,
+        40
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;",
+        ";"
+      ],
+      "err_line": 24,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        24,
+        40
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j < 5001 ; j ++ ) { psum [ i ] [ j ] = psum [ i - 1 ] + psum [ i - 1 ] [ j ] + psum [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j ] ; }",
+        ";"
+      ],
+      "err_line": 24,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        31,
+        32
+      ],
+      "mod_code": [
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;"
+      ],
+      "err_line": 31,
+      "err_msg": "‘t0’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        31,
+        32,
+        40
+      ],
+      "mod_code": [
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;",
+        ";"
+      ],
+      "err_line": 31,
+      "err_msg": "‘t0’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        31,
+        40
+      ],
+      "mod_code": [
+        "for ( int j = t0 ; j <= ( m + k - 1 ) / k ; j ++ )",
+        ";"
+      ],
+      "err_line": 31,
+      "err_msg": "‘t0’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        32,
+        40
+      ],
+      "mod_code": [
+        "int c1 = sum ( i * k , ( i + 1 ) * k - 1 , j * k , j * k ) * k - 1 ;",
+        ";"
+      ],
+      "err_line": 45,
+      "err_msg": "expected ‘}’ at end of input"
+    }
+  ]
+}

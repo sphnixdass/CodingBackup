@@ -1,0 +1,719 @@
+{
+  "meta": {
+    "index": 1623,
+    "hitid": "31HLTCK4BLPIFABF83S4XD08MGYVGB",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "586A",
+    "subid": "48080941"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "define integers n , i , mn , mx , cont and j where mx and cont = 0 and mn = 100",
+      "code": "int n , i , mn = 100 , mx = 0 , cont = 0 , j ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "declare new array of integers a with n elements",
+      "code": "int a [ n ] ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "read standard input to a [ i ]",
+      "code": "cin >> a [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 6,
+      "text": "if a [ i ] = 1 and i < mn , set mn to i",
+      "code": "if ( a [ i ] == 1 && i < mn ) { mn = i ; }",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "if a [ i ] = 1 and i > mx , assign i to mx",
+      "code": "if ( a [ i ] == 1 && i > mx ) { mx = i ; }",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "for j from mn to mx inclusive incrementing j",
+      "code": "for ( j = mn ; j <= mx ; j ++ )",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "assign the new value = cont + 1 to cont",
+      "code": "cont = cont + 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "if a [ j ] and a [ j + 1 ] are both 0",
+      "code": "if ( a [ j ] == 0 && a [ j + 1 ] == 0 )",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "assign the new value = cont - 1 to cont",
+      "code": "cont = cont - 1 ;",
+      "indent": 3
+    },
+    {
+      "line": 13,
+      "text": "else if both a [ j - 1 ] and a [ j ] are equal to 0",
+      "code": "else if ( a [ j - 1 ] == 0 && a [ j ] == 0 )",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "assign cont - 1 to cont",
+      "code": "cont = cont - 1 ;",
+      "indent": 3
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "print cont",
+      "code": "cout << cont << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int n , i , mn = 0 , mx = 0 , mx = 0 , j ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int mx’"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "int a [ n ] [ n ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [n]’)"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "a = a [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "incompatible types in assignment of ‘int’ to ‘int [n]’"
+    },
+    {
+      "mod_line": [
+        13,
+        5
+      ],
+      "mod_code": [
+        "else if ( a [ j - 1 ] && a [ j ] == 0 )",
+        "a = a [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "incompatible types in assignment of ‘int’ to ‘int [n]’"
+    },
+    {
+      "mod_line": [
+        13,
+        5,
+        17
+      ],
+      "mod_code": [
+        "else if ( a [ j - 1 ] && a [ j ] == 0 )",
+        "a = a [ i ] ;",
+        "cout << cont ;"
+      ],
+      "err_line": 5,
+      "err_msg": "incompatible types in assignment of ‘int’ to ‘int [n]’"
+    },
+    {
+      "mod_line": [
+        13,
+        5,
+        17,
+        2
+      ],
+      "mod_code": [
+        "else if ( a [ j - 1 ] && a [ j ] == 0 )",
+        "a = a [ i ] ;",
+        "cout << cont ;",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "incompatible types in assignment of ‘int’ to ‘int [n]’"
+    },
+    {
+      "mod_line": [
+        13,
+        5,
+        17,
+        1
+      ],
+      "mod_code": [
+        "else if ( a [ j - 1 ] && a [ j ] == 0 )",
+        "a = a [ i ] ;",
+        "cout << cont ;",
+        "int n , i , mn = 0 , mx = 0 , mx = 0 , j ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int mx’"
+    },
+    {
+      "mod_line": [
+        13,
+        5,
+        17,
+        11
+      ],
+      "mod_code": [
+        "else if ( a [ j - 1 ] && a [ j ] == 0 )",
+        "a = a [ i ] ;",
+        "cout << cont ;",
+        "if ( a [ j ] && a [ j + 1 ] == 0 )"
+      ],
+      "err_line": 5,
+      "err_msg": "incompatible types in assignment of ‘int’ to ‘int [n]’"
+    },
+    {
+      "mod_line": [
+        13,
+        5,
+        2
+      ],
+      "mod_code": [
+        "else if ( a [ j - 1 ] && a [ j ] == 0 )",
+        "a = a [ i ] ;",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "incompatible types in assignment of ‘int’ to ‘int [n]’"
+    },
+    {
+      "mod_line": [
+        13,
+        5,
+        2,
+        1
+      ],
+      "mod_code": [
+        "else if ( a [ j - 1 ] && a [ j ] == 0 )",
+        "a = a [ i ] ;",
+        "n = getchar ( ) ;",
+        "int n , i , mn = 0 , mx = 0 , mx = 0 , j ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int mx’"
+    },
+    {
+      "mod_line": [
+        13,
+        5,
+        2,
+        11
+      ],
+      "mod_code": [
+        "else if ( a [ j - 1 ] && a [ j ] == 0 )",
+        "a = a [ i ] ;",
+        "n = getchar ( ) ;",
+        "if ( a [ j ] && a [ j + 1 ] == 0 )"
+      ],
+      "err_line": 5,
+      "err_msg": "incompatible types in assignment of ‘int’ to ‘int [n]’"
+    },
+    {
+      "mod_line": [
+        13,
+        5,
+        1
+      ],
+      "mod_code": [
+        "else if ( a [ j - 1 ] && a [ j ] == 0 )",
+        "a = a [ i ] ;",
+        "int n , i , mn = 0 , mx = 0 , mx = 0 , j ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int mx’"
+    },
+    {
+      "mod_line": [
+        13,
+        5,
+        1,
+        11
+      ],
+      "mod_code": [
+        "else if ( a [ j - 1 ] && a [ j ] == 0 )",
+        "a = a [ i ] ;",
+        "int n , i , mn = 0 , mx = 0 , mx = 0 , j ;",
+        "if ( a [ j ] && a [ j + 1 ] == 0 )"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int mx’"
+    },
+    {
+      "mod_line": [
+        13,
+        5,
+        11
+      ],
+      "mod_code": [
+        "else if ( a [ j - 1 ] && a [ j ] == 0 )",
+        "a = a [ i ] ;",
+        "if ( a [ j ] && a [ j + 1 ] == 0 )"
+      ],
+      "err_line": 5,
+      "err_msg": "incompatible types in assignment of ‘int’ to ‘int [n]’"
+    },
+    {
+      "mod_line": [
+        13,
+        17,
+        2,
+        1
+      ],
+      "mod_code": [
+        "else if ( a [ j - 1 ] && a [ j ] == 0 )",
+        "cout << cont ;",
+        "n = getchar ( ) ;",
+        "int n , i , mn = 0 , mx = 0 , mx = 0 , j ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int mx’"
+    },
+    {
+      "mod_line": [
+        13,
+        17,
+        1
+      ],
+      "mod_code": [
+        "else if ( a [ j - 1 ] && a [ j ] == 0 )",
+        "cout << cont ;",
+        "int n , i , mn = 0 , mx = 0 , mx = 0 , j ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int mx’"
+    },
+    {
+      "mod_line": [
+        13,
+        17,
+        1,
+        11
+      ],
+      "mod_code": [
+        "else if ( a [ j - 1 ] && a [ j ] == 0 )",
+        "cout << cont ;",
+        "int n , i , mn = 0 , mx = 0 , mx = 0 , j ;",
+        "if ( a [ j ] && a [ j + 1 ] == 0 )"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int mx’"
+    },
+    {
+      "mod_line": [
+        13,
+        2,
+        1
+      ],
+      "mod_code": [
+        "else if ( a [ j - 1 ] && a [ j ] == 0 )",
+        "n = getchar ( ) ;",
+        "int n , i , mn = 0 , mx = 0 , mx = 0 , j ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int mx’"
+    },
+    {
+      "mod_line": [
+        13,
+        2,
+        1,
+        11
+      ],
+      "mod_code": [
+        "else if ( a [ j - 1 ] && a [ j ] == 0 )",
+        "n = getchar ( ) ;",
+        "int n , i , mn = 0 , mx = 0 , mx = 0 , j ;",
+        "if ( a [ j ] && a [ j + 1 ] == 0 )"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int mx’"
+    },
+    {
+      "mod_line": [
+        13,
+        1
+      ],
+      "mod_code": [
+        "else if ( a [ j - 1 ] && a [ j ] == 0 )",
+        "int n , i , mn = 0 , mx = 0 , mx = 0 , j ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int mx’"
+    },
+    {
+      "mod_line": [
+        13,
+        1,
+        11
+      ],
+      "mod_code": [
+        "else if ( a [ j - 1 ] && a [ j ] == 0 )",
+        "int n , i , mn = 0 , mx = 0 , mx = 0 , j ;",
+        "if ( a [ j ] && a [ j + 1 ] == 0 )"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int mx’"
+    },
+    {
+      "mod_line": [
+        5,
+        17
+      ],
+      "mod_code": [
+        "a = a [ i ] ;",
+        "cout << cont ;"
+      ],
+      "err_line": 5,
+      "err_msg": "incompatible types in assignment of ‘int’ to ‘int [n]’"
+    },
+    {
+      "mod_line": [
+        5,
+        17,
+        2
+      ],
+      "mod_code": [
+        "a = a [ i ] ;",
+        "cout << cont ;",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "incompatible types in assignment of ‘int’ to ‘int [n]’"
+    },
+    {
+      "mod_line": [
+        5,
+        17,
+        2,
+        1
+      ],
+      "mod_code": [
+        "a = a [ i ] ;",
+        "cout << cont ;",
+        "n = getchar ( ) ;",
+        "int n , i , mn = 0 , mx = 0 , mx = 0 , j ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int mx’"
+    },
+    {
+      "mod_line": [
+        5,
+        17,
+        2,
+        11
+      ],
+      "mod_code": [
+        "a = a [ i ] ;",
+        "cout << cont ;",
+        "n = getchar ( ) ;",
+        "if ( a [ j ] && a [ j + 1 ] == 0 )"
+      ],
+      "err_line": 5,
+      "err_msg": "incompatible types in assignment of ‘int’ to ‘int [n]’"
+    },
+    {
+      "mod_line": [
+        5,
+        17,
+        1
+      ],
+      "mod_code": [
+        "a = a [ i ] ;",
+        "cout << cont ;",
+        "int n , i , mn = 0 , mx = 0 , mx = 0 , j ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int mx’"
+    },
+    {
+      "mod_line": [
+        5,
+        17,
+        1,
+        11
+      ],
+      "mod_code": [
+        "a = a [ i ] ;",
+        "cout << cont ;",
+        "int n , i , mn = 0 , mx = 0 , mx = 0 , j ;",
+        "if ( a [ j ] && a [ j + 1 ] == 0 )"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int mx’"
+    },
+    {
+      "mod_line": [
+        5,
+        17,
+        11
+      ],
+      "mod_code": [
+        "a = a [ i ] ;",
+        "cout << cont ;",
+        "if ( a [ j ] && a [ j + 1 ] == 0 )"
+      ],
+      "err_line": 5,
+      "err_msg": "incompatible types in assignment of ‘int’ to ‘int [n]’"
+    },
+    {
+      "mod_line": [
+        5,
+        2
+      ],
+      "mod_code": [
+        "a = a [ i ] ;",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "incompatible types in assignment of ‘int’ to ‘int [n]’"
+    },
+    {
+      "mod_line": [
+        5,
+        2,
+        1
+      ],
+      "mod_code": [
+        "a = a [ i ] ;",
+        "n = getchar ( ) ;",
+        "int n , i , mn = 0 , mx = 0 , mx = 0 , j ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int mx’"
+    },
+    {
+      "mod_line": [
+        5,
+        2,
+        1,
+        11
+      ],
+      "mod_code": [
+        "a = a [ i ] ;",
+        "n = getchar ( ) ;",
+        "int n , i , mn = 0 , mx = 0 , mx = 0 , j ;",
+        "if ( a [ j ] && a [ j + 1 ] == 0 )"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int mx’"
+    },
+    {
+      "mod_line": [
+        5,
+        2,
+        11
+      ],
+      "mod_code": [
+        "a = a [ i ] ;",
+        "n = getchar ( ) ;",
+        "if ( a [ j ] && a [ j + 1 ] == 0 )"
+      ],
+      "err_line": 5,
+      "err_msg": "incompatible types in assignment of ‘int’ to ‘int [n]’"
+    },
+    {
+      "mod_line": [
+        5,
+        1
+      ],
+      "mod_code": [
+        "a = a [ i ] ;",
+        "int n , i , mn = 0 , mx = 0 , mx = 0 , j ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int mx’"
+    },
+    {
+      "mod_line": [
+        5,
+        1,
+        11
+      ],
+      "mod_code": [
+        "a = a [ i ] ;",
+        "int n , i , mn = 0 , mx = 0 , mx = 0 , j ;",
+        "if ( a [ j ] && a [ j + 1 ] == 0 )"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int mx’"
+    },
+    {
+      "mod_line": [
+        5,
+        11
+      ],
+      "mod_code": [
+        "a = a [ i ] ;",
+        "if ( a [ j ] && a [ j + 1 ] == 0 )"
+      ],
+      "err_line": 5,
+      "err_msg": "incompatible types in assignment of ‘int’ to ‘int [n]’"
+    },
+    {
+      "mod_line": [
+        17,
+        2,
+        1
+      ],
+      "mod_code": [
+        "cout << cont ;",
+        "n = getchar ( ) ;",
+        "int n , i , mn = 0 , mx = 0 , mx = 0 , j ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int mx’"
+    },
+    {
+      "mod_line": [
+        17,
+        2,
+        1,
+        11
+      ],
+      "mod_code": [
+        "cout << cont ;",
+        "n = getchar ( ) ;",
+        "int n , i , mn = 0 , mx = 0 , mx = 0 , j ;",
+        "if ( a [ j ] && a [ j + 1 ] == 0 )"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int mx’"
+    },
+    {
+      "mod_line": [
+        17,
+        1
+      ],
+      "mod_code": [
+        "cout << cont ;",
+        "int n , i , mn = 0 , mx = 0 , mx = 0 , j ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int mx’"
+    },
+    {
+      "mod_line": [
+        17,
+        1,
+        11
+      ],
+      "mod_code": [
+        "cout << cont ;",
+        "int n , i , mn = 0 , mx = 0 , mx = 0 , j ;",
+        "if ( a [ j ] && a [ j + 1 ] == 0 )"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int mx’"
+    },
+    {
+      "mod_line": [
+        2,
+        1
+      ],
+      "mod_code": [
+        "n = getchar ( ) ;",
+        "int n , i , mn = 0 , mx = 0 , mx = 0 , j ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int mx’"
+    },
+    {
+      "mod_line": [
+        2,
+        1,
+        11
+      ],
+      "mod_code": [
+        "n = getchar ( ) ;",
+        "int n , i , mn = 0 , mx = 0 , mx = 0 , j ;",
+        "if ( a [ j ] && a [ j + 1 ] == 0 )"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int mx’"
+    },
+    {
+      "mod_line": [
+        1,
+        11
+      ],
+      "mod_code": [
+        "int n , i , mn = 0 , mx = 0 , mx = 0 , j ;",
+        "if ( a [ j ] && a [ j + 1 ] == 0 )"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int mx’"
+    }
+  ]
+}

@@ -1,0 +1,673 @@
+{
+  "meta": {
+    "index": 2432,
+    "hitid": "3ZG552ORAMYS0G389O7FV967CXPV2O",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "580A",
+    "subid": "42291405"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare long long ints n , i and j",
+      "code": "long long int n , i , j ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read standard input to n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "declare long long int arrays a and dp with size n",
+      "code": "long long int a [ n ] , dp [ n ] ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "new long long integer variable ans with value - 1",
+      "code": "long long int ans = - 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "start for loop from i = 0 to n exclusive incrementing i",
+      "code": "for ( i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "read input to a [ i ]",
+      "code": "cin >> a [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "change dp [ i ] to 1",
+      "code": "dp [ i ] = 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "for i from 1 to n exclusive incrementing i",
+      "code": "for ( i = 1 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "if a [ i ] > = a [ i - 1 ] , change the value of dp [ i ] to max of dp [ i ] and 1 + dp [ i - 1 ]",
+      "code": "if ( a [ i ] >= a [ i - 1 ] ) dp [ i ] = max ( dp [ i ] , 1 + dp [ i - 1 ] ) ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "in a for loop , change i from 0 to n exclusive , changing ans to max of ans and dp [ i ] on each loop iteration",
+      "code": "for ( i = 0 ; i < n ; i ++ ) { ans = max ( ans , dp [ i ] ) ; }",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "print ans and \" \\ n \" to the standard output",
+      "code": "cout << ans << \" \\n \" ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { ans [ i ] = max ( ans , dp [ i ] ) ; }"
+      ],
+      "err_line": 12,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "cin >> n )"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "getline ( cin , a [ i ] ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘getline(std::istream&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) ans [ i ] = max ( ans , dp [ i ] ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        12,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { ans [ i ] = max ( ans , dp [ i ] ) ; }",
+        "cin >> n )"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        2,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { ans [ i ] = max ( ans , dp [ i ] ) ; }",
+        "cin >> n )",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        2,
+        13,
+        7
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { ans [ i ] = max ( ans , dp [ i ] ) ; }",
+        "cin >> n )",
+        "cout << ans << \" \" ;",
+        "dp [ i ] = ' 1 ' ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        2,
+        13,
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { ans [ i ] = max ( ans , dp [ i ] ) ; }",
+        "cin >> n )",
+        "cout << ans << \" \" ;",
+        "getline ( cin , a [ i ] ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        2,
+        7
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { ans [ i ] = max ( ans , dp [ i ] ) ; }",
+        "cin >> n )",
+        "dp [ i ] = ' 1 ' ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        2,
+        7,
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { ans [ i ] = max ( ans , dp [ i ] ) ; }",
+        "cin >> n )",
+        "dp [ i ] = ' 1 ' ;",
+        "getline ( cin , a [ i ] ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        2,
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { ans [ i ] = max ( ans , dp [ i ] ) ; }",
+        "cin >> n )",
+        "getline ( cin , a [ i ] ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { ans [ i ] = max ( ans , dp [ i ] ) ; }",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 12,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        12,
+        13,
+        7
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { ans [ i ] = max ( ans , dp [ i ] ) ; }",
+        "cout << ans << \" \" ;",
+        "dp [ i ] = ' 1 ' ;"
+      ],
+      "err_line": 12,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        12,
+        13,
+        7,
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { ans [ i ] = max ( ans , dp [ i ] ) ; }",
+        "cout << ans << \" \" ;",
+        "dp [ i ] = ' 1 ' ;",
+        "getline ( cin , a [ i ] ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘getline(std::istream&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        12,
+        13,
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { ans [ i ] = max ( ans , dp [ i ] ) ; }",
+        "cout << ans << \" \" ;",
+        "getline ( cin , a [ i ] ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘getline(std::istream&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        12,
+        7
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { ans [ i ] = max ( ans , dp [ i ] ) ; }",
+        "dp [ i ] = ' 1 ' ;"
+      ],
+      "err_line": 12,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        12,
+        7,
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { ans [ i ] = max ( ans , dp [ i ] ) ; }",
+        "dp [ i ] = ' 1 ' ;",
+        "getline ( cin , a [ i ] ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘getline(std::istream&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        12,
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { ans [ i ] = max ( ans , dp [ i ] ) ; }",
+        "getline ( cin , a [ i ] ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘getline(std::istream&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        2,
+        12
+      ],
+      "mod_code": [
+        "cin >> n )",
+        "for ( int i = 0 ; i < n ; i ++ ) ans [ i ] = max ( ans , dp [ i ] ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        12,
+        13
+      ],
+      "mod_code": [
+        "cin >> n )",
+        "for ( int i = 0 ; i < n ; i ++ ) ans [ i ] = max ( ans , dp [ i ] ) ;",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        12,
+        13,
+        7
+      ],
+      "mod_code": [
+        "cin >> n )",
+        "for ( int i = 0 ; i < n ; i ++ ) ans [ i ] = max ( ans , dp [ i ] ) ;",
+        "cout << ans << \" \" ;",
+        "dp [ i ] = ' 1 ' ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        12,
+        13,
+        6
+      ],
+      "mod_code": [
+        "cin >> n )",
+        "for ( int i = 0 ; i < n ; i ++ ) ans [ i ] = max ( ans , dp [ i ] ) ;",
+        "cout << ans << \" \" ;",
+        "getline ( cin , a [ i ] ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        12,
+        7
+      ],
+      "mod_code": [
+        "cin >> n )",
+        "for ( int i = 0 ; i < n ; i ++ ) ans [ i ] = max ( ans , dp [ i ] ) ;",
+        "dp [ i ] = ' 1 ' ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        12,
+        7,
+        6
+      ],
+      "mod_code": [
+        "cin >> n )",
+        "for ( int i = 0 ; i < n ; i ++ ) ans [ i ] = max ( ans , dp [ i ] ) ;",
+        "dp [ i ] = ' 1 ' ;",
+        "getline ( cin , a [ i ] ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        12,
+        6
+      ],
+      "mod_code": [
+        "cin >> n )",
+        "for ( int i = 0 ; i < n ; i ++ ) ans [ i ] = max ( ans , dp [ i ] ) ;",
+        "getline ( cin , a [ i ] ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        13
+      ],
+      "mod_code": [
+        "cin >> n )",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        13,
+        7
+      ],
+      "mod_code": [
+        "cin >> n )",
+        "cout << ans << \" \" ;",
+        "dp [ i ] = ' 1 ' ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        13,
+        7,
+        6
+      ],
+      "mod_code": [
+        "cin >> n )",
+        "cout << ans << \" \" ;",
+        "dp [ i ] = ' 1 ' ;",
+        "getline ( cin , a [ i ] ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        13,
+        6
+      ],
+      "mod_code": [
+        "cin >> n )",
+        "cout << ans << \" \" ;",
+        "getline ( cin , a [ i ] ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        7
+      ],
+      "mod_code": [
+        "cin >> n )",
+        "dp [ i ] = ' 1 ' ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        7,
+        6
+      ],
+      "mod_code": [
+        "cin >> n )",
+        "dp [ i ] = ' 1 ' ;",
+        "getline ( cin , a [ i ] ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        6
+      ],
+      "mod_code": [
+        "cin >> n )",
+        "getline ( cin , a [ i ] ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) ans [ i ] = max ( ans , dp [ i ] ) ;",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 12,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        12,
+        13,
+        7
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) ans [ i ] = max ( ans , dp [ i ] ) ;",
+        "cout << ans << \" \" ;",
+        "dp [ i ] = ' 1 ' ;"
+      ],
+      "err_line": 12,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        12,
+        13,
+        7,
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) ans [ i ] = max ( ans , dp [ i ] ) ;",
+        "cout << ans << \" \" ;",
+        "dp [ i ] = ' 1 ' ;",
+        "getline ( cin , a [ i ] ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘getline(std::istream&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        12,
+        13,
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) ans [ i ] = max ( ans , dp [ i ] ) ;",
+        "cout << ans << \" \" ;",
+        "getline ( cin , a [ i ] ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘getline(std::istream&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        12,
+        7
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) ans [ i ] = max ( ans , dp [ i ] ) ;",
+        "dp [ i ] = ' 1 ' ;"
+      ],
+      "err_line": 12,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        12,
+        7,
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) ans [ i ] = max ( ans , dp [ i ] ) ;",
+        "dp [ i ] = ' 1 ' ;",
+        "getline ( cin , a [ i ] ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘getline(std::istream&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        12,
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) ans [ i ] = max ( ans , dp [ i ] ) ;",
+        "getline ( cin , a [ i ] ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘getline(std::istream&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        13,
+        7,
+        6
+      ],
+      "mod_code": [
+        "cout << ans << \" \" ;",
+        "dp [ i ] = ' 1 ' ;",
+        "getline ( cin , a [ i ] ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘getline(std::istream&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        13,
+        6
+      ],
+      "mod_code": [
+        "cout << ans << \" \" ;",
+        "getline ( cin , a [ i ] ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘getline(std::istream&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        7,
+        6
+      ],
+      "mod_code": [
+        "dp [ i ] = ' 1 ' ;",
+        "getline ( cin , a [ i ] ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘getline(std::istream&, long long int&)’"
+    }
+  ]
+}

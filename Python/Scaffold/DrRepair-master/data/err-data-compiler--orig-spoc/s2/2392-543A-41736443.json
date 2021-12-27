@@ -1,0 +1,925 @@
+{
+  "meta": {
+    "index": 2392,
+    "hitid": "3MD8CKRQZZH0D5KZ7P8XTT3LSFZRJ4",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "543A",
+    "subid": "41736443"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create integers n , m , b , mod",
+      "code": "int n , m , b , mod ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create integer array a with size 505",
+      "code": "int a [ 505 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "create 2d long long array dp with size 505 by 505",
+      "code": "long long dp [ 505 ] [ 505 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "read n read m read b read mod",
+      "code": "cin >> n >> m >> b >> mod ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i = 1 to n inclusive , read a [ i ]",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "set bytes from dp to size of dp to value 0",
+      "code": "memset ( dp , 0 , sizeof ( dp ) ) ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "set dp [ 0 ] [ 0 ] to 1",
+      "code": "dp [ 0 ] [ 0 ] = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "for i = 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "for k = 1 to m inclusive",
+      "code": "for ( int k = 1 ; k <= m ; k ++ )",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "for j = a [ i ] to b inclusive",
+      "code": "for ( int j = a [ i ] ; j <= b ; j ++ )",
+      "indent": 3
+    },
+    {
+      "line": 11,
+      "text": "increment dp [ k ] [ j ] by dp [ k - 1 ] [ j - a [ i ] ]",
+      "code": "dp [ k ] [ j ] += dp [ k - 1 ] [ j - a [ i ] ] ;",
+      "indent": 4
+    },
+    {
+      "line": 12,
+      "text": "set dp [ k ] [ j ] to dp [ k ] [ j ] % mod",
+      "code": "dp [ k ] [ j ] %= mod ;",
+      "indent": 4
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 14,
+      "text": "create integer ans with ans = 0",
+      "code": "int ans = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "for i = 0 to b inclusive",
+      "code": "for ( int i = 0 ; i <= b ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "increment ans by dp [ m ] [ i ]",
+      "code": "ans += dp [ m ] [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "set ans to ans % mod",
+      "code": "ans %= mod ;",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "print ans print newline",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "n , m , b , mod ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "a [ 505 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘a’ does not name a type"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "int dp [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "for ( k = 1 ; k <= m ; k ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "for ( j = a [ i ] ; j <= b ; j ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "dp [ k ] [ j ] += dp [ k - 1 ] [ j - a [ i ] ;"
+      ],
+      "err_line": 11,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "ans = 0 ;"
+      ],
+      "err_line": 14,
+      "err_msg": "‘ans’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        0
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "n , m , b , mod ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        8,
+        0,
+        7
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "n , m , b , mod ;",
+        "int dp [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        8,
+        0,
+        7,
+        11
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "n , m , b , mod ;",
+        "int dp [ 0 ] [ 0 ] = 1 ;",
+        "dp [ k ] [ j ] += dp [ k - 1 ] [ j - a [ i ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        8,
+        0,
+        7,
+        1
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "n , m , b , mod ;",
+        "int dp [ 0 ] [ 0 ] = 1 ;",
+        "a [ 505 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        8,
+        0,
+        7,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "n , m , b , mod ;",
+        "int dp [ 0 ] [ 0 ] = 1 ;",
+        "for ( k = 1 ; k <= m ; k ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        8,
+        0,
+        11
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "n , m , b , mod ;",
+        "dp [ k ] [ j ] += dp [ k - 1 ] [ j - a [ i ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        8,
+        0,
+        11,
+        1
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "n , m , b , mod ;",
+        "dp [ k ] [ j ] += dp [ k - 1 ] [ j - a [ i ] ;",
+        "a [ 505 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        8,
+        0,
+        11,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "n , m , b , mod ;",
+        "dp [ k ] [ j ] += dp [ k - 1 ] [ j - a [ i ] ;",
+        "for ( k = 1 ; k <= m ; k ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        8,
+        0,
+        1
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "n , m , b , mod ;",
+        "a [ 505 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        8,
+        0,
+        1,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "n , m , b , mod ;",
+        "a [ 505 ] ;",
+        "for ( k = 1 ; k <= m ; k ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        8,
+        0,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "n , m , b , mod ;",
+        "for ( k = 1 ; k <= m ; k ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        8,
+        7
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int dp [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        8,
+        7,
+        11
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int dp [ 0 ] [ 0 ] = 1 ;",
+        "dp [ k ] [ j ] += dp [ k - 1 ] [ j - a [ i ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        8,
+        7,
+        11,
+        1
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int dp [ 0 ] [ 0 ] = 1 ;",
+        "dp [ k ] [ j ] += dp [ k - 1 ] [ j - a [ i ] ;",
+        "a [ 505 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘a’ does not name a type"
+    },
+    {
+      "mod_line": [
+        8,
+        7,
+        11,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int dp [ 0 ] [ 0 ] = 1 ;",
+        "dp [ k ] [ j ] += dp [ k - 1 ] [ j - a [ i ] ;",
+        "for ( k = 1 ; k <= m ; k ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        8,
+        7,
+        1
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int dp [ 0 ] [ 0 ] = 1 ;",
+        "a [ 505 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘a’ does not name a type"
+    },
+    {
+      "mod_line": [
+        8,
+        7,
+        1,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int dp [ 0 ] [ 0 ] = 1 ;",
+        "a [ 505 ] ;",
+        "for ( k = 1 ; k <= m ; k ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "‘a’ does not name a type"
+    },
+    {
+      "mod_line": [
+        8,
+        7,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int dp [ 0 ] [ 0 ] = 1 ;",
+        "for ( k = 1 ; k <= m ; k ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        8,
+        11
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "dp [ k ] [ j ] += dp [ k - 1 ] [ j - a [ i ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        8,
+        11,
+        1
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "dp [ k ] [ j ] += dp [ k - 1 ] [ j - a [ i ] ;",
+        "a [ 505 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘a’ does not name a type"
+    },
+    {
+      "mod_line": [
+        8,
+        11,
+        1,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "dp [ k ] [ j ] += dp [ k - 1 ] [ j - a [ i ] ;",
+        "a [ 505 ] ;",
+        "for ( k = 1 ; k <= m ; k ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "‘a’ does not name a type"
+    },
+    {
+      "mod_line": [
+        8,
+        11,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "dp [ k ] [ j ] += dp [ k - 1 ] [ j - a [ i ] ;",
+        "for ( k = 1 ; k <= m ; k ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        8,
+        1
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "a [ 505 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘a’ does not name a type"
+    },
+    {
+      "mod_line": [
+        8,
+        1,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "a [ 505 ] ;",
+        "for ( k = 1 ; k <= m ; k ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "‘a’ does not name a type"
+    },
+    {
+      "mod_line": [
+        8,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "for ( k = 1 ; k <= m ; k ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        0,
+        7
+      ],
+      "mod_code": [
+        "n , m , b , mod ;",
+        "int dp [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        7,
+        11
+      ],
+      "mod_code": [
+        "n , m , b , mod ;",
+        "int dp [ 0 ] [ 0 ] = 1 ;",
+        "dp [ k ] [ j ] += dp [ k - 1 ] [ j - a [ i ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        7,
+        11,
+        1
+      ],
+      "mod_code": [
+        "n , m , b , mod ;",
+        "int dp [ 0 ] [ 0 ] = 1 ;",
+        "dp [ k ] [ j ] += dp [ k - 1 ] [ j - a [ i ] ;",
+        "a [ 505 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        7,
+        11,
+        9
+      ],
+      "mod_code": [
+        "n , m , b , mod ;",
+        "int dp [ 0 ] [ 0 ] = 1 ;",
+        "dp [ k ] [ j ] += dp [ k - 1 ] [ j - a [ i ] ;",
+        "for ( k = 1 ; k <= m ; k ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        7,
+        1
+      ],
+      "mod_code": [
+        "n , m , b , mod ;",
+        "int dp [ 0 ] [ 0 ] = 1 ;",
+        "a [ 505 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        7,
+        1,
+        9
+      ],
+      "mod_code": [
+        "n , m , b , mod ;",
+        "int dp [ 0 ] [ 0 ] = 1 ;",
+        "a [ 505 ] ;",
+        "for ( k = 1 ; k <= m ; k ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        7,
+        9
+      ],
+      "mod_code": [
+        "n , m , b , mod ;",
+        "int dp [ 0 ] [ 0 ] = 1 ;",
+        "for ( k = 1 ; k <= m ; k ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        11
+      ],
+      "mod_code": [
+        "n , m , b , mod ;",
+        "dp [ k ] [ j ] += dp [ k - 1 ] [ j - a [ i ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        11,
+        1
+      ],
+      "mod_code": [
+        "n , m , b , mod ;",
+        "dp [ k ] [ j ] += dp [ k - 1 ] [ j - a [ i ] ;",
+        "a [ 505 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        11,
+        1,
+        9
+      ],
+      "mod_code": [
+        "n , m , b , mod ;",
+        "dp [ k ] [ j ] += dp [ k - 1 ] [ j - a [ i ] ;",
+        "a [ 505 ] ;",
+        "for ( k = 1 ; k <= m ; k ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        11,
+        9
+      ],
+      "mod_code": [
+        "n , m , b , mod ;",
+        "dp [ k ] [ j ] += dp [ k - 1 ] [ j - a [ i ] ;",
+        "for ( k = 1 ; k <= m ; k ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        1
+      ],
+      "mod_code": [
+        "n , m , b , mod ;",
+        "a [ 505 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        1,
+        9
+      ],
+      "mod_code": [
+        "n , m , b , mod ;",
+        "a [ 505 ] ;",
+        "for ( k = 1 ; k <= m ; k ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        9
+      ],
+      "mod_code": [
+        "n , m , b , mod ;",
+        "for ( k = 1 ; k <= m ; k ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        7,
+        11
+      ],
+      "mod_code": [
+        "int dp [ 0 ] [ 0 ] = 1 ;",
+        "dp [ k ] [ j ] += dp [ k - 1 ] [ j - a [ i ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        7,
+        11,
+        1
+      ],
+      "mod_code": [
+        "int dp [ 0 ] [ 0 ] = 1 ;",
+        "dp [ k ] [ j ] += dp [ k - 1 ] [ j - a [ i ] ;",
+        "a [ 505 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘a’ does not name a type"
+    },
+    {
+      "mod_line": [
+        7,
+        11,
+        1,
+        9
+      ],
+      "mod_code": [
+        "int dp [ 0 ] [ 0 ] = 1 ;",
+        "dp [ k ] [ j ] += dp [ k - 1 ] [ j - a [ i ] ;",
+        "a [ 505 ] ;",
+        "for ( k = 1 ; k <= m ; k ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "‘a’ does not name a type"
+    },
+    {
+      "mod_line": [
+        7,
+        11,
+        9
+      ],
+      "mod_code": [
+        "int dp [ 0 ] [ 0 ] = 1 ;",
+        "dp [ k ] [ j ] += dp [ k - 1 ] [ j - a [ i ] ;",
+        "for ( k = 1 ; k <= m ; k ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        7,
+        1
+      ],
+      "mod_code": [
+        "int dp [ 0 ] [ 0 ] = 1 ;",
+        "a [ 505 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘a’ does not name a type"
+    },
+    {
+      "mod_line": [
+        7,
+        1,
+        9
+      ],
+      "mod_code": [
+        "int dp [ 0 ] [ 0 ] = 1 ;",
+        "a [ 505 ] ;",
+        "for ( k = 1 ; k <= m ; k ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "‘a’ does not name a type"
+    },
+    {
+      "mod_line": [
+        7,
+        9
+      ],
+      "mod_code": [
+        "int dp [ 0 ] [ 0 ] = 1 ;",
+        "for ( k = 1 ; k <= m ; k ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        11,
+        1
+      ],
+      "mod_code": [
+        "dp [ k ] [ j ] += dp [ k - 1 ] [ j - a [ i ] ;",
+        "a [ 505 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘a’ does not name a type"
+    },
+    {
+      "mod_line": [
+        11,
+        1,
+        9
+      ],
+      "mod_code": [
+        "dp [ k ] [ j ] += dp [ k - 1 ] [ j - a [ i ] ;",
+        "a [ 505 ] ;",
+        "for ( k = 1 ; k <= m ; k ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "‘a’ does not name a type"
+    },
+    {
+      "mod_line": [
+        11,
+        9
+      ],
+      "mod_code": [
+        "dp [ k ] [ j ] += dp [ k - 1 ] [ j - a [ i ] ;",
+        "for ( k = 1 ; k <= m ; k ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        9
+      ],
+      "mod_code": [
+        "a [ 505 ] ;",
+        "for ( k = 1 ; k <= m ; k ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "‘a’ does not name a type"
+    }
+  ]
+}

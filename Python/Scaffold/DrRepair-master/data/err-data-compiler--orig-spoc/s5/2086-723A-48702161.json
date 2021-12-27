@@ -1,0 +1,93 @@
+{
+  "meta": {
+    "index": 2086,
+    "hitid": "3KLL7H3EGDVWF66QS9AMIDC91G8HVT",
+    "workerid": "A24WRPQYGMQLGF",
+    "probid": "723A",
+    "subid": "48702161"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "x = integer array of size 3",
+      "code": "int x [ 3 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "for i = 0 to 3 exclusive , then read x [ i ]",
+      "code": "for ( int i = 0 ; i < 3 ; i ++ ) { cin >> x [ i ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "sort x in ascending order",
+      "code": "sort ( x , x + 3 ) ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "print x [ 2 ] - x [ 0 ]",
+      "code": "cout << x [ 2 ] - x [ 0 ] << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "sort ( x . begin ( ) , x . end ( ) ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "request for member ‘begin’ in ‘x’, which is of non-class type ‘int [3]’"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "sort ( x , x + n ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        1
+      ],
+      "mod_code": [
+        "sort ( x . begin ( ) , x . end ( ) ) ;",
+        "char x [ 3 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "request for member ‘begin’ in ‘x’, which is of non-class type ‘char [3]’"
+    },
+    {
+      "mod_line": [
+        1,
+        3
+      ],
+      "mod_code": [
+        "char x [ 3 ] ;",
+        "sort ( x , x + n ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘n’ was not declared in this scope"
+    }
+  ]
+}

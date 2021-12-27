@@ -1,0 +1,679 @@
+{
+  "meta": {
+    "index": 1129,
+    "hitid": "3L7SUC0TTUO2EJ6LG92APPUFO6U0MT",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "844A",
+    "subid": "48434001"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare integer k",
+      "code": "int k ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "declare string s",
+      "code": "string s ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "read s and k",
+      "code": "cin >> s >> k ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "if size of s is less than k , return print \" impossible \\ n \" , 0",
+      "code": "if ( s . size ( ) < k ) return cout << \" impossible\\n \" , 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "sort from beginning of s to end of s",
+      "code": "sort ( s . begin ( ) , s . end ( ) ) ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "resize s to size ( remove all duplicates but one from ( beginning of s to end of s ) - beginning of s )",
+      "code": "s . resize ( unique ( s . begin ( ) , s . end ( ) ) - s . begin ( ) ) ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "print maximum of ( k - integer casted size of s and 0 ) and newline",
+      "code": "cout << max ( k - ( int ) s . size ( ) , 0 ) << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "s . resize ( s . begin ( ) , s . end ( ) ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘std::__cxx11::basic_string<char>::resize(std::__cxx11::basic_string<char>::iterator, std::__cxx11::basic_string<char>::iterator)’"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "cout << max ( k - int ( s . size ( ) , 0 ) ) << endl ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expression list treated as compound expression in functional cast [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int n ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "char s ;"
+      ],
+      "err_line": 4,
+      "err_msg": "request for member ‘size’ in ‘s’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "s >> s >> k ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "s . resize ( s . begin ( ) , s . end ( ) ) . begin ( ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘std::__cxx11::basic_string<char>::resize(std::__cxx11::basic_string<char>::iterator, std::__cxx11::basic_string<char>::iterator)’"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "cout << max ( k - ( int ) s . size ( ) ) << endl ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘max(int)’"
+    },
+    {
+      "mod_line": [
+        4,
+        6
+      ],
+      "mod_code": [
+        "if ( s . size ( ) < k ) return cout << \" R\\n \" , 0 ;",
+        "s . resize ( s . begin ( ) , s . end ( ) ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘std::__cxx11::basic_string<char>::resize(std::__cxx11::basic_string<char>::iterator, std::__cxx11::basic_string<char>::iterator)’"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        7
+      ],
+      "mod_code": [
+        "if ( s . size ( ) < k ) return cout << \" R\\n \" , 0 ;",
+        "s . resize ( s . begin ( ) , s . end ( ) ) ;",
+        "cout << max ( k - int ( s . size ( ) , 0 ) ) << endl ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘std::__cxx11::basic_string<char>::resize(std::__cxx11::basic_string<char>::iterator, std::__cxx11::basic_string<char>::iterator)’"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        7,
+        3
+      ],
+      "mod_code": [
+        "if ( s . size ( ) < k ) return cout << \" R\\n \" , 0 ;",
+        "s . resize ( s . begin ( ) , s . end ( ) ) ;",
+        "cout << max ( k - int ( s . size ( ) , 0 ) ) << endl ;",
+        "s >> s >> k ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        7,
+        2
+      ],
+      "mod_code": [
+        "if ( s . size ( ) < k ) return cout << \" R\\n \" , 0 ;",
+        "s . resize ( s . begin ( ) , s . end ( ) ) ;",
+        "cout << max ( k - int ( s . size ( ) , 0 ) ) << endl ;",
+        "char s ;"
+      ],
+      "err_line": 4,
+      "err_msg": "request for member ‘size’ in ‘s’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        3
+      ],
+      "mod_code": [
+        "if ( s . size ( ) < k ) return cout << \" R\\n \" , 0 ;",
+        "s . resize ( s . begin ( ) , s . end ( ) ) ;",
+        "s >> s >> k ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        3,
+        2
+      ],
+      "mod_code": [
+        "if ( s . size ( ) < k ) return cout << \" R\\n \" , 0 ;",
+        "s . resize ( s . begin ( ) , s . end ( ) ) ;",
+        "s >> s >> k ;",
+        "char s ;"
+      ],
+      "err_line": 4,
+      "err_msg": "request for member ‘size’ in ‘s’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        3,
+        7
+      ],
+      "mod_code": [
+        "if ( s . size ( ) < k ) return cout << \" R\\n \" , 0 ;",
+        "s . resize ( s . begin ( ) , s . end ( ) ) ;",
+        "s >> s >> k ;",
+        "cout << max ( k - ( int ) s . size ( ) ) << endl ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        2
+      ],
+      "mod_code": [
+        "if ( s . size ( ) < k ) return cout << \" R\\n \" , 0 ;",
+        "s . resize ( s . begin ( ) , s . end ( ) ) ;",
+        "char s ;"
+      ],
+      "err_line": 4,
+      "err_msg": "request for member ‘size’ in ‘s’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        2,
+        7
+      ],
+      "mod_code": [
+        "if ( s . size ( ) < k ) return cout << \" R\\n \" , 0 ;",
+        "s . resize ( s . begin ( ) , s . end ( ) ) ;",
+        "char s ;",
+        "cout << max ( k - ( int ) s . size ( ) ) << endl ;"
+      ],
+      "err_line": 4,
+      "err_msg": "request for member ‘size’ in ‘s’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        7
+      ],
+      "mod_code": [
+        "if ( s . size ( ) < k ) return cout << \" R\\n \" , 0 ;",
+        "s . resize ( s . begin ( ) , s . end ( ) ) ;",
+        "cout << max ( k - ( int ) s . size ( ) ) << endl ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘std::__cxx11::basic_string<char>::resize(std::__cxx11::basic_string<char>::iterator, std::__cxx11::basic_string<char>::iterator)’"
+    },
+    {
+      "mod_line": [
+        4,
+        7
+      ],
+      "mod_code": [
+        "if ( s . size ( ) < k ) return cout << \" R\\n \" , 0 ;",
+        "cout << max ( k - int ( s . size ( ) , 0 ) ) << endl ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expression list treated as compound expression in functional cast [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        4,
+        7,
+        3
+      ],
+      "mod_code": [
+        "if ( s . size ( ) < k ) return cout << \" R\\n \" , 0 ;",
+        "cout << max ( k - int ( s . size ( ) , 0 ) ) << endl ;",
+        "s >> s >> k ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        4,
+        7,
+        3,
+        2
+      ],
+      "mod_code": [
+        "if ( s . size ( ) < k ) return cout << \" R\\n \" , 0 ;",
+        "cout << max ( k - int ( s . size ( ) , 0 ) ) << endl ;",
+        "s >> s >> k ;",
+        "char s ;"
+      ],
+      "err_line": 4,
+      "err_msg": "request for member ‘size’ in ‘s’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        4,
+        7,
+        2
+      ],
+      "mod_code": [
+        "if ( s . size ( ) < k ) return cout << \" R\\n \" , 0 ;",
+        "cout << max ( k - int ( s . size ( ) , 0 ) ) << endl ;",
+        "char s ;"
+      ],
+      "err_line": 4,
+      "err_msg": "request for member ‘size’ in ‘s’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        4,
+        3
+      ],
+      "mod_code": [
+        "if ( s . size ( ) < k ) return cout << \" R\\n \" , 0 ;",
+        "s >> s >> k ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        4,
+        3,
+        2
+      ],
+      "mod_code": [
+        "if ( s . size ( ) < k ) return cout << \" R\\n \" , 0 ;",
+        "s >> s >> k ;",
+        "char s ;"
+      ],
+      "err_line": 4,
+      "err_msg": "request for member ‘size’ in ‘s’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        4,
+        3,
+        2,
+        7
+      ],
+      "mod_code": [
+        "if ( s . size ( ) < k ) return cout << \" R\\n \" , 0 ;",
+        "s >> s >> k ;",
+        "char s ;",
+        "cout << max ( k - ( int ) s . size ( ) ) << endl ;"
+      ],
+      "err_line": 4,
+      "err_msg": "request for member ‘size’ in ‘s’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        4,
+        3,
+        7
+      ],
+      "mod_code": [
+        "if ( s . size ( ) < k ) return cout << \" R\\n \" , 0 ;",
+        "s >> s >> k ;",
+        "cout << max ( k - ( int ) s . size ( ) ) << endl ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        4,
+        2
+      ],
+      "mod_code": [
+        "if ( s . size ( ) < k ) return cout << \" R\\n \" , 0 ;",
+        "char s ;"
+      ],
+      "err_line": 4,
+      "err_msg": "request for member ‘size’ in ‘s’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        4,
+        2,
+        7
+      ],
+      "mod_code": [
+        "if ( s . size ( ) < k ) return cout << \" R\\n \" , 0 ;",
+        "char s ;",
+        "cout << max ( k - ( int ) s . size ( ) ) << endl ;"
+      ],
+      "err_line": 4,
+      "err_msg": "request for member ‘size’ in ‘s’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        4,
+        7
+      ],
+      "mod_code": [
+        "if ( s . size ( ) < k ) return cout << \" R\\n \" , 0 ;",
+        "cout << max ( k - ( int ) s . size ( ) ) << endl ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘max(int)’"
+    },
+    {
+      "mod_line": [
+        6,
+        7
+      ],
+      "mod_code": [
+        "s . resize ( s . begin ( ) , s . end ( ) ) ;",
+        "cout << max ( k - int ( s . size ( ) , 0 ) ) << endl ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘std::__cxx11::basic_string<char>::resize(std::__cxx11::basic_string<char>::iterator, std::__cxx11::basic_string<char>::iterator)’"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        3
+      ],
+      "mod_code": [
+        "s . resize ( s . begin ( ) , s . end ( ) ) ;",
+        "cout << max ( k - int ( s . size ( ) , 0 ) ) << endl ;",
+        "s >> s >> k ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        3,
+        2
+      ],
+      "mod_code": [
+        "s . resize ( s . begin ( ) , s . end ( ) ) ;",
+        "cout << max ( k - int ( s . size ( ) , 0 ) ) << endl ;",
+        "s >> s >> k ;",
+        "char s ;"
+      ],
+      "err_line": 4,
+      "err_msg": "request for member ‘size’ in ‘s’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        2
+      ],
+      "mod_code": [
+        "s . resize ( s . begin ( ) , s . end ( ) ) ;",
+        "cout << max ( k - int ( s . size ( ) , 0 ) ) << endl ;",
+        "char s ;"
+      ],
+      "err_line": 4,
+      "err_msg": "request for member ‘size’ in ‘s’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        6,
+        3
+      ],
+      "mod_code": [
+        "s . resize ( s . begin ( ) , s . end ( ) ) ;",
+        "s >> s >> k ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        6,
+        3,
+        2
+      ],
+      "mod_code": [
+        "s . resize ( s . begin ( ) , s . end ( ) ) ;",
+        "s >> s >> k ;",
+        "char s ;"
+      ],
+      "err_line": 4,
+      "err_msg": "request for member ‘size’ in ‘s’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        6,
+        3,
+        2,
+        7
+      ],
+      "mod_code": [
+        "s . resize ( s . begin ( ) , s . end ( ) ) ;",
+        "s >> s >> k ;",
+        "char s ;",
+        "cout << max ( k - ( int ) s . size ( ) ) << endl ;"
+      ],
+      "err_line": 4,
+      "err_msg": "request for member ‘size’ in ‘s’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        6,
+        3,
+        7
+      ],
+      "mod_code": [
+        "s . resize ( s . begin ( ) , s . end ( ) ) ;",
+        "s >> s >> k ;",
+        "cout << max ( k - ( int ) s . size ( ) ) << endl ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        6,
+        2
+      ],
+      "mod_code": [
+        "s . resize ( s . begin ( ) , s . end ( ) ) ;",
+        "char s ;"
+      ],
+      "err_line": 4,
+      "err_msg": "request for member ‘size’ in ‘s’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        6,
+        2,
+        7
+      ],
+      "mod_code": [
+        "s . resize ( s . begin ( ) , s . end ( ) ) ;",
+        "char s ;",
+        "cout << max ( k - ( int ) s . size ( ) ) << endl ;"
+      ],
+      "err_line": 4,
+      "err_msg": "request for member ‘size’ in ‘s’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        6,
+        7
+      ],
+      "mod_code": [
+        "s . resize ( s . begin ( ) , s . end ( ) ) ;",
+        "cout << max ( k - ( int ) s . size ( ) ) << endl ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘std::__cxx11::basic_string<char>::resize(std::__cxx11::basic_string<char>::iterator, std::__cxx11::basic_string<char>::iterator)’"
+    },
+    {
+      "mod_line": [
+        7,
+        3
+      ],
+      "mod_code": [
+        "cout << max ( k - int ( s . size ( ) , 0 ) ) << endl ;",
+        "s >> s >> k ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        7,
+        3,
+        2
+      ],
+      "mod_code": [
+        "cout << max ( k - int ( s . size ( ) , 0 ) ) << endl ;",
+        "s >> s >> k ;",
+        "char s ;"
+      ],
+      "err_line": 4,
+      "err_msg": "request for member ‘size’ in ‘s’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        7,
+        2
+      ],
+      "mod_code": [
+        "cout << max ( k - int ( s . size ( ) , 0 ) ) << endl ;",
+        "char s ;"
+      ],
+      "err_line": 4,
+      "err_msg": "request for member ‘size’ in ‘s’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        3,
+        2
+      ],
+      "mod_code": [
+        "s >> s >> k ;",
+        "char s ;"
+      ],
+      "err_line": 4,
+      "err_msg": "request for member ‘size’ in ‘s’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        3,
+        2,
+        7
+      ],
+      "mod_code": [
+        "s >> s >> k ;",
+        "char s ;",
+        "cout << max ( k - ( int ) s . size ( ) ) << endl ;"
+      ],
+      "err_line": 4,
+      "err_msg": "request for member ‘size’ in ‘s’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        3,
+        7
+      ],
+      "mod_code": [
+        "s >> s >> k ;",
+        "cout << max ( k - ( int ) s . size ( ) ) << endl ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        2,
+        7
+      ],
+      "mod_code": [
+        "char s ;",
+        "cout << max ( k - ( int ) s . size ( ) ) << endl ;"
+      ],
+      "err_line": 4,
+      "err_msg": "request for member ‘size’ in ‘s’, which is of non-class type ‘char’"
+    }
+  ]
+}

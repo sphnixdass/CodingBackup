@@ -1,0 +1,693 @@
+{
+  "meta": {
+    "index": 272,
+    "hitid": "3D06DR5225DYFW438BZ3EV6SXS0AMO",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "209A",
+    "subid": "45894178"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare gcd1 with long longs a , b as arguments , returning long long",
+      "code": "long long gcd1 ( long long a , long long b )",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "if a is 0 , return b from function",
+      "code": "if ( a == 0 ) return b ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "return result of run gcd1 with b % a , a as arguments , from function",
+      "code": "return gcd1 ( b % a , a ) ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "declare modx with long longs base , ex as arguments , returning long long",
+      "code": "long long modx ( long long base , long long ex )",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "create long longs ans , val with ans = 1LL , val = base",
+      "code": "long long ans = 1LL , val = base ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "while ex is greater than 0LL",
+      "code": "while ( ex > 0LL )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "if ex bitwise and 1LL , set ans to ( ans * val ) % 1000000009LL",
+      "code": "if ( ex & 1LL ) ans = ( ans * val ) % 1000000009LL ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "set val to ( val * val ) % 1000000009LL",
+      "code": "val = ( val * val ) % 1000000009LL ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "set ex to ex bitshift right 1LL",
+      "code": "ex = ex >> 1LL ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "return ans from function",
+      "code": "return ans ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 13,
+      "text": "create long long arrays dp , odd , ev , with dp size 1000005 , odd size 1000005 , ev size 1000005",
+      "code": "long long dp [ 1000005 ] , odd [ 1000005 ] , ev [ 1000005 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 15,
+      "text": "create integer n",
+      "code": "int n ;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "set dp [ 1 ] to odd [ 1 ] to 1",
+      "code": "dp [ 1 ] = odd [ 1 ] = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "create long long ans with ans = 1",
+      "code": "long long ans = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "for i = 2 to n inclusive",
+      "code": "for ( int i = 2 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "if i % 2",
+      "code": "if ( i % 2 )",
+      "indent": 2
+    },
+    {
+      "line": 21,
+      "text": "set dp [ i ] to ( ev [ i - 1 ] + 1 ) % 1000000007LL",
+      "code": "dp [ i ] = ( ev [ i - 1 ] + 1 ) % 1000000007LL ;",
+      "indent": 3
+    },
+    {
+      "line": 22,
+      "text": "set odd [ i ] to ( odd [ i - 2 ] + dp [ i ] ) % 1000000007LL",
+      "code": "odd [ i ] = ( odd [ i - 2 ] + dp [ i ] ) % 1000000007LL ;",
+      "indent": 3
+    },
+    {
+      "line": 23,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 24,
+      "text": "set dp [ i ] to ( odd [ i - 1 ] + 1 ) % 1000000007LL",
+      "code": "dp [ i ] = ( odd [ i - 1 ] + 1 ) % 1000000007LL ;",
+      "indent": 3
+    },
+    {
+      "line": 25,
+      "text": "set ev [ i ] to ( ev [ i - 2 ] + dp [ i ] ) % 1000000007LL",
+      "code": "ev [ i ] = ( ev [ i - 2 ] + dp [ i ] ) % 1000000007LL ;",
+      "indent": 3
+    },
+    {
+      "line": 26,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 27,
+      "text": "set ans to ( ans + dp [ i ] ) % 1000000007LL",
+      "code": "ans = ( ans + dp [ i ] ) % 1000000007LL ;",
+      "indent": 2
+    },
+    {
+      "line": 28,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 29,
+      "text": "print ans print newline",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 30,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 31,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "long long dp [ 1000005 ] , dp [ 1000005 ] , ev [ 1000005 ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "redefinition of ‘long long int dp [1000005]’"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "dp [ 1 ] = 1 [ 1 ] = 1 ;"
+      ],
+      "err_line": 17,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "return gcd1 ( b % a ) , a ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too few arguments to function ‘long long int gcd1(long long int, long long int)’"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "long long modx ( long long base , long long ex ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "ex = ex << \" \" ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid operands of types ‘long long int’ and ‘const char [2]’ to binary ‘operator<<’"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "long long dp [ 1000005 ] , ev [ 1000005 ] , ev [ 1000005 ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "redefinition of ‘long long int ev [1000005]’"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "dp [ 1 ] = 1 [ 1 ] ;"
+      ],
+      "err_line": 17,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        19
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 19,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        21
+      ],
+      "mod_code": [
+        "dp [ i ] = ( ev [ i - 1 ] + 1 ) % 1000000007LL ) ;"
+      ],
+      "err_line": 21,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        24
+      ],
+      "mod_code": [
+        "dp [ i ] = ( ( i [ i - 1 ] + 1 ) % 1000000007LL ) ;"
+      ],
+      "err_line": 24,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        13,
+        17
+      ],
+      "mod_code": [
+        "long long dp [ 1000005 ] , dp [ 1000005 ] , ev [ 1000005 ] ;",
+        "dp [ 1 ] = 1 [ 1 ] = 1 ;"
+      ],
+      "err_line": 13,
+      "err_msg": "redefinition of ‘long long int dp [1000005]’"
+    },
+    {
+      "mod_line": [
+        13,
+        17,
+        24
+      ],
+      "mod_code": [
+        "long long dp [ 1000005 ] , dp [ 1000005 ] , ev [ 1000005 ] ;",
+        "dp [ 1 ] = 1 [ 1 ] = 1 ;",
+        "dp [ i ] = ( ( i [ i - 1 ] + 1 ) % 1000000007LL ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "redefinition of ‘long long int dp [1000005]’"
+    },
+    {
+      "mod_line": [
+        13,
+        17,
+        24,
+        19
+      ],
+      "mod_code": [
+        "long long dp [ 1000005 ] , dp [ 1000005 ] , ev [ 1000005 ] ;",
+        "dp [ 1 ] = 1 [ 1 ] = 1 ;",
+        "dp [ i ] = ( ( i [ i - 1 ] + 1 ) % 1000000007LL ) ;",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "redefinition of ‘long long int dp [1000005]’"
+    },
+    {
+      "mod_line": [
+        13,
+        17,
+        19
+      ],
+      "mod_code": [
+        "long long dp [ 1000005 ] , dp [ 1000005 ] , ev [ 1000005 ] ;",
+        "dp [ 1 ] = 1 [ 1 ] = 1 ;",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "redefinition of ‘long long int dp [1000005]’"
+    },
+    {
+      "mod_line": [
+        13,
+        24
+      ],
+      "mod_code": [
+        "long long dp [ 1000005 ] , dp [ 1000005 ] , ev [ 1000005 ] ;",
+        "dp [ i ] = ( ( i [ i - 1 ] + 1 ) % 1000000007LL ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "redefinition of ‘long long int dp [1000005]’"
+    },
+    {
+      "mod_line": [
+        13,
+        24,
+        17
+      ],
+      "mod_code": [
+        "long long dp [ 1000005 ] , dp [ 1000005 ] , ev [ 1000005 ] ;",
+        "dp [ i ] = ( ( i [ i - 1 ] + 1 ) % 1000000007LL ) ;",
+        "dp [ 1 ] = 1 [ 1 ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "redefinition of ‘long long int dp [1000005]’"
+    },
+    {
+      "mod_line": [
+        13,
+        24,
+        17,
+        19
+      ],
+      "mod_code": [
+        "long long dp [ 1000005 ] , dp [ 1000005 ] , ev [ 1000005 ] ;",
+        "dp [ i ] = ( ( i [ i - 1 ] + 1 ) % 1000000007LL ) ;",
+        "dp [ 1 ] = 1 [ 1 ] ;",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "redefinition of ‘long long int dp [1000005]’"
+    },
+    {
+      "mod_line": [
+        13,
+        24,
+        19
+      ],
+      "mod_code": [
+        "long long dp [ 1000005 ] , dp [ 1000005 ] , ev [ 1000005 ] ;",
+        "dp [ i ] = ( ( i [ i - 1 ] + 1 ) % 1000000007LL ) ;",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "redefinition of ‘long long int dp [1000005]’"
+    },
+    {
+      "mod_line": [
+        13,
+        17
+      ],
+      "mod_code": [
+        "long long dp [ 1000005 ] , dp [ 1000005 ] , ev [ 1000005 ] ;",
+        "dp [ 1 ] = 1 [ 1 ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "redefinition of ‘long long int dp [1000005]’"
+    },
+    {
+      "mod_line": [
+        13,
+        17,
+        19
+      ],
+      "mod_code": [
+        "long long dp [ 1000005 ] , dp [ 1000005 ] , ev [ 1000005 ] ;",
+        "dp [ 1 ] = 1 [ 1 ] ;",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "redefinition of ‘long long int dp [1000005]’"
+    },
+    {
+      "mod_line": [
+        13,
+        19
+      ],
+      "mod_code": [
+        "long long dp [ 1000005 ] , dp [ 1000005 ] , ev [ 1000005 ] ;",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "redefinition of ‘long long int dp [1000005]’"
+    },
+    {
+      "mod_line": [
+        17,
+        24
+      ],
+      "mod_code": [
+        "dp [ 1 ] = 1 [ 1 ] = 1 ;",
+        "dp [ i ] = ( ( i [ i - 1 ] + 1 ) % 1000000007LL ) ;"
+      ],
+      "err_line": 17,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        17,
+        24,
+        13
+      ],
+      "mod_code": [
+        "dp [ 1 ] = 1 [ 1 ] = 1 ;",
+        "dp [ i ] = ( ( i [ i - 1 ] + 1 ) % 1000000007LL ) ;",
+        "long long dp [ 1000005 ] , ev [ 1000005 ] , ev [ 1000005 ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "redefinition of ‘long long int ev [1000005]’"
+    },
+    {
+      "mod_line": [
+        17,
+        24,
+        13,
+        19
+      ],
+      "mod_code": [
+        "dp [ 1 ] = 1 [ 1 ] = 1 ;",
+        "dp [ i ] = ( ( i [ i - 1 ] + 1 ) % 1000000007LL ) ;",
+        "long long dp [ 1000005 ] , ev [ 1000005 ] , ev [ 1000005 ] ;",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "redefinition of ‘long long int ev [1000005]’"
+    },
+    {
+      "mod_line": [
+        17,
+        24,
+        19
+      ],
+      "mod_code": [
+        "dp [ 1 ] = 1 [ 1 ] = 1 ;",
+        "dp [ i ] = ( ( i [ i - 1 ] + 1 ) % 1000000007LL ) ;",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 17,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        17,
+        13
+      ],
+      "mod_code": [
+        "dp [ 1 ] = 1 [ 1 ] = 1 ;",
+        "long long dp [ 1000005 ] , ev [ 1000005 ] , ev [ 1000005 ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "redefinition of ‘long long int ev [1000005]’"
+    },
+    {
+      "mod_line": [
+        17,
+        13,
+        19
+      ],
+      "mod_code": [
+        "dp [ 1 ] = 1 [ 1 ] = 1 ;",
+        "long long dp [ 1000005 ] , ev [ 1000005 ] , ev [ 1000005 ] ;",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "redefinition of ‘long long int ev [1000005]’"
+    },
+    {
+      "mod_line": [
+        17,
+        19
+      ],
+      "mod_code": [
+        "dp [ 1 ] = 1 [ 1 ] = 1 ;",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 17,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        24,
+        13
+      ],
+      "mod_code": [
+        "dp [ i ] = ( ( i [ i - 1 ] + 1 ) % 1000000007LL ) ;",
+        "long long dp [ 1000005 ] , ev [ 1000005 ] , ev [ 1000005 ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "redefinition of ‘long long int ev [1000005]’"
+    },
+    {
+      "mod_line": [
+        24,
+        13,
+        17
+      ],
+      "mod_code": [
+        "dp [ i ] = ( ( i [ i - 1 ] + 1 ) % 1000000007LL ) ;",
+        "long long dp [ 1000005 ] , ev [ 1000005 ] , ev [ 1000005 ] ;",
+        "dp [ 1 ] = 1 [ 1 ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "redefinition of ‘long long int ev [1000005]’"
+    },
+    {
+      "mod_line": [
+        24,
+        13,
+        17,
+        19
+      ],
+      "mod_code": [
+        "dp [ i ] = ( ( i [ i - 1 ] + 1 ) % 1000000007LL ) ;",
+        "long long dp [ 1000005 ] , ev [ 1000005 ] , ev [ 1000005 ] ;",
+        "dp [ 1 ] = 1 [ 1 ] ;",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "redefinition of ‘long long int ev [1000005]’"
+    },
+    {
+      "mod_line": [
+        24,
+        13,
+        19
+      ],
+      "mod_code": [
+        "dp [ i ] = ( ( i [ i - 1 ] + 1 ) % 1000000007LL ) ;",
+        "long long dp [ 1000005 ] , ev [ 1000005 ] , ev [ 1000005 ] ;",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "redefinition of ‘long long int ev [1000005]’"
+    },
+    {
+      "mod_line": [
+        24,
+        17
+      ],
+      "mod_code": [
+        "dp [ i ] = ( ( i [ i - 1 ] + 1 ) % 1000000007LL ) ;",
+        "dp [ 1 ] = 1 [ 1 ] ;"
+      ],
+      "err_line": 17,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        24,
+        17,
+        19
+      ],
+      "mod_code": [
+        "dp [ i ] = ( ( i [ i - 1 ] + 1 ) % 1000000007LL ) ;",
+        "dp [ 1 ] = 1 [ 1 ] ;",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 17,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        24,
+        19
+      ],
+      "mod_code": [
+        "dp [ i ] = ( ( i [ i - 1 ] + 1 ) % 1000000007LL ) ;",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 19,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        17
+      ],
+      "mod_code": [
+        "long long dp [ 1000005 ] , ev [ 1000005 ] , ev [ 1000005 ] ;",
+        "dp [ 1 ] = 1 [ 1 ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "redefinition of ‘long long int ev [1000005]’"
+    },
+    {
+      "mod_line": [
+        13,
+        17,
+        19
+      ],
+      "mod_code": [
+        "long long dp [ 1000005 ] , ev [ 1000005 ] , ev [ 1000005 ] ;",
+        "dp [ 1 ] = 1 [ 1 ] ;",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "redefinition of ‘long long int ev [1000005]’"
+    },
+    {
+      "mod_line": [
+        13,
+        19
+      ],
+      "mod_code": [
+        "long long dp [ 1000005 ] , ev [ 1000005 ] , ev [ 1000005 ] ;",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "redefinition of ‘long long int ev [1000005]’"
+    },
+    {
+      "mod_line": [
+        17,
+        19
+      ],
+      "mod_code": [
+        "dp [ 1 ] = 1 [ 1 ] ;",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 17,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    }
+  ]
+}

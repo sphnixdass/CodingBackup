@@ -1,0 +1,1133 @@
+{
+  "meta": {
+    "index": 1617,
+    "hitid": "3QQUBC64ZE8GTRXWVM6HBI6Q219XN0",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "17A",
+    "subid": "47102058"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "set constant integer MAXN to 1000005",
+      "code": "const int MAXN = 1000005 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare array of integers prime with size MAXN and integer variable num = 0",
+      "code": "int prime [ MAXN ] , num = 0 ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "let pd be array of integers with size MAXN",
+      "code": "bool pd [ MAXN ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "in the function find_prime",
+      "code": "void find_prime ( )",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "let i and j be integers",
+      "code": "int i , j ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "st pd [ 0 ] and pd [ 1 ] to true",
+      "code": "pd [ 0 ] = pd [ 1 ] = true ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 2 to MAXN inclusive",
+      "code": "for ( i = 2 ; i <= MAXN ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "if pd [ i ] is false , set prime [ num ] to i and increment num",
+      "code": "if ( ! pd [ i ] ) prime [ num ++ ] = i ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "for j = 0 to num exclusive",
+      "code": "for ( j = 0 ; j < num ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "if i * prime [ j ] is greater than MAXN break",
+      "code": "if ( i * prime [ j ] > MAXN ) break ;",
+      "indent": 3
+    },
+    {
+      "line": 10,
+      "text": "pd [ i * prime [ j ] ] = true",
+      "code": "pd [ i * prime [ j ] ] = true ;",
+      "indent": 3
+    },
+    {
+      "line": 11,
+      "text": "if i % prime [ j ] is equal to 0 break",
+      "code": "if ( i % prime [ j ] == 0 ) break ;",
+      "indent": 3
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 15,
+      "text": "integer function find with integer argument n",
+      "code": "int find ( int n )",
+      "indent": 0
+    },
+    {
+      "line": 16,
+      "text": "let l , r and mid be integers",
+      "code": "int l , r , mid ;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "set value of l to 0",
+      "code": "l = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "r = num - 1",
+      "code": "r = num - 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "while l < = r",
+      "code": "while ( l <= r )",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "mid = ( l + r ) / 2",
+      "code": "mid = ( l + r ) / 2 ;",
+      "indent": 2
+    },
+    {
+      "line": 21,
+      "text": "if n is greater than prime [ mid ]",
+      "code": "if ( n > prime [ mid ] )",
+      "indent": 2
+    },
+    {
+      "line": 22,
+      "text": "l = mid + 1",
+      "code": "l = mid + 1 ;",
+      "indent": 3
+    },
+    {
+      "line": 23,
+      "text": "else if n is less than prime [ mid ]",
+      "code": "else if ( n < prime [ mid ] )",
+      "indent": 2
+    },
+    {
+      "line": 24,
+      "text": "r = mid - 1",
+      "code": "r = mid - 1 ;",
+      "indent": 3
+    },
+    {
+      "line": 25,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 26,
+      "text": "return mid",
+      "code": "return mid ;",
+      "indent": 3
+    },
+    {
+      "line": 27,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 28,
+      "text": "return - 1",
+      "code": "return - 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 29,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 30,
+      "text": "function mz with integer argument n that returns integer",
+      "code": "int mz ( int n )",
+      "indent": 0
+    },
+    {
+      "line": 31,
+      "text": "pos and t are integers with t = n",
+      "code": "int pos , t = n ;",
+      "indent": 1
+    },
+    {
+      "line": 32,
+      "text": "t = ( t - 1 ) / 2",
+      "code": "t = ( t - 1 ) / 2 ;",
+      "indent": 1
+    },
+    {
+      "line": 33,
+      "text": "while pd [ t ] is true , increment t",
+      "code": "while ( pd [ t ] ) t ++ ;",
+      "indent": 1
+    },
+    {
+      "line": 34,
+      "text": "pos = find ( t )",
+      "code": "pos = find ( t ) ;",
+      "indent": 1
+    },
+    {
+      "line": 35,
+      "text": "if prime [ pos - 1 ] + prime [ pos ] + 1 is equal to n , return 1",
+      "code": "if ( prime [ pos - 1 ] + prime [ pos ] + 1 == n ) return 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 36,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 37,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 38,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 39,
+      "text": "integers n , k , num = 0 , i , flag = 0",
+      "code": "int n , k , num = 0 , i , flag = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 40,
+      "text": "read n and k",
+      "code": "cin >> n >> k ;",
+      "indent": 1
+    },
+    {
+      "line": 41,
+      "text": "call find_prime",
+      "code": "find_prime ( ) ;",
+      "indent": 1
+    },
+    {
+      "line": 42,
+      "text": "for i = 0 to prime [ i ] < n inclusive",
+      "code": "for ( i = 0 ; prime [ i ] <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 43,
+      "text": "if mz of prime [ i ] is true , increment num",
+      "code": "if ( mz ( prime [ i ] ) ) num ++ ;",
+      "indent": 2
+    },
+    {
+      "line": 44,
+      "text": "if num > = k",
+      "code": "if ( num >= k )",
+      "indent": 2
+    },
+    {
+      "line": 45,
+      "text": "set value of flag to 1",
+      "code": "flag = 1 ;",
+      "indent": 3
+    },
+    {
+      "line": 46,
+      "text": "stop the loop",
+      "code": "break ;",
+      "indent": 3
+    },
+    {
+      "line": 47,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 48,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 49,
+      "text": "if flag is equal to 1",
+      "code": "if ( flag == 1 )",
+      "indent": 1
+    },
+    {
+      "line": 50,
+      "text": "print \" YES \\ n \"",
+      "code": "cout << \" YES\\n \" ;",
+      "indent": 2
+    },
+    {
+      "line": 51,
+      "text": "else",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 52,
+      "text": "print \" NO \\ n \"",
+      "code": "cout << \" NO\\n \" ;",
+      "indent": 2
+    },
+    {
+      "line": 53,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 54,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "st [ 0 ] = pd [ 1 ] = true ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘st’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int prime [ MAXN ] , num [ MAXN ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "lvalue required as increment operand"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "void find_prime ( ) { }"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "st [ 0 ] = pd [ 1 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘st’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "int find ( int n ) ;"
+      ],
+      "err_line": 16,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "* l = 0 ;"
+      ],
+      "err_line": 17,
+      "err_msg": "invalid type argument of unary ‘*’ (have ‘int’)"
+    },
+    {
+      "mod_line": [
+        21
+      ],
+      "mod_code": [
+        "if ( n [ mid ] > prime [ mid ] )"
+      ],
+      "err_line": 21,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        30
+      ],
+      "mod_code": [
+        "int mz ( int n ) ;"
+      ],
+      "err_line": 31,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        32
+      ],
+      "mod_code": [
+        "long long t = ( t - 1 ) / 2 ;"
+      ],
+      "err_line": 32,
+      "err_msg": "conflicting declaration ‘long long int t’"
+    },
+    {
+      "mod_line": [
+        34
+      ],
+      "mod_code": [
+        "int pos = find ( t ) ;"
+      ],
+      "err_line": 34,
+      "err_msg": "redeclaration of ‘int pos’"
+    },
+    {
+      "mod_line": [
+        39
+      ],
+      "mod_code": [
+        "int n , k , num = 0 , i , i , flag ;"
+      ],
+      "err_line": 39,
+      "err_msg": "redeclaration of ‘int i’"
+    },
+    {
+      "mod_line": [
+        41
+      ],
+      "mod_code": [
+        "find_prime call ;"
+      ],
+      "err_line": 41,
+      "err_msg": "expected ‘;’ before ‘call’"
+    },
+    {
+      "mod_line": [
+        45
+      ],
+      "mod_code": [
+        "* flag = 1 ;"
+      ],
+      "err_line": 45,
+      "err_msg": "invalid type argument of unary ‘*’ (have ‘int’)"
+    },
+    {
+      "mod_line": [
+        46
+      ],
+      "mod_code": [
+        "stop ;"
+      ],
+      "err_line": 46,
+      "err_msg": "‘stop’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        42
+      ],
+      "mod_code": [
+        "st [ 0 ] = pd [ 1 ] = true ;",
+        "for ( int i = 0 ; prime [ i ] < n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘st’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        42,
+        30
+      ],
+      "mod_code": [
+        "st [ 0 ] = pd [ 1 ] = true ;",
+        "for ( int i = 0 ; prime [ i ] < n ; i ++ )",
+        "int mz ( int n ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘st’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        42,
+        30,
+        39
+      ],
+      "mod_code": [
+        "st [ 0 ] = pd [ 1 ] = true ;",
+        "for ( int i = 0 ; prime [ i ] < n ; i ++ )",
+        "int mz ( int n ) ;",
+        "int n , k , num = 0 , i , i , flag ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘st’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        42,
+        30,
+        24
+      ],
+      "mod_code": [
+        "st [ 0 ] = pd [ 1 ] = true ;",
+        "for ( int i = 0 ; prime [ i ] < n ; i ++ )",
+        "int mz ( int n ) ;",
+        "int r = mid - 1 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘st’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        42,
+        30,
+        44
+      ],
+      "mod_code": [
+        "st [ 0 ] = pd [ 1 ] = true ;",
+        "for ( int i = 0 ; prime [ i ] < n ; i ++ )",
+        "int mz ( int n ) ;",
+        "if ( num >= k ) k ++ ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘st’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        42,
+        39
+      ],
+      "mod_code": [
+        "st [ 0 ] = pd [ 1 ] = true ;",
+        "for ( int i = 0 ; prime [ i ] < n ; i ++ )",
+        "int n , k , num = 0 , i , i , flag ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘st’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        42,
+        39,
+        24
+      ],
+      "mod_code": [
+        "st [ 0 ] = pd [ 1 ] = true ;",
+        "for ( int i = 0 ; prime [ i ] < n ; i ++ )",
+        "int n , k , num = 0 , i , i , flag ;",
+        "int r = mid - 1 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘st’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        42,
+        39,
+        44
+      ],
+      "mod_code": [
+        "st [ 0 ] = pd [ 1 ] = true ;",
+        "for ( int i = 0 ; prime [ i ] < n ; i ++ )",
+        "int n , k , num = 0 , i , i , flag ;",
+        "if ( num >= k ) k ++ ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘st’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        42,
+        24
+      ],
+      "mod_code": [
+        "st [ 0 ] = pd [ 1 ] = true ;",
+        "for ( int i = 0 ; prime [ i ] < n ; i ++ )",
+        "int r = mid - 1 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘st’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        42,
+        24,
+        44
+      ],
+      "mod_code": [
+        "st [ 0 ] = pd [ 1 ] = true ;",
+        "for ( int i = 0 ; prime [ i ] < n ; i ++ )",
+        "int r = mid - 1 ;",
+        "if ( num >= k ) k ++ ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘st’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        42,
+        44
+      ],
+      "mod_code": [
+        "st [ 0 ] = pd [ 1 ] = true ;",
+        "for ( int i = 0 ; prime [ i ] < n ; i ++ )",
+        "if ( num >= k ) k ++ ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘st’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        30
+      ],
+      "mod_code": [
+        "st [ 0 ] = pd [ 1 ] = true ;",
+        "int mz ( int n ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘st’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        30,
+        39
+      ],
+      "mod_code": [
+        "st [ 0 ] = pd [ 1 ] = true ;",
+        "int mz ( int n ) ;",
+        "int n , k , num = 0 , i , i , flag ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘st’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        30,
+        39,
+        24
+      ],
+      "mod_code": [
+        "st [ 0 ] = pd [ 1 ] = true ;",
+        "int mz ( int n ) ;",
+        "int n , k , num = 0 , i , i , flag ;",
+        "int r = mid - 1 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘st’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        30,
+        39,
+        44
+      ],
+      "mod_code": [
+        "st [ 0 ] = pd [ 1 ] = true ;",
+        "int mz ( int n ) ;",
+        "int n , k , num = 0 , i , i , flag ;",
+        "if ( num >= k ) k ++ ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘st’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        30,
+        24
+      ],
+      "mod_code": [
+        "st [ 0 ] = pd [ 1 ] = true ;",
+        "int mz ( int n ) ;",
+        "int r = mid - 1 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘st’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        30,
+        24,
+        44
+      ],
+      "mod_code": [
+        "st [ 0 ] = pd [ 1 ] = true ;",
+        "int mz ( int n ) ;",
+        "int r = mid - 1 ;",
+        "if ( num >= k ) k ++ ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘st’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        30,
+        44
+      ],
+      "mod_code": [
+        "st [ 0 ] = pd [ 1 ] = true ;",
+        "int mz ( int n ) ;",
+        "if ( num >= k ) k ++ ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘st’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        39
+      ],
+      "mod_code": [
+        "st [ 0 ] = pd [ 1 ] = true ;",
+        "int n , k , num = 0 , i , i , flag ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘st’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        39,
+        24
+      ],
+      "mod_code": [
+        "st [ 0 ] = pd [ 1 ] = true ;",
+        "int n , k , num = 0 , i , i , flag ;",
+        "int r = mid - 1 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘st’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        39,
+        24,
+        44
+      ],
+      "mod_code": [
+        "st [ 0 ] = pd [ 1 ] = true ;",
+        "int n , k , num = 0 , i , i , flag ;",
+        "int r = mid - 1 ;",
+        "if ( num >= k ) k ++ ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘st’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        39,
+        44
+      ],
+      "mod_code": [
+        "st [ 0 ] = pd [ 1 ] = true ;",
+        "int n , k , num = 0 , i , i , flag ;",
+        "if ( num >= k ) k ++ ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘st’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        24
+      ],
+      "mod_code": [
+        "st [ 0 ] = pd [ 1 ] = true ;",
+        "int r = mid - 1 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘st’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        24,
+        44
+      ],
+      "mod_code": [
+        "st [ 0 ] = pd [ 1 ] = true ;",
+        "int r = mid - 1 ;",
+        "if ( num >= k ) k ++ ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘st’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        44
+      ],
+      "mod_code": [
+        "st [ 0 ] = pd [ 1 ] = true ;",
+        "if ( num >= k ) k ++ ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘st’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        42,
+        30
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; prime [ i ] < n ; i ++ )",
+        "int mz ( int n ) ;"
+      ],
+      "err_line": 31,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        42,
+        30,
+        39
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; prime [ i ] < n ; i ++ )",
+        "int mz ( int n ) ;",
+        "int n , k , num = 0 , i , i , flag ;"
+      ],
+      "err_line": 31,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        42,
+        30,
+        39,
+        24
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; prime [ i ] < n ; i ++ )",
+        "int mz ( int n ) ;",
+        "int n , k , num = 0 , i , i , flag ;",
+        "int r = mid - 1 ;"
+      ],
+      "err_line": 31,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        42,
+        30,
+        39,
+        44
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; prime [ i ] < n ; i ++ )",
+        "int mz ( int n ) ;",
+        "int n , k , num = 0 , i , i , flag ;",
+        "if ( num >= k ) k ++ ;"
+      ],
+      "err_line": 31,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        42,
+        30,
+        24
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; prime [ i ] < n ; i ++ )",
+        "int mz ( int n ) ;",
+        "int r = mid - 1 ;"
+      ],
+      "err_line": 31,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        42,
+        30,
+        24,
+        44
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; prime [ i ] < n ; i ++ )",
+        "int mz ( int n ) ;",
+        "int r = mid - 1 ;",
+        "if ( num >= k ) k ++ ;"
+      ],
+      "err_line": 31,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        42,
+        30,
+        44
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; prime [ i ] < n ; i ++ )",
+        "int mz ( int n ) ;",
+        "if ( num >= k ) k ++ ;"
+      ],
+      "err_line": 31,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        42,
+        39
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; prime [ i ] < n ; i ++ )",
+        "int n , k , num = 0 , i , i , flag ;"
+      ],
+      "err_line": 39,
+      "err_msg": "redeclaration of ‘int i’"
+    },
+    {
+      "mod_line": [
+        42,
+        39,
+        24
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; prime [ i ] < n ; i ++ )",
+        "int n , k , num = 0 , i , i , flag ;",
+        "int r = mid - 1 ;"
+      ],
+      "err_line": 39,
+      "err_msg": "redeclaration of ‘int i’"
+    },
+    {
+      "mod_line": [
+        42,
+        39,
+        24,
+        44
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; prime [ i ] < n ; i ++ )",
+        "int n , k , num = 0 , i , i , flag ;",
+        "int r = mid - 1 ;",
+        "if ( num >= k ) k ++ ;"
+      ],
+      "err_line": 39,
+      "err_msg": "redeclaration of ‘int i’"
+    },
+    {
+      "mod_line": [
+        42,
+        39,
+        44
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; prime [ i ] < n ; i ++ )",
+        "int n , k , num = 0 , i , i , flag ;",
+        "if ( num >= k ) k ++ ;"
+      ],
+      "err_line": 39,
+      "err_msg": "redeclaration of ‘int i’"
+    },
+    {
+      "mod_line": [
+        30,
+        39
+      ],
+      "mod_code": [
+        "int mz ( int n ) ;",
+        "int n , k , num = 0 , i , i , flag ;"
+      ],
+      "err_line": 31,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        30,
+        39,
+        24
+      ],
+      "mod_code": [
+        "int mz ( int n ) ;",
+        "int n , k , num = 0 , i , i , flag ;",
+        "int r = mid - 1 ;"
+      ],
+      "err_line": 31,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        30,
+        39,
+        24,
+        44
+      ],
+      "mod_code": [
+        "int mz ( int n ) ;",
+        "int n , k , num = 0 , i , i , flag ;",
+        "int r = mid - 1 ;",
+        "if ( num >= k ) k ++ ;"
+      ],
+      "err_line": 31,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        30,
+        39,
+        44
+      ],
+      "mod_code": [
+        "int mz ( int n ) ;",
+        "int n , k , num = 0 , i , i , flag ;",
+        "if ( num >= k ) k ++ ;"
+      ],
+      "err_line": 31,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        30,
+        24
+      ],
+      "mod_code": [
+        "int mz ( int n ) ;",
+        "int r = mid - 1 ;"
+      ],
+      "err_line": 31,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        30,
+        24,
+        44
+      ],
+      "mod_code": [
+        "int mz ( int n ) ;",
+        "int r = mid - 1 ;",
+        "if ( num >= k ) k ++ ;"
+      ],
+      "err_line": 31,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        30,
+        44
+      ],
+      "mod_code": [
+        "int mz ( int n ) ;",
+        "if ( num >= k ) k ++ ;"
+      ],
+      "err_line": 31,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        39,
+        24
+      ],
+      "mod_code": [
+        "int n , k , num = 0 , i , i , flag ;",
+        "int r = mid - 1 ;"
+      ],
+      "err_line": 39,
+      "err_msg": "redeclaration of ‘int i’"
+    },
+    {
+      "mod_line": [
+        39,
+        24,
+        44
+      ],
+      "mod_code": [
+        "int n , k , num = 0 , i , i , flag ;",
+        "int r = mid - 1 ;",
+        "if ( num >= k ) k ++ ;"
+      ],
+      "err_line": 39,
+      "err_msg": "redeclaration of ‘int i’"
+    },
+    {
+      "mod_line": [
+        39,
+        44
+      ],
+      "mod_code": [
+        "int n , k , num = 0 , i , i , flag ;",
+        "if ( num >= k ) k ++ ;"
+      ],
+      "err_line": 39,
+      "err_msg": "redeclaration of ‘int i’"
+    }
+  ]
+}

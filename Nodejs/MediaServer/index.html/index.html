@@ -1,0 +1,128 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dass Study</title>
+    <script>
+        function loadDoc(tempstr) {
+          const xhttp = new XMLHttpRequest();
+          try{
+          xhttp.onload = function() {
+            document.getElementById("demo").innerHTML = this.responseText;
+            
+                const obj = JSON.parse(this.responseText);
+                console.log(obj);
+            
+            // document.getElementById("firstName").innerHTML = obj["firstName"];
+            // document.getElementById("lastName").innerHTML = obj["lastName"];
+        
+          }
+          xhttp.open("GET", "/Videos/" + tempstr);
+          xhttp.send();
+        } catch(e) {
+                console.log(e);
+            }
+        }
+
+        loadDoc("01 - Introduction");
+        </script>
+
+</head>
+<body>
+    <h1>Hi Dass</h1>
+
+    <p id="demo"></p>
+
+    <!-- <h4>Hi Dass</h4><video width="320" height="240" controls><source src="Videos/01 - Introduction/01 - Introduction.mp4" type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/02 - Simple Web Server/02 - Project Intro.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/02 - Simple Web Server/03 - Installing Node.js.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/02 - Simple Web Server/04 - NPM Intro  Basic HTTP Server.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/02 - Simple Web Server/05 - Serving HTML Files.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/03 - Basic Express Website/06 - Project Intro.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/03 - Basic Express Website/07 - Express  Jade Template Setup.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/03 - Basic Express Website/08 - Page Routes  Views.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/03 - Basic Express Website/09 - Nodemailer Setup.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/04 - User Login System/10 - Project Intro.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/04 - User Login System/11 - MongoDB Install  Setup.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/04 - User Login System/12 - Application  Middleware Setup.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/04 - User Login System/13 - Views  Layouts Part A.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/04 - User Login System/14 - Views and Layouts Part B.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/04 - User Login System/15 - User Registration PART-A.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/04 - User Login System/16 - User Registration PART-B.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/04 - User Login System/17 - Password Encryption with Bcrypt.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/04 - User Login System/18 - User Authentication with Passport.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/04 - User Login System/19 - Logout  Access Control Part A.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/04 - User Login System/20 - Logout  Access Control Part B.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/05 - Node Blog System/21 - Project Intro.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/05 - Node Blog System/22 - Modules, Middleware  Template Part A.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/05 - Node Blog System/23 - Modules, Middleware  Template Part B.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/05 - Node Blog System/24 - Homepage Blog Posts Part A.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/05 - Node Blog System/25 - Homepage Blog Posts Part B.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/05 - Node Blog System/26 - Adding Posts PART A.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/05 - Node Blog System/27 - Adding Posts PART -B.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/05 - Node Blog System/28 - Adding Categories.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/05 - Node Blog System/29 - View Posts By Category.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/05 - Node Blog System/30 - Single Posts  Comments Part A.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/05 - Node Blog System/31 - Single Posts  Comments Part B.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/06 - Community Events/32 - Project Intro.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/06 - Community Events/33 - MongoLab  Drywall Setup Part A.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/06 - Community Events/34 - MongoLab  Drywall Setup Part B.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/06 - Community Events/35 - Event Schema  Frontend Display Part A.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/06 - Community Events/36 - Event Schema  Frontend Display Part B.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/06 - Community Events/37 - Details Page  Adding Events.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/06 - Community Events/38 - Details Page  Adding Events Part B.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/06 - Community Events/39 - Edit  Delete Events.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/06 - Community Events/40 - Edit and Delete Events Part B.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/07 - Bookstore/41  - Project Intro.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/07 - Bookstore/42 - Kraken Setup.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/07 - Bookstore/43 - Frontend Routes  Templates Part A.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/07 - Bookstore/44 - Frontend Routes  Templates Part B.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/07 - Bookstore/45 - Frontend Routes  Templates Part C.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/07 - Bookstore/46 - Database  Model.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/07 - Bookstore/47 - Display Data From MongoDB Part A.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/07 - Bookstore/48 - Display Data From MongoDB Part B.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/07 - Bookstore/49 - Admin CRUD Part A.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/07 - Bookstore/50 - Admin CRUD Part B.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/07 - Bookstore/51 - Shopping Cart Part A.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/07 - Bookstore/52 - Shopping Cart Part B.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/08 - ChatIO/53 - Project Intro.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/08 - ChatIO/54 - ChatIO User Interface.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/08 - ChatIO/55 - Sending Chat Messages.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/08 - ChatIO/56 - Adding Usernames.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/08 - ChatIO/57 - App Hosting With Heroku.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/09 - FindaDoc Directory/58 - Project Intro.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/09 - FindaDoc Directory/59 - Install Cassandra  Setup Keyspace.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/09 - FindaDoc Directory/60 - FindaDoc User Interface.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/09 - FindaDoc Directory/61 - Create App With Layout Part A.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/09 - FindaDoc Directory/62 - Create App With Layout Part B.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/09 - FindaDoc Directory/63 - Reading From Cassandra Part A.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/09 - FindaDoc Directory/64 - Reading From Cassandra Part B.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/09 - FindaDoc Directory/65 - Search  Insert.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/10 - Portfolio App/66 - Project Intro.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/10 - Portfolio App/67 - MySQL Install  App Setup.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/10 - Portfolio App/68 - S3 - Frontend Project Display Part A.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/10 - Portfolio App/69 - S3 - Frontend Project Display Part B.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/10 - Portfolio App/70 - Create Backend  Add Projects Part A.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/10 - Portfolio App/71 - Create Backend  Add Projects Part B.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/10 - Portfolio App/72 - Project Edit  Delete.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/11 - eLearning System/73 - Project Intro.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/11 - eLearning System/74 - App  Kickstart Setup Part A.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/11 - eLearning System/75 - App  Kickstart Setup Part B.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/11 - eLearning System/76 - Fetching Classes - Basics Part A.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/11 - eLearning System/77 - Fetching Classes - Basics Part B.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/11 - eLearning System/78 - Fetching Classes - Final Features.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/11 - eLearning System/79 - Registration  Login - Basics Part A.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/11 - eLearning System/80 - Registration  Login - Basics Part B.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/11 - eLearning System/81 - Registration  Login - Final Features.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/11 - eLearning System/82 - Student  Class Registrations.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/11 - eLearning System/83 - Instructor Access.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/11 - eLearning System/84 - Class Lessons Part A.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/11 - eLearning System/85 - Class Lessons Part B.mp4' type="video/mp4"></video>
+    <h4>Hi Dass</h4><video width="320" height="240" controls><source src='Videos/12 - Course Summary/86 - Summary.mp4' type="video/mp4"></video>
+    
+     -->
+    
+</body>
+</html>

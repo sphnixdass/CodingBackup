@@ -1,0 +1,267 @@
+{
+  "meta": {
+    "index": 471,
+    "hitid": "3WKGUBL7SZGZ7P61ZYOX1F535DDL4L",
+    "workerid": "A1EKVUFWL7OJMO",
+    "probid": "990A",
+    "subid": "47664267"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "n , m , a , b = long long",
+      "code": "long long n , m , a , b ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read n , m , a , b",
+      "code": "cin >> n >> m >> a >> b ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "ans = long long",
+      "code": "long long ans ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "if n > m",
+      "code": "if ( n > m )",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "ans = min of ( m - n modulo m ) modulo m * a and ( n % m ) * b",
+      "code": "ans = min ( ( ( m - n % m ) % m ) * a , ( n % m ) * b ) ;",
+      "indent": 2
+    },
+    {
+      "line": 6,
+      "text": "else",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "if n modulo m is 0",
+      "code": "if ( n % m == 0 )",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "ans = 0",
+      "code": "ans = 0 ;",
+      "indent": 3
+    },
+    {
+      "line": 9,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "ans = ( n + ( m - n modulo m ) modulo m ) / m",
+      "code": "ans = ( n + ( m - n % m ) % m ) / m ;",
+      "indent": 3
+    },
+    {
+      "line": 11,
+      "text": "ans = min of ( ans * m - n ) * a and ( n - ( n / m ) * m ) * b",
+      "code": "ans = min ( ( ans * m - n ) * a , ( n - ( n / m ) * m ) * b ) ;",
+      "indent": 3
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "print ans",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "int n , m , a , b ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conflicting declaration ‘int n’"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "ans = min ( ( m - n % m ) % m * a ) * ( n % m ) * b ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        5,
+        2
+      ],
+      "mod_code": [
+        "ans = min ( ( m - n % m ) % m * a ) * ( n % m ) * b ;",
+        "int n , m , a , b ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conflicting declaration ‘int n’"
+    },
+    {
+      "mod_line": [
+        5,
+        2,
+        10
+      ],
+      "mod_code": [
+        "ans = min ( ( m - n % m ) % m * a ) * ( n % m ) * b ;",
+        "int n , m , a , b ;",
+        "int ans = ( n + ( m - n % m ) % m ) / m ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conflicting declaration ‘int n’"
+    },
+    {
+      "mod_line": [
+        5,
+        2,
+        10,
+        11
+      ],
+      "mod_code": [
+        "ans = min ( ( m - n % m ) % m * a ) * ( n % m ) * b ;",
+        "int n , m , a , b ;",
+        "int ans = ( n + ( m - n % m ) % m ) / m ;",
+        "ans = min ( ( ans * m - n ) * a , ( n - ( n / m ) * m ) * b ) * b ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conflicting declaration ‘int n’"
+    },
+    {
+      "mod_line": [
+        5,
+        2,
+        11
+      ],
+      "mod_code": [
+        "ans = min ( ( m - n % m ) % m * a ) * ( n % m ) * b ;",
+        "int n , m , a , b ;",
+        "ans = min ( ( ans * m - n ) * a , ( n - ( n / m ) * m ) * b ) * b ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conflicting declaration ‘int n’"
+    },
+    {
+      "mod_line": [
+        5,
+        10
+      ],
+      "mod_code": [
+        "ans = min ( ( m - n % m ) % m * a ) * ( n % m ) * b ;",
+        "int ans = ( n + ( m - n % m ) % m ) / m ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        11
+      ],
+      "mod_code": [
+        "ans = min ( ( m - n % m ) % m * a ) * ( n % m ) * b ;",
+        "int ans = ( n + ( m - n % m ) % m ) / m ;",
+        "ans = min ( ( ans * m - n ) * a , ( n - ( n / m ) * m ) * b ) * b ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        5,
+        11
+      ],
+      "mod_code": [
+        "ans = min ( ( m - n % m ) % m * a ) * ( n % m ) * b ;",
+        "ans = min ( ( ans * m - n ) * a , ( n - ( n / m ) * m ) * b ) * b ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        2,
+        10
+      ],
+      "mod_code": [
+        "int n , m , a , b ;",
+        "int ans = ( n + ( m - n % m ) % m ) / m ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conflicting declaration ‘int n’"
+    },
+    {
+      "mod_line": [
+        2,
+        10,
+        11
+      ],
+      "mod_code": [
+        "int n , m , a , b ;",
+        "int ans = ( n + ( m - n % m ) % m ) / m ;",
+        "ans = min ( ( ans * m - n ) * a , ( n - ( n / m ) * m ) * b ) * b ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conflicting declaration ‘int n’"
+    },
+    {
+      "mod_line": [
+        2,
+        11
+      ],
+      "mod_code": [
+        "int n , m , a , b ;",
+        "ans = min ( ( ans * m - n ) * a , ( n - ( n / m ) * m ) * b ) * b ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conflicting declaration ‘int n’"
+    }
+  ]
+}

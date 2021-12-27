@@ -1,0 +1,477 @@
+{
+  "meta": {
+    "index": 1646,
+    "hitid": "3JGHED38EDLGQBVJKBBUYZR95UD7YP",
+    "workerid": "A24WRPQYGMQLGF",
+    "probid": "997A",
+    "subid": "48865562"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "Inf = constant integer = 1e9",
+      "code": "const int Inf = 1e9 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "n = integer",
+      "code": "int n ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "x , y = long long",
+      "code": "long long x , y ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "while n , x , y can be read as valid integers",
+      "code": "while ( cin >> n >> x >> y )",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "s , str = string",
+      "code": "string str , s ;",
+      "indent": 2
+    },
+    {
+      "line": 6,
+      "text": "read str",
+      "code": "cin >> str ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "s = s + str [ 0 ]",
+      "code": "s += str [ 0 ] ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "for i = 1 to n exclusive , increase i by 1 at the start of the loop",
+      "code": "for ( int i = 1 ; i < n ; ++ i )",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "if str [ i ] is not str [ i - 1 ] , then s = s + str [ i ]",
+      "code": "if ( str [ i ] != str [ i - 1 ] ) { s += str [ i ] ; }",
+      "indent": 3
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "cnt = length of s / 2",
+      "code": "int cnt = s . length ( ) / 2 ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "if s [ 0 ] is 0 and s [ length of s - 1 ] is 0 , increase cnt by 1",
+      "code": "if ( s [ 0 ] == ' 0 ' && s [ s . length ( ) - 1 ] == ' 0 ' ) ++ cnt ;",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "ans = long long = y * cnt",
+      "code": "long long ans = y * cnt ;",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "for i = 0 to cnt exclusive , increase cnt by 1 at the start of the loop , then ans = lower value between ans and the result of x * i + y * ( cnt - i )",
+      "code": "for ( int i = 0 ; i < cnt ; ++ i ) { ans = min ( ans , x * i + y * ( cnt - i ) ) ; }",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "print ans",
+      "code": "cout << ans << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "cnt = s . length ( ) / 2 ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < cnt ; i ++ ) { cnt = min ( ans , x * ( cnt - i + y * ( cnt - i ) ) ; }"
+      ],
+      "err_line": 14,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "string s ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘str’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "gets ( str ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "cnt = s . size ( ) / 2 ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        12
+      ],
+      "mod_code": [
+        "cnt = s . length ( ) / 2 ;",
+        "if ( s [ 0 ] == 0 && s [ s . length ( ) - 1 ] == 0 ) cnt ++ ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        12,
+        14
+      ],
+      "mod_code": [
+        "cnt = s . length ( ) / 2 ;",
+        "if ( s [ 0 ] == 0 && s [ s . length ( ) - 1 ] == 0 ) cnt ++ ;",
+        "for ( int i = 0 ; i < cnt ; i ++ ) { cnt = min ( ans , x * ( cnt - i + y * ( cnt - i ) ) ; }"
+      ],
+      "err_line": 11,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        12,
+        14,
+        8
+      ],
+      "mod_code": [
+        "cnt = s . length ( ) / 2 ;",
+        "if ( s [ 0 ] == 0 && s [ s . length ( ) - 1 ] == 0 ) cnt ++ ;",
+        "for ( int i = 0 ; i < cnt ; i ++ ) { cnt = min ( ans , x * ( cnt - i + y * ( cnt - i ) ) ; }",
+        "for ( int i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 11,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        12,
+        14
+      ],
+      "mod_code": [
+        "cnt = s . length ( ) / 2 ;",
+        "if ( s [ 0 ] == 0 && s [ s . length ( ) - 1 ] == 0 ) cnt ++ ;",
+        "for ( int i = 0 ; i < cnt ; i ++ ) { cnt = min ( ans , x + i + y * ( cnt - i ) ) ; }"
+      ],
+      "err_line": 11,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        12,
+        14,
+        8
+      ],
+      "mod_code": [
+        "cnt = s . length ( ) / 2 ;",
+        "if ( s [ 0 ] == 0 && s [ s . length ( ) - 1 ] == 0 ) cnt ++ ;",
+        "for ( int i = 0 ; i < cnt ; i ++ ) { cnt = min ( ans , x + i + y * ( cnt - i ) ) ; }",
+        "for ( int i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 11,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        12,
+        8
+      ],
+      "mod_code": [
+        "cnt = s . length ( ) / 2 ;",
+        "if ( s [ 0 ] == 0 && s [ s . length ( ) - 1 ] == 0 ) cnt ++ ;",
+        "for ( int i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 11,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        14
+      ],
+      "mod_code": [
+        "cnt = s . length ( ) / 2 ;",
+        "for ( int i = 0 ; i < cnt ; i ++ ) { cnt = min ( ans , x * ( cnt - i + y * ( cnt - i ) ) ; }"
+      ],
+      "err_line": 11,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        14,
+        12
+      ],
+      "mod_code": [
+        "cnt = s . length ( ) / 2 ;",
+        "for ( int i = 0 ; i < cnt ; i ++ ) { cnt = min ( ans , x * ( cnt - i + y * ( cnt - i ) ) ; }",
+        "if ( s [ 0 ] == 0 && s [ s . size ( ) - 1 ] == 0 ) cnt ++ ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        14,
+        12,
+        8
+      ],
+      "mod_code": [
+        "cnt = s . length ( ) / 2 ;",
+        "for ( int i = 0 ; i < cnt ; i ++ ) { cnt = min ( ans , x * ( cnt - i + y * ( cnt - i ) ) ; }",
+        "if ( s [ 0 ] == 0 && s [ s . size ( ) - 1 ] == 0 ) cnt ++ ;",
+        "for ( int i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 11,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        14,
+        8
+      ],
+      "mod_code": [
+        "cnt = s . length ( ) / 2 ;",
+        "for ( int i = 0 ; i < cnt ; i ++ ) { cnt = min ( ans , x * ( cnt - i + y * ( cnt - i ) ) ; }",
+        "for ( int i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 11,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        12
+      ],
+      "mod_code": [
+        "cnt = s . length ( ) / 2 ;",
+        "if ( s [ 0 ] == 0 && s [ s . size ( ) - 1 ] == 0 ) cnt ++ ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        12,
+        14
+      ],
+      "mod_code": [
+        "cnt = s . length ( ) / 2 ;",
+        "if ( s [ 0 ] == 0 && s [ s . size ( ) - 1 ] == 0 ) cnt ++ ;",
+        "for ( int i = 0 ; i < cnt ; i ++ ) { cnt = min ( ans , x + i + y * ( cnt - i ) ) ; }"
+      ],
+      "err_line": 11,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        12,
+        14,
+        8
+      ],
+      "mod_code": [
+        "cnt = s . length ( ) / 2 ;",
+        "if ( s [ 0 ] == 0 && s [ s . size ( ) - 1 ] == 0 ) cnt ++ ;",
+        "for ( int i = 0 ; i < cnt ; i ++ ) { cnt = min ( ans , x + i + y * ( cnt - i ) ) ; }",
+        "for ( int i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 11,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        12,
+        8
+      ],
+      "mod_code": [
+        "cnt = s . length ( ) / 2 ;",
+        "if ( s [ 0 ] == 0 && s [ s . size ( ) - 1 ] == 0 ) cnt ++ ;",
+        "for ( int i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 11,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        14
+      ],
+      "mod_code": [
+        "cnt = s . length ( ) / 2 ;",
+        "for ( int i = 0 ; i < cnt ; i ++ ) { cnt = min ( ans , x + i + y * ( cnt - i ) ) ; }"
+      ],
+      "err_line": 11,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        14,
+        8
+      ],
+      "mod_code": [
+        "cnt = s . length ( ) / 2 ;",
+        "for ( int i = 0 ; i < cnt ; i ++ ) { cnt = min ( ans , x + i + y * ( cnt - i ) ) ; }",
+        "for ( int i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 11,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        8
+      ],
+      "mod_code": [
+        "cnt = s . length ( ) / 2 ;",
+        "for ( int i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 11,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        14
+      ],
+      "mod_code": [
+        "if ( s [ 0 ] == 0 && s [ s . length ( ) - 1 ] == 0 ) cnt ++ ;",
+        "for ( int i = 0 ; i < cnt ; i ++ ) { cnt = min ( ans , x * ( cnt - i + y * ( cnt - i ) ) ; }"
+      ],
+      "err_line": 14,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        14,
+        8
+      ],
+      "mod_code": [
+        "if ( s [ 0 ] == 0 && s [ s . length ( ) - 1 ] == 0 ) cnt ++ ;",
+        "for ( int i = 0 ; i < cnt ; i ++ ) { cnt = min ( ans , x * ( cnt - i + y * ( cnt - i ) ) ; }",
+        "for ( int i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 14,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        12
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < cnt ; i ++ ) { cnt = min ( ans , x * ( cnt - i + y * ( cnt - i ) ) ; }",
+        "if ( s [ 0 ] == 0 && s [ s . size ( ) - 1 ] == 0 ) cnt ++ ;"
+      ],
+      "err_line": 14,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        12,
+        8
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < cnt ; i ++ ) { cnt = min ( ans , x * ( cnt - i + y * ( cnt - i ) ) ; }",
+        "if ( s [ 0 ] == 0 && s [ s . size ( ) - 1 ] == 0 ) cnt ++ ;",
+        "for ( int i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 14,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        8
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < cnt ; i ++ ) { cnt = min ( ans , x * ( cnt - i + y * ( cnt - i ) ) ; }",
+        "for ( int i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 14,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    }
+  ]
+}

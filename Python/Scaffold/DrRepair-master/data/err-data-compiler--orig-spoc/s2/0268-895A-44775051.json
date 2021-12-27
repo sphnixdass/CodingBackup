@@ -1,0 +1,681 @@
+{
+  "meta": {
+    "index": 268,
+    "hitid": "3VADEH0UHCR80VNAHRDMGZUTNGPPSR",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "895A",
+    "subid": "44775051"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create integers n , minD with minD = 360",
+      "code": "int n , minD = 360 ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "create integer array a with size 722 , with a = { }",
+      "code": "int a [ 722 ] = { } ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for i = 0 to n exclusive , read a [ i ] , set a [ i + n ] to a [ i ]",
+      "code": "for ( int i = 0 ; i < n ; i ++ ) cin >> a [ i ] , a [ i + n ] = a [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for l = 0 to n exclusive",
+      "code": "for ( int l = 0 ; l < n ; l ++ )",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "create integer sum with sum = 0",
+      "code": "int sum = 0 ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "for r = l to n bitshift left 1 exclusive , set minD to minimum of minD and absolute value of ( 180 - sum ) , increment sum by a [ r ]",
+      "code": "for ( int r = l ; r < ( n << 1 ) ; r ++ ) minD = min ( minD , abs ( 180 - sum ) ) , sum += a [ r ] ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "print ( minD bitshift left 1 ) print newline",
+      "code": "cout << ( minD << 1 ) << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "for ( int r = l ; r < n ; r ++ ) { sum = min ( minD , abs ( 180 , abs ( 180 - sum ) ) , sum ++ ) ; }"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘abs(int, int)’"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "{ int a [ 722 ] = { } ;"
+      ],
+      "err_line": 11,
+      "err_msg": "expected ‘}’ at end of input"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "for ( l = 0 ; l < n ; l ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "sum = 0 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘sum’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "for ( int r = l ; r < n ; r ++ ) sum = min ( minD , abs ( 180 , abs ( 180 - sum ) ) , sum ++ ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘abs(int, int)’"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "cout << ( minD << left ) << endl ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid operands of types ‘int’ and ‘std::ios_base&(std::ios_base&)’ to binary ‘operator<<’"
+    },
+    {
+      "mod_line": [
+        7,
+        6
+      ],
+      "mod_code": [
+        "for ( int r = l ; r < n ; r ++ ) { sum = min ( minD , abs ( 180 , abs ( 180 - sum ) ) , sum ++ ) ; }",
+        "sum = 0 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘sum’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        6,
+        9
+      ],
+      "mod_code": [
+        "for ( int r = l ; r < n ; r ++ ) { sum = min ( minD , abs ( 180 , abs ( 180 - sum ) ) , sum ++ ) ; }",
+        "sum = 0 ;",
+        "cout << ( minD << left ) << endl ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘sum’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        6,
+        9,
+        5
+      ],
+      "mod_code": [
+        "for ( int r = l ; r < n ; r ++ ) { sum = min ( minD , abs ( 180 , abs ( 180 - sum ) ) , sum ++ ) ; }",
+        "sum = 0 ;",
+        "cout << ( minD << left ) << endl ;",
+        "for ( l = 0 ; l < n ; l ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        6,
+        9,
+        2
+      ],
+      "mod_code": [
+        "for ( int r = l ; r < n ; r ++ ) { sum = min ( minD , abs ( 180 , abs ( 180 - sum ) ) , sum ++ ) ; }",
+        "sum = 0 ;",
+        "cout << ( minD << left ) << endl ;",
+        "{ int a [ 722 ] = { } ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘sum’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        6,
+        5
+      ],
+      "mod_code": [
+        "for ( int r = l ; r < n ; r ++ ) { sum = min ( minD , abs ( 180 , abs ( 180 - sum ) ) , sum ++ ) ; }",
+        "sum = 0 ;",
+        "for ( l = 0 ; l < n ; l ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        6,
+        5,
+        2
+      ],
+      "mod_code": [
+        "for ( int r = l ; r < n ; r ++ ) { sum = min ( minD , abs ( 180 , abs ( 180 - sum ) ) , sum ++ ) ; }",
+        "sum = 0 ;",
+        "for ( l = 0 ; l < n ; l ++ )",
+        "{ int a [ 722 ] = { } ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        6,
+        2
+      ],
+      "mod_code": [
+        "for ( int r = l ; r < n ; r ++ ) { sum = min ( minD , abs ( 180 , abs ( 180 - sum ) ) , sum ++ ) ; }",
+        "sum = 0 ;",
+        "{ int a [ 722 ] = { } ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘sum’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        9
+      ],
+      "mod_code": [
+        "for ( int r = l ; r < n ; r ++ ) { sum = min ( minD , abs ( 180 , abs ( 180 - sum ) ) , sum ++ ) ; }",
+        "cout << ( minD << left ) << endl ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘abs(int, int)’"
+    },
+    {
+      "mod_line": [
+        7,
+        9,
+        5
+      ],
+      "mod_code": [
+        "for ( int r = l ; r < n ; r ++ ) { sum = min ( minD , abs ( 180 , abs ( 180 - sum ) ) , sum ++ ) ; }",
+        "cout << ( minD << left ) << endl ;",
+        "for ( l = 0 ; l < n ; l ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        9,
+        5,
+        2
+      ],
+      "mod_code": [
+        "for ( int r = l ; r < n ; r ++ ) { sum = min ( minD , abs ( 180 , abs ( 180 - sum ) ) , sum ++ ) ; }",
+        "cout << ( minD << left ) << endl ;",
+        "for ( l = 0 ; l < n ; l ++ )",
+        "{ int a [ 722 ] = { } ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        9,
+        2
+      ],
+      "mod_code": [
+        "for ( int r = l ; r < n ; r ++ ) { sum = min ( minD , abs ( 180 , abs ( 180 - sum ) ) , sum ++ ) ; }",
+        "cout << ( minD << left ) << endl ;",
+        "{ int a [ 722 ] = { } ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘abs(int, int)’"
+    },
+    {
+      "mod_line": [
+        7,
+        5
+      ],
+      "mod_code": [
+        "for ( int r = l ; r < n ; r ++ ) { sum = min ( minD , abs ( 180 , abs ( 180 - sum ) ) , sum ++ ) ; }",
+        "for ( l = 0 ; l < n ; l ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        5,
+        2
+      ],
+      "mod_code": [
+        "for ( int r = l ; r < n ; r ++ ) { sum = min ( minD , abs ( 180 , abs ( 180 - sum ) ) , sum ++ ) ; }",
+        "for ( l = 0 ; l < n ; l ++ )",
+        "{ int a [ 722 ] = { } ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        2
+      ],
+      "mod_code": [
+        "for ( int r = l ; r < n ; r ++ ) { sum = min ( minD , abs ( 180 , abs ( 180 - sum ) ) , sum ++ ) ; }",
+        "{ int a [ 722 ] = { } ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘abs(int, int)’"
+    },
+    {
+      "mod_line": [
+        6,
+        9
+      ],
+      "mod_code": [
+        "sum = 0 ;",
+        "cout << ( minD << left ) << endl ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘sum’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        9,
+        7
+      ],
+      "mod_code": [
+        "sum = 0 ;",
+        "cout << ( minD << left ) << endl ;",
+        "for ( int r = l ; r < n ; r ++ ) sum = min ( minD , abs ( 180 , abs ( 180 - sum ) ) , sum ++ ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘sum’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        9,
+        7,
+        5
+      ],
+      "mod_code": [
+        "sum = 0 ;",
+        "cout << ( minD << left ) << endl ;",
+        "for ( int r = l ; r < n ; r ++ ) sum = min ( minD , abs ( 180 , abs ( 180 - sum ) ) , sum ++ ) ;",
+        "for ( l = 0 ; l < n ; l ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        9,
+        7,
+        2
+      ],
+      "mod_code": [
+        "sum = 0 ;",
+        "cout << ( minD << left ) << endl ;",
+        "for ( int r = l ; r < n ; r ++ ) sum = min ( minD , abs ( 180 , abs ( 180 - sum ) ) , sum ++ ) ;",
+        "{ int a [ 722 ] = { } ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘sum’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        9,
+        5
+      ],
+      "mod_code": [
+        "sum = 0 ;",
+        "cout << ( minD << left ) << endl ;",
+        "for ( l = 0 ; l < n ; l ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        9,
+        5,
+        2
+      ],
+      "mod_code": [
+        "sum = 0 ;",
+        "cout << ( minD << left ) << endl ;",
+        "for ( l = 0 ; l < n ; l ++ )",
+        "{ int a [ 722 ] = { } ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        9,
+        2
+      ],
+      "mod_code": [
+        "sum = 0 ;",
+        "cout << ( minD << left ) << endl ;",
+        "{ int a [ 722 ] = { } ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘sum’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        7
+      ],
+      "mod_code": [
+        "sum = 0 ;",
+        "for ( int r = l ; r < n ; r ++ ) sum = min ( minD , abs ( 180 , abs ( 180 - sum ) ) , sum ++ ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘sum’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        5
+      ],
+      "mod_code": [
+        "sum = 0 ;",
+        "for ( int r = l ; r < n ; r ++ ) sum = min ( minD , abs ( 180 , abs ( 180 - sum ) ) , sum ++ ) ;",
+        "for ( l = 0 ; l < n ; l ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        5,
+        2
+      ],
+      "mod_code": [
+        "sum = 0 ;",
+        "for ( int r = l ; r < n ; r ++ ) sum = min ( minD , abs ( 180 , abs ( 180 - sum ) ) , sum ++ ) ;",
+        "for ( l = 0 ; l < n ; l ++ )",
+        "{ int a [ 722 ] = { } ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        2
+      ],
+      "mod_code": [
+        "sum = 0 ;",
+        "for ( int r = l ; r < n ; r ++ ) sum = min ( minD , abs ( 180 , abs ( 180 - sum ) ) , sum ++ ) ;",
+        "{ int a [ 722 ] = { } ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘sum’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        5
+      ],
+      "mod_code": [
+        "sum = 0 ;",
+        "for ( l = 0 ; l < n ; l ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        5,
+        2
+      ],
+      "mod_code": [
+        "sum = 0 ;",
+        "for ( l = 0 ; l < n ; l ++ )",
+        "{ int a [ 722 ] = { } ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        2
+      ],
+      "mod_code": [
+        "sum = 0 ;",
+        "{ int a [ 722 ] = { } ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘sum’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        7
+      ],
+      "mod_code": [
+        "cout << ( minD << left ) << endl ;",
+        "for ( int r = l ; r < n ; r ++ ) sum = min ( minD , abs ( 180 , abs ( 180 - sum ) ) , sum ++ ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘abs(int, int)’"
+    },
+    {
+      "mod_line": [
+        9,
+        7,
+        5
+      ],
+      "mod_code": [
+        "cout << ( minD << left ) << endl ;",
+        "for ( int r = l ; r < n ; r ++ ) sum = min ( minD , abs ( 180 , abs ( 180 - sum ) ) , sum ++ ) ;",
+        "for ( l = 0 ; l < n ; l ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        7,
+        5,
+        2
+      ],
+      "mod_code": [
+        "cout << ( minD << left ) << endl ;",
+        "for ( int r = l ; r < n ; r ++ ) sum = min ( minD , abs ( 180 , abs ( 180 - sum ) ) , sum ++ ) ;",
+        "for ( l = 0 ; l < n ; l ++ )",
+        "{ int a [ 722 ] = { } ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        7,
+        2
+      ],
+      "mod_code": [
+        "cout << ( minD << left ) << endl ;",
+        "for ( int r = l ; r < n ; r ++ ) sum = min ( minD , abs ( 180 , abs ( 180 - sum ) ) , sum ++ ) ;",
+        "{ int a [ 722 ] = { } ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘abs(int, int)’"
+    },
+    {
+      "mod_line": [
+        9,
+        5
+      ],
+      "mod_code": [
+        "cout << ( minD << left ) << endl ;",
+        "for ( l = 0 ; l < n ; l ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        5,
+        2
+      ],
+      "mod_code": [
+        "cout << ( minD << left ) << endl ;",
+        "for ( l = 0 ; l < n ; l ++ )",
+        "{ int a [ 722 ] = { } ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        2
+      ],
+      "mod_code": [
+        "cout << ( minD << left ) << endl ;",
+        "{ int a [ 722 ] = { } ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid operands of types ‘int’ and ‘std::ios_base&(std::ios_base&)’ to binary ‘operator<<’"
+    },
+    {
+      "mod_line": [
+        7,
+        5
+      ],
+      "mod_code": [
+        "for ( int r = l ; r < n ; r ++ ) sum = min ( minD , abs ( 180 , abs ( 180 - sum ) ) , sum ++ ) ;",
+        "for ( l = 0 ; l < n ; l ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        5,
+        2
+      ],
+      "mod_code": [
+        "for ( int r = l ; r < n ; r ++ ) sum = min ( minD , abs ( 180 , abs ( 180 - sum ) ) , sum ++ ) ;",
+        "for ( l = 0 ; l < n ; l ++ )",
+        "{ int a [ 722 ] = { } ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        2
+      ],
+      "mod_code": [
+        "for ( int r = l ; r < n ; r ++ ) sum = min ( minD , abs ( 180 , abs ( 180 - sum ) ) , sum ++ ) ;",
+        "{ int a [ 722 ] = { } ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘abs(int, int)’"
+    },
+    {
+      "mod_line": [
+        5,
+        2
+      ],
+      "mod_code": [
+        "for ( l = 0 ; l < n ; l ++ )",
+        "{ int a [ 722 ] = { } ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘l’ was not declared in this scope"
+    }
+  ]
+}

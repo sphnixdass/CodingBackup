@@ -1,0 +1,883 @@
+{
+  "meta": {
+    "index": 2354,
+    "hitid": "3CVBMEMMXBAU4G5UAB76CZW6FYXH7X",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "284A",
+    "subid": "47327332"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare boolean test with integers a , p , mod as arguments , returning boolean",
+      "code": "bool test ( int a , int p , int mod )",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare integer res with res = 1",
+      "code": "int res = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "for t = 0 to p - 2 exclusive",
+      "code": "for ( int t = 0 ; t < p - 2 ; t ++ )",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "let res be res * a",
+      "code": "res *= a ;",
+      "indent": 2
+    },
+    {
+      "line": 4,
+      "text": "let res be res % mod",
+      "code": "res %= mod ;",
+      "indent": 2
+    },
+    {
+      "line": 5,
+      "text": "if res is 1 , return false from function",
+      "code": "if ( res == 1 ) { return false ; }",
+      "indent": 2
+    },
+    {
+      "line": 6,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "return true from function",
+      "code": "return true ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 10,
+      "text": "declare integers p , mod",
+      "code": "int p , mod ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "read p",
+      "code": "cin >> p ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "let mod be p",
+      "code": "mod = p ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "declare integer cnt = 0",
+      "code": "int cnt = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "for x = 1 to p exclusive",
+      "code": "for ( int x = 1 ; x < p ; x ++ )",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "if run test ( x , p , mod ) is true , increment cnt",
+      "code": "if ( test ( x , p , mod ) ) { cnt ++ ; }",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "print cnt , newline",
+      "code": "cout << cnt << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "bool test ( int a , int mod , int mod )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int mod’"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "for ( t = 0 ; t < p - 2 ; t ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "continue ;"
+      ],
+      "err_line": 7,
+      "err_msg": "continue statement not within a loop"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "int mod = p ;"
+      ],
+      "err_line": 12,
+      "err_msg": "redeclaration of ‘int mod’"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "for ( x = 1 ; x < p ; x ++ )"
+      ],
+      "err_line": 14,
+      "err_msg": "‘x’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        14
+      ],
+      "mod_code": [
+        "bool test ( int a , int mod , int mod )",
+        "for ( x = 1 ; x < p ; x ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int mod’"
+    },
+    {
+      "mod_line": [
+        0,
+        14,
+        7
+      ],
+      "mod_code": [
+        "bool test ( int a , int mod , int mod )",
+        "for ( x = 1 ; x < p ; x ++ )",
+        "continue ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int mod’"
+    },
+    {
+      "mod_line": [
+        0,
+        14,
+        7,
+        12
+      ],
+      "mod_code": [
+        "bool test ( int a , int mod , int mod )",
+        "for ( x = 1 ; x < p ; x ++ )",
+        "continue ;",
+        "int mod = p ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int mod’"
+    },
+    {
+      "mod_line": [
+        0,
+        14,
+        7,
+        2
+      ],
+      "mod_code": [
+        "bool test ( int a , int mod , int mod )",
+        "for ( x = 1 ; x < p ; x ++ )",
+        "continue ;",
+        "for ( t = 0 ; t < p - 2 ; t ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int mod’"
+    },
+    {
+      "mod_line": [
+        0,
+        14,
+        7,
+        11
+      ],
+      "mod_code": [
+        "bool test ( int a , int mod , int mod )",
+        "for ( x = 1 ; x < p ; x ++ )",
+        "continue ;",
+        "cout << p << endl ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int mod’"
+    },
+    {
+      "mod_line": [
+        0,
+        14,
+        12
+      ],
+      "mod_code": [
+        "bool test ( int a , int mod , int mod )",
+        "for ( x = 1 ; x < p ; x ++ )",
+        "int mod = p ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int mod’"
+    },
+    {
+      "mod_line": [
+        0,
+        14,
+        12,
+        2
+      ],
+      "mod_code": [
+        "bool test ( int a , int mod , int mod )",
+        "for ( x = 1 ; x < p ; x ++ )",
+        "int mod = p ;",
+        "for ( t = 0 ; t < p - 2 ; t ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int mod’"
+    },
+    {
+      "mod_line": [
+        0,
+        14,
+        12,
+        11
+      ],
+      "mod_code": [
+        "bool test ( int a , int mod , int mod )",
+        "for ( x = 1 ; x < p ; x ++ )",
+        "int mod = p ;",
+        "cout << p << endl ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int mod’"
+    },
+    {
+      "mod_line": [
+        0,
+        14,
+        2
+      ],
+      "mod_code": [
+        "bool test ( int a , int mod , int mod )",
+        "for ( x = 1 ; x < p ; x ++ )",
+        "for ( t = 0 ; t < p - 2 ; t ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int mod’"
+    },
+    {
+      "mod_line": [
+        0,
+        14,
+        2,
+        11
+      ],
+      "mod_code": [
+        "bool test ( int a , int mod , int mod )",
+        "for ( x = 1 ; x < p ; x ++ )",
+        "for ( t = 0 ; t < p - 2 ; t ++ )",
+        "cout << p << endl ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int mod’"
+    },
+    {
+      "mod_line": [
+        0,
+        14,
+        11
+      ],
+      "mod_code": [
+        "bool test ( int a , int mod , int mod )",
+        "for ( x = 1 ; x < p ; x ++ )",
+        "cout << p << endl ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int mod’"
+    },
+    {
+      "mod_line": [
+        0,
+        7
+      ],
+      "mod_code": [
+        "bool test ( int a , int mod , int mod )",
+        "continue ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int mod’"
+    },
+    {
+      "mod_line": [
+        0,
+        7,
+        12
+      ],
+      "mod_code": [
+        "bool test ( int a , int mod , int mod )",
+        "continue ;",
+        "int mod = p ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int mod’"
+    },
+    {
+      "mod_line": [
+        0,
+        7,
+        12,
+        2
+      ],
+      "mod_code": [
+        "bool test ( int a , int mod , int mod )",
+        "continue ;",
+        "int mod = p ;",
+        "for ( t = 0 ; t < p - 2 ; t ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int mod’"
+    },
+    {
+      "mod_line": [
+        0,
+        7,
+        12,
+        11
+      ],
+      "mod_code": [
+        "bool test ( int a , int mod , int mod )",
+        "continue ;",
+        "int mod = p ;",
+        "cout << p << endl ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int mod’"
+    },
+    {
+      "mod_line": [
+        0,
+        7,
+        2
+      ],
+      "mod_code": [
+        "bool test ( int a , int mod , int mod )",
+        "continue ;",
+        "for ( t = 0 ; t < p - 2 ; t ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int mod’"
+    },
+    {
+      "mod_line": [
+        0,
+        7,
+        2,
+        11
+      ],
+      "mod_code": [
+        "bool test ( int a , int mod , int mod )",
+        "continue ;",
+        "for ( t = 0 ; t < p - 2 ; t ++ )",
+        "cout << p << endl ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int mod’"
+    },
+    {
+      "mod_line": [
+        0,
+        7,
+        11
+      ],
+      "mod_code": [
+        "bool test ( int a , int mod , int mod )",
+        "continue ;",
+        "cout << p << endl ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int mod’"
+    },
+    {
+      "mod_line": [
+        0,
+        12
+      ],
+      "mod_code": [
+        "bool test ( int a , int mod , int mod )",
+        "int mod = p ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int mod’"
+    },
+    {
+      "mod_line": [
+        0,
+        12,
+        2
+      ],
+      "mod_code": [
+        "bool test ( int a , int mod , int mod )",
+        "int mod = p ;",
+        "for ( t = 0 ; t < p - 2 ; t ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int mod’"
+    },
+    {
+      "mod_line": [
+        0,
+        12,
+        2,
+        11
+      ],
+      "mod_code": [
+        "bool test ( int a , int mod , int mod )",
+        "int mod = p ;",
+        "for ( t = 0 ; t < p - 2 ; t ++ )",
+        "cout << p << endl ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int mod’"
+    },
+    {
+      "mod_line": [
+        0,
+        12,
+        11
+      ],
+      "mod_code": [
+        "bool test ( int a , int mod , int mod )",
+        "int mod = p ;",
+        "cout << p << endl ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int mod’"
+    },
+    {
+      "mod_line": [
+        0,
+        2
+      ],
+      "mod_code": [
+        "bool test ( int a , int mod , int mod )",
+        "for ( t = 0 ; t < p - 2 ; t ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int mod’"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        11
+      ],
+      "mod_code": [
+        "bool test ( int a , int mod , int mod )",
+        "for ( t = 0 ; t < p - 2 ; t ++ )",
+        "cout << p << endl ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int mod’"
+    },
+    {
+      "mod_line": [
+        0,
+        11
+      ],
+      "mod_code": [
+        "bool test ( int a , int mod , int mod )",
+        "cout << p << endl ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int mod’"
+    },
+    {
+      "mod_line": [
+        14,
+        7
+      ],
+      "mod_code": [
+        "for ( x = 1 ; x < p ; x ++ )",
+        "continue ;"
+      ],
+      "err_line": 7,
+      "err_msg": "continue statement not within a loop"
+    },
+    {
+      "mod_line": [
+        14,
+        7,
+        12
+      ],
+      "mod_code": [
+        "for ( x = 1 ; x < p ; x ++ )",
+        "continue ;",
+        "int mod = p ;"
+      ],
+      "err_line": 7,
+      "err_msg": "continue statement not within a loop"
+    },
+    {
+      "mod_line": [
+        14,
+        7,
+        12,
+        2
+      ],
+      "mod_code": [
+        "for ( x = 1 ; x < p ; x ++ )",
+        "continue ;",
+        "int mod = p ;",
+        "for ( t = 0 ; t < p - 2 ; t ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        7,
+        12,
+        11
+      ],
+      "mod_code": [
+        "for ( x = 1 ; x < p ; x ++ )",
+        "continue ;",
+        "int mod = p ;",
+        "cout << p << endl ;"
+      ],
+      "err_line": 7,
+      "err_msg": "continue statement not within a loop"
+    },
+    {
+      "mod_line": [
+        14,
+        7,
+        2
+      ],
+      "mod_code": [
+        "for ( x = 1 ; x < p ; x ++ )",
+        "continue ;",
+        "for ( t = 0 ; t < p - 2 ; t ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        7,
+        2,
+        11
+      ],
+      "mod_code": [
+        "for ( x = 1 ; x < p ; x ++ )",
+        "continue ;",
+        "for ( t = 0 ; t < p - 2 ; t ++ )",
+        "cout << p << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        7,
+        11
+      ],
+      "mod_code": [
+        "for ( x = 1 ; x < p ; x ++ )",
+        "continue ;",
+        "cout << p << endl ;"
+      ],
+      "err_line": 7,
+      "err_msg": "continue statement not within a loop"
+    },
+    {
+      "mod_line": [
+        14,
+        12
+      ],
+      "mod_code": [
+        "for ( x = 1 ; x < p ; x ++ )",
+        "int mod = p ;"
+      ],
+      "err_line": 12,
+      "err_msg": "redeclaration of ‘int mod’"
+    },
+    {
+      "mod_line": [
+        14,
+        12,
+        2
+      ],
+      "mod_code": [
+        "for ( x = 1 ; x < p ; x ++ )",
+        "int mod = p ;",
+        "for ( t = 0 ; t < p - 2 ; t ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        12,
+        2,
+        11
+      ],
+      "mod_code": [
+        "for ( x = 1 ; x < p ; x ++ )",
+        "int mod = p ;",
+        "for ( t = 0 ; t < p - 2 ; t ++ )",
+        "cout << p << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        12,
+        11
+      ],
+      "mod_code": [
+        "for ( x = 1 ; x < p ; x ++ )",
+        "int mod = p ;",
+        "cout << p << endl ;"
+      ],
+      "err_line": 12,
+      "err_msg": "redeclaration of ‘int mod’"
+    },
+    {
+      "mod_line": [
+        14,
+        2
+      ],
+      "mod_code": [
+        "for ( x = 1 ; x < p ; x ++ )",
+        "for ( t = 0 ; t < p - 2 ; t ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        2,
+        11
+      ],
+      "mod_code": [
+        "for ( x = 1 ; x < p ; x ++ )",
+        "for ( t = 0 ; t < p - 2 ; t ++ )",
+        "cout << p << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        11
+      ],
+      "mod_code": [
+        "for ( x = 1 ; x < p ; x ++ )",
+        "cout << p << endl ;"
+      ],
+      "err_line": 14,
+      "err_msg": "‘x’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        12
+      ],
+      "mod_code": [
+        "continue ;",
+        "int mod = p ;"
+      ],
+      "err_line": 7,
+      "err_msg": "continue statement not within a loop"
+    },
+    {
+      "mod_line": [
+        7,
+        12,
+        2
+      ],
+      "mod_code": [
+        "continue ;",
+        "int mod = p ;",
+        "for ( t = 0 ; t < p - 2 ; t ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        12,
+        2,
+        11
+      ],
+      "mod_code": [
+        "continue ;",
+        "int mod = p ;",
+        "for ( t = 0 ; t < p - 2 ; t ++ )",
+        "cout << p << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        12,
+        11
+      ],
+      "mod_code": [
+        "continue ;",
+        "int mod = p ;",
+        "cout << p << endl ;"
+      ],
+      "err_line": 7,
+      "err_msg": "continue statement not within a loop"
+    },
+    {
+      "mod_line": [
+        7,
+        2
+      ],
+      "mod_code": [
+        "continue ;",
+        "for ( t = 0 ; t < p - 2 ; t ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        2,
+        11
+      ],
+      "mod_code": [
+        "continue ;",
+        "for ( t = 0 ; t < p - 2 ; t ++ )",
+        "cout << p << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        11
+      ],
+      "mod_code": [
+        "continue ;",
+        "cout << p << endl ;"
+      ],
+      "err_line": 7,
+      "err_msg": "continue statement not within a loop"
+    },
+    {
+      "mod_line": [
+        12,
+        2
+      ],
+      "mod_code": [
+        "int mod = p ;",
+        "for ( t = 0 ; t < p - 2 ; t ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        2,
+        11
+      ],
+      "mod_code": [
+        "int mod = p ;",
+        "for ( t = 0 ; t < p - 2 ; t ++ )",
+        "cout << p << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        11
+      ],
+      "mod_code": [
+        "int mod = p ;",
+        "cout << p << endl ;"
+      ],
+      "err_line": 12,
+      "err_msg": "redeclaration of ‘int mod’"
+    },
+    {
+      "mod_line": [
+        2,
+        11
+      ],
+      "mod_code": [
+        "for ( t = 0 ; t < p - 2 ; t ++ )",
+        "cout << p << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘t’ was not declared in this scope"
+    }
+  ]
+}

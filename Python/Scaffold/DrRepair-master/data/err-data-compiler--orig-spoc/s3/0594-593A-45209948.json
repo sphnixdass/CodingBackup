@@ -1,0 +1,911 @@
+{
+  "meta": {
+    "index": 594,
+    "hitid": "3UAU495MIIM6U83DRWV7607RZVDUO5",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "593A",
+    "subid": "45209948"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare sol with integers a , b , string vector address v as arguments , returning integer",
+      "code": "int sol ( int a , int b , vector < string > & v )",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare integer ret = 0",
+      "code": "int ret = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "for i = 0 to size of v exclusive",
+      "code": "for ( int i = 0 ; i < v . size ( ) ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "declare integer got = 1",
+      "code": "int got = 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 4,
+      "text": "for j = 0 to length of v [ i ] exclusive",
+      "code": "for ( int j = 0 ; j < v [ i ] . length ( ) ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 5,
+      "text": "if v [ i ] [ j ] - 97 is not a and v [ i ] [ j ] - 97 is not b , let got be 0",
+      "code": "if ( v [ i ] [ j ] - 97 != a && v [ i ] [ j ] - 97 != b ) { got = 0 ; }",
+      "indent": 3
+    },
+    {
+      "line": 6,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "if got is true , increment ret by length of v [ i ]",
+      "code": "if ( got ) { ret += v [ i ] . length ( ) ; }",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "return ret",
+      "code": "return ret ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 12,
+      "text": "declare integer n",
+      "code": "int n ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "declare string vector v initialized with n",
+      "code": "vector < string > v ( n ) ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "for i = 0 to n exclusive , read v [ i ]",
+      "code": "for ( int i = 0 ; i < n ; i ++ ) { cin >> v [ i ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "declare integer ans = 0",
+      "code": "int ans = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "for i = 0 to 26 exclusive",
+      "code": "for ( int i = 0 ; i < 26 ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "for j = 0 to 26 exclusive , let ans be maximum of ( ans and result of run sol ( i , j , v ) )",
+      "code": "for ( int j = 0 ; j < 26 ; j ++ ) { ans = max ( ans , sol ( i , j , v ) ) ; }",
+      "indent": 2
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "print ans and \" \\ n \"",
+      "code": "cout << ans << \" \\n \" ;",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 22,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int sol ( int a , vector < int > & v , int & v )"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int& v’"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int sol ( int & a , vector < int > & v )"
+      ],
+      "err_line": 4,
+      "err_msg": "request for member ‘length’ in ‘(& v)->std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "cin >> N ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘N’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "vector < int > v ( n ) ;"
+      ],
+      "err_line": 18,
+      "err_msg": "invalid initialization of reference of type ‘std::vector<std::__cxx11::basic_string<char> >&’ from expression of type ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "long long ans = 0 ;"
+      ],
+      "err_line": 18,
+      "err_msg": "no matching function for call to ‘max(long long int&, int)’"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < 26 ; i ++ )"
+      ],
+      "err_line": 17,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        0,
+        16
+      ],
+      "mod_code": [
+        "int sol ( int a , vector < int > & v , int & v )",
+        "long long ans = 0 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int& v’"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        20
+      ],
+      "mod_code": [
+        "int sol ( int a , vector < int > & v , int & v )",
+        "long long ans = 0 ;",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int& v’"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        20,
+        17
+      ],
+      "mod_code": [
+        "int sol ( int a , vector < int > & v , int & v )",
+        "long long ans = 0 ;",
+        "cout << ans << \" \" ;",
+        "for ( i = 0 ; i < 26 ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int& v’"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        20,
+        14
+      ],
+      "mod_code": [
+        "int sol ( int a , vector < int > & v , int & v )",
+        "long long ans = 0 ;",
+        "cout << ans << \" \" ;",
+        "vector < int > v ( n ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int& v’"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        20,
+        13
+      ],
+      "mod_code": [
+        "int sol ( int a , vector < int > & v , int & v )",
+        "long long ans = 0 ;",
+        "cout << ans << \" \" ;",
+        "cin >> N ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int& v’"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        17
+      ],
+      "mod_code": [
+        "int sol ( int a , vector < int > & v , int & v )",
+        "long long ans = 0 ;",
+        "for ( i = 0 ; i < 26 ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int& v’"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        17,
+        14
+      ],
+      "mod_code": [
+        "int sol ( int a , vector < int > & v , int & v )",
+        "long long ans = 0 ;",
+        "for ( i = 0 ; i < 26 ; i ++ )",
+        "vector < int > v ( n ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int& v’"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        17,
+        13
+      ],
+      "mod_code": [
+        "int sol ( int a , vector < int > & v , int & v )",
+        "long long ans = 0 ;",
+        "for ( i = 0 ; i < 26 ; i ++ )",
+        "cin >> N ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int& v’"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        14
+      ],
+      "mod_code": [
+        "int sol ( int a , vector < int > & v , int & v )",
+        "long long ans = 0 ;",
+        "vector < int > v ( n ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int& v’"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        14,
+        13
+      ],
+      "mod_code": [
+        "int sol ( int a , vector < int > & v , int & v )",
+        "long long ans = 0 ;",
+        "vector < int > v ( n ) ;",
+        "cin >> N ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int& v’"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        13
+      ],
+      "mod_code": [
+        "int sol ( int a , vector < int > & v , int & v )",
+        "long long ans = 0 ;",
+        "cin >> N ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int& v’"
+    },
+    {
+      "mod_line": [
+        0,
+        20
+      ],
+      "mod_code": [
+        "int sol ( int a , vector < int > & v , int & v )",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int& v’"
+    },
+    {
+      "mod_line": [
+        0,
+        20,
+        17
+      ],
+      "mod_code": [
+        "int sol ( int a , vector < int > & v , int & v )",
+        "cout << ans << \" \" ;",
+        "for ( i = 0 ; i < 26 ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int& v’"
+    },
+    {
+      "mod_line": [
+        0,
+        20,
+        17,
+        14
+      ],
+      "mod_code": [
+        "int sol ( int a , vector < int > & v , int & v )",
+        "cout << ans << \" \" ;",
+        "for ( i = 0 ; i < 26 ; i ++ )",
+        "vector < int > v ( n ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int& v’"
+    },
+    {
+      "mod_line": [
+        0,
+        20,
+        17,
+        13
+      ],
+      "mod_code": [
+        "int sol ( int a , vector < int > & v , int & v )",
+        "cout << ans << \" \" ;",
+        "for ( i = 0 ; i < 26 ; i ++ )",
+        "cin >> N ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int& v’"
+    },
+    {
+      "mod_line": [
+        0,
+        20,
+        14
+      ],
+      "mod_code": [
+        "int sol ( int a , vector < int > & v , int & v )",
+        "cout << ans << \" \" ;",
+        "vector < int > v ( n ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int& v’"
+    },
+    {
+      "mod_line": [
+        0,
+        20,
+        14,
+        13
+      ],
+      "mod_code": [
+        "int sol ( int a , vector < int > & v , int & v )",
+        "cout << ans << \" \" ;",
+        "vector < int > v ( n ) ;",
+        "cin >> N ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int& v’"
+    },
+    {
+      "mod_line": [
+        0,
+        20,
+        13
+      ],
+      "mod_code": [
+        "int sol ( int a , vector < int > & v , int & v )",
+        "cout << ans << \" \" ;",
+        "cin >> N ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int& v’"
+    },
+    {
+      "mod_line": [
+        0,
+        17
+      ],
+      "mod_code": [
+        "int sol ( int a , vector < int > & v , int & v )",
+        "for ( i = 0 ; i < 26 ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int& v’"
+    },
+    {
+      "mod_line": [
+        0,
+        17,
+        14
+      ],
+      "mod_code": [
+        "int sol ( int a , vector < int > & v , int & v )",
+        "for ( i = 0 ; i < 26 ; i ++ )",
+        "vector < int > v ( n ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int& v’"
+    },
+    {
+      "mod_line": [
+        0,
+        17,
+        14,
+        13
+      ],
+      "mod_code": [
+        "int sol ( int a , vector < int > & v , int & v )",
+        "for ( i = 0 ; i < 26 ; i ++ )",
+        "vector < int > v ( n ) ;",
+        "cin >> N ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int& v’"
+    },
+    {
+      "mod_line": [
+        0,
+        17,
+        13
+      ],
+      "mod_code": [
+        "int sol ( int a , vector < int > & v , int & v )",
+        "for ( i = 0 ; i < 26 ; i ++ )",
+        "cin >> N ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int& v’"
+    },
+    {
+      "mod_line": [
+        0,
+        14
+      ],
+      "mod_code": [
+        "int sol ( int a , vector < int > & v , int & v )",
+        "vector < int > v ( n ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int& v’"
+    },
+    {
+      "mod_line": [
+        0,
+        14,
+        13
+      ],
+      "mod_code": [
+        "int sol ( int a , vector < int > & v , int & v )",
+        "vector < int > v ( n ) ;",
+        "cin >> N ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int& v’"
+    },
+    {
+      "mod_line": [
+        0,
+        13
+      ],
+      "mod_code": [
+        "int sol ( int a , vector < int > & v , int & v )",
+        "cin >> N ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int& v’"
+    },
+    {
+      "mod_line": [
+        16,
+        20
+      ],
+      "mod_code": [
+        "long long ans = 0 ;",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 18,
+      "err_msg": "no matching function for call to ‘max(long long int&, int)’"
+    },
+    {
+      "mod_line": [
+        16,
+        20,
+        17
+      ],
+      "mod_code": [
+        "long long ans = 0 ;",
+        "cout << ans << \" \" ;",
+        "for ( i = 0 ; i < 26 ; i ++ )"
+      ],
+      "err_line": 17,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        16,
+        20,
+        17,
+        14
+      ],
+      "mod_code": [
+        "long long ans = 0 ;",
+        "cout << ans << \" \" ;",
+        "for ( i = 0 ; i < 26 ; i ++ )",
+        "vector < int > v ( n ) ;"
+      ],
+      "err_line": 17,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        16,
+        20,
+        17,
+        13
+      ],
+      "mod_code": [
+        "long long ans = 0 ;",
+        "cout << ans << \" \" ;",
+        "for ( i = 0 ; i < 26 ; i ++ )",
+        "cin >> N ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘N’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        20,
+        14
+      ],
+      "mod_code": [
+        "long long ans = 0 ;",
+        "cout << ans << \" \" ;",
+        "vector < int > v ( n ) ;"
+      ],
+      "err_line": 18,
+      "err_msg": "invalid initialization of reference of type ‘std::vector<std::__cxx11::basic_string<char> >&’ from expression of type ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        16,
+        20,
+        14,
+        13
+      ],
+      "mod_code": [
+        "long long ans = 0 ;",
+        "cout << ans << \" \" ;",
+        "vector < int > v ( n ) ;",
+        "cin >> N ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘N’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        20,
+        13
+      ],
+      "mod_code": [
+        "long long ans = 0 ;",
+        "cout << ans << \" \" ;",
+        "cin >> N ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘N’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        17
+      ],
+      "mod_code": [
+        "long long ans = 0 ;",
+        "for ( i = 0 ; i < 26 ; i ++ )"
+      ],
+      "err_line": 17,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        16,
+        17,
+        14
+      ],
+      "mod_code": [
+        "long long ans = 0 ;",
+        "for ( i = 0 ; i < 26 ; i ++ )",
+        "vector < int > v ( n ) ;"
+      ],
+      "err_line": 17,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        16,
+        17,
+        14,
+        13
+      ],
+      "mod_code": [
+        "long long ans = 0 ;",
+        "for ( i = 0 ; i < 26 ; i ++ )",
+        "vector < int > v ( n ) ;",
+        "cin >> N ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘N’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        17,
+        13
+      ],
+      "mod_code": [
+        "long long ans = 0 ;",
+        "for ( i = 0 ; i < 26 ; i ++ )",
+        "cin >> N ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘N’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        14
+      ],
+      "mod_code": [
+        "long long ans = 0 ;",
+        "vector < int > v ( n ) ;"
+      ],
+      "err_line": 18,
+      "err_msg": "invalid initialization of reference of type ‘std::vector<std::__cxx11::basic_string<char> >&’ from expression of type ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        16,
+        14,
+        13
+      ],
+      "mod_code": [
+        "long long ans = 0 ;",
+        "vector < int > v ( n ) ;",
+        "cin >> N ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘N’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        13
+      ],
+      "mod_code": [
+        "long long ans = 0 ;",
+        "cin >> N ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘N’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        20,
+        17
+      ],
+      "mod_code": [
+        "cout << ans << \" \" ;",
+        "for ( i = 0 ; i < 26 ; i ++ )"
+      ],
+      "err_line": 17,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        20,
+        17,
+        14
+      ],
+      "mod_code": [
+        "cout << ans << \" \" ;",
+        "for ( i = 0 ; i < 26 ; i ++ )",
+        "vector < int > v ( n ) ;"
+      ],
+      "err_line": 17,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        20,
+        17,
+        14,
+        13
+      ],
+      "mod_code": [
+        "cout << ans << \" \" ;",
+        "for ( i = 0 ; i < 26 ; i ++ )",
+        "vector < int > v ( n ) ;",
+        "cin >> N ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘N’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        20,
+        17,
+        13
+      ],
+      "mod_code": [
+        "cout << ans << \" \" ;",
+        "for ( i = 0 ; i < 26 ; i ++ )",
+        "cin >> N ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘N’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        20,
+        14
+      ],
+      "mod_code": [
+        "cout << ans << \" \" ;",
+        "vector < int > v ( n ) ;"
+      ],
+      "err_line": 18,
+      "err_msg": "invalid initialization of reference of type ‘std::vector<std::__cxx11::basic_string<char> >&’ from expression of type ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        20,
+        14,
+        13
+      ],
+      "mod_code": [
+        "cout << ans << \" \" ;",
+        "vector < int > v ( n ) ;",
+        "cin >> N ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘N’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        20,
+        13
+      ],
+      "mod_code": [
+        "cout << ans << \" \" ;",
+        "cin >> N ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘N’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17,
+        14
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < 26 ; i ++ )",
+        "vector < int > v ( n ) ;"
+      ],
+      "err_line": 17,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        17,
+        14,
+        13
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < 26 ; i ++ )",
+        "vector < int > v ( n ) ;",
+        "cin >> N ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘N’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17,
+        13
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < 26 ; i ++ )",
+        "cin >> N ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘N’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        13
+      ],
+      "mod_code": [
+        "vector < int > v ( n ) ;",
+        "cin >> N ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘N’ was not declared in this scope"
+    }
+  ]
+}

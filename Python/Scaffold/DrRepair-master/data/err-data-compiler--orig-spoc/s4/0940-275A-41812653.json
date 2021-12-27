@@ -1,0 +1,433 @@
+{
+  "meta": {
+    "index": 940,
+    "hitid": "391JB9X4ZY24R9DPK2CS899O24WMKH",
+    "workerid": "ANZR2DCSMD0NX",
+    "probid": "275A",
+    "subid": "41812653"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "a , b = double array of integers of size 5 by 5 , i , j = integers",
+      "code": "int a [ 5 ] [ 5 ] , b [ 5 ] [ 5 ] , i , j ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "for i = 1 to 4 exclusive",
+      "code": "for ( i = 1 ; i < 4 ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "for j = 1 to 4 exclusive , read a [ i ] [ j ] and set b [ i ] [ j ] to 1",
+      "code": "for ( j = 1 ; j < 4 ; j ++ ) cin >> a [ i ] [ j ] , b [ i ] [ j ] = 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 4,
+      "text": "for i = 1 to 4 exclusive",
+      "code": "for ( i = 1 ; i < 4 ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for j = 1 to 4 exclusive",
+      "code": "for ( j = 1 ; j < 4 ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 6,
+      "text": "if a [ i ] [ j ] bitwise AND 1 is true",
+      "code": "if ( a [ i ] [ j ] & 1 )",
+      "indent": 3
+    },
+    {
+      "line": 7,
+      "text": "set b [ i ] [ j ] to NOT b [ i ] [ j ] , set b [ i - 1 ] [ j ] to NOT b [ i - 1 ] [ j ] , set b [ i + 1 ] [ j ] to NOT b [ i + 1 ] [ j ]",
+      "code": "b [ i ] [ j ] = ! b [ i ] [ j ] , b [ i - 1 ] [ j ] = ! b [ i - 1 ] [ j ] , b [ i + 1 ] [ j ] = ! b [ i + 1 ] [ j ] ;",
+      "indent": 4
+    },
+    {
+      "line": 8,
+      "text": "set b [ i ] [ j - 1 ] to NOT b [ i ] [ j - 1 ] , set b [ i ] [ j + 1 ] to NOT b [ i ] [ j + 1 ]",
+      "code": "b [ i ] [ j - 1 ] = ! b [ i ] [ j - 1 ] , b [ i ] [ j + 1 ] = ! b [ i ] [ j + 1 ] ;",
+      "indent": 4
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 10,
+      "text": "for i = 1 to 4 exclusive",
+      "code": "for ( i = 1 ; i < 4 ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "for j = 1 to 4 exclusive , print b [ i ] [ j ]",
+      "code": "for ( j = 1 ; j < 4 ; j ++ ) cout << b [ i ] [ j ] ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "call puts on \" \"",
+      "code": "puts ( \" \" ) ;",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int a [ 5 ] , b [ 5 ] , i , j ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int a [ 5 ] , i [ 5 ] , i , j ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int i’"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "puts ( ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "too few arguments to function ‘int puts(const char*)’"
+    },
+    {
+      "mod_line": [
+        1,
+        7
+      ],
+      "mod_code": [
+        "int a [ 5 ] , b [ 5 ] , i , j ;",
+        "b [ i ] [ j ] = b [ i ] [ j ] = b [ i - 1 ] [ j ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        8
+      ],
+      "mod_code": [
+        "int a [ 5 ] , b [ 5 ] , i , j ;",
+        "b [ i ] [ j ] = b [ i ] [ j ] = b [ i - 1 ] [ j ] ;",
+        "b [ i ] [ j - 1 ] = b [ i ] [ j - 1 ] = b [ i ] [ j + 1 ] = b [ i ] [ j + 1 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        8,
+        12
+      ],
+      "mod_code": [
+        "int a [ 5 ] , b [ 5 ] , i , j ;",
+        "b [ i ] [ j ] = b [ i ] [ j ] = b [ i - 1 ] [ j ] ;",
+        "b [ i ] [ j - 1 ] = b [ i ] [ j - 1 ] = b [ i ] [ j + 1 ] = b [ i ] [ j + 1 ] ;",
+        "puts ( \" \" ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        8,
+        12
+      ],
+      "mod_code": [
+        "int a [ 5 ] , b [ 5 ] , i , j ;",
+        "b [ i ] [ j ] = b [ i ] [ j ] = b [ i - 1 ] [ j ] ;",
+        "b [ i ] [ j - 1 ] = b [ i ] [ j - 1 ] = b [ i ] [ j + 1 ] = b [ i ] [ j + 1 ] ;",
+        "puts ( ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        12
+      ],
+      "mod_code": [
+        "int a [ 5 ] , b [ 5 ] , i , j ;",
+        "b [ i ] [ j ] = b [ i ] [ j ] = b [ i - 1 ] [ j ] ;",
+        "puts ( \" \" ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        12,
+        8
+      ],
+      "mod_code": [
+        "int a [ 5 ] , b [ 5 ] , i , j ;",
+        "b [ i ] [ j ] = b [ i ] [ j ] = b [ i - 1 ] [ j ] ;",
+        "puts ( \" \" ) ;",
+        "b [ i ] [ j - 1 ] = b [ i ] [ j - 1 ] = b [ i ] [ j - 1 ] = b [ i ] [ j + 1 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        12
+      ],
+      "mod_code": [
+        "int a [ 5 ] , b [ 5 ] , i , j ;",
+        "b [ i ] [ j ] = b [ i ] [ j ] = b [ i - 1 ] [ j ] ;",
+        "puts ( ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        12,
+        8
+      ],
+      "mod_code": [
+        "int a [ 5 ] , b [ 5 ] , i , j ;",
+        "b [ i ] [ j ] = b [ i ] [ j ] = b [ i - 1 ] [ j ] ;",
+        "puts ( ) ;",
+        "b [ i ] [ j - 1 ] = b [ i ] [ j - 1 ] = b [ i ] [ j - 1 ] = b [ i ] [ j + 1 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        8
+      ],
+      "mod_code": [
+        "int a [ 5 ] , b [ 5 ] , i , j ;",
+        "b [ i ] [ j ] = b [ i ] [ j ] = b [ i - 1 ] [ j ] ;",
+        "b [ i ] [ j - 1 ] = b [ i ] [ j - 1 ] = b [ i ] [ j - 1 ] = b [ i ] [ j + 1 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        8
+      ],
+      "mod_code": [
+        "int a [ 5 ] , b [ 5 ] , i , j ;",
+        "b [ i ] [ j - 1 ] = b [ i ] [ j - 1 ] = b [ i ] [ j + 1 ] = b [ i ] [ j + 1 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        8,
+        12
+      ],
+      "mod_code": [
+        "int a [ 5 ] , b [ 5 ] , i , j ;",
+        "b [ i ] [ j - 1 ] = b [ i ] [ j - 1 ] = b [ i ] [ j + 1 ] = b [ i ] [ j + 1 ] ;",
+        "puts ( \" \" ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        8,
+        12
+      ],
+      "mod_code": [
+        "int a [ 5 ] , b [ 5 ] , i , j ;",
+        "b [ i ] [ j - 1 ] = b [ i ] [ j - 1 ] = b [ i ] [ j + 1 ] = b [ i ] [ j + 1 ] ;",
+        "puts ( ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        12
+      ],
+      "mod_code": [
+        "int a [ 5 ] , b [ 5 ] , i , j ;",
+        "puts ( \" \" ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        12,
+        8
+      ],
+      "mod_code": [
+        "int a [ 5 ] , b [ 5 ] , i , j ;",
+        "puts ( \" \" ) ;",
+        "b [ i ] [ j - 1 ] = b [ i ] [ j - 1 ] = b [ i ] [ j - 1 ] = b [ i ] [ j + 1 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        12
+      ],
+      "mod_code": [
+        "int a [ 5 ] , b [ 5 ] , i , j ;",
+        "puts ( ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        12,
+        8
+      ],
+      "mod_code": [
+        "int a [ 5 ] , b [ 5 ] , i , j ;",
+        "puts ( ) ;",
+        "b [ i ] [ j - 1 ] = b [ i ] [ j - 1 ] = b [ i ] [ j - 1 ] = b [ i ] [ j + 1 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        8
+      ],
+      "mod_code": [
+        "int a [ 5 ] , b [ 5 ] , i , j ;",
+        "b [ i ] [ j - 1 ] = b [ i ] [ j - 1 ] = b [ i ] [ j - 1 ] = b [ i ] [ j + 1 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        7,
+        8,
+        12
+      ],
+      "mod_code": [
+        "b [ i ] [ j ] = b [ i ] [ j ] = b [ i - 1 ] [ j ] ;",
+        "b [ i ] [ j - 1 ] = b [ i ] [ j - 1 ] = b [ i ] [ j + 1 ] = b [ i ] [ j + 1 ] ;",
+        "puts ( ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "too few arguments to function ‘int puts(const char*)’"
+    },
+    {
+      "mod_line": [
+        7,
+        12
+      ],
+      "mod_code": [
+        "b [ i ] [ j ] = b [ i ] [ j ] = b [ i - 1 ] [ j ] ;",
+        "puts ( ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "too few arguments to function ‘int puts(const char*)’"
+    },
+    {
+      "mod_line": [
+        7,
+        12,
+        8
+      ],
+      "mod_code": [
+        "b [ i ] [ j ] = b [ i ] [ j ] = b [ i - 1 ] [ j ] ;",
+        "puts ( ) ;",
+        "b [ i ] [ j - 1 ] = b [ i ] [ j - 1 ] = b [ i ] [ j - 1 ] = b [ i ] [ j + 1 ] ;"
+      ],
+      "err_line": 12,
+      "err_msg": "too few arguments to function ‘int puts(const char*)’"
+    },
+    {
+      "mod_line": [
+        8,
+        12
+      ],
+      "mod_code": [
+        "b [ i ] [ j - 1 ] = b [ i ] [ j - 1 ] = b [ i ] [ j + 1 ] = b [ i ] [ j + 1 ] ;",
+        "puts ( ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "too few arguments to function ‘int puts(const char*)’"
+    },
+    {
+      "mod_line": [
+        12,
+        8
+      ],
+      "mod_code": [
+        "puts ( ) ;",
+        "b [ i ] [ j - 1 ] = b [ i ] [ j - 1 ] = b [ i ] [ j - 1 ] = b [ i ] [ j + 1 ] ;"
+      ],
+      "err_line": 12,
+      "err_msg": "too few arguments to function ‘int puts(const char*)’"
+    }
+  ]
+}

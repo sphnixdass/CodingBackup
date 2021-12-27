@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment - Input Fields</title>
+    <link rel="stylesheet" href="style.css">
+    <script async="" src="./Validation.js"></script>
+
+    <script>
+        function btnFun(column, funName, btnid){
+            var table = document.getElementsByTagName("table")[0];
+            var boldValue = "";
+            var italicValue = 0;
+            var blackValue =0;
+            var blueValue =0;
+            var redValue =0;
+
+            console.log("btnobj : ", table.rows[0].cells[column].style.backgroundColor.toString());
+            if (funName == 'Bold')
+            {
+                if (table.rows[0].cells[column].style.fontWeight == "normal")
+                {
+                    boldValue = "bold";
+                    document.getElementById(btnid).innerHTML = "Not Bold";
+                }   else {
+                    boldValue = "normal";
+                    document.getElementById(btnid).innerHTML = "Bold";
+                }
+                
+            } else if (funName == 'Italic')
+            {
+                if (table.rows[0].cells[column].style.fontStyle == "")
+                {
+                    italicValue = 1;
+                    document.getElementById(btnid).innerHTML = "Not Italic";
+                }   else {
+                    italicValue = 2;
+                    document.getElementById(btnid).innerHTML = "Italic";
+                }
+            }else if (funName == 'Black')
+            {
+                if (table.rows[0].cells[column].style.backgroundColor.toString() == "")
+                {
+                    blackValue = 1;
+                }   else {
+                    blackValue = 2;
+                }
+            }else if (funName == 'Blue')
+            {
+                if (table.rows[0].cells[column].style.backgroundColor.toString() == "")
+                {
+                    blueValue = 1;
+                }   else {
+                    blueValue = 2;
+                }
+            }else if (funName == 'Red')
+            {
+                if (table.rows[0].cells[column].style.backgroundColor.toString() == "")
+                {
+                    redValue = 1;
+                }   else {
+                    redValue = 2;
+                }
+            }
+            
+
+            for (var i = 0; i < table.rows.length; i++) {
+
+                if (boldValue == "bold"){
+                    table.rows[i].cells[column].style.fontWeight = "bold";
+                }else if (boldValue == "normal"){
+                    table.rows[i].cells[column].style.fontWeight = "normal";
+                }
+
+                if (italicValue == 1){
+                    table.rows[i].cells[column].style.fontStyle = "italic";
+                }else if (italicValue == 2){
+                    table.rows[i].cells[column].style.fontStyle = "";
+                }
+
+                if (blackValue == 1){
+                    table.rows[i].cells[column].style.backgroundColor= '#000000';
+                }else if (blackValue == 2){
+                    table.rows[i].cells[column].style.backgroundColor='';
+                }
+                
+                if (blueValue == 1){
+                    table.rows[i].cells[column].style.backgroundColor= '#0004fc';
+                }else if (blueValue == 2){
+                    table.rows[i].cells[column].style.backgroundColor='';
+                }
+
+                if (redValue == 1){
+                    table.rows[i].cells[column].style.backgroundColor= '#FF0000';
+                }else if (redValue == 2){
+                    table.rows[i].cells[column].style.backgroundColor='';
+                }
+
+
+            }
+
+        }    
+       
+    </script>
+
+</head>
+<body onload="CreateTable();">
+
+    <h1>Assignment - Input Fields --- by S. Gnanadass</h1>
+    <div class="container">
+        <form name="myForm" action="#" onsubmit="return validateForm()" method="post"></form>
+            <label for="fname">First name:</label>
+            <input type="text" id="fname" name="fname" onKeyUp="fnameInput()" onkeypress="return /[a-z]/i.test(event.key)" autocomplete="off">
+            <button id="fnamebold" onclick="btnFun(1, 'Bold', this.id)">Bold</button>
+            <button id="fnameitalic" onclick="btnFun(1, 'Italic', this.id)">Italic</button>
+            <button id="fnameblack" onclick="btnFun(1, 'Black', this.id)" style="background-color:black"></button>
+            <button id="fnameblue" onclick="btnFun(1, 'Blue', this.id)" style="background-color:blue"></button>
+            <button id="fnamered" onclick="btnFun(1, 'Red', this.id)" style="background-color:red"></button>
+            
+            <br><br>
+            <label for="email">Email address:</label>
+            <input type="text" id="email" name="email" onKeyUp="emailValidateEmail()" autocomplete="off">
+            <button id="emailbold" onclick="btnFun(2, 'Bold', this.id)">Bold</button>
+            <button id="emailitalic" onclick="btnFun(2, 'Italic', this.id)">Italic</button>
+            <button id="emailblack" onclick="btnFun(2, 'Black', this.id)" style="background-color:black"></button>
+            <button id="emailblue" onclick="btnFun(2, 'Blue', this.id)" style="background-color:blue" ></button>
+            <button id="emailred" onclick="btnFun(2, 'Red', this.id)"style="background-color:red"></button>
+            <br><br>
+            <label for="mobile">Mobile number:</label>
+            <input type="text" id="mobile" name="mobile" onKeyUp="mobileInput()" autocomplete="off">
+            <button id="mobilebold" onclick="btnFun(3, 'Bold', this.id)">Bold</button>
+            <button id="mobiletalic" onclick="btnFun(3, 'Italic', this.id)">Italic</button>
+            <button id="mobileblack" onclick="btnFun(3, 'Black', this.id)"  style="background-color:black"></button>
+            <button id="mobileblue" onclick="btnFun(3, 'Blue', this.id)" style="background-color:blue"></button>
+            <button id="mobilered" onclick="btnFun(3, 'Red', this.id)" style="background-color:red"></button>
+            <br><br>
+            <input type="button" value="Append" onclick="addRow()">
+    </form>
+    </div>
+    <div class="container" id="tableOutput"></div>
+</body>
+</html>

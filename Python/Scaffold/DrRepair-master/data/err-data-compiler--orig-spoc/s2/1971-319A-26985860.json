@@ -1,0 +1,1073 @@
+{
+  "meta": {
+    "index": 1971,
+    "hitid": "3R868ACW4S6ZOUGP90H7IJD4ARUZG5",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "319A",
+    "subid": "26985860"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create constant integer MAXN with MAXN = 100",
+      "code": "const int MAXN = 100 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create constant long long integer MOD with MOD = 1e9 + 7",
+      "code": "const long long int MOD = 1e9 + 7 ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "create long long integer array dos_a_la with size ( 2 * MAXN ) + 2",
+      "code": "long long int dos_a_la [ ( 2 * MAXN ) + 2 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "declare f with integer n , constant string address x as arguments , returning long long integer",
+      "code": "long long int f ( int n , const string & x )",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "if n is 0 , return 0 from function",
+      "code": "if ( n == 0 ) return 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "create long long integer ret with ret = 2 * result of run f with n - 1 , x as arguments",
+      "code": "long long int ret = 2 * f ( n - 1 , x ) ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "set ret to red % MOD",
+      "code": "ret %= MOD ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "if x [ n ] is ' 1 '",
+      "code": "if ( x [ n ] == ' 1 ' )",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "increment ret by dos_a_la [ 2 * ( n - 1 ) ]",
+      "code": "ret += dos_a_la [ 2 * ( n - 1 ) ] ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "set ret to ret % MOD",
+      "code": "ret %= MOD ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "return ret from function",
+      "code": "return ret ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 13,
+      "text": "declare init with no arguments , returning void",
+      "code": "void init ( )",
+      "indent": 0
+    },
+    {
+      "line": 14,
+      "text": "set dos_a_la [ 0 ] to 1",
+      "code": "dos_a_la [ 0 ] = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "for i = 1 to 2 * MAXN inclusive",
+      "code": "for ( int i = 1 ; i <= ( 2 * MAXN ) ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "set dos_a_la [ i ] to dos_a_la [ i - 1 ]",
+      "code": "dos_a_la [ i ] = dos_a_la [ i - 1 ] ;",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "set dos_a_la [ i ] to dos_a_la [ i ] bitshift left 1",
+      "code": "dos_a_la [ i ] <<= 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "set dos_a_la [ i ] to dos_a_la [ i ] % MOD",
+      "code": "dos_a_la [ i ] %= MOD ;",
+      "indent": 2
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 21,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 22,
+      "text": "run init",
+      "code": "init ( ) ;",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "create string x",
+      "code": "string x ;",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "read x",
+      "code": "cin >> x ;",
+      "indent": 1
+    },
+    {
+      "line": 25,
+      "text": "create integer n with n = size of x",
+      "code": "int n = x . size ( ) ;",
+      "indent": 1
+    },
+    {
+      "line": 26,
+      "text": "reverse element order from beginning of x to end of x",
+      "code": "reverse ( x . begin ( ) , x . end ( ) ) ;",
+      "indent": 1
+    },
+    {
+      "line": 27,
+      "text": "create long long integer resp with resp = dos_a_la [ n - 1 ]",
+      "code": "long long int resp = dos_a_la [ n - 1 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 28,
+      "text": "create long long integer num with num = 0",
+      "code": "long long int num = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 29,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( int i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 30,
+      "text": "if x [ i ] is ' 1 '",
+      "code": "if ( x [ i ] == ' 1 ' )",
+      "indent": 2
+    },
+    {
+      "line": 31,
+      "text": "increment num by dos_a_la [ i ]",
+      "code": "num += dos_a_la [ i ] ;",
+      "indent": 3
+    },
+    {
+      "line": 32,
+      "text": "set num to num % MOD",
+      "code": "num %= MOD ;",
+      "indent": 3
+    },
+    {
+      "line": 33,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 34,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 35,
+      "text": "set resp to resp * num",
+      "code": "resp *= num ;",
+      "indent": 1
+    },
+    {
+      "line": 36,
+      "text": "set resp to resp % MOD",
+      "code": "resp %= MOD ;",
+      "indent": 1
+    },
+    {
+      "line": 37,
+      "text": "print resp print \" \\ n \"",
+      "code": "cout << resp << \" \\n \" ;",
+      "indent": 1
+    },
+    {
+      "line": 38,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 39,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "long long int dos_a_la [ 2 * MAXN ] + 2 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected initializer before ‘+’ token"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "const long long int f ( const string n , const string x )"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator==’ (operand types are ‘const string {aka const std::__cxx11::basic_string<char>}’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "ret = red % MOD ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘red’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "const MAXN = 100 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘MAXN’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "long long int dos_a_la [ 2 * MAXN ) + 2 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘]’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "const long long int f ( const string n )"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator==’ (operand types are ‘const string {aka const std::__cxx11::basic_string<char>}’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "void init ( ) ;"
+      ],
+      "err_line": 14,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "int dos_a_la [ 0 ] = 1 ;"
+      ],
+      "err_line": 14,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= 2 * MAXN ; i ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        22
+      ],
+      "mod_code": [
+        "1 ( ) ;"
+      ],
+      "err_line": 22,
+      "err_msg": "expression cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        25
+      ],
+      "mod_code": [
+        "int n = strlen ( x ) ;"
+      ],
+      "err_line": 25,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘const char*’ for argument ‘1’ to ‘size_t strlen(const char*)’"
+    },
+    {
+      "mod_line": [
+        29
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 29,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        3
+      ],
+      "mod_code": [
+        "long long int dos_a_la [ 2 * MAXN ] + 2 ;",
+        "const long long int f ( const string n , const string x )"
+      ],
+      "err_line": 2,
+      "err_msg": "expected initializer before ‘+’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        6
+      ],
+      "mod_code": [
+        "long long int dos_a_la [ 2 * MAXN ] + 2 ;",
+        "const long long int f ( const string n , const string x )",
+        "ret = red % MOD ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected initializer before ‘+’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        6,
+        29
+      ],
+      "mod_code": [
+        "long long int dos_a_la [ 2 * MAXN ] + 2 ;",
+        "const long long int f ( const string n , const string x )",
+        "ret = red % MOD ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "expected initializer before ‘+’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        6,
+        0
+      ],
+      "mod_code": [
+        "long long int dos_a_la [ 2 * MAXN ] + 2 ;",
+        "const long long int f ( const string n , const string x )",
+        "ret = red % MOD ;",
+        "const MAXN = 100 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘MAXN’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        6,
+        25
+      ],
+      "mod_code": [
+        "long long int dos_a_la [ 2 * MAXN ] + 2 ;",
+        "const long long int f ( const string n , const string x )",
+        "ret = red % MOD ;",
+        "int n = strlen ( x ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected initializer before ‘+’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        29
+      ],
+      "mod_code": [
+        "long long int dos_a_la [ 2 * MAXN ] + 2 ;",
+        "const long long int f ( const string n , const string x )",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "expected initializer before ‘+’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        29,
+        0
+      ],
+      "mod_code": [
+        "long long int dos_a_la [ 2 * MAXN ] + 2 ;",
+        "const long long int f ( const string n , const string x )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "const MAXN = 100 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘MAXN’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        29,
+        25
+      ],
+      "mod_code": [
+        "long long int dos_a_la [ 2 * MAXN ] + 2 ;",
+        "const long long int f ( const string n , const string x )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int n = strlen ( x ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected initializer before ‘+’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        0
+      ],
+      "mod_code": [
+        "long long int dos_a_la [ 2 * MAXN ] + 2 ;",
+        "const long long int f ( const string n , const string x )",
+        "const MAXN = 100 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘MAXN’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        0,
+        25
+      ],
+      "mod_code": [
+        "long long int dos_a_la [ 2 * MAXN ] + 2 ;",
+        "const long long int f ( const string n , const string x )",
+        "const MAXN = 100 ;",
+        "int n = strlen ( x ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘MAXN’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        25
+      ],
+      "mod_code": [
+        "long long int dos_a_la [ 2 * MAXN ] + 2 ;",
+        "const long long int f ( const string n , const string x )",
+        "int n = strlen ( x ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected initializer before ‘+’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        6
+      ],
+      "mod_code": [
+        "long long int dos_a_la [ 2 * MAXN ] + 2 ;",
+        "ret = red % MOD ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected initializer before ‘+’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        29
+      ],
+      "mod_code": [
+        "long long int dos_a_la [ 2 * MAXN ] + 2 ;",
+        "ret = red % MOD ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "expected initializer before ‘+’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        29,
+        0
+      ],
+      "mod_code": [
+        "long long int dos_a_la [ 2 * MAXN ] + 2 ;",
+        "ret = red % MOD ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "const MAXN = 100 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘MAXN’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        29,
+        25
+      ],
+      "mod_code": [
+        "long long int dos_a_la [ 2 * MAXN ] + 2 ;",
+        "ret = red % MOD ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int n = strlen ( x ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected initializer before ‘+’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        0
+      ],
+      "mod_code": [
+        "long long int dos_a_la [ 2 * MAXN ] + 2 ;",
+        "ret = red % MOD ;",
+        "const MAXN = 100 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘MAXN’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        0,
+        25
+      ],
+      "mod_code": [
+        "long long int dos_a_la [ 2 * MAXN ] + 2 ;",
+        "ret = red % MOD ;",
+        "const MAXN = 100 ;",
+        "int n = strlen ( x ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘MAXN’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        25
+      ],
+      "mod_code": [
+        "long long int dos_a_la [ 2 * MAXN ] + 2 ;",
+        "ret = red % MOD ;",
+        "int n = strlen ( x ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected initializer before ‘+’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        29
+      ],
+      "mod_code": [
+        "long long int dos_a_la [ 2 * MAXN ] + 2 ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "expected initializer before ‘+’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        29,
+        0
+      ],
+      "mod_code": [
+        "long long int dos_a_la [ 2 * MAXN ] + 2 ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "const MAXN = 100 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘MAXN’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        29,
+        0,
+        25
+      ],
+      "mod_code": [
+        "long long int dos_a_la [ 2 * MAXN ] + 2 ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "const MAXN = 100 ;",
+        "int n = strlen ( x ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘MAXN’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        29,
+        25
+      ],
+      "mod_code": [
+        "long long int dos_a_la [ 2 * MAXN ] + 2 ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int n = strlen ( x ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected initializer before ‘+’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        0
+      ],
+      "mod_code": [
+        "long long int dos_a_la [ 2 * MAXN ] + 2 ;",
+        "const MAXN = 100 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘MAXN’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        0,
+        25
+      ],
+      "mod_code": [
+        "long long int dos_a_la [ 2 * MAXN ] + 2 ;",
+        "const MAXN = 100 ;",
+        "int n = strlen ( x ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘MAXN’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        25
+      ],
+      "mod_code": [
+        "long long int dos_a_la [ 2 * MAXN ] + 2 ;",
+        "int n = strlen ( x ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected initializer before ‘+’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        6
+      ],
+      "mod_code": [
+        "const long long int f ( const string n , const string x )",
+        "ret = red % MOD ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator==’ (operand types are ‘const string {aka const std::__cxx11::basic_string<char>}’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        3,
+        6,
+        29
+      ],
+      "mod_code": [
+        "const long long int f ( const string n , const string x )",
+        "ret = red % MOD ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator==’ (operand types are ‘const string {aka const std::__cxx11::basic_string<char>}’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        3,
+        6,
+        29,
+        0
+      ],
+      "mod_code": [
+        "const long long int f ( const string n , const string x )",
+        "ret = red % MOD ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "const MAXN = 100 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘MAXN’ does not name a type"
+    },
+    {
+      "mod_line": [
+        3,
+        6,
+        29,
+        25
+      ],
+      "mod_code": [
+        "const long long int f ( const string n , const string x )",
+        "ret = red % MOD ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int n = strlen ( x ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator==’ (operand types are ‘const string {aka const std::__cxx11::basic_string<char>}’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        3,
+        6,
+        0
+      ],
+      "mod_code": [
+        "const long long int f ( const string n , const string x )",
+        "ret = red % MOD ;",
+        "const MAXN = 100 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘MAXN’ does not name a type"
+    },
+    {
+      "mod_line": [
+        3,
+        6,
+        0,
+        25
+      ],
+      "mod_code": [
+        "const long long int f ( const string n , const string x )",
+        "ret = red % MOD ;",
+        "const MAXN = 100 ;",
+        "int n = strlen ( x ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘MAXN’ does not name a type"
+    },
+    {
+      "mod_line": [
+        3,
+        6,
+        25
+      ],
+      "mod_code": [
+        "const long long int f ( const string n , const string x )",
+        "ret = red % MOD ;",
+        "int n = strlen ( x ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator==’ (operand types are ‘const string {aka const std::__cxx11::basic_string<char>}’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        3,
+        29
+      ],
+      "mod_code": [
+        "const long long int f ( const string n , const string x )",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator==’ (operand types are ‘const string {aka const std::__cxx11::basic_string<char>}’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        3,
+        29,
+        0
+      ],
+      "mod_code": [
+        "const long long int f ( const string n , const string x )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "const MAXN = 100 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘MAXN’ does not name a type"
+    },
+    {
+      "mod_line": [
+        3,
+        29,
+        0,
+        25
+      ],
+      "mod_code": [
+        "const long long int f ( const string n , const string x )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "const MAXN = 100 ;",
+        "int n = strlen ( x ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘MAXN’ does not name a type"
+    },
+    {
+      "mod_line": [
+        3,
+        29,
+        25
+      ],
+      "mod_code": [
+        "const long long int f ( const string n , const string x )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int n = strlen ( x ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator==’ (operand types are ‘const string {aka const std::__cxx11::basic_string<char>}’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        3,
+        0
+      ],
+      "mod_code": [
+        "const long long int f ( const string n , const string x )",
+        "const MAXN = 100 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘MAXN’ does not name a type"
+    },
+    {
+      "mod_line": [
+        3,
+        0,
+        25
+      ],
+      "mod_code": [
+        "const long long int f ( const string n , const string x )",
+        "const MAXN = 100 ;",
+        "int n = strlen ( x ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘MAXN’ does not name a type"
+    },
+    {
+      "mod_line": [
+        3,
+        25
+      ],
+      "mod_code": [
+        "const long long int f ( const string n , const string x )",
+        "int n = strlen ( x ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator==’ (operand types are ‘const string {aka const std::__cxx11::basic_string<char>}’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        6,
+        29
+      ],
+      "mod_code": [
+        "ret = red % MOD ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘red’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        29,
+        0
+      ],
+      "mod_code": [
+        "ret = red % MOD ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "const MAXN = 100 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘MAXN’ does not name a type"
+    },
+    {
+      "mod_line": [
+        6,
+        29,
+        0,
+        25
+      ],
+      "mod_code": [
+        "ret = red % MOD ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "const MAXN = 100 ;",
+        "int n = strlen ( x ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘MAXN’ does not name a type"
+    },
+    {
+      "mod_line": [
+        6,
+        29,
+        25
+      ],
+      "mod_code": [
+        "ret = red % MOD ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int n = strlen ( x ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘red’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        0
+      ],
+      "mod_code": [
+        "ret = red % MOD ;",
+        "const MAXN = 100 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘MAXN’ does not name a type"
+    },
+    {
+      "mod_line": [
+        6,
+        0,
+        25
+      ],
+      "mod_code": [
+        "ret = red % MOD ;",
+        "const MAXN = 100 ;",
+        "int n = strlen ( x ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘MAXN’ does not name a type"
+    },
+    {
+      "mod_line": [
+        6,
+        25
+      ],
+      "mod_code": [
+        "ret = red % MOD ;",
+        "int n = strlen ( x ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘red’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        29,
+        0
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "const MAXN = 100 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘MAXN’ does not name a type"
+    },
+    {
+      "mod_line": [
+        29,
+        0,
+        25
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "const MAXN = 100 ;",
+        "int n = strlen ( x ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘MAXN’ does not name a type"
+    },
+    {
+      "mod_line": [
+        29,
+        25
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int n = strlen ( x ) ;"
+      ],
+      "err_line": 25,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘const char*’ for argument ‘1’ to ‘size_t strlen(const char*)’"
+    },
+    {
+      "mod_line": [
+        0,
+        25
+      ],
+      "mod_code": [
+        "const MAXN = 100 ;",
+        "int n = strlen ( x ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘MAXN’ does not name a type"
+    }
+  ]
+}

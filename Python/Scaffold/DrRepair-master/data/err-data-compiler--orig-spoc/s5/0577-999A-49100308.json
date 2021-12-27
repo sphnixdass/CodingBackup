@@ -1,0 +1,407 @@
+{
+  "meta": {
+    "index": 577,
+    "hitid": "378G7J1SJLSXALFTSI7CJCYAG9DEWF",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "999A",
+    "subid": "49100308"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create integers n , k , forth , back with forth = 0 , back = 0 , create integer array a with size 105",
+      "code": "int n , k , a [ 105 ] , forth = 0 , back = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read n read k",
+      "code": "cin >> n >> k ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "for i = 0 to n exclusive , read a [ i ]",
+      "code": "for ( int i = 0 ; i < n ; i ++ ) cin >> a [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "create integers j , j1",
+      "code": "int j , j1 ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for j = 0 to n exclusive",
+      "code": "for ( j = 0 ; j < n ; j ++ )",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "if a [ j ] is greater than k , break loop",
+      "code": "if ( a [ j ] > k ) break ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "set forth to j",
+      "code": "forth = j ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "for j1 = n - 1 to j inclusive , decrementing j1",
+      "code": "for ( j1 = n - 1 ; j1 >= j ; j1 -- )",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "if a [ j1 ] is greater than k , break loop",
+      "code": "if ( a [ j1 ] > k ) break ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "set back to n - 1 - j1",
+      "code": "back = n - 1 - j1 ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "print forth + back print newline",
+      "code": "cout << forth + back << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int n , k , a = 0 , a [ 105 ] , forth = 0 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int a [105]’"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "int forth = j ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int forth’"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        1
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < n ; j ++ )",
+        "for ( int j1 = n - 1 ; j1 >= j ; j1 -- )",
+        "int n , k , a = 0 , a [ 105 ] , forth = 0 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int a [105]’"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        1,
+        7
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < n ; j ++ )",
+        "for ( int j1 = n - 1 ; j1 >= j ; j1 -- )",
+        "int n , k , a = 0 , a [ 105 ] , forth = 0 ;",
+        "int forth = j ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int a [105]’"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        1,
+        10
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < n ; j ++ )",
+        "for ( int j1 = n - 1 ; j1 >= j ; j1 -- )",
+        "int n , k , a = 0 , a [ 105 ] , forth = 0 ;",
+        "back = n - ( 1 - j1 ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int a [105]’"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        7
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < n ; j ++ )",
+        "for ( int j1 = n - 1 ; j1 >= j ; j1 -- )",
+        "int forth = j ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int forth’"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        7,
+        10
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < n ; j ++ )",
+        "for ( int j1 = n - 1 ; j1 >= j ; j1 -- )",
+        "int forth = j ;",
+        "back = n - ( 1 - j1 ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int forth’"
+    },
+    {
+      "mod_line": [
+        5,
+        1
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < n ; j ++ )",
+        "int n , k , a = 0 , a [ 105 ] , forth = 0 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int a [105]’"
+    },
+    {
+      "mod_line": [
+        5,
+        1,
+        7
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < n ; j ++ )",
+        "int n , k , a = 0 , a [ 105 ] , forth = 0 ;",
+        "int forth = j ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int a [105]’"
+    },
+    {
+      "mod_line": [
+        5,
+        1,
+        7,
+        10
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < n ; j ++ )",
+        "int n , k , a = 0 , a [ 105 ] , forth = 0 ;",
+        "int forth = j ;",
+        "back = n - ( 1 - j1 ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int a [105]’"
+    },
+    {
+      "mod_line": [
+        5,
+        1,
+        10
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < n ; j ++ )",
+        "int n , k , a = 0 , a [ 105 ] , forth = 0 ;",
+        "back = n - ( 1 - j1 ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int a [105]’"
+    },
+    {
+      "mod_line": [
+        5,
+        7
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < n ; j ++ )",
+        "int forth = j ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int forth’"
+    },
+    {
+      "mod_line": [
+        5,
+        7,
+        10
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < n ; j ++ )",
+        "int forth = j ;",
+        "back = n - ( 1 - j1 ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int forth’"
+    },
+    {
+      "mod_line": [
+        8,
+        1
+      ],
+      "mod_code": [
+        "for ( int j1 = n - 1 ; j1 >= j ; j1 -- )",
+        "int n , k , a = 0 , a [ 105 ] , forth = 0 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int a [105]’"
+    },
+    {
+      "mod_line": [
+        8,
+        1,
+        7
+      ],
+      "mod_code": [
+        "for ( int j1 = n - 1 ; j1 >= j ; j1 -- )",
+        "int n , k , a = 0 , a [ 105 ] , forth = 0 ;",
+        "int forth = j ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int a [105]’"
+    },
+    {
+      "mod_line": [
+        8,
+        1,
+        7,
+        10
+      ],
+      "mod_code": [
+        "for ( int j1 = n - 1 ; j1 >= j ; j1 -- )",
+        "int n , k , a = 0 , a [ 105 ] , forth = 0 ;",
+        "int forth = j ;",
+        "back = n - ( 1 - j1 ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int a [105]’"
+    },
+    {
+      "mod_line": [
+        8,
+        1,
+        10
+      ],
+      "mod_code": [
+        "for ( int j1 = n - 1 ; j1 >= j ; j1 -- )",
+        "int n , k , a = 0 , a [ 105 ] , forth = 0 ;",
+        "back = n - ( 1 - j1 ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int a [105]’"
+    },
+    {
+      "mod_line": [
+        8,
+        7
+      ],
+      "mod_code": [
+        "for ( int j1 = n - 1 ; j1 >= j ; j1 -- )",
+        "int forth = j ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int forth’"
+    },
+    {
+      "mod_line": [
+        8,
+        7,
+        10
+      ],
+      "mod_code": [
+        "for ( int j1 = n - 1 ; j1 >= j ; j1 -- )",
+        "int forth = j ;",
+        "back = n - ( 1 - j1 ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int forth’"
+    },
+    {
+      "mod_line": [
+        1,
+        7
+      ],
+      "mod_code": [
+        "int n , k , a = 0 , a [ 105 ] , forth = 0 ;",
+        "int forth = j ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int a [105]’"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        10
+      ],
+      "mod_code": [
+        "int n , k , a = 0 , a [ 105 ] , forth = 0 ;",
+        "int forth = j ;",
+        "back = n - ( 1 - j1 ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int a [105]’"
+    },
+    {
+      "mod_line": [
+        1,
+        10
+      ],
+      "mod_code": [
+        "int n , k , a = 0 , a [ 105 ] , forth = 0 ;",
+        "back = n - ( 1 - j1 ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int a [105]’"
+    },
+    {
+      "mod_line": [
+        7,
+        10
+      ],
+      "mod_code": [
+        "int forth = j ;",
+        "back = n - ( 1 - j1 ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int forth’"
+    }
+  ]
+}

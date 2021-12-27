@@ -1,0 +1,883 @@
+{
+  "meta": {
+    "index": 804,
+    "hitid": "3ZQA3IO31BLQLBCFP8LNVY2UOYEO1Y",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "571A",
+    "subid": "42109411"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare constant integer maxn = 3e5 + 10",
+      "code": "const int maxn = 3e5 + 10 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare long long array sum size maxn",
+      "code": "long long sum [ maxn ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "declare solve with long longs a , b , c , l as arguments , returning long long",
+      "code": "long long solve ( long long a , long long b , long long c , long long l )",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "if a is less than b + c , return long long casted 0 from function",
+      "code": "if ( a < b + c ) return ( long long ) 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "declare long long ans = minimum of a - b - c and l",
+      "code": "long long ans = min ( a - b - c , l ) ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "return ( ans + 1 ) * ( ans + 2 ) / 2",
+      "code": "return ( ans + 1 ) * ( ans + 2 ) / 2 ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 7,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 8,
+      "text": "declare long longs a , b , c , l",
+      "code": "long long a , b , c , l ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "while read a , b , c , l is true",
+      "code": "while ( cin >> a >> b >> c >> l )",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "let sum [ 0 ] be 1",
+      "code": "sum [ 0 ] = 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "for i = 1 to l inclusive , let sum [ i ] be ( i + 1 ) * ( i + 2 ) / 2 + sum [ i - 1 ]",
+      "code": "for ( long long i = 1 ; i <= l ; i ++ ) sum [ i ] = ( i + 1 ) * ( i + 2 ) / 2 + sum [ i - 1 ] ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "declare long long ans = sum [ l ]",
+      "code": "long long ans = sum [ l ] ;",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "for i = 0 to l inclusive",
+      "code": "for ( long long i = 0 ; i <= l ; i ++ )",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "decrement ans by result of run solve ( a + i , b , c , l - i )",
+      "code": "ans -= solve ( a + i , b , c , l - i ) ;",
+      "indent": 3
+    },
+    {
+      "line": 15,
+      "text": "decrement ans by result of run solve ( b + i , a , c , l - i )",
+      "code": "ans -= solve ( b + i , a , c , l - i ) ;",
+      "indent": 3
+    },
+    {
+      "line": 16,
+      "text": "decrement ans by result of run solve ( c + i , a , b , l - i )",
+      "code": "ans -= solve ( c + i , a , b , l - i ) ;",
+      "indent": 3
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "print ans and newline",
+      "code": "cout << ans << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "const maxn = 3e5 + 10 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "long long solve ( long long a , long long c , long long c , long long l )"
+      ],
+      "err_line": 2,
+      "err_msg": "redefinition of ‘long long int c’"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "long long ans = min ( a - b - c - l ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "return ( ans + 1 ) * ( ans + 2 ) / 2 ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= l ; i ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        4
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= l ; i ++ )",
+        "long long ans = min ( a - b - c - l ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        13,
+        4,
+        3
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= l ; i ++ )",
+        "long long ans = min ( a - b - c - l ) ;",
+        "if ( a < b + c ) return 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        13,
+        4,
+        3,
+        10
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= l ; i ++ )",
+        "long long ans = min ( a - b - c - l ) ;",
+        "if ( a < b + c ) return 1 ;",
+        "sum [ ' 0 ' ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        13,
+        4,
+        3,
+        5
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= l ; i ++ )",
+        "long long ans = min ( a - b - c - l ) ;",
+        "if ( a < b + c ) return 1 ;",
+        "return ( ans + 1 ) * ( ans + 2 ) / 2 ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        13,
+        4,
+        3,
+        0
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= l ; i ++ )",
+        "long long ans = min ( a - b - c - l ) ;",
+        "if ( a < b + c ) return 1 ;",
+        "const maxn = 3e5 + 10 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        13,
+        4,
+        10
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= l ; i ++ )",
+        "long long ans = min ( a - b - c - l ) ;",
+        "sum [ ' 0 ' ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        13,
+        4,
+        10,
+        5
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= l ; i ++ )",
+        "long long ans = min ( a - b - c - l ) ;",
+        "sum [ ' 0 ' ] = 1 ;",
+        "return ( ans + 1 ) * ( ans + 2 ) / 2 ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        13,
+        4,
+        10,
+        0
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= l ; i ++ )",
+        "long long ans = min ( a - b - c - l ) ;",
+        "sum [ ' 0 ' ] = 1 ;",
+        "const maxn = 3e5 + 10 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        13,
+        4,
+        5
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= l ; i ++ )",
+        "long long ans = min ( a - b - c - l ) ;",
+        "return ( ans + 1 ) * ( ans + 2 ) / 2 ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        13,
+        4,
+        5,
+        0
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= l ; i ++ )",
+        "long long ans = min ( a - b - c - l ) ;",
+        "return ( ans + 1 ) * ( ans + 2 ) / 2 ) ;",
+        "const maxn = 3e5 + 10 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        13,
+        4,
+        0
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= l ; i ++ )",
+        "long long ans = min ( a - b - c - l ) ;",
+        "const maxn = 3e5 + 10 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        13,
+        3
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= l ; i ++ )",
+        "if ( a < b + c ) return 1 ;"
+      ],
+      "err_line": 13,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        3,
+        10
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= l ; i ++ )",
+        "if ( a < b + c ) return 1 ;",
+        "sum [ ' 0 ' ] = 1 ;"
+      ],
+      "err_line": 13,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        3,
+        10,
+        5
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= l ; i ++ )",
+        "if ( a < b + c ) return 1 ;",
+        "sum [ ' 0 ' ] = 1 ;",
+        "return ( ans + 1 ) * ( ans + 2 ) / 2 ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        13,
+        3,
+        10,
+        0
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= l ; i ++ )",
+        "if ( a < b + c ) return 1 ;",
+        "sum [ ' 0 ' ] = 1 ;",
+        "const maxn = 3e5 + 10 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        13,
+        3,
+        5
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= l ; i ++ )",
+        "if ( a < b + c ) return 1 ;",
+        "return ( ans + 1 ) * ( ans + 2 ) / 2 ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        13,
+        3,
+        5,
+        0
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= l ; i ++ )",
+        "if ( a < b + c ) return 1 ;",
+        "return ( ans + 1 ) * ( ans + 2 ) / 2 ) ;",
+        "const maxn = 3e5 + 10 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        13,
+        3,
+        0
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= l ; i ++ )",
+        "if ( a < b + c ) return 1 ;",
+        "const maxn = 3e5 + 10 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        13,
+        10
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= l ; i ++ )",
+        "sum [ ' 0 ' ] = 1 ;"
+      ],
+      "err_line": 13,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        10,
+        5
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= l ; i ++ )",
+        "sum [ ' 0 ' ] = 1 ;",
+        "return ( ans + 1 ) * ( ans + 2 ) / 2 ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        13,
+        10,
+        5,
+        0
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= l ; i ++ )",
+        "sum [ ' 0 ' ] = 1 ;",
+        "return ( ans + 1 ) * ( ans + 2 ) / 2 ) ;",
+        "const maxn = 3e5 + 10 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        13,
+        10,
+        0
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= l ; i ++ )",
+        "sum [ ' 0 ' ] = 1 ;",
+        "const maxn = 3e5 + 10 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        13,
+        5
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= l ; i ++ )",
+        "return ( ans + 1 ) * ( ans + 2 ) / 2 ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        13,
+        5,
+        0
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= l ; i ++ )",
+        "return ( ans + 1 ) * ( ans + 2 ) / 2 ) ;",
+        "const maxn = 3e5 + 10 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        13,
+        0
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= l ; i ++ )",
+        "const maxn = 3e5 + 10 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        4,
+        3
+      ],
+      "mod_code": [
+        "long long ans = min ( a - b - c - l ) ;",
+        "if ( a < b + c ) return 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        4,
+        3,
+        10
+      ],
+      "mod_code": [
+        "long long ans = min ( a - b - c - l ) ;",
+        "if ( a < b + c ) return 1 ;",
+        "sum [ ' 0 ' ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        4,
+        3,
+        10,
+        5
+      ],
+      "mod_code": [
+        "long long ans = min ( a - b - c - l ) ;",
+        "if ( a < b + c ) return 1 ;",
+        "sum [ ' 0 ' ] = 1 ;",
+        "return ( ans + 1 ) * ( ans + 2 ) / 2 ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        4,
+        3,
+        10,
+        0
+      ],
+      "mod_code": [
+        "long long ans = min ( a - b - c - l ) ;",
+        "if ( a < b + c ) return 1 ;",
+        "sum [ ' 0 ' ] = 1 ;",
+        "const maxn = 3e5 + 10 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        4,
+        3,
+        5
+      ],
+      "mod_code": [
+        "long long ans = min ( a - b - c - l ) ;",
+        "if ( a < b + c ) return 1 ;",
+        "return ( ans + 1 ) * ( ans + 2 ) / 2 ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        4,
+        3,
+        5,
+        0
+      ],
+      "mod_code": [
+        "long long ans = min ( a - b - c - l ) ;",
+        "if ( a < b + c ) return 1 ;",
+        "return ( ans + 1 ) * ( ans + 2 ) / 2 ) ;",
+        "const maxn = 3e5 + 10 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        4,
+        3,
+        0
+      ],
+      "mod_code": [
+        "long long ans = min ( a - b - c - l ) ;",
+        "if ( a < b + c ) return 1 ;",
+        "const maxn = 3e5 + 10 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        4,
+        10
+      ],
+      "mod_code": [
+        "long long ans = min ( a - b - c - l ) ;",
+        "sum [ ' 0 ' ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        4,
+        10,
+        5
+      ],
+      "mod_code": [
+        "long long ans = min ( a - b - c - l ) ;",
+        "sum [ ' 0 ' ] = 1 ;",
+        "return ( ans + 1 ) * ( ans + 2 ) / 2 ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        4,
+        10,
+        5,
+        0
+      ],
+      "mod_code": [
+        "long long ans = min ( a - b - c - l ) ;",
+        "sum [ ' 0 ' ] = 1 ;",
+        "return ( ans + 1 ) * ( ans + 2 ) / 2 ) ;",
+        "const maxn = 3e5 + 10 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        4,
+        10,
+        0
+      ],
+      "mod_code": [
+        "long long ans = min ( a - b - c - l ) ;",
+        "sum [ ' 0 ' ] = 1 ;",
+        "const maxn = 3e5 + 10 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        4,
+        5
+      ],
+      "mod_code": [
+        "long long ans = min ( a - b - c - l ) ;",
+        "return ( ans + 1 ) * ( ans + 2 ) / 2 ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        0
+      ],
+      "mod_code": [
+        "long long ans = min ( a - b - c - l ) ;",
+        "return ( ans + 1 ) * ( ans + 2 ) / 2 ) ;",
+        "const maxn = 3e5 + 10 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        4,
+        0
+      ],
+      "mod_code": [
+        "long long ans = min ( a - b - c - l ) ;",
+        "const maxn = 3e5 + 10 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        3,
+        10,
+        5
+      ],
+      "mod_code": [
+        "if ( a < b + c ) return 1 ;",
+        "sum [ ' 0 ' ] = 1 ;",
+        "return ( ans + 1 ) * ( ans + 2 ) / 2 ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        10,
+        5,
+        0
+      ],
+      "mod_code": [
+        "if ( a < b + c ) return 1 ;",
+        "sum [ ' 0 ' ] = 1 ;",
+        "return ( ans + 1 ) * ( ans + 2 ) / 2 ) ;",
+        "const maxn = 3e5 + 10 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        3,
+        10,
+        0
+      ],
+      "mod_code": [
+        "if ( a < b + c ) return 1 ;",
+        "sum [ ' 0 ' ] = 1 ;",
+        "const maxn = 3e5 + 10 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        3,
+        5
+      ],
+      "mod_code": [
+        "if ( a < b + c ) return 1 ;",
+        "return ( ans + 1 ) * ( ans + 2 ) / 2 ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        5,
+        0
+      ],
+      "mod_code": [
+        "if ( a < b + c ) return 1 ;",
+        "return ( ans + 1 ) * ( ans + 2 ) / 2 ) ;",
+        "const maxn = 3e5 + 10 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        3,
+        0
+      ],
+      "mod_code": [
+        "if ( a < b + c ) return 1 ;",
+        "const maxn = 3e5 + 10 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        10,
+        5
+      ],
+      "mod_code": [
+        "sum [ ' 0 ' ] = 1 ;",
+        "return ( ans + 1 ) * ( ans + 2 ) / 2 ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        5,
+        0
+      ],
+      "mod_code": [
+        "sum [ ' 0 ' ] = 1 ;",
+        "return ( ans + 1 ) * ( ans + 2 ) / 2 ) ;",
+        "const maxn = 3e5 + 10 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        10,
+        0
+      ],
+      "mod_code": [
+        "sum [ ' 0 ' ] = 1 ;",
+        "const maxn = 3e5 + 10 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        5,
+        0
+      ],
+      "mod_code": [
+        "return ( ans + 1 ) * ( ans + 2 ) / 2 ) ;",
+        "const maxn = 3e5 + 10 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    }
+  ]
+}

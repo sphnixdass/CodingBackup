@@ -1,0 +1,629 @@
+{
+  "meta": {
+    "index": 2396,
+    "hitid": "3P0I4CQYVY1JMCSIMWA8OOSOJOOOWN",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "543A",
+    "subid": "41620950"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare integers n , m and b",
+      "code": "int n , m , b ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create long long mod",
+      "code": "long long mod ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "declare long long array a with size 505",
+      "code": "long long a [ 505 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "let dp be long long 3d array with size 2 by 505 by 505",
+      "code": "long long dp [ 2 ] [ 505 ] [ 505 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "read n , m , b and mod",
+      "code": "cin >> n >> m >> b >> mod ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 1 to n inclusive read a [ i ]",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) { cin >> a [ i ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for i = 1 to n inclusive , dp [ i % 2 ] [ 0 ] [ 0 ] = 1L",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) dp [ i % 2 ] [ 0 ] [ 0 ] = 1L ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "for i = 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "for integer j = 1 to m inclusive",
+      "code": "for ( int j = 1 ; j <= m ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "for k = 0 to b inclusive",
+      "code": "for ( int k = 0 ; k <= b ; k ++ )",
+      "indent": 3
+    },
+    {
+      "line": 11,
+      "text": "if k is less than a [ i ]",
+      "code": "if ( k < a [ i ] )",
+      "indent": 4
+    },
+    {
+      "line": 12,
+      "text": "dp [ i % 2 ] [ j ] [ k ] = dp [ ( i - 1 ) % 2 ] [ j ] [ k ] % mod",
+      "code": "dp [ i % 2 ] [ j ] [ k ] = dp [ ( i - 1 ) % 2 ] [ j ] [ k ] % mod ;",
+      "indent": 5
+    },
+    {
+      "line": 13,
+      "text": "else",
+      "code": "else",
+      "indent": 4
+    },
+    {
+      "line": 14,
+      "text": "dp [ i % 2 ] [ j ] [ k ] = ( dp [ i % 2 ] [ j - 1 ] [ k - a [ i ] ] + dp [ ( i - 1 ) % 2 ] [ j ] [ k ] ) % mod",
+      "code": "dp [ i % 2 ] [ j ] [ k ] = ( dp [ i % 2 ] [ j - 1 ] [ k - a [ i ] ] + dp [ ( i - 1 ) % 2 ] [ j ] [ k ] ) % mod ;",
+      "indent": 5
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "declare long long ans = 0",
+      "code": "long long ans = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "for i = 0 to b inclusive , ans = ( ans + dp [ n % 2 ] [ m ] [ i ] ) % mod",
+      "code": "for ( int i = 0 ; i <= b ; i ++ ) { ans = ( ans + dp [ n % 2 ] [ m ] [ i ] ) % mod ; }",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "print ans % mod",
+      "code": "cout << ans % mod << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 22,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "dp [ i % 2 ] [ j ] [ k ] = dp [ ( i - 1 ) % 2 ] [ j ] % mod ;"
+      ],
+      "err_line": 12,
+      "err_msg": "invalid operands of types ‘long long int [505]’ and ‘long long int’ to binary ‘operator%’"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "dp [ i % 2 ] [ j ] [ k ] = ( dp [ i % 2 ] [ j - 1 ] [ k - 1 ] [ k - 1 ] [ j ] ) % mod % mod ;"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int l , m , b ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "long long * mod ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘long long int*’)"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "long long dp [ 2 ] [ 505 ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "if ( k [ i ] < a [ i ] )"
+      ],
+      "err_line": 11,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "n"
+      ],
+      "err_line": 14,
+      "err_msg": "expected ‘;’ before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "dp [ i % 2 ] [ j ] [ k ] = ( dp [ i % 2 ] [ j - 1 ] [ k - 1 ] [ k - 1 ] [ j ] ) % mod ;"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        12,
+        14
+      ],
+      "mod_code": [
+        "dp [ i % 2 ] [ j ] [ k ] = dp [ ( i - 1 ) % 2 ] [ j ] % mod ;",
+        "dp [ i % 2 ] [ j ] [ k ] = ( dp [ i % 2 ] [ j - 1 ] [ k - 1 ] [ k - 1 ] [ j ] ) % mod % mod ;"
+      ],
+      "err_line": 12,
+      "err_msg": "invalid operands of types ‘long long int [505]’ and ‘long long int’ to binary ‘operator%’"
+    },
+    {
+      "mod_line": [
+        12,
+        14,
+        19
+      ],
+      "mod_code": [
+        "dp [ i % 2 ] [ j ] [ k ] = dp [ ( i - 1 ) % 2 ] [ j ] % mod ;",
+        "dp [ i % 2 ] [ j ] [ k ] = ( dp [ i % 2 ] [ j - 1 ] [ k - 1 ] [ k - 1 ] [ j ] ) % mod % mod ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) ans = ( ans + dp [ n % 2 ] [ m ] [ m ] ) % mod ;"
+      ],
+      "err_line": 12,
+      "err_msg": "invalid operands of types ‘long long int [505]’ and ‘long long int’ to binary ‘operator%’"
+    },
+    {
+      "mod_line": [
+        12,
+        14,
+        19,
+        1
+      ],
+      "mod_code": [
+        "dp [ i % 2 ] [ j ] [ k ] = dp [ ( i - 1 ) % 2 ] [ j ] % mod ;",
+        "dp [ i % 2 ] [ j ] [ k ] = ( dp [ i % 2 ] [ j - 1 ] [ k - 1 ] [ k - 1 ] [ j ] ) % mod % mod ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) ans = ( ans + dp [ n % 2 ] [ m ] [ m ] ) % mod ;",
+        "long long * mod ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘long long int*’)"
+    },
+    {
+      "mod_line": [
+        12,
+        14,
+        19
+      ],
+      "mod_code": [
+        "dp [ i % 2 ] [ j ] [ k ] = dp [ ( i - 1 ) % 2 ] [ j ] % mod ;",
+        "dp [ i % 2 ] [ j ] [ k ] = ( dp [ i % 2 ] [ j - 1 ] [ k - 1 ] [ k - 1 ] [ j ] ) % mod % mod ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) { ans = ( ans + dp [ n % 2 ] [ m ] [ m ] ) % mod ; }"
+      ],
+      "err_line": 12,
+      "err_msg": "invalid operands of types ‘long long int [505]’ and ‘long long int’ to binary ‘operator%’"
+    },
+    {
+      "mod_line": [
+        12,
+        14,
+        19,
+        1
+      ],
+      "mod_code": [
+        "dp [ i % 2 ] [ j ] [ k ] = dp [ ( i - 1 ) % 2 ] [ j ] % mod ;",
+        "dp [ i % 2 ] [ j ] [ k ] = ( dp [ i % 2 ] [ j - 1 ] [ k - 1 ] [ k - 1 ] [ j ] ) % mod % mod ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) { ans = ( ans + dp [ n % 2 ] [ m ] [ m ] ) % mod ; }",
+        "long long * mod ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘long long int*’)"
+    },
+    {
+      "mod_line": [
+        12,
+        14,
+        1
+      ],
+      "mod_code": [
+        "dp [ i % 2 ] [ j ] [ k ] = dp [ ( i - 1 ) % 2 ] [ j ] % mod ;",
+        "dp [ i % 2 ] [ j ] [ k ] = ( dp [ i % 2 ] [ j - 1 ] [ k - 1 ] [ k - 1 ] [ j ] ) % mod % mod ;",
+        "long long * mod ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘long long int*’)"
+    },
+    {
+      "mod_line": [
+        12,
+        19
+      ],
+      "mod_code": [
+        "dp [ i % 2 ] [ j ] [ k ] = dp [ ( i - 1 ) % 2 ] [ j ] % mod ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) ans = ( ans + dp [ n % 2 ] [ m ] [ m ] ) % mod ;"
+      ],
+      "err_line": 12,
+      "err_msg": "invalid operands of types ‘long long int [505]’ and ‘long long int’ to binary ‘operator%’"
+    },
+    {
+      "mod_line": [
+        12,
+        19,
+        14
+      ],
+      "mod_code": [
+        "dp [ i % 2 ] [ j ] [ k ] = dp [ ( i - 1 ) % 2 ] [ j ] % mod ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) ans = ( ans + dp [ n % 2 ] [ m ] [ m ] ) % mod ;",
+        "dp [ i % 2 ] [ j ] [ k ] = ( dp [ i % 2 ] [ j - 1 ] [ k - 1 ] [ k - 1 ] [ j ] ) % mod ;"
+      ],
+      "err_line": 12,
+      "err_msg": "invalid operands of types ‘long long int [505]’ and ‘long long int’ to binary ‘operator%’"
+    },
+    {
+      "mod_line": [
+        12,
+        19,
+        14,
+        1
+      ],
+      "mod_code": [
+        "dp [ i % 2 ] [ j ] [ k ] = dp [ ( i - 1 ) % 2 ] [ j ] % mod ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) ans = ( ans + dp [ n % 2 ] [ m ] [ m ] ) % mod ;",
+        "dp [ i % 2 ] [ j ] [ k ] = ( dp [ i % 2 ] [ j - 1 ] [ k - 1 ] [ k - 1 ] [ j ] ) % mod ;",
+        "long long * mod ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘long long int*’)"
+    },
+    {
+      "mod_line": [
+        12,
+        19,
+        1
+      ],
+      "mod_code": [
+        "dp [ i % 2 ] [ j ] [ k ] = dp [ ( i - 1 ) % 2 ] [ j ] % mod ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) ans = ( ans + dp [ n % 2 ] [ m ] [ m ] ) % mod ;",
+        "long long * mod ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘long long int*’)"
+    },
+    {
+      "mod_line": [
+        12,
+        14
+      ],
+      "mod_code": [
+        "dp [ i % 2 ] [ j ] [ k ] = dp [ ( i - 1 ) % 2 ] [ j ] % mod ;",
+        "dp [ i % 2 ] [ j ] [ k ] = ( dp [ i % 2 ] [ j - 1 ] [ k - 1 ] [ k - 1 ] [ j ] ) % mod ;"
+      ],
+      "err_line": 12,
+      "err_msg": "invalid operands of types ‘long long int [505]’ and ‘long long int’ to binary ‘operator%’"
+    },
+    {
+      "mod_line": [
+        12,
+        14,
+        19
+      ],
+      "mod_code": [
+        "dp [ i % 2 ] [ j ] [ k ] = dp [ ( i - 1 ) % 2 ] [ j ] % mod ;",
+        "dp [ i % 2 ] [ j ] [ k ] = ( dp [ i % 2 ] [ j - 1 ] [ k - 1 ] [ k - 1 ] [ j ] ) % mod ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) { ans = ( ans + dp [ n % 2 ] [ m ] [ m ] ) % mod ; }"
+      ],
+      "err_line": 12,
+      "err_msg": "invalid operands of types ‘long long int [505]’ and ‘long long int’ to binary ‘operator%’"
+    },
+    {
+      "mod_line": [
+        12,
+        14,
+        19,
+        1
+      ],
+      "mod_code": [
+        "dp [ i % 2 ] [ j ] [ k ] = dp [ ( i - 1 ) % 2 ] [ j ] % mod ;",
+        "dp [ i % 2 ] [ j ] [ k ] = ( dp [ i % 2 ] [ j - 1 ] [ k - 1 ] [ k - 1 ] [ j ] ) % mod ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) { ans = ( ans + dp [ n % 2 ] [ m ] [ m ] ) % mod ; }",
+        "long long * mod ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘long long int*’)"
+    },
+    {
+      "mod_line": [
+        12,
+        14,
+        1
+      ],
+      "mod_code": [
+        "dp [ i % 2 ] [ j ] [ k ] = dp [ ( i - 1 ) % 2 ] [ j ] % mod ;",
+        "dp [ i % 2 ] [ j ] [ k ] = ( dp [ i % 2 ] [ j - 1 ] [ k - 1 ] [ k - 1 ] [ j ] ) % mod ;",
+        "long long * mod ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘long long int*’)"
+    },
+    {
+      "mod_line": [
+        12,
+        19
+      ],
+      "mod_code": [
+        "dp [ i % 2 ] [ j ] [ k ] = dp [ ( i - 1 ) % 2 ] [ j ] % mod ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) { ans = ( ans + dp [ n % 2 ] [ m ] [ m ] ) % mod ; }"
+      ],
+      "err_line": 12,
+      "err_msg": "invalid operands of types ‘long long int [505]’ and ‘long long int’ to binary ‘operator%’"
+    },
+    {
+      "mod_line": [
+        12,
+        19,
+        1
+      ],
+      "mod_code": [
+        "dp [ i % 2 ] [ j ] [ k ] = dp [ ( i - 1 ) % 2 ] [ j ] % mod ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) { ans = ( ans + dp [ n % 2 ] [ m ] [ m ] ) % mod ; }",
+        "long long * mod ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘long long int*’)"
+    },
+    {
+      "mod_line": [
+        12,
+        1
+      ],
+      "mod_code": [
+        "dp [ i % 2 ] [ j ] [ k ] = dp [ ( i - 1 ) % 2 ] [ j ] % mod ;",
+        "long long * mod ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘long long int*’)"
+    },
+    {
+      "mod_line": [
+        14,
+        19
+      ],
+      "mod_code": [
+        "dp [ i % 2 ] [ j ] [ k ] = ( dp [ i % 2 ] [ j - 1 ] [ k - 1 ] [ k - 1 ] [ j ] ) % mod % mod ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) ans = ( ans + dp [ n % 2 ] [ m ] [ m ] ) % mod ;"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        14,
+        19,
+        1
+      ],
+      "mod_code": [
+        "dp [ i % 2 ] [ j ] [ k ] = ( dp [ i % 2 ] [ j - 1 ] [ k - 1 ] [ k - 1 ] [ j ] ) % mod % mod ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) ans = ( ans + dp [ n % 2 ] [ m ] [ m ] ) % mod ;",
+        "long long * mod ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘long long int*’)"
+    },
+    {
+      "mod_line": [
+        14,
+        19
+      ],
+      "mod_code": [
+        "dp [ i % 2 ] [ j ] [ k ] = ( dp [ i % 2 ] [ j - 1 ] [ k - 1 ] [ k - 1 ] [ j ] ) % mod % mod ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) { ans = ( ans + dp [ n % 2 ] [ m ] [ m ] ) % mod ; }"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        14,
+        19,
+        1
+      ],
+      "mod_code": [
+        "dp [ i % 2 ] [ j ] [ k ] = ( dp [ i % 2 ] [ j - 1 ] [ k - 1 ] [ k - 1 ] [ j ] ) % mod % mod ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) { ans = ( ans + dp [ n % 2 ] [ m ] [ m ] ) % mod ; }",
+        "long long * mod ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘long long int*’)"
+    },
+    {
+      "mod_line": [
+        14,
+        1
+      ],
+      "mod_code": [
+        "dp [ i % 2 ] [ j ] [ k ] = ( dp [ i % 2 ] [ j - 1 ] [ k - 1 ] [ k - 1 ] [ j ] ) % mod % mod ;",
+        "long long * mod ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘long long int*’)"
+    },
+    {
+      "mod_line": [
+        19,
+        14
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i <= b ; i ++ ) ans = ( ans + dp [ n % 2 ] [ m ] [ m ] ) % mod ;",
+        "dp [ i % 2 ] [ j ] [ k ] = ( dp [ i % 2 ] [ j - 1 ] [ k - 1 ] [ k - 1 ] [ j ] ) % mod ;"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        19,
+        14,
+        1
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i <= b ; i ++ ) ans = ( ans + dp [ n % 2 ] [ m ] [ m ] ) % mod ;",
+        "dp [ i % 2 ] [ j ] [ k ] = ( dp [ i % 2 ] [ j - 1 ] [ k - 1 ] [ k - 1 ] [ j ] ) % mod ;",
+        "long long * mod ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘long long int*’)"
+    },
+    {
+      "mod_line": [
+        19,
+        1
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i <= b ; i ++ ) ans = ( ans + dp [ n % 2 ] [ m ] [ m ] ) % mod ;",
+        "long long * mod ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘long long int*’)"
+    },
+    {
+      "mod_line": [
+        14,
+        19
+      ],
+      "mod_code": [
+        "dp [ i % 2 ] [ j ] [ k ] = ( dp [ i % 2 ] [ j - 1 ] [ k - 1 ] [ k - 1 ] [ j ] ) % mod ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) { ans = ( ans + dp [ n % 2 ] [ m ] [ m ] ) % mod ; }"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        14,
+        19,
+        1
+      ],
+      "mod_code": [
+        "dp [ i % 2 ] [ j ] [ k ] = ( dp [ i % 2 ] [ j - 1 ] [ k - 1 ] [ k - 1 ] [ j ] ) % mod ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) { ans = ( ans + dp [ n % 2 ] [ m ] [ m ] ) % mod ; }",
+        "long long * mod ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘long long int*’)"
+    },
+    {
+      "mod_line": [
+        14,
+        1
+      ],
+      "mod_code": [
+        "dp [ i % 2 ] [ j ] [ k ] = ( dp [ i % 2 ] [ j - 1 ] [ k - 1 ] [ k - 1 ] [ j ] ) % mod ;",
+        "long long * mod ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘long long int*’)"
+    },
+    {
+      "mod_line": [
+        19,
+        1
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i <= b ; i ++ ) { ans = ( ans + dp [ n % 2 ] [ m ] [ m ] ) % mod ; }",
+        "long long * mod ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘long long int*’)"
+    }
+  ]
+}

@@ -1,0 +1,921 @@
+{
+  "meta": {
+    "index": 786,
+    "hitid": "36AZSFEYZ4UMOT34SH0QW29B632VBQ",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "571A",
+    "subid": "42129009"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare constant integer nmax = 1e5 + 2",
+      "code": "const int nmax = 1e5 + 2 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare constant long long mod = 1e9 + 7",
+      "code": "const long long mod = 1e9 + 7 ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "declare long longs a , b , c , l",
+      "code": "long long a , b , c , l ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "declare hishab with long longs x , y as arguments , returning long long",
+      "code": "long long hishab ( long long x , long long y )",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "let x be minimum of x and y",
+      "code": "x = min ( x , y ) ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "return ( x + 1 ) * ( x + 2 ) / 2",
+      "code": "return ( x + 1 ) * ( x + 2 ) / 2 ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 7,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 8,
+      "text": "while read a , b , c , l is true",
+      "code": "while ( cin >> a >> b >> c >> l )",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "declare long longs jhamela = 0 , shob = 0",
+      "code": "long long jhamela = 0 , shob = 0 ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "for i = 0 to l inclusive",
+      "code": "for ( long long i = 0 ; i <= l ; i ++ )",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "if a + i is greater than or equal to b + c increment jhamela by result of run hishab ( ( i + a - b - c ) / 2 , i )",
+      "code": "if ( a + i >= b + c ) { jhamela += hishab ( ( i + a - b - c ) / 2 , i ) ; }",
+      "indent": 3
+    },
+    {
+      "line": 12,
+      "text": "if b + i is greater than or equal to a + c increment jhamela by result of run hishab ( ( i + b - a - c ) / 2 , i )",
+      "code": "if ( b + i >= a + c ) { jhamela += hishab ( ( i + b - a - c ) / 2 , i ) ; }",
+      "indent": 3
+    },
+    {
+      "line": 13,
+      "text": "if c + i is greater than or equal to b + a increment jhamela by result of run hishab ( ( i + c - b - a ) / 2 , i )",
+      "code": "if ( c + i >= b + a ) { jhamela += hishab ( ( i + c - b - a ) / 2 , i ) ; }",
+      "indent": 3
+    },
+    {
+      "line": 14,
+      "text": "increment shob by result of run hishab by i and LLONG_MAX",
+      "code": "shob += hishab ( i , LLONG_MAX ) ;",
+      "indent": 3
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "if shob - jhamela is less than 0",
+      "code": "if ( shob - jhamela < 0 )",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "print \" 0 \" and newline",
+      "code": "cout << \" 0 \" << endl ;",
+      "indent": 3
+    },
+    {
+      "line": 18,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 19,
+      "text": "print shob - jhamela and newline",
+      "code": "cout << shob - jhamela << endl ;",
+      "indent": 3
+    },
+    {
+      "line": 20,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 22,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "long long hishab ( long long x , long long y ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "return ( x + 1 ) * ( x + 2 ) / 2 ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= l ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "if ( a + i >= b + c ) jhamela += hishab ( ( i + a - b - c ) / 2 ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "too few arguments to function ‘long long int hishab(long long int, long long int)’"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "if ( b + i >= a + c ) jhamela += hishab ( ( i + b - a - c ) / 2 ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "too few arguments to function ‘long long int hishab(long long int, long long int)’"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "if ( c + i >= b + a ) jhamela += hishab ( ( i + c - b - a ) / 2 ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "too few arguments to function ‘long long int hishab(long long int, long long int)’"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "shob += hishab ( i + i ) ;"
+      ],
+      "err_line": 14,
+      "err_msg": "too few arguments to function ‘long long int hishab(long long int, long long int)’"
+    },
+    {
+      "mod_line": [
+        3,
+        8
+      ],
+      "mod_code": [
+        "long long hishab ( long long x , long long y ) ;",
+        "while ( cin >> a >> b >> c )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        8,
+        14
+      ],
+      "mod_code": [
+        "long long hishab ( long long x , long long y ) ;",
+        "while ( cin >> a >> b >> c )",
+        "shob += hishab ( i + i ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        8,
+        14,
+        5
+      ],
+      "mod_code": [
+        "long long hishab ( long long x , long long y ) ;",
+        "while ( cin >> a >> b >> c )",
+        "shob += hishab ( i + i ) ;",
+        "return ( x + 1 ) * ( x + 2 ) / 2 ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        8,
+        14,
+        13
+      ],
+      "mod_code": [
+        "long long hishab ( long long x , long long y ) ;",
+        "while ( cin >> a >> b >> c )",
+        "shob += hishab ( i + i ) ;",
+        "if ( c + i >= b + a ) jhamela += hishab ( ( i + c - b - a ) / 2 ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        8,
+        14,
+        10
+      ],
+      "mod_code": [
+        "long long hishab ( long long x , long long y ) ;",
+        "while ( cin >> a >> b >> c )",
+        "shob += hishab ( i + i ) ;",
+        "for ( i = 0 ; i <= l ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        8,
+        5
+      ],
+      "mod_code": [
+        "long long hishab ( long long x , long long y ) ;",
+        "while ( cin >> a >> b >> c )",
+        "return ( x + 1 ) * ( x + 2 ) / 2 ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        8,
+        5,
+        13
+      ],
+      "mod_code": [
+        "long long hishab ( long long x , long long y ) ;",
+        "while ( cin >> a >> b >> c )",
+        "return ( x + 1 ) * ( x + 2 ) / 2 ) ;",
+        "if ( c + i >= b + a ) jhamela += hishab ( ( i + c - b - a ) / 2 ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        8,
+        5,
+        10
+      ],
+      "mod_code": [
+        "long long hishab ( long long x , long long y ) ;",
+        "while ( cin >> a >> b >> c )",
+        "return ( x + 1 ) * ( x + 2 ) / 2 ) ;",
+        "for ( i = 0 ; i <= l ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        8,
+        13
+      ],
+      "mod_code": [
+        "long long hishab ( long long x , long long y ) ;",
+        "while ( cin >> a >> b >> c )",
+        "if ( c + i >= b + a ) jhamela += hishab ( ( i + c - b - a ) / 2 ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        8,
+        13,
+        10
+      ],
+      "mod_code": [
+        "long long hishab ( long long x , long long y ) ;",
+        "while ( cin >> a >> b >> c )",
+        "if ( c + i >= b + a ) jhamela += hishab ( ( i + c - b - a ) / 2 ) ;",
+        "for ( i = 0 ; i <= l ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        8,
+        10
+      ],
+      "mod_code": [
+        "long long hishab ( long long x , long long y ) ;",
+        "while ( cin >> a >> b >> c )",
+        "for ( i = 0 ; i <= l ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        14
+      ],
+      "mod_code": [
+        "long long hishab ( long long x , long long y ) ;",
+        "shob += hishab ( i + i ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        14,
+        5
+      ],
+      "mod_code": [
+        "long long hishab ( long long x , long long y ) ;",
+        "shob += hishab ( i + i ) ;",
+        "return ( x + 1 ) * ( x + 2 ) / 2 ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        14,
+        5,
+        13
+      ],
+      "mod_code": [
+        "long long hishab ( long long x , long long y ) ;",
+        "shob += hishab ( i + i ) ;",
+        "return ( x + 1 ) * ( x + 2 ) / 2 ) ;",
+        "if ( c + i >= b + a ) jhamela += hishab ( ( i + c - b - a ) / 2 ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        14,
+        5,
+        10
+      ],
+      "mod_code": [
+        "long long hishab ( long long x , long long y ) ;",
+        "shob += hishab ( i + i ) ;",
+        "return ( x + 1 ) * ( x + 2 ) / 2 ) ;",
+        "for ( i = 0 ; i <= l ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        14,
+        13
+      ],
+      "mod_code": [
+        "long long hishab ( long long x , long long y ) ;",
+        "shob += hishab ( i + i ) ;",
+        "if ( c + i >= b + a ) jhamela += hishab ( ( i + c - b - a ) / 2 ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        14,
+        13,
+        10
+      ],
+      "mod_code": [
+        "long long hishab ( long long x , long long y ) ;",
+        "shob += hishab ( i + i ) ;",
+        "if ( c + i >= b + a ) jhamela += hishab ( ( i + c - b - a ) / 2 ) ;",
+        "for ( i = 0 ; i <= l ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        14,
+        10
+      ],
+      "mod_code": [
+        "long long hishab ( long long x , long long y ) ;",
+        "shob += hishab ( i + i ) ;",
+        "for ( i = 0 ; i <= l ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        5
+      ],
+      "mod_code": [
+        "long long hishab ( long long x , long long y ) ;",
+        "return ( x + 1 ) * ( x + 2 ) / 2 ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        5,
+        13
+      ],
+      "mod_code": [
+        "long long hishab ( long long x , long long y ) ;",
+        "return ( x + 1 ) * ( x + 2 ) / 2 ) ;",
+        "if ( c + i >= b + a ) jhamela += hishab ( ( i + c - b - a ) / 2 ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        5,
+        13,
+        10
+      ],
+      "mod_code": [
+        "long long hishab ( long long x , long long y ) ;",
+        "return ( x + 1 ) * ( x + 2 ) / 2 ) ;",
+        "if ( c + i >= b + a ) jhamela += hishab ( ( i + c - b - a ) / 2 ) ;",
+        "for ( i = 0 ; i <= l ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        5,
+        10
+      ],
+      "mod_code": [
+        "long long hishab ( long long x , long long y ) ;",
+        "return ( x + 1 ) * ( x + 2 ) / 2 ) ;",
+        "for ( i = 0 ; i <= l ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        13
+      ],
+      "mod_code": [
+        "long long hishab ( long long x , long long y ) ;",
+        "if ( c + i >= b + a ) jhamela += hishab ( ( i + c - b - a ) / 2 ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        13,
+        10
+      ],
+      "mod_code": [
+        "long long hishab ( long long x , long long y ) ;",
+        "if ( c + i >= b + a ) jhamela += hishab ( ( i + c - b - a ) / 2 ) ;",
+        "for ( i = 0 ; i <= l ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        10
+      ],
+      "mod_code": [
+        "long long hishab ( long long x , long long y ) ;",
+        "for ( i = 0 ; i <= l ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        14
+      ],
+      "mod_code": [
+        "while ( cin >> a >> b >> c )",
+        "shob += hishab ( i + i ) ;"
+      ],
+      "err_line": 14,
+      "err_msg": "too few arguments to function ‘long long int hishab(long long int, long long int)’"
+    },
+    {
+      "mod_line": [
+        8,
+        14,
+        5
+      ],
+      "mod_code": [
+        "while ( cin >> a >> b >> c )",
+        "shob += hishab ( i + i ) ;",
+        "return ( x + 1 ) * ( x + 2 ) / 2 ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        14,
+        5,
+        13
+      ],
+      "mod_code": [
+        "while ( cin >> a >> b >> c )",
+        "shob += hishab ( i + i ) ;",
+        "return ( x + 1 ) * ( x + 2 ) / 2 ) ;",
+        "if ( c + i >= b + a ) jhamela += hishab ( ( i + c - b - a ) / 2 ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        14,
+        5,
+        10
+      ],
+      "mod_code": [
+        "while ( cin >> a >> b >> c )",
+        "shob += hishab ( i + i ) ;",
+        "return ( x + 1 ) * ( x + 2 ) / 2 ) ;",
+        "for ( i = 0 ; i <= l ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        14,
+        13
+      ],
+      "mod_code": [
+        "while ( cin >> a >> b >> c )",
+        "shob += hishab ( i + i ) ;",
+        "if ( c + i >= b + a ) jhamela += hishab ( ( i + c - b - a ) / 2 ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "too few arguments to function ‘long long int hishab(long long int, long long int)’"
+    },
+    {
+      "mod_line": [
+        8,
+        14,
+        13,
+        10
+      ],
+      "mod_code": [
+        "while ( cin >> a >> b >> c )",
+        "shob += hishab ( i + i ) ;",
+        "if ( c + i >= b + a ) jhamela += hishab ( ( i + c - b - a ) / 2 ) ;",
+        "for ( i = 0 ; i <= l ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        14,
+        10
+      ],
+      "mod_code": [
+        "while ( cin >> a >> b >> c )",
+        "shob += hishab ( i + i ) ;",
+        "for ( i = 0 ; i <= l ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        5
+      ],
+      "mod_code": [
+        "while ( cin >> a >> b >> c )",
+        "return ( x + 1 ) * ( x + 2 ) / 2 ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        5,
+        13
+      ],
+      "mod_code": [
+        "while ( cin >> a >> b >> c )",
+        "return ( x + 1 ) * ( x + 2 ) / 2 ) ;",
+        "if ( c + i >= b + a ) jhamela += hishab ( ( i + c - b - a ) / 2 ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        5,
+        13,
+        10
+      ],
+      "mod_code": [
+        "while ( cin >> a >> b >> c )",
+        "return ( x + 1 ) * ( x + 2 ) / 2 ) ;",
+        "if ( c + i >= b + a ) jhamela += hishab ( ( i + c - b - a ) / 2 ) ;",
+        "for ( i = 0 ; i <= l ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        5,
+        10
+      ],
+      "mod_code": [
+        "while ( cin >> a >> b >> c )",
+        "return ( x + 1 ) * ( x + 2 ) / 2 ) ;",
+        "for ( i = 0 ; i <= l ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        13
+      ],
+      "mod_code": [
+        "while ( cin >> a >> b >> c )",
+        "if ( c + i >= b + a ) jhamela += hishab ( ( i + c - b - a ) / 2 ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "too few arguments to function ‘long long int hishab(long long int, long long int)’"
+    },
+    {
+      "mod_line": [
+        8,
+        13,
+        10
+      ],
+      "mod_code": [
+        "while ( cin >> a >> b >> c )",
+        "if ( c + i >= b + a ) jhamela += hishab ( ( i + c - b - a ) / 2 ) ;",
+        "for ( i = 0 ; i <= l ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        10
+      ],
+      "mod_code": [
+        "while ( cin >> a >> b >> c )",
+        "for ( i = 0 ; i <= l ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        5
+      ],
+      "mod_code": [
+        "shob += hishab ( i + i ) ;",
+        "return ( x + 1 ) * ( x + 2 ) / 2 ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        5,
+        13
+      ],
+      "mod_code": [
+        "shob += hishab ( i + i ) ;",
+        "return ( x + 1 ) * ( x + 2 ) / 2 ) ;",
+        "if ( c + i >= b + a ) jhamela += hishab ( ( i + c - b - a ) / 2 ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        5,
+        13,
+        10
+      ],
+      "mod_code": [
+        "shob += hishab ( i + i ) ;",
+        "return ( x + 1 ) * ( x + 2 ) / 2 ) ;",
+        "if ( c + i >= b + a ) jhamela += hishab ( ( i + c - b - a ) / 2 ) ;",
+        "for ( i = 0 ; i <= l ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        5,
+        10
+      ],
+      "mod_code": [
+        "shob += hishab ( i + i ) ;",
+        "return ( x + 1 ) * ( x + 2 ) / 2 ) ;",
+        "for ( i = 0 ; i <= l ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        13
+      ],
+      "mod_code": [
+        "shob += hishab ( i + i ) ;",
+        "if ( c + i >= b + a ) jhamela += hishab ( ( i + c - b - a ) / 2 ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "too few arguments to function ‘long long int hishab(long long int, long long int)’"
+    },
+    {
+      "mod_line": [
+        14,
+        13,
+        10
+      ],
+      "mod_code": [
+        "shob += hishab ( i + i ) ;",
+        "if ( c + i >= b + a ) jhamela += hishab ( ( i + c - b - a ) / 2 ) ;",
+        "for ( i = 0 ; i <= l ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        10
+      ],
+      "mod_code": [
+        "shob += hishab ( i + i ) ;",
+        "for ( i = 0 ; i <= l ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        13
+      ],
+      "mod_code": [
+        "return ( x + 1 ) * ( x + 2 ) / 2 ) ;",
+        "if ( c + i >= b + a ) jhamela += hishab ( ( i + c - b - a ) / 2 ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        13,
+        10
+      ],
+      "mod_code": [
+        "return ( x + 1 ) * ( x + 2 ) / 2 ) ;",
+        "if ( c + i >= b + a ) jhamela += hishab ( ( i + c - b - a ) / 2 ) ;",
+        "for ( i = 0 ; i <= l ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        10
+      ],
+      "mod_code": [
+        "return ( x + 1 ) * ( x + 2 ) / 2 ) ;",
+        "for ( i = 0 ; i <= l ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        13,
+        10
+      ],
+      "mod_code": [
+        "if ( c + i >= b + a ) jhamela += hishab ( ( i + c - b - a ) / 2 ) ;",
+        "for ( i = 0 ; i <= l ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘i’ was not declared in this scope"
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "meta": {
+    "index": 2038,
+    "hitid": "33EEIIWHK719SZ5TBZXGRR4AS3YQVS",
+    "workerid": "A24WRPQYGMQLGF",
+    "probid": "594A",
+    "subid": "47943775"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "n = integer",
+      "code": "int n ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "a = integer array of size 200005",
+      "code": "int a [ 200005 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for i = 0 to n exclusive , then read a [ i ]",
+      "code": "for ( int i = 0 ; i < n ; i ++ ) cin >> a [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "sort a in ascending order",
+      "code": "sort ( a , a + n ) ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "sol = integer = 1123123123",
+      "code": "int sol = 1123123123 ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for i = 0 to n / 2 exclusive , then sol = the minimum value between sol and a [ i + n / 2 ] - a [ i ]",
+      "code": "for ( int i = 0 ; i < n / 2 ; i ++ ) sol = min ( sol , a [ i + n / 2 ] - a [ i ] ) ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "print sol",
+      "code": "cout << sol << ' \\n ' ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "sort ( a . begin ( ) , a . end ( ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "request for member ‘begin’ in ‘a’, which is of non-class type ‘int [200005]’"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int * a [ 200005 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int*’)"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "long long sol = 1123123123 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘min(long long int&, int)’"
+    },
+    {
+      "mod_line": [
+        5,
+        6
+      ],
+      "mod_code": [
+        "sort ( a . begin ( ) , a . end ( ) ) ;",
+        "long long sol = 1123123123 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "request for member ‘begin’ in ‘a’, which is of non-class type ‘int [200005]’"
+    },
+    {
+      "mod_line": [
+        5,
+        6,
+        1
+      ],
+      "mod_code": [
+        "sort ( a . begin ( ) , a . end ( ) ) ;",
+        "long long sol = 1123123123 ;",
+        "int * a [ 200005 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int*’)"
+    },
+    {
+      "mod_line": [
+        5,
+        1
+      ],
+      "mod_code": [
+        "sort ( a . begin ( ) , a . end ( ) ) ;",
+        "int * a [ 200005 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int*’)"
+    },
+    {
+      "mod_line": [
+        6,
+        1
+      ],
+      "mod_code": [
+        "long long sol = 1123123123 ;",
+        "int * a [ 200005 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int*’)"
+    }
+  ]
+}

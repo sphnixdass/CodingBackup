@@ -1,0 +1,719 @@
+{
+  "meta": {
+    "index": 889,
+    "hitid": "3LEG2HW4UFH34JHI992BDN3LO3W2F2",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "252A",
+    "subid": "45880837"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare int variable n",
+      "code": "int n ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "create vector of intergers v with n elements",
+      "code": "vector < int > v ( n ) ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "read n elements into v",
+      "code": "for ( int i = 0 ; i < n ; i ++ ) cin >> v [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "create integer ans = 0",
+      "code": "int ans = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "loop i from 0 to n exclusive",
+      "code": "for ( int i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for j = i to n exclusive",
+      "code": "for ( int j = i ; j < n ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "declare int x = v [ i ]",
+      "code": "int x = v [ i ] ;",
+      "indent": 3
+    },
+    {
+      "line": 9,
+      "text": "for k = i + 1 to j inclusive , assign x ^ v [ k ] to x",
+      "code": "for ( int k = i + 1 ; k <= j ; k ++ ) x = ( x ^ v [ k ] ) ;",
+      "indent": 3
+    },
+    {
+      "line": 10,
+      "text": "change ans to max of ans and x",
+      "code": "ans = max ( ans , x ) ;",
+      "indent": 3
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "print ans",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "for ( int k = i + 1 ; k <= j ; k ++ ) { x = x [ k ] ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int n , n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int n’"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "while ( cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘v’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "vector < int > :: v ( n ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘v’ is not a member of ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "long long ans = 0 ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(long long int&, int&)’"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "for ( k = i + 1 ; k <= j ; k ++ ) { x = x [ k ] ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        2
+      ],
+      "mod_code": [
+        "for ( int k = i + 1 ; k <= j ; k ++ ) { x = x [ k ] ; }",
+        "while ( cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘v’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        2,
+        6
+      ],
+      "mod_code": [
+        "for ( int k = i + 1 ; k <= j ; k ++ ) { x = x [ k ] ; }",
+        "while ( cin >> n )",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘v’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        2,
+        6,
+        3
+      ],
+      "mod_code": [
+        "for ( int k = i + 1 ; k <= j ; k ++ ) { x = x [ k ] ; }",
+        "while ( cin >> n )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "vector < int > :: v ( n ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘v’ is not a member of ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        9,
+        2,
+        6,
+        1
+      ],
+      "mod_code": [
+        "for ( int k = i + 1 ; k <= j ; k ++ ) { x = x [ k ] ; }",
+        "while ( cin >> n )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int n , n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int n’"
+    },
+    {
+      "mod_line": [
+        9,
+        2,
+        3
+      ],
+      "mod_code": [
+        "for ( int k = i + 1 ; k <= j ; k ++ ) { x = x [ k ] ; }",
+        "while ( cin >> n )",
+        "vector < int > :: v ( n ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘v’ is not a member of ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        9,
+        2,
+        3,
+        1
+      ],
+      "mod_code": [
+        "for ( int k = i + 1 ; k <= j ; k ++ ) { x = x [ k ] ; }",
+        "while ( cin >> n )",
+        "vector < int > :: v ( n ) ;",
+        "int n , n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int n’"
+    },
+    {
+      "mod_line": [
+        9,
+        2,
+        1
+      ],
+      "mod_code": [
+        "for ( int k = i + 1 ; k <= j ; k ++ ) { x = x [ k ] ; }",
+        "while ( cin >> n )",
+        "int n , n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int n’"
+    },
+    {
+      "mod_line": [
+        9,
+        6
+      ],
+      "mod_code": [
+        "for ( int k = i + 1 ; k <= j ; k ++ ) { x = x [ k ] ; }",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        6,
+        3
+      ],
+      "mod_code": [
+        "for ( int k = i + 1 ; k <= j ; k ++ ) { x = x [ k ] ; }",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "vector < int > :: v ( n ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘v’ is not a member of ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        9,
+        6,
+        3,
+        1
+      ],
+      "mod_code": [
+        "for ( int k = i + 1 ; k <= j ; k ++ ) { x = x [ k ] ; }",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "vector < int > :: v ( n ) ;",
+        "int n , n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int n’"
+    },
+    {
+      "mod_line": [
+        9,
+        6,
+        1
+      ],
+      "mod_code": [
+        "for ( int k = i + 1 ; k <= j ; k ++ ) { x = x [ k ] ; }",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int n , n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int n’"
+    },
+    {
+      "mod_line": [
+        9,
+        3
+      ],
+      "mod_code": [
+        "for ( int k = i + 1 ; k <= j ; k ++ ) { x = x [ k ] ; }",
+        "vector < int > :: v ( n ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘v’ is not a member of ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        1
+      ],
+      "mod_code": [
+        "for ( int k = i + 1 ; k <= j ; k ++ ) { x = x [ k ] ; }",
+        "vector < int > :: v ( n ) ;",
+        "int n , n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int n’"
+    },
+    {
+      "mod_line": [
+        9,
+        1
+      ],
+      "mod_code": [
+        "for ( int k = i + 1 ; k <= j ; k ++ ) { x = x [ k ] ; }",
+        "int n , n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int n’"
+    },
+    {
+      "mod_line": [
+        2,
+        6
+      ],
+      "mod_code": [
+        "while ( cin >> n )",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘v’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        3
+      ],
+      "mod_code": [
+        "while ( cin >> n )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "vector < int > :: v ( n ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘v’ is not a member of ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        3,
+        1
+      ],
+      "mod_code": [
+        "while ( cin >> n )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "vector < int > :: v ( n ) ;",
+        "int n , n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int n’"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        3,
+        9
+      ],
+      "mod_code": [
+        "while ( cin >> n )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "vector < int > :: v ( n ) ;",
+        "for ( k = i + 1 ; k <= j ; k ++ ) { x = x [ k ] ; }"
+      ],
+      "err_line": 3,
+      "err_msg": "‘v’ is not a member of ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        1
+      ],
+      "mod_code": [
+        "while ( cin >> n )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int n , n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int n’"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        1,
+        9
+      ],
+      "mod_code": [
+        "while ( cin >> n )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int n , n ;",
+        "for ( k = i + 1 ; k <= j ; k ++ ) { x = x [ k ] ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int n’"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        9
+      ],
+      "mod_code": [
+        "while ( cin >> n )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( k = i + 1 ; k <= j ; k ++ ) { x = x [ k ] ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "‘v’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        3
+      ],
+      "mod_code": [
+        "while ( cin >> n )",
+        "vector < int > :: v ( n ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘v’ is not a member of ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        1
+      ],
+      "mod_code": [
+        "while ( cin >> n )",
+        "vector < int > :: v ( n ) ;",
+        "int n , n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int n’"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        1,
+        9
+      ],
+      "mod_code": [
+        "while ( cin >> n )",
+        "vector < int > :: v ( n ) ;",
+        "int n , n ;",
+        "for ( k = i + 1 ; k <= j ; k ++ ) { x = x [ k ] ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int n’"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        9
+      ],
+      "mod_code": [
+        "while ( cin >> n )",
+        "vector < int > :: v ( n ) ;",
+        "for ( k = i + 1 ; k <= j ; k ++ ) { x = x [ k ] ; }"
+      ],
+      "err_line": 3,
+      "err_msg": "‘v’ is not a member of ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        2,
+        1
+      ],
+      "mod_code": [
+        "while ( cin >> n )",
+        "int n , n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int n’"
+    },
+    {
+      "mod_line": [
+        2,
+        1,
+        9
+      ],
+      "mod_code": [
+        "while ( cin >> n )",
+        "int n , n ;",
+        "for ( k = i + 1 ; k <= j ; k ++ ) { x = x [ k ] ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int n’"
+    },
+    {
+      "mod_line": [
+        2,
+        9
+      ],
+      "mod_code": [
+        "while ( cin >> n )",
+        "for ( k = i + 1 ; k <= j ; k ++ ) { x = x [ k ] ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "‘v’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        3
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "vector < int > :: v ( n ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘v’ is not a member of ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        6,
+        3,
+        1
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "vector < int > :: v ( n ) ;",
+        "int n , n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int n’"
+    },
+    {
+      "mod_line": [
+        6,
+        3,
+        1,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "vector < int > :: v ( n ) ;",
+        "int n , n ;",
+        "for ( k = i + 1 ; k <= j ; k ++ ) { x = x [ k ] ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int n’"
+    },
+    {
+      "mod_line": [
+        6,
+        3,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "vector < int > :: v ( n ) ;",
+        "for ( k = i + 1 ; k <= j ; k ++ ) { x = x [ k ] ; }"
+      ],
+      "err_line": 3,
+      "err_msg": "‘v’ is not a member of ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        6,
+        1
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int n , n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int n’"
+    },
+    {
+      "mod_line": [
+        6,
+        1,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int n , n ;",
+        "for ( k = i + 1 ; k <= j ; k ++ ) { x = x [ k ] ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int n’"
+    },
+    {
+      "mod_line": [
+        6,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( k = i + 1 ; k <= j ; k ++ ) { x = x [ k ] ; }"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        1
+      ],
+      "mod_code": [
+        "vector < int > :: v ( n ) ;",
+        "int n , n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int n’"
+    },
+    {
+      "mod_line": [
+        3,
+        1,
+        9
+      ],
+      "mod_code": [
+        "vector < int > :: v ( n ) ;",
+        "int n , n ;",
+        "for ( k = i + 1 ; k <= j ; k ++ ) { x = x [ k ] ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int n’"
+    },
+    {
+      "mod_line": [
+        3,
+        9
+      ],
+      "mod_code": [
+        "vector < int > :: v ( n ) ;",
+        "for ( k = i + 1 ; k <= j ; k ++ ) { x = x [ k ] ; }"
+      ],
+      "err_line": 3,
+      "err_msg": "‘v’ is not a member of ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        1,
+        9
+      ],
+      "mod_code": [
+        "int n , n ;",
+        "for ( k = i + 1 ; k <= j ; k ++ ) { x = x [ k ] ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int n’"
+    }
+  ]
+}

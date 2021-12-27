@@ -1,0 +1,753 @@
+{
+  "meta": {
+    "index": 894,
+    "hitid": "3RWB1RTQDJHQHB813T7HZ8USC9AP8U",
+    "workerid": "A1EKVUFWL7OJMO",
+    "probid": "252A",
+    "subid": "44778485"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "n = integer",
+      "code": "int n ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "V = vector of int with V = n",
+      "code": "vector < int > V ( n ) ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for i = 0 to n exclusive , read V [ i ]",
+      "code": "for ( int i = 0 ; i < n ; ++ i ) cin >> V [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "mx = integer with mx = V [ 0 ]",
+      "code": "int mx = V [ 0 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( int i = 0 ; i < n ; ++ i )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "cur = integer with cur = 0",
+      "code": "int cur = 0 ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "for j = i to n exclusive",
+      "code": "for ( int j = i ; j < n ; ++ j )",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "cur = cur bitwise xor V [ j ]",
+      "code": "cur ^= V [ j ] ;",
+      "indent": 3
+    },
+    {
+      "line": 10,
+      "text": "mx = max of mx and cur",
+      "code": "mx = max ( mx , cur ) ;",
+      "indent": 3
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "print mx",
+      "code": "cout << mx << \" \\n \" ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "while ( cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘V’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "long long mx = V [ 0 ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(long long int&, int&)’"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "long long int cur = 0 ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        10,
+        6
+      ],
+      "mod_code": [
+        "cur *= V [ j ] ;",
+        "int mx = max ( mx , cur ) ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        10,
+        6,
+        3
+      ],
+      "mod_code": [
+        "cur *= V [ j ] ;",
+        "int mx = max ( mx , cur ) ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "vector < int > V ;"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        10,
+        6,
+        8
+      ],
+      "mod_code": [
+        "cur *= V [ j ] ;",
+        "int mx = max ( mx , cur ) ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        10,
+        6,
+        5
+      ],
+      "mod_code": [
+        "cur *= V [ j ] ;",
+        "int mx = max ( mx , cur ) ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "long long mx = V [ 0 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        10,
+        3,
+        8
+      ],
+      "mod_code": [
+        "cur *= V [ j ] ;",
+        "int mx = max ( mx , cur ) ;",
+        "vector < int > V ;",
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        10,
+        8
+      ],
+      "mod_code": [
+        "cur *= V [ j ] ;",
+        "int mx = max ( mx , cur ) ;",
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        10,
+        8,
+        5
+      ],
+      "mod_code": [
+        "cur *= V [ j ] ;",
+        "int mx = max ( mx , cur ) ;",
+        "for ( j = i ; j < n ; j ++ )",
+        "long long mx = V [ 0 ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        6
+      ],
+      "mod_code": [
+        "cur *= V [ j ] ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        6,
+        3
+      ],
+      "mod_code": [
+        "cur *= V [ j ] ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "vector < int > V ;"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        6,
+        3,
+        8
+      ],
+      "mod_code": [
+        "cur *= V [ j ] ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "vector < int > V ;",
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        6,
+        3,
+        5
+      ],
+      "mod_code": [
+        "cur *= V [ j ] ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "vector < int > V ;",
+        "long long mx = V [ 0 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        6,
+        8
+      ],
+      "mod_code": [
+        "cur *= V [ j ] ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        6,
+        8,
+        5
+      ],
+      "mod_code": [
+        "cur *= V [ j ] ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( j = i ; j < n ; j ++ )",
+        "long long mx = V [ 0 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        6,
+        5
+      ],
+      "mod_code": [
+        "cur *= V [ j ] ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "long long mx = V [ 0 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        8
+      ],
+      "mod_code": [
+        "cur *= V [ j ] ;",
+        "vector < int > V ;",
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        8,
+        5
+      ],
+      "mod_code": [
+        "cur *= V [ j ] ;",
+        "vector < int > V ;",
+        "for ( j = i ; j < n ; j ++ )",
+        "long long mx = V [ 0 ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        5
+      ],
+      "mod_code": [
+        "cur *= V [ j ] ;",
+        "vector < int > V ;",
+        "long long mx = V [ 0 ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(long long int&, int&)’"
+    },
+    {
+      "mod_line": [
+        9,
+        8
+      ],
+      "mod_code": [
+        "cur *= V [ j ] ;",
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        8,
+        5
+      ],
+      "mod_code": [
+        "cur *= V [ j ] ;",
+        "for ( j = i ; j < n ; j ++ )",
+        "long long mx = V [ 0 ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        5
+      ],
+      "mod_code": [
+        "cur *= V [ j ] ;",
+        "long long mx = V [ 0 ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(long long int&, int&)’"
+    },
+    {
+      "mod_line": [
+        10,
+        6
+      ],
+      "mod_code": [
+        "int mx = max ( mx , cur ) ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        6,
+        3
+      ],
+      "mod_code": [
+        "int mx = max ( mx , cur ) ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "vector < int > V ;"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        6,
+        3,
+        8
+      ],
+      "mod_code": [
+        "int mx = max ( mx , cur ) ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "vector < int > V ;",
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        6,
+        3,
+        5
+      ],
+      "mod_code": [
+        "int mx = max ( mx , cur ) ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "vector < int > V ;",
+        "long long mx = V [ 0 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        6,
+        8
+      ],
+      "mod_code": [
+        "int mx = max ( mx , cur ) ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        6,
+        8,
+        5
+      ],
+      "mod_code": [
+        "int mx = max ( mx , cur ) ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( j = i ; j < n ; j ++ )",
+        "long long mx = V [ 0 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        6,
+        5
+      ],
+      "mod_code": [
+        "int mx = max ( mx , cur ) ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "long long mx = V [ 0 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        8
+      ],
+      "mod_code": [
+        "int mx = max ( mx , cur ) ;",
+        "vector < int > V ;",
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        8,
+        5
+      ],
+      "mod_code": [
+        "int mx = max ( mx , cur ) ;",
+        "vector < int > V ;",
+        "for ( j = i ; j < n ; j ++ )",
+        "long long mx = V [ 0 ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        8
+      ],
+      "mod_code": [
+        "int mx = max ( mx , cur ) ;",
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        8,
+        5
+      ],
+      "mod_code": [
+        "int mx = max ( mx , cur ) ;",
+        "for ( j = i ; j < n ; j ++ )",
+        "long long mx = V [ 0 ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        3
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "vector < int > V ;"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        3,
+        8
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "vector < int > V ;",
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        3,
+        8,
+        5
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "vector < int > V ;",
+        "for ( j = i ; j < n ; j ++ )",
+        "long long mx = V [ 0 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        3,
+        5
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "vector < int > V ;",
+        "long long mx = V [ 0 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        8
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        8,
+        5
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( j = i ; j < n ; j ++ )",
+        "long long mx = V [ 0 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        5
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "long long mx = V [ 0 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        8
+      ],
+      "mod_code": [
+        "vector < int > V ;",
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        8,
+        5
+      ],
+      "mod_code": [
+        "vector < int > V ;",
+        "for ( j = i ; j < n ; j ++ )",
+        "long long mx = V [ 0 ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        5
+      ],
+      "mod_code": [
+        "vector < int > V ;",
+        "long long mx = V [ 0 ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(long long int&, int&)’"
+    },
+    {
+      "mod_line": [
+        8,
+        5
+      ],
+      "mod_code": [
+        "for ( j = i ; j < n ; j ++ )",
+        "long long mx = V [ 0 ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    }
+  ]
+}

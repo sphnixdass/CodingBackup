@@ -1,0 +1,1093 @@
+{
+  "meta": {
+    "index": 919,
+    "hitid": "3R15W654VDN6WUTZXVVA4I6815XLQ5",
+    "workerid": "A1R0Q9CUUBSM5F",
+    "probid": "213A",
+    "subid": "40718035"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create bool array visit of size 204",
+      "code": "bool visit [ 204 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create integer vector dependency of size 204",
+      "code": "vector < int > dependency [ 204 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "create integer array col of size 203",
+      "code": "int col [ 203 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "create integer n",
+      "code": "int n ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 1 to n , read col [ i ]",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) { cin >> col [ i ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for i = 1 to n",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "create integer k",
+      "code": "int k ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "read k",
+      "code": "cin >> k ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "for j = 1 to k",
+      "code": "for ( int j = 1 ; j <= k ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "create integer m",
+      "code": "int m ;",
+      "indent": 3
+    },
+    {
+      "line": 12,
+      "text": "read m",
+      "code": "cin >> m ;",
+      "indent": 3
+    },
+    {
+      "line": 13,
+      "text": "append m to dependency [ i ]",
+      "code": "dependency [ i ] . push_back ( m ) ;",
+      "indent": 3
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "create integer ans = INT_MAX",
+      "code": "int ans = INT_MAX ;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "for l = 1 to 3",
+      "code": "for ( int l = 1 ; l <= 3 ; l ++ )",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "create integers hours = 0 , cur = 1 , vis = 0",
+      "code": "int hours = 0 , cur = l , vis = 0 ;",
+      "indent": 2
+    },
+    {
+      "line": 19,
+      "text": "for i = 1 to n , set visit [ i ] to false",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) { visit [ i ] = false ; }",
+      "indent": 2
+    },
+    {
+      "line": 20,
+      "text": "while vis is not equal to n",
+      "code": "while ( vis != n )",
+      "indent": 2
+    },
+    {
+      "line": 21,
+      "text": "create bool cvis = false",
+      "code": "bool cvis = false ;",
+      "indent": 3
+    },
+    {
+      "line": 22,
+      "text": "for i = 1 to n",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 3
+    },
+    {
+      "line": 23,
+      "text": "if ! visit [ i ] is truthy and col [ i ] is equal to cur",
+      "code": "if ( ! visit [ i ] && col [ i ] == cur )",
+      "indent": 4
+    },
+    {
+      "line": 24,
+      "text": "create bool cr = true",
+      "code": "bool cr = true ;",
+      "indent": 5
+    },
+    {
+      "line": 25,
+      "text": "for j = 0 to the size of dependency [ i ] exclusive",
+      "code": "for ( int j = 0 ; j < dependency [ i ] . size ( ) ; j ++ )",
+      "indent": 5
+    },
+    {
+      "line": 26,
+      "text": "if ! visit [ dependency [ i ] [ j ] ] is truthy",
+      "code": "if ( ! visit [ dependency [ i ] [ j ] ] )",
+      "indent": 6
+    },
+    {
+      "line": 27,
+      "text": "set cr to false",
+      "code": "cr = false ;",
+      "indent": 7
+    },
+    {
+      "line": 28,
+      "text": "break loop",
+      "code": "break ;",
+      "indent": 7
+    },
+    {
+      "line": 29,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 6
+    },
+    {
+      "line": 30,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 5
+    },
+    {
+      "line": 31,
+      "text": "if cr is truthy",
+      "code": "if ( cr )",
+      "indent": 5
+    },
+    {
+      "line": 32,
+      "text": "set visit [ i ] to true",
+      "code": "visit [ i ] = true ;",
+      "indent": 6
+    },
+    {
+      "line": 33,
+      "text": "increment vis",
+      "code": "vis ++ ;",
+      "indent": 6
+    },
+    {
+      "line": 34,
+      "text": "set cvis to true",
+      "code": "cvis = true ;",
+      "indent": 6
+    },
+    {
+      "line": 35,
+      "text": "increment hours",
+      "code": "hours ++ ;",
+      "indent": 6
+    },
+    {
+      "line": 36,
+      "text": "break loop",
+      "code": "break ;",
+      "indent": 6
+    },
+    {
+      "line": 37,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 5
+    },
+    {
+      "line": 38,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 4
+    },
+    {
+      "line": 39,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 40,
+      "text": "if ! cvis is truthy",
+      "code": "if ( ! cvis )",
+      "indent": 3
+    },
+    {
+      "line": 41,
+      "text": "set cur to the result of 1 + ( cur ) % 3",
+      "code": "cur = 1 + ( cur ) % 3 ;",
+      "indent": 4
+    },
+    {
+      "line": 42,
+      "text": "increment hours",
+      "code": "hours ++ ;",
+      "indent": 4
+    },
+    {
+      "line": 43,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 44,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 45,
+      "text": "set ans to the min of ans and hours",
+      "code": "ans = min ( ans , hours ) ;",
+      "indent": 2
+    },
+    {
+      "line": 46,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 47,
+      "text": "print ans",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 48,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 49,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "vector < int > dependency ( 204 ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "request for member ‘push_back’ in ‘dependency.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "int * col [ 203 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int*’)"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "int n ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "for ( j = 1 ; j <= k ; j ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "int n ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘m’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "dependency [ i ] . append ( m ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘append’"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "long long ans = INT_MAX ;"
+      ],
+      "err_line": 45,
+      "err_msg": "no matching function for call to ‘min(long long int&, int&)’"
+    },
+    {
+      "mod_line": [
+        22
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 22,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        25
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j < dependency [ i ] . size ( ) ; j ++ )"
+      ],
+      "err_line": 25,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        28
+      ],
+      "mod_code": [
+        "break break ;"
+      ],
+      "err_line": 28,
+      "err_msg": "expected ‘;’ before ‘break’"
+    },
+    {
+      "mod_line": [
+        32
+      ],
+      "mod_code": [
+        "visit [ i ] to true ;"
+      ],
+      "err_line": 32,
+      "err_msg": "expected ‘;’ before ‘to’"
+    },
+    {
+      "mod_line": [
+        36
+      ],
+      "mod_code": [
+        "break break ;"
+      ],
+      "err_line": 36,
+      "err_msg": "expected ‘;’ before ‘break’"
+    },
+    {
+      "mod_line": [
+        1,
+        18
+      ],
+      "mod_code": [
+        "vector < int > dependency ( 204 ) ;",
+        "int hours = 0 , cur = 1 , vis = 0 ;"
+      ],
+      "err_line": 13,
+      "err_msg": "request for member ‘push_back’ in ‘dependency.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        1,
+        18,
+        27
+      ],
+      "mod_code": [
+        "vector < int > dependency ( 204 ) ;",
+        "int hours = 0 , cur = 1 , vis = 0 ;",
+        "bool cr = false ;"
+      ],
+      "err_line": 13,
+      "err_msg": "request for member ‘push_back’ in ‘dependency.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        1,
+        18,
+        27,
+        32
+      ],
+      "mod_code": [
+        "vector < int > dependency ( 204 ) ;",
+        "int hours = 0 , cur = 1 , vis = 0 ;",
+        "bool cr = false ;",
+        "visit [ i ] to true ;"
+      ],
+      "err_line": 13,
+      "err_msg": "request for member ‘push_back’ in ‘dependency.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        1,
+        18,
+        27,
+        16
+      ],
+      "mod_code": [
+        "vector < int > dependency ( 204 ) ;",
+        "int hours = 0 , cur = 1 , vis = 0 ;",
+        "bool cr = false ;",
+        "long long ans = INT_MAX ;"
+      ],
+      "err_line": 13,
+      "err_msg": "request for member ‘push_back’ in ‘dependency.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        1,
+        18,
+        27,
+        9
+      ],
+      "mod_code": [
+        "vector < int > dependency ( 204 ) ;",
+        "int hours = 0 , cur = 1 , vis = 0 ;",
+        "bool cr = false ;",
+        "cin >> n ;"
+      ],
+      "err_line": 13,
+      "err_msg": "request for member ‘push_back’ in ‘dependency.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        1,
+        18,
+        32
+      ],
+      "mod_code": [
+        "vector < int > dependency ( 204 ) ;",
+        "int hours = 0 , cur = 1 , vis = 0 ;",
+        "visit [ i ] to true ;"
+      ],
+      "err_line": 13,
+      "err_msg": "request for member ‘push_back’ in ‘dependency.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        1,
+        18,
+        32,
+        16
+      ],
+      "mod_code": [
+        "vector < int > dependency ( 204 ) ;",
+        "int hours = 0 , cur = 1 , vis = 0 ;",
+        "visit [ i ] to true ;",
+        "long long ans = INT_MAX ;"
+      ],
+      "err_line": 13,
+      "err_msg": "request for member ‘push_back’ in ‘dependency.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        1,
+        18,
+        32,
+        9
+      ],
+      "mod_code": [
+        "vector < int > dependency ( 204 ) ;",
+        "int hours = 0 , cur = 1 , vis = 0 ;",
+        "visit [ i ] to true ;",
+        "cin >> n ;"
+      ],
+      "err_line": 13,
+      "err_msg": "request for member ‘push_back’ in ‘dependency.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        1,
+        18,
+        16
+      ],
+      "mod_code": [
+        "vector < int > dependency ( 204 ) ;",
+        "int hours = 0 , cur = 1 , vis = 0 ;",
+        "long long ans = INT_MAX ;"
+      ],
+      "err_line": 13,
+      "err_msg": "request for member ‘push_back’ in ‘dependency.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        1,
+        18,
+        16,
+        9
+      ],
+      "mod_code": [
+        "vector < int > dependency ( 204 ) ;",
+        "int hours = 0 , cur = 1 , vis = 0 ;",
+        "long long ans = INT_MAX ;",
+        "cin >> n ;"
+      ],
+      "err_line": 13,
+      "err_msg": "request for member ‘push_back’ in ‘dependency.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        1,
+        18,
+        9
+      ],
+      "mod_code": [
+        "vector < int > dependency ( 204 ) ;",
+        "int hours = 0 , cur = 1 , vis = 0 ;",
+        "cin >> n ;"
+      ],
+      "err_line": 13,
+      "err_msg": "request for member ‘push_back’ in ‘dependency.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        1,
+        27
+      ],
+      "mod_code": [
+        "vector < int > dependency ( 204 ) ;",
+        "bool cr = false ;"
+      ],
+      "err_line": 13,
+      "err_msg": "request for member ‘push_back’ in ‘dependency.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        1,
+        27,
+        32
+      ],
+      "mod_code": [
+        "vector < int > dependency ( 204 ) ;",
+        "bool cr = false ;",
+        "visit [ i ] to true ;"
+      ],
+      "err_line": 13,
+      "err_msg": "request for member ‘push_back’ in ‘dependency.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        1,
+        27,
+        32,
+        16
+      ],
+      "mod_code": [
+        "vector < int > dependency ( 204 ) ;",
+        "bool cr = false ;",
+        "visit [ i ] to true ;",
+        "long long ans = INT_MAX ;"
+      ],
+      "err_line": 13,
+      "err_msg": "request for member ‘push_back’ in ‘dependency.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        1,
+        27,
+        32,
+        9
+      ],
+      "mod_code": [
+        "vector < int > dependency ( 204 ) ;",
+        "bool cr = false ;",
+        "visit [ i ] to true ;",
+        "cin >> n ;"
+      ],
+      "err_line": 13,
+      "err_msg": "request for member ‘push_back’ in ‘dependency.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        1,
+        27,
+        16
+      ],
+      "mod_code": [
+        "vector < int > dependency ( 204 ) ;",
+        "bool cr = false ;",
+        "long long ans = INT_MAX ;"
+      ],
+      "err_line": 13,
+      "err_msg": "request for member ‘push_back’ in ‘dependency.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        1,
+        27,
+        16,
+        9
+      ],
+      "mod_code": [
+        "vector < int > dependency ( 204 ) ;",
+        "bool cr = false ;",
+        "long long ans = INT_MAX ;",
+        "cin >> n ;"
+      ],
+      "err_line": 13,
+      "err_msg": "request for member ‘push_back’ in ‘dependency.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        1,
+        27,
+        9
+      ],
+      "mod_code": [
+        "vector < int > dependency ( 204 ) ;",
+        "bool cr = false ;",
+        "cin >> n ;"
+      ],
+      "err_line": 13,
+      "err_msg": "request for member ‘push_back’ in ‘dependency.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        1,
+        32
+      ],
+      "mod_code": [
+        "vector < int > dependency ( 204 ) ;",
+        "visit [ i ] to true ;"
+      ],
+      "err_line": 13,
+      "err_msg": "request for member ‘push_back’ in ‘dependency.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        1,
+        32,
+        16
+      ],
+      "mod_code": [
+        "vector < int > dependency ( 204 ) ;",
+        "visit [ i ] to true ;",
+        "long long ans = INT_MAX ;"
+      ],
+      "err_line": 13,
+      "err_msg": "request for member ‘push_back’ in ‘dependency.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        1,
+        32,
+        16,
+        9
+      ],
+      "mod_code": [
+        "vector < int > dependency ( 204 ) ;",
+        "visit [ i ] to true ;",
+        "long long ans = INT_MAX ;",
+        "cin >> n ;"
+      ],
+      "err_line": 13,
+      "err_msg": "request for member ‘push_back’ in ‘dependency.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        1,
+        32,
+        9
+      ],
+      "mod_code": [
+        "vector < int > dependency ( 204 ) ;",
+        "visit [ i ] to true ;",
+        "cin >> n ;"
+      ],
+      "err_line": 13,
+      "err_msg": "request for member ‘push_back’ in ‘dependency.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        1,
+        16
+      ],
+      "mod_code": [
+        "vector < int > dependency ( 204 ) ;",
+        "long long ans = INT_MAX ;"
+      ],
+      "err_line": 13,
+      "err_msg": "request for member ‘push_back’ in ‘dependency.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        1,
+        16,
+        9
+      ],
+      "mod_code": [
+        "vector < int > dependency ( 204 ) ;",
+        "long long ans = INT_MAX ;",
+        "cin >> n ;"
+      ],
+      "err_line": 13,
+      "err_msg": "request for member ‘push_back’ in ‘dependency.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        1,
+        9
+      ],
+      "mod_code": [
+        "vector < int > dependency ( 204 ) ;",
+        "cin >> n ;"
+      ],
+      "err_line": 13,
+      "err_msg": "request for member ‘push_back’ in ‘dependency.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        18,
+        27,
+        32
+      ],
+      "mod_code": [
+        "int hours = 0 , cur = 1 , vis = 0 ;",
+        "bool cr = false ;",
+        "visit [ i ] to true ;"
+      ],
+      "err_line": 32,
+      "err_msg": "expected ‘;’ before ‘to’"
+    },
+    {
+      "mod_line": [
+        18,
+        27,
+        32,
+        16
+      ],
+      "mod_code": [
+        "int hours = 0 , cur = 1 , vis = 0 ;",
+        "bool cr = false ;",
+        "visit [ i ] to true ;",
+        "long long ans = INT_MAX ;"
+      ],
+      "err_line": 32,
+      "err_msg": "expected ‘;’ before ‘to’"
+    },
+    {
+      "mod_line": [
+        18,
+        27,
+        32,
+        9
+      ],
+      "mod_code": [
+        "int hours = 0 , cur = 1 , vis = 0 ;",
+        "bool cr = false ;",
+        "visit [ i ] to true ;",
+        "cin >> n ;"
+      ],
+      "err_line": 32,
+      "err_msg": "expected ‘;’ before ‘to’"
+    },
+    {
+      "mod_line": [
+        18,
+        27,
+        16
+      ],
+      "mod_code": [
+        "int hours = 0 , cur = 1 , vis = 0 ;",
+        "bool cr = false ;",
+        "long long ans = INT_MAX ;"
+      ],
+      "err_line": 45,
+      "err_msg": "no matching function for call to ‘min(long long int&, int&)’"
+    },
+    {
+      "mod_line": [
+        18,
+        27,
+        16,
+        9
+      ],
+      "mod_code": [
+        "int hours = 0 , cur = 1 , vis = 0 ;",
+        "bool cr = false ;",
+        "long long ans = INT_MAX ;",
+        "cin >> n ;"
+      ],
+      "err_line": 45,
+      "err_msg": "no matching function for call to ‘min(long long int&, int&)’"
+    },
+    {
+      "mod_line": [
+        18,
+        32
+      ],
+      "mod_code": [
+        "int hours = 0 , cur = 1 , vis = 0 ;",
+        "visit [ i ] to true ;"
+      ],
+      "err_line": 32,
+      "err_msg": "expected ‘;’ before ‘to’"
+    },
+    {
+      "mod_line": [
+        18,
+        32,
+        16
+      ],
+      "mod_code": [
+        "int hours = 0 , cur = 1 , vis = 0 ;",
+        "visit [ i ] to true ;",
+        "long long ans = INT_MAX ;"
+      ],
+      "err_line": 32,
+      "err_msg": "expected ‘;’ before ‘to’"
+    },
+    {
+      "mod_line": [
+        18,
+        32,
+        16,
+        9
+      ],
+      "mod_code": [
+        "int hours = 0 , cur = 1 , vis = 0 ;",
+        "visit [ i ] to true ;",
+        "long long ans = INT_MAX ;",
+        "cin >> n ;"
+      ],
+      "err_line": 32,
+      "err_msg": "expected ‘;’ before ‘to’"
+    },
+    {
+      "mod_line": [
+        18,
+        32,
+        9
+      ],
+      "mod_code": [
+        "int hours = 0 , cur = 1 , vis = 0 ;",
+        "visit [ i ] to true ;",
+        "cin >> n ;"
+      ],
+      "err_line": 32,
+      "err_msg": "expected ‘;’ before ‘to’"
+    },
+    {
+      "mod_line": [
+        18,
+        16
+      ],
+      "mod_code": [
+        "int hours = 0 , cur = 1 , vis = 0 ;",
+        "long long ans = INT_MAX ;"
+      ],
+      "err_line": 45,
+      "err_msg": "no matching function for call to ‘min(long long int&, int&)’"
+    },
+    {
+      "mod_line": [
+        18,
+        16,
+        9
+      ],
+      "mod_code": [
+        "int hours = 0 , cur = 1 , vis = 0 ;",
+        "long long ans = INT_MAX ;",
+        "cin >> n ;"
+      ],
+      "err_line": 45,
+      "err_msg": "no matching function for call to ‘min(long long int&, int&)’"
+    },
+    {
+      "mod_line": [
+        27,
+        32
+      ],
+      "mod_code": [
+        "bool cr = false ;",
+        "visit [ i ] to true ;"
+      ],
+      "err_line": 32,
+      "err_msg": "expected ‘;’ before ‘to’"
+    },
+    {
+      "mod_line": [
+        27,
+        32,
+        16
+      ],
+      "mod_code": [
+        "bool cr = false ;",
+        "visit [ i ] to true ;",
+        "long long ans = INT_MAX ;"
+      ],
+      "err_line": 32,
+      "err_msg": "expected ‘;’ before ‘to’"
+    },
+    {
+      "mod_line": [
+        27,
+        32,
+        16,
+        9
+      ],
+      "mod_code": [
+        "bool cr = false ;",
+        "visit [ i ] to true ;",
+        "long long ans = INT_MAX ;",
+        "cin >> n ;"
+      ],
+      "err_line": 32,
+      "err_msg": "expected ‘;’ before ‘to’"
+    },
+    {
+      "mod_line": [
+        27,
+        32,
+        9
+      ],
+      "mod_code": [
+        "bool cr = false ;",
+        "visit [ i ] to true ;",
+        "cin >> n ;"
+      ],
+      "err_line": 32,
+      "err_msg": "expected ‘;’ before ‘to’"
+    },
+    {
+      "mod_line": [
+        27,
+        16
+      ],
+      "mod_code": [
+        "bool cr = false ;",
+        "long long ans = INT_MAX ;"
+      ],
+      "err_line": 45,
+      "err_msg": "no matching function for call to ‘min(long long int&, int&)’"
+    },
+    {
+      "mod_line": [
+        27,
+        16,
+        9
+      ],
+      "mod_code": [
+        "bool cr = false ;",
+        "long long ans = INT_MAX ;",
+        "cin >> n ;"
+      ],
+      "err_line": 45,
+      "err_msg": "no matching function for call to ‘min(long long int&, int&)’"
+    },
+    {
+      "mod_line": [
+        32,
+        16
+      ],
+      "mod_code": [
+        "visit [ i ] to true ;",
+        "long long ans = INT_MAX ;"
+      ],
+      "err_line": 32,
+      "err_msg": "expected ‘;’ before ‘to’"
+    },
+    {
+      "mod_line": [
+        32,
+        16,
+        9
+      ],
+      "mod_code": [
+        "visit [ i ] to true ;",
+        "long long ans = INT_MAX ;",
+        "cin >> n ;"
+      ],
+      "err_line": 32,
+      "err_msg": "expected ‘;’ before ‘to’"
+    },
+    {
+      "mod_line": [
+        32,
+        9
+      ],
+      "mod_code": [
+        "visit [ i ] to true ;",
+        "cin >> n ;"
+      ],
+      "err_line": 32,
+      "err_msg": "expected ‘;’ before ‘to’"
+    },
+    {
+      "mod_line": [
+        16,
+        9
+      ],
+      "mod_code": [
+        "long long ans = INT_MAX ;",
+        "cin >> n ;"
+      ],
+      "err_line": 45,
+      "err_msg": "no matching function for call to ‘min(long long int&, int&)’"
+    }
+  ]
+}

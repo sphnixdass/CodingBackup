@@ -1,0 +1,899 @@
+{
+  "meta": {
+    "index": 1707,
+    "hitid": "31GN6YMHLPMYK4KBTDRH8T2PH0QSWY",
+    "workerid": "A1AYVATMT88U1W",
+    "probid": "1044A",
+    "subid": "47798264"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "let MX be a constant integer with MX = 1000000000",
+      "code": "const int MX = 1000000000 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "let N be a constant integer with N = 1e5 + 7",
+      "code": "const int N = 1e5 + 7 ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "a = array of integers of length N",
+      "code": "int a [ N ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "cnt = array of integers of length N",
+      "code": "int cnt [ N ] ;",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "let n , m be integers",
+      "code": "int n , m ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "read n , m",
+      "code": "cin >> n >> m ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for i = 1 to n inclusive , read a [ i ]",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "sort the values of a + 1 and a + n + 1",
+      "code": "sort ( a + 1 , a + n + 1 ) ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "a [ n + 1 ] is equal to MX",
+      "code": "a [ n + 1 ] = MX ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "while m is decremented by 1",
+      "code": "while ( m -- )",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "let l , r , y be integers",
+      "code": "int l , r , y ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "read l , r , y",
+      "code": "cin >> l >> r >> y ;",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "if l is greater than 1 , proceed to next",
+      "code": "if ( l > 1 ) continue ;",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "the integer value of idx is equal to upper_bound ( a , a + n + 2 , r ) - a - 1",
+      "code": "int idx = upper_bound ( a , a + n + 2 , r ) - a - 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "if idx is equal to 0 , proceed to next",
+      "code": "if ( idx == 0 ) continue ;",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "increment cnt [ idx ] by 1",
+      "code": "cnt [ idx ] ++ ;",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "for integer i is equal to n , i > = 0 ; decrement i by 1 , increment cnt [ i ] by cnt [ i + 1 ]",
+      "code": "for ( int i = n ; i >= 0 ; i -- ) cnt [ i ] += cnt [ i + 1 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "let ans be an integer with ans = 1e9 + 7",
+      "code": "int ans = 1e9 + 7 ;",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "for i = 0 to n inclusive , ans is equal to minimum of ans and i + cnt [ i + 1 ]",
+      "code": "for ( int i = 0 ; i <= n ; i ++ ) { ans = min ( ans , i + cnt [ i + 1 ] ) ; }",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "print ans and newline",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 22,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "a [ N ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘a’ does not name a type"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "sort ( a + 1 + a + n + 1 ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int [100007]’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "int a [ n + 1 ] = MX ;"
+      ],
+      "err_line": 9,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "while ( m is 1 )"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘)’ before ‘is’"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "idx = upper_bound ( a , a + n + 2 , r ) - a - 1 ;"
+      ],
+      "err_line": 14,
+      "err_msg": "‘idx’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        19
+      ],
+      "mod_code": [
+        "const int ans = 1e9 + 7 ;"
+      ],
+      "err_line": 20,
+      "err_msg": "assignment of read-only variable ‘ans’"
+    },
+    {
+      "mod_line": [
+        12,
+        9
+      ],
+      "mod_code": [
+        "cin >> l >> r , y ;",
+        "int a [ n + 1 ] = MX ;"
+      ],
+      "err_line": 9,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        12,
+        9,
+        10
+      ],
+      "mod_code": [
+        "cin >> l >> r , y ;",
+        "int a [ n + 1 ] = MX ;",
+        "while ( m is 1 )"
+      ],
+      "err_line": 9,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        12,
+        9,
+        10,
+        8
+      ],
+      "mod_code": [
+        "cin >> l >> r , y ;",
+        "int a [ n + 1 ] = MX ;",
+        "while ( m is 1 )",
+        "sort ( a + 1 + a + n + 1 ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int [100007]’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        12,
+        9,
+        10,
+        14
+      ],
+      "mod_code": [
+        "cin >> l >> r , y ;",
+        "int a [ n + 1 ] = MX ;",
+        "while ( m is 1 )",
+        "idx = upper_bound ( a , a + n + 2 , r ) - a - 1 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        12,
+        9,
+        10,
+        6
+      ],
+      "mod_code": [
+        "cin >> l >> r , y ;",
+        "int a [ n + 1 ] = MX ;",
+        "while ( m is 1 )",
+        "cin >> n , m ;"
+      ],
+      "err_line": 9,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        12,
+        9,
+        8
+      ],
+      "mod_code": [
+        "cin >> l >> r , y ;",
+        "int a [ n + 1 ] = MX ;",
+        "sort ( a + 1 + a + n + 1 ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int [100007]’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        12,
+        9,
+        8,
+        14
+      ],
+      "mod_code": [
+        "cin >> l >> r , y ;",
+        "int a [ n + 1 ] = MX ;",
+        "sort ( a + 1 + a + n + 1 ) ;",
+        "idx = upper_bound ( a , a + n + 2 , r ) - a - 1 ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int [100007]’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        12,
+        9,
+        8,
+        6
+      ],
+      "mod_code": [
+        "cin >> l >> r , y ;",
+        "int a [ n + 1 ] = MX ;",
+        "sort ( a + 1 + a + n + 1 ) ;",
+        "cin >> n , m ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int [100007]’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        12,
+        9,
+        14
+      ],
+      "mod_code": [
+        "cin >> l >> r , y ;",
+        "int a [ n + 1 ] = MX ;",
+        "idx = upper_bound ( a , a + n + 2 , r ) - a - 1 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        12,
+        9,
+        14,
+        6
+      ],
+      "mod_code": [
+        "cin >> l >> r , y ;",
+        "int a [ n + 1 ] = MX ;",
+        "idx = upper_bound ( a , a + n + 2 , r ) - a - 1 ;",
+        "cin >> n , m ;"
+      ],
+      "err_line": 9,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        12,
+        9,
+        6
+      ],
+      "mod_code": [
+        "cin >> l >> r , y ;",
+        "int a [ n + 1 ] = MX ;",
+        "cin >> n , m ;"
+      ],
+      "err_line": 9,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        12,
+        10
+      ],
+      "mod_code": [
+        "cin >> l >> r , y ;",
+        "while ( m is 1 )"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘)’ before ‘is’"
+    },
+    {
+      "mod_line": [
+        12,
+        10,
+        8
+      ],
+      "mod_code": [
+        "cin >> l >> r , y ;",
+        "while ( m is 1 )",
+        "sort ( a + 1 + a + n + 1 ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int [100007]’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        12,
+        10,
+        8,
+        14
+      ],
+      "mod_code": [
+        "cin >> l >> r , y ;",
+        "while ( m is 1 )",
+        "sort ( a + 1 + a + n + 1 ) ;",
+        "idx = upper_bound ( a , a + n + 2 , r ) - a - 1 ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int [100007]’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        12,
+        10,
+        8,
+        6
+      ],
+      "mod_code": [
+        "cin >> l >> r , y ;",
+        "while ( m is 1 )",
+        "sort ( a + 1 + a + n + 1 ) ;",
+        "cin >> n , m ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int [100007]’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        12,
+        10,
+        14
+      ],
+      "mod_code": [
+        "cin >> l >> r , y ;",
+        "while ( m is 1 )",
+        "idx = upper_bound ( a , a + n + 2 , r ) - a - 1 ;"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘)’ before ‘is’"
+    },
+    {
+      "mod_line": [
+        12,
+        10,
+        14,
+        6
+      ],
+      "mod_code": [
+        "cin >> l >> r , y ;",
+        "while ( m is 1 )",
+        "idx = upper_bound ( a , a + n + 2 , r ) - a - 1 ;",
+        "cin >> n , m ;"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘)’ before ‘is’"
+    },
+    {
+      "mod_line": [
+        12,
+        10,
+        6
+      ],
+      "mod_code": [
+        "cin >> l >> r , y ;",
+        "while ( m is 1 )",
+        "cin >> n , m ;"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘)’ before ‘is’"
+    },
+    {
+      "mod_line": [
+        12,
+        8
+      ],
+      "mod_code": [
+        "cin >> l >> r , y ;",
+        "sort ( a + 1 + a + n + 1 ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int [100007]’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        12,
+        8,
+        14
+      ],
+      "mod_code": [
+        "cin >> l >> r , y ;",
+        "sort ( a + 1 + a + n + 1 ) ;",
+        "idx = upper_bound ( a , a + n + 2 , r ) - a - 1 ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int [100007]’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        12,
+        8,
+        14,
+        6
+      ],
+      "mod_code": [
+        "cin >> l >> r , y ;",
+        "sort ( a + 1 + a + n + 1 ) ;",
+        "idx = upper_bound ( a , a + n + 2 , r ) - a - 1 ;",
+        "cin >> n , m ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int [100007]’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        12,
+        8,
+        6
+      ],
+      "mod_code": [
+        "cin >> l >> r , y ;",
+        "sort ( a + 1 + a + n + 1 ) ;",
+        "cin >> n , m ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int [100007]’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        12,
+        14
+      ],
+      "mod_code": [
+        "cin >> l >> r , y ;",
+        "idx = upper_bound ( a , a + n + 2 , r ) - a - 1 ;"
+      ],
+      "err_line": 14,
+      "err_msg": "‘idx’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        14,
+        6
+      ],
+      "mod_code": [
+        "cin >> l >> r , y ;",
+        "idx = upper_bound ( a , a + n + 2 , r ) - a - 1 ;",
+        "cin >> n , m ;"
+      ],
+      "err_line": 14,
+      "err_msg": "‘idx’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        10
+      ],
+      "mod_code": [
+        "int a [ n + 1 ] = MX ;",
+        "while ( m is 1 )"
+      ],
+      "err_line": 9,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        9,
+        10,
+        8
+      ],
+      "mod_code": [
+        "int a [ n + 1 ] = MX ;",
+        "while ( m is 1 )",
+        "sort ( a + 1 + a + n + 1 ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int [100007]’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        9,
+        10,
+        8,
+        14
+      ],
+      "mod_code": [
+        "int a [ n + 1 ] = MX ;",
+        "while ( m is 1 )",
+        "sort ( a + 1 + a + n + 1 ) ;",
+        "idx = upper_bound ( a , a + n + 2 , r ) - a - 1 ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int [100007]’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        9,
+        10,
+        8,
+        6
+      ],
+      "mod_code": [
+        "int a [ n + 1 ] = MX ;",
+        "while ( m is 1 )",
+        "sort ( a + 1 + a + n + 1 ) ;",
+        "cin >> n , m ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int [100007]’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        9,
+        10,
+        14
+      ],
+      "mod_code": [
+        "int a [ n + 1 ] = MX ;",
+        "while ( m is 1 )",
+        "idx = upper_bound ( a , a + n + 2 , r ) - a - 1 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        9,
+        10,
+        14,
+        6
+      ],
+      "mod_code": [
+        "int a [ n + 1 ] = MX ;",
+        "while ( m is 1 )",
+        "idx = upper_bound ( a , a + n + 2 , r ) - a - 1 ;",
+        "cin >> n , m ;"
+      ],
+      "err_line": 9,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        9,
+        10,
+        6
+      ],
+      "mod_code": [
+        "int a [ n + 1 ] = MX ;",
+        "while ( m is 1 )",
+        "cin >> n , m ;"
+      ],
+      "err_line": 9,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        9,
+        8
+      ],
+      "mod_code": [
+        "int a [ n + 1 ] = MX ;",
+        "sort ( a + 1 + a + n + 1 ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int [100007]’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        9,
+        8,
+        14
+      ],
+      "mod_code": [
+        "int a [ n + 1 ] = MX ;",
+        "sort ( a + 1 + a + n + 1 ) ;",
+        "idx = upper_bound ( a , a + n + 2 , r ) - a - 1 ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int [100007]’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        9,
+        8,
+        14,
+        6
+      ],
+      "mod_code": [
+        "int a [ n + 1 ] = MX ;",
+        "sort ( a + 1 + a + n + 1 ) ;",
+        "idx = upper_bound ( a , a + n + 2 , r ) - a - 1 ;",
+        "cin >> n , m ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int [100007]’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        9,
+        8,
+        6
+      ],
+      "mod_code": [
+        "int a [ n + 1 ] = MX ;",
+        "sort ( a + 1 + a + n + 1 ) ;",
+        "cin >> n , m ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int [100007]’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        9,
+        14
+      ],
+      "mod_code": [
+        "int a [ n + 1 ] = MX ;",
+        "idx = upper_bound ( a , a + n + 2 , r ) - a - 1 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        9,
+        14,
+        6
+      ],
+      "mod_code": [
+        "int a [ n + 1 ] = MX ;",
+        "idx = upper_bound ( a , a + n + 2 , r ) - a - 1 ;",
+        "cin >> n , m ;"
+      ],
+      "err_line": 9,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        9,
+        6
+      ],
+      "mod_code": [
+        "int a [ n + 1 ] = MX ;",
+        "cin >> n , m ;"
+      ],
+      "err_line": 9,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        10,
+        8
+      ],
+      "mod_code": [
+        "while ( m is 1 )",
+        "sort ( a + 1 + a + n + 1 ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int [100007]’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        10,
+        8,
+        14
+      ],
+      "mod_code": [
+        "while ( m is 1 )",
+        "sort ( a + 1 + a + n + 1 ) ;",
+        "idx = upper_bound ( a , a + n + 2 , r ) - a - 1 ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int [100007]’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        10,
+        8,
+        14,
+        6
+      ],
+      "mod_code": [
+        "while ( m is 1 )",
+        "sort ( a + 1 + a + n + 1 ) ;",
+        "idx = upper_bound ( a , a + n + 2 , r ) - a - 1 ;",
+        "cin >> n , m ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int [100007]’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        10,
+        8,
+        6
+      ],
+      "mod_code": [
+        "while ( m is 1 )",
+        "sort ( a + 1 + a + n + 1 ) ;",
+        "cin >> n , m ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int [100007]’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        10,
+        14
+      ],
+      "mod_code": [
+        "while ( m is 1 )",
+        "idx = upper_bound ( a , a + n + 2 , r ) - a - 1 ;"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘)’ before ‘is’"
+    },
+    {
+      "mod_line": [
+        10,
+        14,
+        6
+      ],
+      "mod_code": [
+        "while ( m is 1 )",
+        "idx = upper_bound ( a , a + n + 2 , r ) - a - 1 ;",
+        "cin >> n , m ;"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘)’ before ‘is’"
+    },
+    {
+      "mod_line": [
+        10,
+        6
+      ],
+      "mod_code": [
+        "while ( m is 1 )",
+        "cin >> n , m ;"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘)’ before ‘is’"
+    },
+    {
+      "mod_line": [
+        8,
+        14
+      ],
+      "mod_code": [
+        "sort ( a + 1 + a + n + 1 ) ;",
+        "idx = upper_bound ( a , a + n + 2 , r ) - a - 1 ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int [100007]’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        8,
+        14,
+        6
+      ],
+      "mod_code": [
+        "sort ( a + 1 + a + n + 1 ) ;",
+        "idx = upper_bound ( a , a + n + 2 , r ) - a - 1 ;",
+        "cin >> n , m ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int [100007]’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        8,
+        6
+      ],
+      "mod_code": [
+        "sort ( a + 1 + a + n + 1 ) ;",
+        "cin >> n , m ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int [100007]’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        14,
+        6
+      ],
+      "mod_code": [
+        "idx = upper_bound ( a , a + n + 2 , r ) - a - 1 ;",
+        "cin >> n , m ;"
+      ],
+      "err_line": 14,
+      "err_msg": "‘idx’ was not declared in this scope"
+    }
+  ]
+}

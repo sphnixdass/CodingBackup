@@ -1,0 +1,863 @@
+{
+  "meta": {
+    "index": 1274,
+    "hitid": "3YLTXLH3DF0JAM9U6X1NCLNRFS4HP5",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "496A",
+    "subid": "40987537"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare integer array a size 110",
+      "code": "int a [ 110 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "declare integer n",
+      "code": "int n ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for i = 0 to n exclusive , read a [ i ]",
+      "code": "for ( int i = 0 ; i < n ; i ++ ) cin >> a [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "declare ret = 1000000000 as integer",
+      "code": "int ret = 1000000000 ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 1 to n - 1 exclusive",
+      "code": "for ( int i = 1 ; i < n - 1 ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "declare d = 0 as integer",
+      "code": "int d = 0 ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "for j = 0 to n - 1 exclusive",
+      "code": "for ( int j = 0 ; j < n - 1 ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "if j is i",
+      "code": "if ( j == i )",
+      "indent": 3
+    },
+    {
+      "line": 10,
+      "text": "let d be maximum of ( d and a [ i + 1 ] - a [ j - 1 ] )",
+      "code": "d = max ( d , a [ i + 1 ] - a [ j - 1 ] ) ;",
+      "indent": 4
+    },
+    {
+      "line": 11,
+      "text": "else",
+      "code": "else",
+      "indent": 3
+    },
+    {
+      "line": 12,
+      "text": "let d be maximum of ( d and a [ j + 1 ] - a [ j ] )",
+      "code": "d = max ( d , a [ j + 1 ] - a [ j ] ) ;",
+      "indent": 4
+    },
+    {
+      "line": 13,
+      "text": "let ret be minimum of ret and d",
+      "code": "ret = min ( ret , d ) ;",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "print ret , newline",
+      "code": "cout << ret << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "long int a [ 110 ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(int&, long int)’"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "long int d = 0 ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(long int&, int)’"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j < n - 1 ; j ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "d = max ( d + a , a [ i + 1 ] - a [ j - 1 ] ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(int*, int)’"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "d = max ( d [ j , a [ j + 1 ] - a [ j ] ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "expected ‘]’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "ret = ret ( ret , d ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘ret’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        10,
+        8
+      ],
+      "mod_code": [
+        "d = max ( d + a , a [ i + 1 ] - a [ j - 1 ] ) ;",
+        "for ( j = 0 ; j < n - 1 ; j ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        8,
+        9
+      ],
+      "mod_code": [
+        "d = max ( d + a , a [ i + 1 ] - a [ j - 1 ] ) ;",
+        "for ( j = 0 ; j < n - 1 ; j ++ )",
+        "if ( ! j )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        8,
+        9,
+        6
+      ],
+      "mod_code": [
+        "d = max ( d + a , a [ i + 1 ] - a [ j - 1 ] ) ;",
+        "for ( j = 0 ; j < n - 1 ; j ++ )",
+        "if ( ! j )",
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        8,
+        9,
+        0
+      ],
+      "mod_code": [
+        "d = max ( d + a , a [ i + 1 ] - a [ j - 1 ] ) ;",
+        "for ( j = 0 ; j < n - 1 ; j ++ )",
+        "if ( ! j )",
+        "long int a [ 110 ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        8,
+        9,
+        12
+      ],
+      "mod_code": [
+        "d = max ( d + a , a [ i + 1 ] - a [ j - 1 ] ) ;",
+        "for ( j = 0 ; j < n - 1 ; j ++ )",
+        "if ( ! j )",
+        "d = max ( d [ j , a [ j + 1 ] - a [ j ] ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        8,
+        6
+      ],
+      "mod_code": [
+        "d = max ( d + a , a [ i + 1 ] - a [ j - 1 ] ) ;",
+        "for ( j = 0 ; j < n - 1 ; j ++ )",
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        8,
+        6,
+        0
+      ],
+      "mod_code": [
+        "d = max ( d + a , a [ i + 1 ] - a [ j - 1 ] ) ;",
+        "for ( j = 0 ; j < n - 1 ; j ++ )",
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )",
+        "long int a [ 110 ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        8,
+        6,
+        12
+      ],
+      "mod_code": [
+        "d = max ( d + a , a [ i + 1 ] - a [ j - 1 ] ) ;",
+        "for ( j = 0 ; j < n - 1 ; j ++ )",
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )",
+        "d = max ( d [ j , a [ j + 1 ] - a [ j ] ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        8,
+        0
+      ],
+      "mod_code": [
+        "d = max ( d + a , a [ i + 1 ] - a [ j - 1 ] ) ;",
+        "for ( j = 0 ; j < n - 1 ; j ++ )",
+        "long int a [ 110 ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        8,
+        0,
+        12
+      ],
+      "mod_code": [
+        "d = max ( d + a , a [ i + 1 ] - a [ j - 1 ] ) ;",
+        "for ( j = 0 ; j < n - 1 ; j ++ )",
+        "long int a [ 110 ] ;",
+        "d = max ( d [ j , a [ j + 1 ] - a [ j ] ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        8,
+        12
+      ],
+      "mod_code": [
+        "d = max ( d + a , a [ i + 1 ] - a [ j - 1 ] ) ;",
+        "for ( j = 0 ; j < n - 1 ; j ++ )",
+        "d = max ( d [ j , a [ j + 1 ] - a [ j ] ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        9
+      ],
+      "mod_code": [
+        "d = max ( d + a , a [ i + 1 ] - a [ j - 1 ] ) ;",
+        "if ( ! j )"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(int*, int)’"
+    },
+    {
+      "mod_line": [
+        10,
+        9,
+        6
+      ],
+      "mod_code": [
+        "d = max ( d + a , a [ i + 1 ] - a [ j - 1 ] ) ;",
+        "if ( ! j )",
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(int*, int)’"
+    },
+    {
+      "mod_line": [
+        10,
+        9,
+        6,
+        0
+      ],
+      "mod_code": [
+        "d = max ( d + a , a [ i + 1 ] - a [ j - 1 ] ) ;",
+        "if ( ! j )",
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )",
+        "long int a [ 110 ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(long int*, long int)’"
+    },
+    {
+      "mod_line": [
+        10,
+        9,
+        6,
+        12
+      ],
+      "mod_code": [
+        "d = max ( d + a , a [ i + 1 ] - a [ j - 1 ] ) ;",
+        "if ( ! j )",
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )",
+        "d = max ( d [ j , a [ j + 1 ] - a [ j ] ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(int*, int)’"
+    },
+    {
+      "mod_line": [
+        10,
+        9,
+        0
+      ],
+      "mod_code": [
+        "d = max ( d + a , a [ i + 1 ] - a [ j - 1 ] ) ;",
+        "if ( ! j )",
+        "long int a [ 110 ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(long int*, long int)’"
+    },
+    {
+      "mod_line": [
+        10,
+        9,
+        0,
+        12
+      ],
+      "mod_code": [
+        "d = max ( d + a , a [ i + 1 ] - a [ j - 1 ] ) ;",
+        "if ( ! j )",
+        "long int a [ 110 ] ;",
+        "d = max ( d [ j , a [ j + 1 ] - a [ j ] ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(long int*, long int)’"
+    },
+    {
+      "mod_line": [
+        10,
+        9,
+        12
+      ],
+      "mod_code": [
+        "d = max ( d + a , a [ i + 1 ] - a [ j - 1 ] ) ;",
+        "if ( ! j )",
+        "d = max ( d [ j , a [ j + 1 ] - a [ j ] ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(int*, int)’"
+    },
+    {
+      "mod_line": [
+        10,
+        6
+      ],
+      "mod_code": [
+        "d = max ( d + a , a [ i + 1 ] - a [ j - 1 ] ) ;",
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(int*, int)’"
+    },
+    {
+      "mod_line": [
+        10,
+        6,
+        0
+      ],
+      "mod_code": [
+        "d = max ( d + a , a [ i + 1 ] - a [ j - 1 ] ) ;",
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )",
+        "long int a [ 110 ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(long int*, long int)’"
+    },
+    {
+      "mod_line": [
+        10,
+        6,
+        0,
+        12
+      ],
+      "mod_code": [
+        "d = max ( d + a , a [ i + 1 ] - a [ j - 1 ] ) ;",
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )",
+        "long int a [ 110 ] ;",
+        "d = max ( d [ j , a [ j + 1 ] - a [ j ] ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(long int*, long int)’"
+    },
+    {
+      "mod_line": [
+        10,
+        6,
+        12
+      ],
+      "mod_code": [
+        "d = max ( d + a , a [ i + 1 ] - a [ j - 1 ] ) ;",
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )",
+        "d = max ( d [ j , a [ j + 1 ] - a [ j ] ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(int*, int)’"
+    },
+    {
+      "mod_line": [
+        10,
+        0
+      ],
+      "mod_code": [
+        "d = max ( d + a , a [ i + 1 ] - a [ j - 1 ] ) ;",
+        "long int a [ 110 ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(long int*, long int)’"
+    },
+    {
+      "mod_line": [
+        10,
+        0,
+        12
+      ],
+      "mod_code": [
+        "d = max ( d + a , a [ i + 1 ] - a [ j - 1 ] ) ;",
+        "long int a [ 110 ] ;",
+        "d = max ( d [ j , a [ j + 1 ] - a [ j ] ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(long int*, long int)’"
+    },
+    {
+      "mod_line": [
+        10,
+        12
+      ],
+      "mod_code": [
+        "d = max ( d + a , a [ i + 1 ] - a [ j - 1 ] ) ;",
+        "d = max ( d [ j , a [ j + 1 ] - a [ j ] ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(int*, int)’"
+    },
+    {
+      "mod_line": [
+        8,
+        9
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j < n - 1 ; j ++ )",
+        "if ( ! j )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        9,
+        6
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j < n - 1 ; j ++ )",
+        "if ( ! j )",
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        9,
+        6,
+        0
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j < n - 1 ; j ++ )",
+        "if ( ! j )",
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )",
+        "long int a [ 110 ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        9,
+        6,
+        12
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j < n - 1 ; j ++ )",
+        "if ( ! j )",
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )",
+        "d = max ( d [ j , a [ j + 1 ] - a [ j ] ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        9,
+        0
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j < n - 1 ; j ++ )",
+        "if ( ! j )",
+        "long int a [ 110 ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        9,
+        0,
+        12
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j < n - 1 ; j ++ )",
+        "if ( ! j )",
+        "long int a [ 110 ] ;",
+        "d = max ( d [ j , a [ j + 1 ] - a [ j ] ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        9,
+        12
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j < n - 1 ; j ++ )",
+        "if ( ! j )",
+        "d = max ( d [ j , a [ j + 1 ] - a [ j ] ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        6
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j < n - 1 ; j ++ )",
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        6,
+        0
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j < n - 1 ; j ++ )",
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )",
+        "long int a [ 110 ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        6,
+        0,
+        12
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j < n - 1 ; j ++ )",
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )",
+        "long int a [ 110 ] ;",
+        "d = max ( d [ j , a [ j + 1 ] - a [ j ] ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        6,
+        12
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j < n - 1 ; j ++ )",
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )",
+        "d = max ( d [ j , a [ j + 1 ] - a [ j ] ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        0
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j < n - 1 ; j ++ )",
+        "long int a [ 110 ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        0,
+        12
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j < n - 1 ; j ++ )",
+        "long int a [ 110 ] ;",
+        "d = max ( d [ j , a [ j + 1 ] - a [ j ] ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        12
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j < n - 1 ; j ++ )",
+        "d = max ( d [ j , a [ j + 1 ] - a [ j ] ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        6,
+        0
+      ],
+      "mod_code": [
+        "if ( ! j )",
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )",
+        "long int a [ 110 ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(int&, long int)’"
+    },
+    {
+      "mod_line": [
+        9,
+        6,
+        0,
+        12
+      ],
+      "mod_code": [
+        "if ( ! j )",
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )",
+        "long int a [ 110 ] ;",
+        "d = max ( d [ j , a [ j + 1 ] - a [ j ] ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(int&, long int)’"
+    },
+    {
+      "mod_line": [
+        9,
+        6,
+        12
+      ],
+      "mod_code": [
+        "if ( ! j )",
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )",
+        "d = max ( d [ j , a [ j + 1 ] - a [ j ] ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "expected ‘]’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        9,
+        0
+      ],
+      "mod_code": [
+        "if ( ! j )",
+        "long int a [ 110 ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(int&, long int)’"
+    },
+    {
+      "mod_line": [
+        9,
+        0,
+        12
+      ],
+      "mod_code": [
+        "if ( ! j )",
+        "long int a [ 110 ] ;",
+        "d = max ( d [ j , a [ j + 1 ] - a [ j ] ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(int&, long int)’"
+    },
+    {
+      "mod_line": [
+        9,
+        12
+      ],
+      "mod_code": [
+        "if ( ! j )",
+        "d = max ( d [ j , a [ j + 1 ] - a [ j ] ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "expected ‘]’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        0
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )",
+        "long int a [ 110 ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(int&, long int)’"
+    },
+    {
+      "mod_line": [
+        6,
+        0,
+        12
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )",
+        "long int a [ 110 ] ;",
+        "d = max ( d [ j , a [ j + 1 ] - a [ j ] ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(int&, long int)’"
+    },
+    {
+      "mod_line": [
+        6,
+        12
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )",
+        "d = max ( d [ j , a [ j + 1 ] - a [ j ] ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "expected ‘]’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        12
+      ],
+      "mod_code": [
+        "long int a [ 110 ] ;",
+        "d = max ( d [ j , a [ j + 1 ] - a [ j ] ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(int&, long int)’"
+    }
+  ]
+}

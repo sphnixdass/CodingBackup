@@ -1,0 +1,729 @@
+{
+  "meta": {
+    "index": 1773,
+    "hitid": "32LAQ1JNT9JM708LNDH60ADEY3STUO",
+    "workerid": "A1R0Q9CUUBSM5F",
+    "probid": "87A",
+    "subid": "48992990"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create long long ints a , b , and lcm",
+      "code": "long long a , b , lcm ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare LCM taking in long long ints a and b and returning long long",
+      "code": "long long LCM ( long long a , long long b )",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "return the result of ( a * b ) / __gcd ( a , b )",
+      "code": "return ( a * b ) / __gcd ( a , b ) ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "read a and b",
+      "code": "cin >> a >> b ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "set lcm to LCM ( a , b )",
+      "code": "lcm = LCM ( a , b ) ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "if a is equal to b , print \" Equal \" and return 0",
+      "code": "if ( a == b ) return cout << \" Equal \" , 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "if a is less than b",
+      "code": "if ( a < b )",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "set a to lcm / a - 1 , b = lcm / b",
+      "code": "a = lcm / a - 1 , b = lcm / b ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "else",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "set a to lcm / a , b = lcm / b - 1",
+      "code": "a = lcm / a , b = lcm / b - 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "if a is more than b",
+      "code": "if ( a > b )",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "print \" Dasha \"",
+      "code": "cout << \" Dasha \" << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "else if a is less than b",
+      "code": "else if ( a < b )",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "print \" Masha \"",
+      "code": "cout << \" Masha \" << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "else do",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "print \" Equal \"",
+      "code": "cout << \" Equal \" << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "long long void LCM ( long long a , long long b )"
+      ],
+      "err_line": 1,
+      "err_msg": "‘long long’ invalid for ‘LCM’"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "int lcm ( a , b ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "if ( a > b ) break ;"
+      ],
+      "err_line": 12,
+      "err_msg": "break statement not within loop or switch"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "else do"
+      ],
+      "err_line": 18,
+      "err_msg": "expected ‘while’ before numeric constant"
+    },
+    {
+      "mod_line": [
+        9,
+        15,
+        12
+      ],
+      "mod_code": [
+        "int a = lcm / a - 1 , b = lcm / b ;",
+        "cout << \" Masha \" ;",
+        "if ( a > b ) break ;"
+      ],
+      "err_line": 12,
+      "err_msg": "break statement not within loop or switch"
+    },
+    {
+      "mod_line": [
+        9,
+        15,
+        12,
+        11
+      ],
+      "mod_code": [
+        "int a = lcm / a - 1 , b = lcm / b ;",
+        "cout << \" Masha \" ;",
+        "if ( a > b ) break ;",
+        "int a = lcm / a , b = lcm / b - 1 ;"
+      ],
+      "err_line": 12,
+      "err_msg": "break statement not within loop or switch"
+    },
+    {
+      "mod_line": [
+        9,
+        15,
+        12,
+        6
+      ],
+      "mod_code": [
+        "int a = lcm / a - 1 , b = lcm / b ;",
+        "cout << \" Masha \" ;",
+        "if ( a > b ) break ;",
+        "int lcm ( a , b ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        15,
+        12,
+        13
+      ],
+      "mod_code": [
+        "int a = lcm / a - 1 , b = lcm / b ;",
+        "cout << \" Masha \" ;",
+        "if ( a > b ) break ;",
+        "cout << \" Dasha \" ;"
+      ],
+      "err_line": 12,
+      "err_msg": "break statement not within loop or switch"
+    },
+    {
+      "mod_line": [
+        9,
+        15,
+        11,
+        6
+      ],
+      "mod_code": [
+        "int a = lcm / a - 1 , b = lcm / b ;",
+        "cout << \" Masha \" ;",
+        "int a = lcm / a , b = lcm / b - 1 ;",
+        "int lcm ( a , b ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        15,
+        6
+      ],
+      "mod_code": [
+        "int a = lcm / a - 1 , b = lcm / b ;",
+        "cout << \" Masha \" ;",
+        "int lcm ( a , b ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        15,
+        6,
+        13
+      ],
+      "mod_code": [
+        "int a = lcm / a - 1 , b = lcm / b ;",
+        "cout << \" Masha \" ;",
+        "int lcm ( a , b ) ;",
+        "cout << \" Dasha \" ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        12
+      ],
+      "mod_code": [
+        "int a = lcm / a - 1 , b = lcm / b ;",
+        "if ( a > b ) break ;"
+      ],
+      "err_line": 12,
+      "err_msg": "break statement not within loop or switch"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        11
+      ],
+      "mod_code": [
+        "int a = lcm / a - 1 , b = lcm / b ;",
+        "if ( a > b ) break ;",
+        "int a = lcm / a , b = lcm / b - 1 ;"
+      ],
+      "err_line": 12,
+      "err_msg": "break statement not within loop or switch"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        11,
+        6
+      ],
+      "mod_code": [
+        "int a = lcm / a - 1 , b = lcm / b ;",
+        "if ( a > b ) break ;",
+        "int a = lcm / a , b = lcm / b - 1 ;",
+        "int lcm ( a , b ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        11,
+        13
+      ],
+      "mod_code": [
+        "int a = lcm / a - 1 , b = lcm / b ;",
+        "if ( a > b ) break ;",
+        "int a = lcm / a , b = lcm / b - 1 ;",
+        "cout << \" Dasha \" ;"
+      ],
+      "err_line": 12,
+      "err_msg": "break statement not within loop or switch"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        6
+      ],
+      "mod_code": [
+        "int a = lcm / a - 1 , b = lcm / b ;",
+        "if ( a > b ) break ;",
+        "int lcm ( a , b ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        6,
+        13
+      ],
+      "mod_code": [
+        "int a = lcm / a - 1 , b = lcm / b ;",
+        "if ( a > b ) break ;",
+        "int lcm ( a , b ) ;",
+        "cout << \" Dasha \" ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        13
+      ],
+      "mod_code": [
+        "int a = lcm / a - 1 , b = lcm / b ;",
+        "if ( a > b ) break ;",
+        "cout << \" Dasha \" ;"
+      ],
+      "err_line": 12,
+      "err_msg": "break statement not within loop or switch"
+    },
+    {
+      "mod_line": [
+        9,
+        11,
+        6
+      ],
+      "mod_code": [
+        "int a = lcm / a - 1 , b = lcm / b ;",
+        "int a = lcm / a , b = lcm / b - 1 ;",
+        "int lcm ( a , b ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        11,
+        6,
+        13
+      ],
+      "mod_code": [
+        "int a = lcm / a - 1 , b = lcm / b ;",
+        "int a = lcm / a , b = lcm / b - 1 ;",
+        "int lcm ( a , b ) ;",
+        "cout << \" Dasha \" ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        6
+      ],
+      "mod_code": [
+        "int a = lcm / a - 1 , b = lcm / b ;",
+        "int lcm ( a , b ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        6,
+        13
+      ],
+      "mod_code": [
+        "int a = lcm / a - 1 , b = lcm / b ;",
+        "int lcm ( a , b ) ;",
+        "cout << \" Dasha \" ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        15,
+        12
+      ],
+      "mod_code": [
+        "cout << \" Masha \" ;",
+        "if ( a > b ) break ;"
+      ],
+      "err_line": 12,
+      "err_msg": "break statement not within loop or switch"
+    },
+    {
+      "mod_line": [
+        15,
+        12,
+        11
+      ],
+      "mod_code": [
+        "cout << \" Masha \" ;",
+        "if ( a > b ) break ;",
+        "int a = lcm / a , b = lcm / b - 1 ;"
+      ],
+      "err_line": 12,
+      "err_msg": "break statement not within loop or switch"
+    },
+    {
+      "mod_line": [
+        15,
+        12,
+        11,
+        6
+      ],
+      "mod_code": [
+        "cout << \" Masha \" ;",
+        "if ( a > b ) break ;",
+        "int a = lcm / a , b = lcm / b - 1 ;",
+        "int lcm ( a , b ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        15,
+        12,
+        11,
+        13
+      ],
+      "mod_code": [
+        "cout << \" Masha \" ;",
+        "if ( a > b ) break ;",
+        "int a = lcm / a , b = lcm / b - 1 ;",
+        "cout << \" Dasha \" ;"
+      ],
+      "err_line": 12,
+      "err_msg": "break statement not within loop or switch"
+    },
+    {
+      "mod_line": [
+        15,
+        12,
+        6
+      ],
+      "mod_code": [
+        "cout << \" Masha \" ;",
+        "if ( a > b ) break ;",
+        "int lcm ( a , b ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        15,
+        12,
+        6,
+        13
+      ],
+      "mod_code": [
+        "cout << \" Masha \" ;",
+        "if ( a > b ) break ;",
+        "int lcm ( a , b ) ;",
+        "cout << \" Dasha \" ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        15,
+        12,
+        13
+      ],
+      "mod_code": [
+        "cout << \" Masha \" ;",
+        "if ( a > b ) break ;",
+        "cout << \" Dasha \" ;"
+      ],
+      "err_line": 12,
+      "err_msg": "break statement not within loop or switch"
+    },
+    {
+      "mod_line": [
+        15,
+        11,
+        6
+      ],
+      "mod_code": [
+        "cout << \" Masha \" ;",
+        "int a = lcm / a , b = lcm / b - 1 ;",
+        "int lcm ( a , b ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        15,
+        11,
+        6,
+        13
+      ],
+      "mod_code": [
+        "cout << \" Masha \" ;",
+        "int a = lcm / a , b = lcm / b - 1 ;",
+        "int lcm ( a , b ) ;",
+        "cout << \" Dasha \" ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        15,
+        6
+      ],
+      "mod_code": [
+        "cout << \" Masha \" ;",
+        "int lcm ( a , b ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        15,
+        6,
+        13
+      ],
+      "mod_code": [
+        "cout << \" Masha \" ;",
+        "int lcm ( a , b ) ;",
+        "cout << \" Dasha \" ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        11
+      ],
+      "mod_code": [
+        "if ( a > b ) break ;",
+        "int a = lcm / a , b = lcm / b - 1 ;"
+      ],
+      "err_line": 12,
+      "err_msg": "break statement not within loop or switch"
+    },
+    {
+      "mod_line": [
+        12,
+        11,
+        6
+      ],
+      "mod_code": [
+        "if ( a > b ) break ;",
+        "int a = lcm / a , b = lcm / b - 1 ;",
+        "int lcm ( a , b ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        11,
+        6,
+        13
+      ],
+      "mod_code": [
+        "if ( a > b ) break ;",
+        "int a = lcm / a , b = lcm / b - 1 ;",
+        "int lcm ( a , b ) ;",
+        "cout << \" Dasha \" ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        11,
+        13
+      ],
+      "mod_code": [
+        "if ( a > b ) break ;",
+        "int a = lcm / a , b = lcm / b - 1 ;",
+        "cout << \" Dasha \" ;"
+      ],
+      "err_line": 12,
+      "err_msg": "break statement not within loop or switch"
+    },
+    {
+      "mod_line": [
+        12,
+        6
+      ],
+      "mod_code": [
+        "if ( a > b ) break ;",
+        "int lcm ( a , b ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        6,
+        13
+      ],
+      "mod_code": [
+        "if ( a > b ) break ;",
+        "int lcm ( a , b ) ;",
+        "cout << \" Dasha \" ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        13
+      ],
+      "mod_code": [
+        "if ( a > b ) break ;",
+        "cout << \" Dasha \" ;"
+      ],
+      "err_line": 12,
+      "err_msg": "break statement not within loop or switch"
+    },
+    {
+      "mod_line": [
+        11,
+        6
+      ],
+      "mod_code": [
+        "int a = lcm / a , b = lcm / b - 1 ;",
+        "int lcm ( a , b ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        6,
+        13
+      ],
+      "mod_code": [
+        "int a = lcm / a , b = lcm / b - 1 ;",
+        "int lcm ( a , b ) ;",
+        "cout << \" Dasha \" ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        13
+      ],
+      "mod_code": [
+        "int lcm ( a , b ) ;",
+        "cout << \" Dasha \" ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    }
+  ]
+}

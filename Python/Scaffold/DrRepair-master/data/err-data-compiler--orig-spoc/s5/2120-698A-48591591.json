@@ -1,0 +1,927 @@
+{
+  "meta": {
+    "index": 2120,
+    "hitid": "36KM3FWE3R6JTGZYC30L67XPTHW70M",
+    "workerid": "A1AYVATMT88U1W",
+    "probid": "698A",
+    "subid": "48591591"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "let n , dp , ans be long integers with ans = 0 , dp = 2d array of long integers with 101 rows and 4 columns",
+      "code": "long long n , dp [ 101 ] [ 4 ] , ans = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "a = vector of long integers with size 101",
+      "code": "vector < long long > a ( 101 ) ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for long integer i = 1 to n inclusive , read a [ i ]",
+      "code": "for ( long long i = 1 ; i <= n ; i ++ ) cin >> a [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "memset of dp , 0 , sizeof dp",
+      "code": "memset ( dp , 0 , sizeof dp ) ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for long integer i = 1 to n inclusive",
+      "code": "for ( long long i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "if a [ i ] is equal to 1 or a [ i ] is equal to 3",
+      "code": "if ( a [ i ] == 1 || a [ i ] == 3 )",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "let x be a long integer with x is equal to maximum of dp [ i - 1 ] [ 1 ] + 1 and dp [ i - 1 ] [ 2 ] + 1",
+      "code": "long long x = max ( dp [ i - 1 ] [ 1 ] + 1 , dp [ i - 1 ] [ 2 ] + 1 ) ;",
+      "indent": 3
+    },
+    {
+      "line": 9,
+      "text": "dp [ i ] [ 3 ] is equal to maximum of x and dp [ i - 1 ] [ 3 ]",
+      "code": "dp [ i ] [ 3 ] = max ( x , dp [ i - 1 ] [ 3 ] ) ;",
+      "indent": 3
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "if a [ i ] is equal to 3 or a [ i ] is equal to 2",
+      "code": "if ( a [ i ] == 3 || a [ i ] == 2 )",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "let x be a long integer with x is equal to maximum of dp [ i - 1 ] [ 1 ] + 1 and dp [ i - 1 ] [ 3 ] + 1",
+      "code": "long long x = max ( dp [ i - 1 ] [ 1 ] + 1 , dp [ i - 1 ] [ 3 ] + 1 ) ;",
+      "indent": 3
+    },
+    {
+      "line": 13,
+      "text": "dp [ i ] [ 2 ] is equal to maximum of x and dp [ i - 1 ] [ 2 ]",
+      "code": "dp [ i ] [ 2 ] = max ( x , dp [ i - 1 ] [ 2 ] ) ;",
+      "indent": 3
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "if a [ i ] is not equal to 3",
+      "code": "if ( a [ i ] != 3 )",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "let x be a long integer with x is equal to maximum of dp [ i - 1 ] [ 3 ] and dp [ i - 1 ] [ 2 ]",
+      "code": "long long x = max ( dp [ i - 1 ] [ 3 ] , dp [ i - 1 ] [ 2 ] ) ;",
+      "indent": 3
+    },
+    {
+      "line": 17,
+      "text": "dp [ i ] [ 1 ] is equal to maximum of x and dp [ i - 1 ] [ 1 ]",
+      "code": "dp [ i ] [ 1 ] = max ( x , dp [ i - 1 ] [ 1 ] ) ;",
+      "indent": 3
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "ans is equal to maximum of dp [ n ] [ 1 ] and dp [ n ] [ 2 ]",
+      "code": "ans = max ( dp [ n ] [ 1 ] , dp [ n ] [ 2 ] ) ;",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "ans is equal to maximum of ans and dp [ n ] [ 3 ]",
+      "code": "ans = max ( ans , dp [ n ] [ 3 ] ) ;",
+      "indent": 1
+    },
+    {
+      "line": 22,
+      "text": "print n - ans and newline",
+      "code": "cout << n - ans << \" \\n \" ;",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "vector < long long int > a [ 101 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘std::vector<long long int>’)"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "long long n , dp [ 101 ] [ 4 ] , dp [ 101 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int dp [101]’"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "dp [ i ] [ 3 ] = max ( x [ i - 1 ] [ 3 ] ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "dp [ i ] [ 2 ] = max ( x [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "dp [ i ] [ 1 ] = max ( x [ i - 1 ] [ 1 ] ) ;"
+      ],
+      "err_line": 17,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        20
+      ],
+      "mod_code": [
+        "int ans = max ( dp [ n ] [ 1 ] , dp [ n ] [ 2 ] ) ;"
+      ],
+      "err_line": 20,
+      "err_msg": "conflicting declaration ‘int ans’"
+    },
+    {
+      "mod_line": [
+        21
+      ],
+      "mod_code": [
+        "ans = max ( ans [ n ] [ 3 ] ) ;"
+      ],
+      "err_line": 21,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        1
+      ],
+      "mod_code": [
+        "vector < long long int > a [ 101 ] ;",
+        "long long n , dp [ 101 ] [ 4 ] , dp [ 101 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int dp [101]’"
+    },
+    {
+      "mod_line": [
+        2,
+        1,
+        21
+      ],
+      "mod_code": [
+        "vector < long long int > a [ 101 ] ;",
+        "long long n , dp [ 101 ] [ 4 ] , dp [ 101 ] ;",
+        "ans = max ( ans [ n ] [ 3 ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int dp [101]’"
+    },
+    {
+      "mod_line": [
+        2,
+        1,
+        21,
+        17
+      ],
+      "mod_code": [
+        "vector < long long int > a [ 101 ] ;",
+        "long long n , dp [ 101 ] [ 4 ] , dp [ 101 ] ;",
+        "ans = max ( ans [ n ] [ 3 ] ) ;",
+        "dp [ i ] [ 1 ] = max ( x [ i - 1 ] [ 1 ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int dp [101]’"
+    },
+    {
+      "mod_line": [
+        2,
+        1,
+        21,
+        13
+      ],
+      "mod_code": [
+        "vector < long long int > a [ 101 ] ;",
+        "long long n , dp [ 101 ] [ 4 ] , dp [ 101 ] ;",
+        "ans = max ( ans [ n ] [ 3 ] ) ;",
+        "dp [ i ] [ 2 ] = max ( x [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int dp [101]’"
+    },
+    {
+      "mod_line": [
+        2,
+        1,
+        21,
+        20
+      ],
+      "mod_code": [
+        "vector < long long int > a [ 101 ] ;",
+        "long long n , dp [ 101 ] [ 4 ] , dp [ 101 ] ;",
+        "ans = max ( ans [ n ] [ 3 ] ) ;",
+        "int ans = max ( dp [ n ] [ 1 ] , dp [ n ] [ 2 ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int dp [101]’"
+    },
+    {
+      "mod_line": [
+        2,
+        1,
+        17
+      ],
+      "mod_code": [
+        "vector < long long int > a [ 101 ] ;",
+        "long long n , dp [ 101 ] [ 4 ] , dp [ 101 ] ;",
+        "dp [ i ] [ 1 ] = max ( x [ i - 1 ] [ 1 ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int dp [101]’"
+    },
+    {
+      "mod_line": [
+        2,
+        1,
+        17,
+        13
+      ],
+      "mod_code": [
+        "vector < long long int > a [ 101 ] ;",
+        "long long n , dp [ 101 ] [ 4 ] , dp [ 101 ] ;",
+        "dp [ i ] [ 1 ] = max ( x [ i - 1 ] [ 1 ] ) ;",
+        "dp [ i ] [ 2 ] = max ( x [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int dp [101]’"
+    },
+    {
+      "mod_line": [
+        2,
+        1,
+        17,
+        20
+      ],
+      "mod_code": [
+        "vector < long long int > a [ 101 ] ;",
+        "long long n , dp [ 101 ] [ 4 ] , dp [ 101 ] ;",
+        "dp [ i ] [ 1 ] = max ( x [ i - 1 ] [ 1 ] ) ;",
+        "int ans = max ( dp [ n ] [ 1 ] , dp [ n ] [ 2 ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int dp [101]’"
+    },
+    {
+      "mod_line": [
+        2,
+        1,
+        13
+      ],
+      "mod_code": [
+        "vector < long long int > a [ 101 ] ;",
+        "long long n , dp [ 101 ] [ 4 ] , dp [ 101 ] ;",
+        "dp [ i ] [ 2 ] = max ( x [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int dp [101]’"
+    },
+    {
+      "mod_line": [
+        2,
+        1,
+        13,
+        20
+      ],
+      "mod_code": [
+        "vector < long long int > a [ 101 ] ;",
+        "long long n , dp [ 101 ] [ 4 ] , dp [ 101 ] ;",
+        "dp [ i ] [ 2 ] = max ( x [ i - 1 ] [ 2 ] ) ;",
+        "int ans = max ( dp [ n ] [ 1 ] , dp [ n ] [ 2 ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int dp [101]’"
+    },
+    {
+      "mod_line": [
+        2,
+        1,
+        20
+      ],
+      "mod_code": [
+        "vector < long long int > a [ 101 ] ;",
+        "long long n , dp [ 101 ] [ 4 ] , dp [ 101 ] ;",
+        "int ans = max ( dp [ n ] [ 1 ] , dp [ n ] [ 2 ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int dp [101]’"
+    },
+    {
+      "mod_line": [
+        2,
+        21
+      ],
+      "mod_code": [
+        "vector < long long int > a [ 101 ] ;",
+        "ans = max ( ans [ n ] [ 3 ] ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘std::vector<long long int>’)"
+    },
+    {
+      "mod_line": [
+        2,
+        21,
+        17
+      ],
+      "mod_code": [
+        "vector < long long int > a [ 101 ] ;",
+        "ans = max ( ans [ n ] [ 3 ] ) ;",
+        "dp [ i ] [ 1 ] = max ( x [ i - 1 ] [ 1 ] ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘std::vector<long long int>’)"
+    },
+    {
+      "mod_line": [
+        2,
+        21,
+        17,
+        13
+      ],
+      "mod_code": [
+        "vector < long long int > a [ 101 ] ;",
+        "ans = max ( ans [ n ] [ 3 ] ) ;",
+        "dp [ i ] [ 1 ] = max ( x [ i - 1 ] [ 1 ] ) ;",
+        "dp [ i ] [ 2 ] = max ( x [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘std::vector<long long int>’)"
+    },
+    {
+      "mod_line": [
+        2,
+        21,
+        17,
+        20
+      ],
+      "mod_code": [
+        "vector < long long int > a [ 101 ] ;",
+        "ans = max ( ans [ n ] [ 3 ] ) ;",
+        "dp [ i ] [ 1 ] = max ( x [ i - 1 ] [ 1 ] ) ;",
+        "int ans = max ( dp [ n ] [ 1 ] , dp [ n ] [ 2 ] ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘std::vector<long long int>’)"
+    },
+    {
+      "mod_line": [
+        2,
+        21,
+        13
+      ],
+      "mod_code": [
+        "vector < long long int > a [ 101 ] ;",
+        "ans = max ( ans [ n ] [ 3 ] ) ;",
+        "dp [ i ] [ 2 ] = max ( x [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘std::vector<long long int>’)"
+    },
+    {
+      "mod_line": [
+        2,
+        21,
+        13,
+        20
+      ],
+      "mod_code": [
+        "vector < long long int > a [ 101 ] ;",
+        "ans = max ( ans [ n ] [ 3 ] ) ;",
+        "dp [ i ] [ 2 ] = max ( x [ i - 1 ] [ 2 ] ) ;",
+        "int ans = max ( dp [ n ] [ 1 ] , dp [ n ] [ 2 ] ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘std::vector<long long int>’)"
+    },
+    {
+      "mod_line": [
+        2,
+        21,
+        20
+      ],
+      "mod_code": [
+        "vector < long long int > a [ 101 ] ;",
+        "ans = max ( ans [ n ] [ 3 ] ) ;",
+        "int ans = max ( dp [ n ] [ 1 ] , dp [ n ] [ 2 ] ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘std::vector<long long int>’)"
+    },
+    {
+      "mod_line": [
+        2,
+        17
+      ],
+      "mod_code": [
+        "vector < long long int > a [ 101 ] ;",
+        "dp [ i ] [ 1 ] = max ( x [ i - 1 ] [ 1 ] ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘std::vector<long long int>’)"
+    },
+    {
+      "mod_line": [
+        2,
+        17,
+        13
+      ],
+      "mod_code": [
+        "vector < long long int > a [ 101 ] ;",
+        "dp [ i ] [ 1 ] = max ( x [ i - 1 ] [ 1 ] ) ;",
+        "dp [ i ] [ 2 ] = max ( x [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘std::vector<long long int>’)"
+    },
+    {
+      "mod_line": [
+        2,
+        17,
+        13,
+        20
+      ],
+      "mod_code": [
+        "vector < long long int > a [ 101 ] ;",
+        "dp [ i ] [ 1 ] = max ( x [ i - 1 ] [ 1 ] ) ;",
+        "dp [ i ] [ 2 ] = max ( x [ i - 1 ] [ 2 ] ) ;",
+        "int ans = max ( dp [ n ] [ 1 ] , dp [ n ] [ 2 ] ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘std::vector<long long int>’)"
+    },
+    {
+      "mod_line": [
+        2,
+        17,
+        20
+      ],
+      "mod_code": [
+        "vector < long long int > a [ 101 ] ;",
+        "dp [ i ] [ 1 ] = max ( x [ i - 1 ] [ 1 ] ) ;",
+        "int ans = max ( dp [ n ] [ 1 ] , dp [ n ] [ 2 ] ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘std::vector<long long int>’)"
+    },
+    {
+      "mod_line": [
+        2,
+        13
+      ],
+      "mod_code": [
+        "vector < long long int > a [ 101 ] ;",
+        "dp [ i ] [ 2 ] = max ( x [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘std::vector<long long int>’)"
+    },
+    {
+      "mod_line": [
+        2,
+        13,
+        20
+      ],
+      "mod_code": [
+        "vector < long long int > a [ 101 ] ;",
+        "dp [ i ] [ 2 ] = max ( x [ i - 1 ] [ 2 ] ) ;",
+        "int ans = max ( dp [ n ] [ 1 ] , dp [ n ] [ 2 ] ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘std::vector<long long int>’)"
+    },
+    {
+      "mod_line": [
+        2,
+        20
+      ],
+      "mod_code": [
+        "vector < long long int > a [ 101 ] ;",
+        "int ans = max ( dp [ n ] [ 1 ] , dp [ n ] [ 2 ] ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘std::vector<long long int>’)"
+    },
+    {
+      "mod_line": [
+        1,
+        21
+      ],
+      "mod_code": [
+        "long long n , dp [ 101 ] [ 4 ] , dp [ 101 ] ;",
+        "ans = max ( ans [ n ] [ 3 ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int dp [101]’"
+    },
+    {
+      "mod_line": [
+        1,
+        21,
+        17
+      ],
+      "mod_code": [
+        "long long n , dp [ 101 ] [ 4 ] , dp [ 101 ] ;",
+        "ans = max ( ans [ n ] [ 3 ] ) ;",
+        "dp [ i ] [ 1 ] = max ( x [ i - 1 ] [ 1 ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int dp [101]’"
+    },
+    {
+      "mod_line": [
+        1,
+        21,
+        17,
+        13
+      ],
+      "mod_code": [
+        "long long n , dp [ 101 ] [ 4 ] , dp [ 101 ] ;",
+        "ans = max ( ans [ n ] [ 3 ] ) ;",
+        "dp [ i ] [ 1 ] = max ( x [ i - 1 ] [ 1 ] ) ;",
+        "dp [ i ] [ 2 ] = max ( x [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int dp [101]’"
+    },
+    {
+      "mod_line": [
+        1,
+        21,
+        17,
+        20
+      ],
+      "mod_code": [
+        "long long n , dp [ 101 ] [ 4 ] , dp [ 101 ] ;",
+        "ans = max ( ans [ n ] [ 3 ] ) ;",
+        "dp [ i ] [ 1 ] = max ( x [ i - 1 ] [ 1 ] ) ;",
+        "int ans = max ( dp [ n ] [ 1 ] , dp [ n ] [ 2 ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int dp [101]’"
+    },
+    {
+      "mod_line": [
+        1,
+        21,
+        13
+      ],
+      "mod_code": [
+        "long long n , dp [ 101 ] [ 4 ] , dp [ 101 ] ;",
+        "ans = max ( ans [ n ] [ 3 ] ) ;",
+        "dp [ i ] [ 2 ] = max ( x [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int dp [101]’"
+    },
+    {
+      "mod_line": [
+        1,
+        21,
+        13,
+        20
+      ],
+      "mod_code": [
+        "long long n , dp [ 101 ] [ 4 ] , dp [ 101 ] ;",
+        "ans = max ( ans [ n ] [ 3 ] ) ;",
+        "dp [ i ] [ 2 ] = max ( x [ i - 1 ] [ 2 ] ) ;",
+        "int ans = max ( dp [ n ] [ 1 ] , dp [ n ] [ 2 ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int dp [101]’"
+    },
+    {
+      "mod_line": [
+        1,
+        21,
+        20
+      ],
+      "mod_code": [
+        "long long n , dp [ 101 ] [ 4 ] , dp [ 101 ] ;",
+        "ans = max ( ans [ n ] [ 3 ] ) ;",
+        "int ans = max ( dp [ n ] [ 1 ] , dp [ n ] [ 2 ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int dp [101]’"
+    },
+    {
+      "mod_line": [
+        1,
+        17
+      ],
+      "mod_code": [
+        "long long n , dp [ 101 ] [ 4 ] , dp [ 101 ] ;",
+        "dp [ i ] [ 1 ] = max ( x [ i - 1 ] [ 1 ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int dp [101]’"
+    },
+    {
+      "mod_line": [
+        1,
+        17,
+        13
+      ],
+      "mod_code": [
+        "long long n , dp [ 101 ] [ 4 ] , dp [ 101 ] ;",
+        "dp [ i ] [ 1 ] = max ( x [ i - 1 ] [ 1 ] ) ;",
+        "dp [ i ] [ 2 ] = max ( x [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int dp [101]’"
+    },
+    {
+      "mod_line": [
+        1,
+        17,
+        13,
+        20
+      ],
+      "mod_code": [
+        "long long n , dp [ 101 ] [ 4 ] , dp [ 101 ] ;",
+        "dp [ i ] [ 1 ] = max ( x [ i - 1 ] [ 1 ] ) ;",
+        "dp [ i ] [ 2 ] = max ( x [ i - 1 ] [ 2 ] ) ;",
+        "int ans = max ( dp [ n ] [ 1 ] , dp [ n ] [ 2 ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int dp [101]’"
+    },
+    {
+      "mod_line": [
+        1,
+        17,
+        20
+      ],
+      "mod_code": [
+        "long long n , dp [ 101 ] [ 4 ] , dp [ 101 ] ;",
+        "dp [ i ] [ 1 ] = max ( x [ i - 1 ] [ 1 ] ) ;",
+        "int ans = max ( dp [ n ] [ 1 ] , dp [ n ] [ 2 ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int dp [101]’"
+    },
+    {
+      "mod_line": [
+        1,
+        13
+      ],
+      "mod_code": [
+        "long long n , dp [ 101 ] [ 4 ] , dp [ 101 ] ;",
+        "dp [ i ] [ 2 ] = max ( x [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int dp [101]’"
+    },
+    {
+      "mod_line": [
+        1,
+        13,
+        20
+      ],
+      "mod_code": [
+        "long long n , dp [ 101 ] [ 4 ] , dp [ 101 ] ;",
+        "dp [ i ] [ 2 ] = max ( x [ i - 1 ] [ 2 ] ) ;",
+        "int ans = max ( dp [ n ] [ 1 ] , dp [ n ] [ 2 ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int dp [101]’"
+    },
+    {
+      "mod_line": [
+        1,
+        20
+      ],
+      "mod_code": [
+        "long long n , dp [ 101 ] [ 4 ] , dp [ 101 ] ;",
+        "int ans = max ( dp [ n ] [ 1 ] , dp [ n ] [ 2 ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int dp [101]’"
+    },
+    {
+      "mod_line": [
+        21,
+        17
+      ],
+      "mod_code": [
+        "ans = max ( ans [ n ] [ 3 ] ) ;",
+        "dp [ i ] [ 1 ] = max ( x [ i - 1 ] [ 1 ] ) ;"
+      ],
+      "err_line": 17,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        21,
+        17,
+        13
+      ],
+      "mod_code": [
+        "ans = max ( ans [ n ] [ 3 ] ) ;",
+        "dp [ i ] [ 1 ] = max ( x [ i - 1 ] [ 1 ] ) ;",
+        "dp [ i ] [ 2 ] = max ( x [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        21,
+        17,
+        13,
+        20
+      ],
+      "mod_code": [
+        "ans = max ( ans [ n ] [ 3 ] ) ;",
+        "dp [ i ] [ 1 ] = max ( x [ i - 1 ] [ 1 ] ) ;",
+        "dp [ i ] [ 2 ] = max ( x [ i - 1 ] [ 2 ] ) ;",
+        "int ans = max ( dp [ n ] [ 1 ] , dp [ n ] [ 2 ] ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        21,
+        17,
+        20
+      ],
+      "mod_code": [
+        "ans = max ( ans [ n ] [ 3 ] ) ;",
+        "dp [ i ] [ 1 ] = max ( x [ i - 1 ] [ 1 ] ) ;",
+        "int ans = max ( dp [ n ] [ 1 ] , dp [ n ] [ 2 ] ) ;"
+      ],
+      "err_line": 17,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        21,
+        13
+      ],
+      "mod_code": [
+        "ans = max ( ans [ n ] [ 3 ] ) ;",
+        "dp [ i ] [ 2 ] = max ( x [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        21,
+        13,
+        20
+      ],
+      "mod_code": [
+        "ans = max ( ans [ n ] [ 3 ] ) ;",
+        "dp [ i ] [ 2 ] = max ( x [ i - 1 ] [ 2 ] ) ;",
+        "int ans = max ( dp [ n ] [ 1 ] , dp [ n ] [ 2 ] ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        21,
+        20
+      ],
+      "mod_code": [
+        "ans = max ( ans [ n ] [ 3 ] ) ;",
+        "int ans = max ( dp [ n ] [ 1 ] , dp [ n ] [ 2 ] ) ;"
+      ],
+      "err_line": 20,
+      "err_msg": "conflicting declaration ‘int ans’"
+    },
+    {
+      "mod_line": [
+        17,
+        13
+      ],
+      "mod_code": [
+        "dp [ i ] [ 1 ] = max ( x [ i - 1 ] [ 1 ] ) ;",
+        "dp [ i ] [ 2 ] = max ( x [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        17,
+        13,
+        20
+      ],
+      "mod_code": [
+        "dp [ i ] [ 1 ] = max ( x [ i - 1 ] [ 1 ] ) ;",
+        "dp [ i ] [ 2 ] = max ( x [ i - 1 ] [ 2 ] ) ;",
+        "int ans = max ( dp [ n ] [ 1 ] , dp [ n ] [ 2 ] ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        17,
+        20
+      ],
+      "mod_code": [
+        "dp [ i ] [ 1 ] = max ( x [ i - 1 ] [ 1 ] ) ;",
+        "int ans = max ( dp [ n ] [ 1 ] , dp [ n ] [ 2 ] ) ;"
+      ],
+      "err_line": 17,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        13,
+        20
+      ],
+      "mod_code": [
+        "dp [ i ] [ 2 ] = max ( x [ i - 1 ] [ 2 ] ) ;",
+        "int ans = max ( dp [ n ] [ 1 ] , dp [ n ] [ 2 ] ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    }
+  ]
+}

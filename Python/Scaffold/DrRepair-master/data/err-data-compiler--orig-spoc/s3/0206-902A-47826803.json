@@ -1,0 +1,311 @@
+{
+  "meta": {
+    "index": 206,
+    "hitid": "3BPP3MA3TCEHZR3UO40AA1HUI2ELEY",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "902A",
+    "subid": "47826803"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare integer array freq size 10000005",
+      "code": "int freq [ 10000005 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare integers n , m",
+      "code": "int n , m ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "read n and m",
+      "code": "cin >> n >> m ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "declare integer array mat size n by 2",
+      "code": "int mat [ n ] [ 2 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "set bytes from freq to size of freq to value 0",
+      "code": "memset ( freq , 0 , sizeof freq ) ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( int i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "read mat [ i ] [ 0 ] , mat [ i ] [ 1 ]",
+      "code": "cin >> mat [ i ] [ 0 ] >> mat [ i ] [ 1 ] ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "for j = ( mat [ i ] [ 0 ] ) + 1 to mat [ i ] [ 1 ] inclusive , increment freq [ j ]",
+      "code": "for ( int j = ( mat [ i ] [ 0 ] ) + 1 ; j <= mat [ i ] [ 1 ] ; j ++ ) freq [ j ] ++ ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "for i = 1 to m inclusive",
+      "code": "for ( int i = 1 ; i <= m ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "if not freq [ i ]",
+      "code": "if ( ! freq [ i ] )",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "print \" NO \"",
+      "code": "puts ( \" NO \" ) ;",
+      "indent": 3
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 3
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "print \" YES \"",
+      "code": "puts ( \" YES \" ) ;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘mat’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "int mat [ n ] [ j ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "cin >> mat [ i ] [ 0 ] >> mat [ i ] [ j ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= m ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        4,
+        3
+      ],
+      "mod_code": [
+        "int mat [ n ] [ j ] ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        3,
+        10
+      ],
+      "mod_code": [
+        "int mat [ n ] [ j ] ;",
+        "while ( cin >> n >> m )",
+        "for ( i = 1 ; i <= m ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        3,
+        10,
+        7
+      ],
+      "mod_code": [
+        "int mat [ n ] [ j ] ;",
+        "while ( cin >> n >> m )",
+        "for ( i = 1 ; i <= m ; i ++ )",
+        "cin >> mat [ i ] [ 0 ] >> mat [ i ] [ j ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        3,
+        7
+      ],
+      "mod_code": [
+        "int mat [ n ] [ j ] ;",
+        "while ( cin >> n >> m )",
+        "cin >> mat [ i ] [ 0 ] >> mat [ i ] [ j ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        10
+      ],
+      "mod_code": [
+        "int mat [ n ] [ j ] ;",
+        "for ( i = 1 ; i <= m ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        10,
+        7
+      ],
+      "mod_code": [
+        "int mat [ n ] [ j ] ;",
+        "for ( i = 1 ; i <= m ; i ++ )",
+        "cin >> mat [ i ] [ 0 ] >> mat [ i ] [ j ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        7
+      ],
+      "mod_code": [
+        "int mat [ n ] [ j ] ;",
+        "cin >> mat [ i ] [ 0 ] >> mat [ i ] [ j ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        10
+      ],
+      "mod_code": [
+        "while ( cin >> n >> m )",
+        "for ( i = 1 ; i <= m ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘mat’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        10,
+        7
+      ],
+      "mod_code": [
+        "while ( cin >> n >> m )",
+        "for ( i = 1 ; i <= m ; i ++ )",
+        "cin >> mat [ i ] [ 0 ] >> mat [ i ] [ j ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘mat’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        7
+      ],
+      "mod_code": [
+        "while ( cin >> n >> m )",
+        "cin >> mat [ i ] [ 0 ] >> mat [ i ] [ j ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘mat’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        7
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= m ; i ++ )",
+        "cin >> mat [ i ] [ 0 ] >> mat [ i ] [ j ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    }
+  ]
+}

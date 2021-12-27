@@ -1,0 +1,165 @@
+{
+  "meta": {
+    "index": 785,
+    "hitid": "34ZTTGSNJXI4AYA96AGCCQD1KOSQH7",
+    "workerid": "A1AYVATMT88U1W",
+    "probid": "571A",
+    "subid": "43101142"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "let inf be a constant integer with inf = 0x3f3f3f3f",
+      "code": "const int inf = 0x3f3f3f3f ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "let maxn be a constant integer with maxn = 2e5 + 5",
+      "code": "const int maxn = 2e5 + 5 ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "let a , b , c , l be long integers",
+      "code": "long long a , b , c , l ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "let solve be a function that accepts long integers x , y , z , l and returns a long integer value",
+      "code": "long long solve ( long long x , long long y , long long z , long long l )",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "if x is less than y + z , return 0",
+      "code": "if ( x < y + z ) return 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "let tmp be a long integer with tmp = minimum of x - y - z and l",
+      "code": "long long tmp = min ( x - y - z , l ) ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "return the value of ( tmp + 1 ) * ( tmp + 2 ) / 2",
+      "code": "return ( tmp + 1 ) * ( tmp + 2 ) / 2 ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 8,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 9,
+      "text": "read a , b , c , l",
+      "code": "cin >> a >> b >> c >> l ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "let ans be a long integer with ans = 0",
+      "code": "long long ans = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "for long integer i = 0 to l inclusive , increment ans by ( i + 1 ) * ( i + 2 ) / 2",
+      "code": "for ( long long i = 0 ; i <= l ; i ++ ) ans += ( i + 1 ) * ( i + 2 ) / 2 ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "for integer i = 0 to l inclusive",
+      "code": "for ( int i = 0 ; i <= l ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "decrement ans by solve ( a + i , b , c , l - i )",
+      "code": "ans -= solve ( a + i , b , c , l - i ) ;",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "decrement ans by solve ( b + i , a , c , l - i )",
+      "code": "ans -= solve ( b + i , a , c , l - i ) ;",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "decrement ans by solve ( c + i , a , b , l - i )",
+      "code": "ans -= solve ( c + i , a , b , l - i ) ;",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "print ans and newline",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "long long solve ( long long x , long long y , long long z , long long z )"
+      ],
+      "err_line": 3,
+      "err_msg": "redefinition of ‘long long int z’"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "cin >> a >> b >> c >> n ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        9
+      ],
+      "mod_code": [
+        "long long solve ( long long x , long long y , long long z , long long z )",
+        "cin >> a >> b >> c >> n ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redefinition of ‘long long int z’"
+    }
+  ]
+}

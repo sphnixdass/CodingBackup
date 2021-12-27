@@ -1,0 +1,699 @@
+{
+  "meta": {
+    "index": 2307,
+    "hitid": "34R3P23QHSV9UV6VIJFI4FVN8PAWHI",
+    "workerid": "A1AYVATMT88U1W",
+    "probid": "908A",
+    "subid": "49053991"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "function isVowel takes a character a and returns a boolean value",
+      "code": "bool isVowel ( char a )",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "return the value of ( a is equal to a or a is equal to e or a is equal to i or a is equal to o or a is equal to u )",
+      "code": "return ( a == ' a ' || a == ' e ' || a == ' i ' || a == ' o ' || a == ' u ' ) ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "function isOdd takes a character a and returns a boolean value",
+      "code": "bool isOdd ( char a )",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "return the value of ( a is equal to 1 or a is equal to 3 or a is equal to 5 or a is equal to 7 or a is equal to 9 )",
+      "code": "return ( a == ' 1 ' || a == ' 3 ' || a == ' 5 ' || a == ' 7 ' || a == ' 9 ' ) ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 6,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 7,
+      "text": "text is a string",
+      "code": "string text ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "read text",
+      "code": "cin >> text ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "num is an integer and equals 0",
+      "code": "int num = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "for integer i = 0 to text . length ( ) exclusive",
+      "code": "for ( int i = 0 ; i < text . length ( ) ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "if isVowel ( text [ i ] ) or isOdd ( text [ i ] is true , increase num by 1",
+      "code": "if ( isVowel ( text [ i ] ) || isOdd ( text [ i ] ) ) num ++ ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "print num and newline",
+      "code": "cout << num << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "return ( a == a || a == i || a == i || a == i ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "return ( a == ' a ' || a == i || a == i || a == u ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "bool isOdd ( char a ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "string text ( )"
+      ],
+      "err_line": 8,
+      "err_msg": "expected initializer before ‘cin’"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "gets ( text ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "num = 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘num’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        4
+      ],
+      "mod_code": [
+        "return ( a == a || a == i || a == i || a == i ) ;",
+        "return ( a == 3 || a == 5 || a == 5 || a == 5 || a == 9 ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        4,
+        3
+      ],
+      "mod_code": [
+        "return ( a == a || a == i || a == i || a == i ) ;",
+        "return ( a == 3 || a == 5 || a == 5 || a == 5 || a == 9 ) ;",
+        "bool isOdd ( char a ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        4,
+        3,
+        9
+      ],
+      "mod_code": [
+        "return ( a == a || a == i || a == i || a == i ) ;",
+        "return ( a == 3 || a == 5 || a == 5 || a == 5 || a == 9 ) ;",
+        "bool isOdd ( char a ) ;",
+        "num = 0 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        4,
+        3,
+        7
+      ],
+      "mod_code": [
+        "return ( a == a || a == i || a == i || a == i ) ;",
+        "return ( a == 3 || a == 5 || a == 5 || a == 5 || a == 9 ) ;",
+        "bool isOdd ( char a ) ;",
+        "string text ( )"
+      ],
+      "err_line": 1,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        4,
+        9
+      ],
+      "mod_code": [
+        "return ( a == a || a == i || a == i || a == i ) ;",
+        "return ( a == 3 || a == 5 || a == 5 || a == 5 || a == 9 ) ;",
+        "num = 0 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        4,
+        9,
+        7
+      ],
+      "mod_code": [
+        "return ( a == a || a == i || a == i || a == i ) ;",
+        "return ( a == 3 || a == 5 || a == 5 || a == 5 || a == 9 ) ;",
+        "num = 0 ;",
+        "string text ( )"
+      ],
+      "err_line": 1,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        4,
+        7
+      ],
+      "mod_code": [
+        "return ( a == a || a == i || a == i || a == i ) ;",
+        "return ( a == 3 || a == 5 || a == 5 || a == 5 || a == 9 ) ;",
+        "string text ( )"
+      ],
+      "err_line": 1,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        3
+      ],
+      "mod_code": [
+        "return ( a == a || a == i || a == i || a == i ) ;",
+        "bool isOdd ( char a ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        3,
+        9
+      ],
+      "mod_code": [
+        "return ( a == a || a == i || a == i || a == i ) ;",
+        "bool isOdd ( char a ) ;",
+        "num = 0 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        3,
+        9,
+        7
+      ],
+      "mod_code": [
+        "return ( a == a || a == i || a == i || a == i ) ;",
+        "bool isOdd ( char a ) ;",
+        "num = 0 ;",
+        "string text ( )"
+      ],
+      "err_line": 1,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        3,
+        7
+      ],
+      "mod_code": [
+        "return ( a == a || a == i || a == i || a == i ) ;",
+        "bool isOdd ( char a ) ;",
+        "string text ( )"
+      ],
+      "err_line": 1,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        9
+      ],
+      "mod_code": [
+        "return ( a == a || a == i || a == i || a == i ) ;",
+        "num = 0 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        7
+      ],
+      "mod_code": [
+        "return ( a == a || a == i || a == i || a == i ) ;",
+        "num = 0 ;",
+        "string text ( )"
+      ],
+      "err_line": 1,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        7
+      ],
+      "mod_code": [
+        "return ( a == a || a == i || a == i || a == i ) ;",
+        "string text ( )"
+      ],
+      "err_line": 1,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        3
+      ],
+      "mod_code": [
+        "return ( a == 3 || a == 5 || a == 5 || a == 5 || a == 9 ) ;",
+        "bool isOdd ( char a ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        3,
+        1
+      ],
+      "mod_code": [
+        "return ( a == 3 || a == 5 || a == 5 || a == 5 || a == 9 ) ;",
+        "bool isOdd ( char a ) ;",
+        "return ( a == ' a ' || a == i || a == i || a == u ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        3,
+        1,
+        9
+      ],
+      "mod_code": [
+        "return ( a == 3 || a == 5 || a == 5 || a == 5 || a == 9 ) ;",
+        "bool isOdd ( char a ) ;",
+        "return ( a == ' a ' || a == i || a == i || a == u ) ;",
+        "num = 0 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        3,
+        1,
+        7
+      ],
+      "mod_code": [
+        "return ( a == 3 || a == 5 || a == 5 || a == 5 || a == 9 ) ;",
+        "bool isOdd ( char a ) ;",
+        "return ( a == ' a ' || a == i || a == i || a == u ) ;",
+        "string text ( )"
+      ],
+      "err_line": 1,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        3,
+        9
+      ],
+      "mod_code": [
+        "return ( a == 3 || a == 5 || a == 5 || a == 5 || a == 9 ) ;",
+        "bool isOdd ( char a ) ;",
+        "num = 0 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        3,
+        9,
+        7
+      ],
+      "mod_code": [
+        "return ( a == 3 || a == 5 || a == 5 || a == 5 || a == 9 ) ;",
+        "bool isOdd ( char a ) ;",
+        "num = 0 ;",
+        "string text ( )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        3,
+        7
+      ],
+      "mod_code": [
+        "return ( a == 3 || a == 5 || a == 5 || a == 5 || a == 9 ) ;",
+        "bool isOdd ( char a ) ;",
+        "string text ( )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        1
+      ],
+      "mod_code": [
+        "return ( a == 3 || a == 5 || a == 5 || a == 5 || a == 9 ) ;",
+        "return ( a == ' a ' || a == i || a == i || a == u ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        1,
+        9
+      ],
+      "mod_code": [
+        "return ( a == 3 || a == 5 || a == 5 || a == 5 || a == 9 ) ;",
+        "return ( a == ' a ' || a == i || a == i || a == u ) ;",
+        "num = 0 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        1,
+        9,
+        7
+      ],
+      "mod_code": [
+        "return ( a == 3 || a == 5 || a == 5 || a == 5 || a == 9 ) ;",
+        "return ( a == ' a ' || a == i || a == i || a == u ) ;",
+        "num = 0 ;",
+        "string text ( )"
+      ],
+      "err_line": 1,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        1,
+        7
+      ],
+      "mod_code": [
+        "return ( a == 3 || a == 5 || a == 5 || a == 5 || a == 9 ) ;",
+        "return ( a == ' a ' || a == i || a == i || a == u ) ;",
+        "string text ( )"
+      ],
+      "err_line": 1,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        9
+      ],
+      "mod_code": [
+        "return ( a == 3 || a == 5 || a == 5 || a == 5 || a == 9 ) ;",
+        "num = 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘num’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        9,
+        7
+      ],
+      "mod_code": [
+        "return ( a == 3 || a == 5 || a == 5 || a == 5 || a == 9 ) ;",
+        "num = 0 ;",
+        "string text ( )"
+      ],
+      "err_line": 8,
+      "err_msg": "expected initializer before ‘cin’"
+    },
+    {
+      "mod_line": [
+        4,
+        7
+      ],
+      "mod_code": [
+        "return ( a == 3 || a == 5 || a == 5 || a == 5 || a == 9 ) ;",
+        "string text ( )"
+      ],
+      "err_line": 8,
+      "err_msg": "expected initializer before ‘cin’"
+    },
+    {
+      "mod_line": [
+        3,
+        1
+      ],
+      "mod_code": [
+        "bool isOdd ( char a ) ;",
+        "return ( a == ' a ' || a == i || a == i || a == u ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        1,
+        9
+      ],
+      "mod_code": [
+        "bool isOdd ( char a ) ;",
+        "return ( a == ' a ' || a == i || a == i || a == u ) ;",
+        "num = 0 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        1,
+        9,
+        7
+      ],
+      "mod_code": [
+        "bool isOdd ( char a ) ;",
+        "return ( a == ' a ' || a == i || a == i || a == u ) ;",
+        "num = 0 ;",
+        "string text ( )"
+      ],
+      "err_line": 1,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        1,
+        7
+      ],
+      "mod_code": [
+        "bool isOdd ( char a ) ;",
+        "return ( a == ' a ' || a == i || a == i || a == u ) ;",
+        "string text ( )"
+      ],
+      "err_line": 1,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        9
+      ],
+      "mod_code": [
+        "bool isOdd ( char a ) ;",
+        "num = 0 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        9,
+        7
+      ],
+      "mod_code": [
+        "bool isOdd ( char a ) ;",
+        "num = 0 ;",
+        "string text ( )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        7
+      ],
+      "mod_code": [
+        "bool isOdd ( char a ) ;",
+        "string text ( )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        9
+      ],
+      "mod_code": [
+        "return ( a == ' a ' || a == i || a == i || a == u ) ;",
+        "num = 0 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        7
+      ],
+      "mod_code": [
+        "return ( a == ' a ' || a == i || a == i || a == u ) ;",
+        "num = 0 ;",
+        "string text ( )"
+      ],
+      "err_line": 1,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        7
+      ],
+      "mod_code": [
+        "return ( a == ' a ' || a == i || a == i || a == u ) ;",
+        "string text ( )"
+      ],
+      "err_line": 1,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        7
+      ],
+      "mod_code": [
+        "num = 0 ;",
+        "string text ( )"
+      ],
+      "err_line": 8,
+      "err_msg": "expected initializer before ‘cin’"
+    }
+  ]
+}

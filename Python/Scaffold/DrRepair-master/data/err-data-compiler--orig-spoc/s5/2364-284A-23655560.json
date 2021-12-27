@@ -1,0 +1,1015 @@
+{
+  "meta": {
+    "index": 2364,
+    "hitid": "3W5PY7V3UP19A6WLLK0R1PWIWPAJY5",
+    "workerid": "A2QLFQ2ZYR6B7M",
+    "probid": "284A",
+    "subid": "23655560"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "p = int , dp = array of 2005 by 2005 int",
+      "code": "int p , dp [ 2005 ] [ 2005 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "function helper ( no args , no return value )",
+      "code": "void helper ( )",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "fill dp with 0",
+      "code": "memset ( dp , 0 , sizeof ( dp ) ) ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "for i = 0 to p exclusive dp [ i ] [ 0 ] = 1",
+      "code": "for ( int i = 0 ; i < p ; i ++ ) { dp [ i ] [ 0 ] = 1 ; }",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for x = 1 to p exclusive",
+      "code": "for ( int x = 1 ; x < p ; x ++ )",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "fpr i = 1 to p exclusive dp [ x ] [ i ] = ( ( dp [ x ] [ i - 1 ] ) * x ) modulo p",
+      "code": "for ( int i = 1 ; i < p ; i ++ ) { dp [ x ] [ i ] = ( ( dp [ x ] [ i - 1 ] ) * x ) % p ; }",
+      "indent": 2
+    },
+    {
+      "line": 6,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 8,
+      "text": "function isPrimeRoot ( get int x , return bool )",
+      "code": "bool isPrimeRoot ( int x )",
+      "indent": 0
+    },
+    {
+      "line": 9,
+      "text": "curr = 0",
+      "code": "int curr = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "for k = 0 to p - 2 exclusive",
+      "code": "for ( int k = 0 ; k < p - 2 ; k ++ )",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "add dp [ x ] [ k ] to curr",
+      "code": "curr += dp [ x ] [ k ] ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "if curr modulo p is 0 or ( x - 1 ) modulo p is 0 return false",
+      "code": "if ( curr % p == 0 || ( x - 1 ) % p == 0 ) { return false ; }",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "add dp [ x ] [ p - 2 ] to curr",
+      "code": "curr = curr + dp [ x ] [ p - 2 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "if curr modulo p is not 0 and ( x - 1 ) modulo p is not 0 return false",
+      "code": "if ( curr % p != 0 && ( x - 1 ) % p != 0 ) { return false ; }",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "return true",
+      "code": "return true ;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 18,
+      "text": "function solve ( no args , return int )",
+      "code": "int solve ( )",
+      "indent": 0
+    },
+    {
+      "line": 19,
+      "text": "helper ( )",
+      "code": "helper ( ) ;",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "ans = 0",
+      "code": "int ans = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "for x = 1 to p exclusive",
+      "code": "for ( int x = 1 ; x < p ; x ++ )",
+      "indent": 1
+    },
+    {
+      "line": 22,
+      "text": "if isPrimeRoot ( x ) increment ans",
+      "code": "if ( isPrimeRoot ( x ) ) { ans ++ ; }",
+      "indent": 2
+    },
+    {
+      "line": 23,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "return ans",
+      "code": "return ans ;",
+      "indent": 1
+    },
+    {
+      "line": 25,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 26,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 27,
+      "text": "read p",
+      "code": "cin >> p ;",
+      "indent": 1
+    },
+    {
+      "line": 28,
+      "text": "ans = solve ( )",
+      "code": "int ans = solve ( ) ;",
+      "indent": 1
+    },
+    {
+      "line": 29,
+      "text": "print ans",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 30,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 31,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "i = ( ( dp [ x ] [ i ] ) * ( ( dp [ x ] [ i - 1 ] ) * x ) % p ) % p ;"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        18
+      ],
+      "mod_code": [
+        "void solve ( )"
+      ],
+      "err_line": 24,
+      "err_msg": "return-statement with a value, in function returning 'void' [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        28
+      ],
+      "mod_code": [
+        "ans = solve ( ) ;"
+      ],
+      "err_line": 28,
+      "err_msg": "‘ans’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int p [ 2005 ] , dp [ 2005 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "void helper ( ) { }"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "for ( x = 1 ; x < p ; x ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘x’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "void isPrimeRoot ( int x )"
+      ],
+      "err_line": 12,
+      "err_msg": "return-statement with a value, in function returning 'void' [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "for ( k = 0 ; k < p - 2 ; k ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "curr = dp + dp [ x ] [ k ] ;"
+      ],
+      "err_line": 11,
+      "err_msg": "invalid conversion from ‘int (*)[2005]’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        19
+      ],
+      "mod_code": [
+        "putchar ( ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "too few arguments to function ‘int putchar(int)’"
+    },
+    {
+      "mod_line": [
+        21
+      ],
+      "mod_code": [
+        "for ( x = 1 ; x < p ; x ++ )"
+      ],
+      "err_line": 21,
+      "err_msg": "‘x’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        18
+      ],
+      "mod_code": [
+        "i = ( ( dp [ x ] [ i ] ) * ( ( dp [ x ] [ i - 1 ] ) * x ) % p ) % p ;",
+        "void solve ( )"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        18,
+        28
+      ],
+      "mod_code": [
+        "i = ( ( dp [ x ] [ i ] ) * ( ( dp [ x ] [ i - 1 ] ) * x ) % p ) % p ;",
+        "void solve ( )",
+        "ans = solve ( ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        18,
+        28,
+        19
+      ],
+      "mod_code": [
+        "i = ( ( dp [ x ] [ i ] ) * ( ( dp [ x ] [ i - 1 ] ) * x ) % p ) % p ;",
+        "void solve ( )",
+        "ans = solve ( ) ;",
+        "putchar ( ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        18,
+        28,
+        4
+      ],
+      "mod_code": [
+        "i = ( ( dp [ x ] [ i ] ) * ( ( dp [ x ] [ i - 1 ] ) * x ) % p ) % p ;",
+        "void solve ( )",
+        "ans = solve ( ) ;",
+        "for ( x = 1 ; x < p ; x ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘x’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        18,
+        28,
+        8
+      ],
+      "mod_code": [
+        "i = ( ( dp [ x ] [ i ] ) * ( ( dp [ x ] [ i - 1 ] ) * x ) % p ) % p ;",
+        "void solve ( )",
+        "ans = solve ( ) ;",
+        "void isPrimeRoot ( int x )"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        18,
+        19
+      ],
+      "mod_code": [
+        "i = ( ( dp [ x ] [ i ] ) * ( ( dp [ x ] [ i - 1 ] ) * x ) % p ) % p ;",
+        "void solve ( )",
+        "putchar ( ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        18,
+        19,
+        4
+      ],
+      "mod_code": [
+        "i = ( ( dp [ x ] [ i ] ) * ( ( dp [ x ] [ i - 1 ] ) * x ) % p ) % p ;",
+        "void solve ( )",
+        "putchar ( ) ;",
+        "for ( x = 1 ; x < p ; x ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘x’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        18,
+        19,
+        8
+      ],
+      "mod_code": [
+        "i = ( ( dp [ x ] [ i ] ) * ( ( dp [ x ] [ i - 1 ] ) * x ) % p ) % p ;",
+        "void solve ( )",
+        "putchar ( ) ;",
+        "void isPrimeRoot ( int x )"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        18,
+        4
+      ],
+      "mod_code": [
+        "i = ( ( dp [ x ] [ i ] ) * ( ( dp [ x ] [ i - 1 ] ) * x ) % p ) % p ;",
+        "void solve ( )",
+        "for ( x = 1 ; x < p ; x ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘x’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        18,
+        4,
+        8
+      ],
+      "mod_code": [
+        "i = ( ( dp [ x ] [ i ] ) * ( ( dp [ x ] [ i - 1 ] ) * x ) % p ) % p ;",
+        "void solve ( )",
+        "for ( x = 1 ; x < p ; x ++ )",
+        "void isPrimeRoot ( int x )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘x’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        18,
+        8
+      ],
+      "mod_code": [
+        "i = ( ( dp [ x ] [ i ] ) * ( ( dp [ x ] [ i - 1 ] ) * x ) % p ) % p ;",
+        "void solve ( )",
+        "void isPrimeRoot ( int x )"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        28
+      ],
+      "mod_code": [
+        "i = ( ( dp [ x ] [ i ] ) * ( ( dp [ x ] [ i - 1 ] ) * x ) % p ) % p ;",
+        "ans = solve ( ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        28,
+        19
+      ],
+      "mod_code": [
+        "i = ( ( dp [ x ] [ i ] ) * ( ( dp [ x ] [ i - 1 ] ) * x ) % p ) % p ;",
+        "ans = solve ( ) ;",
+        "putchar ( ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        28,
+        19,
+        4
+      ],
+      "mod_code": [
+        "i = ( ( dp [ x ] [ i ] ) * ( ( dp [ x ] [ i - 1 ] ) * x ) % p ) % p ;",
+        "ans = solve ( ) ;",
+        "putchar ( ) ;",
+        "for ( x = 1 ; x < p ; x ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘x’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        28,
+        19,
+        8
+      ],
+      "mod_code": [
+        "i = ( ( dp [ x ] [ i ] ) * ( ( dp [ x ] [ i - 1 ] ) * x ) % p ) % p ;",
+        "ans = solve ( ) ;",
+        "putchar ( ) ;",
+        "void isPrimeRoot ( int x )"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        28,
+        4
+      ],
+      "mod_code": [
+        "i = ( ( dp [ x ] [ i ] ) * ( ( dp [ x ] [ i - 1 ] ) * x ) % p ) % p ;",
+        "ans = solve ( ) ;",
+        "for ( x = 1 ; x < p ; x ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘x’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        28,
+        4,
+        8
+      ],
+      "mod_code": [
+        "i = ( ( dp [ x ] [ i ] ) * ( ( dp [ x ] [ i - 1 ] ) * x ) % p ) % p ;",
+        "ans = solve ( ) ;",
+        "for ( x = 1 ; x < p ; x ++ )",
+        "void isPrimeRoot ( int x )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘x’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        28,
+        8
+      ],
+      "mod_code": [
+        "i = ( ( dp [ x ] [ i ] ) * ( ( dp [ x ] [ i - 1 ] ) * x ) % p ) % p ;",
+        "ans = solve ( ) ;",
+        "void isPrimeRoot ( int x )"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        19
+      ],
+      "mod_code": [
+        "i = ( ( dp [ x ] [ i ] ) * ( ( dp [ x ] [ i - 1 ] ) * x ) % p ) % p ;",
+        "putchar ( ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        19,
+        4
+      ],
+      "mod_code": [
+        "i = ( ( dp [ x ] [ i ] ) * ( ( dp [ x ] [ i - 1 ] ) * x ) % p ) % p ;",
+        "putchar ( ) ;",
+        "for ( x = 1 ; x < p ; x ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘x’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        19,
+        4,
+        8
+      ],
+      "mod_code": [
+        "i = ( ( dp [ x ] [ i ] ) * ( ( dp [ x ] [ i - 1 ] ) * x ) % p ) % p ;",
+        "putchar ( ) ;",
+        "for ( x = 1 ; x < p ; x ++ )",
+        "void isPrimeRoot ( int x )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘x’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        19,
+        8
+      ],
+      "mod_code": [
+        "i = ( ( dp [ x ] [ i ] ) * ( ( dp [ x ] [ i - 1 ] ) * x ) % p ) % p ;",
+        "putchar ( ) ;",
+        "void isPrimeRoot ( int x )"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        4
+      ],
+      "mod_code": [
+        "i = ( ( dp [ x ] [ i ] ) * ( ( dp [ x ] [ i - 1 ] ) * x ) % p ) % p ;",
+        "for ( x = 1 ; x < p ; x ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘x’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        4,
+        8
+      ],
+      "mod_code": [
+        "i = ( ( dp [ x ] [ i ] ) * ( ( dp [ x ] [ i - 1 ] ) * x ) % p ) % p ;",
+        "for ( x = 1 ; x < p ; x ++ )",
+        "void isPrimeRoot ( int x )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘x’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        8
+      ],
+      "mod_code": [
+        "i = ( ( dp [ x ] [ i ] ) * ( ( dp [ x ] [ i - 1 ] ) * x ) % p ) % p ;",
+        "void isPrimeRoot ( int x )"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        18,
+        28
+      ],
+      "mod_code": [
+        "void solve ( )",
+        "ans = solve ( ) ;"
+      ],
+      "err_line": 24,
+      "err_msg": "return-statement with a value, in function returning 'void' [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        18,
+        28,
+        19
+      ],
+      "mod_code": [
+        "void solve ( )",
+        "ans = solve ( ) ;",
+        "putchar ( ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "too few arguments to function ‘int putchar(int)’"
+    },
+    {
+      "mod_line": [
+        18,
+        28,
+        19,
+        4
+      ],
+      "mod_code": [
+        "void solve ( )",
+        "ans = solve ( ) ;",
+        "putchar ( ) ;",
+        "for ( x = 1 ; x < p ; x ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘x’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        18,
+        28,
+        19,
+        8
+      ],
+      "mod_code": [
+        "void solve ( )",
+        "ans = solve ( ) ;",
+        "putchar ( ) ;",
+        "void isPrimeRoot ( int x )"
+      ],
+      "err_line": 12,
+      "err_msg": "return-statement with a value, in function returning 'void' [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        18,
+        28,
+        4
+      ],
+      "mod_code": [
+        "void solve ( )",
+        "ans = solve ( ) ;",
+        "for ( x = 1 ; x < p ; x ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘x’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        18,
+        28,
+        4,
+        8
+      ],
+      "mod_code": [
+        "void solve ( )",
+        "ans = solve ( ) ;",
+        "for ( x = 1 ; x < p ; x ++ )",
+        "void isPrimeRoot ( int x )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘x’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        18,
+        28,
+        8
+      ],
+      "mod_code": [
+        "void solve ( )",
+        "ans = solve ( ) ;",
+        "void isPrimeRoot ( int x )"
+      ],
+      "err_line": 12,
+      "err_msg": "return-statement with a value, in function returning 'void' [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        18,
+        19
+      ],
+      "mod_code": [
+        "void solve ( )",
+        "putchar ( ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "too few arguments to function ‘int putchar(int)’"
+    },
+    {
+      "mod_line": [
+        18,
+        19,
+        4
+      ],
+      "mod_code": [
+        "void solve ( )",
+        "putchar ( ) ;",
+        "for ( x = 1 ; x < p ; x ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘x’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        18,
+        19,
+        4,
+        8
+      ],
+      "mod_code": [
+        "void solve ( )",
+        "putchar ( ) ;",
+        "for ( x = 1 ; x < p ; x ++ )",
+        "void isPrimeRoot ( int x )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘x’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        18,
+        19,
+        8
+      ],
+      "mod_code": [
+        "void solve ( )",
+        "putchar ( ) ;",
+        "void isPrimeRoot ( int x )"
+      ],
+      "err_line": 12,
+      "err_msg": "return-statement with a value, in function returning 'void' [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        18,
+        4
+      ],
+      "mod_code": [
+        "void solve ( )",
+        "for ( x = 1 ; x < p ; x ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘x’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        18,
+        4,
+        8
+      ],
+      "mod_code": [
+        "void solve ( )",
+        "for ( x = 1 ; x < p ; x ++ )",
+        "void isPrimeRoot ( int x )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘x’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        18,
+        8
+      ],
+      "mod_code": [
+        "void solve ( )",
+        "void isPrimeRoot ( int x )"
+      ],
+      "err_line": 12,
+      "err_msg": "return-statement with a value, in function returning 'void' [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        28,
+        19
+      ],
+      "mod_code": [
+        "ans = solve ( ) ;",
+        "putchar ( ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "too few arguments to function ‘int putchar(int)’"
+    },
+    {
+      "mod_line": [
+        28,
+        19,
+        4
+      ],
+      "mod_code": [
+        "ans = solve ( ) ;",
+        "putchar ( ) ;",
+        "for ( x = 1 ; x < p ; x ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘x’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        28,
+        19,
+        4,
+        8
+      ],
+      "mod_code": [
+        "ans = solve ( ) ;",
+        "putchar ( ) ;",
+        "for ( x = 1 ; x < p ; x ++ )",
+        "void isPrimeRoot ( int x )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘x’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        28,
+        19,
+        8
+      ],
+      "mod_code": [
+        "ans = solve ( ) ;",
+        "putchar ( ) ;",
+        "void isPrimeRoot ( int x )"
+      ],
+      "err_line": 12,
+      "err_msg": "return-statement with a value, in function returning 'void' [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        28,
+        4
+      ],
+      "mod_code": [
+        "ans = solve ( ) ;",
+        "for ( x = 1 ; x < p ; x ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘x’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        28,
+        4,
+        8
+      ],
+      "mod_code": [
+        "ans = solve ( ) ;",
+        "for ( x = 1 ; x < p ; x ++ )",
+        "void isPrimeRoot ( int x )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘x’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        28,
+        8
+      ],
+      "mod_code": [
+        "ans = solve ( ) ;",
+        "void isPrimeRoot ( int x )"
+      ],
+      "err_line": 12,
+      "err_msg": "return-statement with a value, in function returning 'void' [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        19,
+        4
+      ],
+      "mod_code": [
+        "putchar ( ) ;",
+        "for ( x = 1 ; x < p ; x ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘x’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        19,
+        4,
+        8
+      ],
+      "mod_code": [
+        "putchar ( ) ;",
+        "for ( x = 1 ; x < p ; x ++ )",
+        "void isPrimeRoot ( int x )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘x’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        19,
+        8
+      ],
+      "mod_code": [
+        "putchar ( ) ;",
+        "void isPrimeRoot ( int x )"
+      ],
+      "err_line": 12,
+      "err_msg": "return-statement with a value, in function returning 'void' [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        4,
+        8
+      ],
+      "mod_code": [
+        "for ( x = 1 ; x < p ; x ++ )",
+        "void isPrimeRoot ( int x )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘x’ was not declared in this scope"
+    }
+  ]
+}

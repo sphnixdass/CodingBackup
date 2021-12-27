@@ -1,0 +1,467 @@
+{
+  "meta": {
+    "index": 1151,
+    "hitid": "34ZTTGSNJXI4AYA96AGCCQD1J1THQO",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "910A",
+    "subid": "48185781"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create constant integer MAXN with MAXN = 101",
+      "code": "const int MAXN = 101 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create integers n , d",
+      "code": "int n , d ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "create 2d integer array dp with size MAXN by MAXN",
+      "code": "int dp [ MAXN ] [ MAXN ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "create 2d boolean array used with size MAXN by MAXN",
+      "code": "bool used [ MAXN ] [ MAXN ] ;",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "create character array flower with size MAXN",
+      "code": "char flower [ MAXN ] ;",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "declare f with integers position , pasos as arguments , returning integer",
+      "code": "int f ( int position , int pasos )",
+      "indent": 0
+    },
+    {
+      "line": 6,
+      "text": "if position is n , return pasos from function",
+      "code": "if ( position == n ) { return pasos ; }",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "if position is greater than n , return INT_MAX",
+      "code": "if ( position > n ) { return INT_MAX ; }",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "if used [ position ] [ pasos ] , return dp [ position ] [ pasos ] from function",
+      "code": "if ( used [ position ] [ pasos ] ) { return dp [ position ] [ pasos ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "create integer ans with ans = INT_MAX",
+      "code": "int ans = INT_MAX ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "for i = 1 to d + 1 exclusive",
+      "code": "for ( int i = 1 ; i < d + 1 ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "if position + i is less than or equal to n and flower [ position + 1 ] is ' 1 ' , set ans to minimum of ans and result of run f with position + i , pasos + 1 as arguments",
+      "code": "if ( position + i <= n && flower [ position + i ] == ' 1 ' ) { ans = min ( ans , f ( position + i , pasos + 1 ) ) ; }",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "set used [ position ] [ pasos ] to 1",
+      "code": "used [ position ] [ pasos ] = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "set dp [ position ] [ pasos ] to ans",
+      "code": "dp [ position ] [ pasos ] = ans ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "return ans from function",
+      "code": "return ans ;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 18,
+      "text": "read n read d",
+      "code": "cin >> n >> d ;",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "for i = 1 to n + 1 exclusive , read flower [ i ]",
+      "code": "for ( int i = 1 ; i < n + 1 ; i ++ ) { cin >> flower [ i ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "create integer ans with ans = result of run function f with 1 , 0 as arguments",
+      "code": "int ans = f ( 1 , 0 ) ;",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "if ans is INT_MAX",
+      "code": "if ( ans == INT_MAX )",
+      "indent": 1
+    },
+    {
+      "line": 22,
+      "text": "print - 1 print newline",
+      "code": "cout << - 1 << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 23,
+      "text": "else",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "print ans print newline",
+      "code": "cout << ans << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 25,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 26,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 27,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "int dp [ MAXN + MAXN ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "bool used [ MAXN + MAXN ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid types ‘bool[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘flower’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "int f ( int position , int pasos ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "long int ans = INT_MAX ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘min(long int&, int)’"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "if ( position + i <= n && flower [ position + 1 ] == ' 1 ' ) ans = min ( ans , f + position , pasos + 1 ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘min(int&, int (*)(int, int), int)’"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "return ans ans ;"
+      ],
+      "err_line": 15,
+      "err_msg": "expected ‘;’ before ‘ans’"
+    },
+    {
+      "mod_line": [
+        18
+      ],
+      "mod_code": [
+        "cin >> n >> k ;"
+      ],
+      "err_line": 18,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        20
+      ],
+      "mod_code": [
+        "int ans = f ( f , 0 ) ;"
+      ],
+      "err_line": 20,
+      "err_msg": "invalid conversion from ‘int (*)(int, int)’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        21,
+        11
+      ],
+      "mod_code": [
+        "if ( ! ans )",
+        "if ( position + i <= n && flower [ position + 1 ] == ' 1 ' ) ans = min ( ans , f + position , pasos + 1 ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘min(int&, int (*)(int, int), int)’"
+    },
+    {
+      "mod_line": [
+        21,
+        11,
+        13
+      ],
+      "mod_code": [
+        "if ( ! ans )",
+        "if ( position + i <= n && flower [ position + 1 ] == ' 1 ' ) ans = min ( ans , f + position , pasos + 1 ) ;",
+        "used [ position ] [ ' pasos ' ] = 1 ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘min(int&, int (*)(int, int), int)’"
+    },
+    {
+      "mod_line": [
+        21,
+        11,
+        13,
+        14
+      ],
+      "mod_code": [
+        "if ( ! ans )",
+        "if ( position + i <= n && flower [ position + 1 ] == ' 1 ' ) ans = min ( ans , f + position , pasos + 1 ) ;",
+        "used [ position ] [ ' pasos ' ] = 1 ;",
+        "dp [ position ] [ ' pasos ' ] = ans ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘min(int&, int (*)(int, int), int)’"
+    },
+    {
+      "mod_line": [
+        21,
+        11,
+        13,
+        24
+      ],
+      "mod_code": [
+        "if ( ! ans )",
+        "if ( position + i <= n && flower [ position + 1 ] == ' 1 ' ) ans = min ( ans , f + position , pasos + 1 ) ;",
+        "used [ position ] [ ' pasos ' ] = 1 ;",
+        "cout << ans ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘min(int&, int (*)(int, int), int)’"
+    },
+    {
+      "mod_line": [
+        21,
+        11,
+        14
+      ],
+      "mod_code": [
+        "if ( ! ans )",
+        "if ( position + i <= n && flower [ position + 1 ] == ' 1 ' ) ans = min ( ans , f + position , pasos + 1 ) ;",
+        "dp [ position ] [ ' pasos ' ] = ans ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘min(int&, int (*)(int, int), int)’"
+    },
+    {
+      "mod_line": [
+        21,
+        11,
+        14,
+        24
+      ],
+      "mod_code": [
+        "if ( ! ans )",
+        "if ( position + i <= n && flower [ position + 1 ] == ' 1 ' ) ans = min ( ans , f + position , pasos + 1 ) ;",
+        "dp [ position ] [ ' pasos ' ] = ans ;",
+        "cout << ans ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘min(int&, int (*)(int, int), int)’"
+    },
+    {
+      "mod_line": [
+        21,
+        11,
+        24
+      ],
+      "mod_code": [
+        "if ( ! ans )",
+        "if ( position + i <= n && flower [ position + 1 ] == ' 1 ' ) ans = min ( ans , f + position , pasos + 1 ) ;",
+        "cout << ans ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘min(int&, int (*)(int, int), int)’"
+    },
+    {
+      "mod_line": [
+        11,
+        13
+      ],
+      "mod_code": [
+        "if ( position + i <= n && flower [ position + 1 ] == ' 1 ' ) ans = min ( ans , f + position , pasos + 1 ) ;",
+        "used [ position ] [ ' pasos ' ] = 1 ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘min(int&, int (*)(int, int), int)’"
+    },
+    {
+      "mod_line": [
+        11,
+        13,
+        14
+      ],
+      "mod_code": [
+        "if ( position + i <= n && flower [ position + 1 ] == ' 1 ' ) ans = min ( ans , f + position , pasos + 1 ) ;",
+        "used [ position ] [ ' pasos ' ] = 1 ;",
+        "dp [ position ] [ ' pasos ' ] = ans ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘min(int&, int (*)(int, int), int)’"
+    },
+    {
+      "mod_line": [
+        11,
+        13,
+        14,
+        24
+      ],
+      "mod_code": [
+        "if ( position + i <= n && flower [ position + 1 ] == ' 1 ' ) ans = min ( ans , f + position , pasos + 1 ) ;",
+        "used [ position ] [ ' pasos ' ] = 1 ;",
+        "dp [ position ] [ ' pasos ' ] = ans ;",
+        "cout << ans ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘min(int&, int (*)(int, int), int)’"
+    },
+    {
+      "mod_line": [
+        11,
+        13,
+        24
+      ],
+      "mod_code": [
+        "if ( position + i <= n && flower [ position + 1 ] == ' 1 ' ) ans = min ( ans , f + position , pasos + 1 ) ;",
+        "used [ position ] [ ' pasos ' ] = 1 ;",
+        "cout << ans ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘min(int&, int (*)(int, int), int)’"
+    },
+    {
+      "mod_line": [
+        11,
+        14
+      ],
+      "mod_code": [
+        "if ( position + i <= n && flower [ position + 1 ] == ' 1 ' ) ans = min ( ans , f + position , pasos + 1 ) ;",
+        "dp [ position ] [ ' pasos ' ] = ans ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘min(int&, int (*)(int, int), int)’"
+    },
+    {
+      "mod_line": [
+        11,
+        14,
+        24
+      ],
+      "mod_code": [
+        "if ( position + i <= n && flower [ position + 1 ] == ' 1 ' ) ans = min ( ans , f + position , pasos + 1 ) ;",
+        "dp [ position ] [ ' pasos ' ] = ans ;",
+        "cout << ans ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘min(int&, int (*)(int, int), int)’"
+    },
+    {
+      "mod_line": [
+        11,
+        24
+      ],
+      "mod_code": [
+        "if ( position + i <= n && flower [ position + 1 ] == ' 1 ' ) ans = min ( ans , f + position , pasos + 1 ) ;",
+        "cout << ans ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘min(int&, int (*)(int, int), int)’"
+    }
+  ]
+}

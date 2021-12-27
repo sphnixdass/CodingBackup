@@ -1,0 +1,747 @@
+{
+  "meta": {
+    "index": 2434,
+    "hitid": "34R0BODSP1T3X209WHK3TCLXWC9E5Y",
+    "workerid": "A1R0Q9CUUBSM5F",
+    "probid": "553A",
+    "subid": "45772667"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "let maxN and mod be constant integers with maxN = 1e3 + 13 and mod = 1e9 + 7",
+      "code": "const int maxN = 1e3 + 13 , mod = 1e9 + 7 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "let ans , a [ maxN ] , c [ maxN ] [ maxN ] , sum , and k be long long values with ans = 1",
+      "code": "long long ans = 1 , a [ maxN ] , c [ maxN ] [ maxN ] , sum , k ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "read k",
+      "code": "cin >> k ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for i = 0 to maxN exclusive",
+      "code": "for ( int i = 0 ; i < maxN ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for j = 0 to maxN exclusive",
+      "code": "for ( int j = 0 ; j < maxN ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 6,
+      "text": "if j is equal to 0 or j is equal to i",
+      "code": "if ( j == 0 || j == i )",
+      "indent": 3
+    },
+    {
+      "line": 7,
+      "text": "set c [ i ] [ j ] to 1",
+      "code": "c [ i ] [ j ] = 1 ;",
+      "indent": 4
+    },
+    {
+      "line": 8,
+      "text": "else",
+      "code": "else",
+      "indent": 3
+    },
+    {
+      "line": 9,
+      "text": "set c [ i ] [ j ] to ( c [ i - 1 ] [ j ] + c [ i - 1 ] [ j - 1 ] ) % mod",
+      "code": "c [ i ] [ j ] = ( c [ i - 1 ] [ j ] + c [ i - 1 ] [ j - 1 ] ) % mod ;",
+      "indent": 4
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "for i = 0 to k exclusive",
+      "code": "for ( int i = 0 ; i < k ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "read a [ i ]",
+      "code": "cin >> a [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "set ans to ( ans * c [ sum + a [ i ] - 1 ] [ a [ i ] - 1 ] ) % mod",
+      "code": "ans = ( ans * c [ sum + a [ i ] - 1 ] [ a [ i ] - 1 ] ) % mod ;",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "set sum to sum + a [ i ]",
+      "code": "sum += a [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "output ans and new line",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "const int maxN , mod = 1e3 + 7 , mod = 1e9 + 7 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "uninitialized const ‘maxN’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "long long ans , a [ maxN ] [ maxN ] , c [ maxN ] [ maxN ] , sum = 1 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "long long ans , a [ maxN ] [ maxN ] , c [ maxN ] [ maxN ] , k = 1 ;"
+      ],
+      "err_line": 12,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [1013]’)"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "cin >> n ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "c [ ' i ' ] = 1 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "incompatible types in assignment of ‘int’ to ‘long long int [1013]’"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "c [ i ] [ j ] = ( ( c [ i - 1 ] [ j ] + c [ i - 1 ] [ j - 1 ] ) % mod ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < k ; i ++ )"
+      ],
+      "err_line": 11,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "a >> a [ i ] ;"
+      ],
+      "err_line": 12,
+      "err_msg": "invalid operands of types ‘long long int [1013]’ and ‘long long int’ to binary ‘operator>>’"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "ans = ( ans * c [ sum + a [ i ] - 1 ] ) % mod ] [ a [ i ] - 1 ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid operands of types ‘long long int’ and ‘long long int [1013]’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        0,
+        1
+      ],
+      "mod_code": [
+        "const int maxN , mod = 1e3 + 7 , mod = 1e9 + 7 ;",
+        "long long ans , a [ maxN ] [ maxN ] , c [ maxN ] [ maxN ] , sum = 1 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "uninitialized const ‘maxN’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        0,
+        1,
+        13
+      ],
+      "mod_code": [
+        "const int maxN , mod = 1e3 + 7 , mod = 1e9 + 7 ;",
+        "long long ans , a [ maxN ] [ maxN ] , c [ maxN ] [ maxN ] , sum = 1 ;",
+        "ans = ( ans * c [ sum + a [ i ] - 1 ] ) % mod ] [ a [ i ] - 1 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "uninitialized const ‘maxN’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        0,
+        1,
+        13,
+        8
+      ],
+      "mod_code": [
+        "const int maxN , mod = 1e3 + 7 , mod = 1e9 + 7 ;",
+        "long long ans , a [ maxN ] [ maxN ] , c [ maxN ] [ maxN ] , sum = 1 ;",
+        "ans = ( ans * c [ sum + a [ i ] - 1 ] ) % mod ] [ a [ i ] - 1 ] ;",
+        "else ;"
+      ],
+      "err_line": 0,
+      "err_msg": "uninitialized const ‘maxN’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        0,
+        1,
+        13,
+        11
+      ],
+      "mod_code": [
+        "const int maxN , mod = 1e3 + 7 , mod = 1e9 + 7 ;",
+        "long long ans , a [ maxN ] [ maxN ] , c [ maxN ] [ maxN ] , sum = 1 ;",
+        "ans = ( ans * c [ sum + a [ i ] - 1 ] ) % mod ] [ a [ i ] - 1 ] ;",
+        "for ( i = 0 ; i < k ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "uninitialized const ‘maxN’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        0,
+        1,
+        8
+      ],
+      "mod_code": [
+        "const int maxN , mod = 1e3 + 7 , mod = 1e9 + 7 ;",
+        "long long ans , a [ maxN ] [ maxN ] , c [ maxN ] [ maxN ] , sum = 1 ;",
+        "else ;"
+      ],
+      "err_line": 0,
+      "err_msg": "uninitialized const ‘maxN’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        0,
+        1,
+        8,
+        11
+      ],
+      "mod_code": [
+        "const int maxN , mod = 1e3 + 7 , mod = 1e9 + 7 ;",
+        "long long ans , a [ maxN ] [ maxN ] , c [ maxN ] [ maxN ] , sum = 1 ;",
+        "else ;",
+        "for ( i = 0 ; i < k ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "uninitialized const ‘maxN’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        0,
+        1,
+        11
+      ],
+      "mod_code": [
+        "const int maxN , mod = 1e3 + 7 , mod = 1e9 + 7 ;",
+        "long long ans , a [ maxN ] [ maxN ] , c [ maxN ] [ maxN ] , sum = 1 ;",
+        "for ( i = 0 ; i < k ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "uninitialized const ‘maxN’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        0,
+        13
+      ],
+      "mod_code": [
+        "const int maxN , mod = 1e3 + 7 , mod = 1e9 + 7 ;",
+        "ans = ( ans * c [ sum + a [ i ] - 1 ] ) % mod ] [ a [ i ] - 1 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "uninitialized const ‘maxN’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        0,
+        13,
+        8
+      ],
+      "mod_code": [
+        "const int maxN , mod = 1e3 + 7 , mod = 1e9 + 7 ;",
+        "ans = ( ans * c [ sum + a [ i ] - 1 ] ) % mod ] [ a [ i ] - 1 ] ;",
+        "else ;"
+      ],
+      "err_line": 0,
+      "err_msg": "uninitialized const ‘maxN’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        0,
+        13,
+        8,
+        1
+      ],
+      "mod_code": [
+        "const int maxN , mod = 1e3 + 7 , mod = 1e9 + 7 ;",
+        "ans = ( ans * c [ sum + a [ i ] - 1 ] ) % mod ] [ a [ i ] - 1 ] ;",
+        "else ;",
+        "long long ans , a [ maxN ] [ maxN ] , c [ maxN ] [ maxN ] , k = 1 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "uninitialized const ‘maxN’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        0,
+        13,
+        8,
+        11
+      ],
+      "mod_code": [
+        "const int maxN , mod = 1e3 + 7 , mod = 1e9 + 7 ;",
+        "ans = ( ans * c [ sum + a [ i ] - 1 ] ) % mod ] [ a [ i ] - 1 ] ;",
+        "else ;",
+        "for ( i = 0 ; i < k ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "uninitialized const ‘maxN’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        0,
+        13,
+        1
+      ],
+      "mod_code": [
+        "const int maxN , mod = 1e3 + 7 , mod = 1e9 + 7 ;",
+        "ans = ( ans * c [ sum + a [ i ] - 1 ] ) % mod ] [ a [ i ] - 1 ] ;",
+        "long long ans , a [ maxN ] [ maxN ] , c [ maxN ] [ maxN ] , k = 1 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "uninitialized const ‘maxN’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        0,
+        13,
+        1,
+        11
+      ],
+      "mod_code": [
+        "const int maxN , mod = 1e3 + 7 , mod = 1e9 + 7 ;",
+        "ans = ( ans * c [ sum + a [ i ] - 1 ] ) % mod ] [ a [ i ] - 1 ] ;",
+        "long long ans , a [ maxN ] [ maxN ] , c [ maxN ] [ maxN ] , k = 1 ;",
+        "for ( i = 0 ; i < k ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "uninitialized const ‘maxN’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        0,
+        13,
+        11
+      ],
+      "mod_code": [
+        "const int maxN , mod = 1e3 + 7 , mod = 1e9 + 7 ;",
+        "ans = ( ans * c [ sum + a [ i ] - 1 ] ) % mod ] [ a [ i ] - 1 ] ;",
+        "for ( i = 0 ; i < k ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "uninitialized const ‘maxN’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        0,
+        8
+      ],
+      "mod_code": [
+        "const int maxN , mod = 1e3 + 7 , mod = 1e9 + 7 ;",
+        "else ;"
+      ],
+      "err_line": 0,
+      "err_msg": "uninitialized const ‘maxN’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        0,
+        8,
+        1
+      ],
+      "mod_code": [
+        "const int maxN , mod = 1e3 + 7 , mod = 1e9 + 7 ;",
+        "else ;",
+        "long long ans , a [ maxN ] [ maxN ] , c [ maxN ] [ maxN ] , k = 1 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "uninitialized const ‘maxN’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        0,
+        8,
+        1,
+        11
+      ],
+      "mod_code": [
+        "const int maxN , mod = 1e3 + 7 , mod = 1e9 + 7 ;",
+        "else ;",
+        "long long ans , a [ maxN ] [ maxN ] , c [ maxN ] [ maxN ] , k = 1 ;",
+        "for ( i = 0 ; i < k ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "uninitialized const ‘maxN’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        0,
+        8,
+        11
+      ],
+      "mod_code": [
+        "const int maxN , mod = 1e3 + 7 , mod = 1e9 + 7 ;",
+        "else ;",
+        "for ( i = 0 ; i < k ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "uninitialized const ‘maxN’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        0,
+        1
+      ],
+      "mod_code": [
+        "const int maxN , mod = 1e3 + 7 , mod = 1e9 + 7 ;",
+        "long long ans , a [ maxN ] [ maxN ] , c [ maxN ] [ maxN ] , k = 1 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "uninitialized const ‘maxN’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        0,
+        1,
+        11
+      ],
+      "mod_code": [
+        "const int maxN , mod = 1e3 + 7 , mod = 1e9 + 7 ;",
+        "long long ans , a [ maxN ] [ maxN ] , c [ maxN ] [ maxN ] , k = 1 ;",
+        "for ( i = 0 ; i < k ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "uninitialized const ‘maxN’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        0,
+        11
+      ],
+      "mod_code": [
+        "const int maxN , mod = 1e3 + 7 , mod = 1e9 + 7 ;",
+        "for ( i = 0 ; i < k ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "uninitialized const ‘maxN’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        1,
+        13
+      ],
+      "mod_code": [
+        "long long ans , a [ maxN ] [ maxN ] , c [ maxN ] [ maxN ] , sum = 1 ;",
+        "ans = ( ans * c [ sum + a [ i ] - 1 ] ) % mod ] [ a [ i ] - 1 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        13,
+        8
+      ],
+      "mod_code": [
+        "long long ans , a [ maxN ] [ maxN ] , c [ maxN ] [ maxN ] , sum = 1 ;",
+        "ans = ( ans * c [ sum + a [ i ] - 1 ] ) % mod ] [ a [ i ] - 1 ] ;",
+        "else ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        13,
+        8,
+        11
+      ],
+      "mod_code": [
+        "long long ans , a [ maxN ] [ maxN ] , c [ maxN ] [ maxN ] , sum = 1 ;",
+        "ans = ( ans * c [ sum + a [ i ] - 1 ] ) % mod ] [ a [ i ] - 1 ] ;",
+        "else ;",
+        "for ( i = 0 ; i < k ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        13,
+        11
+      ],
+      "mod_code": [
+        "long long ans , a [ maxN ] [ maxN ] , c [ maxN ] [ maxN ] , sum = 1 ;",
+        "ans = ( ans * c [ sum + a [ i ] - 1 ] ) % mod ] [ a [ i ] - 1 ] ;",
+        "for ( i = 0 ; i < k ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        8
+      ],
+      "mod_code": [
+        "long long ans , a [ maxN ] [ maxN ] , c [ maxN ] [ maxN ] , sum = 1 ;",
+        "else ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        8,
+        11
+      ],
+      "mod_code": [
+        "long long ans , a [ maxN ] [ maxN ] , c [ maxN ] [ maxN ] , sum = 1 ;",
+        "else ;",
+        "for ( i = 0 ; i < k ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        11
+      ],
+      "mod_code": [
+        "long long ans , a [ maxN ] [ maxN ] , c [ maxN ] [ maxN ] , sum = 1 ;",
+        "for ( i = 0 ; i < k ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        8
+      ],
+      "mod_code": [
+        "ans = ( ans * c [ sum + a [ i ] - 1 ] ) % mod ] [ a [ i ] - 1 ] ;",
+        "else ;"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid operands of types ‘long long int’ and ‘long long int [1013]’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        13,
+        8,
+        1
+      ],
+      "mod_code": [
+        "ans = ( ans * c [ sum + a [ i ] - 1 ] ) % mod ] [ a [ i ] - 1 ] ;",
+        "else ;",
+        "long long ans , a [ maxN ] [ maxN ] , c [ maxN ] [ maxN ] , k = 1 ;"
+      ],
+      "err_line": 12,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [1013]’)"
+    },
+    {
+      "mod_line": [
+        13,
+        8,
+        1,
+        11
+      ],
+      "mod_code": [
+        "ans = ( ans * c [ sum + a [ i ] - 1 ] ) % mod ] [ a [ i ] - 1 ] ;",
+        "else ;",
+        "long long ans , a [ maxN ] [ maxN ] , c [ maxN ] [ maxN ] , k = 1 ;",
+        "for ( i = 0 ; i < k ; i ++ )"
+      ],
+      "err_line": 11,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        8,
+        11
+      ],
+      "mod_code": [
+        "ans = ( ans * c [ sum + a [ i ] - 1 ] ) % mod ] [ a [ i ] - 1 ] ;",
+        "else ;",
+        "for ( i = 0 ; i < k ; i ++ )"
+      ],
+      "err_line": 11,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        1
+      ],
+      "mod_code": [
+        "ans = ( ans * c [ sum + a [ i ] - 1 ] ) % mod ] [ a [ i ] - 1 ] ;",
+        "long long ans , a [ maxN ] [ maxN ] , c [ maxN ] [ maxN ] , k = 1 ;"
+      ],
+      "err_line": 12,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [1013]’)"
+    },
+    {
+      "mod_line": [
+        13,
+        1,
+        11
+      ],
+      "mod_code": [
+        "ans = ( ans * c [ sum + a [ i ] - 1 ] ) % mod ] [ a [ i ] - 1 ] ;",
+        "long long ans , a [ maxN ] [ maxN ] , c [ maxN ] [ maxN ] , k = 1 ;",
+        "for ( i = 0 ; i < k ; i ++ )"
+      ],
+      "err_line": 11,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        11
+      ],
+      "mod_code": [
+        "ans = ( ans * c [ sum + a [ i ] - 1 ] ) % mod ] [ a [ i ] - 1 ] ;",
+        "for ( i = 0 ; i < k ; i ++ )"
+      ],
+      "err_line": 11,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        8,
+        1
+      ],
+      "mod_code": [
+        "else ;",
+        "long long ans , a [ maxN ] [ maxN ] , c [ maxN ] [ maxN ] , k = 1 ;"
+      ],
+      "err_line": 12,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [1013]’)"
+    },
+    {
+      "mod_line": [
+        8,
+        1,
+        11
+      ],
+      "mod_code": [
+        "else ;",
+        "long long ans , a [ maxN ] [ maxN ] , c [ maxN ] [ maxN ] , k = 1 ;",
+        "for ( i = 0 ; i < k ; i ++ )"
+      ],
+      "err_line": 11,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        8,
+        11
+      ],
+      "mod_code": [
+        "else ;",
+        "for ( i = 0 ; i < k ; i ++ )"
+      ],
+      "err_line": 11,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        1,
+        11
+      ],
+      "mod_code": [
+        "long long ans , a [ maxN ] [ maxN ] , c [ maxN ] [ maxN ] , k = 1 ;",
+        "for ( i = 0 ; i < k ; i ++ )"
+      ],
+      "err_line": 11,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    }
+  ]
+}

@@ -1,0 +1,489 @@
+{
+  "meta": {
+    "index": 813,
+    "hitid": "3E24UO25QZKLSXDCVEX4QUTBVMW6O5",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "455A",
+    "subid": "49074720"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "set constant integer N to 1e5",
+      "code": "const int N = 1e5 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create integer n",
+      "code": "int n ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "declare integer array a with size N + 5",
+      "code": "int a [ N + 5 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "declare long long array dp with size N + 5",
+      "code": "long long dp [ N + 5 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for integer i = 1 , u to n inclusive",
+      "code": "for ( int i = 1 , u ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "read u",
+      "code": "cin >> u ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "increment a [ u ]",
+      "code": "a [ u ] ++ ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "set dp [ 1 ] to a [ 1 ]",
+      "code": "dp [ 1 ] = a [ 1 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "dp [ 2 ] = max of 2LL * a [ 2 ] and dp [ 1 ]",
+      "code": "dp [ 2 ] = max ( 2LL * a [ 2 ] , dp [ 1 ] ) ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "for i = 3 to N inclusive , set dp [ i ] to max of dp [ i - 1 ] and dp [ i - 2 ] + 1LL * i * a [ i ]",
+      "code": "for ( int i = 3 ; i <= N ; i ++ ) { dp [ i ] = max ( dp [ i - 1 ] , dp [ i - 2 ] + 1LL * i * a [ i ] ) ; }",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "print dp [ N ] and ' \\ n '",
+      "code": "cout << dp [ N ] << ' \\n ' ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘u’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "int a + N + 5 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected initializer before ‘+’ token"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "char dp [ 1 ] = a [ 1 ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "dp [ 2 ] = max ( 2LL * a [ 2 ] and dp [ 1 ] ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘max(bool)’"
+    },
+    {
+      "mod_line": [
+        6,
+        11
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ )",
+        "dp [ 2 ] = max ( 2LL * a [ 2 ] and dp [ 1 ] ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘u’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        11,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ )",
+        "dp [ 2 ] = max ( 2LL * a [ 2 ] and dp [ 1 ] ) ;",
+        "cout << dp [ N ] << ' ' ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘u’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        11,
+        13,
+        10
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ )",
+        "dp [ 2 ] = max ( 2LL * a [ 2 ] and dp [ 1 ] ) ;",
+        "cout << dp [ N ] << ' ' ;",
+        "char dp [ 1 ] = a [ 1 ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘u’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        11,
+        13,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ )",
+        "dp [ 2 ] = max ( 2LL * a [ 2 ] and dp [ 1 ] ) ;",
+        "cout << dp [ N ] << ' ' ;",
+        "int a + N + 5 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected initializer before ‘+’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        11,
+        10
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ )",
+        "dp [ 2 ] = max ( 2LL * a [ 2 ] and dp [ 1 ] ) ;",
+        "char dp [ 1 ] = a [ 1 ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘u’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        11,
+        10,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ )",
+        "dp [ 2 ] = max ( 2LL * a [ 2 ] and dp [ 1 ] ) ;",
+        "char dp [ 1 ] = a [ 1 ] ;",
+        "int a + N + 5 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected initializer before ‘+’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        11,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ )",
+        "dp [ 2 ] = max ( 2LL * a [ 2 ] and dp [ 1 ] ) ;",
+        "int a + N + 5 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected initializer before ‘+’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ )",
+        "cout << dp [ N ] << ' ' ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘u’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        13,
+        10
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ )",
+        "cout << dp [ N ] << ' ' ;",
+        "char dp [ 1 ] = a [ 1 ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘u’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        13,
+        10,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ )",
+        "cout << dp [ N ] << ' ' ;",
+        "char dp [ 1 ] = a [ 1 ] ;",
+        "int a + N + 5 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected initializer before ‘+’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        13,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ )",
+        "cout << dp [ N ] << ' ' ;",
+        "int a + N + 5 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected initializer before ‘+’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        10
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ )",
+        "char dp [ 1 ] = a [ 1 ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘u’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        10,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ )",
+        "char dp [ 1 ] = a [ 1 ] ;",
+        "int a + N + 5 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected initializer before ‘+’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ )",
+        "int a + N + 5 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected initializer before ‘+’ token"
+    },
+    {
+      "mod_line": [
+        11,
+        13
+      ],
+      "mod_code": [
+        "dp [ 2 ] = max ( 2LL * a [ 2 ] and dp [ 1 ] ) ;",
+        "cout << dp [ N ] << ' ' ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘max(bool)’"
+    },
+    {
+      "mod_line": [
+        11,
+        13,
+        10
+      ],
+      "mod_code": [
+        "dp [ 2 ] = max ( 2LL * a [ 2 ] and dp [ 1 ] ) ;",
+        "cout << dp [ N ] << ' ' ;",
+        "char dp [ 1 ] = a [ 1 ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        11,
+        13,
+        10,
+        2
+      ],
+      "mod_code": [
+        "dp [ 2 ] = max ( 2LL * a [ 2 ] and dp [ 1 ] ) ;",
+        "cout << dp [ N ] << ' ' ;",
+        "char dp [ 1 ] = a [ 1 ] ;",
+        "int a + N + 5 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected initializer before ‘+’ token"
+    },
+    {
+      "mod_line": [
+        11,
+        13,
+        2
+      ],
+      "mod_code": [
+        "dp [ 2 ] = max ( 2LL * a [ 2 ] and dp [ 1 ] ) ;",
+        "cout << dp [ N ] << ' ' ;",
+        "int a + N + 5 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected initializer before ‘+’ token"
+    },
+    {
+      "mod_line": [
+        11,
+        10
+      ],
+      "mod_code": [
+        "dp [ 2 ] = max ( 2LL * a [ 2 ] and dp [ 1 ] ) ;",
+        "char dp [ 1 ] = a [ 1 ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        11,
+        10,
+        2
+      ],
+      "mod_code": [
+        "dp [ 2 ] = max ( 2LL * a [ 2 ] and dp [ 1 ] ) ;",
+        "char dp [ 1 ] = a [ 1 ] ;",
+        "int a + N + 5 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected initializer before ‘+’ token"
+    },
+    {
+      "mod_line": [
+        11,
+        2
+      ],
+      "mod_code": [
+        "dp [ 2 ] = max ( 2LL * a [ 2 ] and dp [ 1 ] ) ;",
+        "int a + N + 5 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected initializer before ‘+’ token"
+    },
+    {
+      "mod_line": [
+        13,
+        10
+      ],
+      "mod_code": [
+        "cout << dp [ N ] << ' ' ;",
+        "char dp [ 1 ] = a [ 1 ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        13,
+        10,
+        2
+      ],
+      "mod_code": [
+        "cout << dp [ N ] << ' ' ;",
+        "char dp [ 1 ] = a [ 1 ] ;",
+        "int a + N + 5 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected initializer before ‘+’ token"
+    },
+    {
+      "mod_line": [
+        13,
+        2
+      ],
+      "mod_code": [
+        "cout << dp [ N ] << ' ' ;",
+        "int a + N + 5 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected initializer before ‘+’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        2
+      ],
+      "mod_code": [
+        "char dp [ 1 ] = a [ 1 ] ;",
+        "int a + N + 5 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected initializer before ‘+’ token"
+    }
+  ]
+}

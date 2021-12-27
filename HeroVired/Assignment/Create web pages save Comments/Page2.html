@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="/css/main.css">
+<body>
+
+    <h1>Assignment - Create webpage --- by S. Gnanadass</h1>
+    <div class="container">
+
+<div id="id01"></div>
+
+<a href="/">Go to Page1</a> 
+    </div>
+
+<script>
+var xmlhttp = new XMLHttpRequest();
+var url = "Data.txt";
+
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+      console.log(this.responseText);
+    var myArr = JSON.parse(this.responseText);
+    myFunction(myArr);
+  }
+};
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+
+function myFunction(data) {
+    var out = "<ul>";
+            for(var k in data) {
+                out += '<li>' + data[k] + "</li>";
+            }
+
+            out += '</ul>';
+
+            document.getElementById("id01").innerHTML = out;
+
+}
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,261 @@
+{
+  "meta": {
+    "index": 811,
+    "hitid": "39WICJI5ATMYUI41ELANZPOV5ZX3ZY",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "455A",
+    "subid": "48915530"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create long long integer array cnt with size 100002",
+      "code": "long long int cnt [ 100002 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create long long integer array ans with size 100002",
+      "code": "long long int ans [ 100002 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "create integer n",
+      "code": "int n ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i = 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "create integer a",
+      "code": "int a ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "read a",
+      "code": "cin >> a ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "set cnt [ a ] to cnt [ a ] + 1",
+      "code": "cnt [ a ] = cnt [ a ] + 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "set ans [ 0 ] to 0",
+      "code": "ans [ 0 ] = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "set ans [ 1 ] to cnt [ 1 ]",
+      "code": "ans [ 1 ] = cnt [ 1 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "for i = 2 to 100000 inclusive , set ans [ i ] to maximum of ans [ i - 1 ] and ans [ i - 2 ] + cnt [ i ] * i",
+      "code": "for ( int i = 2 ; i <= 100000 ; i ++ ) { ans [ i ] = max ( ans [ i - 1 ] , ans [ i - 2 ] + cnt [ i ] * i ) ; }",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "print ans [ 100000 ] print newline",
+      "code": "cout << ans [ 100000 ] << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "ans [ 1 ++ ] = cnt [ 1 ] ;"
+      ],
+      "err_line": 11,
+      "err_msg": "lvalue required as increment operand"
+    },
+    {
+      "mod_line": [
+        8,
+        11
+      ],
+      "mod_code": [
+        "cnt [ a ++ ] = cnt [ a ] + 1 ;",
+        "ans [ 1 ++ ] = cnt [ 1 ] ;"
+      ],
+      "err_line": 11,
+      "err_msg": "lvalue required as increment operand"
+    },
+    {
+      "mod_line": [
+        8,
+        11,
+        7
+      ],
+      "mod_code": [
+        "cnt [ a ++ ] = cnt [ a ] + 1 ;",
+        "ans [ 1 ++ ] = cnt [ 1 ] ;",
+        "cin >> n ;"
+      ],
+      "err_line": 11,
+      "err_msg": "lvalue required as increment operand"
+    },
+    {
+      "mod_line": [
+        8,
+        11,
+        7,
+        5
+      ],
+      "mod_code": [
+        "cnt [ a ++ ] = cnt [ a ] + 1 ;",
+        "ans [ 1 ++ ] = cnt [ 1 ] ;",
+        "cin >> n ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        11,
+        5
+      ],
+      "mod_code": [
+        "cnt [ a ++ ] = cnt [ a ] + 1 ;",
+        "ans [ 1 ++ ] = cnt [ 1 ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        7,
+        5
+      ],
+      "mod_code": [
+        "cnt [ a ++ ] = cnt [ a ] + 1 ;",
+        "cin >> n ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        5
+      ],
+      "mod_code": [
+        "cnt [ a ++ ] = cnt [ a ] + 1 ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        7
+      ],
+      "mod_code": [
+        "ans [ 1 ++ ] = cnt [ 1 ] ;",
+        "cin >> n ;"
+      ],
+      "err_line": 11,
+      "err_msg": "lvalue required as increment operand"
+    },
+    {
+      "mod_line": [
+        11,
+        7,
+        5
+      ],
+      "mod_code": [
+        "ans [ 1 ++ ] = cnt [ 1 ] ;",
+        "cin >> n ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        5
+      ],
+      "mod_code": [
+        "ans [ 1 ++ ] = cnt [ 1 ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        5
+      ],
+      "mod_code": [
+        "cin >> n ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    }
+  ]
+}

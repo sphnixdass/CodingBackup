@@ -1,0 +1,821 @@
+{
+  "meta": {
+    "index": 500,
+    "hitid": "3ULIZ0H1VAZ4D16XKTPOMS236GB511",
+    "workerid": "A1NBHCFZKJGHKW",
+    "probid": "408A",
+    "subid": "48092492"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "T = array of 105 ints",
+      "code": "int T [ 105 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "K = array of 105 ints",
+      "code": "int K [ 105 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "n , x = int",
+      "code": "int n , x ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i = 0 to n exclusive read K [ i ]",
+      "code": "for ( int i = int ( 0 ) ; i < int ( n ) ; i ++ ) cin >> K [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( int i = int ( 0 ) ; i < int ( n ) ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "set T [ i ] = K [ i ] * 15",
+      "code": "T [ i ] = K [ i ] * 15 ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "for j = 0 to K [ i ]",
+      "code": "for ( int j = int ( 0 ) ; j < int ( K [ i ] ) ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "read x",
+      "code": "cin >> x ;",
+      "indent": 3
+    },
+    {
+      "line": 10,
+      "text": "set T [ i ] = 5 * x",
+      "code": "T [ i ] += 5 * x ;",
+      "indent": 3
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "men = int with men = 1 < < 30",
+      "code": "int men = 1 << 30 ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "fo i = 0 to n exclusive set men to minimum of men and T [ i ]",
+      "code": "for ( int i = int ( 0 ) ; i < int ( n ) ; i ++ ) men = min ( men , T [ i ] ) ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "print men",
+      "code": "cout << men << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { men = min ( men [ i ] ) ; }"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "long long T [ 105 ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "int n , x , x ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘int x’"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j < K [ i ] ; j ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        14
+      ],
+      "mod_code": [
+        "T [ i ] = 5 * x ;",
+        "for ( int i = 0 ; i < n ; i ++ ) { men = min ( men [ i ] ) ; }"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        10,
+        14,
+        9
+      ],
+      "mod_code": [
+        "T [ i ] = 5 * x ;",
+        "for ( int i = 0 ; i < n ; i ++ ) { men = min ( men [ i ] ) ; }",
+        "cin >> n ;"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        10,
+        14,
+        9,
+        13
+      ],
+      "mod_code": [
+        "T [ i ] = 5 * x ;",
+        "for ( int i = 0 ; i < n ; i ++ ) { men = min ( men [ i ] ) ; }",
+        "cin >> n ;",
+        "int men = 1 < 1 << 30 ;"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        10,
+        14,
+        9,
+        1
+      ],
+      "mod_code": [
+        "T [ i ] = 5 * x ;",
+        "for ( int i = 0 ; i < n ; i ++ ) { men = min ( men [ i ] ) ; }",
+        "cin >> n ;",
+        "long long T [ 105 ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        10,
+        14,
+        9,
+        3
+      ],
+      "mod_code": [
+        "T [ i ] = 5 * x ;",
+        "for ( int i = 0 ; i < n ; i ++ ) { men = min ( men [ i ] ) ; }",
+        "cin >> n ;",
+        "int n , x , x ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘int x’"
+    },
+    {
+      "mod_line": [
+        10,
+        14,
+        13
+      ],
+      "mod_code": [
+        "T [ i ] = 5 * x ;",
+        "for ( int i = 0 ; i < n ; i ++ ) { men = min ( men [ i ] ) ; }",
+        "int men = 1 < 1 << 30 ;"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        10,
+        14,
+        13,
+        1
+      ],
+      "mod_code": [
+        "T [ i ] = 5 * x ;",
+        "for ( int i = 0 ; i < n ; i ++ ) { men = min ( men [ i ] ) ; }",
+        "int men = 1 < 1 << 30 ;",
+        "long long T [ 105 ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        10,
+        14,
+        13,
+        3
+      ],
+      "mod_code": [
+        "T [ i ] = 5 * x ;",
+        "for ( int i = 0 ; i < n ; i ++ ) { men = min ( men [ i ] ) ; }",
+        "int men = 1 < 1 << 30 ;",
+        "int n , x , x ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘int x’"
+    },
+    {
+      "mod_line": [
+        10,
+        14,
+        1
+      ],
+      "mod_code": [
+        "T [ i ] = 5 * x ;",
+        "for ( int i = 0 ; i < n ; i ++ ) { men = min ( men [ i ] ) ; }",
+        "long long T [ 105 ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        10,
+        14,
+        1,
+        3
+      ],
+      "mod_code": [
+        "T [ i ] = 5 * x ;",
+        "for ( int i = 0 ; i < n ; i ++ ) { men = min ( men [ i ] ) ; }",
+        "long long T [ 105 ] ;",
+        "int n , x , x ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘int x’"
+    },
+    {
+      "mod_line": [
+        10,
+        14,
+        3
+      ],
+      "mod_code": [
+        "T [ i ] = 5 * x ;",
+        "for ( int i = 0 ; i < n ; i ++ ) { men = min ( men [ i ] ) ; }",
+        "int n , x , x ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘int x’"
+    },
+    {
+      "mod_line": [
+        10,
+        9,
+        13,
+        1
+      ],
+      "mod_code": [
+        "T [ i ] = 5 * x ;",
+        "cin >> n ;",
+        "int men = 1 < 1 << 30 ;",
+        "long long T [ 105 ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        10,
+        9,
+        13,
+        3
+      ],
+      "mod_code": [
+        "T [ i ] = 5 * x ;",
+        "cin >> n ;",
+        "int men = 1 < 1 << 30 ;",
+        "int n , x , x ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘int x’"
+    },
+    {
+      "mod_line": [
+        10,
+        9,
+        1
+      ],
+      "mod_code": [
+        "T [ i ] = 5 * x ;",
+        "cin >> n ;",
+        "long long T [ 105 ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        10,
+        9,
+        1,
+        3
+      ],
+      "mod_code": [
+        "T [ i ] = 5 * x ;",
+        "cin >> n ;",
+        "long long T [ 105 ] ;",
+        "int n , x , x ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘int x’"
+    },
+    {
+      "mod_line": [
+        10,
+        9,
+        3
+      ],
+      "mod_code": [
+        "T [ i ] = 5 * x ;",
+        "cin >> n ;",
+        "int n , x , x ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘int x’"
+    },
+    {
+      "mod_line": [
+        10,
+        13,
+        1
+      ],
+      "mod_code": [
+        "T [ i ] = 5 * x ;",
+        "int men = 1 < 1 << 30 ;",
+        "long long T [ 105 ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        10,
+        13,
+        1,
+        3
+      ],
+      "mod_code": [
+        "T [ i ] = 5 * x ;",
+        "int men = 1 < 1 << 30 ;",
+        "long long T [ 105 ] ;",
+        "int n , x , x ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘int x’"
+    },
+    {
+      "mod_line": [
+        10,
+        13,
+        3
+      ],
+      "mod_code": [
+        "T [ i ] = 5 * x ;",
+        "int men = 1 < 1 << 30 ;",
+        "int n , x , x ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘int x’"
+    },
+    {
+      "mod_line": [
+        10,
+        1
+      ],
+      "mod_code": [
+        "T [ i ] = 5 * x ;",
+        "long long T [ 105 ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        10,
+        1,
+        3
+      ],
+      "mod_code": [
+        "T [ i ] = 5 * x ;",
+        "long long T [ 105 ] ;",
+        "int n , x , x ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘int x’"
+    },
+    {
+      "mod_line": [
+        10,
+        3
+      ],
+      "mod_code": [
+        "T [ i ] = 5 * x ;",
+        "int n , x , x ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘int x’"
+    },
+    {
+      "mod_line": [
+        14,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { men = min ( men [ i ] ) ; }",
+        "cin >> n ;"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        14,
+        9,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { men = min ( men [ i ] ) ; }",
+        "cin >> n ;",
+        "int men = 1 < 1 << 30 ;"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        14,
+        9,
+        13,
+        1
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { men = min ( men [ i ] ) ; }",
+        "cin >> n ;",
+        "int men = 1 < 1 << 30 ;",
+        "long long T [ 105 ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        14,
+        9,
+        13,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { men = min ( men [ i ] ) ; }",
+        "cin >> n ;",
+        "int men = 1 < 1 << 30 ;",
+        "int n , x , x ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘int x’"
+    },
+    {
+      "mod_line": [
+        14,
+        9,
+        1
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { men = min ( men [ i ] ) ; }",
+        "cin >> n ;",
+        "long long T [ 105 ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        14,
+        9,
+        1,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { men = min ( men [ i ] ) ; }",
+        "cin >> n ;",
+        "long long T [ 105 ] ;",
+        "int n , x , x ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘int x’"
+    },
+    {
+      "mod_line": [
+        14,
+        9,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { men = min ( men [ i ] ) ; }",
+        "cin >> n ;",
+        "int n , x , x ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘int x’"
+    },
+    {
+      "mod_line": [
+        14,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { men = min ( men [ i ] ) ; }",
+        "int men = 1 < 1 << 30 ;"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        14,
+        13,
+        1
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { men = min ( men [ i ] ) ; }",
+        "int men = 1 < 1 << 30 ;",
+        "long long T [ 105 ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        14,
+        13,
+        1,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { men = min ( men [ i ] ) ; }",
+        "int men = 1 < 1 << 30 ;",
+        "long long T [ 105 ] ;",
+        "int n , x , x ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘int x’"
+    },
+    {
+      "mod_line": [
+        14,
+        13,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { men = min ( men [ i ] ) ; }",
+        "int men = 1 < 1 << 30 ;",
+        "int n , x , x ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘int x’"
+    },
+    {
+      "mod_line": [
+        14,
+        1
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { men = min ( men [ i ] ) ; }",
+        "long long T [ 105 ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        14,
+        1,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { men = min ( men [ i ] ) ; }",
+        "long long T [ 105 ] ;",
+        "int n , x , x ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘int x’"
+    },
+    {
+      "mod_line": [
+        14,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { men = min ( men [ i ] ) ; }",
+        "int n , x , x ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘int x’"
+    },
+    {
+      "mod_line": [
+        9,
+        13,
+        1
+      ],
+      "mod_code": [
+        "cin >> n ;",
+        "int men = 1 < 1 << 30 ;",
+        "long long T [ 105 ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        9,
+        13,
+        1,
+        3
+      ],
+      "mod_code": [
+        "cin >> n ;",
+        "int men = 1 < 1 << 30 ;",
+        "long long T [ 105 ] ;",
+        "int n , x , x ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘int x’"
+    },
+    {
+      "mod_line": [
+        9,
+        13,
+        3
+      ],
+      "mod_code": [
+        "cin >> n ;",
+        "int men = 1 < 1 << 30 ;",
+        "int n , x , x ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘int x’"
+    },
+    {
+      "mod_line": [
+        9,
+        1
+      ],
+      "mod_code": [
+        "cin >> n ;",
+        "long long T [ 105 ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        9,
+        1,
+        3
+      ],
+      "mod_code": [
+        "cin >> n ;",
+        "long long T [ 105 ] ;",
+        "int n , x , x ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘int x’"
+    },
+    {
+      "mod_line": [
+        9,
+        3
+      ],
+      "mod_code": [
+        "cin >> n ;",
+        "int n , x , x ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘int x’"
+    },
+    {
+      "mod_line": [
+        13,
+        1
+      ],
+      "mod_code": [
+        "int men = 1 < 1 << 30 ;",
+        "long long T [ 105 ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        13,
+        1,
+        3
+      ],
+      "mod_code": [
+        "int men = 1 < 1 << 30 ;",
+        "long long T [ 105 ] ;",
+        "int n , x , x ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘int x’"
+    },
+    {
+      "mod_line": [
+        13,
+        3
+      ],
+      "mod_code": [
+        "int men = 1 < 1 << 30 ;",
+        "int n , x , x ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘int x’"
+    },
+    {
+      "mod_line": [
+        1,
+        3
+      ],
+      "mod_code": [
+        "long long T [ 105 ] ;",
+        "int n , x , x ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘int x’"
+    }
+  ]
+}

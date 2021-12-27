@@ -1,0 +1,141 @@
+{
+  "meta": {
+    "index": 2000,
+    "hitid": "39AYGO6AFFE3ACD0UZXRB5T66ZNN6E",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "389A",
+    "subid": "47869917"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare integer array a size 10005",
+      "code": "int a [ 10005 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare gcd with integers a , b as arguments , returning integer",
+      "code": "int gcd ( int a , int b )",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "if b is 0",
+      "code": "if ( b == 0 )",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "return a from function",
+      "code": "return a ;",
+      "indent": 2
+    },
+    {
+      "line": 4,
+      "text": "else",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "return result of run gcd with b , a % b as arguments",
+      "code": "return gcd ( b , a % b ) ;",
+      "indent": 2
+    },
+    {
+      "line": 6,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 7,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 8,
+      "text": "declare integer n",
+      "code": "int n ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "for i = 1 to n inclusive , read a [ i ]",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "declare integer ans = result of run gcd as a [ 1 ] and a [ 2 ] as arguments",
+      "code": "int ans = gcd ( a [ 1 ] , a [ 2 ] ) ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "for i = 3 to n inclusive , let ans be result of run gcd ( ans , a [ i ] )",
+      "code": "for ( int i = 3 ; i <= n ; i ++ ) ans = gcd ( ans , a [ i ] ) ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "print ans * n and newline",
+      "code": "cout << ans * n << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int gcd ( int a , int b ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "int ans = gcd ( gcd ( a [ 1 ] , a [ 2 ] ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        11
+      ],
+      "mod_code": [
+        "int gcd ( int a , int b ) ;",
+        "int ans = gcd ( gcd ( a [ 1 ] , a [ 2 ] ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    }
+  ]
+}

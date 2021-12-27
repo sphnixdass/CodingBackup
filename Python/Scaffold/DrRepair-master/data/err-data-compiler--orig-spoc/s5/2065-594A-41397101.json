@@ -1,0 +1,739 @@
+{
+  "meta": {
+    "index": 2065,
+    "hitid": "3XU9MCX6VO6079MR0425UCH4RR7R2M",
+    "workerid": "A1R0Q9CUUBSM5F",
+    "probid": "594A",
+    "subid": "41397101"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create integer n and integer array a of size 200009",
+      "code": "int n , a [ 200009 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare solve taking in integer p and returning integer",
+      "code": "int solve ( int p )",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "create integer minx = 1e9",
+      "code": "int minx = 1e9 ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "for i = 0 to n - p exclusive , set minx to the min of minx and a [ i + p ] - a [ i ]",
+      "code": "for ( int i = 0 ; i < n - p ; i ++ ) minx = min ( minx , a [ i + p ] - a [ i ] ) ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "return minx",
+      "code": "return minx ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 6,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 7,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "for i = 0 to n exclusive , read a [ i ]",
+      "code": "for ( int i = 0 ; i < n ; i ++ ) cin >> a [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "sort array a",
+      "code": "sort ( a , a + n ) ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "if n modulo 2 is 1",
+      "code": "if ( n % 2 == 1 )",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "if n is equal to 3",
+      "code": "if ( n == 3 )",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "call solve on 1 and print the return value",
+      "code": "cout << solve ( 1 ) << endl ;",
+      "indent": 3
+    },
+    {
+      "line": 13,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "call solve on 2 and print the return value",
+      "code": "cout << solve ( 2 ) << endl ;",
+      "indent": 3
+    },
+    {
+      "line": 15,
+      "text": "else",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "call solve on n / 2 and print the return value",
+      "code": "cout << solve ( n / 2 ) << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "solve ( 1 , value ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘value’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "cout << value << endl ;"
+      ],
+      "err_line": 14,
+      "err_msg": "‘value’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int solve ( int p ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "long long minx = 1e9 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘min(long long int&, int)’"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "else if ( n == 3 )"
+      ],
+      "err_line": 11,
+      "err_msg": "expected ‘}’ before ‘else’"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "cout << value << endl ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘value’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "solve ( 2 , value ) ;"
+      ],
+      "err_line": 14,
+      "err_msg": "‘value’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        14
+      ],
+      "mod_code": [
+        "solve ( 1 , value ) ;",
+        "cout << value << endl ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘value’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        14,
+        16
+      ],
+      "mod_code": [
+        "solve ( 1 , value ) ;",
+        "cout << value << endl ;",
+        "cout << n / 2 << endl ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘value’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        14,
+        16,
+        1
+      ],
+      "mod_code": [
+        "solve ( 1 , value ) ;",
+        "cout << value << endl ;",
+        "cout << n / 2 << endl ;",
+        "int solve ( int p ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        14,
+        16,
+        11
+      ],
+      "mod_code": [
+        "solve ( 1 , value ) ;",
+        "cout << value << endl ;",
+        "cout << n / 2 << endl ;",
+        "else if ( n == 3 )"
+      ],
+      "err_line": 11,
+      "err_msg": "expected ‘}’ before ‘else’"
+    },
+    {
+      "mod_line": [
+        12,
+        14,
+        1
+      ],
+      "mod_code": [
+        "solve ( 1 , value ) ;",
+        "cout << value << endl ;",
+        "int solve ( int p ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        14,
+        1,
+        11
+      ],
+      "mod_code": [
+        "solve ( 1 , value ) ;",
+        "cout << value << endl ;",
+        "int solve ( int p ) ;",
+        "else if ( n == 3 )"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        14,
+        11
+      ],
+      "mod_code": [
+        "solve ( 1 , value ) ;",
+        "cout << value << endl ;",
+        "else if ( n == 3 )"
+      ],
+      "err_line": 11,
+      "err_msg": "expected ‘}’ before ‘else’"
+    },
+    {
+      "mod_line": [
+        12,
+        16
+      ],
+      "mod_code": [
+        "solve ( 1 , value ) ;",
+        "cout << n / 2 << endl ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘value’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        16,
+        14
+      ],
+      "mod_code": [
+        "solve ( 1 , value ) ;",
+        "cout << n / 2 << endl ;",
+        "solve ( 2 , value ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘value’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        16,
+        14,
+        1
+      ],
+      "mod_code": [
+        "solve ( 1 , value ) ;",
+        "cout << n / 2 << endl ;",
+        "solve ( 2 , value ) ;",
+        "int solve ( int p ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        16,
+        14,
+        11
+      ],
+      "mod_code": [
+        "solve ( 1 , value ) ;",
+        "cout << n / 2 << endl ;",
+        "solve ( 2 , value ) ;",
+        "else if ( n == 3 )"
+      ],
+      "err_line": 11,
+      "err_msg": "expected ‘}’ before ‘else’"
+    },
+    {
+      "mod_line": [
+        12,
+        16,
+        1
+      ],
+      "mod_code": [
+        "solve ( 1 , value ) ;",
+        "cout << n / 2 << endl ;",
+        "int solve ( int p ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        16,
+        1,
+        11
+      ],
+      "mod_code": [
+        "solve ( 1 , value ) ;",
+        "cout << n / 2 << endl ;",
+        "int solve ( int p ) ;",
+        "else if ( n == 3 )"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        16,
+        11
+      ],
+      "mod_code": [
+        "solve ( 1 , value ) ;",
+        "cout << n / 2 << endl ;",
+        "else if ( n == 3 )"
+      ],
+      "err_line": 11,
+      "err_msg": "expected ‘}’ before ‘else’"
+    },
+    {
+      "mod_line": [
+        12,
+        14
+      ],
+      "mod_code": [
+        "solve ( 1 , value ) ;",
+        "solve ( 2 , value ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘value’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        14,
+        1
+      ],
+      "mod_code": [
+        "solve ( 1 , value ) ;",
+        "solve ( 2 , value ) ;",
+        "int solve ( int p ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        14,
+        1,
+        11
+      ],
+      "mod_code": [
+        "solve ( 1 , value ) ;",
+        "solve ( 2 , value ) ;",
+        "int solve ( int p ) ;",
+        "else if ( n == 3 )"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        14,
+        11
+      ],
+      "mod_code": [
+        "solve ( 1 , value ) ;",
+        "solve ( 2 , value ) ;",
+        "else if ( n == 3 )"
+      ],
+      "err_line": 11,
+      "err_msg": "expected ‘}’ before ‘else’"
+    },
+    {
+      "mod_line": [
+        12,
+        1
+      ],
+      "mod_code": [
+        "solve ( 1 , value ) ;",
+        "int solve ( int p ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        1,
+        11
+      ],
+      "mod_code": [
+        "solve ( 1 , value ) ;",
+        "int solve ( int p ) ;",
+        "else if ( n == 3 )"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        11
+      ],
+      "mod_code": [
+        "solve ( 1 , value ) ;",
+        "else if ( n == 3 )"
+      ],
+      "err_line": 11,
+      "err_msg": "expected ‘}’ before ‘else’"
+    },
+    {
+      "mod_line": [
+        14,
+        16
+      ],
+      "mod_code": [
+        "cout << value << endl ;",
+        "cout << n / 2 << endl ;"
+      ],
+      "err_line": 14,
+      "err_msg": "‘value’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        16,
+        1
+      ],
+      "mod_code": [
+        "cout << value << endl ;",
+        "cout << n / 2 << endl ;",
+        "int solve ( int p ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        16,
+        1,
+        11
+      ],
+      "mod_code": [
+        "cout << value << endl ;",
+        "cout << n / 2 << endl ;",
+        "int solve ( int p ) ;",
+        "else if ( n == 3 )"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        16,
+        11
+      ],
+      "mod_code": [
+        "cout << value << endl ;",
+        "cout << n / 2 << endl ;",
+        "else if ( n == 3 )"
+      ],
+      "err_line": 11,
+      "err_msg": "expected ‘}’ before ‘else’"
+    },
+    {
+      "mod_line": [
+        14,
+        1
+      ],
+      "mod_code": [
+        "cout << value << endl ;",
+        "int solve ( int p ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        1,
+        11
+      ],
+      "mod_code": [
+        "cout << value << endl ;",
+        "int solve ( int p ) ;",
+        "else if ( n == 3 )"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        11
+      ],
+      "mod_code": [
+        "cout << value << endl ;",
+        "else if ( n == 3 )"
+      ],
+      "err_line": 11,
+      "err_msg": "expected ‘}’ before ‘else’"
+    },
+    {
+      "mod_line": [
+        16,
+        14
+      ],
+      "mod_code": [
+        "cout << n / 2 << endl ;",
+        "solve ( 2 , value ) ;"
+      ],
+      "err_line": 14,
+      "err_msg": "‘value’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        14,
+        1
+      ],
+      "mod_code": [
+        "cout << n / 2 << endl ;",
+        "solve ( 2 , value ) ;",
+        "int solve ( int p ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        14,
+        1,
+        11
+      ],
+      "mod_code": [
+        "cout << n / 2 << endl ;",
+        "solve ( 2 , value ) ;",
+        "int solve ( int p ) ;",
+        "else if ( n == 3 )"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        14,
+        11
+      ],
+      "mod_code": [
+        "cout << n / 2 << endl ;",
+        "solve ( 2 , value ) ;",
+        "else if ( n == 3 )"
+      ],
+      "err_line": 11,
+      "err_msg": "expected ‘}’ before ‘else’"
+    },
+    {
+      "mod_line": [
+        16,
+        1
+      ],
+      "mod_code": [
+        "cout << n / 2 << endl ;",
+        "int solve ( int p ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        1,
+        11
+      ],
+      "mod_code": [
+        "cout << n / 2 << endl ;",
+        "int solve ( int p ) ;",
+        "else if ( n == 3 )"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        11
+      ],
+      "mod_code": [
+        "cout << n / 2 << endl ;",
+        "else if ( n == 3 )"
+      ],
+      "err_line": 11,
+      "err_msg": "expected ‘}’ before ‘else’"
+    },
+    {
+      "mod_line": [
+        14,
+        1
+      ],
+      "mod_code": [
+        "solve ( 2 , value ) ;",
+        "int solve ( int p ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        1,
+        11
+      ],
+      "mod_code": [
+        "solve ( 2 , value ) ;",
+        "int solve ( int p ) ;",
+        "else if ( n == 3 )"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        11
+      ],
+      "mod_code": [
+        "solve ( 2 , value ) ;",
+        "else if ( n == 3 )"
+      ],
+      "err_line": 11,
+      "err_msg": "expected ‘}’ before ‘else’"
+    },
+    {
+      "mod_line": [
+        1,
+        11
+      ],
+      "mod_code": [
+        "int solve ( int p ) ;",
+        "else if ( n == 3 )"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    }
+  ]
+}

@@ -1,0 +1,653 @@
+{
+  "meta": {
+    "index": 183,
+    "hitid": "3O4VWC1GEW08U3ZXWZ71BV05NOK3JO",
+    "workerid": "A28TIENUWLMMIP",
+    "probid": "875A",
+    "subid": "46045438"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "let n be a long long integer",
+      "code": "long long n ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "let v be a vector of long long integers",
+      "code": "vector < long long > v ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "define function kq which takes in long long integer k as an argument",
+      "code": "long long kq ( long long k )",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "let temp be a long long integer , set temp to 0",
+      "code": "long long temp = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "while k is true",
+      "code": "while ( k )",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "add k % 10 to temp",
+      "code": "temp += k % 10 ;",
+      "indent": 2
+    },
+    {
+      "line": 6,
+      "text": "divide k by 10",
+      "code": "k /= 10 ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "return the value of temp",
+      "code": "return temp ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 11,
+      "text": "read in n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "for i = n iterate until i is greater than n - 100",
+      "code": "for ( int i = n ; i > n - 100 ; -- i )",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "if kq ( i ) + i is equal to n , add i to the vector",
+      "code": "if ( kq ( i ) + i == n ) v . push_back ( i ) ;",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "print v . size ( )",
+      "code": "cout << v . size ( ) << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "for i = v . size ( ) - 1 iterate until i is greater than or equal to 0 , print v [ i ]",
+      "code": "for ( int i = v . size ( ) - 1 ; i >= 0 ; -- i ) { cout << v [ i ] << endl ; }",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "void kq ( long long k )"
+      ],
+      "err_line": 8,
+      "err_msg": "return-statement with a value, in function returning 'void' [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "if ( kq ( i ) + i == n ) { vector += i ; }"
+      ],
+      "err_line": 13,
+      "err_msg": "missing template arguments before ‘+=’ token"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "if ( kq ( i ) + i == n ) vector << i ;"
+      ],
+      "err_line": 13,
+      "err_msg": "missing template arguments before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "for ( i = v . size ( ) - 1 ; i >= 0 ; i -- ) cout << v [ i ] ;"
+      ],
+      "err_line": 16,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2,
+        12
+      ],
+      "mod_code": [
+        "void kq ( long long k )",
+        "for ( int i = n ; i > n - 100 ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "return-statement with a value, in function returning 'void' [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2,
+        12,
+        13
+      ],
+      "mod_code": [
+        "void kq ( long long k )",
+        "for ( int i = n ; i > n - 100 ; i ++ )",
+        "if ( kq ( i ) + i == n ) { vector += i ; }"
+      ],
+      "err_line": 8,
+      "err_msg": "return-statement with a value, in function returning 'void' [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2,
+        12,
+        13,
+        16
+      ],
+      "mod_code": [
+        "void kq ( long long k )",
+        "for ( int i = n ; i > n - 100 ; i ++ )",
+        "if ( kq ( i ) + i == n ) { vector += i ; }",
+        "for ( int i = v . size ( ) - 1 ; i >= 0 ; i -- ) cout << v [ i ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "return-statement with a value, in function returning 'void' [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2,
+        12,
+        13,
+        16
+      ],
+      "mod_code": [
+        "void kq ( long long k )",
+        "for ( int i = n ; i > n - 100 ; i ++ )",
+        "if ( kq ( i ) + i == n ) { vector += i ; }",
+        "for ( i = v . size ( ) - 1 ; i >= 0 ; i -- ) cout << v [ i ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "return-statement with a value, in function returning 'void' [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2,
+        12,
+        13,
+        15
+      ],
+      "mod_code": [
+        "void kq ( long long k )",
+        "for ( int i = n ; i > n - 100 ; i ++ )",
+        "if ( kq ( i ) + i == n ) { vector += i ; }",
+        "cout << v . size ( ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "return-statement with a value, in function returning 'void' [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2,
+        12,
+        16
+      ],
+      "mod_code": [
+        "void kq ( long long k )",
+        "for ( int i = n ; i > n - 100 ; i ++ )",
+        "for ( int i = v . size ( ) - 1 ; i >= 0 ; i -- ) cout << v [ i ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "return-statement with a value, in function returning 'void' [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2,
+        12,
+        16,
+        15
+      ],
+      "mod_code": [
+        "void kq ( long long k )",
+        "for ( int i = n ; i > n - 100 ; i ++ )",
+        "for ( int i = v . size ( ) - 1 ; i >= 0 ; i -- ) cout << v [ i ] ;",
+        "cout << v . size ( ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "return-statement with a value, in function returning 'void' [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2,
+        12,
+        16
+      ],
+      "mod_code": [
+        "void kq ( long long k )",
+        "for ( int i = n ; i > n - 100 ; i ++ )",
+        "for ( i = v . size ( ) - 1 ; i >= 0 ; i -- ) cout << v [ i ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "return-statement with a value, in function returning 'void' [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2,
+        12,
+        16,
+        15
+      ],
+      "mod_code": [
+        "void kq ( long long k )",
+        "for ( int i = n ; i > n - 100 ; i ++ )",
+        "for ( i = v . size ( ) - 1 ; i >= 0 ; i -- ) cout << v [ i ] ;",
+        "cout << v . size ( ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "return-statement with a value, in function returning 'void' [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2,
+        12,
+        15
+      ],
+      "mod_code": [
+        "void kq ( long long k )",
+        "for ( int i = n ; i > n - 100 ; i ++ )",
+        "cout << v . size ( ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "return-statement with a value, in function returning 'void' [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2,
+        13
+      ],
+      "mod_code": [
+        "void kq ( long long k )",
+        "if ( kq ( i ) + i == n ) { vector += i ; }"
+      ],
+      "err_line": 8,
+      "err_msg": "return-statement with a value, in function returning 'void' [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2,
+        13,
+        16
+      ],
+      "mod_code": [
+        "void kq ( long long k )",
+        "if ( kq ( i ) + i == n ) { vector += i ; }",
+        "for ( int i = v . size ( ) - 1 ; i >= 0 ; i -- ) cout << v [ i ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "return-statement with a value, in function returning 'void' [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2,
+        13,
+        16,
+        15
+      ],
+      "mod_code": [
+        "void kq ( long long k )",
+        "if ( kq ( i ) + i == n ) { vector += i ; }",
+        "for ( int i = v . size ( ) - 1 ; i >= 0 ; i -- ) cout << v [ i ] ;",
+        "cout << v . size ( ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "return-statement with a value, in function returning 'void' [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2,
+        13,
+        16
+      ],
+      "mod_code": [
+        "void kq ( long long k )",
+        "if ( kq ( i ) + i == n ) { vector += i ; }",
+        "for ( i = v . size ( ) - 1 ; i >= 0 ; i -- ) cout << v [ i ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "return-statement with a value, in function returning 'void' [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2,
+        13,
+        16,
+        15
+      ],
+      "mod_code": [
+        "void kq ( long long k )",
+        "if ( kq ( i ) + i == n ) { vector += i ; }",
+        "for ( i = v . size ( ) - 1 ; i >= 0 ; i -- ) cout << v [ i ] ;",
+        "cout << v . size ( ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "return-statement with a value, in function returning 'void' [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2,
+        13,
+        15
+      ],
+      "mod_code": [
+        "void kq ( long long k )",
+        "if ( kq ( i ) + i == n ) { vector += i ; }",
+        "cout << v . size ( ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "return-statement with a value, in function returning 'void' [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2,
+        16
+      ],
+      "mod_code": [
+        "void kq ( long long k )",
+        "for ( int i = v . size ( ) - 1 ; i >= 0 ; i -- ) cout << v [ i ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "return-statement with a value, in function returning 'void' [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2,
+        16,
+        15
+      ],
+      "mod_code": [
+        "void kq ( long long k )",
+        "for ( int i = v . size ( ) - 1 ; i >= 0 ; i -- ) cout << v [ i ] ;",
+        "cout << v . size ( ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "return-statement with a value, in function returning 'void' [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2,
+        16
+      ],
+      "mod_code": [
+        "void kq ( long long k )",
+        "for ( i = v . size ( ) - 1 ; i >= 0 ; i -- ) cout << v [ i ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "return-statement with a value, in function returning 'void' [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2,
+        16,
+        15
+      ],
+      "mod_code": [
+        "void kq ( long long k )",
+        "for ( i = v . size ( ) - 1 ; i >= 0 ; i -- ) cout << v [ i ] ;",
+        "cout << v . size ( ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "return-statement with a value, in function returning 'void' [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2,
+        15
+      ],
+      "mod_code": [
+        "void kq ( long long k )",
+        "cout << v . size ( ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "return-statement with a value, in function returning 'void' [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = n ; i > n - 100 ; i ++ )",
+        "if ( kq ( i ) + i == n ) { vector += i ; }"
+      ],
+      "err_line": 13,
+      "err_msg": "missing template arguments before ‘+=’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        13,
+        16
+      ],
+      "mod_code": [
+        "for ( int i = n ; i > n - 100 ; i ++ )",
+        "if ( kq ( i ) + i == n ) { vector += i ; }",
+        "for ( int i = v . size ( ) - 1 ; i >= 0 ; i -- ) cout << v [ i ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "missing template arguments before ‘+=’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        13,
+        16,
+        15
+      ],
+      "mod_code": [
+        "for ( int i = n ; i > n - 100 ; i ++ )",
+        "if ( kq ( i ) + i == n ) { vector += i ; }",
+        "for ( int i = v . size ( ) - 1 ; i >= 0 ; i -- ) cout << v [ i ] ;",
+        "cout << v . size ( ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "missing template arguments before ‘+=’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        13,
+        16
+      ],
+      "mod_code": [
+        "for ( int i = n ; i > n - 100 ; i ++ )",
+        "if ( kq ( i ) + i == n ) { vector += i ; }",
+        "for ( i = v . size ( ) - 1 ; i >= 0 ; i -- ) cout << v [ i ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "missing template arguments before ‘+=’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        13,
+        16,
+        15
+      ],
+      "mod_code": [
+        "for ( int i = n ; i > n - 100 ; i ++ )",
+        "if ( kq ( i ) + i == n ) { vector += i ; }",
+        "for ( i = v . size ( ) - 1 ; i >= 0 ; i -- ) cout << v [ i ] ;",
+        "cout << v . size ( ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "missing template arguments before ‘+=’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        13,
+        15
+      ],
+      "mod_code": [
+        "for ( int i = n ; i > n - 100 ; i ++ )",
+        "if ( kq ( i ) + i == n ) { vector += i ; }",
+        "cout << v . size ( ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "missing template arguments before ‘+=’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        16
+      ],
+      "mod_code": [
+        "for ( int i = n ; i > n - 100 ; i ++ )",
+        "for ( i = v . size ( ) - 1 ; i >= 0 ; i -- ) cout << v [ i ] ;"
+      ],
+      "err_line": 16,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        16,
+        15
+      ],
+      "mod_code": [
+        "for ( int i = n ; i > n - 100 ; i ++ )",
+        "for ( i = v . size ( ) - 1 ; i >= 0 ; i -- ) cout << v [ i ] ;",
+        "cout << v . size ( ) ;"
+      ],
+      "err_line": 16,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        16
+      ],
+      "mod_code": [
+        "if ( kq ( i ) + i == n ) { vector += i ; }",
+        "for ( int i = v . size ( ) - 1 ; i >= 0 ; i -- ) cout << v [ i ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "missing template arguments before ‘+=’ token"
+    },
+    {
+      "mod_line": [
+        13,
+        16,
+        15
+      ],
+      "mod_code": [
+        "if ( kq ( i ) + i == n ) { vector += i ; }",
+        "for ( int i = v . size ( ) - 1 ; i >= 0 ; i -- ) cout << v [ i ] ;",
+        "cout << v . size ( ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "missing template arguments before ‘+=’ token"
+    },
+    {
+      "mod_line": [
+        13,
+        16
+      ],
+      "mod_code": [
+        "if ( kq ( i ) + i == n ) { vector += i ; }",
+        "for ( i = v . size ( ) - 1 ; i >= 0 ; i -- ) cout << v [ i ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "missing template arguments before ‘+=’ token"
+    },
+    {
+      "mod_line": [
+        13,
+        16,
+        15
+      ],
+      "mod_code": [
+        "if ( kq ( i ) + i == n ) { vector += i ; }",
+        "for ( i = v . size ( ) - 1 ; i >= 0 ; i -- ) cout << v [ i ] ;",
+        "cout << v . size ( ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "missing template arguments before ‘+=’ token"
+    },
+    {
+      "mod_line": [
+        13,
+        15
+      ],
+      "mod_code": [
+        "if ( kq ( i ) + i == n ) { vector += i ; }",
+        "cout << v . size ( ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "missing template arguments before ‘+=’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        15
+      ],
+      "mod_code": [
+        "for ( i = v . size ( ) - 1 ; i >= 0 ; i -- ) cout << v [ i ] ;",
+        "cout << v . size ( ) ;"
+      ],
+      "err_line": 16,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    }
+  ]
+}

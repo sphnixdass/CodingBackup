@@ -1,0 +1,1275 @@
+{
+  "meta": {
+    "index": 490,
+    "hitid": "3CESM1J3EIXTX6MEM0OE7O6XZBRW6E",
+    "workerid": "A3QHJOSOK95QWB",
+    "probid": "937A",
+    "subid": "42244578"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "let mod be an constant in = 10",
+      "code": "const int mod = 10 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "N = const int = 1000002",
+      "code": "const int N = 1000002 ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "let nextz be an int array of length N",
+      "code": "int nextz [ N ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "let S and T be both char arrays of size N",
+      "code": "char S [ N ] , T [ N ] ;",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "slen , tlen = int",
+      "code": "int slen , tlen ;",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "in void function getNext",
+      "code": "void getNext ( )",
+      "indent": 0
+    },
+    {
+      "line": 6,
+      "text": "j , k = int",
+      "code": "int j , k ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "set j = 0",
+      "code": "j = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "set k = - 1",
+      "code": "k = - 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "set nextz at 0 to - 1",
+      "code": "nextz [ 0 ] = - 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "while j < tlen",
+      "code": "while ( j < tlen )",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "if k = - 1 or T at j = T at k",
+      "code": "if ( k == - 1 || T [ j ] == T [ k ] )",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "increment j and set nextz at j to increment k",
+      "code": "nextz [ ++ j ] = ++ k ;",
+      "indent": 3
+    },
+    {
+      "line": 13,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "set k to nextz at k",
+      "code": "k = nextz [ k ] ;",
+      "indent": 3
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 16,
+      "text": "in int function KMP_Index",
+      "code": "int KMP_Index ( )",
+      "indent": 0
+    },
+    {
+      "line": 17,
+      "text": "let i and j be both int = 0",
+      "code": "int i = 0 , j = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "call getNext ( )",
+      "code": "getNext ( ) ;",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "while i < slen and j < tlen",
+      "code": "while ( i < slen && j < tlen )",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "if j = - 1 or S [ i ] is T [ j ]",
+      "code": "if ( j == - 1 || S [ i ] == T [ j ] )",
+      "indent": 2
+    },
+    {
+      "line": 21,
+      "text": "increment i",
+      "code": "i ++ ;",
+      "indent": 3
+    },
+    {
+      "line": 22,
+      "text": "increment j",
+      "code": "j ++ ;",
+      "indent": 3
+    },
+    {
+      "line": 23,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 24,
+      "text": "set j to nextz at j",
+      "code": "j = nextz [ j ] ;",
+      "indent": 3
+    },
+    {
+      "line": 25,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 26,
+      "text": "if j = tlen",
+      "code": "if ( j == tlen )",
+      "indent": 1
+    },
+    {
+      "line": 27,
+      "text": "return i - tlen",
+      "code": "return i - tlen ;",
+      "indent": 2
+    },
+    {
+      "line": 28,
+      "text": "else",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 29,
+      "text": "return - 1",
+      "code": "return - 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 30,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 31,
+      "text": "in int function KMP_Count",
+      "code": "int KMP_Count ( )",
+      "indent": 0
+    },
+    {
+      "line": 32,
+      "text": "let ans = int = 0",
+      "code": "int ans = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 33,
+      "text": "let i and j be ints with j = 0",
+      "code": "int i , j = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 34,
+      "text": "if slen and tlen are both 1",
+      "code": "if ( slen == 1 && tlen == 1 )",
+      "indent": 1
+    },
+    {
+      "line": 35,
+      "text": "if S [ 0 ] is T [ 0 ]",
+      "code": "if ( S [ 0 ] == T [ 0 ] )",
+      "indent": 2
+    },
+    {
+      "line": 36,
+      "text": "return 1",
+      "code": "return 1 ;",
+      "indent": 3
+    },
+    {
+      "line": 37,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 38,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 3
+    },
+    {
+      "line": 39,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 40,
+      "text": "call getNext",
+      "code": "getNext ( ) ;",
+      "indent": 1
+    },
+    {
+      "line": 41,
+      "text": "for i = 0 to slen exclusive",
+      "code": "for ( i = 0 ; i < slen ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 42,
+      "text": "while j > 0 and S [ i ] isn ' t T [ j ] , set j to nextz at j",
+      "code": "while ( j > 0 && S [ i ] != T [ j ] ) j = nextz [ j ] ;",
+      "indent": 2
+    },
+    {
+      "line": 43,
+      "text": "if S at i = T at j",
+      "code": "if ( S [ i ] == T [ j ] ) j ++ ;",
+      "indent": 2
+    },
+    {
+      "line": 44,
+      "text": "if j = tlen",
+      "code": "if ( j == tlen )",
+      "indent": 2
+    },
+    {
+      "line": 45,
+      "text": "increment ans",
+      "code": "ans ++ ;",
+      "indent": 3
+    },
+    {
+      "line": 46,
+      "text": "set j to nextz [ j ]",
+      "code": "j = nextz [ j ] ;",
+      "indent": 3
+    },
+    {
+      "line": 47,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 48,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 49,
+      "text": "return ans",
+      "code": "return ans ;",
+      "indent": 1
+    },
+    {
+      "line": 50,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 51,
+      "text": "let st be a set of int",
+      "code": "set < int > st ;",
+      "indent": 0
+    },
+    {
+      "line": 52,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 53,
+      "text": "n = int",
+      "code": "int n ;",
+      "indent": 1
+    },
+    {
+      "line": 54,
+      "text": "flag = 0 = int",
+      "code": "int flag = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 55,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 56,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( int i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 57,
+      "text": "x = int",
+      "code": "int x ;",
+      "indent": 2
+    },
+    {
+      "line": 58,
+      "text": "read x",
+      "code": "cin >> x ;",
+      "indent": 2
+    },
+    {
+      "line": 59,
+      "text": "insert x in st",
+      "code": "st . insert ( x ) ;",
+      "indent": 2
+    },
+    {
+      "line": 60,
+      "text": "if x is 0 then set flag to 1",
+      "code": "if ( x == 0 ) flag = 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 61,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 62,
+      "text": "if flag isn ' t 0",
+      "code": "if ( flag )",
+      "indent": 1
+    },
+    {
+      "line": 63,
+      "text": "print the size of st - 1 and new line",
+      "code": "cout << st . size ( ) - 1 << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 64,
+      "text": "else",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 65,
+      "text": "print the size of st and new line",
+      "code": "cout << st . size ( ) << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 66,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "void getNext ( ) { }"
+      ],
+      "err_line": 6,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "int j = 0 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int j’"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "nextz . push_back ( j ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "request for member ‘push_back’ in ‘nextz’, which is of non-class type ‘int [1000002]’"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "const in = 10 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘in’ does not name a type"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "char T [ N ] , T [ N ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redefinition of ‘char T [1000002]’"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "int k , k ;"
+      ],
+      "err_line": 6,
+      "err_msg": "redeclaration of ‘int k’"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "int k = - 1 ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int k’"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "nextz . at ( 0 ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "request for member ‘at’ in ‘nextz’, which is of non-class type ‘int [1000002]’"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "nextz . insert ( j ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "request for member ‘insert’ in ‘nextz’, which is of non-class type ‘int [1000002]’"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "k = nextz ( k ) ;"
+      ],
+      "err_line": 14,
+      "err_msg": "‘nextz’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        24
+      ],
+      "mod_code": [
+        "j = nextz . at ( j ) ;"
+      ],
+      "err_line": 24,
+      "err_msg": "request for member ‘at’ in ‘nextz’, which is of non-class type ‘int [1000002]’"
+    },
+    {
+      "mod_line": [
+        35
+      ],
+      "mod_code": [
+        "if ( S [ 0 ] == T [ ' 0 ' )"
+      ],
+      "err_line": 35,
+      "err_msg": "expected ‘]’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        40
+      ],
+      "mod_code": [
+        "getNext call ;"
+      ],
+      "err_line": 40,
+      "err_msg": "expected ‘;’ before ‘call’"
+    },
+    {
+      "mod_line": [
+        51
+      ],
+      "mod_code": [
+        "priority_queue < int > st ;"
+      ],
+      "err_line": 59,
+      "err_msg": "‘class std::priority_queue<int>’ has no member named ‘insert’"
+    },
+    {
+      "mod_line": [
+        56
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 56,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        59
+      ],
+      "mod_code": [
+        "st . push ( x ) ;"
+      ],
+      "err_line": 59,
+      "err_msg": "‘class std::set<int>’ has no member named ‘push’"
+    },
+    {
+      "mod_line": [
+        5,
+        7
+      ],
+      "mod_code": [
+        "void getNext ( ) { }",
+        "int j = 0 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        7,
+        12
+      ],
+      "mod_code": [
+        "void getNext ( ) { }",
+        "int j = 0 ;",
+        "nextz . push_back ( j ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        7,
+        12,
+        59
+      ],
+      "mod_code": [
+        "void getNext ( ) { }",
+        "int j = 0 ;",
+        "nextz . push_back ( j ) ;",
+        "st . push ( x ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        7,
+        12,
+        40
+      ],
+      "mod_code": [
+        "void getNext ( ) { }",
+        "int j = 0 ;",
+        "nextz . push_back ( j ) ;",
+        "getNext call ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        7,
+        12,
+        14
+      ],
+      "mod_code": [
+        "void getNext ( ) { }",
+        "int j = 0 ;",
+        "nextz . push_back ( j ) ;",
+        "k = nextz ( k ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        7,
+        59
+      ],
+      "mod_code": [
+        "void getNext ( ) { }",
+        "int j = 0 ;",
+        "st . push ( x ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        7,
+        59,
+        40
+      ],
+      "mod_code": [
+        "void getNext ( ) { }",
+        "int j = 0 ;",
+        "st . push ( x ) ;",
+        "getNext call ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        7,
+        59,
+        14
+      ],
+      "mod_code": [
+        "void getNext ( ) { }",
+        "int j = 0 ;",
+        "st . push ( x ) ;",
+        "k = nextz ( k ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        7,
+        40
+      ],
+      "mod_code": [
+        "void getNext ( ) { }",
+        "int j = 0 ;",
+        "getNext call ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        7,
+        40,
+        14
+      ],
+      "mod_code": [
+        "void getNext ( ) { }",
+        "int j = 0 ;",
+        "getNext call ;",
+        "k = nextz ( k ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        7,
+        14
+      ],
+      "mod_code": [
+        "void getNext ( ) { }",
+        "int j = 0 ;",
+        "k = nextz ( k ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        12
+      ],
+      "mod_code": [
+        "void getNext ( ) { }",
+        "nextz . push_back ( j ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        12,
+        59
+      ],
+      "mod_code": [
+        "void getNext ( ) { }",
+        "nextz . push_back ( j ) ;",
+        "st . push ( x ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        12,
+        59,
+        40
+      ],
+      "mod_code": [
+        "void getNext ( ) { }",
+        "nextz . push_back ( j ) ;",
+        "st . push ( x ) ;",
+        "getNext call ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        12,
+        59,
+        14
+      ],
+      "mod_code": [
+        "void getNext ( ) { }",
+        "nextz . push_back ( j ) ;",
+        "st . push ( x ) ;",
+        "k = nextz ( k ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        12,
+        40
+      ],
+      "mod_code": [
+        "void getNext ( ) { }",
+        "nextz . push_back ( j ) ;",
+        "getNext call ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        12,
+        40,
+        14
+      ],
+      "mod_code": [
+        "void getNext ( ) { }",
+        "nextz . push_back ( j ) ;",
+        "getNext call ;",
+        "k = nextz ( k ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        12,
+        14
+      ],
+      "mod_code": [
+        "void getNext ( ) { }",
+        "nextz . push_back ( j ) ;",
+        "k = nextz ( k ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        59
+      ],
+      "mod_code": [
+        "void getNext ( ) { }",
+        "st . push ( x ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        59,
+        40
+      ],
+      "mod_code": [
+        "void getNext ( ) { }",
+        "st . push ( x ) ;",
+        "getNext call ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        59,
+        40,
+        14
+      ],
+      "mod_code": [
+        "void getNext ( ) { }",
+        "st . push ( x ) ;",
+        "getNext call ;",
+        "k = nextz ( k ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        59,
+        14
+      ],
+      "mod_code": [
+        "void getNext ( ) { }",
+        "st . push ( x ) ;",
+        "k = nextz ( k ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        40
+      ],
+      "mod_code": [
+        "void getNext ( ) { }",
+        "getNext call ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        40,
+        14
+      ],
+      "mod_code": [
+        "void getNext ( ) { }",
+        "getNext call ;",
+        "k = nextz ( k ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        14
+      ],
+      "mod_code": [
+        "void getNext ( ) { }",
+        "k = nextz ( k ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        12
+      ],
+      "mod_code": [
+        "int j = 0 ;",
+        "nextz . push_back ( j ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int j’"
+    },
+    {
+      "mod_line": [
+        7,
+        12,
+        59
+      ],
+      "mod_code": [
+        "int j = 0 ;",
+        "nextz . push_back ( j ) ;",
+        "st . push ( x ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int j’"
+    },
+    {
+      "mod_line": [
+        7,
+        12,
+        59,
+        40
+      ],
+      "mod_code": [
+        "int j = 0 ;",
+        "nextz . push_back ( j ) ;",
+        "st . push ( x ) ;",
+        "getNext call ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int j’"
+    },
+    {
+      "mod_line": [
+        7,
+        12,
+        59,
+        14
+      ],
+      "mod_code": [
+        "int j = 0 ;",
+        "nextz . push_back ( j ) ;",
+        "st . push ( x ) ;",
+        "k = nextz ( k ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int j’"
+    },
+    {
+      "mod_line": [
+        7,
+        12,
+        40
+      ],
+      "mod_code": [
+        "int j = 0 ;",
+        "nextz . push_back ( j ) ;",
+        "getNext call ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int j’"
+    },
+    {
+      "mod_line": [
+        7,
+        12,
+        40,
+        14
+      ],
+      "mod_code": [
+        "int j = 0 ;",
+        "nextz . push_back ( j ) ;",
+        "getNext call ;",
+        "k = nextz ( k ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int j’"
+    },
+    {
+      "mod_line": [
+        7,
+        12,
+        14
+      ],
+      "mod_code": [
+        "int j = 0 ;",
+        "nextz . push_back ( j ) ;",
+        "k = nextz ( k ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int j’"
+    },
+    {
+      "mod_line": [
+        7,
+        59
+      ],
+      "mod_code": [
+        "int j = 0 ;",
+        "st . push ( x ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int j’"
+    },
+    {
+      "mod_line": [
+        7,
+        59,
+        40
+      ],
+      "mod_code": [
+        "int j = 0 ;",
+        "st . push ( x ) ;",
+        "getNext call ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int j’"
+    },
+    {
+      "mod_line": [
+        7,
+        59,
+        40,
+        14
+      ],
+      "mod_code": [
+        "int j = 0 ;",
+        "st . push ( x ) ;",
+        "getNext call ;",
+        "k = nextz ( k ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int j’"
+    },
+    {
+      "mod_line": [
+        7,
+        59,
+        14
+      ],
+      "mod_code": [
+        "int j = 0 ;",
+        "st . push ( x ) ;",
+        "k = nextz ( k ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int j’"
+    },
+    {
+      "mod_line": [
+        7,
+        40
+      ],
+      "mod_code": [
+        "int j = 0 ;",
+        "getNext call ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int j’"
+    },
+    {
+      "mod_line": [
+        7,
+        40,
+        14
+      ],
+      "mod_code": [
+        "int j = 0 ;",
+        "getNext call ;",
+        "k = nextz ( k ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int j’"
+    },
+    {
+      "mod_line": [
+        7,
+        14
+      ],
+      "mod_code": [
+        "int j = 0 ;",
+        "k = nextz ( k ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int j’"
+    },
+    {
+      "mod_line": [
+        12,
+        59
+      ],
+      "mod_code": [
+        "nextz . push_back ( j ) ;",
+        "st . push ( x ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "request for member ‘push_back’ in ‘nextz’, which is of non-class type ‘int [1000002]’"
+    },
+    {
+      "mod_line": [
+        12,
+        59,
+        40
+      ],
+      "mod_code": [
+        "nextz . push_back ( j ) ;",
+        "st . push ( x ) ;",
+        "getNext call ;"
+      ],
+      "err_line": 12,
+      "err_msg": "request for member ‘push_back’ in ‘nextz’, which is of non-class type ‘int [1000002]’"
+    },
+    {
+      "mod_line": [
+        12,
+        59,
+        40,
+        14
+      ],
+      "mod_code": [
+        "nextz . push_back ( j ) ;",
+        "st . push ( x ) ;",
+        "getNext call ;",
+        "k = nextz ( k ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "request for member ‘push_back’ in ‘nextz’, which is of non-class type ‘int [1000002]’"
+    },
+    {
+      "mod_line": [
+        12,
+        59,
+        14
+      ],
+      "mod_code": [
+        "nextz . push_back ( j ) ;",
+        "st . push ( x ) ;",
+        "k = nextz ( k ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "request for member ‘push_back’ in ‘nextz’, which is of non-class type ‘int [1000002]’"
+    },
+    {
+      "mod_line": [
+        12,
+        40
+      ],
+      "mod_code": [
+        "nextz . push_back ( j ) ;",
+        "getNext call ;"
+      ],
+      "err_line": 12,
+      "err_msg": "request for member ‘push_back’ in ‘nextz’, which is of non-class type ‘int [1000002]’"
+    },
+    {
+      "mod_line": [
+        12,
+        40,
+        14
+      ],
+      "mod_code": [
+        "nextz . push_back ( j ) ;",
+        "getNext call ;",
+        "k = nextz ( k ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "request for member ‘push_back’ in ‘nextz’, which is of non-class type ‘int [1000002]’"
+    },
+    {
+      "mod_line": [
+        12,
+        14
+      ],
+      "mod_code": [
+        "nextz . push_back ( j ) ;",
+        "k = nextz ( k ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "request for member ‘push_back’ in ‘nextz’, which is of non-class type ‘int [1000002]’"
+    },
+    {
+      "mod_line": [
+        59,
+        40
+      ],
+      "mod_code": [
+        "st . push ( x ) ;",
+        "getNext call ;"
+      ],
+      "err_line": 40,
+      "err_msg": "expected ‘;’ before ‘call’"
+    },
+    {
+      "mod_line": [
+        59,
+        40,
+        14
+      ],
+      "mod_code": [
+        "st . push ( x ) ;",
+        "getNext call ;",
+        "k = nextz ( k ) ;"
+      ],
+      "err_line": 14,
+      "err_msg": "‘nextz’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        59,
+        14
+      ],
+      "mod_code": [
+        "st . push ( x ) ;",
+        "k = nextz ( k ) ;"
+      ],
+      "err_line": 14,
+      "err_msg": "‘nextz’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        40,
+        14
+      ],
+      "mod_code": [
+        "getNext call ;",
+        "k = nextz ( k ) ;"
+      ],
+      "err_line": 14,
+      "err_msg": "‘nextz’ cannot be used as a function"
+    }
+  ]
+}

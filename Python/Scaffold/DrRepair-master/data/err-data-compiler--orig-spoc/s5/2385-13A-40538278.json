@@ -1,0 +1,855 @@
+{
+  "meta": {
+    "index": 2385,
+    "hitid": "3AC6MFV69KCDOQB0T6ZP3JP5OPYZHQ",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "13A",
+    "subid": "40538278"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare gcd with integers a , b as arguments , returning integer",
+      "code": "int gcd ( int a , int b )",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "if b is 0 , return a",
+      "code": "if ( b == 0 ) { return a ; }",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "return result of run gcd with b , a % b as arguments",
+      "code": "return gcd ( b , a % b ) ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "create integer A",
+      "code": "int A ;",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 6,
+      "text": "read A",
+      "code": "cin >> A ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "create long long s with s = 0",
+      "code": "long long s = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "for i = 2 to A exclusive",
+      "code": "for ( int i = 2 ; i < A ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "create integer x with x = A",
+      "code": "int x = A ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "while x is not 0",
+      "code": "while ( x != 0 )",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "increment s by x % i",
+      "code": "s += x % i ;",
+      "indent": 3
+    },
+    {
+      "line": 12,
+      "text": "set x to x / i",
+      "code": "x /= i ;",
+      "indent": 3
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "create integer g with g = result of run gcd with A - 2 , s as arguments",
+      "code": "int g = gcd ( A - 2 , s ) ;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "print s / g print ' / ' print ( A - 2 ) / g print newline",
+      "code": "cout << s / g << ' / ' << ( A - 2 ) / g << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int gcd ( int a , int b ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "int n ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘A’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "cin >> n ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "int g = gcd ( A - 2 ) ;"
+      ],
+      "err_line": 15,
+      "err_msg": "too few arguments to function ‘int gcd(int, int)’"
+    },
+    {
+      "mod_line": [
+        8,
+        15
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= A ; i ++ )",
+        "int g = gcd ( A - 2 ) ;"
+      ],
+      "err_line": 15,
+      "err_msg": "too few arguments to function ‘int gcd(int, int)’"
+    },
+    {
+      "mod_line": [
+        8,
+        15,
+        0
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= A ; i ++ )",
+        "int g = gcd ( A - 2 ) ;",
+        "int gcd ( int a , int b ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        15,
+        0,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= A ; i ++ )",
+        "int g = gcd ( A - 2 ) ;",
+        "int gcd ( int a , int b ) ;",
+        "int n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        15,
+        0,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= A ; i ++ )",
+        "int g = gcd ( A - 2 ) ;",
+        "int gcd ( int a , int b ) ;",
+        "int x = ' A ' ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        15,
+        0,
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= A ; i ++ )",
+        "int g = gcd ( A - 2 ) ;",
+        "int gcd ( int a , int b ) ;",
+        "cin >> n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        15,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= A ; i ++ )",
+        "int g = gcd ( A - 2 ) ;",
+        "int n ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘A’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        15,
+        4,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= A ; i ++ )",
+        "int g = gcd ( A - 2 ) ;",
+        "int n ;",
+        "int x = ' A ' ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘A’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        15,
+        4,
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= A ; i ++ )",
+        "int g = gcd ( A - 2 ) ;",
+        "int n ;",
+        "cin >> n ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘A’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        15,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= A ; i ++ )",
+        "int g = gcd ( A - 2 ) ;",
+        "int x = ' A ' ;"
+      ],
+      "err_line": 15,
+      "err_msg": "too few arguments to function ‘int gcd(int, int)’"
+    },
+    {
+      "mod_line": [
+        8,
+        15,
+        9,
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= A ; i ++ )",
+        "int g = gcd ( A - 2 ) ;",
+        "int x = ' A ' ;",
+        "cin >> n ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        15,
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= A ; i ++ )",
+        "int g = gcd ( A - 2 ) ;",
+        "cin >> n ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        0
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= A ; i ++ )",
+        "int gcd ( int a , int b ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        0,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= A ; i ++ )",
+        "int gcd ( int a , int b ) ;",
+        "int n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        0,
+        4,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= A ; i ++ )",
+        "int gcd ( int a , int b ) ;",
+        "int n ;",
+        "int x = ' A ' ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        0,
+        4,
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= A ; i ++ )",
+        "int gcd ( int a , int b ) ;",
+        "int n ;",
+        "cin >> n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        0,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= A ; i ++ )",
+        "int gcd ( int a , int b ) ;",
+        "int x = ' A ' ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        0,
+        9,
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= A ; i ++ )",
+        "int gcd ( int a , int b ) ;",
+        "int x = ' A ' ;",
+        "cin >> n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        0,
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= A ; i ++ )",
+        "int gcd ( int a , int b ) ;",
+        "cin >> n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= A ; i ++ )",
+        "int n ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘A’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        4,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= A ; i ++ )",
+        "int n ;",
+        "int x = ' A ' ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘A’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        4,
+        9,
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= A ; i ++ )",
+        "int n ;",
+        "int x = ' A ' ;",
+        "cin >> n ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘A’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        4,
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= A ; i ++ )",
+        "int n ;",
+        "cin >> n ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘A’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        9,
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= A ; i ++ )",
+        "int x = ' A ' ;",
+        "cin >> n ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= A ; i ++ )",
+        "cin >> n ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        0
+      ],
+      "mod_code": [
+        "int g = gcd ( A - 2 ) ;",
+        "int gcd ( int a , int b ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        15,
+        0,
+        4
+      ],
+      "mod_code": [
+        "int g = gcd ( A - 2 ) ;",
+        "int gcd ( int a , int b ) ;",
+        "int n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        15,
+        0,
+        4,
+        9
+      ],
+      "mod_code": [
+        "int g = gcd ( A - 2 ) ;",
+        "int gcd ( int a , int b ) ;",
+        "int n ;",
+        "int x = ' A ' ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        15,
+        0,
+        4,
+        6
+      ],
+      "mod_code": [
+        "int g = gcd ( A - 2 ) ;",
+        "int gcd ( int a , int b ) ;",
+        "int n ;",
+        "cin >> n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        15,
+        0,
+        9
+      ],
+      "mod_code": [
+        "int g = gcd ( A - 2 ) ;",
+        "int gcd ( int a , int b ) ;",
+        "int x = ' A ' ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        15,
+        0,
+        9,
+        6
+      ],
+      "mod_code": [
+        "int g = gcd ( A - 2 ) ;",
+        "int gcd ( int a , int b ) ;",
+        "int x = ' A ' ;",
+        "cin >> n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        15,
+        0,
+        6
+      ],
+      "mod_code": [
+        "int g = gcd ( A - 2 ) ;",
+        "int gcd ( int a , int b ) ;",
+        "cin >> n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        15,
+        4
+      ],
+      "mod_code": [
+        "int g = gcd ( A - 2 ) ;",
+        "int n ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘A’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        4,
+        9
+      ],
+      "mod_code": [
+        "int g = gcd ( A - 2 ) ;",
+        "int n ;",
+        "int x = ' A ' ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘A’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        4,
+        9,
+        6
+      ],
+      "mod_code": [
+        "int g = gcd ( A - 2 ) ;",
+        "int n ;",
+        "int x = ' A ' ;",
+        "cin >> n ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘A’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        4,
+        6
+      ],
+      "mod_code": [
+        "int g = gcd ( A - 2 ) ;",
+        "int n ;",
+        "cin >> n ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘A’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        9
+      ],
+      "mod_code": [
+        "int g = gcd ( A - 2 ) ;",
+        "int x = ' A ' ;"
+      ],
+      "err_line": 15,
+      "err_msg": "too few arguments to function ‘int gcd(int, int)’"
+    },
+    {
+      "mod_line": [
+        15,
+        9,
+        6
+      ],
+      "mod_code": [
+        "int g = gcd ( A - 2 ) ;",
+        "int x = ' A ' ;",
+        "cin >> n ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        6
+      ],
+      "mod_code": [
+        "int g = gcd ( A - 2 ) ;",
+        "cin >> n ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        4
+      ],
+      "mod_code": [
+        "int gcd ( int a , int b ) ;",
+        "int n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        9
+      ],
+      "mod_code": [
+        "int gcd ( int a , int b ) ;",
+        "int n ;",
+        "int x = ' A ' ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        9,
+        6
+      ],
+      "mod_code": [
+        "int gcd ( int a , int b ) ;",
+        "int n ;",
+        "int x = ' A ' ;",
+        "cin >> n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        6
+      ],
+      "mod_code": [
+        "int gcd ( int a , int b ) ;",
+        "int n ;",
+        "cin >> n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        9
+      ],
+      "mod_code": [
+        "int gcd ( int a , int b ) ;",
+        "int x = ' A ' ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        9,
+        6
+      ],
+      "mod_code": [
+        "int gcd ( int a , int b ) ;",
+        "int x = ' A ' ;",
+        "cin >> n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        6
+      ],
+      "mod_code": [
+        "int gcd ( int a , int b ) ;",
+        "cin >> n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        9
+      ],
+      "mod_code": [
+        "int n ;",
+        "int x = ' A ' ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘A’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        9,
+        6
+      ],
+      "mod_code": [
+        "int n ;",
+        "int x = ' A ' ;",
+        "cin >> n ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘A’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        6
+      ],
+      "mod_code": [
+        "int n ;",
+        "cin >> n ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘A’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        6
+      ],
+      "mod_code": [
+        "int x = ' A ' ;",
+        "cin >> n ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘n’ was not declared in this scope"
+    }
+  ]
+}

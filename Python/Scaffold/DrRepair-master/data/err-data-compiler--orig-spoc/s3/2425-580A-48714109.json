@@ -1,0 +1,853 @@
+{
+  "meta": {
+    "index": 2425,
+    "hitid": "3QHITW7OYO3P0B2V046KV4QX7T2QAW",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "580A",
+    "subid": "48714109"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare integer constant N = 1e5 + 1",
+      "code": "int const N = 1e5 + 1 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare integers n , integer array a size N",
+      "code": "int n , a [ N ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for i = 0 to n exclusive , read a [ i ]",
+      "code": "for ( int i = 0 ; i < n ; ++ i ) cin >> a [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "let a [ n ] be - 1",
+      "code": "a [ n ] = - 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "declare integers lst = a [ 0 ] , res = 0",
+      "code": "int lst = a [ 0 ] , res = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for i = 0 , tmp , to i is less than n , incrementing i",
+      "code": "for ( int i = 0 , tmp ; i < n ; ++ i )",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "let tmp be i",
+      "code": "tmp = i ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "while a [ i ] is less than or equal to a [ i + 1 ] , increment i",
+      "code": "while ( a [ i ] <= a [ i + 1 ] ) ++ i ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "let res be maximum of ( res and i - tmp + 1 )",
+      "code": "res = max ( res , i - tmp + 1 ) ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "print res and newline",
+      "code": "cout << res << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int n , a [ N ] , n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int n’"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "cin >> N ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘const int’)"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "int lst = a [ 0 ] , res = \" 0 \" ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid conversion from ‘const char*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "int tmp = i ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int tmp’"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "res be max ( res , i - tmp + 1 ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘;’ before ‘be’"
+    },
+    {
+      "mod_line": [
+        10,
+        3
+      ],
+      "mod_code": [
+        "res be max ( res , i - tmp + 1 ) ;",
+        "cin >> N ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘const int’)"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        8
+      ],
+      "mod_code": [
+        "res be max ( res , i - tmp + 1 ) ;",
+        "cin >> N ;",
+        "int tmp = i ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘const int’)"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        8,
+        6
+      ],
+      "mod_code": [
+        "res be max ( res , i - tmp + 1 ) ;",
+        "cin >> N ;",
+        "int tmp = i ;",
+        "int lst = a [ 0 ] , res = \" 0 \" ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘const int’)"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        8,
+        5
+      ],
+      "mod_code": [
+        "res be max ( res , i - tmp + 1 ) ;",
+        "cin >> N ;",
+        "int tmp = i ;",
+        "a [ n ] = ' 1 ' ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘const int’)"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        8,
+        1
+      ],
+      "mod_code": [
+        "res be max ( res , i - tmp + 1 ) ;",
+        "cin >> N ;",
+        "int tmp = i ;",
+        "int n , a [ N ] , n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int n’"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        6
+      ],
+      "mod_code": [
+        "res be max ( res , i - tmp + 1 ) ;",
+        "cin >> N ;",
+        "int lst = a [ 0 ] , res = \" 0 \" ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘const int’)"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        6,
+        5
+      ],
+      "mod_code": [
+        "res be max ( res , i - tmp + 1 ) ;",
+        "cin >> N ;",
+        "int lst = a [ 0 ] , res = \" 0 \" ;",
+        "a [ n ] = ' 1 ' ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘const int’)"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        6,
+        1
+      ],
+      "mod_code": [
+        "res be max ( res , i - tmp + 1 ) ;",
+        "cin >> N ;",
+        "int lst = a [ 0 ] , res = \" 0 \" ;",
+        "int n , a [ N ] , n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int n’"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        5
+      ],
+      "mod_code": [
+        "res be max ( res , i - tmp + 1 ) ;",
+        "cin >> N ;",
+        "a [ n ] = ' 1 ' ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘const int’)"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        5,
+        1
+      ],
+      "mod_code": [
+        "res be max ( res , i - tmp + 1 ) ;",
+        "cin >> N ;",
+        "a [ n ] = ' 1 ' ;",
+        "int n , a [ N ] , n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int n’"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        1
+      ],
+      "mod_code": [
+        "res be max ( res , i - tmp + 1 ) ;",
+        "cin >> N ;",
+        "int n , a [ N ] , n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int n’"
+    },
+    {
+      "mod_line": [
+        10,
+        8
+      ],
+      "mod_code": [
+        "res be max ( res , i - tmp + 1 ) ;",
+        "int tmp = i ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int tmp’"
+    },
+    {
+      "mod_line": [
+        10,
+        8,
+        6
+      ],
+      "mod_code": [
+        "res be max ( res , i - tmp + 1 ) ;",
+        "int tmp = i ;",
+        "int lst = a [ 0 ] , res = \" 0 \" ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid conversion from ‘const char*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        8,
+        6,
+        5
+      ],
+      "mod_code": [
+        "res be max ( res , i - tmp + 1 ) ;",
+        "int tmp = i ;",
+        "int lst = a [ 0 ] , res = \" 0 \" ;",
+        "a [ n ] = ' 1 ' ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid conversion from ‘const char*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        8,
+        6,
+        1
+      ],
+      "mod_code": [
+        "res be max ( res , i - tmp + 1 ) ;",
+        "int tmp = i ;",
+        "int lst = a [ 0 ] , res = \" 0 \" ;",
+        "int n , a [ N ] , n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int n’"
+    },
+    {
+      "mod_line": [
+        10,
+        8,
+        5
+      ],
+      "mod_code": [
+        "res be max ( res , i - tmp + 1 ) ;",
+        "int tmp = i ;",
+        "a [ n ] = ' 1 ' ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int tmp’"
+    },
+    {
+      "mod_line": [
+        10,
+        8,
+        5,
+        1
+      ],
+      "mod_code": [
+        "res be max ( res , i - tmp + 1 ) ;",
+        "int tmp = i ;",
+        "a [ n ] = ' 1 ' ;",
+        "int n , a [ N ] , n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int n’"
+    },
+    {
+      "mod_line": [
+        10,
+        8,
+        1
+      ],
+      "mod_code": [
+        "res be max ( res , i - tmp + 1 ) ;",
+        "int tmp = i ;",
+        "int n , a [ N ] , n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int n’"
+    },
+    {
+      "mod_line": [
+        10,
+        6
+      ],
+      "mod_code": [
+        "res be max ( res , i - tmp + 1 ) ;",
+        "int lst = a [ 0 ] , res = \" 0 \" ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid conversion from ‘const char*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        6,
+        5
+      ],
+      "mod_code": [
+        "res be max ( res , i - tmp + 1 ) ;",
+        "int lst = a [ 0 ] , res = \" 0 \" ;",
+        "a [ n ] = ' 1 ' ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid conversion from ‘const char*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        6,
+        5,
+        1
+      ],
+      "mod_code": [
+        "res be max ( res , i - tmp + 1 ) ;",
+        "int lst = a [ 0 ] , res = \" 0 \" ;",
+        "a [ n ] = ' 1 ' ;",
+        "int n , a [ N ] , n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int n’"
+    },
+    {
+      "mod_line": [
+        10,
+        6,
+        1
+      ],
+      "mod_code": [
+        "res be max ( res , i - tmp + 1 ) ;",
+        "int lst = a [ 0 ] , res = \" 0 \" ;",
+        "int n , a [ N ] , n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int n’"
+    },
+    {
+      "mod_line": [
+        10,
+        5
+      ],
+      "mod_code": [
+        "res be max ( res , i - tmp + 1 ) ;",
+        "a [ n ] = ' 1 ' ;"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘;’ before ‘be’"
+    },
+    {
+      "mod_line": [
+        10,
+        5,
+        1
+      ],
+      "mod_code": [
+        "res be max ( res , i - tmp + 1 ) ;",
+        "a [ n ] = ' 1 ' ;",
+        "int n , a [ N ] , n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int n’"
+    },
+    {
+      "mod_line": [
+        10,
+        1
+      ],
+      "mod_code": [
+        "res be max ( res , i - tmp + 1 ) ;",
+        "int n , a [ N ] , n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int n’"
+    },
+    {
+      "mod_line": [
+        3,
+        8
+      ],
+      "mod_code": [
+        "cin >> N ;",
+        "int tmp = i ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘const int’)"
+    },
+    {
+      "mod_line": [
+        3,
+        8,
+        6
+      ],
+      "mod_code": [
+        "cin >> N ;",
+        "int tmp = i ;",
+        "int lst = a [ 0 ] , res = \" 0 \" ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘const int’)"
+    },
+    {
+      "mod_line": [
+        3,
+        8,
+        6,
+        5
+      ],
+      "mod_code": [
+        "cin >> N ;",
+        "int tmp = i ;",
+        "int lst = a [ 0 ] , res = \" 0 \" ;",
+        "a [ n ] = ' 1 ' ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘const int’)"
+    },
+    {
+      "mod_line": [
+        3,
+        8,
+        6,
+        1
+      ],
+      "mod_code": [
+        "cin >> N ;",
+        "int tmp = i ;",
+        "int lst = a [ 0 ] , res = \" 0 \" ;",
+        "int n , a [ N ] , n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int n’"
+    },
+    {
+      "mod_line": [
+        3,
+        8,
+        5
+      ],
+      "mod_code": [
+        "cin >> N ;",
+        "int tmp = i ;",
+        "a [ n ] = ' 1 ' ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘const int’)"
+    },
+    {
+      "mod_line": [
+        3,
+        8,
+        5,
+        1
+      ],
+      "mod_code": [
+        "cin >> N ;",
+        "int tmp = i ;",
+        "a [ n ] = ' 1 ' ;",
+        "int n , a [ N ] , n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int n’"
+    },
+    {
+      "mod_line": [
+        3,
+        8,
+        1
+      ],
+      "mod_code": [
+        "cin >> N ;",
+        "int tmp = i ;",
+        "int n , a [ N ] , n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int n’"
+    },
+    {
+      "mod_line": [
+        3,
+        6
+      ],
+      "mod_code": [
+        "cin >> N ;",
+        "int lst = a [ 0 ] , res = \" 0 \" ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘const int’)"
+    },
+    {
+      "mod_line": [
+        3,
+        6,
+        5
+      ],
+      "mod_code": [
+        "cin >> N ;",
+        "int lst = a [ 0 ] , res = \" 0 \" ;",
+        "a [ n ] = ' 1 ' ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘const int’)"
+    },
+    {
+      "mod_line": [
+        3,
+        6,
+        5,
+        1
+      ],
+      "mod_code": [
+        "cin >> N ;",
+        "int lst = a [ 0 ] , res = \" 0 \" ;",
+        "a [ n ] = ' 1 ' ;",
+        "int n , a [ N ] , n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int n’"
+    },
+    {
+      "mod_line": [
+        3,
+        6,
+        1
+      ],
+      "mod_code": [
+        "cin >> N ;",
+        "int lst = a [ 0 ] , res = \" 0 \" ;",
+        "int n , a [ N ] , n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int n’"
+    },
+    {
+      "mod_line": [
+        3,
+        5
+      ],
+      "mod_code": [
+        "cin >> N ;",
+        "a [ n ] = ' 1 ' ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘const int’)"
+    },
+    {
+      "mod_line": [
+        3,
+        5,
+        1
+      ],
+      "mod_code": [
+        "cin >> N ;",
+        "a [ n ] = ' 1 ' ;",
+        "int n , a [ N ] , n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int n’"
+    },
+    {
+      "mod_line": [
+        3,
+        1
+      ],
+      "mod_code": [
+        "cin >> N ;",
+        "int n , a [ N ] , n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int n’"
+    },
+    {
+      "mod_line": [
+        8,
+        6
+      ],
+      "mod_code": [
+        "int tmp = i ;",
+        "int lst = a [ 0 ] , res = \" 0 \" ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid conversion from ‘const char*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        8,
+        6,
+        5
+      ],
+      "mod_code": [
+        "int tmp = i ;",
+        "int lst = a [ 0 ] , res = \" 0 \" ;",
+        "a [ n ] = ' 1 ' ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid conversion from ‘const char*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        8,
+        6,
+        5,
+        1
+      ],
+      "mod_code": [
+        "int tmp = i ;",
+        "int lst = a [ 0 ] , res = \" 0 \" ;",
+        "a [ n ] = ' 1 ' ;",
+        "int n , a [ N ] , n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int n’"
+    },
+    {
+      "mod_line": [
+        8,
+        6,
+        1
+      ],
+      "mod_code": [
+        "int tmp = i ;",
+        "int lst = a [ 0 ] , res = \" 0 \" ;",
+        "int n , a [ N ] , n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int n’"
+    },
+    {
+      "mod_line": [
+        8,
+        5
+      ],
+      "mod_code": [
+        "int tmp = i ;",
+        "a [ n ] = ' 1 ' ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int tmp’"
+    },
+    {
+      "mod_line": [
+        8,
+        5,
+        1
+      ],
+      "mod_code": [
+        "int tmp = i ;",
+        "a [ n ] = ' 1 ' ;",
+        "int n , a [ N ] , n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int n’"
+    },
+    {
+      "mod_line": [
+        8,
+        1
+      ],
+      "mod_code": [
+        "int tmp = i ;",
+        "int n , a [ N ] , n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int n’"
+    },
+    {
+      "mod_line": [
+        6,
+        5
+      ],
+      "mod_code": [
+        "int lst = a [ 0 ] , res = \" 0 \" ;",
+        "a [ n ] = ' 1 ' ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid conversion from ‘const char*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        5,
+        1
+      ],
+      "mod_code": [
+        "int lst = a [ 0 ] , res = \" 0 \" ;",
+        "a [ n ] = ' 1 ' ;",
+        "int n , a [ N ] , n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int n’"
+    },
+    {
+      "mod_line": [
+        6,
+        1
+      ],
+      "mod_code": [
+        "int lst = a [ 0 ] , res = \" 0 \" ;",
+        "int n , a [ N ] , n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int n’"
+    },
+    {
+      "mod_line": [
+        5,
+        1
+      ],
+      "mod_code": [
+        "a [ n ] = ' 1 ' ;",
+        "int n , a [ N ] , n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int n’"
+    }
+  ]
+}

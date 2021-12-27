@@ -1,0 +1,927 @@
+{
+  "meta": {
+    "index": 487,
+    "hitid": "3EGKVCRQFWM3SNY9XSNA31D5OK5YB3",
+    "workerid": "A1R0Q9CUUBSM5F",
+    "probid": "261A",
+    "subid": "49067559"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create integer arrays coupons of size 100005 and arr of size 100005",
+      "code": "int coupons [ 100005 ] , arr [ 100005 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "make ints C and N",
+      "code": "int C , N ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "read C",
+      "code": "cin >> C ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for i = 0 to C exclusive , read coupons [ i ]",
+      "code": "for ( int i = 0 ; i < C ; i ++ ) cin >> coupons [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "read N",
+      "code": "cin >> N ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "make int BestCoupon = * min_element ( coupons , coupons + C )",
+      "code": "int BestCoupon = * min_element ( coupons , coupons + C ) ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for i = 0 to N exclusive , read arr [ i ]",
+      "code": "for ( int i = 0 ; i < N ; i ++ ) cin >> arr [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "sort arr using arr + N",
+      "code": "sort ( arr , arr + N ) ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "reverse order of contents of arr using arr + N",
+      "code": "reverse ( arr , arr + N ) ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "create long long int result = 0",
+      "code": "long long int result = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "make integer j = 0",
+      "code": "int j = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "while j is less than N",
+      "code": "while ( j < N )",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "for i = j while i is less than j + BestCoupon and i is less than N , add arr [ i ] to result",
+      "code": "for ( int i = j ; i < j + BestCoupon and i < N ; i ++ ) result += arr [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "set j to j + BestCoupon",
+      "code": "j += BestCoupon ;",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "set j to min of N and j + 2",
+      "code": "j = min ( N , j + 2 ) ;",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "display resutl",
+      "code": "cout << result << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "cout << resutl << endl ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘resutl’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int coupons [ 100005 ] [ 100005 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [100005]’)"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "long long C , N ;"
+      ],
+      "err_line": 15,
+      "err_msg": "no matching function for call to ‘min(long long int&, int)’"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "getline ( cin , C ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘getline(std::istream&, int&)’"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "int BestCoupon = * min_element ( ( coupons , coupons + C ) ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘min_element(int*)’"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "reverse ( arr . begin ( ) , arr + N ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "request for member ‘begin’ in ‘arr’, which is of non-class type ‘int [100005]’"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "long long int int result = 0 ;"
+      ],
+      "err_line": 10,
+      "err_msg": "two or more data types in declaration of ‘result’"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "j = 0 ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "for ( i = j ; i < j + BestCoupon && i < N ; i ++ ) result += arr [ i ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "cout << resutl << \" \\n \" ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘resutl’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17,
+        5
+      ],
+      "mod_code": [
+        "cout << resutl << endl ;",
+        "N >> N ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘resutl’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17,
+        5,
+        13
+      ],
+      "mod_code": [
+        "cout << resutl << endl ;",
+        "N >> N ;",
+        "for ( i = j ; i < j + BestCoupon && i < N ; i ++ ) result += arr [ i ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        17,
+        5,
+        13,
+        3
+      ],
+      "mod_code": [
+        "cout << resutl << endl ;",
+        "N >> N ;",
+        "for ( i = j ; i < j + BestCoupon && i < N ; i ++ ) result += arr [ i ] ;",
+        "getline ( cin , C ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘getline(std::istream&, int&)’"
+    },
+    {
+      "mod_line": [
+        17,
+        5,
+        13,
+        0
+      ],
+      "mod_code": [
+        "cout << resutl << endl ;",
+        "N >> N ;",
+        "for ( i = j ; i < j + BestCoupon && i < N ; i ++ ) result += arr [ i ] ;",
+        "int coupons [ 100005 ] [ 100005 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [100005]’)"
+    },
+    {
+      "mod_line": [
+        17,
+        5,
+        13,
+        9
+      ],
+      "mod_code": [
+        "cout << resutl << endl ;",
+        "N >> N ;",
+        "for ( i = j ; i < j + BestCoupon && i < N ; i ++ ) result += arr [ i ] ;",
+        "reverse ( arr . begin ( ) , arr + N ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "request for member ‘begin’ in ‘arr’, which is of non-class type ‘int [100005]’"
+    },
+    {
+      "mod_line": [
+        17,
+        5,
+        3
+      ],
+      "mod_code": [
+        "cout << resutl << endl ;",
+        "N >> N ;",
+        "getline ( cin , C ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘getline(std::istream&, int&)’"
+    },
+    {
+      "mod_line": [
+        17,
+        5,
+        3,
+        0
+      ],
+      "mod_code": [
+        "cout << resutl << endl ;",
+        "N >> N ;",
+        "getline ( cin , C ) ;",
+        "int coupons [ 100005 ] [ 100005 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘getline(std::istream&, int&)’"
+    },
+    {
+      "mod_line": [
+        17,
+        5,
+        3,
+        9
+      ],
+      "mod_code": [
+        "cout << resutl << endl ;",
+        "N >> N ;",
+        "getline ( cin , C ) ;",
+        "reverse ( arr . begin ( ) , arr + N ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘getline(std::istream&, int&)’"
+    },
+    {
+      "mod_line": [
+        17,
+        5,
+        0
+      ],
+      "mod_code": [
+        "cout << resutl << endl ;",
+        "N >> N ;",
+        "int coupons [ 100005 ] [ 100005 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [100005]’)"
+    },
+    {
+      "mod_line": [
+        17,
+        5,
+        0,
+        9
+      ],
+      "mod_code": [
+        "cout << resutl << endl ;",
+        "N >> N ;",
+        "int coupons [ 100005 ] [ 100005 ] ;",
+        "reverse ( arr . begin ( ) , arr + N ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [100005]’)"
+    },
+    {
+      "mod_line": [
+        17,
+        5,
+        9
+      ],
+      "mod_code": [
+        "cout << resutl << endl ;",
+        "N >> N ;",
+        "reverse ( arr . begin ( ) , arr + N ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "request for member ‘begin’ in ‘arr’, which is of non-class type ‘int [100005]’"
+    },
+    {
+      "mod_line": [
+        17,
+        13
+      ],
+      "mod_code": [
+        "cout << resutl << endl ;",
+        "for ( i = j ; i < j + BestCoupon && i < N ; i ++ ) result += arr [ i ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        17,
+        13,
+        3
+      ],
+      "mod_code": [
+        "cout << resutl << endl ;",
+        "for ( i = j ; i < j + BestCoupon && i < N ; i ++ ) result += arr [ i ] ;",
+        "getline ( cin , C ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘getline(std::istream&, int&)’"
+    },
+    {
+      "mod_line": [
+        17,
+        13,
+        3,
+        0
+      ],
+      "mod_code": [
+        "cout << resutl << endl ;",
+        "for ( i = j ; i < j + BestCoupon && i < N ; i ++ ) result += arr [ i ] ;",
+        "getline ( cin , C ) ;",
+        "int coupons [ 100005 ] [ 100005 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘getline(std::istream&, int&)’"
+    },
+    {
+      "mod_line": [
+        17,
+        13,
+        3,
+        9
+      ],
+      "mod_code": [
+        "cout << resutl << endl ;",
+        "for ( i = j ; i < j + BestCoupon && i < N ; i ++ ) result += arr [ i ] ;",
+        "getline ( cin , C ) ;",
+        "reverse ( arr . begin ( ) , arr + N ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘getline(std::istream&, int&)’"
+    },
+    {
+      "mod_line": [
+        17,
+        13,
+        0
+      ],
+      "mod_code": [
+        "cout << resutl << endl ;",
+        "for ( i = j ; i < j + BestCoupon && i < N ; i ++ ) result += arr [ i ] ;",
+        "int coupons [ 100005 ] [ 100005 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [100005]’)"
+    },
+    {
+      "mod_line": [
+        17,
+        13,
+        0,
+        9
+      ],
+      "mod_code": [
+        "cout << resutl << endl ;",
+        "for ( i = j ; i < j + BestCoupon && i < N ; i ++ ) result += arr [ i ] ;",
+        "int coupons [ 100005 ] [ 100005 ] ;",
+        "reverse ( arr . begin ( ) , arr + N ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [100005]’)"
+    },
+    {
+      "mod_line": [
+        17,
+        13,
+        9
+      ],
+      "mod_code": [
+        "cout << resutl << endl ;",
+        "for ( i = j ; i < j + BestCoupon && i < N ; i ++ ) result += arr [ i ] ;",
+        "reverse ( arr . begin ( ) , arr + N ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "request for member ‘begin’ in ‘arr’, which is of non-class type ‘int [100005]’"
+    },
+    {
+      "mod_line": [
+        17,
+        3
+      ],
+      "mod_code": [
+        "cout << resutl << endl ;",
+        "getline ( cin , C ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘getline(std::istream&, int&)’"
+    },
+    {
+      "mod_line": [
+        17,
+        3,
+        0
+      ],
+      "mod_code": [
+        "cout << resutl << endl ;",
+        "getline ( cin , C ) ;",
+        "int coupons [ 100005 ] [ 100005 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘getline(std::istream&, int&)’"
+    },
+    {
+      "mod_line": [
+        17,
+        3,
+        0,
+        9
+      ],
+      "mod_code": [
+        "cout << resutl << endl ;",
+        "getline ( cin , C ) ;",
+        "int coupons [ 100005 ] [ 100005 ] ;",
+        "reverse ( arr . begin ( ) , arr + N ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘getline(std::istream&, int&)’"
+    },
+    {
+      "mod_line": [
+        17,
+        3,
+        9
+      ],
+      "mod_code": [
+        "cout << resutl << endl ;",
+        "getline ( cin , C ) ;",
+        "reverse ( arr . begin ( ) , arr + N ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘getline(std::istream&, int&)’"
+    },
+    {
+      "mod_line": [
+        17,
+        0
+      ],
+      "mod_code": [
+        "cout << resutl << endl ;",
+        "int coupons [ 100005 ] [ 100005 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [100005]’)"
+    },
+    {
+      "mod_line": [
+        17,
+        0,
+        9
+      ],
+      "mod_code": [
+        "cout << resutl << endl ;",
+        "int coupons [ 100005 ] [ 100005 ] ;",
+        "reverse ( arr . begin ( ) , arr + N ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [100005]’)"
+    },
+    {
+      "mod_line": [
+        17,
+        9
+      ],
+      "mod_code": [
+        "cout << resutl << endl ;",
+        "reverse ( arr . begin ( ) , arr + N ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "request for member ‘begin’ in ‘arr’, which is of non-class type ‘int [100005]’"
+    },
+    {
+      "mod_line": [
+        5,
+        13
+      ],
+      "mod_code": [
+        "N >> N ;",
+        "for ( i = j ; i < j + BestCoupon && i < N ; i ++ ) result += arr [ i ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        13,
+        3
+      ],
+      "mod_code": [
+        "N >> N ;",
+        "for ( i = j ; i < j + BestCoupon && i < N ; i ++ ) result += arr [ i ] ;",
+        "getline ( cin , C ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘getline(std::istream&, int&)’"
+    },
+    {
+      "mod_line": [
+        5,
+        13,
+        3,
+        0
+      ],
+      "mod_code": [
+        "N >> N ;",
+        "for ( i = j ; i < j + BestCoupon && i < N ; i ++ ) result += arr [ i ] ;",
+        "getline ( cin , C ) ;",
+        "int coupons [ 100005 ] [ 100005 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘getline(std::istream&, int&)’"
+    },
+    {
+      "mod_line": [
+        5,
+        13,
+        3,
+        9
+      ],
+      "mod_code": [
+        "N >> N ;",
+        "for ( i = j ; i < j + BestCoupon && i < N ; i ++ ) result += arr [ i ] ;",
+        "getline ( cin , C ) ;",
+        "reverse ( arr . begin ( ) , arr + N ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘getline(std::istream&, int&)’"
+    },
+    {
+      "mod_line": [
+        5,
+        13,
+        0
+      ],
+      "mod_code": [
+        "N >> N ;",
+        "for ( i = j ; i < j + BestCoupon && i < N ; i ++ ) result += arr [ i ] ;",
+        "int coupons [ 100005 ] [ 100005 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [100005]’)"
+    },
+    {
+      "mod_line": [
+        5,
+        13,
+        0,
+        9
+      ],
+      "mod_code": [
+        "N >> N ;",
+        "for ( i = j ; i < j + BestCoupon && i < N ; i ++ ) result += arr [ i ] ;",
+        "int coupons [ 100005 ] [ 100005 ] ;",
+        "reverse ( arr . begin ( ) , arr + N ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [100005]’)"
+    },
+    {
+      "mod_line": [
+        5,
+        13,
+        9
+      ],
+      "mod_code": [
+        "N >> N ;",
+        "for ( i = j ; i < j + BestCoupon && i < N ; i ++ ) result += arr [ i ] ;",
+        "reverse ( arr . begin ( ) , arr + N ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "request for member ‘begin’ in ‘arr’, which is of non-class type ‘int [100005]’"
+    },
+    {
+      "mod_line": [
+        5,
+        3
+      ],
+      "mod_code": [
+        "N >> N ;",
+        "getline ( cin , C ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘getline(std::istream&, int&)’"
+    },
+    {
+      "mod_line": [
+        5,
+        3,
+        0
+      ],
+      "mod_code": [
+        "N >> N ;",
+        "getline ( cin , C ) ;",
+        "int coupons [ 100005 ] [ 100005 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘getline(std::istream&, int&)’"
+    },
+    {
+      "mod_line": [
+        5,
+        3,
+        0,
+        9
+      ],
+      "mod_code": [
+        "N >> N ;",
+        "getline ( cin , C ) ;",
+        "int coupons [ 100005 ] [ 100005 ] ;",
+        "reverse ( arr . begin ( ) , arr + N ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘getline(std::istream&, int&)’"
+    },
+    {
+      "mod_line": [
+        5,
+        3,
+        9
+      ],
+      "mod_code": [
+        "N >> N ;",
+        "getline ( cin , C ) ;",
+        "reverse ( arr . begin ( ) , arr + N ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘getline(std::istream&, int&)’"
+    },
+    {
+      "mod_line": [
+        5,
+        0
+      ],
+      "mod_code": [
+        "N >> N ;",
+        "int coupons [ 100005 ] [ 100005 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [100005]’)"
+    },
+    {
+      "mod_line": [
+        5,
+        0,
+        9
+      ],
+      "mod_code": [
+        "N >> N ;",
+        "int coupons [ 100005 ] [ 100005 ] ;",
+        "reverse ( arr . begin ( ) , arr + N ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [100005]’)"
+    },
+    {
+      "mod_line": [
+        5,
+        9
+      ],
+      "mod_code": [
+        "N >> N ;",
+        "reverse ( arr . begin ( ) , arr + N ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "request for member ‘begin’ in ‘arr’, which is of non-class type ‘int [100005]’"
+    },
+    {
+      "mod_line": [
+        13,
+        3
+      ],
+      "mod_code": [
+        "for ( i = j ; i < j + BestCoupon && i < N ; i ++ ) result += arr [ i ] ;",
+        "getline ( cin , C ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘getline(std::istream&, int&)’"
+    },
+    {
+      "mod_line": [
+        13,
+        3,
+        0
+      ],
+      "mod_code": [
+        "for ( i = j ; i < j + BestCoupon && i < N ; i ++ ) result += arr [ i ] ;",
+        "getline ( cin , C ) ;",
+        "int coupons [ 100005 ] [ 100005 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘getline(std::istream&, int&)’"
+    },
+    {
+      "mod_line": [
+        13,
+        3,
+        0,
+        9
+      ],
+      "mod_code": [
+        "for ( i = j ; i < j + BestCoupon && i < N ; i ++ ) result += arr [ i ] ;",
+        "getline ( cin , C ) ;",
+        "int coupons [ 100005 ] [ 100005 ] ;",
+        "reverse ( arr . begin ( ) , arr + N ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘getline(std::istream&, int&)’"
+    },
+    {
+      "mod_line": [
+        13,
+        3,
+        9
+      ],
+      "mod_code": [
+        "for ( i = j ; i < j + BestCoupon && i < N ; i ++ ) result += arr [ i ] ;",
+        "getline ( cin , C ) ;",
+        "reverse ( arr . begin ( ) , arr + N ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘getline(std::istream&, int&)’"
+    },
+    {
+      "mod_line": [
+        13,
+        0
+      ],
+      "mod_code": [
+        "for ( i = j ; i < j + BestCoupon && i < N ; i ++ ) result += arr [ i ] ;",
+        "int coupons [ 100005 ] [ 100005 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [100005]’)"
+    },
+    {
+      "mod_line": [
+        13,
+        0,
+        9
+      ],
+      "mod_code": [
+        "for ( i = j ; i < j + BestCoupon && i < N ; i ++ ) result += arr [ i ] ;",
+        "int coupons [ 100005 ] [ 100005 ] ;",
+        "reverse ( arr . begin ( ) , arr + N ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [100005]’)"
+    },
+    {
+      "mod_line": [
+        13,
+        9
+      ],
+      "mod_code": [
+        "for ( i = j ; i < j + BestCoupon && i < N ; i ++ ) result += arr [ i ] ;",
+        "reverse ( arr . begin ( ) , arr + N ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "request for member ‘begin’ in ‘arr’, which is of non-class type ‘int [100005]’"
+    },
+    {
+      "mod_line": [
+        3,
+        0
+      ],
+      "mod_code": [
+        "getline ( cin , C ) ;",
+        "int coupons [ 100005 ] [ 100005 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘getline(std::istream&, int&)’"
+    },
+    {
+      "mod_line": [
+        3,
+        0,
+        9
+      ],
+      "mod_code": [
+        "getline ( cin , C ) ;",
+        "int coupons [ 100005 ] [ 100005 ] ;",
+        "reverse ( arr . begin ( ) , arr + N ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘getline(std::istream&, int&)’"
+    },
+    {
+      "mod_line": [
+        3,
+        9
+      ],
+      "mod_code": [
+        "getline ( cin , C ) ;",
+        "reverse ( arr . begin ( ) , arr + N ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘getline(std::istream&, int&)’"
+    },
+    {
+      "mod_line": [
+        0,
+        9
+      ],
+      "mod_code": [
+        "int coupons [ 100005 ] [ 100005 ] ;",
+        "reverse ( arr . begin ( ) , arr + N ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [100005]’)"
+    }
+  ]
+}

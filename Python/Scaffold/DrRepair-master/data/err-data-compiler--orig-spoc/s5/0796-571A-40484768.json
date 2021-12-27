@@ -1,0 +1,225 @@
+{
+  "meta": {
+    "index": 796,
+    "hitid": "3O71U79SRBJ2FSQXPBLUZV0YJYCSM7",
+    "workerid": "A1R0Q9CUUBSM5F",
+    "probid": "571A",
+    "subid": "40484768"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare fast_io",
+      "code": "void fast_io ( ) { }",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create long long ints a , b , c , and l",
+      "code": "long long a , b , c , l ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "make long long array dp of size 200001",
+      "code": "long long dp [ 200001 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "declare query taking in long long integer x and returning long long",
+      "code": "long long query ( long long x )",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "return the result of ( x + 2 ) * ( x + 1 ) / 2",
+      "code": "return ( x + 2 ) * ( x + 1 ) / 2 ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 6,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 7,
+      "text": "call fast_io",
+      "code": "fast_io ( ) ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "read a , b , c , and l",
+      "code": "cin >> a >> b >> c >> l ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "make long long ans = 0",
+      "code": "long long ans = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "for ajout = 0 to 1",
+      "code": "for ( long long ajout = 0 ; ajout <= l ; ajout ++ )",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "make long long v1 = ( ajout + b + c - a + 1LL ) / 2",
+      "code": "long long v1 = ( ajout + b + c - a + 1LL ) / 2 ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "create long long int v2 = ( ajout + a + c - b + 1LL ) / 2",
+      "code": "long long v2 = ( ajout + a + c - b + 1LL ) / 2 ;",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "create long long integer v3 = ( ajout + a + b - c + 1LL ) / 2",
+      "code": "long long v3 = ( ajout + a + b - c + 1LL ) / 2 ;",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "if v1 is greater than 0 , v2 is greater than 0 , and v3 is greater than 0",
+      "code": "if ( v1 > 0 and v2 > 0 and v3 > 0 )",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "add query ( ajout ) to ans",
+      "code": "ans += query ( ajout ) ;",
+      "indent": 3
+    },
+    {
+      "line": 16,
+      "text": "if ajout is greater than or equal to v1 , set ans to ans - query ( ajout - v1 )",
+      "code": "if ( ajout >= v1 ) ans -= query ( ajout - v1 ) ;",
+      "indent": 3
+    },
+    {
+      "line": 17,
+      "text": "if ajout is greater than or equal to 1 , subtract query ( ajout - v2 ) from ans",
+      "code": "if ( ajout >= v2 ) ans -= query ( ajout - v2 ) ;",
+      "indent": 3
+    },
+    {
+      "line": 18,
+      "text": "if ajout is greater than or equal to v3 , set ans to ans - query ( ajout - v3 )",
+      "code": "if ( ajout >= v3 ) ans -= query ( ajout - v3 ) ;",
+      "indent": 3
+    },
+    {
+      "line": 19,
+      "text": "if ajout is greater than or equal to v1 + v2 , set ans to ans + query ( ajout - v1 - v2 )",
+      "code": "if ( ajout >= v1 + v2 ) ans += query ( ajout - v1 - v2 ) ;",
+      "indent": 3
+    },
+    {
+      "line": 20,
+      "text": "if ajout is greater than or equal to v2 + v3 , set ans to ans + query ( ajout - v2 - v3 )",
+      "code": "if ( ajout >= v2 + v3 ) ans += query ( ajout - v2 - v3 ) ;",
+      "indent": 3
+    },
+    {
+      "line": 21,
+      "text": "if ajout is greater than or equal to v1 + v3 , add query ( ajout - v1 - v3 ) to ans",
+      "code": "if ( ajout >= v1 + v3 ) ans += query ( ajout - v1 - v3 ) ;",
+      "indent": 3
+    },
+    {
+      "line": 22,
+      "text": "if ajout is greater than or equal to v1 + v2 + v3 , subtract query ( ajout - v1 - v2 - v3 ) from ans",
+      "code": "if ( ajout >= v1 + v2 + v3 ) ans -= query ( ajout - v1 - v2 - v3 ) ;",
+      "indent": 3
+    },
+    {
+      "line": 23,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 24,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 25,
+      "text": "show ans",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 26,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "void n ;"
+      ],
+      "err_line": 0,
+      "err_msg": "variable or field ‘n’ declared void"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "while ( cin >> a >> b >> c >> l )"
+      ],
+      "err_line": 15,
+      "err_msg": "‘ans’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "for ( ajout = 0 ; ajout < 1 ; ajout ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘ajout’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "ans . push_back ( ajout ) ;"
+      ],
+      "err_line": 15,
+      "err_msg": "request for member ‘push_back’ in ‘ans’, which is of non-class type ‘long long int’"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "if ( ajout >= v1 ) ans -= query ;"
+      ],
+      "err_line": 16,
+      "err_msg": "invalid operands of types ‘long long int’ and ‘long long int(long long int)’ to binary ‘operator-’"
+    }
+  ]
+}

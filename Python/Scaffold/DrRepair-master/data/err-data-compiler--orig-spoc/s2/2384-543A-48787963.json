@@ -1,0 +1,725 @@
+{
+  "meta": {
+    "index": 2384,
+    "hitid": "37M4O367VJC19QSMDF8M6KQ64R65M9",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "543A",
+    "subid": "48787963"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "long long integer constant INF = 8e16",
+      "code": "const long long int INF = ( long long int ) ( 8e16 ) ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "long long integer constant MOD = 1000000007",
+      "code": "const long long int MOD = 1000000007 ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "long long integer array a with size 501 and 2 arrays dp and Dp with size 501 by 501",
+      "code": "long long int a [ 501 ] , dp [ 501 ] [ 501 ] , Dp [ 501 ] [ 501 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "declare long long integers n , m , b and mod",
+      "code": "long long int n , m , b , mod ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "read n , m , b and mod",
+      "code": "cin >> n >> m >> b >> mod ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 1 to n inclusive , read a [ i ]",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for integer i = 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "for integer j = 1 to m inclusive",
+      "code": "for ( int j = 1 ; j <= m ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "if j = 1 increment dp [ j ] [ a [ i ] ]",
+      "code": "if ( j == 1 ) dp [ j ] [ a [ i ] ] ++ ;",
+      "indent": 3
+    },
+    {
+      "line": 10,
+      "text": "for integer k = 0 to b inclusive",
+      "code": "for ( int k = 0 ; k <= b ; k ++ )",
+      "indent": 3
+    },
+    {
+      "line": 11,
+      "text": "if k > = a [ i ] increment dp [ j ] [ k ] by dp [ j - 1 ] [ k - a [ i ] ]",
+      "code": "if ( k >= a [ i ] ) { dp [ j ] [ k ] += dp [ j - 1 ] [ k - a [ i ] ] ; }",
+      "indent": 4
+    },
+    {
+      "line": 12,
+      "text": "increase dp [ j ] [ k ] by Dp [ j ] [ k ]",
+      "code": "dp [ j ] [ k ] += Dp [ j ] [ k ] ;",
+      "indent": 4
+    },
+    {
+      "line": 13,
+      "text": "dp [ j ] [ k ] % = mod",
+      "code": "dp [ j ] [ k ] %= mod ;",
+      "indent": 4
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "for integer j = 1 to m inclusive",
+      "code": "for ( int j = 1 ; j <= m ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "for integer k = 0 to b inclusive",
+      "code": "for ( int k = 0 ; k <= b ; k ++ )",
+      "indent": 3
+    },
+    {
+      "line": 18,
+      "text": "Dp [ j ] [ k ] = dp [ j ] [ k ]",
+      "code": "Dp [ j ] [ k ] = dp [ j ] [ k ] ;",
+      "indent": 4
+    },
+    {
+      "line": 19,
+      "text": "set value of dp [ j ] [ k ] to 0",
+      "code": "dp [ j ] [ k ] = 0 ;",
+      "indent": 4
+    },
+    {
+      "line": 20,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 21,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 22,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "create long long integer ans = 0",
+      "code": "long long int ans = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "for integer j = 0 to b inclusive",
+      "code": "for ( int j = 0 ; j <= b ; j ++ )",
+      "indent": 1
+    },
+    {
+      "line": 25,
+      "text": "increase ans by Dp [ m ] [ j ]",
+      "code": "ans += Dp [ m ] [ j ] ;",
+      "indent": 2
+    },
+    {
+      "line": 26,
+      "text": "ans = ans modulo mod",
+      "code": "ans %= mod ;",
+      "indent": 2
+    },
+    {
+      "line": 27,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 28,
+      "text": "print ans and ' \\ n '",
+      "code": "cout << ans << ' \\n ' ;",
+      "indent": 1
+    },
+    {
+      "line": 29,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 30,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "long long int a [ 501 ] [ 2 ] , Dp [ 501 ] [ 501 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2]’)"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "long long a [ 501 ] [ 2 ] , Dp [ 501 ] [ 501 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2]’)"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "long int int n , m , b , mod ;"
+      ],
+      "err_line": 4,
+      "err_msg": "two or more data types in declaration of ‘n’"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "if ( k >= a [ i ] ) dp [ j ] [ k ] += dp - a [ i - 1 ] [ k - a [ i ] ;"
+      ],
+      "err_line": 11,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        13
+      ],
+      "mod_code": [
+        "long long int a [ 501 ] [ 2 ] , Dp [ 501 ] [ 501 ] ;",
+        "dp [ j ] [ k ] = mod ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        13,
+        18
+      ],
+      "mod_code": [
+        "long long int a [ 501 ] [ 2 ] , Dp [ 501 ] [ 501 ] ;",
+        "dp [ j ] [ k ] = mod ;",
+        "Dp [ j ] [ k ] += dp [ j ] [ k ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        13,
+        18,
+        4
+      ],
+      "mod_code": [
+        "long long int a [ 501 ] [ 2 ] , Dp [ 501 ] [ 501 ] ;",
+        "dp [ j ] [ k ] = mod ;",
+        "Dp [ j ] [ k ] += dp [ j ] [ k ] ;",
+        "long int int n , m , b , mod ;"
+      ],
+      "err_line": 4,
+      "err_msg": "two or more data types in declaration of ‘n’"
+    },
+    {
+      "mod_line": [
+        2,
+        13,
+        18,
+        28
+      ],
+      "mod_code": [
+        "long long int a [ 501 ] [ 2 ] , Dp [ 501 ] [ 501 ] ;",
+        "dp [ j ] [ k ] = mod ;",
+        "Dp [ j ] [ k ] += dp [ j ] [ k ] ;",
+        "cout << ( ans << ' \\n ' ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        13,
+        4
+      ],
+      "mod_code": [
+        "long long int a [ 501 ] [ 2 ] , Dp [ 501 ] [ 501 ] ;",
+        "dp [ j ] [ k ] = mod ;",
+        "long int int n , m , b , mod ;"
+      ],
+      "err_line": 4,
+      "err_msg": "two or more data types in declaration of ‘n’"
+    },
+    {
+      "mod_line": [
+        2,
+        13,
+        4,
+        28
+      ],
+      "mod_code": [
+        "long long int a [ 501 ] [ 2 ] , Dp [ 501 ] [ 501 ] ;",
+        "dp [ j ] [ k ] = mod ;",
+        "long int int n , m , b , mod ;",
+        "cout << ( ans << ' \\n ' ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "two or more data types in declaration of ‘n’"
+    },
+    {
+      "mod_line": [
+        2,
+        13,
+        28
+      ],
+      "mod_code": [
+        "long long int a [ 501 ] [ 2 ] , Dp [ 501 ] [ 501 ] ;",
+        "dp [ j ] [ k ] = mod ;",
+        "cout << ( ans << ' \\n ' ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        18
+      ],
+      "mod_code": [
+        "long long int a [ 501 ] [ 2 ] , Dp [ 501 ] [ 501 ] ;",
+        "Dp [ j ] [ k ] += dp [ j ] [ k ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        18,
+        4
+      ],
+      "mod_code": [
+        "long long int a [ 501 ] [ 2 ] , Dp [ 501 ] [ 501 ] ;",
+        "Dp [ j ] [ k ] += dp [ j ] [ k ] ;",
+        "long int int n , m , b , mod ;"
+      ],
+      "err_line": 4,
+      "err_msg": "two or more data types in declaration of ‘n’"
+    },
+    {
+      "mod_line": [
+        2,
+        18,
+        4,
+        28
+      ],
+      "mod_code": [
+        "long long int a [ 501 ] [ 2 ] , Dp [ 501 ] [ 501 ] ;",
+        "Dp [ j ] [ k ] += dp [ j ] [ k ] ;",
+        "long int int n , m , b , mod ;",
+        "cout << ( ans << ' \\n ' ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "two or more data types in declaration of ‘n’"
+    },
+    {
+      "mod_line": [
+        2,
+        18,
+        28
+      ],
+      "mod_code": [
+        "long long int a [ 501 ] [ 2 ] , Dp [ 501 ] [ 501 ] ;",
+        "Dp [ j ] [ k ] += dp [ j ] [ k ] ;",
+        "cout << ( ans << ' \\n ' ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        4
+      ],
+      "mod_code": [
+        "long long int a [ 501 ] [ 2 ] , Dp [ 501 ] [ 501 ] ;",
+        "long int int n , m , b , mod ;"
+      ],
+      "err_line": 4,
+      "err_msg": "two or more data types in declaration of ‘n’"
+    },
+    {
+      "mod_line": [
+        2,
+        4,
+        28
+      ],
+      "mod_code": [
+        "long long int a [ 501 ] [ 2 ] , Dp [ 501 ] [ 501 ] ;",
+        "long int int n , m , b , mod ;",
+        "cout << ( ans << ' \\n ' ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "two or more data types in declaration of ‘n’"
+    },
+    {
+      "mod_line": [
+        2,
+        28
+      ],
+      "mod_code": [
+        "long long int a [ 501 ] [ 2 ] , Dp [ 501 ] [ 501 ] ;",
+        "cout << ( ans << ' \\n ' ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2]’)"
+    },
+    {
+      "mod_line": [
+        13,
+        18,
+        2
+      ],
+      "mod_code": [
+        "dp [ j ] [ k ] = mod ;",
+        "Dp [ j ] [ k ] += dp [ j ] [ k ] ;",
+        "long long a [ 501 ] [ 2 ] , Dp [ 501 ] [ 501 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2]’)"
+    },
+    {
+      "mod_line": [
+        13,
+        18,
+        2,
+        4
+      ],
+      "mod_code": [
+        "dp [ j ] [ k ] = mod ;",
+        "Dp [ j ] [ k ] += dp [ j ] [ k ] ;",
+        "long long a [ 501 ] [ 2 ] , Dp [ 501 ] [ 501 ] ;",
+        "long int int n , m , b , mod ;"
+      ],
+      "err_line": 4,
+      "err_msg": "two or more data types in declaration of ‘n’"
+    },
+    {
+      "mod_line": [
+        13,
+        18,
+        2,
+        28
+      ],
+      "mod_code": [
+        "dp [ j ] [ k ] = mod ;",
+        "Dp [ j ] [ k ] += dp [ j ] [ k ] ;",
+        "long long a [ 501 ] [ 2 ] , Dp [ 501 ] [ 501 ] ;",
+        "cout << ( ans << ' \\n ' ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2]’)"
+    },
+    {
+      "mod_line": [
+        13,
+        18,
+        4
+      ],
+      "mod_code": [
+        "dp [ j ] [ k ] = mod ;",
+        "Dp [ j ] [ k ] += dp [ j ] [ k ] ;",
+        "long int int n , m , b , mod ;"
+      ],
+      "err_line": 4,
+      "err_msg": "two or more data types in declaration of ‘n’"
+    },
+    {
+      "mod_line": [
+        13,
+        18,
+        4,
+        28
+      ],
+      "mod_code": [
+        "dp [ j ] [ k ] = mod ;",
+        "Dp [ j ] [ k ] += dp [ j ] [ k ] ;",
+        "long int int n , m , b , mod ;",
+        "cout << ( ans << ' \\n ' ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "two or more data types in declaration of ‘n’"
+    },
+    {
+      "mod_line": [
+        13,
+        2
+      ],
+      "mod_code": [
+        "dp [ j ] [ k ] = mod ;",
+        "long long a [ 501 ] [ 2 ] , Dp [ 501 ] [ 501 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2]’)"
+    },
+    {
+      "mod_line": [
+        13,
+        2,
+        4
+      ],
+      "mod_code": [
+        "dp [ j ] [ k ] = mod ;",
+        "long long a [ 501 ] [ 2 ] , Dp [ 501 ] [ 501 ] ;",
+        "long int int n , m , b , mod ;"
+      ],
+      "err_line": 4,
+      "err_msg": "two or more data types in declaration of ‘n’"
+    },
+    {
+      "mod_line": [
+        13,
+        2,
+        4,
+        28
+      ],
+      "mod_code": [
+        "dp [ j ] [ k ] = mod ;",
+        "long long a [ 501 ] [ 2 ] , Dp [ 501 ] [ 501 ] ;",
+        "long int int n , m , b , mod ;",
+        "cout << ( ans << ' \\n ' ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "two or more data types in declaration of ‘n’"
+    },
+    {
+      "mod_line": [
+        13,
+        2,
+        28
+      ],
+      "mod_code": [
+        "dp [ j ] [ k ] = mod ;",
+        "long long a [ 501 ] [ 2 ] , Dp [ 501 ] [ 501 ] ;",
+        "cout << ( ans << ' \\n ' ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2]’)"
+    },
+    {
+      "mod_line": [
+        13,
+        4
+      ],
+      "mod_code": [
+        "dp [ j ] [ k ] = mod ;",
+        "long int int n , m , b , mod ;"
+      ],
+      "err_line": 4,
+      "err_msg": "two or more data types in declaration of ‘n’"
+    },
+    {
+      "mod_line": [
+        13,
+        4,
+        28
+      ],
+      "mod_code": [
+        "dp [ j ] [ k ] = mod ;",
+        "long int int n , m , b , mod ;",
+        "cout << ( ans << ' \\n ' ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "two or more data types in declaration of ‘n’"
+    },
+    {
+      "mod_line": [
+        18,
+        2
+      ],
+      "mod_code": [
+        "Dp [ j ] [ k ] += dp [ j ] [ k ] ;",
+        "long long a [ 501 ] [ 2 ] , Dp [ 501 ] [ 501 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2]’)"
+    },
+    {
+      "mod_line": [
+        18,
+        2,
+        4
+      ],
+      "mod_code": [
+        "Dp [ j ] [ k ] += dp [ j ] [ k ] ;",
+        "long long a [ 501 ] [ 2 ] , Dp [ 501 ] [ 501 ] ;",
+        "long int int n , m , b , mod ;"
+      ],
+      "err_line": 4,
+      "err_msg": "two or more data types in declaration of ‘n’"
+    },
+    {
+      "mod_line": [
+        18,
+        2,
+        4,
+        28
+      ],
+      "mod_code": [
+        "Dp [ j ] [ k ] += dp [ j ] [ k ] ;",
+        "long long a [ 501 ] [ 2 ] , Dp [ 501 ] [ 501 ] ;",
+        "long int int n , m , b , mod ;",
+        "cout << ( ans << ' \\n ' ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "two or more data types in declaration of ‘n’"
+    },
+    {
+      "mod_line": [
+        18,
+        2,
+        28
+      ],
+      "mod_code": [
+        "Dp [ j ] [ k ] += dp [ j ] [ k ] ;",
+        "long long a [ 501 ] [ 2 ] , Dp [ 501 ] [ 501 ] ;",
+        "cout << ( ans << ' \\n ' ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2]’)"
+    },
+    {
+      "mod_line": [
+        18,
+        4
+      ],
+      "mod_code": [
+        "Dp [ j ] [ k ] += dp [ j ] [ k ] ;",
+        "long int int n , m , b , mod ;"
+      ],
+      "err_line": 4,
+      "err_msg": "two or more data types in declaration of ‘n’"
+    },
+    {
+      "mod_line": [
+        18,
+        4,
+        28
+      ],
+      "mod_code": [
+        "Dp [ j ] [ k ] += dp [ j ] [ k ] ;",
+        "long int int n , m , b , mod ;",
+        "cout << ( ans << ' \\n ' ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "two or more data types in declaration of ‘n’"
+    },
+    {
+      "mod_line": [
+        2,
+        4
+      ],
+      "mod_code": [
+        "long long a [ 501 ] [ 2 ] , Dp [ 501 ] [ 501 ] ;",
+        "long int int n , m , b , mod ;"
+      ],
+      "err_line": 4,
+      "err_msg": "two or more data types in declaration of ‘n’"
+    },
+    {
+      "mod_line": [
+        2,
+        4,
+        28
+      ],
+      "mod_code": [
+        "long long a [ 501 ] [ 2 ] , Dp [ 501 ] [ 501 ] ;",
+        "long int int n , m , b , mod ;",
+        "cout << ( ans << ' \\n ' ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "two or more data types in declaration of ‘n’"
+    },
+    {
+      "mod_line": [
+        2,
+        28
+      ],
+      "mod_code": [
+        "long long a [ 501 ] [ 2 ] , Dp [ 501 ] [ 501 ] ;",
+        "cout << ( ans << ' \\n ' ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2]’)"
+    },
+    {
+      "mod_line": [
+        4,
+        28
+      ],
+      "mod_code": [
+        "long int int n , m , b , mod ;",
+        "cout << ( ans << ' \\n ' ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "two or more data types in declaration of ‘n’"
+    }
+  ]
+}

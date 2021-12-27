@@ -1,0 +1,811 @@
+{
+  "meta": {
+    "index": 2647,
+    "hitid": "3OZ4VAIBEX9S6C1GG9D7UQSOE8AJVY",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "552A",
+    "subid": "40757501"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare integer n",
+      "code": "int n ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "declare integers a , b , c , d",
+      "code": "int a , b , c , d ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "declare integer array vis size 105 by 105",
+      "code": "int vis [ 105 ] [ 105 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "while read n is true",
+      "code": "while ( cin >> n )",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "set bytes from vis to size of vis to value 0",
+      "code": "memset ( vis , 0 , sizeof ( vis ) ) ;",
+      "indent": 2
+    },
+    {
+      "line": 6,
+      "text": "declare integer sum = 0",
+      "code": "int sum = 0 ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( int i = 0 ; i < n ; i ++ )",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "read a , b , c , d",
+      "code": "cin >> a >> b >> c >> d ;",
+      "indent": 3
+    },
+    {
+      "line": 9,
+      "text": "for i = a to c inclusive",
+      "code": "for ( int i = a ; i <= c ; i ++ )",
+      "indent": 3
+    },
+    {
+      "line": 10,
+      "text": "for j = b to d inclusive , increment vis [ i ] [ j ]",
+      "code": "for ( int j = b ; j <= d ; j ++ ) { vis [ i ] [ j ] ++ ; }",
+      "indent": 4
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "for i = 1 to 100 inclusive",
+      "code": "for ( int i = 1 ; i <= 100 ; i ++ )",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "for j = 1 to 100 inclusive , let sum be sum + vis [ i ] [ j ]",
+      "code": "for ( int j = 1 ; j <= 100 ; j ++ ) { sum = sum + vis [ i ] [ j ] ; }",
+      "indent": 3
+    },
+    {
+      "line": 14,
+      "text": "print sum , newline",
+      "code": "cout << sum << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "int a [ 105 ] [ 105 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘int a [105][105]’"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= 100 ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        7
+      ],
+      "mod_code": [
+        "int a [ 105 ] [ 105 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘int a [105][105]’"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        4
+      ],
+      "mod_code": [
+        "int a [ 105 ] [ 105 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "while ( n )"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘int a [105][105]’"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        4,
+        12
+      ],
+      "mod_code": [
+        "int a [ 105 ] [ 105 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "while ( n )",
+        "for ( i = 1 ; i <= 100 ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘int a [105][105]’"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        4,
+        8
+      ],
+      "mod_code": [
+        "int a [ 105 ] [ 105 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "while ( n )",
+        "cin >> a >> b >> c , d ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘int a [105][105]’"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        4,
+        9
+      ],
+      "mod_code": [
+        "int a [ 105 ] [ 105 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "while ( n )",
+        "for ( i = a ; i <= c ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘int a [105][105]’"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        12
+      ],
+      "mod_code": [
+        "int a [ 105 ] [ 105 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( i = 1 ; i <= 100 ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘int a [105][105]’"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        12,
+        8
+      ],
+      "mod_code": [
+        "int a [ 105 ] [ 105 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( i = 1 ; i <= 100 ; i ++ )",
+        "cin >> a >> b >> c , d ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘int a [105][105]’"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        12,
+        9
+      ],
+      "mod_code": [
+        "int a [ 105 ] [ 105 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( i = 1 ; i <= 100 ; i ++ )",
+        "for ( i = a ; i <= c ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘int a [105][105]’"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        8
+      ],
+      "mod_code": [
+        "int a [ 105 ] [ 105 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "cin >> a >> b >> c , d ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘int a [105][105]’"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        8,
+        9
+      ],
+      "mod_code": [
+        "int a [ 105 ] [ 105 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "cin >> a >> b >> c , d ;",
+        "for ( i = a ; i <= c ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘int a [105][105]’"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        9
+      ],
+      "mod_code": [
+        "int a [ 105 ] [ 105 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( i = a ; i <= c ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘int a [105][105]’"
+    },
+    {
+      "mod_line": [
+        3,
+        4
+      ],
+      "mod_code": [
+        "int a [ 105 ] [ 105 ] ;",
+        "while ( n )"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘int a [105][105]’"
+    },
+    {
+      "mod_line": [
+        3,
+        4,
+        12
+      ],
+      "mod_code": [
+        "int a [ 105 ] [ 105 ] ;",
+        "while ( n )",
+        "for ( i = 1 ; i <= 100 ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘int a [105][105]’"
+    },
+    {
+      "mod_line": [
+        3,
+        4,
+        12,
+        8
+      ],
+      "mod_code": [
+        "int a [ 105 ] [ 105 ] ;",
+        "while ( n )",
+        "for ( i = 1 ; i <= 100 ; i ++ )",
+        "cin >> a >> b >> c , d ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘int a [105][105]’"
+    },
+    {
+      "mod_line": [
+        3,
+        4,
+        12,
+        9
+      ],
+      "mod_code": [
+        "int a [ 105 ] [ 105 ] ;",
+        "while ( n )",
+        "for ( i = 1 ; i <= 100 ; i ++ )",
+        "for ( i = a ; i <= c ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘int a [105][105]’"
+    },
+    {
+      "mod_line": [
+        3,
+        4,
+        8
+      ],
+      "mod_code": [
+        "int a [ 105 ] [ 105 ] ;",
+        "while ( n )",
+        "cin >> a >> b >> c , d ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘int a [105][105]’"
+    },
+    {
+      "mod_line": [
+        3,
+        4,
+        8,
+        9
+      ],
+      "mod_code": [
+        "int a [ 105 ] [ 105 ] ;",
+        "while ( n )",
+        "cin >> a >> b >> c , d ;",
+        "for ( i = a ; i <= c ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘int a [105][105]’"
+    },
+    {
+      "mod_line": [
+        3,
+        4,
+        9
+      ],
+      "mod_code": [
+        "int a [ 105 ] [ 105 ] ;",
+        "while ( n )",
+        "for ( i = a ; i <= c ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘int a [105][105]’"
+    },
+    {
+      "mod_line": [
+        3,
+        12
+      ],
+      "mod_code": [
+        "int a [ 105 ] [ 105 ] ;",
+        "for ( i = 1 ; i <= 100 ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘int a [105][105]’"
+    },
+    {
+      "mod_line": [
+        3,
+        12,
+        8
+      ],
+      "mod_code": [
+        "int a [ 105 ] [ 105 ] ;",
+        "for ( i = 1 ; i <= 100 ; i ++ )",
+        "cin >> a >> b >> c , d ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘int a [105][105]’"
+    },
+    {
+      "mod_line": [
+        3,
+        12,
+        8,
+        9
+      ],
+      "mod_code": [
+        "int a [ 105 ] [ 105 ] ;",
+        "for ( i = 1 ; i <= 100 ; i ++ )",
+        "cin >> a >> b >> c , d ;",
+        "for ( i = a ; i <= c ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘int a [105][105]’"
+    },
+    {
+      "mod_line": [
+        3,
+        12,
+        9
+      ],
+      "mod_code": [
+        "int a [ 105 ] [ 105 ] ;",
+        "for ( i = 1 ; i <= 100 ; i ++ )",
+        "for ( i = a ; i <= c ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘int a [105][105]’"
+    },
+    {
+      "mod_line": [
+        3,
+        8
+      ],
+      "mod_code": [
+        "int a [ 105 ] [ 105 ] ;",
+        "cin >> a >> b >> c , d ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘int a [105][105]’"
+    },
+    {
+      "mod_line": [
+        3,
+        8,
+        9
+      ],
+      "mod_code": [
+        "int a [ 105 ] [ 105 ] ;",
+        "cin >> a >> b >> c , d ;",
+        "for ( i = a ; i <= c ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘int a [105][105]’"
+    },
+    {
+      "mod_line": [
+        3,
+        9
+      ],
+      "mod_code": [
+        "int a [ 105 ] [ 105 ] ;",
+        "for ( i = a ; i <= c ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘int a [105][105]’"
+    },
+    {
+      "mod_line": [
+        7,
+        4
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "while ( n )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        4,
+        12
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "while ( n )",
+        "for ( i = 1 ; i <= 100 ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        4,
+        12,
+        8
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "while ( n )",
+        "for ( i = 1 ; i <= 100 ; i ++ )",
+        "cin >> a >> b >> c , d ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        4,
+        12,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "while ( n )",
+        "for ( i = 1 ; i <= 100 ; i ++ )",
+        "for ( i = a ; i <= c ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        4,
+        8
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "while ( n )",
+        "cin >> a >> b >> c , d ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        4,
+        8,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "while ( n )",
+        "cin >> a >> b >> c , d ;",
+        "for ( i = a ; i <= c ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        4,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "while ( n )",
+        "for ( i = a ; i <= c ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        12
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( i = 1 ; i <= 100 ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        12,
+        8
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( i = 1 ; i <= 100 ; i ++ )",
+        "cin >> a >> b >> c , d ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        12,
+        8,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( i = 1 ; i <= 100 ; i ++ )",
+        "cin >> a >> b >> c , d ;",
+        "for ( i = a ; i <= c ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        12,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( i = 1 ; i <= 100 ; i ++ )",
+        "for ( i = a ; i <= c ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        8
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "cin >> a >> b >> c , d ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        8,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "cin >> a >> b >> c , d ;",
+        "for ( i = a ; i <= c ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( i = a ; i <= c ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        12
+      ],
+      "mod_code": [
+        "while ( n )",
+        "for ( i = 1 ; i <= 100 ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        4,
+        12,
+        8
+      ],
+      "mod_code": [
+        "while ( n )",
+        "for ( i = 1 ; i <= 100 ; i ++ )",
+        "cin >> a >> b >> c , d ;"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        4,
+        12,
+        8,
+        9
+      ],
+      "mod_code": [
+        "while ( n )",
+        "for ( i = 1 ; i <= 100 ; i ++ )",
+        "cin >> a >> b >> c , d ;",
+        "for ( i = a ; i <= c ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        4,
+        12,
+        9
+      ],
+      "mod_code": [
+        "while ( n )",
+        "for ( i = 1 ; i <= 100 ; i ++ )",
+        "for ( i = a ; i <= c ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        8
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= 100 ; i ++ )",
+        "cin >> a >> b >> c , d ;"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        8,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= 100 ; i ++ )",
+        "cin >> a >> b >> c , d ;",
+        "for ( i = a ; i <= c ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= 100 ; i ++ )",
+        "for ( i = a ; i <= c ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    }
+  ]
+}

@@ -1,0 +1,821 @@
+{
+  "meta": {
+    "index": 989,
+    "hitid": "3FHTJGYT8NU5AQEJMRJ5RLBQZ5VGPY",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "196A",
+    "subid": "46366311"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "string function lexMaxSubseq with const string reference argument & s",
+      "code": "string lexMaxSubseq ( const string & s )",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create string answ",
+      "code": "string answ ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "integer n = length of s",
+      "code": "const int n = ( int ) s . size ( ) ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "vector of integers next with n elements = n - 1",
+      "code": "vector < int > next ( n , n - 1 ) ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "char max = pointer to max element of s",
+      "code": "char max = * max_element ( s . begin ( ) , s . end ( ) ) ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i = n - 2 to 0",
+      "code": "for ( int i = n - 2 ; i >= 0 ; -- i )",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "if s [ i + 1 ] > = s [ next [ i + 1 ] ]",
+      "code": "if ( s [ i + 1 ] >= s [ next [ i + 1 ] ] )",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "set value of next [ i ] to i + 1",
+      "code": "next [ i ] = i + 1 ;",
+      "indent": 3
+    },
+    {
+      "line": 8,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "next [ i ] = next [ i + 1 ]",
+      "code": "next [ i ] = next [ i + 1 ] ;",
+      "indent": 3
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "declare integer curr = 0",
+      "code": "int curr = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "if s [ 0 ] ! = max , curr = next [ 0 ]",
+      "code": "if ( s [ 0 ] != max ) { curr = next [ 0 ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "while true",
+      "code": "while ( true )",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "increase answ by s [ curr ]",
+      "code": "answ += s [ curr ] ;",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "create integer prev = curr",
+      "code": "int prev = curr ;",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "set value of curr to next [ curr ]",
+      "code": "curr = next [ curr ] ;",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "if curr = prev , break",
+      "code": "if ( curr == prev ) { break ; }",
+      "indent": 2
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "return answ",
+      "code": "return answ ;",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 22,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 23,
+      "text": "create string s",
+      "code": "string s ;",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "while reading s , print the result of lexMaxSubseq of s and a new line",
+      "code": "while ( cin >> s ) { cout << lexMaxSubseq ( s ) << endl ; }",
+      "indent": 1
+    },
+    {
+      "line": 25,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 26,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "char * max = * * 2 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid type argument of unary ‘*’ (have ‘int’)"
+    },
+    {
+      "mod_line": [
+        24
+      ],
+      "mod_code": [
+        "while ( cin >> s ) { cout << s . lexMaxSubseq ( ) << endl ; }"
+      ],
+      "err_line": 24,
+      "err_msg": "‘std::__cxx11::string {aka class std::__cxx11::basic_string<char>}’ has no member named ‘lexMaxSubseq’"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "string lexMaxSubseq ( const string & s ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "string n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conflicting declaration ‘const int n’"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "char * max = max ( s ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘max’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "for ( i = n - 2 ; i >= 0 ; i -- )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "if ( s [ i + 1 ] >= s [ next + i + 1 ] )"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator+’ (operand types are ‘std::vector<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "* curr = next [ curr ] ;"
+      ],
+      "err_line": 17,
+      "err_msg": "invalid type argument of unary ‘*’ (have ‘int’)"
+    },
+    {
+      "mod_line": [
+        20
+      ],
+      "mod_code": [
+        "else"
+      ],
+      "err_line": 20,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        23
+      ],
+      "mod_code": [
+        "string n ;"
+      ],
+      "err_line": 24,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        24
+      ],
+      "mod_code": [
+        "while ( cin >> s ) cout << s . lexMaxSubseq ( ) << endl ;"
+      ],
+      "err_line": 24,
+      "err_msg": "‘std::__cxx11::string {aka class std::__cxx11::basic_string<char>}’ has no member named ‘lexMaxSubseq’"
+    },
+    {
+      "mod_line": [
+        3,
+        4
+      ],
+      "mod_code": [
+        "vector < int > next ( n - 1 ) ;",
+        "char * max = * * 2 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid type argument of unary ‘*’ (have ‘int’)"
+    },
+    {
+      "mod_line": [
+        3,
+        4,
+        24
+      ],
+      "mod_code": [
+        "vector < int > next ( n - 1 ) ;",
+        "char * max = * * 2 ;",
+        "while ( cin >> s ) { cout << s . lexMaxSubseq ( ) << endl ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid type argument of unary ‘*’ (have ‘int’)"
+    },
+    {
+      "mod_line": [
+        3,
+        4,
+        24,
+        17
+      ],
+      "mod_code": [
+        "vector < int > next ( n - 1 ) ;",
+        "char * max = * * 2 ;",
+        "while ( cin >> s ) { cout << s . lexMaxSubseq ( ) << endl ; }",
+        "* curr = next [ curr ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid type argument of unary ‘*’ (have ‘int’)"
+    },
+    {
+      "mod_line": [
+        3,
+        4,
+        24,
+        0
+      ],
+      "mod_code": [
+        "vector < int > next ( n - 1 ) ;",
+        "char * max = * * 2 ;",
+        "while ( cin >> s ) { cout << s . lexMaxSubseq ( ) << endl ; }",
+        "string lexMaxSubseq ( const string & s ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        4,
+        17
+      ],
+      "mod_code": [
+        "vector < int > next ( n - 1 ) ;",
+        "char * max = * * 2 ;",
+        "* curr = next [ curr ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid type argument of unary ‘*’ (have ‘int’)"
+    },
+    {
+      "mod_line": [
+        3,
+        4,
+        17,
+        0
+      ],
+      "mod_code": [
+        "vector < int > next ( n - 1 ) ;",
+        "char * max = * * 2 ;",
+        "* curr = next [ curr ] ;",
+        "string lexMaxSubseq ( const string & s ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        4,
+        0
+      ],
+      "mod_code": [
+        "vector < int > next ( n - 1 ) ;",
+        "char * max = * * 2 ;",
+        "string lexMaxSubseq ( const string & s ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        24
+      ],
+      "mod_code": [
+        "vector < int > next ( n - 1 ) ;",
+        "while ( cin >> s ) { cout << s . lexMaxSubseq ( ) << endl ; }"
+      ],
+      "err_line": 24,
+      "err_msg": "‘std::__cxx11::string {aka class std::__cxx11::basic_string<char>}’ has no member named ‘lexMaxSubseq’"
+    },
+    {
+      "mod_line": [
+        3,
+        24,
+        17
+      ],
+      "mod_code": [
+        "vector < int > next ( n - 1 ) ;",
+        "while ( cin >> s ) { cout << s . lexMaxSubseq ( ) << endl ; }",
+        "* curr = next [ curr ] ;"
+      ],
+      "err_line": 17,
+      "err_msg": "invalid type argument of unary ‘*’ (have ‘int’)"
+    },
+    {
+      "mod_line": [
+        3,
+        24,
+        17,
+        4
+      ],
+      "mod_code": [
+        "vector < int > next ( n - 1 ) ;",
+        "while ( cin >> s ) { cout << s . lexMaxSubseq ( ) << endl ; }",
+        "* curr = next [ curr ] ;",
+        "char * max = max ( s ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘max’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        3,
+        24,
+        17,
+        0
+      ],
+      "mod_code": [
+        "vector < int > next ( n - 1 ) ;",
+        "while ( cin >> s ) { cout << s . lexMaxSubseq ( ) << endl ; }",
+        "* curr = next [ curr ] ;",
+        "string lexMaxSubseq ( const string & s ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        24,
+        4
+      ],
+      "mod_code": [
+        "vector < int > next ( n - 1 ) ;",
+        "while ( cin >> s ) { cout << s . lexMaxSubseq ( ) << endl ; }",
+        "char * max = max ( s ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘max’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        3,
+        24,
+        4,
+        0
+      ],
+      "mod_code": [
+        "vector < int > next ( n - 1 ) ;",
+        "while ( cin >> s ) { cout << s . lexMaxSubseq ( ) << endl ; }",
+        "char * max = max ( s ) ;",
+        "string lexMaxSubseq ( const string & s ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        24,
+        0
+      ],
+      "mod_code": [
+        "vector < int > next ( n - 1 ) ;",
+        "while ( cin >> s ) { cout << s . lexMaxSubseq ( ) << endl ; }",
+        "string lexMaxSubseq ( const string & s ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        17
+      ],
+      "mod_code": [
+        "vector < int > next ( n - 1 ) ;",
+        "* curr = next [ curr ] ;"
+      ],
+      "err_line": 17,
+      "err_msg": "invalid type argument of unary ‘*’ (have ‘int’)"
+    },
+    {
+      "mod_line": [
+        3,
+        17,
+        4
+      ],
+      "mod_code": [
+        "vector < int > next ( n - 1 ) ;",
+        "* curr = next [ curr ] ;",
+        "char * max = max ( s ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘max’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        3,
+        17,
+        4,
+        0
+      ],
+      "mod_code": [
+        "vector < int > next ( n - 1 ) ;",
+        "* curr = next [ curr ] ;",
+        "char * max = max ( s ) ;",
+        "string lexMaxSubseq ( const string & s ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        17,
+        0
+      ],
+      "mod_code": [
+        "vector < int > next ( n - 1 ) ;",
+        "* curr = next [ curr ] ;",
+        "string lexMaxSubseq ( const string & s ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        4
+      ],
+      "mod_code": [
+        "vector < int > next ( n - 1 ) ;",
+        "char * max = max ( s ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘max’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        3,
+        4,
+        0
+      ],
+      "mod_code": [
+        "vector < int > next ( n - 1 ) ;",
+        "char * max = max ( s ) ;",
+        "string lexMaxSubseq ( const string & s ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        0
+      ],
+      "mod_code": [
+        "vector < int > next ( n - 1 ) ;",
+        "string lexMaxSubseq ( const string & s ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        24
+      ],
+      "mod_code": [
+        "char * max = * * 2 ;",
+        "while ( cin >> s ) { cout << s . lexMaxSubseq ( ) << endl ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid type argument of unary ‘*’ (have ‘int’)"
+    },
+    {
+      "mod_line": [
+        4,
+        24,
+        17
+      ],
+      "mod_code": [
+        "char * max = * * 2 ;",
+        "while ( cin >> s ) { cout << s . lexMaxSubseq ( ) << endl ; }",
+        "* curr = next [ curr ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid type argument of unary ‘*’ (have ‘int’)"
+    },
+    {
+      "mod_line": [
+        4,
+        24,
+        17,
+        0
+      ],
+      "mod_code": [
+        "char * max = * * 2 ;",
+        "while ( cin >> s ) { cout << s . lexMaxSubseq ( ) << endl ; }",
+        "* curr = next [ curr ] ;",
+        "string lexMaxSubseq ( const string & s ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        24,
+        0
+      ],
+      "mod_code": [
+        "char * max = * * 2 ;",
+        "while ( cin >> s ) { cout << s . lexMaxSubseq ( ) << endl ; }",
+        "string lexMaxSubseq ( const string & s ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        17
+      ],
+      "mod_code": [
+        "char * max = * * 2 ;",
+        "* curr = next [ curr ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid type argument of unary ‘*’ (have ‘int’)"
+    },
+    {
+      "mod_line": [
+        4,
+        17,
+        0
+      ],
+      "mod_code": [
+        "char * max = * * 2 ;",
+        "* curr = next [ curr ] ;",
+        "string lexMaxSubseq ( const string & s ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        0
+      ],
+      "mod_code": [
+        "char * max = * * 2 ;",
+        "string lexMaxSubseq ( const string & s ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        24,
+        17
+      ],
+      "mod_code": [
+        "while ( cin >> s ) { cout << s . lexMaxSubseq ( ) << endl ; }",
+        "* curr = next [ curr ] ;"
+      ],
+      "err_line": 17,
+      "err_msg": "invalid type argument of unary ‘*’ (have ‘int’)"
+    },
+    {
+      "mod_line": [
+        24,
+        17,
+        4
+      ],
+      "mod_code": [
+        "while ( cin >> s ) { cout << s . lexMaxSubseq ( ) << endl ; }",
+        "* curr = next [ curr ] ;",
+        "char * max = max ( s ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘max’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        24,
+        17,
+        4,
+        0
+      ],
+      "mod_code": [
+        "while ( cin >> s ) { cout << s . lexMaxSubseq ( ) << endl ; }",
+        "* curr = next [ curr ] ;",
+        "char * max = max ( s ) ;",
+        "string lexMaxSubseq ( const string & s ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        24,
+        17,
+        0
+      ],
+      "mod_code": [
+        "while ( cin >> s ) { cout << s . lexMaxSubseq ( ) << endl ; }",
+        "* curr = next [ curr ] ;",
+        "string lexMaxSubseq ( const string & s ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        24,
+        4
+      ],
+      "mod_code": [
+        "while ( cin >> s ) { cout << s . lexMaxSubseq ( ) << endl ; }",
+        "char * max = max ( s ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘max’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        24,
+        4,
+        0
+      ],
+      "mod_code": [
+        "while ( cin >> s ) { cout << s . lexMaxSubseq ( ) << endl ; }",
+        "char * max = max ( s ) ;",
+        "string lexMaxSubseq ( const string & s ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        24,
+        0
+      ],
+      "mod_code": [
+        "while ( cin >> s ) { cout << s . lexMaxSubseq ( ) << endl ; }",
+        "string lexMaxSubseq ( const string & s ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        17,
+        4
+      ],
+      "mod_code": [
+        "* curr = next [ curr ] ;",
+        "char * max = max ( s ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘max’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        17,
+        4,
+        0
+      ],
+      "mod_code": [
+        "* curr = next [ curr ] ;",
+        "char * max = max ( s ) ;",
+        "string lexMaxSubseq ( const string & s ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        17,
+        0
+      ],
+      "mod_code": [
+        "* curr = next [ curr ] ;",
+        "string lexMaxSubseq ( const string & s ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        0
+      ],
+      "mod_code": [
+        "char * max = max ( s ) ;",
+        "string lexMaxSubseq ( const string & s ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    }
+  ]
+}

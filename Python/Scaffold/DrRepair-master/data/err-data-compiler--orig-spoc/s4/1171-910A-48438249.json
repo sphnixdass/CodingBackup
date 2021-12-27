@@ -1,0 +1,623 @@
+{
+  "meta": {
+    "index": 1171,
+    "hitid": "3KG2UQJ0MJIWKUWK98BPHAAX5D2QN6",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "910A",
+    "subid": "48438249"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare integer variables n and d",
+      "code": "int n , d ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read n and d",
+      "code": "cin >> n >> d ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "declare string variable called s",
+      "code": "string s ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "read s",
+      "code": "cin >> s ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "create queue of integers called dist",
+      "code": "queue < int > dist ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( int i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "if s [ i ] = ' 1 ' push i into dist",
+      "code": "if ( s [ i ] == ' 1 ' ) dist . push ( i ) ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "dp is an integer array with size n",
+      "code": "int dp [ n ] ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "fill dp with value 1e6",
+      "code": "fill ( dp , dp + n , 1e6 ) ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "assign value of 0 to dp [ 0 ]",
+      "code": "dp [ 0 ] = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "for integer i = 1 to n exclusive",
+      "code": "for ( int i = 1 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "while i - d is greater than first element of dist , remove it",
+      "code": "while ( i - d > dist . front ( ) ) dist . pop ( ) ;",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "if s [ i ] = ' 1 ' set dp [ i ] = min of dp [ i ] and dp [ dist . front ( ) ] + 1",
+      "code": "if ( s [ i ] == ' 1 ' ) dp [ i ] = min ( dp [ i ] , dp [ dist . front ( ) ] + 1 ) ;",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "if dp [ n - 1 ] = 1e6",
+      "code": "if ( dp [ n - 1 ] == 1e6 )",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "print \" - 1 \\ n \"",
+      "code": "cout << \" -1\\n \" ;",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "else",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "print dp [ n - 1 ] and \" \\ n \"",
+      "code": "cout << dp [ n - 1 ] << \" \\n \" ;",
+      "indent": 2
+    },
+    {
+      "line": 20,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "while ( i - d > 0 ) dist . erase ( it ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘class std::queue<int>’ has no member named ‘erase’"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "cin >> n >> k ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "string n ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘std::__cxx11::string n’"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "gets ( s ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "if ( s [ i ] == ' 1 ' ) dist . push_back ( i ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘class std::queue<int>’ has no member named ‘push_back’"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "memset ( dp , 1e6 + sizeof ( dp ) ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "while ( i - d > dist . end ( ) )"
+      ],
+      "err_line": 13,
+      "err_msg": "‘class std::queue<int>’ has no member named ‘end’"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "if ( s [ i ] == ' 1 ' ) dp [ i ] = min ( dp [ i ] + dp [ dist . front ( ) ] + 1 ) ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(int)’"
+    },
+    {
+      "mod_line": [
+        10,
+        13
+      ],
+      "mod_code": [
+        "memset ( dp , 1e6 , sizeof ( dp ) ) ;",
+        "while ( i - d > 0 ) dist . erase ( it ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘class std::queue<int>’ has no member named ‘erase’"
+    },
+    {
+      "mod_line": [
+        10,
+        13,
+        4
+      ],
+      "mod_code": [
+        "memset ( dp , 1e6 , sizeof ( dp ) ) ;",
+        "while ( i - d > 0 ) dist . erase ( it ) ;",
+        "gets ( s ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    },
+    {
+      "mod_line": [
+        10,
+        13,
+        4,
+        3
+      ],
+      "mod_code": [
+        "memset ( dp , 1e6 , sizeof ( dp ) ) ;",
+        "while ( i - d > 0 ) dist . erase ( it ) ;",
+        "gets ( s ) ;",
+        "string n ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘std::__cxx11::string n’"
+    },
+    {
+      "mod_line": [
+        10,
+        13,
+        3
+      ],
+      "mod_code": [
+        "memset ( dp , 1e6 , sizeof ( dp ) ) ;",
+        "while ( i - d > 0 ) dist . erase ( it ) ;",
+        "string n ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘std::__cxx11::string n’"
+    },
+    {
+      "mod_line": [
+        10,
+        13
+      ],
+      "mod_code": [
+        "memset ( dp , 1e6 , sizeof ( dp ) ) ;",
+        "while ( i - d > dist . end ( ) )"
+      ],
+      "err_line": 13,
+      "err_msg": "‘class std::queue<int>’ has no member named ‘end’"
+    },
+    {
+      "mod_line": [
+        10,
+        13,
+        4
+      ],
+      "mod_code": [
+        "memset ( dp , 1e6 , sizeof ( dp ) ) ;",
+        "while ( i - d > dist . end ( ) )",
+        "gets ( s ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    },
+    {
+      "mod_line": [
+        10,
+        13,
+        4,
+        3
+      ],
+      "mod_code": [
+        "memset ( dp , 1e6 , sizeof ( dp ) ) ;",
+        "while ( i - d > dist . end ( ) )",
+        "gets ( s ) ;",
+        "string n ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘std::__cxx11::string n’"
+    },
+    {
+      "mod_line": [
+        10,
+        13,
+        3
+      ],
+      "mod_code": [
+        "memset ( dp , 1e6 , sizeof ( dp ) ) ;",
+        "while ( i - d > dist . end ( ) )",
+        "string n ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘std::__cxx11::string n’"
+    },
+    {
+      "mod_line": [
+        10,
+        4
+      ],
+      "mod_code": [
+        "memset ( dp , 1e6 , sizeof ( dp ) ) ;",
+        "gets ( s ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    },
+    {
+      "mod_line": [
+        10,
+        4,
+        3
+      ],
+      "mod_code": [
+        "memset ( dp , 1e6 , sizeof ( dp ) ) ;",
+        "gets ( s ) ;",
+        "string n ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘std::__cxx11::string n’"
+    },
+    {
+      "mod_line": [
+        10,
+        3
+      ],
+      "mod_code": [
+        "memset ( dp , 1e6 , sizeof ( dp ) ) ;",
+        "string n ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘std::__cxx11::string n’"
+    },
+    {
+      "mod_line": [
+        13,
+        4
+      ],
+      "mod_code": [
+        "while ( i - d > 0 ) dist . erase ( it ) ;",
+        "gets ( s ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    },
+    {
+      "mod_line": [
+        13,
+        4,
+        10
+      ],
+      "mod_code": [
+        "while ( i - d > 0 ) dist . erase ( it ) ;",
+        "gets ( s ) ;",
+        "memset ( dp , 1e6 + sizeof ( dp ) ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    },
+    {
+      "mod_line": [
+        13,
+        4,
+        10,
+        3
+      ],
+      "mod_code": [
+        "while ( i - d > 0 ) dist . erase ( it ) ;",
+        "gets ( s ) ;",
+        "memset ( dp , 1e6 + sizeof ( dp ) ) ;",
+        "string n ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘std::__cxx11::string n’"
+    },
+    {
+      "mod_line": [
+        13,
+        4,
+        3
+      ],
+      "mod_code": [
+        "while ( i - d > 0 ) dist . erase ( it ) ;",
+        "gets ( s ) ;",
+        "string n ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘std::__cxx11::string n’"
+    },
+    {
+      "mod_line": [
+        13,
+        10
+      ],
+      "mod_code": [
+        "while ( i - d > 0 ) dist . erase ( it ) ;",
+        "memset ( dp , 1e6 + sizeof ( dp ) ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        13,
+        10,
+        3
+      ],
+      "mod_code": [
+        "while ( i - d > 0 ) dist . erase ( it ) ;",
+        "memset ( dp , 1e6 + sizeof ( dp ) ) ;",
+        "string n ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘std::__cxx11::string n’"
+    },
+    {
+      "mod_line": [
+        13,
+        3
+      ],
+      "mod_code": [
+        "while ( i - d > 0 ) dist . erase ( it ) ;",
+        "string n ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘std::__cxx11::string n’"
+    },
+    {
+      "mod_line": [
+        13,
+        4
+      ],
+      "mod_code": [
+        "while ( i - d > dist . end ( ) )",
+        "gets ( s ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    },
+    {
+      "mod_line": [
+        13,
+        4,
+        10
+      ],
+      "mod_code": [
+        "while ( i - d > dist . end ( ) )",
+        "gets ( s ) ;",
+        "memset ( dp , 1e6 + sizeof ( dp ) ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    },
+    {
+      "mod_line": [
+        13,
+        4,
+        10,
+        3
+      ],
+      "mod_code": [
+        "while ( i - d > dist . end ( ) )",
+        "gets ( s ) ;",
+        "memset ( dp , 1e6 + sizeof ( dp ) ) ;",
+        "string n ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘std::__cxx11::string n’"
+    },
+    {
+      "mod_line": [
+        13,
+        4,
+        3
+      ],
+      "mod_code": [
+        "while ( i - d > dist . end ( ) )",
+        "gets ( s ) ;",
+        "string n ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘std::__cxx11::string n’"
+    },
+    {
+      "mod_line": [
+        13,
+        10
+      ],
+      "mod_code": [
+        "while ( i - d > dist . end ( ) )",
+        "memset ( dp , 1e6 + sizeof ( dp ) ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        13,
+        10,
+        3
+      ],
+      "mod_code": [
+        "while ( i - d > dist . end ( ) )",
+        "memset ( dp , 1e6 + sizeof ( dp ) ) ;",
+        "string n ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘std::__cxx11::string n’"
+    },
+    {
+      "mod_line": [
+        13,
+        3
+      ],
+      "mod_code": [
+        "while ( i - d > dist . end ( ) )",
+        "string n ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘std::__cxx11::string n’"
+    },
+    {
+      "mod_line": [
+        4,
+        10
+      ],
+      "mod_code": [
+        "gets ( s ) ;",
+        "memset ( dp , 1e6 + sizeof ( dp ) ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    },
+    {
+      "mod_line": [
+        4,
+        10,
+        3
+      ],
+      "mod_code": [
+        "gets ( s ) ;",
+        "memset ( dp , 1e6 + sizeof ( dp ) ) ;",
+        "string n ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘std::__cxx11::string n’"
+    },
+    {
+      "mod_line": [
+        4,
+        3
+      ],
+      "mod_code": [
+        "gets ( s ) ;",
+        "string n ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘std::__cxx11::string n’"
+    },
+    {
+      "mod_line": [
+        10,
+        3
+      ],
+      "mod_code": [
+        "memset ( dp , 1e6 + sizeof ( dp ) ) ;",
+        "string n ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘std::__cxx11::string n’"
+    }
+  ]
+}

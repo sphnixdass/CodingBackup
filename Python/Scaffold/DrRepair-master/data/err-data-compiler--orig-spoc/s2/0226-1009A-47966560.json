@@ -1,0 +1,701 @@
+{
+  "meta": {
+    "index": 226,
+    "hitid": "3L7SUC0TTUO2EJ6LG92APPUFO6VM0G",
+    "workerid": "A2J7P30MA3S6OV",
+    "probid": "1009A",
+    "subid": "47966560"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "maxn = 100000 + 10",
+      "code": "const int maxn = 1000 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "create int game [ maxn + 10 ] , wallet [ maxn + 10 ]",
+      "code": "int game [ maxn + 10 ] , wallet [ maxn + 10 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "create int m and n",
+      "code": "int m , n ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "read n and m",
+      "code": "cin >> n >> m ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i = 0 to n exclusive , read game [ i ]",
+      "code": "for ( int i = 0 ; i < n ; i ++ ) cin >> game [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 0 to m exclusive , read wallet [ i ]",
+      "code": "for ( int i = 0 ; i < m ; i ++ ) cin >> wallet [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "set sum , x and y to 0",
+      "code": "int sum = 0 , x = 0 , i = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "while i different from m and x different from n",
+      "code": "while ( i != m && x != n )",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "if wallet [ i ] > = game [ x ]",
+      "code": "if ( wallet [ i ] >= game [ x ] )",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "increment sum",
+      "code": "sum ++ ;",
+      "indent": 3
+    },
+    {
+      "line": 11,
+      "text": "increment i",
+      "code": "i ++ ;",
+      "indent": 3
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "increment x",
+      "code": "x ++ ;",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "print sum",
+      "code": "cout << sum << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "int sum = 0 , x = 0 ;"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "maxn += 10 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "int game [ maxn + 10 ] = wallet [ maxn + 10 ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘wallet’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "int m , m ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘int m’"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "sum = 0 , x = 0 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘sum’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        2
+      ],
+      "mod_code": [
+        "int sum = 0 , x = 0 ;",
+        "int game [ maxn + 10 ] = wallet [ maxn + 10 ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘wallet’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        2,
+        0
+      ],
+      "mod_code": [
+        "int sum = 0 , x = 0 ;",
+        "int game [ maxn + 10 ] = wallet [ maxn + 10 ] ;",
+        "maxn += 10 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        7,
+        2,
+        0,
+        9
+      ],
+      "mod_code": [
+        "int sum = 0 , x = 0 ;",
+        "int game [ maxn + 10 ] = wallet [ maxn + 10 ] ;",
+        "maxn += 10 ;",
+        "if ( wallet [ i ] > game [ x ] )"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        7,
+        2,
+        0,
+        3
+      ],
+      "mod_code": [
+        "int sum = 0 , x = 0 ;",
+        "int game [ maxn + 10 ] = wallet [ maxn + 10 ] ;",
+        "maxn += 10 ;",
+        "int m , m ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        7,
+        2,
+        9
+      ],
+      "mod_code": [
+        "int sum = 0 , x = 0 ;",
+        "int game [ maxn + 10 ] = wallet [ maxn + 10 ] ;",
+        "if ( wallet [ i ] > game [ x ] )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘wallet’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        2,
+        9,
+        3
+      ],
+      "mod_code": [
+        "int sum = 0 , x = 0 ;",
+        "int game [ maxn + 10 ] = wallet [ maxn + 10 ] ;",
+        "if ( wallet [ i ] > game [ x ] )",
+        "int m , m ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘wallet’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        2,
+        3
+      ],
+      "mod_code": [
+        "int sum = 0 , x = 0 ;",
+        "int game [ maxn + 10 ] = wallet [ maxn + 10 ] ;",
+        "int m , m ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘wallet’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        0
+      ],
+      "mod_code": [
+        "int sum = 0 , x = 0 ;",
+        "maxn += 10 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        7,
+        0,
+        9
+      ],
+      "mod_code": [
+        "int sum = 0 , x = 0 ;",
+        "maxn += 10 ;",
+        "if ( wallet [ i ] > game [ x ] )"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        7,
+        0,
+        9,
+        3
+      ],
+      "mod_code": [
+        "int sum = 0 , x = 0 ;",
+        "maxn += 10 ;",
+        "if ( wallet [ i ] > game [ x ] )",
+        "int m , m ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        7,
+        0,
+        3
+      ],
+      "mod_code": [
+        "int sum = 0 , x = 0 ;",
+        "maxn += 10 ;",
+        "int m , m ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        7,
+        9
+      ],
+      "mod_code": [
+        "int sum = 0 , x = 0 ;",
+        "if ( wallet [ i ] > game [ x ] )"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7,
+        9,
+        3
+      ],
+      "mod_code": [
+        "int sum = 0 , x = 0 ;",
+        "if ( wallet [ i ] > game [ x ] )",
+        "int m , m ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘int m’"
+    },
+    {
+      "mod_line": [
+        7,
+        3
+      ],
+      "mod_code": [
+        "int sum = 0 , x = 0 ;",
+        "int m , m ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘int m’"
+    },
+    {
+      "mod_line": [
+        2,
+        0
+      ],
+      "mod_code": [
+        "int game [ maxn + 10 ] = wallet [ maxn + 10 ] ;",
+        "maxn += 10 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        0,
+        7
+      ],
+      "mod_code": [
+        "int game [ maxn + 10 ] = wallet [ maxn + 10 ] ;",
+        "maxn += 10 ;",
+        "sum = 0 , x = 0 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        0,
+        7,
+        9
+      ],
+      "mod_code": [
+        "int game [ maxn + 10 ] = wallet [ maxn + 10 ] ;",
+        "maxn += 10 ;",
+        "sum = 0 , x = 0 ;",
+        "if ( wallet [ i ] > game [ x ] )"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        0,
+        7,
+        3
+      ],
+      "mod_code": [
+        "int game [ maxn + 10 ] = wallet [ maxn + 10 ] ;",
+        "maxn += 10 ;",
+        "sum = 0 , x = 0 ;",
+        "int m , m ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        0,
+        9
+      ],
+      "mod_code": [
+        "int game [ maxn + 10 ] = wallet [ maxn + 10 ] ;",
+        "maxn += 10 ;",
+        "if ( wallet [ i ] > game [ x ] )"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        0,
+        9,
+        3
+      ],
+      "mod_code": [
+        "int game [ maxn + 10 ] = wallet [ maxn + 10 ] ;",
+        "maxn += 10 ;",
+        "if ( wallet [ i ] > game [ x ] )",
+        "int m , m ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        0,
+        3
+      ],
+      "mod_code": [
+        "int game [ maxn + 10 ] = wallet [ maxn + 10 ] ;",
+        "maxn += 10 ;",
+        "int m , m ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        7
+      ],
+      "mod_code": [
+        "int game [ maxn + 10 ] = wallet [ maxn + 10 ] ;",
+        "sum = 0 , x = 0 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘wallet’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        7,
+        9
+      ],
+      "mod_code": [
+        "int game [ maxn + 10 ] = wallet [ maxn + 10 ] ;",
+        "sum = 0 , x = 0 ;",
+        "if ( wallet [ i ] > game [ x ] )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘wallet’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        7,
+        9,
+        3
+      ],
+      "mod_code": [
+        "int game [ maxn + 10 ] = wallet [ maxn + 10 ] ;",
+        "sum = 0 , x = 0 ;",
+        "if ( wallet [ i ] > game [ x ] )",
+        "int m , m ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘wallet’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        7,
+        3
+      ],
+      "mod_code": [
+        "int game [ maxn + 10 ] = wallet [ maxn + 10 ] ;",
+        "sum = 0 , x = 0 ;",
+        "int m , m ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘wallet’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        9
+      ],
+      "mod_code": [
+        "int game [ maxn + 10 ] = wallet [ maxn + 10 ] ;",
+        "if ( wallet [ i ] > game [ x ] )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘wallet’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        9,
+        3
+      ],
+      "mod_code": [
+        "int game [ maxn + 10 ] = wallet [ maxn + 10 ] ;",
+        "if ( wallet [ i ] > game [ x ] )",
+        "int m , m ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘wallet’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        3
+      ],
+      "mod_code": [
+        "int game [ maxn + 10 ] = wallet [ maxn + 10 ] ;",
+        "int m , m ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘wallet’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        7
+      ],
+      "mod_code": [
+        "maxn += 10 ;",
+        "sum = 0 , x = 0 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        7,
+        9
+      ],
+      "mod_code": [
+        "maxn += 10 ;",
+        "sum = 0 , x = 0 ;",
+        "if ( wallet [ i ] > game [ x ] )"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        7,
+        9,
+        3
+      ],
+      "mod_code": [
+        "maxn += 10 ;",
+        "sum = 0 , x = 0 ;",
+        "if ( wallet [ i ] > game [ x ] )",
+        "int m , m ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        7,
+        3
+      ],
+      "mod_code": [
+        "maxn += 10 ;",
+        "sum = 0 , x = 0 ;",
+        "int m , m ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        9
+      ],
+      "mod_code": [
+        "maxn += 10 ;",
+        "if ( wallet [ i ] > game [ x ] )"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        9,
+        3
+      ],
+      "mod_code": [
+        "maxn += 10 ;",
+        "if ( wallet [ i ] > game [ x ] )",
+        "int m , m ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        3
+      ],
+      "mod_code": [
+        "maxn += 10 ;",
+        "int m , m ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘maxn’ does not name a type"
+    },
+    {
+      "mod_line": [
+        7,
+        9
+      ],
+      "mod_code": [
+        "sum = 0 , x = 0 ;",
+        "if ( wallet [ i ] > game [ x ] )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘sum’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        9,
+        3
+      ],
+      "mod_code": [
+        "sum = 0 , x = 0 ;",
+        "if ( wallet [ i ] > game [ x ] )",
+        "int m , m ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘int m’"
+    },
+    {
+      "mod_line": [
+        7,
+        3
+      ],
+      "mod_code": [
+        "sum = 0 , x = 0 ;",
+        "int m , m ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘int m’"
+    },
+    {
+      "mod_line": [
+        9,
+        3
+      ],
+      "mod_code": [
+        "if ( wallet [ i ] > game [ x ] )",
+        "int m , m ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘int m’"
+    }
+  ]
+}

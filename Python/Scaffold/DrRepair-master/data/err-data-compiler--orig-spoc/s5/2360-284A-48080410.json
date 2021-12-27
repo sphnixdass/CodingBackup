@@ -1,0 +1,681 @@
+{
+  "meta": {
+    "index": 2360,
+    "hitid": "3IYI9285WSUW73VGPSI24Y4ZT1SCJQ",
+    "workerid": "A1R0Q9CUUBSM5F",
+    "probid": "284A",
+    "subid": "48080410"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create constant integer MAXN = 2200",
+      "code": "const int MAXN = 2200 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "let int n",
+      "code": "int n ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "let int array q of size MAXN",
+      "code": "int q [ MAXN ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "declare fpow taking in integers a and x and returning integer",
+      "code": "int fpow ( int a , int x )",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "let int rtn = 1",
+      "code": "int rtn = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "loop until x is falsy",
+      "code": "for ( ; x ; x >>= 1 , a = 1ll * a * a % n )",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "if x & 1 is truthy , set rtn to 1ll * rtn * a % n",
+      "code": "if ( x & 1 ) rtn = 1ll * rtn * a % n ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "return rtn",
+      "code": "return rtn ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 10,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "let int top = 0",
+      "code": "int top = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "for i = 2 to n - 1 exclusive",
+      "code": "for ( int i = 2 ; i < n - 1 ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "if ( n - 1 ) % i = = 0 , set q [ + + top ] to i",
+      "code": "if ( ( n - 1 ) % i == 0 ) q [ ++ top ] = i ;",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "create int ans = 0",
+      "code": "int ans = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "for i = 2 to n exclusive",
+      "code": "for ( int i = 2 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "let bool p = 1",
+      "code": "bool p = 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "for j = 1 to top and while p is truthy",
+      "code": "for ( int j = 1 ; j <= top && p ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "if fpow ( i , q [ j ] ) is equal to 1 , set p to 0",
+      "code": "if ( fpow ( i , q [ j ] ) == 1 ) p = 0 ;",
+      "indent": 3
+    },
+    {
+      "line": 19,
+      "text": "if p is truthy , add 1 to ans",
+      "code": "if ( p ) ans ++ ;",
+      "indent": 2
+    },
+    {
+      "line": 20,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "if n is equal to 2 , increment ans",
+      "code": "if ( n == 2 ) ans ++ ;",
+      "indent": 1
+    },
+    {
+      "line": 22,
+      "text": "print ans",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "for ( j = 1 ; p < top ; j ++ )"
+      ],
+      "err_line": 17,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "int rtn = l ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "while ( cin >> n )"
+      ],
+      "err_line": 13,
+      "err_msg": "‘top’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i < n - 1 ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i < n ; i ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "p = 1 ;"
+      ],
+      "err_line": 16,
+      "err_msg": "‘p’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "for ( j = 1 ; p <= top ; j ++ )"
+      ],
+      "err_line": 17,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        17
+      ],
+      "mod_code": [
+        "for ( ; ; )",
+        "for ( j = 1 ; p < top ; j ++ )"
+      ],
+      "err_line": 17,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        17,
+        1
+      ],
+      "mod_code": [
+        "for ( ; ; )",
+        "for ( j = 1 ; p < top ; j ++ )",
+        "char n ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        17,
+        1,
+        15
+      ],
+      "mod_code": [
+        "for ( ; ; )",
+        "for ( j = 1 ; p < top ; j ++ )",
+        "char n ;",
+        "for ( i = 2 ; i < n ; i ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        17,
+        1,
+        11
+      ],
+      "mod_code": [
+        "for ( ; ; )",
+        "for ( j = 1 ; p < top ; j ++ )",
+        "char n ;",
+        "int top = 1 ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        17,
+        15
+      ],
+      "mod_code": [
+        "for ( ; ; )",
+        "for ( j = 1 ; p < top ; j ++ )",
+        "for ( i = 2 ; i < n ; i ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        17,
+        15,
+        11
+      ],
+      "mod_code": [
+        "for ( ; ; )",
+        "for ( j = 1 ; p < top ; j ++ )",
+        "for ( i = 2 ; i < n ; i ++ )",
+        "int top = 1 ;"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        17,
+        11
+      ],
+      "mod_code": [
+        "for ( ; ; )",
+        "for ( j = 1 ; p < top ; j ++ )",
+        "int top = 1 ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        1,
+        15
+      ],
+      "mod_code": [
+        "for ( ; ; )",
+        "char n ;",
+        "for ( i = 2 ; i < n ; i ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        1,
+        15,
+        11
+      ],
+      "mod_code": [
+        "for ( ; ; )",
+        "char n ;",
+        "for ( i = 2 ; i < n ; i ++ )",
+        "int top = 1 ;"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        15
+      ],
+      "mod_code": [
+        "for ( ; ; )",
+        "for ( i = 2 ; i < n ; i ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        15,
+        11
+      ],
+      "mod_code": [
+        "for ( ; ; )",
+        "for ( i = 2 ; i < n ; i ++ )",
+        "int top = 1 ;"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        17,
+        1
+      ],
+      "mod_code": [
+        "for ( j = 1 ; p < top ; j ++ )",
+        "char n ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17,
+        1,
+        15
+      ],
+      "mod_code": [
+        "for ( j = 1 ; p < top ; j ++ )",
+        "char n ;",
+        "for ( i = 2 ; i < n ; i ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        17,
+        1,
+        15,
+        5
+      ],
+      "mod_code": [
+        "for ( j = 1 ; p < top ; j ++ )",
+        "char n ;",
+        "for ( i = 2 ; i < n ; i ++ )",
+        "for ( ; x ; )"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        17,
+        1,
+        15,
+        11
+      ],
+      "mod_code": [
+        "for ( j = 1 ; p < top ; j ++ )",
+        "char n ;",
+        "for ( i = 2 ; i < n ; i ++ )",
+        "int top = 1 ;"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        17,
+        1,
+        5
+      ],
+      "mod_code": [
+        "for ( j = 1 ; p < top ; j ++ )",
+        "char n ;",
+        "for ( ; x ; )"
+      ],
+      "err_line": 17,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17,
+        1,
+        5,
+        11
+      ],
+      "mod_code": [
+        "for ( j = 1 ; p < top ; j ++ )",
+        "char n ;",
+        "for ( ; x ; )",
+        "int top = 1 ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17,
+        1,
+        11
+      ],
+      "mod_code": [
+        "for ( j = 1 ; p < top ; j ++ )",
+        "char n ;",
+        "int top = 1 ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17,
+        15
+      ],
+      "mod_code": [
+        "for ( j = 1 ; p < top ; j ++ )",
+        "for ( i = 2 ; i < n ; i ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        17,
+        15,
+        5
+      ],
+      "mod_code": [
+        "for ( j = 1 ; p < top ; j ++ )",
+        "for ( i = 2 ; i < n ; i ++ )",
+        "for ( ; x ; )"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        17,
+        15,
+        5,
+        11
+      ],
+      "mod_code": [
+        "for ( j = 1 ; p < top ; j ++ )",
+        "for ( i = 2 ; i < n ; i ++ )",
+        "for ( ; x ; )",
+        "int top = 1 ;"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        17,
+        15,
+        11
+      ],
+      "mod_code": [
+        "for ( j = 1 ; p < top ; j ++ )",
+        "for ( i = 2 ; i < n ; i ++ )",
+        "int top = 1 ;"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        17,
+        5
+      ],
+      "mod_code": [
+        "for ( j = 1 ; p < top ; j ++ )",
+        "for ( ; x ; )"
+      ],
+      "err_line": 17,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17,
+        5,
+        11
+      ],
+      "mod_code": [
+        "for ( j = 1 ; p < top ; j ++ )",
+        "for ( ; x ; )",
+        "int top = 1 ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17,
+        11
+      ],
+      "mod_code": [
+        "for ( j = 1 ; p < top ; j ++ )",
+        "int top = 1 ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        15
+      ],
+      "mod_code": [
+        "char n ;",
+        "for ( i = 2 ; i < n ; i ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        1,
+        15,
+        5
+      ],
+      "mod_code": [
+        "char n ;",
+        "for ( i = 2 ; i < n ; i ++ )",
+        "for ( ; x ; )"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        1,
+        15,
+        5,
+        11
+      ],
+      "mod_code": [
+        "char n ;",
+        "for ( i = 2 ; i < n ; i ++ )",
+        "for ( ; x ; )",
+        "int top = 1 ;"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        1,
+        15,
+        11
+      ],
+      "mod_code": [
+        "char n ;",
+        "for ( i = 2 ; i < n ; i ++ )",
+        "int top = 1 ;"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        15,
+        5
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i < n ; i ++ )",
+        "for ( ; x ; )"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        15,
+        5,
+        11
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i < n ; i ++ )",
+        "for ( ; x ; )",
+        "int top = 1 ;"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        15,
+        11
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i < n ; i ++ )",
+        "int top = 1 ;"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    }
+  ]
+}

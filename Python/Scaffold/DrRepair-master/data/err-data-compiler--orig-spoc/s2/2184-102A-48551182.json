@@ -1,0 +1,853 @@
+{
+  "meta": {
+    "index": 2184,
+    "hitid": "3D5G8J4N5AYMKFXLS3RBWWFXCA4TVG",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "102A",
+    "subid": "48551182"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare new constant integer INF with value 1000000000",
+      "code": "const int INF = 1000000000 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create new double constant EPS = 1e - 9",
+      "code": "const double EPS = 1e-9 ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "create integers n , m , a , b , ans = INF and cur",
+      "code": "int n , m , a , b , ans = INF , cur ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "read n and m",
+      "code": "cin >> n >> m ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "prices is a new array of integers with size n + 1",
+      "code": "int prices [ n + 1 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "matches is a new 2d array of booleans n + 1 by n + 1",
+      "code": "bool matches [ n + 1 ] [ n + 1 ] = { } ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "read n elements of prices from the input , starting from the index 1",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) cin >> prices [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "start for loop from i = 0 to m exclusive incrementing i",
+      "code": "for ( int i = 0 ; i < m ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "read user input to a and b",
+      "code": "cin >> a >> b ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "set the values of matches [ a ] [ b ] and matches [ b ] [ a ] to 1",
+      "code": "matches [ a ] [ b ] = matches [ b ] [ a ] = 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "if m is less than 3",
+      "code": "if ( m < 3 )",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "print - 1 and ' \\ n '",
+      "code": "cout << - 1 << ' \\n ' ;",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "for integer i = 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "for j = i + 1 to n inclusive incrementing j",
+      "code": "for ( int j = i + 1 ; j <= n ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "if matches [ i ] [ j ] is false , skip the rest of the loop",
+      "code": "if ( ! matches [ i ] [ j ] ) continue ;",
+      "indent": 3
+    },
+    {
+      "line": 19,
+      "text": "start for loop from k = j + 1 to n inclusive",
+      "code": "for ( int k = j + 1 ; k <= n ; k ++ )",
+      "indent": 3
+    },
+    {
+      "line": 20,
+      "text": "if matches [ i ] [ j ] , matches [ i ] [ k ] and matches [ j ] [ k ] are all true , set the value of ans to min of ans and prices [ i ] + prices [ j ] + prices [ k ]",
+      "code": "if ( matches [ i ] [ j ] && matches [ i ] [ k ] && matches [ j ] [ k ] ) { ans = min ( ans , prices [ i ] + prices [ j ] + prices [ k ] ) ; }",
+      "indent": 4
+    },
+    {
+      "line": 21,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 22,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 23,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "if ans is equal to INF",
+      "code": "if ( ans == INF )",
+      "indent": 1
+    },
+    {
+      "line": 25,
+      "text": "print - 1 and ' \\ n '",
+      "code": "cout << - 1 << ' \\n ' ;",
+      "indent": 2
+    },
+    {
+      "line": 26,
+      "text": "else",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 27,
+      "text": "print ans and ' \\ n '",
+      "code": "cout << ans << ' \\n ' ;",
+      "indent": 2
+    },
+    {
+      "line": 28,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        20
+      ],
+      "mod_code": [
+        "if ( matches [ i ] [ j ] ) ans = min ( ans , prices [ i ] [ k ] + prices [ j ] + prices [ j ] + prices [ k ] + prices [ k ] ) ;"
+      ],
+      "err_line": 20,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘prices’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "prices = prices [ n + 1 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘prices’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < m ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "matches [ a ] [ b ] [ b ] [ a ] = 1 ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid types ‘bool[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "cout << \" -1\\n ' ;"
+      ],
+      "err_line": 13,
+      "err_msg": "missing terminating \" character"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "for ( j = i + 1 ; j <= n ; j ++ )"
+      ],
+      "err_line": 17,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        19
+      ],
+      "mod_code": [
+        "for ( k = j + 1 ; k <= n ; k ++ )"
+      ],
+      "err_line": 19,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        20
+      ],
+      "mod_code": [
+        "if ( matches [ i ] [ j ] ) ans [ i ] = min ( ans , prices [ i ] [ k ] + prices [ j ] + prices [ j ] + prices [ k ] + prices [ k ] ) ;"
+      ],
+      "err_line": 20,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        25
+      ],
+      "mod_code": [
+        "cout << \" -1\\n ' ;"
+      ],
+      "err_line": 25,
+      "err_msg": "missing terminating \" character"
+    },
+    {
+      "mod_line": [
+        26
+      ],
+      "mod_code": [
+        "n"
+      ],
+      "err_line": 27,
+      "err_msg": "expected ‘;’ before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        20
+      ],
+      "mod_code": [
+        "bool matches [ n + 1 ] [ n + 1 ] ;",
+        "for ( int i = 1 ; i < n ; i ++ ) cin >> prices [ i ] ;",
+        "if ( matches [ i ] [ j ] ) ans = min ( ans , prices [ i ] [ k ] + prices [ j ] + prices [ j ] + prices [ k ] + prices [ k ] ) ;"
+      ],
+      "err_line": 20,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        20,
+        4
+      ],
+      "mod_code": [
+        "bool matches [ n + 1 ] [ n + 1 ] ;",
+        "for ( int i = 1 ; i < n ; i ++ ) cin >> prices [ i ] ;",
+        "if ( matches [ i ] [ j ] ) ans = min ( ans , prices [ i ] [ k ] + prices [ j ] + prices [ j ] + prices [ k ] + prices [ k ] ) ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘prices’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        20,
+        27
+      ],
+      "mod_code": [
+        "bool matches [ n + 1 ] [ n + 1 ] ;",
+        "for ( int i = 1 ; i < n ; i ++ ) cin >> prices [ i ] ;",
+        "if ( matches [ i ] [ j ] ) ans = min ( ans , prices [ i ] [ k ] + prices [ j ] + prices [ j ] + prices [ k ] + prices [ k ] ) ;",
+        "ans << ans << ' \\n ' ;"
+      ],
+      "err_line": 20,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        20,
+        12
+      ],
+      "mod_code": [
+        "bool matches [ n + 1 ] [ n + 1 ] ;",
+        "for ( int i = 1 ; i < n ; i ++ ) cin >> prices [ i ] ;",
+        "if ( matches [ i ] [ j ] ) ans = min ( ans , prices [ i ] [ k ] + prices [ j ] + prices [ j ] + prices [ k ] + prices [ k ] ) ;",
+        "if ( m <= 3 )"
+      ],
+      "err_line": 20,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        4
+      ],
+      "mod_code": [
+        "bool matches [ n + 1 ] [ n + 1 ] ;",
+        "for ( int i = 1 ; i < n ; i ++ ) cin >> prices [ i ] ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘prices’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        4,
+        27
+      ],
+      "mod_code": [
+        "bool matches [ n + 1 ] [ n + 1 ] ;",
+        "for ( int i = 1 ; i < n ; i ++ ) cin >> prices [ i ] ;",
+        "while ( cin >> n >> m )",
+        "ans << ans << ' \\n ' ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘prices’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        4,
+        12
+      ],
+      "mod_code": [
+        "bool matches [ n + 1 ] [ n + 1 ] ;",
+        "for ( int i = 1 ; i < n ; i ++ ) cin >> prices [ i ] ;",
+        "while ( cin >> n >> m )",
+        "if ( m <= 3 )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘prices’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        20
+      ],
+      "mod_code": [
+        "bool matches [ n + 1 ] [ n + 1 ] ;",
+        "if ( matches [ i ] [ j ] ) ans = min ( ans , prices [ i ] [ k ] + prices [ j ] + prices [ j ] + prices [ k ] + prices [ k ] ) ;"
+      ],
+      "err_line": 20,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        6,
+        20,
+        4
+      ],
+      "mod_code": [
+        "bool matches [ n + 1 ] [ n + 1 ] ;",
+        "if ( matches [ i ] [ j ] ) ans = min ( ans , prices [ i ] [ k ] + prices [ j ] + prices [ j ] + prices [ k ] + prices [ k ] ) ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘prices’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        20,
+        4,
+        27
+      ],
+      "mod_code": [
+        "bool matches [ n + 1 ] [ n + 1 ] ;",
+        "if ( matches [ i ] [ j ] ) ans = min ( ans , prices [ i ] [ k ] + prices [ j ] + prices [ j ] + prices [ k ] + prices [ k ] ) ;",
+        "while ( cin >> n >> m )",
+        "ans << ans << ' \\n ' ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘prices’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        20,
+        4,
+        12
+      ],
+      "mod_code": [
+        "bool matches [ n + 1 ] [ n + 1 ] ;",
+        "if ( matches [ i ] [ j ] ) ans = min ( ans , prices [ i ] [ k ] + prices [ j ] + prices [ j ] + prices [ k ] + prices [ k ] ) ;",
+        "while ( cin >> n >> m )",
+        "if ( m <= 3 )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘prices’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        20,
+        27
+      ],
+      "mod_code": [
+        "bool matches [ n + 1 ] [ n + 1 ] ;",
+        "if ( matches [ i ] [ j ] ) ans = min ( ans , prices [ i ] [ k ] + prices [ j ] + prices [ j ] + prices [ k ] + prices [ k ] ) ;",
+        "ans << ans << ' \\n ' ;"
+      ],
+      "err_line": 20,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        6,
+        20,
+        27,
+        12
+      ],
+      "mod_code": [
+        "bool matches [ n + 1 ] [ n + 1 ] ;",
+        "if ( matches [ i ] [ j ] ) ans = min ( ans , prices [ i ] [ k ] + prices [ j ] + prices [ j ] + prices [ k ] + prices [ k ] ) ;",
+        "ans << ans << ' \\n ' ;",
+        "if ( m <= 3 )"
+      ],
+      "err_line": 20,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        6,
+        20,
+        12
+      ],
+      "mod_code": [
+        "bool matches [ n + 1 ] [ n + 1 ] ;",
+        "if ( matches [ i ] [ j ] ) ans = min ( ans , prices [ i ] [ k ] + prices [ j ] + prices [ j ] + prices [ k ] + prices [ k ] ) ;",
+        "if ( m <= 3 )"
+      ],
+      "err_line": 20,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        6,
+        4
+      ],
+      "mod_code": [
+        "bool matches [ n + 1 ] [ n + 1 ] ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘prices’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        4,
+        27
+      ],
+      "mod_code": [
+        "bool matches [ n + 1 ] [ n + 1 ] ;",
+        "while ( cin >> n >> m )",
+        "ans << ans << ' \\n ' ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘prices’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        4,
+        27,
+        12
+      ],
+      "mod_code": [
+        "bool matches [ n + 1 ] [ n + 1 ] ;",
+        "while ( cin >> n >> m )",
+        "ans << ans << ' \\n ' ;",
+        "if ( m <= 3 )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘prices’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        4,
+        12
+      ],
+      "mod_code": [
+        "bool matches [ n + 1 ] [ n + 1 ] ;",
+        "while ( cin >> n >> m )",
+        "if ( m <= 3 )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘prices’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        20
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i < n ; i ++ ) cin >> prices [ i ] ;",
+        "if ( matches [ i ] [ j ] ) ans = min ( ans , prices [ i ] [ k ] + prices [ j ] + prices [ j ] + prices [ k ] + prices [ k ] ) ;"
+      ],
+      "err_line": 20,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        7,
+        20,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i < n ; i ++ ) cin >> prices [ i ] ;",
+        "if ( matches [ i ] [ j ] ) ans = min ( ans , prices [ i ] [ k ] + prices [ j ] + prices [ j ] + prices [ k ] + prices [ k ] ) ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘prices’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        20,
+        4,
+        27
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i < n ; i ++ ) cin >> prices [ i ] ;",
+        "if ( matches [ i ] [ j ] ) ans = min ( ans , prices [ i ] [ k ] + prices [ j ] + prices [ j ] + prices [ k ] + prices [ k ] ) ;",
+        "while ( cin >> n >> m )",
+        "ans << ans << ' \\n ' ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘prices’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        20,
+        4,
+        12
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i < n ; i ++ ) cin >> prices [ i ] ;",
+        "if ( matches [ i ] [ j ] ) ans = min ( ans , prices [ i ] [ k ] + prices [ j ] + prices [ j ] + prices [ k ] + prices [ k ] ) ;",
+        "while ( cin >> n >> m )",
+        "if ( m <= 3 )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘prices’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        20,
+        27
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i < n ; i ++ ) cin >> prices [ i ] ;",
+        "if ( matches [ i ] [ j ] ) ans = min ( ans , prices [ i ] [ k ] + prices [ j ] + prices [ j ] + prices [ k ] + prices [ k ] ) ;",
+        "ans << ans << ' \\n ' ;"
+      ],
+      "err_line": 20,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        7,
+        20,
+        27,
+        12
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i < n ; i ++ ) cin >> prices [ i ] ;",
+        "if ( matches [ i ] [ j ] ) ans = min ( ans , prices [ i ] [ k ] + prices [ j ] + prices [ j ] + prices [ k ] + prices [ k ] ) ;",
+        "ans << ans << ' \\n ' ;",
+        "if ( m <= 3 )"
+      ],
+      "err_line": 20,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        7,
+        20,
+        12
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i < n ; i ++ ) cin >> prices [ i ] ;",
+        "if ( matches [ i ] [ j ] ) ans = min ( ans , prices [ i ] [ k ] + prices [ j ] + prices [ j ] + prices [ k ] + prices [ k ] ) ;",
+        "if ( m <= 3 )"
+      ],
+      "err_line": 20,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        7,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i < n ; i ++ ) cin >> prices [ i ] ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘prices’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        4,
+        27
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i < n ; i ++ ) cin >> prices [ i ] ;",
+        "while ( cin >> n >> m )",
+        "ans << ans << ' \\n ' ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘prices’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        4,
+        27,
+        12
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i < n ; i ++ ) cin >> prices [ i ] ;",
+        "while ( cin >> n >> m )",
+        "ans << ans << ' \\n ' ;",
+        "if ( m <= 3 )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘prices’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        4,
+        12
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i < n ; i ++ ) cin >> prices [ i ] ;",
+        "while ( cin >> n >> m )",
+        "if ( m <= 3 )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘prices’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        20,
+        4
+      ],
+      "mod_code": [
+        "if ( matches [ i ] [ j ] ) ans = min ( ans , prices [ i ] [ k ] + prices [ j ] + prices [ j ] + prices [ k ] + prices [ k ] ) ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘prices’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        20,
+        4,
+        27
+      ],
+      "mod_code": [
+        "if ( matches [ i ] [ j ] ) ans = min ( ans , prices [ i ] [ k ] + prices [ j ] + prices [ j ] + prices [ k ] + prices [ k ] ) ;",
+        "while ( cin >> n >> m )",
+        "ans << ans << ' \\n ' ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘prices’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        20,
+        4,
+        27,
+        12
+      ],
+      "mod_code": [
+        "if ( matches [ i ] [ j ] ) ans = min ( ans , prices [ i ] [ k ] + prices [ j ] + prices [ j ] + prices [ k ] + prices [ k ] ) ;",
+        "while ( cin >> n >> m )",
+        "ans << ans << ' \\n ' ;",
+        "if ( m <= 3 )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘prices’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        20,
+        4,
+        12
+      ],
+      "mod_code": [
+        "if ( matches [ i ] [ j ] ) ans = min ( ans , prices [ i ] [ k ] + prices [ j ] + prices [ j ] + prices [ k ] + prices [ k ] ) ;",
+        "while ( cin >> n >> m )",
+        "if ( m <= 3 )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘prices’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        20,
+        27
+      ],
+      "mod_code": [
+        "if ( matches [ i ] [ j ] ) ans = min ( ans , prices [ i ] [ k ] + prices [ j ] + prices [ j ] + prices [ k ] + prices [ k ] ) ;",
+        "ans << ans << ' \\n ' ;"
+      ],
+      "err_line": 20,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        20,
+        27,
+        12
+      ],
+      "mod_code": [
+        "if ( matches [ i ] [ j ] ) ans = min ( ans , prices [ i ] [ k ] + prices [ j ] + prices [ j ] + prices [ k ] + prices [ k ] ) ;",
+        "ans << ans << ' \\n ' ;",
+        "if ( m <= 3 )"
+      ],
+      "err_line": 20,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        20,
+        12
+      ],
+      "mod_code": [
+        "if ( matches [ i ] [ j ] ) ans = min ( ans , prices [ i ] [ k ] + prices [ j ] + prices [ j ] + prices [ k ] + prices [ k ] ) ;",
+        "if ( m <= 3 )"
+      ],
+      "err_line": 20,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        27
+      ],
+      "mod_code": [
+        "while ( cin >> n >> m )",
+        "ans << ans << ' \\n ' ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘prices’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        27,
+        12
+      ],
+      "mod_code": [
+        "while ( cin >> n >> m )",
+        "ans << ans << ' \\n ' ;",
+        "if ( m <= 3 )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘prices’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        12
+      ],
+      "mod_code": [
+        "while ( cin >> n >> m )",
+        "if ( m <= 3 )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘prices’ was not declared in this scope"
+    }
+  ]
+}

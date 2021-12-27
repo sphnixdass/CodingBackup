@@ -1,0 +1,701 @@
+{
+  "meta": {
+    "index": 1242,
+    "hitid": "31N9JPQXIPCJ71XHQIOV8WIWFD7NHJ",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "1042A",
+    "subid": "48794371"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "a is a new array of integers with 100 elements",
+      "code": "int a [ 100 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "declare integers n and m",
+      "code": "int n , m ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "read user input to n and m",
+      "code": "cin >> n >> m ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "in a for loop , increment i starting from 0 , while a ! = n , and read a [ i ] on each iteration",
+      "code": "for ( int i = 0 ; i != n ; ++ i ) cin >> a [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "sort a",
+      "code": "sort ( a , a + n , greater < int > ( ) ) ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "create integers ans1 = a [ 0 ] + m and ans2 = a [ 0 ]",
+      "code": "int ans1 = a [ 0 ] + m , ans2 = a [ 0 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for i from 1 to n exclusive",
+      "code": "for ( int i = 1 ; i != n ; ++ i )",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "if a [ 0 ] - a [ i ] < = m",
+      "code": "if ( a [ 0 ] - a [ i ] <= m )",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "change m to m - a [ 0 ] - a [ i ]",
+      "code": "m -= a [ 0 ] - a [ i ] ;",
+      "indent": 3
+    },
+    {
+      "line": 10,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "change m to 0",
+      "code": "m = 0 ;",
+      "indent": 3
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "if m is not 0 , change ans2 to the sum of ans2 and ( m - 1 ) / n + 1",
+      "code": "if ( m ) ans2 += ( m - 1 ) / n + 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "print ans2 , ' ' and ans1",
+      "code": "cout << ans2 << ' ' << ans1 << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; a != n ; i ++ ) { cin >> a [ i ] ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; a != n ; i ++ ) cin >> a [ i ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "int ans1 = a [ 0 ] + m = a [ 0 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "do"
+      ],
+      "err_line": 12,
+      "err_msg": "expected ‘while’ before ‘}’ token"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "cout << ans2 << ' \" << ans1 << endl ;"
+      ],
+      "err_line": 14,
+      "err_msg": "missing terminating ' character"
+    },
+    {
+      "mod_line": [
+        4,
+        5
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; a != n ; i ++ ) { cin >> a [ i ] ; }",
+        "sort ( a , a + n ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        14
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; a != n ; i ++ ) { cin >> a [ i ] ; }",
+        "sort ( a , a + n ) ;",
+        "cout << ans2 << ' \" << ans1 << endl ;"
+      ],
+      "err_line": 14,
+      "err_msg": "missing terminating ' character"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        14,
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; a != n ; i ++ ) { cin >> a [ i ] ; }",
+        "sort ( a , a + n ) ;",
+        "cout << ans2 << ' \" << ans1 << endl ;",
+        "int ans1 = a [ 0 ] + m = a [ 0 ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "missing terminating ' character"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        14,
+        10
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; a != n ; i ++ ) { cin >> a [ i ] ; }",
+        "sort ( a , a + n ) ;",
+        "cout << ans2 << ' \" << ans1 << endl ;",
+        "do"
+      ],
+      "err_line": 14,
+      "err_msg": "missing terminating ' character"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; a != n ; i ++ ) { cin >> a [ i ] ; }",
+        "sort ( a , a + n ) ;",
+        "int ans1 = a [ 0 ] + m = a [ 0 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        6,
+        10
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; a != n ; i ++ ) { cin >> a [ i ] ; }",
+        "sort ( a , a + n ) ;",
+        "int ans1 = a [ 0 ] + m = a [ 0 ] ;",
+        "do"
+      ],
+      "err_line": 4,
+      "err_msg": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        10
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; a != n ; i ++ ) { cin >> a [ i ] ; }",
+        "sort ( a , a + n ) ;",
+        "do"
+      ],
+      "err_line": 4,
+      "err_msg": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        4,
+        14
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; a != n ; i ++ ) { cin >> a [ i ] ; }",
+        "cout << ans2 << ' \" << ans1 << endl ;"
+      ],
+      "err_line": 14,
+      "err_msg": "missing terminating ' character"
+    },
+    {
+      "mod_line": [
+        4,
+        14,
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; a != n ; i ++ ) { cin >> a [ i ] ; }",
+        "cout << ans2 << ' \" << ans1 << endl ;",
+        "int ans1 = a [ 0 ] + m = a [ 0 ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "missing terminating ' character"
+    },
+    {
+      "mod_line": [
+        4,
+        14,
+        6,
+        10
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; a != n ; i ++ ) { cin >> a [ i ] ; }",
+        "cout << ans2 << ' \" << ans1 << endl ;",
+        "int ans1 = a [ 0 ] + m = a [ 0 ] ;",
+        "do"
+      ],
+      "err_line": 14,
+      "err_msg": "missing terminating ' character"
+    },
+    {
+      "mod_line": [
+        4,
+        14,
+        10
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; a != n ; i ++ ) { cin >> a [ i ] ; }",
+        "cout << ans2 << ' \" << ans1 << endl ;",
+        "do"
+      ],
+      "err_line": 14,
+      "err_msg": "missing terminating ' character"
+    },
+    {
+      "mod_line": [
+        4,
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; a != n ; i ++ ) { cin >> a [ i ] ; }",
+        "int ans1 = a [ 0 ] + m = a [ 0 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        10
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; a != n ; i ++ ) { cin >> a [ i ] ; }",
+        "int ans1 = a [ 0 ] + m = a [ 0 ] ;",
+        "do"
+      ],
+      "err_line": 4,
+      "err_msg": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        4,
+        10
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; a != n ; i ++ ) { cin >> a [ i ] ; }",
+        "do"
+      ],
+      "err_line": 4,
+      "err_msg": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        14
+      ],
+      "mod_code": [
+        "sort ( a , a + n ) ;",
+        "cout << ans2 << ' \" << ans1 << endl ;"
+      ],
+      "err_line": 14,
+      "err_msg": "missing terminating ' character"
+    },
+    {
+      "mod_line": [
+        5,
+        14,
+        4
+      ],
+      "mod_code": [
+        "sort ( a , a + n ) ;",
+        "cout << ans2 << ' \" << ans1 << endl ;",
+        "for ( int i = 0 ; a != n ; i ++ ) cin >> a [ i ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "missing terminating ' character"
+    },
+    {
+      "mod_line": [
+        5,
+        14,
+        4,
+        6
+      ],
+      "mod_code": [
+        "sort ( a , a + n ) ;",
+        "cout << ans2 << ' \" << ans1 << endl ;",
+        "for ( int i = 0 ; a != n ; i ++ ) cin >> a [ i ] ;",
+        "int ans1 = a [ 0 ] + m = a [ 0 ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "missing terminating ' character"
+    },
+    {
+      "mod_line": [
+        5,
+        14,
+        4,
+        10
+      ],
+      "mod_code": [
+        "sort ( a , a + n ) ;",
+        "cout << ans2 << ' \" << ans1 << endl ;",
+        "for ( int i = 0 ; a != n ; i ++ ) cin >> a [ i ] ;",
+        "do"
+      ],
+      "err_line": 14,
+      "err_msg": "missing terminating ' character"
+    },
+    {
+      "mod_line": [
+        5,
+        14,
+        6
+      ],
+      "mod_code": [
+        "sort ( a , a + n ) ;",
+        "cout << ans2 << ' \" << ans1 << endl ;",
+        "int ans1 = a [ 0 ] + m = a [ 0 ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "missing terminating ' character"
+    },
+    {
+      "mod_line": [
+        5,
+        14,
+        6,
+        10
+      ],
+      "mod_code": [
+        "sort ( a , a + n ) ;",
+        "cout << ans2 << ' \" << ans1 << endl ;",
+        "int ans1 = a [ 0 ] + m = a [ 0 ] ;",
+        "do"
+      ],
+      "err_line": 14,
+      "err_msg": "missing terminating ' character"
+    },
+    {
+      "mod_line": [
+        5,
+        14,
+        10
+      ],
+      "mod_code": [
+        "sort ( a , a + n ) ;",
+        "cout << ans2 << ' \" << ans1 << endl ;",
+        "do"
+      ],
+      "err_line": 14,
+      "err_msg": "missing terminating ' character"
+    },
+    {
+      "mod_line": [
+        5,
+        4
+      ],
+      "mod_code": [
+        "sort ( a , a + n ) ;",
+        "for ( int i = 0 ; a != n ; i ++ ) cin >> a [ i ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        4,
+        6
+      ],
+      "mod_code": [
+        "sort ( a , a + n ) ;",
+        "for ( int i = 0 ; a != n ; i ++ ) cin >> a [ i ] ;",
+        "int ans1 = a [ 0 ] + m = a [ 0 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        4,
+        6,
+        10
+      ],
+      "mod_code": [
+        "sort ( a , a + n ) ;",
+        "for ( int i = 0 ; a != n ; i ++ ) cin >> a [ i ] ;",
+        "int ans1 = a [ 0 ] + m = a [ 0 ] ;",
+        "do"
+      ],
+      "err_line": 4,
+      "err_msg": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        4,
+        10
+      ],
+      "mod_code": [
+        "sort ( a , a + n ) ;",
+        "for ( int i = 0 ; a != n ; i ++ ) cin >> a [ i ] ;",
+        "do"
+      ],
+      "err_line": 4,
+      "err_msg": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        6
+      ],
+      "mod_code": [
+        "sort ( a , a + n ) ;",
+        "int ans1 = a [ 0 ] + m = a [ 0 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        5,
+        6,
+        10
+      ],
+      "mod_code": [
+        "sort ( a , a + n ) ;",
+        "int ans1 = a [ 0 ] + m = a [ 0 ] ;",
+        "do"
+      ],
+      "err_line": 6,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        5,
+        10
+      ],
+      "mod_code": [
+        "sort ( a , a + n ) ;",
+        "do"
+      ],
+      "err_line": 12,
+      "err_msg": "expected ‘while’ before ‘}’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        4
+      ],
+      "mod_code": [
+        "cout << ans2 << ' \" << ans1 << endl ;",
+        "for ( int i = 0 ; a != n ; i ++ ) cin >> a [ i ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "missing terminating ' character"
+    },
+    {
+      "mod_line": [
+        14,
+        4,
+        6
+      ],
+      "mod_code": [
+        "cout << ans2 << ' \" << ans1 << endl ;",
+        "for ( int i = 0 ; a != n ; i ++ ) cin >> a [ i ] ;",
+        "int ans1 = a [ 0 ] + m = a [ 0 ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "missing terminating ' character"
+    },
+    {
+      "mod_line": [
+        14,
+        4,
+        6,
+        10
+      ],
+      "mod_code": [
+        "cout << ans2 << ' \" << ans1 << endl ;",
+        "for ( int i = 0 ; a != n ; i ++ ) cin >> a [ i ] ;",
+        "int ans1 = a [ 0 ] + m = a [ 0 ] ;",
+        "do"
+      ],
+      "err_line": 14,
+      "err_msg": "missing terminating ' character"
+    },
+    {
+      "mod_line": [
+        14,
+        4,
+        10
+      ],
+      "mod_code": [
+        "cout << ans2 << ' \" << ans1 << endl ;",
+        "for ( int i = 0 ; a != n ; i ++ ) cin >> a [ i ] ;",
+        "do"
+      ],
+      "err_line": 14,
+      "err_msg": "missing terminating ' character"
+    },
+    {
+      "mod_line": [
+        14,
+        6
+      ],
+      "mod_code": [
+        "cout << ans2 << ' \" << ans1 << endl ;",
+        "int ans1 = a [ 0 ] + m = a [ 0 ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "missing terminating ' character"
+    },
+    {
+      "mod_line": [
+        14,
+        6,
+        10
+      ],
+      "mod_code": [
+        "cout << ans2 << ' \" << ans1 << endl ;",
+        "int ans1 = a [ 0 ] + m = a [ 0 ] ;",
+        "do"
+      ],
+      "err_line": 14,
+      "err_msg": "missing terminating ' character"
+    },
+    {
+      "mod_line": [
+        14,
+        10
+      ],
+      "mod_code": [
+        "cout << ans2 << ' \" << ans1 << endl ;",
+        "do"
+      ],
+      "err_line": 14,
+      "err_msg": "missing terminating ' character"
+    },
+    {
+      "mod_line": [
+        4,
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; a != n ; i ++ ) cin >> a [ i ] ;",
+        "int ans1 = a [ 0 ] + m = a [ 0 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        10
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; a != n ; i ++ ) cin >> a [ i ] ;",
+        "int ans1 = a [ 0 ] + m = a [ 0 ] ;",
+        "do"
+      ],
+      "err_line": 4,
+      "err_msg": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        4,
+        10
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; a != n ; i ++ ) cin >> a [ i ] ;",
+        "do"
+      ],
+      "err_line": 4,
+      "err_msg": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        10
+      ],
+      "mod_code": [
+        "int ans1 = a [ 0 ] + m = a [ 0 ] ;",
+        "do"
+      ],
+      "err_line": 6,
+      "err_msg": "lvalue required as left operand of assignment"
+    }
+  ]
+}

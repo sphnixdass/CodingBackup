@@ -1,0 +1,1015 @@
+{
+  "meta": {
+    "index": 823,
+    "hitid": "3TCFMTM8HEICE4NA2ANQOLZRM6K12W",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "455A",
+    "subid": "48798030"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create long long array a with 100005 elements",
+      "code": "long long a [ 100005 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create long long array dp with 100005 elements",
+      "code": "long long dp [ 100005 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "create long long array vis with 100005 elements",
+      "code": "long long vis [ 100005 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "create long long array b with 100005 elements",
+      "code": "long long b [ 100005 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "create long long array freq with 100005 elements",
+      "code": "long long freq [ 100005 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 6,
+      "text": "declare long longs t , n , l and r",
+      "code": "long long t , n , l , r ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "for i = 1 to 100000 inclusive",
+      "code": "for ( int i = 1 ; i <= 100000 ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "set value of vis [ i ] to 0",
+      "code": "vis [ i ] = 0 ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "freq [ i ] = 0",
+      "code": "freq [ i ] = 0 ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "for integer j = 1 to n inclusive",
+      "code": "for ( int j = 1 ; j <= n ; j ++ )",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "read b [ j ]",
+      "code": "cin >> b [ j ] ;",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "increment freq [ b [ j ] ]",
+      "code": "freq [ b [ j ] ] ++ ;",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "declare long long variable cnt = 1",
+      "code": "long long cnt = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "for j = 1 to n inclusive",
+      "code": "for ( int j = 1 ; j <= n ; j ++ )",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "if vis [ b [ j ] ] is not 0",
+      "code": "if ( ! vis [ b [ j ] ] )",
+      "indent": 2
+    },
+    {
+      "line": 19,
+      "text": "a [ cnt ] = b [ j ]",
+      "code": "a [ cnt ] = b [ j ] ;",
+      "indent": 3
+    },
+    {
+      "line": 20,
+      "text": "assign value of 1 to vis [ b [ j ] ]",
+      "code": "vis [ b [ j ] ] = 1 ;",
+      "indent": 3
+    },
+    {
+      "line": 21,
+      "text": "increment cnt",
+      "code": "cnt ++ ;",
+      "indent": 3
+    },
+    {
+      "line": 22,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 23,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "set n to cnt - 1",
+      "code": "n = cnt - 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 25,
+      "text": "sort array a from index 1 to 1 + n",
+      "code": "sort ( a + 1 , a + 1 + n ) ;",
+      "indent": 1
+    },
+    {
+      "line": 26,
+      "text": "dp [ 0 ] = 0",
+      "code": "dp [ 0 ] = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 27,
+      "text": "set value of l to 1",
+      "code": "l = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 28,
+      "text": "set r to 1",
+      "code": "r = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 29,
+      "text": "set integer p to max of l and r",
+      "code": "int p = max ( l , r ) ;",
+      "indent": 1
+    },
+    {
+      "line": 30,
+      "text": "for i = 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 31,
+      "text": "assign value of dp [ i - 1 ] to dp [ i ]",
+      "code": "dp [ i ] = dp [ i - 1 ] ;",
+      "indent": 2
+    },
+    {
+      "line": 32,
+      "text": "assign value lower_bound ( a + 1 , a + 1 + n , a [ i ] - p ) - ( a + 1 ) to integer lx",
+      "code": "int lx = lower_bound ( a + 1 , a + 1 + n , a [ i ] - p ) - ( a + 1 ) ;",
+      "indent": 2
+    },
+    {
+      "line": 33,
+      "text": "increment lx",
+      "code": "lx ++ ;",
+      "indent": 2
+    },
+    {
+      "line": 34,
+      "text": "if lx = 1",
+      "code": "if ( lx == 1 )",
+      "indent": 2
+    },
+    {
+      "line": 35,
+      "text": "dp [ i ] = max of freq [ a [ i ] ] * a [ i ] and dp [ i ]",
+      "code": "dp [ i ] = max ( freq [ a [ i ] ] * a [ i ] , dp [ i ] ) ;",
+      "indent": 3
+    },
+    {
+      "line": 36,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 37,
+      "text": "dp [ i ] = max of dp [ i ] and a [ i ] * freq [ a [ i ] ] + dp [ lx - 1 ]",
+      "code": "dp [ i ] = max ( dp [ i ] , a [ i ] * freq [ a [ i ] ] + dp [ lx - 1 ] ) ;",
+      "indent": 3
+    },
+    {
+      "line": 38,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 39,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 40,
+      "text": "print dp [ n ]",
+      "code": "cout << dp [ n ] << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 41,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        35
+      ],
+      "mod_code": [
+        "dp [ i ] = max ( freq [ a [ i ] ] ] * a [ i ] , dp [ i ] ) ;"
+      ],
+      "err_line": 35,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= 100000 ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "for ( j = 1 ; j <= n ; j ++ )"
+      ],
+      "err_line": 17,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        20
+      ],
+      "mod_code": [
+        "vis [ b [ j ] ] = 1 1 1 ;"
+      ],
+      "err_line": 20,
+      "err_msg": "expected ‘;’ before numeric constant"
+    },
+    {
+      "mod_line": [
+        27
+      ],
+      "mod_code": [
+        "* l = 1 ;"
+      ],
+      "err_line": 27,
+      "err_msg": "invalid type argument of unary ‘*’ (have ‘long long int’)"
+    },
+    {
+      "mod_line": [
+        28
+      ],
+      "mod_code": [
+        "int r = 1 ;"
+      ],
+      "err_line": 28,
+      "err_msg": "conflicting declaration ‘int r’"
+    },
+    {
+      "mod_line": [
+        29
+      ],
+      "mod_code": [
+        "p = max ( l , r ) ;"
+      ],
+      "err_line": 29,
+      "err_msg": "‘p’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        30
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 30,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        34
+      ],
+      "mod_code": [
+        "if ( lx == 1 ) break ;"
+      ],
+      "err_line": 36,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        37
+      ],
+      "mod_code": [
+        "dp [ i ] = max ( dp [ i ] , a [ a [ i ] ] + dp [ lx - 1 ] ] + dp [ lx - 1 ] ) ;"
+      ],
+      "err_line": 37,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        18,
+        35
+      ],
+      "mod_code": [
+        "if ( vis [ b [ j ] ] != 0 )",
+        "dp [ i ] = max ( freq [ a [ i ] ] ] * a [ i ] , dp [ i ] ) ;"
+      ],
+      "err_line": 35,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        18,
+        35,
+        17
+      ],
+      "mod_code": [
+        "if ( vis [ b [ j ] ] != 0 )",
+        "dp [ i ] = max ( freq [ a [ i ] ] ] * a [ i ] , dp [ i ] ) ;",
+        "for ( j = 1 ; j <= n ; j ++ )"
+      ],
+      "err_line": 17,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        18,
+        35,
+        17,
+        29
+      ],
+      "mod_code": [
+        "if ( vis [ b [ j ] ] != 0 )",
+        "dp [ i ] = max ( freq [ a [ i ] ] ] * a [ i ] , dp [ i ] ) ;",
+        "for ( j = 1 ; j <= n ; j ++ )",
+        "p = max ( l , r ) ;"
+      ],
+      "err_line": 17,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        18,
+        35,
+        17,
+        24
+      ],
+      "mod_code": [
+        "if ( vis [ b [ j ] ] != 0 )",
+        "dp [ i ] = max ( freq [ a [ i ] ] ] * a [ i ] , dp [ i ] ) ;",
+        "for ( j = 1 ; j <= n ; j ++ )",
+        "n -= 1 ;"
+      ],
+      "err_line": 17,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        18,
+        35,
+        17,
+        13
+      ],
+      "mod_code": [
+        "if ( vis [ b [ j ] ] != 0 )",
+        "dp [ i ] = max ( freq [ a [ i ] ] ] * a [ i ] , dp [ i ] ) ;",
+        "for ( j = 1 ; j <= n ; j ++ )",
+        "cout << b [ j ] ;"
+      ],
+      "err_line": 17,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        18,
+        35,
+        29
+      ],
+      "mod_code": [
+        "if ( vis [ b [ j ] ] != 0 )",
+        "dp [ i ] = max ( freq [ a [ i ] ] ] * a [ i ] , dp [ i ] ) ;",
+        "p = max ( l , r ) ;"
+      ],
+      "err_line": 29,
+      "err_msg": "‘p’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        18,
+        35,
+        29,
+        24
+      ],
+      "mod_code": [
+        "if ( vis [ b [ j ] ] != 0 )",
+        "dp [ i ] = max ( freq [ a [ i ] ] ] * a [ i ] , dp [ i ] ) ;",
+        "p = max ( l , r ) ;",
+        "n -= 1 ;"
+      ],
+      "err_line": 29,
+      "err_msg": "‘p’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        18,
+        35,
+        29,
+        13
+      ],
+      "mod_code": [
+        "if ( vis [ b [ j ] ] != 0 )",
+        "dp [ i ] = max ( freq [ a [ i ] ] ] * a [ i ] , dp [ i ] ) ;",
+        "p = max ( l , r ) ;",
+        "cout << b [ j ] ;"
+      ],
+      "err_line": 29,
+      "err_msg": "‘p’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        18,
+        35,
+        24
+      ],
+      "mod_code": [
+        "if ( vis [ b [ j ] ] != 0 )",
+        "dp [ i ] = max ( freq [ a [ i ] ] ] * a [ i ] , dp [ i ] ) ;",
+        "n -= 1 ;"
+      ],
+      "err_line": 35,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        18,
+        35,
+        24,
+        13
+      ],
+      "mod_code": [
+        "if ( vis [ b [ j ] ] != 0 )",
+        "dp [ i ] = max ( freq [ a [ i ] ] ] * a [ i ] , dp [ i ] ) ;",
+        "n -= 1 ;",
+        "cout << b [ j ] ;"
+      ],
+      "err_line": 35,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        18,
+        35,
+        13
+      ],
+      "mod_code": [
+        "if ( vis [ b [ j ] ] != 0 )",
+        "dp [ i ] = max ( freq [ a [ i ] ] ] * a [ i ] , dp [ i ] ) ;",
+        "cout << b [ j ] ;"
+      ],
+      "err_line": 35,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        18,
+        17
+      ],
+      "mod_code": [
+        "if ( vis [ b [ j ] ] != 0 )",
+        "for ( j = 1 ; j <= n ; j ++ )"
+      ],
+      "err_line": 17,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        18,
+        17,
+        29
+      ],
+      "mod_code": [
+        "if ( vis [ b [ j ] ] != 0 )",
+        "for ( j = 1 ; j <= n ; j ++ )",
+        "p = max ( l , r ) ;"
+      ],
+      "err_line": 17,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        18,
+        17,
+        29,
+        24
+      ],
+      "mod_code": [
+        "if ( vis [ b [ j ] ] != 0 )",
+        "for ( j = 1 ; j <= n ; j ++ )",
+        "p = max ( l , r ) ;",
+        "n -= 1 ;"
+      ],
+      "err_line": 17,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        18,
+        17,
+        29,
+        13
+      ],
+      "mod_code": [
+        "if ( vis [ b [ j ] ] != 0 )",
+        "for ( j = 1 ; j <= n ; j ++ )",
+        "p = max ( l , r ) ;",
+        "cout << b [ j ] ;"
+      ],
+      "err_line": 17,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        18,
+        17,
+        24
+      ],
+      "mod_code": [
+        "if ( vis [ b [ j ] ] != 0 )",
+        "for ( j = 1 ; j <= n ; j ++ )",
+        "n -= 1 ;"
+      ],
+      "err_line": 17,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        18,
+        17,
+        24,
+        13
+      ],
+      "mod_code": [
+        "if ( vis [ b [ j ] ] != 0 )",
+        "for ( j = 1 ; j <= n ; j ++ )",
+        "n -= 1 ;",
+        "cout << b [ j ] ;"
+      ],
+      "err_line": 17,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        18,
+        17,
+        13
+      ],
+      "mod_code": [
+        "if ( vis [ b [ j ] ] != 0 )",
+        "for ( j = 1 ; j <= n ; j ++ )",
+        "cout << b [ j ] ;"
+      ],
+      "err_line": 17,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        18,
+        29
+      ],
+      "mod_code": [
+        "if ( vis [ b [ j ] ] != 0 )",
+        "p = max ( l , r ) ;"
+      ],
+      "err_line": 29,
+      "err_msg": "‘p’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        18,
+        29,
+        24
+      ],
+      "mod_code": [
+        "if ( vis [ b [ j ] ] != 0 )",
+        "p = max ( l , r ) ;",
+        "n -= 1 ;"
+      ],
+      "err_line": 29,
+      "err_msg": "‘p’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        18,
+        29,
+        24,
+        13
+      ],
+      "mod_code": [
+        "if ( vis [ b [ j ] ] != 0 )",
+        "p = max ( l , r ) ;",
+        "n -= 1 ;",
+        "cout << b [ j ] ;"
+      ],
+      "err_line": 29,
+      "err_msg": "‘p’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        18,
+        29,
+        13
+      ],
+      "mod_code": [
+        "if ( vis [ b [ j ] ] != 0 )",
+        "p = max ( l , r ) ;",
+        "cout << b [ j ] ;"
+      ],
+      "err_line": 29,
+      "err_msg": "‘p’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        35,
+        17
+      ],
+      "mod_code": [
+        "dp [ i ] = max ( freq [ a [ i ] ] ] * a [ i ] , dp [ i ] ) ;",
+        "for ( j = 1 ; j <= n ; j ++ )"
+      ],
+      "err_line": 17,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        35,
+        17,
+        29
+      ],
+      "mod_code": [
+        "dp [ i ] = max ( freq [ a [ i ] ] ] * a [ i ] , dp [ i ] ) ;",
+        "for ( j = 1 ; j <= n ; j ++ )",
+        "p = max ( l , r ) ;"
+      ],
+      "err_line": 17,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        35,
+        17,
+        29,
+        24
+      ],
+      "mod_code": [
+        "dp [ i ] = max ( freq [ a [ i ] ] ] * a [ i ] , dp [ i ] ) ;",
+        "for ( j = 1 ; j <= n ; j ++ )",
+        "p = max ( l , r ) ;",
+        "n -= 1 ;"
+      ],
+      "err_line": 17,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        35,
+        17,
+        29,
+        13
+      ],
+      "mod_code": [
+        "dp [ i ] = max ( freq [ a [ i ] ] ] * a [ i ] , dp [ i ] ) ;",
+        "for ( j = 1 ; j <= n ; j ++ )",
+        "p = max ( l , r ) ;",
+        "cout << b [ j ] ;"
+      ],
+      "err_line": 17,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        35,
+        17,
+        24
+      ],
+      "mod_code": [
+        "dp [ i ] = max ( freq [ a [ i ] ] ] * a [ i ] , dp [ i ] ) ;",
+        "for ( j = 1 ; j <= n ; j ++ )",
+        "n -= 1 ;"
+      ],
+      "err_line": 17,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        35,
+        17,
+        24,
+        13
+      ],
+      "mod_code": [
+        "dp [ i ] = max ( freq [ a [ i ] ] ] * a [ i ] , dp [ i ] ) ;",
+        "for ( j = 1 ; j <= n ; j ++ )",
+        "n -= 1 ;",
+        "cout << b [ j ] ;"
+      ],
+      "err_line": 17,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        35,
+        17,
+        13
+      ],
+      "mod_code": [
+        "dp [ i ] = max ( freq [ a [ i ] ] ] * a [ i ] , dp [ i ] ) ;",
+        "for ( j = 1 ; j <= n ; j ++ )",
+        "cout << b [ j ] ;"
+      ],
+      "err_line": 17,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        35,
+        29
+      ],
+      "mod_code": [
+        "dp [ i ] = max ( freq [ a [ i ] ] ] * a [ i ] , dp [ i ] ) ;",
+        "p = max ( l , r ) ;"
+      ],
+      "err_line": 29,
+      "err_msg": "‘p’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        35,
+        29,
+        24
+      ],
+      "mod_code": [
+        "dp [ i ] = max ( freq [ a [ i ] ] ] * a [ i ] , dp [ i ] ) ;",
+        "p = max ( l , r ) ;",
+        "n -= 1 ;"
+      ],
+      "err_line": 29,
+      "err_msg": "‘p’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        35,
+        29,
+        24,
+        13
+      ],
+      "mod_code": [
+        "dp [ i ] = max ( freq [ a [ i ] ] ] * a [ i ] , dp [ i ] ) ;",
+        "p = max ( l , r ) ;",
+        "n -= 1 ;",
+        "cout << b [ j ] ;"
+      ],
+      "err_line": 29,
+      "err_msg": "‘p’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        35,
+        29,
+        13
+      ],
+      "mod_code": [
+        "dp [ i ] = max ( freq [ a [ i ] ] ] * a [ i ] , dp [ i ] ) ;",
+        "p = max ( l , r ) ;",
+        "cout << b [ j ] ;"
+      ],
+      "err_line": 29,
+      "err_msg": "‘p’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        35,
+        24
+      ],
+      "mod_code": [
+        "dp [ i ] = max ( freq [ a [ i ] ] ] * a [ i ] , dp [ i ] ) ;",
+        "n -= 1 ;"
+      ],
+      "err_line": 35,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        35,
+        24,
+        13
+      ],
+      "mod_code": [
+        "dp [ i ] = max ( freq [ a [ i ] ] ] * a [ i ] , dp [ i ] ) ;",
+        "n -= 1 ;",
+        "cout << b [ j ] ;"
+      ],
+      "err_line": 35,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        35,
+        13
+      ],
+      "mod_code": [
+        "dp [ i ] = max ( freq [ a [ i ] ] ] * a [ i ] , dp [ i ] ) ;",
+        "cout << b [ j ] ;"
+      ],
+      "err_line": 35,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        17,
+        29
+      ],
+      "mod_code": [
+        "for ( j = 1 ; j <= n ; j ++ )",
+        "p = max ( l , r ) ;"
+      ],
+      "err_line": 17,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        17,
+        29,
+        24
+      ],
+      "mod_code": [
+        "for ( j = 1 ; j <= n ; j ++ )",
+        "p = max ( l , r ) ;",
+        "n -= 1 ;"
+      ],
+      "err_line": 17,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        17,
+        29,
+        24,
+        13
+      ],
+      "mod_code": [
+        "for ( j = 1 ; j <= n ; j ++ )",
+        "p = max ( l , r ) ;",
+        "n -= 1 ;",
+        "cout << b [ j ] ;"
+      ],
+      "err_line": 17,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        17,
+        29,
+        13
+      ],
+      "mod_code": [
+        "for ( j = 1 ; j <= n ; j ++ )",
+        "p = max ( l , r ) ;",
+        "cout << b [ j ] ;"
+      ],
+      "err_line": 17,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        17,
+        24
+      ],
+      "mod_code": [
+        "for ( j = 1 ; j <= n ; j ++ )",
+        "n -= 1 ;"
+      ],
+      "err_line": 17,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        17,
+        24,
+        13
+      ],
+      "mod_code": [
+        "for ( j = 1 ; j <= n ; j ++ )",
+        "n -= 1 ;",
+        "cout << b [ j ] ;"
+      ],
+      "err_line": 17,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        17,
+        13
+      ],
+      "mod_code": [
+        "for ( j = 1 ; j <= n ; j ++ )",
+        "cout << b [ j ] ;"
+      ],
+      "err_line": 17,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        29,
+        24
+      ],
+      "mod_code": [
+        "p = max ( l , r ) ;",
+        "n -= 1 ;"
+      ],
+      "err_line": 29,
+      "err_msg": "‘p’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        29,
+        24,
+        13
+      ],
+      "mod_code": [
+        "p = max ( l , r ) ;",
+        "n -= 1 ;",
+        "cout << b [ j ] ;"
+      ],
+      "err_line": 29,
+      "err_msg": "‘p’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        29,
+        13
+      ],
+      "mod_code": [
+        "p = max ( l , r ) ;",
+        "cout << b [ j ] ;"
+      ],
+      "err_line": 29,
+      "err_msg": "‘p’ was not declared in this scope"
+    }
+  ]
+}

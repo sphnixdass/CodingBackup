@@ -1,0 +1,777 @@
+{
+  "meta": {
+    "index": 2401,
+    "hitid": "3VZYA8PITOS46CLFOALO8NJT1O505T",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "543A",
+    "subid": "48657360"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create constant integer MAXN with MAXN = 510",
+      "code": "const int MAXN = 510 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create integer array a with size MAXN",
+      "code": "int a [ MAXN ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "create 2d long long array dp with size MAXN by MAXN",
+      "code": "long long dp [ MAXN ] [ MAXN ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "create integers n , m , b , mod",
+      "code": "int n , m , b , mod ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "read n read m read b read mod",
+      "code": "cin >> n >> m >> b >> mod ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "set dp [ 0 ] [ 0 ] to 1",
+      "code": "dp [ 0 ] [ 0 ] = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for i = 1 to n inclusive , read a [ i ]",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) { cin >> a [ i ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "for i = 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "for j = 1 to m inclusive",
+      "code": "for ( int j = 1 ; j <= m ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "for k = a [ i ] to b inclusive",
+      "code": "for ( int k = a [ i ] ; k <= b ; k ++ )",
+      "indent": 3
+    },
+    {
+      "line": 11,
+      "text": "increment ap [ j ] [ k ] by dp [ j - 1 ] [ k - a [ i ] ]",
+      "code": "dp [ j ] [ k ] += dp [ j - 1 ] [ k - a [ i ] ] ;",
+      "indent": 4
+    },
+    {
+      "line": 12,
+      "text": "set dp [ j ] [ k ] to dp [ j ] [ k ] % mod",
+      "code": "dp [ j ] [ k ] %= mod ;",
+      "indent": 4
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "create integer ans with ans = 0",
+      "code": "int ans = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "for i = 0 to b inclusive",
+      "code": "for ( int i = 0 ; i <= b ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "increment ans by dp [ m ] [ i ]",
+      "code": "ans += dp [ m ] [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 19,
+      "text": "set ans to ans % mod",
+      "code": "ans %= mod ;",
+      "indent": 2
+    },
+    {
+      "line": 20,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "print ans print newline",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 22,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "ap [ j ] [ k ] += dp [ j - 1 ] [ k - a [ i ] ] ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘ap’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "a [ MAXN ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘a’ does not name a type"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "n , m , b , mod ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "int dp [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "for ( k = a [ i ] ; k <= b ; k ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "ap [ j ] [ k ] += dp [ j - 1 ] [ k - a [ i ] ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘ap’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "ans = 0 ;"
+      ],
+      "err_line": 16,
+      "err_msg": "‘ans’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        4
+      ],
+      "mod_code": [
+        "ap [ j ] [ k ] += dp [ j - 1 ] [ k - a [ i ] ] ;",
+        "n , m , b , mod ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        4,
+        5
+      ],
+      "mod_code": [
+        "ap [ j ] [ k ] += dp [ j - 1 ] [ k - a [ i ] ] ;",
+        "n , m , b , mod ;",
+        "while ( cin >> n >> m >> b >> mod )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        4,
+        5,
+        16
+      ],
+      "mod_code": [
+        "ap [ j ] [ k ] += dp [ j - 1 ] [ k - a [ i ] ] ;",
+        "n , m , b , mod ;",
+        "while ( cin >> n >> m >> b >> mod )",
+        "ans = 0 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        4,
+        5,
+        9
+      ],
+      "mod_code": [
+        "ap [ j ] [ k ] += dp [ j - 1 ] [ k - a [ i ] ] ;",
+        "n , m , b , mod ;",
+        "while ( cin >> n >> m >> b >> mod )",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        4,
+        16
+      ],
+      "mod_code": [
+        "ap [ j ] [ k ] += dp [ j - 1 ] [ k - a [ i ] ] ;",
+        "n , m , b , mod ;",
+        "ans = 0 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        4,
+        16,
+        9
+      ],
+      "mod_code": [
+        "ap [ j ] [ k ] += dp [ j - 1 ] [ k - a [ i ] ] ;",
+        "n , m , b , mod ;",
+        "ans = 0 ;",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        4,
+        9
+      ],
+      "mod_code": [
+        "ap [ j ] [ k ] += dp [ j - 1 ] [ k - a [ i ] ] ;",
+        "n , m , b , mod ;",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        5
+      ],
+      "mod_code": [
+        "ap [ j ] [ k ] += dp [ j - 1 ] [ k - a [ i ] ] ;",
+        "while ( cin >> n >> m >> b >> mod )"
+      ],
+      "err_line": 11,
+      "err_msg": "‘ap’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        5,
+        16
+      ],
+      "mod_code": [
+        "ap [ j ] [ k ] += dp [ j - 1 ] [ k - a [ i ] ] ;",
+        "while ( cin >> n >> m >> b >> mod )",
+        "ans = 0 ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘ap’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        5,
+        16,
+        9
+      ],
+      "mod_code": [
+        "ap [ j ] [ k ] += dp [ j - 1 ] [ k - a [ i ] ] ;",
+        "while ( cin >> n >> m >> b >> mod )",
+        "ans = 0 ;",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        5,
+        9
+      ],
+      "mod_code": [
+        "ap [ j ] [ k ] += dp [ j - 1 ] [ k - a [ i ] ] ;",
+        "while ( cin >> n >> m >> b >> mod )",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        16
+      ],
+      "mod_code": [
+        "ap [ j ] [ k ] += dp [ j - 1 ] [ k - a [ i ] ] ;",
+        "ans = 0 ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘ap’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        16,
+        9
+      ],
+      "mod_code": [
+        "ap [ j ] [ k ] += dp [ j - 1 ] [ k - a [ i ] ] ;",
+        "ans = 0 ;",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        9
+      ],
+      "mod_code": [
+        "ap [ j ] [ k ] += dp [ j - 1 ] [ k - a [ i ] ] ;",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        11
+      ],
+      "mod_code": [
+        "n , m , b , mod ;",
+        "ap [ j ] [ k ] += dp [ j - 1 ] [ k - a [ i ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        11,
+        5
+      ],
+      "mod_code": [
+        "n , m , b , mod ;",
+        "ap [ j ] [ k ] += dp [ j - 1 ] [ k - a [ i ] ;",
+        "while ( cin >> n >> m >> b >> mod )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        11,
+        5,
+        16
+      ],
+      "mod_code": [
+        "n , m , b , mod ;",
+        "ap [ j ] [ k ] += dp [ j - 1 ] [ k - a [ i ] ;",
+        "while ( cin >> n >> m >> b >> mod )",
+        "ans = 0 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        11,
+        5,
+        9
+      ],
+      "mod_code": [
+        "n , m , b , mod ;",
+        "ap [ j ] [ k ] += dp [ j - 1 ] [ k - a [ i ] ;",
+        "while ( cin >> n >> m >> b >> mod )",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        11,
+        16
+      ],
+      "mod_code": [
+        "n , m , b , mod ;",
+        "ap [ j ] [ k ] += dp [ j - 1 ] [ k - a [ i ] ;",
+        "ans = 0 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        11,
+        16,
+        9
+      ],
+      "mod_code": [
+        "n , m , b , mod ;",
+        "ap [ j ] [ k ] += dp [ j - 1 ] [ k - a [ i ] ;",
+        "ans = 0 ;",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        11,
+        9
+      ],
+      "mod_code": [
+        "n , m , b , mod ;",
+        "ap [ j ] [ k ] += dp [ j - 1 ] [ k - a [ i ] ;",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        5
+      ],
+      "mod_code": [
+        "n , m , b , mod ;",
+        "while ( cin >> n >> m >> b >> mod )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        16
+      ],
+      "mod_code": [
+        "n , m , b , mod ;",
+        "while ( cin >> n >> m >> b >> mod )",
+        "ans = 0 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        16,
+        9
+      ],
+      "mod_code": [
+        "n , m , b , mod ;",
+        "while ( cin >> n >> m >> b >> mod )",
+        "ans = 0 ;",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        9
+      ],
+      "mod_code": [
+        "n , m , b , mod ;",
+        "while ( cin >> n >> m >> b >> mod )",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        16
+      ],
+      "mod_code": [
+        "n , m , b , mod ;",
+        "ans = 0 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        16,
+        9
+      ],
+      "mod_code": [
+        "n , m , b , mod ;",
+        "ans = 0 ;",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        9
+      ],
+      "mod_code": [
+        "n , m , b , mod ;",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        5
+      ],
+      "mod_code": [
+        "ap [ j ] [ k ] += dp [ j - 1 ] [ k - a [ i ] ;",
+        "while ( cin >> n >> m >> b >> mod )"
+      ],
+      "err_line": 11,
+      "err_msg": "‘ap’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        5,
+        16
+      ],
+      "mod_code": [
+        "ap [ j ] [ k ] += dp [ j - 1 ] [ k - a [ i ] ;",
+        "while ( cin >> n >> m >> b >> mod )",
+        "ans = 0 ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘ap’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        5,
+        16,
+        9
+      ],
+      "mod_code": [
+        "ap [ j ] [ k ] += dp [ j - 1 ] [ k - a [ i ] ;",
+        "while ( cin >> n >> m >> b >> mod )",
+        "ans = 0 ;",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        5,
+        9
+      ],
+      "mod_code": [
+        "ap [ j ] [ k ] += dp [ j - 1 ] [ k - a [ i ] ;",
+        "while ( cin >> n >> m >> b >> mod )",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        16
+      ],
+      "mod_code": [
+        "ap [ j ] [ k ] += dp [ j - 1 ] [ k - a [ i ] ;",
+        "ans = 0 ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘ap’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        16,
+        9
+      ],
+      "mod_code": [
+        "ap [ j ] [ k ] += dp [ j - 1 ] [ k - a [ i ] ;",
+        "ans = 0 ;",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        9
+      ],
+      "mod_code": [
+        "ap [ j ] [ k ] += dp [ j - 1 ] [ k - a [ i ] ;",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        16
+      ],
+      "mod_code": [
+        "while ( cin >> n >> m >> b >> mod )",
+        "ans = 0 ;"
+      ],
+      "err_line": 16,
+      "err_msg": "‘ans’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        16,
+        9
+      ],
+      "mod_code": [
+        "while ( cin >> n >> m >> b >> mod )",
+        "ans = 0 ;",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        9
+      ],
+      "mod_code": [
+        "while ( cin >> n >> m >> b >> mod )",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        9
+      ],
+      "mod_code": [
+        "ans = 0 ;",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘j’ was not declared in this scope"
+    }
+  ]
+}

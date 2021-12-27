@@ -1,0 +1,1005 @@
+{
+  "meta": {
+    "index": 2114,
+    "hitid": "302OLP89DZ1L6ASCVM5PBZ1G3EZCAB",
+    "workerid": "A3QHJOSOK95QWB",
+    "probid": "698A",
+    "subid": "48718918"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "let dp be a 100x3 integer matrix",
+      "code": "int dp [ 100 ] [ 3 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "n , day = long long",
+      "code": "long long n , day ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "let v be a vector of long long",
+      "code": "vector < long long > v ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( int i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "read day",
+      "code": "cin >> day ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "push back day into v",
+      "code": "v . push_back ( day ) ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( int i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "for j = 0 to 3 exclusive , set dp [ i ] [ j ] to 1000",
+      "code": "for ( int j = 0 ; j < 3 ; j ++ ) { dp [ i ] [ j ] = 1000 ; }",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "set dp [ 0 ] [ 0 ] = 1",
+      "code": "dp [ 0 ] [ 0 ] = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "if v [ 0 ] = 2 or v [ 0 ] = 3 then set dp [ 0 ] [ 2 ] to 0",
+      "code": "if ( v [ 0 ] == 2 || v [ 0 ] == 3 ) dp [ 0 ] [ 2 ] = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "if v [ 0 ] = 1 or v [ 0 ] = 3 then set dp [ 0 ] [ 1 ] = 0",
+      "code": "if ( v [ 0 ] == 1 || v [ 0 ] == 3 ) dp [ 0 ] [ 1 ] = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "for i = 1 to n exclusive",
+      "code": "for ( int i = 1 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "set dp = ( min of dp [ i - 1 ] [ 0 ] , min of dp [ i - 1 ] [ 1 ] , dp [ i - 1 ] [ 2 ) + 1",
+      "code": "dp [ i ] [ 0 ] = min ( dp [ i - 1 ] [ 0 ] , min ( dp [ i - 1 ] [ 1 ] , dp [ i - 1 ] [ 2 ] ) ) + 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "if v [ i ] = 1 or v [ i ] = 3 then set dp [ i ] [ 1 ] = min of dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ]",
+      "code": "if ( v [ i ] == 1 || v [ i ] == 3 ) dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "if v [ i ] = 2 or v [ i ] = 3 then set dp [ i ] [ 2 ] = min of dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 1 ]",
+      "code": "if ( v [ i ] == 2 || v [ i ] == 3 ) dp [ i ] [ 2 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 1 ] ) ;",
+      "indent": 2
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "print min of dp [ n - 1 ] [ 0 ] , min of dp [ n - 1 ] [ 1 ] , dp [ n - 1 ] [ 2 ]",
+      "code": "cout << min ( dp [ n - 1 ] [ 0 ] , min ( dp [ n - 1 ] [ 1 ] , dp [ n - 1 ] [ 2 ] ) ) << \" \\n \" ;",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int dp [ matrix ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘matrix’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "if ( v [ 0 ] == 2 || v [ 0 ] [ 2 ] == 3 ) dp [ 0 ] [ 2 ] = 0 ;"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "if ( v [ 0 ] == 1 || v [ 0 ] [ 1 ] == 3 ) dp [ 0 ] [ 1 ] = 0 ;"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "dp = min ( dp [ i - 1 ] [ 0 ] , min ( dp [ i - 1 ] [ 1 ] , dp [ i - 1 ] [ 2 ] ) + 1 ) ;"
+      ],
+      "err_line": 16,
+      "err_msg": "incompatible types in assignment of ‘const int’ to ‘int [100][3]’"
+    },
+    {
+      "mod_line": [
+        20
+      ],
+      "mod_code": [
+        "cout << min ( dp [ n - 1 ] [ 0 ] [ 0 ] , min ( dp [ n - 1 ] [ 1 ] , dp [ n - 1 ] [ 2 ] ) ) << endl ;"
+      ],
+      "err_line": 20,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int dp [ matrix ] [ 5 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘matrix’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "{ cin >> day ;"
+      ],
+      "err_line": 21,
+      "err_msg": "expected ‘}’ at end of input"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "v . push_back ( day day ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected ‘)’ before ‘day’"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "dp [ 0 ] [ j ] = 1 ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "if ( v [ 0 ] == 2 || v [ 0 ] [ 2 ] == 3 ) { dp [ 0 ] [ 2 ] = 0 ; }"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "if ( v [ 0 ] == 1 || v [ 0 ] [ 1 ] == 3 ) { dp [ 0 ] [ 1 ] = 0 ; }"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "int dp = min ( dp [ i - 1 ] [ 0 ] , min ( dp [ i - 1 ] [ 1 ] , dp [ i - 1 ] [ 2 ] ) + 1 ) ;"
+      ],
+      "err_line": 16,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "if ( v [ i ] == 1 || v [ i ] [ 1 ] == 3 ) dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 17,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        20
+      ],
+      "mod_code": [
+        "cout << min ( dp [ n - 1 ] [ 0 ] [ 0 ] , min ( dp [ n - 1 ] [ 1 ] , dp [ n - 1 ] [ 2 ] ) << endl ;"
+      ],
+      "err_line": 20,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        13
+      ],
+      "mod_code": [
+        "int dp [ matrix ] ;",
+        "if ( v [ 0 ] == 2 || v [ 0 ] [ 2 ] == 3 ) dp [ 0 ] [ 2 ] = 0 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘matrix’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        13,
+        14
+      ],
+      "mod_code": [
+        "int dp [ matrix ] ;",
+        "if ( v [ 0 ] == 2 || v [ 0 ] [ 2 ] == 3 ) dp [ 0 ] [ 2 ] = 0 ;",
+        "if ( v [ 0 ] == 1 || v [ 0 ] [ 1 ] == 3 ) dp [ 0 ] [ 1 ] = 0 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘matrix’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        13,
+        14,
+        16
+      ],
+      "mod_code": [
+        "int dp [ matrix ] ;",
+        "if ( v [ 0 ] == 2 || v [ 0 ] [ 2 ] == 3 ) dp [ 0 ] [ 2 ] = 0 ;",
+        "if ( v [ 0 ] == 1 || v [ 0 ] [ 1 ] == 3 ) dp [ 0 ] [ 1 ] = 0 ;",
+        "dp = min ( dp [ i - 1 ] [ 0 ] , min ( dp [ i - 1 ] [ 1 ] , dp [ i - 1 ] [ 2 ] ) + 1 ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘matrix’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        13,
+        14,
+        20
+      ],
+      "mod_code": [
+        "int dp [ matrix ] ;",
+        "if ( v [ 0 ] == 2 || v [ 0 ] [ 2 ] == 3 ) dp [ 0 ] [ 2 ] = 0 ;",
+        "if ( v [ 0 ] == 1 || v [ 0 ] [ 1 ] == 3 ) dp [ 0 ] [ 1 ] = 0 ;",
+        "cout << min ( dp [ n - 1 ] [ 0 ] [ 0 ] , min ( dp [ n - 1 ] [ 1 ] , dp [ n - 1 ] [ 2 ] ) ) << endl ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘matrix’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        13,
+        14,
+        17
+      ],
+      "mod_code": [
+        "int dp [ matrix ] ;",
+        "if ( v [ 0 ] == 2 || v [ 0 ] [ 2 ] == 3 ) dp [ 0 ] [ 2 ] = 0 ;",
+        "if ( v [ 0 ] == 1 || v [ 0 ] [ 1 ] == 3 ) dp [ 0 ] [ 1 ] = 0 ;",
+        "if ( v [ i ] == 1 || v [ i ] [ 1 ] == 3 ) dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘matrix’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        13,
+        16
+      ],
+      "mod_code": [
+        "int dp [ matrix ] ;",
+        "if ( v [ 0 ] == 2 || v [ 0 ] [ 2 ] == 3 ) dp [ 0 ] [ 2 ] = 0 ;",
+        "dp = min ( dp [ i - 1 ] [ 0 ] , min ( dp [ i - 1 ] [ 1 ] , dp [ i - 1 ] [ 2 ] ) + 1 ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘matrix’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        13,
+        16,
+        20
+      ],
+      "mod_code": [
+        "int dp [ matrix ] ;",
+        "if ( v [ 0 ] == 2 || v [ 0 ] [ 2 ] == 3 ) dp [ 0 ] [ 2 ] = 0 ;",
+        "dp = min ( dp [ i - 1 ] [ 0 ] , min ( dp [ i - 1 ] [ 1 ] , dp [ i - 1 ] [ 2 ] ) + 1 ) ;",
+        "cout << min ( dp [ n - 1 ] [ 0 ] [ 0 ] , min ( dp [ n - 1 ] [ 1 ] , dp [ n - 1 ] [ 2 ] ) ) << endl ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘matrix’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        13,
+        16,
+        17
+      ],
+      "mod_code": [
+        "int dp [ matrix ] ;",
+        "if ( v [ 0 ] == 2 || v [ 0 ] [ 2 ] == 3 ) dp [ 0 ] [ 2 ] = 0 ;",
+        "dp = min ( dp [ i - 1 ] [ 0 ] , min ( dp [ i - 1 ] [ 1 ] , dp [ i - 1 ] [ 2 ] ) + 1 ) ;",
+        "if ( v [ i ] == 1 || v [ i ] [ 1 ] == 3 ) dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘matrix’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        13,
+        20
+      ],
+      "mod_code": [
+        "int dp [ matrix ] ;",
+        "if ( v [ 0 ] == 2 || v [ 0 ] [ 2 ] == 3 ) dp [ 0 ] [ 2 ] = 0 ;",
+        "cout << min ( dp [ n - 1 ] [ 0 ] [ 0 ] , min ( dp [ n - 1 ] [ 1 ] , dp [ n - 1 ] [ 2 ] ) ) << endl ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘matrix’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        13,
+        20,
+        17
+      ],
+      "mod_code": [
+        "int dp [ matrix ] ;",
+        "if ( v [ 0 ] == 2 || v [ 0 ] [ 2 ] == 3 ) dp [ 0 ] [ 2 ] = 0 ;",
+        "cout << min ( dp [ n - 1 ] [ 0 ] [ 0 ] , min ( dp [ n - 1 ] [ 1 ] , dp [ n - 1 ] [ 2 ] ) ) << endl ;",
+        "if ( v [ i ] == 1 || v [ i ] [ 1 ] == 3 ) dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘matrix’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        13,
+        17
+      ],
+      "mod_code": [
+        "int dp [ matrix ] ;",
+        "if ( v [ 0 ] == 2 || v [ 0 ] [ 2 ] == 3 ) dp [ 0 ] [ 2 ] = 0 ;",
+        "if ( v [ i ] == 1 || v [ i ] [ 1 ] == 3 ) dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘matrix’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        14
+      ],
+      "mod_code": [
+        "int dp [ matrix ] ;",
+        "if ( v [ 0 ] == 1 || v [ 0 ] [ 1 ] == 3 ) dp [ 0 ] [ 1 ] = 0 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘matrix’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        14,
+        16
+      ],
+      "mod_code": [
+        "int dp [ matrix ] ;",
+        "if ( v [ 0 ] == 1 || v [ 0 ] [ 1 ] == 3 ) dp [ 0 ] [ 1 ] = 0 ;",
+        "dp = min ( dp [ i - 1 ] [ 0 ] , min ( dp [ i - 1 ] [ 1 ] , dp [ i - 1 ] [ 2 ] ) + 1 ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘matrix’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        14,
+        16,
+        20
+      ],
+      "mod_code": [
+        "int dp [ matrix ] ;",
+        "if ( v [ 0 ] == 1 || v [ 0 ] [ 1 ] == 3 ) dp [ 0 ] [ 1 ] = 0 ;",
+        "dp = min ( dp [ i - 1 ] [ 0 ] , min ( dp [ i - 1 ] [ 1 ] , dp [ i - 1 ] [ 2 ] ) + 1 ) ;",
+        "cout << min ( dp [ n - 1 ] [ 0 ] [ 0 ] , min ( dp [ n - 1 ] [ 1 ] , dp [ n - 1 ] [ 2 ] ) ) << endl ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘matrix’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        14,
+        16,
+        17
+      ],
+      "mod_code": [
+        "int dp [ matrix ] ;",
+        "if ( v [ 0 ] == 1 || v [ 0 ] [ 1 ] == 3 ) dp [ 0 ] [ 1 ] = 0 ;",
+        "dp = min ( dp [ i - 1 ] [ 0 ] , min ( dp [ i - 1 ] [ 1 ] , dp [ i - 1 ] [ 2 ] ) + 1 ) ;",
+        "if ( v [ i ] == 1 || v [ i ] [ 1 ] == 3 ) dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘matrix’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        14,
+        20
+      ],
+      "mod_code": [
+        "int dp [ matrix ] ;",
+        "if ( v [ 0 ] == 1 || v [ 0 ] [ 1 ] == 3 ) dp [ 0 ] [ 1 ] = 0 ;",
+        "cout << min ( dp [ n - 1 ] [ 0 ] [ 0 ] , min ( dp [ n - 1 ] [ 1 ] , dp [ n - 1 ] [ 2 ] ) ) << endl ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘matrix’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        14,
+        20,
+        17
+      ],
+      "mod_code": [
+        "int dp [ matrix ] ;",
+        "if ( v [ 0 ] == 1 || v [ 0 ] [ 1 ] == 3 ) dp [ 0 ] [ 1 ] = 0 ;",
+        "cout << min ( dp [ n - 1 ] [ 0 ] [ 0 ] , min ( dp [ n - 1 ] [ 1 ] , dp [ n - 1 ] [ 2 ] ) ) << endl ;",
+        "if ( v [ i ] == 1 || v [ i ] [ 1 ] == 3 ) dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘matrix’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        14,
+        17
+      ],
+      "mod_code": [
+        "int dp [ matrix ] ;",
+        "if ( v [ 0 ] == 1 || v [ 0 ] [ 1 ] == 3 ) dp [ 0 ] [ 1 ] = 0 ;",
+        "if ( v [ i ] == 1 || v [ i ] [ 1 ] == 3 ) dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘matrix’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        16
+      ],
+      "mod_code": [
+        "int dp [ matrix ] ;",
+        "dp = min ( dp [ i - 1 ] [ 0 ] , min ( dp [ i - 1 ] [ 1 ] , dp [ i - 1 ] [ 2 ] ) + 1 ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘matrix’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        20
+      ],
+      "mod_code": [
+        "int dp [ matrix ] ;",
+        "dp = min ( dp [ i - 1 ] [ 0 ] , min ( dp [ i - 1 ] [ 1 ] , dp [ i - 1 ] [ 2 ] ) + 1 ) ;",
+        "cout << min ( dp [ n - 1 ] [ 0 ] [ 0 ] , min ( dp [ n - 1 ] [ 1 ] , dp [ n - 1 ] [ 2 ] ) ) << endl ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘matrix’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        20,
+        17
+      ],
+      "mod_code": [
+        "int dp [ matrix ] ;",
+        "dp = min ( dp [ i - 1 ] [ 0 ] , min ( dp [ i - 1 ] [ 1 ] , dp [ i - 1 ] [ 2 ] ) + 1 ) ;",
+        "cout << min ( dp [ n - 1 ] [ 0 ] [ 0 ] , min ( dp [ n - 1 ] [ 1 ] , dp [ n - 1 ] [ 2 ] ) ) << endl ;",
+        "if ( v [ i ] == 1 || v [ i ] [ 1 ] == 3 ) dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘matrix’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        17
+      ],
+      "mod_code": [
+        "int dp [ matrix ] ;",
+        "dp = min ( dp [ i - 1 ] [ 0 ] , min ( dp [ i - 1 ] [ 1 ] , dp [ i - 1 ] [ 2 ] ) + 1 ) ;",
+        "if ( v [ i ] == 1 || v [ i ] [ 1 ] == 3 ) dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘matrix’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        20
+      ],
+      "mod_code": [
+        "int dp [ matrix ] ;",
+        "cout << min ( dp [ n - 1 ] [ 0 ] [ 0 ] , min ( dp [ n - 1 ] [ 1 ] , dp [ n - 1 ] [ 2 ] ) ) << endl ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘matrix’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        20,
+        17
+      ],
+      "mod_code": [
+        "int dp [ matrix ] ;",
+        "cout << min ( dp [ n - 1 ] [ 0 ] [ 0 ] , min ( dp [ n - 1 ] [ 1 ] , dp [ n - 1 ] [ 2 ] ) ) << endl ;",
+        "if ( v [ i ] == 1 || v [ i ] [ 1 ] == 3 ) dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘matrix’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        17
+      ],
+      "mod_code": [
+        "int dp [ matrix ] ;",
+        "if ( v [ i ] == 1 || v [ i ] [ 1 ] == 3 ) dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘matrix’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        14
+      ],
+      "mod_code": [
+        "if ( v [ 0 ] == 2 || v [ 0 ] [ 2 ] == 3 ) dp [ 0 ] [ 2 ] = 0 ;",
+        "if ( v [ 0 ] == 1 || v [ 0 ] [ 1 ] == 3 ) dp [ 0 ] [ 1 ] = 0 ;"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        13,
+        14,
+        16
+      ],
+      "mod_code": [
+        "if ( v [ 0 ] == 2 || v [ 0 ] [ 2 ] == 3 ) dp [ 0 ] [ 2 ] = 0 ;",
+        "if ( v [ 0 ] == 1 || v [ 0 ] [ 1 ] == 3 ) dp [ 0 ] [ 1 ] = 0 ;",
+        "dp = min ( dp [ i - 1 ] [ 0 ] , min ( dp [ i - 1 ] [ 1 ] , dp [ i - 1 ] [ 2 ] ) + 1 ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        13,
+        14,
+        16,
+        20
+      ],
+      "mod_code": [
+        "if ( v [ 0 ] == 2 || v [ 0 ] [ 2 ] == 3 ) dp [ 0 ] [ 2 ] = 0 ;",
+        "if ( v [ 0 ] == 1 || v [ 0 ] [ 1 ] == 3 ) dp [ 0 ] [ 1 ] = 0 ;",
+        "dp = min ( dp [ i - 1 ] [ 0 ] , min ( dp [ i - 1 ] [ 1 ] , dp [ i - 1 ] [ 2 ] ) + 1 ) ;",
+        "cout << min ( dp [ n - 1 ] [ 0 ] [ 0 ] , min ( dp [ n - 1 ] [ 1 ] , dp [ n - 1 ] [ 2 ] ) ) << endl ;"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        13,
+        14,
+        16,
+        17
+      ],
+      "mod_code": [
+        "if ( v [ 0 ] == 2 || v [ 0 ] [ 2 ] == 3 ) dp [ 0 ] [ 2 ] = 0 ;",
+        "if ( v [ 0 ] == 1 || v [ 0 ] [ 1 ] == 3 ) dp [ 0 ] [ 1 ] = 0 ;",
+        "dp = min ( dp [ i - 1 ] [ 0 ] , min ( dp [ i - 1 ] [ 1 ] , dp [ i - 1 ] [ 2 ] ) + 1 ) ;",
+        "if ( v [ i ] == 1 || v [ i ] [ 1 ] == 3 ) dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        13,
+        14,
+        20
+      ],
+      "mod_code": [
+        "if ( v [ 0 ] == 2 || v [ 0 ] [ 2 ] == 3 ) dp [ 0 ] [ 2 ] = 0 ;",
+        "if ( v [ 0 ] == 1 || v [ 0 ] [ 1 ] == 3 ) dp [ 0 ] [ 1 ] = 0 ;",
+        "cout << min ( dp [ n - 1 ] [ 0 ] [ 0 ] , min ( dp [ n - 1 ] [ 1 ] , dp [ n - 1 ] [ 2 ] ) ) << endl ;"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        13,
+        14,
+        20,
+        17
+      ],
+      "mod_code": [
+        "if ( v [ 0 ] == 2 || v [ 0 ] [ 2 ] == 3 ) dp [ 0 ] [ 2 ] = 0 ;",
+        "if ( v [ 0 ] == 1 || v [ 0 ] [ 1 ] == 3 ) dp [ 0 ] [ 1 ] = 0 ;",
+        "cout << min ( dp [ n - 1 ] [ 0 ] [ 0 ] , min ( dp [ n - 1 ] [ 1 ] , dp [ n - 1 ] [ 2 ] ) ) << endl ;",
+        "if ( v [ i ] == 1 || v [ i ] [ 1 ] == 3 ) dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        13,
+        14,
+        17
+      ],
+      "mod_code": [
+        "if ( v [ 0 ] == 2 || v [ 0 ] [ 2 ] == 3 ) dp [ 0 ] [ 2 ] = 0 ;",
+        "if ( v [ 0 ] == 1 || v [ 0 ] [ 1 ] == 3 ) dp [ 0 ] [ 1 ] = 0 ;",
+        "if ( v [ i ] == 1 || v [ i ] [ 1 ] == 3 ) dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        13,
+        16
+      ],
+      "mod_code": [
+        "if ( v [ 0 ] == 2 || v [ 0 ] [ 2 ] == 3 ) dp [ 0 ] [ 2 ] = 0 ;",
+        "dp = min ( dp [ i - 1 ] [ 0 ] , min ( dp [ i - 1 ] [ 1 ] , dp [ i - 1 ] [ 2 ] ) + 1 ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        13,
+        16,
+        20
+      ],
+      "mod_code": [
+        "if ( v [ 0 ] == 2 || v [ 0 ] [ 2 ] == 3 ) dp [ 0 ] [ 2 ] = 0 ;",
+        "dp = min ( dp [ i - 1 ] [ 0 ] , min ( dp [ i - 1 ] [ 1 ] , dp [ i - 1 ] [ 2 ] ) + 1 ) ;",
+        "cout << min ( dp [ n - 1 ] [ 0 ] [ 0 ] , min ( dp [ n - 1 ] [ 1 ] , dp [ n - 1 ] [ 2 ] ) ) << endl ;"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        13,
+        16,
+        20,
+        17
+      ],
+      "mod_code": [
+        "if ( v [ 0 ] == 2 || v [ 0 ] [ 2 ] == 3 ) dp [ 0 ] [ 2 ] = 0 ;",
+        "dp = min ( dp [ i - 1 ] [ 0 ] , min ( dp [ i - 1 ] [ 1 ] , dp [ i - 1 ] [ 2 ] ) + 1 ) ;",
+        "cout << min ( dp [ n - 1 ] [ 0 ] [ 0 ] , min ( dp [ n - 1 ] [ 1 ] , dp [ n - 1 ] [ 2 ] ) ) << endl ;",
+        "if ( v [ i ] == 1 || v [ i ] [ 1 ] == 3 ) dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        13,
+        16,
+        17
+      ],
+      "mod_code": [
+        "if ( v [ 0 ] == 2 || v [ 0 ] [ 2 ] == 3 ) dp [ 0 ] [ 2 ] = 0 ;",
+        "dp = min ( dp [ i - 1 ] [ 0 ] , min ( dp [ i - 1 ] [ 1 ] , dp [ i - 1 ] [ 2 ] ) + 1 ) ;",
+        "if ( v [ i ] == 1 || v [ i ] [ 1 ] == 3 ) dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        13,
+        20
+      ],
+      "mod_code": [
+        "if ( v [ 0 ] == 2 || v [ 0 ] [ 2 ] == 3 ) dp [ 0 ] [ 2 ] = 0 ;",
+        "cout << min ( dp [ n - 1 ] [ 0 ] [ 0 ] , min ( dp [ n - 1 ] [ 1 ] , dp [ n - 1 ] [ 2 ] ) ) << endl ;"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        13,
+        20,
+        17
+      ],
+      "mod_code": [
+        "if ( v [ 0 ] == 2 || v [ 0 ] [ 2 ] == 3 ) dp [ 0 ] [ 2 ] = 0 ;",
+        "cout << min ( dp [ n - 1 ] [ 0 ] [ 0 ] , min ( dp [ n - 1 ] [ 1 ] , dp [ n - 1 ] [ 2 ] ) ) << endl ;",
+        "if ( v [ i ] == 1 || v [ i ] [ 1 ] == 3 ) dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        13,
+        17
+      ],
+      "mod_code": [
+        "if ( v [ 0 ] == 2 || v [ 0 ] [ 2 ] == 3 ) dp [ 0 ] [ 2 ] = 0 ;",
+        "if ( v [ i ] == 1 || v [ i ] [ 1 ] == 3 ) dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        14,
+        16
+      ],
+      "mod_code": [
+        "if ( v [ 0 ] == 1 || v [ 0 ] [ 1 ] == 3 ) dp [ 0 ] [ 1 ] = 0 ;",
+        "dp = min ( dp [ i - 1 ] [ 0 ] , min ( dp [ i - 1 ] [ 1 ] , dp [ i - 1 ] [ 2 ] ) + 1 ) ;"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        14,
+        16,
+        20
+      ],
+      "mod_code": [
+        "if ( v [ 0 ] == 1 || v [ 0 ] [ 1 ] == 3 ) dp [ 0 ] [ 1 ] = 0 ;",
+        "dp = min ( dp [ i - 1 ] [ 0 ] , min ( dp [ i - 1 ] [ 1 ] , dp [ i - 1 ] [ 2 ] ) + 1 ) ;",
+        "cout << min ( dp [ n - 1 ] [ 0 ] [ 0 ] , min ( dp [ n - 1 ] [ 1 ] , dp [ n - 1 ] [ 2 ] ) ) << endl ;"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        14,
+        16,
+        20,
+        17
+      ],
+      "mod_code": [
+        "if ( v [ 0 ] == 1 || v [ 0 ] [ 1 ] == 3 ) dp [ 0 ] [ 1 ] = 0 ;",
+        "dp = min ( dp [ i - 1 ] [ 0 ] , min ( dp [ i - 1 ] [ 1 ] , dp [ i - 1 ] [ 2 ] ) + 1 ) ;",
+        "cout << min ( dp [ n - 1 ] [ 0 ] [ 0 ] , min ( dp [ n - 1 ] [ 1 ] , dp [ n - 1 ] [ 2 ] ) ) << endl ;",
+        "if ( v [ i ] == 1 || v [ i ] [ 1 ] == 3 ) dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        14,
+        16,
+        17
+      ],
+      "mod_code": [
+        "if ( v [ 0 ] == 1 || v [ 0 ] [ 1 ] == 3 ) dp [ 0 ] [ 1 ] = 0 ;",
+        "dp = min ( dp [ i - 1 ] [ 0 ] , min ( dp [ i - 1 ] [ 1 ] , dp [ i - 1 ] [ 2 ] ) + 1 ) ;",
+        "if ( v [ i ] == 1 || v [ i ] [ 1 ] == 3 ) dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        14,
+        20
+      ],
+      "mod_code": [
+        "if ( v [ 0 ] == 1 || v [ 0 ] [ 1 ] == 3 ) dp [ 0 ] [ 1 ] = 0 ;",
+        "cout << min ( dp [ n - 1 ] [ 0 ] [ 0 ] , min ( dp [ n - 1 ] [ 1 ] , dp [ n - 1 ] [ 2 ] ) ) << endl ;"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        14,
+        20,
+        17
+      ],
+      "mod_code": [
+        "if ( v [ 0 ] == 1 || v [ 0 ] [ 1 ] == 3 ) dp [ 0 ] [ 1 ] = 0 ;",
+        "cout << min ( dp [ n - 1 ] [ 0 ] [ 0 ] , min ( dp [ n - 1 ] [ 1 ] , dp [ n - 1 ] [ 2 ] ) ) << endl ;",
+        "if ( v [ i ] == 1 || v [ i ] [ 1 ] == 3 ) dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        14,
+        17
+      ],
+      "mod_code": [
+        "if ( v [ 0 ] == 1 || v [ 0 ] [ 1 ] == 3 ) dp [ 0 ] [ 1 ] = 0 ;",
+        "if ( v [ i ] == 1 || v [ i ] [ 1 ] == 3 ) dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        16,
+        20
+      ],
+      "mod_code": [
+        "dp = min ( dp [ i - 1 ] [ 0 ] , min ( dp [ i - 1 ] [ 1 ] , dp [ i - 1 ] [ 2 ] ) + 1 ) ;",
+        "cout << min ( dp [ n - 1 ] [ 0 ] [ 0 ] , min ( dp [ n - 1 ] [ 1 ] , dp [ n - 1 ] [ 2 ] ) ) << endl ;"
+      ],
+      "err_line": 16,
+      "err_msg": "incompatible types in assignment of ‘const int’ to ‘int [100][3]’"
+    },
+    {
+      "mod_line": [
+        16,
+        20,
+        17
+      ],
+      "mod_code": [
+        "dp = min ( dp [ i - 1 ] [ 0 ] , min ( dp [ i - 1 ] [ 1 ] , dp [ i - 1 ] [ 2 ] ) + 1 ) ;",
+        "cout << min ( dp [ n - 1 ] [ 0 ] [ 0 ] , min ( dp [ n - 1 ] [ 1 ] , dp [ n - 1 ] [ 2 ] ) ) << endl ;",
+        "if ( v [ i ] == 1 || v [ i ] [ 1 ] == 3 ) dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 16,
+      "err_msg": "incompatible types in assignment of ‘const int’ to ‘int [100][3]’"
+    },
+    {
+      "mod_line": [
+        16,
+        17
+      ],
+      "mod_code": [
+        "dp = min ( dp [ i - 1 ] [ 0 ] , min ( dp [ i - 1 ] [ 1 ] , dp [ i - 1 ] [ 2 ] ) + 1 ) ;",
+        "if ( v [ i ] == 1 || v [ i ] [ 1 ] == 3 ) dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 16,
+      "err_msg": "incompatible types in assignment of ‘const int’ to ‘int [100][3]’"
+    },
+    {
+      "mod_line": [
+        20,
+        17
+      ],
+      "mod_code": [
+        "cout << min ( dp [ n - 1 ] [ 0 ] [ 0 ] , min ( dp [ n - 1 ] [ 1 ] , dp [ n - 1 ] [ 2 ] ) ) << endl ;",
+        "if ( v [ i ] == 1 || v [ i ] [ 1 ] == 3 ) dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 17,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    }
+  ]
+}

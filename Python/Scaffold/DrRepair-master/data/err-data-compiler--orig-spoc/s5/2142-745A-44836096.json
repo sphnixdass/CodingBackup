@@ -1,0 +1,575 @@
+{
+  "meta": {
+    "index": 2142,
+    "hitid": "311HQEI8RSAGV15OGXDDC60BBOAZ71",
+    "workerid": "A1EKVUFWL7OJMO",
+    "probid": "745A",
+    "subid": "44836096"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "word = string",
+      "code": "string word ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "size = integer",
+      "code": "int size ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "s = set of string",
+      "code": "set < string > s ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "read word",
+      "code": "cin >> word ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "size = length of word",
+      "code": "size = word . length ( ) ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 0 to size exclusive",
+      "code": "for ( int i = 0 ; i < size ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "insert word in s",
+      "code": "s . insert ( word ) ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "word = word [ size - 1 ] + word",
+      "code": "word = word [ size - 1 ] + word ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "resize size of word",
+      "code": "word . resize ( size ) ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "print size of s",
+      "code": "cout << s . size ( ) << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "int size = word . length ( ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int size’"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "int word = word [ size - 1 ] + word ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "char word ;"
+      ],
+      "err_line": 5,
+      "err_msg": "request for member ‘length’ in ‘word’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "set < char > s ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘std::set<char>::insert(std::__cxx11::string&)’"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "int size = word . size ( ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int size’"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < size ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "s . insert ( word . insert ( word ) ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘std::__cxx11::basic_string<char>::insert(std::__cxx11::string&)’"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "int word = word [ 1 - 1 ] + word ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "word . resize ( word ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "no matching function for call to ‘std::__cxx11::basic_string<char>::resize(std::__cxx11::string&)’"
+    },
+    {
+      "mod_line": [
+        5,
+        8
+      ],
+      "mod_code": [
+        "int size = word . length ( ) ;",
+        "int word = word [ size - 1 ] + word ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int size’"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        9
+      ],
+      "mod_code": [
+        "int size = word . length ( ) ;",
+        "int word = word [ size - 1 ] + word ;",
+        "word . size ( ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int size’"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        9,
+        7
+      ],
+      "mod_code": [
+        "int size = word . length ( ) ;",
+        "int word = word [ size - 1 ] + word ;",
+        "word . size ( ) ;",
+        "s . insert ( word . insert ( word ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int size’"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        7
+      ],
+      "mod_code": [
+        "int size = word . length ( ) ;",
+        "int word = word [ size - 1 ] + word ;",
+        "s . insert ( word . insert ( word ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int size’"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        7,
+        9
+      ],
+      "mod_code": [
+        "int size = word . length ( ) ;",
+        "int word = word [ size - 1 ] + word ;",
+        "s . insert ( word . insert ( word ) ) ;",
+        "word . resize ( word ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int size’"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        9
+      ],
+      "mod_code": [
+        "int size = word . length ( ) ;",
+        "int word = word [ size - 1 ] + word ;",
+        "word . resize ( word ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int size’"
+    },
+    {
+      "mod_line": [
+        5,
+        9
+      ],
+      "mod_code": [
+        "int size = word . length ( ) ;",
+        "word . size ( ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int size’"
+    },
+    {
+      "mod_line": [
+        5,
+        9,
+        7
+      ],
+      "mod_code": [
+        "int size = word . length ( ) ;",
+        "word . size ( ) ;",
+        "s . insert ( word . insert ( word ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int size’"
+    },
+    {
+      "mod_line": [
+        5,
+        7
+      ],
+      "mod_code": [
+        "int size = word . length ( ) ;",
+        "s . insert ( word . insert ( word ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int size’"
+    },
+    {
+      "mod_line": [
+        5,
+        7,
+        9
+      ],
+      "mod_code": [
+        "int size = word . length ( ) ;",
+        "s . insert ( word . insert ( word ) ) ;",
+        "word . resize ( word ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int size’"
+    },
+    {
+      "mod_line": [
+        5,
+        9
+      ],
+      "mod_code": [
+        "int size = word . length ( ) ;",
+        "word . resize ( word ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int size’"
+    },
+    {
+      "mod_line": [
+        8,
+        9
+      ],
+      "mod_code": [
+        "int word = word [ size - 1 ] + word ;",
+        "word . size ( ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        8,
+        9,
+        5
+      ],
+      "mod_code": [
+        "int word = word [ size - 1 ] + word ;",
+        "word . size ( ) ;",
+        "int size = word . size ( ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int size’"
+    },
+    {
+      "mod_line": [
+        8,
+        9,
+        5,
+        7
+      ],
+      "mod_code": [
+        "int word = word [ size - 1 ] + word ;",
+        "word . size ( ) ;",
+        "int size = word . size ( ) ;",
+        "s . insert ( word . insert ( word ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int size’"
+    },
+    {
+      "mod_line": [
+        8,
+        9,
+        7
+      ],
+      "mod_code": [
+        "int word = word [ size - 1 ] + word ;",
+        "word . size ( ) ;",
+        "s . insert ( word . insert ( word ) ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘std::__cxx11::basic_string<char>::insert(std::__cxx11::string&)’"
+    },
+    {
+      "mod_line": [
+        8,
+        5
+      ],
+      "mod_code": [
+        "int word = word [ size - 1 ] + word ;",
+        "int size = word . size ( ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int size’"
+    },
+    {
+      "mod_line": [
+        8,
+        5,
+        7
+      ],
+      "mod_code": [
+        "int word = word [ size - 1 ] + word ;",
+        "int size = word . size ( ) ;",
+        "s . insert ( word . insert ( word ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int size’"
+    },
+    {
+      "mod_line": [
+        8,
+        5,
+        7,
+        9
+      ],
+      "mod_code": [
+        "int word = word [ size - 1 ] + word ;",
+        "int size = word . size ( ) ;",
+        "s . insert ( word . insert ( word ) ) ;",
+        "word . resize ( word ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int size’"
+    },
+    {
+      "mod_line": [
+        8,
+        5,
+        9
+      ],
+      "mod_code": [
+        "int word = word [ size - 1 ] + word ;",
+        "int size = word . size ( ) ;",
+        "word . resize ( word ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int size’"
+    },
+    {
+      "mod_line": [
+        8,
+        7
+      ],
+      "mod_code": [
+        "int word = word [ size - 1 ] + word ;",
+        "s . insert ( word . insert ( word ) ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘std::__cxx11::basic_string<char>::insert(std::__cxx11::string&)’"
+    },
+    {
+      "mod_line": [
+        8,
+        7,
+        9
+      ],
+      "mod_code": [
+        "int word = word [ size - 1 ] + word ;",
+        "s . insert ( word . insert ( word ) ) ;",
+        "word . resize ( word ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘std::__cxx11::basic_string<char>::insert(std::__cxx11::string&)’"
+    },
+    {
+      "mod_line": [
+        8,
+        9
+      ],
+      "mod_code": [
+        "int word = word [ size - 1 ] + word ;",
+        "word . resize ( word ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9,
+        5
+      ],
+      "mod_code": [
+        "word . size ( ) ;",
+        "int size = word . size ( ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int size’"
+    },
+    {
+      "mod_line": [
+        9,
+        5,
+        7
+      ],
+      "mod_code": [
+        "word . size ( ) ;",
+        "int size = word . size ( ) ;",
+        "s . insert ( word . insert ( word ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int size’"
+    },
+    {
+      "mod_line": [
+        9,
+        7
+      ],
+      "mod_code": [
+        "word . size ( ) ;",
+        "s . insert ( word . insert ( word ) ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘std::__cxx11::basic_string<char>::insert(std::__cxx11::string&)’"
+    },
+    {
+      "mod_line": [
+        5,
+        7
+      ],
+      "mod_code": [
+        "int size = word . size ( ) ;",
+        "s . insert ( word . insert ( word ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int size’"
+    },
+    {
+      "mod_line": [
+        5,
+        7,
+        9
+      ],
+      "mod_code": [
+        "int size = word . size ( ) ;",
+        "s . insert ( word . insert ( word ) ) ;",
+        "word . resize ( word ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int size’"
+    },
+    {
+      "mod_line": [
+        5,
+        9
+      ],
+      "mod_code": [
+        "int size = word . size ( ) ;",
+        "word . resize ( word ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int size’"
+    },
+    {
+      "mod_line": [
+        7,
+        9
+      ],
+      "mod_code": [
+        "s . insert ( word . insert ( word ) ) ;",
+        "word . resize ( word ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘std::__cxx11::basic_string<char>::insert(std::__cxx11::string&)’"
+    }
+  ]
+}

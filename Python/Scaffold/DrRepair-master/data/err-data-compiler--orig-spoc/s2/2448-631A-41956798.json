@@ -1,0 +1,653 @@
+{
+  "meta": {
+    "index": 2448,
+    "hitid": "3RSBJ6YZECKHBQ6NW708K06OP8WOFY",
+    "workerid": "A1EKVUFWL7OJMO",
+    "probid": "631A",
+    "subid": "41956798"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "n = long long",
+      "code": "long long n ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "a , b = long long array of size n + 1",
+      "code": "long long a [ n + 1 ] , b [ n + 1 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for i = 1 to n , read a [ i ]",
+      "code": "for ( long long i = 1 ; i <= n ; i ++ ) cin >> a [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i = 1 to n , read b [ i ]",
+      "code": "for ( long long i = 1 ; i <= n ; i ++ ) cin >> b [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "maks = long long with maks = 0",
+      "code": "long long maks = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for i = 1 to n",
+      "code": "for ( long long i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "for j = i to n",
+      "code": "for ( long long j = i ; j <= n ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "suma , sumb = long long with suma = 0 , sumb = 0",
+      "code": "long long suma = 0 , sumb = 0 ;",
+      "indent": 3
+    },
+    {
+      "line": 10,
+      "text": "for l = i to j",
+      "code": "for ( long long l = i ; l <= j ; l ++ )",
+      "indent": 3
+    },
+    {
+      "line": 11,
+      "text": "suma = suma bitwise or a [ l ]",
+      "code": "suma = suma | a [ l ] ;",
+      "indent": 4
+    },
+    {
+      "line": 12,
+      "text": "sumb = sumb bitwise or b [ l ]",
+      "code": "sumb = sumb | b [ l ] ;",
+      "indent": 4
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 14,
+      "text": "maks = max of maks and suma + sumb",
+      "code": "maks = max ( maks , suma + sumb ) ;",
+      "indent": 3
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "print maks",
+      "code": "cout << maks << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "long long a [ n + 1 ] , b ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "suma = a | a [ l ] ;"
+      ],
+      "err_line": 11,
+      "err_msg": "invalid operands of types ‘long long int [(((ssizetype)n) + 1)]’ and ‘long long int’ to binary ‘operator|’"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "int maks = max ( maks , suma + sumb ) ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘max(int&, long long int)’"
+    },
+    {
+      "mod_line": [
+        3,
+        8
+      ],
+      "mod_code": [
+        "long long a [ n + 1 ] , b ;",
+        "for ( int j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        3,
+        8,
+        10
+      ],
+      "mod_code": [
+        "long long a [ n + 1 ] , b ;",
+        "for ( int j = i ; j < n ; j ++ )",
+        "for ( int l = i ; l < j ; l ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        3,
+        8,
+        10,
+        7
+      ],
+      "mod_code": [
+        "long long a [ n + 1 ] , b ;",
+        "for ( int j = i ; j < n ; j ++ )",
+        "for ( int l = i ; l < j ; l ++ )",
+        "for ( int i = 1 ; i < n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        3,
+        8,
+        10,
+        11
+      ],
+      "mod_code": [
+        "long long a [ n + 1 ] , b ;",
+        "for ( int j = i ; j < n ; j ++ )",
+        "for ( int l = i ; l < j ; l ++ )",
+        "suma = a | a [ l ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        3,
+        8,
+        7
+      ],
+      "mod_code": [
+        "long long a [ n + 1 ] , b ;",
+        "for ( int j = i ; j < n ; j ++ )",
+        "for ( int i = 1 ; i < n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        3,
+        8,
+        7,
+        11
+      ],
+      "mod_code": [
+        "long long a [ n + 1 ] , b ;",
+        "for ( int j = i ; j < n ; j ++ )",
+        "for ( int i = 1 ; i < n ; i ++ )",
+        "suma = a | a [ l ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        3,
+        8,
+        11
+      ],
+      "mod_code": [
+        "long long a [ n + 1 ] , b ;",
+        "for ( int j = i ; j < n ; j ++ )",
+        "suma = a | a [ l ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        3,
+        10
+      ],
+      "mod_code": [
+        "long long a [ n + 1 ] , b ;",
+        "for ( int l = i ; l < j ; l ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        3,
+        10,
+        7
+      ],
+      "mod_code": [
+        "long long a [ n + 1 ] , b ;",
+        "for ( int l = i ; l < j ; l ++ )",
+        "for ( int i = 1 ; i < n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        3,
+        10,
+        7,
+        8
+      ],
+      "mod_code": [
+        "long long a [ n + 1 ] , b ;",
+        "for ( int l = i ; l < j ; l ++ )",
+        "for ( int i = 1 ; i < n ; i ++ )",
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        3,
+        10,
+        7,
+        11
+      ],
+      "mod_code": [
+        "long long a [ n + 1 ] , b ;",
+        "for ( int l = i ; l < j ; l ++ )",
+        "for ( int i = 1 ; i < n ; i ++ )",
+        "suma = a | a [ l ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        3,
+        10,
+        8
+      ],
+      "mod_code": [
+        "long long a [ n + 1 ] , b ;",
+        "for ( int l = i ; l < j ; l ++ )",
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        3,
+        10,
+        8,
+        11
+      ],
+      "mod_code": [
+        "long long a [ n + 1 ] , b ;",
+        "for ( int l = i ; l < j ; l ++ )",
+        "for ( j = i ; j < n ; j ++ )",
+        "suma = a | a [ l ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        3,
+        10,
+        11
+      ],
+      "mod_code": [
+        "long long a [ n + 1 ] , b ;",
+        "for ( int l = i ; l < j ; l ++ )",
+        "suma = a | a [ l ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        3,
+        7
+      ],
+      "mod_code": [
+        "long long a [ n + 1 ] , b ;",
+        "for ( int i = 1 ; i < n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        8
+      ],
+      "mod_code": [
+        "long long a [ n + 1 ] , b ;",
+        "for ( int i = 1 ; i < n ; i ++ )",
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        8,
+        11
+      ],
+      "mod_code": [
+        "long long a [ n + 1 ] , b ;",
+        "for ( int i = 1 ; i < n ; i ++ )",
+        "for ( j = i ; j < n ; j ++ )",
+        "suma = a | a [ l ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        11
+      ],
+      "mod_code": [
+        "long long a [ n + 1 ] , b ;",
+        "for ( int i = 1 ; i < n ; i ++ )",
+        "suma = a | a [ l ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        3,
+        8
+      ],
+      "mod_code": [
+        "long long a [ n + 1 ] , b ;",
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        3,
+        8,
+        11
+      ],
+      "mod_code": [
+        "long long a [ n + 1 ] , b ;",
+        "for ( j = i ; j < n ; j ++ )",
+        "suma = a | a [ l ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        3,
+        11
+      ],
+      "mod_code": [
+        "long long a [ n + 1 ] , b ;",
+        "suma = a | a [ l ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        7,
+        11
+      ],
+      "mod_code": [
+        "for ( int j = i ; j < n ; j ++ )",
+        "for ( int l = i ; l < j ; l ++ )",
+        "for ( int i = 1 ; i < n ; i ++ )",
+        "suma = a | a [ l ] ;"
+      ],
+      "err_line": 11,
+      "err_msg": "invalid operands of types ‘long long int [(((ssizetype)n) + 1)]’ and ‘long long int’ to binary ‘operator|’"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        11
+      ],
+      "mod_code": [
+        "for ( int j = i ; j < n ; j ++ )",
+        "for ( int l = i ; l < j ; l ++ )",
+        "suma = a | a [ l ] ;"
+      ],
+      "err_line": 11,
+      "err_msg": "invalid operands of types ‘long long int [(((ssizetype)n) + 1)]’ and ‘long long int’ to binary ‘operator|’"
+    },
+    {
+      "mod_line": [
+        8,
+        7,
+        11
+      ],
+      "mod_code": [
+        "for ( int j = i ; j < n ; j ++ )",
+        "for ( int i = 1 ; i < n ; i ++ )",
+        "suma = a | a [ l ] ;"
+      ],
+      "err_line": 11,
+      "err_msg": "invalid operands of types ‘long long int [(((ssizetype)n) + 1)]’ and ‘long long int’ to binary ‘operator|’"
+    },
+    {
+      "mod_line": [
+        8,
+        11
+      ],
+      "mod_code": [
+        "for ( int j = i ; j < n ; j ++ )",
+        "suma = a | a [ l ] ;"
+      ],
+      "err_line": 11,
+      "err_msg": "invalid operands of types ‘long long int [(((ssizetype)n) + 1)]’ and ‘long long int’ to binary ‘operator|’"
+    },
+    {
+      "mod_line": [
+        10,
+        7,
+        8
+      ],
+      "mod_code": [
+        "for ( int l = i ; l < j ; l ++ )",
+        "for ( int i = 1 ; i < n ; i ++ )",
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        7,
+        8,
+        11
+      ],
+      "mod_code": [
+        "for ( int l = i ; l < j ; l ++ )",
+        "for ( int i = 1 ; i < n ; i ++ )",
+        "for ( j = i ; j < n ; j ++ )",
+        "suma = a | a [ l ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        7,
+        11
+      ],
+      "mod_code": [
+        "for ( int l = i ; l < j ; l ++ )",
+        "for ( int i = 1 ; i < n ; i ++ )",
+        "suma = a | a [ l ] ;"
+      ],
+      "err_line": 11,
+      "err_msg": "invalid operands of types ‘long long int [(((ssizetype)n) + 1)]’ and ‘long long int’ to binary ‘operator|’"
+    },
+    {
+      "mod_line": [
+        10,
+        8
+      ],
+      "mod_code": [
+        "for ( int l = i ; l < j ; l ++ )",
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        8,
+        11
+      ],
+      "mod_code": [
+        "for ( int l = i ; l < j ; l ++ )",
+        "for ( j = i ; j < n ; j ++ )",
+        "suma = a | a [ l ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        11
+      ],
+      "mod_code": [
+        "for ( int l = i ; l < j ; l ++ )",
+        "suma = a | a [ l ] ;"
+      ],
+      "err_line": 11,
+      "err_msg": "invalid operands of types ‘long long int [(((ssizetype)n) + 1)]’ and ‘long long int’ to binary ‘operator|’"
+    },
+    {
+      "mod_line": [
+        7,
+        8
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i < n ; i ++ )",
+        "for ( j = i ; j < n ; j ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        8,
+        11
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i < n ; i ++ )",
+        "for ( j = i ; j < n ; j ++ )",
+        "suma = a | a [ l ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        11
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i < n ; i ++ )",
+        "suma = a | a [ l ] ;"
+      ],
+      "err_line": 11,
+      "err_msg": "invalid operands of types ‘long long int [(((ssizetype)n) + 1)]’ and ‘long long int’ to binary ‘operator|’"
+    },
+    {
+      "mod_line": [
+        8,
+        11
+      ],
+      "mod_code": [
+        "for ( j = i ; j < n ; j ++ )",
+        "suma = a | a [ l ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    }
+  ]
+}

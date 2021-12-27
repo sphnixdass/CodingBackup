@@ -1,0 +1,455 @@
+{
+  "meta": {
+    "index": 359,
+    "hitid": "3EFNPKWBMSI1SXYBARXVTQL9OFB30E",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "845A",
+    "subid": "43050109"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare integer array a size 205",
+      "code": "int a [ 205 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "declare integer n",
+      "code": "int n ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for i = 1 to 2 * n inclusive , read a [ i ]",
+      "code": "for ( int i = 1 ; i <= 2 * n ; ++ i ) cin >> a [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "sort elements from a to a + 2 * n + 1",
+      "code": "sort ( a , a + 2 * n + 1 ) ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; ++ i )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for j = n + 1 to 2 * n inclusive",
+      "code": "for ( int j = n + 1 ; j <= 2 * n ; ++ j )",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "if a [ i ] is greater than or equal to a [ j ]",
+      "code": "if ( a [ i ] >= a [ j ] )",
+      "indent": 3
+    },
+    {
+      "line": 9,
+      "text": "print \" NO \" , newline",
+      "code": "cout << \" NO \" << endl ;",
+      "indent": 4
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 4
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 12,
+      "text": "print \" YES \" , newline",
+      "code": "cout << \" YES \" << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "sort ( a * 2 * n + 1 ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid operands of types ‘int [205]’ and ‘int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "for ( j = n + 1 ; j <= 2 * n ; j ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        7
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "for ( j = n + 1 ; j <= 2 * n ; j ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        5
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "for ( j = n + 1 ; j <= 2 * n ; j ++ )",
+        "sort ( a * 2 * n + 1 ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid operands of types ‘int [205]’ and ‘int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        5,
+        12
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "for ( j = n + 1 ; j <= 2 * n ; j ++ )",
+        "sort ( a * 2 * n + 1 ) ;",
+        "cout << \" YES\\n \" << endl ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid operands of types ‘int [205]’ and ‘int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        5,
+        8
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "for ( j = n + 1 ; j <= 2 * n ; j ++ )",
+        "sort ( a * 2 * n + 1 ) ;",
+        "if ( a [ i ] > a [ j ] )"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid operands of types ‘int [205]’ and ‘int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        12
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "for ( j = n + 1 ; j <= 2 * n ; j ++ )",
+        "cout << \" YES\\n \" << endl ;"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        12,
+        8
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "for ( j = n + 1 ; j <= 2 * n ; j ++ )",
+        "cout << \" YES\\n \" << endl ;",
+        "if ( a [ i ] > a [ j ] )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        8
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "for ( j = n + 1 ; j <= 2 * n ; j ++ )",
+        "if ( a [ i ] > a [ j ] )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        5
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "sort ( a * 2 * n + 1 ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid operands of types ‘int [205]’ and ‘int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        6,
+        5,
+        12
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "sort ( a * 2 * n + 1 ) ;",
+        "cout << \" YES\\n \" << endl ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid operands of types ‘int [205]’ and ‘int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        6,
+        5,
+        12,
+        8
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "sort ( a * 2 * n + 1 ) ;",
+        "cout << \" YES\\n \" << endl ;",
+        "if ( a [ i ] > a [ j ] )"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid operands of types ‘int [205]’ and ‘int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        6,
+        5,
+        8
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "sort ( a * 2 * n + 1 ) ;",
+        "if ( a [ i ] > a [ j ] )"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid operands of types ‘int [205]’ and ‘int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        6,
+        12
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "cout << \" YES\\n \" << endl ;"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        12,
+        8
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "cout << \" YES\\n \" << endl ;",
+        "if ( a [ i ] > a [ j ] )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        8
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "if ( a [ i ] > a [ j ] )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7,
+        5
+      ],
+      "mod_code": [
+        "for ( j = n + 1 ; j <= 2 * n ; j ++ )",
+        "sort ( a * 2 * n + 1 ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid operands of types ‘int [205]’ and ‘int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        7,
+        5,
+        12
+      ],
+      "mod_code": [
+        "for ( j = n + 1 ; j <= 2 * n ; j ++ )",
+        "sort ( a * 2 * n + 1 ) ;",
+        "cout << \" YES\\n \" << endl ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid operands of types ‘int [205]’ and ‘int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        7,
+        5,
+        12,
+        8
+      ],
+      "mod_code": [
+        "for ( j = n + 1 ; j <= 2 * n ; j ++ )",
+        "sort ( a * 2 * n + 1 ) ;",
+        "cout << \" YES\\n \" << endl ;",
+        "if ( a [ i ] > a [ j ] )"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid operands of types ‘int [205]’ and ‘int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        7,
+        5,
+        8
+      ],
+      "mod_code": [
+        "for ( j = n + 1 ; j <= 2 * n ; j ++ )",
+        "sort ( a * 2 * n + 1 ) ;",
+        "if ( a [ i ] > a [ j ] )"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid operands of types ‘int [205]’ and ‘int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        7,
+        12
+      ],
+      "mod_code": [
+        "for ( j = n + 1 ; j <= 2 * n ; j ++ )",
+        "cout << \" YES\\n \" << endl ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        12,
+        8
+      ],
+      "mod_code": [
+        "for ( j = n + 1 ; j <= 2 * n ; j ++ )",
+        "cout << \" YES\\n \" << endl ;",
+        "if ( a [ i ] > a [ j ] )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        8
+      ],
+      "mod_code": [
+        "for ( j = n + 1 ; j <= 2 * n ; j ++ )",
+        "if ( a [ i ] > a [ j ] )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        12
+      ],
+      "mod_code": [
+        "sort ( a * 2 * n + 1 ) ;",
+        "cout << \" YES\\n \" << endl ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid operands of types ‘int [205]’ and ‘int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        5,
+        12,
+        8
+      ],
+      "mod_code": [
+        "sort ( a * 2 * n + 1 ) ;",
+        "cout << \" YES\\n \" << endl ;",
+        "if ( a [ i ] > a [ j ] )"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid operands of types ‘int [205]’ and ‘int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        5,
+        8
+      ],
+      "mod_code": [
+        "sort ( a * 2 * n + 1 ) ;",
+        "if ( a [ i ] > a [ j ] )"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid operands of types ‘int [205]’ and ‘int’ to binary ‘operator*’"
+    }
+  ]
+}

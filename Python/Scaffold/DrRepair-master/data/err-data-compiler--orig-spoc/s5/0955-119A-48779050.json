@@ -1,0 +1,729 @@
+{
+  "meta": {
+    "index": 955,
+    "hitid": "3NZ1E5QA6ZV5QZOPMQIDS4FCSS3B5R",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "119A",
+    "subid": "48779050"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create integers a , b , n",
+      "code": "int a , b , n ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare gcd with integers x , y as arguments , returning integer",
+      "code": "int gcd ( int x , int y )",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "if y is 0 , return x from function",
+      "code": "if ( y == 0 ) { return x ; }",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "if x is less than y , swap values between x and y",
+      "code": "if ( x < y ) { swap ( x , y ) ; }",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "return result of run gcd with y , x % y as arguments",
+      "code": "return gcd ( y , x % y ) ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 6,
+      "text": "declare game with no arguments , returning integer",
+      "code": "int game ( )",
+      "indent": 0
+    },
+    {
+      "line": 7,
+      "text": "while 1 is true",
+      "code": "while ( 1 )",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "decrement n by result of run gcd with a , n as arguments",
+      "code": "n -= gcd ( a , n ) ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "if n is 0 , return 0 from function",
+      "code": "if ( n == 0 ) { return 0 ; }",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "decrement n by result of run gcd with b , n as arguments",
+      "code": "n -= gcd ( b , n ) ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "if n is 0 , return 1 from function",
+      "code": "if ( n == 0 ) { return 1 ; }",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 15,
+      "text": "while read a read b read n",
+      "code": "while ( cin >> a >> b >> n )",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "create integer ans with ans = result of run game",
+      "code": "int ans = game ( ) ;",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "print ans print newline",
+      "code": "cout << ans << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "int ans = game ( game ) ;"
+      ],
+      "err_line": 16,
+      "err_msg": "too many arguments to function ‘int game()’"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int gcd ( int x , int y ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "int game ( ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "while ( 1 ) 1 ++ ;"
+      ],
+      "err_line": 7,
+      "err_msg": "lvalue required as increment operand"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "while ( { cin >> a >> b >> n )"
+      ],
+      "err_line": 15,
+      "err_msg": "expected primary-expression before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "int ans = game ;"
+      ],
+      "err_line": 16,
+      "err_msg": "invalid conversion from ‘int (*)()’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        16,
+        10
+      ],
+      "mod_code": [
+        "int ans = game ( game ) ;",
+        "n -- ;"
+      ],
+      "err_line": 16,
+      "err_msg": "too many arguments to function ‘int game()’"
+    },
+    {
+      "mod_line": [
+        16,
+        10,
+        1
+      ],
+      "mod_code": [
+        "int ans = game ( game ) ;",
+        "n -- ;",
+        "int gcd ( int x , int y ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        10,
+        1,
+        15
+      ],
+      "mod_code": [
+        "int ans = game ( game ) ;",
+        "n -- ;",
+        "int gcd ( int x , int y ) ;",
+        "while ( { cin >> a >> b >> n )"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        10,
+        1,
+        7
+      ],
+      "mod_code": [
+        "int ans = game ( game ) ;",
+        "n -- ;",
+        "int gcd ( int x , int y ) ;",
+        "while ( 1 ) 1 ++ ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        10,
+        15
+      ],
+      "mod_code": [
+        "int ans = game ( game ) ;",
+        "n -- ;",
+        "while ( { cin >> a >> b >> n )"
+      ],
+      "err_line": 15,
+      "err_msg": "expected primary-expression before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        10,
+        15,
+        7
+      ],
+      "mod_code": [
+        "int ans = game ( game ) ;",
+        "n -- ;",
+        "while ( { cin >> a >> b >> n )",
+        "while ( 1 ) 1 ++ ;"
+      ],
+      "err_line": 7,
+      "err_msg": "lvalue required as increment operand"
+    },
+    {
+      "mod_line": [
+        16,
+        10,
+        7
+      ],
+      "mod_code": [
+        "int ans = game ( game ) ;",
+        "n -- ;",
+        "while ( 1 ) 1 ++ ;"
+      ],
+      "err_line": 7,
+      "err_msg": "lvalue required as increment operand"
+    },
+    {
+      "mod_line": [
+        16,
+        1
+      ],
+      "mod_code": [
+        "int ans = game ( game ) ;",
+        "int gcd ( int x , int y ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        1,
+        15
+      ],
+      "mod_code": [
+        "int ans = game ( game ) ;",
+        "int gcd ( int x , int y ) ;",
+        "while ( { cin >> a >> b >> n )"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        1,
+        15,
+        7
+      ],
+      "mod_code": [
+        "int ans = game ( game ) ;",
+        "int gcd ( int x , int y ) ;",
+        "while ( { cin >> a >> b >> n )",
+        "while ( 1 ) 1 ++ ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        1,
+        7
+      ],
+      "mod_code": [
+        "int ans = game ( game ) ;",
+        "int gcd ( int x , int y ) ;",
+        "while ( 1 ) 1 ++ ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        15
+      ],
+      "mod_code": [
+        "int ans = game ( game ) ;",
+        "while ( { cin >> a >> b >> n )"
+      ],
+      "err_line": 15,
+      "err_msg": "expected primary-expression before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        15,
+        7
+      ],
+      "mod_code": [
+        "int ans = game ( game ) ;",
+        "while ( { cin >> a >> b >> n )",
+        "while ( 1 ) 1 ++ ;"
+      ],
+      "err_line": 7,
+      "err_msg": "lvalue required as increment operand"
+    },
+    {
+      "mod_line": [
+        16,
+        7
+      ],
+      "mod_code": [
+        "int ans = game ( game ) ;",
+        "while ( 1 ) 1 ++ ;"
+      ],
+      "err_line": 7,
+      "err_msg": "lvalue required as increment operand"
+    },
+    {
+      "mod_line": [
+        16,
+        10
+      ],
+      "mod_code": [
+        "int ans = game ;",
+        "n -- ;"
+      ],
+      "err_line": 16,
+      "err_msg": "invalid conversion from ‘int (*)()’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        16,
+        10,
+        1
+      ],
+      "mod_code": [
+        "int ans = game ;",
+        "n -- ;",
+        "int gcd ( int x , int y ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        10,
+        1,
+        15
+      ],
+      "mod_code": [
+        "int ans = game ;",
+        "n -- ;",
+        "int gcd ( int x , int y ) ;",
+        "while ( { cin >> a >> b >> n )"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        10,
+        1,
+        7
+      ],
+      "mod_code": [
+        "int ans = game ;",
+        "n -- ;",
+        "int gcd ( int x , int y ) ;",
+        "while ( 1 ) 1 ++ ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        10,
+        15
+      ],
+      "mod_code": [
+        "int ans = game ;",
+        "n -- ;",
+        "while ( { cin >> a >> b >> n )"
+      ],
+      "err_line": 15,
+      "err_msg": "expected primary-expression before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        10,
+        15,
+        7
+      ],
+      "mod_code": [
+        "int ans = game ;",
+        "n -- ;",
+        "while ( { cin >> a >> b >> n )",
+        "while ( 1 ) 1 ++ ;"
+      ],
+      "err_line": 7,
+      "err_msg": "lvalue required as increment operand"
+    },
+    {
+      "mod_line": [
+        16,
+        10,
+        7
+      ],
+      "mod_code": [
+        "int ans = game ;",
+        "n -- ;",
+        "while ( 1 ) 1 ++ ;"
+      ],
+      "err_line": 7,
+      "err_msg": "lvalue required as increment operand"
+    },
+    {
+      "mod_line": [
+        16,
+        1
+      ],
+      "mod_code": [
+        "int ans = game ;",
+        "int gcd ( int x , int y ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        1,
+        15
+      ],
+      "mod_code": [
+        "int ans = game ;",
+        "int gcd ( int x , int y ) ;",
+        "while ( { cin >> a >> b >> n )"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        1,
+        15,
+        7
+      ],
+      "mod_code": [
+        "int ans = game ;",
+        "int gcd ( int x , int y ) ;",
+        "while ( { cin >> a >> b >> n )",
+        "while ( 1 ) 1 ++ ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        1,
+        7
+      ],
+      "mod_code": [
+        "int ans = game ;",
+        "int gcd ( int x , int y ) ;",
+        "while ( 1 ) 1 ++ ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        15
+      ],
+      "mod_code": [
+        "int ans = game ;",
+        "while ( { cin >> a >> b >> n )"
+      ],
+      "err_line": 15,
+      "err_msg": "expected primary-expression before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        15,
+        7
+      ],
+      "mod_code": [
+        "int ans = game ;",
+        "while ( { cin >> a >> b >> n )",
+        "while ( 1 ) 1 ++ ;"
+      ],
+      "err_line": 7,
+      "err_msg": "lvalue required as increment operand"
+    },
+    {
+      "mod_line": [
+        16,
+        7
+      ],
+      "mod_code": [
+        "int ans = game ;",
+        "while ( 1 ) 1 ++ ;"
+      ],
+      "err_line": 7,
+      "err_msg": "lvalue required as increment operand"
+    },
+    {
+      "mod_line": [
+        10,
+        1
+      ],
+      "mod_code": [
+        "n -- ;",
+        "int gcd ( int x , int y ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        1,
+        15
+      ],
+      "mod_code": [
+        "n -- ;",
+        "int gcd ( int x , int y ) ;",
+        "while ( { cin >> a >> b >> n )"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        1,
+        15,
+        7
+      ],
+      "mod_code": [
+        "n -- ;",
+        "int gcd ( int x , int y ) ;",
+        "while ( { cin >> a >> b >> n )",
+        "while ( 1 ) 1 ++ ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        1,
+        7
+      ],
+      "mod_code": [
+        "n -- ;",
+        "int gcd ( int x , int y ) ;",
+        "while ( 1 ) 1 ++ ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        15
+      ],
+      "mod_code": [
+        "n -- ;",
+        "while ( { cin >> a >> b >> n )"
+      ],
+      "err_line": 15,
+      "err_msg": "expected primary-expression before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        15,
+        7
+      ],
+      "mod_code": [
+        "n -- ;",
+        "while ( { cin >> a >> b >> n )",
+        "while ( 1 ) 1 ++ ;"
+      ],
+      "err_line": 7,
+      "err_msg": "lvalue required as increment operand"
+    },
+    {
+      "mod_line": [
+        10,
+        7
+      ],
+      "mod_code": [
+        "n -- ;",
+        "while ( 1 ) 1 ++ ;"
+      ],
+      "err_line": 7,
+      "err_msg": "lvalue required as increment operand"
+    },
+    {
+      "mod_line": [
+        1,
+        15
+      ],
+      "mod_code": [
+        "int gcd ( int x , int y ) ;",
+        "while ( { cin >> a >> b >> n )"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        15,
+        7
+      ],
+      "mod_code": [
+        "int gcd ( int x , int y ) ;",
+        "while ( { cin >> a >> b >> n )",
+        "while ( 1 ) 1 ++ ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        7
+      ],
+      "mod_code": [
+        "int gcd ( int x , int y ) ;",
+        "while ( 1 ) 1 ++ ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        15,
+        7
+      ],
+      "mod_code": [
+        "while ( { cin >> a >> b >> n )",
+        "while ( 1 ) 1 ++ ;"
+      ],
+      "err_line": 7,
+      "err_msg": "lvalue required as increment operand"
+    }
+  ]
+}

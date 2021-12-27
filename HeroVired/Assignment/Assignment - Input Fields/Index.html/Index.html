@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment - Input Fields</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script>
+        
+        var arrValue = new Array();
+
+        function emailValidateEmail()
+            {
+                var inputText = email.value;
+                var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                if(inputText.match(mailformat))
+                {
+                    email.style.backgroundColor = 'green';
+                }
+                else
+                {
+                    email.style.backgroundColor = 'red';
+                }
+            }
+
+            function fnameInput() {
+                var value = fname.value;
+                if (value.length == 0) {
+                    fname.style.backgroundColor = 'red';
+                } else {
+                    fname.style.backgroundColor = 'green';
+                }
+            }
+
+            function mobileInput() {
+                var value = mobile.value;
+                if (!value || isNaN(value) || value.length != 10) {
+                    mobile.style.backgroundColor = 'red';
+                } else {
+                    mobile.style.backgroundColor = 'green';
+                }
+            }
+
+            function addRow(){
+                if (email.style.backgroundColor == 'green' && fname.style.backgroundColor == 'green' && mobile.style.backgroundColor == 'green')
+                {
+                    arrValue.push([arrValue.length + 1, fname.value, email.value, mobile.value]);
+                    CreateTable();
+                    fname.value = "";
+                    email.value = "";
+                    mobile.value = "";
+                    fname.style.backgroundColor = 'black';
+                    email.style.backgroundColor = 'black';
+                    mobile.style.backgroundColor = 'black';
+                }
+            }
+
+            function CreateTable() {
+
+// CREATE DYNAMIC TABLE.
+var table = document.createElement('table');
+
+// SET THE TABLE ID. 
+// WE WOULD NEED THE ID TO TRAVERSE AND EXTRACT DATA FROM THE TABLE.
+table.setAttribute('id', 'empTable');
+
+var arrHead = new Array();
+arrHead = ['Sl. no.', 'First Name', 'Email', 'Mobile', 'Delete'];
+
+var tr = table.insertRow(-1);
+
+for (var h = 0; h < arrHead.length; h++) {
+    var th = document.createElement('th');              // TABLE HEADER.
+    th.innerHTML = arrHead[h];
+    tr.appendChild(th);
+}
+
+for (var c = 0; c <= arrValue.length - 1; c++) {
+    tr = table.insertRow(-1);
+
+    for (var j = 0; j < arrHead.length; j++) {
+        var td = document.createElement('td');          // TABLE DEFINITION.
+        td = tr.insertCell(-1);
+        if (arrHead.length == (j + 1)){
+            td.innerHTML = "<button id=" + (c + 1) + " onClick=\"arrValue.splice(" + c + ",1); CreateTable();\">Delete</button>";
+
+        }else
+        {
+            td.innerHTML = arrValue[c][j];
+        }
+    }
+}
+
+var e = document.getElementById("tableOutput");
+        
+        var child = e.lastElementChild; 
+        while (child) {
+            e.removeChild(child);
+            child = e.lastElementChild;
+        }
+
+document.getElementById("tableOutput").appendChild(table);
+}
+
+        </script>
+
+</head>
+<body onload="CreateTable();">
+
+    <h1>Assignment - Input Fields --- by S. Gnanadass</h1>
+    <div class="container">
+        <form name="myForm" action="#" onsubmit="return validateForm()" method="post"></form>
+            <label for="fname">First name:</label>
+            <input type="text" id="fname" name="fname" onKeyUp="fnameInput()" onkeypress="return /[a-z]/i.test(event.key)" autocomplete="off"><br><br>
+            <label for="email">Email address:</label>
+            <input type="text" id="email" name="email" onKeyUp="emailValidateEmail()" autocomplete="off"><br><br>
+            <label for="mobile">Mobile number:</label>
+            <input type="text" id="mobile" name="mobile" onKeyUp="mobileInput()" autocomplete="off"><br><br>
+            <input type="button" value="Append" onclick="addRow()">
+    </form>
+    </div>
+    <div id="tableOutput"></div>
+</body>
+</html>

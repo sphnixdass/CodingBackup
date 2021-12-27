@@ -1,0 +1,657 @@
+{
+  "meta": {
+    "index": 90,
+    "hitid": "386T3MLZLNPNTU4HM8SRK7TK3E6803",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "762A",
+    "subid": "49095144"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare constant integer N = 4e7",
+      "code": "const int N = 4e7 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create integer array p with N elements",
+      "code": "int p [ N ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "declare long long variables n and k",
+      "code": "long long n , k ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "read n and k",
+      "code": "cin >> n >> k ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "declare integer variable index = 0",
+      "code": "int index = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 1 while i * i < = n",
+      "code": "for ( long long i = 1 ; i * i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "if n % i = 0 , increment index and set p [ index ] to i",
+      "code": "if ( n % i == 0 ) p [ ++ index ] = i ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "declare boolean variable is_square = true if ( p [ index ] * p [ index ] = n ) , else false",
+      "code": "bool is_square = ( long long ) p [ index ] * p [ index ] == n ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "declare integer cnt = index * 2 - is_square",
+      "code": "int cnt = index * 2 - is_square ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "if k < = index",
+      "code": "if ( k <= index )",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "print p [ k ]",
+      "code": "cout << p [ k ] << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "else if k is greater than cnt",
+      "code": "else if ( k > cnt )",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "print - 1",
+      "code": "cout << - 1 << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "else",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "print n / p [ 2 * index - k + ! is_square ]",
+      "code": "cout << n / p [ 2 * index - k + ! is_square ] << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "p [ N ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘p’ does not name a type"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "while ( cin >> n >> k )"
+      ],
+      "err_line": 7,
+      "err_msg": "no pre-increment operator for type"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i * i <= n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "bool is_square = ( p [ index ] * p [ index ] = n ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "n"
+      ],
+      "err_line": 15,
+      "err_msg": "expected ‘;’ before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        14
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i * i <= n ; i ++ )",
+        "if ( n % i == 0 ) p [ index ++ ] = i ;",
+        "n"
+      ],
+      "err_line": 15,
+      "err_msg": "expected ‘;’ before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        14,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i * i <= n ; i ++ )",
+        "if ( n % i == 0 ) p [ index ++ ] = i ;",
+        "n",
+        "while ( cin >> n >> k )"
+      ],
+      "err_line": 7,
+      "err_msg": "no post-increment operator for type"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        14,
+        12
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i * i <= n ; i ++ )",
+        "if ( n % i == 0 ) p [ index ++ ] = i ;",
+        "n",
+        "else if ( k >= cnt )"
+      ],
+      "err_line": 15,
+      "err_msg": "expected ‘;’ before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i * i <= n ; i ++ )",
+        "if ( n % i == 0 ) p [ index ++ ] = i ;",
+        "while ( cin >> n >> k )"
+      ],
+      "err_line": 7,
+      "err_msg": "no post-increment operator for type"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        4,
+        12
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i * i <= n ; i ++ )",
+        "if ( n % i == 0 ) p [ index ++ ] = i ;",
+        "while ( cin >> n >> k )",
+        "else if ( k >= cnt )"
+      ],
+      "err_line": 7,
+      "err_msg": "no post-increment operator for type"
+    },
+    {
+      "mod_line": [
+        6,
+        14
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i * i <= n ; i ++ )",
+        "n"
+      ],
+      "err_line": 15,
+      "err_msg": "expected ‘;’ before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        14,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i * i <= n ; i ++ )",
+        "n",
+        "while ( cin >> n >> k )"
+      ],
+      "err_line": 7,
+      "err_msg": "no pre-increment operator for type"
+    },
+    {
+      "mod_line": [
+        6,
+        14,
+        4,
+        12
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i * i <= n ; i ++ )",
+        "n",
+        "while ( cin >> n >> k )",
+        "else if ( k >= cnt )"
+      ],
+      "err_line": 7,
+      "err_msg": "no pre-increment operator for type"
+    },
+    {
+      "mod_line": [
+        6,
+        14,
+        12
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i * i <= n ; i ++ )",
+        "n",
+        "else if ( k >= cnt )"
+      ],
+      "err_line": 15,
+      "err_msg": "expected ‘;’ before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i * i <= n ; i ++ )",
+        "while ( cin >> n >> k )"
+      ],
+      "err_line": 7,
+      "err_msg": "no pre-increment operator for type"
+    },
+    {
+      "mod_line": [
+        6,
+        4,
+        12
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i * i <= n ; i ++ )",
+        "while ( cin >> n >> k )",
+        "else if ( k >= cnt )"
+      ],
+      "err_line": 7,
+      "err_msg": "no pre-increment operator for type"
+    },
+    {
+      "mod_line": [
+        7,
+        14
+      ],
+      "mod_code": [
+        "if ( n % i == 0 ) p [ index ++ ] = i ;",
+        "n"
+      ],
+      "err_line": 15,
+      "err_msg": "expected ‘;’ before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        14,
+        4
+      ],
+      "mod_code": [
+        "if ( n % i == 0 ) p [ index ++ ] = i ;",
+        "n",
+        "while ( cin >> n >> k )"
+      ],
+      "err_line": 7,
+      "err_msg": "no post-increment operator for type"
+    },
+    {
+      "mod_line": [
+        7,
+        14,
+        4,
+        6
+      ],
+      "mod_code": [
+        "if ( n % i == 0 ) p [ index ++ ] = i ;",
+        "n",
+        "while ( cin >> n >> k )",
+        "for ( i = 1 ; i * i <= n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        14,
+        4,
+        12
+      ],
+      "mod_code": [
+        "if ( n % i == 0 ) p [ index ++ ] = i ;",
+        "n",
+        "while ( cin >> n >> k )",
+        "else if ( k >= cnt )"
+      ],
+      "err_line": 7,
+      "err_msg": "no post-increment operator for type"
+    },
+    {
+      "mod_line": [
+        7,
+        14,
+        6
+      ],
+      "mod_code": [
+        "if ( n % i == 0 ) p [ index ++ ] = i ;",
+        "n",
+        "for ( i = 1 ; i * i <= n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        14,
+        6,
+        12
+      ],
+      "mod_code": [
+        "if ( n % i == 0 ) p [ index ++ ] = i ;",
+        "n",
+        "for ( i = 1 ; i * i <= n ; i ++ )",
+        "else if ( k >= cnt )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        14,
+        12
+      ],
+      "mod_code": [
+        "if ( n % i == 0 ) p [ index ++ ] = i ;",
+        "n",
+        "else if ( k >= cnt )"
+      ],
+      "err_line": 15,
+      "err_msg": "expected ‘;’ before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        4
+      ],
+      "mod_code": [
+        "if ( n % i == 0 ) p [ index ++ ] = i ;",
+        "while ( cin >> n >> k )"
+      ],
+      "err_line": 7,
+      "err_msg": "no post-increment operator for type"
+    },
+    {
+      "mod_line": [
+        7,
+        4,
+        6
+      ],
+      "mod_code": [
+        "if ( n % i == 0 ) p [ index ++ ] = i ;",
+        "while ( cin >> n >> k )",
+        "for ( i = 1 ; i * i <= n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        4,
+        6,
+        12
+      ],
+      "mod_code": [
+        "if ( n % i == 0 ) p [ index ++ ] = i ;",
+        "while ( cin >> n >> k )",
+        "for ( i = 1 ; i * i <= n ; i ++ )",
+        "else if ( k >= cnt )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        4,
+        12
+      ],
+      "mod_code": [
+        "if ( n % i == 0 ) p [ index ++ ] = i ;",
+        "while ( cin >> n >> k )",
+        "else if ( k >= cnt )"
+      ],
+      "err_line": 7,
+      "err_msg": "no post-increment operator for type"
+    },
+    {
+      "mod_line": [
+        7,
+        6
+      ],
+      "mod_code": [
+        "if ( n % i == 0 ) p [ index ++ ] = i ;",
+        "for ( i = 1 ; i * i <= n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        6,
+        12
+      ],
+      "mod_code": [
+        "if ( n % i == 0 ) p [ index ++ ] = i ;",
+        "for ( i = 1 ; i * i <= n ; i ++ )",
+        "else if ( k >= cnt )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        4
+      ],
+      "mod_code": [
+        "n",
+        "while ( cin >> n >> k )"
+      ],
+      "err_line": 7,
+      "err_msg": "no pre-increment operator for type"
+    },
+    {
+      "mod_line": [
+        14,
+        4,
+        6
+      ],
+      "mod_code": [
+        "n",
+        "while ( cin >> n >> k )",
+        "for ( i = 1 ; i * i <= n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        4,
+        6,
+        12
+      ],
+      "mod_code": [
+        "n",
+        "while ( cin >> n >> k )",
+        "for ( i = 1 ; i * i <= n ; i ++ )",
+        "else if ( k >= cnt )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        4,
+        12
+      ],
+      "mod_code": [
+        "n",
+        "while ( cin >> n >> k )",
+        "else if ( k >= cnt )"
+      ],
+      "err_line": 7,
+      "err_msg": "no pre-increment operator for type"
+    },
+    {
+      "mod_line": [
+        14,
+        6
+      ],
+      "mod_code": [
+        "n",
+        "for ( i = 1 ; i * i <= n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        6,
+        12
+      ],
+      "mod_code": [
+        "n",
+        "for ( i = 1 ; i * i <= n ; i ++ )",
+        "else if ( k >= cnt )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        12
+      ],
+      "mod_code": [
+        "n",
+        "else if ( k >= cnt )"
+      ],
+      "err_line": 15,
+      "err_msg": "expected ‘;’ before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        6
+      ],
+      "mod_code": [
+        "while ( cin >> n >> k )",
+        "for ( i = 1 ; i * i <= n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        12
+      ],
+      "mod_code": [
+        "while ( cin >> n >> k )",
+        "for ( i = 1 ; i * i <= n ; i ++ )",
+        "else if ( k >= cnt )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        12
+      ],
+      "mod_code": [
+        "while ( cin >> n >> k )",
+        "else if ( k >= cnt )"
+      ],
+      "err_line": 7,
+      "err_msg": "no pre-increment operator for type"
+    },
+    {
+      "mod_line": [
+        6,
+        12
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i * i <= n ; i ++ )",
+        "else if ( k >= cnt )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    }
+  ]
+}

@@ -1,0 +1,887 @@
+{
+  "meta": {
+    "index": 113,
+    "hitid": "33Q5P9PUSPGM7I0K7ELOSSSPCZ4CZA",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "354A",
+    "subid": "48665894"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create long longs n , l , r , ql , qr , create long long arrays w , sum with w size 100005 , sum size 100005",
+      "code": "long long n , l , r , ql , qr , w [ 100005 ] , sum [ 100005 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "read n read l read r read ql read qr",
+      "code": "cin >> n >> l >> r >> ql >> qr ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( int i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "read w [ i ]",
+      "code": "cin >> w [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 5,
+      "text": "set sum [ i + 1 ] to w [ i ] + sum [ i ]",
+      "code": "sum [ i + 1 ] = w [ i ] + sum [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 6,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "create long long ans with ans = 1e14",
+      "code": "long long ans = 1e14 ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "or i = 0 to n inclusive",
+      "code": "for ( int i = 0 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "create long long temp with temp = sum [ i ] * l + ( sum [ n ] - sum [ i ] ) * r",
+      "code": "long long temp = sum [ i ] * l + ( sum [ n ] - sum [ i ] ) * r ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "if n - i is greater than i",
+      "code": "if ( n - i > i )",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "increment temp by ( n - i - i - 1 ) * qr",
+      "code": "temp += ( n - i - i - 1 ) * qr ;",
+      "indent": 3
+    },
+    {
+      "line": 12,
+      "text": "else if i is greater than n - i",
+      "code": "else if ( i > n - i )",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "increment temp by ( 2 * i - n - 1 ) * ql",
+      "code": "temp += ( 2 * i - n - 1 ) * ql ;",
+      "indent": 3
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "set ans to minimum of ans and temp",
+      "code": "ans = min ( ans , temp ) ;",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "print ans print newline",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "long long n , l , r , ql [ 100005 ] , ql [ 100005 ] , sum ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int ql [100005]’"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "long long n , l , r , ql [ 100005 ] , sum [ 100005 ] , sum ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘long long int sum’"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "cin >> n read l >> r >> ql >> qr ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid operands of types ‘long long int [100005]’ and ‘long long int’ to binary ‘operator>>’"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "int ans = min ( ans , temp ) ;"
+      ],
+      "err_line": 15,
+      "err_msg": "no matching function for call to ‘min(int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        0,
+        2
+      ],
+      "mod_code": [
+        "long long n , l , r , ql [ 100005 ] , ql [ 100005 ] , sum ;",
+        "cin >> n read l >> r >> ql >> qr ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int ql [100005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        3
+      ],
+      "mod_code": [
+        "long long n , l , r , ql [ 100005 ] , ql [ 100005 ] , sum ;",
+        "cin >> n read l >> r >> ql >> qr ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int ql [100005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        3,
+        15
+      ],
+      "mod_code": [
+        "long long n , l , r , ql [ 100005 ] , ql [ 100005 ] , sum ;",
+        "cin >> n read l >> r >> ql >> qr ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int ans = min ( ans , temp ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int ql [100005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        3,
+        5
+      ],
+      "mod_code": [
+        "long long n , l , r , ql [ 100005 ] , ql [ 100005 ] , sum ;",
+        "cin >> n read l >> r >> ql >> qr ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "sum [ i + 1 ] += sum [ i ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int ql [100005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        3,
+        4
+      ],
+      "mod_code": [
+        "long long n , l , r , ql [ 100005 ] , ql [ 100005 ] , sum ;",
+        "cin >> n read l >> r >> ql >> qr ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int ql [100005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        15
+      ],
+      "mod_code": [
+        "long long n , l , r , ql [ 100005 ] , ql [ 100005 ] , sum ;",
+        "cin >> n read l >> r >> ql >> qr ;",
+        "int ans = min ( ans , temp ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int ql [100005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        15,
+        5
+      ],
+      "mod_code": [
+        "long long n , l , r , ql [ 100005 ] , ql [ 100005 ] , sum ;",
+        "cin >> n read l >> r >> ql >> qr ;",
+        "int ans = min ( ans , temp ) ;",
+        "sum [ i + 1 ] += sum [ i ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int ql [100005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        15,
+        4
+      ],
+      "mod_code": [
+        "long long n , l , r , ql [ 100005 ] , ql [ 100005 ] , sum ;",
+        "cin >> n read l >> r >> ql >> qr ;",
+        "int ans = min ( ans , temp ) ;",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int ql [100005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        5
+      ],
+      "mod_code": [
+        "long long n , l , r , ql [ 100005 ] , ql [ 100005 ] , sum ;",
+        "cin >> n read l >> r >> ql >> qr ;",
+        "sum [ i + 1 ] += sum [ i ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int ql [100005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        5,
+        4
+      ],
+      "mod_code": [
+        "long long n , l , r , ql [ 100005 ] , ql [ 100005 ] , sum ;",
+        "cin >> n read l >> r >> ql >> qr ;",
+        "sum [ i + 1 ] += sum [ i ] ;",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int ql [100005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        4
+      ],
+      "mod_code": [
+        "long long n , l , r , ql [ 100005 ] , ql [ 100005 ] , sum ;",
+        "cin >> n read l >> r >> ql >> qr ;",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int ql [100005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        3
+      ],
+      "mod_code": [
+        "long long n , l , r , ql [ 100005 ] , ql [ 100005 ] , sum ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int ql [100005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        3,
+        15
+      ],
+      "mod_code": [
+        "long long n , l , r , ql [ 100005 ] , ql [ 100005 ] , sum ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int ans = min ( ans , temp ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int ql [100005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        3,
+        15,
+        5
+      ],
+      "mod_code": [
+        "long long n , l , r , ql [ 100005 ] , ql [ 100005 ] , sum ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int ans = min ( ans , temp ) ;",
+        "sum [ i + 1 ] += sum [ i ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int ql [100005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        3,
+        15,
+        4
+      ],
+      "mod_code": [
+        "long long n , l , r , ql [ 100005 ] , ql [ 100005 ] , sum ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int ans = min ( ans , temp ) ;",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int ql [100005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        3,
+        5
+      ],
+      "mod_code": [
+        "long long n , l , r , ql [ 100005 ] , ql [ 100005 ] , sum ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "sum [ i + 1 ] += sum [ i ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int ql [100005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        3,
+        5,
+        4
+      ],
+      "mod_code": [
+        "long long n , l , r , ql [ 100005 ] , ql [ 100005 ] , sum ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "sum [ i + 1 ] += sum [ i ] ;",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int ql [100005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        3,
+        4
+      ],
+      "mod_code": [
+        "long long n , l , r , ql [ 100005 ] , ql [ 100005 ] , sum ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int ql [100005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        15
+      ],
+      "mod_code": [
+        "long long n , l , r , ql [ 100005 ] , ql [ 100005 ] , sum ;",
+        "int ans = min ( ans , temp ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int ql [100005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        15,
+        5
+      ],
+      "mod_code": [
+        "long long n , l , r , ql [ 100005 ] , ql [ 100005 ] , sum ;",
+        "int ans = min ( ans , temp ) ;",
+        "sum [ i + 1 ] += sum [ i ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int ql [100005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        15,
+        5,
+        4
+      ],
+      "mod_code": [
+        "long long n , l , r , ql [ 100005 ] , ql [ 100005 ] , sum ;",
+        "int ans = min ( ans , temp ) ;",
+        "sum [ i + 1 ] += sum [ i ] ;",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int ql [100005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        15,
+        4
+      ],
+      "mod_code": [
+        "long long n , l , r , ql [ 100005 ] , ql [ 100005 ] , sum ;",
+        "int ans = min ( ans , temp ) ;",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int ql [100005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        5
+      ],
+      "mod_code": [
+        "long long n , l , r , ql [ 100005 ] , ql [ 100005 ] , sum ;",
+        "sum [ i + 1 ] += sum [ i ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int ql [100005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        5,
+        4
+      ],
+      "mod_code": [
+        "long long n , l , r , ql [ 100005 ] , ql [ 100005 ] , sum ;",
+        "sum [ i + 1 ] += sum [ i ] ;",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int ql [100005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        4
+      ],
+      "mod_code": [
+        "long long n , l , r , ql [ 100005 ] , ql [ 100005 ] , sum ;",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int ql [100005]’"
+    },
+    {
+      "mod_line": [
+        2,
+        3
+      ],
+      "mod_code": [
+        "cin >> n read l >> r >> ql >> qr ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        15
+      ],
+      "mod_code": [
+        "cin >> n read l >> r >> ql >> qr ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int ans = min ( ans , temp ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        15,
+        5
+      ],
+      "mod_code": [
+        "cin >> n read l >> r >> ql >> qr ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int ans = min ( ans , temp ) ;",
+        "sum [ i + 1 ] += sum [ i ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        15,
+        4
+      ],
+      "mod_code": [
+        "cin >> n read l >> r >> ql >> qr ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int ans = min ( ans , temp ) ;",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        5
+      ],
+      "mod_code": [
+        "cin >> n read l >> r >> ql >> qr ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "sum [ i + 1 ] += sum [ i ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        5,
+        4
+      ],
+      "mod_code": [
+        "cin >> n read l >> r >> ql >> qr ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "sum [ i + 1 ] += sum [ i ] ;",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        4
+      ],
+      "mod_code": [
+        "cin >> n read l >> r >> ql >> qr ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        2,
+        15
+      ],
+      "mod_code": [
+        "cin >> n read l >> r >> ql >> qr ;",
+        "int ans = min ( ans , temp ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        2,
+        15,
+        5
+      ],
+      "mod_code": [
+        "cin >> n read l >> r >> ql >> qr ;",
+        "int ans = min ( ans , temp ) ;",
+        "sum [ i + 1 ] += sum [ i ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        2,
+        15,
+        5,
+        4
+      ],
+      "mod_code": [
+        "cin >> n read l >> r >> ql >> qr ;",
+        "int ans = min ( ans , temp ) ;",
+        "sum [ i + 1 ] += sum [ i ] ;",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        2,
+        15,
+        4
+      ],
+      "mod_code": [
+        "cin >> n read l >> r >> ql >> qr ;",
+        "int ans = min ( ans , temp ) ;",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        2,
+        5
+      ],
+      "mod_code": [
+        "cin >> n read l >> r >> ql >> qr ;",
+        "sum [ i + 1 ] += sum [ i ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        2,
+        5,
+        4
+      ],
+      "mod_code": [
+        "cin >> n read l >> r >> ql >> qr ;",
+        "sum [ i + 1 ] += sum [ i ] ;",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        2,
+        4
+      ],
+      "mod_code": [
+        "cin >> n read l >> r >> ql >> qr ;",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        3,
+        15
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int ans = min ( ans , temp ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        15,
+        5
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int ans = min ( ans , temp ) ;",
+        "sum [ i + 1 ] += sum [ i ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        15,
+        5,
+        4
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int ans = min ( ans , temp ) ;",
+        "sum [ i + 1 ] += sum [ i ] ;",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        15,
+        4
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int ans = min ( ans , temp ) ;",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        5
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "sum [ i + 1 ] += sum [ i ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        5,
+        4
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "sum [ i + 1 ] += sum [ i ] ;",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        4
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        5
+      ],
+      "mod_code": [
+        "int ans = min ( ans , temp ) ;",
+        "sum [ i + 1 ] += sum [ i ] ;"
+      ],
+      "err_line": 15,
+      "err_msg": "no matching function for call to ‘min(int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        15,
+        5,
+        4
+      ],
+      "mod_code": [
+        "int ans = min ( ans , temp ) ;",
+        "sum [ i + 1 ] += sum [ i ] ;",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid operands of types ‘long long int [100005]’ and ‘long long int’ to binary ‘operator>>’"
+    },
+    {
+      "mod_line": [
+        15,
+        4
+      ],
+      "mod_code": [
+        "int ans = min ( ans , temp ) ;",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid operands of types ‘long long int [100005]’ and ‘long long int’ to binary ‘operator>>’"
+    },
+    {
+      "mod_line": [
+        5,
+        4
+      ],
+      "mod_code": [
+        "sum [ i + 1 ] += sum [ i ] ;",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid operands of types ‘long long int [100005]’ and ‘long long int’ to binary ‘operator>>’"
+    }
+  ]
+}

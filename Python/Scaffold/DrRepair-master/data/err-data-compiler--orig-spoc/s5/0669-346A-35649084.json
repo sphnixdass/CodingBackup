@@ -1,0 +1,683 @@
+{
+  "meta": {
+    "index": 669,
+    "hitid": "32ZCLEW0BZEF1S4KUX48OY36SKCJPG",
+    "workerid": "A1R0Q9CUUBSM5F",
+    "probid": "346A",
+    "subid": "35649084"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare gcd taking ints a and b and returning integer",
+      "code": "int gcd ( int a , int b )",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "return b ? gcd ( b , a % b ) : a",
+      "code": "return b ? gcd ( b , a % b ) : a ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "create integers n , temp , and maxn and integer array of size 100000",
+      "code": "int n , a [ 100000 ] , temp , maxn ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 1 to n",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "read a [ i ]",
+      "code": "cin >> a [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "if a [ i ] is greater than maxn , set maxn to a [ i ]",
+      "code": "if ( a [ i ] > maxn ) maxn = a [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "set temp to gcd ( a [ 1 ] , a [ 2 ] )",
+      "code": "temp = gcd ( a [ 1 ] , a [ 2 ] ) ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "for i = 3 to n , set temp to gcd ( temp , a [ i ] )",
+      "code": "for ( int i = 3 ; i <= n ; i ++ ) temp = gcd ( temp , a [ i ] ) ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "create integer movetimes = maxn / temp - n",
+      "code": "int movetimes = maxn / temp - n ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "output \" Alice \" if movetimes & 1 is truthy or \" Bob \" if not",
+      "code": "puts ( movetimes & 1 ? \" Alice \" : \" Bob \" ) ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "int n , temp , maxn , maxn [ 100000 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int maxn [100000]’"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int gcd ( a , b ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "int n , temp , temp , maxn [ 100000 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int temp’"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "int temp = gcd ( a [ 1 ] , a [ 2 ] ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "redeclaration of ‘int temp’"
+    },
+    {
+      "mod_line": [
+        4,
+        13
+      ],
+      "mod_code": [
+        "int n , temp , maxn , maxn [ 100000 ] ;",
+        "cout << ( movetimes & 1 ? \" Alice \" : \" Bob \" ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int maxn [100000]’"
+    },
+    {
+      "mod_line": [
+        4,
+        13,
+        12
+      ],
+      "mod_code": [
+        "int n , temp , maxn , maxn [ 100000 ] ;",
+        "cout << ( movetimes & 1 ? \" Alice \" : \" Bob \" ) ;",
+        "int movetimes = maxn / ( temp - n ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int maxn [100000]’"
+    },
+    {
+      "mod_line": [
+        4,
+        13,
+        12,
+        10
+      ],
+      "mod_code": [
+        "int n , temp , maxn , maxn [ 100000 ] ;",
+        "cout << ( movetimes & 1 ? \" Alice \" : \" Bob \" ) ;",
+        "int movetimes = maxn / ( temp - n ) ;",
+        "int temp = gcd ( a [ 1 ] , a [ 2 ] ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int maxn [100000]’"
+    },
+    {
+      "mod_line": [
+        4,
+        13,
+        12,
+        6
+      ],
+      "mod_code": [
+        "int n , temp , maxn , maxn [ 100000 ] ;",
+        "cout << ( movetimes & 1 ? \" Alice \" : \" Bob \" ) ;",
+        "int movetimes = maxn / ( temp - n ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int maxn [100000]’"
+    },
+    {
+      "mod_line": [
+        4,
+        13,
+        10
+      ],
+      "mod_code": [
+        "int n , temp , maxn , maxn [ 100000 ] ;",
+        "cout << ( movetimes & 1 ? \" Alice \" : \" Bob \" ) ;",
+        "int temp = gcd ( a [ 1 ] , a [ 2 ] ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int maxn [100000]’"
+    },
+    {
+      "mod_line": [
+        4,
+        13,
+        10,
+        6
+      ],
+      "mod_code": [
+        "int n , temp , maxn , maxn [ 100000 ] ;",
+        "cout << ( movetimes & 1 ? \" Alice \" : \" Bob \" ) ;",
+        "int temp = gcd ( a [ 1 ] , a [ 2 ] ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int maxn [100000]’"
+    },
+    {
+      "mod_line": [
+        4,
+        13,
+        6
+      ],
+      "mod_code": [
+        "int n , temp , maxn , maxn [ 100000 ] ;",
+        "cout << ( movetimes & 1 ? \" Alice \" : \" Bob \" ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int maxn [100000]’"
+    },
+    {
+      "mod_line": [
+        4,
+        12
+      ],
+      "mod_code": [
+        "int n , temp , maxn , maxn [ 100000 ] ;",
+        "int movetimes = maxn / ( temp - n ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int maxn [100000]’"
+    },
+    {
+      "mod_line": [
+        4,
+        12,
+        10
+      ],
+      "mod_code": [
+        "int n , temp , maxn , maxn [ 100000 ] ;",
+        "int movetimes = maxn / ( temp - n ) ;",
+        "int temp = gcd ( a [ 1 ] , a [ 2 ] ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int maxn [100000]’"
+    },
+    {
+      "mod_line": [
+        4,
+        12,
+        10,
+        6
+      ],
+      "mod_code": [
+        "int n , temp , maxn , maxn [ 100000 ] ;",
+        "int movetimes = maxn / ( temp - n ) ;",
+        "int temp = gcd ( a [ 1 ] , a [ 2 ] ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int maxn [100000]’"
+    },
+    {
+      "mod_line": [
+        4,
+        12,
+        6
+      ],
+      "mod_code": [
+        "int n , temp , maxn , maxn [ 100000 ] ;",
+        "int movetimes = maxn / ( temp - n ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int maxn [100000]’"
+    },
+    {
+      "mod_line": [
+        4,
+        10
+      ],
+      "mod_code": [
+        "int n , temp , maxn , maxn [ 100000 ] ;",
+        "int temp = gcd ( a [ 1 ] , a [ 2 ] ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int maxn [100000]’"
+    },
+    {
+      "mod_line": [
+        4,
+        10,
+        6
+      ],
+      "mod_code": [
+        "int n , temp , maxn , maxn [ 100000 ] ;",
+        "int temp = gcd ( a [ 1 ] , a [ 2 ] ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int maxn [100000]’"
+    },
+    {
+      "mod_line": [
+        4,
+        6
+      ],
+      "mod_code": [
+        "int n , temp , maxn , maxn [ 100000 ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int maxn [100000]’"
+    },
+    {
+      "mod_line": [
+        13,
+        12,
+        10
+      ],
+      "mod_code": [
+        "cout << ( movetimes & 1 ? \" Alice \" : \" Bob \" ) ;",
+        "int movetimes = maxn / ( temp - n ) ;",
+        "int temp = gcd ( a [ 1 ] , a [ 2 ] ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "redeclaration of ‘int temp’"
+    },
+    {
+      "mod_line": [
+        13,
+        12,
+        10,
+        4
+      ],
+      "mod_code": [
+        "cout << ( movetimes & 1 ? \" Alice \" : \" Bob \" ) ;",
+        "int movetimes = maxn / ( temp - n ) ;",
+        "int temp = gcd ( a [ 1 ] , a [ 2 ] ) ;",
+        "int n , temp , temp , maxn [ 100000 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int temp’"
+    },
+    {
+      "mod_line": [
+        13,
+        12,
+        10,
+        6
+      ],
+      "mod_code": [
+        "cout << ( movetimes & 1 ? \" Alice \" : \" Bob \" ) ;",
+        "int movetimes = maxn / ( temp - n ) ;",
+        "int temp = gcd ( a [ 1 ] , a [ 2 ] ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        12,
+        4
+      ],
+      "mod_code": [
+        "cout << ( movetimes & 1 ? \" Alice \" : \" Bob \" ) ;",
+        "int movetimes = maxn / ( temp - n ) ;",
+        "int n , temp , temp , maxn [ 100000 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int temp’"
+    },
+    {
+      "mod_line": [
+        13,
+        12,
+        4,
+        6
+      ],
+      "mod_code": [
+        "cout << ( movetimes & 1 ? \" Alice \" : \" Bob \" ) ;",
+        "int movetimes = maxn / ( temp - n ) ;",
+        "int n , temp , temp , maxn [ 100000 ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int temp’"
+    },
+    {
+      "mod_line": [
+        13,
+        12,
+        6
+      ],
+      "mod_code": [
+        "cout << ( movetimes & 1 ? \" Alice \" : \" Bob \" ) ;",
+        "int movetimes = maxn / ( temp - n ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        10
+      ],
+      "mod_code": [
+        "cout << ( movetimes & 1 ? \" Alice \" : \" Bob \" ) ;",
+        "int temp = gcd ( a [ 1 ] , a [ 2 ] ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "redeclaration of ‘int temp’"
+    },
+    {
+      "mod_line": [
+        13,
+        10,
+        4
+      ],
+      "mod_code": [
+        "cout << ( movetimes & 1 ? \" Alice \" : \" Bob \" ) ;",
+        "int temp = gcd ( a [ 1 ] , a [ 2 ] ) ;",
+        "int n , temp , temp , maxn [ 100000 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int temp’"
+    },
+    {
+      "mod_line": [
+        13,
+        10,
+        4,
+        6
+      ],
+      "mod_code": [
+        "cout << ( movetimes & 1 ? \" Alice \" : \" Bob \" ) ;",
+        "int temp = gcd ( a [ 1 ] , a [ 2 ] ) ;",
+        "int n , temp , temp , maxn [ 100000 ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int temp’"
+    },
+    {
+      "mod_line": [
+        13,
+        10,
+        6
+      ],
+      "mod_code": [
+        "cout << ( movetimes & 1 ? \" Alice \" : \" Bob \" ) ;",
+        "int temp = gcd ( a [ 1 ] , a [ 2 ] ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        4
+      ],
+      "mod_code": [
+        "cout << ( movetimes & 1 ? \" Alice \" : \" Bob \" ) ;",
+        "int n , temp , temp , maxn [ 100000 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int temp’"
+    },
+    {
+      "mod_line": [
+        13,
+        4,
+        6
+      ],
+      "mod_code": [
+        "cout << ( movetimes & 1 ? \" Alice \" : \" Bob \" ) ;",
+        "int n , temp , temp , maxn [ 100000 ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int temp’"
+    },
+    {
+      "mod_line": [
+        13,
+        6
+      ],
+      "mod_code": [
+        "cout << ( movetimes & 1 ? \" Alice \" : \" Bob \" ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        10
+      ],
+      "mod_code": [
+        "int movetimes = maxn / ( temp - n ) ;",
+        "int temp = gcd ( a [ 1 ] , a [ 2 ] ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "redeclaration of ‘int temp’"
+    },
+    {
+      "mod_line": [
+        12,
+        10,
+        4
+      ],
+      "mod_code": [
+        "int movetimes = maxn / ( temp - n ) ;",
+        "int temp = gcd ( a [ 1 ] , a [ 2 ] ) ;",
+        "int n , temp , temp , maxn [ 100000 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int temp’"
+    },
+    {
+      "mod_line": [
+        12,
+        10,
+        4,
+        6
+      ],
+      "mod_code": [
+        "int movetimes = maxn / ( temp - n ) ;",
+        "int temp = gcd ( a [ 1 ] , a [ 2 ] ) ;",
+        "int n , temp , temp , maxn [ 100000 ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int temp’"
+    },
+    {
+      "mod_line": [
+        12,
+        10,
+        6
+      ],
+      "mod_code": [
+        "int movetimes = maxn / ( temp - n ) ;",
+        "int temp = gcd ( a [ 1 ] , a [ 2 ] ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        4
+      ],
+      "mod_code": [
+        "int movetimes = maxn / ( temp - n ) ;",
+        "int n , temp , temp , maxn [ 100000 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int temp’"
+    },
+    {
+      "mod_line": [
+        12,
+        4,
+        6
+      ],
+      "mod_code": [
+        "int movetimes = maxn / ( temp - n ) ;",
+        "int n , temp , temp , maxn [ 100000 ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int temp’"
+    },
+    {
+      "mod_line": [
+        12,
+        6
+      ],
+      "mod_code": [
+        "int movetimes = maxn / ( temp - n ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        4
+      ],
+      "mod_code": [
+        "int temp = gcd ( a [ 1 ] , a [ 2 ] ) ;",
+        "int n , temp , temp , maxn [ 100000 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int temp’"
+    },
+    {
+      "mod_line": [
+        10,
+        4,
+        6
+      ],
+      "mod_code": [
+        "int temp = gcd ( a [ 1 ] , a [ 2 ] ) ;",
+        "int n , temp , temp , maxn [ 100000 ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int temp’"
+    },
+    {
+      "mod_line": [
+        10,
+        6
+      ],
+      "mod_code": [
+        "int temp = gcd ( a [ 1 ] , a [ 2 ] ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        6
+      ],
+      "mod_code": [
+        "int n , temp , temp , maxn [ 100000 ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int temp’"
+    }
+  ]
+}

@@ -1,0 +1,677 @@
+{
+  "meta": {
+    "index": 2402,
+    "hitid": "3WGZLY9VCHGHSE5BYKGMZED3X3F8DW",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "543A",
+    "subid": "48716262"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "let f be integer 2d array with size 501 by 501",
+      "code": "int f [ 501 ] [ 501 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "declare integer variables n , m , b and mod",
+      "code": "int n , m , b , mod ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "read n , m , b and mod",
+      "code": "cin >> n >> m >> b >> mod ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "set value of f [ 0 ] [ 0 ] to 1",
+      "code": "f [ 0 ] [ 0 ] = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i = 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "declare integer variable x",
+      "code": "int x ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "read x",
+      "code": "cin >> x ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "for integer j = 1 to m inclusive",
+      "code": "for ( int j = 1 ; j <= m ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "for integer k = x to b inclusive , ( f [ j ] [ k ] + = f [ j - 1 ] [ k - x ] ) % = mod",
+      "code": "for ( int k = x ; k <= b ; k ++ ) { ( f [ j ] [ k ] += f [ j - 1 ] [ k - x ] ) %= mod ; }",
+      "indent": 3
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "declare integer ans = 0",
+      "code": "int ans = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "for i = 0 to b inclusive , ( ans + = f [ m ] [ i ] ) % = mod",
+      "code": "for ( int i = 0 ; i <= b ; i ++ ) { ( ans += f [ m ] [ i ] ) %= mod ; }",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "print ans",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int f [ 501 ] [ 501 ] be ;"
+      ],
+      "err_line": 0,
+      "err_msg": "expected initializer before ‘be’"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "int n , m , b >> mod ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected initializer before ‘>>’ token"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "C [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘C’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "ans = 0 ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘ans’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        13,
+        2
+      ],
+      "mod_code": [
+        "for ( int k = x ; k <= b ; k ++ ) { f [ j ] [ k ] += mod ; }",
+        "for ( int i = 0 ; i <= b ; i ++ ) ( ans + f [ m ] [ i ] ) % mod ;",
+        "int n , m , b >> mod ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected initializer before ‘>>’ token"
+    },
+    {
+      "mod_line": [
+        9,
+        13,
+        2,
+        0
+      ],
+      "mod_code": [
+        "for ( int k = x ; k <= b ; k ++ ) { f [ j ] [ k ] += mod ; }",
+        "for ( int i = 0 ; i <= b ; i ++ ) ( ans + f [ m ] [ i ] ) % mod ;",
+        "int n , m , b >> mod ;",
+        "int f [ 501 ] [ 501 ] be ;"
+      ],
+      "err_line": 0,
+      "err_msg": "expected initializer before ‘be’"
+    },
+    {
+      "mod_line": [
+        9,
+        13,
+        2,
+        4
+      ],
+      "mod_code": [
+        "for ( int k = x ; k <= b ; k ++ ) { f [ j ] [ k ] += mod ; }",
+        "for ( int i = 0 ; i <= b ; i ++ ) ( ans + f [ m ] [ i ] ) % mod ;",
+        "int n , m , b >> mod ;",
+        "C [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected initializer before ‘>>’ token"
+    },
+    {
+      "mod_line": [
+        9,
+        13,
+        0
+      ],
+      "mod_code": [
+        "for ( int k = x ; k <= b ; k ++ ) { f [ j ] [ k ] += mod ; }",
+        "for ( int i = 0 ; i <= b ; i ++ ) ( ans + f [ m ] [ i ] ) % mod ;",
+        "int f [ 501 ] [ 501 ] be ;"
+      ],
+      "err_line": 0,
+      "err_msg": "expected initializer before ‘be’"
+    },
+    {
+      "mod_line": [
+        9,
+        13,
+        0,
+        4
+      ],
+      "mod_code": [
+        "for ( int k = x ; k <= b ; k ++ ) { f [ j ] [ k ] += mod ; }",
+        "for ( int i = 0 ; i <= b ; i ++ ) ( ans + f [ m ] [ i ] ) % mod ;",
+        "int f [ 501 ] [ 501 ] be ;",
+        "C [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "expected initializer before ‘be’"
+    },
+    {
+      "mod_line": [
+        9,
+        13,
+        4
+      ],
+      "mod_code": [
+        "for ( int k = x ; k <= b ; k ++ ) { f [ j ] [ k ] += mod ; }",
+        "for ( int i = 0 ; i <= b ; i ++ ) ( ans + f [ m ] [ i ] ) % mod ;",
+        "C [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘C’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        2
+      ],
+      "mod_code": [
+        "for ( int k = x ; k <= b ; k ++ ) { f [ j ] [ k ] += mod ; }",
+        "int n , m , b >> mod ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected initializer before ‘>>’ token"
+    },
+    {
+      "mod_line": [
+        9,
+        2,
+        0
+      ],
+      "mod_code": [
+        "for ( int k = x ; k <= b ; k ++ ) { f [ j ] [ k ] += mod ; }",
+        "int n , m , b >> mod ;",
+        "int f [ 501 ] [ 501 ] be ;"
+      ],
+      "err_line": 0,
+      "err_msg": "expected initializer before ‘be’"
+    },
+    {
+      "mod_line": [
+        9,
+        2,
+        0,
+        4
+      ],
+      "mod_code": [
+        "for ( int k = x ; k <= b ; k ++ ) { f [ j ] [ k ] += mod ; }",
+        "int n , m , b >> mod ;",
+        "int f [ 501 ] [ 501 ] be ;",
+        "C [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "expected initializer before ‘be’"
+    },
+    {
+      "mod_line": [
+        9,
+        2,
+        4
+      ],
+      "mod_code": [
+        "for ( int k = x ; k <= b ; k ++ ) { f [ j ] [ k ] += mod ; }",
+        "int n , m , b >> mod ;",
+        "C [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected initializer before ‘>>’ token"
+    },
+    {
+      "mod_line": [
+        9,
+        0
+      ],
+      "mod_code": [
+        "for ( int k = x ; k <= b ; k ++ ) { f [ j ] [ k ] += mod ; }",
+        "int f [ 501 ] [ 501 ] be ;"
+      ],
+      "err_line": 0,
+      "err_msg": "expected initializer before ‘be’"
+    },
+    {
+      "mod_line": [
+        9,
+        0,
+        4
+      ],
+      "mod_code": [
+        "for ( int k = x ; k <= b ; k ++ ) { f [ j ] [ k ] += mod ; }",
+        "int f [ 501 ] [ 501 ] be ;",
+        "C [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "expected initializer before ‘be’"
+    },
+    {
+      "mod_line": [
+        9,
+        4
+      ],
+      "mod_code": [
+        "for ( int k = x ; k <= b ; k ++ ) { f [ j ] [ k ] += mod ; }",
+        "C [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘C’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        9,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i <= b ; i ++ ) ( ans + f [ m ] [ i ] ) % mod ;",
+        "for ( int k = x ; k <= b ; k ++ ) ( f [ j ] [ k ] , f [ j - 1 ] [ k - x ] ) % mod ;",
+        "int n , m , b >> mod ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected initializer before ‘>>’ token"
+    },
+    {
+      "mod_line": [
+        13,
+        9,
+        2,
+        0
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i <= b ; i ++ ) ( ans + f [ m ] [ i ] ) % mod ;",
+        "for ( int k = x ; k <= b ; k ++ ) ( f [ j ] [ k ] , f [ j - 1 ] [ k - x ] ) % mod ;",
+        "int n , m , b >> mod ;",
+        "int f [ 501 ] [ 501 ] be ;"
+      ],
+      "err_line": 0,
+      "err_msg": "expected initializer before ‘be’"
+    },
+    {
+      "mod_line": [
+        13,
+        9,
+        2,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i <= b ; i ++ ) ( ans + f [ m ] [ i ] ) % mod ;",
+        "for ( int k = x ; k <= b ; k ++ ) ( f [ j ] [ k ] , f [ j - 1 ] [ k - x ] ) % mod ;",
+        "int n , m , b >> mod ;",
+        "C [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected initializer before ‘>>’ token"
+    },
+    {
+      "mod_line": [
+        13,
+        9,
+        0
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i <= b ; i ++ ) ( ans + f [ m ] [ i ] ) % mod ;",
+        "for ( int k = x ; k <= b ; k ++ ) ( f [ j ] [ k ] , f [ j - 1 ] [ k - x ] ) % mod ;",
+        "int f [ 501 ] [ 501 ] be ;"
+      ],
+      "err_line": 0,
+      "err_msg": "expected initializer before ‘be’"
+    },
+    {
+      "mod_line": [
+        13,
+        9,
+        0,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i <= b ; i ++ ) ( ans + f [ m ] [ i ] ) % mod ;",
+        "for ( int k = x ; k <= b ; k ++ ) ( f [ j ] [ k ] , f [ j - 1 ] [ k - x ] ) % mod ;",
+        "int f [ 501 ] [ 501 ] be ;",
+        "C [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "expected initializer before ‘be’"
+    },
+    {
+      "mod_line": [
+        13,
+        9,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i <= b ; i ++ ) ( ans + f [ m ] [ i ] ) % mod ;",
+        "for ( int k = x ; k <= b ; k ++ ) ( f [ j ] [ k ] , f [ j - 1 ] [ k - x ] ) % mod ;",
+        "C [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘C’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i <= b ; i ++ ) ( ans + f [ m ] [ i ] ) % mod ;",
+        "int n , m , b >> mod ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected initializer before ‘>>’ token"
+    },
+    {
+      "mod_line": [
+        13,
+        2,
+        0
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i <= b ; i ++ ) ( ans + f [ m ] [ i ] ) % mod ;",
+        "int n , m , b >> mod ;",
+        "int f [ 501 ] [ 501 ] be ;"
+      ],
+      "err_line": 0,
+      "err_msg": "expected initializer before ‘be’"
+    },
+    {
+      "mod_line": [
+        13,
+        2,
+        0,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i <= b ; i ++ ) ( ans + f [ m ] [ i ] ) % mod ;",
+        "int n , m , b >> mod ;",
+        "int f [ 501 ] [ 501 ] be ;",
+        "C [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "expected initializer before ‘be’"
+    },
+    {
+      "mod_line": [
+        13,
+        2,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i <= b ; i ++ ) ( ans + f [ m ] [ i ] ) % mod ;",
+        "int n , m , b >> mod ;",
+        "C [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected initializer before ‘>>’ token"
+    },
+    {
+      "mod_line": [
+        13,
+        0
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i <= b ; i ++ ) ( ans + f [ m ] [ i ] ) % mod ;",
+        "int f [ 501 ] [ 501 ] be ;"
+      ],
+      "err_line": 0,
+      "err_msg": "expected initializer before ‘be’"
+    },
+    {
+      "mod_line": [
+        13,
+        0,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i <= b ; i ++ ) ( ans + f [ m ] [ i ] ) % mod ;",
+        "int f [ 501 ] [ 501 ] be ;",
+        "C [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "expected initializer before ‘be’"
+    },
+    {
+      "mod_line": [
+        13,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i <= b ; i ++ ) ( ans + f [ m ] [ i ] ) % mod ;",
+        "C [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘C’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        2
+      ],
+      "mod_code": [
+        "for ( int k = x ; k <= b ; k ++ ) ( f [ j ] [ k ] , f [ j - 1 ] [ k - x ] ) % mod ;",
+        "int n , m , b >> mod ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected initializer before ‘>>’ token"
+    },
+    {
+      "mod_line": [
+        9,
+        2,
+        0
+      ],
+      "mod_code": [
+        "for ( int k = x ; k <= b ; k ++ ) ( f [ j ] [ k ] , f [ j - 1 ] [ k - x ] ) % mod ;",
+        "int n , m , b >> mod ;",
+        "int f [ 501 ] [ 501 ] be ;"
+      ],
+      "err_line": 0,
+      "err_msg": "expected initializer before ‘be’"
+    },
+    {
+      "mod_line": [
+        9,
+        2,
+        0,
+        4
+      ],
+      "mod_code": [
+        "for ( int k = x ; k <= b ; k ++ ) ( f [ j ] [ k ] , f [ j - 1 ] [ k - x ] ) % mod ;",
+        "int n , m , b >> mod ;",
+        "int f [ 501 ] [ 501 ] be ;",
+        "C [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "expected initializer before ‘be’"
+    },
+    {
+      "mod_line": [
+        9,
+        2,
+        4
+      ],
+      "mod_code": [
+        "for ( int k = x ; k <= b ; k ++ ) ( f [ j ] [ k ] , f [ j - 1 ] [ k - x ] ) % mod ;",
+        "int n , m , b >> mod ;",
+        "C [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected initializer before ‘>>’ token"
+    },
+    {
+      "mod_line": [
+        9,
+        0
+      ],
+      "mod_code": [
+        "for ( int k = x ; k <= b ; k ++ ) ( f [ j ] [ k ] , f [ j - 1 ] [ k - x ] ) % mod ;",
+        "int f [ 501 ] [ 501 ] be ;"
+      ],
+      "err_line": 0,
+      "err_msg": "expected initializer before ‘be’"
+    },
+    {
+      "mod_line": [
+        9,
+        0,
+        4
+      ],
+      "mod_code": [
+        "for ( int k = x ; k <= b ; k ++ ) ( f [ j ] [ k ] , f [ j - 1 ] [ k - x ] ) % mod ;",
+        "int f [ 501 ] [ 501 ] be ;",
+        "C [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "expected initializer before ‘be’"
+    },
+    {
+      "mod_line": [
+        9,
+        4
+      ],
+      "mod_code": [
+        "for ( int k = x ; k <= b ; k ++ ) ( f [ j ] [ k ] , f [ j - 1 ] [ k - x ] ) % mod ;",
+        "C [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘C’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        0
+      ],
+      "mod_code": [
+        "int n , m , b >> mod ;",
+        "int f [ 501 ] [ 501 ] be ;"
+      ],
+      "err_line": 0,
+      "err_msg": "expected initializer before ‘be’"
+    },
+    {
+      "mod_line": [
+        2,
+        0,
+        4
+      ],
+      "mod_code": [
+        "int n , m , b >> mod ;",
+        "int f [ 501 ] [ 501 ] be ;",
+        "C [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "expected initializer before ‘be’"
+    },
+    {
+      "mod_line": [
+        2,
+        4
+      ],
+      "mod_code": [
+        "int n , m , b >> mod ;",
+        "C [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected initializer before ‘>>’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        4
+      ],
+      "mod_code": [
+        "int f [ 501 ] [ 501 ] be ;",
+        "C [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "expected initializer before ‘be’"
+    }
+  ]
+}

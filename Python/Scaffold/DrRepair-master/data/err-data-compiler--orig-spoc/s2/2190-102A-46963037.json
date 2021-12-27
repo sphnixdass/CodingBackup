@@ -1,0 +1,925 @@
+{
+  "meta": {
+    "index": 2190,
+    "hitid": "3OND0WXMHW9FDVK4XJLCI9ON1L7EHM",
+    "workerid": "A1R0Q9CUUBSM5F",
+    "probid": "102A",
+    "subid": "46963037"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "make constant integer mod = 1e9 + 7",
+      "code": "const int mod = 1e9 + 7 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "let const int maxn = 1e5",
+      "code": "const int maxn = 1e5 ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "let long long ints n and m",
+      "code": "long long n , m ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "make ints u and v",
+      "code": "int u , v ;",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "create integer array num of size 105",
+      "code": "int num [ 105 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "make int array edge of size with array of size 105",
+      "code": "int edge [ 105 ] [ 105 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 6,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 7,
+      "text": "read n and m",
+      "code": "cin >> n >> m ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "set all contents of edge to 0",
+      "code": "memset ( edge , 0 , sizeof edge ) ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "for i = 1 to n , read num [ i ]",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) cin >> num [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "for i = 0 to m exclusive",
+      "code": "for ( int i = 0 ; i < m ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "read u and v",
+      "code": "cin >> u >> v ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "increment edge [ u ] [ 0 ]",
+      "code": "edge [ u ] [ 0 ] ++ ;",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "set edge [ u ] [ edge [ u ] [ 0 ] ] to v",
+      "code": "edge [ u ] [ edge [ u ] [ 0 ] ] = v ;",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "set edge [ v ] [ 0 ] to edge [ v ] [ 0 ] + 1",
+      "code": "edge [ v ] [ 0 ] ++ ;",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "set edge [ v ] [ edge [ v ] [ 0 ] ] to u",
+      "code": "edge [ v ] [ edge [ v ] [ 0 ] ] = u ;",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "make ints a , b , and c",
+      "code": "int a , b , c ;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "create bool f = false",
+      "code": "bool f = false ;",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "make integer ans = mod",
+      "code": "int ans = mod ;",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "for i = 1 to n",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "set a to i",
+      "code": "a = i ;",
+      "indent": 2
+    },
+    {
+      "line": 22,
+      "text": "for j = 1 to edge [ a ] [ 0 ]",
+      "code": "for ( int j = 1 ; j <= edge [ a ] [ 0 ] ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 23,
+      "text": "set b to edge [ a ] [ j ]",
+      "code": "b = edge [ a ] [ j ] ;",
+      "indent": 3
+    },
+    {
+      "line": 24,
+      "text": "for k = 1 to edge [ b ] [ 0 ]",
+      "code": "for ( int k = 1 ; k <= edge [ b ] [ 0 ] ; k ++ )",
+      "indent": 3
+    },
+    {
+      "line": 25,
+      "text": "set c to edge [ b ] [ k ]",
+      "code": "c = edge [ b ] [ k ] ;",
+      "indent": 4
+    },
+    {
+      "line": 26,
+      "text": "for p = 1 to edge [ c ] [ 0 ]",
+      "code": "for ( int p = 1 ; p <= edge [ c ] [ 0 ] ; p ++ )",
+      "indent": 4
+    },
+    {
+      "line": 27,
+      "text": "if edge [ c ] [ p ] is equal to a",
+      "code": "if ( edge [ c ] [ p ] == a )",
+      "indent": 5
+    },
+    {
+      "line": 28,
+      "text": "set f to true",
+      "code": "f = true ;",
+      "indent": 6
+    },
+    {
+      "line": 29,
+      "text": "set ans to min ( ans , num [ a ] + num [ b ] + num [ c ] )",
+      "code": "ans = min ( ans , num [ a ] + num [ b ] + num [ c ] ) ;",
+      "indent": 6
+    },
+    {
+      "line": 30,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 5
+    },
+    {
+      "line": 31,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 4
+    },
+    {
+      "line": 32,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 33,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 34,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 35,
+      "text": "if f is truthy",
+      "code": "if ( f )",
+      "indent": 1
+    },
+    {
+      "line": 36,
+      "text": "print ans",
+      "code": "cout << ans << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 37,
+      "text": "else do",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 38,
+      "text": "show \" - 1 \\ n \"",
+      "code": "cout << \" -1\\n \" ;",
+      "indent": 2
+    },
+    {
+      "line": 39,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 40,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        26
+      ],
+      "mod_code": [
+        "for ( int p = 1 ; p [ c ] [ 0 ] ; p ++ )"
+      ],
+      "err_line": 26,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "int arr [ 105 ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘num’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "int edge [ 105 ] ;"
+      ],
+      "err_line": 12,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < m ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "int edge [ u ] [ edge [ u ] [ 0 ] ] = v ;"
+      ],
+      "err_line": 13,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "int edge [ v ] [ 0 ] = edge [ v ] [ 0 ] + 1 ;"
+      ],
+      "err_line": 14,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "int edge [ v ] [ edge ] [ v ] [ 0 ] = u ;"
+      ],
+      "err_line": 15,
+      "err_msg": "size of array ‘edge’ has non-integral type ‘int [105][105]’"
+    },
+    {
+      "mod_line": [
+        19
+      ],
+      "mod_code": [
+        "const int ans = mod ;"
+      ],
+      "err_line": 29,
+      "err_msg": "assignment of read-only variable ‘ans’"
+    },
+    {
+      "mod_line": [
+        22
+      ],
+      "mod_code": [
+        "for ( j = 1 ; j < edge [ a ] [ 0 ] ; j ++ )"
+      ],
+      "err_line": 22,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        24
+      ],
+      "mod_code": [
+        "for ( k = 1 ; k < edge [ b ] [ 0 ] ; k ++ )"
+      ],
+      "err_line": 24,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        26
+      ],
+      "mod_code": [
+        "for ( p = 1 ; p [ c ] [ 0 ] ; p ++ )"
+      ],
+      "err_line": 26,
+      "err_msg": "‘p’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        37
+      ],
+      "mod_code": [
+        "else do"
+      ],
+      "err_line": 39,
+      "err_msg": "expected ‘while’ before numeric constant"
+    },
+    {
+      "mod_line": [
+        38
+      ],
+      "mod_code": [
+        "cout << \" \\ \" ;"
+      ],
+      "err_line": 38,
+      "err_msg": "missing terminating \" character"
+    },
+    {
+      "mod_line": [
+        26,
+        10
+      ],
+      "mod_code": [
+        "for ( int p = 1 ; p [ c ] [ 0 ] ; p ++ )",
+        "for ( i = 0 ; i < m ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        10,
+        11
+      ],
+      "mod_code": [
+        "for ( int p = 1 ; p [ c ] [ 0 ] ; p ++ )",
+        "for ( i = 0 ; i < m ; i ++ )",
+        "cin >> n >> v ;"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        10,
+        11,
+        13
+      ],
+      "mod_code": [
+        "for ( int p = 1 ; p [ c ] [ 0 ] ; p ++ )",
+        "for ( i = 0 ; i < m ; i ++ )",
+        "cin >> n >> v ;",
+        "int edge [ u ] [ edge [ u ] [ 0 ] ] = v ;"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        10,
+        11,
+        37
+      ],
+      "mod_code": [
+        "for ( int p = 1 ; p [ c ] [ 0 ] ; p ++ )",
+        "for ( i = 0 ; i < m ; i ++ )",
+        "cin >> n >> v ;",
+        "else do"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        10,
+        13
+      ],
+      "mod_code": [
+        "for ( int p = 1 ; p [ c ] [ 0 ] ; p ++ )",
+        "for ( i = 0 ; i < m ; i ++ )",
+        "int edge [ u ] [ edge [ u ] [ 0 ] ] = v ;"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        10,
+        13,
+        37
+      ],
+      "mod_code": [
+        "for ( int p = 1 ; p [ c ] [ 0 ] ; p ++ )",
+        "for ( i = 0 ; i < m ; i ++ )",
+        "int edge [ u ] [ edge [ u ] [ 0 ] ] = v ;",
+        "else do"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        10,
+        37
+      ],
+      "mod_code": [
+        "for ( int p = 1 ; p [ c ] [ 0 ] ; p ++ )",
+        "for ( i = 0 ; i < m ; i ++ )",
+        "else do"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        11
+      ],
+      "mod_code": [
+        "for ( int p = 1 ; p [ c ] [ 0 ] ; p ++ )",
+        "cin >> n >> v ;"
+      ],
+      "err_line": 26,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        26,
+        11,
+        13
+      ],
+      "mod_code": [
+        "for ( int p = 1 ; p [ c ] [ 0 ] ; p ++ )",
+        "cin >> n >> v ;",
+        "int edge [ u ] [ edge [ u ] [ 0 ] ] = v ;"
+      ],
+      "err_line": 13,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        26,
+        11,
+        13,
+        37
+      ],
+      "mod_code": [
+        "for ( int p = 1 ; p [ c ] [ 0 ] ; p ++ )",
+        "cin >> n >> v ;",
+        "int edge [ u ] [ edge [ u ] [ 0 ] ] = v ;",
+        "else do"
+      ],
+      "err_line": 13,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        26,
+        11,
+        37
+      ],
+      "mod_code": [
+        "for ( int p = 1 ; p [ c ] [ 0 ] ; p ++ )",
+        "cin >> n >> v ;",
+        "else do"
+      ],
+      "err_line": 26,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        26,
+        13
+      ],
+      "mod_code": [
+        "for ( int p = 1 ; p [ c ] [ 0 ] ; p ++ )",
+        "int edge [ u ] [ edge [ u ] [ 0 ] ] = v ;"
+      ],
+      "err_line": 13,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        26,
+        13,
+        37
+      ],
+      "mod_code": [
+        "for ( int p = 1 ; p [ c ] [ 0 ] ; p ++ )",
+        "int edge [ u ] [ edge [ u ] [ 0 ] ] = v ;",
+        "else do"
+      ],
+      "err_line": 13,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        26,
+        37
+      ],
+      "mod_code": [
+        "for ( int p = 1 ; p [ c ] [ 0 ] ; p ++ )",
+        "else do"
+      ],
+      "err_line": 26,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        10,
+        11
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < m ; i ++ )",
+        "cin >> n >> v ;"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        11,
+        26
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < m ; i ++ )",
+        "cin >> n >> v ;",
+        "for ( p = 1 ; p [ c ] [ 0 ] ; p ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        11,
+        26,
+        13
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < m ; i ++ )",
+        "cin >> n >> v ;",
+        "for ( p = 1 ; p [ c ] [ 0 ] ; p ++ )",
+        "int edge [ u ] [ edge [ u ] [ 0 ] ] = v ;"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        11,
+        26,
+        37
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < m ; i ++ )",
+        "cin >> n >> v ;",
+        "for ( p = 1 ; p [ c ] [ 0 ] ; p ++ )",
+        "else do"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        11,
+        13
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < m ; i ++ )",
+        "cin >> n >> v ;",
+        "int edge [ u ] [ edge [ u ] [ 0 ] ] = v ;"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        11,
+        13,
+        37
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < m ; i ++ )",
+        "cin >> n >> v ;",
+        "int edge [ u ] [ edge [ u ] [ 0 ] ] = v ;",
+        "else do"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        11,
+        37
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < m ; i ++ )",
+        "cin >> n >> v ;",
+        "else do"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        26
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < m ; i ++ )",
+        "for ( p = 1 ; p [ c ] [ 0 ] ; p ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        26,
+        13
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < m ; i ++ )",
+        "for ( p = 1 ; p [ c ] [ 0 ] ; p ++ )",
+        "int edge [ u ] [ edge [ u ] [ 0 ] ] = v ;"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        26,
+        13,
+        37
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < m ; i ++ )",
+        "for ( p = 1 ; p [ c ] [ 0 ] ; p ++ )",
+        "int edge [ u ] [ edge [ u ] [ 0 ] ] = v ;",
+        "else do"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        26,
+        37
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < m ; i ++ )",
+        "for ( p = 1 ; p [ c ] [ 0 ] ; p ++ )",
+        "else do"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        13
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < m ; i ++ )",
+        "int edge [ u ] [ edge [ u ] [ 0 ] ] = v ;"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        13,
+        37
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < m ; i ++ )",
+        "int edge [ u ] [ edge [ u ] [ 0 ] ] = v ;",
+        "else do"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        37
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < m ; i ++ )",
+        "else do"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        26
+      ],
+      "mod_code": [
+        "cin >> n >> v ;",
+        "for ( p = 1 ; p [ c ] [ 0 ] ; p ++ )"
+      ],
+      "err_line": 26,
+      "err_msg": "‘p’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        26,
+        13
+      ],
+      "mod_code": [
+        "cin >> n >> v ;",
+        "for ( p = 1 ; p [ c ] [ 0 ] ; p ++ )",
+        "int edge [ u ] [ edge [ u ] [ 0 ] ] = v ;"
+      ],
+      "err_line": 13,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        11,
+        26,
+        13,
+        37
+      ],
+      "mod_code": [
+        "cin >> n >> v ;",
+        "for ( p = 1 ; p [ c ] [ 0 ] ; p ++ )",
+        "int edge [ u ] [ edge [ u ] [ 0 ] ] = v ;",
+        "else do"
+      ],
+      "err_line": 13,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        11,
+        26,
+        37
+      ],
+      "mod_code": [
+        "cin >> n >> v ;",
+        "for ( p = 1 ; p [ c ] [ 0 ] ; p ++ )",
+        "else do"
+      ],
+      "err_line": 26,
+      "err_msg": "‘p’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        13
+      ],
+      "mod_code": [
+        "cin >> n >> v ;",
+        "int edge [ u ] [ edge [ u ] [ 0 ] ] = v ;"
+      ],
+      "err_line": 13,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        11,
+        13,
+        37
+      ],
+      "mod_code": [
+        "cin >> n >> v ;",
+        "int edge [ u ] [ edge [ u ] [ 0 ] ] = v ;",
+        "else do"
+      ],
+      "err_line": 13,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        11,
+        37
+      ],
+      "mod_code": [
+        "cin >> n >> v ;",
+        "else do"
+      ],
+      "err_line": 39,
+      "err_msg": "expected ‘while’ before numeric constant"
+    },
+    {
+      "mod_line": [
+        26,
+        13
+      ],
+      "mod_code": [
+        "for ( p = 1 ; p [ c ] [ 0 ] ; p ++ )",
+        "int edge [ u ] [ edge [ u ] [ 0 ] ] = v ;"
+      ],
+      "err_line": 13,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        26,
+        13,
+        37
+      ],
+      "mod_code": [
+        "for ( p = 1 ; p [ c ] [ 0 ] ; p ++ )",
+        "int edge [ u ] [ edge [ u ] [ 0 ] ] = v ;",
+        "else do"
+      ],
+      "err_line": 13,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        26,
+        37
+      ],
+      "mod_code": [
+        "for ( p = 1 ; p [ c ] [ 0 ] ; p ++ )",
+        "else do"
+      ],
+      "err_line": 26,
+      "err_msg": "‘p’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        37
+      ],
+      "mod_code": [
+        "int edge [ u ] [ edge [ u ] [ 0 ] ] = v ;",
+        "else do"
+      ],
+      "err_line": 13,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    }
+  ]
+}

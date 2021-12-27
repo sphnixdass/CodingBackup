@@ -1,0 +1,987 @@
+{
+  "meta": {
+    "index": 2448,
+    "hitid": "3SD15I2WD2OW68KQCGDC2RV01IU63F",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "553A",
+    "subid": "47713888"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare const long long maxn = 1111",
+      "code": "const long long maxn = 1111 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare const long long mod = 1000000007",
+      "code": "const long long mod = 1000000007 ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "k , ans and lastans are long longs where ans and lastans = 1 ; c and sum are long long arrays with maxn elements ; p is an 2d array of long longs with size maxn by maxn",
+      "code": "long long k , c [ maxn ] , p [ maxn ] [ maxn ] , sum [ maxn ] , ans = 1 , lastans = 1 ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "long long function C with long long arguments a and b",
+      "code": "long long C ( long long a , long long b )",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "return p [ a ] [ b ] modulo mod",
+      "code": "return p [ a ] [ b ] % mod ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 6,
+      "text": "void function init",
+      "code": "void init ( )",
+      "indent": 0
+    },
+    {
+      "line": 7,
+      "text": "assign 1 to p [ 0 ] [ 0 ]",
+      "code": "p [ 0 ] [ 0 ] = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "loop i from 1 to 1100 inclusive",
+      "code": "for ( long long i = 1 ; i <= 1100 ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "assign 1 to p [ i ] [ 0 ]",
+      "code": "p [ i ] [ 0 ] = 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "for j from 1 to i inclusive , set p [ i ] [ j ] to ( p [ i - 1 ] [ j ] + p [ i - 1 ] [ j - 1 ] ) % mod",
+      "code": "for ( long long j = 1 ; j <= i ; j ++ ) { p [ i ] [ j ] = ( p [ i - 1 ] [ j ] + p [ i - 1 ] [ j - 1 ] ) % mod ; }",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 14,
+      "text": "read k",
+      "code": "cin >> k ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "call init ( )",
+      "code": "init ( ) ;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "loop i from 1 to k inclusive",
+      "code": "for ( long long i = 1 ; i <= k ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "read input to c [ i ]",
+      "code": "cin >> c [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "assign value of sum [ i - 1 ] + c [ i ] to sum [ i ]",
+      "code": "sum [ i ] = sum [ i - 1 ] + c [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 19,
+      "text": "sum [ i ] % = mod",
+      "code": "sum [ i ] %= mod ;",
+      "indent": 2
+    },
+    {
+      "line": 20,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "loop i from 1 to k inclusive",
+      "code": "for ( long long i = 1 ; i <= k ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 22,
+      "text": "assign lastans * C ( sum [ i - 1 ] + c [ i ] - 1 , c [ i ] - 1 ) to ans",
+      "code": "ans = lastans * C ( sum [ i - 1 ] + c [ i ] - 1 , c [ i ] - 1 ) ;",
+      "indent": 2
+    },
+    {
+      "line": 23,
+      "text": "ans % = mod",
+      "code": "ans %= mod ;",
+      "indent": 2
+    },
+    {
+      "line": 24,
+      "text": "assign ans to lastans",
+      "code": "lastans = ans ;",
+      "indent": 2
+    },
+    {
+      "line": 25,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 26,
+      "text": "print ans",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 27,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 28,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "long long p [ maxn ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "void init ( ) { }"
+      ],
+      "err_line": 7,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= i ; j ++ ) { p [ i ] [ j ] [ j ] [ j ] + p [ i - 1 ] [ j ] + p [ i - 1 ] [ j - 1 ] ) % mod ; }"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "long long k [ maxn ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘p’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "long long C ( long long a , long long b ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "p [ ' 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "missing terminating ' character"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= 1100 ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "char p [ i ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= i ; j ++ ) { p [ i ] [ j ] [ j ] [ j ] [ i ] + p [ i - 1 ] [ j - 1 ] % mod ; }"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "cin >> n ;"
+      ],
+      "err_line": 14,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "init ( ) ) ;"
+      ],
+      "err_line": 15,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 16,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "cin >> c ;"
+      ],
+      "err_line": 17,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [1111]’)"
+    },
+    {
+      "mod_line": [
+        18
+      ],
+      "mod_code": [
+        "sum [ i ] + sum = sum [ i - 1 ] + c [ i ] ;"
+      ],
+      "err_line": 18,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        21
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 21,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2,
+        6
+      ],
+      "mod_code": [
+        "long long p [ maxn ] ;",
+        "void init ( ) { }"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        10
+      ],
+      "mod_code": [
+        "long long p [ maxn ] ;",
+        "void init ( ) { }",
+        "for ( int j = 1 ; j <= i ; j ++ ) { p [ i ] [ j ] [ j ] [ j ] + p [ i - 1 ] [ j ] + p [ i - 1 ] [ j - 1 ] ) % mod ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        10,
+        22
+      ],
+      "mod_code": [
+        "long long p [ maxn ] ;",
+        "void init ( ) { }",
+        "for ( int j = 1 ; j <= i ; j ++ ) { p [ i ] [ j ] [ j ] [ j ] + p [ i - 1 ] [ j ] + p [ i - 1 ] [ j - 1 ] ) % mod ; }",
+        "ans -= C ( sum [ i - 1 ] + c [ i ] - 1 , c [ i ] - 1 ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        10,
+        26
+      ],
+      "mod_code": [
+        "long long p [ maxn ] ;",
+        "void init ( ) { }",
+        "for ( int j = 1 ; j <= i ; j ++ ) { p [ i ] [ j ] [ j ] [ j ] + p [ i - 1 ] [ j ] + p [ i - 1 ] [ j - 1 ] ) % mod ; }",
+        "cout << ans ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        10,
+        23
+      ],
+      "mod_code": [
+        "long long p [ maxn ] ;",
+        "void init ( ) { }",
+        "for ( int j = 1 ; j <= i ; j ++ ) { p [ i ] [ j ] [ j ] [ j ] + p [ i - 1 ] [ j ] + p [ i - 1 ] [ j - 1 ] ) % mod ; }",
+        "ans += mod ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        22
+      ],
+      "mod_code": [
+        "long long p [ maxn ] ;",
+        "void init ( ) { }",
+        "ans -= C ( sum [ i - 1 ] + c [ i ] - 1 , c [ i ] - 1 ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        22,
+        26
+      ],
+      "mod_code": [
+        "long long p [ maxn ] ;",
+        "void init ( ) { }",
+        "ans -= C ( sum [ i - 1 ] + c [ i ] - 1 , c [ i ] - 1 ) ;",
+        "cout << ans ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        22,
+        23
+      ],
+      "mod_code": [
+        "long long p [ maxn ] ;",
+        "void init ( ) { }",
+        "ans -= C ( sum [ i - 1 ] + c [ i ] - 1 , c [ i ] - 1 ) ;",
+        "ans += mod ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        26
+      ],
+      "mod_code": [
+        "long long p [ maxn ] ;",
+        "void init ( ) { }",
+        "cout << ans ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        26,
+        23
+      ],
+      "mod_code": [
+        "long long p [ maxn ] ;",
+        "void init ( ) { }",
+        "cout << ans ;",
+        "ans += mod ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        23
+      ],
+      "mod_code": [
+        "long long p [ maxn ] ;",
+        "void init ( ) { }",
+        "ans += mod ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        10
+      ],
+      "mod_code": [
+        "long long p [ maxn ] ;",
+        "for ( int j = 1 ; j <= i ; j ++ ) { p [ i ] [ j ] [ j ] [ j ] + p [ i - 1 ] [ j ] + p [ i - 1 ] [ j - 1 ] ) % mod ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        10,
+        22
+      ],
+      "mod_code": [
+        "long long p [ maxn ] ;",
+        "for ( int j = 1 ; j <= i ; j ++ ) { p [ i ] [ j ] [ j ] [ j ] + p [ i - 1 ] [ j ] + p [ i - 1 ] [ j - 1 ] ) % mod ; }",
+        "ans -= C ( sum [ i - 1 ] + c [ i ] - 1 , c [ i ] - 1 ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        10,
+        22,
+        26
+      ],
+      "mod_code": [
+        "long long p [ maxn ] ;",
+        "for ( int j = 1 ; j <= i ; j ++ ) { p [ i ] [ j ] [ j ] [ j ] + p [ i - 1 ] [ j ] + p [ i - 1 ] [ j - 1 ] ) % mod ; }",
+        "ans -= C ( sum [ i - 1 ] + c [ i ] - 1 , c [ i ] - 1 ) ;",
+        "cout << ans ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        10,
+        22,
+        23
+      ],
+      "mod_code": [
+        "long long p [ maxn ] ;",
+        "for ( int j = 1 ; j <= i ; j ++ ) { p [ i ] [ j ] [ j ] [ j ] + p [ i - 1 ] [ j ] + p [ i - 1 ] [ j - 1 ] ) % mod ; }",
+        "ans -= C ( sum [ i - 1 ] + c [ i ] - 1 , c [ i ] - 1 ) ;",
+        "ans += mod ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        10,
+        26
+      ],
+      "mod_code": [
+        "long long p [ maxn ] ;",
+        "for ( int j = 1 ; j <= i ; j ++ ) { p [ i ] [ j ] [ j ] [ j ] + p [ i - 1 ] [ j ] + p [ i - 1 ] [ j - 1 ] ) % mod ; }",
+        "cout << ans ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        10,
+        26,
+        23
+      ],
+      "mod_code": [
+        "long long p [ maxn ] ;",
+        "for ( int j = 1 ; j <= i ; j ++ ) { p [ i ] [ j ] [ j ] [ j ] + p [ i - 1 ] [ j ] + p [ i - 1 ] [ j - 1 ] ) % mod ; }",
+        "cout << ans ;",
+        "ans += mod ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        10,
+        23
+      ],
+      "mod_code": [
+        "long long p [ maxn ] ;",
+        "for ( int j = 1 ; j <= i ; j ++ ) { p [ i ] [ j ] [ j ] [ j ] + p [ i - 1 ] [ j ] + p [ i - 1 ] [ j - 1 ] ) % mod ; }",
+        "ans += mod ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        22
+      ],
+      "mod_code": [
+        "long long p [ maxn ] ;",
+        "ans -= C ( sum [ i - 1 ] + c [ i ] - 1 , c [ i ] - 1 ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        22,
+        26
+      ],
+      "mod_code": [
+        "long long p [ maxn ] ;",
+        "ans -= C ( sum [ i - 1 ] + c [ i ] - 1 , c [ i ] - 1 ) ;",
+        "cout << ans ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        22,
+        26,
+        23
+      ],
+      "mod_code": [
+        "long long p [ maxn ] ;",
+        "ans -= C ( sum [ i - 1 ] + c [ i ] - 1 , c [ i ] - 1 ) ;",
+        "cout << ans ;",
+        "ans += mod ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        22,
+        23
+      ],
+      "mod_code": [
+        "long long p [ maxn ] ;",
+        "ans -= C ( sum [ i - 1 ] + c [ i ] - 1 , c [ i ] - 1 ) ;",
+        "ans += mod ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        26
+      ],
+      "mod_code": [
+        "long long p [ maxn ] ;",
+        "cout << ans ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        26,
+        23
+      ],
+      "mod_code": [
+        "long long p [ maxn ] ;",
+        "cout << ans ;",
+        "ans += mod ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        23
+      ],
+      "mod_code": [
+        "long long p [ maxn ] ;",
+        "ans += mod ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        6,
+        10
+      ],
+      "mod_code": [
+        "void init ( ) { }",
+        "for ( int j = 1 ; j <= i ; j ++ ) { p [ i ] [ j ] [ j ] [ j ] + p [ i - 1 ] [ j ] + p [ i - 1 ] [ j - 1 ] ) % mod ; }"
+      ],
+      "err_line": 7,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        10,
+        22
+      ],
+      "mod_code": [
+        "void init ( ) { }",
+        "for ( int j = 1 ; j <= i ; j ++ ) { p [ i ] [ j ] [ j ] [ j ] + p [ i - 1 ] [ j ] + p [ i - 1 ] [ j - 1 ] ) % mod ; }",
+        "ans -= C ( sum [ i - 1 ] + c [ i ] - 1 , c [ i ] - 1 ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        10,
+        22,
+        26
+      ],
+      "mod_code": [
+        "void init ( ) { }",
+        "for ( int j = 1 ; j <= i ; j ++ ) { p [ i ] [ j ] [ j ] [ j ] + p [ i - 1 ] [ j ] + p [ i - 1 ] [ j - 1 ] ) % mod ; }",
+        "ans -= C ( sum [ i - 1 ] + c [ i ] - 1 , c [ i ] - 1 ) ;",
+        "cout << ans ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        10,
+        22,
+        23
+      ],
+      "mod_code": [
+        "void init ( ) { }",
+        "for ( int j = 1 ; j <= i ; j ++ ) { p [ i ] [ j ] [ j ] [ j ] + p [ i - 1 ] [ j ] + p [ i - 1 ] [ j - 1 ] ) % mod ; }",
+        "ans -= C ( sum [ i - 1 ] + c [ i ] - 1 , c [ i ] - 1 ) ;",
+        "ans += mod ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        10,
+        26
+      ],
+      "mod_code": [
+        "void init ( ) { }",
+        "for ( int j = 1 ; j <= i ; j ++ ) { p [ i ] [ j ] [ j ] [ j ] + p [ i - 1 ] [ j ] + p [ i - 1 ] [ j - 1 ] ) % mod ; }",
+        "cout << ans ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        10,
+        26,
+        23
+      ],
+      "mod_code": [
+        "void init ( ) { }",
+        "for ( int j = 1 ; j <= i ; j ++ ) { p [ i ] [ j ] [ j ] [ j ] + p [ i - 1 ] [ j ] + p [ i - 1 ] [ j - 1 ] ) % mod ; }",
+        "cout << ans ;",
+        "ans += mod ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        10,
+        23
+      ],
+      "mod_code": [
+        "void init ( ) { }",
+        "for ( int j = 1 ; j <= i ; j ++ ) { p [ i ] [ j ] [ j ] [ j ] + p [ i - 1 ] [ j ] + p [ i - 1 ] [ j - 1 ] ) % mod ; }",
+        "ans += mod ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        22
+      ],
+      "mod_code": [
+        "void init ( ) { }",
+        "ans -= C ( sum [ i - 1 ] + c [ i ] - 1 , c [ i ] - 1 ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        22,
+        26
+      ],
+      "mod_code": [
+        "void init ( ) { }",
+        "ans -= C ( sum [ i - 1 ] + c [ i ] - 1 , c [ i ] - 1 ) ;",
+        "cout << ans ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        22,
+        26,
+        23
+      ],
+      "mod_code": [
+        "void init ( ) { }",
+        "ans -= C ( sum [ i - 1 ] + c [ i ] - 1 , c [ i ] - 1 ) ;",
+        "cout << ans ;",
+        "ans += mod ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        22,
+        23
+      ],
+      "mod_code": [
+        "void init ( ) { }",
+        "ans -= C ( sum [ i - 1 ] + c [ i ] - 1 , c [ i ] - 1 ) ;",
+        "ans += mod ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        26
+      ],
+      "mod_code": [
+        "void init ( ) { }",
+        "cout << ans ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        26,
+        23
+      ],
+      "mod_code": [
+        "void init ( ) { }",
+        "cout << ans ;",
+        "ans += mod ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        23
+      ],
+      "mod_code": [
+        "void init ( ) { }",
+        "ans += mod ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        22
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= i ; j ++ ) { p [ i ] [ j ] [ j ] [ j ] + p [ i - 1 ] [ j ] + p [ i - 1 ] [ j - 1 ] ) % mod ; }",
+        "ans -= C ( sum [ i - 1 ] + c [ i ] - 1 , c [ i ] - 1 ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        10,
+        22,
+        26
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= i ; j ++ ) { p [ i ] [ j ] [ j ] [ j ] + p [ i - 1 ] [ j ] + p [ i - 1 ] [ j - 1 ] ) % mod ; }",
+        "ans -= C ( sum [ i - 1 ] + c [ i ] - 1 , c [ i ] - 1 ) ;",
+        "cout << ans ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        10,
+        22,
+        26,
+        23
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= i ; j ++ ) { p [ i ] [ j ] [ j ] [ j ] + p [ i - 1 ] [ j ] + p [ i - 1 ] [ j - 1 ] ) % mod ; }",
+        "ans -= C ( sum [ i - 1 ] + c [ i ] - 1 , c [ i ] - 1 ) ;",
+        "cout << ans ;",
+        "ans += mod ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        10,
+        22,
+        23
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= i ; j ++ ) { p [ i ] [ j ] [ j ] [ j ] + p [ i - 1 ] [ j ] + p [ i - 1 ] [ j - 1 ] ) % mod ; }",
+        "ans -= C ( sum [ i - 1 ] + c [ i ] - 1 , c [ i ] - 1 ) ;",
+        "ans += mod ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        10,
+        26
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= i ; j ++ ) { p [ i ] [ j ] [ j ] [ j ] + p [ i - 1 ] [ j ] + p [ i - 1 ] [ j - 1 ] ) % mod ; }",
+        "cout << ans ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        10,
+        26,
+        23
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= i ; j ++ ) { p [ i ] [ j ] [ j ] [ j ] + p [ i - 1 ] [ j ] + p [ i - 1 ] [ j - 1 ] ) % mod ; }",
+        "cout << ans ;",
+        "ans += mod ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        10,
+        23
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= i ; j ++ ) { p [ i ] [ j ] [ j ] [ j ] + p [ i - 1 ] [ j ] + p [ i - 1 ] [ j - 1 ] ) % mod ; }",
+        "ans += mod ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    }
+  ]
+}

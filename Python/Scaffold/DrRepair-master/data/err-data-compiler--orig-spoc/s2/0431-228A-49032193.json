@@ -1,0 +1,529 @@
+{
+  "meta": {
+    "index": 431,
+    "hitid": "356TQKY9XFR1B54177D0ZM37BSC873",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "228A",
+    "subid": "49032193"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare integers s1 , s2 , s3 , s4 and counter , all of them with value 0",
+      "code": "int s1 = 0 , s2 = 0 , s3 = 0 , s4 = 0 , counter = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read s1 , s2 , s3 and s4",
+      "code": "cin >> s1 >> s2 >> s3 >> s4 ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "if s3 = s4 | | s2 = s4 | | s1 = s4 , set s4 = 0",
+      "code": "if ( s3 == s4 || s2 == s4 || s1 == s4 ) { s4 = 0 ; }",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "if s2 = s3 | | s1 = s3 , set s3 = 0",
+      "code": "if ( s2 == s3 || s1 == s3 ) { s3 = 0 ; }",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "if s1 = s2 , set s2 = 0",
+      "code": "if ( s1 == s2 ) { s2 = 0 ; }",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "create integer array S from variables s1 , s2 , s3 and s4",
+      "code": "int S [ 4 ] = { s1 , s2 , s3 , s4 } ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for i = 0 to 4 exclusive",
+      "code": "for ( int i = 0 ; i < 4 ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "increment counter if S [ i ] ! = 0",
+      "code": "if ( S [ i ] != 0 ) { counter ++ ; }",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "print 4 - counter",
+      "code": "cout << 4 - counter << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int s1 , s2 [ 0 ] , s2 , s4 , s4 , counter ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int s2’"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "int S [ ] , s2 , s3 , s4 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "storage size of ‘S’ isn’t known"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int s1 , s2 , s3 , counter = 0 , counter , counter ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int counter’"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "int S [ 4 ] , s2 , s3 , s4 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "redeclaration of ‘int s2’"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < 4 ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        6
+      ],
+      "mod_code": [
+        "int s1 , s2 [ 0 ] , s2 , s4 , s4 , counter ;",
+        "int S [ ] , s2 , s3 , s4 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int s2’"
+    },
+    {
+      "mod_line": [
+        1,
+        6,
+        2
+      ],
+      "mod_code": [
+        "int s1 , s2 [ 0 ] , s2 , s4 , s4 , counter ;",
+        "int S [ ] , s2 , s3 , s4 ;",
+        "cin >> s1 >> s2 >> s2 >> s4 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int s2’"
+    },
+    {
+      "mod_line": [
+        1,
+        6,
+        2,
+        7
+      ],
+      "mod_code": [
+        "int s1 , s2 [ 0 ] , s2 , s4 , s4 , counter ;",
+        "int S [ ] , s2 , s3 , s4 ;",
+        "cin >> s1 >> s2 >> s2 >> s4 ;",
+        "for ( i = 0 ; i < 4 ; i ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int s2’"
+    },
+    {
+      "mod_line": [
+        1,
+        6,
+        7
+      ],
+      "mod_code": [
+        "int s1 , s2 [ 0 ] , s2 , s4 , s4 , counter ;",
+        "int S [ ] , s2 , s3 , s4 ;",
+        "for ( i = 0 ; i < 4 ; i ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int s2’"
+    },
+    {
+      "mod_line": [
+        1,
+        2
+      ],
+      "mod_code": [
+        "int s1 , s2 [ 0 ] , s2 , s4 , s4 , counter ;",
+        "cin >> s1 >> s2 >> s2 >> s4 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int s2’"
+    },
+    {
+      "mod_line": [
+        1,
+        2,
+        6
+      ],
+      "mod_code": [
+        "int s1 , s2 [ 0 ] , s2 , s4 , s4 , counter ;",
+        "cin >> s1 >> s2 >> s2 >> s4 ;",
+        "int S [ 4 ] , s2 , s3 , s4 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int s2’"
+    },
+    {
+      "mod_line": [
+        1,
+        2,
+        6,
+        7
+      ],
+      "mod_code": [
+        "int s1 , s2 [ 0 ] , s2 , s4 , s4 , counter ;",
+        "cin >> s1 >> s2 >> s2 >> s4 ;",
+        "int S [ 4 ] , s2 , s3 , s4 ;",
+        "for ( i = 0 ; i < 4 ; i ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int s2’"
+    },
+    {
+      "mod_line": [
+        1,
+        2,
+        7
+      ],
+      "mod_code": [
+        "int s1 , s2 [ 0 ] , s2 , s4 , s4 , counter ;",
+        "cin >> s1 >> s2 >> s2 >> s4 ;",
+        "for ( i = 0 ; i < 4 ; i ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int s2’"
+    },
+    {
+      "mod_line": [
+        1,
+        6
+      ],
+      "mod_code": [
+        "int s1 , s2 [ 0 ] , s2 , s4 , s4 , counter ;",
+        "int S [ 4 ] , s2 , s3 , s4 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int s2’"
+    },
+    {
+      "mod_line": [
+        1,
+        6,
+        7
+      ],
+      "mod_code": [
+        "int s1 , s2 [ 0 ] , s2 , s4 , s4 , counter ;",
+        "int S [ 4 ] , s2 , s3 , s4 ;",
+        "for ( i = 0 ; i < 4 ; i ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int s2’"
+    },
+    {
+      "mod_line": [
+        1,
+        7
+      ],
+      "mod_code": [
+        "int s1 , s2 [ 0 ] , s2 , s4 , s4 , counter ;",
+        "for ( i = 0 ; i < 4 ; i ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int s2’"
+    },
+    {
+      "mod_line": [
+        6,
+        2
+      ],
+      "mod_code": [
+        "int S [ ] , s2 , s3 , s4 ;",
+        "cin >> s1 >> s2 >> s2 >> s4 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "storage size of ‘S’ isn’t known"
+    },
+    {
+      "mod_line": [
+        6,
+        2,
+        1
+      ],
+      "mod_code": [
+        "int S [ ] , s2 , s3 , s4 ;",
+        "cin >> s1 >> s2 >> s2 >> s4 ;",
+        "int s1 , s2 , s3 , counter = 0 , counter , counter ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int counter’"
+    },
+    {
+      "mod_line": [
+        6,
+        2,
+        1,
+        7
+      ],
+      "mod_code": [
+        "int S [ ] , s2 , s3 , s4 ;",
+        "cin >> s1 >> s2 >> s2 >> s4 ;",
+        "int s1 , s2 , s3 , counter = 0 , counter , counter ;",
+        "for ( i = 0 ; i < 4 ; i ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int counter’"
+    },
+    {
+      "mod_line": [
+        6,
+        2,
+        7
+      ],
+      "mod_code": [
+        "int S [ ] , s2 , s3 , s4 ;",
+        "cin >> s1 >> s2 >> s2 >> s4 ;",
+        "for ( i = 0 ; i < 4 ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "storage size of ‘S’ isn’t known"
+    },
+    {
+      "mod_line": [
+        6,
+        1
+      ],
+      "mod_code": [
+        "int S [ ] , s2 , s3 , s4 ;",
+        "int s1 , s2 , s3 , counter = 0 , counter , counter ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int counter’"
+    },
+    {
+      "mod_line": [
+        6,
+        1,
+        7
+      ],
+      "mod_code": [
+        "int S [ ] , s2 , s3 , s4 ;",
+        "int s1 , s2 , s3 , counter = 0 , counter , counter ;",
+        "for ( i = 0 ; i < 4 ; i ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int counter’"
+    },
+    {
+      "mod_line": [
+        6,
+        7
+      ],
+      "mod_code": [
+        "int S [ ] , s2 , s3 , s4 ;",
+        "for ( i = 0 ; i < 4 ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "storage size of ‘S’ isn’t known"
+    },
+    {
+      "mod_line": [
+        2,
+        1
+      ],
+      "mod_code": [
+        "cin >> s1 >> s2 >> s2 >> s4 ;",
+        "int s1 , s2 , s3 , counter = 0 , counter , counter ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int counter’"
+    },
+    {
+      "mod_line": [
+        2,
+        1,
+        6
+      ],
+      "mod_code": [
+        "cin >> s1 >> s2 >> s2 >> s4 ;",
+        "int s1 , s2 , s3 , counter = 0 , counter , counter ;",
+        "int S [ 4 ] , s2 , s3 , s4 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int counter’"
+    },
+    {
+      "mod_line": [
+        2,
+        1,
+        6,
+        7
+      ],
+      "mod_code": [
+        "cin >> s1 >> s2 >> s2 >> s4 ;",
+        "int s1 , s2 , s3 , counter = 0 , counter , counter ;",
+        "int S [ 4 ] , s2 , s3 , s4 ;",
+        "for ( i = 0 ; i < 4 ; i ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int counter’"
+    },
+    {
+      "mod_line": [
+        2,
+        1,
+        7
+      ],
+      "mod_code": [
+        "cin >> s1 >> s2 >> s2 >> s4 ;",
+        "int s1 , s2 , s3 , counter = 0 , counter , counter ;",
+        "for ( i = 0 ; i < 4 ; i ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int counter’"
+    },
+    {
+      "mod_line": [
+        2,
+        6
+      ],
+      "mod_code": [
+        "cin >> s1 >> s2 >> s2 >> s4 ;",
+        "int S [ 4 ] , s2 , s3 , s4 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "redeclaration of ‘int s2’"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        7
+      ],
+      "mod_code": [
+        "cin >> s1 >> s2 >> s2 >> s4 ;",
+        "int S [ 4 ] , s2 , s3 , s4 ;",
+        "for ( i = 0 ; i < 4 ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "redeclaration of ‘int s2’"
+    },
+    {
+      "mod_line": [
+        2,
+        7
+      ],
+      "mod_code": [
+        "cin >> s1 >> s2 >> s2 >> s4 ;",
+        "for ( i = 0 ; i < 4 ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        6
+      ],
+      "mod_code": [
+        "int s1 , s2 , s3 , counter = 0 , counter , counter ;",
+        "int S [ 4 ] , s2 , s3 , s4 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int counter’"
+    },
+    {
+      "mod_line": [
+        1,
+        6,
+        7
+      ],
+      "mod_code": [
+        "int s1 , s2 , s3 , counter = 0 , counter , counter ;",
+        "int S [ 4 ] , s2 , s3 , s4 ;",
+        "for ( i = 0 ; i < 4 ; i ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int counter’"
+    },
+    {
+      "mod_line": [
+        1,
+        7
+      ],
+      "mod_code": [
+        "int s1 , s2 , s3 , counter = 0 , counter , counter ;",
+        "for ( i = 0 ; i < 4 ; i ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int counter’"
+    },
+    {
+      "mod_line": [
+        6,
+        7
+      ],
+      "mod_code": [
+        "int S [ 4 ] , s2 , s3 , s4 ;",
+        "for ( i = 0 ; i < 4 ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "redeclaration of ‘int s2’"
+    }
+  ]
+}

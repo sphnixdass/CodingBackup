@@ -1,0 +1,671 @@
+{
+  "meta": {
+    "index": 763,
+    "hitid": "3THR0FZ95PN3BIGJII36FDB8M4FOL0",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "985A",
+    "subid": "47497619"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create integer n",
+      "code": "int n ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read input to n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "create vector of integers v with n / 2 elements",
+      "code": "vector < int > v ( n / 2 ) ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for i from 0 to n / 2 exclusive , read input to v [ i ]",
+      "code": "for ( int i = 0 ; i < n / 2 ; i ++ ) { cin >> v [ i ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "sort v",
+      "code": "sort ( v . begin ( ) , v . end ( ) ) ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "declare int variables mov1 and mov2 = 0",
+      "code": "int mov1 = 0 , mov2 = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for integers i = 0 and j = 1 while i < length of v , incrementing i by 1 and j by 2",
+      "code": "for ( int i = 0 , j = 1 ; i < v . size ( ) ; i ++ , j += 2 )",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "increase mov1 by abs ( j - v [ i ] )",
+      "code": "mov1 += abs ( j - v [ i ] ) ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "increase mov2 by abs ( j + 1 - v [ i ] )",
+      "code": "mov2 += abs ( j + 1 - v [ i ] ) ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "print min of mov1 and mov2 and \" \\ n \"",
+      "code": "cout << min ( mov1 , mov2 ) << \" \\n \" ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "for ( int i = 0 , j = 1 ; i < v . length ( ) ; i += 2 )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "vector < int > v ( n ) / 2 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘,’ or ‘;’ before ‘/’ token"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "sort ( v . rbegin ( ) , v . end ( ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘sort(std::vector<int>::reverse_iterator, std::vector<int>::iterator)’"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "mov2 += abs ( j , 1 - v [ i ] ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "no matching function for call to ‘abs(int&, int)’"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "cout << min ( min ( mov1 , mov2 ) ) << \" \\n \" ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘min(const int&)’"
+    },
+    {
+      "mod_line": [
+        7,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 0 , j = 1 ; i < v . length ( ) ; i += 2 )",
+        "n = n ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        7,
+        2,
+        11
+      ],
+      "mod_code": [
+        "for ( int i = 0 , j = 1 ; i < v . length ( ) ; i += 2 )",
+        "n = n ;",
+        "cout << min ( min ( mov1 , mov2 ) ) << \" \\n \" ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        7,
+        2,
+        11,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = 0 , j = 1 ; i < v . length ( ) ; i += 2 )",
+        "n = n ;",
+        "cout << min ( min ( mov1 , mov2 ) ) << \" \\n \" ;",
+        "vector < int > v ( n ) / 2 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘,’ or ‘;’ before ‘/’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        2,
+        11,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 , j = 1 ; i < v . length ( ) ; i += 2 )",
+        "n = n ;",
+        "cout << min ( min ( mov1 , mov2 ) ) << \" \\n \" ;",
+        "mov2 += abs ( j , 1 - v [ i ] ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        7,
+        2,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = 0 , j = 1 ; i < v . length ( ) ; i += 2 )",
+        "n = n ;",
+        "vector < int > v ( n ) / 2 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘,’ or ‘;’ before ‘/’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        2,
+        3,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 , j = 1 ; i < v . length ( ) ; i += 2 )",
+        "n = n ;",
+        "vector < int > v ( n ) / 2 ;",
+        "mov2 += abs ( j , 1 - v [ i ] ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘,’ or ‘;’ before ‘/’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        2,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 , j = 1 ; i < v . length ( ) ; i += 2 )",
+        "n = n ;",
+        "mov2 += abs ( j , 1 - v [ i ] ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        7,
+        11
+      ],
+      "mod_code": [
+        "for ( int i = 0 , j = 1 ; i < v . length ( ) ; i += 2 )",
+        "cout << min ( min ( mov1 , mov2 ) ) << \" \\n \" ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        7,
+        11,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = 0 , j = 1 ; i < v . length ( ) ; i += 2 )",
+        "cout << min ( min ( mov1 , mov2 ) ) << \" \\n \" ;",
+        "vector < int > v ( n ) / 2 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘,’ or ‘;’ before ‘/’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        11,
+        3,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 , j = 1 ; i < v . length ( ) ; i += 2 )",
+        "cout << min ( min ( mov1 , mov2 ) ) << \" \\n \" ;",
+        "vector < int > v ( n ) / 2 ;",
+        "mov2 += abs ( j , 1 - v [ i ] ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘,’ or ‘;’ before ‘/’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        11,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 , j = 1 ; i < v . length ( ) ; i += 2 )",
+        "cout << min ( min ( mov1 , mov2 ) ) << \" \\n \" ;",
+        "mov2 += abs ( j , 1 - v [ i ] ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        7,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = 0 , j = 1 ; i < v . length ( ) ; i += 2 )",
+        "vector < int > v ( n ) / 2 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘,’ or ‘;’ before ‘/’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        3,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 , j = 1 ; i < v . length ( ) ; i += 2 )",
+        "vector < int > v ( n ) / 2 ;",
+        "mov2 += abs ( j , 1 - v [ i ] ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘,’ or ‘;’ before ‘/’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 , j = 1 ; i < v . length ( ) ; i += 2 )",
+        "mov2 += abs ( j , 1 - v [ i ] ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        2,
+        7,
+        11
+      ],
+      "mod_code": [
+        "n = n ;",
+        "for ( int i = 0 , j = 1 ; i < v . size ( ) ; i += 2 )",
+        "cout << min ( min ( mov1 , mov2 ) ) << \" \\n \" ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘min(const int&)’"
+    },
+    {
+      "mod_line": [
+        2,
+        7,
+        11,
+        3
+      ],
+      "mod_code": [
+        "n = n ;",
+        "for ( int i = 0 , j = 1 ; i < v . size ( ) ; i += 2 )",
+        "cout << min ( min ( mov1 , mov2 ) ) << \" \\n \" ;",
+        "vector < int > v ( n ) / 2 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘,’ or ‘;’ before ‘/’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        7,
+        11,
+        9
+      ],
+      "mod_code": [
+        "n = n ;",
+        "for ( int i = 0 , j = 1 ; i < v . size ( ) ; i += 2 )",
+        "cout << min ( min ( mov1 , mov2 ) ) << \" \\n \" ;",
+        "mov2 += abs ( j , 1 - v [ i ] ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "no matching function for call to ‘abs(int&, int)’"
+    },
+    {
+      "mod_line": [
+        2,
+        7,
+        3
+      ],
+      "mod_code": [
+        "n = n ;",
+        "for ( int i = 0 , j = 1 ; i < v . size ( ) ; i += 2 )",
+        "vector < int > v ( n ) / 2 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘,’ or ‘;’ before ‘/’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        7,
+        3,
+        9
+      ],
+      "mod_code": [
+        "n = n ;",
+        "for ( int i = 0 , j = 1 ; i < v . size ( ) ; i += 2 )",
+        "vector < int > v ( n ) / 2 ;",
+        "mov2 += abs ( j , 1 - v [ i ] ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘,’ or ‘;’ before ‘/’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        7,
+        9
+      ],
+      "mod_code": [
+        "n = n ;",
+        "for ( int i = 0 , j = 1 ; i < v . size ( ) ; i += 2 )",
+        "mov2 += abs ( j , 1 - v [ i ] ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "no matching function for call to ‘abs(int&, int)’"
+    },
+    {
+      "mod_line": [
+        2,
+        11
+      ],
+      "mod_code": [
+        "n = n ;",
+        "cout << min ( min ( mov1 , mov2 ) ) << \" \\n \" ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘min(const int&)’"
+    },
+    {
+      "mod_line": [
+        2,
+        11,
+        3
+      ],
+      "mod_code": [
+        "n = n ;",
+        "cout << min ( min ( mov1 , mov2 ) ) << \" \\n \" ;",
+        "vector < int > v ( n ) / 2 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘,’ or ‘;’ before ‘/’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        11,
+        3,
+        9
+      ],
+      "mod_code": [
+        "n = n ;",
+        "cout << min ( min ( mov1 , mov2 ) ) << \" \\n \" ;",
+        "vector < int > v ( n ) / 2 ;",
+        "mov2 += abs ( j , 1 - v [ i ] ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘,’ or ‘;’ before ‘/’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        11,
+        9
+      ],
+      "mod_code": [
+        "n = n ;",
+        "cout << min ( min ( mov1 , mov2 ) ) << \" \\n \" ;",
+        "mov2 += abs ( j , 1 - v [ i ] ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "no matching function for call to ‘abs(int&, int)’"
+    },
+    {
+      "mod_line": [
+        2,
+        3
+      ],
+      "mod_code": [
+        "n = n ;",
+        "vector < int > v ( n ) / 2 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘,’ or ‘;’ before ‘/’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        9
+      ],
+      "mod_code": [
+        "n = n ;",
+        "vector < int > v ( n ) / 2 ;",
+        "mov2 += abs ( j , 1 - v [ i ] ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘,’ or ‘;’ before ‘/’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        9
+      ],
+      "mod_code": [
+        "n = n ;",
+        "mov2 += abs ( j , 1 - v [ i ] ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "no matching function for call to ‘abs(int&, int)’"
+    },
+    {
+      "mod_line": [
+        7,
+        11
+      ],
+      "mod_code": [
+        "for ( int i = 0 , j = 1 ; i < v . size ( ) ; i += 2 )",
+        "cout << min ( min ( mov1 , mov2 ) ) << \" \\n \" ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘min(const int&)’"
+    },
+    {
+      "mod_line": [
+        7,
+        11,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = 0 , j = 1 ; i < v . size ( ) ; i += 2 )",
+        "cout << min ( min ( mov1 , mov2 ) ) << \" \\n \" ;",
+        "vector < int > v ( n ) / 2 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘,’ or ‘;’ before ‘/’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        11,
+        3,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 , j = 1 ; i < v . size ( ) ; i += 2 )",
+        "cout << min ( min ( mov1 , mov2 ) ) << \" \\n \" ;",
+        "vector < int > v ( n ) / 2 ;",
+        "mov2 += abs ( j , 1 - v [ i ] ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘,’ or ‘;’ before ‘/’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        11,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 , j = 1 ; i < v . size ( ) ; i += 2 )",
+        "cout << min ( min ( mov1 , mov2 ) ) << \" \\n \" ;",
+        "mov2 += abs ( j , 1 - v [ i ] ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "no matching function for call to ‘abs(int&, int)’"
+    },
+    {
+      "mod_line": [
+        7,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = 0 , j = 1 ; i < v . size ( ) ; i += 2 )",
+        "vector < int > v ( n ) / 2 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘,’ or ‘;’ before ‘/’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        3,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 , j = 1 ; i < v . size ( ) ; i += 2 )",
+        "vector < int > v ( n ) / 2 ;",
+        "mov2 += abs ( j , 1 - v [ i ] ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘,’ or ‘;’ before ‘/’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 , j = 1 ; i < v . size ( ) ; i += 2 )",
+        "mov2 += abs ( j , 1 - v [ i ] ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "no matching function for call to ‘abs(int&, int)’"
+    },
+    {
+      "mod_line": [
+        11,
+        3
+      ],
+      "mod_code": [
+        "cout << min ( min ( mov1 , mov2 ) ) << \" \\n \" ;",
+        "vector < int > v ( n ) / 2 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘,’ or ‘;’ before ‘/’ token"
+    },
+    {
+      "mod_line": [
+        11,
+        3,
+        9
+      ],
+      "mod_code": [
+        "cout << min ( min ( mov1 , mov2 ) ) << \" \\n \" ;",
+        "vector < int > v ( n ) / 2 ;",
+        "mov2 += abs ( j , 1 - v [ i ] ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘,’ or ‘;’ before ‘/’ token"
+    },
+    {
+      "mod_line": [
+        11,
+        9
+      ],
+      "mod_code": [
+        "cout << min ( min ( mov1 , mov2 ) ) << \" \\n \" ;",
+        "mov2 += abs ( j , 1 - v [ i ] ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "no matching function for call to ‘abs(int&, int)’"
+    },
+    {
+      "mod_line": [
+        3,
+        9
+      ],
+      "mod_code": [
+        "vector < int > v ( n ) / 2 ;",
+        "mov2 += abs ( j , 1 - v [ i ] ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘,’ or ‘;’ before ‘/’ token"
+    }
+  ]
+}

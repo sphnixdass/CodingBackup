@@ -1,0 +1,549 @@
+{
+  "meta": {
+    "index": 800,
+    "hitid": "3S1WOPCJFGNB41FULJOXUM42ED8JET",
+    "workerid": "A1AYVATMT88U1W",
+    "probid": "571A",
+    "subid": "42847432"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "let SZ , INF be constant integers with SZ = 200010 , INF = 0x7FFFFFFF",
+      "code": "const int SZ = 200010 , INF = 0x7FFFFFFF ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "let sub be a function that accepts long integer values a , b , c , ll and returns a long integer value",
+      "code": "long long sub ( long long a , long long b , long long c , long long ll )",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "let res be a long integer with res = 0",
+      "code": "long long res = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "for long integer i = maximum of ( long long ) 0 , b + c - a to 11 inclusive",
+      "code": "for ( long long i = max ( ( long long ) 0 , b + c - a ) ; i <= ll ; ++ i )",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "let less be a long integer with less is equal to minimum of ll - i , a + i - ( b + c )",
+      "code": "long long less = min ( ll - i , a + i - ( b + c ) ) ;",
+      "indent": 2
+    },
+    {
+      "line": 5,
+      "text": "increment res by less + 1 + less * ( less + 1 ) / 2",
+      "code": "res += less + 1 + less * ( less + 1 ) / 2 ;",
+      "indent": 2
+    },
+    {
+      "line": 6,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "return the value of res",
+      "code": "return res ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 10,
+      "text": "let a , b , c , ll be long integers",
+      "code": "long long a , b , c , ll ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "read a , b , c , ll",
+      "code": "cin >> a >> b >> c >> ll ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "let res be a long integer with res = 0",
+      "code": "long long res = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "for long integer i = 0 to 11 inclusive , increment res by ( i + 3 - 1 ) * ( i + 3 - 2 ) / 2",
+      "code": "for ( long long i = 0 ; i <= ll ; ++ i ) { res += ( i + 3 - 1 ) * ( i + 3 - 2 ) / 2 ; }",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "decrement res by sub ( a , b , c , ll )",
+      "code": "res -= sub ( a , b , c , ll ) ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "decrement res by sub ( b , c , a , ll )",
+      "code": "res -= sub ( b , c , a , ll ) ;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "decrement res by sub ( c , a , b , ll )",
+      "code": "res -= sub ( c , a , b , ll ) ;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "print res and newline",
+      "code": "cout << res << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "for ( long long i = max ( ( long long ) 0 )"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘max(long long int)’"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "for ( long long i = max ( long long ) 0 ; i <= max ( 0 ) ; i ++ ) { b = max ( 0 ) ; }"
+      ],
+      "err_line": 3,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "long long let = min ( ll - i , a + i - ( b + c ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "missing template arguments before ‘+’ token"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "res += 1 + 1 + * ( 1 + 1 ) / 2 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid type argument of unary ‘*’ (have ‘int’)"
+    },
+    {
+      "mod_line": [
+        3,
+        5
+      ],
+      "mod_code": [
+        "for ( long long i = max ( ( long long ) 0 )",
+        "res += 1 + 1 + ( less + 1 ) / 2 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘max(long long int)’"
+    },
+    {
+      "mod_line": [
+        3,
+        5,
+        13
+      ],
+      "mod_code": [
+        "for ( long long i = max ( ( long long ) 0 )",
+        "res += 1 + 1 + ( less + 1 ) / 2 ;",
+        "for ( long long i = 0 ; i <= 11 ; i ++ ) { res += ( i + 3 - 1 ) * ( i + 3 - 2 ) / 2 ; }"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘max(long long int)’"
+    },
+    {
+      "mod_line": [
+        3,
+        5,
+        13,
+        4
+      ],
+      "mod_code": [
+        "for ( long long i = max ( ( long long ) 0 )",
+        "res += 1 + 1 + ( less + 1 ) / 2 ;",
+        "for ( long long i = 0 ; i <= 11 ; i ++ ) { res += ( i + 3 - 1 ) * ( i + 3 - 2 ) / 2 ; }",
+        "long long let = min ( ll - i , a + i - ( b + c ) ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘max(long long int)’"
+    },
+    {
+      "mod_line": [
+        3,
+        5,
+        4
+      ],
+      "mod_code": [
+        "for ( long long i = max ( ( long long ) 0 )",
+        "res += 1 + 1 + ( less + 1 ) / 2 ;",
+        "long long let = min ( ll - i , a + i - ( b + c ) ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘max(long long int)’"
+    },
+    {
+      "mod_line": [
+        3,
+        13
+      ],
+      "mod_code": [
+        "for ( long long i = max ( ( long long ) 0 )",
+        "for ( long long i = 0 ; i <= 11 ; i ++ ) { res += ( i + 3 - 1 ) * ( i + 3 - 2 ) / 2 ; }"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘max(long long int)’"
+    },
+    {
+      "mod_line": [
+        3,
+        13,
+        4
+      ],
+      "mod_code": [
+        "for ( long long i = max ( ( long long ) 0 )",
+        "for ( long long i = 0 ; i <= 11 ; i ++ ) { res += ( i + 3 - 1 ) * ( i + 3 - 2 ) / 2 ; }",
+        "long long let = min ( ll - i , a + i - ( b + c ) ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘max(long long int)’"
+    },
+    {
+      "mod_line": [
+        3,
+        13,
+        4,
+        5
+      ],
+      "mod_code": [
+        "for ( long long i = max ( ( long long ) 0 )",
+        "for ( long long i = 0 ; i <= 11 ; i ++ ) { res += ( i + 3 - 1 ) * ( i + 3 - 2 ) / 2 ; }",
+        "long long let = min ( ll - i , a + i - ( b + c ) ) ;",
+        "res += 1 + 1 + * ( 1 + 1 ) / 2 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘max(long long int)’"
+    },
+    {
+      "mod_line": [
+        3,
+        13,
+        5
+      ],
+      "mod_code": [
+        "for ( long long i = max ( ( long long ) 0 )",
+        "for ( long long i = 0 ; i <= 11 ; i ++ ) { res += ( i + 3 - 1 ) * ( i + 3 - 2 ) / 2 ; }",
+        "res += 1 + 1 + * ( 1 + 1 ) / 2 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘max(long long int)’"
+    },
+    {
+      "mod_line": [
+        3,
+        4
+      ],
+      "mod_code": [
+        "for ( long long i = max ( ( long long ) 0 )",
+        "long long let = min ( ll - i , a + i - ( b + c ) ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘max(long long int)’"
+    },
+    {
+      "mod_line": [
+        3,
+        4,
+        5
+      ],
+      "mod_code": [
+        "for ( long long i = max ( ( long long ) 0 )",
+        "long long let = min ( ll - i , a + i - ( b + c ) ) ;",
+        "res += 1 + 1 + * ( 1 + 1 ) / 2 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘max(long long int)’"
+    },
+    {
+      "mod_line": [
+        3,
+        5
+      ],
+      "mod_code": [
+        "for ( long long i = max ( ( long long ) 0 )",
+        "res += 1 + 1 + * ( 1 + 1 ) / 2 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘max(long long int)’"
+    },
+    {
+      "mod_line": [
+        5,
+        13,
+        4
+      ],
+      "mod_code": [
+        "res += 1 + 1 + ( less + 1 ) / 2 ;",
+        "for ( long long i = 0 ; i <= 11 ; i ++ ) { res += ( i + 3 - 1 ) * ( i + 3 - 2 ) / 2 ; }",
+        "long long let = min ( ll - i , a + i - ( b + c ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "missing template arguments before ‘+’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        13,
+        4,
+        3
+      ],
+      "mod_code": [
+        "res += 1 + 1 + ( less + 1 ) / 2 ;",
+        "for ( long long i = 0 ; i <= 11 ; i ++ ) { res += ( i + 3 - 1 ) * ( i + 3 - 2 ) / 2 ; }",
+        "long long let = min ( ll - i , a + i - ( b + c ) ) ;",
+        "for ( long long i = max ( long long ) 0 ; i <= max ( 0 ) ; i ++ ) { b = max ( 0 ) ; }"
+      ],
+      "err_line": 3,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        5,
+        13,
+        3
+      ],
+      "mod_code": [
+        "res += 1 + 1 + ( less + 1 ) / 2 ;",
+        "for ( long long i = 0 ; i <= 11 ; i ++ ) { res += ( i + 3 - 1 ) * ( i + 3 - 2 ) / 2 ; }",
+        "for ( long long i = max ( long long ) 0 ; i <= max ( 0 ) ; i ++ ) { b = max ( 0 ) ; }"
+      ],
+      "err_line": 3,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        5,
+        4
+      ],
+      "mod_code": [
+        "res += 1 + 1 + ( less + 1 ) / 2 ;",
+        "long long let = min ( ll - i , a + i - ( b + c ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "missing template arguments before ‘+’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        4,
+        3
+      ],
+      "mod_code": [
+        "res += 1 + 1 + ( less + 1 ) / 2 ;",
+        "long long let = min ( ll - i , a + i - ( b + c ) ) ;",
+        "for ( long long i = max ( long long ) 0 ; i <= max ( 0 ) ; i ++ ) { b = max ( 0 ) ; }"
+      ],
+      "err_line": 3,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        5,
+        3
+      ],
+      "mod_code": [
+        "res += 1 + 1 + ( less + 1 ) / 2 ;",
+        "for ( long long i = max ( long long ) 0 ; i <= max ( 0 ) ; i ++ ) { b = max ( 0 ) ; }"
+      ],
+      "err_line": 3,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        13,
+        4
+      ],
+      "mod_code": [
+        "for ( long long i = 0 ; i <= 11 ; i ++ ) { res += ( i + 3 - 1 ) * ( i + 3 - 2 ) / 2 ; }",
+        "long long let = min ( ll - i , a + i - ( b + c ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "missing template arguments before ‘+’ token"
+    },
+    {
+      "mod_line": [
+        13,
+        4,
+        5
+      ],
+      "mod_code": [
+        "for ( long long i = 0 ; i <= 11 ; i ++ ) { res += ( i + 3 - 1 ) * ( i + 3 - 2 ) / 2 ; }",
+        "long long let = min ( ll - i , a + i - ( b + c ) ) ;",
+        "res += 1 + 1 + * ( 1 + 1 ) / 2 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid type argument of unary ‘*’ (have ‘int’)"
+    },
+    {
+      "mod_line": [
+        13,
+        4,
+        5,
+        3
+      ],
+      "mod_code": [
+        "for ( long long i = 0 ; i <= 11 ; i ++ ) { res += ( i + 3 - 1 ) * ( i + 3 - 2 ) / 2 ; }",
+        "long long let = min ( ll - i , a + i - ( b + c ) ) ;",
+        "res += 1 + 1 + * ( 1 + 1 ) / 2 ;",
+        "for ( long long i = max ( long long ) 0 ; i <= max ( 0 ) ; i ++ ) { b = max ( 0 ) ; }"
+      ],
+      "err_line": 3,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        13,
+        4,
+        3
+      ],
+      "mod_code": [
+        "for ( long long i = 0 ; i <= 11 ; i ++ ) { res += ( i + 3 - 1 ) * ( i + 3 - 2 ) / 2 ; }",
+        "long long let = min ( ll - i , a + i - ( b + c ) ) ;",
+        "for ( long long i = max ( long long ) 0 ; i <= max ( 0 ) ; i ++ ) { b = max ( 0 ) ; }"
+      ],
+      "err_line": 3,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        13,
+        5
+      ],
+      "mod_code": [
+        "for ( long long i = 0 ; i <= 11 ; i ++ ) { res += ( i + 3 - 1 ) * ( i + 3 - 2 ) / 2 ; }",
+        "res += 1 + 1 + * ( 1 + 1 ) / 2 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid type argument of unary ‘*’ (have ‘int’)"
+    },
+    {
+      "mod_line": [
+        13,
+        5,
+        3
+      ],
+      "mod_code": [
+        "for ( long long i = 0 ; i <= 11 ; i ++ ) { res += ( i + 3 - 1 ) * ( i + 3 - 2 ) / 2 ; }",
+        "res += 1 + 1 + * ( 1 + 1 ) / 2 ;",
+        "for ( long long i = max ( long long ) 0 ; i <= max ( 0 ) ; i ++ ) { b = max ( 0 ) ; }"
+      ],
+      "err_line": 3,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        13,
+        3
+      ],
+      "mod_code": [
+        "for ( long long i = 0 ; i <= 11 ; i ++ ) { res += ( i + 3 - 1 ) * ( i + 3 - 2 ) / 2 ; }",
+        "for ( long long i = max ( long long ) 0 ; i <= max ( 0 ) ; i ++ ) { b = max ( 0 ) ; }"
+      ],
+      "err_line": 3,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        4,
+        5
+      ],
+      "mod_code": [
+        "long long let = min ( ll - i , a + i - ( b + c ) ) ;",
+        "res += 1 + 1 + * ( 1 + 1 ) / 2 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid type argument of unary ‘*’ (have ‘int’)"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        3
+      ],
+      "mod_code": [
+        "long long let = min ( ll - i , a + i - ( b + c ) ) ;",
+        "res += 1 + 1 + * ( 1 + 1 ) / 2 ;",
+        "for ( long long i = max ( long long ) 0 ; i <= max ( 0 ) ; i ++ ) { b = max ( 0 ) ; }"
+      ],
+      "err_line": 3,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        4,
+        3
+      ],
+      "mod_code": [
+        "long long let = min ( ll - i , a + i - ( b + c ) ) ;",
+        "for ( long long i = max ( long long ) 0 ; i <= max ( 0 ) ; i ++ ) { b = max ( 0 ) ; }"
+      ],
+      "err_line": 3,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        5,
+        3
+      ],
+      "mod_code": [
+        "res += 1 + 1 + * ( 1 + 1 ) / 2 ;",
+        "for ( long long i = max ( long long ) 0 ; i <= max ( 0 ) ; i ++ ) { b = max ( 0 ) ; }"
+      ],
+      "err_line": 3,
+      "err_msg": "expected primary-expression before ‘long’"
+    }
+  ]
+}

@@ -1,0 +1,863 @@
+{
+  "meta": {
+    "index": 2449,
+    "hitid": "3RTFSSG7T80BGRPL94UGW7OUP6HLWC",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "631A",
+    "subid": "48675441"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare constant integer maxn = 5e5 + 1000",
+      "code": "const int maxn = 5e5 + 1000 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare integer arrays a size maxn , b size maxn",
+      "code": "int a [ maxn ] , b [ maxn ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "declare integer n",
+      "code": "int n ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i = 1 to n inclusive , read a [ i ]",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 1 to n inclusive , read b [ i ]",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) cin >> b [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "declare ans = 0 as integer",
+      "code": "int ans = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "for l = 1 to n inclusive",
+      "code": "for ( int l = 1 ; l <= n ; l ++ )",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "for r = 1 to n inclusive",
+      "code": "for ( int r = 1 ; r <= n ; r ++ )",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "declare tmp1 = 0 , tmp2 = 0 as integers",
+      "code": "int tmp1 = 0 , tmp2 = 0 ;",
+      "indent": 3
+    },
+    {
+      "line": 11,
+      "text": "for i = l to r inclusive , let tmp1 be tmp1 bitwise or a [ i ] , let tmp2 be tmp2 bitwise or b [ i ]",
+      "code": "for ( int i = l ; i <= r ; i ++ ) { tmp1 |= a [ i ] , tmp2 |= b [ i ] ; }",
+      "indent": 3
+    },
+    {
+      "line": 12,
+      "text": "let ans be maximum of ( tmp1 + tmp2 and ans )",
+      "code": "ans = max ( tmp1 + tmp2 , ans ) ;",
+      "indent": 3
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "print ans and newline",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int a [ maxn ] [ maxn ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [501000]’)"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "n ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "for ( l = 1 ; l <= n ; l ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "for ( r = 1 ; r <= n ; r ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘r’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "int tmp1 = 0 ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘tmp2’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "ans = max ( ( tmp1 + tmp2 , ans ) ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "no matching function for call to ‘max(int&)’"
+    },
+    {
+      "mod_line": [
+        12,
+        4
+      ],
+      "mod_code": [
+        "ans = max ( ( tmp1 + tmp2 , ans ) ) ;",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "no matching function for call to ‘max(int&)’"
+    },
+    {
+      "mod_line": [
+        12,
+        4,
+        9
+      ],
+      "mod_code": [
+        "ans = max ( ( tmp1 + tmp2 , ans ) ) ;",
+        "n = getchar ( ) ;",
+        "for ( r = 1 ; r <= n ; r ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘r’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        4,
+        9,
+        11
+      ],
+      "mod_code": [
+        "ans = max ( ( tmp1 + tmp2 , ans ) ) ;",
+        "n = getchar ( ) ;",
+        "for ( r = 1 ; r <= n ; r ++ )",
+        "for ( int i = l ; i <= r ; i ++ ) { tmp1 = tmp1 | a [ i ] >> b [ i ] ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "‘r’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        4,
+        9,
+        1
+      ],
+      "mod_code": [
+        "ans = max ( ( tmp1 + tmp2 , ans ) ) ;",
+        "n = getchar ( ) ;",
+        "for ( r = 1 ; r <= n ; r ++ )",
+        "int a [ maxn ] [ maxn ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [501000]’)"
+    },
+    {
+      "mod_line": [
+        12,
+        4,
+        9,
+        10
+      ],
+      "mod_code": [
+        "ans = max ( ( tmp1 + tmp2 , ans ) ) ;",
+        "n = getchar ( ) ;",
+        "for ( r = 1 ; r <= n ; r ++ )",
+        "int tmp1 = 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘r’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        4,
+        11
+      ],
+      "mod_code": [
+        "ans = max ( ( tmp1 + tmp2 , ans ) ) ;",
+        "n = getchar ( ) ;",
+        "for ( int i = l ; i <= r ; i ++ ) { tmp1 = tmp1 | a [ i ] >> b [ i ] ; }"
+      ],
+      "err_line": 12,
+      "err_msg": "no matching function for call to ‘max(int&)’"
+    },
+    {
+      "mod_line": [
+        12,
+        4,
+        11,
+        1
+      ],
+      "mod_code": [
+        "ans = max ( ( tmp1 + tmp2 , ans ) ) ;",
+        "n = getchar ( ) ;",
+        "for ( int i = l ; i <= r ; i ++ ) { tmp1 = tmp1 | a [ i ] >> b [ i ] ; }",
+        "int a [ maxn ] [ maxn ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [501000]’)"
+    },
+    {
+      "mod_line": [
+        12,
+        4,
+        11,
+        10
+      ],
+      "mod_code": [
+        "ans = max ( ( tmp1 + tmp2 , ans ) ) ;",
+        "n = getchar ( ) ;",
+        "for ( int i = l ; i <= r ; i ++ ) { tmp1 = tmp1 | a [ i ] >> b [ i ] ; }",
+        "int tmp1 = 0 ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘tmp2’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        4,
+        1
+      ],
+      "mod_code": [
+        "ans = max ( ( tmp1 + tmp2 , ans ) ) ;",
+        "n = getchar ( ) ;",
+        "int a [ maxn ] [ maxn ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [501000]’)"
+    },
+    {
+      "mod_line": [
+        12,
+        4,
+        1,
+        10
+      ],
+      "mod_code": [
+        "ans = max ( ( tmp1 + tmp2 , ans ) ) ;",
+        "n = getchar ( ) ;",
+        "int a [ maxn ] [ maxn ] ;",
+        "int tmp1 = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [501000]’)"
+    },
+    {
+      "mod_line": [
+        12,
+        4,
+        10
+      ],
+      "mod_code": [
+        "ans = max ( ( tmp1 + tmp2 , ans ) ) ;",
+        "n = getchar ( ) ;",
+        "int tmp1 = 0 ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘tmp2’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        9
+      ],
+      "mod_code": [
+        "ans = max ( ( tmp1 + tmp2 , ans ) ) ;",
+        "for ( r = 1 ; r <= n ; r ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘r’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        9,
+        11
+      ],
+      "mod_code": [
+        "ans = max ( ( tmp1 + tmp2 , ans ) ) ;",
+        "for ( r = 1 ; r <= n ; r ++ )",
+        "for ( int i = l ; i <= r ; i ++ ) { tmp1 = tmp1 | a [ i ] >> b [ i ] ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "‘r’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        9,
+        11,
+        1
+      ],
+      "mod_code": [
+        "ans = max ( ( tmp1 + tmp2 , ans ) ) ;",
+        "for ( r = 1 ; r <= n ; r ++ )",
+        "for ( int i = l ; i <= r ; i ++ ) { tmp1 = tmp1 | a [ i ] >> b [ i ] ; }",
+        "int a [ maxn ] [ maxn ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [501000]’)"
+    },
+    {
+      "mod_line": [
+        12,
+        9,
+        11,
+        10
+      ],
+      "mod_code": [
+        "ans = max ( ( tmp1 + tmp2 , ans ) ) ;",
+        "for ( r = 1 ; r <= n ; r ++ )",
+        "for ( int i = l ; i <= r ; i ++ ) { tmp1 = tmp1 | a [ i ] >> b [ i ] ; }",
+        "int tmp1 = 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘r’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        9,
+        1
+      ],
+      "mod_code": [
+        "ans = max ( ( tmp1 + tmp2 , ans ) ) ;",
+        "for ( r = 1 ; r <= n ; r ++ )",
+        "int a [ maxn ] [ maxn ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [501000]’)"
+    },
+    {
+      "mod_line": [
+        12,
+        9,
+        1,
+        10
+      ],
+      "mod_code": [
+        "ans = max ( ( tmp1 + tmp2 , ans ) ) ;",
+        "for ( r = 1 ; r <= n ; r ++ )",
+        "int a [ maxn ] [ maxn ] ;",
+        "int tmp1 = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [501000]’)"
+    },
+    {
+      "mod_line": [
+        12,
+        9,
+        10
+      ],
+      "mod_code": [
+        "ans = max ( ( tmp1 + tmp2 , ans ) ) ;",
+        "for ( r = 1 ; r <= n ; r ++ )",
+        "int tmp1 = 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘r’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        11
+      ],
+      "mod_code": [
+        "ans = max ( ( tmp1 + tmp2 , ans ) ) ;",
+        "for ( int i = l ; i <= r ; i ++ ) { tmp1 = tmp1 | a [ i ] >> b [ i ] ; }"
+      ],
+      "err_line": 12,
+      "err_msg": "no matching function for call to ‘max(int&)’"
+    },
+    {
+      "mod_line": [
+        12,
+        11,
+        1
+      ],
+      "mod_code": [
+        "ans = max ( ( tmp1 + tmp2 , ans ) ) ;",
+        "for ( int i = l ; i <= r ; i ++ ) { tmp1 = tmp1 | a [ i ] >> b [ i ] ; }",
+        "int a [ maxn ] [ maxn ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [501000]’)"
+    },
+    {
+      "mod_line": [
+        12,
+        11,
+        1,
+        10
+      ],
+      "mod_code": [
+        "ans = max ( ( tmp1 + tmp2 , ans ) ) ;",
+        "for ( int i = l ; i <= r ; i ++ ) { tmp1 = tmp1 | a [ i ] >> b [ i ] ; }",
+        "int a [ maxn ] [ maxn ] ;",
+        "int tmp1 = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [501000]’)"
+    },
+    {
+      "mod_line": [
+        12,
+        11,
+        10
+      ],
+      "mod_code": [
+        "ans = max ( ( tmp1 + tmp2 , ans ) ) ;",
+        "for ( int i = l ; i <= r ; i ++ ) { tmp1 = tmp1 | a [ i ] >> b [ i ] ; }",
+        "int tmp1 = 0 ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘tmp2’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        1
+      ],
+      "mod_code": [
+        "ans = max ( ( tmp1 + tmp2 , ans ) ) ;",
+        "int a [ maxn ] [ maxn ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [501000]’)"
+    },
+    {
+      "mod_line": [
+        12,
+        1,
+        10
+      ],
+      "mod_code": [
+        "ans = max ( ( tmp1 + tmp2 , ans ) ) ;",
+        "int a [ maxn ] [ maxn ] ;",
+        "int tmp1 = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [501000]’)"
+    },
+    {
+      "mod_line": [
+        12,
+        10
+      ],
+      "mod_code": [
+        "ans = max ( ( tmp1 + tmp2 , ans ) ) ;",
+        "int tmp1 = 0 ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘tmp2’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        9
+      ],
+      "mod_code": [
+        "n = getchar ( ) ;",
+        "for ( r = 1 ; r <= n ; r ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘r’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        9,
+        11
+      ],
+      "mod_code": [
+        "n = getchar ( ) ;",
+        "for ( r = 1 ; r <= n ; r ++ )",
+        "for ( int i = l ; i <= r ; i ++ ) { tmp1 = tmp1 | a [ i ] >> b [ i ] ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "‘r’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        9,
+        11,
+        1
+      ],
+      "mod_code": [
+        "n = getchar ( ) ;",
+        "for ( r = 1 ; r <= n ; r ++ )",
+        "for ( int i = l ; i <= r ; i ++ ) { tmp1 = tmp1 | a [ i ] >> b [ i ] ; }",
+        "int a [ maxn ] [ maxn ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [501000]’)"
+    },
+    {
+      "mod_line": [
+        4,
+        9,
+        11,
+        10
+      ],
+      "mod_code": [
+        "n = getchar ( ) ;",
+        "for ( r = 1 ; r <= n ; r ++ )",
+        "for ( int i = l ; i <= r ; i ++ ) { tmp1 = tmp1 | a [ i ] >> b [ i ] ; }",
+        "int tmp1 = 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘r’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        9,
+        1
+      ],
+      "mod_code": [
+        "n = getchar ( ) ;",
+        "for ( r = 1 ; r <= n ; r ++ )",
+        "int a [ maxn ] [ maxn ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [501000]’)"
+    },
+    {
+      "mod_line": [
+        4,
+        9,
+        1,
+        10
+      ],
+      "mod_code": [
+        "n = getchar ( ) ;",
+        "for ( r = 1 ; r <= n ; r ++ )",
+        "int a [ maxn ] [ maxn ] ;",
+        "int tmp1 = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [501000]’)"
+    },
+    {
+      "mod_line": [
+        4,
+        9,
+        10
+      ],
+      "mod_code": [
+        "n = getchar ( ) ;",
+        "for ( r = 1 ; r <= n ; r ++ )",
+        "int tmp1 = 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘r’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        11,
+        1
+      ],
+      "mod_code": [
+        "n = getchar ( ) ;",
+        "for ( int i = l ; i <= r ; i ++ ) { tmp1 = tmp1 | a [ i ] >> b [ i ] ; }",
+        "int a [ maxn ] [ maxn ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [501000]’)"
+    },
+    {
+      "mod_line": [
+        4,
+        11,
+        1,
+        10
+      ],
+      "mod_code": [
+        "n = getchar ( ) ;",
+        "for ( int i = l ; i <= r ; i ++ ) { tmp1 = tmp1 | a [ i ] >> b [ i ] ; }",
+        "int a [ maxn ] [ maxn ] ;",
+        "int tmp1 = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [501000]’)"
+    },
+    {
+      "mod_line": [
+        4,
+        11,
+        10
+      ],
+      "mod_code": [
+        "n = getchar ( ) ;",
+        "for ( int i = l ; i <= r ; i ++ ) { tmp1 = tmp1 | a [ i ] >> b [ i ] ; }",
+        "int tmp1 = 0 ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘tmp2’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        1
+      ],
+      "mod_code": [
+        "n = getchar ( ) ;",
+        "int a [ maxn ] [ maxn ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [501000]’)"
+    },
+    {
+      "mod_line": [
+        4,
+        1,
+        10
+      ],
+      "mod_code": [
+        "n = getchar ( ) ;",
+        "int a [ maxn ] [ maxn ] ;",
+        "int tmp1 = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [501000]’)"
+    },
+    {
+      "mod_line": [
+        4,
+        10
+      ],
+      "mod_code": [
+        "n = getchar ( ) ;",
+        "int tmp1 = 0 ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘tmp2’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        11
+      ],
+      "mod_code": [
+        "for ( r = 1 ; r <= n ; r ++ )",
+        "for ( int i = l ; i <= r ; i ++ ) { tmp1 = tmp1 | a [ i ] >> b [ i ] ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "‘r’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        11,
+        1
+      ],
+      "mod_code": [
+        "for ( r = 1 ; r <= n ; r ++ )",
+        "for ( int i = l ; i <= r ; i ++ ) { tmp1 = tmp1 | a [ i ] >> b [ i ] ; }",
+        "int a [ maxn ] [ maxn ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [501000]’)"
+    },
+    {
+      "mod_line": [
+        9,
+        11,
+        1,
+        10
+      ],
+      "mod_code": [
+        "for ( r = 1 ; r <= n ; r ++ )",
+        "for ( int i = l ; i <= r ; i ++ ) { tmp1 = tmp1 | a [ i ] >> b [ i ] ; }",
+        "int a [ maxn ] [ maxn ] ;",
+        "int tmp1 = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [501000]’)"
+    },
+    {
+      "mod_line": [
+        9,
+        11,
+        10
+      ],
+      "mod_code": [
+        "for ( r = 1 ; r <= n ; r ++ )",
+        "for ( int i = l ; i <= r ; i ++ ) { tmp1 = tmp1 | a [ i ] >> b [ i ] ; }",
+        "int tmp1 = 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘r’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        1
+      ],
+      "mod_code": [
+        "for ( r = 1 ; r <= n ; r ++ )",
+        "int a [ maxn ] [ maxn ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [501000]’)"
+    },
+    {
+      "mod_line": [
+        9,
+        1,
+        10
+      ],
+      "mod_code": [
+        "for ( r = 1 ; r <= n ; r ++ )",
+        "int a [ maxn ] [ maxn ] ;",
+        "int tmp1 = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [501000]’)"
+    },
+    {
+      "mod_line": [
+        9,
+        10
+      ],
+      "mod_code": [
+        "for ( r = 1 ; r <= n ; r ++ )",
+        "int tmp1 = 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘r’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        1
+      ],
+      "mod_code": [
+        "for ( int i = l ; i <= r ; i ++ ) { tmp1 = tmp1 | a [ i ] >> b [ i ] ; }",
+        "int a [ maxn ] [ maxn ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [501000]’)"
+    },
+    {
+      "mod_line": [
+        11,
+        1,
+        10
+      ],
+      "mod_code": [
+        "for ( int i = l ; i <= r ; i ++ ) { tmp1 = tmp1 | a [ i ] >> b [ i ] ; }",
+        "int a [ maxn ] [ maxn ] ;",
+        "int tmp1 = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [501000]’)"
+    },
+    {
+      "mod_line": [
+        11,
+        10
+      ],
+      "mod_code": [
+        "for ( int i = l ; i <= r ; i ++ ) { tmp1 = tmp1 | a [ i ] >> b [ i ] ; }",
+        "int tmp1 = 0 ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘tmp2’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        10
+      ],
+      "mod_code": [
+        "int a [ maxn ] [ maxn ] ;",
+        "int tmp1 = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [501000]’)"
+    }
+  ]
+}

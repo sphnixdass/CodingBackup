@@ -1,0 +1,723 @@
+{
+  "meta": {
+    "index": 2548,
+    "hitid": "3XEIP58NL0HFAMUQKRENVBIC5LNZL7",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "499A",
+    "subid": "40933344"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare integer variables n and x",
+      "code": "int n , x ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "while reading n and x in a loop",
+      "code": "while ( cin >> n >> x )",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "create integer arrays l and r with 50 elements each",
+      "code": "int l [ 50 ] , r [ 50 ] ;",
+      "indent": 2
+    },
+    {
+      "line": 4,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( int i = 0 ; i < n ; i ++ )",
+      "indent": 2
+    },
+    {
+      "line": 5,
+      "text": "read l [ i ] and r [ i ]",
+      "code": "cin >> l [ i ] >> r [ i ] ;",
+      "indent": 3
+    },
+    {
+      "line": 6,
+      "text": "increase r [ i ] by one",
+      "code": "r [ i ] ++ ;",
+      "indent": 3
+    },
+    {
+      "line": 7,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "create integers sum = 0 and current = 1",
+      "code": "int sum = 0 , current = 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( int i = 0 ; i < n ; i ++ )",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "declare integer tem = l [ i ] - current",
+      "code": "int tem = l [ i ] - current ;",
+      "indent": 3
+    },
+    {
+      "line": 11,
+      "text": "increase current by ( tem / x ) * x",
+      "code": "current += ( tem / x ) * x ;",
+      "indent": 3
+    },
+    {
+      "line": 12,
+      "text": "increase sum by r [ i ] - current",
+      "code": "sum += r [ i ] - current ;",
+      "indent": 3
+    },
+    {
+      "line": 13,
+      "text": "current = r [ i ]",
+      "code": "current = r [ i ] ;",
+      "indent": 3
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "print sum",
+      "code": "cout << sum << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int n and x ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected initializer before ‘and’ token"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "int l [ 50 ] create { } , r [ 50 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected initializer before ‘create’"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        8,
+        4
+      ],
+      "mod_code": [
+        "int sum = 1 , current = 1 ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        4,
+        5
+      ],
+      "mod_code": [
+        "int sum = 1 , current = 1 ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "cin >> l [ i ] , r [ i ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        4,
+        5,
+        11
+      ],
+      "mod_code": [
+        "int sum = 1 , current = 1 ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "cin >> l [ i ] , r [ i ] ;",
+        "++ current += ( tem / x ) * x ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        4,
+        5,
+        10
+      ],
+      "mod_code": [
+        "int sum = 1 , current = 1 ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "cin >> l [ i ] , r [ i ] ;",
+        "int tem = l [ i ] - ' current ' ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        4,
+        5,
+        3
+      ],
+      "mod_code": [
+        "int sum = 1 , current = 1 ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "cin >> l [ i ] , r [ i ] ;",
+        "int l [ 50 ] create { } , r [ 50 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected initializer before ‘create’"
+    },
+    {
+      "mod_line": [
+        8,
+        4,
+        11
+      ],
+      "mod_code": [
+        "int sum = 1 , current = 1 ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "++ current += ( tem / x ) * x ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        4,
+        11,
+        10
+      ],
+      "mod_code": [
+        "int sum = 1 , current = 1 ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "++ current += ( tem / x ) * x ;",
+        "int tem = l [ i ] - ' current ' ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        4,
+        11,
+        3
+      ],
+      "mod_code": [
+        "int sum = 1 , current = 1 ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "++ current += ( tem / x ) * x ;",
+        "int l [ 50 ] create { } , r [ 50 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected initializer before ‘create’"
+    },
+    {
+      "mod_line": [
+        8,
+        4,
+        10
+      ],
+      "mod_code": [
+        "int sum = 1 , current = 1 ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int tem = l [ i ] - ' current ' ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        4,
+        10,
+        3
+      ],
+      "mod_code": [
+        "int sum = 1 , current = 1 ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int tem = l [ i ] - ' current ' ;",
+        "int l [ 50 ] create { } , r [ 50 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected initializer before ‘create’"
+    },
+    {
+      "mod_line": [
+        8,
+        4,
+        3
+      ],
+      "mod_code": [
+        "int sum = 1 , current = 1 ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int l [ 50 ] create { } , r [ 50 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected initializer before ‘create’"
+    },
+    {
+      "mod_line": [
+        8,
+        5,
+        11,
+        3
+      ],
+      "mod_code": [
+        "int sum = 1 , current = 1 ;",
+        "cin >> l [ i ] , r [ i ] ;",
+        "++ current += ( tem / x ) * x ;",
+        "int l [ 50 ] create { } , r [ 50 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected initializer before ‘create’"
+    },
+    {
+      "mod_line": [
+        8,
+        5,
+        10,
+        3
+      ],
+      "mod_code": [
+        "int sum = 1 , current = 1 ;",
+        "cin >> l [ i ] , r [ i ] ;",
+        "int tem = l [ i ] - ' current ' ;",
+        "int l [ 50 ] create { } , r [ 50 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected initializer before ‘create’"
+    },
+    {
+      "mod_line": [
+        8,
+        5,
+        3
+      ],
+      "mod_code": [
+        "int sum = 1 , current = 1 ;",
+        "cin >> l [ i ] , r [ i ] ;",
+        "int l [ 50 ] create { } , r [ 50 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected initializer before ‘create’"
+    },
+    {
+      "mod_line": [
+        8,
+        11,
+        10,
+        3
+      ],
+      "mod_code": [
+        "int sum = 1 , current = 1 ;",
+        "++ current += ( tem / x ) * x ;",
+        "int tem = l [ i ] - ' current ' ;",
+        "int l [ 50 ] create { } , r [ 50 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected initializer before ‘create’"
+    },
+    {
+      "mod_line": [
+        8,
+        11,
+        3
+      ],
+      "mod_code": [
+        "int sum = 1 , current = 1 ;",
+        "++ current += ( tem / x ) * x ;",
+        "int l [ 50 ] create { } , r [ 50 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected initializer before ‘create’"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        3
+      ],
+      "mod_code": [
+        "int sum = 1 , current = 1 ;",
+        "int tem = l [ i ] - ' current ' ;",
+        "int l [ 50 ] create { } , r [ 50 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected initializer before ‘create’"
+    },
+    {
+      "mod_line": [
+        8,
+        3
+      ],
+      "mod_code": [
+        "int sum = 1 , current = 1 ;",
+        "int l [ 50 ] create { } , r [ 50 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected initializer before ‘create’"
+    },
+    {
+      "mod_line": [
+        4,
+        5
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "cin >> l [ i ] , r [ i ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        11
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "cin >> l [ i ] , r [ i ] ;",
+        "++ current += ( tem / x ) * x ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        11,
+        10
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "cin >> l [ i ] , r [ i ] ;",
+        "++ current += ( tem / x ) * x ;",
+        "int tem = l [ i ] - ' current ' ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        11,
+        3
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "cin >> l [ i ] , r [ i ] ;",
+        "++ current += ( tem / x ) * x ;",
+        "int l [ 50 ] create { } , r [ 50 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected initializer before ‘create’"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        10
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "cin >> l [ i ] , r [ i ] ;",
+        "int tem = l [ i ] - ' current ' ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        10,
+        3
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "cin >> l [ i ] , r [ i ] ;",
+        "int tem = l [ i ] - ' current ' ;",
+        "int l [ 50 ] create { } , r [ 50 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected initializer before ‘create’"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        3
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "cin >> l [ i ] , r [ i ] ;",
+        "int l [ 50 ] create { } , r [ 50 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected initializer before ‘create’"
+    },
+    {
+      "mod_line": [
+        4,
+        11
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "++ current += ( tem / x ) * x ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        11,
+        10
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "++ current += ( tem / x ) * x ;",
+        "int tem = l [ i ] - ' current ' ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        11,
+        10,
+        3
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "++ current += ( tem / x ) * x ;",
+        "int tem = l [ i ] - ' current ' ;",
+        "int l [ 50 ] create { } , r [ 50 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected initializer before ‘create’"
+    },
+    {
+      "mod_line": [
+        4,
+        11,
+        3
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "++ current += ( tem / x ) * x ;",
+        "int l [ 50 ] create { } , r [ 50 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected initializer before ‘create’"
+    },
+    {
+      "mod_line": [
+        4,
+        10
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int tem = l [ i ] - ' current ' ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        10,
+        3
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int tem = l [ i ] - ' current ' ;",
+        "int l [ 50 ] create { } , r [ 50 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected initializer before ‘create’"
+    },
+    {
+      "mod_line": [
+        4,
+        3
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int l [ 50 ] create { } , r [ 50 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected initializer before ‘create’"
+    },
+    {
+      "mod_line": [
+        5,
+        11,
+        10,
+        3
+      ],
+      "mod_code": [
+        "cin >> l [ i ] , r [ i ] ;",
+        "++ current += ( tem / x ) * x ;",
+        "int tem = l [ i ] - ' current ' ;",
+        "int l [ 50 ] create { } , r [ 50 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected initializer before ‘create’"
+    },
+    {
+      "mod_line": [
+        5,
+        11,
+        3
+      ],
+      "mod_code": [
+        "cin >> l [ i ] , r [ i ] ;",
+        "++ current += ( tem / x ) * x ;",
+        "int l [ 50 ] create { } , r [ 50 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected initializer before ‘create’"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        3
+      ],
+      "mod_code": [
+        "cin >> l [ i ] , r [ i ] ;",
+        "int tem = l [ i ] - ' current ' ;",
+        "int l [ 50 ] create { } , r [ 50 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected initializer before ‘create’"
+    },
+    {
+      "mod_line": [
+        5,
+        3
+      ],
+      "mod_code": [
+        "cin >> l [ i ] , r [ i ] ;",
+        "int l [ 50 ] create { } , r [ 50 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected initializer before ‘create’"
+    },
+    {
+      "mod_line": [
+        11,
+        10,
+        3
+      ],
+      "mod_code": [
+        "++ current += ( tem / x ) * x ;",
+        "int tem = l [ i ] - ' current ' ;",
+        "int l [ 50 ] create { } , r [ 50 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected initializer before ‘create’"
+    },
+    {
+      "mod_line": [
+        11,
+        3
+      ],
+      "mod_code": [
+        "++ current += ( tem / x ) * x ;",
+        "int l [ 50 ] create { } , r [ 50 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected initializer before ‘create’"
+    },
+    {
+      "mod_line": [
+        10,
+        3
+      ],
+      "mod_code": [
+        "int tem = l [ i ] - ' current ' ;",
+        "int l [ 50 ] create { } , r [ 50 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected initializer before ‘create’"
+    }
+  ]
+}

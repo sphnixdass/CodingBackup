@@ -1,0 +1,801 @@
+{
+  "meta": {
+    "index": 2439,
+    "hitid": "3FCO4VKOZ47IK6ESKAZ0RWZTNI4E7D",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "553A",
+    "subid": "40992480"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create long long MOD = 1e9 + 7",
+      "code": "long long MOD = 1e9 + 7 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create long long 2d array dp with size 1100 by 1100 and arrays a and s with 1010 elements",
+      "code": "long long dp [ 1100 ] [ 1100 ] , a [ 1010 ] , s [ 1010 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "declare int array inv with size 1100",
+      "code": "int inv [ 1100 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "declare integer n",
+      "code": "int n ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "change inv [ 1 ] to 1",
+      "code": "inv [ 1 ] = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "loop i from 2 to 1010 exclusive , change inv [ i ] to inv [ MOD % i ] * ( MOD - MOD / i ) % MOD",
+      "code": "for ( int i = 2 ; i < 1010 ; i ++ ) inv [ i ] = inv [ MOD % i ] * ( MOD - MOD / i ) % MOD ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "read n and keep looping",
+      "code": "while ( cin >> n )",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "for i = n to 1 inclusive counting down , read a [ i ]",
+      "code": "for ( int i = n ; i >= 1 ; i -- ) cin >> a [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "for i from 1 to n inclusive , assign 0 to dp [ i ] [ 0 ] and assign 1 to dp [ 0 ] [ i ]",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) dp [ i ] [ 0 ] = 0 , dp [ 0 ] [ i ] = 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "set s [ 0 ] to 0",
+      "code": "s [ 0 ] = 0 ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "loop i from 1 to n inclusive , setting s [ i ] to s [ i - 1 ] + a [ i ]",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) s [ i ] = s [ i - 1 ] + a [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "for i from 1 to s [ n ] inclusive",
+      "code": "for ( int i = 1 ; i <= s [ n ] ; i ++ )",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "for j = 1 to min of i and n inclusive , change dp [ i ] [ j ] to dp [ i - 1 ] [ j ] * ( s [ j ] - i + 1 ) % MOD + dp [ i - 1 ] [ j - 1 ] * a [ j ] % MOD",
+      "code": "for ( int j = 1 ; j <= min ( i , n ) ; j ++ ) { dp [ i ] [ j ] = dp [ i - 1 ] [ j ] * ( s [ j ] - i + 1 ) % MOD + dp [ i - 1 ] [ j - 1 ] * a [ j ] % MOD ; }",
+      "indent": 3
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "for int i = 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "for int j = 2 to a [ i ] inclusive , set dp [ s [ n ] ] [ n ] = dp [ s [ n ] ] [ n ] * inv [ j ] % MOD",
+      "code": "for ( int j = 2 ; j <= a [ i ] ; j ++ ) dp [ s [ n ] ] [ n ] = dp [ s [ n ] ] [ n ] * inv [ j ] % MOD ;",
+      "indent": 3
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "print dp [ s [ n ] ] [ n ]",
+      "code": "cout << dp [ s [ n ] ] [ n ] << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "long long dp [ 1100 ] [ 1010 ] , s [ 1010 ] , s [ 1010 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int s [1010]’"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) { dp [ i ] [ 0 ] [ i ] [ i ] [ i ] [ i ] = 1 ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= min ( i , n ) ; j ++ ) { dp [ i ] [ j ] = dp [ i - 1 ] [ j ] * MOD + dp [ i - 1 ] [ j - 1 ] * a [ i - 1 ] [ j - 1 ] * a [ j ] % MOD ; }"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "long long dp [ 1010 ] [ 1010 ] , s [ 1010 ] , s [ 1010 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int s [1010]’"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "int * inv [ 1100 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "long int n ;"
+      ],
+      "err_line": 13,
+      "err_msg": "no matching function for call to ‘min(int&, long int&)’"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "inv [ 1 ] ] = 1 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i < 1010 ; i ++ ) { inv [ i ] [ i ] * ( MOD - MOD / i ) % MOD ; }"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "while ( cin >> n ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) { dp [ i ] [ 0 ] [ i ] = 1 ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= s [ n ] ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= min ( i , n ) ; j ++ ) dp [ i ] [ j ] = dp [ i - 1 ] [ j ] * MOD + dp [ i - 1 ] [ j - 1 ] * a [ i - 1 ] [ j - 1 ] * a [ j ] % MOD ;"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        9
+      ],
+      "mod_code": [
+        "long long dp [ 1100 ] [ 1010 ] , s [ 1010 ] , s [ 1010 ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) { dp [ i ] [ 0 ] [ i ] [ i ] [ i ] [ i ] = 1 ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int s [1010]’"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        11
+      ],
+      "mod_code": [
+        "long long dp [ 1100 ] [ 1010 ] , s [ 1010 ] , s [ 1010 ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) { dp [ i ] [ 0 ] [ i ] [ i ] [ i ] [ i ] = 1 ; }",
+        "for ( int i = 1 ; i <= n ; i ++ ) s [ i ] + a [ i - 1 ] + a [ i ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int s [1010]’"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        11,
+        13
+      ],
+      "mod_code": [
+        "long long dp [ 1100 ] [ 1010 ] , s [ 1010 ] , s [ 1010 ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) { dp [ i ] [ 0 ] [ i ] [ i ] [ i ] [ i ] = 1 ; }",
+        "for ( int i = 1 ; i <= n ; i ++ ) s [ i ] + a [ i - 1 ] + a [ i ] ;",
+        "for ( int j = 1 ; j <= min ( i , n ) ; j ++ ) { dp [ i ] [ j ] = dp [ i - 1 ] [ j ] * MOD + dp [ i - 1 ] [ j - 1 ] * a [ i - 1 ] [ j - 1 ] * a [ j ] % MOD ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int s [1010]’"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        11,
+        13
+      ],
+      "mod_code": [
+        "long long dp [ 1100 ] [ 1010 ] , s [ 1010 ] , s [ 1010 ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) { dp [ i ] [ 0 ] [ i ] [ i ] [ i ] [ i ] = 1 ; }",
+        "for ( int i = 1 ; i <= n ; i ++ ) s [ i ] + a [ i - 1 ] + a [ i ] ;",
+        "for ( int j = 1 ; j <= min ( i , n ) ; j ++ ) dp [ i ] [ j ] = dp [ i - 1 ] [ j ] * MOD + dp [ i - 1 ] [ j - 1 ] * a [ i - 1 ] [ j - 1 ] * a [ j ] % MOD ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int s [1010]’"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        11,
+        2
+      ],
+      "mod_code": [
+        "long long dp [ 1100 ] [ 1010 ] , s [ 1010 ] , s [ 1010 ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) { dp [ i ] [ 0 ] [ i ] [ i ] [ i ] [ i ] = 1 ; }",
+        "for ( int i = 1 ; i <= n ; i ++ ) s [ i ] + a [ i - 1 ] + a [ i ] ;",
+        "int * inv [ 1100 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int s [1010]’"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        13
+      ],
+      "mod_code": [
+        "long long dp [ 1100 ] [ 1010 ] , s [ 1010 ] , s [ 1010 ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) { dp [ i ] [ 0 ] [ i ] [ i ] [ i ] [ i ] = 1 ; }",
+        "for ( int j = 1 ; j <= min ( i , n ) ; j ++ ) { dp [ i ] [ j ] = dp [ i - 1 ] [ j ] * MOD + dp [ i - 1 ] [ j - 1 ] * a [ i - 1 ] [ j - 1 ] * a [ j ] % MOD ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int s [1010]’"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        13,
+        2
+      ],
+      "mod_code": [
+        "long long dp [ 1100 ] [ 1010 ] , s [ 1010 ] , s [ 1010 ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) { dp [ i ] [ 0 ] [ i ] [ i ] [ i ] [ i ] = 1 ; }",
+        "for ( int j = 1 ; j <= min ( i , n ) ; j ++ ) { dp [ i ] [ j ] = dp [ i - 1 ] [ j ] * MOD + dp [ i - 1 ] [ j - 1 ] * a [ i - 1 ] [ j - 1 ] * a [ j ] % MOD ; }",
+        "int * inv [ 1100 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int s [1010]’"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        13
+      ],
+      "mod_code": [
+        "long long dp [ 1100 ] [ 1010 ] , s [ 1010 ] , s [ 1010 ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) { dp [ i ] [ 0 ] [ i ] [ i ] [ i ] [ i ] = 1 ; }",
+        "for ( int j = 1 ; j <= min ( i , n ) ; j ++ ) dp [ i ] [ j ] = dp [ i - 1 ] [ j ] * MOD + dp [ i - 1 ] [ j - 1 ] * a [ i - 1 ] [ j - 1 ] * a [ j ] % MOD ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int s [1010]’"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        13,
+        2
+      ],
+      "mod_code": [
+        "long long dp [ 1100 ] [ 1010 ] , s [ 1010 ] , s [ 1010 ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) { dp [ i ] [ 0 ] [ i ] [ i ] [ i ] [ i ] = 1 ; }",
+        "for ( int j = 1 ; j <= min ( i , n ) ; j ++ ) dp [ i ] [ j ] = dp [ i - 1 ] [ j ] * MOD + dp [ i - 1 ] [ j - 1 ] * a [ i - 1 ] [ j - 1 ] * a [ j ] % MOD ;",
+        "int * inv [ 1100 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int s [1010]’"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        2
+      ],
+      "mod_code": [
+        "long long dp [ 1100 ] [ 1010 ] , s [ 1010 ] , s [ 1010 ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) { dp [ i ] [ 0 ] [ i ] [ i ] [ i ] [ i ] = 1 ; }",
+        "int * inv [ 1100 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int s [1010]’"
+    },
+    {
+      "mod_line": [
+        1,
+        11
+      ],
+      "mod_code": [
+        "long long dp [ 1100 ] [ 1010 ] , s [ 1010 ] , s [ 1010 ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) s [ i ] + a [ i - 1 ] + a [ i ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int s [1010]’"
+    },
+    {
+      "mod_line": [
+        1,
+        11,
+        13
+      ],
+      "mod_code": [
+        "long long dp [ 1100 ] [ 1010 ] , s [ 1010 ] , s [ 1010 ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) s [ i ] + a [ i - 1 ] + a [ i ] ;",
+        "for ( int j = 1 ; j <= min ( i , n ) ; j ++ ) { dp [ i ] [ j ] = dp [ i - 1 ] [ j ] * MOD + dp [ i - 1 ] [ j - 1 ] * a [ i - 1 ] [ j - 1 ] * a [ j ] % MOD ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int s [1010]’"
+    },
+    {
+      "mod_line": [
+        1,
+        11,
+        13,
+        2
+      ],
+      "mod_code": [
+        "long long dp [ 1100 ] [ 1010 ] , s [ 1010 ] , s [ 1010 ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) s [ i ] + a [ i - 1 ] + a [ i ] ;",
+        "for ( int j = 1 ; j <= min ( i , n ) ; j ++ ) { dp [ i ] [ j ] = dp [ i - 1 ] [ j ] * MOD + dp [ i - 1 ] [ j - 1 ] * a [ i - 1 ] [ j - 1 ] * a [ j ] % MOD ; }",
+        "int * inv [ 1100 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int s [1010]’"
+    },
+    {
+      "mod_line": [
+        1,
+        11,
+        13
+      ],
+      "mod_code": [
+        "long long dp [ 1100 ] [ 1010 ] , s [ 1010 ] , s [ 1010 ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) s [ i ] + a [ i - 1 ] + a [ i ] ;",
+        "for ( int j = 1 ; j <= min ( i , n ) ; j ++ ) dp [ i ] [ j ] = dp [ i - 1 ] [ j ] * MOD + dp [ i - 1 ] [ j - 1 ] * a [ i - 1 ] [ j - 1 ] * a [ j ] % MOD ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int s [1010]’"
+    },
+    {
+      "mod_line": [
+        1,
+        11,
+        13,
+        2
+      ],
+      "mod_code": [
+        "long long dp [ 1100 ] [ 1010 ] , s [ 1010 ] , s [ 1010 ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) s [ i ] + a [ i - 1 ] + a [ i ] ;",
+        "for ( int j = 1 ; j <= min ( i , n ) ; j ++ ) dp [ i ] [ j ] = dp [ i - 1 ] [ j ] * MOD + dp [ i - 1 ] [ j - 1 ] * a [ i - 1 ] [ j - 1 ] * a [ j ] % MOD ;",
+        "int * inv [ 1100 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int s [1010]’"
+    },
+    {
+      "mod_line": [
+        1,
+        11,
+        2
+      ],
+      "mod_code": [
+        "long long dp [ 1100 ] [ 1010 ] , s [ 1010 ] , s [ 1010 ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) s [ i ] + a [ i - 1 ] + a [ i ] ;",
+        "int * inv [ 1100 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int s [1010]’"
+    },
+    {
+      "mod_line": [
+        1,
+        13
+      ],
+      "mod_code": [
+        "long long dp [ 1100 ] [ 1010 ] , s [ 1010 ] , s [ 1010 ] ;",
+        "for ( int j = 1 ; j <= min ( i , n ) ; j ++ ) { dp [ i ] [ j ] = dp [ i - 1 ] [ j ] * MOD + dp [ i - 1 ] [ j - 1 ] * a [ i - 1 ] [ j - 1 ] * a [ j ] % MOD ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int s [1010]’"
+    },
+    {
+      "mod_line": [
+        1,
+        13,
+        2
+      ],
+      "mod_code": [
+        "long long dp [ 1100 ] [ 1010 ] , s [ 1010 ] , s [ 1010 ] ;",
+        "for ( int j = 1 ; j <= min ( i , n ) ; j ++ ) { dp [ i ] [ j ] = dp [ i - 1 ] [ j ] * MOD + dp [ i - 1 ] [ j - 1 ] * a [ i - 1 ] [ j - 1 ] * a [ j ] % MOD ; }",
+        "int * inv [ 1100 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int s [1010]’"
+    },
+    {
+      "mod_line": [
+        1,
+        13
+      ],
+      "mod_code": [
+        "long long dp [ 1100 ] [ 1010 ] , s [ 1010 ] , s [ 1010 ] ;",
+        "for ( int j = 1 ; j <= min ( i , n ) ; j ++ ) dp [ i ] [ j ] = dp [ i - 1 ] [ j ] * MOD + dp [ i - 1 ] [ j - 1 ] * a [ i - 1 ] [ j - 1 ] * a [ j ] % MOD ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int s [1010]’"
+    },
+    {
+      "mod_line": [
+        1,
+        13,
+        2
+      ],
+      "mod_code": [
+        "long long dp [ 1100 ] [ 1010 ] , s [ 1010 ] , s [ 1010 ] ;",
+        "for ( int j = 1 ; j <= min ( i , n ) ; j ++ ) dp [ i ] [ j ] = dp [ i - 1 ] [ j ] * MOD + dp [ i - 1 ] [ j - 1 ] * a [ i - 1 ] [ j - 1 ] * a [ j ] % MOD ;",
+        "int * inv [ 1100 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int s [1010]’"
+    },
+    {
+      "mod_line": [
+        1,
+        2
+      ],
+      "mod_code": [
+        "long long dp [ 1100 ] [ 1010 ] , s [ 1010 ] , s [ 1010 ] ;",
+        "int * inv [ 1100 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int s [1010]’"
+    },
+    {
+      "mod_line": [
+        9,
+        11
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) { dp [ i ] [ 0 ] [ i ] [ i ] [ i ] [ i ] = 1 ; }",
+        "for ( int i = 1 ; i <= n ; i ++ ) s [ i ] + a [ i - 1 ] + a [ i ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9,
+        11,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) { dp [ i ] [ 0 ] [ i ] [ i ] [ i ] [ i ] = 1 ; }",
+        "for ( int i = 1 ; i <= n ; i ++ ) s [ i ] + a [ i - 1 ] + a [ i ] ;",
+        "for ( int j = 1 ; j <= min ( i , n ) ; j ++ ) { dp [ i ] [ j ] = dp [ i - 1 ] [ j ] * MOD + dp [ i - 1 ] [ j - 1 ] * a [ i - 1 ] [ j - 1 ] * a [ j ] % MOD ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9,
+        11,
+        13,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) { dp [ i ] [ 0 ] [ i ] [ i ] [ i ] [ i ] = 1 ; }",
+        "for ( int i = 1 ; i <= n ; i ++ ) s [ i ] + a [ i - 1 ] + a [ i ] ;",
+        "for ( int j = 1 ; j <= min ( i , n ) ; j ++ ) { dp [ i ] [ j ] = dp [ i - 1 ] [ j ] * MOD + dp [ i - 1 ] [ j - 1 ] * a [ i - 1 ] [ j - 1 ] * a [ j ] % MOD ; }",
+        "int * inv [ 1100 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        11,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) { dp [ i ] [ 0 ] [ i ] [ i ] [ i ] [ i ] = 1 ; }",
+        "for ( int i = 1 ; i <= n ; i ++ ) s [ i ] + a [ i - 1 ] + a [ i ] ;",
+        "for ( int j = 1 ; j <= min ( i , n ) ; j ++ ) dp [ i ] [ j ] = dp [ i - 1 ] [ j ] * MOD + dp [ i - 1 ] [ j - 1 ] * a [ i - 1 ] [ j - 1 ] * a [ j ] % MOD ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9,
+        11,
+        13,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) { dp [ i ] [ 0 ] [ i ] [ i ] [ i ] [ i ] = 1 ; }",
+        "for ( int i = 1 ; i <= n ; i ++ ) s [ i ] + a [ i - 1 ] + a [ i ] ;",
+        "for ( int j = 1 ; j <= min ( i , n ) ; j ++ ) dp [ i ] [ j ] = dp [ i - 1 ] [ j ] * MOD + dp [ i - 1 ] [ j - 1 ] * a [ i - 1 ] [ j - 1 ] * a [ j ] % MOD ;",
+        "int * inv [ 1100 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        11,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) { dp [ i ] [ 0 ] [ i ] [ i ] [ i ] [ i ] = 1 ; }",
+        "for ( int i = 1 ; i <= n ; i ++ ) s [ i ] + a [ i - 1 ] + a [ i ] ;",
+        "int * inv [ 1100 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) { dp [ i ] [ 0 ] [ i ] [ i ] [ i ] [ i ] = 1 ; }",
+        "for ( int j = 1 ; j <= min ( i , n ) ; j ++ ) { dp [ i ] [ j ] = dp [ i - 1 ] [ j ] * MOD + dp [ i - 1 ] [ j - 1 ] * a [ i - 1 ] [ j - 1 ] * a [ j ] % MOD ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9,
+        13,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) { dp [ i ] [ 0 ] [ i ] [ i ] [ i ] [ i ] = 1 ; }",
+        "for ( int j = 1 ; j <= min ( i , n ) ; j ++ ) { dp [ i ] [ j ] = dp [ i - 1 ] [ j ] * MOD + dp [ i - 1 ] [ j - 1 ] * a [ i - 1 ] [ j - 1 ] * a [ j ] % MOD ; }",
+        "int * inv [ 1100 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) { dp [ i ] [ 0 ] [ i ] [ i ] [ i ] [ i ] = 1 ; }",
+        "for ( int j = 1 ; j <= min ( i , n ) ; j ++ ) dp [ i ] [ j ] = dp [ i - 1 ] [ j ] * MOD + dp [ i - 1 ] [ j - 1 ] * a [ i - 1 ] [ j - 1 ] * a [ j ] % MOD ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9,
+        13,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) { dp [ i ] [ 0 ] [ i ] [ i ] [ i ] [ i ] = 1 ; }",
+        "for ( int j = 1 ; j <= min ( i , n ) ; j ++ ) dp [ i ] [ j ] = dp [ i - 1 ] [ j ] * MOD + dp [ i - 1 ] [ j - 1 ] * a [ i - 1 ] [ j - 1 ] * a [ j ] % MOD ;",
+        "int * inv [ 1100 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) { dp [ i ] [ 0 ] [ i ] [ i ] [ i ] [ i ] = 1 ; }",
+        "int * inv [ 1100 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) s [ i ] + a [ i - 1 ] + a [ i ] ;",
+        "for ( int j = 1 ; j <= min ( i , n ) ; j ++ ) { dp [ i ] [ j ] = dp [ i - 1 ] [ j ] * MOD + dp [ i - 1 ] [ j - 1 ] * a [ i - 1 ] [ j - 1 ] * a [ j ] % MOD ; }"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        11,
+        13,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) s [ i ] + a [ i - 1 ] + a [ i ] ;",
+        "for ( int j = 1 ; j <= min ( i , n ) ; j ++ ) { dp [ i ] [ j ] = dp [ i - 1 ] [ j ] * MOD + dp [ i - 1 ] [ j - 1 ] * a [ i - 1 ] [ j - 1 ] * a [ j ] % MOD ; }",
+        "int * inv [ 1100 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) s [ i ] + a [ i - 1 ] + a [ i ] ;",
+        "for ( int j = 1 ; j <= min ( i , n ) ; j ++ ) dp [ i ] [ j ] = dp [ i - 1 ] [ j ] * MOD + dp [ i - 1 ] [ j - 1 ] * a [ i - 1 ] [ j - 1 ] * a [ j ] % MOD ;"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        11,
+        13,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) s [ i ] + a [ i - 1 ] + a [ i ] ;",
+        "for ( int j = 1 ; j <= min ( i , n ) ; j ++ ) dp [ i ] [ j ] = dp [ i - 1 ] [ j ] * MOD + dp [ i - 1 ] [ j - 1 ] * a [ i - 1 ] [ j - 1 ] * a [ j ] % MOD ;",
+        "int * inv [ 1100 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) s [ i ] + a [ i - 1 ] + a [ i ] ;",
+        "int * inv [ 1100 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        2
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= min ( i , n ) ; j ++ ) { dp [ i ] [ j ] = dp [ i - 1 ] [ j ] * MOD + dp [ i - 1 ] [ j - 1 ] * a [ i - 1 ] [ j - 1 ] * a [ j ] % MOD ; }",
+        "int * inv [ 1100 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        2
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= min ( i , n ) ; j ++ ) dp [ i ] [ j ] = dp [ i - 1 ] [ j ] * MOD + dp [ i - 1 ] [ j - 1 ] * a [ i - 1 ] [ j - 1 ] * a [ j ] % MOD ;",
+        "int * inv [ 1100 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    }
+  ]
+}

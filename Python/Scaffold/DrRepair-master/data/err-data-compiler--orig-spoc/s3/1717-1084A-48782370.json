@@ -1,0 +1,683 @@
+{
+  "meta": {
+    "index": 1717,
+    "hitid": "3W9XHF7WGKP84439TZD4UN4GWCUTKR",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "1084A",
+    "subid": "48782370"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare new constant integer maxn with value 1e5 + 5",
+      "code": "const int maxn = 1e5 + 5 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "num is a new array of integers with size maxn",
+      "code": "int num [ maxn ] = { 0 } ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "let n and ans be ints with ans = 1000000000",
+      "code": "int n , ans = 1000000000 ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "read standard input to n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "read n elements from the input to array num",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) cin >> num [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for integer i = 1 to n inclusive incrementing i",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "declare integer cnt with value 0",
+      "code": "int cnt = 0 ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "in a for loop , change j from 1 to n inclusive , increasing cnt by 2 * num [ j ] * ( abs ( i - j ) + abs ( j - 1 ) + abs ( 1 - i ) ) on each loop",
+      "code": "for ( int j = 1 ; j <= n ; j ++ ) cnt += 2 * num [ j ] * ( abs ( i - j ) + abs ( j - 1 ) + abs ( 1 - i ) ) ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "change the value of ans to min of cnt and ans",
+      "code": "ans = min ( cnt , ans ) ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "print ans",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "long long cnt = 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "no matching function for call to ‘min(long long int&, int&)’"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "ans = min ( cnt value , ans ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected ‘)’ before ‘value’"
+    },
+    {
+      "mod_line": [
+        5,
+        11,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) cin >> num [ i ] ;",
+        "cout << ans ;",
+        "ans = min ( cnt value , ans ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected ‘)’ before ‘value’"
+    },
+    {
+      "mod_line": [
+        5,
+        11,
+        9,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) cin >> num [ i ] ;",
+        "cout << ans ;",
+        "ans = min ( cnt value , ans ) ;",
+        "int n = 1000000000 , ans ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected ‘)’ before ‘value’"
+    },
+    {
+      "mod_line": [
+        5,
+        11,
+        9,
+        8
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) cin >> num [ i ] ;",
+        "cout << ans ;",
+        "ans = min ( cnt value , ans ) ;",
+        "for ( int j = 1 ; j <= n ; j ++ ) { cnt += 2 * num [ j ] * ( abs ( i - j ) + abs ( j - 1 ) + abs ( 1 - 1 ) ) ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "expected ‘)’ before ‘value’"
+    },
+    {
+      "mod_line": [
+        5,
+        11,
+        9,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) cin >> num [ i ] ;",
+        "cout << ans ;",
+        "ans = min ( cnt value , ans ) ;",
+        "cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        11,
+        2,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) cin >> num [ i ] ;",
+        "cout << ans ;",
+        "int n = 1000000000 , ans ;",
+        "cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        11,
+        8,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) cin >> num [ i ] ;",
+        "cout << ans ;",
+        "for ( int j = 1 ; j <= n ; j ++ ) { cnt += 2 * num [ j ] * ( abs ( i - j ) + abs ( j - 1 ) + abs ( 1 - 1 ) ) ; }",
+        "cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        11,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) cin >> num [ i ] ;",
+        "cout << ans ;",
+        "cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) cin >> num [ i ] ;",
+        "ans = min ( cnt value , ans ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected ‘)’ before ‘value’"
+    },
+    {
+      "mod_line": [
+        5,
+        9,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) cin >> num [ i ] ;",
+        "ans = min ( cnt value , ans ) ;",
+        "int n = 1000000000 , ans ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected ‘)’ before ‘value’"
+    },
+    {
+      "mod_line": [
+        5,
+        9,
+        2,
+        8
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) cin >> num [ i ] ;",
+        "ans = min ( cnt value , ans ) ;",
+        "int n = 1000000000 , ans ;",
+        "for ( int j = 1 ; j <= n ; j ++ ) { cnt += 2 * num [ j ] * ( abs ( i - j ) + abs ( j - 1 ) + abs ( 1 - 1 ) ) ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "expected ‘)’ before ‘value’"
+    },
+    {
+      "mod_line": [
+        5,
+        9,
+        2,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) cin >> num [ i ] ;",
+        "ans = min ( cnt value , ans ) ;",
+        "int n = 1000000000 , ans ;",
+        "cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        9,
+        8
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) cin >> num [ i ] ;",
+        "ans = min ( cnt value , ans ) ;",
+        "for ( int j = 1 ; j <= n ; j ++ ) { cnt += 2 * num [ j ] * ( abs ( i - j ) + abs ( j - 1 ) + abs ( 1 - 1 ) ) ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "expected ‘)’ before ‘value’"
+    },
+    {
+      "mod_line": [
+        5,
+        9,
+        8,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) cin >> num [ i ] ;",
+        "ans = min ( cnt value , ans ) ;",
+        "for ( int j = 1 ; j <= n ; j ++ ) { cnt += 2 * num [ j ] * ( abs ( i - j ) + abs ( j - 1 ) + abs ( 1 - 1 ) ) ; }",
+        "cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        9,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) cin >> num [ i ] ;",
+        "ans = min ( cnt value , ans ) ;",
+        "cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        2,
+        8,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) cin >> num [ i ] ;",
+        "int n = 1000000000 , ans ;",
+        "for ( int j = 1 ; j <= n ; j ++ ) { cnt += 2 * num [ j ] * ( abs ( i - j ) + abs ( j - 1 ) + abs ( 1 - 1 ) ) ; }",
+        "cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        2,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) cin >> num [ i ] ;",
+        "int n = 1000000000 , ans ;",
+        "cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) cin >> num [ i ] ;",
+        "for ( int j = 1 ; j <= n ; j ++ ) { cnt += 2 * num [ j ] * ( abs ( i - j ) + abs ( j - 1 ) + abs ( 1 - 1 ) ) ; }",
+        "cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) cin >> num [ i ] ;",
+        "cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        11,
+        9
+      ],
+      "mod_code": [
+        "cout << ans ;",
+        "ans = min ( cnt value , ans ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected ‘)’ before ‘value’"
+    },
+    {
+      "mod_line": [
+        11,
+        9,
+        2
+      ],
+      "mod_code": [
+        "cout << ans ;",
+        "ans = min ( cnt value , ans ) ;",
+        "int n = 1000000000 , ans ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected ‘)’ before ‘value’"
+    },
+    {
+      "mod_line": [
+        11,
+        9,
+        2,
+        8
+      ],
+      "mod_code": [
+        "cout << ans ;",
+        "ans = min ( cnt value , ans ) ;",
+        "int n = 1000000000 , ans ;",
+        "for ( int j = 1 ; j <= n ; j ++ ) { cnt += 2 * num [ j ] * ( abs ( i - j ) + abs ( j - 1 ) + abs ( 1 - 1 ) ) ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "expected ‘)’ before ‘value’"
+    },
+    {
+      "mod_line": [
+        11,
+        9,
+        2,
+        4
+      ],
+      "mod_code": [
+        "cout << ans ;",
+        "ans = min ( cnt value , ans ) ;",
+        "int n = 1000000000 , ans ;",
+        "cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        11,
+        9,
+        8
+      ],
+      "mod_code": [
+        "cout << ans ;",
+        "ans = min ( cnt value , ans ) ;",
+        "for ( int j = 1 ; j <= n ; j ++ ) { cnt += 2 * num [ j ] * ( abs ( i - j ) + abs ( j - 1 ) + abs ( 1 - 1 ) ) ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "expected ‘)’ before ‘value’"
+    },
+    {
+      "mod_line": [
+        11,
+        9,
+        8,
+        4
+      ],
+      "mod_code": [
+        "cout << ans ;",
+        "ans = min ( cnt value , ans ) ;",
+        "for ( int j = 1 ; j <= n ; j ++ ) { cnt += 2 * num [ j ] * ( abs ( i - j ) + abs ( j - 1 ) + abs ( 1 - 1 ) ) ; }",
+        "cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        11,
+        9,
+        4
+      ],
+      "mod_code": [
+        "cout << ans ;",
+        "ans = min ( cnt value , ans ) ;",
+        "cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        11,
+        2,
+        8,
+        4
+      ],
+      "mod_code": [
+        "cout << ans ;",
+        "int n = 1000000000 , ans ;",
+        "for ( int j = 1 ; j <= n ; j ++ ) { cnt += 2 * num [ j ] * ( abs ( i - j ) + abs ( j - 1 ) + abs ( 1 - 1 ) ) ; }",
+        "cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        11,
+        2,
+        4
+      ],
+      "mod_code": [
+        "cout << ans ;",
+        "int n = 1000000000 , ans ;",
+        "cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        11,
+        8,
+        4
+      ],
+      "mod_code": [
+        "cout << ans ;",
+        "for ( int j = 1 ; j <= n ; j ++ ) { cnt += 2 * num [ j ] * ( abs ( i - j ) + abs ( j - 1 ) + abs ( 1 - 1 ) ) ; }",
+        "cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        11,
+        4
+      ],
+      "mod_code": [
+        "cout << ans ;",
+        "cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        9,
+        2
+      ],
+      "mod_code": [
+        "ans = min ( cnt value , ans ) ;",
+        "int n = 1000000000 , ans ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected ‘)’ before ‘value’"
+    },
+    {
+      "mod_line": [
+        9,
+        2,
+        8
+      ],
+      "mod_code": [
+        "ans = min ( cnt value , ans ) ;",
+        "int n = 1000000000 , ans ;",
+        "for ( int j = 1 ; j <= n ; j ++ ) { cnt += 2 * num [ j ] * ( abs ( i - j ) + abs ( j - 1 ) + abs ( 1 - 1 ) ) ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "expected ‘)’ before ‘value’"
+    },
+    {
+      "mod_line": [
+        9,
+        2,
+        8,
+        4
+      ],
+      "mod_code": [
+        "ans = min ( cnt value , ans ) ;",
+        "int n = 1000000000 , ans ;",
+        "for ( int j = 1 ; j <= n ; j ++ ) { cnt += 2 * num [ j ] * ( abs ( i - j ) + abs ( j - 1 ) + abs ( 1 - 1 ) ) ; }",
+        "cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        9,
+        2,
+        4
+      ],
+      "mod_code": [
+        "ans = min ( cnt value , ans ) ;",
+        "int n = 1000000000 , ans ;",
+        "cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        9,
+        8
+      ],
+      "mod_code": [
+        "ans = min ( cnt value , ans ) ;",
+        "for ( int j = 1 ; j <= n ; j ++ ) { cnt += 2 * num [ j ] * ( abs ( i - j ) + abs ( j - 1 ) + abs ( 1 - 1 ) ) ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "expected ‘)’ before ‘value’"
+    },
+    {
+      "mod_line": [
+        9,
+        8,
+        4
+      ],
+      "mod_code": [
+        "ans = min ( cnt value , ans ) ;",
+        "for ( int j = 1 ; j <= n ; j ++ ) { cnt += 2 * num [ j ] * ( abs ( i - j ) + abs ( j - 1 ) + abs ( 1 - 1 ) ) ; }",
+        "cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        9,
+        4
+      ],
+      "mod_code": [
+        "ans = min ( cnt value , ans ) ;",
+        "cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        8,
+        4
+      ],
+      "mod_code": [
+        "int n = 1000000000 , ans ;",
+        "for ( int j = 1 ; j <= n ; j ++ ) { cnt += 2 * num [ j ] * ( abs ( i - j ) + abs ( j - 1 ) + abs ( 1 - 1 ) ) ; }",
+        "cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        4
+      ],
+      "mod_code": [
+        "int n = 1000000000 , ans ;",
+        "cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        4
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= n ; j ++ ) { cnt += 2 * num [ j ] * ( abs ( i - j ) + abs ( j - 1 ) + abs ( 1 - 1 ) ) ; }",
+        "cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    }
+  ]
+}

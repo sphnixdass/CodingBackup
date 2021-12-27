@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "index": 2359,
+    "hitid": "3LB1BGHFL2Q3O9SQXEEV3VJRT47YTK",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "1004A",
+    "subid": "42088693"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create integer n",
+      "code": "int n ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create integer d , create integer array a with size 110",
+      "code": "int d , a [ 110 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "read n read d",
+      "code": "cin >> n >> d ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for i = 1 to n inclusive , read a [ i ]",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) { cin >> a [ i ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "create integer ans with ans = 2",
+      "code": "int ans = 2 ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 2 to n inclusive",
+      "code": "for ( int i = 2 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "if a [ i ] - a [ i - 1 ] is greater than or equal to 2 * d + 1 , increment ans by 2",
+      "code": "if ( a [ i ] - a [ i - 1 ] >= 2 * d + 1 ) { ans += 2 ; }",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "if a [ i ] - a [ i - 1 ] is 2 * d , increment ans",
+      "code": "if ( a [ i ] - a [ i - 1 ] == 2 * d ) { ans ++ ; }",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "print ans print newline",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int d [ 110 ] , d [ 110 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int d [110]’"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int d [ 110 ] , d ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int d’"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        1,
+        6
+      ],
+      "mod_code": [
+        "int d [ 110 ] , d [ 110 ] ;",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int d [110]’"
+    },
+    {
+      "mod_line": [
+        1,
+        6
+      ],
+      "mod_code": [
+        "int d [ 110 ] , d ;",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int d’"
+    }
+  ]
+}

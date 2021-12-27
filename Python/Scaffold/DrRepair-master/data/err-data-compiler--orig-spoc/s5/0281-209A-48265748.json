@@ -1,0 +1,355 @@
+{
+  "meta": {
+    "index": 281,
+    "hitid": "3IKMEYR0LWPEK59WAKT8T0VQWZDK2M",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "209A",
+    "subid": "48265748"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create constant long long mod with mod = 1e9 + 7",
+      "code": "const long long mod = 1e9 + 7 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create constant long long maxn with maxn = 1e6",
+      "code": "const long long maxn = 1e6 ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "create long long n , create long long 2d array dp with size 2 by maxn",
+      "code": "long long n , dp [ 2 ] [ maxn ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "set dp [ 0 ] [ 0 ] to 1",
+      "code": "dp [ 0 ] [ 0 ] = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 1 to n exclusive",
+      "code": "for ( long long i = 1 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "if i bitwise and 1",
+      "code": "if ( i & 1 )",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "set dp [ 0 ] [ 1 ] to dp [ 0 ] [ i - 1 ]",
+      "code": "dp [ 0 ] [ i ] = dp [ 0 ] [ i - 1 ] ;",
+      "indent": 3
+    },
+    {
+      "line": 9,
+      "text": "set dp [ 1 ] [ i ] to ( dp [ 1 ] [ i - 1 ] % mod + dp [ 0 ] [ i - 1 ] % mod + 1 ) % mod",
+      "code": "dp [ 1 ] [ i ] = ( dp [ 1 ] [ i - 1 ] % mod + dp [ 0 ] [ i - 1 ] % mod + 1 ) % mod ;",
+      "indent": 3
+    },
+    {
+      "line": 10,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "set dp [ 1 ] [ i ] to dp [ 1 ] [ i - 1 ]",
+      "code": "dp [ 1 ] [ i ] = dp [ 1 ] [ i - 1 ] ;",
+      "indent": 3
+    },
+    {
+      "line": 12,
+      "text": "set dp [ 0 ] [ i ] to ( dp [ 0 ] [ i - 1 ] % mod + dp [ 1 ] [ i - 1 ] % mod + 1 ) % mod",
+      "code": "dp [ 0 ] [ i ] = ( dp [ 0 ] [ i - 1 ] % mod + dp [ 1 ] [ i - 1 ] % mod + 1 ) % mod ;",
+      "indent": 3
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "print ( dp [ 0 ] [ n - 1 ] + dp [ 1 ] [ n - 1 ] ) % mod print newline",
+      "code": "cout << ( dp [ 0 ] [ n - 1 ] + dp [ 1 ] [ n - 1 ] ) % mod << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "long long n , dp [ 2 ] , n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "redefinition of ‘long long int n’"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "if ( i & l )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        7
+      ],
+      "mod_code": [
+        "dp [ 0 ] [ 1 ] = dp [ 0 ] [ i - 1 ] ;",
+        "if ( i & l )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        7,
+        5
+      ],
+      "mod_code": [
+        "dp [ 0 ] [ 1 ] = dp [ 0 ] [ i - 1 ] ;",
+        "if ( i & l )",
+        "dp [ 0 ] [ ' 0 ' ] = 1 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        7,
+        5,
+        2
+      ],
+      "mod_code": [
+        "dp [ 0 ] [ 1 ] = dp [ 0 ] [ i - 1 ] ;",
+        "if ( i & l )",
+        "dp [ 0 ] [ ' 0 ' ] = 1 ;",
+        "long long n , dp [ 2 ] , n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "redefinition of ‘long long int n’"
+    },
+    {
+      "mod_line": [
+        8,
+        7,
+        2
+      ],
+      "mod_code": [
+        "dp [ 0 ] [ 1 ] = dp [ 0 ] [ i - 1 ] ;",
+        "if ( i & l )",
+        "long long n , dp [ 2 ] , n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "redefinition of ‘long long int n’"
+    },
+    {
+      "mod_line": [
+        8,
+        5,
+        2
+      ],
+      "mod_code": [
+        "dp [ 0 ] [ 1 ] = dp [ 0 ] [ i - 1 ] ;",
+        "dp [ 0 ] [ ' 0 ' ] = 1 ;",
+        "long long n , dp [ 2 ] , n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "redefinition of ‘long long int n’"
+    },
+    {
+      "mod_line": [
+        8,
+        2
+      ],
+      "mod_code": [
+        "dp [ 0 ] [ 1 ] = dp [ 0 ] [ i - 1 ] ;",
+        "long long n , dp [ 2 ] , n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "redefinition of ‘long long int n’"
+    },
+    {
+      "mod_line": [
+        7,
+        5
+      ],
+      "mod_code": [
+        "if ( i & l )",
+        "dp [ 0 ] [ ' 0 ' ] = 1 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        5,
+        8
+      ],
+      "mod_code": [
+        "if ( i & l )",
+        "dp [ 0 ] [ ' 0 ' ] = 1 ;",
+        "dp [ 0 ] [ 1 ] = ( dp [ 0 ] [ i - 1 ] ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        5,
+        8,
+        2
+      ],
+      "mod_code": [
+        "if ( i & l )",
+        "dp [ 0 ] [ ' 0 ' ] = 1 ;",
+        "dp [ 0 ] [ 1 ] = ( dp [ 0 ] [ i - 1 ] ) ;",
+        "long long n , dp [ 2 ] , n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "redefinition of ‘long long int n’"
+    },
+    {
+      "mod_line": [
+        7,
+        5,
+        2
+      ],
+      "mod_code": [
+        "if ( i & l )",
+        "dp [ 0 ] [ ' 0 ' ] = 1 ;",
+        "long long n , dp [ 2 ] , n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "redefinition of ‘long long int n’"
+    },
+    {
+      "mod_line": [
+        7,
+        8
+      ],
+      "mod_code": [
+        "if ( i & l )",
+        "dp [ 0 ] [ 1 ] = ( dp [ 0 ] [ i - 1 ] ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        8,
+        2
+      ],
+      "mod_code": [
+        "if ( i & l )",
+        "dp [ 0 ] [ 1 ] = ( dp [ 0 ] [ i - 1 ] ) ;",
+        "long long n , dp [ 2 ] , n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "redefinition of ‘long long int n’"
+    },
+    {
+      "mod_line": [
+        7,
+        2
+      ],
+      "mod_code": [
+        "if ( i & l )",
+        "long long n , dp [ 2 ] , n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "redefinition of ‘long long int n’"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        2
+      ],
+      "mod_code": [
+        "dp [ 0 ] [ ' 0 ' ] = 1 ;",
+        "dp [ 0 ] [ 1 ] = ( dp [ 0 ] [ i - 1 ] ) ;",
+        "long long n , dp [ 2 ] , n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "redefinition of ‘long long int n’"
+    },
+    {
+      "mod_line": [
+        5,
+        2
+      ],
+      "mod_code": [
+        "dp [ 0 ] [ ' 0 ' ] = 1 ;",
+        "long long n , dp [ 2 ] , n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "redefinition of ‘long long int n’"
+    },
+    {
+      "mod_line": [
+        8,
+        2
+      ],
+      "mod_code": [
+        "dp [ 0 ] [ 1 ] = ( dp [ 0 ] [ i - 1 ] ) ;",
+        "long long n , dp [ 2 ] , n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "redefinition of ‘long long int n’"
+    }
+  ]
+}

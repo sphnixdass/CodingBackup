@@ -1,0 +1,749 @@
+{
+  "meta": {
+    "index": 682,
+    "hitid": "3NKW03WTLM1M7O5Y192CDTNOZC7QW9",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "346A",
+    "subid": "42072828"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare integer n",
+      "code": "int n ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare gcd with long longs a , b as arguments , returning integer",
+      "code": "int gcd ( long long a , long long b )",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "if b is 0 , return a from function",
+      "code": "if ( b == 0 ) return a ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "return result of gcd ( b , a % b )",
+      "code": "return gcd ( b , a % b ) ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 6,
+      "text": "while read n is true",
+      "code": "while ( cin >> n )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "declare long longs g , m = 0",
+      "code": "long long g , m = 0 ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "declare long longs a , b",
+      "code": "long long a , b ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "read a and b",
+      "code": "cin >> a >> b ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "let g be result of run gcd ( a , b )",
+      "code": "g = gcd ( a , b ) ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "let m be a if a is greater than b , else b",
+      "code": "m = a > b ? a : b ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "for i = 2 to n exclusive",
+      "code": "for ( int i = 2 ; i < n ; i ++ )",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "read b",
+      "code": "cin >> b ;",
+      "indent": 3
+    },
+    {
+      "line": 14,
+      "text": "if b is greater than m , let m be b",
+      "code": "if ( b > m ) m = b ;",
+      "indent": 3
+    },
+    {
+      "line": 15,
+      "text": "let g be result of run gcd ( g , b )",
+      "code": "g = gcd ( g , b ) ;",
+      "indent": 3
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "declare long long cnt = m / g - n",
+      "code": "long long cnt = m / g - n ;",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "if cnt % 2",
+      "code": "if ( cnt % 2 )",
+      "indent": 2
+    },
+    {
+      "line": 19,
+      "text": "print \" Alice \" and newline",
+      "code": "cout << \" Alice \" << endl ;",
+      "indent": 3
+    },
+    {
+      "line": 20,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 21,
+      "text": "print \" Bob \" and newline",
+      "code": "cout << \" Bob \" << endl ;",
+      "indent": 3
+    },
+    {
+      "line": 22,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "return result ( b , a % b ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘result’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "g ( a , b ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘g’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i < n ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        10
+      ],
+      "mod_code": [
+        "while ( n )",
+        "g ( a , b ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘g’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        6,
+        10,
+        3
+      ],
+      "mod_code": [
+        "while ( n )",
+        "g ( a , b ) ;",
+        "return result ( b , a % b ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘result’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        10,
+        3,
+        9
+      ],
+      "mod_code": [
+        "while ( n )",
+        "g ( a , b ) ;",
+        "return result ( b , a % b ) ;",
+        "while ( cin >> a >> b )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘result’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        10,
+        3,
+        18
+      ],
+      "mod_code": [
+        "while ( n )",
+        "g ( a , b ) ;",
+        "return result ( b , a % b ) ;",
+        "if ( cnt % 2 == 0 )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘result’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        10,
+        3,
+        13
+      ],
+      "mod_code": [
+        "while ( n )",
+        "g ( a , b ) ;",
+        "return result ( b , a % b ) ;",
+        "cout << b << endl ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘result’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        10,
+        9
+      ],
+      "mod_code": [
+        "while ( n )",
+        "g ( a , b ) ;",
+        "while ( cin >> a >> b )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘g’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        6,
+        10,
+        9,
+        18
+      ],
+      "mod_code": [
+        "while ( n )",
+        "g ( a , b ) ;",
+        "while ( cin >> a >> b )",
+        "if ( cnt % 2 == 0 )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘g’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        6,
+        10,
+        9,
+        13
+      ],
+      "mod_code": [
+        "while ( n )",
+        "g ( a , b ) ;",
+        "while ( cin >> a >> b )",
+        "cout << b << endl ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘g’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        6,
+        10,
+        18
+      ],
+      "mod_code": [
+        "while ( n )",
+        "g ( a , b ) ;",
+        "if ( cnt % 2 == 0 )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘g’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        6,
+        10,
+        18,
+        13
+      ],
+      "mod_code": [
+        "while ( n )",
+        "g ( a , b ) ;",
+        "if ( cnt % 2 == 0 )",
+        "cout << b << endl ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘g’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        6,
+        10,
+        13
+      ],
+      "mod_code": [
+        "while ( n )",
+        "g ( a , b ) ;",
+        "cout << b << endl ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘g’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        6,
+        3
+      ],
+      "mod_code": [
+        "while ( n )",
+        "return result ( b , a % b ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘result’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        3,
+        9
+      ],
+      "mod_code": [
+        "while ( n )",
+        "return result ( b , a % b ) ;",
+        "while ( cin >> a >> b )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘result’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        3,
+        9,
+        18
+      ],
+      "mod_code": [
+        "while ( n )",
+        "return result ( b , a % b ) ;",
+        "while ( cin >> a >> b )",
+        "if ( cnt % 2 == 0 )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘result’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        3,
+        9,
+        13
+      ],
+      "mod_code": [
+        "while ( n )",
+        "return result ( b , a % b ) ;",
+        "while ( cin >> a >> b )",
+        "cout << b << endl ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘result’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        3,
+        18
+      ],
+      "mod_code": [
+        "while ( n )",
+        "return result ( b , a % b ) ;",
+        "if ( cnt % 2 == 0 )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘result’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        3,
+        18,
+        13
+      ],
+      "mod_code": [
+        "while ( n )",
+        "return result ( b , a % b ) ;",
+        "if ( cnt % 2 == 0 )",
+        "cout << b << endl ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘result’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        3,
+        13
+      ],
+      "mod_code": [
+        "while ( n )",
+        "return result ( b , a % b ) ;",
+        "cout << b << endl ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘result’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        3
+      ],
+      "mod_code": [
+        "g ( a , b ) ;",
+        "return result ( b , a % b ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘result’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        9
+      ],
+      "mod_code": [
+        "g ( a , b ) ;",
+        "return result ( b , a % b ) ;",
+        "while ( cin >> a >> b )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘result’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        9,
+        18
+      ],
+      "mod_code": [
+        "g ( a , b ) ;",
+        "return result ( b , a % b ) ;",
+        "while ( cin >> a >> b )",
+        "if ( cnt % 2 == 0 )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘result’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        9,
+        13
+      ],
+      "mod_code": [
+        "g ( a , b ) ;",
+        "return result ( b , a % b ) ;",
+        "while ( cin >> a >> b )",
+        "cout << b << endl ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘result’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        18
+      ],
+      "mod_code": [
+        "g ( a , b ) ;",
+        "return result ( b , a % b ) ;",
+        "if ( cnt % 2 == 0 )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘result’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        18,
+        13
+      ],
+      "mod_code": [
+        "g ( a , b ) ;",
+        "return result ( b , a % b ) ;",
+        "if ( cnt % 2 == 0 )",
+        "cout << b << endl ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘result’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        13
+      ],
+      "mod_code": [
+        "g ( a , b ) ;",
+        "return result ( b , a % b ) ;",
+        "cout << b << endl ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘result’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        9
+      ],
+      "mod_code": [
+        "g ( a , b ) ;",
+        "while ( cin >> a >> b )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘g’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        10,
+        9,
+        18
+      ],
+      "mod_code": [
+        "g ( a , b ) ;",
+        "while ( cin >> a >> b )",
+        "if ( cnt % 2 == 0 )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘g’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        10,
+        9,
+        18,
+        13
+      ],
+      "mod_code": [
+        "g ( a , b ) ;",
+        "while ( cin >> a >> b )",
+        "if ( cnt % 2 == 0 )",
+        "cout << b << endl ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘g’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        10,
+        9,
+        13
+      ],
+      "mod_code": [
+        "g ( a , b ) ;",
+        "while ( cin >> a >> b )",
+        "cout << b << endl ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘g’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        10,
+        18
+      ],
+      "mod_code": [
+        "g ( a , b ) ;",
+        "if ( cnt % 2 == 0 )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘g’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        10,
+        18,
+        13
+      ],
+      "mod_code": [
+        "g ( a , b ) ;",
+        "if ( cnt % 2 == 0 )",
+        "cout << b << endl ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘g’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        10,
+        13
+      ],
+      "mod_code": [
+        "g ( a , b ) ;",
+        "cout << b << endl ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘g’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        3,
+        9
+      ],
+      "mod_code": [
+        "return result ( b , a % b ) ;",
+        "while ( cin >> a >> b )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘result’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        9,
+        18
+      ],
+      "mod_code": [
+        "return result ( b , a % b ) ;",
+        "while ( cin >> a >> b )",
+        "if ( cnt % 2 == 0 )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘result’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        9,
+        18,
+        13
+      ],
+      "mod_code": [
+        "return result ( b , a % b ) ;",
+        "while ( cin >> a >> b )",
+        "if ( cnt % 2 == 0 )",
+        "cout << b << endl ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘result’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        9,
+        13
+      ],
+      "mod_code": [
+        "return result ( b , a % b ) ;",
+        "while ( cin >> a >> b )",
+        "cout << b << endl ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘result’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        18
+      ],
+      "mod_code": [
+        "return result ( b , a % b ) ;",
+        "if ( cnt % 2 == 0 )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘result’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        18,
+        13
+      ],
+      "mod_code": [
+        "return result ( b , a % b ) ;",
+        "if ( cnt % 2 == 0 )",
+        "cout << b << endl ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘result’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        13
+      ],
+      "mod_code": [
+        "return result ( b , a % b ) ;",
+        "cout << b << endl ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘result’ was not declared in this scope"
+    }
+  ]
+}

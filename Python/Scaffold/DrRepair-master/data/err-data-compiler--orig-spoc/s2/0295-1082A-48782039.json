@@ -1,0 +1,733 @@
+{
+  "meta": {
+    "index": 295,
+    "hitid": "3YCT0L9OMM38XABX1C0UCAPYOOKNS0",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "1082A",
+    "subid": "48782039"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "assign value = 2e9 + 99 to constant integer INF",
+      "code": "const int INF = int ( 2e9 ) + 99 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare integer variables n , x , y and d",
+      "code": "int n , x , y , d ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "function dist with int arguments x and y that returns int",
+      "code": "int dist ( int x , int y )",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "return ( abs ( x - y ) + ( d - 1 ) ) / d",
+      "code": "return ( abs ( x - y ) + ( d - 1 ) ) / d ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 6,
+      "text": "declare new integer t",
+      "code": "int t ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "read standard input to t",
+      "code": "cin >> t ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "for i = 0 to t exclusive incrementing i",
+      "code": "for ( int i = 0 ; i < t ; ++ i )",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "read n , x , y and d from the user input",
+      "code": "cin >> n >> x >> y >> d ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "len is a new integer = absolute value of ( x - y )",
+      "code": "int len = abs ( x - y ) ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "create new integer variable res with value INF",
+      "code": "int res = INF ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "if len % d = 0 , assign min of res and dist ( x , y ) to res",
+      "code": "if ( len % d == 0 ) res = min ( res , dist ( x , y ) ) ;",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "change the value of len to y - 1",
+      "code": "len = y - 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "if len % d is 0 , change res to min of res and ( dist ( x , 1 ) + dist ( 1 , y ) )",
+      "code": "if ( len % d == 0 ) res = min ( res , dist ( x , 1 ) + dist ( 1 , y ) ) ;",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "set len to n - y",
+      "code": "len = n - y ;",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "if len % d = 0 , assign min of res and ( dist ( x , n ) + dist ( n , y ) ) to res",
+      "code": "if ( len % d == 0 ) res = min ( res , dist ( x , n ) + dist ( n , y ) ) ;",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "if res = INF , assign - 1 to res",
+      "code": "if ( res == INF ) res = - 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "print res to the standard output",
+      "code": "cout << res << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ( x , n ) + dist ( n , y ) ) ;"
+      ],
+      "err_line": 16,
+      "err_msg": "no matching function for call to ‘min(int&, int (&)(int, int), int)’"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int n , x , y >> d ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected initializer before ‘>>’ token"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "int dist ( int x that int y )"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘,’ or ‘...’ before ‘that’"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < t ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ( x , 1 ) + dist ) ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(int&, int (&)(int, int), int (*)(int, int))’"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "int len = n - y ;"
+      ],
+      "err_line": 15,
+      "err_msg": "redeclaration of ‘int len’"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ) + dist ( n , y ) ;"
+      ],
+      "err_line": 16,
+      "err_msg": "no matching function for call to ‘min(int&, int (&)(int, int), int (&)(int, int))’"
+    },
+    {
+      "mod_line": [
+        16,
+        14
+      ],
+      "mod_code": [
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ( x , n ) + dist ( n , y ) ) ;",
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ( x , 1 ) + dist ) ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(int&, int (&)(int, int), int (*)(int, int))’"
+    },
+    {
+      "mod_line": [
+        16,
+        14,
+        7
+      ],
+      "mod_code": [
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ( x , n ) + dist ( n , y ) ) ;",
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ( x , 1 ) + dist ) ;",
+        "t = t ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(int&, int (&)(int, int), int (*)(int, int))’"
+    },
+    {
+      "mod_line": [
+        16,
+        14,
+        7,
+        1
+      ],
+      "mod_code": [
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ( x , n ) + dist ( n , y ) ) ;",
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ( x , 1 ) + dist ) ;",
+        "t = t ;",
+        "int n , x , y >> d ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected initializer before ‘>>’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        14,
+        7,
+        9
+      ],
+      "mod_code": [
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ( x , n ) + dist ( n , y ) ) ;",
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ( x , 1 ) + dist ) ;",
+        "t = t ;",
+        "cin >> n >> x , y >> d ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(int&, int (&)(int, int), int (*)(int, int))’"
+    },
+    {
+      "mod_line": [
+        16,
+        14,
+        1
+      ],
+      "mod_code": [
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ( x , n ) + dist ( n , y ) ) ;",
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ( x , 1 ) + dist ) ;",
+        "int n , x , y >> d ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected initializer before ‘>>’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        14,
+        1,
+        9
+      ],
+      "mod_code": [
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ( x , n ) + dist ( n , y ) ) ;",
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ( x , 1 ) + dist ) ;",
+        "int n , x , y >> d ;",
+        "cin >> n >> x , y >> d ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected initializer before ‘>>’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        14,
+        9
+      ],
+      "mod_code": [
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ( x , n ) + dist ( n , y ) ) ;",
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ( x , 1 ) + dist ) ;",
+        "cin >> n >> x , y >> d ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(int&, int (&)(int, int), int (*)(int, int))’"
+    },
+    {
+      "mod_line": [
+        16,
+        7
+      ],
+      "mod_code": [
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ( x , n ) + dist ( n , y ) ) ;",
+        "t = t ;"
+      ],
+      "err_line": 16,
+      "err_msg": "no matching function for call to ‘min(int&, int (&)(int, int), int)’"
+    },
+    {
+      "mod_line": [
+        16,
+        7,
+        1
+      ],
+      "mod_code": [
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ( x , n ) + dist ( n , y ) ) ;",
+        "t = t ;",
+        "int n , x , y >> d ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected initializer before ‘>>’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        7,
+        1,
+        9
+      ],
+      "mod_code": [
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ( x , n ) + dist ( n , y ) ) ;",
+        "t = t ;",
+        "int n , x , y >> d ;",
+        "cin >> n >> x , y >> d ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected initializer before ‘>>’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        7,
+        9
+      ],
+      "mod_code": [
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ( x , n ) + dist ( n , y ) ) ;",
+        "t = t ;",
+        "cin >> n >> x , y >> d ;"
+      ],
+      "err_line": 16,
+      "err_msg": "no matching function for call to ‘min(int&, int (&)(int, int), int)’"
+    },
+    {
+      "mod_line": [
+        16,
+        1
+      ],
+      "mod_code": [
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ( x , n ) + dist ( n , y ) ) ;",
+        "int n , x , y >> d ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected initializer before ‘>>’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        1,
+        9
+      ],
+      "mod_code": [
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ( x , n ) + dist ( n , y ) ) ;",
+        "int n , x , y >> d ;",
+        "cin >> n >> x , y >> d ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected initializer before ‘>>’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        9
+      ],
+      "mod_code": [
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ( x , n ) + dist ( n , y ) ) ;",
+        "cin >> n >> x , y >> d ;"
+      ],
+      "err_line": 16,
+      "err_msg": "no matching function for call to ‘min(int&, int (&)(int, int), int)’"
+    },
+    {
+      "mod_line": [
+        14,
+        7
+      ],
+      "mod_code": [
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ( x , 1 ) + dist ) ;",
+        "t = t ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(int&, int (&)(int, int), int (*)(int, int))’"
+    },
+    {
+      "mod_line": [
+        14,
+        7,
+        1
+      ],
+      "mod_code": [
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ( x , 1 ) + dist ) ;",
+        "t = t ;",
+        "int n , x , y >> d ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected initializer before ‘>>’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        7,
+        1,
+        16
+      ],
+      "mod_code": [
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ( x , 1 ) + dist ) ;",
+        "t = t ;",
+        "int n , x , y >> d ;",
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ) + dist ( n , y ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected initializer before ‘>>’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        7,
+        1,
+        9
+      ],
+      "mod_code": [
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ( x , 1 ) + dist ) ;",
+        "t = t ;",
+        "int n , x , y >> d ;",
+        "cin >> n >> x , y >> d ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected initializer before ‘>>’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        7,
+        16
+      ],
+      "mod_code": [
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ( x , 1 ) + dist ) ;",
+        "t = t ;",
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ) + dist ( n , y ) ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(int&, int (&)(int, int), int (*)(int, int))’"
+    },
+    {
+      "mod_line": [
+        14,
+        7,
+        16,
+        9
+      ],
+      "mod_code": [
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ( x , 1 ) + dist ) ;",
+        "t = t ;",
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ) + dist ( n , y ) ;",
+        "cin >> n >> x , y >> d ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(int&, int (&)(int, int), int (*)(int, int))’"
+    },
+    {
+      "mod_line": [
+        14,
+        7,
+        9
+      ],
+      "mod_code": [
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ( x , 1 ) + dist ) ;",
+        "t = t ;",
+        "cin >> n >> x , y >> d ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(int&, int (&)(int, int), int (*)(int, int))’"
+    },
+    {
+      "mod_line": [
+        14,
+        1
+      ],
+      "mod_code": [
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ( x , 1 ) + dist ) ;",
+        "int n , x , y >> d ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected initializer before ‘>>’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        1,
+        16
+      ],
+      "mod_code": [
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ( x , 1 ) + dist ) ;",
+        "int n , x , y >> d ;",
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ) + dist ( n , y ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected initializer before ‘>>’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        1,
+        16,
+        9
+      ],
+      "mod_code": [
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ( x , 1 ) + dist ) ;",
+        "int n , x , y >> d ;",
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ) + dist ( n , y ) ;",
+        "cin >> n >> x , y >> d ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected initializer before ‘>>’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        1,
+        9
+      ],
+      "mod_code": [
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ( x , 1 ) + dist ) ;",
+        "int n , x , y >> d ;",
+        "cin >> n >> x , y >> d ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected initializer before ‘>>’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        16
+      ],
+      "mod_code": [
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ( x , 1 ) + dist ) ;",
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ) + dist ( n , y ) ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(int&, int (&)(int, int), int (*)(int, int))’"
+    },
+    {
+      "mod_line": [
+        14,
+        16,
+        9
+      ],
+      "mod_code": [
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ( x , 1 ) + dist ) ;",
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ) + dist ( n , y ) ;",
+        "cin >> n >> x , y >> d ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(int&, int (&)(int, int), int (*)(int, int))’"
+    },
+    {
+      "mod_line": [
+        14,
+        9
+      ],
+      "mod_code": [
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ( x , 1 ) + dist ) ;",
+        "cin >> n >> x , y >> d ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(int&, int (&)(int, int), int (*)(int, int))’"
+    },
+    {
+      "mod_line": [
+        7,
+        1
+      ],
+      "mod_code": [
+        "t = t ;",
+        "int n , x , y >> d ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected initializer before ‘>>’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        1,
+        16
+      ],
+      "mod_code": [
+        "t = t ;",
+        "int n , x , y >> d ;",
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ) + dist ( n , y ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected initializer before ‘>>’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        1,
+        16,
+        9
+      ],
+      "mod_code": [
+        "t = t ;",
+        "int n , x , y >> d ;",
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ) + dist ( n , y ) ;",
+        "cin >> n >> x , y >> d ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected initializer before ‘>>’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        1,
+        9
+      ],
+      "mod_code": [
+        "t = t ;",
+        "int n , x , y >> d ;",
+        "cin >> n >> x , y >> d ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected initializer before ‘>>’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        16
+      ],
+      "mod_code": [
+        "t = t ;",
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ) + dist ( n , y ) ;"
+      ],
+      "err_line": 16,
+      "err_msg": "no matching function for call to ‘min(int&, int (&)(int, int), int (&)(int, int))’"
+    },
+    {
+      "mod_line": [
+        7,
+        16,
+        9
+      ],
+      "mod_code": [
+        "t = t ;",
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ) + dist ( n , y ) ;",
+        "cin >> n >> x , y >> d ;"
+      ],
+      "err_line": 16,
+      "err_msg": "no matching function for call to ‘min(int&, int (&)(int, int), int (&)(int, int))’"
+    },
+    {
+      "mod_line": [
+        1,
+        16
+      ],
+      "mod_code": [
+        "int n , x , y >> d ;",
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ) + dist ( n , y ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected initializer before ‘>>’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        16,
+        9
+      ],
+      "mod_code": [
+        "int n , x , y >> d ;",
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ) + dist ( n , y ) ;",
+        "cin >> n >> x , y >> d ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected initializer before ‘>>’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        9
+      ],
+      "mod_code": [
+        "int n , x , y >> d ;",
+        "cin >> n >> x , y >> d ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected initializer before ‘>>’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        9
+      ],
+      "mod_code": [
+        "if ( len % d == 0 ) res = min ( res , ( dist ) , dist ) + dist ( n , y ) ;",
+        "cin >> n >> x , y >> d ;"
+      ],
+      "err_line": 16,
+      "err_msg": "no matching function for call to ‘min(int&, int (&)(int, int), int (&)(int, int))’"
+    }
+  ]
+}

@@ -1,0 +1,575 @@
+{
+  "meta": {
+    "index": 2056,
+    "hitid": "3QGHA0EA0JUZ3I39IR5MI4SPDCZWBW",
+    "workerid": "A24WRPQYGMQLGF",
+    "probid": "594A",
+    "subid": "35099225"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "MAXN = constant integer = 200010",
+      "code": "const int MAXN = 200000 + 10 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "nums = number array of size MAXN , dp = integer array of size MAXN",
+      "code": "int nums [ MAXN ] , dp [ MAXN ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "n = integer",
+      "code": "int n ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i = 0 to n exclusive , then read nums [ i ]",
+      "code": "for ( int i = 0 ; i < n ; i ++ ) { cin >> nums [ i ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "sort nums in ascending order",
+      "code": "sort ( nums , nums + n ) ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "n = n / 2 - 1",
+      "code": "n = n / 2 - 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "for i = 0 to n inclusive , then dp [ i ] = nums [ i ] - nums [ 0 ]",
+      "code": "for ( int i = 0 ; i <= n ; i ++ ) { dp [ i ] = nums [ i ] - nums [ 0 ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "ret = integer = 0",
+      "code": "int ret = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "for i = 0 to n inclusive , then ret = max ( ret , dp [ n - i ] + nums [ 2 * n + 1 ] - nums [ 2 * n + 1 - i ] )",
+      "code": "for ( int i = 0 ; i <= n ; i ++ ) { ret = max ( ret , dp [ n - i ] + nums [ 2 * n + 1 ] - nums [ 2 * n + 1 - i ] ) ; }",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "print the result of nums [ 2 * n + 1 ] - nums [ 0 ] - ret",
+      "code": "cout << nums [ 2 * n + 1 ] - nums [ 0 ] - ret << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "sort ( nums . begin ( ) , nums . end ( ) ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘begin’ in ‘nums’, which is of non-class type ‘int [200010]’"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int nums [ MAXN ] , nums [ MAXN ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int nums [200010]’"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "long long int ret = 0 ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(long long int&, int)’"
+    },
+    {
+      "mod_line": [
+        6,
+        10
+      ],
+      "mod_code": [
+        "sort ( nums . begin ( ) , nums . end ( ) ) ;",
+        "for ( int i = 0 ; i <= n ; i ++ ) { ret = max ( ret , dp [ n - i ] + nums [ 2 * n + 1 ] - nums [ 2 * n + 1 ] ) ; }"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘begin’ in ‘nums’, which is of non-class type ‘int [200010]’"
+    },
+    {
+      "mod_line": [
+        6,
+        10,
+        11
+      ],
+      "mod_code": [
+        "sort ( nums . begin ( ) , nums . end ( ) ) ;",
+        "for ( int i = 0 ; i <= n ; i ++ ) { ret = max ( ret , dp [ n - i ] + nums [ 2 * n + 1 ] - nums [ 2 * n + 1 ] ) ; }",
+        "cout << nums [ 2 * n + 1 ] - nums [ 0 ] - ret ;"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘begin’ in ‘nums’, which is of non-class type ‘int [200010]’"
+    },
+    {
+      "mod_line": [
+        6,
+        10,
+        11,
+        7
+      ],
+      "mod_code": [
+        "sort ( nums . begin ( ) , nums . end ( ) ) ;",
+        "for ( int i = 0 ; i <= n ; i ++ ) { ret = max ( ret , dp [ n - i ] + nums [ 2 * n + 1 ] - nums [ 2 * n + 1 ] ) ; }",
+        "cout << nums [ 2 * n + 1 ] - nums [ 0 ] - ret ;",
+        "n -= 2 - 1 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘begin’ in ‘nums’, which is of non-class type ‘int [200010]’"
+    },
+    {
+      "mod_line": [
+        6,
+        10,
+        11,
+        9
+      ],
+      "mod_code": [
+        "sort ( nums . begin ( ) , nums . end ( ) ) ;",
+        "for ( int i = 0 ; i <= n ; i ++ ) { ret = max ( ret , dp [ n - i ] + nums [ 2 * n + 1 ] - nums [ 2 * n + 1 ] ) ; }",
+        "cout << nums [ 2 * n + 1 ] - nums [ 0 ] - ret ;",
+        "long long int ret = 0 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘begin’ in ‘nums’, which is of non-class type ‘int [200010]’"
+    },
+    {
+      "mod_line": [
+        6,
+        10,
+        7
+      ],
+      "mod_code": [
+        "sort ( nums . begin ( ) , nums . end ( ) ) ;",
+        "for ( int i = 0 ; i <= n ; i ++ ) { ret = max ( ret , dp [ n - i ] + nums [ 2 * n + 1 ] - nums [ 2 * n + 1 ] ) ; }",
+        "n -= 2 - 1 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘begin’ in ‘nums’, which is of non-class type ‘int [200010]’"
+    },
+    {
+      "mod_line": [
+        6,
+        10,
+        7,
+        9
+      ],
+      "mod_code": [
+        "sort ( nums . begin ( ) , nums . end ( ) ) ;",
+        "for ( int i = 0 ; i <= n ; i ++ ) { ret = max ( ret , dp [ n - i ] + nums [ 2 * n + 1 ] - nums [ 2 * n + 1 ] ) ; }",
+        "n -= 2 - 1 ;",
+        "long long int ret = 0 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘begin’ in ‘nums’, which is of non-class type ‘int [200010]’"
+    },
+    {
+      "mod_line": [
+        6,
+        10,
+        9
+      ],
+      "mod_code": [
+        "sort ( nums . begin ( ) , nums . end ( ) ) ;",
+        "for ( int i = 0 ; i <= n ; i ++ ) { ret = max ( ret , dp [ n - i ] + nums [ 2 * n + 1 ] - nums [ 2 * n + 1 ] ) ; }",
+        "long long int ret = 0 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘begin’ in ‘nums’, which is of non-class type ‘int [200010]’"
+    },
+    {
+      "mod_line": [
+        6,
+        11
+      ],
+      "mod_code": [
+        "sort ( nums . begin ( ) , nums . end ( ) ) ;",
+        "cout << nums [ 2 * n + 1 ] - nums [ 0 ] - ret ;"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘begin’ in ‘nums’, which is of non-class type ‘int [200010]’"
+    },
+    {
+      "mod_line": [
+        6,
+        11,
+        7
+      ],
+      "mod_code": [
+        "sort ( nums . begin ( ) , nums . end ( ) ) ;",
+        "cout << nums [ 2 * n + 1 ] - nums [ 0 ] - ret ;",
+        "n -= 2 - 1 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘begin’ in ‘nums’, which is of non-class type ‘int [200010]’"
+    },
+    {
+      "mod_line": [
+        6,
+        11,
+        7,
+        9
+      ],
+      "mod_code": [
+        "sort ( nums . begin ( ) , nums . end ( ) ) ;",
+        "cout << nums [ 2 * n + 1 ] - nums [ 0 ] - ret ;",
+        "n -= 2 - 1 ;",
+        "long long int ret = 0 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘begin’ in ‘nums’, which is of non-class type ‘int [200010]’"
+    },
+    {
+      "mod_line": [
+        6,
+        11,
+        7,
+        10
+      ],
+      "mod_code": [
+        "sort ( nums . begin ( ) , nums . end ( ) ) ;",
+        "cout << nums [ 2 * n + 1 ] - nums [ 0 ] - ret ;",
+        "n -= 2 - 1 ;",
+        "for ( int i = 0 ; i <= n ; i ++ ) { ret = max ( ret , dp [ n - i ] + nums [ 2 * i + 1 ] - nums [ 2 * n + 1 ] ) ; }"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘begin’ in ‘nums’, which is of non-class type ‘int [200010]’"
+    },
+    {
+      "mod_line": [
+        6,
+        11,
+        9
+      ],
+      "mod_code": [
+        "sort ( nums . begin ( ) , nums . end ( ) ) ;",
+        "cout << nums [ 2 * n + 1 ] - nums [ 0 ] - ret ;",
+        "long long int ret = 0 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘begin’ in ‘nums’, which is of non-class type ‘int [200010]’"
+    },
+    {
+      "mod_line": [
+        6,
+        11,
+        9,
+        10
+      ],
+      "mod_code": [
+        "sort ( nums . begin ( ) , nums . end ( ) ) ;",
+        "cout << nums [ 2 * n + 1 ] - nums [ 0 ] - ret ;",
+        "long long int ret = 0 ;",
+        "for ( int i = 0 ; i <= n ; i ++ ) { ret = max ( ret , dp [ n - i ] + nums [ 2 * i + 1 ] - nums [ 2 * n + 1 ] ) ; }"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘begin’ in ‘nums’, which is of non-class type ‘int [200010]’"
+    },
+    {
+      "mod_line": [
+        6,
+        11,
+        10
+      ],
+      "mod_code": [
+        "sort ( nums . begin ( ) , nums . end ( ) ) ;",
+        "cout << nums [ 2 * n + 1 ] - nums [ 0 ] - ret ;",
+        "for ( int i = 0 ; i <= n ; i ++ ) { ret = max ( ret , dp [ n - i ] + nums [ 2 * i + 1 ] - nums [ 2 * n + 1 ] ) ; }"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘begin’ in ‘nums’, which is of non-class type ‘int [200010]’"
+    },
+    {
+      "mod_line": [
+        6,
+        7
+      ],
+      "mod_code": [
+        "sort ( nums . begin ( ) , nums . end ( ) ) ;",
+        "n -= 2 - 1 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘begin’ in ‘nums’, which is of non-class type ‘int [200010]’"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        9
+      ],
+      "mod_code": [
+        "sort ( nums . begin ( ) , nums . end ( ) ) ;",
+        "n -= 2 - 1 ;",
+        "long long int ret = 0 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘begin’ in ‘nums’, which is of non-class type ‘int [200010]’"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        9,
+        10
+      ],
+      "mod_code": [
+        "sort ( nums . begin ( ) , nums . end ( ) ) ;",
+        "n -= 2 - 1 ;",
+        "long long int ret = 0 ;",
+        "for ( int i = 0 ; i <= n ; i ++ ) { ret = max ( ret , dp [ n - i ] + nums [ 2 * i + 1 ] - nums [ 2 * n + 1 ] ) ; }"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘begin’ in ‘nums’, which is of non-class type ‘int [200010]’"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        10
+      ],
+      "mod_code": [
+        "sort ( nums . begin ( ) , nums . end ( ) ) ;",
+        "n -= 2 - 1 ;",
+        "for ( int i = 0 ; i <= n ; i ++ ) { ret = max ( ret , dp [ n - i ] + nums [ 2 * i + 1 ] - nums [ 2 * n + 1 ] ) ; }"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘begin’ in ‘nums’, which is of non-class type ‘int [200010]’"
+    },
+    {
+      "mod_line": [
+        6,
+        9
+      ],
+      "mod_code": [
+        "sort ( nums . begin ( ) , nums . end ( ) ) ;",
+        "long long int ret = 0 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘begin’ in ‘nums’, which is of non-class type ‘int [200010]’"
+    },
+    {
+      "mod_line": [
+        6,
+        9,
+        10
+      ],
+      "mod_code": [
+        "sort ( nums . begin ( ) , nums . end ( ) ) ;",
+        "long long int ret = 0 ;",
+        "for ( int i = 0 ; i <= n ; i ++ ) { ret = max ( ret , dp [ n - i ] + nums [ 2 * i + 1 ] - nums [ 2 * n + 1 ] ) ; }"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘begin’ in ‘nums’, which is of non-class type ‘int [200010]’"
+    },
+    {
+      "mod_line": [
+        6,
+        10
+      ],
+      "mod_code": [
+        "sort ( nums . begin ( ) , nums . end ( ) ) ;",
+        "for ( int i = 0 ; i <= n ; i ++ ) { ret = max ( ret , dp [ n - i ] + nums [ 2 * i + 1 ] - nums [ 2 * n + 1 ] ) ; }"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘begin’ in ‘nums’, which is of non-class type ‘int [200010]’"
+    },
+    {
+      "mod_line": [
+        10,
+        11,
+        7,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i <= n ; i ++ ) { ret = max ( ret , dp [ n - i ] + nums [ 2 * n + 1 ] - nums [ 2 * n + 1 ] ) ; }",
+        "cout << nums [ 2 * n + 1 ] - nums [ 0 ] - ret ;",
+        "n -= 2 - 1 ;",
+        "long long int ret = 0 ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(long long int&, int&)’"
+    },
+    {
+      "mod_line": [
+        10,
+        11,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i <= n ; i ++ ) { ret = max ( ret , dp [ n - i ] + nums [ 2 * n + 1 ] - nums [ 2 * n + 1 ] ) ; }",
+        "cout << nums [ 2 * n + 1 ] - nums [ 0 ] - ret ;",
+        "long long int ret = 0 ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(long long int&, int&)’"
+    },
+    {
+      "mod_line": [
+        10,
+        7,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i <= n ; i ++ ) { ret = max ( ret , dp [ n - i ] + nums [ 2 * n + 1 ] - nums [ 2 * n + 1 ] ) ; }",
+        "n -= 2 - 1 ;",
+        "long long int ret = 0 ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(long long int&, int&)’"
+    },
+    {
+      "mod_line": [
+        10,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i <= n ; i ++ ) { ret = max ( ret , dp [ n - i ] + nums [ 2 * n + 1 ] - nums [ 2 * n + 1 ] ) ; }",
+        "long long int ret = 0 ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(long long int&, int&)’"
+    },
+    {
+      "mod_line": [
+        11,
+        7,
+        9
+      ],
+      "mod_code": [
+        "cout << nums [ 2 * n + 1 ] - nums [ 0 ] - ret ;",
+        "n -= 2 - 1 ;",
+        "long long int ret = 0 ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(long long int&, int)’"
+    },
+    {
+      "mod_line": [
+        11,
+        7,
+        9,
+        10
+      ],
+      "mod_code": [
+        "cout << nums [ 2 * n + 1 ] - nums [ 0 ] - ret ;",
+        "n -= 2 - 1 ;",
+        "long long int ret = 0 ;",
+        "for ( int i = 0 ; i <= n ; i ++ ) { ret = max ( ret , dp [ n - i ] + nums [ 2 * i + 1 ] - nums [ 2 * n + 1 ] ) ; }"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(long long int&, int)’"
+    },
+    {
+      "mod_line": [
+        11,
+        9
+      ],
+      "mod_code": [
+        "cout << nums [ 2 * n + 1 ] - nums [ 0 ] - ret ;",
+        "long long int ret = 0 ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(long long int&, int)’"
+    },
+    {
+      "mod_line": [
+        11,
+        9,
+        10
+      ],
+      "mod_code": [
+        "cout << nums [ 2 * n + 1 ] - nums [ 0 ] - ret ;",
+        "long long int ret = 0 ;",
+        "for ( int i = 0 ; i <= n ; i ++ ) { ret = max ( ret , dp [ n - i ] + nums [ 2 * i + 1 ] - nums [ 2 * n + 1 ] ) ; }"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(long long int&, int)’"
+    },
+    {
+      "mod_line": [
+        7,
+        9
+      ],
+      "mod_code": [
+        "n -= 2 - 1 ;",
+        "long long int ret = 0 ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(long long int&, int)’"
+    },
+    {
+      "mod_line": [
+        7,
+        9,
+        10
+      ],
+      "mod_code": [
+        "n -= 2 - 1 ;",
+        "long long int ret = 0 ;",
+        "for ( int i = 0 ; i <= n ; i ++ ) { ret = max ( ret , dp [ n - i ] + nums [ 2 * i + 1 ] - nums [ 2 * n + 1 ] ) ; }"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(long long int&, int)’"
+    },
+    {
+      "mod_line": [
+        9,
+        10
+      ],
+      "mod_code": [
+        "long long int ret = 0 ;",
+        "for ( int i = 0 ; i <= n ; i ++ ) { ret = max ( ret , dp [ n - i ] + nums [ 2 * i + 1 ] - nums [ 2 * n + 1 ] ) ; }"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(long long int&, int)’"
+    }
+  ]
+}

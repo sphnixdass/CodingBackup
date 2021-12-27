@@ -1,0 +1,1001 @@
+{
+  "meta": {
+    "index": 1189,
+    "hitid": "3XWUWJ18TLK17DNANI7G56ZGGU1UU7",
+    "workerid": "A1C5H6OY3HGO4U",
+    "probid": "910A",
+    "subid": "37120361"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "n , d = integers",
+      "code": "int n , d ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create constant integer nmax with value 1e2 + 2",
+      "code": "const int nmax = 1e2 + 2 ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "v = integer vector of length nmax",
+      "code": "vector < int > v [ nmax ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "visited = boolean array of length nmax by nmax",
+      "code": "bool visited [ nmax ] [ nmax ] ;",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "s = string",
+      "code": "string s ;",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "set res to 1e4",
+      "code": "int res = 1e4 ;",
+      "indent": 0
+    },
+    {
+      "line": 6,
+      "text": "declare dfs that takes in integers i and j",
+      "code": "void dfs ( int i , int j )",
+      "indent": 0
+    },
+    {
+      "line": 7,
+      "text": "if i equals n - 1",
+      "code": "if ( i == n - 1 )",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "set res to the minimum of res and j",
+      "code": "res = min ( res , j ) ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "return",
+      "code": "return ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "set visited [ i ] [ j ] to true",
+      "code": "visited [ i ] [ j ] = true ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "for k - 0 to the size of v [ i ] exclusive",
+      "code": "for ( int k = 0 ; k < v [ i ] . size ( ) ; k ++ )",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "if not visited [ v [ i ] [ k ] ] [ j + 1 ] then call dfs with arguments v [ i ] [ k ] and j + 1",
+      "code": "if ( ! visited [ v [ i ] [ k ] ] [ j + 1 ] ) dfs ( v [ i ] [ k ] , j + 1 ) ;",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 16,
+      "text": "read n and d and s",
+      "code": "cin >> n >> d >> s ;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "for i = 0 to n - 1 exclusive",
+      "code": "for ( int i = 0 ; i < n - 1 ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "if s [ i ] is not ' 1 ' continue",
+      "code": "if ( s [ i ] != ' 1 ' ) continue ;",
+      "indent": 2
+    },
+    {
+      "line": 19,
+      "text": "for j = ' 1 ' to d inclusive",
+      "code": "for ( int j = 1 ; j <= d ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 20,
+      "text": "if i + j is greater than n continue",
+      "code": "if ( i + j >= n ) continue ;",
+      "indent": 3
+    },
+    {
+      "line": 21,
+      "text": "if s [ i + j ] equals ' 1 ' then add i + j to the end of v [ i ]",
+      "code": "if ( s [ i + j ] == ' 1 ' ) v [ i ] . push_back ( i + j ) ;",
+      "indent": 3
+    },
+    {
+      "line": 22,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 23,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "call dfs with arguments 0 and 0",
+      "code": "dfs ( 0 , 0 ) ;",
+      "indent": 1
+    },
+    {
+      "line": 25,
+      "text": "if res is greater than 100",
+      "code": "if ( res > 100 )",
+      "indent": 1
+    },
+    {
+      "line": 26,
+      "text": "print - 1",
+      "code": "cout << - 1 << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 27,
+      "text": "else",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 28,
+      "text": "print res",
+      "code": "cout << res << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 29,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "vector < int > v ( nmax ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "request for member ‘size’ in ‘v.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "res = 1e4 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘res’ does not name a type"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "if ( ! visited [ v [ i ] [ k ] ] [ j + 1 ] ) dfs ( v [ i ] [ k ] , j + 1 ] ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "bool visited [ nmax + nmax ] ;"
+      ],
+      "err_line": 11,
+      "err_msg": "invalid types ‘bool[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "void dfs ( int i , int j ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "return return ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected primary-expression before ‘return’"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "visited [ i ] [ j ] ] = true ;"
+      ],
+      "err_line": 11,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "for ( k = 0 ; k < v [ i ] . size ( ) ; k ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "n >> n >> d >> s ;"
+      ],
+      "err_line": 16,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘int’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n - 1 ; i ++ )"
+      ],
+      "err_line": 17,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        19
+      ],
+      "mod_code": [
+        "for ( j = ' 1 ' ; j <= d ; j ++ )"
+      ],
+      "err_line": 19,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        24
+      ],
+      "mod_code": [
+        "dfs ( 0 , 0 , 0 ) ;"
+      ],
+      "err_line": 24,
+      "err_msg": "too many arguments to function ‘void dfs(int, int)’"
+    },
+    {
+      "mod_line": [
+        2,
+        5
+      ],
+      "mod_code": [
+        "vector < int > v ( nmax ) ;",
+        "res = 1e4 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘res’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        5,
+        13
+      ],
+      "mod_code": [
+        "vector < int > v ( nmax ) ;",
+        "res = 1e4 ;",
+        "if ( ! visited [ v [ i ] [ k ] ] [ j + 1 ] ) dfs ( v [ i ] [ k ] , j + 1 ] ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘res’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        5,
+        13,
+        19
+      ],
+      "mod_code": [
+        "vector < int > v ( nmax ) ;",
+        "res = 1e4 ;",
+        "if ( ! visited [ v [ i ] [ k ] ] [ j + 1 ] ) dfs ( v [ i ] [ k ] , j + 1 ] ) ;",
+        "for ( int j = ' 1 ' ; j <= d ; j ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘res’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        5,
+        13,
+        21
+      ],
+      "mod_code": [
+        "vector < int > v ( nmax ) ;",
+        "res = 1e4 ;",
+        "if ( ! visited [ v [ i ] [ k ] ] [ j + 1 ] ) dfs ( v [ i ] [ k ] , j + 1 ] ) ;",
+        "if ( s [ i + j ] == ' 1 ' ) v [ i + j ] . push_back ( i + j ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘res’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        5,
+        13,
+        17
+      ],
+      "mod_code": [
+        "vector < int > v ( nmax ) ;",
+        "res = 1e4 ;",
+        "if ( ! visited [ v [ i ] [ k ] ] [ j + 1 ] ) dfs ( v [ i ] [ k ] , j + 1 ] ) ;",
+        "for ( i = 0 ; i < n - 1 ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘res’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        5,
+        19
+      ],
+      "mod_code": [
+        "vector < int > v ( nmax ) ;",
+        "res = 1e4 ;",
+        "for ( int j = ' 1 ' ; j <= d ; j ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘res’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        5,
+        19,
+        21
+      ],
+      "mod_code": [
+        "vector < int > v ( nmax ) ;",
+        "res = 1e4 ;",
+        "for ( int j = ' 1 ' ; j <= d ; j ++ )",
+        "if ( s [ i + j ] == ' 1 ' ) v [ i + j ] . push_back ( i + j ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘res’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        5,
+        19,
+        17
+      ],
+      "mod_code": [
+        "vector < int > v ( nmax ) ;",
+        "res = 1e4 ;",
+        "for ( int j = ' 1 ' ; j <= d ; j ++ )",
+        "for ( i = 0 ; i < n - 1 ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘res’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        5,
+        21
+      ],
+      "mod_code": [
+        "vector < int > v ( nmax ) ;",
+        "res = 1e4 ;",
+        "if ( s [ i + j ] == ' 1 ' ) v [ i + j ] . push_back ( i + j ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘res’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        5,
+        21,
+        17
+      ],
+      "mod_code": [
+        "vector < int > v ( nmax ) ;",
+        "res = 1e4 ;",
+        "if ( s [ i + j ] == ' 1 ' ) v [ i + j ] . push_back ( i + j ) ;",
+        "for ( i = 0 ; i < n - 1 ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘res’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        5,
+        17
+      ],
+      "mod_code": [
+        "vector < int > v ( nmax ) ;",
+        "res = 1e4 ;",
+        "for ( i = 0 ; i < n - 1 ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘res’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        13
+      ],
+      "mod_code": [
+        "vector < int > v ( nmax ) ;",
+        "if ( ! visited [ v [ i ] [ k ] ] [ j + 1 ] ) dfs ( v [ i ] [ k ] , j + 1 ] ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "request for member ‘size’ in ‘v.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        2,
+        13,
+        19
+      ],
+      "mod_code": [
+        "vector < int > v ( nmax ) ;",
+        "if ( ! visited [ v [ i ] [ k ] ] [ j + 1 ] ) dfs ( v [ i ] [ k ] , j + 1 ] ) ;",
+        "for ( int j = ' 1 ' ; j <= d ; j ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "request for member ‘size’ in ‘v.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        2,
+        13,
+        19,
+        21
+      ],
+      "mod_code": [
+        "vector < int > v ( nmax ) ;",
+        "if ( ! visited [ v [ i ] [ k ] ] [ j + 1 ] ) dfs ( v [ i ] [ k ] , j + 1 ] ) ;",
+        "for ( int j = ' 1 ' ; j <= d ; j ++ )",
+        "if ( s [ i + j ] == ' 1 ' ) v [ i + j ] . push_back ( i + j ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "request for member ‘size’ in ‘v.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        2,
+        13,
+        19,
+        17
+      ],
+      "mod_code": [
+        "vector < int > v ( nmax ) ;",
+        "if ( ! visited [ v [ i ] [ k ] ] [ j + 1 ] ) dfs ( v [ i ] [ k ] , j + 1 ] ) ;",
+        "for ( int j = ' 1 ' ; j <= d ; j ++ )",
+        "for ( i = 0 ; i < n - 1 ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "request for member ‘size’ in ‘v.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        2,
+        13,
+        21
+      ],
+      "mod_code": [
+        "vector < int > v ( nmax ) ;",
+        "if ( ! visited [ v [ i ] [ k ] ] [ j + 1 ] ) dfs ( v [ i ] [ k ] , j + 1 ] ) ;",
+        "if ( s [ i + j ] == ' 1 ' ) v [ i + j ] . push_back ( i + j ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "request for member ‘size’ in ‘v.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        2,
+        13,
+        21,
+        17
+      ],
+      "mod_code": [
+        "vector < int > v ( nmax ) ;",
+        "if ( ! visited [ v [ i ] [ k ] ] [ j + 1 ] ) dfs ( v [ i ] [ k ] , j + 1 ] ) ;",
+        "if ( s [ i + j ] == ' 1 ' ) v [ i + j ] . push_back ( i + j ) ;",
+        "for ( i = 0 ; i < n - 1 ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "request for member ‘size’ in ‘v.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        2,
+        13,
+        17
+      ],
+      "mod_code": [
+        "vector < int > v ( nmax ) ;",
+        "if ( ! visited [ v [ i ] [ k ] ] [ j + 1 ] ) dfs ( v [ i ] [ k ] , j + 1 ] ) ;",
+        "for ( i = 0 ; i < n - 1 ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "request for member ‘size’ in ‘v.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        2,
+        19
+      ],
+      "mod_code": [
+        "vector < int > v ( nmax ) ;",
+        "for ( int j = ' 1 ' ; j <= d ; j ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "request for member ‘size’ in ‘v.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        2,
+        19,
+        21
+      ],
+      "mod_code": [
+        "vector < int > v ( nmax ) ;",
+        "for ( int j = ' 1 ' ; j <= d ; j ++ )",
+        "if ( s [ i + j ] == ' 1 ' ) v [ i + j ] . push_back ( i + j ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "request for member ‘size’ in ‘v.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        2,
+        19,
+        21,
+        17
+      ],
+      "mod_code": [
+        "vector < int > v ( nmax ) ;",
+        "for ( int j = ' 1 ' ; j <= d ; j ++ )",
+        "if ( s [ i + j ] == ' 1 ' ) v [ i + j ] . push_back ( i + j ) ;",
+        "for ( i = 0 ; i < n - 1 ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "request for member ‘size’ in ‘v.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        2,
+        19,
+        17
+      ],
+      "mod_code": [
+        "vector < int > v ( nmax ) ;",
+        "for ( int j = ' 1 ' ; j <= d ; j ++ )",
+        "for ( i = 0 ; i < n - 1 ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "request for member ‘size’ in ‘v.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        2,
+        21
+      ],
+      "mod_code": [
+        "vector < int > v ( nmax ) ;",
+        "if ( s [ i + j ] == ' 1 ' ) v [ i + j ] . push_back ( i + j ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "request for member ‘size’ in ‘v.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        2,
+        21,
+        17
+      ],
+      "mod_code": [
+        "vector < int > v ( nmax ) ;",
+        "if ( s [ i + j ] == ' 1 ' ) v [ i + j ] . push_back ( i + j ) ;",
+        "for ( i = 0 ; i < n - 1 ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "request for member ‘size’ in ‘v.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        2,
+        17
+      ],
+      "mod_code": [
+        "vector < int > v ( nmax ) ;",
+        "for ( i = 0 ; i < n - 1 ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "request for member ‘size’ in ‘v.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        5,
+        13
+      ],
+      "mod_code": [
+        "res = 1e4 ;",
+        "if ( ! visited [ v [ i ] [ k ] ] [ j + 1 ] ) dfs ( v [ i ] [ k ] , j + 1 ] ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘res’ does not name a type"
+    },
+    {
+      "mod_line": [
+        5,
+        13,
+        19
+      ],
+      "mod_code": [
+        "res = 1e4 ;",
+        "if ( ! visited [ v [ i ] [ k ] ] [ j + 1 ] ) dfs ( v [ i ] [ k ] , j + 1 ] ) ;",
+        "for ( int j = ' 1 ' ; j <= d ; j ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘res’ does not name a type"
+    },
+    {
+      "mod_line": [
+        5,
+        13,
+        19,
+        21
+      ],
+      "mod_code": [
+        "res = 1e4 ;",
+        "if ( ! visited [ v [ i ] [ k ] ] [ j + 1 ] ) dfs ( v [ i ] [ k ] , j + 1 ] ) ;",
+        "for ( int j = ' 1 ' ; j <= d ; j ++ )",
+        "if ( s [ i + j ] == ' 1 ' ) v [ i + j ] . push_back ( i + j ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘res’ does not name a type"
+    },
+    {
+      "mod_line": [
+        5,
+        13,
+        19,
+        17
+      ],
+      "mod_code": [
+        "res = 1e4 ;",
+        "if ( ! visited [ v [ i ] [ k ] ] [ j + 1 ] ) dfs ( v [ i ] [ k ] , j + 1 ] ) ;",
+        "for ( int j = ' 1 ' ; j <= d ; j ++ )",
+        "for ( i = 0 ; i < n - 1 ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘res’ does not name a type"
+    },
+    {
+      "mod_line": [
+        5,
+        13,
+        21
+      ],
+      "mod_code": [
+        "res = 1e4 ;",
+        "if ( ! visited [ v [ i ] [ k ] ] [ j + 1 ] ) dfs ( v [ i ] [ k ] , j + 1 ] ) ;",
+        "if ( s [ i + j ] == ' 1 ' ) v [ i + j ] . push_back ( i + j ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘res’ does not name a type"
+    },
+    {
+      "mod_line": [
+        5,
+        13,
+        21,
+        17
+      ],
+      "mod_code": [
+        "res = 1e4 ;",
+        "if ( ! visited [ v [ i ] [ k ] ] [ j + 1 ] ) dfs ( v [ i ] [ k ] , j + 1 ] ) ;",
+        "if ( s [ i + j ] == ' 1 ' ) v [ i + j ] . push_back ( i + j ) ;",
+        "for ( i = 0 ; i < n - 1 ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘res’ does not name a type"
+    },
+    {
+      "mod_line": [
+        5,
+        13,
+        17
+      ],
+      "mod_code": [
+        "res = 1e4 ;",
+        "if ( ! visited [ v [ i ] [ k ] ] [ j + 1 ] ) dfs ( v [ i ] [ k ] , j + 1 ] ) ;",
+        "for ( i = 0 ; i < n - 1 ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘res’ does not name a type"
+    },
+    {
+      "mod_line": [
+        5,
+        19
+      ],
+      "mod_code": [
+        "res = 1e4 ;",
+        "for ( int j = ' 1 ' ; j <= d ; j ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘res’ does not name a type"
+    },
+    {
+      "mod_line": [
+        5,
+        19,
+        21
+      ],
+      "mod_code": [
+        "res = 1e4 ;",
+        "for ( int j = ' 1 ' ; j <= d ; j ++ )",
+        "if ( s [ i + j ] == ' 1 ' ) v [ i + j ] . push_back ( i + j ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘res’ does not name a type"
+    },
+    {
+      "mod_line": [
+        5,
+        19,
+        21,
+        17
+      ],
+      "mod_code": [
+        "res = 1e4 ;",
+        "for ( int j = ' 1 ' ; j <= d ; j ++ )",
+        "if ( s [ i + j ] == ' 1 ' ) v [ i + j ] . push_back ( i + j ) ;",
+        "for ( i = 0 ; i < n - 1 ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘res’ does not name a type"
+    },
+    {
+      "mod_line": [
+        5,
+        19,
+        17
+      ],
+      "mod_code": [
+        "res = 1e4 ;",
+        "for ( int j = ' 1 ' ; j <= d ; j ++ )",
+        "for ( i = 0 ; i < n - 1 ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘res’ does not name a type"
+    },
+    {
+      "mod_line": [
+        5,
+        21
+      ],
+      "mod_code": [
+        "res = 1e4 ;",
+        "if ( s [ i + j ] == ' 1 ' ) v [ i + j ] . push_back ( i + j ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘res’ does not name a type"
+    },
+    {
+      "mod_line": [
+        5,
+        21,
+        17
+      ],
+      "mod_code": [
+        "res = 1e4 ;",
+        "if ( s [ i + j ] == ' 1 ' ) v [ i + j ] . push_back ( i + j ) ;",
+        "for ( i = 0 ; i < n - 1 ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘res’ does not name a type"
+    },
+    {
+      "mod_line": [
+        5,
+        17
+      ],
+      "mod_code": [
+        "res = 1e4 ;",
+        "for ( i = 0 ; i < n - 1 ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘res’ does not name a type"
+    },
+    {
+      "mod_line": [
+        13,
+        19
+      ],
+      "mod_code": [
+        "if ( ! visited [ v [ i ] [ k ] ] [ j + 1 ] ) dfs ( v [ i ] [ k ] , j + 1 ] ) ;",
+        "for ( int j = ' 1 ' ; j <= d ; j ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        13,
+        19,
+        21
+      ],
+      "mod_code": [
+        "if ( ! visited [ v [ i ] [ k ] ] [ j + 1 ] ) dfs ( v [ i ] [ k ] , j + 1 ] ) ;",
+        "for ( int j = ' 1 ' ; j <= d ; j ++ )",
+        "if ( s [ i + j ] == ' 1 ' ) v [ i + j ] . push_back ( i + j ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        13,
+        19,
+        21,
+        17
+      ],
+      "mod_code": [
+        "if ( ! visited [ v [ i ] [ k ] ] [ j + 1 ] ) dfs ( v [ i ] [ k ] , j + 1 ] ) ;",
+        "for ( int j = ' 1 ' ; j <= d ; j ++ )",
+        "if ( s [ i + j ] == ' 1 ' ) v [ i + j ] . push_back ( i + j ) ;",
+        "for ( i = 0 ; i < n - 1 ; i ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        13,
+        19,
+        17
+      ],
+      "mod_code": [
+        "if ( ! visited [ v [ i ] [ k ] ] [ j + 1 ] ) dfs ( v [ i ] [ k ] , j + 1 ] ) ;",
+        "for ( int j = ' 1 ' ; j <= d ; j ++ )",
+        "for ( i = 0 ; i < n - 1 ; i ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        13,
+        21
+      ],
+      "mod_code": [
+        "if ( ! visited [ v [ i ] [ k ] ] [ j + 1 ] ) dfs ( v [ i ] [ k ] , j + 1 ] ) ;",
+        "if ( s [ i + j ] == ' 1 ' ) v [ i + j ] . push_back ( i + j ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        13,
+        21,
+        17
+      ],
+      "mod_code": [
+        "if ( ! visited [ v [ i ] [ k ] ] [ j + 1 ] ) dfs ( v [ i ] [ k ] , j + 1 ] ) ;",
+        "if ( s [ i + j ] == ' 1 ' ) v [ i + j ] . push_back ( i + j ) ;",
+        "for ( i = 0 ; i < n - 1 ; i ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        13,
+        17
+      ],
+      "mod_code": [
+        "if ( ! visited [ v [ i ] [ k ] ] [ j + 1 ] ) dfs ( v [ i ] [ k ] , j + 1 ] ) ;",
+        "for ( i = 0 ; i < n - 1 ; i ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        19,
+        21,
+        17
+      ],
+      "mod_code": [
+        "for ( int j = ' 1 ' ; j <= d ; j ++ )",
+        "if ( s [ i + j ] == ' 1 ' ) v [ i + j ] . push_back ( i + j ) ;",
+        "for ( i = 0 ; i < n - 1 ; i ++ )"
+      ],
+      "err_line": 17,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        19,
+        17
+      ],
+      "mod_code": [
+        "for ( int j = ' 1 ' ; j <= d ; j ++ )",
+        "for ( i = 0 ; i < n - 1 ; i ++ )"
+      ],
+      "err_line": 17,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        21,
+        17
+      ],
+      "mod_code": [
+        "if ( s [ i + j ] == ' 1 ' ) v [ i + j ] . push_back ( i + j ) ;",
+        "for ( i = 0 ; i < n - 1 ; i ++ )"
+      ],
+      "err_line": 17,
+      "err_msg": "‘i’ was not declared in this scope"
+    }
+  ]
+}

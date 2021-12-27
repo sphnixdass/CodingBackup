@@ -1,0 +1,987 @@
+{
+  "meta": {
+    "index": 1157,
+    "hitid": "391FPZIE4CGW2RHQNJ0HMRAQMMZHUT",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "910A",
+    "subid": "48799618"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare integers n and d",
+      "code": "int n , d ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read n and d",
+      "code": "cin >> n >> d ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "let L be a vector of integers",
+      "code": "vector < int > L ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "let s be string",
+      "code": "string s ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "read s",
+      "code": "cin >> s ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for integer i = 0 to n exclusive",
+      "code": "for ( int i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "if s [ i ] = ' 1 ' , push i into L",
+      "code": "if ( s [ i ] == ' 1 ' ) { L . push_back ( i ) ; }",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "dp is an array of integers with size = length of L",
+      "code": "int dp [ L . size ( ) ] ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "call memset with arguments dp , - 1 and sizeof ( dp )",
+      "code": "memset ( dp , - 1 , sizeof ( dp ) ) ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "assign value of 0 to dp [ 0 ]",
+      "code": "dp [ 0 ] = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "for i = 0 to length of L exclusive",
+      "code": "for ( int i = 0 ; i < L . size ( ) ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "for integer j = i + 1 to length of L while L [ j ] < = L [ i ] + d",
+      "code": "for ( int j = i + 1 ; j < L . size ( ) && L [ j ] <= L [ i ] + d ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "if dp [ j ] = - 1",
+      "code": "if ( dp [ j ] == - 1 )",
+      "indent": 3
+    },
+    {
+      "line": 15,
+      "text": "set dp [ j ] to dp [ i ] + 1",
+      "code": "dp [ j ] = dp [ i ] + 1 ;",
+      "indent": 4
+    },
+    {
+      "line": 16,
+      "text": "else",
+      "code": "else",
+      "indent": 3
+    },
+    {
+      "line": 17,
+      "text": "set dp [ j ] to min of dp [ i ] + 1 and dp [ j ]",
+      "code": "dp [ j ] = min ( dp [ i ] + 1 , dp [ j ] ) ;",
+      "indent": 4
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 20,
+      "text": "if i < = length of L - 2 & & dp [ i + 1 ] = - 1 , break",
+      "code": "if ( i <= L . size ( ) - 2 && dp [ i + 1 ] == - 1 ) break ;",
+      "indent": 2
+    },
+    {
+      "line": 21,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 22,
+      "text": "print dp [ length of L - 1 ] and ' \\ n '",
+      "code": "cout << dp [ L . size ( ) - 1 ] << ' \\n ' ;",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "int dp [ L ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "size of array ‘dp’ has non-integral type ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < L . length ( ) ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "for ( int j = i + 1 ; j < L . length ( ) ; j ++ ) L [ j ] += d ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        20
+      ],
+      "mod_code": [
+        "if ( i <= L . length ( ) - 2 && dp [ i + 1 ] == - 1 ) break ;"
+      ],
+      "err_line": 20,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        22
+      ],
+      "mod_code": [
+        "cout << dp [ L . length ( ) - 1 ] << ' \\n ' ;"
+      ],
+      "err_line": 22,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "cin >> n >> k ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "s >> s ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "if ( s [ i ] == ' 1 ' ) L . push ( i ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘push’"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "int dp [ L ] [ L ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "size of array ‘dp’ has non-integral type ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "for ( int j = i + 1 ; j < L . length ( ) ; j ++ ) { L [ j ] += d ; }"
+      ],
+      "err_line": 13,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "else else"
+      ],
+      "err_line": 16,
+      "err_msg": "expected primary-expression before ‘else’"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "dp [ j ] = min ( dp [ i ] + 1 + dp [ j ] ) ;"
+      ],
+      "err_line": 17,
+      "err_msg": "no matching function for call to ‘min(int)’"
+    },
+    {
+      "mod_line": [
+        20
+      ],
+      "mod_code": [
+        "if ( i <= L . length ( ) && dp [ i + 1 ] == - 1 ) break ;"
+      ],
+      "err_line": 20,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        9,
+        12
+      ],
+      "mod_code": [
+        "int dp [ L ] ;",
+        "for ( int i = 0 ; i < L . length ( ) ; i ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "size of array ‘dp’ has non-integral type ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        13
+      ],
+      "mod_code": [
+        "int dp [ L ] ;",
+        "for ( int i = 0 ; i < L . length ( ) ; i ++ )",
+        "for ( int j = i + 1 ; j < L . length ( ) ; j ++ ) L [ j ] += d ;"
+      ],
+      "err_line": 9,
+      "err_msg": "size of array ‘dp’ has non-integral type ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        13,
+        20
+      ],
+      "mod_code": [
+        "int dp [ L ] ;",
+        "for ( int i = 0 ; i < L . length ( ) ; i ++ )",
+        "for ( int j = i + 1 ; j < L . length ( ) ; j ++ ) L [ j ] += d ;",
+        "if ( i <= L . length ( ) - 2 && dp [ i + 1 ] == - 1 ) break ;"
+      ],
+      "err_line": 9,
+      "err_msg": "size of array ‘dp’ has non-integral type ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        13,
+        22
+      ],
+      "mod_code": [
+        "int dp [ L ] ;",
+        "for ( int i = 0 ; i < L . length ( ) ; i ++ )",
+        "for ( int j = i + 1 ; j < L . length ( ) ; j ++ ) L [ j ] += d ;",
+        "cout << dp [ L . length ( ) - 1 ] << ' \\n ' ;"
+      ],
+      "err_line": 9,
+      "err_msg": "size of array ‘dp’ has non-integral type ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        13,
+        14
+      ],
+      "mod_code": [
+        "int dp [ L ] ;",
+        "for ( int i = 0 ; i < L . length ( ) ; i ++ )",
+        "for ( int j = i + 1 ; j < L . length ( ) ; j ++ ) L [ j ] += d ;",
+        "if ( dp [ j ] == ' 1 ' )"
+      ],
+      "err_line": 9,
+      "err_msg": "size of array ‘dp’ has non-integral type ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        20
+      ],
+      "mod_code": [
+        "int dp [ L ] ;",
+        "for ( int i = 0 ; i < L . length ( ) ; i ++ )",
+        "if ( i <= L . length ( ) - 2 && dp [ i + 1 ] == - 1 ) break ;"
+      ],
+      "err_line": 9,
+      "err_msg": "size of array ‘dp’ has non-integral type ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        20,
+        22
+      ],
+      "mod_code": [
+        "int dp [ L ] ;",
+        "for ( int i = 0 ; i < L . length ( ) ; i ++ )",
+        "if ( i <= L . length ( ) - 2 && dp [ i + 1 ] == - 1 ) break ;",
+        "cout << dp [ L . length ( ) - 1 ] << ' \\n ' ;"
+      ],
+      "err_line": 9,
+      "err_msg": "size of array ‘dp’ has non-integral type ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        20,
+        14
+      ],
+      "mod_code": [
+        "int dp [ L ] ;",
+        "for ( int i = 0 ; i < L . length ( ) ; i ++ )",
+        "if ( i <= L . length ( ) - 2 && dp [ i + 1 ] == - 1 ) break ;",
+        "if ( dp [ j ] == ' 1 ' )"
+      ],
+      "err_line": 9,
+      "err_msg": "size of array ‘dp’ has non-integral type ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        22
+      ],
+      "mod_code": [
+        "int dp [ L ] ;",
+        "for ( int i = 0 ; i < L . length ( ) ; i ++ )",
+        "cout << dp [ L . length ( ) - 1 ] << ' \\n ' ;"
+      ],
+      "err_line": 9,
+      "err_msg": "size of array ‘dp’ has non-integral type ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        22,
+        14
+      ],
+      "mod_code": [
+        "int dp [ L ] ;",
+        "for ( int i = 0 ; i < L . length ( ) ; i ++ )",
+        "cout << dp [ L . length ( ) - 1 ] << ' \\n ' ;",
+        "if ( dp [ j ] == ' 1 ' )"
+      ],
+      "err_line": 9,
+      "err_msg": "size of array ‘dp’ has non-integral type ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        14
+      ],
+      "mod_code": [
+        "int dp [ L ] ;",
+        "for ( int i = 0 ; i < L . length ( ) ; i ++ )",
+        "if ( dp [ j ] == ' 1 ' )"
+      ],
+      "err_line": 9,
+      "err_msg": "size of array ‘dp’ has non-integral type ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        9,
+        13
+      ],
+      "mod_code": [
+        "int dp [ L ] ;",
+        "for ( int j = i + 1 ; j < L . length ( ) ; j ++ ) L [ j ] += d ;"
+      ],
+      "err_line": 9,
+      "err_msg": "size of array ‘dp’ has non-integral type ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        9,
+        13,
+        20
+      ],
+      "mod_code": [
+        "int dp [ L ] ;",
+        "for ( int j = i + 1 ; j < L . length ( ) ; j ++ ) L [ j ] += d ;",
+        "if ( i <= L . length ( ) - 2 && dp [ i + 1 ] == - 1 ) break ;"
+      ],
+      "err_line": 9,
+      "err_msg": "size of array ‘dp’ has non-integral type ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        9,
+        13,
+        20,
+        22
+      ],
+      "mod_code": [
+        "int dp [ L ] ;",
+        "for ( int j = i + 1 ; j < L . length ( ) ; j ++ ) L [ j ] += d ;",
+        "if ( i <= L . length ( ) - 2 && dp [ i + 1 ] == - 1 ) break ;",
+        "cout << dp [ L . length ( ) - 1 ] << ' \\n ' ;"
+      ],
+      "err_line": 9,
+      "err_msg": "size of array ‘dp’ has non-integral type ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        9,
+        13,
+        20,
+        14
+      ],
+      "mod_code": [
+        "int dp [ L ] ;",
+        "for ( int j = i + 1 ; j < L . length ( ) ; j ++ ) L [ j ] += d ;",
+        "if ( i <= L . length ( ) - 2 && dp [ i + 1 ] == - 1 ) break ;",
+        "if ( dp [ j ] == ' 1 ' )"
+      ],
+      "err_line": 9,
+      "err_msg": "size of array ‘dp’ has non-integral type ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        9,
+        13,
+        22
+      ],
+      "mod_code": [
+        "int dp [ L ] ;",
+        "for ( int j = i + 1 ; j < L . length ( ) ; j ++ ) L [ j ] += d ;",
+        "cout << dp [ L . length ( ) - 1 ] << ' \\n ' ;"
+      ],
+      "err_line": 9,
+      "err_msg": "size of array ‘dp’ has non-integral type ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        9,
+        13,
+        22,
+        14
+      ],
+      "mod_code": [
+        "int dp [ L ] ;",
+        "for ( int j = i + 1 ; j < L . length ( ) ; j ++ ) L [ j ] += d ;",
+        "cout << dp [ L . length ( ) - 1 ] << ' \\n ' ;",
+        "if ( dp [ j ] == ' 1 ' )"
+      ],
+      "err_line": 9,
+      "err_msg": "size of array ‘dp’ has non-integral type ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        9,
+        13,
+        14
+      ],
+      "mod_code": [
+        "int dp [ L ] ;",
+        "for ( int j = i + 1 ; j < L . length ( ) ; j ++ ) L [ j ] += d ;",
+        "if ( dp [ j ] == ' 1 ' )"
+      ],
+      "err_line": 9,
+      "err_msg": "size of array ‘dp’ has non-integral type ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        9,
+        20
+      ],
+      "mod_code": [
+        "int dp [ L ] ;",
+        "if ( i <= L . length ( ) - 2 && dp [ i + 1 ] == - 1 ) break ;"
+      ],
+      "err_line": 9,
+      "err_msg": "size of array ‘dp’ has non-integral type ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        9,
+        20,
+        22
+      ],
+      "mod_code": [
+        "int dp [ L ] ;",
+        "if ( i <= L . length ( ) - 2 && dp [ i + 1 ] == - 1 ) break ;",
+        "cout << dp [ L . length ( ) - 1 ] << ' \\n ' ;"
+      ],
+      "err_line": 9,
+      "err_msg": "size of array ‘dp’ has non-integral type ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        9,
+        20,
+        22,
+        14
+      ],
+      "mod_code": [
+        "int dp [ L ] ;",
+        "if ( i <= L . length ( ) - 2 && dp [ i + 1 ] == - 1 ) break ;",
+        "cout << dp [ L . length ( ) - 1 ] << ' \\n ' ;",
+        "if ( dp [ j ] == ' 1 ' )"
+      ],
+      "err_line": 9,
+      "err_msg": "size of array ‘dp’ has non-integral type ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        9,
+        20,
+        14
+      ],
+      "mod_code": [
+        "int dp [ L ] ;",
+        "if ( i <= L . length ( ) - 2 && dp [ i + 1 ] == - 1 ) break ;",
+        "if ( dp [ j ] == ' 1 ' )"
+      ],
+      "err_line": 9,
+      "err_msg": "size of array ‘dp’ has non-integral type ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        9,
+        22
+      ],
+      "mod_code": [
+        "int dp [ L ] ;",
+        "cout << dp [ L . length ( ) - 1 ] << ' \\n ' ;"
+      ],
+      "err_line": 9,
+      "err_msg": "size of array ‘dp’ has non-integral type ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        9,
+        22,
+        14
+      ],
+      "mod_code": [
+        "int dp [ L ] ;",
+        "cout << dp [ L . length ( ) - 1 ] << ' \\n ' ;",
+        "if ( dp [ j ] == ' 1 ' )"
+      ],
+      "err_line": 9,
+      "err_msg": "size of array ‘dp’ has non-integral type ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        9,
+        14
+      ],
+      "mod_code": [
+        "int dp [ L ] ;",
+        "if ( dp [ j ] == ' 1 ' )"
+      ],
+      "err_line": 9,
+      "err_msg": "size of array ‘dp’ has non-integral type ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        12,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < L . length ( ) ; i ++ )",
+        "for ( int j = i + 1 ; j < L . length ( ) ; j ++ ) L [ j ] += d ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        12,
+        13,
+        20
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < L . length ( ) ; i ++ )",
+        "for ( int j = i + 1 ; j < L . length ( ) ; j ++ ) L [ j ] += d ;",
+        "if ( i <= L . length ( ) - 2 && dp [ i + 1 ] == - 1 ) break ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        12,
+        13,
+        20,
+        22
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < L . length ( ) ; i ++ )",
+        "for ( int j = i + 1 ; j < L . length ( ) ; j ++ ) L [ j ] += d ;",
+        "if ( i <= L . length ( ) - 2 && dp [ i + 1 ] == - 1 ) break ;",
+        "cout << dp [ L . length ( ) - 1 ] << ' \\n ' ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        12,
+        13,
+        20,
+        14
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < L . length ( ) ; i ++ )",
+        "for ( int j = i + 1 ; j < L . length ( ) ; j ++ ) L [ j ] += d ;",
+        "if ( i <= L . length ( ) - 2 && dp [ i + 1 ] == - 1 ) break ;",
+        "if ( dp [ j ] == ' 1 ' )"
+      ],
+      "err_line": 12,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        12,
+        13,
+        22
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < L . length ( ) ; i ++ )",
+        "for ( int j = i + 1 ; j < L . length ( ) ; j ++ ) L [ j ] += d ;",
+        "cout << dp [ L . length ( ) - 1 ] << ' \\n ' ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        12,
+        13,
+        22,
+        14
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < L . length ( ) ; i ++ )",
+        "for ( int j = i + 1 ; j < L . length ( ) ; j ++ ) L [ j ] += d ;",
+        "cout << dp [ L . length ( ) - 1 ] << ' \\n ' ;",
+        "if ( dp [ j ] == ' 1 ' )"
+      ],
+      "err_line": 12,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        12,
+        13,
+        14
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < L . length ( ) ; i ++ )",
+        "for ( int j = i + 1 ; j < L . length ( ) ; j ++ ) L [ j ] += d ;",
+        "if ( dp [ j ] == ' 1 ' )"
+      ],
+      "err_line": 12,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        12,
+        20
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < L . length ( ) ; i ++ )",
+        "if ( i <= L . length ( ) - 2 && dp [ i + 1 ] == - 1 ) break ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        12,
+        20,
+        22
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < L . length ( ) ; i ++ )",
+        "if ( i <= L . length ( ) - 2 && dp [ i + 1 ] == - 1 ) break ;",
+        "cout << dp [ L . length ( ) - 1 ] << ' \\n ' ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        12,
+        20,
+        22,
+        14
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < L . length ( ) ; i ++ )",
+        "if ( i <= L . length ( ) - 2 && dp [ i + 1 ] == - 1 ) break ;",
+        "cout << dp [ L . length ( ) - 1 ] << ' \\n ' ;",
+        "if ( dp [ j ] == ' 1 ' )"
+      ],
+      "err_line": 12,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        12,
+        20,
+        14
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < L . length ( ) ; i ++ )",
+        "if ( i <= L . length ( ) - 2 && dp [ i + 1 ] == - 1 ) break ;",
+        "if ( dp [ j ] == ' 1 ' )"
+      ],
+      "err_line": 12,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        12,
+        22
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < L . length ( ) ; i ++ )",
+        "cout << dp [ L . length ( ) - 1 ] << ' \\n ' ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        12,
+        22,
+        14
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < L . length ( ) ; i ++ )",
+        "cout << dp [ L . length ( ) - 1 ] << ' \\n ' ;",
+        "if ( dp [ j ] == ' 1 ' )"
+      ],
+      "err_line": 12,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        12,
+        14
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < L . length ( ) ; i ++ )",
+        "if ( dp [ j ] == ' 1 ' )"
+      ],
+      "err_line": 12,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        13,
+        20
+      ],
+      "mod_code": [
+        "for ( int j = i + 1 ; j < L . length ( ) ; j ++ ) L [ j ] += d ;",
+        "if ( i <= L . length ( ) - 2 && dp [ i + 1 ] == - 1 ) break ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        13,
+        20,
+        22
+      ],
+      "mod_code": [
+        "for ( int j = i + 1 ; j < L . length ( ) ; j ++ ) L [ j ] += d ;",
+        "if ( i <= L . length ( ) - 2 && dp [ i + 1 ] == - 1 ) break ;",
+        "cout << dp [ L . length ( ) - 1 ] << ' \\n ' ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        13,
+        20,
+        22,
+        14
+      ],
+      "mod_code": [
+        "for ( int j = i + 1 ; j < L . length ( ) ; j ++ ) L [ j ] += d ;",
+        "if ( i <= L . length ( ) - 2 && dp [ i + 1 ] == - 1 ) break ;",
+        "cout << dp [ L . length ( ) - 1 ] << ' \\n ' ;",
+        "if ( dp [ j ] == ' 1 ' )"
+      ],
+      "err_line": 13,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        13,
+        20,
+        14
+      ],
+      "mod_code": [
+        "for ( int j = i + 1 ; j < L . length ( ) ; j ++ ) L [ j ] += d ;",
+        "if ( i <= L . length ( ) - 2 && dp [ i + 1 ] == - 1 ) break ;",
+        "if ( dp [ j ] == ' 1 ' )"
+      ],
+      "err_line": 13,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        13,
+        22
+      ],
+      "mod_code": [
+        "for ( int j = i + 1 ; j < L . length ( ) ; j ++ ) L [ j ] += d ;",
+        "cout << dp [ L . length ( ) - 1 ] << ' \\n ' ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        13,
+        22,
+        14
+      ],
+      "mod_code": [
+        "for ( int j = i + 1 ; j < L . length ( ) ; j ++ ) L [ j ] += d ;",
+        "cout << dp [ L . length ( ) - 1 ] << ' \\n ' ;",
+        "if ( dp [ j ] == ' 1 ' )"
+      ],
+      "err_line": 13,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        13,
+        14
+      ],
+      "mod_code": [
+        "for ( int j = i + 1 ; j < L . length ( ) ; j ++ ) L [ j ] += d ;",
+        "if ( dp [ j ] == ' 1 ' )"
+      ],
+      "err_line": 13,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        20,
+        22
+      ],
+      "mod_code": [
+        "if ( i <= L . length ( ) - 2 && dp [ i + 1 ] == - 1 ) break ;",
+        "cout << dp [ L . length ( ) - 1 ] << ' \\n ' ;"
+      ],
+      "err_line": 20,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        20,
+        22,
+        14
+      ],
+      "mod_code": [
+        "if ( i <= L . length ( ) - 2 && dp [ i + 1 ] == - 1 ) break ;",
+        "cout << dp [ L . length ( ) - 1 ] << ' \\n ' ;",
+        "if ( dp [ j ] == ' 1 ' )"
+      ],
+      "err_line": 20,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        20,
+        14
+      ],
+      "mod_code": [
+        "if ( i <= L . length ( ) - 2 && dp [ i + 1 ] == - 1 ) break ;",
+        "if ( dp [ j ] == ' 1 ' )"
+      ],
+      "err_line": 20,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        22,
+        14
+      ],
+      "mod_code": [
+        "cout << dp [ L . length ( ) - 1 ] << ' \\n ' ;",
+        "if ( dp [ j ] == ' 1 ' )"
+      ],
+      "err_line": 22,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    }
+  ]
+}

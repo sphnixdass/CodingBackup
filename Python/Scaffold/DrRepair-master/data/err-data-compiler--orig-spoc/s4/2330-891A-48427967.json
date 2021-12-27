@@ -1,0 +1,999 @@
+{
+  "meta": {
+    "index": 2330,
+    "hitid": "3W5PY7V3UP19A6WLLK0R1PWIV2DJYX",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "891A",
+    "subid": "48427967"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create long n , k",
+      "code": "long n , k ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "create integer one with one = 0",
+      "code": "int one = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "create long vector v initialized with n",
+      "code": "vector < long > v ( n ) ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "read v [ 0 ]",
+      "code": "cin >> v [ 0 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "set k to v [ 0 ]",
+      "code": "k = v [ 0 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "if v [ 0 ] is 1 , increment one",
+      "code": "if ( v [ 0 ] == 1 ) one ++ ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "for i = 1 to n exclusive",
+      "code": "for ( long i = 1 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "read v [ i ]",
+      "code": "cin >> v [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "set k to result of run __gcd with k , v [ i ] as arguments",
+      "code": "k = __gcd ( k , v [ i ] ) ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "if v [ i ] is 1 , increment one",
+      "code": "if ( v [ i ] == 1 ) one ++ ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "if k is not 1 , return print \" - 1 \\ n \" , 0",
+      "code": "if ( k != 1 ) return cout << \" -1\\n \" , 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "if one is greater than 0 , return print n - one print \" \\ n \" , 0",
+      "code": "if ( one > 0 ) return cout << n - one << \" \\n \" , 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "create long ans with ans = INT_MAX",
+      "code": "long ans = INT_MAX ;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "for l = 0 to n exclusive",
+      "code": "for ( long l = 0 ; l < n ; l ++ )",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "create long g with g = v [ l ]",
+      "code": "long g = v [ l ] ;",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "for r = l + 1 to n exclusive",
+      "code": "for ( long r = l + 1 ; r < n ; r ++ )",
+      "indent": 2
+    },
+    {
+      "line": 19,
+      "text": "set g to result of run __gcd with g , v [ r ] as arguments",
+      "code": "g = __gcd ( g , v [ r ] ) ;",
+      "indent": 3
+    },
+    {
+      "line": 20,
+      "text": "if g is 1 , set ans to minimum of n + r - l - 1 and ans",
+      "code": "if ( g == 1 ) { ans = min ( n + r - l - 1 , ans ) ; }",
+      "indent": 3
+    },
+    {
+      "line": 21,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 22,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "print ans print \" \\ n \"",
+      "code": "cout << ans << \" \\n \" ;",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 25,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "if ( one > 0 ) return cout << n - one << \" \\n \" ;"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid user-defined conversion from ‘std::basic_ostream<char>’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "long long n , k ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘__gcd(long long int&, long int&)’"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "while ( cin >> n )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘v’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "vector < long long > v ( n ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘__gcd(long int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "cin >> v [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "char k = v [ 0 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "conflicting declaration ‘char k’"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "v >> v [ i ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::vector<long int>’ and ‘long int’)"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "k ] = __gcd ( k , v [ i ] ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "if ( k != 1 ) return puts ( \" -1\\n \" , 0 ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "too many arguments to function ‘int puts(const char*)’"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "long long ans = INT_MAX ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no matching function for call to ‘min(long int, long long int&)’"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "for ( l = 0 ; l < n ; l ++ )"
+      ],
+      "err_line": 16,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "long long g = v [ l ] ;"
+      ],
+      "err_line": 19,
+      "err_msg": "no matching function for call to ‘__gcd(long long int&, long int&)’"
+    },
+    {
+      "mod_line": [
+        19
+      ],
+      "mod_code": [
+        "g ] = __gcd ( g , v [ r ] ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        13
+      ],
+      "mod_code": [
+        "if ( one > 0 ) return cout << n - one << \" \\n \" ;",
+        "if ( k != 1 ) return puts ( \" -1\\n \" , 0 ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "too many arguments to function ‘int puts(const char*)’"
+    },
+    {
+      "mod_line": [
+        14,
+        13,
+        10
+      ],
+      "mod_code": [
+        "if ( one > 0 ) return cout << n - one << \" \\n \" ;",
+        "if ( k != 1 ) return puts ( \" -1\\n \" , 0 ) ;",
+        "k ] = __gcd ( k , v [ i ] ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        13,
+        10,
+        16
+      ],
+      "mod_code": [
+        "if ( one > 0 ) return cout << n - one << \" \\n \" ;",
+        "if ( k != 1 ) return puts ( \" -1\\n \" , 0 ) ;",
+        "k ] = __gcd ( k , v [ i ] ) ;",
+        "for ( l = 0 ; l < n ; l ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        13,
+        10,
+        5
+      ],
+      "mod_code": [
+        "if ( one > 0 ) return cout << n - one << \" \\n \" ;",
+        "if ( k != 1 ) return puts ( \" -1\\n \" , 0 ) ;",
+        "k ] = __gcd ( k , v [ i ] ) ;",
+        "cin >> v [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        13,
+        10,
+        18
+      ],
+      "mod_code": [
+        "if ( one > 0 ) return cout << n - one << \" \\n \" ;",
+        "if ( k != 1 ) return puts ( \" -1\\n \" , 0 ) ;",
+        "k ] = __gcd ( k , v [ i ] ) ;",
+        "for ( int r = l + 1 ; r <= n ; r ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        13,
+        16
+      ],
+      "mod_code": [
+        "if ( one > 0 ) return cout << n - one << \" \\n \" ;",
+        "if ( k != 1 ) return puts ( \" -1\\n \" , 0 ) ;",
+        "for ( l = 0 ; l < n ; l ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "too many arguments to function ‘int puts(const char*)’"
+    },
+    {
+      "mod_line": [
+        14,
+        13,
+        16,
+        5
+      ],
+      "mod_code": [
+        "if ( one > 0 ) return cout << n - one << \" \\n \" ;",
+        "if ( k != 1 ) return puts ( \" -1\\n \" , 0 ) ;",
+        "for ( l = 0 ; l < n ; l ++ )",
+        "cin >> v [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        13,
+        16,
+        18
+      ],
+      "mod_code": [
+        "if ( one > 0 ) return cout << n - one << \" \\n \" ;",
+        "if ( k != 1 ) return puts ( \" -1\\n \" , 0 ) ;",
+        "for ( l = 0 ; l < n ; l ++ )",
+        "for ( int r = l + 1 ; r <= n ; r ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "too many arguments to function ‘int puts(const char*)’"
+    },
+    {
+      "mod_line": [
+        14,
+        13,
+        5
+      ],
+      "mod_code": [
+        "if ( one > 0 ) return cout << n - one << \" \\n \" ;",
+        "if ( k != 1 ) return puts ( \" -1\\n \" , 0 ) ;",
+        "cin >> v [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        13,
+        5,
+        18
+      ],
+      "mod_code": [
+        "if ( one > 0 ) return cout << n - one << \" \\n \" ;",
+        "if ( k != 1 ) return puts ( \" -1\\n \" , 0 ) ;",
+        "cin >> v [ i ] ;",
+        "for ( int r = l + 1 ; r <= n ; r ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        13,
+        18
+      ],
+      "mod_code": [
+        "if ( one > 0 ) return cout << n - one << \" \\n \" ;",
+        "if ( k != 1 ) return puts ( \" -1\\n \" , 0 ) ;",
+        "for ( int r = l + 1 ; r <= n ; r ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "too many arguments to function ‘int puts(const char*)’"
+    },
+    {
+      "mod_line": [
+        14,
+        10
+      ],
+      "mod_code": [
+        "if ( one > 0 ) return cout << n - one << \" \\n \" ;",
+        "k ] = __gcd ( k , v [ i ] ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        10,
+        16
+      ],
+      "mod_code": [
+        "if ( one > 0 ) return cout << n - one << \" \\n \" ;",
+        "k ] = __gcd ( k , v [ i ] ) ;",
+        "for ( l = 0 ; l < n ; l ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        10,
+        16,
+        5
+      ],
+      "mod_code": [
+        "if ( one > 0 ) return cout << n - one << \" \\n \" ;",
+        "k ] = __gcd ( k , v [ i ] ) ;",
+        "for ( l = 0 ; l < n ; l ++ )",
+        "cin >> v [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        10,
+        16,
+        18
+      ],
+      "mod_code": [
+        "if ( one > 0 ) return cout << n - one << \" \\n \" ;",
+        "k ] = __gcd ( k , v [ i ] ) ;",
+        "for ( l = 0 ; l < n ; l ++ )",
+        "for ( int r = l + 1 ; r <= n ; r ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        10,
+        5
+      ],
+      "mod_code": [
+        "if ( one > 0 ) return cout << n - one << \" \\n \" ;",
+        "k ] = __gcd ( k , v [ i ] ) ;",
+        "cin >> v [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        10,
+        5,
+        18
+      ],
+      "mod_code": [
+        "if ( one > 0 ) return cout << n - one << \" \\n \" ;",
+        "k ] = __gcd ( k , v [ i ] ) ;",
+        "cin >> v [ i ] ;",
+        "for ( int r = l + 1 ; r <= n ; r ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        10,
+        18
+      ],
+      "mod_code": [
+        "if ( one > 0 ) return cout << n - one << \" \\n \" ;",
+        "k ] = __gcd ( k , v [ i ] ) ;",
+        "for ( int r = l + 1 ; r <= n ; r ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        16
+      ],
+      "mod_code": [
+        "if ( one > 0 ) return cout << n - one << \" \\n \" ;",
+        "for ( l = 0 ; l < n ; l ++ )"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid user-defined conversion from ‘std::basic_ostream<char>’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        14,
+        16,
+        5
+      ],
+      "mod_code": [
+        "if ( one > 0 ) return cout << n - one << \" \\n \" ;",
+        "for ( l = 0 ; l < n ; l ++ )",
+        "cin >> v [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        16,
+        5,
+        18
+      ],
+      "mod_code": [
+        "if ( one > 0 ) return cout << n - one << \" \\n \" ;",
+        "for ( l = 0 ; l < n ; l ++ )",
+        "cin >> v [ i ] ;",
+        "for ( int r = l + 1 ; r <= n ; r ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        16,
+        18
+      ],
+      "mod_code": [
+        "if ( one > 0 ) return cout << n - one << \" \\n \" ;",
+        "for ( l = 0 ; l < n ; l ++ )",
+        "for ( int r = l + 1 ; r <= n ; r ++ )"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid user-defined conversion from ‘std::basic_ostream<char>’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        14,
+        5
+      ],
+      "mod_code": [
+        "if ( one > 0 ) return cout << n - one << \" \\n \" ;",
+        "cin >> v [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        5,
+        18
+      ],
+      "mod_code": [
+        "if ( one > 0 ) return cout << n - one << \" \\n \" ;",
+        "cin >> v [ i ] ;",
+        "for ( int r = l + 1 ; r <= n ; r ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        18
+      ],
+      "mod_code": [
+        "if ( one > 0 ) return cout << n - one << \" \\n \" ;",
+        "for ( int r = l + 1 ; r <= n ; r ++ )"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid user-defined conversion from ‘std::basic_ostream<char>’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        10
+      ],
+      "mod_code": [
+        "if ( k != 1 ) return puts ( \" -1\\n \" , 0 ) ;",
+        "k ] = __gcd ( k , v [ i ] ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        13,
+        10,
+        16
+      ],
+      "mod_code": [
+        "if ( k != 1 ) return puts ( \" -1\\n \" , 0 ) ;",
+        "k ] = __gcd ( k , v [ i ] ) ;",
+        "for ( l = 0 ; l < n ; l ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        13,
+        10,
+        16,
+        5
+      ],
+      "mod_code": [
+        "if ( k != 1 ) return puts ( \" -1\\n \" , 0 ) ;",
+        "k ] = __gcd ( k , v [ i ] ) ;",
+        "for ( l = 0 ; l < n ; l ++ )",
+        "cin >> v [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        10,
+        16,
+        18
+      ],
+      "mod_code": [
+        "if ( k != 1 ) return puts ( \" -1\\n \" , 0 ) ;",
+        "k ] = __gcd ( k , v [ i ] ) ;",
+        "for ( l = 0 ; l < n ; l ++ )",
+        "for ( int r = l + 1 ; r <= n ; r ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        13,
+        10,
+        5
+      ],
+      "mod_code": [
+        "if ( k != 1 ) return puts ( \" -1\\n \" , 0 ) ;",
+        "k ] = __gcd ( k , v [ i ] ) ;",
+        "cin >> v [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        10,
+        5,
+        18
+      ],
+      "mod_code": [
+        "if ( k != 1 ) return puts ( \" -1\\n \" , 0 ) ;",
+        "k ] = __gcd ( k , v [ i ] ) ;",
+        "cin >> v [ i ] ;",
+        "for ( int r = l + 1 ; r <= n ; r ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        10,
+        18
+      ],
+      "mod_code": [
+        "if ( k != 1 ) return puts ( \" -1\\n \" , 0 ) ;",
+        "k ] = __gcd ( k , v [ i ] ) ;",
+        "for ( int r = l + 1 ; r <= n ; r ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        13,
+        16
+      ],
+      "mod_code": [
+        "if ( k != 1 ) return puts ( \" -1\\n \" , 0 ) ;",
+        "for ( l = 0 ; l < n ; l ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "too many arguments to function ‘int puts(const char*)’"
+    },
+    {
+      "mod_line": [
+        13,
+        16,
+        5
+      ],
+      "mod_code": [
+        "if ( k != 1 ) return puts ( \" -1\\n \" , 0 ) ;",
+        "for ( l = 0 ; l < n ; l ++ )",
+        "cin >> v [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        16,
+        5,
+        18
+      ],
+      "mod_code": [
+        "if ( k != 1 ) return puts ( \" -1\\n \" , 0 ) ;",
+        "for ( l = 0 ; l < n ; l ++ )",
+        "cin >> v [ i ] ;",
+        "for ( int r = l + 1 ; r <= n ; r ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        16,
+        18
+      ],
+      "mod_code": [
+        "if ( k != 1 ) return puts ( \" -1\\n \" , 0 ) ;",
+        "for ( l = 0 ; l < n ; l ++ )",
+        "for ( int r = l + 1 ; r <= n ; r ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "too many arguments to function ‘int puts(const char*)’"
+    },
+    {
+      "mod_line": [
+        13,
+        5
+      ],
+      "mod_code": [
+        "if ( k != 1 ) return puts ( \" -1\\n \" , 0 ) ;",
+        "cin >> v [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        5,
+        18
+      ],
+      "mod_code": [
+        "if ( k != 1 ) return puts ( \" -1\\n \" , 0 ) ;",
+        "cin >> v [ i ] ;",
+        "for ( int r = l + 1 ; r <= n ; r ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        18
+      ],
+      "mod_code": [
+        "if ( k != 1 ) return puts ( \" -1\\n \" , 0 ) ;",
+        "for ( int r = l + 1 ; r <= n ; r ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "too many arguments to function ‘int puts(const char*)’"
+    },
+    {
+      "mod_line": [
+        10,
+        16
+      ],
+      "mod_code": [
+        "k ] = __gcd ( k , v [ i ] ) ;",
+        "for ( l = 0 ; l < n ; l ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        16,
+        5
+      ],
+      "mod_code": [
+        "k ] = __gcd ( k , v [ i ] ) ;",
+        "for ( l = 0 ; l < n ; l ++ )",
+        "cin >> v [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        16,
+        5,
+        18
+      ],
+      "mod_code": [
+        "k ] = __gcd ( k , v [ i ] ) ;",
+        "for ( l = 0 ; l < n ; l ++ )",
+        "cin >> v [ i ] ;",
+        "for ( int r = l + 1 ; r <= n ; r ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        16,
+        18
+      ],
+      "mod_code": [
+        "k ] = __gcd ( k , v [ i ] ) ;",
+        "for ( l = 0 ; l < n ; l ++ )",
+        "for ( int r = l + 1 ; r <= n ; r ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        5
+      ],
+      "mod_code": [
+        "k ] = __gcd ( k , v [ i ] ) ;",
+        "cin >> v [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        5,
+        18
+      ],
+      "mod_code": [
+        "k ] = __gcd ( k , v [ i ] ) ;",
+        "cin >> v [ i ] ;",
+        "for ( int r = l + 1 ; r <= n ; r ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        18
+      ],
+      "mod_code": [
+        "k ] = __gcd ( k , v [ i ] ) ;",
+        "for ( int r = l + 1 ; r <= n ; r ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        5
+      ],
+      "mod_code": [
+        "for ( l = 0 ; l < n ; l ++ )",
+        "cin >> v [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        5,
+        18
+      ],
+      "mod_code": [
+        "for ( l = 0 ; l < n ; l ++ )",
+        "cin >> v [ i ] ;",
+        "for ( int r = l + 1 ; r <= n ; r ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        18
+      ],
+      "mod_code": [
+        "for ( l = 0 ; l < n ; l ++ )",
+        "for ( int r = l + 1 ; r <= n ; r ++ )"
+      ],
+      "err_line": 16,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        18
+      ],
+      "mod_code": [
+        "cin >> v [ i ] ;",
+        "for ( int r = l + 1 ; r <= n ; r ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    }
+  ]
+}

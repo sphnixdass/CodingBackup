@@ -1,0 +1,889 @@
+{
+  "meta": {
+    "index": 2451,
+    "hitid": "3WUVMVA7OBXYE33MN0PXMX21CWIZAU",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "553A",
+    "subid": "48880612"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare int variable k and int array c with 1010 elements",
+      "code": "int k , c [ 1010 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare 2d long long array dp with size 1010 by 1010",
+      "code": "long long dp [ 1010 ] [ 1010 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "read input to k",
+      "code": "cin >> k ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for i = 0 and _n = k while i < _n , increment i , read c [ i ]",
+      "code": "for ( int i = 0 , _n = ( k ) ; i < _n ; i ++ ) cin >> c [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "set dp [ 0 ] [ 0 ] to 1",
+      "code": "dp [ 0 ] [ 0 ] = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for integer i = 1 and integer _n = 1005 while i < = _n , increment i",
+      "code": "for ( int i = ( 1 ) , _n = ( 1005 ) ; i <= _n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "assign 1 to dp [ i ] [ 0 ]",
+      "code": "dp [ i ] [ 0 ] = 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "for integer j = 1 and integer _n = 1005 while j < = _n , increment j , set dp [ i ] [ j ] to ( dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j - 1 ] ) % 1000000007",
+      "code": "for ( int j = ( 1 ) , _n = ( 1005 ) ; j <= _n ; j ++ ) { dp [ i ] [ j ] = ( dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j - 1 ] ) % 1000000007 ; }",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "declare long long ans = 1",
+      "code": "long long ans = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "create long long sum = 0",
+      "code": "long long sum = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "for integer i = 0 and integer _n = k while i < _n , increment i",
+      "code": "for ( int i = 0 , _n = ( k ) ; i < _n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "set ans to ( ans * dp [ sum + c [ i ] - 1 ] [ c [ i ] - 1 ] ) % 1000000007",
+      "code": "ans = ( ans * dp [ sum + c [ i ] - 1 ] [ c [ i ] - 1 ] ) % 1000000007 ;",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "increase sum by c [ i ]",
+      "code": "sum += c [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "print ans",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int c , c [ 1010 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int c [1010]’"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 1 , _n = _n ( 1005 ) ; i <= _n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘_n’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "ans = ( ans * dp [ sum + c [ i ] - 1 ] ) % 1000000007 ] [ c [ i ] - 1 ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid operands of types ‘long long int’ and ‘long long int [1010]’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "cin >> n ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "dp [ 0 ] [ j ] = 1 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "char dp [ i ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "for ( int j = 1 , _n = _n ( 1005 ) ; j <= _n ; j ++ ) dp [ i ] [ j ] = ( dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j - 1 ] ) % 1000000007 ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘_n’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "for ( int i = 0 , _n = _n ( k ) ; i < _n ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "‘_n’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        0,
+        6
+      ],
+      "mod_code": [
+        "int c , c [ 1010 ] ;",
+        "for ( int i = 1 , _n = _n ( 1005 ) ; i <= _n ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int c [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        6,
+        8
+      ],
+      "mod_code": [
+        "int c , c [ 1010 ] ;",
+        "for ( int i = 1 , _n = _n ( 1005 ) ; i <= _n ; i ++ )",
+        "for ( int j = 1 ; j <= _n ; j ++ ) { dp [ i ] [ j ] = ( dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j - 1 ] ) % 1000000007 ; }"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int c [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        6,
+        8,
+        13
+      ],
+      "mod_code": [
+        "int c , c [ 1010 ] ;",
+        "for ( int i = 1 , _n = _n ( 1005 ) ; i <= _n ; i ++ )",
+        "for ( int j = 1 ; j <= _n ; j ++ ) { dp [ i ] [ j ] = ( dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j - 1 ] ) % 1000000007 ; }",
+        "ans = ( ans * dp [ sum + c [ i ] - 1 ] ) % 1000000007 ] [ c [ i ] - 1 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int c [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        6,
+        8,
+        12
+      ],
+      "mod_code": [
+        "int c , c [ 1010 ] ;",
+        "for ( int i = 1 , _n = _n ( 1005 ) ; i <= _n ; i ++ )",
+        "for ( int j = 1 ; j <= _n ; j ++ ) { dp [ i ] [ j ] = ( dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j - 1 ] ) % 1000000007 ; }",
+        "for ( int i = 0 , _n = _n ( k ) ; i < _n ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int c [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        6,
+        8,
+        16
+      ],
+      "mod_code": [
+        "int c , c [ 1010 ] ;",
+        "for ( int i = 1 , _n = _n ( 1005 ) ; i <= _n ; i ++ )",
+        "for ( int j = 1 ; j <= _n ; j ++ ) { dp [ i ] [ j ] = ( dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j - 1 ] ) % 1000000007 ; }",
+        "cout << ans ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int c [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        6,
+        13
+      ],
+      "mod_code": [
+        "int c , c [ 1010 ] ;",
+        "for ( int i = 1 , _n = _n ( 1005 ) ; i <= _n ; i ++ )",
+        "ans = ( ans * dp [ sum + c [ i ] - 1 ] ) % 1000000007 ] [ c [ i ] - 1 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int c [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        6,
+        13,
+        12
+      ],
+      "mod_code": [
+        "int c , c [ 1010 ] ;",
+        "for ( int i = 1 , _n = _n ( 1005 ) ; i <= _n ; i ++ )",
+        "ans = ( ans * dp [ sum + c [ i ] - 1 ] ) % 1000000007 ] [ c [ i ] - 1 ] ;",
+        "for ( int i = 0 , _n = _n ( k ) ; i < _n ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int c [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        6,
+        13,
+        16
+      ],
+      "mod_code": [
+        "int c , c [ 1010 ] ;",
+        "for ( int i = 1 , _n = _n ( 1005 ) ; i <= _n ; i ++ )",
+        "ans = ( ans * dp [ sum + c [ i ] - 1 ] ) % 1000000007 ] [ c [ i ] - 1 ] ;",
+        "cout << ans ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int c [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        6,
+        12
+      ],
+      "mod_code": [
+        "int c , c [ 1010 ] ;",
+        "for ( int i = 1 , _n = _n ( 1005 ) ; i <= _n ; i ++ )",
+        "for ( int i = 0 , _n = _n ( k ) ; i < _n ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int c [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        6,
+        12,
+        16
+      ],
+      "mod_code": [
+        "int c , c [ 1010 ] ;",
+        "for ( int i = 1 , _n = _n ( 1005 ) ; i <= _n ; i ++ )",
+        "for ( int i = 0 , _n = _n ( k ) ; i < _n ; i ++ )",
+        "cout << ans ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int c [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        6,
+        16
+      ],
+      "mod_code": [
+        "int c , c [ 1010 ] ;",
+        "for ( int i = 1 , _n = _n ( 1005 ) ; i <= _n ; i ++ )",
+        "cout << ans ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int c [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        8
+      ],
+      "mod_code": [
+        "int c , c [ 1010 ] ;",
+        "for ( int j = 1 ; j <= _n ; j ++ ) { dp [ i ] [ j ] = ( dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j - 1 ] ) % 1000000007 ; }"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int c [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        8,
+        13
+      ],
+      "mod_code": [
+        "int c , c [ 1010 ] ;",
+        "for ( int j = 1 ; j <= _n ; j ++ ) { dp [ i ] [ j ] = ( dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j - 1 ] ) % 1000000007 ; }",
+        "ans = ( ans * dp [ sum + c [ i ] - 1 ] ) % 1000000007 ] [ c [ i ] - 1 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int c [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        8,
+        13,
+        12
+      ],
+      "mod_code": [
+        "int c , c [ 1010 ] ;",
+        "for ( int j = 1 ; j <= _n ; j ++ ) { dp [ i ] [ j ] = ( dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j - 1 ] ) % 1000000007 ; }",
+        "ans = ( ans * dp [ sum + c [ i ] - 1 ] ) % 1000000007 ] [ c [ i ] - 1 ] ;",
+        "for ( int i = 0 , _n = _n ( k ) ; i < _n ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int c [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        8,
+        13,
+        16
+      ],
+      "mod_code": [
+        "int c , c [ 1010 ] ;",
+        "for ( int j = 1 ; j <= _n ; j ++ ) { dp [ i ] [ j ] = ( dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j - 1 ] ) % 1000000007 ; }",
+        "ans = ( ans * dp [ sum + c [ i ] - 1 ] ) % 1000000007 ] [ c [ i ] - 1 ] ;",
+        "cout << ans ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int c [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        8,
+        12
+      ],
+      "mod_code": [
+        "int c , c [ 1010 ] ;",
+        "for ( int j = 1 ; j <= _n ; j ++ ) { dp [ i ] [ j ] = ( dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j - 1 ] ) % 1000000007 ; }",
+        "for ( int i = 0 , _n = _n ( k ) ; i < _n ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int c [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        8,
+        12,
+        16
+      ],
+      "mod_code": [
+        "int c , c [ 1010 ] ;",
+        "for ( int j = 1 ; j <= _n ; j ++ ) { dp [ i ] [ j ] = ( dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j - 1 ] ) % 1000000007 ; }",
+        "for ( int i = 0 , _n = _n ( k ) ; i < _n ; i ++ )",
+        "cout << ans ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int c [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        8,
+        16
+      ],
+      "mod_code": [
+        "int c , c [ 1010 ] ;",
+        "for ( int j = 1 ; j <= _n ; j ++ ) { dp [ i ] [ j ] = ( dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j - 1 ] ) % 1000000007 ; }",
+        "cout << ans ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int c [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        13
+      ],
+      "mod_code": [
+        "int c , c [ 1010 ] ;",
+        "ans = ( ans * dp [ sum + c [ i ] - 1 ] ) % 1000000007 ] [ c [ i ] - 1 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int c [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        13,
+        12
+      ],
+      "mod_code": [
+        "int c , c [ 1010 ] ;",
+        "ans = ( ans * dp [ sum + c [ i ] - 1 ] ) % 1000000007 ] [ c [ i ] - 1 ] ;",
+        "for ( int i = 0 , _n = _n ( k ) ; i < _n ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int c [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        13,
+        12,
+        16
+      ],
+      "mod_code": [
+        "int c , c [ 1010 ] ;",
+        "ans = ( ans * dp [ sum + c [ i ] - 1 ] ) % 1000000007 ] [ c [ i ] - 1 ] ;",
+        "for ( int i = 0 , _n = _n ( k ) ; i < _n ; i ++ )",
+        "cout << ans ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int c [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        13,
+        16
+      ],
+      "mod_code": [
+        "int c , c [ 1010 ] ;",
+        "ans = ( ans * dp [ sum + c [ i ] - 1 ] ) % 1000000007 ] [ c [ i ] - 1 ] ;",
+        "cout << ans ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int c [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        12
+      ],
+      "mod_code": [
+        "int c , c [ 1010 ] ;",
+        "for ( int i = 0 , _n = _n ( k ) ; i < _n ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int c [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        12,
+        16
+      ],
+      "mod_code": [
+        "int c , c [ 1010 ] ;",
+        "for ( int i = 0 , _n = _n ( k ) ; i < _n ; i ++ )",
+        "cout << ans ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int c [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        16
+      ],
+      "mod_code": [
+        "int c , c [ 1010 ] ;",
+        "cout << ans ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int c [1010]’"
+    },
+    {
+      "mod_line": [
+        6,
+        8
+      ],
+      "mod_code": [
+        "for ( int i = 1 , _n = _n ( 1005 ) ; i <= _n ; i ++ )",
+        "for ( int j = 1 ; j <= _n ; j ++ ) { dp [ i ] [ j ] = ( dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j - 1 ] ) % 1000000007 ; }"
+      ],
+      "err_line": 6,
+      "err_msg": "‘_n’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        6,
+        8,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 1 , _n = _n ( 1005 ) ; i <= _n ; i ++ )",
+        "for ( int j = 1 ; j <= _n ; j ++ ) { dp [ i ] [ j ] = ( dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j - 1 ] ) % 1000000007 ; }",
+        "ans = ( ans * dp [ sum + c [ i ] - 1 ] ) % 1000000007 ] [ c [ i ] - 1 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘_n’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        6,
+        8,
+        13,
+        12
+      ],
+      "mod_code": [
+        "for ( int i = 1 , _n = _n ( 1005 ) ; i <= _n ; i ++ )",
+        "for ( int j = 1 ; j <= _n ; j ++ ) { dp [ i ] [ j ] = ( dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j - 1 ] ) % 1000000007 ; }",
+        "ans = ( ans * dp [ sum + c [ i ] - 1 ] ) % 1000000007 ] [ c [ i ] - 1 ] ;",
+        "for ( int i = 0 , _n = _n ( k ) ; i < _n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘_n’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        6,
+        8,
+        13,
+        16
+      ],
+      "mod_code": [
+        "for ( int i = 1 , _n = _n ( 1005 ) ; i <= _n ; i ++ )",
+        "for ( int j = 1 ; j <= _n ; j ++ ) { dp [ i ] [ j ] = ( dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j - 1 ] ) % 1000000007 ; }",
+        "ans = ( ans * dp [ sum + c [ i ] - 1 ] ) % 1000000007 ] [ c [ i ] - 1 ] ;",
+        "cout << ans ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘_n’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        6,
+        8,
+        12
+      ],
+      "mod_code": [
+        "for ( int i = 1 , _n = _n ( 1005 ) ; i <= _n ; i ++ )",
+        "for ( int j = 1 ; j <= _n ; j ++ ) { dp [ i ] [ j ] = ( dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j - 1 ] ) % 1000000007 ; }",
+        "for ( int i = 0 , _n = _n ( k ) ; i < _n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘_n’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        6,
+        8,
+        12,
+        16
+      ],
+      "mod_code": [
+        "for ( int i = 1 , _n = _n ( 1005 ) ; i <= _n ; i ++ )",
+        "for ( int j = 1 ; j <= _n ; j ++ ) { dp [ i ] [ j ] = ( dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j - 1 ] ) % 1000000007 ; }",
+        "for ( int i = 0 , _n = _n ( k ) ; i < _n ; i ++ )",
+        "cout << ans ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘_n’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        6,
+        8,
+        16
+      ],
+      "mod_code": [
+        "for ( int i = 1 , _n = _n ( 1005 ) ; i <= _n ; i ++ )",
+        "for ( int j = 1 ; j <= _n ; j ++ ) { dp [ i ] [ j ] = ( dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j - 1 ] ) % 1000000007 ; }",
+        "cout << ans ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘_n’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        6,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 1 , _n = _n ( 1005 ) ; i <= _n ; i ++ )",
+        "ans = ( ans * dp [ sum + c [ i ] - 1 ] ) % 1000000007 ] [ c [ i ] - 1 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘_n’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        6,
+        13,
+        12
+      ],
+      "mod_code": [
+        "for ( int i = 1 , _n = _n ( 1005 ) ; i <= _n ; i ++ )",
+        "ans = ( ans * dp [ sum + c [ i ] - 1 ] ) % 1000000007 ] [ c [ i ] - 1 ] ;",
+        "for ( int i = 0 , _n = _n ( k ) ; i < _n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘_n’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        6,
+        13,
+        12,
+        16
+      ],
+      "mod_code": [
+        "for ( int i = 1 , _n = _n ( 1005 ) ; i <= _n ; i ++ )",
+        "ans = ( ans * dp [ sum + c [ i ] - 1 ] ) % 1000000007 ] [ c [ i ] - 1 ] ;",
+        "for ( int i = 0 , _n = _n ( k ) ; i < _n ; i ++ )",
+        "cout << ans ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘_n’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        6,
+        13,
+        16
+      ],
+      "mod_code": [
+        "for ( int i = 1 , _n = _n ( 1005 ) ; i <= _n ; i ++ )",
+        "ans = ( ans * dp [ sum + c [ i ] - 1 ] ) % 1000000007 ] [ c [ i ] - 1 ] ;",
+        "cout << ans ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘_n’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        6,
+        12
+      ],
+      "mod_code": [
+        "for ( int i = 1 , _n = _n ( 1005 ) ; i <= _n ; i ++ )",
+        "for ( int i = 0 , _n = _n ( k ) ; i < _n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘_n’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        6,
+        12,
+        16
+      ],
+      "mod_code": [
+        "for ( int i = 1 , _n = _n ( 1005 ) ; i <= _n ; i ++ )",
+        "for ( int i = 0 , _n = _n ( k ) ; i < _n ; i ++ )",
+        "cout << ans ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘_n’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        6,
+        16
+      ],
+      "mod_code": [
+        "for ( int i = 1 , _n = _n ( 1005 ) ; i <= _n ; i ++ )",
+        "cout << ans ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘_n’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        8,
+        13
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= _n ; j ++ ) { dp [ i ] [ j ] = ( dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j - 1 ] ) % 1000000007 ; }",
+        "ans = ( ans * dp [ sum + c [ i ] - 1 ] ) % 1000000007 ] [ c [ i ] - 1 ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid operands of types ‘long long int’ and ‘long long int [1010]’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        8,
+        13,
+        12
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= _n ; j ++ ) { dp [ i ] [ j ] = ( dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j - 1 ] ) % 1000000007 ; }",
+        "ans = ( ans * dp [ sum + c [ i ] - 1 ] ) % 1000000007 ] [ c [ i ] - 1 ] ;",
+        "for ( int i = 0 , _n = _n ( k ) ; i < _n ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "‘_n’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        8,
+        13,
+        12,
+        16
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= _n ; j ++ ) { dp [ i ] [ j ] = ( dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j - 1 ] ) % 1000000007 ; }",
+        "ans = ( ans * dp [ sum + c [ i ] - 1 ] ) % 1000000007 ] [ c [ i ] - 1 ] ;",
+        "for ( int i = 0 , _n = _n ( k ) ; i < _n ; i ++ )",
+        "cout << ans ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘_n’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        8,
+        13,
+        16
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= _n ; j ++ ) { dp [ i ] [ j ] = ( dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j - 1 ] ) % 1000000007 ; }",
+        "ans = ( ans * dp [ sum + c [ i ] - 1 ] ) % 1000000007 ] [ c [ i ] - 1 ] ;",
+        "cout << ans ;"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid operands of types ‘long long int’ and ‘long long int [1010]’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        8,
+        12
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= _n ; j ++ ) { dp [ i ] [ j ] = ( dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j - 1 ] ) % 1000000007 ; }",
+        "for ( int i = 0 , _n = _n ( k ) ; i < _n ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "‘_n’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        8,
+        12,
+        16
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= _n ; j ++ ) { dp [ i ] [ j ] = ( dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j ] + dp [ i - 1 ] [ j - 1 ] ) % 1000000007 ; }",
+        "for ( int i = 0 , _n = _n ( k ) ; i < _n ; i ++ )",
+        "cout << ans ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘_n’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        13,
+        12
+      ],
+      "mod_code": [
+        "ans = ( ans * dp [ sum + c [ i ] - 1 ] ) % 1000000007 ] [ c [ i ] - 1 ] ;",
+        "for ( int i = 0 , _n = _n ( k ) ; i < _n ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "‘_n’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        13,
+        12,
+        16
+      ],
+      "mod_code": [
+        "ans = ( ans * dp [ sum + c [ i ] - 1 ] ) % 1000000007 ] [ c [ i ] - 1 ] ;",
+        "for ( int i = 0 , _n = _n ( k ) ; i < _n ; i ++ )",
+        "cout << ans ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘_n’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        13,
+        16
+      ],
+      "mod_code": [
+        "ans = ( ans * dp [ sum + c [ i ] - 1 ] ) % 1000000007 ] [ c [ i ] - 1 ] ;",
+        "cout << ans ;"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid operands of types ‘long long int’ and ‘long long int [1010]’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        12,
+        16
+      ],
+      "mod_code": [
+        "for ( int i = 0 , _n = _n ( k ) ; i < _n ; i ++ )",
+        "cout << ans ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘_n’ cannot be used as a function"
+    }
+  ]
+}

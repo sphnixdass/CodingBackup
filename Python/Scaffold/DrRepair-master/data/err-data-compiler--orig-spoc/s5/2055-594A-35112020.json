@@ -1,0 +1,873 @@
+{
+  "meta": {
+    "index": 2055,
+    "hitid": "3Q7TKIAPOT4C7LPUS9PQ4JZ9IQ8DLS",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "594A",
+    "subid": "35112020"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create constant integer N with N = 1e5 + 5",
+      "code": "const int N = 1e5 + 5 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create constant integer M with M = 1e5 + 5",
+      "code": "const int M = 1e5 + 5 ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "create integers n , i create integer array s with size 2 * N",
+      "code": "int n , i , s [ 2 * N ] ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i = 0 to n exclusive , read s [ i ]",
+      "code": "for ( i = 0 ; i < n ; i ++ ) { cin >> s [ i ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "sort elements from s to s + n",
+      "code": "sort ( s , s + n ) ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "if n is 2",
+      "code": "if ( n == 2 )",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "print s [ 1 ] - s [ 0 ] print newline",
+      "code": "cout << s [ 1 ] - s [ 0 ] << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "create integer ans",
+      "code": "int ans ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "create integer tu with tu = ( n - 2 ) / 2",
+      "code": "int tu = ( n - 2 ) / 2 ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "for i = 1 + tu to n exclusive",
+      "code": "for ( i = 1 + tu ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "if i is 1 + tu",
+      "code": "if ( i == 1 + tu )",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "set ans to s [ i ] - s [ i - ( 1 + tu ) ]",
+      "code": "ans = s [ i ] - s [ i - ( 1 + tu ) ] ;",
+      "indent": 3
+    },
+    {
+      "line": 16,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "set ans to minimum of ans and s [ i ] - s [ i - ( 1 + tu ) ]",
+      "code": "ans = min ( ans , s [ i ] - s [ i - ( 1 + tu ) ] ) ;",
+      "indent": 3
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "print ans print newline",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "int n , s [ 2 * N ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "sort ( s . begin ( ) , s + n ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘begin’ in ‘s’, which is of non-class type ‘int [200010]’"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "long long ans ;"
+      ],
+      "err_line": 17,
+      "err_msg": "no matching function for call to ‘min(long long int&, int)’"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "ans = min ( ans , s [ i ] - s [ i - tu ) ] ] ;"
+      ],
+      "err_line": 17,
+      "err_msg": "expected ‘]’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        11,
+        3
+      ],
+      "mod_code": [
+        "long long ans ;",
+        "int n , s [ 2 * N ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        3,
+        15
+      ],
+      "mod_code": [
+        "long long ans ;",
+        "int n , s [ 2 * N ] ;",
+        "ans = s [ i ] - s [ i - tu - tu ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        3,
+        15,
+        14
+      ],
+      "mod_code": [
+        "long long ans ;",
+        "int n , s [ 2 * N ] ;",
+        "ans = s [ i ] - s [ i - tu - tu ] ;",
+        "if ( i == 1 )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        3,
+        15,
+        17
+      ],
+      "mod_code": [
+        "long long ans ;",
+        "int n , s [ 2 * N ] ;",
+        "ans = s [ i ] - s [ i - tu - tu ] ;",
+        "ans = min ( ans , s [ i ] - s [ i - tu ) ] ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        3,
+        15,
+        6
+      ],
+      "mod_code": [
+        "long long ans ;",
+        "int n , s [ 2 * N ] ;",
+        "ans = s [ i ] - s [ i - tu - tu ] ;",
+        "sort ( s . begin ( ) , s + n ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        3,
+        14
+      ],
+      "mod_code": [
+        "long long ans ;",
+        "int n , s [ 2 * N ] ;",
+        "if ( i == 1 )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        3,
+        14,
+        17
+      ],
+      "mod_code": [
+        "long long ans ;",
+        "int n , s [ 2 * N ] ;",
+        "if ( i == 1 )",
+        "ans = min ( ans , s [ i ] - s [ i - tu ) ] ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        3,
+        14,
+        6
+      ],
+      "mod_code": [
+        "long long ans ;",
+        "int n , s [ 2 * N ] ;",
+        "if ( i == 1 )",
+        "sort ( s . begin ( ) , s + n ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        3,
+        17
+      ],
+      "mod_code": [
+        "long long ans ;",
+        "int n , s [ 2 * N ] ;",
+        "ans = min ( ans , s [ i ] - s [ i - tu ) ] ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        3,
+        17,
+        6
+      ],
+      "mod_code": [
+        "long long ans ;",
+        "int n , s [ 2 * N ] ;",
+        "ans = min ( ans , s [ i ] - s [ i - tu ) ] ] ;",
+        "sort ( s . begin ( ) , s + n ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        3,
+        6
+      ],
+      "mod_code": [
+        "long long ans ;",
+        "int n , s [ 2 * N ] ;",
+        "sort ( s . begin ( ) , s + n ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        15
+      ],
+      "mod_code": [
+        "long long ans ;",
+        "ans = s [ i ] - s [ i - tu - tu ] ;"
+      ],
+      "err_line": 17,
+      "err_msg": "no matching function for call to ‘min(long long int&, int)’"
+    },
+    {
+      "mod_line": [
+        11,
+        15,
+        14
+      ],
+      "mod_code": [
+        "long long ans ;",
+        "ans = s [ i ] - s [ i - tu - tu ] ;",
+        "if ( i == 1 )"
+      ],
+      "err_line": 17,
+      "err_msg": "no matching function for call to ‘min(long long int&, int)’"
+    },
+    {
+      "mod_line": [
+        11,
+        15,
+        14,
+        17
+      ],
+      "mod_code": [
+        "long long ans ;",
+        "ans = s [ i ] - s [ i - tu - tu ] ;",
+        "if ( i == 1 )",
+        "ans = min ( ans , s [ i ] - s [ i - tu ) ] ] ;"
+      ],
+      "err_line": 17,
+      "err_msg": "expected ‘]’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        11,
+        15,
+        14,
+        6
+      ],
+      "mod_code": [
+        "long long ans ;",
+        "ans = s [ i ] - s [ i - tu - tu ] ;",
+        "if ( i == 1 )",
+        "sort ( s . begin ( ) , s + n ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘begin’ in ‘s’, which is of non-class type ‘int [200010]’"
+    },
+    {
+      "mod_line": [
+        11,
+        15,
+        17
+      ],
+      "mod_code": [
+        "long long ans ;",
+        "ans = s [ i ] - s [ i - tu - tu ] ;",
+        "ans = min ( ans , s [ i ] - s [ i - tu ) ] ] ;"
+      ],
+      "err_line": 17,
+      "err_msg": "expected ‘]’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        11,
+        15,
+        17,
+        6
+      ],
+      "mod_code": [
+        "long long ans ;",
+        "ans = s [ i ] - s [ i - tu - tu ] ;",
+        "ans = min ( ans , s [ i ] - s [ i - tu ) ] ] ;",
+        "sort ( s . begin ( ) , s + n ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘begin’ in ‘s’, which is of non-class type ‘int [200010]’"
+    },
+    {
+      "mod_line": [
+        11,
+        15,
+        6
+      ],
+      "mod_code": [
+        "long long ans ;",
+        "ans = s [ i ] - s [ i - tu - tu ] ;",
+        "sort ( s . begin ( ) , s + n ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘begin’ in ‘s’, which is of non-class type ‘int [200010]’"
+    },
+    {
+      "mod_line": [
+        11,
+        14
+      ],
+      "mod_code": [
+        "long long ans ;",
+        "if ( i == 1 )"
+      ],
+      "err_line": 17,
+      "err_msg": "no matching function for call to ‘min(long long int&, int)’"
+    },
+    {
+      "mod_line": [
+        11,
+        14,
+        17
+      ],
+      "mod_code": [
+        "long long ans ;",
+        "if ( i == 1 )",
+        "ans = min ( ans , s [ i ] - s [ i - tu ) ] ] ;"
+      ],
+      "err_line": 17,
+      "err_msg": "expected ‘]’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        11,
+        14,
+        17,
+        6
+      ],
+      "mod_code": [
+        "long long ans ;",
+        "if ( i == 1 )",
+        "ans = min ( ans , s [ i ] - s [ i - tu ) ] ] ;",
+        "sort ( s . begin ( ) , s + n ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘begin’ in ‘s’, which is of non-class type ‘int [200010]’"
+    },
+    {
+      "mod_line": [
+        11,
+        14,
+        6
+      ],
+      "mod_code": [
+        "long long ans ;",
+        "if ( i == 1 )",
+        "sort ( s . begin ( ) , s + n ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘begin’ in ‘s’, which is of non-class type ‘int [200010]’"
+    },
+    {
+      "mod_line": [
+        11,
+        17
+      ],
+      "mod_code": [
+        "long long ans ;",
+        "ans = min ( ans , s [ i ] - s [ i - tu ) ] ] ;"
+      ],
+      "err_line": 17,
+      "err_msg": "expected ‘]’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        11,
+        17,
+        6
+      ],
+      "mod_code": [
+        "long long ans ;",
+        "ans = min ( ans , s [ i ] - s [ i - tu ) ] ] ;",
+        "sort ( s . begin ( ) , s + n ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘begin’ in ‘s’, which is of non-class type ‘int [200010]’"
+    },
+    {
+      "mod_line": [
+        11,
+        6
+      ],
+      "mod_code": [
+        "long long ans ;",
+        "sort ( s . begin ( ) , s + n ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘begin’ in ‘s’, which is of non-class type ‘int [200010]’"
+    },
+    {
+      "mod_line": [
+        3,
+        15
+      ],
+      "mod_code": [
+        "int n , s [ 2 * N ] ;",
+        "ans = s [ i ] - s [ i - tu - tu ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        15,
+        14
+      ],
+      "mod_code": [
+        "int n , s [ 2 * N ] ;",
+        "ans = s [ i ] - s [ i - tu - tu ] ;",
+        "if ( i == 1 )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        15,
+        14,
+        17
+      ],
+      "mod_code": [
+        "int n , s [ 2 * N ] ;",
+        "ans = s [ i ] - s [ i - tu - tu ] ;",
+        "if ( i == 1 )",
+        "ans = min ( ans , s [ i ] - s [ i - tu ) ] ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        15,
+        14,
+        6
+      ],
+      "mod_code": [
+        "int n , s [ 2 * N ] ;",
+        "ans = s [ i ] - s [ i - tu - tu ] ;",
+        "if ( i == 1 )",
+        "sort ( s . begin ( ) , s + n ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        15,
+        17
+      ],
+      "mod_code": [
+        "int n , s [ 2 * N ] ;",
+        "ans = s [ i ] - s [ i - tu - tu ] ;",
+        "ans = min ( ans , s [ i ] - s [ i - tu ) ] ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        15,
+        17,
+        6
+      ],
+      "mod_code": [
+        "int n , s [ 2 * N ] ;",
+        "ans = s [ i ] - s [ i - tu - tu ] ;",
+        "ans = min ( ans , s [ i ] - s [ i - tu ) ] ] ;",
+        "sort ( s . begin ( ) , s + n ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        15,
+        6
+      ],
+      "mod_code": [
+        "int n , s [ 2 * N ] ;",
+        "ans = s [ i ] - s [ i - tu - tu ] ;",
+        "sort ( s . begin ( ) , s + n ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        14
+      ],
+      "mod_code": [
+        "int n , s [ 2 * N ] ;",
+        "if ( i == 1 )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        14,
+        17
+      ],
+      "mod_code": [
+        "int n , s [ 2 * N ] ;",
+        "if ( i == 1 )",
+        "ans = min ( ans , s [ i ] - s [ i - tu ) ] ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        14,
+        17,
+        6
+      ],
+      "mod_code": [
+        "int n , s [ 2 * N ] ;",
+        "if ( i == 1 )",
+        "ans = min ( ans , s [ i ] - s [ i - tu ) ] ] ;",
+        "sort ( s . begin ( ) , s + n ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        14,
+        6
+      ],
+      "mod_code": [
+        "int n , s [ 2 * N ] ;",
+        "if ( i == 1 )",
+        "sort ( s . begin ( ) , s + n ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        17
+      ],
+      "mod_code": [
+        "int n , s [ 2 * N ] ;",
+        "ans = min ( ans , s [ i ] - s [ i - tu ) ] ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        17,
+        6
+      ],
+      "mod_code": [
+        "int n , s [ 2 * N ] ;",
+        "ans = min ( ans , s [ i ] - s [ i - tu ) ] ] ;",
+        "sort ( s . begin ( ) , s + n ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        6
+      ],
+      "mod_code": [
+        "int n , s [ 2 * N ] ;",
+        "sort ( s . begin ( ) , s + n ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        14,
+        17
+      ],
+      "mod_code": [
+        "ans = s [ i ] - s [ i - tu - tu ] ;",
+        "if ( i == 1 )",
+        "ans = min ( ans , s [ i ] - s [ i - tu ) ] ] ;"
+      ],
+      "err_line": 17,
+      "err_msg": "expected ‘]’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        15,
+        14,
+        17,
+        6
+      ],
+      "mod_code": [
+        "ans = s [ i ] - s [ i - tu - tu ] ;",
+        "if ( i == 1 )",
+        "ans = min ( ans , s [ i ] - s [ i - tu ) ] ] ;",
+        "sort ( s . begin ( ) , s + n ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘begin’ in ‘s’, which is of non-class type ‘int [200010]’"
+    },
+    {
+      "mod_line": [
+        15,
+        14,
+        6
+      ],
+      "mod_code": [
+        "ans = s [ i ] - s [ i - tu - tu ] ;",
+        "if ( i == 1 )",
+        "sort ( s . begin ( ) , s + n ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘begin’ in ‘s’, which is of non-class type ‘int [200010]’"
+    },
+    {
+      "mod_line": [
+        15,
+        17
+      ],
+      "mod_code": [
+        "ans = s [ i ] - s [ i - tu - tu ] ;",
+        "ans = min ( ans , s [ i ] - s [ i - tu ) ] ] ;"
+      ],
+      "err_line": 17,
+      "err_msg": "expected ‘]’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        15,
+        17,
+        6
+      ],
+      "mod_code": [
+        "ans = s [ i ] - s [ i - tu - tu ] ;",
+        "ans = min ( ans , s [ i ] - s [ i - tu ) ] ] ;",
+        "sort ( s . begin ( ) , s + n ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘begin’ in ‘s’, which is of non-class type ‘int [200010]’"
+    },
+    {
+      "mod_line": [
+        15,
+        6
+      ],
+      "mod_code": [
+        "ans = s [ i ] - s [ i - tu - tu ] ;",
+        "sort ( s . begin ( ) , s + n ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘begin’ in ‘s’, which is of non-class type ‘int [200010]’"
+    },
+    {
+      "mod_line": [
+        14,
+        17
+      ],
+      "mod_code": [
+        "if ( i == 1 )",
+        "ans = min ( ans , s [ i ] - s [ i - tu ) ] ] ;"
+      ],
+      "err_line": 17,
+      "err_msg": "expected ‘]’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        17,
+        6
+      ],
+      "mod_code": [
+        "if ( i == 1 )",
+        "ans = min ( ans , s [ i ] - s [ i - tu ) ] ] ;",
+        "sort ( s . begin ( ) , s + n ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘begin’ in ‘s’, which is of non-class type ‘int [200010]’"
+    },
+    {
+      "mod_line": [
+        14,
+        6
+      ],
+      "mod_code": [
+        "if ( i == 1 )",
+        "sort ( s . begin ( ) , s + n ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘begin’ in ‘s’, which is of non-class type ‘int [200010]’"
+    },
+    {
+      "mod_line": [
+        17,
+        6
+      ],
+      "mod_code": [
+        "ans = min ( ans , s [ i ] - s [ i - tu ) ] ] ;",
+        "sort ( s . begin ( ) , s + n ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘begin’ in ‘s’, which is of non-class type ‘int [200010]’"
+    }
+  ]
+}

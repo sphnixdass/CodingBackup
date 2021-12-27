@@ -1,0 +1,863 @@
+{
+  "meta": {
+    "index": 1178,
+    "hitid": "311HQEI8RSAGV15OGXDDC60BBOF7ZE",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "797A",
+    "subid": "41981764"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare integer array is_prime size 200000",
+      "code": "int is_prime [ 200000 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare integer array prime size 20000",
+      "code": "int prime [ 20000 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "declare n , k as integers",
+      "code": "int n , k ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "declare integer array num size 20000",
+      "code": "int num [ 20000 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "declare cnt = 0 as integer",
+      "code": "int cnt = 0 ;",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "declare integer array temp size 20000",
+      "code": "int temp [ 20000 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 6,
+      "text": "declare shai with no arguments , returning void",
+      "code": "void shai ( )",
+      "indent": 0
+    },
+    {
+      "line": 7,
+      "text": "for i = 2 to 100000 inclusive",
+      "code": "for ( int i = 2 ; i <= 100000 ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "if not is_prime [ i ]",
+      "code": "if ( ! is_prime [ i ] )",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "let prime [ increment cnt ] be i",
+      "code": "prime [ ++ cnt ] = i ;",
+      "indent": 3
+    },
+    {
+      "line": 10,
+      "text": "for j = i + i to 100000 inclusive , incrementing j by i , let is_prime [ j ] be 1",
+      "code": "for ( int j = i + i ; j <= 100000 ; j += i ) { is_prime [ j ] = 1 ; }",
+      "indent": 3
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 15,
+      "text": "run shai",
+      "code": "shai ( ) ;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "read n , k",
+      "code": "cin >> n >> k ;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "declare sum = 0 as integer",
+      "code": "int sum = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "declare ans = 1 as integer",
+      "code": "int ans = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "for i = 1 to cnt inclusive",
+      "code": "for ( int i = 1 ; i <= cnt ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "while n % prime [ i ] is 0",
+      "code": "while ( n % prime [ i ] == 0 )",
+      "indent": 2
+    },
+    {
+      "line": 21,
+      "text": "increment num [ i ]",
+      "code": "num [ i ] ++ ;",
+      "indent": 3
+    },
+    {
+      "line": 22,
+      "text": "if increment sum is less than k",
+      "code": "if ( ++ sum < k )",
+      "indent": 3
+    },
+    {
+      "line": 23,
+      "text": "let temp [ sum ] be prime [ i ]",
+      "code": "temp [ sum ] = prime [ i ] ;",
+      "indent": 4
+    },
+    {
+      "line": 24,
+      "text": "else",
+      "code": "else",
+      "indent": 3
+    },
+    {
+      "line": 25,
+      "text": "let ans be ans * prime [ i ]",
+      "code": "ans *= prime [ i ] ;",
+      "indent": 4
+    },
+    {
+      "line": 26,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 27,
+      "text": "let n be n / prime [ i ]",
+      "code": "n /= prime [ i ] ;",
+      "indent": 3
+    },
+    {
+      "line": 28,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 29,
+      "text": "if n is 1 , end loop",
+      "code": "if ( n == 1 ) break ;",
+      "indent": 2
+    },
+    {
+      "line": 30,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 31,
+      "text": "if sum is less than k",
+      "code": "if ( sum < k )",
+      "indent": 1
+    },
+    {
+      "line": 32,
+      "text": "print - 1 and newline",
+      "code": "cout << - 1 << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 33,
+      "text": "else",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 34,
+      "text": "for i = 1 to k exclusive , print temp [ i ] , \" \"",
+      "code": "for ( int i = 1 ; i < k ; i ++ ) { cout << temp [ i ] << \" \" ; }",
+      "indent": 2
+    },
+    {
+      "line": 35,
+      "text": "print ans , newline",
+      "code": "cout << ans << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 36,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 37,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 38,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "void shai ( ) { }"
+      ],
+      "err_line": 7,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int arr [ 200000 ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘is_prime’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "int * temp [ 20000 ] ;"
+      ],
+      "err_line": 23,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= 100000 ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "shai ( )"
+      ],
+      "err_line": 16,
+      "err_msg": "expected ‘;’ before ‘cin’"
+    },
+    {
+      "mod_line": [
+        19
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= cnt ; i ++ )"
+      ],
+      "err_line": 19,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        9
+      ],
+      "mod_code": [
+        "void shai ( ) { }",
+        "prime [ cnt ++ ] = i ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        9,
+        22
+      ],
+      "mod_code": [
+        "void shai ( ) { }",
+        "prime [ cnt ++ ] = i ;",
+        "if ( sum < k )"
+      ],
+      "err_line": 7,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        9,
+        22,
+        20
+      ],
+      "mod_code": [
+        "void shai ( ) { }",
+        "prime [ cnt ++ ] = i ;",
+        "if ( sum < k )",
+        "while ( n % prime [ i ] == ' 0 ' )"
+      ],
+      "err_line": 7,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        9,
+        22,
+        15
+      ],
+      "mod_code": [
+        "void shai ( ) { }",
+        "prime [ cnt ++ ] = i ;",
+        "if ( sum < k )",
+        "shai ( )"
+      ],
+      "err_line": 7,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        9,
+        22,
+        23
+      ],
+      "mod_code": [
+        "void shai ( ) { }",
+        "prime [ cnt ++ ] = i ;",
+        "if ( sum < k )",
+        "temp [ ' sum ' ] = prime [ i ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        9,
+        20
+      ],
+      "mod_code": [
+        "void shai ( ) { }",
+        "prime [ cnt ++ ] = i ;",
+        "while ( n % prime [ i ] == ' 0 ' )"
+      ],
+      "err_line": 7,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        9,
+        20,
+        15
+      ],
+      "mod_code": [
+        "void shai ( ) { }",
+        "prime [ cnt ++ ] = i ;",
+        "while ( n % prime [ i ] == ' 0 ' )",
+        "shai ( )"
+      ],
+      "err_line": 7,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        9,
+        20,
+        23
+      ],
+      "mod_code": [
+        "void shai ( ) { }",
+        "prime [ cnt ++ ] = i ;",
+        "while ( n % prime [ i ] == ' 0 ' )",
+        "temp [ ' sum ' ] = prime [ i ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        9,
+        15
+      ],
+      "mod_code": [
+        "void shai ( ) { }",
+        "prime [ cnt ++ ] = i ;",
+        "shai ( )"
+      ],
+      "err_line": 7,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        9,
+        15,
+        23
+      ],
+      "mod_code": [
+        "void shai ( ) { }",
+        "prime [ cnt ++ ] = i ;",
+        "shai ( )",
+        "temp [ ' sum ' ] = prime [ i ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        9,
+        23
+      ],
+      "mod_code": [
+        "void shai ( ) { }",
+        "prime [ cnt ++ ] = i ;",
+        "temp [ ' sum ' ] = prime [ i ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        22
+      ],
+      "mod_code": [
+        "void shai ( ) { }",
+        "if ( sum < k )"
+      ],
+      "err_line": 7,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        22,
+        20
+      ],
+      "mod_code": [
+        "void shai ( ) { }",
+        "if ( sum < k )",
+        "while ( n % prime [ i ] == ' 0 ' )"
+      ],
+      "err_line": 7,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        22,
+        20,
+        15
+      ],
+      "mod_code": [
+        "void shai ( ) { }",
+        "if ( sum < k )",
+        "while ( n % prime [ i ] == ' 0 ' )",
+        "shai ( )"
+      ],
+      "err_line": 7,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        22,
+        20,
+        23
+      ],
+      "mod_code": [
+        "void shai ( ) { }",
+        "if ( sum < k )",
+        "while ( n % prime [ i ] == ' 0 ' )",
+        "temp [ ' sum ' ] = prime [ i ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        22,
+        15
+      ],
+      "mod_code": [
+        "void shai ( ) { }",
+        "if ( sum < k )",
+        "shai ( )"
+      ],
+      "err_line": 7,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        22,
+        15,
+        23
+      ],
+      "mod_code": [
+        "void shai ( ) { }",
+        "if ( sum < k )",
+        "shai ( )",
+        "temp [ ' sum ' ] = prime [ i ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        22,
+        23
+      ],
+      "mod_code": [
+        "void shai ( ) { }",
+        "if ( sum < k )",
+        "temp [ ' sum ' ] = prime [ i ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        20
+      ],
+      "mod_code": [
+        "void shai ( ) { }",
+        "while ( n % prime [ i ] == ' 0 ' )"
+      ],
+      "err_line": 7,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        20,
+        15
+      ],
+      "mod_code": [
+        "void shai ( ) { }",
+        "while ( n % prime [ i ] == ' 0 ' )",
+        "shai ( )"
+      ],
+      "err_line": 7,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        20,
+        15,
+        23
+      ],
+      "mod_code": [
+        "void shai ( ) { }",
+        "while ( n % prime [ i ] == ' 0 ' )",
+        "shai ( )",
+        "temp [ ' sum ' ] = prime [ i ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        20,
+        23
+      ],
+      "mod_code": [
+        "void shai ( ) { }",
+        "while ( n % prime [ i ] == ' 0 ' )",
+        "temp [ ' sum ' ] = prime [ i ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        15
+      ],
+      "mod_code": [
+        "void shai ( ) { }",
+        "shai ( )"
+      ],
+      "err_line": 7,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        15,
+        23
+      ],
+      "mod_code": [
+        "void shai ( ) { }",
+        "shai ( )",
+        "temp [ ' sum ' ] = prime [ i ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        23
+      ],
+      "mod_code": [
+        "void shai ( ) { }",
+        "temp [ ' sum ' ] = prime [ i ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        9,
+        22,
+        20,
+        15
+      ],
+      "mod_code": [
+        "prime [ cnt ++ ] = i ;",
+        "if ( sum < k )",
+        "while ( n % prime [ i ] == ' 0 ' )",
+        "shai ( )"
+      ],
+      "err_line": 16,
+      "err_msg": "expected ‘;’ before ‘cin’"
+    },
+    {
+      "mod_line": [
+        9,
+        22,
+        15
+      ],
+      "mod_code": [
+        "prime [ cnt ++ ] = i ;",
+        "if ( sum < k )",
+        "shai ( )"
+      ],
+      "err_line": 16,
+      "err_msg": "expected ‘;’ before ‘cin’"
+    },
+    {
+      "mod_line": [
+        9,
+        22,
+        15,
+        23
+      ],
+      "mod_code": [
+        "prime [ cnt ++ ] = i ;",
+        "if ( sum < k )",
+        "shai ( )",
+        "temp [ ' sum ' ] = prime [ i ] ;"
+      ],
+      "err_line": 16,
+      "err_msg": "expected ‘;’ before ‘cin’"
+    },
+    {
+      "mod_line": [
+        9,
+        20,
+        15
+      ],
+      "mod_code": [
+        "prime [ cnt ++ ] = i ;",
+        "while ( n % prime [ i ] == ' 0 ' )",
+        "shai ( )"
+      ],
+      "err_line": 16,
+      "err_msg": "expected ‘;’ before ‘cin’"
+    },
+    {
+      "mod_line": [
+        9,
+        20,
+        15,
+        23
+      ],
+      "mod_code": [
+        "prime [ cnt ++ ] = i ;",
+        "while ( n % prime [ i ] == ' 0 ' )",
+        "shai ( )",
+        "temp [ ' sum ' ] = prime [ i ] ;"
+      ],
+      "err_line": 16,
+      "err_msg": "expected ‘;’ before ‘cin’"
+    },
+    {
+      "mod_line": [
+        9,
+        15
+      ],
+      "mod_code": [
+        "prime [ cnt ++ ] = i ;",
+        "shai ( )"
+      ],
+      "err_line": 16,
+      "err_msg": "expected ‘;’ before ‘cin’"
+    },
+    {
+      "mod_line": [
+        9,
+        15,
+        23
+      ],
+      "mod_code": [
+        "prime [ cnt ++ ] = i ;",
+        "shai ( )",
+        "temp [ ' sum ' ] = prime [ i ] ;"
+      ],
+      "err_line": 16,
+      "err_msg": "expected ‘;’ before ‘cin’"
+    },
+    {
+      "mod_line": [
+        22,
+        20,
+        15
+      ],
+      "mod_code": [
+        "if ( sum < k )",
+        "while ( n % prime [ i ] == ' 0 ' )",
+        "shai ( )"
+      ],
+      "err_line": 16,
+      "err_msg": "expected ‘;’ before ‘cin’"
+    },
+    {
+      "mod_line": [
+        22,
+        20,
+        15,
+        23
+      ],
+      "mod_code": [
+        "if ( sum < k )",
+        "while ( n % prime [ i ] == ' 0 ' )",
+        "shai ( )",
+        "temp [ ' sum ' ] = prime [ i ] ;"
+      ],
+      "err_line": 16,
+      "err_msg": "expected ‘;’ before ‘cin’"
+    },
+    {
+      "mod_line": [
+        22,
+        15
+      ],
+      "mod_code": [
+        "if ( sum < k )",
+        "shai ( )"
+      ],
+      "err_line": 16,
+      "err_msg": "expected ‘;’ before ‘cin’"
+    },
+    {
+      "mod_line": [
+        22,
+        15,
+        23
+      ],
+      "mod_code": [
+        "if ( sum < k )",
+        "shai ( )",
+        "temp [ ' sum ' ] = prime [ i ] ;"
+      ],
+      "err_line": 16,
+      "err_msg": "expected ‘;’ before ‘cin’"
+    },
+    {
+      "mod_line": [
+        20,
+        15
+      ],
+      "mod_code": [
+        "while ( n % prime [ i ] == ' 0 ' )",
+        "shai ( )"
+      ],
+      "err_line": 16,
+      "err_msg": "expected ‘;’ before ‘cin’"
+    },
+    {
+      "mod_line": [
+        20,
+        15,
+        23
+      ],
+      "mod_code": [
+        "while ( n % prime [ i ] == ' 0 ' )",
+        "shai ( )",
+        "temp [ ' sum ' ] = prime [ i ] ;"
+      ],
+      "err_line": 16,
+      "err_msg": "expected ‘;’ before ‘cin’"
+    },
+    {
+      "mod_line": [
+        15,
+        23
+      ],
+      "mod_code": [
+        "shai ( )",
+        "temp [ ' sum ' ] = prime [ i ] ;"
+      ],
+      "err_line": 16,
+      "err_msg": "expected ‘;’ before ‘cin’"
+    }
+  ]
+}

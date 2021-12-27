@@ -1,0 +1,103 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+              
+        // Function to check if brackets are balanced
+        function areBracketsBalanced(expr)
+        {
+            
+            // Using ArrayDeque is faster
+            // than using Stack class
+            let stack = [];
+        
+            // Traversing the Expression
+            for(let i = 0; i < expr.length; i++)
+            {
+                let x = expr[i];
+        
+                if (x == '(' || x == '[' || x == '{')
+                {
+                    
+                    // Push the element in the stack
+                    stack.push(x);
+                    continue;
+                }
+        
+                // If current character is not opening
+                // bracket, then it must be closing.
+                // So stack cannot be empty at this point.
+                if (stack.length == 0)
+                    return false;
+                    
+                let check;
+                switch (x){
+                case ')':
+                    check = stack.pop();
+                    if (check == '{' || check == '[')
+                        return false;
+                    break;
+        
+                case '}':
+                    check = stack.pop();
+                    if (check == '(' || check == '[')
+                        return false;
+                    break;
+        
+                case ']':
+                    check = stack.pop();
+                    if (check == '(' || check == '{')
+                        return false;
+                    break;
+                }
+            }
+        
+            // Check Empty Stack
+            return (stack.length == 0);
+        }
+        
+       
+        
+        </script>
+        
+</head>
+<body>
+    
+    <h1>Balanced Parentheses ---- By Gnanadass S.</h1>
+    <script>
+         // example 1
+         let expr = "([{Dass}])";
+        
+        // Function call
+        if (areBracketsBalanced(expr))
+            document.write("Balanced for given expression " + expr + "<br>");
+        else
+            document.write("Not Balanced for given expression " + expr + "<br>");
+
+
+            // example 1
+         let expr2 = "([{Dass}, {Chris}, {Caleb}][2])";
+        
+        // Function call
+        if (areBracketsBalanced(expr2))
+            document.write("Balanced for given expression " + expr2 + "<br>");
+        else
+            document.write("Not Balanced for given expression " + expr2 + "<br>");
+
+     // example 1
+     let expr3 = "([{Dass}, {Chris}, }{{Caleb}][2])";
+        
+        // Function call
+        if (areBracketsBalanced(expr3))
+            document.write("Balanced for given expression " + expr3 + "<br>");
+        else
+            document.write("Not Balanced for given expression " + expr3 + "<br>");
+
+
+</script>
+</body>
+</html>

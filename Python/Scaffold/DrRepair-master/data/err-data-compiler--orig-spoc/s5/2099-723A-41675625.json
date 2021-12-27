@@ -1,0 +1,103 @@
+{
+  "meta": {
+    "index": 2099,
+    "hitid": "3QREJ3J433RKLRV4KQBD8WUZ2ZAKLH",
+    "workerid": "A1EKVUFWL7OJMO",
+    "probid": "723A",
+    "subid": "41675625"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "a = integer array of size 3",
+      "code": "int a [ 3 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read a [ 0 ] , a [ 1 ] , a [ 2 ]",
+      "code": "cin >> a [ 0 ] >> a [ 1 ] >> a [ 2 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "sort a and a + 3",
+      "code": "sort ( a , a + 3 ) ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "print ( a [ 2 ] - a [ 0 ] )",
+      "code": "cout << ( a [ 2 ] - a [ 0 ] ) << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "cout << a [ 0 ] >> a [ 1 ] >> a [ 2 ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_ostream<char>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        2,
+        3
+      ],
+      "mod_code": [
+        "cout << a [ 0 ] >> a [ 1 ] >> a [ 2 ] ;",
+        "sort ( a + 3 , a + 3 ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_ostream<char>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        1
+      ],
+      "mod_code": [
+        "cout << a [ 0 ] >> a [ 1 ] >> a [ 2 ] ;",
+        "sort ( a + 3 , a + 3 ) ;",
+        "char a [ 3 ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_ostream<char>’ and ‘char’)"
+    },
+    {
+      "mod_line": [
+        2,
+        1
+      ],
+      "mod_code": [
+        "cout << a [ 0 ] >> a [ 1 ] >> a [ 2 ] ;",
+        "char a [ 3 ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_ostream<char>’ and ‘char’)"
+    }
+  ]
+}

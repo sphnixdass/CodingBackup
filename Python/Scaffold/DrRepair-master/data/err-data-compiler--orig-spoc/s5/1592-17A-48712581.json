@@ -1,0 +1,807 @@
+{
+  "meta": {
+    "index": 1592,
+    "hitid": "3E9ZFLPWOYMOFQM5Y6TP6AA9G2FXIK",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "17A",
+    "subid": "48712581"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create constant integer SZ = 1003",
+      "code": "const int SZ = 1003 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "isprime is an array of booleans with size SZ",
+      "code": "bool isprime [ SZ ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "in the function sieve",
+      "code": "void sieve ( )",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "invoke fill with arguments isprime , isprime + SZ and 1",
+      "code": "fill ( isprime , isprime + SZ , 1 ) ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "isprime [ 1 ] and isprime [ 0 ] = 0",
+      "code": "isprime [ 0 ] = isprime [ 1 ] = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for integer i = 2 to SZ exclusive",
+      "code": "for ( int i = 2 ; i * i < SZ ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "if isprime [ i ] is true",
+      "code": "if ( isprime [ i ] )",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "for integer j = i * i to SZ exclusive incrementing by i , set iprime [ j ] to false",
+      "code": "for ( int j = i * i ; j < SZ ; j += i ) { isprime [ j ] = false ; }",
+      "indent": 3
+    },
+    {
+      "line": 8,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 11,
+      "text": "call function sieve",
+      "code": "sieve ( ) ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "create integers n and k",
+      "code": "int n , k ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "read n and k",
+      "code": "cin >> n >> k ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "primes = vector of integers",
+      "code": "vector < int > primes ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "for integer i = 0 to n inclusive",
+      "code": "for ( int i = 0 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "if isprime [ i ] is true , push i into primes",
+      "code": "if ( isprime [ i ] ) primes . push_back ( i ) ;",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "declare integer cnt = 0",
+      "code": "int cnt = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "for integer i = 1 to length of primes exclusive",
+      "code": "for ( int i = 1 ; i < primes . size ( ) ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "assign value primes [ i ] + primes [ i - 1 ] + 1 to the integer num",
+      "code": "int num = primes [ i ] + primes [ i - 1 ] + 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 20,
+      "text": "increment cnt if num < = n and isprime [ num ]",
+      "code": "if ( num <= n && isprime [ num ] ) cnt ++ ;",
+      "indent": 2
+    },
+    {
+      "line": 21,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 22,
+      "text": "if cnt > = k",
+      "code": "if ( cnt >= k )",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "print \" YES \\ n \"",
+      "code": "cout << \" YES\\n \" ;",
+      "indent": 2
+    },
+    {
+      "line": 24,
+      "text": "else",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 25,
+      "text": "print \" NO \\ n \"",
+      "code": "cout << \" NO\\n \" ;",
+      "indent": 2
+    },
+    {
+      "line": 26,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 27,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "fill ( isprime , isprime + SZ ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘fill(bool [1003], bool*)’"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "for ( int j = i * i ; j < SZ ; j += i ) { iprime [ j ] = false ; }"
+      ],
+      "err_line": 7,
+      "err_msg": "‘iprime’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        18
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i < primes . length ( ) ; i ++ )"
+      ],
+      "err_line": 18,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "sieve ( ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected constructor, destructor, or type conversion before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "fill ( SZ , isprime + SZ ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘fill(const int&, bool*)’"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "for ( int j = i * i ; j < SZ ; j += i ) iprime [ j ] = false ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘iprime’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "if ( isprime [ i ] ) primes . push ( i ) ;"
+      ],
+      "err_line": 16,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘push’"
+    },
+    {
+      "mod_line": [
+        19
+      ],
+      "mod_code": [
+        "num = primes [ i ] + primes [ i - 1 ] + 1 ;"
+      ],
+      "err_line": 19,
+      "err_msg": "‘num’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        22
+      ],
+      "mod_code": [
+        "if ( cnt >= k ) k ++ ;"
+      ],
+      "err_line": 24,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        3,
+        7
+      ],
+      "mod_code": [
+        "fill ( isprime , isprime + SZ ) ;",
+        "for ( int j = i * i ; j < SZ ; j += i ) { iprime [ j ] = false ; }"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘fill(bool [1003], bool*)’"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        18
+      ],
+      "mod_code": [
+        "fill ( isprime , isprime + SZ ) ;",
+        "for ( int j = i * i ; j < SZ ; j += i ) { iprime [ j ] = false ; }",
+        "for ( int i = 1 ; i < primes . length ( ) ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘fill(bool [1003], bool*)’"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        18,
+        19
+      ],
+      "mod_code": [
+        "fill ( isprime , isprime + SZ ) ;",
+        "for ( int j = i * i ; j < SZ ; j += i ) { iprime [ j ] = false ; }",
+        "for ( int i = 1 ; i < primes . length ( ) ; i ++ )",
+        "num = primes [ i ] + primes [ i - 1 ] + 1 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘fill(bool [1003], bool*)’"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        18,
+        16
+      ],
+      "mod_code": [
+        "fill ( isprime , isprime + SZ ) ;",
+        "for ( int j = i * i ; j < SZ ; j += i ) { iprime [ j ] = false ; }",
+        "for ( int i = 1 ; i < primes . length ( ) ; i ++ )",
+        "if ( isprime [ i ] ) primes . push ( i ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘fill(bool [1003], bool*)’"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        19
+      ],
+      "mod_code": [
+        "fill ( isprime , isprime + SZ ) ;",
+        "for ( int j = i * i ; j < SZ ; j += i ) { iprime [ j ] = false ; }",
+        "num = primes [ i ] + primes [ i - 1 ] + 1 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘fill(bool [1003], bool*)’"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        19,
+        16
+      ],
+      "mod_code": [
+        "fill ( isprime , isprime + SZ ) ;",
+        "for ( int j = i * i ; j < SZ ; j += i ) { iprime [ j ] = false ; }",
+        "num = primes [ i ] + primes [ i - 1 ] + 1 ;",
+        "if ( isprime [ i ] ) primes . push ( i ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘fill(bool [1003], bool*)’"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        16
+      ],
+      "mod_code": [
+        "fill ( isprime , isprime + SZ ) ;",
+        "for ( int j = i * i ; j < SZ ; j += i ) { iprime [ j ] = false ; }",
+        "if ( isprime [ i ] ) primes . push ( i ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘fill(bool [1003], bool*)’"
+    },
+    {
+      "mod_line": [
+        3,
+        18
+      ],
+      "mod_code": [
+        "fill ( isprime , isprime + SZ ) ;",
+        "for ( int i = 1 ; i < primes . length ( ) ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘fill(bool [1003], bool*)’"
+    },
+    {
+      "mod_line": [
+        3,
+        18,
+        7
+      ],
+      "mod_code": [
+        "fill ( isprime , isprime + SZ ) ;",
+        "for ( int i = 1 ; i < primes . length ( ) ; i ++ )",
+        "for ( int j = i * i ; j < SZ ; j += i ) iprime [ j ] = false ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘fill(bool [1003], bool*)’"
+    },
+    {
+      "mod_line": [
+        3,
+        18,
+        7,
+        19
+      ],
+      "mod_code": [
+        "fill ( isprime , isprime + SZ ) ;",
+        "for ( int i = 1 ; i < primes . length ( ) ; i ++ )",
+        "for ( int j = i * i ; j < SZ ; j += i ) iprime [ j ] = false ;",
+        "num = primes [ i ] + primes [ i - 1 ] + 1 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘fill(bool [1003], bool*)’"
+    },
+    {
+      "mod_line": [
+        3,
+        18,
+        7,
+        16
+      ],
+      "mod_code": [
+        "fill ( isprime , isprime + SZ ) ;",
+        "for ( int i = 1 ; i < primes . length ( ) ; i ++ )",
+        "for ( int j = i * i ; j < SZ ; j += i ) iprime [ j ] = false ;",
+        "if ( isprime [ i ] ) primes . push ( i ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘fill(bool [1003], bool*)’"
+    },
+    {
+      "mod_line": [
+        3,
+        18,
+        19
+      ],
+      "mod_code": [
+        "fill ( isprime , isprime + SZ ) ;",
+        "for ( int i = 1 ; i < primes . length ( ) ; i ++ )",
+        "num = primes [ i ] + primes [ i - 1 ] + 1 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘fill(bool [1003], bool*)’"
+    },
+    {
+      "mod_line": [
+        3,
+        18,
+        19,
+        16
+      ],
+      "mod_code": [
+        "fill ( isprime , isprime + SZ ) ;",
+        "for ( int i = 1 ; i < primes . length ( ) ; i ++ )",
+        "num = primes [ i ] + primes [ i - 1 ] + 1 ;",
+        "if ( isprime [ i ] ) primes . push ( i ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘fill(bool [1003], bool*)’"
+    },
+    {
+      "mod_line": [
+        3,
+        18,
+        16
+      ],
+      "mod_code": [
+        "fill ( isprime , isprime + SZ ) ;",
+        "for ( int i = 1 ; i < primes . length ( ) ; i ++ )",
+        "if ( isprime [ i ] ) primes . push ( i ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘fill(bool [1003], bool*)’"
+    },
+    {
+      "mod_line": [
+        3,
+        7
+      ],
+      "mod_code": [
+        "fill ( isprime , isprime + SZ ) ;",
+        "for ( int j = i * i ; j < SZ ; j += i ) iprime [ j ] = false ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘fill(bool [1003], bool*)’"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        19
+      ],
+      "mod_code": [
+        "fill ( isprime , isprime + SZ ) ;",
+        "for ( int j = i * i ; j < SZ ; j += i ) iprime [ j ] = false ;",
+        "num = primes [ i ] + primes [ i - 1 ] + 1 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘fill(bool [1003], bool*)’"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        19,
+        16
+      ],
+      "mod_code": [
+        "fill ( isprime , isprime + SZ ) ;",
+        "for ( int j = i * i ; j < SZ ; j += i ) iprime [ j ] = false ;",
+        "num = primes [ i ] + primes [ i - 1 ] + 1 ;",
+        "if ( isprime [ i ] ) primes . push ( i ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘fill(bool [1003], bool*)’"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        16
+      ],
+      "mod_code": [
+        "fill ( isprime , isprime + SZ ) ;",
+        "for ( int j = i * i ; j < SZ ; j += i ) iprime [ j ] = false ;",
+        "if ( isprime [ i ] ) primes . push ( i ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘fill(bool [1003], bool*)’"
+    },
+    {
+      "mod_line": [
+        3,
+        19
+      ],
+      "mod_code": [
+        "fill ( isprime , isprime + SZ ) ;",
+        "num = primes [ i ] + primes [ i - 1 ] + 1 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘fill(bool [1003], bool*)’"
+    },
+    {
+      "mod_line": [
+        3,
+        19,
+        16
+      ],
+      "mod_code": [
+        "fill ( isprime , isprime + SZ ) ;",
+        "num = primes [ i ] + primes [ i - 1 ] + 1 ;",
+        "if ( isprime [ i ] ) primes . push ( i ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘fill(bool [1003], bool*)’"
+    },
+    {
+      "mod_line": [
+        3,
+        16
+      ],
+      "mod_code": [
+        "fill ( isprime , isprime + SZ ) ;",
+        "if ( isprime [ i ] ) primes . push ( i ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no matching function for call to ‘fill(bool [1003], bool*)’"
+    },
+    {
+      "mod_line": [
+        7,
+        18
+      ],
+      "mod_code": [
+        "for ( int j = i * i ; j < SZ ; j += i ) { iprime [ j ] = false ; }",
+        "for ( int i = 1 ; i < primes . length ( ) ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘iprime’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        18,
+        19
+      ],
+      "mod_code": [
+        "for ( int j = i * i ; j < SZ ; j += i ) { iprime [ j ] = false ; }",
+        "for ( int i = 1 ; i < primes . length ( ) ; i ++ )",
+        "num = primes [ i ] + primes [ i - 1 ] + 1 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘iprime’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        18,
+        19,
+        16
+      ],
+      "mod_code": [
+        "for ( int j = i * i ; j < SZ ; j += i ) { iprime [ j ] = false ; }",
+        "for ( int i = 1 ; i < primes . length ( ) ; i ++ )",
+        "num = primes [ i ] + primes [ i - 1 ] + 1 ;",
+        "if ( isprime [ i ] ) primes . push ( i ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘iprime’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        18,
+        16
+      ],
+      "mod_code": [
+        "for ( int j = i * i ; j < SZ ; j += i ) { iprime [ j ] = false ; }",
+        "for ( int i = 1 ; i < primes . length ( ) ; i ++ )",
+        "if ( isprime [ i ] ) primes . push ( i ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘iprime’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        19
+      ],
+      "mod_code": [
+        "for ( int j = i * i ; j < SZ ; j += i ) { iprime [ j ] = false ; }",
+        "num = primes [ i ] + primes [ i - 1 ] + 1 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘iprime’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        19,
+        16
+      ],
+      "mod_code": [
+        "for ( int j = i * i ; j < SZ ; j += i ) { iprime [ j ] = false ; }",
+        "num = primes [ i ] + primes [ i - 1 ] + 1 ;",
+        "if ( isprime [ i ] ) primes . push ( i ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘iprime’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        16
+      ],
+      "mod_code": [
+        "for ( int j = i * i ; j < SZ ; j += i ) { iprime [ j ] = false ; }",
+        "if ( isprime [ i ] ) primes . push ( i ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘iprime’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        18,
+        7
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i < primes . length ( ) ; i ++ )",
+        "for ( int j = i * i ; j < SZ ; j += i ) iprime [ j ] = false ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘iprime’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        18,
+        7,
+        19
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i < primes . length ( ) ; i ++ )",
+        "for ( int j = i * i ; j < SZ ; j += i ) iprime [ j ] = false ;",
+        "num = primes [ i ] + primes [ i - 1 ] + 1 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘iprime’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        18,
+        7,
+        19,
+        16
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i < primes . length ( ) ; i ++ )",
+        "for ( int j = i * i ; j < SZ ; j += i ) iprime [ j ] = false ;",
+        "num = primes [ i ] + primes [ i - 1 ] + 1 ;",
+        "if ( isprime [ i ] ) primes . push ( i ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘iprime’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        18,
+        7,
+        16
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i < primes . length ( ) ; i ++ )",
+        "for ( int j = i * i ; j < SZ ; j += i ) iprime [ j ] = false ;",
+        "if ( isprime [ i ] ) primes . push ( i ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘iprime’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        18,
+        19
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i < primes . length ( ) ; i ++ )",
+        "num = primes [ i ] + primes [ i - 1 ] + 1 ;"
+      ],
+      "err_line": 18,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        18,
+        19,
+        16
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i < primes . length ( ) ; i ++ )",
+        "num = primes [ i ] + primes [ i - 1 ] + 1 ;",
+        "if ( isprime [ i ] ) primes . push ( i ) ;"
+      ],
+      "err_line": 16,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘push’"
+    },
+    {
+      "mod_line": [
+        18,
+        16
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i < primes . length ( ) ; i ++ )",
+        "if ( isprime [ i ] ) primes . push ( i ) ;"
+      ],
+      "err_line": 16,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘push’"
+    },
+    {
+      "mod_line": [
+        7,
+        19
+      ],
+      "mod_code": [
+        "for ( int j = i * i ; j < SZ ; j += i ) iprime [ j ] = false ;",
+        "num = primes [ i ] + primes [ i - 1 ] + 1 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘iprime’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        19,
+        16
+      ],
+      "mod_code": [
+        "for ( int j = i * i ; j < SZ ; j += i ) iprime [ j ] = false ;",
+        "num = primes [ i ] + primes [ i - 1 ] + 1 ;",
+        "if ( isprime [ i ] ) primes . push ( i ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘iprime’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        16
+      ],
+      "mod_code": [
+        "for ( int j = i * i ; j < SZ ; j += i ) iprime [ j ] = false ;",
+        "if ( isprime [ i ] ) primes . push ( i ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘iprime’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        19,
+        16
+      ],
+      "mod_code": [
+        "num = primes [ i ] + primes [ i - 1 ] + 1 ;",
+        "if ( isprime [ i ] ) primes . push ( i ) ;"
+      ],
+      "err_line": 16,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘push’"
+    }
+  ]
+}

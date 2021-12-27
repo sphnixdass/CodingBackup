@@ -1,0 +1,851 @@
+{
+  "meta": {
+    "index": 1384,
+    "hitid": "3S1L4CQSFXZS9MCMMOVQJ5MJ0RVAFO",
+    "workerid": "A3QHJOSOK95QWB",
+    "probid": "54A",
+    "subid": "47069093"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "n , k , c = int",
+      "code": "int n , k , c ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "a , f = int array of length 400",
+      "code": "int a [ 400 ] , f [ 400 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "read n , k , c",
+      "code": "cin >> n >> k >> c ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for x = int and i = 1 , until i < = c , increment i",
+      "code": "for ( int i = 1 , x ; i <= c ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "read x",
+      "code": "cin >> x ;",
+      "indent": 2
+    },
+    {
+      "line": 6,
+      "text": "set a at x = 1",
+      "code": "a [ x ] = 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "for i = 1 to n inclusive , set f at i to f [ i - 1 ] + a [ i ]",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) f [ i ] = f [ i - 1 ] + a [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "for i = 0 to n - k inclusive",
+      "code": "for ( int i = 0 ; i <= n - k ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "if f [ i + k ] - f [ i ] isn ' t 0",
+      "code": "if ( ! ( f [ i + k ] - f [ i ] ) )",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "set a [ i + k ] to 1",
+      "code": "a [ i + k ] = 1 ;",
+      "indent": 3
+    },
+    {
+      "line": 12,
+      "text": "for j = i + k to n inclusive , increment j , then increment f at j",
+      "code": "for ( int j = i + k ; j <= n ; j ++ ) f [ j ] ++ ;",
+      "indent": 3
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "print f at n",
+      "code": "cout << f [ n ] << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "for ( int x = 1 ; i <= c ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "for ( int j = i + k ; j <= n ; j ++ , f ++ ) { f ++ , f ++ ; }"
+      ],
+      "err_line": 12,
+      "err_msg": "lvalue required as increment operand"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int n , arr , c ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int a [ 400 ] , a [ 400 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int a [400]’"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "for ( int x = 1 ; i <= c && i <= c ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "a [ a ] = 1 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid types ‘int [400][int [400]]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= n - k ; i ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "for ( int j = i + k ; j <= n ; j ++ ) { f += j ; }"
+      ],
+      "err_line": 12,
+      "err_msg": "incompatible types in assignment of ‘int’ to ‘int [400]’"
+    },
+    {
+      "mod_line": [
+        4,
+        8
+      ],
+      "mod_code": [
+        "for ( int x = 1 ; i <= c ; i ++ )",
+        "for ( int i = 1 ; i <= n ; i ++ ) f [ i - 1 ] = f [ i - 1 ] + a [ i ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        8,
+        10
+      ],
+      "mod_code": [
+        "for ( int x = 1 ; i <= c ; i ++ )",
+        "for ( int i = 1 ; i <= n ; i ++ ) f [ i - 1 ] = f [ i - 1 ] + a [ i ] ;",
+        "if ( f [ i + k ] - f [ i ] )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        8,
+        10,
+        12
+      ],
+      "mod_code": [
+        "for ( int x = 1 ; i <= c ; i ++ )",
+        "for ( int i = 1 ; i <= n ; i ++ ) f [ i - 1 ] = f [ i - 1 ] + a [ i ] ;",
+        "if ( f [ i + k ] - f [ i ] )",
+        "for ( int j = i + k ; j <= n ; j ++ , f ++ ) { f ++ , f ++ ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        8,
+        10,
+        1
+      ],
+      "mod_code": [
+        "for ( int x = 1 ; i <= c ; i ++ )",
+        "for ( int i = 1 ; i <= n ; i ++ ) f [ i - 1 ] = f [ i - 1 ] + a [ i ] ;",
+        "if ( f [ i + k ] - f [ i ] )",
+        "int a [ 400 ] , a [ 400 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int a [400]’"
+    },
+    {
+      "mod_line": [
+        4,
+        8,
+        10,
+        5
+      ],
+      "mod_code": [
+        "for ( int x = 1 ; i <= c ; i ++ )",
+        "for ( int i = 1 ; i <= n ; i ++ ) f [ i - 1 ] = f [ i - 1 ] + a [ i ] ;",
+        "if ( f [ i + k ] - f [ i ] )",
+        "x = getchar ( ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        8,
+        12
+      ],
+      "mod_code": [
+        "for ( int x = 1 ; i <= c ; i ++ )",
+        "for ( int i = 1 ; i <= n ; i ++ ) f [ i - 1 ] = f [ i - 1 ] + a [ i ] ;",
+        "for ( int j = i + k ; j <= n ; j ++ , f ++ ) { f ++ , f ++ ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        8,
+        12,
+        1
+      ],
+      "mod_code": [
+        "for ( int x = 1 ; i <= c ; i ++ )",
+        "for ( int i = 1 ; i <= n ; i ++ ) f [ i - 1 ] = f [ i - 1 ] + a [ i ] ;",
+        "for ( int j = i + k ; j <= n ; j ++ , f ++ ) { f ++ , f ++ ; }",
+        "int a [ 400 ] , a [ 400 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int a [400]’"
+    },
+    {
+      "mod_line": [
+        4,
+        8,
+        12,
+        5
+      ],
+      "mod_code": [
+        "for ( int x = 1 ; i <= c ; i ++ )",
+        "for ( int i = 1 ; i <= n ; i ++ ) f [ i - 1 ] = f [ i - 1 ] + a [ i ] ;",
+        "for ( int j = i + k ; j <= n ; j ++ , f ++ ) { f ++ , f ++ ; }",
+        "x = getchar ( ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        8,
+        1
+      ],
+      "mod_code": [
+        "for ( int x = 1 ; i <= c ; i ++ )",
+        "for ( int i = 1 ; i <= n ; i ++ ) f [ i - 1 ] = f [ i - 1 ] + a [ i ] ;",
+        "int a [ 400 ] , a [ 400 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int a [400]’"
+    },
+    {
+      "mod_line": [
+        4,
+        8,
+        1,
+        5
+      ],
+      "mod_code": [
+        "for ( int x = 1 ; i <= c ; i ++ )",
+        "for ( int i = 1 ; i <= n ; i ++ ) f [ i - 1 ] = f [ i - 1 ] + a [ i ] ;",
+        "int a [ 400 ] , a [ 400 ] ;",
+        "x = getchar ( ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int a [400]’"
+    },
+    {
+      "mod_line": [
+        4,
+        8,
+        5
+      ],
+      "mod_code": [
+        "for ( int x = 1 ; i <= c ; i ++ )",
+        "for ( int i = 1 ; i <= n ; i ++ ) f [ i - 1 ] = f [ i - 1 ] + a [ i ] ;",
+        "x = getchar ( ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        10
+      ],
+      "mod_code": [
+        "for ( int x = 1 ; i <= c ; i ++ )",
+        "if ( f [ i + k ] - f [ i ] )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        10,
+        12
+      ],
+      "mod_code": [
+        "for ( int x = 1 ; i <= c ; i ++ )",
+        "if ( f [ i + k ] - f [ i ] )",
+        "for ( int j = i + k ; j <= n ; j ++ , f ++ ) { f ++ , f ++ ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        10,
+        12,
+        1
+      ],
+      "mod_code": [
+        "for ( int x = 1 ; i <= c ; i ++ )",
+        "if ( f [ i + k ] - f [ i ] )",
+        "for ( int j = i + k ; j <= n ; j ++ , f ++ ) { f ++ , f ++ ; }",
+        "int a [ 400 ] , a [ 400 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int a [400]’"
+    },
+    {
+      "mod_line": [
+        4,
+        10,
+        12,
+        5
+      ],
+      "mod_code": [
+        "for ( int x = 1 ; i <= c ; i ++ )",
+        "if ( f [ i + k ] - f [ i ] )",
+        "for ( int j = i + k ; j <= n ; j ++ , f ++ ) { f ++ , f ++ ; }",
+        "x = getchar ( ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        10,
+        1
+      ],
+      "mod_code": [
+        "for ( int x = 1 ; i <= c ; i ++ )",
+        "if ( f [ i + k ] - f [ i ] )",
+        "int a [ 400 ] , a [ 400 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int a [400]’"
+    },
+    {
+      "mod_line": [
+        4,
+        10,
+        1,
+        5
+      ],
+      "mod_code": [
+        "for ( int x = 1 ; i <= c ; i ++ )",
+        "if ( f [ i + k ] - f [ i ] )",
+        "int a [ 400 ] , a [ 400 ] ;",
+        "x = getchar ( ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int a [400]’"
+    },
+    {
+      "mod_line": [
+        4,
+        10,
+        5
+      ],
+      "mod_code": [
+        "for ( int x = 1 ; i <= c ; i ++ )",
+        "if ( f [ i + k ] - f [ i ] )",
+        "x = getchar ( ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        12
+      ],
+      "mod_code": [
+        "for ( int x = 1 ; i <= c ; i ++ )",
+        "for ( int j = i + k ; j <= n ; j ++ , f ++ ) { f ++ , f ++ ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        12,
+        1
+      ],
+      "mod_code": [
+        "for ( int x = 1 ; i <= c ; i ++ )",
+        "for ( int j = i + k ; j <= n ; j ++ , f ++ ) { f ++ , f ++ ; }",
+        "int a [ 400 ] , a [ 400 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int a [400]’"
+    },
+    {
+      "mod_line": [
+        4,
+        12,
+        1,
+        5
+      ],
+      "mod_code": [
+        "for ( int x = 1 ; i <= c ; i ++ )",
+        "for ( int j = i + k ; j <= n ; j ++ , f ++ ) { f ++ , f ++ ; }",
+        "int a [ 400 ] , a [ 400 ] ;",
+        "x = getchar ( ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int a [400]’"
+    },
+    {
+      "mod_line": [
+        4,
+        12,
+        5
+      ],
+      "mod_code": [
+        "for ( int x = 1 ; i <= c ; i ++ )",
+        "for ( int j = i + k ; j <= n ; j ++ , f ++ ) { f ++ , f ++ ; }",
+        "x = getchar ( ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        1
+      ],
+      "mod_code": [
+        "for ( int x = 1 ; i <= c ; i ++ )",
+        "int a [ 400 ] , a [ 400 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int a [400]’"
+    },
+    {
+      "mod_line": [
+        4,
+        1,
+        5
+      ],
+      "mod_code": [
+        "for ( int x = 1 ; i <= c ; i ++ )",
+        "int a [ 400 ] , a [ 400 ] ;",
+        "x = getchar ( ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int a [400]’"
+    },
+    {
+      "mod_line": [
+        4,
+        5
+      ],
+      "mod_code": [
+        "for ( int x = 1 ; i <= c ; i ++ )",
+        "x = getchar ( ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        12
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) f [ i - 1 ] = f [ i - 1 ] + a [ i ] ;",
+        "if ( f [ i + k ] - f [ i ] )",
+        "for ( int j = i + k ; j <= n ; j ++ , f ++ ) { f ++ , f ++ ; }"
+      ],
+      "err_line": 12,
+      "err_msg": "lvalue required as increment operand"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        12,
+        1
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) f [ i - 1 ] = f [ i - 1 ] + a [ i ] ;",
+        "if ( f [ i + k ] - f [ i ] )",
+        "for ( int j = i + k ; j <= n ; j ++ , f ++ ) { f ++ , f ++ ; }",
+        "int a [ 400 ] , a [ 400 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int a [400]’"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        12,
+        5
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) f [ i - 1 ] = f [ i - 1 ] + a [ i ] ;",
+        "if ( f [ i + k ] - f [ i ] )",
+        "for ( int j = i + k ; j <= n ; j ++ , f ++ ) { f ++ , f ++ ; }",
+        "x = getchar ( ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "lvalue required as increment operand"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        1
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) f [ i - 1 ] = f [ i - 1 ] + a [ i ] ;",
+        "if ( f [ i + k ] - f [ i ] )",
+        "int a [ 400 ] , a [ 400 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int a [400]’"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        1,
+        5
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) f [ i - 1 ] = f [ i - 1 ] + a [ i ] ;",
+        "if ( f [ i + k ] - f [ i ] )",
+        "int a [ 400 ] , a [ 400 ] ;",
+        "x = getchar ( ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int a [400]’"
+    },
+    {
+      "mod_line": [
+        8,
+        12
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) f [ i - 1 ] = f [ i - 1 ] + a [ i ] ;",
+        "for ( int j = i + k ; j <= n ; j ++ , f ++ ) { f ++ , f ++ ; }"
+      ],
+      "err_line": 12,
+      "err_msg": "lvalue required as increment operand"
+    },
+    {
+      "mod_line": [
+        8,
+        12,
+        1
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) f [ i - 1 ] = f [ i - 1 ] + a [ i ] ;",
+        "for ( int j = i + k ; j <= n ; j ++ , f ++ ) { f ++ , f ++ ; }",
+        "int a [ 400 ] , a [ 400 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int a [400]’"
+    },
+    {
+      "mod_line": [
+        8,
+        12,
+        1,
+        5
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) f [ i - 1 ] = f [ i - 1 ] + a [ i ] ;",
+        "for ( int j = i + k ; j <= n ; j ++ , f ++ ) { f ++ , f ++ ; }",
+        "int a [ 400 ] , a [ 400 ] ;",
+        "x = getchar ( ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int a [400]’"
+    },
+    {
+      "mod_line": [
+        8,
+        12,
+        5
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) f [ i - 1 ] = f [ i - 1 ] + a [ i ] ;",
+        "for ( int j = i + k ; j <= n ; j ++ , f ++ ) { f ++ , f ++ ; }",
+        "x = getchar ( ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "lvalue required as increment operand"
+    },
+    {
+      "mod_line": [
+        8,
+        1
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) f [ i - 1 ] = f [ i - 1 ] + a [ i ] ;",
+        "int a [ 400 ] , a [ 400 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int a [400]’"
+    },
+    {
+      "mod_line": [
+        8,
+        1,
+        5
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) f [ i - 1 ] = f [ i - 1 ] + a [ i ] ;",
+        "int a [ 400 ] , a [ 400 ] ;",
+        "x = getchar ( ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int a [400]’"
+    },
+    {
+      "mod_line": [
+        10,
+        12
+      ],
+      "mod_code": [
+        "if ( f [ i + k ] - f [ i ] )",
+        "for ( int j = i + k ; j <= n ; j ++ , f ++ ) { f ++ , f ++ ; }"
+      ],
+      "err_line": 12,
+      "err_msg": "lvalue required as increment operand"
+    },
+    {
+      "mod_line": [
+        10,
+        12,
+        1
+      ],
+      "mod_code": [
+        "if ( f [ i + k ] - f [ i ] )",
+        "for ( int j = i + k ; j <= n ; j ++ , f ++ ) { f ++ , f ++ ; }",
+        "int a [ 400 ] , a [ 400 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int a [400]’"
+    },
+    {
+      "mod_line": [
+        10,
+        12,
+        1,
+        5
+      ],
+      "mod_code": [
+        "if ( f [ i + k ] - f [ i ] )",
+        "for ( int j = i + k ; j <= n ; j ++ , f ++ ) { f ++ , f ++ ; }",
+        "int a [ 400 ] , a [ 400 ] ;",
+        "x = getchar ( ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int a [400]’"
+    },
+    {
+      "mod_line": [
+        10,
+        12,
+        5
+      ],
+      "mod_code": [
+        "if ( f [ i + k ] - f [ i ] )",
+        "for ( int j = i + k ; j <= n ; j ++ , f ++ ) { f ++ , f ++ ; }",
+        "x = getchar ( ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "lvalue required as increment operand"
+    },
+    {
+      "mod_line": [
+        10,
+        1
+      ],
+      "mod_code": [
+        "if ( f [ i + k ] - f [ i ] )",
+        "int a [ 400 ] , a [ 400 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int a [400]’"
+    },
+    {
+      "mod_line": [
+        10,
+        1,
+        5
+      ],
+      "mod_code": [
+        "if ( f [ i + k ] - f [ i ] )",
+        "int a [ 400 ] , a [ 400 ] ;",
+        "x = getchar ( ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int a [400]’"
+    },
+    {
+      "mod_line": [
+        12,
+        1
+      ],
+      "mod_code": [
+        "for ( int j = i + k ; j <= n ; j ++ , f ++ ) { f ++ , f ++ ; }",
+        "int a [ 400 ] , a [ 400 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int a [400]’"
+    },
+    {
+      "mod_line": [
+        12,
+        1,
+        5
+      ],
+      "mod_code": [
+        "for ( int j = i + k ; j <= n ; j ++ , f ++ ) { f ++ , f ++ ; }",
+        "int a [ 400 ] , a [ 400 ] ;",
+        "x = getchar ( ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int a [400]’"
+    },
+    {
+      "mod_line": [
+        12,
+        5
+      ],
+      "mod_code": [
+        "for ( int j = i + k ; j <= n ; j ++ , f ++ ) { f ++ , f ++ ; }",
+        "x = getchar ( ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "lvalue required as increment operand"
+    },
+    {
+      "mod_line": [
+        1,
+        5
+      ],
+      "mod_code": [
+        "int a [ 400 ] , a [ 400 ] ;",
+        "x = getchar ( ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int a [400]’"
+    }
+  ]
+}

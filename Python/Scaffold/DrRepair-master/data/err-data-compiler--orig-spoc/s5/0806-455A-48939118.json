@@ -1,0 +1,851 @@
+{
+  "meta": {
+    "index": 806,
+    "hitid": "33BFF6QPI15U0NZW3YQG0LUDOXT3W8",
+    "workerid": "A24WRPQYGMQLGF",
+    "probid": "455A",
+    "subid": "48939118"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "n , x = long long",
+      "code": "long long n , x ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "cnt = long long vector of size 100001 by 0",
+      "code": "vector < long long > cnt ( 100001 , 0 ) ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "if i = 0 to n exclusive",
+      "code": "for ( long long i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "read x",
+      "code": "cin >> x ;",
+      "indent": 2
+    },
+    {
+      "line": 6,
+      "text": "increase cnt [ x ] by 1",
+      "code": "cnt [ x ] ++ ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "dp = long long of size 100001",
+      "code": "long long dp [ 100001 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "dp [ 0 ] = 0",
+      "code": "dp [ 0 ] = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "dp [ 1 ] = cnt [ 1 ]",
+      "code": "dp [ 1 ] = cnt [ 1 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "if i = 0 to 100001 exclusive , dp [ i ] = the greater value between dp [ i - 1 ] and dp [ i - 2 ] + ( cnt [ i ] * i )",
+      "code": "for ( long long i = 2 ; i < 100001 ; i ++ ) dp [ i ] = max ( dp [ i - 1 ] , dp [ i - 2 ] + ( cnt [ i ] * i ) ) ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "print dp [ 100000 ]",
+      "code": "cout << dp [ 100000 ] << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "if ( i == 0 ) dp [ i ] = dp [ i - 1 ] + ( cnt [ i - 2 ] + ( cnt [ i ] * i ) ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "vector < long long > cnt [ 100001 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no ‘operator++(int)’ declared for postfix ‘++’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "int dp [ 1 ] = cnt [ 1 ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "conflicting declaration ‘int dp [1]’"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "if ( i == 0 ) dp [ i ] = dp [ i - 1 ] + ( cnt [ i - 1 ] + ( cnt [ i ] * i ) ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        9
+      ],
+      "mod_code": [
+        "if ( i == 0 ) dp [ i ] = dp [ i - 1 ] + ( cnt [ i - 2 ] + ( cnt [ i ] * i ) ) ;",
+        "dp [ 0 ] = ' 0 ' ;"
+      ],
+      "err_line": 11,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        9,
+        5
+      ],
+      "mod_code": [
+        "if ( i == 0 ) dp [ i ] = dp [ i - 1 ] + ( cnt [ i - 2 ] + ( cnt [ i ] * i ) ) ;",
+        "dp [ 0 ] = ' 0 ' ;",
+        "cin >> n ;"
+      ],
+      "err_line": 11,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        9,
+        5,
+        3
+      ],
+      "mod_code": [
+        "if ( i == 0 ) dp [ i ] = dp [ i - 1 ] + ( cnt [ i - 2 ] + ( cnt [ i ] * i ) ) ;",
+        "dp [ 0 ] = ' 0 ' ;",
+        "cin >> n ;",
+        "vector < long long > cnt [ 100001 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no ‘operator++(int)’ declared for postfix ‘++’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        9,
+        5,
+        10
+      ],
+      "mod_code": [
+        "if ( i == 0 ) dp [ i ] = dp [ i - 1 ] + ( cnt [ i - 2 ] + ( cnt [ i ] * i ) ) ;",
+        "dp [ 0 ] = ' 0 ' ;",
+        "cin >> n ;",
+        "int dp [ 1 ] = cnt [ 1 ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "conflicting declaration ‘int dp [1]’"
+    },
+    {
+      "mod_line": [
+        11,
+        9,
+        5,
+        2
+      ],
+      "mod_code": [
+        "if ( i == 0 ) dp [ i ] = dp [ i - 1 ] + ( cnt [ i - 2 ] + ( cnt [ i ] * i ) ) ;",
+        "dp [ 0 ] = ' 0 ' ;",
+        "cin >> n ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        9,
+        3
+      ],
+      "mod_code": [
+        "if ( i == 0 ) dp [ i ] = dp [ i - 1 ] + ( cnt [ i - 2 ] + ( cnt [ i ] * i ) ) ;",
+        "dp [ 0 ] = ' 0 ' ;",
+        "vector < long long > cnt [ 100001 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no ‘operator++(int)’ declared for postfix ‘++’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        9,
+        3,
+        10
+      ],
+      "mod_code": [
+        "if ( i == 0 ) dp [ i ] = dp [ i - 1 ] + ( cnt [ i - 2 ] + ( cnt [ i ] * i ) ) ;",
+        "dp [ 0 ] = ' 0 ' ;",
+        "vector < long long > cnt [ 100001 ] ;",
+        "int dp [ 1 ] = cnt [ 1 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no ‘operator++(int)’ declared for postfix ‘++’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        9,
+        3,
+        2
+      ],
+      "mod_code": [
+        "if ( i == 0 ) dp [ i ] = dp [ i - 1 ] + ( cnt [ i - 2 ] + ( cnt [ i ] * i ) ) ;",
+        "dp [ 0 ] = ' 0 ' ;",
+        "vector < long long > cnt [ 100001 ] ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        9,
+        10
+      ],
+      "mod_code": [
+        "if ( i == 0 ) dp [ i ] = dp [ i - 1 ] + ( cnt [ i - 2 ] + ( cnt [ i ] * i ) ) ;",
+        "dp [ 0 ] = ' 0 ' ;",
+        "int dp [ 1 ] = cnt [ 1 ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "conflicting declaration ‘int dp [1]’"
+    },
+    {
+      "mod_line": [
+        11,
+        9,
+        10,
+        2
+      ],
+      "mod_code": [
+        "if ( i == 0 ) dp [ i ] = dp [ i - 1 ] + ( cnt [ i - 2 ] + ( cnt [ i ] * i ) ) ;",
+        "dp [ 0 ] = ' 0 ' ;",
+        "int dp [ 1 ] = cnt [ 1 ] ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        9,
+        2
+      ],
+      "mod_code": [
+        "if ( i == 0 ) dp [ i ] = dp [ i - 1 ] + ( cnt [ i - 2 ] + ( cnt [ i ] * i ) ) ;",
+        "dp [ 0 ] = ' 0 ' ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        5
+      ],
+      "mod_code": [
+        "if ( i == 0 ) dp [ i ] = dp [ i - 1 ] + ( cnt [ i - 2 ] + ( cnt [ i ] * i ) ) ;",
+        "cin >> n ;"
+      ],
+      "err_line": 11,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        5,
+        3
+      ],
+      "mod_code": [
+        "if ( i == 0 ) dp [ i ] = dp [ i - 1 ] + ( cnt [ i - 2 ] + ( cnt [ i ] * i ) ) ;",
+        "cin >> n ;",
+        "vector < long long > cnt [ 100001 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no ‘operator++(int)’ declared for postfix ‘++’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        5,
+        3,
+        10
+      ],
+      "mod_code": [
+        "if ( i == 0 ) dp [ i ] = dp [ i - 1 ] + ( cnt [ i - 2 ] + ( cnt [ i ] * i ) ) ;",
+        "cin >> n ;",
+        "vector < long long > cnt [ 100001 ] ;",
+        "int dp [ 1 ] = cnt [ 1 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no ‘operator++(int)’ declared for postfix ‘++’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        5,
+        3,
+        2
+      ],
+      "mod_code": [
+        "if ( i == 0 ) dp [ i ] = dp [ i - 1 ] + ( cnt [ i - 2 ] + ( cnt [ i ] * i ) ) ;",
+        "cin >> n ;",
+        "vector < long long > cnt [ 100001 ] ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        5,
+        10
+      ],
+      "mod_code": [
+        "if ( i == 0 ) dp [ i ] = dp [ i - 1 ] + ( cnt [ i - 2 ] + ( cnt [ i ] * i ) ) ;",
+        "cin >> n ;",
+        "int dp [ 1 ] = cnt [ 1 ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "conflicting declaration ‘int dp [1]’"
+    },
+    {
+      "mod_line": [
+        11,
+        5,
+        10,
+        2
+      ],
+      "mod_code": [
+        "if ( i == 0 ) dp [ i ] = dp [ i - 1 ] + ( cnt [ i - 2 ] + ( cnt [ i ] * i ) ) ;",
+        "cin >> n ;",
+        "int dp [ 1 ] = cnt [ 1 ] ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        5,
+        2
+      ],
+      "mod_code": [
+        "if ( i == 0 ) dp [ i ] = dp [ i - 1 ] + ( cnt [ i - 2 ] + ( cnt [ i ] * i ) ) ;",
+        "cin >> n ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        3
+      ],
+      "mod_code": [
+        "if ( i == 0 ) dp [ i ] = dp [ i - 1 ] + ( cnt [ i - 2 ] + ( cnt [ i ] * i ) ) ;",
+        "vector < long long > cnt [ 100001 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no ‘operator++(int)’ declared for postfix ‘++’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        3,
+        10
+      ],
+      "mod_code": [
+        "if ( i == 0 ) dp [ i ] = dp [ i - 1 ] + ( cnt [ i - 2 ] + ( cnt [ i ] * i ) ) ;",
+        "vector < long long > cnt [ 100001 ] ;",
+        "int dp [ 1 ] = cnt [ 1 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no ‘operator++(int)’ declared for postfix ‘++’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        3,
+        10,
+        2
+      ],
+      "mod_code": [
+        "if ( i == 0 ) dp [ i ] = dp [ i - 1 ] + ( cnt [ i - 2 ] + ( cnt [ i ] * i ) ) ;",
+        "vector < long long > cnt [ 100001 ] ;",
+        "int dp [ 1 ] = cnt [ 1 ] ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        3,
+        2
+      ],
+      "mod_code": [
+        "if ( i == 0 ) dp [ i ] = dp [ i - 1 ] + ( cnt [ i - 2 ] + ( cnt [ i ] * i ) ) ;",
+        "vector < long long > cnt [ 100001 ] ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        10
+      ],
+      "mod_code": [
+        "if ( i == 0 ) dp [ i ] = dp [ i - 1 ] + ( cnt [ i - 2 ] + ( cnt [ i ] * i ) ) ;",
+        "int dp [ 1 ] = cnt [ 1 ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "conflicting declaration ‘int dp [1]’"
+    },
+    {
+      "mod_line": [
+        11,
+        10,
+        2
+      ],
+      "mod_code": [
+        "if ( i == 0 ) dp [ i ] = dp [ i - 1 ] + ( cnt [ i - 2 ] + ( cnt [ i ] * i ) ) ;",
+        "int dp [ 1 ] = cnt [ 1 ] ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        2
+      ],
+      "mod_code": [
+        "if ( i == 0 ) dp [ i ] = dp [ i - 1 ] + ( cnt [ i - 2 ] + ( cnt [ i ] * i ) ) ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        5,
+        3
+      ],
+      "mod_code": [
+        "dp [ 0 ] = ' 0 ' ;",
+        "cin >> n ;",
+        "vector < long long > cnt [ 100001 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no ‘operator++(int)’ declared for postfix ‘++’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        5,
+        3,
+        10
+      ],
+      "mod_code": [
+        "dp [ 0 ] = ' 0 ' ;",
+        "cin >> n ;",
+        "vector < long long > cnt [ 100001 ] ;",
+        "int dp [ 1 ] = cnt [ 1 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no ‘operator++(int)’ declared for postfix ‘++’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        5,
+        3,
+        2
+      ],
+      "mod_code": [
+        "dp [ 0 ] = ' 0 ' ;",
+        "cin >> n ;",
+        "vector < long long > cnt [ 100001 ] ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        5,
+        10
+      ],
+      "mod_code": [
+        "dp [ 0 ] = ' 0 ' ;",
+        "cin >> n ;",
+        "int dp [ 1 ] = cnt [ 1 ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "conflicting declaration ‘int dp [1]’"
+    },
+    {
+      "mod_line": [
+        9,
+        5,
+        10,
+        2
+      ],
+      "mod_code": [
+        "dp [ 0 ] = ' 0 ' ;",
+        "cin >> n ;",
+        "int dp [ 1 ] = cnt [ 1 ] ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        5,
+        2
+      ],
+      "mod_code": [
+        "dp [ 0 ] = ' 0 ' ;",
+        "cin >> n ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        3
+      ],
+      "mod_code": [
+        "dp [ 0 ] = ' 0 ' ;",
+        "vector < long long > cnt [ 100001 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no ‘operator++(int)’ declared for postfix ‘++’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        10
+      ],
+      "mod_code": [
+        "dp [ 0 ] = ' 0 ' ;",
+        "vector < long long > cnt [ 100001 ] ;",
+        "int dp [ 1 ] = cnt [ 1 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no ‘operator++(int)’ declared for postfix ‘++’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        10,
+        2
+      ],
+      "mod_code": [
+        "dp [ 0 ] = ' 0 ' ;",
+        "vector < long long > cnt [ 100001 ] ;",
+        "int dp [ 1 ] = cnt [ 1 ] ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        2
+      ],
+      "mod_code": [
+        "dp [ 0 ] = ' 0 ' ;",
+        "vector < long long > cnt [ 100001 ] ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        10
+      ],
+      "mod_code": [
+        "dp [ 0 ] = ' 0 ' ;",
+        "int dp [ 1 ] = cnt [ 1 ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "conflicting declaration ‘int dp [1]’"
+    },
+    {
+      "mod_line": [
+        9,
+        10,
+        2
+      ],
+      "mod_code": [
+        "dp [ 0 ] = ' 0 ' ;",
+        "int dp [ 1 ] = cnt [ 1 ] ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        2
+      ],
+      "mod_code": [
+        "dp [ 0 ] = ' 0 ' ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        3
+      ],
+      "mod_code": [
+        "cin >> n ;",
+        "vector < long long > cnt [ 100001 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no ‘operator++(int)’ declared for postfix ‘++’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        3,
+        10
+      ],
+      "mod_code": [
+        "cin >> n ;",
+        "vector < long long > cnt [ 100001 ] ;",
+        "int dp [ 1 ] = cnt [ 1 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no ‘operator++(int)’ declared for postfix ‘++’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        3,
+        10,
+        2
+      ],
+      "mod_code": [
+        "cin >> n ;",
+        "vector < long long > cnt [ 100001 ] ;",
+        "int dp [ 1 ] = cnt [ 1 ] ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        3,
+        2
+      ],
+      "mod_code": [
+        "cin >> n ;",
+        "vector < long long > cnt [ 100001 ] ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        10
+      ],
+      "mod_code": [
+        "cin >> n ;",
+        "int dp [ 1 ] = cnt [ 1 ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "conflicting declaration ‘int dp [1]’"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        2
+      ],
+      "mod_code": [
+        "cin >> n ;",
+        "int dp [ 1 ] = cnt [ 1 ] ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        2
+      ],
+      "mod_code": [
+        "cin >> n ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        10
+      ],
+      "mod_code": [
+        "vector < long long > cnt [ 100001 ] ;",
+        "int dp [ 1 ] = cnt [ 1 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no ‘operator++(int)’ declared for postfix ‘++’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        10,
+        2
+      ],
+      "mod_code": [
+        "vector < long long > cnt [ 100001 ] ;",
+        "int dp [ 1 ] = cnt [ 1 ] ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        2
+      ],
+      "mod_code": [
+        "vector < long long > cnt [ 100001 ] ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        2
+      ],
+      "mod_code": [
+        "int dp [ 1 ] = cnt [ 1 ] ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    }
+  ]
+}

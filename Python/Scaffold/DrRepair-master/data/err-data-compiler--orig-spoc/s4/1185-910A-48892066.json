@@ -1,0 +1,477 @@
+{
+  "meta": {
+    "index": 1185,
+    "hitid": "3VGZ74AYTGAMG15FHMXZ7LCJ0MFCGF",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "910A",
+    "subid": "48892066"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create integers n , d",
+      "code": "int n , d ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read n read d",
+      "code": "cin >> n >> d ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "create string ar",
+      "code": "string ar ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "create integer array dp with size n",
+      "code": "int dp [ n ] ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i = 0 to n exclusive , set dp [ i ] to INT_MAX",
+      "code": "for ( int i = 0 ; i < n ; i ++ ) dp [ i ] = INT_MAX ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "read ar",
+      "code": "cin >> ar ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "set ar [ 0 ] to ' 1 '",
+      "code": "ar [ 0 ] = ' 1 ' ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "set dp [ 0 ] to 0",
+      "code": "dp [ 0 ] = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "for i = 1 to n exclusive",
+      "code": "for ( int i = 1 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "if ar [ i ] is ' 1 '",
+      "code": "if ( ar [ i ] == ' 1 ' )",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "for j = i - 1 , count = 1 , to count is less than or equal to d and j is greater than or equal to 0 , decrementing j , incrementing count",
+      "code": "for ( int j = i - 1 , count = 1 ; count <= d && j >= 0 ; j -- , count ++ )",
+      "indent": 3
+    },
+    {
+      "line": 12,
+      "text": "if ar [ j ] is ' 1 ' and dp [ j ] is not INT_MAX , set dp [ i ] to minimum of dp [ j ] + 1 and dp [ i ]",
+      "code": "if ( ar [ j ] == ' 1 ' && dp [ j ] != INT_MAX ) { dp [ i ] = min ( dp [ j ] + 1 , dp [ i ] ) ; }",
+      "indent": 4
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "if dp [ n - 1 ] is not INT_MAX",
+      "code": "if ( dp [ n - 1 ] != INT_MAX )",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "print dp [ n - 1 ]",
+      "code": "cout << dp [ n - 1 ] ;",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "else",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "print \" - 1 \"",
+      "code": "cout << \" -1 \" ;",
+      "indent": 2
+    },
+    {
+      "line": 19,
+      "text": "print newline",
+      "code": "cout << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "for ( int j = i - 1 , count = 1 ; j <= d && j >= 0 ; j -- ) { count ++ ; }"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "cin >> n >> k ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "char ar ;"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid types ‘char[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "cin >> input ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘input’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        16
+      ],
+      "mod_code": [
+        "for ( int j = i - 1 , count = 1 ; j <= d && j >= 0 ; j -- ) { count ++ ; }",
+        "cout << dp [ n - 1 ] << endl ;"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        16,
+        18
+      ],
+      "mod_code": [
+        "for ( int j = i - 1 , count = 1 ; j <= d && j >= 0 ; j -- ) { count ++ ; }",
+        "cout << dp [ n - 1 ] << endl ;",
+        "cout << \" -1 \" << endl ;"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        16,
+        18,
+        10
+      ],
+      "mod_code": [
+        "for ( int j = i - 1 , count = 1 ; j <= d && j >= 0 ; j -- ) { count ++ ; }",
+        "cout << dp [ n - 1 ] << endl ;",
+        "cout << \" -1 \" << endl ;",
+        "if ( ar [ i ] == ' l ' )"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        16,
+        18,
+        7
+      ],
+      "mod_code": [
+        "for ( int j = i - 1 , count = 1 ; j <= d && j >= 0 ; j -- ) { count ++ ; }",
+        "cout << dp [ n - 1 ] << endl ;",
+        "cout << \" -1 \" << endl ;",
+        "ar [ 0 ] = ' \\0 ' ;"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        16,
+        10
+      ],
+      "mod_code": [
+        "for ( int j = i - 1 , count = 1 ; j <= d && j >= 0 ; j -- ) { count ++ ; }",
+        "cout << dp [ n - 1 ] << endl ;",
+        "if ( ar [ i ] == ' l ' )"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        16,
+        10,
+        7
+      ],
+      "mod_code": [
+        "for ( int j = i - 1 , count = 1 ; j <= d && j >= 0 ; j -- ) { count ++ ; }",
+        "cout << dp [ n - 1 ] << endl ;",
+        "if ( ar [ i ] == ' l ' )",
+        "ar [ 0 ] = ' \\0 ' ;"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        16,
+        10,
+        18
+      ],
+      "mod_code": [
+        "for ( int j = i - 1 , count = 1 ; j <= d && j >= 0 ; j -- ) { count ++ ; }",
+        "cout << dp [ n - 1 ] << endl ;",
+        "if ( ar [ i ] == ' l ' )",
+        "puts ( \" -1 \" ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        16,
+        7
+      ],
+      "mod_code": [
+        "for ( int j = i - 1 , count = 1 ; j <= d && j >= 0 ; j -- ) { count ++ ; }",
+        "cout << dp [ n - 1 ] << endl ;",
+        "ar [ 0 ] = ' \\0 ' ;"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        16,
+        7,
+        18
+      ],
+      "mod_code": [
+        "for ( int j = i - 1 , count = 1 ; j <= d && j >= 0 ; j -- ) { count ++ ; }",
+        "cout << dp [ n - 1 ] << endl ;",
+        "ar [ 0 ] = ' \\0 ' ;",
+        "puts ( \" -1 \" ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        16,
+        18
+      ],
+      "mod_code": [
+        "for ( int j = i - 1 , count = 1 ; j <= d && j >= 0 ; j -- ) { count ++ ; }",
+        "cout << dp [ n - 1 ] << endl ;",
+        "puts ( \" -1 \" ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        18
+      ],
+      "mod_code": [
+        "for ( int j = i - 1 , count = 1 ; j <= d && j >= 0 ; j -- ) { count ++ ; }",
+        "cout << \" -1 \" << endl ;"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        18,
+        10
+      ],
+      "mod_code": [
+        "for ( int j = i - 1 , count = 1 ; j <= d && j >= 0 ; j -- ) { count ++ ; }",
+        "cout << \" -1 \" << endl ;",
+        "if ( ar [ i ] == ' l ' )"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        18,
+        10,
+        7
+      ],
+      "mod_code": [
+        "for ( int j = i - 1 , count = 1 ; j <= d && j >= 0 ; j -- ) { count ++ ; }",
+        "cout << \" -1 \" << endl ;",
+        "if ( ar [ i ] == ' l ' )",
+        "ar [ 0 ] = ' \\0 ' ;"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        18,
+        7
+      ],
+      "mod_code": [
+        "for ( int j = i - 1 , count = 1 ; j <= d && j >= 0 ; j -- ) { count ++ ; }",
+        "cout << \" -1 \" << endl ;",
+        "ar [ 0 ] = ' \\0 ' ;"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        10
+      ],
+      "mod_code": [
+        "for ( int j = i - 1 , count = 1 ; j <= d && j >= 0 ; j -- ) { count ++ ; }",
+        "if ( ar [ i ] == ' l ' )"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        10,
+        7
+      ],
+      "mod_code": [
+        "for ( int j = i - 1 , count = 1 ; j <= d && j >= 0 ; j -- ) { count ++ ; }",
+        "if ( ar [ i ] == ' l ' )",
+        "ar [ 0 ] = ' \\0 ' ;"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        10,
+        7,
+        18
+      ],
+      "mod_code": [
+        "for ( int j = i - 1 , count = 1 ; j <= d && j >= 0 ; j -- ) { count ++ ; }",
+        "if ( ar [ i ] == ' l ' )",
+        "ar [ 0 ] = ' \\0 ' ;",
+        "puts ( \" -1 \" ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        10,
+        18
+      ],
+      "mod_code": [
+        "for ( int j = i - 1 , count = 1 ; j <= d && j >= 0 ; j -- ) { count ++ ; }",
+        "if ( ar [ i ] == ' l ' )",
+        "puts ( \" -1 \" ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        7
+      ],
+      "mod_code": [
+        "for ( int j = i - 1 , count = 1 ; j <= d && j >= 0 ; j -- ) { count ++ ; }",
+        "ar [ 0 ] = ' \\0 ' ;"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        7,
+        18
+      ],
+      "mod_code": [
+        "for ( int j = i - 1 , count = 1 ; j <= d && j >= 0 ; j -- ) { count ++ ; }",
+        "ar [ 0 ] = ' \\0 ' ;",
+        "puts ( \" -1 \" ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        18
+      ],
+      "mod_code": [
+        "for ( int j = i - 1 , count = 1 ; j <= d && j >= 0 ; j -- ) { count ++ ; }",
+        "puts ( \" -1 \" ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    }
+  ]
+}

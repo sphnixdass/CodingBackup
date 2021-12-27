@@ -1,0 +1,677 @@
+{
+  "meta": {
+    "index": 2507,
+    "hitid": "3UYRNV2KITTQEQWONEUPVJPXCUHN84",
+    "workerid": "A24WRPQYGMQLGF",
+    "probid": "94A",
+    "subid": "43387924"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "pass = string",
+      "code": "string pass ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "comb = string array of size 100",
+      "code": "string comb [ 10 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "read pass",
+      "code": "cin >> pass ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for i = 0 to 10 exclusive , then read comb [ i ]",
+      "code": "for ( int i = 0 ; i < 10 ; i ++ ) { cin >> comb [ i ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i = 0 to 8 exclusive",
+      "code": "for ( int i = 0 ; i < 8 ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for j = 0 to 10 exclusive",
+      "code": "for ( int j = 0 ; j < 10 ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "if pass at pass [ i * 10 ] to pass [ i * 10 + 10 ] is comb [ j ] , then print j",
+      "code": "if ( pass . substr ( i * 10 , 10 ) == comb [ j ] ) cout << j ;",
+      "indent": 3
+    },
+    {
+      "line": 8,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "print endline",
+      "code": "cout << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "if ( pass [ i * 10 ] == comb [ j ] ) cout << j [ j ] << endl ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator==’ (operand types are ‘char’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "char comb [ 100 ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator==’ (operand types are ‘std::__cxx11::basic_string<char>’ and ‘char’)"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < 8 ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j < 10 ; j ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "if ( pass [ i * 10 ] == comb [ j ] ) { cout << j [ j ] << endl ; }"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator==’ (operand types are ‘char’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        7,
+        2
+      ],
+      "mod_code": [
+        "if ( pass [ i * 10 ] == comb [ j ] ) cout << j [ j ] << endl ;",
+        "char comb [ 100 ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        7,
+        2,
+        6
+      ],
+      "mod_code": [
+        "if ( pass [ i * 10 ] == comb [ j ] ) cout << j [ j ] << endl ;",
+        "char comb [ 100 ] ;",
+        "for ( j = 0 ; j < 10 ; j ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        2,
+        6,
+        5
+      ],
+      "mod_code": [
+        "if ( pass [ i * 10 ] == comb [ j ] ) cout << j [ j ] << endl ;",
+        "char comb [ 100 ] ;",
+        "for ( j = 0 ; j < 10 ; j ++ )",
+        "for ( i = 0 ; i < 8 ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7,
+        2,
+        6,
+        3
+      ],
+      "mod_code": [
+        "if ( pass [ i * 10 ] == comb [ j ] ) cout << j [ j ] << endl ;",
+        "char comb [ 100 ] ;",
+        "for ( j = 0 ; j < 10 ; j ++ )",
+        "pass = getchar ( ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        2,
+        5
+      ],
+      "mod_code": [
+        "if ( pass [ i * 10 ] == comb [ j ] ) cout << j [ j ] << endl ;",
+        "char comb [ 100 ] ;",
+        "for ( i = 0 ; i < 8 ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7,
+        2,
+        5,
+        3
+      ],
+      "mod_code": [
+        "if ( pass [ i * 10 ] == comb [ j ] ) cout << j [ j ] << endl ;",
+        "char comb [ 100 ] ;",
+        "for ( i = 0 ; i < 8 ; i ++ )",
+        "pass = getchar ( ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7,
+        2,
+        3
+      ],
+      "mod_code": [
+        "if ( pass [ i * 10 ] == comb [ j ] ) cout << j [ j ] << endl ;",
+        "char comb [ 100 ] ;",
+        "pass = getchar ( ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        7,
+        6
+      ],
+      "mod_code": [
+        "if ( pass [ i * 10 ] == comb [ j ] ) cout << j [ j ] << endl ;",
+        "for ( j = 0 ; j < 10 ; j ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        6,
+        5
+      ],
+      "mod_code": [
+        "if ( pass [ i * 10 ] == comb [ j ] ) cout << j [ j ] << endl ;",
+        "for ( j = 0 ; j < 10 ; j ++ )",
+        "for ( i = 0 ; i < 8 ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7,
+        6,
+        5,
+        3
+      ],
+      "mod_code": [
+        "if ( pass [ i * 10 ] == comb [ j ] ) cout << j [ j ] << endl ;",
+        "for ( j = 0 ; j < 10 ; j ++ )",
+        "for ( i = 0 ; i < 8 ; i ++ )",
+        "pass = getchar ( ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7,
+        6,
+        3
+      ],
+      "mod_code": [
+        "if ( pass [ i * 10 ] == comb [ j ] ) cout << j [ j ] << endl ;",
+        "for ( j = 0 ; j < 10 ; j ++ )",
+        "pass = getchar ( ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        5
+      ],
+      "mod_code": [
+        "if ( pass [ i * 10 ] == comb [ j ] ) cout << j [ j ] << endl ;",
+        "for ( i = 0 ; i < 8 ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7,
+        5,
+        3
+      ],
+      "mod_code": [
+        "if ( pass [ i * 10 ] == comb [ j ] ) cout << j [ j ] << endl ;",
+        "for ( i = 0 ; i < 8 ; i ++ )",
+        "pass = getchar ( ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7,
+        3
+      ],
+      "mod_code": [
+        "if ( pass [ i * 10 ] == comb [ j ] ) cout << j [ j ] << endl ;",
+        "pass = getchar ( ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator==’ (operand types are ‘char’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        7,
+        2
+      ],
+      "mod_code": [
+        "if ( pass [ i * 10 ] == comb [ j ] ) { cout << j [ j ] << endl ; }",
+        "char comb [ 100 ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        7,
+        2,
+        6
+      ],
+      "mod_code": [
+        "if ( pass [ i * 10 ] == comb [ j ] ) { cout << j [ j ] << endl ; }",
+        "char comb [ 100 ] ;",
+        "for ( j = 0 ; j < 10 ; j ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        2,
+        6,
+        5
+      ],
+      "mod_code": [
+        "if ( pass [ i * 10 ] == comb [ j ] ) { cout << j [ j ] << endl ; }",
+        "char comb [ 100 ] ;",
+        "for ( j = 0 ; j < 10 ; j ++ )",
+        "for ( i = 0 ; i < 8 ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7,
+        2,
+        6,
+        3
+      ],
+      "mod_code": [
+        "if ( pass [ i * 10 ] == comb [ j ] ) { cout << j [ j ] << endl ; }",
+        "char comb [ 100 ] ;",
+        "for ( j = 0 ; j < 10 ; j ++ )",
+        "pass = getchar ( ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        2,
+        5
+      ],
+      "mod_code": [
+        "if ( pass [ i * 10 ] == comb [ j ] ) { cout << j [ j ] << endl ; }",
+        "char comb [ 100 ] ;",
+        "for ( i = 0 ; i < 8 ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7,
+        2,
+        5,
+        3
+      ],
+      "mod_code": [
+        "if ( pass [ i * 10 ] == comb [ j ] ) { cout << j [ j ] << endl ; }",
+        "char comb [ 100 ] ;",
+        "for ( i = 0 ; i < 8 ; i ++ )",
+        "pass = getchar ( ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7,
+        2,
+        3
+      ],
+      "mod_code": [
+        "if ( pass [ i * 10 ] == comb [ j ] ) { cout << j [ j ] << endl ; }",
+        "char comb [ 100 ] ;",
+        "pass = getchar ( ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        7,
+        6
+      ],
+      "mod_code": [
+        "if ( pass [ i * 10 ] == comb [ j ] ) { cout << j [ j ] << endl ; }",
+        "for ( j = 0 ; j < 10 ; j ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        6,
+        5
+      ],
+      "mod_code": [
+        "if ( pass [ i * 10 ] == comb [ j ] ) { cout << j [ j ] << endl ; }",
+        "for ( j = 0 ; j < 10 ; j ++ )",
+        "for ( i = 0 ; i < 8 ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7,
+        6,
+        5,
+        3
+      ],
+      "mod_code": [
+        "if ( pass [ i * 10 ] == comb [ j ] ) { cout << j [ j ] << endl ; }",
+        "for ( j = 0 ; j < 10 ; j ++ )",
+        "for ( i = 0 ; i < 8 ; i ++ )",
+        "pass = getchar ( ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7,
+        6,
+        3
+      ],
+      "mod_code": [
+        "if ( pass [ i * 10 ] == comb [ j ] ) { cout << j [ j ] << endl ; }",
+        "for ( j = 0 ; j < 10 ; j ++ )",
+        "pass = getchar ( ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        5
+      ],
+      "mod_code": [
+        "if ( pass [ i * 10 ] == comb [ j ] ) { cout << j [ j ] << endl ; }",
+        "for ( i = 0 ; i < 8 ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7,
+        5,
+        3
+      ],
+      "mod_code": [
+        "if ( pass [ i * 10 ] == comb [ j ] ) { cout << j [ j ] << endl ; }",
+        "for ( i = 0 ; i < 8 ; i ++ )",
+        "pass = getchar ( ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7,
+        3
+      ],
+      "mod_code": [
+        "if ( pass [ i * 10 ] == comb [ j ] ) { cout << j [ j ] << endl ; }",
+        "pass = getchar ( ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator==’ (operand types are ‘char’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        2,
+        6
+      ],
+      "mod_code": [
+        "char comb [ 100 ] ;",
+        "for ( j = 0 ; j < 10 ; j ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        5
+      ],
+      "mod_code": [
+        "char comb [ 100 ] ;",
+        "for ( j = 0 ; j < 10 ; j ++ )",
+        "for ( i = 0 ; i < 8 ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        5,
+        3
+      ],
+      "mod_code": [
+        "char comb [ 100 ] ;",
+        "for ( j = 0 ; j < 10 ; j ++ )",
+        "for ( i = 0 ; i < 8 ; i ++ )",
+        "pass = getchar ( ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        3
+      ],
+      "mod_code": [
+        "char comb [ 100 ] ;",
+        "for ( j = 0 ; j < 10 ; j ++ )",
+        "pass = getchar ( ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        5
+      ],
+      "mod_code": [
+        "char comb [ 100 ] ;",
+        "for ( i = 0 ; i < 8 ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2,
+        5,
+        3
+      ],
+      "mod_code": [
+        "char comb [ 100 ] ;",
+        "for ( i = 0 ; i < 8 ; i ++ )",
+        "pass = getchar ( ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2,
+        3
+      ],
+      "mod_code": [
+        "char comb [ 100 ] ;",
+        "pass = getchar ( ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator==’ (operand types are ‘std::__cxx11::basic_string<char>’ and ‘char’)"
+    },
+    {
+      "mod_line": [
+        6,
+        5
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j < 10 ; j ++ )",
+        "for ( i = 0 ; i < 8 ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        5,
+        3
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j < 10 ; j ++ )",
+        "for ( i = 0 ; i < 8 ; i ++ )",
+        "pass = getchar ( ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        3
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j < 10 ; j ++ )",
+        "pass = getchar ( ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        3
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < 8 ; i ++ )",
+        "pass = getchar ( ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    }
+  ]
+}

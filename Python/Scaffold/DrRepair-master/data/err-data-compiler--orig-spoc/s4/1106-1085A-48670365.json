@@ -1,0 +1,669 @@
+{
+  "meta": {
+    "index": 1106,
+    "hitid": "37G6BXQPLQFSQOJ7G986RNGORL1EQ5",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "1085A",
+    "subid": "48670365"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create strings ans , s",
+      "code": "string ans , s ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read s",
+      "code": "cin >> s ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "create integer i with size of s / 2 - 1",
+      "code": "int i = s . size ( ) / 2 - 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "if size of s % 2 is 1 , increment i",
+      "code": "if ( s . size ( ) % 2 == 1 ) i ++ ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "create integer p with p = i + 1",
+      "code": "int p = i + 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i is less than or equal to 0 , decrementing i , incrementing p",
+      "code": "for ( ; i >= 0 ; i -- , p ++ )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "add element s [ i ] to end of ans",
+      "code": "ans . push_back ( s [ i ] ) ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "if p is less than size of s , add element s [ p ] to end of ans",
+      "code": "if ( p < s . size ( ) ) ans . push_back ( s [ p ] ) ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "print ans print newline",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "if ( p < s . size ( ) ) ans . push ( s [ p ] ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘std::__cxx11::string {aka class std::__cxx11::basic_string<char>}’ has no member named ‘push’"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "string ans = s ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "s >> s ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "p = i + 1 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘p’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "ans . push ( s [ i ] ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘std::__cxx11::string {aka class std::__cxx11::basic_string<char>}’ has no member named ‘push’"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "if ( p < s . size ( ) ) { ans . push ( s [ p ] ) ; }"
+      ],
+      "err_line": 8,
+      "err_msg": "‘std::__cxx11::string {aka class std::__cxx11::basic_string<char>}’ has no member named ‘push’"
+    },
+    {
+      "mod_line": [
+        6,
+        8
+      ],
+      "mod_code": [
+        "for ( ; i <= 0 ; i -- )",
+        "if ( p < s . size ( ) ) ans . push ( s [ p ] ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘std::__cxx11::string {aka class std::__cxx11::basic_string<char>}’ has no member named ‘push’"
+    },
+    {
+      "mod_line": [
+        6,
+        8,
+        10
+      ],
+      "mod_code": [
+        "for ( ; i <= 0 ; i -- )",
+        "if ( p < s . size ( ) ) ans . push ( s [ p ] ) ;",
+        "cout << ans ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘std::__cxx11::string {aka class std::__cxx11::basic_string<char>}’ has no member named ‘push’"
+    },
+    {
+      "mod_line": [
+        6,
+        8,
+        10,
+        1
+      ],
+      "mod_code": [
+        "for ( ; i <= 0 ; i -- )",
+        "if ( p < s . size ( ) ) ans . push ( s [ p ] ) ;",
+        "cout << ans ;",
+        "string ans = s ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        8,
+        10,
+        2
+      ],
+      "mod_code": [
+        "for ( ; i <= 0 ; i -- )",
+        "if ( p < s . size ( ) ) ans . push ( s [ p ] ) ;",
+        "cout << ans ;",
+        "s >> s ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        6,
+        8,
+        1
+      ],
+      "mod_code": [
+        "for ( ; i <= 0 ; i -- )",
+        "if ( p < s . size ( ) ) ans . push ( s [ p ] ) ;",
+        "string ans = s ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        8,
+        1,
+        2
+      ],
+      "mod_code": [
+        "for ( ; i <= 0 ; i -- )",
+        "if ( p < s . size ( ) ) ans . push ( s [ p ] ) ;",
+        "string ans = s ;",
+        "s >> s ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        8,
+        2
+      ],
+      "mod_code": [
+        "for ( ; i <= 0 ; i -- )",
+        "if ( p < s . size ( ) ) ans . push ( s [ p ] ) ;",
+        "s >> s ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        6,
+        10,
+        1
+      ],
+      "mod_code": [
+        "for ( ; i <= 0 ; i -- )",
+        "cout << ans ;",
+        "string ans = s ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        10,
+        1,
+        2
+      ],
+      "mod_code": [
+        "for ( ; i <= 0 ; i -- )",
+        "cout << ans ;",
+        "string ans = s ;",
+        "s >> s ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        10,
+        1,
+        8
+      ],
+      "mod_code": [
+        "for ( ; i <= 0 ; i -- )",
+        "cout << ans ;",
+        "string ans = s ;",
+        "if ( p < s . size ( ) ) { ans . push ( s [ p ] ) ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        10,
+        2
+      ],
+      "mod_code": [
+        "for ( ; i <= 0 ; i -- )",
+        "cout << ans ;",
+        "s >> s ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        6,
+        10,
+        2,
+        8
+      ],
+      "mod_code": [
+        "for ( ; i <= 0 ; i -- )",
+        "cout << ans ;",
+        "s >> s ;",
+        "if ( p < s . size ( ) ) { ans . push ( s [ p ] ) ; }"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        6,
+        10,
+        8
+      ],
+      "mod_code": [
+        "for ( ; i <= 0 ; i -- )",
+        "cout << ans ;",
+        "if ( p < s . size ( ) ) { ans . push ( s [ p ] ) ; }"
+      ],
+      "err_line": 8,
+      "err_msg": "‘std::__cxx11::string {aka class std::__cxx11::basic_string<char>}’ has no member named ‘push’"
+    },
+    {
+      "mod_line": [
+        6,
+        1
+      ],
+      "mod_code": [
+        "for ( ; i <= 0 ; i -- )",
+        "string ans = s ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        1,
+        2
+      ],
+      "mod_code": [
+        "for ( ; i <= 0 ; i -- )",
+        "string ans = s ;",
+        "s >> s ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        1,
+        2,
+        8
+      ],
+      "mod_code": [
+        "for ( ; i <= 0 ; i -- )",
+        "string ans = s ;",
+        "s >> s ;",
+        "if ( p < s . size ( ) ) { ans . push ( s [ p ] ) ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        1,
+        8
+      ],
+      "mod_code": [
+        "for ( ; i <= 0 ; i -- )",
+        "string ans = s ;",
+        "if ( p < s . size ( ) ) { ans . push ( s [ p ] ) ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        2
+      ],
+      "mod_code": [
+        "for ( ; i <= 0 ; i -- )",
+        "s >> s ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        6,
+        2,
+        8
+      ],
+      "mod_code": [
+        "for ( ; i <= 0 ; i -- )",
+        "s >> s ;",
+        "if ( p < s . size ( ) ) { ans . push ( s [ p ] ) ; }"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        6,
+        8
+      ],
+      "mod_code": [
+        "for ( ; i <= 0 ; i -- )",
+        "if ( p < s . size ( ) ) { ans . push ( s [ p ] ) ; }"
+      ],
+      "err_line": 8,
+      "err_msg": "‘std::__cxx11::string {aka class std::__cxx11::basic_string<char>}’ has no member named ‘push’"
+    },
+    {
+      "mod_line": [
+        8,
+        10
+      ],
+      "mod_code": [
+        "if ( p < s . size ( ) ) ans . push ( s [ p ] ) ;",
+        "cout << ans ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘std::__cxx11::string {aka class std::__cxx11::basic_string<char>}’ has no member named ‘push’"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        1
+      ],
+      "mod_code": [
+        "if ( p < s . size ( ) ) ans . push ( s [ p ] ) ;",
+        "cout << ans ;",
+        "string ans = s ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        1,
+        2
+      ],
+      "mod_code": [
+        "if ( p < s . size ( ) ) ans . push ( s [ p ] ) ;",
+        "cout << ans ;",
+        "string ans = s ;",
+        "s >> s ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        2
+      ],
+      "mod_code": [
+        "if ( p < s . size ( ) ) ans . push ( s [ p ] ) ;",
+        "cout << ans ;",
+        "s >> s ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        8,
+        1
+      ],
+      "mod_code": [
+        "if ( p < s . size ( ) ) ans . push ( s [ p ] ) ;",
+        "string ans = s ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        1,
+        2
+      ],
+      "mod_code": [
+        "if ( p < s . size ( ) ) ans . push ( s [ p ] ) ;",
+        "string ans = s ;",
+        "s >> s ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        2
+      ],
+      "mod_code": [
+        "if ( p < s . size ( ) ) ans . push ( s [ p ] ) ;",
+        "s >> s ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        10,
+        1
+      ],
+      "mod_code": [
+        "cout << ans ;",
+        "string ans = s ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        1,
+        2
+      ],
+      "mod_code": [
+        "cout << ans ;",
+        "string ans = s ;",
+        "s >> s ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        1,
+        2,
+        8
+      ],
+      "mod_code": [
+        "cout << ans ;",
+        "string ans = s ;",
+        "s >> s ;",
+        "if ( p < s . size ( ) ) { ans . push ( s [ p ] ) ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        1,
+        8
+      ],
+      "mod_code": [
+        "cout << ans ;",
+        "string ans = s ;",
+        "if ( p < s . size ( ) ) { ans . push ( s [ p ] ) ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        2
+      ],
+      "mod_code": [
+        "cout << ans ;",
+        "s >> s ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        10,
+        2,
+        8
+      ],
+      "mod_code": [
+        "cout << ans ;",
+        "s >> s ;",
+        "if ( p < s . size ( ) ) { ans . push ( s [ p ] ) ; }"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        10,
+        8
+      ],
+      "mod_code": [
+        "cout << ans ;",
+        "if ( p < s . size ( ) ) { ans . push ( s [ p ] ) ; }"
+      ],
+      "err_line": 8,
+      "err_msg": "‘std::__cxx11::string {aka class std::__cxx11::basic_string<char>}’ has no member named ‘push’"
+    },
+    {
+      "mod_line": [
+        1,
+        2
+      ],
+      "mod_code": [
+        "string ans = s ;",
+        "s >> s ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        2,
+        8
+      ],
+      "mod_code": [
+        "string ans = s ;",
+        "s >> s ;",
+        "if ( p < s . size ( ) ) { ans . push ( s [ p ] ) ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        8
+      ],
+      "mod_code": [
+        "string ans = s ;",
+        "if ( p < s . size ( ) ) { ans . push ( s [ p ] ) ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        8
+      ],
+      "mod_code": [
+        "s >> s ;",
+        "if ( p < s . size ( ) ) { ans . push ( s [ p ] ) ; }"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    }
+  ]
+}

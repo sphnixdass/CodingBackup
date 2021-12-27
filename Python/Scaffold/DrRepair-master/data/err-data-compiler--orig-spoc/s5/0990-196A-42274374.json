@@ -1,0 +1,601 @@
+{
+  "meta": {
+    "index": 990,
+    "hitid": "3KTZHH2ONI9KW8BOBDFPI40X6H78ME",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "196A",
+    "subid": "42274374"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare string sequence",
+      "code": "string sequence ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read input into sequence",
+      "code": "getline ( cin , sequence ) ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "create deque of chars called letters",
+      "code": "deque < char > letters ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for i = 0 to length of sequence exclusive",
+      "code": "for ( int i = 0 ; i < sequence . length ( ) ; ++ i )",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "while letters is not empty and first element of letters < sequence [ i ] , remove first element from letters",
+      "code": "while ( ! letters . empty ( ) && letters . front ( ) < sequence [ i ] ) letters . pop_front ( ) ;",
+      "indent": 2
+    },
+    {
+      "line": 6,
+      "text": "push sequence [ i ] to beginning of the letters",
+      "code": "letters . push_front ( sequence [ i ] ) ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "while letters is not empty",
+      "code": "while ( ! letters . empty ( ) )",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "print last element of letters",
+      "code": "cout << letters . back ( ) ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "remove last element of letters",
+      "code": "letters . pop_back ( ) ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "print new line",
+      "code": "cout << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "string s ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘sequence’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "while ( ! letters . empty ( ) && letters < sequence [ i ] ) letters . pop ( ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator<’ (operand types are ‘std::deque<char>’ and ‘char’)"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "deque < char > letters [ 8 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "request for member ‘empty’ in ‘letters’, which is of non-class type ‘std::deque<char> [8]’"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "while ( ! letters . empty ( ) && letters . first < sequence [ i ] ) letters . pop ( ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘class std::deque<char>’ has no member named ‘first’"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "letters . push ( sequence [ i ] ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘class std::deque<char>’ has no member named ‘push’"
+    },
+    {
+      "mod_line": [
+        1,
+        5
+      ],
+      "mod_code": [
+        "string s ;",
+        "while ( ! letters . empty ( ) && letters < sequence [ i ] ) letters . pop ( ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘sequence’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        5,
+        6
+      ],
+      "mod_code": [
+        "string s ;",
+        "while ( ! letters . empty ( ) && letters < sequence [ i ] ) letters . pop ( ) ;",
+        "letters . push_back ( sequence [ i ] ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘sequence’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        5,
+        6,
+        9
+      ],
+      "mod_code": [
+        "string s ;",
+        "while ( ! letters . empty ( ) && letters < sequence [ i ] ) letters . pop ( ) ;",
+        "letters . push_back ( sequence [ i ] ) ;",
+        "cout << letters [ 0 ] << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘sequence’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        5,
+        6,
+        8
+      ],
+      "mod_code": [
+        "string s ;",
+        "while ( ! letters . empty ( ) && letters < sequence [ i ] ) letters . pop ( ) ;",
+        "letters . push_back ( sequence [ i ] ) ;",
+        "while ( letters . empty ( ) )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘sequence’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        5,
+        6,
+        9
+      ],
+      "mod_code": [
+        "string s ;",
+        "while ( ! letters . empty ( ) && letters < sequence [ i ] ) letters . pop ( ) ;",
+        "letters . push_back ( sequence [ i ] ) ;",
+        "cout << letters . back ( ) << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘sequence’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        5,
+        9
+      ],
+      "mod_code": [
+        "string s ;",
+        "while ( ! letters . empty ( ) && letters < sequence [ i ] ) letters . pop ( ) ;",
+        "cout << letters [ 0 ] << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘sequence’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        5,
+        9,
+        8
+      ],
+      "mod_code": [
+        "string s ;",
+        "while ( ! letters . empty ( ) && letters < sequence [ i ] ) letters . pop ( ) ;",
+        "cout << letters [ 0 ] << endl ;",
+        "while ( letters . empty ( ) )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘sequence’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        5,
+        8
+      ],
+      "mod_code": [
+        "string s ;",
+        "while ( ! letters . empty ( ) && letters < sequence [ i ] ) letters . pop ( ) ;",
+        "while ( letters . empty ( ) )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘sequence’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        5,
+        8,
+        9
+      ],
+      "mod_code": [
+        "string s ;",
+        "while ( ! letters . empty ( ) && letters < sequence [ i ] ) letters . pop ( ) ;",
+        "while ( letters . empty ( ) )",
+        "cout << letters . back ( ) << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘sequence’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        5,
+        9
+      ],
+      "mod_code": [
+        "string s ;",
+        "while ( ! letters . empty ( ) && letters < sequence [ i ] ) letters . pop ( ) ;",
+        "cout << letters . back ( ) << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘sequence’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        6
+      ],
+      "mod_code": [
+        "string s ;",
+        "letters . push_back ( sequence [ i ] ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘sequence’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        6,
+        9
+      ],
+      "mod_code": [
+        "string s ;",
+        "letters . push_back ( sequence [ i ] ) ;",
+        "cout << letters [ 0 ] << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘sequence’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        6,
+        9,
+        8
+      ],
+      "mod_code": [
+        "string s ;",
+        "letters . push_back ( sequence [ i ] ) ;",
+        "cout << letters [ 0 ] << endl ;",
+        "while ( letters . empty ( ) )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘sequence’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        6,
+        8
+      ],
+      "mod_code": [
+        "string s ;",
+        "letters . push_back ( sequence [ i ] ) ;",
+        "while ( letters . empty ( ) )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘sequence’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        6,
+        8,
+        9
+      ],
+      "mod_code": [
+        "string s ;",
+        "letters . push_back ( sequence [ i ] ) ;",
+        "while ( letters . empty ( ) )",
+        "cout << letters . back ( ) << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘sequence’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        6,
+        9
+      ],
+      "mod_code": [
+        "string s ;",
+        "letters . push_back ( sequence [ i ] ) ;",
+        "cout << letters . back ( ) << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘sequence’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        9
+      ],
+      "mod_code": [
+        "string s ;",
+        "cout << letters [ 0 ] << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘sequence’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        8
+      ],
+      "mod_code": [
+        "string s ;",
+        "cout << letters [ 0 ] << endl ;",
+        "while ( letters . empty ( ) )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘sequence’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        8
+      ],
+      "mod_code": [
+        "string s ;",
+        "while ( letters . empty ( ) )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘sequence’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        8,
+        9
+      ],
+      "mod_code": [
+        "string s ;",
+        "while ( letters . empty ( ) )",
+        "cout << letters . back ( ) << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘sequence’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        9
+      ],
+      "mod_code": [
+        "string s ;",
+        "cout << letters . back ( ) << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘sequence’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        6
+      ],
+      "mod_code": [
+        "while ( ! letters . empty ( ) && letters < sequence [ i ] ) letters . pop ( ) ;",
+        "letters . push_back ( sequence [ i ] ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator<’ (operand types are ‘std::deque<char>’ and ‘char’)"
+    },
+    {
+      "mod_line": [
+        5,
+        6,
+        9
+      ],
+      "mod_code": [
+        "while ( ! letters . empty ( ) && letters < sequence [ i ] ) letters . pop ( ) ;",
+        "letters . push_back ( sequence [ i ] ) ;",
+        "cout << letters [ 0 ] << endl ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator<’ (operand types are ‘std::deque<char>’ and ‘char’)"
+    },
+    {
+      "mod_line": [
+        5,
+        6,
+        9,
+        8
+      ],
+      "mod_code": [
+        "while ( ! letters . empty ( ) && letters < sequence [ i ] ) letters . pop ( ) ;",
+        "letters . push_back ( sequence [ i ] ) ;",
+        "cout << letters [ 0 ] << endl ;",
+        "while ( letters . empty ( ) )"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator<’ (operand types are ‘std::deque<char>’ and ‘char’)"
+    },
+    {
+      "mod_line": [
+        5,
+        6,
+        8
+      ],
+      "mod_code": [
+        "while ( ! letters . empty ( ) && letters < sequence [ i ] ) letters . pop ( ) ;",
+        "letters . push_back ( sequence [ i ] ) ;",
+        "while ( letters . empty ( ) )"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator<’ (operand types are ‘std::deque<char>’ and ‘char’)"
+    },
+    {
+      "mod_line": [
+        5,
+        6,
+        8,
+        9
+      ],
+      "mod_code": [
+        "while ( ! letters . empty ( ) && letters < sequence [ i ] ) letters . pop ( ) ;",
+        "letters . push_back ( sequence [ i ] ) ;",
+        "while ( letters . empty ( ) )",
+        "cout << letters . back ( ) << endl ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator<’ (operand types are ‘std::deque<char>’ and ‘char’)"
+    },
+    {
+      "mod_line": [
+        5,
+        6,
+        9
+      ],
+      "mod_code": [
+        "while ( ! letters . empty ( ) && letters < sequence [ i ] ) letters . pop ( ) ;",
+        "letters . push_back ( sequence [ i ] ) ;",
+        "cout << letters . back ( ) << endl ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator<’ (operand types are ‘std::deque<char>’ and ‘char’)"
+    },
+    {
+      "mod_line": [
+        5,
+        9
+      ],
+      "mod_code": [
+        "while ( ! letters . empty ( ) && letters < sequence [ i ] ) letters . pop ( ) ;",
+        "cout << letters [ 0 ] << endl ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator<’ (operand types are ‘std::deque<char>’ and ‘char’)"
+    },
+    {
+      "mod_line": [
+        5,
+        9,
+        8
+      ],
+      "mod_code": [
+        "while ( ! letters . empty ( ) && letters < sequence [ i ] ) letters . pop ( ) ;",
+        "cout << letters [ 0 ] << endl ;",
+        "while ( letters . empty ( ) )"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator<’ (operand types are ‘std::deque<char>’ and ‘char’)"
+    },
+    {
+      "mod_line": [
+        5,
+        8
+      ],
+      "mod_code": [
+        "while ( ! letters . empty ( ) && letters < sequence [ i ] ) letters . pop ( ) ;",
+        "while ( letters . empty ( ) )"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator<’ (operand types are ‘std::deque<char>’ and ‘char’)"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        9
+      ],
+      "mod_code": [
+        "while ( ! letters . empty ( ) && letters < sequence [ i ] ) letters . pop ( ) ;",
+        "while ( letters . empty ( ) )",
+        "cout << letters . back ( ) << endl ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator<’ (operand types are ‘std::deque<char>’ and ‘char’)"
+    },
+    {
+      "mod_line": [
+        5,
+        9
+      ],
+      "mod_code": [
+        "while ( ! letters . empty ( ) && letters < sequence [ i ] ) letters . pop ( ) ;",
+        "cout << letters . back ( ) << endl ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator<’ (operand types are ‘std::deque<char>’ and ‘char’)"
+    }
+  ]
+}

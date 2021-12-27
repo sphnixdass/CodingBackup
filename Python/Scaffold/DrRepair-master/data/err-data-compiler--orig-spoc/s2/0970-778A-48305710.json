@@ -1,0 +1,961 @@
+{
+  "meta": {
+    "index": 970,
+    "hitid": "3IZVJEBJ6AEXR1RJXN8L6S0FFQZ6Z7",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "778A",
+    "subid": "48305710"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare possible with strings t , p , long long pointer edits , long long changeIndex as arguments , returning boolean",
+      "code": "bool possible ( string t , string p , long long * edits , long long changeIndex )",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create integer firstPointer with firstPointer = 0",
+      "code": "int firstPointer = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "create integer secondPointer with secondPointer = 0",
+      "code": "int secondPointer = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "while firstPointer is less than size of t and secondPointer is less than size of p",
+      "code": "while ( firstPointer < t . size ( ) && secondPointer < p . size ( ) )",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "if t [ firstPointer ] is p [ secondPointer ] and edits [ firstPointer ] is greater than changeIndex",
+      "code": "if ( t [ firstPointer ] == p [ secondPointer ] && edits [ firstPointer ] > changeIndex )",
+      "indent": 2
+    },
+    {
+      "line": 5,
+      "text": "increment firstPointer",
+      "code": "firstPointer ++ ;",
+      "indent": 3
+    },
+    {
+      "line": 6,
+      "text": "increment secondPointer",
+      "code": "secondPointer ++ ;",
+      "indent": 3
+    },
+    {
+      "line": 7,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "increment firstPointer",
+      "code": "firstPointer ++ ;",
+      "indent": 3
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "return ( secoindPointer is size of p ) from function",
+      "code": "return ( secondPointer == p . size ( ) ) ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 14,
+      "text": "create string t",
+      "code": "string t ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "create string p",
+      "code": "string p ;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "read t read p",
+      "code": "cin >> t >> p ;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "create long long array moves with size size of t",
+      "code": "long long moves [ t . size ( ) ] ;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "for i = 0 to size of t exclusive , read moves [ i ]",
+      "code": "for ( long long i = 0 ; i < t . size ( ) ; i ++ ) { cin >> moves [ i ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "create long long array edits with size size of t",
+      "code": "long long edits [ t . size ( ) ] ;",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "for i = 0 to size of t , set edits [ i ] to - 1",
+      "code": "for ( long long i = 0 ; i < t . size ( ) ; i ++ ) { edits [ i ] = - 1 ; }",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "for i = 0 to size of t , set edits [ moves [ i ] - 1 ] to i",
+      "code": "for ( long long i = 0 ; i < t . size ( ) ; i ++ ) { edits [ moves [ i ] - 1 ] = i ; }",
+      "indent": 1
+    },
+    {
+      "line": 22,
+      "text": "create long long high with high = size of t - 1",
+      "code": "long long high = t . size ( ) - 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "create long long low with low = 0",
+      "code": "long long low = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "if not result of run possible with t , p , edits , 0 as arguments",
+      "code": "if ( ! possible ( t , p , edits , 0 ) )",
+      "indent": 1
+    },
+    {
+      "line": 25,
+      "text": "print 0 print ' \\ n '",
+      "code": "cout << 0 << ' \\n ' ;",
+      "indent": 2
+    },
+    {
+      "line": 26,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 2
+    },
+    {
+      "line": 27,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 28,
+      "text": "while low is less than high",
+      "code": "while ( low < high )",
+      "indent": 1
+    },
+    {
+      "line": 29,
+      "text": "create long long mid with mid = low + ( 1 + high - low ) / 2",
+      "code": "long long mid = low + ( 1 + high - low ) / 2 ;",
+      "indent": 2
+    },
+    {
+      "line": 30,
+      "text": "if result of run possible with t , p , edits , mid as arguments is true",
+      "code": "if ( possible ( t , p , edits , mid ) )",
+      "indent": 2
+    },
+    {
+      "line": 31,
+      "text": "set low to high",
+      "code": "low = mid ;",
+      "indent": 3
+    },
+    {
+      "line": 32,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 33,
+      "text": "set high to mid - 1",
+      "code": "high = mid - 1 ;",
+      "indent": 3
+    },
+    {
+      "line": 34,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 35,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 36,
+      "text": "print low + 1 print ' \\ n '",
+      "code": "cout << low + 1 << ' \\n ' ;",
+      "indent": 1
+    },
+    {
+      "line": 37,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 38,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "bool possible ( string t , long long edits , long long changeIndex , long long changeIndex )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int changeIndex’"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "return ( secoindPointer == p . size ( ) ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘secoindPointer’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "bool possible ( string t , long long p , long long changeIndex , long long changeIndex )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int changeIndex’"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "firstPointer = 0 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘firstPointer’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "secondPointer = 0 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘secondPointer’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "while ( firstPointer < t . size ( ) && secondPointer is p < p . size ( ) )"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘)’ before ‘is’"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "n"
+      ],
+      "err_line": 7,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "return secoindPointer == p . size ( ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘secoindPointer’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "string S ;"
+      ],
+      "err_line": 16,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "string * p ;"
+      ],
+      "err_line": 16,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>’ and ‘std::__cxx11::string* {aka std::__cxx11::basic_string<char>*}’)"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "t >> t >> p ;"
+      ],
+      "err_line": 16,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "long long moves [ t . size ( ) ;"
+      ],
+      "err_line": 17,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        19
+      ],
+      "mod_code": [
+        "long long edits [ t . size ( ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        22
+      ],
+      "mod_code": [
+        "long long high = t - 1 ;"
+      ],
+      "err_line": 22,
+      "err_msg": "no match for ‘operator-’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        24
+      ],
+      "mod_code": [
+        "if ( ! possible ( t , p , edits ) )"
+      ],
+      "err_line": 24,
+      "err_msg": "too few arguments to function ‘bool possible(std::__cxx11::string, std::__cxx11::string, long long int*, long long int)’"
+    },
+    {
+      "mod_line": [
+        25
+      ],
+      "mod_code": [
+        "cout << \" 0 ' << ' \\n ' ;"
+      ],
+      "err_line": 25,
+      "err_msg": "missing terminating \" character"
+    },
+    {
+      "mod_line": [
+        29
+      ],
+      "mod_code": [
+        "long long mid += ( 1 + high - low ) / 2 ;"
+      ],
+      "err_line": 29,
+      "err_msg": "expected initializer before ‘+=’ token"
+    },
+    {
+      "mod_line": [
+        30
+      ],
+      "mod_code": [
+        "if ( possible ( t , p , edits ) , mid )"
+      ],
+      "err_line": 30,
+      "err_msg": "too few arguments to function ‘bool possible(std::__cxx11::string, std::__cxx11::string, long long int*, long long int)’"
+    },
+    {
+      "mod_line": [
+        32
+      ],
+      "mod_code": [
+        "n"
+      ],
+      "err_line": 32,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        11
+      ],
+      "mod_code": [
+        "bool possible ( string t , long long edits , long long changeIndex , long long changeIndex )",
+        "return ( secoindPointer == p . size ( ) ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int changeIndex’"
+    },
+    {
+      "mod_line": [
+        0,
+        11,
+        31
+      ],
+      "mod_code": [
+        "bool possible ( string t , long long edits , long long changeIndex , long long changeIndex )",
+        "return ( secoindPointer == p . size ( ) ) ;",
+        "low = high ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int changeIndex’"
+    },
+    {
+      "mod_line": [
+        0,
+        11,
+        31,
+        4
+      ],
+      "mod_code": [
+        "bool possible ( string t , long long edits , long long changeIndex , long long changeIndex )",
+        "return ( secoindPointer == p . size ( ) ) ;",
+        "low = high ;",
+        "if ( t [ firstPointer ] != p [ secondPointer ] && edits [ firstPointer ] > changeIndex )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int changeIndex’"
+    },
+    {
+      "mod_line": [
+        0,
+        11,
+        31,
+        1
+      ],
+      "mod_code": [
+        "bool possible ( string t , long long edits , long long changeIndex , long long changeIndex )",
+        "return ( secoindPointer == p . size ( ) ) ;",
+        "low = high ;",
+        "firstPointer = 0 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int changeIndex’"
+    },
+    {
+      "mod_line": [
+        0,
+        11,
+        4
+      ],
+      "mod_code": [
+        "bool possible ( string t , long long edits , long long changeIndex , long long changeIndex )",
+        "return ( secoindPointer == p . size ( ) ) ;",
+        "if ( t [ firstPointer ] != p [ secondPointer ] && edits [ firstPointer ] > changeIndex )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int changeIndex’"
+    },
+    {
+      "mod_line": [
+        0,
+        11,
+        4,
+        1
+      ],
+      "mod_code": [
+        "bool possible ( string t , long long edits , long long changeIndex , long long changeIndex )",
+        "return ( secoindPointer == p . size ( ) ) ;",
+        "if ( t [ firstPointer ] != p [ secondPointer ] && edits [ firstPointer ] > changeIndex )",
+        "firstPointer = 0 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int changeIndex’"
+    },
+    {
+      "mod_line": [
+        0,
+        11,
+        1
+      ],
+      "mod_code": [
+        "bool possible ( string t , long long edits , long long changeIndex , long long changeIndex )",
+        "return ( secoindPointer == p . size ( ) ) ;",
+        "firstPointer = 0 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int changeIndex’"
+    },
+    {
+      "mod_line": [
+        0,
+        31
+      ],
+      "mod_code": [
+        "bool possible ( string t , long long edits , long long changeIndex , long long changeIndex )",
+        "low = high ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int changeIndex’"
+    },
+    {
+      "mod_line": [
+        0,
+        31,
+        11
+      ],
+      "mod_code": [
+        "bool possible ( string t , long long edits , long long changeIndex , long long changeIndex )",
+        "low = high ;",
+        "return secoindPointer == p . size ( ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int changeIndex’"
+    },
+    {
+      "mod_line": [
+        0,
+        31,
+        11,
+        4
+      ],
+      "mod_code": [
+        "bool possible ( string t , long long edits , long long changeIndex , long long changeIndex )",
+        "low = high ;",
+        "return secoindPointer == p . size ( ) ;",
+        "if ( t [ firstPointer ] != p [ secondPointer ] && edits [ firstPointer ] > changeIndex )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int changeIndex’"
+    },
+    {
+      "mod_line": [
+        0,
+        31,
+        11,
+        1
+      ],
+      "mod_code": [
+        "bool possible ( string t , long long edits , long long changeIndex , long long changeIndex )",
+        "low = high ;",
+        "return secoindPointer == p . size ( ) ;",
+        "firstPointer = 0 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int changeIndex’"
+    },
+    {
+      "mod_line": [
+        0,
+        31,
+        4
+      ],
+      "mod_code": [
+        "bool possible ( string t , long long edits , long long changeIndex , long long changeIndex )",
+        "low = high ;",
+        "if ( t [ firstPointer ] != p [ secondPointer ] && edits [ firstPointer ] > changeIndex )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int changeIndex’"
+    },
+    {
+      "mod_line": [
+        0,
+        31,
+        4,
+        1
+      ],
+      "mod_code": [
+        "bool possible ( string t , long long edits , long long changeIndex , long long changeIndex )",
+        "low = high ;",
+        "if ( t [ firstPointer ] != p [ secondPointer ] && edits [ firstPointer ] > changeIndex )",
+        "firstPointer = 0 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int changeIndex’"
+    },
+    {
+      "mod_line": [
+        0,
+        31,
+        1
+      ],
+      "mod_code": [
+        "bool possible ( string t , long long edits , long long changeIndex , long long changeIndex )",
+        "low = high ;",
+        "firstPointer = 0 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int changeIndex’"
+    },
+    {
+      "mod_line": [
+        0,
+        11
+      ],
+      "mod_code": [
+        "bool possible ( string t , long long edits , long long changeIndex , long long changeIndex )",
+        "return secoindPointer == p . size ( ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int changeIndex’"
+    },
+    {
+      "mod_line": [
+        0,
+        11,
+        4
+      ],
+      "mod_code": [
+        "bool possible ( string t , long long edits , long long changeIndex , long long changeIndex )",
+        "return secoindPointer == p . size ( ) ;",
+        "if ( t [ firstPointer ] != p [ secondPointer ] && edits [ firstPointer ] > changeIndex )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int changeIndex’"
+    },
+    {
+      "mod_line": [
+        0,
+        11,
+        4,
+        1
+      ],
+      "mod_code": [
+        "bool possible ( string t , long long edits , long long changeIndex , long long changeIndex )",
+        "return secoindPointer == p . size ( ) ;",
+        "if ( t [ firstPointer ] != p [ secondPointer ] && edits [ firstPointer ] > changeIndex )",
+        "firstPointer = 0 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int changeIndex’"
+    },
+    {
+      "mod_line": [
+        0,
+        11,
+        1
+      ],
+      "mod_code": [
+        "bool possible ( string t , long long edits , long long changeIndex , long long changeIndex )",
+        "return secoindPointer == p . size ( ) ;",
+        "firstPointer = 0 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int changeIndex’"
+    },
+    {
+      "mod_line": [
+        0,
+        4
+      ],
+      "mod_code": [
+        "bool possible ( string t , long long edits , long long changeIndex , long long changeIndex )",
+        "if ( t [ firstPointer ] != p [ secondPointer ] && edits [ firstPointer ] > changeIndex )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int changeIndex’"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        1
+      ],
+      "mod_code": [
+        "bool possible ( string t , long long edits , long long changeIndex , long long changeIndex )",
+        "if ( t [ firstPointer ] != p [ secondPointer ] && edits [ firstPointer ] > changeIndex )",
+        "firstPointer = 0 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int changeIndex’"
+    },
+    {
+      "mod_line": [
+        0,
+        1
+      ],
+      "mod_code": [
+        "bool possible ( string t , long long edits , long long changeIndex , long long changeIndex )",
+        "firstPointer = 0 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int changeIndex’"
+    },
+    {
+      "mod_line": [
+        11,
+        31
+      ],
+      "mod_code": [
+        "return ( secoindPointer == p . size ( ) ) ;",
+        "low = high ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘secoindPointer’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        31,
+        4
+      ],
+      "mod_code": [
+        "return ( secoindPointer == p . size ( ) ) ;",
+        "low = high ;",
+        "if ( t [ firstPointer ] != p [ secondPointer ] && edits [ firstPointer ] > changeIndex )"
+      ],
+      "err_line": 11,
+      "err_msg": "‘secoindPointer’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        31,
+        4,
+        1
+      ],
+      "mod_code": [
+        "return ( secoindPointer == p . size ( ) ) ;",
+        "low = high ;",
+        "if ( t [ firstPointer ] != p [ secondPointer ] && edits [ firstPointer ] > changeIndex )",
+        "firstPointer = 0 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘firstPointer’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        31,
+        1
+      ],
+      "mod_code": [
+        "return ( secoindPointer == p . size ( ) ) ;",
+        "low = high ;",
+        "firstPointer = 0 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘firstPointer’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        4
+      ],
+      "mod_code": [
+        "return ( secoindPointer == p . size ( ) ) ;",
+        "if ( t [ firstPointer ] != p [ secondPointer ] && edits [ firstPointer ] > changeIndex )"
+      ],
+      "err_line": 11,
+      "err_msg": "‘secoindPointer’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        4,
+        1
+      ],
+      "mod_code": [
+        "return ( secoindPointer == p . size ( ) ) ;",
+        "if ( t [ firstPointer ] != p [ secondPointer ] && edits [ firstPointer ] > changeIndex )",
+        "firstPointer = 0 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘firstPointer’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        1
+      ],
+      "mod_code": [
+        "return ( secoindPointer == p . size ( ) ) ;",
+        "firstPointer = 0 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘firstPointer’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        31,
+        11
+      ],
+      "mod_code": [
+        "low = high ;",
+        "return secoindPointer == p . size ( ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘secoindPointer’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        31,
+        11,
+        4
+      ],
+      "mod_code": [
+        "low = high ;",
+        "return secoindPointer == p . size ( ) ;",
+        "if ( t [ firstPointer ] != p [ secondPointer ] && edits [ firstPointer ] > changeIndex )"
+      ],
+      "err_line": 11,
+      "err_msg": "‘secoindPointer’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        31,
+        11,
+        4,
+        1
+      ],
+      "mod_code": [
+        "low = high ;",
+        "return secoindPointer == p . size ( ) ;",
+        "if ( t [ firstPointer ] != p [ secondPointer ] && edits [ firstPointer ] > changeIndex )",
+        "firstPointer = 0 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘firstPointer’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        31,
+        11,
+        1
+      ],
+      "mod_code": [
+        "low = high ;",
+        "return secoindPointer == p . size ( ) ;",
+        "firstPointer = 0 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘firstPointer’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        31,
+        4,
+        1
+      ],
+      "mod_code": [
+        "low = high ;",
+        "if ( t [ firstPointer ] != p [ secondPointer ] && edits [ firstPointer ] > changeIndex )",
+        "firstPointer = 0 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘firstPointer’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        31,
+        1
+      ],
+      "mod_code": [
+        "low = high ;",
+        "firstPointer = 0 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘firstPointer’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        4
+      ],
+      "mod_code": [
+        "return secoindPointer == p . size ( ) ;",
+        "if ( t [ firstPointer ] != p [ secondPointer ] && edits [ firstPointer ] > changeIndex )"
+      ],
+      "err_line": 11,
+      "err_msg": "‘secoindPointer’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        4,
+        1
+      ],
+      "mod_code": [
+        "return secoindPointer == p . size ( ) ;",
+        "if ( t [ firstPointer ] != p [ secondPointer ] && edits [ firstPointer ] > changeIndex )",
+        "firstPointer = 0 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘firstPointer’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        1
+      ],
+      "mod_code": [
+        "return secoindPointer == p . size ( ) ;",
+        "firstPointer = 0 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘firstPointer’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        1
+      ],
+      "mod_code": [
+        "if ( t [ firstPointer ] != p [ secondPointer ] && edits [ firstPointer ] > changeIndex )",
+        "firstPointer = 0 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘firstPointer’ was not declared in this scope"
+    }
+  ]
+}

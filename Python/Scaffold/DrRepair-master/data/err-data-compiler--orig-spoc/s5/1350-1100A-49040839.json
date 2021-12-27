@@ -1,0 +1,571 @@
+{
+  "meta": {
+    "index": 1350,
+    "hitid": "3ZRKL6Z1E8X2NIUBE8NZMQG1NCWGSJ",
+    "workerid": "A24WRPQYGMQLGF",
+    "probid": "1100A",
+    "subid": "49040839"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "a = integer array of size 101 , b = integer array of size 101",
+      "code": "int a [ 101 ] , b [ 101 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "n , k = integers",
+      "code": "int n , k ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "read n , k",
+      "code": "cin >> n >> k ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "i , j = integers",
+      "code": "int i , j ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "t = integer = 0 , ans = integer = 0",
+      "code": "int t = 0 , ans = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 0 to n exclusive , then read a [ i ]",
+      "code": "for ( i = 0 ; i < n ; i ++ ) { cin >> a [ i ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "t = t + a [ i ]",
+      "code": "t += a [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "b [ i modulo k ] = b [ i modulo k ] + a [ i ]",
+      "code": "b [ i % k ] += a [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "for i = 0 to k exclusive , then ans = the biggest number between ans and the absolute value of ( t - b [ i ] )",
+      "code": "for ( i = 0 ; i < k ; i ++ ) { ans = max ( ans , abs ( t - b [ i ] ) ) ; }",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "print ans",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int a [ 101 ] [ 101 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [101]’)"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "int t , ans = 0 , ans = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int ans’"
+    },
+    {
+      "mod_line": [
+        11,
+        0
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < k ; i ++ ) ans = ( abs ( ans - b [ i ] ) ) ;",
+        "int a [ 101 ] [ 101 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [101]’)"
+    },
+    {
+      "mod_line": [
+        11,
+        0,
+        5
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < k ; i ++ ) ans = ( abs ( ans - b [ i ] ) ) ;",
+        "int a [ 101 ] [ 101 ] ;",
+        "int t , ans = 0 , ans = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int ans’"
+    },
+    {
+      "mod_line": [
+        11,
+        0,
+        5,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < k ; i ++ ) ans = ( abs ( ans - b [ i ] ) ) ;",
+        "int a [ 101 ] [ 101 ] ;",
+        "int t , ans = 0 , ans = 0 ;",
+        "b [ i % k ] %= a [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int ans’"
+    },
+    {
+      "mod_line": [
+        11,
+        0,
+        5,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < k ; i ++ ) ans = ( abs ( ans - b [ i ] ) ) ;",
+        "int a [ 101 ] [ 101 ] ;",
+        "int t , ans = 0 , ans = 0 ;",
+        "cin >> n >> n ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int ans’"
+    },
+    {
+      "mod_line": [
+        11,
+        0,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < k ; i ++ ) ans = ( abs ( ans - b [ i ] ) ) ;",
+        "int a [ 101 ] [ 101 ] ;",
+        "b [ i % k ] %= a [ i ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [101]’)"
+    },
+    {
+      "mod_line": [
+        11,
+        0,
+        9,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < k ; i ++ ) ans = ( abs ( ans - b [ i ] ) ) ;",
+        "int a [ 101 ] [ 101 ] ;",
+        "b [ i % k ] %= a [ i ] ;",
+        "cin >> n >> n ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [101]’)"
+    },
+    {
+      "mod_line": [
+        11,
+        0,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < k ; i ++ ) ans = ( abs ( ans - b [ i ] ) ) ;",
+        "int a [ 101 ] [ 101 ] ;",
+        "cin >> n >> n ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [101]’)"
+    },
+    {
+      "mod_line": [
+        11,
+        5
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < k ; i ++ ) ans = ( abs ( ans - b [ i ] ) ) ;",
+        "int t , ans = 0 , ans = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int ans’"
+    },
+    {
+      "mod_line": [
+        11,
+        5,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < k ; i ++ ) ans = ( abs ( ans - b [ i ] ) ) ;",
+        "int t , ans = 0 , ans = 0 ;",
+        "b [ i % k ] %= a [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int ans’"
+    },
+    {
+      "mod_line": [
+        11,
+        5,
+        9,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < k ; i ++ ) ans = ( abs ( ans - b [ i ] ) ) ;",
+        "int t , ans = 0 , ans = 0 ;",
+        "b [ i % k ] %= a [ i ] ;",
+        "cin >> n >> n ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int ans’"
+    },
+    {
+      "mod_line": [
+        11,
+        5,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < k ; i ++ ) ans = ( abs ( ans - b [ i ] ) ) ;",
+        "int t , ans = 0 , ans = 0 ;",
+        "cin >> n >> n ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int ans’"
+    },
+    {
+      "mod_line": [
+        0,
+        5
+      ],
+      "mod_code": [
+        "int a [ 101 ] [ 101 ] ;",
+        "int t , ans = 0 , ans = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int ans’"
+    },
+    {
+      "mod_line": [
+        0,
+        5,
+        9
+      ],
+      "mod_code": [
+        "int a [ 101 ] [ 101 ] ;",
+        "int t , ans = 0 , ans = 0 ;",
+        "b [ i % k ] %= a [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int ans’"
+    },
+    {
+      "mod_line": [
+        0,
+        5,
+        9,
+        11
+      ],
+      "mod_code": [
+        "int a [ 101 ] [ 101 ] ;",
+        "int t , ans = 0 , ans = 0 ;",
+        "b [ i % k ] %= a [ i ] ;",
+        "for ( int i = 0 ; i < k ; i ++ ) ans = ( abs ( t - b [ i ] ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int ans’"
+    },
+    {
+      "mod_line": [
+        0,
+        5,
+        9,
+        3
+      ],
+      "mod_code": [
+        "int a [ 101 ] [ 101 ] ;",
+        "int t , ans = 0 , ans = 0 ;",
+        "b [ i % k ] %= a [ i ] ;",
+        "cin >> n >> n ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int ans’"
+    },
+    {
+      "mod_line": [
+        0,
+        5,
+        11
+      ],
+      "mod_code": [
+        "int a [ 101 ] [ 101 ] ;",
+        "int t , ans = 0 , ans = 0 ;",
+        "for ( int i = 0 ; i < k ; i ++ ) ans = ( abs ( t - b [ i ] ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int ans’"
+    },
+    {
+      "mod_line": [
+        0,
+        5,
+        11,
+        3
+      ],
+      "mod_code": [
+        "int a [ 101 ] [ 101 ] ;",
+        "int t , ans = 0 , ans = 0 ;",
+        "for ( int i = 0 ; i < k ; i ++ ) ans = ( abs ( t - b [ i ] ) ) ;",
+        "cin >> n >> n ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int ans’"
+    },
+    {
+      "mod_line": [
+        0,
+        5,
+        3
+      ],
+      "mod_code": [
+        "int a [ 101 ] [ 101 ] ;",
+        "int t , ans = 0 , ans = 0 ;",
+        "cin >> n >> n ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int ans’"
+    },
+    {
+      "mod_line": [
+        0,
+        9
+      ],
+      "mod_code": [
+        "int a [ 101 ] [ 101 ] ;",
+        "b [ i % k ] %= a [ i ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [101]’)"
+    },
+    {
+      "mod_line": [
+        0,
+        9,
+        11
+      ],
+      "mod_code": [
+        "int a [ 101 ] [ 101 ] ;",
+        "b [ i % k ] %= a [ i ] ;",
+        "for ( int i = 0 ; i < k ; i ++ ) ans = ( abs ( t - b [ i ] ) ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [101]’)"
+    },
+    {
+      "mod_line": [
+        0,
+        9,
+        11,
+        3
+      ],
+      "mod_code": [
+        "int a [ 101 ] [ 101 ] ;",
+        "b [ i % k ] %= a [ i ] ;",
+        "for ( int i = 0 ; i < k ; i ++ ) ans = ( abs ( t - b [ i ] ) ) ;",
+        "cin >> n >> n ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [101]’)"
+    },
+    {
+      "mod_line": [
+        0,
+        9,
+        3
+      ],
+      "mod_code": [
+        "int a [ 101 ] [ 101 ] ;",
+        "b [ i % k ] %= a [ i ] ;",
+        "cin >> n >> n ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [101]’)"
+    },
+    {
+      "mod_line": [
+        0,
+        11
+      ],
+      "mod_code": [
+        "int a [ 101 ] [ 101 ] ;",
+        "for ( int i = 0 ; i < k ; i ++ ) ans = ( abs ( t - b [ i ] ) ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [101]’)"
+    },
+    {
+      "mod_line": [
+        0,
+        11,
+        3
+      ],
+      "mod_code": [
+        "int a [ 101 ] [ 101 ] ;",
+        "for ( int i = 0 ; i < k ; i ++ ) ans = ( abs ( t - b [ i ] ) ) ;",
+        "cin >> n >> n ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [101]’)"
+    },
+    {
+      "mod_line": [
+        0,
+        3
+      ],
+      "mod_code": [
+        "int a [ 101 ] [ 101 ] ;",
+        "cin >> n >> n ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [101]’)"
+    },
+    {
+      "mod_line": [
+        5,
+        9
+      ],
+      "mod_code": [
+        "int t , ans = 0 , ans = 0 ;",
+        "b [ i % k ] %= a [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int ans’"
+    },
+    {
+      "mod_line": [
+        5,
+        9,
+        11
+      ],
+      "mod_code": [
+        "int t , ans = 0 , ans = 0 ;",
+        "b [ i % k ] %= a [ i ] ;",
+        "for ( int i = 0 ; i < k ; i ++ ) ans = ( abs ( t - b [ i ] ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int ans’"
+    },
+    {
+      "mod_line": [
+        5,
+        9,
+        11,
+        3
+      ],
+      "mod_code": [
+        "int t , ans = 0 , ans = 0 ;",
+        "b [ i % k ] %= a [ i ] ;",
+        "for ( int i = 0 ; i < k ; i ++ ) ans = ( abs ( t - b [ i ] ) ) ;",
+        "cin >> n >> n ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int ans’"
+    },
+    {
+      "mod_line": [
+        5,
+        9,
+        3
+      ],
+      "mod_code": [
+        "int t , ans = 0 , ans = 0 ;",
+        "b [ i % k ] %= a [ i ] ;",
+        "cin >> n >> n ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int ans’"
+    },
+    {
+      "mod_line": [
+        5,
+        11
+      ],
+      "mod_code": [
+        "int t , ans = 0 , ans = 0 ;",
+        "for ( int i = 0 ; i < k ; i ++ ) ans = ( abs ( t - b [ i ] ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int ans’"
+    },
+    {
+      "mod_line": [
+        5,
+        11,
+        3
+      ],
+      "mod_code": [
+        "int t , ans = 0 , ans = 0 ;",
+        "for ( int i = 0 ; i < k ; i ++ ) ans = ( abs ( t - b [ i ] ) ) ;",
+        "cin >> n >> n ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int ans’"
+    },
+    {
+      "mod_line": [
+        5,
+        3
+      ],
+      "mod_code": [
+        "int t , ans = 0 , ans = 0 ;",
+        "cin >> n >> n ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int ans’"
+    }
+  ]
+}

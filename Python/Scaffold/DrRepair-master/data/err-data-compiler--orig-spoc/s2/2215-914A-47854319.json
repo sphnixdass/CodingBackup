@@ -1,0 +1,503 @@
+{
+  "meta": {
+    "index": 2215,
+    "hitid": "3VQTAXTYN3FMBEE4NRQL0G7SSWPUBW",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "914A",
+    "subid": "47854319"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create integer array a with size 10000",
+      "code": "int a [ 10000 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "for i = 0 to 1001 exclusive , set a [ i ] to i * i",
+      "code": "for ( int i = 0 ; i < 1001 ; i ++ ) { a [ i ] = i * i ; }",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "create integer b create integer array c with size 10000",
+      "code": "int b , c [ 10000 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "read b",
+      "code": "cin >> b ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i = 0 to b exclusive , read c [ i ]",
+      "code": "for ( int i = 0 ; i < b ; i ++ ) { cin >> c [ i ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "sort elements form c to c + b",
+      "code": "sort ( c , c + b ) ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for i = b - 1 to - 1 exclusive , decrementing i",
+      "code": "for ( int i = b - 1 ; i > - 1 ; i -- )",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "for j = 0 to 1001 exclusive",
+      "code": "for ( int j = 0 ; j < 1001 ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "if c [ i ] is a [ j ] , go to jump point momo",
+      "code": "if ( c [ i ] == a [ j ] ) { goto momo ; }",
+      "indent": 3
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "print c [ i ] print newline",
+      "code": "cout << c [ i ] << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "mark jump point momo",
+      "code": "momo : ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "int c [ 10000 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘b’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "if ( c [ i ] == a [ j ] ) { momo = momo ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "‘momo’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "mark : ;"
+      ],
+      "err_line": 9,
+      "err_msg": "label ‘momo’ used but not defined"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "a [ 10000 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "int b [ 10000 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [10000]’)"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "sort ( c . begin ( ) , c + b ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘begin’ in ‘c’, which is of non-class type ‘int [10000]’"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j < 1001 ; j ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        7
+      ],
+      "mod_code": [
+        "int c [ 10000 ] ;",
+        "for ( int i = b - 1 ; i > 1 ; i -- )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘b’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        9
+      ],
+      "mod_code": [
+        "int c [ 10000 ] ;",
+        "for ( int i = b - 1 ; i > 1 ; i -- )",
+        "if ( c [ i ] == a [ j ] ) { momo = momo ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "‘b’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        9,
+        13
+      ],
+      "mod_code": [
+        "int c [ 10000 ] ;",
+        "for ( int i = b - 1 ; i > 1 ; i -- )",
+        "if ( c [ i ] == a [ j ] ) { momo = momo ; }",
+        "mark : ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘b’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        13
+      ],
+      "mod_code": [
+        "int c [ 10000 ] ;",
+        "for ( int i = b - 1 ; i > 1 ; i -- )",
+        "mark : ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘b’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        13,
+        9
+      ],
+      "mod_code": [
+        "int c [ 10000 ] ;",
+        "for ( int i = b - 1 ; i > 1 ; i -- )",
+        "mark : ;",
+        "if ( c [ i ] == a [ j ] ) { continue ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "‘b’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        9
+      ],
+      "mod_code": [
+        "int c [ 10000 ] ;",
+        "for ( int i = b - 1 ; i > 1 ; i -- )",
+        "if ( c [ i ] == a [ j ] ) { continue ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "‘b’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        9
+      ],
+      "mod_code": [
+        "int c [ 10000 ] ;",
+        "if ( c [ i ] == a [ j ] ) { momo = momo ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "‘b’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        9,
+        13
+      ],
+      "mod_code": [
+        "int c [ 10000 ] ;",
+        "if ( c [ i ] == a [ j ] ) { momo = momo ; }",
+        "mark : ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘b’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        9,
+        13,
+        7
+      ],
+      "mod_code": [
+        "int c [ 10000 ] ;",
+        "if ( c [ i ] == a [ j ] ) { momo = momo ; }",
+        "mark : ;",
+        "for ( int i = b - 1 ; i >= 1 ; i -- )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘b’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        9,
+        7
+      ],
+      "mod_code": [
+        "int c [ 10000 ] ;",
+        "if ( c [ i ] == a [ j ] ) { momo = momo ; }",
+        "for ( int i = b - 1 ; i >= 1 ; i -- )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘b’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        13
+      ],
+      "mod_code": [
+        "int c [ 10000 ] ;",
+        "mark : ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘b’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        13,
+        9
+      ],
+      "mod_code": [
+        "int c [ 10000 ] ;",
+        "mark : ;",
+        "if ( c [ i ] == a [ j ] ) { continue ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "‘b’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        13,
+        9,
+        7
+      ],
+      "mod_code": [
+        "int c [ 10000 ] ;",
+        "mark : ;",
+        "if ( c [ i ] == a [ j ] ) { continue ; }",
+        "for ( int i = b - 1 ; i >= 1 ; i -- )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘b’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        13,
+        7
+      ],
+      "mod_code": [
+        "int c [ 10000 ] ;",
+        "mark : ;",
+        "for ( int i = b - 1 ; i >= 1 ; i -- )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘b’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        9
+      ],
+      "mod_code": [
+        "int c [ 10000 ] ;",
+        "if ( c [ i ] == a [ j ] ) { continue ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "‘b’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        9,
+        7
+      ],
+      "mod_code": [
+        "int c [ 10000 ] ;",
+        "if ( c [ i ] == a [ j ] ) { continue ; }",
+        "for ( int i = b - 1 ; i >= 1 ; i -- )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘b’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        7
+      ],
+      "mod_code": [
+        "int c [ 10000 ] ;",
+        "for ( int i = b - 1 ; i >= 1 ; i -- )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘b’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = b - 1 ; i > 1 ; i -- )",
+        "if ( c [ i ] == a [ j ] ) { momo = momo ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "‘momo’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        9,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = b - 1 ; i > 1 ; i -- )",
+        "if ( c [ i ] == a [ j ] ) { momo = momo ; }",
+        "mark : ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘momo’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = b - 1 ; i > 1 ; i -- )",
+        "mark : ;"
+      ],
+      "err_line": 9,
+      "err_msg": "label ‘momo’ used but not defined"
+    },
+    {
+      "mod_line": [
+        9,
+        13
+      ],
+      "mod_code": [
+        "if ( c [ i ] == a [ j ] ) { momo = momo ; }",
+        "mark : ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘momo’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        13,
+        7
+      ],
+      "mod_code": [
+        "if ( c [ i ] == a [ j ] ) { momo = momo ; }",
+        "mark : ;",
+        "for ( int i = b - 1 ; i >= 1 ; i -- )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘momo’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        7
+      ],
+      "mod_code": [
+        "if ( c [ i ] == a [ j ] ) { momo = momo ; }",
+        "for ( int i = b - 1 ; i >= 1 ; i -- )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘momo’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        7
+      ],
+      "mod_code": [
+        "mark : ;",
+        "for ( int i = b - 1 ; i >= 1 ; i -- )"
+      ],
+      "err_line": 9,
+      "err_msg": "label ‘momo’ used but not defined"
+    }
+  ]
+}

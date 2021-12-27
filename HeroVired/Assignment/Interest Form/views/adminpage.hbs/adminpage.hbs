@@ -1,0 +1,30 @@
+{{!-- <input type="button" value="ViewTable" onclick="CreateTable();"> --}}
+
+    <table id="customers" >
+                           <thead>
+                               <tr>
+                                   <th>UserName</th>
+                                   <th>EmailID</th>
+                                   <th>MobileNumber</th>
+                                   <th>Action</th>
+                                   
+                               </tr>
+                           </thead>
+            
+                           <tbody>
+                              {{#each cursor}}
+                               <tr>
+                                   <td>{{firstname}}</td>
+                                   <td>{{emailid}}</td>
+                                   <td>{{mobileno}}</td>
+                                   
+                                   <td><button type="button" onclick="changestatus(this.id, 'approve')" id="Approve{{firstname}}">Approve</button> <button type="button" onclick="changestatus(this.id, 'reject')" id="Reject{{firstname}}">Reject</button></td>
+                               </tr>
+                               {{else}}
+                               <tr>
+                                <td colspan="4">No content</td>
+                                </tr>
+                               {{/each}}
+                           </tbody>
+                       </table>
+

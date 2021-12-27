@@ -1,0 +1,533 @@
+{
+  "meta": {
+    "index": 341,
+    "hitid": "33CLA8O0MI5K83Y3OZHCEVBT0VHFRZ",
+    "workerid": "A1EKVUFWL7OJMO",
+    "probid": "339A",
+    "subid": "47810043"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "op = string",
+      "code": "string op ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read op",
+      "code": "cin >> op ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "final = string",
+      "code": "string final ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "final2 = string",
+      "code": "string final2 ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i = 0 to op . length ( ) exclusive",
+      "code": "for ( int i = 0 ; i < op . length ( ) ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "if ( op [ i ] is not + ) , final = final + op [ i ]",
+      "code": "if ( op [ i ] != ' + ' ) { final += op [ i ] ; }",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "sort final . begin ( ) and final . end ( )",
+      "code": "sort ( final . begin ( ) , final . end ( ) ) ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "for j = 0 to op . length ( ) / 2 exclusive , final . insert ( ( j * 2 ) + 1 , + )",
+      "code": "for ( int j = 0 ; j < op . length ( ) / 2 ; j ++ ) { final . insert ( ( j * 2 ) + 1 , \" + \" ) ; }",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "print final",
+      "code": "cout << final << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < op . length ( ) / 2 ; j ++ ) { final . insert ( op * 2 ) + 1 ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "no match for ‘operator*’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "char op ;"
+      ],
+      "err_line": 5,
+      "err_msg": "request for member ‘length’ in ‘op’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "gets ( op ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "string final , final ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘std::__cxx11::string final’"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "sort ( final . length ( ) , final . end ( ) ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "no matching function for call to ‘sort(std::__cxx11::basic_string<char>::size_type, std::__cxx11::basic_string<char>::iterator)’"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < op . length ( ) / 2 ; j ++ ) { final . insert ( ( j * 2 ) + 1 ) ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "no matching function for call to ‘std::__cxx11::basic_string<char>::insert(int)’"
+    },
+    {
+      "mod_line": [
+        9,
+        10
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < op . length ( ) / 2 ; j ++ ) { final . insert ( op * 2 ) + 1 ; }",
+        "cout << \" final \" << endl ;"
+      ],
+      "err_line": 9,
+      "err_msg": "no match for ‘operator*’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        9,
+        10,
+        3
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < op . length ( ) / 2 ; j ++ ) { final . insert ( op * 2 ) + 1 ; }",
+        "cout << \" final \" << endl ;",
+        "string final , final ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘std::__cxx11::string final’"
+    },
+    {
+      "mod_line": [
+        9,
+        10,
+        3,
+        2
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < op . length ( ) / 2 ; j ++ ) { final . insert ( op * 2 ) + 1 ; }",
+        "cout << \" final \" << endl ;",
+        "string final , final ;",
+        "gets ( op ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    },
+    {
+      "mod_line": [
+        9,
+        10,
+        2
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < op . length ( ) / 2 ; j ++ ) { final . insert ( op * 2 ) + 1 ; }",
+        "cout << \" final \" << endl ;",
+        "gets ( op ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    },
+    {
+      "mod_line": [
+        9,
+        3
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < op . length ( ) / 2 ; j ++ ) { final . insert ( op * 2 ) + 1 ; }",
+        "string final , final ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘std::__cxx11::string final’"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        2
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < op . length ( ) / 2 ; j ++ ) { final . insert ( op * 2 ) + 1 ; }",
+        "string final , final ;",
+        "gets ( op ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        2,
+        10
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < op . length ( ) / 2 ; j ++ ) { final . insert ( op * 2 ) + 1 ; }",
+        "string final , final ;",
+        "gets ( op ) ;",
+        "cout << \" 0\\n \" ;"
+      ],
+      "err_line": 2,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        10
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < op . length ( ) / 2 ; j ++ ) { final . insert ( op * 2 ) + 1 ; }",
+        "string final , final ;",
+        "cout << \" 0\\n \" ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘std::__cxx11::string final’"
+    },
+    {
+      "mod_line": [
+        9,
+        2
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < op . length ( ) / 2 ; j ++ ) { final . insert ( op * 2 ) + 1 ; }",
+        "gets ( op ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    },
+    {
+      "mod_line": [
+        9,
+        2,
+        10
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < op . length ( ) / 2 ; j ++ ) { final . insert ( op * 2 ) + 1 ; }",
+        "gets ( op ) ;",
+        "cout << \" 0\\n \" ;"
+      ],
+      "err_line": 2,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    },
+    {
+      "mod_line": [
+        9,
+        10
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < op . length ( ) / 2 ; j ++ ) { final . insert ( op * 2 ) + 1 ; }",
+        "cout << \" 0\\n \" ;"
+      ],
+      "err_line": 9,
+      "err_msg": "no match for ‘operator*’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        10,
+        9
+      ],
+      "mod_code": [
+        "cout << \" final \" << endl ;",
+        "for ( int j = 0 ; j < op . length ( ) / 2 ; j ++ ) { final . insert ( ( j * 2 ) + 1 ) ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "no matching function for call to ‘std::__cxx11::basic_string<char>::insert(int)’"
+    },
+    {
+      "mod_line": [
+        10,
+        9,
+        3
+      ],
+      "mod_code": [
+        "cout << \" final \" << endl ;",
+        "for ( int j = 0 ; j < op . length ( ) / 2 ; j ++ ) { final . insert ( ( j * 2 ) + 1 ) ; }",
+        "string final , final ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘std::__cxx11::string final’"
+    },
+    {
+      "mod_line": [
+        10,
+        9,
+        3,
+        2
+      ],
+      "mod_code": [
+        "cout << \" final \" << endl ;",
+        "for ( int j = 0 ; j < op . length ( ) / 2 ; j ++ ) { final . insert ( ( j * 2 ) + 1 ) ; }",
+        "string final , final ;",
+        "gets ( op ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    },
+    {
+      "mod_line": [
+        10,
+        9,
+        2
+      ],
+      "mod_code": [
+        "cout << \" final \" << endl ;",
+        "for ( int j = 0 ; j < op . length ( ) / 2 ; j ++ ) { final . insert ( ( j * 2 ) + 1 ) ; }",
+        "gets ( op ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    },
+    {
+      "mod_line": [
+        10,
+        3
+      ],
+      "mod_code": [
+        "cout << \" final \" << endl ;",
+        "string final , final ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘std::__cxx11::string final’"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        2
+      ],
+      "mod_code": [
+        "cout << \" final \" << endl ;",
+        "string final , final ;",
+        "gets ( op ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    },
+    {
+      "mod_line": [
+        10,
+        2
+      ],
+      "mod_code": [
+        "cout << \" final \" << endl ;",
+        "gets ( op ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    },
+    {
+      "mod_line": [
+        9,
+        3
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < op . length ( ) / 2 ; j ++ ) { final . insert ( ( j * 2 ) + 1 ) ; }",
+        "string final , final ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘std::__cxx11::string final’"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        2
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < op . length ( ) / 2 ; j ++ ) { final . insert ( ( j * 2 ) + 1 ) ; }",
+        "string final , final ;",
+        "gets ( op ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        2,
+        10
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < op . length ( ) / 2 ; j ++ ) { final . insert ( ( j * 2 ) + 1 ) ; }",
+        "string final , final ;",
+        "gets ( op ) ;",
+        "cout << \" 0\\n \" ;"
+      ],
+      "err_line": 2,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        10
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < op . length ( ) / 2 ; j ++ ) { final . insert ( ( j * 2 ) + 1 ) ; }",
+        "string final , final ;",
+        "cout << \" 0\\n \" ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘std::__cxx11::string final’"
+    },
+    {
+      "mod_line": [
+        9,
+        2
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < op . length ( ) / 2 ; j ++ ) { final . insert ( ( j * 2 ) + 1 ) ; }",
+        "gets ( op ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    },
+    {
+      "mod_line": [
+        9,
+        2,
+        10
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < op . length ( ) / 2 ; j ++ ) { final . insert ( ( j * 2 ) + 1 ) ; }",
+        "gets ( op ) ;",
+        "cout << \" 0\\n \" ;"
+      ],
+      "err_line": 2,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    },
+    {
+      "mod_line": [
+        9,
+        10
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < op . length ( ) / 2 ; j ++ ) { final . insert ( ( j * 2 ) + 1 ) ; }",
+        "cout << \" 0\\n \" ;"
+      ],
+      "err_line": 9,
+      "err_msg": "no matching function for call to ‘std::__cxx11::basic_string<char>::insert(int)’"
+    },
+    {
+      "mod_line": [
+        3,
+        2
+      ],
+      "mod_code": [
+        "string final , final ;",
+        "gets ( op ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    },
+    {
+      "mod_line": [
+        3,
+        2,
+        10
+      ],
+      "mod_code": [
+        "string final , final ;",
+        "gets ( op ) ;",
+        "cout << \" 0\\n \" ;"
+      ],
+      "err_line": 2,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    },
+    {
+      "mod_line": [
+        3,
+        10
+      ],
+      "mod_code": [
+        "string final , final ;",
+        "cout << \" 0\\n \" ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘std::__cxx11::string final’"
+    },
+    {
+      "mod_line": [
+        2,
+        10
+      ],
+      "mod_code": [
+        "gets ( op ) ;",
+        "cout << \" 0\\n \" ;"
+      ],
+      "err_line": 2,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    }
+  ]
+}

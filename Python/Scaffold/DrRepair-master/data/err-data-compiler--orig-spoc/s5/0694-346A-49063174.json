@@ -1,0 +1,1111 @@
+{
+  "meta": {
+    "index": 694,
+    "hitid": "3XDSWAMB22MDTQZTKI2B1ZGL7WPQC0",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "346A",
+    "subid": "49063174"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare constant long long inf = long long casted ( 1e18 )",
+      "code": "const long long inf = ( long long ) 1e18 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare gcd with long longs a , b as arguments , returning long long",
+      "code": "long long gcd ( long long a , long long b )",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "declare long long r",
+      "code": "long long r ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "while b is true",
+      "code": "while ( b )",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "let r be a % b",
+      "code": "r = a % b ;",
+      "indent": 2
+    },
+    {
+      "line": 5,
+      "text": "let a be b",
+      "code": "a = b ;",
+      "indent": 2
+    },
+    {
+      "line": 6,
+      "text": "let b be r",
+      "code": "b = r ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "return a from function",
+      "code": "return a ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 10,
+      "text": "declare lcm with long longs a , b as arguments , returning long long",
+      "code": "long long lcm ( long long a , long long b )",
+      "indent": 0
+    },
+    {
+      "line": 11,
+      "text": "return a / result of run gcd ( a , b ) * b",
+      "code": "return a / gcd ( a , b ) * b ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 13,
+      "text": "declare fpow with long longs n , k , integer p default = 1000000007 as arguments , returning long long",
+      "code": "long long fpow ( long long n , long long k , int p = 1000000007 )",
+      "indent": 0
+    },
+    {
+      "line": 14,
+      "text": "declare long long r = 1",
+      "code": "long long r = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "for to k , setting k to k bitshift right 1",
+      "code": "for ( ; k ; k >>= 1 )",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "if k bitwise and 1 , let r be r * n % p",
+      "code": "if ( k & 1 ) r = r * n % p ;",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "let n be n * n % p",
+      "code": "n = n * n % p ;",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "return r from function",
+      "code": "return r ;",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 21,
+      "text": "declare inv with integers a , p default = 1000000007 as arguments , returning integer",
+      "code": "int inv ( int a , int p = 1000000007 )",
+      "indent": 0
+    },
+    {
+      "line": 22,
+      "text": "return result of run fpow ( a , p - 2 , p ) from function",
+      "code": "return fpow ( a , p - 2 , p ) ;",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 24,
+      "text": "declare long long array spf size 1000001 + 1",
+      "code": "long long spf [ 1000001 + 1 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 25,
+      "text": "declare sieve with no arguments , returning void",
+      "code": "void sieve ( )",
+      "indent": 0
+    },
+    {
+      "line": 26,
+      "text": "for i = 1 to 1000001 exclusive , let spf [ i ] be i",
+      "code": "for ( int i = 1 ; i < 1000001 ; i ++ ) { spf [ i ] = i ; }",
+      "indent": 1
+    },
+    {
+      "line": 27,
+      "text": "for i = 2 to 1000001 exclusive , incrementing i by 2 , let spf [ i ] be 2",
+      "code": "for ( long long i = 2 ; i < 1000001 ; i += 2 ) { spf [ i ] = 2 ; }",
+      "indent": 1
+    },
+    {
+      "line": 28,
+      "text": "for i = 3 to 1000001 exclusive , incrementing i by 2",
+      "code": "for ( long long i = 3 ; i < 1000001 ; i += 2 )",
+      "indent": 1
+    },
+    {
+      "line": 29,
+      "text": "if spf [ i ] is i",
+      "code": "if ( spf [ i ] == i )",
+      "indent": 2
+    },
+    {
+      "line": 30,
+      "text": "for j = i * i to 1000001 exclusive , incrementing j by i , let spf [ j ] be minimum of ( i and long long casted spf [ j ] )",
+      "code": "for ( long long j = i * i ; j < 1000001 ; j += i ) { spf [ j ] = min ( i , ( long long ) spf [ j ] ) ; }",
+      "indent": 3
+    },
+    {
+      "line": 31,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 32,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 33,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 34,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 35,
+      "text": "declare long long n",
+      "code": "long long n ;",
+      "indent": 1
+    },
+    {
+      "line": 36,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 37,
+      "text": "declare long long vector a initialized with n",
+      "code": "vector < long long > a ( n ) ;",
+      "indent": 1
+    },
+    {
+      "line": 38,
+      "text": "for i = 0 to n exclusive , read a [ i ]",
+      "code": "for ( int i = 0 ; i < n ; i ++ ) cin >> a [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 39,
+      "text": "declare long long gg = a [ 0 ]",
+      "code": "long long gg = a [ 0 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 40,
+      "text": "for i = 1 to n exclusive , let gg be result of run __gcd ( gg , a [ i ] )",
+      "code": "for ( int i = 1 ; i < n ; i ++ ) gg = __gcd ( gg , a [ i ] ) ;",
+      "indent": 1
+    },
+    {
+      "line": 41,
+      "text": "declare long long m = value of largest element between beginning of a and end of a",
+      "code": "long long m = * max_element ( a . begin ( ) , a . end ( ) ) ;",
+      "indent": 1
+    },
+    {
+      "line": 42,
+      "text": "declare long long val = integer casted ( m / gg ) - n",
+      "code": "long long val = int ( m / gg ) - n ;",
+      "indent": 1
+    },
+    {
+      "line": 43,
+      "text": "if val % 2 is 0",
+      "code": "if ( val % 2 == 0 )",
+      "indent": 1
+    },
+    {
+      "line": 44,
+      "text": "print \" Bob \\ n \"",
+      "code": "cout << \" Bob\\n \" ;",
+      "indent": 2
+    },
+    {
+      "line": 45,
+      "text": "else",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 46,
+      "text": "print \" Alice \\ n \"",
+      "code": "cout << \" Alice\\n \" ;",
+      "indent": 2
+    },
+    {
+      "line": 47,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        21
+      ],
+      "mod_code": [
+        "int inv ( int a , int p = int 1000000007 )"
+      ],
+      "err_line": 21,
+      "err_msg": "expected primary-expression before ‘int’"
+    },
+    {
+      "mod_line": [
+        28
+      ],
+      "mod_code": [
+        "for ( int i = 3 ; i < 1000001 ; i += 2 )"
+      ],
+      "err_line": 30,
+      "err_msg": "no matching function for call to ‘min(int&, long long int)’"
+    },
+    {
+      "mod_line": [
+        30
+      ],
+      "mod_code": [
+        "for ( int j = i * i ; j < 1000001 ; j += i ) spf [ j ] = min ( i , long long ) spf [ j ] ;"
+      ],
+      "err_line": 30,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "long long gcd ( long long a , long long b ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "return ;"
+      ],
+      "err_line": 8,
+      "err_msg": "return-statement with no value, in function returning ‘long long int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "long long lcm ( long long a , long long b ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "return a / abs ( a , b ) * b ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘abs(long long int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "long long fpow ( long long n , long long p , long long p = 1000000007 )"
+      ],
+      "err_line": 13,
+      "err_msg": "redefinition of ‘long long int p’"
+    },
+    {
+      "mod_line": [
+        22
+      ],
+      "mod_code": [
+        "return fpow ( int a , p - 2 , p ) ;"
+      ],
+      "err_line": 22,
+      "err_msg": "expected primary-expression before ‘int’"
+    },
+    {
+      "mod_line": [
+        25
+      ],
+      "mod_code": [
+        "void sieve ( ) ;"
+      ],
+      "err_line": 26,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        26
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i < 1000001 ; i ++ ) spf [ i ] = i ;"
+      ],
+      "err_line": 26,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i < 1000001 ; i += 2 ) spf [ i ] = 2 ;"
+      ],
+      "err_line": 27,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        28
+      ],
+      "mod_code": [
+        "for ( i = 3 ; i < 1000001 ; i += 2 )"
+      ],
+      "err_line": 28,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        30
+      ],
+      "mod_code": [
+        "for ( int j = i * i ; j < 1000001 ; j += i ) { spf [ j ] = min ( i , long long ) spf [ j ] ; }"
+      ],
+      "err_line": 30,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        36
+      ],
+      "mod_code": [
+        "while ( cin >> n )"
+      ],
+      "err_line": 38,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        37
+      ],
+      "mod_code": [
+        "long long a ( n ) ;"
+      ],
+      "err_line": 38,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        21,
+        28
+      ],
+      "mod_code": [
+        "int inv ( int a , int p = int 1000000007 )",
+        "for ( int i = 3 ; i < 1000001 ; i += 2 )"
+      ],
+      "err_line": 21,
+      "err_msg": "expected primary-expression before ‘int’"
+    },
+    {
+      "mod_line": [
+        21,
+        28,
+        30
+      ],
+      "mod_code": [
+        "int inv ( int a , int p = int 1000000007 )",
+        "for ( int i = 3 ; i < 1000001 ; i += 2 )",
+        "for ( int j = i * i ; j < 1000001 ; j += i ) spf [ j ] = min ( i , long long ) spf [ j ] ;"
+      ],
+      "err_line": 21,
+      "err_msg": "expected primary-expression before ‘int’"
+    },
+    {
+      "mod_line": [
+        21,
+        28,
+        30,
+        41
+      ],
+      "mod_code": [
+        "int inv ( int a , int p = int 1000000007 )",
+        "for ( int i = 3 ; i < 1000001 ; i += 2 )",
+        "for ( int j = i * i ; j < 1000001 ; j += i ) spf [ j ] = min ( i , long long ) spf [ j ] ;",
+        "long long m = * min_element ( a . begin ( ) , a . end ( ) ) ;"
+      ],
+      "err_line": 21,
+      "err_msg": "expected primary-expression before ‘int’"
+    },
+    {
+      "mod_line": [
+        21,
+        28,
+        30,
+        44
+      ],
+      "mod_code": [
+        "int inv ( int a , int p = int 1000000007 )",
+        "for ( int i = 3 ; i < 1000001 ; i += 2 )",
+        "for ( int j = i * i ; j < 1000001 ; j += i ) spf [ j ] = min ( i , long long ) spf [ j ] ;",
+        "cout << \" A\\n \" ;"
+      ],
+      "err_line": 21,
+      "err_msg": "expected primary-expression before ‘int’"
+    },
+    {
+      "mod_line": [
+        21,
+        28,
+        30,
+        46
+      ],
+      "mod_code": [
+        "int inv ( int a , int p = int 1000000007 )",
+        "for ( int i = 3 ; i < 1000001 ; i += 2 )",
+        "for ( int j = i * i ; j < 1000001 ; j += i ) spf [ j ] = min ( i , long long ) spf [ j ] ;",
+        "cout << \" A\\n \" ;"
+      ],
+      "err_line": 21,
+      "err_msg": "expected primary-expression before ‘int’"
+    },
+    {
+      "mod_line": [
+        21,
+        28,
+        41
+      ],
+      "mod_code": [
+        "int inv ( int a , int p = int 1000000007 )",
+        "for ( int i = 3 ; i < 1000001 ; i += 2 )",
+        "long long m = * min_element ( a . begin ( ) , a . end ( ) ) ;"
+      ],
+      "err_line": 21,
+      "err_msg": "expected primary-expression before ‘int’"
+    },
+    {
+      "mod_line": [
+        21,
+        28,
+        41,
+        44
+      ],
+      "mod_code": [
+        "int inv ( int a , int p = int 1000000007 )",
+        "for ( int i = 3 ; i < 1000001 ; i += 2 )",
+        "long long m = * min_element ( a . begin ( ) , a . end ( ) ) ;",
+        "cout << \" A\\n \" ;"
+      ],
+      "err_line": 21,
+      "err_msg": "expected primary-expression before ‘int’"
+    },
+    {
+      "mod_line": [
+        21,
+        28,
+        41,
+        46
+      ],
+      "mod_code": [
+        "int inv ( int a , int p = int 1000000007 )",
+        "for ( int i = 3 ; i < 1000001 ; i += 2 )",
+        "long long m = * min_element ( a . begin ( ) , a . end ( ) ) ;",
+        "cout << \" A\\n \" ;"
+      ],
+      "err_line": 21,
+      "err_msg": "expected primary-expression before ‘int’"
+    },
+    {
+      "mod_line": [
+        21,
+        28,
+        44
+      ],
+      "mod_code": [
+        "int inv ( int a , int p = int 1000000007 )",
+        "for ( int i = 3 ; i < 1000001 ; i += 2 )",
+        "cout << \" A\\n \" ;"
+      ],
+      "err_line": 21,
+      "err_msg": "expected primary-expression before ‘int’"
+    },
+    {
+      "mod_line": [
+        21,
+        28,
+        44,
+        46
+      ],
+      "mod_code": [
+        "int inv ( int a , int p = int 1000000007 )",
+        "for ( int i = 3 ; i < 1000001 ; i += 2 )",
+        "cout << \" A\\n \" ;",
+        "cout << \" A\\n \" ;"
+      ],
+      "err_line": 21,
+      "err_msg": "expected primary-expression before ‘int’"
+    },
+    {
+      "mod_line": [
+        21,
+        28,
+        46
+      ],
+      "mod_code": [
+        "int inv ( int a , int p = int 1000000007 )",
+        "for ( int i = 3 ; i < 1000001 ; i += 2 )",
+        "cout << \" A\\n \" ;"
+      ],
+      "err_line": 21,
+      "err_msg": "expected primary-expression before ‘int’"
+    },
+    {
+      "mod_line": [
+        21,
+        30
+      ],
+      "mod_code": [
+        "int inv ( int a , int p = int 1000000007 )",
+        "for ( int j = i * i ; j < 1000001 ; j += i ) spf [ j ] = min ( i , long long ) spf [ j ] ;"
+      ],
+      "err_line": 21,
+      "err_msg": "expected primary-expression before ‘int’"
+    },
+    {
+      "mod_line": [
+        21,
+        30,
+        41
+      ],
+      "mod_code": [
+        "int inv ( int a , int p = int 1000000007 )",
+        "for ( int j = i * i ; j < 1000001 ; j += i ) spf [ j ] = min ( i , long long ) spf [ j ] ;",
+        "long long m = * min_element ( a . begin ( ) , a . end ( ) ) ;"
+      ],
+      "err_line": 21,
+      "err_msg": "expected primary-expression before ‘int’"
+    },
+    {
+      "mod_line": [
+        21,
+        30,
+        41,
+        44
+      ],
+      "mod_code": [
+        "int inv ( int a , int p = int 1000000007 )",
+        "for ( int j = i * i ; j < 1000001 ; j += i ) spf [ j ] = min ( i , long long ) spf [ j ] ;",
+        "long long m = * min_element ( a . begin ( ) , a . end ( ) ) ;",
+        "cout << \" A\\n \" ;"
+      ],
+      "err_line": 21,
+      "err_msg": "expected primary-expression before ‘int’"
+    },
+    {
+      "mod_line": [
+        21,
+        30,
+        41,
+        46
+      ],
+      "mod_code": [
+        "int inv ( int a , int p = int 1000000007 )",
+        "for ( int j = i * i ; j < 1000001 ; j += i ) spf [ j ] = min ( i , long long ) spf [ j ] ;",
+        "long long m = * min_element ( a . begin ( ) , a . end ( ) ) ;",
+        "cout << \" A\\n \" ;"
+      ],
+      "err_line": 21,
+      "err_msg": "expected primary-expression before ‘int’"
+    },
+    {
+      "mod_line": [
+        21,
+        30,
+        44
+      ],
+      "mod_code": [
+        "int inv ( int a , int p = int 1000000007 )",
+        "for ( int j = i * i ; j < 1000001 ; j += i ) spf [ j ] = min ( i , long long ) spf [ j ] ;",
+        "cout << \" A\\n \" ;"
+      ],
+      "err_line": 21,
+      "err_msg": "expected primary-expression before ‘int’"
+    },
+    {
+      "mod_line": [
+        21,
+        30,
+        44,
+        46
+      ],
+      "mod_code": [
+        "int inv ( int a , int p = int 1000000007 )",
+        "for ( int j = i * i ; j < 1000001 ; j += i ) spf [ j ] = min ( i , long long ) spf [ j ] ;",
+        "cout << \" A\\n \" ;",
+        "cout << \" A\\n \" ;"
+      ],
+      "err_line": 21,
+      "err_msg": "expected primary-expression before ‘int’"
+    },
+    {
+      "mod_line": [
+        21,
+        30,
+        46
+      ],
+      "mod_code": [
+        "int inv ( int a , int p = int 1000000007 )",
+        "for ( int j = i * i ; j < 1000001 ; j += i ) spf [ j ] = min ( i , long long ) spf [ j ] ;",
+        "cout << \" A\\n \" ;"
+      ],
+      "err_line": 21,
+      "err_msg": "expected primary-expression before ‘int’"
+    },
+    {
+      "mod_line": [
+        21,
+        41
+      ],
+      "mod_code": [
+        "int inv ( int a , int p = int 1000000007 )",
+        "long long m = * min_element ( a . begin ( ) , a . end ( ) ) ;"
+      ],
+      "err_line": 21,
+      "err_msg": "expected primary-expression before ‘int’"
+    },
+    {
+      "mod_line": [
+        21,
+        41,
+        44
+      ],
+      "mod_code": [
+        "int inv ( int a , int p = int 1000000007 )",
+        "long long m = * min_element ( a . begin ( ) , a . end ( ) ) ;",
+        "cout << \" A\\n \" ;"
+      ],
+      "err_line": 21,
+      "err_msg": "expected primary-expression before ‘int’"
+    },
+    {
+      "mod_line": [
+        21,
+        41,
+        44,
+        46
+      ],
+      "mod_code": [
+        "int inv ( int a , int p = int 1000000007 )",
+        "long long m = * min_element ( a . begin ( ) , a . end ( ) ) ;",
+        "cout << \" A\\n \" ;",
+        "cout << \" A\\n \" ;"
+      ],
+      "err_line": 21,
+      "err_msg": "expected primary-expression before ‘int’"
+    },
+    {
+      "mod_line": [
+        21,
+        41,
+        46
+      ],
+      "mod_code": [
+        "int inv ( int a , int p = int 1000000007 )",
+        "long long m = * min_element ( a . begin ( ) , a . end ( ) ) ;",
+        "cout << \" A\\n \" ;"
+      ],
+      "err_line": 21,
+      "err_msg": "expected primary-expression before ‘int’"
+    },
+    {
+      "mod_line": [
+        21,
+        44
+      ],
+      "mod_code": [
+        "int inv ( int a , int p = int 1000000007 )",
+        "cout << \" A\\n \" ;"
+      ],
+      "err_line": 21,
+      "err_msg": "expected primary-expression before ‘int’"
+    },
+    {
+      "mod_line": [
+        21,
+        44,
+        46
+      ],
+      "mod_code": [
+        "int inv ( int a , int p = int 1000000007 )",
+        "cout << \" A\\n \" ;",
+        "cout << \" A\\n \" ;"
+      ],
+      "err_line": 21,
+      "err_msg": "expected primary-expression before ‘int’"
+    },
+    {
+      "mod_line": [
+        21,
+        46
+      ],
+      "mod_code": [
+        "int inv ( int a , int p = int 1000000007 )",
+        "cout << \" A\\n \" ;"
+      ],
+      "err_line": 21,
+      "err_msg": "expected primary-expression before ‘int’"
+    },
+    {
+      "mod_line": [
+        28,
+        30
+      ],
+      "mod_code": [
+        "for ( int i = 3 ; i < 1000001 ; i += 2 )",
+        "for ( int j = i * i ; j < 1000001 ; j += i ) spf [ j ] = min ( i , long long ) spf [ j ] ;"
+      ],
+      "err_line": 30,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        28,
+        30,
+        41
+      ],
+      "mod_code": [
+        "for ( int i = 3 ; i < 1000001 ; i += 2 )",
+        "for ( int j = i * i ; j < 1000001 ; j += i ) spf [ j ] = min ( i , long long ) spf [ j ] ;",
+        "long long m = * min_element ( a . begin ( ) , a . end ( ) ) ;"
+      ],
+      "err_line": 30,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        28,
+        30,
+        41,
+        44
+      ],
+      "mod_code": [
+        "for ( int i = 3 ; i < 1000001 ; i += 2 )",
+        "for ( int j = i * i ; j < 1000001 ; j += i ) spf [ j ] = min ( i , long long ) spf [ j ] ;",
+        "long long m = * min_element ( a . begin ( ) , a . end ( ) ) ;",
+        "cout << \" A\\n \" ;"
+      ],
+      "err_line": 30,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        28,
+        30,
+        41,
+        46
+      ],
+      "mod_code": [
+        "for ( int i = 3 ; i < 1000001 ; i += 2 )",
+        "for ( int j = i * i ; j < 1000001 ; j += i ) spf [ j ] = min ( i , long long ) spf [ j ] ;",
+        "long long m = * min_element ( a . begin ( ) , a . end ( ) ) ;",
+        "cout << \" A\\n \" ;"
+      ],
+      "err_line": 30,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        28,
+        30,
+        44
+      ],
+      "mod_code": [
+        "for ( int i = 3 ; i < 1000001 ; i += 2 )",
+        "for ( int j = i * i ; j < 1000001 ; j += i ) spf [ j ] = min ( i , long long ) spf [ j ] ;",
+        "cout << \" A\\n \" ;"
+      ],
+      "err_line": 30,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        28,
+        30,
+        44,
+        46
+      ],
+      "mod_code": [
+        "for ( int i = 3 ; i < 1000001 ; i += 2 )",
+        "for ( int j = i * i ; j < 1000001 ; j += i ) spf [ j ] = min ( i , long long ) spf [ j ] ;",
+        "cout << \" A\\n \" ;",
+        "cout << \" A\\n \" ;"
+      ],
+      "err_line": 30,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        28,
+        30,
+        46
+      ],
+      "mod_code": [
+        "for ( int i = 3 ; i < 1000001 ; i += 2 )",
+        "for ( int j = i * i ; j < 1000001 ; j += i ) spf [ j ] = min ( i , long long ) spf [ j ] ;",
+        "cout << \" A\\n \" ;"
+      ],
+      "err_line": 30,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        28,
+        41
+      ],
+      "mod_code": [
+        "for ( int i = 3 ; i < 1000001 ; i += 2 )",
+        "long long m = * min_element ( a . begin ( ) , a . end ( ) ) ;"
+      ],
+      "err_line": 30,
+      "err_msg": "no matching function for call to ‘min(int&, long long int)’"
+    },
+    {
+      "mod_line": [
+        28,
+        41,
+        44
+      ],
+      "mod_code": [
+        "for ( int i = 3 ; i < 1000001 ; i += 2 )",
+        "long long m = * min_element ( a . begin ( ) , a . end ( ) ) ;",
+        "cout << \" A\\n \" ;"
+      ],
+      "err_line": 30,
+      "err_msg": "no matching function for call to ‘min(int&, long long int)’"
+    },
+    {
+      "mod_line": [
+        28,
+        41,
+        44,
+        46
+      ],
+      "mod_code": [
+        "for ( int i = 3 ; i < 1000001 ; i += 2 )",
+        "long long m = * min_element ( a . begin ( ) , a . end ( ) ) ;",
+        "cout << \" A\\n \" ;",
+        "cout << \" A\\n \" ;"
+      ],
+      "err_line": 30,
+      "err_msg": "no matching function for call to ‘min(int&, long long int)’"
+    },
+    {
+      "mod_line": [
+        28,
+        41,
+        46
+      ],
+      "mod_code": [
+        "for ( int i = 3 ; i < 1000001 ; i += 2 )",
+        "long long m = * min_element ( a . begin ( ) , a . end ( ) ) ;",
+        "cout << \" A\\n \" ;"
+      ],
+      "err_line": 30,
+      "err_msg": "no matching function for call to ‘min(int&, long long int)’"
+    },
+    {
+      "mod_line": [
+        28,
+        44
+      ],
+      "mod_code": [
+        "for ( int i = 3 ; i < 1000001 ; i += 2 )",
+        "cout << \" A\\n \" ;"
+      ],
+      "err_line": 30,
+      "err_msg": "no matching function for call to ‘min(int&, long long int)’"
+    },
+    {
+      "mod_line": [
+        28,
+        44,
+        46
+      ],
+      "mod_code": [
+        "for ( int i = 3 ; i < 1000001 ; i += 2 )",
+        "cout << \" A\\n \" ;",
+        "cout << \" A\\n \" ;"
+      ],
+      "err_line": 30,
+      "err_msg": "no matching function for call to ‘min(int&, long long int)’"
+    },
+    {
+      "mod_line": [
+        28,
+        46
+      ],
+      "mod_code": [
+        "for ( int i = 3 ; i < 1000001 ; i += 2 )",
+        "cout << \" A\\n \" ;"
+      ],
+      "err_line": 30,
+      "err_msg": "no matching function for call to ‘min(int&, long long int)’"
+    },
+    {
+      "mod_line": [
+        30,
+        41
+      ],
+      "mod_code": [
+        "for ( int j = i * i ; j < 1000001 ; j += i ) spf [ j ] = min ( i , long long ) spf [ j ] ;",
+        "long long m = * min_element ( a . begin ( ) , a . end ( ) ) ;"
+      ],
+      "err_line": 30,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        30,
+        41,
+        44
+      ],
+      "mod_code": [
+        "for ( int j = i * i ; j < 1000001 ; j += i ) spf [ j ] = min ( i , long long ) spf [ j ] ;",
+        "long long m = * min_element ( a . begin ( ) , a . end ( ) ) ;",
+        "cout << \" A\\n \" ;"
+      ],
+      "err_line": 30,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        30,
+        41,
+        44,
+        46
+      ],
+      "mod_code": [
+        "for ( int j = i * i ; j < 1000001 ; j += i ) spf [ j ] = min ( i , long long ) spf [ j ] ;",
+        "long long m = * min_element ( a . begin ( ) , a . end ( ) ) ;",
+        "cout << \" A\\n \" ;",
+        "cout << \" A\\n \" ;"
+      ],
+      "err_line": 30,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        30,
+        41,
+        46
+      ],
+      "mod_code": [
+        "for ( int j = i * i ; j < 1000001 ; j += i ) spf [ j ] = min ( i , long long ) spf [ j ] ;",
+        "long long m = * min_element ( a . begin ( ) , a . end ( ) ) ;",
+        "cout << \" A\\n \" ;"
+      ],
+      "err_line": 30,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        30,
+        44
+      ],
+      "mod_code": [
+        "for ( int j = i * i ; j < 1000001 ; j += i ) spf [ j ] = min ( i , long long ) spf [ j ] ;",
+        "cout << \" A\\n \" ;"
+      ],
+      "err_line": 30,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        30,
+        44,
+        46
+      ],
+      "mod_code": [
+        "for ( int j = i * i ; j < 1000001 ; j += i ) spf [ j ] = min ( i , long long ) spf [ j ] ;",
+        "cout << \" A\\n \" ;",
+        "cout << \" A\\n \" ;"
+      ],
+      "err_line": 30,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        30,
+        46
+      ],
+      "mod_code": [
+        "for ( int j = i * i ; j < 1000001 ; j += i ) spf [ j ] = min ( i , long long ) spf [ j ] ;",
+        "cout << \" A\\n \" ;"
+      ],
+      "err_line": 30,
+      "err_msg": "expected primary-expression before ‘long’"
+    }
+  ]
+}

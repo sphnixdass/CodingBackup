@@ -1,0 +1,221 @@
+{
+  "meta": {
+    "index": 236,
+    "hitid": "3DFYDSXB2WUSTXCGBJ32Y4Q5ZE5JU2",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "879A",
+    "subid": "48899091"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare long long integer n",
+      "code": "long long int n ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare long long integer array s with size 300009",
+      "code": "long long int s [ 300009 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "declare long long integer array d with size 300009",
+      "code": "long long int d [ 300009 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "create a map from long long ints to long long ints called mp",
+      "code": "map < long long int , long long int > mp ;",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( long long int i = 0 ; i < n ; i ++ ) cin >> s [ i ] >> d [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "create long long integer maxi = 1",
+      "code": "long long int maxi = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "for long long int i = 0 to n exclusive",
+      "code": "for ( long long int i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "set value of maxi to max of maxi and s [ i ]",
+      "code": "maxi = max ( maxi , s [ i ] ) ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "while ( maxi - s [ i ] ) % d [ i ] ! = 0 , increment maxi",
+      "code": "while ( ( maxi - s [ i ] ) % d [ i ] != 0 ) { maxi ++ ; }",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "if i ! = n - 1 , increment maxi",
+      "code": "if ( i != n - 1 ) maxi ++ ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "print maxi and \" \\ n \"",
+      "code": "cout << maxi << \" \\n \" ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘maxi’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "* maxi = max ( maxi , s [ i ] ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid type argument of unary ‘*’ (have ‘long long int’)"
+    },
+    {
+      "mod_line": [
+        6,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ )",
+        "* maxi = max ( maxi , s [ i ] ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘maxi’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        9,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ )",
+        "* maxi = max ( maxi , s [ i ] ) ;",
+        "cout << maxi << \" \\0 \" ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘maxi’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ )",
+        "cout << maxi << \" \\0 \" ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘maxi’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        6
+      ],
+      "mod_code": [
+        "* maxi = max ( maxi , s [ i ] ) ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        6,
+        13
+      ],
+      "mod_code": [
+        "* maxi = max ( maxi , s [ i ] ) ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "cout << maxi << \" \\0 \" ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        13
+      ],
+      "mod_code": [
+        "* maxi = max ( maxi , s [ i ] ) ;",
+        "cout << maxi << \" \\0 \" ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid type argument of unary ‘*’ (have ‘long long int’)"
+    },
+    {
+      "mod_line": [
+        6,
+        13
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "cout << maxi << \" \\0 \" ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    }
+  ]
+}

@@ -1,0 +1,2597 @@
+{
+  "meta": {
+    "index": 1921,
+    "hitid": "3S8APUMBJXDXSWHES2VMEG6PI9BFBJ",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "351A",
+    "subid": "47184524"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create long double array a with size 2 * 2005 , create 2d long double array dp with size 2 * 2005 by 2005",
+      "code": "long double a [ 2 * 2005 ] , dp [ 2 * 2005 ] [ 2005 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create integer n",
+      "code": "int n ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "declare input with no arguments , returning integer",
+      "code": "int input ( )",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for i = 1 to 2 * n inclusive , read a [ i ]",
+      "code": "for ( int i = 1 ; i <= 2 * n ; i ++ ) cin >> a [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 7,
+      "text": "declare init with no arguments , returning integer",
+      "code": "int init ( )",
+      "indent": 0
+    },
+    {
+      "line": 8,
+      "text": "for i = 0 to 2 * n inclusive",
+      "code": "for ( int i = 0 ; i <= 2 * n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "for j = 0 to n inclusive , set dp [ i ] [ j ] to INT_MAX",
+      "code": "for ( int j = 0 ; j <= n ; j ++ ) dp [ i ] [ j ] = INT_MAX ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "set dp [ 0 ] [ 0 ] to 0",
+      "code": "dp [ 0 ] [ 0 ] = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 13,
+      "text": "declare process with no arguments , returning integer",
+      "code": "int process ( )",
+      "indent": 0
+    },
+    {
+      "line": 14,
+      "text": "for i = 1 to 2 * n inclusive",
+      "code": "for ( int i = 1 ; i <= 2 * n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "for cei = 0 to minimum of i and n inclusive",
+      "code": "for ( int cei = 0 ; cei <= min ( i , n ) ; cei ++ )",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "create long doubles val1 , val2 with val1 = INT_MAX , val2 = INT_MAX",
+      "code": "long double val1 = INT_MAX , val2 = INT_MAX ;",
+      "indent": 3
+    },
+    {
+      "line": 17,
+      "text": "if cei is greater than 0 , set val1 to dp [ i - 1 ] [ cei - 1 ] + round up ( a [ i ] ) - a [ i ]",
+      "code": "if ( cei > 0 ) val1 = dp [ i - 1 ] [ cei - 1 ] + ceil ( a [ i ] ) - a [ i ] ;",
+      "indent": 3
+    },
+    {
+      "line": 18,
+      "text": "if ( i - cei ) is less than or equal to n , set val2 to dp [ i - 1 ] [ cei ] + round down ( a [ i ] ) - a [ i ]",
+      "code": "if ( ( i - cei ) <= n ) val2 = dp [ i - 1 ] [ cei ] + floor ( a [ i ] ) - a [ i ] ;",
+      "indent": 3
+    },
+    {
+      "line": 19,
+      "text": "set dp [ i ] [ cei ] to val1",
+      "code": "dp [ i ] [ cei ] = val1 ;",
+      "indent": 3
+    },
+    {
+      "line": 20,
+      "text": "if absolute value of val2 is less than absolute value of val1 , set dp [ i ] [ cei ] to val2",
+      "code": "if ( fabs ( val2 ) < fabs ( val1 ) ) dp [ i ] [ cei ] = val2 ;",
+      "indent": 3
+    },
+    {
+      "line": 21,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 22,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 25,
+      "text": "declare output with no arguments , returning integer",
+      "code": "int output ( )",
+      "indent": 0
+    },
+    {
+      "line": 26,
+      "text": "print fixed , set cout precision to 3 , print absolute value of dp [ 2 * n ] [ n ] , print newline",
+      "code": "cout << fixed << setprecision ( 3 ) << fabs ( dp [ 2 * n ] [ n ] ) << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 27,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 28,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 29,
+      "text": "declare in with no arguments , returning void",
+      "code": "void in ( )",
+      "indent": 0
+    },
+    {
+      "line": 30,
+      "text": "for i = 0 to 2 * n inclusive",
+      "code": "for ( int i = 0 ; i <= 2 * n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 31,
+      "text": "for j = 0 to n inclusive",
+      "code": "for ( int j = 0 ; j <= n ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 32,
+      "text": "if dp [ i ] [ j ] is INT_MAX",
+      "code": "if ( dp [ i ] [ j ] == INT_MAX )",
+      "indent": 3
+    },
+    {
+      "line": 33,
+      "text": "print 999999 print \" \"",
+      "code": "cout << 999999 << \" \" ;",
+      "indent": 4
+    },
+    {
+      "line": 34,
+      "text": "else if dp [ i ] [ j ] is greater than or equal to 0",
+      "code": "else if ( dp [ i ] [ j ] >= 0 )",
+      "indent": 3
+    },
+    {
+      "line": 35,
+      "text": "print \" \" print dp [ i ] [ j ] print \" \"",
+      "code": "cout << \" \" << dp [ i ] [ j ] << \" \" ;",
+      "indent": 4
+    },
+    {
+      "line": 36,
+      "text": "else",
+      "code": "else",
+      "indent": 3
+    },
+    {
+      "line": 37,
+      "text": "print dp [ i ] [ j ] print \" \"",
+      "code": "cout << dp [ i ] [ j ] << \" \" ;",
+      "indent": 4
+    },
+    {
+      "line": 38,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 39,
+      "text": "print newline",
+      "code": "cout << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 40,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 41,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 42,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 43,
+      "text": "run input",
+      "code": "input ( ) ;",
+      "indent": 1
+    },
+    {
+      "line": 44,
+      "text": "run init",
+      "code": "init ( ) ;",
+      "indent": 1
+    },
+    {
+      "line": 45,
+      "text": "run process",
+      "code": "process ( ) ;",
+      "indent": 1
+    },
+    {
+      "line": 46,
+      "text": "run output",
+      "code": "output ( ) ;",
+      "indent": 1
+    },
+    {
+      "line": 47,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "long doubles = INT_MAX , val2 = INT_MAX ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘val1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        26
+      ],
+      "mod_code": [
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;"
+      ],
+      "err_line": 26,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        29
+      ],
+      "mod_code": [
+        "void in ( ) { }"
+      ],
+      "err_line": 30,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "long long n ;"
+      ],
+      "err_line": 15,
+      "err_msg": "no matching function for call to ‘min(int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "int input ( ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "int init ( ) { }"
+      ],
+      "err_line": 8,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= 2 * n ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "int process ( ) { }"
+      ],
+      "err_line": 14,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= 2 * n ; i ++ )"
+      ],
+      "err_line": 14,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        20
+      ],
+      "mod_code": [
+        "if ( abs ( val2 ) < abs ( val1 , val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }"
+      ],
+      "err_line": 20,
+      "err_msg": "no matching function for call to ‘abs(long double&, long double&)’"
+    },
+    {
+      "mod_line": [
+        25
+      ],
+      "mod_code": [
+        "int output ( ) { }"
+      ],
+      "err_line": 26,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        26
+      ],
+      "mod_code": [
+        "cout << fixed << 3 << precision ( dp [ 2 * n ] [ n ] ) << endl ;"
+      ],
+      "err_line": 26,
+      "err_msg": "‘precision’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        30
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= 2 * n ; i ++ )"
+      ],
+      "err_line": 30,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        31
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j <= n ; j ++ )"
+      ],
+      "err_line": 31,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        35
+      ],
+      "mod_code": [
+        "<< \" \" << dp [ i ] [ j ] << \" \" ;"
+      ],
+      "err_line": 35,
+      "err_msg": "expected primary-expression before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        43
+      ],
+      "mod_code": [
+        "void input ( )"
+      ],
+      "err_line": 44,
+      "err_msg": "expected initializer before ‘init’"
+    },
+    {
+      "mod_line": [
+        44
+      ],
+      "mod_code": [
+        "init ( )"
+      ],
+      "err_line": 45,
+      "err_msg": "expected ‘;’ before ‘process’"
+    },
+    {
+      "mod_line": [
+        45
+      ],
+      "mod_code": [
+        "process ( )"
+      ],
+      "err_line": 46,
+      "err_msg": "expected ‘;’ before ‘output’"
+    },
+    {
+      "mod_line": [
+        46
+      ],
+      "mod_code": [
+        "output ( ) << endl ;"
+      ],
+      "err_line": 46,
+      "err_msg": "invalid operands of types ‘int’ and ‘<unresolved overloaded function type>’ to binary ‘operator<<’"
+    },
+    {
+      "mod_line": [
+        0,
+        16
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "long doubles = INT_MAX , val2 = INT_MAX ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        17
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        17,
+        18
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        17,
+        19
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "dp [ i ] [ cei ] = ' val1 ' ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        17,
+        20
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        17,
+        26
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        17,
+        29
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "void in ( ) { }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        18
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        18,
+        19
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "dp [ i ] [ cei ] = ' val1 ' ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        18,
+        20
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        18,
+        26
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        18,
+        29
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "void in ( ) { }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        19
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "dp [ i ] [ cei ] = ' val1 ' ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        19,
+        20
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        19,
+        26
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        19,
+        29
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "void in ( ) { }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        20
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        20,
+        26
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        20,
+        29
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }",
+        "void in ( ) { }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        26
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        26,
+        29
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;",
+        "void in ( ) { }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        29
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "void in ( ) { }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        17
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        17,
+        18
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        17,
+        18,
+        19
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "dp [ i ] [ cei ] = ' val1 ' ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        17,
+        18,
+        20
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        17,
+        18,
+        26
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        17,
+        18,
+        29
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "void in ( ) { }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        17,
+        19
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "dp [ i ] [ cei ] = ' val1 ' ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        17,
+        19,
+        20
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        17,
+        19,
+        26
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        17,
+        19,
+        29
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "void in ( ) { }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        17,
+        20
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        17,
+        20,
+        26
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        17,
+        20,
+        29
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }",
+        "void in ( ) { }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        17,
+        26
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        17,
+        26,
+        29
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;",
+        "void in ( ) { }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        17,
+        29
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "void in ( ) { }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        18
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        18,
+        19
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "dp [ i ] [ cei ] = ' val1 ' ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        18,
+        19,
+        20
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        18,
+        19,
+        26
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        18,
+        19,
+        29
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "void in ( ) { }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        18,
+        20
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        18,
+        20,
+        26
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        18,
+        20,
+        29
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }",
+        "void in ( ) { }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        18,
+        26
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        18,
+        26,
+        29
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;",
+        "void in ( ) { }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        18,
+        29
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "void in ( ) { }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        19
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "dp [ i ] [ cei ] = ' val1 ' ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        19,
+        20
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        19,
+        20,
+        26
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        19,
+        20,
+        29
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }",
+        "void in ( ) { }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        19,
+        26
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        19,
+        26,
+        29
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;",
+        "void in ( ) { }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        19,
+        29
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "void in ( ) { }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        20
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        20,
+        26
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        20,
+        26,
+        29
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;",
+        "void in ( ) { }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        20,
+        29
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }",
+        "void in ( ) { }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        26
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        26,
+        29
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;",
+        "void in ( ) { }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        29
+      ],
+      "mod_code": [
+        "long double a [ 2 * 2005 * 2005 ] , dp [ 2 * 2005 ] ;",
+        "void in ( ) { }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long double[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        16,
+        17
+      ],
+      "mod_code": [
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }"
+      ],
+      "err_line": 17,
+      "err_msg": "‘val1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        17,
+        18
+      ],
+      "mod_code": [
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }"
+      ],
+      "err_line": 17,
+      "err_msg": "‘val1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        17,
+        18,
+        19
+      ],
+      "mod_code": [
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "dp [ i ] [ cei ] = ' val1 ' ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘val1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        17,
+        18,
+        20
+      ],
+      "mod_code": [
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }"
+      ],
+      "err_line": 17,
+      "err_msg": "‘val1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        17,
+        18,
+        26
+      ],
+      "mod_code": [
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘val1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        17,
+        18,
+        29
+      ],
+      "mod_code": [
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "void in ( ) { }"
+      ],
+      "err_line": 17,
+      "err_msg": "‘val1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        17,
+        19
+      ],
+      "mod_code": [
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "dp [ i ] [ cei ] = ' val1 ' ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘val1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        17,
+        19,
+        20
+      ],
+      "mod_code": [
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }"
+      ],
+      "err_line": 17,
+      "err_msg": "‘val1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        17,
+        19,
+        26
+      ],
+      "mod_code": [
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘val1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        17,
+        19,
+        29
+      ],
+      "mod_code": [
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "void in ( ) { }"
+      ],
+      "err_line": 17,
+      "err_msg": "‘val1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        17,
+        20
+      ],
+      "mod_code": [
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }"
+      ],
+      "err_line": 17,
+      "err_msg": "‘val1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        17,
+        20,
+        26
+      ],
+      "mod_code": [
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘val1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        17,
+        20,
+        29
+      ],
+      "mod_code": [
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }",
+        "void in ( ) { }"
+      ],
+      "err_line": 17,
+      "err_msg": "‘val1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        17,
+        26
+      ],
+      "mod_code": [
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘val1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        17,
+        26,
+        29
+      ],
+      "mod_code": [
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;",
+        "void in ( ) { }"
+      ],
+      "err_line": 17,
+      "err_msg": "‘val1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        17,
+        29
+      ],
+      "mod_code": [
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "void in ( ) { }"
+      ],
+      "err_line": 17,
+      "err_msg": "‘val1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        18
+      ],
+      "mod_code": [
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }"
+      ],
+      "err_line": 17,
+      "err_msg": "‘val1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        18,
+        19
+      ],
+      "mod_code": [
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "dp [ i ] [ cei ] = ' val1 ' ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘val1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        18,
+        19,
+        20
+      ],
+      "mod_code": [
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }"
+      ],
+      "err_line": 17,
+      "err_msg": "‘val1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        18,
+        19,
+        26
+      ],
+      "mod_code": [
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘val1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        18,
+        19,
+        29
+      ],
+      "mod_code": [
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "void in ( ) { }"
+      ],
+      "err_line": 17,
+      "err_msg": "‘val1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        18,
+        20
+      ],
+      "mod_code": [
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }"
+      ],
+      "err_line": 17,
+      "err_msg": "‘val1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        18,
+        20,
+        26
+      ],
+      "mod_code": [
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘val1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        18,
+        20,
+        29
+      ],
+      "mod_code": [
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }",
+        "void in ( ) { }"
+      ],
+      "err_line": 17,
+      "err_msg": "‘val1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        18,
+        26
+      ],
+      "mod_code": [
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘val1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        18,
+        26,
+        29
+      ],
+      "mod_code": [
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;",
+        "void in ( ) { }"
+      ],
+      "err_line": 17,
+      "err_msg": "‘val1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        18,
+        29
+      ],
+      "mod_code": [
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "void in ( ) { }"
+      ],
+      "err_line": 17,
+      "err_msg": "‘val1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        19
+      ],
+      "mod_code": [
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "dp [ i ] [ cei ] = ' val1 ' ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘val1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        19,
+        20
+      ],
+      "mod_code": [
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }"
+      ],
+      "err_line": 17,
+      "err_msg": "‘val1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        19,
+        20,
+        26
+      ],
+      "mod_code": [
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘val1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        19,
+        20,
+        29
+      ],
+      "mod_code": [
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }",
+        "void in ( ) { }"
+      ],
+      "err_line": 17,
+      "err_msg": "‘val1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        19,
+        26
+      ],
+      "mod_code": [
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘val1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        19,
+        26,
+        29
+      ],
+      "mod_code": [
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;",
+        "void in ( ) { }"
+      ],
+      "err_line": 17,
+      "err_msg": "‘val1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        19,
+        29
+      ],
+      "mod_code": [
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "void in ( ) { }"
+      ],
+      "err_line": 17,
+      "err_msg": "‘val1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        20
+      ],
+      "mod_code": [
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }"
+      ],
+      "err_line": 17,
+      "err_msg": "‘val1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        20,
+        26
+      ],
+      "mod_code": [
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘val1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        20,
+        26,
+        29
+      ],
+      "mod_code": [
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;",
+        "void in ( ) { }"
+      ],
+      "err_line": 17,
+      "err_msg": "‘val1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        20,
+        29
+      ],
+      "mod_code": [
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }",
+        "void in ( ) { }"
+      ],
+      "err_line": 17,
+      "err_msg": "‘val1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        26
+      ],
+      "mod_code": [
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘val1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        26,
+        29
+      ],
+      "mod_code": [
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;",
+        "void in ( ) { }"
+      ],
+      "err_line": 17,
+      "err_msg": "‘val1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        29
+      ],
+      "mod_code": [
+        "long doubles = INT_MAX , val2 = INT_MAX ;",
+        "void in ( ) { }"
+      ],
+      "err_line": 17,
+      "err_msg": "‘val1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17,
+        18,
+        19,
+        26
+      ],
+      "mod_code": [
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;"
+      ],
+      "err_line": 26,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        17,
+        18,
+        19,
+        29
+      ],
+      "mod_code": [
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "void in ( ) { }"
+      ],
+      "err_line": 30,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        17,
+        18,
+        20,
+        26
+      ],
+      "mod_code": [
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;"
+      ],
+      "err_line": 26,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        17,
+        18,
+        20,
+        29
+      ],
+      "mod_code": [
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }",
+        "void in ( ) { }"
+      ],
+      "err_line": 30,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        17,
+        18,
+        26
+      ],
+      "mod_code": [
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;"
+      ],
+      "err_line": 26,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        17,
+        18,
+        26,
+        29
+      ],
+      "mod_code": [
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;",
+        "void in ( ) { }"
+      ],
+      "err_line": 26,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        17,
+        18,
+        29
+      ],
+      "mod_code": [
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "void in ( ) { }"
+      ],
+      "err_line": 30,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        17,
+        19,
+        20,
+        26
+      ],
+      "mod_code": [
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;"
+      ],
+      "err_line": 26,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        17,
+        19,
+        20,
+        29
+      ],
+      "mod_code": [
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }",
+        "void in ( ) { }"
+      ],
+      "err_line": 30,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        17,
+        19,
+        26
+      ],
+      "mod_code": [
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;"
+      ],
+      "err_line": 26,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        17,
+        19,
+        26,
+        29
+      ],
+      "mod_code": [
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;",
+        "void in ( ) { }"
+      ],
+      "err_line": 26,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        17,
+        19,
+        29
+      ],
+      "mod_code": [
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "void in ( ) { }"
+      ],
+      "err_line": 30,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        17,
+        20,
+        26
+      ],
+      "mod_code": [
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;"
+      ],
+      "err_line": 26,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        17,
+        20,
+        26,
+        29
+      ],
+      "mod_code": [
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;",
+        "void in ( ) { }"
+      ],
+      "err_line": 26,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        17,
+        20,
+        29
+      ],
+      "mod_code": [
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }",
+        "void in ( ) { }"
+      ],
+      "err_line": 30,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        17,
+        26
+      ],
+      "mod_code": [
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;"
+      ],
+      "err_line": 26,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        17,
+        26,
+        29
+      ],
+      "mod_code": [
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;",
+        "void in ( ) { }"
+      ],
+      "err_line": 26,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        17,
+        29
+      ],
+      "mod_code": [
+        "if ( cei > 0 ) { val1 = dp [ i - 1 ] [ cei - 1 ] + a [ i ] ; }",
+        "void in ( ) { }"
+      ],
+      "err_line": 30,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        18,
+        19,
+        20,
+        26
+      ],
+      "mod_code": [
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;"
+      ],
+      "err_line": 26,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        18,
+        19,
+        20,
+        29
+      ],
+      "mod_code": [
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }",
+        "void in ( ) { }"
+      ],
+      "err_line": 30,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        18,
+        19,
+        26
+      ],
+      "mod_code": [
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;"
+      ],
+      "err_line": 26,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        18,
+        19,
+        26,
+        29
+      ],
+      "mod_code": [
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;",
+        "void in ( ) { }"
+      ],
+      "err_line": 26,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        18,
+        19,
+        29
+      ],
+      "mod_code": [
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "void in ( ) { }"
+      ],
+      "err_line": 30,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        18,
+        20,
+        26
+      ],
+      "mod_code": [
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;"
+      ],
+      "err_line": 26,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        18,
+        20,
+        26,
+        29
+      ],
+      "mod_code": [
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;",
+        "void in ( ) { }"
+      ],
+      "err_line": 26,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        18,
+        20,
+        29
+      ],
+      "mod_code": [
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }",
+        "void in ( ) { }"
+      ],
+      "err_line": 30,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        18,
+        26
+      ],
+      "mod_code": [
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;"
+      ],
+      "err_line": 26,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        18,
+        26,
+        29
+      ],
+      "mod_code": [
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;",
+        "void in ( ) { }"
+      ],
+      "err_line": 26,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        18,
+        29
+      ],
+      "mod_code": [
+        "if ( ( i - cei ) <= n ) { val2 = dp [ i - 1 ] [ cei ] + a [ i ] + a [ i ] ; }",
+        "void in ( ) { }"
+      ],
+      "err_line": 30,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        19,
+        20,
+        26
+      ],
+      "mod_code": [
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;"
+      ],
+      "err_line": 26,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        19,
+        20,
+        26,
+        29
+      ],
+      "mod_code": [
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;",
+        "void in ( ) { }"
+      ],
+      "err_line": 26,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        19,
+        20,
+        29
+      ],
+      "mod_code": [
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }",
+        "void in ( ) { }"
+      ],
+      "err_line": 30,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        19,
+        26
+      ],
+      "mod_code": [
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;"
+      ],
+      "err_line": 26,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        19,
+        26,
+        29
+      ],
+      "mod_code": [
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;",
+        "void in ( ) { }"
+      ],
+      "err_line": 26,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        19,
+        29
+      ],
+      "mod_code": [
+        "dp [ i ] [ cei ] = ' val1 ' ;",
+        "void in ( ) { }"
+      ],
+      "err_line": 30,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        20,
+        26
+      ],
+      "mod_code": [
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;"
+      ],
+      "err_line": 26,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        20,
+        26,
+        29
+      ],
+      "mod_code": [
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }",
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;",
+        "void in ( ) { }"
+      ],
+      "err_line": 26,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        20,
+        29
+      ],
+      "mod_code": [
+        "if ( abs ( val2 ) < abs ( val1 ) ) { dp [ i ] [ cei ] = ' val2 ' ; }",
+        "void in ( ) { }"
+      ],
+      "err_line": 30,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        26,
+        29
+      ],
+      "mod_code": [
+        "cout << fixed << 3 << 3 [ 2 * n ] [ n ] << endl ;",
+        "void in ( ) { }"
+      ],
+      "err_line": 26,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    }
+  ]
+}

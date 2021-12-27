@@ -1,0 +1,737 @@
+{
+  "meta": {
+    "index": 2462,
+    "hitid": "3Y40HMYLL1CTOHH5SNI3PDYKBZGXUB",
+    "workerid": "A24WRPQYGMQLGF",
+    "probid": "631A",
+    "subid": "46105538"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "MAXN = constant integer = 1000",
+      "code": "const int MAXN = 1000 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "a = integer array of size MAXN , b = integer array of size MAXN",
+      "code": "int a [ MAXN ] , b [ MAXN ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "in function f with arguments of an integer array a , integer l , integer r , and integer n , that returns an integer",
+      "code": "int f ( int a [ ] , int l , int r , int n )",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "res = integer = 0",
+      "code": "int res = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for i = 1 to r inclusive then res = a new number created by comparing the bits of res and a [ i ] and setting the new number ' s bits to 1 if any of the earlier numbers contains 1 in the same position",
+      "code": "for ( int i = l ; i <= r ; ++ i ) { res |= a [ i ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "return res",
+      "code": "return res ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 7,
+      "text": "in function solve that returns nothing",
+      "code": "void solve ( )",
+      "indent": 0
+    },
+    {
+      "line": 8,
+      "text": "n = integer",
+      "code": "int n ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "for i = 0 to n exclusive , read a [ i ]",
+      "code": "for ( int i = int ( 0 ) ; i < int ( n ) ; ++ i ) cin >> a [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "for i = 0 to n exclusive , read b [ i ]",
+      "code": "for ( int i = int ( 0 ) ; i < int ( n ) ; ++ i ) cin >> b [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "mx = integer = max value of an integer",
+      "code": "int mx = INT_MIN ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "for l = 0 to n exclusive",
+      "code": "for ( int l = 0 ; l < n ; ++ l )",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "for r = l to n exclusive , then mx = the bigger number between mx and call f with arguments a , l , r , n + call f with argument b , l , r , n",
+      "code": "for ( int r = l ; r < n ; ++ r ) { mx = max ( mx , f ( a , l , r , n ) + f ( b , l , r , n ) ) ; }",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "print mx",
+      "code": "cout << mx << ' \\n ' ;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 19,
+      "text": "call solve",
+      "code": "solve ( ) ;",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "int mx = max ( s ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "for ( int r = l ; r < n ; r ++ ) { mx = max ( mx , f ( a , l , r , f ) , f , n , n , n ) ; }"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid conversion from ‘int (*)(int*, int, int, int)’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int a [ MAXN ] , a [ MAXN ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int a [1000]’"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "int f ( int a [ ] , int l , int l , int n )"
+      ],
+      "err_line": 2,
+      "err_msg": "redefinition of ‘int l’"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "int mx = max ( max ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "no matching function for call to ‘max(<unresolved overloaded function type>)’"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "for ( l = 0 ; l < n ; l ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "for ( int r = l ; r < n ; r ++ ) { mx = max ( mx , f ( a , l , r , f ) , f , n , n ) ; }"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid conversion from ‘int (*)(int*, int, int, int)’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        19
+      ],
+      "mod_code": [
+        "exit ( ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "too few arguments to function ‘void exit(int)’"
+    },
+    {
+      "mod_line": [
+        4,
+        12
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= r ; i ++ ) res = ' new ' ;",
+        "int mx = max ( s ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        12,
+        14
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= r ; i ++ ) res = ' new ' ;",
+        "int mx = max ( s ) ;",
+        "for ( int r = l ; r < n ; r ++ ) { mx = max ( mx , f ( a , l , r , f ) , f , n , n , n ) ; }"
+      ],
+      "err_line": 12,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        12,
+        14,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= r ; i ++ ) res = ' new ' ;",
+        "int mx = max ( s ) ;",
+        "for ( int r = l ; r < n ; r ++ ) { mx = max ( mx , f ( a , l , r , f ) , f , n , n , n ) ; }",
+        "for ( l = 0 ; l < n ; l ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        12,
+        14,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= r ; i ++ ) res = ' new ' ;",
+        "int mx = max ( s ) ;",
+        "for ( int r = l ; r < n ; r ++ ) { mx = max ( mx , f ( a , l , r , f ) , f , n , n , n ) ; }",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        12,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= r ; i ++ ) res = ' new ' ;",
+        "int mx = max ( s ) ;",
+        "for ( l = 0 ; l < n ; l ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        12,
+        13,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= r ; i ++ ) res = ' new ' ;",
+        "int mx = max ( s ) ;",
+        "for ( l = 0 ; l < n ; l ++ )",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        12,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= r ; i ++ ) res = ' new ' ;",
+        "int mx = max ( s ) ;",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        14
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= r ; i ++ ) res = ' new ' ;",
+        "for ( int r = l ; r < n ; r ++ ) { mx = max ( mx , f ( a , l , r , f ) , f , n , n , n ) ; }"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid conversion from ‘int (*)(int*, int, int, int)’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        4,
+        14,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= r ; i ++ ) res = ' new ' ;",
+        "for ( int r = l ; r < n ; r ++ ) { mx = max ( mx , f ( a , l , r , f ) , f , n , n , n ) ; }",
+        "for ( l = 0 ; l < n ; l ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        14,
+        13,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= r ; i ++ ) res = ' new ' ;",
+        "for ( int r = l ; r < n ; r ++ ) { mx = max ( mx , f ( a , l , r , f ) , f , n , n , n ) ; }",
+        "for ( l = 0 ; l < n ; l ++ )",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        14,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= r ; i ++ ) res = ' new ' ;",
+        "for ( int r = l ; r < n ; r ++ ) { mx = max ( mx , f ( a , l , r , f ) , f , n , n , n ) ; }",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid conversion from ‘int (*)(int*, int, int, int)’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        4,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= r ; i ++ ) res = ' new ' ;",
+        "for ( l = 0 ; l < n ; l ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        13,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= r ; i ++ ) res = ' new ' ;",
+        "for ( l = 0 ; l < n ; l ++ )",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        14
+      ],
+      "mod_code": [
+        "int mx = max ( s ) ;",
+        "for ( int r = l ; r < n ; r ++ ) { mx = max ( mx , f ( a , l , r , f ) , f , n , n , n ) ; }"
+      ],
+      "err_line": 12,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        14,
+        13
+      ],
+      "mod_code": [
+        "int mx = max ( s ) ;",
+        "for ( int r = l ; r < n ; r ++ ) { mx = max ( mx , f ( a , l , r , f ) , f , n , n , n ) ; }",
+        "for ( l = 0 ; l < n ; l ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        14,
+        13,
+        9
+      ],
+      "mod_code": [
+        "int mx = max ( s ) ;",
+        "for ( int r = l ; r < n ; r ++ ) { mx = max ( mx , f ( a , l , r , f ) , f , n , n , n ) ; }",
+        "for ( l = 0 ; l < n ; l ++ )",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        14,
+        13,
+        4
+      ],
+      "mod_code": [
+        "int mx = max ( s ) ;",
+        "for ( int r = l ; r < n ; r ++ ) { mx = max ( mx , f ( a , l , r , f ) , f , n , n , n ) ; }",
+        "for ( l = 0 ; l < n ; l ++ )",
+        "for ( int i = 1 ; i <= r ; i ++ ) { res = ' new ' ; }"
+      ],
+      "err_line": 12,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        14,
+        9
+      ],
+      "mod_code": [
+        "int mx = max ( s ) ;",
+        "for ( int r = l ; r < n ; r ++ ) { mx = max ( mx , f ( a , l , r , f ) , f , n , n , n ) ; }",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        14,
+        9,
+        4
+      ],
+      "mod_code": [
+        "int mx = max ( s ) ;",
+        "for ( int r = l ; r < n ; r ++ ) { mx = max ( mx , f ( a , l , r , f ) , f , n , n , n ) ; }",
+        "n = getchar ( ) ;",
+        "for ( int i = 1 ; i <= r ; i ++ ) { res = ' new ' ; }"
+      ],
+      "err_line": 12,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        14,
+        4
+      ],
+      "mod_code": [
+        "int mx = max ( s ) ;",
+        "for ( int r = l ; r < n ; r ++ ) { mx = max ( mx , f ( a , l , r , f ) , f , n , n , n ) ; }",
+        "for ( int i = 1 ; i <= r ; i ++ ) { res = ' new ' ; }"
+      ],
+      "err_line": 12,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        13
+      ],
+      "mod_code": [
+        "int mx = max ( s ) ;",
+        "for ( l = 0 ; l < n ; l ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        13,
+        9
+      ],
+      "mod_code": [
+        "int mx = max ( s ) ;",
+        "for ( l = 0 ; l < n ; l ++ )",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        13,
+        9,
+        4
+      ],
+      "mod_code": [
+        "int mx = max ( s ) ;",
+        "for ( l = 0 ; l < n ; l ++ )",
+        "n = getchar ( ) ;",
+        "for ( int i = 1 ; i <= r ; i ++ ) { res = ' new ' ; }"
+      ],
+      "err_line": 12,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        13,
+        4
+      ],
+      "mod_code": [
+        "int mx = max ( s ) ;",
+        "for ( l = 0 ; l < n ; l ++ )",
+        "for ( int i = 1 ; i <= r ; i ++ ) { res = ' new ' ; }"
+      ],
+      "err_line": 12,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        9
+      ],
+      "mod_code": [
+        "int mx = max ( s ) ;",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        9,
+        4
+      ],
+      "mod_code": [
+        "int mx = max ( s ) ;",
+        "n = getchar ( ) ;",
+        "for ( int i = 1 ; i <= r ; i ++ ) { res = ' new ' ; }"
+      ],
+      "err_line": 12,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        4
+      ],
+      "mod_code": [
+        "int mx = max ( s ) ;",
+        "for ( int i = 1 ; i <= r ; i ++ ) { res = ' new ' ; }"
+      ],
+      "err_line": 12,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        13
+      ],
+      "mod_code": [
+        "for ( int r = l ; r < n ; r ++ ) { mx = max ( mx , f ( a , l , r , f ) , f , n , n , n ) ; }",
+        "for ( l = 0 ; l < n ; l ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        13,
+        9
+      ],
+      "mod_code": [
+        "for ( int r = l ; r < n ; r ++ ) { mx = max ( mx , f ( a , l , r , f ) , f , n , n , n ) ; }",
+        "for ( l = 0 ; l < n ; l ++ )",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        13,
+        9,
+        4
+      ],
+      "mod_code": [
+        "for ( int r = l ; r < n ; r ++ ) { mx = max ( mx , f ( a , l , r , f ) , f , n , n , n ) ; }",
+        "for ( l = 0 ; l < n ; l ++ )",
+        "n = getchar ( ) ;",
+        "for ( int i = 1 ; i <= r ; i ++ ) { res = ' new ' ; }"
+      ],
+      "err_line": 13,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        13,
+        4
+      ],
+      "mod_code": [
+        "for ( int r = l ; r < n ; r ++ ) { mx = max ( mx , f ( a , l , r , f ) , f , n , n , n ) ; }",
+        "for ( l = 0 ; l < n ; l ++ )",
+        "for ( int i = 1 ; i <= r ; i ++ ) { res = ' new ' ; }"
+      ],
+      "err_line": 13,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        9
+      ],
+      "mod_code": [
+        "for ( int r = l ; r < n ; r ++ ) { mx = max ( mx , f ( a , l , r , f ) , f , n , n , n ) ; }",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid conversion from ‘int (*)(int*, int, int, int)’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        14,
+        9,
+        4
+      ],
+      "mod_code": [
+        "for ( int r = l ; r < n ; r ++ ) { mx = max ( mx , f ( a , l , r , f ) , f , n , n , n ) ; }",
+        "n = getchar ( ) ;",
+        "for ( int i = 1 ; i <= r ; i ++ ) { res = ' new ' ; }"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid conversion from ‘int (*)(int*, int, int, int)’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        14,
+        4
+      ],
+      "mod_code": [
+        "for ( int r = l ; r < n ; r ++ ) { mx = max ( mx , f ( a , l , r , f ) , f , n , n , n ) ; }",
+        "for ( int i = 1 ; i <= r ; i ++ ) { res = ' new ' ; }"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid conversion from ‘int (*)(int*, int, int, int)’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        9
+      ],
+      "mod_code": [
+        "for ( l = 0 ; l < n ; l ++ )",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        9,
+        4
+      ],
+      "mod_code": [
+        "for ( l = 0 ; l < n ; l ++ )",
+        "n = getchar ( ) ;",
+        "for ( int i = 1 ; i <= r ; i ++ ) { res = ' new ' ; }"
+      ],
+      "err_line": 13,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        4
+      ],
+      "mod_code": [
+        "for ( l = 0 ; l < n ; l ++ )",
+        "for ( int i = 1 ; i <= r ; i ++ ) { res = ' new ' ; }"
+      ],
+      "err_line": 13,
+      "err_msg": "‘l’ was not declared in this scope"
+    }
+  ]
+}

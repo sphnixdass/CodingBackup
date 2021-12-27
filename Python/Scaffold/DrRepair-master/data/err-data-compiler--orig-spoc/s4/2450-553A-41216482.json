@@ -1,0 +1,959 @@
+{
+  "meta": {
+    "index": 2450,
+    "hitid": "3WA2XVDZEMBZG60N10U8LIZXS7KE6E",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "553A",
+    "subid": "41216482"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare const integers N = 1e3 + 2 and MOD = 1e9 + 7",
+      "code": "const int N = 1e3 + 2 , MOD = 1e9 + 7 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare long long int variables ans and sum and an array of long long ints pascal with size N by N",
+      "code": "long long int pascal [ N ] [ N ] , ans , sum ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "create short int n and short int array arr with size N",
+      "code": "short int n , arr [ N ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "assign 1 to ans",
+      "code": "ans = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "set first sizeof pascal bytes at the pointer pascal to 0",
+      "code": "memset ( pascal , 0 , sizeof pascal ) ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "loop i from 0 to N exclusive",
+      "code": "for ( int i = 0 ; i < N ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "loop j from 0 to i inclusive",
+      "code": "for ( int j = 0 ; j <= i ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "if j is equal to 0",
+      "code": "if ( j == 0 )",
+      "indent": 3
+    },
+    {
+      "line": 9,
+      "text": "set pascal [ i ] [ j ] to 1",
+      "code": "pascal [ i ] [ j ] = 1 ;",
+      "indent": 4
+    },
+    {
+      "line": 10,
+      "text": "else",
+      "code": "else",
+      "indent": 3
+    },
+    {
+      "line": 11,
+      "text": "set pascal [ i ] [ j ] to ( ( pascal [ i - 1 ] [ j - 1 ] % MOD ) + ( pascal [ i - 1 ] [ j ] % MOD ) ) % MOD",
+      "code": "pascal [ i ] [ j ] = ( ( pascal [ i - 1 ] [ j - 1 ] % MOD ) + ( pascal [ i - 1 ] [ j ] % MOD ) ) % MOD ;",
+      "indent": 4
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( int i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "read arr [ i ]",
+      "code": "cin >> arr [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "increase sum by arr [ i ]",
+      "code": "sum += arr [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "loop i from n - 1 to - 1 exclusive counting down",
+      "code": "for ( int i = n - 1 ; i > - 1 ; i -- )",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "decrement sum by one",
+      "code": "sum -- ;",
+      "indent": 2
+    },
+    {
+      "line": 20,
+      "text": "set ans to ( ( ans % MOD ) * ( pascal [ sum ] [ arr [ i ] - 1 ] % MOD ) ) % MOD",
+      "code": "ans = ( ( ans % MOD ) * ( pascal [ sum ] [ arr [ i ] - 1 ] % MOD ) ) % MOD ;",
+      "indent": 2
+    },
+    {
+      "line": 21,
+      "text": "ans % MOD",
+      "code": "ans % MOD ;",
+      "indent": 2
+    },
+    {
+      "line": 22,
+      "text": "decrease sum by arr [ i ]",
+      "code": "sum -= arr [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 23,
+      "text": "increment sum",
+      "code": "sum ++ ;",
+      "indent": 2
+    },
+    {
+      "line": 24,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 25,
+      "text": "print ans",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 26,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 27,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "long long int ans , pascal , pascal [ N ] [ N ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int pascal [1002][1002]’"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "const N = 1e3 + 2 , MOD = 1e9 + 7 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘N’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "short arr , arr [ N ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conflicting declaration ‘short int arr [1002]’"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < N ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j <= i ; j ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 14,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "arr >> arr [ i ] ;"
+      ],
+      "err_line": 15,
+      "err_msg": "invalid operands of types ‘short int [1002]’ and ‘short int’ to binary ‘operator>>’"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "sum += arr [ i ] [ i ] ;"
+      ],
+      "err_line": 16,
+      "err_msg": "invalid types ‘short int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        20
+      ],
+      "mod_code": [
+        "ans = ( ( ans % MOD ) * ( pascal [ sum ] [ arr [ i ] - 1 ) % MOD ) ) % MOD ;"
+      ],
+      "err_line": 20,
+      "err_msg": "expected ‘]’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        7
+      ],
+      "mod_code": [
+        "long long int ans , pascal , pascal [ N ] [ N ] ;",
+        "for ( j = 0 ; j <= i ; j ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int pascal [1002][1002]’"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        20
+      ],
+      "mod_code": [
+        "long long int ans , pascal , pascal [ N ] [ N ] ;",
+        "for ( j = 0 ; j <= i ; j ++ )",
+        "ans = ( ( ans % MOD ) * ( pascal [ sum ] [ arr [ i ] - 1 ) % MOD ) ) % MOD ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int pascal [1002][1002]’"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        20,
+        9
+      ],
+      "mod_code": [
+        "long long int ans , pascal , pascal [ N ] [ N ] ;",
+        "for ( j = 0 ; j <= i ; j ++ )",
+        "ans = ( ( ans % MOD ) * ( pascal [ sum ] [ arr [ i ] - 1 ) % MOD ) ) % MOD ;",
+        "pascal [ i ] [ j ] = ' 1 ' ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int pascal [1002][1002]’"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        20,
+        8
+      ],
+      "mod_code": [
+        "long long int ans , pascal , pascal [ N ] [ N ] ;",
+        "for ( j = 0 ; j <= i ; j ++ )",
+        "ans = ( ( ans % MOD ) * ( pascal [ sum ] [ arr [ i ] - 1 ) % MOD ) ) % MOD ;",
+        "if ( j == ' 0 ' )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int pascal [1002][1002]’"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        20,
+        16
+      ],
+      "mod_code": [
+        "long long int ans , pascal , pascal [ N ] [ N ] ;",
+        "for ( j = 0 ; j <= i ; j ++ )",
+        "ans = ( ( ans % MOD ) * ( pascal [ sum ] [ arr [ i ] - 1 ) % MOD ) ) % MOD ;",
+        "sum += arr [ i ] [ i ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int pascal [1002][1002]’"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        9
+      ],
+      "mod_code": [
+        "long long int ans , pascal , pascal [ N ] [ N ] ;",
+        "for ( j = 0 ; j <= i ; j ++ )",
+        "pascal [ i ] [ j ] = ' 1 ' ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int pascal [1002][1002]’"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        9,
+        8
+      ],
+      "mod_code": [
+        "long long int ans , pascal , pascal [ N ] [ N ] ;",
+        "for ( j = 0 ; j <= i ; j ++ )",
+        "pascal [ i ] [ j ] = ' 1 ' ;",
+        "if ( j == ' 0 ' )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int pascal [1002][1002]’"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        9,
+        16
+      ],
+      "mod_code": [
+        "long long int ans , pascal , pascal [ N ] [ N ] ;",
+        "for ( j = 0 ; j <= i ; j ++ )",
+        "pascal [ i ] [ j ] = ' 1 ' ;",
+        "sum += arr [ i ] [ i ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int pascal [1002][1002]’"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        8
+      ],
+      "mod_code": [
+        "long long int ans , pascal , pascal [ N ] [ N ] ;",
+        "for ( j = 0 ; j <= i ; j ++ )",
+        "if ( j == ' 0 ' )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int pascal [1002][1002]’"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        8,
+        16
+      ],
+      "mod_code": [
+        "long long int ans , pascal , pascal [ N ] [ N ] ;",
+        "for ( j = 0 ; j <= i ; j ++ )",
+        "if ( j == ' 0 ' )",
+        "sum += arr [ i ] [ i ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int pascal [1002][1002]’"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        16
+      ],
+      "mod_code": [
+        "long long int ans , pascal , pascal [ N ] [ N ] ;",
+        "for ( j = 0 ; j <= i ; j ++ )",
+        "sum += arr [ i ] [ i ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int pascal [1002][1002]’"
+    },
+    {
+      "mod_line": [
+        1,
+        20
+      ],
+      "mod_code": [
+        "long long int ans , pascal , pascal [ N ] [ N ] ;",
+        "ans = ( ( ans % MOD ) * ( pascal [ sum ] [ arr [ i ] - 1 ) % MOD ) ) % MOD ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int pascal [1002][1002]’"
+    },
+    {
+      "mod_line": [
+        1,
+        20,
+        9
+      ],
+      "mod_code": [
+        "long long int ans , pascal , pascal [ N ] [ N ] ;",
+        "ans = ( ( ans % MOD ) * ( pascal [ sum ] [ arr [ i ] - 1 ) % MOD ) ) % MOD ;",
+        "pascal [ i ] [ j ] = ' 1 ' ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int pascal [1002][1002]’"
+    },
+    {
+      "mod_line": [
+        1,
+        20,
+        9,
+        8
+      ],
+      "mod_code": [
+        "long long int ans , pascal , pascal [ N ] [ N ] ;",
+        "ans = ( ( ans % MOD ) * ( pascal [ sum ] [ arr [ i ] - 1 ) % MOD ) ) % MOD ;",
+        "pascal [ i ] [ j ] = ' 1 ' ;",
+        "if ( j == ' 0 ' )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int pascal [1002][1002]’"
+    },
+    {
+      "mod_line": [
+        1,
+        20,
+        9,
+        16
+      ],
+      "mod_code": [
+        "long long int ans , pascal , pascal [ N ] [ N ] ;",
+        "ans = ( ( ans % MOD ) * ( pascal [ sum ] [ arr [ i ] - 1 ) % MOD ) ) % MOD ;",
+        "pascal [ i ] [ j ] = ' 1 ' ;",
+        "sum += arr [ i ] [ i ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int pascal [1002][1002]’"
+    },
+    {
+      "mod_line": [
+        1,
+        20,
+        8
+      ],
+      "mod_code": [
+        "long long int ans , pascal , pascal [ N ] [ N ] ;",
+        "ans = ( ( ans % MOD ) * ( pascal [ sum ] [ arr [ i ] - 1 ) % MOD ) ) % MOD ;",
+        "if ( j == ' 0 ' )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int pascal [1002][1002]’"
+    },
+    {
+      "mod_line": [
+        1,
+        20,
+        8,
+        16
+      ],
+      "mod_code": [
+        "long long int ans , pascal , pascal [ N ] [ N ] ;",
+        "ans = ( ( ans % MOD ) * ( pascal [ sum ] [ arr [ i ] - 1 ) % MOD ) ) % MOD ;",
+        "if ( j == ' 0 ' )",
+        "sum += arr [ i ] [ i ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int pascal [1002][1002]’"
+    },
+    {
+      "mod_line": [
+        1,
+        20,
+        16
+      ],
+      "mod_code": [
+        "long long int ans , pascal , pascal [ N ] [ N ] ;",
+        "ans = ( ( ans % MOD ) * ( pascal [ sum ] [ arr [ i ] - 1 ) % MOD ) ) % MOD ;",
+        "sum += arr [ i ] [ i ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int pascal [1002][1002]’"
+    },
+    {
+      "mod_line": [
+        1,
+        9
+      ],
+      "mod_code": [
+        "long long int ans , pascal , pascal [ N ] [ N ] ;",
+        "pascal [ i ] [ j ] = ' 1 ' ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int pascal [1002][1002]’"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        8
+      ],
+      "mod_code": [
+        "long long int ans , pascal , pascal [ N ] [ N ] ;",
+        "pascal [ i ] [ j ] = ' 1 ' ;",
+        "if ( j == ' 0 ' )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int pascal [1002][1002]’"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        8,
+        16
+      ],
+      "mod_code": [
+        "long long int ans , pascal , pascal [ N ] [ N ] ;",
+        "pascal [ i ] [ j ] = ' 1 ' ;",
+        "if ( j == ' 0 ' )",
+        "sum += arr [ i ] [ i ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int pascal [1002][1002]’"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        16
+      ],
+      "mod_code": [
+        "long long int ans , pascal , pascal [ N ] [ N ] ;",
+        "pascal [ i ] [ j ] = ' 1 ' ;",
+        "sum += arr [ i ] [ i ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int pascal [1002][1002]’"
+    },
+    {
+      "mod_line": [
+        1,
+        8
+      ],
+      "mod_code": [
+        "long long int ans , pascal , pascal [ N ] [ N ] ;",
+        "if ( j == ' 0 ' )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int pascal [1002][1002]’"
+    },
+    {
+      "mod_line": [
+        1,
+        8,
+        16
+      ],
+      "mod_code": [
+        "long long int ans , pascal , pascal [ N ] [ N ] ;",
+        "if ( j == ' 0 ' )",
+        "sum += arr [ i ] [ i ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int pascal [1002][1002]’"
+    },
+    {
+      "mod_line": [
+        1,
+        16
+      ],
+      "mod_code": [
+        "long long int ans , pascal , pascal [ N ] [ N ] ;",
+        "sum += arr [ i ] [ i ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘long long int pascal [1002][1002]’"
+    },
+    {
+      "mod_line": [
+        7,
+        20
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j <= i ; j ++ )",
+        "ans = ( ( ans % MOD ) * ( pascal [ sum ] [ arr [ i ] - 1 ) % MOD ) ) % MOD ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        20,
+        9
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j <= i ; j ++ )",
+        "ans = ( ( ans % MOD ) * ( pascal [ sum ] [ arr [ i ] - 1 ) % MOD ) ) % MOD ;",
+        "pascal [ i ] [ j ] = ' 1 ' ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        20,
+        9,
+        8
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j <= i ; j ++ )",
+        "ans = ( ( ans % MOD ) * ( pascal [ sum ] [ arr [ i ] - 1 ) % MOD ) ) % MOD ;",
+        "pascal [ i ] [ j ] = ' 1 ' ;",
+        "if ( j == ' 0 ' )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        20,
+        9,
+        16
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j <= i ; j ++ )",
+        "ans = ( ( ans % MOD ) * ( pascal [ sum ] [ arr [ i ] - 1 ) % MOD ) ) % MOD ;",
+        "pascal [ i ] [ j ] = ' 1 ' ;",
+        "sum += arr [ i ] [ i ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        20,
+        8
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j <= i ; j ++ )",
+        "ans = ( ( ans % MOD ) * ( pascal [ sum ] [ arr [ i ] - 1 ) % MOD ) ) % MOD ;",
+        "if ( j == ' 0 ' )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        20,
+        8,
+        16
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j <= i ; j ++ )",
+        "ans = ( ( ans % MOD ) * ( pascal [ sum ] [ arr [ i ] - 1 ) % MOD ) ) % MOD ;",
+        "if ( j == ' 0 ' )",
+        "sum += arr [ i ] [ i ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        20,
+        16
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j <= i ; j ++ )",
+        "ans = ( ( ans % MOD ) * ( pascal [ sum ] [ arr [ i ] - 1 ) % MOD ) ) % MOD ;",
+        "sum += arr [ i ] [ i ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        9
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j <= i ; j ++ )",
+        "pascal [ i ] [ j ] = ' 1 ' ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        9,
+        8
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j <= i ; j ++ )",
+        "pascal [ i ] [ j ] = ' 1 ' ;",
+        "if ( j == ' 0 ' )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        9,
+        8,
+        16
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j <= i ; j ++ )",
+        "pascal [ i ] [ j ] = ' 1 ' ;",
+        "if ( j == ' 0 ' )",
+        "sum += arr [ i ] [ i ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        9,
+        16
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j <= i ; j ++ )",
+        "pascal [ i ] [ j ] = ' 1 ' ;",
+        "sum += arr [ i ] [ i ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        8
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j <= i ; j ++ )",
+        "if ( j == ' 0 ' )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        8,
+        16
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j <= i ; j ++ )",
+        "if ( j == ' 0 ' )",
+        "sum += arr [ i ] [ i ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        16
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j <= i ; j ++ )",
+        "sum += arr [ i ] [ i ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        20,
+        9
+      ],
+      "mod_code": [
+        "ans = ( ( ans % MOD ) * ( pascal [ sum ] [ arr [ i ] - 1 ) % MOD ) ) % MOD ;",
+        "pascal [ i ] [ j ] = ' 1 ' ;"
+      ],
+      "err_line": 20,
+      "err_msg": "expected ‘]’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        20,
+        9,
+        8
+      ],
+      "mod_code": [
+        "ans = ( ( ans % MOD ) * ( pascal [ sum ] [ arr [ i ] - 1 ) % MOD ) ) % MOD ;",
+        "pascal [ i ] [ j ] = ' 1 ' ;",
+        "if ( j == ' 0 ' )"
+      ],
+      "err_line": 20,
+      "err_msg": "expected ‘]’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        20,
+        9,
+        8,
+        16
+      ],
+      "mod_code": [
+        "ans = ( ( ans % MOD ) * ( pascal [ sum ] [ arr [ i ] - 1 ) % MOD ) ) % MOD ;",
+        "pascal [ i ] [ j ] = ' 1 ' ;",
+        "if ( j == ' 0 ' )",
+        "sum += arr [ i ] [ i ] ;"
+      ],
+      "err_line": 16,
+      "err_msg": "invalid types ‘short int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        20,
+        9,
+        16
+      ],
+      "mod_code": [
+        "ans = ( ( ans % MOD ) * ( pascal [ sum ] [ arr [ i ] - 1 ) % MOD ) ) % MOD ;",
+        "pascal [ i ] [ j ] = ' 1 ' ;",
+        "sum += arr [ i ] [ i ] ;"
+      ],
+      "err_line": 16,
+      "err_msg": "invalid types ‘short int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        20,
+        8
+      ],
+      "mod_code": [
+        "ans = ( ( ans % MOD ) * ( pascal [ sum ] [ arr [ i ] - 1 ) % MOD ) ) % MOD ;",
+        "if ( j == ' 0 ' )"
+      ],
+      "err_line": 20,
+      "err_msg": "expected ‘]’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        20,
+        8,
+        16
+      ],
+      "mod_code": [
+        "ans = ( ( ans % MOD ) * ( pascal [ sum ] [ arr [ i ] - 1 ) % MOD ) ) % MOD ;",
+        "if ( j == ' 0 ' )",
+        "sum += arr [ i ] [ i ] ;"
+      ],
+      "err_line": 16,
+      "err_msg": "invalid types ‘short int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        20,
+        16
+      ],
+      "mod_code": [
+        "ans = ( ( ans % MOD ) * ( pascal [ sum ] [ arr [ i ] - 1 ) % MOD ) ) % MOD ;",
+        "sum += arr [ i ] [ i ] ;"
+      ],
+      "err_line": 16,
+      "err_msg": "invalid types ‘short int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9,
+        8,
+        16
+      ],
+      "mod_code": [
+        "pascal [ i ] [ j ] = ' 1 ' ;",
+        "if ( j == ' 0 ' )",
+        "sum += arr [ i ] [ i ] ;"
+      ],
+      "err_line": 16,
+      "err_msg": "invalid types ‘short int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9,
+        16
+      ],
+      "mod_code": [
+        "pascal [ i ] [ j ] = ' 1 ' ;",
+        "sum += arr [ i ] [ i ] ;"
+      ],
+      "err_line": 16,
+      "err_msg": "invalid types ‘short int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        8,
+        16
+      ],
+      "mod_code": [
+        "if ( j == ' 0 ' )",
+        "sum += arr [ i ] [ i ] ;"
+      ],
+      "err_line": 16,
+      "err_msg": "invalid types ‘short int[int]’ for array subscript"
+    }
+  ]
+}

@@ -1,0 +1,913 @@
+{
+  "meta": {
+    "index": 1839,
+    "hitid": "3TRB893CSJ4G4KAJQ5PORZK5ZBNG7P",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "513A",
+    "subid": "41640406"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare integer variables k1 and k2 and multidimensional integer array dp with size 101 by 101 by 5",
+      "code": "int dp [ 101 ] [ 101 ] [ 5 ] , k1 , k2 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "function rec with integer arguments n1 , n2 and turn that returns integer",
+      "code": "int rec ( int n1 , int n2 , int turn )",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "create reference integer & ret = dp [ n1 ] [ n2 ] [ turn ]",
+      "code": "int & ret = dp [ n1 ] [ n2 ] [ turn ] ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "if ~ ret return ret ^ 1",
+      "code": "if ( ~ ret ) return ret ^ 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "assign value of 0 to ret",
+      "code": "ret = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "if turn > 0",
+      "code": "if ( turn )",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "if n1 < = 0 return 1",
+      "code": "if ( ! n1 ) return 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "for integer i = 1 to min of k1 and n1 inclusive , set ret to max ( ret , rec ( n1 - i , n2 , turn ^ 1 )",
+      "code": "for ( int i = 1 ; i <= min ( k1 , n1 ) ; i ++ ) { ret = max ( ret , rec ( n1 - i , n2 , turn ^ 1 ) ) ; }",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "else",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "if n2 < = 0 return 1",
+      "code": "if ( ! n2 ) return 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "for i = 1 to min of k2 and n2 inclusive , set ret to max ( ret , rec ( n1 , n2 - i , turn ^ 1 ) )",
+      "code": "for ( int i = 1 ; i <= min ( k2 , n2 ) ; i ++ ) { ret = max ( ret , rec ( n1 , n2 - i , turn ^ 1 ) ) ; }",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "return ret ^ 1",
+      "code": "return ret ^ 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 15,
+      "text": "set sizeof dp bytes at the pointer dp to - 1",
+      "code": "memset ( dp , - 1 , sizeof dp ) ;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "create integers n1 and n2",
+      "code": "int n1 , n2 ;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "read n1 , n2 , k1 and k2",
+      "code": "cin >> n1 >> n2 >> k1 >> k2 ;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "if rec ( n1 , n2 , 1 ) returned false",
+      "code": "if ( ! rec ( n1 , n2 , 1 ) )",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "print \" First \"",
+      "code": "cout << \" First \" << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 20,
+      "text": "else",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "print \" Second \"",
+      "code": "cout << \" Second \" << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 22,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int dp [ 101 ] [ 101 ] , k1 [ 101 ] [ 5 ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= min ( k1 - i , n2 , turn ( n1 - i , n2 , turn , turn ) ) ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘turn’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= min ( k2 , rec ( n1 , n2 - i , turn - i , turn - i , turn ) ) ; i ++ ) { ret ++ ; }"
+      ],
+      "err_line": 10,
+      "err_msg": "too many arguments to function ‘int rec(int, int, int)’"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int k1 [ 101 ] [ 101 ] , k1 [ 101 ] [ 5 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int k1 [101][5]’"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "rec ( int n1 , int n2 , int turn )"
+      ],
+      "err_line": 1,
+      "err_msg": "ISO C++ forbids declaration of ‘rec’ with no type [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "int ret = 0 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "conflicting declaration ‘int ret’"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= min ( k1 - i , n2 , turn ( n1 - i , n2 , turn , turn ) ) ; i ++ ) { ret ++ ; }"
+      ],
+      "err_line": 7,
+      "err_msg": "‘turn’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= min ( k2 , rec ( n1 , n2 - i , turn - i , turn - i , turn ) ) ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "too many arguments to function ‘int rec(int, int, int)’"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "int n1 create n2 ;"
+      ],
+      "err_line": 16,
+      "err_msg": "expected initializer before ‘create’"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "cin >> n1 >> n2 >> k1 >> n ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        3
+      ],
+      "mod_code": [
+        "int dp [ 101 ] [ 101 ] , k1 [ 101 ] [ 5 ] ;",
+        "if ( ~ ~ ~ ~ ~ ret ) { return ret ; }"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        3,
+        7
+      ],
+      "mod_code": [
+        "int dp [ 101 ] [ 101 ] , k1 [ 101 ] [ 5 ] ;",
+        "if ( ~ ~ ~ ~ ~ ret ) { return ret ; }",
+        "for ( int i = 1 ; i <= min ( k1 - i , n2 , turn ( n1 - i , n2 , turn , turn ) ) ; i ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        3,
+        7,
+        10
+      ],
+      "mod_code": [
+        "int dp [ 101 ] [ 101 ] , k1 [ 101 ] [ 5 ] ;",
+        "if ( ~ ~ ~ ~ ~ ret ) { return ret ; }",
+        "for ( int i = 1 ; i <= min ( k1 - i , n2 , turn ( n1 - i , n2 , turn , turn ) ) ; i ++ )",
+        "for ( int i = 1 ; i <= min ( k2 , rec ( n1 , n2 - i , turn - i , turn - i , turn ) ) ; i ++ ) { ret ++ ; }"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        3,
+        7,
+        12
+      ],
+      "mod_code": [
+        "int dp [ 101 ] [ 101 ] , k1 [ 101 ] [ 5 ] ;",
+        "if ( ~ ~ ~ ~ ~ ret ) { return ret ; }",
+        "for ( int i = 1 ; i <= min ( k1 - i , n2 , turn ( n1 - i , n2 , turn , turn ) ) ; i ++ )",
+        "return ( ret * 1 ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        3,
+        7,
+        18
+      ],
+      "mod_code": [
+        "int dp [ 101 ] [ 101 ] , k1 [ 101 ] [ 5 ] ;",
+        "if ( ~ ~ ~ ~ ~ ret ) { return ret ; }",
+        "for ( int i = 1 ; i <= min ( k1 - i , n2 , turn ( n1 - i , n2 , turn , turn ) ) ; i ++ )",
+        "if ( rec ( n1 , n2 , 1 ) )"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        3,
+        10
+      ],
+      "mod_code": [
+        "int dp [ 101 ] [ 101 ] , k1 [ 101 ] [ 5 ] ;",
+        "if ( ~ ~ ~ ~ ~ ret ) { return ret ; }",
+        "for ( int i = 1 ; i <= min ( k2 , rec ( n1 , n2 - i , turn - i , turn - i , turn ) ) ; i ++ ) { ret ++ ; }"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        3,
+        10,
+        12
+      ],
+      "mod_code": [
+        "int dp [ 101 ] [ 101 ] , k1 [ 101 ] [ 5 ] ;",
+        "if ( ~ ~ ~ ~ ~ ret ) { return ret ; }",
+        "for ( int i = 1 ; i <= min ( k2 , rec ( n1 , n2 - i , turn - i , turn - i , turn ) ) ; i ++ ) { ret ++ ; }",
+        "return ( ret * 1 ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        3,
+        10,
+        18
+      ],
+      "mod_code": [
+        "int dp [ 101 ] [ 101 ] , k1 [ 101 ] [ 5 ] ;",
+        "if ( ~ ~ ~ ~ ~ ret ) { return ret ; }",
+        "for ( int i = 1 ; i <= min ( k2 , rec ( n1 , n2 - i , turn - i , turn - i , turn ) ) ; i ++ ) { ret ++ ; }",
+        "if ( rec ( n1 , n2 , 1 ) )"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        3,
+        12
+      ],
+      "mod_code": [
+        "int dp [ 101 ] [ 101 ] , k1 [ 101 ] [ 5 ] ;",
+        "if ( ~ ~ ~ ~ ~ ret ) { return ret ; }",
+        "return ( ret * 1 ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        3,
+        12,
+        18
+      ],
+      "mod_code": [
+        "int dp [ 101 ] [ 101 ] , k1 [ 101 ] [ 5 ] ;",
+        "if ( ~ ~ ~ ~ ~ ret ) { return ret ; }",
+        "return ( ret * 1 ) ;",
+        "if ( rec ( n1 , n2 , 1 ) )"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        3,
+        18
+      ],
+      "mod_code": [
+        "int dp [ 101 ] [ 101 ] , k1 [ 101 ] [ 5 ] ;",
+        "if ( ~ ~ ~ ~ ~ ret ) { return ret ; }",
+        "if ( rec ( n1 , n2 , 1 ) )"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        7
+      ],
+      "mod_code": [
+        "int dp [ 101 ] [ 101 ] , k1 [ 101 ] [ 5 ] ;",
+        "for ( int i = 1 ; i <= min ( k1 - i , n2 , turn ( n1 - i , n2 , turn , turn ) ) ; i ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        7,
+        10
+      ],
+      "mod_code": [
+        "int dp [ 101 ] [ 101 ] , k1 [ 101 ] [ 5 ] ;",
+        "for ( int i = 1 ; i <= min ( k1 - i , n2 , turn ( n1 - i , n2 , turn , turn ) ) ; i ++ )",
+        "for ( int i = 1 ; i <= min ( k2 , rec ( n1 , n2 - i , turn - i , turn - i , turn ) ) ; i ++ ) { ret ++ ; }"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        7,
+        10,
+        12
+      ],
+      "mod_code": [
+        "int dp [ 101 ] [ 101 ] , k1 [ 101 ] [ 5 ] ;",
+        "for ( int i = 1 ; i <= min ( k1 - i , n2 , turn ( n1 - i , n2 , turn , turn ) ) ; i ++ )",
+        "for ( int i = 1 ; i <= min ( k2 , rec ( n1 , n2 - i , turn - i , turn - i , turn ) ) ; i ++ ) { ret ++ ; }",
+        "return ( ret * 1 ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        7,
+        10,
+        18
+      ],
+      "mod_code": [
+        "int dp [ 101 ] [ 101 ] , k1 [ 101 ] [ 5 ] ;",
+        "for ( int i = 1 ; i <= min ( k1 - i , n2 , turn ( n1 - i , n2 , turn , turn ) ) ; i ++ )",
+        "for ( int i = 1 ; i <= min ( k2 , rec ( n1 , n2 - i , turn - i , turn - i , turn ) ) ; i ++ ) { ret ++ ; }",
+        "if ( rec ( n1 , n2 , 1 ) )"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        7,
+        12
+      ],
+      "mod_code": [
+        "int dp [ 101 ] [ 101 ] , k1 [ 101 ] [ 5 ] ;",
+        "for ( int i = 1 ; i <= min ( k1 - i , n2 , turn ( n1 - i , n2 , turn , turn ) ) ; i ++ )",
+        "return ( ret * 1 ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        7,
+        12,
+        18
+      ],
+      "mod_code": [
+        "int dp [ 101 ] [ 101 ] , k1 [ 101 ] [ 5 ] ;",
+        "for ( int i = 1 ; i <= min ( k1 - i , n2 , turn ( n1 - i , n2 , turn , turn ) ) ; i ++ )",
+        "return ( ret * 1 ) ;",
+        "if ( rec ( n1 , n2 , 1 ) )"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        7,
+        18
+      ],
+      "mod_code": [
+        "int dp [ 101 ] [ 101 ] , k1 [ 101 ] [ 5 ] ;",
+        "for ( int i = 1 ; i <= min ( k1 - i , n2 , turn ( n1 - i , n2 , turn , turn ) ) ; i ++ )",
+        "if ( rec ( n1 , n2 , 1 ) )"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        10
+      ],
+      "mod_code": [
+        "int dp [ 101 ] [ 101 ] , k1 [ 101 ] [ 5 ] ;",
+        "for ( int i = 1 ; i <= min ( k2 , rec ( n1 , n2 - i , turn - i , turn - i , turn ) ) ; i ++ ) { ret ++ ; }"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        10,
+        12
+      ],
+      "mod_code": [
+        "int dp [ 101 ] [ 101 ] , k1 [ 101 ] [ 5 ] ;",
+        "for ( int i = 1 ; i <= min ( k2 , rec ( n1 , n2 - i , turn - i , turn - i , turn ) ) ; i ++ ) { ret ++ ; }",
+        "return ( ret * 1 ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        10,
+        12,
+        18
+      ],
+      "mod_code": [
+        "int dp [ 101 ] [ 101 ] , k1 [ 101 ] [ 5 ] ;",
+        "for ( int i = 1 ; i <= min ( k2 , rec ( n1 , n2 - i , turn - i , turn - i , turn ) ) ; i ++ ) { ret ++ ; }",
+        "return ( ret * 1 ) ;",
+        "if ( rec ( n1 , n2 , 1 ) )"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        10,
+        18
+      ],
+      "mod_code": [
+        "int dp [ 101 ] [ 101 ] , k1 [ 101 ] [ 5 ] ;",
+        "for ( int i = 1 ; i <= min ( k2 , rec ( n1 , n2 - i , turn - i , turn - i , turn ) ) ; i ++ ) { ret ++ ; }",
+        "if ( rec ( n1 , n2 , 1 ) )"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        12
+      ],
+      "mod_code": [
+        "int dp [ 101 ] [ 101 ] , k1 [ 101 ] [ 5 ] ;",
+        "return ( ret * 1 ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        12,
+        18
+      ],
+      "mod_code": [
+        "int dp [ 101 ] [ 101 ] , k1 [ 101 ] [ 5 ] ;",
+        "return ( ret * 1 ) ;",
+        "if ( rec ( n1 , n2 , 1 ) )"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0,
+        18
+      ],
+      "mod_code": [
+        "int dp [ 101 ] [ 101 ] , k1 [ 101 ] [ 5 ] ;",
+        "if ( rec ( n1 , n2 , 1 ) )"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        3,
+        7
+      ],
+      "mod_code": [
+        "if ( ~ ~ ~ ~ ~ ret ) { return ret ; }",
+        "for ( int i = 1 ; i <= min ( k1 - i , n2 , turn ( n1 - i , n2 , turn , turn ) ) ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘turn’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        10
+      ],
+      "mod_code": [
+        "if ( ~ ~ ~ ~ ~ ret ) { return ret ; }",
+        "for ( int i = 1 ; i <= min ( k1 - i , n2 , turn ( n1 - i , n2 , turn , turn ) ) ; i ++ )",
+        "for ( int i = 1 ; i <= min ( k2 , rec ( n1 , n2 - i , turn - i , turn - i , turn ) ) ; i ++ ) { ret ++ ; }"
+      ],
+      "err_line": 7,
+      "err_msg": "‘turn’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        10,
+        12
+      ],
+      "mod_code": [
+        "if ( ~ ~ ~ ~ ~ ret ) { return ret ; }",
+        "for ( int i = 1 ; i <= min ( k1 - i , n2 , turn ( n1 - i , n2 , turn , turn ) ) ; i ++ )",
+        "for ( int i = 1 ; i <= min ( k2 , rec ( n1 , n2 - i , turn - i , turn - i , turn ) ) ; i ++ ) { ret ++ ; }",
+        "return ( ret * 1 ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘turn’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        10,
+        18
+      ],
+      "mod_code": [
+        "if ( ~ ~ ~ ~ ~ ret ) { return ret ; }",
+        "for ( int i = 1 ; i <= min ( k1 - i , n2 , turn ( n1 - i , n2 , turn , turn ) ) ; i ++ )",
+        "for ( int i = 1 ; i <= min ( k2 , rec ( n1 , n2 - i , turn - i , turn - i , turn ) ) ; i ++ ) { ret ++ ; }",
+        "if ( rec ( n1 , n2 , 1 ) )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘turn’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        12
+      ],
+      "mod_code": [
+        "if ( ~ ~ ~ ~ ~ ret ) { return ret ; }",
+        "for ( int i = 1 ; i <= min ( k1 - i , n2 , turn ( n1 - i , n2 , turn , turn ) ) ; i ++ )",
+        "return ( ret * 1 ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘turn’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        12,
+        18
+      ],
+      "mod_code": [
+        "if ( ~ ~ ~ ~ ~ ret ) { return ret ; }",
+        "for ( int i = 1 ; i <= min ( k1 - i , n2 , turn ( n1 - i , n2 , turn , turn ) ) ; i ++ )",
+        "return ( ret * 1 ) ;",
+        "if ( rec ( n1 , n2 , 1 ) )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘turn’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        18
+      ],
+      "mod_code": [
+        "if ( ~ ~ ~ ~ ~ ret ) { return ret ; }",
+        "for ( int i = 1 ; i <= min ( k1 - i , n2 , turn ( n1 - i , n2 , turn , turn ) ) ; i ++ )",
+        "if ( rec ( n1 , n2 , 1 ) )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘turn’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        3,
+        10
+      ],
+      "mod_code": [
+        "if ( ~ ~ ~ ~ ~ ret ) { return ret ; }",
+        "for ( int i = 1 ; i <= min ( k2 , rec ( n1 , n2 - i , turn - i , turn - i , turn ) ) ; i ++ ) { ret ++ ; }"
+      ],
+      "err_line": 10,
+      "err_msg": "too many arguments to function ‘int rec(int, int, int)’"
+    },
+    {
+      "mod_line": [
+        3,
+        10,
+        12
+      ],
+      "mod_code": [
+        "if ( ~ ~ ~ ~ ~ ret ) { return ret ; }",
+        "for ( int i = 1 ; i <= min ( k2 , rec ( n1 , n2 - i , turn - i , turn - i , turn ) ) ; i ++ ) { ret ++ ; }",
+        "return ( ret * 1 ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "too many arguments to function ‘int rec(int, int, int)’"
+    },
+    {
+      "mod_line": [
+        3,
+        10,
+        12,
+        18
+      ],
+      "mod_code": [
+        "if ( ~ ~ ~ ~ ~ ret ) { return ret ; }",
+        "for ( int i = 1 ; i <= min ( k2 , rec ( n1 , n2 - i , turn - i , turn - i , turn ) ) ; i ++ ) { ret ++ ; }",
+        "return ( ret * 1 ) ;",
+        "if ( rec ( n1 , n2 , 1 ) )"
+      ],
+      "err_line": 10,
+      "err_msg": "too many arguments to function ‘int rec(int, int, int)’"
+    },
+    {
+      "mod_line": [
+        3,
+        10,
+        18
+      ],
+      "mod_code": [
+        "if ( ~ ~ ~ ~ ~ ret ) { return ret ; }",
+        "for ( int i = 1 ; i <= min ( k2 , rec ( n1 , n2 - i , turn - i , turn - i , turn ) ) ; i ++ ) { ret ++ ; }",
+        "if ( rec ( n1 , n2 , 1 ) )"
+      ],
+      "err_line": 10,
+      "err_msg": "too many arguments to function ‘int rec(int, int, int)’"
+    },
+    {
+      "mod_line": [
+        7,
+        10
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= min ( k1 - i , n2 , turn ( n1 - i , n2 , turn , turn ) ) ; i ++ )",
+        "for ( int i = 1 ; i <= min ( k2 , rec ( n1 , n2 - i , turn - i , turn - i , turn ) ) ; i ++ ) { ret ++ ; }"
+      ],
+      "err_line": 7,
+      "err_msg": "‘turn’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        7,
+        10,
+        12
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= min ( k1 - i , n2 , turn ( n1 - i , n2 , turn , turn ) ) ; i ++ )",
+        "for ( int i = 1 ; i <= min ( k2 , rec ( n1 , n2 - i , turn - i , turn - i , turn ) ) ; i ++ ) { ret ++ ; }",
+        "return ( ret * 1 ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘turn’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        7,
+        10,
+        12,
+        18
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= min ( k1 - i , n2 , turn ( n1 - i , n2 , turn , turn ) ) ; i ++ )",
+        "for ( int i = 1 ; i <= min ( k2 , rec ( n1 , n2 - i , turn - i , turn - i , turn ) ) ; i ++ ) { ret ++ ; }",
+        "return ( ret * 1 ) ;",
+        "if ( rec ( n1 , n2 , 1 ) )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘turn’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        7,
+        10,
+        18
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= min ( k1 - i , n2 , turn ( n1 - i , n2 , turn , turn ) ) ; i ++ )",
+        "for ( int i = 1 ; i <= min ( k2 , rec ( n1 , n2 - i , turn - i , turn - i , turn ) ) ; i ++ ) { ret ++ ; }",
+        "if ( rec ( n1 , n2 , 1 ) )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘turn’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        7,
+        12
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= min ( k1 - i , n2 , turn ( n1 - i , n2 , turn , turn ) ) ; i ++ )",
+        "return ( ret * 1 ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘turn’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        7,
+        12,
+        18
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= min ( k1 - i , n2 , turn ( n1 - i , n2 , turn , turn ) ) ; i ++ )",
+        "return ( ret * 1 ) ;",
+        "if ( rec ( n1 , n2 , 1 ) )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘turn’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        7,
+        18
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= min ( k1 - i , n2 , turn ( n1 - i , n2 , turn , turn ) ) ; i ++ )",
+        "if ( rec ( n1 , n2 , 1 ) )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘turn’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        10,
+        12
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= min ( k2 , rec ( n1 , n2 - i , turn - i , turn - i , turn ) ) ; i ++ ) { ret ++ ; }",
+        "return ( ret * 1 ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "too many arguments to function ‘int rec(int, int, int)’"
+    },
+    {
+      "mod_line": [
+        10,
+        12,
+        18
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= min ( k2 , rec ( n1 , n2 - i , turn - i , turn - i , turn ) ) ; i ++ ) { ret ++ ; }",
+        "return ( ret * 1 ) ;",
+        "if ( rec ( n1 , n2 , 1 ) )"
+      ],
+      "err_line": 10,
+      "err_msg": "too many arguments to function ‘int rec(int, int, int)’"
+    },
+    {
+      "mod_line": [
+        10,
+        18
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= min ( k2 , rec ( n1 , n2 - i , turn - i , turn - i , turn ) ) ; i ++ ) { ret ++ ; }",
+        "if ( rec ( n1 , n2 , 1 ) )"
+      ],
+      "err_line": 10,
+      "err_msg": "too many arguments to function ‘int rec(int, int, int)’"
+    }
+  ]
+}

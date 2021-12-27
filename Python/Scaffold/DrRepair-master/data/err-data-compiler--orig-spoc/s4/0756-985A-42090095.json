@@ -1,0 +1,1011 @@
+{
+  "meta": {
+    "index": 756,
+    "hitid": "3MYASTQBG75NYI57KEXML5Y3SWVQDU",
+    "workerid": "A1EKVUFWL7OJMO",
+    "probid": "985A",
+    "subid": "42090095"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "n = integer",
+      "code": "int n ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "p = integer array of size 110",
+      "code": "int p [ 110 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "a = integer array of size 110",
+      "code": "int a [ 110 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "t = integer",
+      "code": "int t ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "while read t , p [ t ] = 1",
+      "code": "while ( cin >> t ) { p [ t ] = 1 ; }",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "set all contents of a to p",
+      "code": "memcpy ( a , p , sizeof a ) ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "ans = integer with ans = 1e8",
+      "code": "int ans = 1e8 ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "res = integer with res = 0",
+      "code": "int res = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "for i = 1 to n",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "if i bitwise and 1",
+      "code": "if ( i & 1 )",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "res = res + abs ( 1 - p [ i ] )",
+      "code": "res += abs ( 1 - p [ i ] ) ;",
+      "indent": 3
+    },
+    {
+      "line": 13,
+      "text": "p [ i + 1 ] = p [ i + 1 ] + p [ i ] - 1",
+      "code": "p [ i + 1 ] += p [ i ] - 1 ;",
+      "indent": 3
+    },
+    {
+      "line": 14,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "res = res + abs ( 0 - p [ i ] )",
+      "code": "res += abs ( 0 - p [ i ] ) ;",
+      "indent": 3
+    },
+    {
+      "line": 16,
+      "text": "p [ i + 1 ] = p [ i + 1 ] + p [ i ]",
+      "code": "p [ i + 1 ] += p [ i ] ;",
+      "indent": 3
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "if p [ n + 1 ] is 0 and p [ n + 2 ] is 0 , ans = min ( ans , res )",
+      "code": "if ( p [ n + 1 ] == 0 && p [ n + 2 ] == 0 ) ans = min ( ans , res ) ;",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "res = 0",
+      "code": "res = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "set all contents of p to a",
+      "code": "memcpy ( p , a , sizeof p ) ;",
+      "indent": 1
+    },
+    {
+      "line": 22,
+      "text": "for i = 1 to n",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "if i bitwise and 1",
+      "code": "if ( i & 1 )",
+      "indent": 2
+    },
+    {
+      "line": 24,
+      "text": "res = res + abs ( p [ i ] )",
+      "code": "res += abs ( p [ i ] ) ;",
+      "indent": 3
+    },
+    {
+      "line": 25,
+      "text": "p [ i + 1 ] = p [ i + 1 ] + p [ i ]",
+      "code": "p [ i + 1 ] += p [ i ] ;",
+      "indent": 3
+    },
+    {
+      "line": 26,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 27,
+      "text": "res = res + abs ( 1 - p [ i ] )",
+      "code": "res += abs ( 1 - p [ i ] ) ;",
+      "indent": 3
+    },
+    {
+      "line": 28,
+      "text": "p [ i + 1 ] = p [ i + 1 ] + p [ i ] - 1",
+      "code": "p [ i + 1 ] += p [ i ] - 1 ;",
+      "indent": 3
+    },
+    {
+      "line": 29,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 30,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 31,
+      "text": "if p [ n + 1 ] is 0 and p [ n + 2 ] is 0 , ans = min ( ans , res )",
+      "code": "if ( p [ n + 1 ] == 0 && p [ n + 2 ] == 0 ) ans = min ( ans , res ) ;",
+      "indent": 1
+    },
+    {
+      "line": 32,
+      "text": "print ans",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 33,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 34,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "memset ( a , p , sizeof ( a ) ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid conversion from ‘int*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        20
+      ],
+      "mod_code": [
+        "int res = 0 ;"
+      ],
+      "err_line": 20,
+      "err_msg": "redeclaration of ‘int res’"
+    },
+    {
+      "mod_line": [
+        21
+      ],
+      "mod_code": [
+        "memset ( p , a + sizeof ( p ) ) ;"
+      ],
+      "err_line": 21,
+      "err_msg": "invalid conversion from ‘int*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "while ( cin >> t >> p [ t ] == 1 )"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator==’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "memset ( a , p + sizeof ( a ) ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid conversion from ‘int*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "long int ans = 1e8 ;"
+      ],
+      "err_line": 19,
+      "err_msg": "no matching function for call to ‘min(long int&, int&)’"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        21
+      ],
+      "mod_code": [
+        "memset ( p , a + n ) ;"
+      ],
+      "err_line": 21,
+      "err_msg": "invalid conversion from ‘int*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        22
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 22,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        7
+      ],
+      "mod_code": [
+        "while ( cin >> t >> p [ t ] )",
+        "memset ( a , p , sizeof ( a ) ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid conversion from ‘int*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        20
+      ],
+      "mod_code": [
+        "while ( cin >> t >> p [ t ] )",
+        "memset ( a , p , sizeof ( a ) ) ;",
+        "int res = 0 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid conversion from ‘int*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        20,
+        21
+      ],
+      "mod_code": [
+        "while ( cin >> t >> p [ t ] )",
+        "memset ( a , p , sizeof ( a ) ) ;",
+        "int res = 0 ;",
+        "memset ( p , a + sizeof ( p ) ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid conversion from ‘int*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        20,
+        4
+      ],
+      "mod_code": [
+        "while ( cin >> t >> p [ t ] )",
+        "memset ( a , p , sizeof ( a ) ) ;",
+        "int res = 0 ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        20,
+        11
+      ],
+      "mod_code": [
+        "while ( cin >> t >> p [ t ] )",
+        "memset ( a , p , sizeof ( a ) ) ;",
+        "int res = 0 ;",
+        "if ( ! i & 1 )"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid conversion from ‘int*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        21
+      ],
+      "mod_code": [
+        "while ( cin >> t >> p [ t ] )",
+        "memset ( a , p , sizeof ( a ) ) ;",
+        "memset ( p , a + sizeof ( p ) ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid conversion from ‘int*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        21,
+        4
+      ],
+      "mod_code": [
+        "while ( cin >> t >> p [ t ] )",
+        "memset ( a , p , sizeof ( a ) ) ;",
+        "memset ( p , a + sizeof ( p ) ) ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        21,
+        11
+      ],
+      "mod_code": [
+        "while ( cin >> t >> p [ t ] )",
+        "memset ( a , p , sizeof ( a ) ) ;",
+        "memset ( p , a + sizeof ( p ) ) ;",
+        "if ( ! i & 1 )"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid conversion from ‘int*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        4
+      ],
+      "mod_code": [
+        "while ( cin >> t >> p [ t ] )",
+        "memset ( a , p , sizeof ( a ) ) ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        4,
+        11
+      ],
+      "mod_code": [
+        "while ( cin >> t >> p [ t ] )",
+        "memset ( a , p , sizeof ( a ) ) ;",
+        "while ( cin >> n )",
+        "if ( ! i & 1 )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        11
+      ],
+      "mod_code": [
+        "while ( cin >> t >> p [ t ] )",
+        "memset ( a , p , sizeof ( a ) ) ;",
+        "if ( ! i & 1 )"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid conversion from ‘int*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        20
+      ],
+      "mod_code": [
+        "while ( cin >> t >> p [ t ] )",
+        "int res = 0 ;"
+      ],
+      "err_line": 20,
+      "err_msg": "redeclaration of ‘int res’"
+    },
+    {
+      "mod_line": [
+        6,
+        20,
+        21
+      ],
+      "mod_code": [
+        "while ( cin >> t >> p [ t ] )",
+        "int res = 0 ;",
+        "memset ( p , a + sizeof ( p ) ) ;"
+      ],
+      "err_line": 20,
+      "err_msg": "redeclaration of ‘int res’"
+    },
+    {
+      "mod_line": [
+        6,
+        20,
+        21,
+        4
+      ],
+      "mod_code": [
+        "while ( cin >> t >> p [ t ] )",
+        "int res = 0 ;",
+        "memset ( p , a + sizeof ( p ) ) ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        20,
+        21,
+        11
+      ],
+      "mod_code": [
+        "while ( cin >> t >> p [ t ] )",
+        "int res = 0 ;",
+        "memset ( p , a + sizeof ( p ) ) ;",
+        "if ( ! i & 1 )"
+      ],
+      "err_line": 20,
+      "err_msg": "redeclaration of ‘int res’"
+    },
+    {
+      "mod_line": [
+        6,
+        20,
+        4
+      ],
+      "mod_code": [
+        "while ( cin >> t >> p [ t ] )",
+        "int res = 0 ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        20,
+        4,
+        11
+      ],
+      "mod_code": [
+        "while ( cin >> t >> p [ t ] )",
+        "int res = 0 ;",
+        "while ( cin >> n )",
+        "if ( ! i & 1 )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        20,
+        11
+      ],
+      "mod_code": [
+        "while ( cin >> t >> p [ t ] )",
+        "int res = 0 ;",
+        "if ( ! i & 1 )"
+      ],
+      "err_line": 20,
+      "err_msg": "redeclaration of ‘int res’"
+    },
+    {
+      "mod_line": [
+        6,
+        21
+      ],
+      "mod_code": [
+        "while ( cin >> t >> p [ t ] )",
+        "memset ( p , a + sizeof ( p ) ) ;"
+      ],
+      "err_line": 21,
+      "err_msg": "invalid conversion from ‘int*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        21,
+        4
+      ],
+      "mod_code": [
+        "while ( cin >> t >> p [ t ] )",
+        "memset ( p , a + sizeof ( p ) ) ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        21,
+        4,
+        11
+      ],
+      "mod_code": [
+        "while ( cin >> t >> p [ t ] )",
+        "memset ( p , a + sizeof ( p ) ) ;",
+        "while ( cin >> n )",
+        "if ( ! i & 1 )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        21,
+        11
+      ],
+      "mod_code": [
+        "while ( cin >> t >> p [ t ] )",
+        "memset ( p , a + sizeof ( p ) ) ;",
+        "if ( ! i & 1 )"
+      ],
+      "err_line": 21,
+      "err_msg": "invalid conversion from ‘int*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        4
+      ],
+      "mod_code": [
+        "while ( cin >> t >> p [ t ] )",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        4,
+        11
+      ],
+      "mod_code": [
+        "while ( cin >> t >> p [ t ] )",
+        "while ( cin >> n )",
+        "if ( ! i & 1 )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        20
+      ],
+      "mod_code": [
+        "memset ( a , p , sizeof ( a ) ) ;",
+        "int res = 0 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid conversion from ‘int*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7,
+        20,
+        21
+      ],
+      "mod_code": [
+        "memset ( a , p , sizeof ( a ) ) ;",
+        "int res = 0 ;",
+        "memset ( p , a + sizeof ( p ) ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid conversion from ‘int*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7,
+        20,
+        21,
+        4
+      ],
+      "mod_code": [
+        "memset ( a , p , sizeof ( a ) ) ;",
+        "int res = 0 ;",
+        "memset ( p , a + sizeof ( p ) ) ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        20,
+        21,
+        11
+      ],
+      "mod_code": [
+        "memset ( a , p , sizeof ( a ) ) ;",
+        "int res = 0 ;",
+        "memset ( p , a + sizeof ( p ) ) ;",
+        "if ( ! i & 1 )"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid conversion from ‘int*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7,
+        20,
+        4
+      ],
+      "mod_code": [
+        "memset ( a , p , sizeof ( a ) ) ;",
+        "int res = 0 ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        20,
+        4,
+        11
+      ],
+      "mod_code": [
+        "memset ( a , p , sizeof ( a ) ) ;",
+        "int res = 0 ;",
+        "while ( cin >> n )",
+        "if ( ! i & 1 )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        20,
+        11
+      ],
+      "mod_code": [
+        "memset ( a , p , sizeof ( a ) ) ;",
+        "int res = 0 ;",
+        "if ( ! i & 1 )"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid conversion from ‘int*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7,
+        21
+      ],
+      "mod_code": [
+        "memset ( a , p , sizeof ( a ) ) ;",
+        "memset ( p , a + sizeof ( p ) ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid conversion from ‘int*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7,
+        21,
+        4
+      ],
+      "mod_code": [
+        "memset ( a , p , sizeof ( a ) ) ;",
+        "memset ( p , a + sizeof ( p ) ) ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        21,
+        4,
+        11
+      ],
+      "mod_code": [
+        "memset ( a , p , sizeof ( a ) ) ;",
+        "memset ( p , a + sizeof ( p ) ) ;",
+        "while ( cin >> n )",
+        "if ( ! i & 1 )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        21,
+        11
+      ],
+      "mod_code": [
+        "memset ( a , p , sizeof ( a ) ) ;",
+        "memset ( p , a + sizeof ( p ) ) ;",
+        "if ( ! i & 1 )"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid conversion from ‘int*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7,
+        4
+      ],
+      "mod_code": [
+        "memset ( a , p , sizeof ( a ) ) ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        4,
+        11
+      ],
+      "mod_code": [
+        "memset ( a , p , sizeof ( a ) ) ;",
+        "while ( cin >> n )",
+        "if ( ! i & 1 )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        11
+      ],
+      "mod_code": [
+        "memset ( a , p , sizeof ( a ) ) ;",
+        "if ( ! i & 1 )"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid conversion from ‘int*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        20,
+        21
+      ],
+      "mod_code": [
+        "int res = 0 ;",
+        "memset ( p , a + sizeof ( p ) ) ;"
+      ],
+      "err_line": 20,
+      "err_msg": "redeclaration of ‘int res’"
+    },
+    {
+      "mod_line": [
+        20,
+        21,
+        4
+      ],
+      "mod_code": [
+        "int res = 0 ;",
+        "memset ( p , a + sizeof ( p ) ) ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        20,
+        21,
+        4,
+        11
+      ],
+      "mod_code": [
+        "int res = 0 ;",
+        "memset ( p , a + sizeof ( p ) ) ;",
+        "while ( cin >> n )",
+        "if ( ! i & 1 )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        20,
+        21,
+        11
+      ],
+      "mod_code": [
+        "int res = 0 ;",
+        "memset ( p , a + sizeof ( p ) ) ;",
+        "if ( ! i & 1 )"
+      ],
+      "err_line": 20,
+      "err_msg": "redeclaration of ‘int res’"
+    },
+    {
+      "mod_line": [
+        20,
+        4
+      ],
+      "mod_code": [
+        "int res = 0 ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        20,
+        4,
+        11
+      ],
+      "mod_code": [
+        "int res = 0 ;",
+        "while ( cin >> n )",
+        "if ( ! i & 1 )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        20,
+        11
+      ],
+      "mod_code": [
+        "int res = 0 ;",
+        "if ( ! i & 1 )"
+      ],
+      "err_line": 20,
+      "err_msg": "redeclaration of ‘int res’"
+    },
+    {
+      "mod_line": [
+        21,
+        4
+      ],
+      "mod_code": [
+        "memset ( p , a + sizeof ( p ) ) ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        21,
+        4,
+        11
+      ],
+      "mod_code": [
+        "memset ( p , a + sizeof ( p ) ) ;",
+        "while ( cin >> n )",
+        "if ( ! i & 1 )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        21,
+        11
+      ],
+      "mod_code": [
+        "memset ( p , a + sizeof ( p ) ) ;",
+        "if ( ! i & 1 )"
+      ],
+      "err_line": 21,
+      "err_msg": "invalid conversion from ‘int*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        4,
+        11
+      ],
+      "mod_code": [
+        "while ( cin >> n )",
+        "if ( ! i & 1 )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘t’ was not declared in this scope"
+    }
+  ]
+}

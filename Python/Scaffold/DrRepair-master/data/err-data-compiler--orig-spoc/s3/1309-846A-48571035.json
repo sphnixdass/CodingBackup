@@ -1,0 +1,681 @@
+{
+  "meta": {
+    "index": 1309,
+    "hitid": "3P0I4CQYVY1JMCSIMWA8OOSOKBMWO4",
+    "workerid": "A1EKVUFWL7OJMO",
+    "probid": "846A",
+    "subid": "48571035"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "size = const integer with size = 105",
+      "code": "const int size = 105 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "suf , pre = integers with pre , suf = integer array of size size = { 0 }",
+      "code": "int suf [ size ] = { 0 } , pre [ size ] = { 0 } ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "n = integer",
+      "code": "int n ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "arr = integer array of size n + 1 = { 0 }",
+      "code": "int arr [ n + 1 ] = { 0 } ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 1 to n , read arr [ i ] , suf [ i ] = ( arr [ i ] ) , pre [ i ] = ( not arr [ i ] )",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) cin >> arr [ i ] , suf [ i ] = ( arr [ i ] ) , pre [ i ] = ( ! arr [ i ] ) ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for i = n down to 1 , suf [ i ] = suf [ i ] + suf [ i + 1 ]",
+      "code": "for ( int i = n ; i >= 1 ; i -- ) suf [ i ] += suf [ i + 1 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "for i = 1 to n , pre [ i ] = pre [ i ] + pre [ i - 1 ]",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) pre [ i ] += pre [ i - 1 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "ans = integer with ans = 0",
+      "code": "int ans = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "for i = 1 to n , ans = max ( ans , pre [ i ] + suf [ i ] )",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) ans = max ( ans , pre [ i ] + suf [ i ] ) ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "print ans",
+      "code": "cout << ans << \" \\n \" ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int suf [ size ] = { 0 } , pre [ endl ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "const int size [ 105 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "uninitialized const ‘size’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "cin >> N ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘N’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "int arr [ n + l ] = { 0 } ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) { cin >> arr [ i ] >> suf [ i ] = ( ! arr [ i ] ) >> pre [ i ] ; }"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator=’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "long long ans = 0 ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(long long int&, int)’"
+    },
+    {
+      "mod_line": [
+        1,
+        6
+      ],
+      "mod_code": [
+        "int suf [ size ] = { 0 } , pre [ endl ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) { cin >> arr [ i ] >> suf [ i ] , suf [ i ] = ! arr [ i ] >> pre [ i ] ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        6,
+        7
+      ],
+      "mod_code": [
+        "int suf [ size ] = { 0 } , pre [ endl ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) { cin >> arr [ i ] >> suf [ i ] , suf [ i ] = ! arr [ i ] >> pre [ i ] ; }",
+        "for ( int i = n ; i >= 1 ; i -- ) { suf [ i ] += suf [ i ] + suf [ i + 1 ] ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        6,
+        7,
+        5
+      ],
+      "mod_code": [
+        "int suf [ size ] = { 0 } , pre [ endl ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) { cin >> arr [ i ] >> suf [ i ] , suf [ i ] = ! arr [ i ] >> pre [ i ] ; }",
+        "for ( int i = n ; i >= 1 ; i -- ) { suf [ i ] += suf [ i ] + suf [ i + 1 ] ; }",
+        "int arr [ n + l ] = { 0 } ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        6,
+        7,
+        4
+      ],
+      "mod_code": [
+        "int suf [ size ] = { 0 } , pre [ endl ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) { cin >> arr [ i ] >> suf [ i ] , suf [ i ] = ! arr [ i ] >> pre [ i ] ; }",
+        "for ( int i = n ; i >= 1 ; i -- ) { suf [ i ] += suf [ i ] + suf [ i + 1 ] ; }",
+        "cin >> N ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        6,
+        5
+      ],
+      "mod_code": [
+        "int suf [ size ] = { 0 } , pre [ endl ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) { cin >> arr [ i ] >> suf [ i ] , suf [ i ] = ! arr [ i ] >> pre [ i ] ; }",
+        "int arr [ n + l ] = { 0 } ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        6,
+        5,
+        4
+      ],
+      "mod_code": [
+        "int suf [ size ] = { 0 } , pre [ endl ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) { cin >> arr [ i ] >> suf [ i ] , suf [ i ] = ! arr [ i ] >> pre [ i ] ; }",
+        "int arr [ n + l ] = { 0 } ;",
+        "cin >> N ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        6,
+        4
+      ],
+      "mod_code": [
+        "int suf [ size ] = { 0 } , pre [ endl ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) { cin >> arr [ i ] >> suf [ i ] , suf [ i ] = ! arr [ i ] >> pre [ i ] ; }",
+        "cin >> N ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        7
+      ],
+      "mod_code": [
+        "int suf [ size ] = { 0 } , pre [ endl ;",
+        "for ( int i = n ; i >= 1 ; i -- ) { suf [ i ] += suf [ i ] + suf [ i + 1 ] ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        5
+      ],
+      "mod_code": [
+        "int suf [ size ] = { 0 } , pre [ endl ;",
+        "for ( int i = n ; i >= 1 ; i -- ) { suf [ i ] += suf [ i ] + suf [ i + 1 ] ; }",
+        "int arr [ n + l ] = { 0 } ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        5,
+        6
+      ],
+      "mod_code": [
+        "int suf [ size ] = { 0 } , pre [ endl ;",
+        "for ( int i = n ; i >= 1 ; i -- ) { suf [ i ] += suf [ i ] + suf [ i + 1 ] ; }",
+        "int arr [ n + l ] = { 0 } ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) { cin >> arr [ i ] >> suf [ i ] = ( ! arr [ i ] ) >> pre [ i ] ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        5,
+        4
+      ],
+      "mod_code": [
+        "int suf [ size ] = { 0 } , pre [ endl ;",
+        "for ( int i = n ; i >= 1 ; i -- ) { suf [ i ] += suf [ i ] + suf [ i + 1 ] ; }",
+        "int arr [ n + l ] = { 0 } ;",
+        "cin >> N ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        6
+      ],
+      "mod_code": [
+        "int suf [ size ] = { 0 } , pre [ endl ;",
+        "for ( int i = n ; i >= 1 ; i -- ) { suf [ i ] += suf [ i ] + suf [ i + 1 ] ; }",
+        "for ( int i = 1 ; i <= n ; i ++ ) { cin >> arr [ i ] >> suf [ i ] = ( ! arr [ i ] ) >> pre [ i ] ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        6,
+        4
+      ],
+      "mod_code": [
+        "int suf [ size ] = { 0 } , pre [ endl ;",
+        "for ( int i = n ; i >= 1 ; i -- ) { suf [ i ] += suf [ i ] + suf [ i + 1 ] ; }",
+        "for ( int i = 1 ; i <= n ; i ++ ) { cin >> arr [ i ] >> suf [ i ] = ( ! arr [ i ] ) >> pre [ i ] ; }",
+        "cin >> N ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        4
+      ],
+      "mod_code": [
+        "int suf [ size ] = { 0 } , pre [ endl ;",
+        "for ( int i = n ; i >= 1 ; i -- ) { suf [ i ] += suf [ i ] + suf [ i + 1 ] ; }",
+        "cin >> N ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        5
+      ],
+      "mod_code": [
+        "int suf [ size ] = { 0 } , pre [ endl ;",
+        "int arr [ n + l ] = { 0 } ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        5,
+        6
+      ],
+      "mod_code": [
+        "int suf [ size ] = { 0 } , pre [ endl ;",
+        "int arr [ n + l ] = { 0 } ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) { cin >> arr [ i ] >> suf [ i ] = ( ! arr [ i ] ) >> pre [ i ] ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        5,
+        6,
+        4
+      ],
+      "mod_code": [
+        "int suf [ size ] = { 0 } , pre [ endl ;",
+        "int arr [ n + l ] = { 0 } ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) { cin >> arr [ i ] >> suf [ i ] = ( ! arr [ i ] ) >> pre [ i ] ; }",
+        "cin >> N ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        5,
+        4
+      ],
+      "mod_code": [
+        "int suf [ size ] = { 0 } , pre [ endl ;",
+        "int arr [ n + l ] = { 0 } ;",
+        "cin >> N ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        6
+      ],
+      "mod_code": [
+        "int suf [ size ] = { 0 } , pre [ endl ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) { cin >> arr [ i ] >> suf [ i ] = ( ! arr [ i ] ) >> pre [ i ] ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        6,
+        4
+      ],
+      "mod_code": [
+        "int suf [ size ] = { 0 } , pre [ endl ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) { cin >> arr [ i ] >> suf [ i ] = ( ! arr [ i ] ) >> pre [ i ] ; }",
+        "cin >> N ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        4
+      ],
+      "mod_code": [
+        "int suf [ size ] = { 0 } , pre [ endl ;",
+        "cin >> N ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        5
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) { cin >> arr [ i ] >> suf [ i ] , suf [ i ] = ! arr [ i ] >> pre [ i ] ; }",
+        "for ( int i = n ; i >= 1 ; i -- ) { suf [ i ] += suf [ i ] + suf [ i + 1 ] ; }",
+        "int arr [ n + l ] = { 0 } ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        5,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) { cin >> arr [ i ] >> suf [ i ] , suf [ i ] = ! arr [ i ] >> pre [ i ] ; }",
+        "for ( int i = n ; i >= 1 ; i -- ) { suf [ i ] += suf [ i ] + suf [ i + 1 ] ; }",
+        "int arr [ n + l ] = { 0 } ;",
+        "cin >> N ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘N’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) { cin >> arr [ i ] >> suf [ i ] , suf [ i ] = ! arr [ i ] >> pre [ i ] ; }",
+        "for ( int i = n ; i >= 1 ; i -- ) { suf [ i ] += suf [ i ] + suf [ i + 1 ] ; }",
+        "cin >> N ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘N’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        5
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) { cin >> arr [ i ] >> suf [ i ] , suf [ i ] = ! arr [ i ] >> pre [ i ] ; }",
+        "int arr [ n + l ] = { 0 } ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        5,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) { cin >> arr [ i ] >> suf [ i ] , suf [ i ] = ! arr [ i ] >> pre [ i ] ; }",
+        "int arr [ n + l ] = { 0 } ;",
+        "cin >> N ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘N’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) { cin >> arr [ i ] >> suf [ i ] , suf [ i ] = ! arr [ i ] >> pre [ i ] ; }",
+        "cin >> N ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘N’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        5
+      ],
+      "mod_code": [
+        "for ( int i = n ; i >= 1 ; i -- ) { suf [ i ] += suf [ i ] + suf [ i + 1 ] ; }",
+        "int arr [ n + l ] = { 0 } ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        5,
+        6
+      ],
+      "mod_code": [
+        "for ( int i = n ; i >= 1 ; i -- ) { suf [ i ] += suf [ i ] + suf [ i + 1 ] ; }",
+        "int arr [ n + l ] = { 0 } ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) { cin >> arr [ i ] >> suf [ i ] = ( ! arr [ i ] ) >> pre [ i ] ; }"
+      ],
+      "err_line": 5,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        5,
+        6,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = n ; i >= 1 ; i -- ) { suf [ i ] += suf [ i ] + suf [ i + 1 ] ; }",
+        "int arr [ n + l ] = { 0 } ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) { cin >> arr [ i ] >> suf [ i ] = ( ! arr [ i ] ) >> pre [ i ] ; }",
+        "cin >> N ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘N’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        5,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = n ; i >= 1 ; i -- ) { suf [ i ] += suf [ i ] + suf [ i + 1 ] ; }",
+        "int arr [ n + l ] = { 0 } ;",
+        "cin >> N ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘N’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        6
+      ],
+      "mod_code": [
+        "for ( int i = n ; i >= 1 ; i -- ) { suf [ i ] += suf [ i ] + suf [ i + 1 ] ; }",
+        "for ( int i = 1 ; i <= n ; i ++ ) { cin >> arr [ i ] >> suf [ i ] = ( ! arr [ i ] ) >> pre [ i ] ; }"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator=’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        7,
+        6,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = n ; i >= 1 ; i -- ) { suf [ i ] += suf [ i ] + suf [ i + 1 ] ; }",
+        "for ( int i = 1 ; i <= n ; i ++ ) { cin >> arr [ i ] >> suf [ i ] = ( ! arr [ i ] ) >> pre [ i ] ; }",
+        "cin >> N ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘N’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = n ; i >= 1 ; i -- ) { suf [ i ] += suf [ i ] + suf [ i + 1 ] ; }",
+        "cin >> N ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘N’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        6
+      ],
+      "mod_code": [
+        "int arr [ n + l ] = { 0 } ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) { cin >> arr [ i ] >> suf [ i ] = ( ! arr [ i ] ) >> pre [ i ] ; }"
+      ],
+      "err_line": 5,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        6,
+        4
+      ],
+      "mod_code": [
+        "int arr [ n + l ] = { 0 } ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) { cin >> arr [ i ] >> suf [ i ] = ( ! arr [ i ] ) >> pre [ i ] ; }",
+        "cin >> N ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘N’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        4
+      ],
+      "mod_code": [
+        "int arr [ n + l ] = { 0 } ;",
+        "cin >> N ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘N’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) { cin >> arr [ i ] >> suf [ i ] = ( ! arr [ i ] ) >> pre [ i ] ; }",
+        "cin >> N ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘N’ was not declared in this scope"
+    }
+  ]
+}

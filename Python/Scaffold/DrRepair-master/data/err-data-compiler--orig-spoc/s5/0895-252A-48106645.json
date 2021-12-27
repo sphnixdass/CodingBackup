@@ -1,0 +1,821 @@
+{
+  "meta": {
+    "index": 895,
+    "hitid": "3S829FDFT2V77F6J6SSEFDUWPZGXDW",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "252A",
+    "subid": "48106645"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare integer variable n",
+      "code": "int n ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "let a be int array with size 111",
+      "code": "int a [ 111 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for i = 1 to n inclusive read a [ i ]",
+      "code": "for ( int i = 1 ; i <= n ; ++ i ) cin >> a [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "declare int mx = a [ 1 ]",
+      "code": "int mx = a [ 1 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for integer i = 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; ++ i )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for j = i to n inclusive",
+      "code": "for ( int j = i ; j <= n ; ++ j )",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "create integer x = 0",
+      "code": "int x = 0 ;",
+      "indent": 3
+    },
+    {
+      "line": 9,
+      "text": "for integer k = i to j inclusive , set x to x ^ a [ k ]",
+      "code": "for ( int k = i ; k <= j ; ++ k ) x ^= a [ k ] ;",
+      "indent": 3
+    },
+    {
+      "line": 10,
+      "text": "change mx to max of mx and x",
+      "code": "mx = max ( mx , x ) ;",
+      "indent": 3
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "print mx and \" \\ n \"",
+      "code": "cout << mx << \" \\n \" ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "for ( int k = i ; k <= j ; k ++ ) { x = x [ k ] ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "char mx = a [ 1 ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(char&, int&)’"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "for ( j = i ; j <= n ; j ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "long long x = 0 ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "for ( int k = i ; k <= j ; k ++ ) x = x [ k ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9,
+        13
+      ],
+      "mod_code": [
+        "for ( int k = i ; k <= j ; k ++ ) { x = x [ k ] ; }",
+        "cout << mx << \" \\0 \" ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9,
+        13,
+        8
+      ],
+      "mod_code": [
+        "for ( int k = i ; k <= j ; k ++ ) { x = x [ k ] ; }",
+        "cout << mx << \" \\0 \" ;",
+        "long long x = 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9,
+        13,
+        8,
+        5
+      ],
+      "mod_code": [
+        "for ( int k = i ; k <= j ; k ++ ) { x = x [ k ] ; }",
+        "cout << mx << \" \\0 \" ;",
+        "long long x = 0 ;",
+        "char mx = a [ 1 ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9,
+        13,
+        8,
+        10
+      ],
+      "mod_code": [
+        "for ( int k = i ; k <= j ; k ++ ) { x = x [ k ] ; }",
+        "cout << mx << \" \\0 \" ;",
+        "long long x = 0 ;",
+        "int mx = max ( mx , x ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9,
+        13,
+        8,
+        7
+      ],
+      "mod_code": [
+        "for ( int k = i ; k <= j ; k ++ ) { x = x [ k ] ; }",
+        "cout << mx << \" \\0 \" ;",
+        "long long x = 0 ;",
+        "for ( j = i ; j <= n ; j ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        13,
+        5
+      ],
+      "mod_code": [
+        "for ( int k = i ; k <= j ; k ++ ) { x = x [ k ] ; }",
+        "cout << mx << \" \\0 \" ;",
+        "char mx = a [ 1 ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9,
+        13,
+        5,
+        10
+      ],
+      "mod_code": [
+        "for ( int k = i ; k <= j ; k ++ ) { x = x [ k ] ; }",
+        "cout << mx << \" \\0 \" ;",
+        "char mx = a [ 1 ] ;",
+        "int mx = max ( mx , x ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9,
+        13,
+        5,
+        7
+      ],
+      "mod_code": [
+        "for ( int k = i ; k <= j ; k ++ ) { x = x [ k ] ; }",
+        "cout << mx << \" \\0 \" ;",
+        "char mx = a [ 1 ] ;",
+        "for ( j = i ; j <= n ; j ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        13,
+        10
+      ],
+      "mod_code": [
+        "for ( int k = i ; k <= j ; k ++ ) { x = x [ k ] ; }",
+        "cout << mx << \" \\0 \" ;",
+        "int mx = max ( mx , x ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9,
+        13,
+        10,
+        7
+      ],
+      "mod_code": [
+        "for ( int k = i ; k <= j ; k ++ ) { x = x [ k ] ; }",
+        "cout << mx << \" \\0 \" ;",
+        "int mx = max ( mx , x ) ;",
+        "for ( j = i ; j <= n ; j ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        13,
+        7
+      ],
+      "mod_code": [
+        "for ( int k = i ; k <= j ; k ++ ) { x = x [ k ] ; }",
+        "cout << mx << \" \\0 \" ;",
+        "for ( j = i ; j <= n ; j ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        8
+      ],
+      "mod_code": [
+        "for ( int k = i ; k <= j ; k ++ ) { x = x [ k ] ; }",
+        "long long x = 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9,
+        8,
+        5
+      ],
+      "mod_code": [
+        "for ( int k = i ; k <= j ; k ++ ) { x = x [ k ] ; }",
+        "long long x = 0 ;",
+        "char mx = a [ 1 ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9,
+        8,
+        5,
+        10
+      ],
+      "mod_code": [
+        "for ( int k = i ; k <= j ; k ++ ) { x = x [ k ] ; }",
+        "long long x = 0 ;",
+        "char mx = a [ 1 ] ;",
+        "int mx = max ( mx , x ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9,
+        8,
+        5,
+        7
+      ],
+      "mod_code": [
+        "for ( int k = i ; k <= j ; k ++ ) { x = x [ k ] ; }",
+        "long long x = 0 ;",
+        "char mx = a [ 1 ] ;",
+        "for ( j = i ; j <= n ; j ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        8,
+        10
+      ],
+      "mod_code": [
+        "for ( int k = i ; k <= j ; k ++ ) { x = x [ k ] ; }",
+        "long long x = 0 ;",
+        "int mx = max ( mx , x ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9,
+        8,
+        10,
+        7
+      ],
+      "mod_code": [
+        "for ( int k = i ; k <= j ; k ++ ) { x = x [ k ] ; }",
+        "long long x = 0 ;",
+        "int mx = max ( mx , x ) ;",
+        "for ( j = i ; j <= n ; j ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        8,
+        7
+      ],
+      "mod_code": [
+        "for ( int k = i ; k <= j ; k ++ ) { x = x [ k ] ; }",
+        "long long x = 0 ;",
+        "for ( j = i ; j <= n ; j ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        5
+      ],
+      "mod_code": [
+        "for ( int k = i ; k <= j ; k ++ ) { x = x [ k ] ; }",
+        "char mx = a [ 1 ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9,
+        5,
+        10
+      ],
+      "mod_code": [
+        "for ( int k = i ; k <= j ; k ++ ) { x = x [ k ] ; }",
+        "char mx = a [ 1 ] ;",
+        "int mx = max ( mx , x ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9,
+        5,
+        10,
+        7
+      ],
+      "mod_code": [
+        "for ( int k = i ; k <= j ; k ++ ) { x = x [ k ] ; }",
+        "char mx = a [ 1 ] ;",
+        "int mx = max ( mx , x ) ;",
+        "for ( j = i ; j <= n ; j ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        5,
+        7
+      ],
+      "mod_code": [
+        "for ( int k = i ; k <= j ; k ++ ) { x = x [ k ] ; }",
+        "char mx = a [ 1 ] ;",
+        "for ( j = i ; j <= n ; j ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        10
+      ],
+      "mod_code": [
+        "for ( int k = i ; k <= j ; k ++ ) { x = x [ k ] ; }",
+        "int mx = max ( mx , x ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9,
+        10,
+        7
+      ],
+      "mod_code": [
+        "for ( int k = i ; k <= j ; k ++ ) { x = x [ k ] ; }",
+        "int mx = max ( mx , x ) ;",
+        "for ( j = i ; j <= n ; j ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        7
+      ],
+      "mod_code": [
+        "for ( int k = i ; k <= j ; k ++ ) { x = x [ k ] ; }",
+        "for ( j = i ; j <= n ; j ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        8
+      ],
+      "mod_code": [
+        "cout << mx << \" \\0 \" ;",
+        "long long x = 0 ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        13,
+        8,
+        5
+      ],
+      "mod_code": [
+        "cout << mx << \" \\0 \" ;",
+        "long long x = 0 ;",
+        "char mx = a [ 1 ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(char&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        13,
+        8,
+        5,
+        10
+      ],
+      "mod_code": [
+        "cout << mx << \" \\0 \" ;",
+        "long long x = 0 ;",
+        "char mx = a [ 1 ] ;",
+        "int mx = max ( mx , x ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        13,
+        8,
+        5,
+        7
+      ],
+      "mod_code": [
+        "cout << mx << \" \\0 \" ;",
+        "long long x = 0 ;",
+        "char mx = a [ 1 ] ;",
+        "for ( j = i ; j <= n ; j ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        8,
+        10
+      ],
+      "mod_code": [
+        "cout << mx << \" \\0 \" ;",
+        "long long x = 0 ;",
+        "int mx = max ( mx , x ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        13,
+        8,
+        10,
+        7
+      ],
+      "mod_code": [
+        "cout << mx << \" \\0 \" ;",
+        "long long x = 0 ;",
+        "int mx = max ( mx , x ) ;",
+        "for ( j = i ; j <= n ; j ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        8,
+        7
+      ],
+      "mod_code": [
+        "cout << mx << \" \\0 \" ;",
+        "long long x = 0 ;",
+        "for ( j = i ; j <= n ; j ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        5
+      ],
+      "mod_code": [
+        "cout << mx << \" \\0 \" ;",
+        "char mx = a [ 1 ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(char&, int&)’"
+    },
+    {
+      "mod_line": [
+        13,
+        5,
+        10,
+        7
+      ],
+      "mod_code": [
+        "cout << mx << \" \\0 \" ;",
+        "char mx = a [ 1 ] ;",
+        "int mx = max ( mx , x ) ;",
+        "for ( j = i ; j <= n ; j ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        5,
+        7
+      ],
+      "mod_code": [
+        "cout << mx << \" \\0 \" ;",
+        "char mx = a [ 1 ] ;",
+        "for ( j = i ; j <= n ; j ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        10,
+        7
+      ],
+      "mod_code": [
+        "cout << mx << \" \\0 \" ;",
+        "int mx = max ( mx , x ) ;",
+        "for ( j = i ; j <= n ; j ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        7
+      ],
+      "mod_code": [
+        "cout << mx << \" \\0 \" ;",
+        "for ( j = i ; j <= n ; j ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        5
+      ],
+      "mod_code": [
+        "long long x = 0 ;",
+        "char mx = a [ 1 ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(char&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        8,
+        5,
+        10
+      ],
+      "mod_code": [
+        "long long x = 0 ;",
+        "char mx = a [ 1 ] ;",
+        "int mx = max ( mx , x ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        8,
+        5,
+        10,
+        7
+      ],
+      "mod_code": [
+        "long long x = 0 ;",
+        "char mx = a [ 1 ] ;",
+        "int mx = max ( mx , x ) ;",
+        "for ( j = i ; j <= n ; j ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        5,
+        7
+      ],
+      "mod_code": [
+        "long long x = 0 ;",
+        "char mx = a [ 1 ] ;",
+        "for ( j = i ; j <= n ; j ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        10
+      ],
+      "mod_code": [
+        "long long x = 0 ;",
+        "int mx = max ( mx , x ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        7
+      ],
+      "mod_code": [
+        "long long x = 0 ;",
+        "int mx = max ( mx , x ) ;",
+        "for ( j = i ; j <= n ; j ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        7
+      ],
+      "mod_code": [
+        "long long x = 0 ;",
+        "for ( j = i ; j <= n ; j ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        7
+      ],
+      "mod_code": [
+        "char mx = a [ 1 ] ;",
+        "int mx = max ( mx , x ) ;",
+        "for ( j = i ; j <= n ; j ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        7
+      ],
+      "mod_code": [
+        "char mx = a [ 1 ] ;",
+        "for ( j = i ; j <= n ; j ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        7
+      ],
+      "mod_code": [
+        "int mx = max ( mx , x ) ;",
+        "for ( j = i ; j <= n ; j ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    }
+  ]
+}

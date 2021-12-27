@@ -1,0 +1,721 @@
+{
+  "meta": {
+    "index": 2441,
+    "hitid": "3HFWPF5AK9D1T6INJTGF3WRSJ7R3SY",
+    "workerid": "A1NBHCFZKJGHKW",
+    "probid": "553A",
+    "subid": "47713722"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "k = int , C = two dimensional int array of sizes 1010 and 1010 and s , dp , c = int array of size 1010 each",
+      "code": "int C [ 1010 ] [ 1010 ] , k , s [ 1010 ] , dp [ 1010 ] , c [ 1010 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "set C [ 0 ] [ 0 ] to 1",
+      "code": "C [ 0 ] [ 0 ] = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "for i = 1 to 1000 inclusive",
+      "code": "for ( int i = 1 ; i <= 1000 ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "set C [ i ] [ 0 ] to 1",
+      "code": "C [ i ] [ 0 ] = 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 5,
+      "text": "for j = 1 to i inclusive set C [ i ] [ j ] to ( C [ i - 1 ] [ j - 1 ] + C [ i - 1 ] [ j ] ) mod 1000000007",
+      "code": "for ( int j = 1 ; j <= i ; j ++ ) { C [ i ] [ j ] = ( C [ i - 1 ] [ j - 1 ] + C [ i - 1 ] [ j ] ) % 1000000007 ; }",
+      "indent": 2
+    },
+    {
+      "line": 6,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "read k",
+      "code": "cin >> k ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "for i = 1 to k inclusive",
+      "code": "for ( int i = 1 ; i <= k ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "read c [ i ]",
+      "code": "cin >> c [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "set s [ i ] to s [ i - 1 ] + c [ i ]",
+      "code": "s [ i ] = s [ i - 1 ] + c [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "set dp [ 0 ] to 1",
+      "code": "dp [ 0 ] = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "for i = 1 to k inclusive set dp [ i ] to 1LL * C [ s [ i ] - 1 ] [ c [ i ] - 1 ] * dp [ i - 1 ] mod 1000000007",
+      "code": "for ( int i = 1 ; i <= k ; i ++ ) { dp [ i ] = 1LL * C [ s [ i ] - 1 ] [ c [ i ] - 1 ] * dp [ i - 1 ] % 1000000007 ; }",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "print dp [ k ]",
+      "code": "cout << dp [ k ] << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int k , C [ 1010 ] [ 1010 ] , dp [ 1010 ] [ 1010 ] , c [ 1010 ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int k , C [ 1010 ] [ 1010 ] , s [ 1010 ] [ 1010 ] , c [ 1010 ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "incompatible types in assignment of ‘int*’ to ‘int [1010]’"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "C [ ' i ' ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "incompatible types in assignment of ‘int’ to ‘int [1010]’"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "cin >> n ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "cin >> c >> c [ i ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [1010]’)"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= k ; i ++ ) { dp [ i ] = 1LL * C [ s [ i ] - 1 ] * dp [ i - 1 ] - 1 ] * dp [ i - 1 ] ; }"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid operands of types ‘long long int’ and ‘int [1010]’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        0,
+        9
+      ],
+      "mod_code": [
+        "int k , C [ 1010 ] [ 1010 ] , dp [ 1010 ] [ 1010 ] , c [ 1010 ] ;",
+        "cin >> c >> c [ i ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [1010]’)"
+    },
+    {
+      "mod_line": [
+        0,
+        9,
+        8
+      ],
+      "mod_code": [
+        "int k , C [ 1010 ] [ 1010 ] , dp [ 1010 ] [ 1010 ] , c [ 1010 ] ;",
+        "cin >> c >> c [ i ] ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        0,
+        9,
+        8,
+        12
+      ],
+      "mod_code": [
+        "int k , C [ 1010 ] [ 1010 ] , dp [ 1010 ] [ 1010 ] , c [ 1010 ] ;",
+        "cin >> c >> c [ i ] ;",
+        "for ( i = 1 ; i <= k ; i ++ )",
+        "dp [ ' 0 ' ] = 1 ;"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        0,
+        9,
+        8,
+        7
+      ],
+      "mod_code": [
+        "int k , C [ 1010 ] [ 1010 ] , dp [ 1010 ] [ 1010 ] , c [ 1010 ] ;",
+        "cin >> c >> c [ i ] ;",
+        "for ( i = 1 ; i <= k ; i ++ )",
+        "cin >> n ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        9,
+        12
+      ],
+      "mod_code": [
+        "int k , C [ 1010 ] [ 1010 ] , dp [ 1010 ] [ 1010 ] , c [ 1010 ] ;",
+        "cin >> c >> c [ i ] ;",
+        "dp [ ' 0 ' ] = 1 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [1010]’)"
+    },
+    {
+      "mod_line": [
+        0,
+        9,
+        12,
+        7
+      ],
+      "mod_code": [
+        "int k , C [ 1010 ] [ 1010 ] , dp [ 1010 ] [ 1010 ] , c [ 1010 ] ;",
+        "cin >> c >> c [ i ] ;",
+        "dp [ ' 0 ' ] = 1 ;",
+        "cin >> n ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        9,
+        7
+      ],
+      "mod_code": [
+        "int k , C [ 1010 ] [ 1010 ] , dp [ 1010 ] [ 1010 ] , c [ 1010 ] ;",
+        "cin >> c >> c [ i ] ;",
+        "cin >> n ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        8
+      ],
+      "mod_code": [
+        "int k , C [ 1010 ] [ 1010 ] , dp [ 1010 ] [ 1010 ] , c [ 1010 ] ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        0,
+        8,
+        12
+      ],
+      "mod_code": [
+        "int k , C [ 1010 ] [ 1010 ] , dp [ 1010 ] [ 1010 ] , c [ 1010 ] ;",
+        "for ( i = 1 ; i <= k ; i ++ )",
+        "dp [ ' 0 ' ] = 1 ;"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        0,
+        8,
+        12,
+        7
+      ],
+      "mod_code": [
+        "int k , C [ 1010 ] [ 1010 ] , dp [ 1010 ] [ 1010 ] , c [ 1010 ] ;",
+        "for ( i = 1 ; i <= k ; i ++ )",
+        "dp [ ' 0 ' ] = 1 ;",
+        "cin >> n ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        8,
+        7
+      ],
+      "mod_code": [
+        "int k , C [ 1010 ] [ 1010 ] , dp [ 1010 ] [ 1010 ] , c [ 1010 ] ;",
+        "for ( i = 1 ; i <= k ; i ++ )",
+        "cin >> n ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        12
+      ],
+      "mod_code": [
+        "int k , C [ 1010 ] [ 1010 ] , dp [ 1010 ] [ 1010 ] , c [ 1010 ] ;",
+        "dp [ ' 0 ' ] = 1 ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        12,
+        7
+      ],
+      "mod_code": [
+        "int k , C [ 1010 ] [ 1010 ] , dp [ 1010 ] [ 1010 ] , c [ 1010 ] ;",
+        "dp [ ' 0 ' ] = 1 ;",
+        "cin >> n ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        7
+      ],
+      "mod_code": [
+        "int k , C [ 1010 ] [ 1010 ] , dp [ 1010 ] [ 1010 ] , c [ 1010 ] ;",
+        "cin >> n ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        8
+      ],
+      "mod_code": [
+        "cin >> c >> c [ i ] ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        8,
+        0
+      ],
+      "mod_code": [
+        "cin >> c >> c [ i ] ;",
+        "for ( i = 1 ; i <= k ; i ++ )",
+        "int k , C [ 1010 ] [ 1010 ] , s [ 1010 ] [ 1010 ] , c [ 1010 ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        8,
+        0,
+        12
+      ],
+      "mod_code": [
+        "cin >> c >> c [ i ] ;",
+        "for ( i = 1 ; i <= k ; i ++ )",
+        "int k , C [ 1010 ] [ 1010 ] , s [ 1010 ] [ 1010 ] , c [ 1010 ] ;",
+        "dp [ ' 0 ' ] = 1 ;"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        8,
+        0,
+        7
+      ],
+      "mod_code": [
+        "cin >> c >> c [ i ] ;",
+        "for ( i = 1 ; i <= k ; i ++ )",
+        "int k , C [ 1010 ] [ 1010 ] , s [ 1010 ] [ 1010 ] , c [ 1010 ] ;",
+        "cin >> n ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        8,
+        12
+      ],
+      "mod_code": [
+        "cin >> c >> c [ i ] ;",
+        "for ( i = 1 ; i <= k ; i ++ )",
+        "dp [ ' 0 ' ] = 1 ;"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        8,
+        12,
+        7
+      ],
+      "mod_code": [
+        "cin >> c >> c [ i ] ;",
+        "for ( i = 1 ; i <= k ; i ++ )",
+        "dp [ ' 0 ' ] = 1 ;",
+        "cin >> n ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        8,
+        7
+      ],
+      "mod_code": [
+        "cin >> c >> c [ i ] ;",
+        "for ( i = 1 ; i <= k ; i ++ )",
+        "cin >> n ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        0
+      ],
+      "mod_code": [
+        "cin >> c >> c [ i ] ;",
+        "int k , C [ 1010 ] [ 1010 ] , s [ 1010 ] [ 1010 ] , c [ 1010 ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [1010]’)"
+    },
+    {
+      "mod_line": [
+        9,
+        0,
+        12
+      ],
+      "mod_code": [
+        "cin >> c >> c [ i ] ;",
+        "int k , C [ 1010 ] [ 1010 ] , s [ 1010 ] [ 1010 ] , c [ 1010 ] ;",
+        "dp [ ' 0 ' ] = 1 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [1010]’)"
+    },
+    {
+      "mod_line": [
+        9,
+        0,
+        12,
+        7
+      ],
+      "mod_code": [
+        "cin >> c >> c [ i ] ;",
+        "int k , C [ 1010 ] [ 1010 ] , s [ 1010 ] [ 1010 ] , c [ 1010 ] ;",
+        "dp [ ' 0 ' ] = 1 ;",
+        "cin >> n ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        0,
+        7
+      ],
+      "mod_code": [
+        "cin >> c >> c [ i ] ;",
+        "int k , C [ 1010 ] [ 1010 ] , s [ 1010 ] [ 1010 ] , c [ 1010 ] ;",
+        "cin >> n ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        12
+      ],
+      "mod_code": [
+        "cin >> c >> c [ i ] ;",
+        "dp [ ' 0 ' ] = 1 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [1010]’)"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        7
+      ],
+      "mod_code": [
+        "cin >> c >> c [ i ] ;",
+        "dp [ ' 0 ' ] = 1 ;",
+        "cin >> n ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        7
+      ],
+      "mod_code": [
+        "cin >> c >> c [ i ] ;",
+        "cin >> n ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        0
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= k ; i ++ )",
+        "int k , C [ 1010 ] [ 1010 ] , s [ 1010 ] [ 1010 ] , c [ 1010 ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        8,
+        0,
+        12
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= k ; i ++ )",
+        "int k , C [ 1010 ] [ 1010 ] , s [ 1010 ] [ 1010 ] , c [ 1010 ] ;",
+        "dp [ ' 0 ' ] = 1 ;"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        8,
+        0,
+        12,
+        7
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= k ; i ++ )",
+        "int k , C [ 1010 ] [ 1010 ] , s [ 1010 ] [ 1010 ] , c [ 1010 ] ;",
+        "dp [ ' 0 ' ] = 1 ;",
+        "cin >> n ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        0,
+        7
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= k ; i ++ )",
+        "int k , C [ 1010 ] [ 1010 ] , s [ 1010 ] [ 1010 ] , c [ 1010 ] ;",
+        "cin >> n ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        12
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= k ; i ++ )",
+        "dp [ ' 0 ' ] = 1 ;"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        8,
+        12,
+        7
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= k ; i ++ )",
+        "dp [ ' 0 ' ] = 1 ;",
+        "cin >> n ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        7
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= k ; i ++ )",
+        "cin >> n ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        12
+      ],
+      "mod_code": [
+        "int k , C [ 1010 ] [ 1010 ] , s [ 1010 ] [ 1010 ] , c [ 1010 ] ;",
+        "dp [ ' 0 ' ] = 1 ;"
+      ],
+      "err_line": 10,
+      "err_msg": "incompatible types in assignment of ‘int*’ to ‘int [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        12,
+        7
+      ],
+      "mod_code": [
+        "int k , C [ 1010 ] [ 1010 ] , s [ 1010 ] [ 1010 ] , c [ 1010 ] ;",
+        "dp [ ' 0 ' ] = 1 ;",
+        "cin >> n ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        7
+      ],
+      "mod_code": [
+        "int k , C [ 1010 ] [ 1010 ] , s [ 1010 ] [ 1010 ] , c [ 1010 ] ;",
+        "cin >> n ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        7
+      ],
+      "mod_code": [
+        "dp [ ' 0 ' ] = 1 ;",
+        "cin >> n ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘n’ was not declared in this scope"
+    }
+  ]
+}

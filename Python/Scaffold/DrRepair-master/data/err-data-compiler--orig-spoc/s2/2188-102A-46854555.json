@@ -1,0 +1,539 @@
+{
+  "meta": {
+    "index": 2188,
+    "hitid": "3MDWE879UHWORMQ1PGVU4KKEFBM9BR",
+    "workerid": "A1NBHCFZKJGHKW",
+    "probid": "102A",
+    "subid": "46854555"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "i , j , k , n , m , t1 , t2 , nowp , minp = int with minp = - 1 and price = int array of size 110 and cprice = two dimensional int array of sizes 101 and 101 with all values set to 0",
+      "code": "int i , j , k , n , m , t1 , t2 , price [ 110 ] , cprice [ 101 ] [ 101 ] = { 0 } , nowp , minp = - 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read n then m",
+      "code": "cin >> n >> m ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "for i = 1 to n inclusive read price [ i ]",
+      "code": "for ( i = 1 ; i <= n ; i ++ ) cin >> price [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for i = 0 to m",
+      "code": "for ( i = 0 ; i < m ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "read t1 then t2",
+      "code": "cin >> t1 >> t2 ;",
+      "indent": 2
+    },
+    {
+      "line": 6,
+      "text": "set cprice [ t1 ] [ t2 ] to price [ t1 ] + price [ t2 ]",
+      "code": "cprice [ t1 ] [ t2 ] = price [ t1 ] + price [ t2 ] ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "set cprice [ t2 ] [ t1 ] to price [ t1 ] + price [ t2 ]",
+      "code": "cprice [ t2 ] [ t1 ] = price [ t1 ] + price [ t2 ] ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "for i = 1 to n - 1",
+      "code": "for ( i = 1 ; i < n - 1 ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "for j = i + 1 to n",
+      "code": "for ( j = i + 1 ; j < n ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "for k = j + 1 to n inclusive",
+      "code": "for ( k = j + 1 ; k <= n ; k ++ )",
+      "indent": 3
+    },
+    {
+      "line": 12,
+      "text": "if cprice [ i ] [ j ] > 0 and cprice [ j ] [ k ] > 0 and cprice [ i ] [ k ] > 0",
+      "code": "if ( cprice [ i ] [ j ] > 0 && cprice [ j ] [ k ] > 0 && cprice [ i ] [ k ] > 0 )",
+      "indent": 4
+    },
+    {
+      "line": 13,
+      "text": "set nowp to ( cprice [ i ] [ j ] + cprice [ j ] [ k ] + cprice [ i ] [ k ] ) / 2",
+      "code": "nowp = ( cprice [ i ] [ j ] + cprice [ j ] [ k ] + cprice [ i ] [ k ] ) / 2 ;",
+      "indent": 5
+    },
+    {
+      "line": 14,
+      "text": "if minp is - 1 or nowp < minp set minp to nowp",
+      "code": "if ( minp == - 1 || nowp < minp ) minp = nowp ;",
+      "indent": 5
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 4
+    },
+    {
+      "line": 16,
+      "text": "print minp",
+      "code": "cout << minp << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int i , j , k , n , m [ 110 ] [ 110 ] , cprice [ 110 ] , cprice , nowp = - 1 , nowp , minp , minp ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int cprice’"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int i , j , k , n [ 110 ] , cprice [ 110 ] , cprice [ 110 ] = { 0 , t1 , t2 , nowp , nowp = 0 , minp , minp ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int cprice [110]’"
+    },
+    {
+      "mod_line": [
+        1,
+        7
+      ],
+      "mod_code": [
+        "int i , j , k , n , m [ 110 ] [ 110 ] , cprice [ 110 ] , cprice , nowp = - 1 , nowp , minp , minp ;",
+        "cprice [ t2 ] [ t1 ] += price [ t2 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int cprice’"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        16
+      ],
+      "mod_code": [
+        "int i , j , k , n , m [ 110 ] [ 110 ] , cprice [ 110 ] , cprice , nowp = - 1 , nowp , minp , minp ;",
+        "cprice [ t2 ] [ t1 ] += price [ t2 ] ;",
+        "cout << ' minp ' ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int cprice’"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        16,
+        5
+      ],
+      "mod_code": [
+        "int i , j , k , n , m [ 110 ] [ 110 ] , cprice [ 110 ] , cprice , nowp = - 1 , nowp , minp , minp ;",
+        "cprice [ t2 ] [ t1 ] += price [ t2 ] ;",
+        "cout << ' minp ' ;",
+        "t1 >> t1 >> t2 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int cprice’"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        16,
+        2
+      ],
+      "mod_code": [
+        "int i , j , k , n , m [ 110 ] [ 110 ] , cprice [ 110 ] , cprice , nowp = - 1 , nowp , minp , minp ;",
+        "cprice [ t2 ] [ t1 ] += price [ t2 ] ;",
+        "cout << ' minp ' ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int cprice’"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        5
+      ],
+      "mod_code": [
+        "int i , j , k , n , m [ 110 ] [ 110 ] , cprice [ 110 ] , cprice , nowp = - 1 , nowp , minp , minp ;",
+        "cprice [ t2 ] [ t1 ] += price [ t2 ] ;",
+        "t1 >> t1 >> t2 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int cprice’"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        5,
+        2
+      ],
+      "mod_code": [
+        "int i , j , k , n , m [ 110 ] [ 110 ] , cprice [ 110 ] , cprice , nowp = - 1 , nowp , minp , minp ;",
+        "cprice [ t2 ] [ t1 ] += price [ t2 ] ;",
+        "t1 >> t1 >> t2 ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int cprice’"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        2
+      ],
+      "mod_code": [
+        "int i , j , k , n , m [ 110 ] [ 110 ] , cprice [ 110 ] , cprice , nowp = - 1 , nowp , minp , minp ;",
+        "cprice [ t2 ] [ t1 ] += price [ t2 ] ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int cprice’"
+    },
+    {
+      "mod_line": [
+        1,
+        16
+      ],
+      "mod_code": [
+        "int i , j , k , n , m [ 110 ] [ 110 ] , cprice [ 110 ] , cprice , nowp = - 1 , nowp , minp , minp ;",
+        "cout << ' minp ' ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int cprice’"
+    },
+    {
+      "mod_line": [
+        1,
+        16,
+        5
+      ],
+      "mod_code": [
+        "int i , j , k , n , m [ 110 ] [ 110 ] , cprice [ 110 ] , cprice , nowp = - 1 , nowp , minp , minp ;",
+        "cout << ' minp ' ;",
+        "t1 >> t1 >> t2 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int cprice’"
+    },
+    {
+      "mod_line": [
+        1,
+        16,
+        5,
+        2
+      ],
+      "mod_code": [
+        "int i , j , k , n , m [ 110 ] [ 110 ] , cprice [ 110 ] , cprice , nowp = - 1 , nowp , minp , minp ;",
+        "cout << ' minp ' ;",
+        "t1 >> t1 >> t2 ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int cprice’"
+    },
+    {
+      "mod_line": [
+        1,
+        16,
+        2
+      ],
+      "mod_code": [
+        "int i , j , k , n , m [ 110 ] [ 110 ] , cprice [ 110 ] , cprice , nowp = - 1 , nowp , minp , minp ;",
+        "cout << ' minp ' ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int cprice’"
+    },
+    {
+      "mod_line": [
+        1,
+        5
+      ],
+      "mod_code": [
+        "int i , j , k , n , m [ 110 ] [ 110 ] , cprice [ 110 ] , cprice , nowp = - 1 , nowp , minp , minp ;",
+        "t1 >> t1 >> t2 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int cprice’"
+    },
+    {
+      "mod_line": [
+        1,
+        5,
+        2
+      ],
+      "mod_code": [
+        "int i , j , k , n , m [ 110 ] [ 110 ] , cprice [ 110 ] , cprice , nowp = - 1 , nowp , minp , minp ;",
+        "t1 >> t1 >> t2 ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int cprice’"
+    },
+    {
+      "mod_line": [
+        1,
+        2
+      ],
+      "mod_code": [
+        "int i , j , k , n , m [ 110 ] [ 110 ] , cprice [ 110 ] , cprice , nowp = - 1 , nowp , minp , minp ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int cprice’"
+    },
+    {
+      "mod_line": [
+        7,
+        1
+      ],
+      "mod_code": [
+        "cprice [ t2 ] [ t1 ] += price [ t2 ] ;",
+        "int i , j , k , n [ 110 ] , cprice [ 110 ] , cprice [ 110 ] = { 0 , t1 , t2 , nowp , nowp = 0 , minp , minp ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int cprice [110]’"
+    },
+    {
+      "mod_line": [
+        7,
+        1,
+        16
+      ],
+      "mod_code": [
+        "cprice [ t2 ] [ t1 ] += price [ t2 ] ;",
+        "int i , j , k , n [ 110 ] , cprice [ 110 ] , cprice [ 110 ] = { 0 , t1 , t2 , nowp , nowp = 0 , minp , minp ;",
+        "cout << ' minp ' ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int cprice [110]’"
+    },
+    {
+      "mod_line": [
+        7,
+        1,
+        16,
+        5
+      ],
+      "mod_code": [
+        "cprice [ t2 ] [ t1 ] += price [ t2 ] ;",
+        "int i , j , k , n [ 110 ] , cprice [ 110 ] , cprice [ 110 ] = { 0 , t1 , t2 , nowp , nowp = 0 , minp , minp ;",
+        "cout << ' minp ' ;",
+        "t1 >> t1 >> t2 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int cprice [110]’"
+    },
+    {
+      "mod_line": [
+        7,
+        1,
+        16,
+        2
+      ],
+      "mod_code": [
+        "cprice [ t2 ] [ t1 ] += price [ t2 ] ;",
+        "int i , j , k , n [ 110 ] , cprice [ 110 ] , cprice [ 110 ] = { 0 , t1 , t2 , nowp , nowp = 0 , minp , minp ;",
+        "cout << ' minp ' ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int cprice [110]’"
+    },
+    {
+      "mod_line": [
+        7,
+        1,
+        5
+      ],
+      "mod_code": [
+        "cprice [ t2 ] [ t1 ] += price [ t2 ] ;",
+        "int i , j , k , n [ 110 ] , cprice [ 110 ] , cprice [ 110 ] = { 0 , t1 , t2 , nowp , nowp = 0 , minp , minp ;",
+        "t1 >> t1 >> t2 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int cprice [110]’"
+    },
+    {
+      "mod_line": [
+        7,
+        1,
+        5,
+        2
+      ],
+      "mod_code": [
+        "cprice [ t2 ] [ t1 ] += price [ t2 ] ;",
+        "int i , j , k , n [ 110 ] , cprice [ 110 ] , cprice [ 110 ] = { 0 , t1 , t2 , nowp , nowp = 0 , minp , minp ;",
+        "t1 >> t1 >> t2 ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int cprice [110]’"
+    },
+    {
+      "mod_line": [
+        7,
+        1,
+        2
+      ],
+      "mod_code": [
+        "cprice [ t2 ] [ t1 ] += price [ t2 ] ;",
+        "int i , j , k , n [ 110 ] , cprice [ 110 ] , cprice [ 110 ] = { 0 , t1 , t2 , nowp , nowp = 0 , minp , minp ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int cprice [110]’"
+    },
+    {
+      "mod_line": [
+        1,
+        16
+      ],
+      "mod_code": [
+        "int i , j , k , n [ 110 ] , cprice [ 110 ] , cprice [ 110 ] = { 0 , t1 , t2 , nowp , nowp = 0 , minp , minp ;",
+        "cout << ' minp ' ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int cprice [110]’"
+    },
+    {
+      "mod_line": [
+        1,
+        16,
+        5
+      ],
+      "mod_code": [
+        "int i , j , k , n [ 110 ] , cprice [ 110 ] , cprice [ 110 ] = { 0 , t1 , t2 , nowp , nowp = 0 , minp , minp ;",
+        "cout << ' minp ' ;",
+        "t1 >> t1 >> t2 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int cprice [110]’"
+    },
+    {
+      "mod_line": [
+        1,
+        16,
+        5,
+        2
+      ],
+      "mod_code": [
+        "int i , j , k , n [ 110 ] , cprice [ 110 ] , cprice [ 110 ] = { 0 , t1 , t2 , nowp , nowp = 0 , minp , minp ;",
+        "cout << ' minp ' ;",
+        "t1 >> t1 >> t2 ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int cprice [110]’"
+    },
+    {
+      "mod_line": [
+        1,
+        16,
+        2
+      ],
+      "mod_code": [
+        "int i , j , k , n [ 110 ] , cprice [ 110 ] , cprice [ 110 ] = { 0 , t1 , t2 , nowp , nowp = 0 , minp , minp ;",
+        "cout << ' minp ' ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int cprice [110]’"
+    },
+    {
+      "mod_line": [
+        1,
+        5
+      ],
+      "mod_code": [
+        "int i , j , k , n [ 110 ] , cprice [ 110 ] , cprice [ 110 ] = { 0 , t1 , t2 , nowp , nowp = 0 , minp , minp ;",
+        "t1 >> t1 >> t2 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int cprice [110]’"
+    },
+    {
+      "mod_line": [
+        1,
+        5,
+        2
+      ],
+      "mod_code": [
+        "int i , j , k , n [ 110 ] , cprice [ 110 ] , cprice [ 110 ] = { 0 , t1 , t2 , nowp , nowp = 0 , minp , minp ;",
+        "t1 >> t1 >> t2 ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int cprice [110]’"
+    },
+    {
+      "mod_line": [
+        1,
+        2
+      ],
+      "mod_code": [
+        "int i , j , k , n [ 110 ] , cprice [ 110 ] , cprice [ 110 ] = { 0 , t1 , t2 , nowp , nowp = 0 , minp , minp ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int cprice [110]’"
+    }
+  ]
+}

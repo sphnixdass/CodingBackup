@@ -1,0 +1,607 @@
+{
+  "meta": {
+    "index": 2049,
+    "hitid": "3J9UN9O9J3MCDB00DCPI9X2YKCTJ02",
+    "workerid": "A1EKVUFWL7OJMO",
+    "probid": "594A",
+    "subid": "36799834"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "inf = const integer with inf = ( cast to int ) 1e9 + 7",
+      "code": "const int inf = ( int ) 1e9 + 7 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "N = const integer N = ( cast to int ) 3e5 + 7",
+      "code": "const int N = ( int ) 3e5 + 7 ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "n = integer",
+      "code": "int n ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "a = integer array of size N",
+      "code": "int a [ N ] ;",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "ans = integer with ans = inf",
+      "code": "int ans = inf ;",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 6,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for i = 1 to n , read a [ i ]",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) { cin >> a [ i ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "sort a + 1 and a + n + 1",
+      "code": "sort ( a + 1 , a + n + 1 ) ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "cnt = integer with cnt = n / 2 - 1",
+      "code": "int cnt = n / 2 - 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "for i = 0 to cnt , ans = min ( ans , a [ n - ( cnt - i ) ] - a [ i + 1 ] )",
+      "code": "for ( int i = 0 ; i <= cnt ; i ++ ) { ans = min ( ans , a [ n - ( cnt - i ) ] - a [ i + 1 ] ) ; }",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "print ans",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "const N = ( int ) 3e5 + 7 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘N’ does not name a type"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "long long ans = inf ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘min(long long int&, int)’"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < cnt ; i ++ ) { ans = min ( ans , a [ n - 1 ] ] - a [ i + 1 ] ) ; }"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        1
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < cnt ; i ++ ) ans = min ( ans , a [ n - ( cnt - i ) ] - a [ i + 1 ] ) ;",
+        "char a [ N ] ;",
+        "const N = ( int ) 3e5 + 7 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘N’ does not name a type"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        1,
+        8
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < cnt ; i ++ ) ans = min ( ans , a [ n - ( cnt - i ) ] - a [ i + 1 ] ) ;",
+        "char a [ N ] ;",
+        "const N = ( int ) 3e5 + 7 ;",
+        "sort ( a + 1 , a + n + 1 + 1 ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘N’ does not name a type"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        1,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < cnt ; i ++ ) ans = min ( ans , a [ n - ( cnt - i ) ] - a [ i + 1 ] ) ;",
+        "char a [ N ] ;",
+        "const N = ( int ) 3e5 + 7 ;",
+        "long long ans = inf ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘N’ does not name a type"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        8,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < cnt ; i ++ ) ans = min ( ans , a [ n - ( cnt - i ) ] - a [ i + 1 ] ) ;",
+        "char a [ N ] ;",
+        "sort ( a + 1 , a + n + 1 + 1 ) ;",
+        "long long ans = inf ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘min(long long int&, int)’"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < cnt ; i ++ ) ans = min ( ans , a [ n - ( cnt - i ) ] - a [ i + 1 ] ) ;",
+        "char a [ N ] ;",
+        "long long ans = inf ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘min(long long int&, int)’"
+    },
+    {
+      "mod_line": [
+        10,
+        1
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < cnt ; i ++ ) ans = min ( ans , a [ n - ( cnt - i ) ] - a [ i + 1 ] ) ;",
+        "const N = ( int ) 3e5 + 7 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘N’ does not name a type"
+    },
+    {
+      "mod_line": [
+        10,
+        1,
+        8
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < cnt ; i ++ ) ans = min ( ans , a [ n - ( cnt - i ) ] - a [ i + 1 ] ) ;",
+        "const N = ( int ) 3e5 + 7 ;",
+        "sort ( a + 1 , a + n + 1 + 1 ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘N’ does not name a type"
+    },
+    {
+      "mod_line": [
+        10,
+        1,
+        8,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < cnt ; i ++ ) ans = min ( ans , a [ n - ( cnt - i ) ] - a [ i + 1 ] ) ;",
+        "const N = ( int ) 3e5 + 7 ;",
+        "sort ( a + 1 , a + n + 1 + 1 ) ;",
+        "long long ans = inf ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘N’ does not name a type"
+    },
+    {
+      "mod_line": [
+        10,
+        1,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < cnt ; i ++ ) ans = min ( ans , a [ n - ( cnt - i ) ] - a [ i + 1 ] ) ;",
+        "const N = ( int ) 3e5 + 7 ;",
+        "long long ans = inf ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘N’ does not name a type"
+    },
+    {
+      "mod_line": [
+        10,
+        8,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < cnt ; i ++ ) ans = min ( ans , a [ n - ( cnt - i ) ] - a [ i + 1 ] ) ;",
+        "sort ( a + 1 , a + n + 1 + 1 ) ;",
+        "long long ans = inf ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘min(long long int&, int)’"
+    },
+    {
+      "mod_line": [
+        10,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < cnt ; i ++ ) ans = min ( ans , a [ n - ( cnt - i ) ] - a [ i + 1 ] ) ;",
+        "long long ans = inf ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘min(long long int&, int)’"
+    },
+    {
+      "mod_line": [
+        10,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < cnt ; i ++ ) { ans = min ( ans , a [ n - 1 ] ] - a [ i + 1 ] ) ; }",
+        "char a [ N ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        1
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < cnt ; i ++ ) { ans = min ( ans , a [ n - 1 ] ] - a [ i + 1 ] ) ; }",
+        "char a [ N ] ;",
+        "const N = ( int ) 3e5 + 7 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘N’ does not name a type"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        1,
+        8
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < cnt ; i ++ ) { ans = min ( ans , a [ n - 1 ] ] - a [ i + 1 ] ) ; }",
+        "char a [ N ] ;",
+        "const N = ( int ) 3e5 + 7 ;",
+        "sort ( a + 1 , a + n + 1 + 1 ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘N’ does not name a type"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        1,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < cnt ; i ++ ) { ans = min ( ans , a [ n - 1 ] ] - a [ i + 1 ] ) ; }",
+        "char a [ N ] ;",
+        "const N = ( int ) 3e5 + 7 ;",
+        "long long ans = inf ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘N’ does not name a type"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        8
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < cnt ; i ++ ) { ans = min ( ans , a [ n - 1 ] ] - a [ i + 1 ] ) ; }",
+        "char a [ N ] ;",
+        "sort ( a + 1 , a + n + 1 + 1 ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        8,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < cnt ; i ++ ) { ans = min ( ans , a [ n - 1 ] ] - a [ i + 1 ] ) ; }",
+        "char a [ N ] ;",
+        "sort ( a + 1 , a + n + 1 + 1 ) ;",
+        "long long ans = inf ;"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < cnt ; i ++ ) { ans = min ( ans , a [ n - 1 ] ] - a [ i + 1 ] ) ; }",
+        "char a [ N ] ;",
+        "long long ans = inf ;"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        1
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < cnt ; i ++ ) { ans = min ( ans , a [ n - 1 ] ] - a [ i + 1 ] ) ; }",
+        "const N = ( int ) 3e5 + 7 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘N’ does not name a type"
+    },
+    {
+      "mod_line": [
+        10,
+        1,
+        8
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < cnt ; i ++ ) { ans = min ( ans , a [ n - 1 ] ] - a [ i + 1 ] ) ; }",
+        "const N = ( int ) 3e5 + 7 ;",
+        "sort ( a + 1 , a + n + 1 + 1 ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘N’ does not name a type"
+    },
+    {
+      "mod_line": [
+        10,
+        1,
+        8,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < cnt ; i ++ ) { ans = min ( ans , a [ n - 1 ] ] - a [ i + 1 ] ) ; }",
+        "const N = ( int ) 3e5 + 7 ;",
+        "sort ( a + 1 , a + n + 1 + 1 ) ;",
+        "long long ans = inf ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘N’ does not name a type"
+    },
+    {
+      "mod_line": [
+        10,
+        1,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < cnt ; i ++ ) { ans = min ( ans , a [ n - 1 ] ] - a [ i + 1 ] ) ; }",
+        "const N = ( int ) 3e5 + 7 ;",
+        "long long ans = inf ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘N’ does not name a type"
+    },
+    {
+      "mod_line": [
+        10,
+        8
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < cnt ; i ++ ) { ans = min ( ans , a [ n - 1 ] ] - a [ i + 1 ] ) ; }",
+        "sort ( a + 1 , a + n + 1 + 1 ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        8,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < cnt ; i ++ ) { ans = min ( ans , a [ n - 1 ] ] - a [ i + 1 ] ) ; }",
+        "sort ( a + 1 , a + n + 1 + 1 ) ;",
+        "long long ans = inf ;"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < cnt ; i ++ ) { ans = min ( ans , a [ n - 1 ] ] - a [ i + 1 ] ) ; }",
+        "long long ans = inf ;"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        1
+      ],
+      "mod_code": [
+        "char a [ N ] ;",
+        "const N = ( int ) 3e5 + 7 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘N’ does not name a type"
+    },
+    {
+      "mod_line": [
+        3,
+        1,
+        8
+      ],
+      "mod_code": [
+        "char a [ N ] ;",
+        "const N = ( int ) 3e5 + 7 ;",
+        "sort ( a + 1 , a + n + 1 + 1 ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘N’ does not name a type"
+    },
+    {
+      "mod_line": [
+        3,
+        1,
+        8,
+        4
+      ],
+      "mod_code": [
+        "char a [ N ] ;",
+        "const N = ( int ) 3e5 + 7 ;",
+        "sort ( a + 1 , a + n + 1 + 1 ) ;",
+        "long long ans = inf ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘N’ does not name a type"
+    },
+    {
+      "mod_line": [
+        3,
+        1,
+        4
+      ],
+      "mod_code": [
+        "char a [ N ] ;",
+        "const N = ( int ) 3e5 + 7 ;",
+        "long long ans = inf ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘N’ does not name a type"
+    },
+    {
+      "mod_line": [
+        3,
+        8,
+        4
+      ],
+      "mod_code": [
+        "char a [ N ] ;",
+        "sort ( a + 1 , a + n + 1 + 1 ) ;",
+        "long long ans = inf ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘min(long long int&, int)’"
+    },
+    {
+      "mod_line": [
+        3,
+        4
+      ],
+      "mod_code": [
+        "char a [ N ] ;",
+        "long long ans = inf ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘min(long long int&, int)’"
+    },
+    {
+      "mod_line": [
+        1,
+        8
+      ],
+      "mod_code": [
+        "const N = ( int ) 3e5 + 7 ;",
+        "sort ( a + 1 , a + n + 1 + 1 ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘N’ does not name a type"
+    },
+    {
+      "mod_line": [
+        1,
+        8,
+        4
+      ],
+      "mod_code": [
+        "const N = ( int ) 3e5 + 7 ;",
+        "sort ( a + 1 , a + n + 1 + 1 ) ;",
+        "long long ans = inf ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘N’ does not name a type"
+    },
+    {
+      "mod_line": [
+        1,
+        4
+      ],
+      "mod_code": [
+        "const N = ( int ) 3e5 + 7 ;",
+        "long long ans = inf ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘N’ does not name a type"
+    },
+    {
+      "mod_line": [
+        8,
+        4
+      ],
+      "mod_code": [
+        "sort ( a + 1 , a + n + 1 + 1 ) ;",
+        "long long ans = inf ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘min(long long int&, int)’"
+    }
+  ]
+}

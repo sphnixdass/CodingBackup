@@ -1,0 +1,1153 @@
+{
+  "meta": {
+    "index": 2183,
+    "hitid": "3PR3LXCWSFTV4PT2UCNCTHB6YE5X9J",
+    "workerid": "A24WRPQYGMQLGF",
+    "probid": "744A",
+    "subid": "41607166"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "mp = integer vector",
+      "code": "vector < int > mp ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "n , m , k = integer",
+      "code": "int n , m , k ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "pre = integer array of size 100005 , cnt = integer array of size 100005",
+      "code": "int pre [ 100005 ] , cnt [ 100005 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "cap = boolean array of size 100005",
+      "code": "bool cap [ 100005 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "in function find with an argument of integer x and returns an integer",
+      "code": "int find ( int x )",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "return if pre [ x ] is x return x , if not then return the result of calling find with an argument of pre [ x ]",
+      "code": "return ( pre [ x ] == x ? x : find ( pre [ x ] ) ) ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 7,
+      "text": "in function uion with arguments of integer a and integer b that returns nothing",
+      "code": "void uion ( int a , int b )",
+      "indent": 0
+    },
+    {
+      "line": 8,
+      "text": "fa = integer = the result of find with an argument a , fb = integer = the result of find with an argument n",
+      "code": "int fa = find ( a ) , fb = find ( b ) ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "if fa is not fb",
+      "code": "if ( fa != fb )",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "pre [ fa ] = fb",
+      "code": "pre [ fa ] = fb ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "cnt [ fb ] = cnt [ fb ] + cnt [ fa ]",
+      "code": "cnt [ fb ] += cnt [ fa ] ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 15,
+      "text": "u , v = integers , c = integer array of size 100005",
+      "code": "int c [ 100005 ] , u , v ;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "ans = integer = 0 , Max = integer = 0",
+      "code": "int ans = 0 , Max = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "while n , m , k are read as valid integers",
+      "code": "while ( cin >> n >> m >> k )",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "for i = 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 2
+    },
+    {
+      "line": 19,
+      "text": "pre [ i ] = i",
+      "code": "pre [ i ] = i ;",
+      "indent": 3
+    },
+    {
+      "line": 20,
+      "text": "cnt [ i ] = 1",
+      "code": "cnt [ i ] = 1 ;",
+      "indent": 3
+    },
+    {
+      "line": 21,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 22,
+      "text": "set all elements of cap to 0",
+      "code": "memset ( cap , 0 , sizeof ( cap ) ) ;",
+      "indent": 2
+    },
+    {
+      "line": 23,
+      "text": "for i = 0 to k exclusive , then read c [ i ]",
+      "code": "for ( int i = 0 ; i < k ; i ++ ) cin >> c [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 24,
+      "text": "for i = 0 to m exclusive",
+      "code": "for ( int i = 0 ; i < m ; i ++ )",
+      "indent": 2
+    },
+    {
+      "line": 25,
+      "text": "read u , v",
+      "code": "cin >> u >> v ;",
+      "indent": 3
+    },
+    {
+      "line": 26,
+      "text": "call uion with arguments u and v",
+      "code": "uion ( u , v ) ;",
+      "indent": 3
+    },
+    {
+      "line": 27,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 28,
+      "text": "for i = 0 to k exclusive , then cap [ the result of find with argument c [ i ] ] is 1",
+      "code": "for ( int i = 0 ; i < k ; i ++ ) cap [ find ( c [ i ] ) ] = 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 29,
+      "text": "for i = 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 2
+    },
+    {
+      "line": 30,
+      "text": "if calling find with argument i is i",
+      "code": "if ( find ( i ) == i )",
+      "indent": 3
+    },
+    {
+      "line": 31,
+      "text": "if cap [ i ] is nonzero",
+      "code": "if ( cap [ i ] )",
+      "indent": 4
+    },
+    {
+      "line": 32,
+      "text": "Max = the bigger value between Max and cnt [ i ]",
+      "code": "Max = max ( Max , cnt [ i ] ) ;",
+      "indent": 5
+    },
+    {
+      "line": 33,
+      "text": "else",
+      "code": "else",
+      "indent": 4
+    },
+    {
+      "line": 34,
+      "text": "push back the value of mp and insert a new element of cnt [ i ] at the end of mp",
+      "code": "mp . push_back ( cnt [ i ] ) ;",
+      "indent": 5
+    },
+    {
+      "line": 35,
+      "text": "ans = ans + ( cnt [ i ] - 1 ) * cnt [ i ] / 2",
+      "code": "ans += ( cnt [ i ] - 1 ) * cnt [ i ] / 2 ;",
+      "indent": 4
+    },
+    {
+      "line": 36,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 37,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 38,
+      "text": "for i = 0 to the size of mp exclusive",
+      "code": "for ( int i = 0 ; i < mp . size ( ) ; i ++ )",
+      "indent": 2
+    },
+    {
+      "line": 39,
+      "text": "for j = i + 1 to size of mp exclusive , then ans = ans + mp [ i ] * mp [ j ]",
+      "code": "for ( int j = i + 1 ; j < mp . size ( ) ; j ++ ) { ans += mp [ i ] * mp [ j ] ; }",
+      "indent": 3
+    },
+    {
+      "line": 40,
+      "text": "ans = ans + MAx * mp [ i ]",
+      "code": "ans += Max * mp [ i ] ;",
+      "indent": 3
+    },
+    {
+      "line": 41,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 42,
+      "text": "ans = ans - m",
+      "code": "ans -= m ;",
+      "indent": 2
+    },
+    {
+      "line": 43,
+      "text": "print ans",
+      "code": "cout << ans << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 44,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 45,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 46,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "int u , v [ 100005 ] , v [ 100005 ] ;"
+      ],
+      "err_line": 15,
+      "err_msg": "redeclaration of ‘int v [100005]’"
+    },
+    {
+      "mod_line": [
+        28
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < k ; i ++ ) { cap [ find ( c [ i ] ] = 1 ) ; }"
+      ],
+      "err_line": 28,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        40
+      ],
+      "mod_code": [
+        "ans += MAx * mp [ i ] ;"
+      ],
+      "err_line": 40,
+      "err_msg": "‘MAx’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "int pre [ 100005 ] , pre [ 100005 ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "redefinition of ‘int pre [100005]’"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "int find ( int x , int x )"
+      ],
+      "err_line": 4,
+      "err_msg": "redefinition of ‘int x’"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "return pre [ x ] == x ? pre : pre [ x ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "operands to ?: have different types ‘int*’ and ‘int’"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "int fa = find ( a , fb ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘fb’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "int u [ 100005 ] , v [ 100005 ] ;"
+      ],
+      "err_line": 23,
+      "err_msg": "‘c’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "int Max = 0 , Max = 0 ;"
+      ],
+      "err_line": 16,
+      "err_msg": "redeclaration of ‘int Max’"
+    },
+    {
+      "mod_line": [
+        18
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 18,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        24
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < m ; i ++ )"
+      ],
+      "err_line": 24,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26
+      ],
+      "mod_code": [
+        "uion ( ( u , v ) ) ;"
+      ],
+      "err_line": 26,
+      "err_msg": "too few arguments to function ‘void uion(int, int)’"
+    },
+    {
+      "mod_line": [
+        28
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < k ; i ++ ) { cap [ i ] += c [ i ] ] ; }"
+      ],
+      "err_line": 28,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        29
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 29,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        34
+      ],
+      "mod_code": [
+        "mp . push_back ( cnt ) ;"
+      ],
+      "err_line": 34,
+      "err_msg": "invalid conversion from ‘int*’ to ‘std::vector<int>::value_type {aka int}’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        38
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < mp . size ( ) ; i ++ )"
+      ],
+      "err_line": 38,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        40
+      ],
+      "mod_code": [
+        "ans += ( MAx * mp [ i ] ) ;"
+      ],
+      "err_line": 40,
+      "err_msg": "‘MAx’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        15
+      ],
+      "mod_code": [
+        "return pre [ x ] == x ? x : pre [ x ] ;",
+        "int fa = find ( a ) , fb ( n ) ;",
+        "int u , v [ 100005 ] , v [ 100005 ] ;"
+      ],
+      "err_line": 15,
+      "err_msg": "redeclaration of ‘int v [100005]’"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        15,
+        28
+      ],
+      "mod_code": [
+        "return pre [ x ] == x ? x : pre [ x ] ;",
+        "int fa = find ( a ) , fb ( n ) ;",
+        "int u , v [ 100005 ] , v [ 100005 ] ;",
+        "for ( int i = 0 ; i < k ; i ++ ) { cap [ find ( c [ i ] ] = 1 ) ; }"
+      ],
+      "err_line": 15,
+      "err_msg": "redeclaration of ‘int v [100005]’"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        15,
+        40
+      ],
+      "mod_code": [
+        "return pre [ x ] == x ? x : pre [ x ] ;",
+        "int fa = find ( a ) , fb ( n ) ;",
+        "int u , v [ 100005 ] , v [ 100005 ] ;",
+        "ans += MAx * mp [ i ] ;"
+      ],
+      "err_line": 15,
+      "err_msg": "redeclaration of ‘int v [100005]’"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        15,
+        18
+      ],
+      "mod_code": [
+        "return pre [ x ] == x ? x : pre [ x ] ;",
+        "int fa = find ( a ) , fb ( n ) ;",
+        "int u , v [ 100005 ] , v [ 100005 ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "redeclaration of ‘int v [100005]’"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        28
+      ],
+      "mod_code": [
+        "return pre [ x ] == x ? x : pre [ x ] ;",
+        "int fa = find ( a ) , fb ( n ) ;",
+        "for ( int i = 0 ; i < k ; i ++ ) { cap [ find ( c [ i ] ] = 1 ) ; }"
+      ],
+      "err_line": 28,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        28,
+        40
+      ],
+      "mod_code": [
+        "return pre [ x ] == x ? x : pre [ x ] ;",
+        "int fa = find ( a ) , fb ( n ) ;",
+        "for ( int i = 0 ; i < k ; i ++ ) { cap [ find ( c [ i ] ] = 1 ) ; }",
+        "ans += MAx * mp [ i ] ;"
+      ],
+      "err_line": 28,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        28,
+        18
+      ],
+      "mod_code": [
+        "return pre [ x ] == x ? x : pre [ x ] ;",
+        "int fa = find ( a ) , fb ( n ) ;",
+        "for ( int i = 0 ; i < k ; i ++ ) { cap [ find ( c [ i ] ] = 1 ) ; }",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 18,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        40
+      ],
+      "mod_code": [
+        "return pre [ x ] == x ? x : pre [ x ] ;",
+        "int fa = find ( a ) , fb ( n ) ;",
+        "ans += MAx * mp [ i ] ;"
+      ],
+      "err_line": 40,
+      "err_msg": "‘MAx’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        40,
+        18
+      ],
+      "mod_code": [
+        "return pre [ x ] == x ? x : pre [ x ] ;",
+        "int fa = find ( a ) , fb ( n ) ;",
+        "ans += MAx * mp [ i ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 18,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        18
+      ],
+      "mod_code": [
+        "return pre [ x ] == x ? x : pre [ x ] ;",
+        "int fa = find ( a ) , fb ( n ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 18,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        15
+      ],
+      "mod_code": [
+        "return pre [ x ] == x ? x : pre [ x ] ;",
+        "int u , v [ 100005 ] , v [ 100005 ] ;"
+      ],
+      "err_line": 15,
+      "err_msg": "redeclaration of ‘int v [100005]’"
+    },
+    {
+      "mod_line": [
+        5,
+        15,
+        28
+      ],
+      "mod_code": [
+        "return pre [ x ] == x ? x : pre [ x ] ;",
+        "int u , v [ 100005 ] , v [ 100005 ] ;",
+        "for ( int i = 0 ; i < k ; i ++ ) { cap [ find ( c [ i ] ] = 1 ) ; }"
+      ],
+      "err_line": 15,
+      "err_msg": "redeclaration of ‘int v [100005]’"
+    },
+    {
+      "mod_line": [
+        5,
+        15,
+        28,
+        40
+      ],
+      "mod_code": [
+        "return pre [ x ] == x ? x : pre [ x ] ;",
+        "int u , v [ 100005 ] , v [ 100005 ] ;",
+        "for ( int i = 0 ; i < k ; i ++ ) { cap [ find ( c [ i ] ] = 1 ) ; }",
+        "ans += MAx * mp [ i ] ;"
+      ],
+      "err_line": 15,
+      "err_msg": "redeclaration of ‘int v [100005]’"
+    },
+    {
+      "mod_line": [
+        5,
+        15,
+        28,
+        18
+      ],
+      "mod_code": [
+        "return pre [ x ] == x ? x : pre [ x ] ;",
+        "int u , v [ 100005 ] , v [ 100005 ] ;",
+        "for ( int i = 0 ; i < k ; i ++ ) { cap [ find ( c [ i ] ] = 1 ) ; }",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "redeclaration of ‘int v [100005]’"
+    },
+    {
+      "mod_line": [
+        5,
+        15,
+        40
+      ],
+      "mod_code": [
+        "return pre [ x ] == x ? x : pre [ x ] ;",
+        "int u , v [ 100005 ] , v [ 100005 ] ;",
+        "ans += MAx * mp [ i ] ;"
+      ],
+      "err_line": 15,
+      "err_msg": "redeclaration of ‘int v [100005]’"
+    },
+    {
+      "mod_line": [
+        5,
+        15,
+        40,
+        18
+      ],
+      "mod_code": [
+        "return pre [ x ] == x ? x : pre [ x ] ;",
+        "int u , v [ 100005 ] , v [ 100005 ] ;",
+        "ans += MAx * mp [ i ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "redeclaration of ‘int v [100005]’"
+    },
+    {
+      "mod_line": [
+        5,
+        15,
+        18
+      ],
+      "mod_code": [
+        "return pre [ x ] == x ? x : pre [ x ] ;",
+        "int u , v [ 100005 ] , v [ 100005 ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "redeclaration of ‘int v [100005]’"
+    },
+    {
+      "mod_line": [
+        5,
+        28
+      ],
+      "mod_code": [
+        "return pre [ x ] == x ? x : pre [ x ] ;",
+        "for ( int i = 0 ; i < k ; i ++ ) { cap [ find ( c [ i ] ] = 1 ) ; }"
+      ],
+      "err_line": 28,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        28,
+        40
+      ],
+      "mod_code": [
+        "return pre [ x ] == x ? x : pre [ x ] ;",
+        "for ( int i = 0 ; i < k ; i ++ ) { cap [ find ( c [ i ] ] = 1 ) ; }",
+        "ans += MAx * mp [ i ] ;"
+      ],
+      "err_line": 28,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        28,
+        40,
+        18
+      ],
+      "mod_code": [
+        "return pre [ x ] == x ? x : pre [ x ] ;",
+        "for ( int i = 0 ; i < k ; i ++ ) { cap [ find ( c [ i ] ] = 1 ) ; }",
+        "ans += MAx * mp [ i ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 18,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        28,
+        18
+      ],
+      "mod_code": [
+        "return pre [ x ] == x ? x : pre [ x ] ;",
+        "for ( int i = 0 ; i < k ; i ++ ) { cap [ find ( c [ i ] ] = 1 ) ; }",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 18,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        40
+      ],
+      "mod_code": [
+        "return pre [ x ] == x ? x : pre [ x ] ;",
+        "ans += MAx * mp [ i ] ;"
+      ],
+      "err_line": 40,
+      "err_msg": "‘MAx’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        40,
+        18
+      ],
+      "mod_code": [
+        "return pre [ x ] == x ? x : pre [ x ] ;",
+        "ans += MAx * mp [ i ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 18,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        18
+      ],
+      "mod_code": [
+        "return pre [ x ] == x ? x : pre [ x ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 18,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        15
+      ],
+      "mod_code": [
+        "int fa = find ( a ) , fb ( n ) ;",
+        "int u , v [ 100005 ] , v [ 100005 ] ;"
+      ],
+      "err_line": 15,
+      "err_msg": "redeclaration of ‘int v [100005]’"
+    },
+    {
+      "mod_line": [
+        8,
+        15,
+        28
+      ],
+      "mod_code": [
+        "int fa = find ( a ) , fb ( n ) ;",
+        "int u , v [ 100005 ] , v [ 100005 ] ;",
+        "for ( int i = 0 ; i < k ; i ++ ) { cap [ find ( c [ i ] ] = 1 ) ; }"
+      ],
+      "err_line": 15,
+      "err_msg": "redeclaration of ‘int v [100005]’"
+    },
+    {
+      "mod_line": [
+        8,
+        15,
+        28,
+        40
+      ],
+      "mod_code": [
+        "int fa = find ( a ) , fb ( n ) ;",
+        "int u , v [ 100005 ] , v [ 100005 ] ;",
+        "for ( int i = 0 ; i < k ; i ++ ) { cap [ find ( c [ i ] ] = 1 ) ; }",
+        "ans += MAx * mp [ i ] ;"
+      ],
+      "err_line": 15,
+      "err_msg": "redeclaration of ‘int v [100005]’"
+    },
+    {
+      "mod_line": [
+        8,
+        15,
+        28,
+        18
+      ],
+      "mod_code": [
+        "int fa = find ( a ) , fb ( n ) ;",
+        "int u , v [ 100005 ] , v [ 100005 ] ;",
+        "for ( int i = 0 ; i < k ; i ++ ) { cap [ find ( c [ i ] ] = 1 ) ; }",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "redeclaration of ‘int v [100005]’"
+    },
+    {
+      "mod_line": [
+        8,
+        15,
+        40
+      ],
+      "mod_code": [
+        "int fa = find ( a ) , fb ( n ) ;",
+        "int u , v [ 100005 ] , v [ 100005 ] ;",
+        "ans += MAx * mp [ i ] ;"
+      ],
+      "err_line": 15,
+      "err_msg": "redeclaration of ‘int v [100005]’"
+    },
+    {
+      "mod_line": [
+        8,
+        15,
+        40,
+        18
+      ],
+      "mod_code": [
+        "int fa = find ( a ) , fb ( n ) ;",
+        "int u , v [ 100005 ] , v [ 100005 ] ;",
+        "ans += MAx * mp [ i ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "redeclaration of ‘int v [100005]’"
+    },
+    {
+      "mod_line": [
+        8,
+        15,
+        18
+      ],
+      "mod_code": [
+        "int fa = find ( a ) , fb ( n ) ;",
+        "int u , v [ 100005 ] , v [ 100005 ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "redeclaration of ‘int v [100005]’"
+    },
+    {
+      "mod_line": [
+        8,
+        28
+      ],
+      "mod_code": [
+        "int fa = find ( a ) , fb ( n ) ;",
+        "for ( int i = 0 ; i < k ; i ++ ) { cap [ find ( c [ i ] ] = 1 ) ; }"
+      ],
+      "err_line": 28,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        28,
+        40
+      ],
+      "mod_code": [
+        "int fa = find ( a ) , fb ( n ) ;",
+        "for ( int i = 0 ; i < k ; i ++ ) { cap [ find ( c [ i ] ] = 1 ) ; }",
+        "ans += MAx * mp [ i ] ;"
+      ],
+      "err_line": 28,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        28,
+        40,
+        18
+      ],
+      "mod_code": [
+        "int fa = find ( a ) , fb ( n ) ;",
+        "for ( int i = 0 ; i < k ; i ++ ) { cap [ find ( c [ i ] ] = 1 ) ; }",
+        "ans += MAx * mp [ i ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 18,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        28,
+        18
+      ],
+      "mod_code": [
+        "int fa = find ( a ) , fb ( n ) ;",
+        "for ( int i = 0 ; i < k ; i ++ ) { cap [ find ( c [ i ] ] = 1 ) ; }",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 18,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        40
+      ],
+      "mod_code": [
+        "int fa = find ( a ) , fb ( n ) ;",
+        "ans += MAx * mp [ i ] ;"
+      ],
+      "err_line": 40,
+      "err_msg": "‘MAx’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        40,
+        18
+      ],
+      "mod_code": [
+        "int fa = find ( a ) , fb ( n ) ;",
+        "ans += MAx * mp [ i ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 18,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        18
+      ],
+      "mod_code": [
+        "int fa = find ( a ) , fb ( n ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 18,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        28
+      ],
+      "mod_code": [
+        "int u , v [ 100005 ] , v [ 100005 ] ;",
+        "for ( int i = 0 ; i < k ; i ++ ) { cap [ find ( c [ i ] ] = 1 ) ; }"
+      ],
+      "err_line": 15,
+      "err_msg": "redeclaration of ‘int v [100005]’"
+    },
+    {
+      "mod_line": [
+        15,
+        28,
+        40
+      ],
+      "mod_code": [
+        "int u , v [ 100005 ] , v [ 100005 ] ;",
+        "for ( int i = 0 ; i < k ; i ++ ) { cap [ find ( c [ i ] ] = 1 ) ; }",
+        "ans += MAx * mp [ i ] ;"
+      ],
+      "err_line": 15,
+      "err_msg": "redeclaration of ‘int v [100005]’"
+    },
+    {
+      "mod_line": [
+        15,
+        28,
+        40,
+        18
+      ],
+      "mod_code": [
+        "int u , v [ 100005 ] , v [ 100005 ] ;",
+        "for ( int i = 0 ; i < k ; i ++ ) { cap [ find ( c [ i ] ] = 1 ) ; }",
+        "ans += MAx * mp [ i ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "redeclaration of ‘int v [100005]’"
+    },
+    {
+      "mod_line": [
+        15,
+        28,
+        18
+      ],
+      "mod_code": [
+        "int u , v [ 100005 ] , v [ 100005 ] ;",
+        "for ( int i = 0 ; i < k ; i ++ ) { cap [ find ( c [ i ] ] = 1 ) ; }",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "redeclaration of ‘int v [100005]’"
+    },
+    {
+      "mod_line": [
+        15,
+        40
+      ],
+      "mod_code": [
+        "int u , v [ 100005 ] , v [ 100005 ] ;",
+        "ans += MAx * mp [ i ] ;"
+      ],
+      "err_line": 15,
+      "err_msg": "redeclaration of ‘int v [100005]’"
+    },
+    {
+      "mod_line": [
+        15,
+        40,
+        18
+      ],
+      "mod_code": [
+        "int u , v [ 100005 ] , v [ 100005 ] ;",
+        "ans += MAx * mp [ i ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "redeclaration of ‘int v [100005]’"
+    },
+    {
+      "mod_line": [
+        15,
+        18
+      ],
+      "mod_code": [
+        "int u , v [ 100005 ] , v [ 100005 ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "redeclaration of ‘int v [100005]’"
+    },
+    {
+      "mod_line": [
+        28,
+        40
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < k ; i ++ ) { cap [ find ( c [ i ] ] = 1 ) ; }",
+        "ans += MAx * mp [ i ] ;"
+      ],
+      "err_line": 28,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        28,
+        40,
+        18
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < k ; i ++ ) { cap [ find ( c [ i ] ] = 1 ) ; }",
+        "ans += MAx * mp [ i ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 18,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        28,
+        18
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < k ; i ++ ) { cap [ find ( c [ i ] ] = 1 ) ; }",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 18,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        40,
+        18
+      ],
+      "mod_code": [
+        "ans += MAx * mp [ i ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 18,
+      "err_msg": "‘i’ was not declared in this scope"
+    }
+  ]
+}

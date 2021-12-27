@@ -1,0 +1,821 @@
+{
+  "meta": {
+    "index": 2669,
+    "hitid": "371Q3BEXDH32EZPG40BO7XW7Y2PSZJ",
+    "workerid": "A1NBHCFZKJGHKW",
+    "probid": "165A",
+    "subid": "49065290"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "n = int",
+      "code": "int n ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "x , y = int array of size 205 each",
+      "code": "int x [ 205 ] , y [ 205 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "z = int with z = 0",
+      "code": "int z = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "read n values into x then y",
+      "code": "for ( int i = 0 ; i < n ; i ++ ) cin >> x [ i ] >> y [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 0 to n",
+      "code": "for ( int i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "m = int with m = 0",
+      "code": "int m = 0 ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "for j = 0 to n",
+      "code": "for ( int j = 0 ; j < n ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "if x [ j ] is greater than x [ i ] and y [ j ] is y [ i ] then set m to m bitwise - or 1",
+      "code": "if ( x [ j ] > x [ i ] && y [ j ] == y [ i ] ) m |= 1 ;",
+      "indent": 3
+    },
+    {
+      "line": 10,
+      "text": "if x [ j ] is less than x [ i ] and y [ j ] is y [ i ] then set m to m bitwise - or 2",
+      "code": "if ( x [ j ] < x [ i ] && y [ j ] == y [ i ] ) m |= 2 ;",
+      "indent": 3
+    },
+    {
+      "line": 11,
+      "text": "if y [ j ] is greater than y [ i ] and x [ j ] is x [ i ] then set m to m bitwise - or 4",
+      "code": "if ( y [ j ] > y [ i ] && x [ j ] == x [ i ] ) m |= 4 ;",
+      "indent": 3
+    },
+    {
+      "line": 12,
+      "text": "if y [ j ] is less than y [ i ] and x [ j ] is x [ i ] then set m to m bitwise - or 8",
+      "code": "if ( y [ j ] < y [ i ] && x [ j ] == x [ i ] ) m |= 8 ;",
+      "indent": 3
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "if m is 15 then increment z",
+      "code": "if ( m == 15 ) z ++ ;",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "print z",
+      "code": "cout << z << ' \\n ' ;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int x [ 205 ] , x [ 205 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int x [205]’"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "int * m = 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int’ to binary ‘operator|’"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j < n ; j ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "if ( y [ j ] < y [ i ] && x [ j ] == x [ i ] || x [ j ] < x ) { m = 8 ; }"
+      ],
+      "err_line": 12,
+      "err_msg": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        1,
+        7
+      ],
+      "mod_code": [
+        "int x [ 205 ] , x [ 205 ] ;",
+        "int * m = 0 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int x [205]’"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        10
+      ],
+      "mod_code": [
+        "int x [ 205 ] , x [ 205 ] ;",
+        "int * m = 0 ;",
+        "if ( x [ j ] < x [ i ] && y [ j ] == y [ i ] || y [ j ] < 2 ) { m ++ ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int x [205]’"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        10,
+        12
+      ],
+      "mod_code": [
+        "int x [ 205 ] , x [ 205 ] ;",
+        "int * m = 0 ;",
+        "if ( x [ j ] < x [ i ] && y [ j ] == y [ i ] || y [ j ] < 2 ) { m ++ ; }",
+        "if ( y [ j ] < y [ i ] && x [ j ] == x [ i ] || x [ j ] < x ) { m = 8 ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int x [205]’"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        10,
+        4
+      ],
+      "mod_code": [
+        "int x [ 205 ] , x [ 205 ] ;",
+        "int * m = 0 ;",
+        "if ( x [ j ] < x [ i ] && y [ j ] == y [ i ] || y [ j ] < 2 ) { m ++ ; }",
+        "bool z = 0 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int x [205]’"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        10,
+        0
+      ],
+      "mod_code": [
+        "int x [ 205 ] , x [ 205 ] ;",
+        "int * m = 0 ;",
+        "if ( x [ j ] < x [ i ] && y [ j ] == y [ i ] || y [ j ] < 2 ) { m ++ ; }",
+        "bool n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int x [205]’"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        12
+      ],
+      "mod_code": [
+        "int x [ 205 ] , x [ 205 ] ;",
+        "int * m = 0 ;",
+        "if ( y [ j ] < y [ i ] && x [ j ] == x [ i ] || x [ j ] < x ) { m = 8 ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int x [205]’"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        12,
+        4
+      ],
+      "mod_code": [
+        "int x [ 205 ] , x [ 205 ] ;",
+        "int * m = 0 ;",
+        "if ( y [ j ] < y [ i ] && x [ j ] == x [ i ] || x [ j ] < x ) { m = 8 ; }",
+        "bool z = 0 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int x [205]’"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        12,
+        0
+      ],
+      "mod_code": [
+        "int x [ 205 ] , x [ 205 ] ;",
+        "int * m = 0 ;",
+        "if ( y [ j ] < y [ i ] && x [ j ] == x [ i ] || x [ j ] < x ) { m = 8 ; }",
+        "bool n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int x [205]’"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        4
+      ],
+      "mod_code": [
+        "int x [ 205 ] , x [ 205 ] ;",
+        "int * m = 0 ;",
+        "bool z = 0 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int x [205]’"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        4,
+        0
+      ],
+      "mod_code": [
+        "int x [ 205 ] , x [ 205 ] ;",
+        "int * m = 0 ;",
+        "bool z = 0 ;",
+        "bool n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int x [205]’"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        0
+      ],
+      "mod_code": [
+        "int x [ 205 ] , x [ 205 ] ;",
+        "int * m = 0 ;",
+        "bool n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int x [205]’"
+    },
+    {
+      "mod_line": [
+        1,
+        10
+      ],
+      "mod_code": [
+        "int x [ 205 ] , x [ 205 ] ;",
+        "if ( x [ j ] < x [ i ] && y [ j ] == y [ i ] || y [ j ] < 2 ) { m ++ ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int x [205]’"
+    },
+    {
+      "mod_line": [
+        1,
+        10,
+        12
+      ],
+      "mod_code": [
+        "int x [ 205 ] , x [ 205 ] ;",
+        "if ( x [ j ] < x [ i ] && y [ j ] == y [ i ] || y [ j ] < 2 ) { m ++ ; }",
+        "if ( y [ j ] < y [ i ] && x [ j ] == x [ i ] || x [ j ] < x ) { m = 8 ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int x [205]’"
+    },
+    {
+      "mod_line": [
+        1,
+        10,
+        12,
+        4
+      ],
+      "mod_code": [
+        "int x [ 205 ] , x [ 205 ] ;",
+        "if ( x [ j ] < x [ i ] && y [ j ] == y [ i ] || y [ j ] < 2 ) { m ++ ; }",
+        "if ( y [ j ] < y [ i ] && x [ j ] == x [ i ] || x [ j ] < x ) { m = 8 ; }",
+        "bool z = 0 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int x [205]’"
+    },
+    {
+      "mod_line": [
+        1,
+        10,
+        12,
+        0
+      ],
+      "mod_code": [
+        "int x [ 205 ] , x [ 205 ] ;",
+        "if ( x [ j ] < x [ i ] && y [ j ] == y [ i ] || y [ j ] < 2 ) { m ++ ; }",
+        "if ( y [ j ] < y [ i ] && x [ j ] == x [ i ] || x [ j ] < x ) { m = 8 ; }",
+        "bool n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int x [205]’"
+    },
+    {
+      "mod_line": [
+        1,
+        10,
+        4
+      ],
+      "mod_code": [
+        "int x [ 205 ] , x [ 205 ] ;",
+        "if ( x [ j ] < x [ i ] && y [ j ] == y [ i ] || y [ j ] < 2 ) { m ++ ; }",
+        "bool z = 0 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int x [205]’"
+    },
+    {
+      "mod_line": [
+        1,
+        10,
+        4,
+        0
+      ],
+      "mod_code": [
+        "int x [ 205 ] , x [ 205 ] ;",
+        "if ( x [ j ] < x [ i ] && y [ j ] == y [ i ] || y [ j ] < 2 ) { m ++ ; }",
+        "bool z = 0 ;",
+        "bool n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int x [205]’"
+    },
+    {
+      "mod_line": [
+        1,
+        10,
+        0
+      ],
+      "mod_code": [
+        "int x [ 205 ] , x [ 205 ] ;",
+        "if ( x [ j ] < x [ i ] && y [ j ] == y [ i ] || y [ j ] < 2 ) { m ++ ; }",
+        "bool n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int x [205]’"
+    },
+    {
+      "mod_line": [
+        1,
+        12
+      ],
+      "mod_code": [
+        "int x [ 205 ] , x [ 205 ] ;",
+        "if ( y [ j ] < y [ i ] && x [ j ] == x [ i ] || x [ j ] < x ) { m = 8 ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int x [205]’"
+    },
+    {
+      "mod_line": [
+        1,
+        12,
+        4
+      ],
+      "mod_code": [
+        "int x [ 205 ] , x [ 205 ] ;",
+        "if ( y [ j ] < y [ i ] && x [ j ] == x [ i ] || x [ j ] < x ) { m = 8 ; }",
+        "bool z = 0 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int x [205]’"
+    },
+    {
+      "mod_line": [
+        1,
+        12,
+        4,
+        0
+      ],
+      "mod_code": [
+        "int x [ 205 ] , x [ 205 ] ;",
+        "if ( y [ j ] < y [ i ] && x [ j ] == x [ i ] || x [ j ] < x ) { m = 8 ; }",
+        "bool z = 0 ;",
+        "bool n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int x [205]’"
+    },
+    {
+      "mod_line": [
+        1,
+        12,
+        0
+      ],
+      "mod_code": [
+        "int x [ 205 ] , x [ 205 ] ;",
+        "if ( y [ j ] < y [ i ] && x [ j ] == x [ i ] || x [ j ] < x ) { m = 8 ; }",
+        "bool n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int x [205]’"
+    },
+    {
+      "mod_line": [
+        1,
+        4
+      ],
+      "mod_code": [
+        "int x [ 205 ] , x [ 205 ] ;",
+        "bool z = 0 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int x [205]’"
+    },
+    {
+      "mod_line": [
+        1,
+        4,
+        0
+      ],
+      "mod_code": [
+        "int x [ 205 ] , x [ 205 ] ;",
+        "bool z = 0 ;",
+        "bool n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int x [205]’"
+    },
+    {
+      "mod_line": [
+        1,
+        0
+      ],
+      "mod_code": [
+        "int x [ 205 ] , x [ 205 ] ;",
+        "bool n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int x [205]’"
+    },
+    {
+      "mod_line": [
+        7,
+        10
+      ],
+      "mod_code": [
+        "int * m = 0 ;",
+        "if ( x [ j ] < x [ i ] && y [ j ] == y [ i ] || y [ j ] < 2 ) { m ++ ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int’ to binary ‘operator|’"
+    },
+    {
+      "mod_line": [
+        7,
+        10,
+        12
+      ],
+      "mod_code": [
+        "int * m = 0 ;",
+        "if ( x [ j ] < x [ i ] && y [ j ] == y [ i ] || y [ j ] < 2 ) { m ++ ; }",
+        "if ( y [ j ] < y [ i ] && x [ j ] == x [ i ] || x [ j ] < x ) { m = 8 ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int’ to binary ‘operator|’"
+    },
+    {
+      "mod_line": [
+        7,
+        10,
+        12,
+        4
+      ],
+      "mod_code": [
+        "int * m = 0 ;",
+        "if ( x [ j ] < x [ i ] && y [ j ] == y [ i ] || y [ j ] < 2 ) { m ++ ; }",
+        "if ( y [ j ] < y [ i ] && x [ j ] == x [ i ] || x [ j ] < x ) { m = 8 ; }",
+        "bool z = 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int’ to binary ‘operator|’"
+    },
+    {
+      "mod_line": [
+        7,
+        10,
+        12,
+        0
+      ],
+      "mod_code": [
+        "int * m = 0 ;",
+        "if ( x [ j ] < x [ i ] && y [ j ] == y [ i ] || y [ j ] < 2 ) { m ++ ; }",
+        "if ( y [ j ] < y [ i ] && x [ j ] == x [ i ] || x [ j ] < x ) { m = 8 ; }",
+        "bool n ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int’ to binary ‘operator|’"
+    },
+    {
+      "mod_line": [
+        7,
+        10,
+        4
+      ],
+      "mod_code": [
+        "int * m = 0 ;",
+        "if ( x [ j ] < x [ i ] && y [ j ] == y [ i ] || y [ j ] < 2 ) { m ++ ; }",
+        "bool z = 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int’ to binary ‘operator|’"
+    },
+    {
+      "mod_line": [
+        7,
+        10,
+        4,
+        0
+      ],
+      "mod_code": [
+        "int * m = 0 ;",
+        "if ( x [ j ] < x [ i ] && y [ j ] == y [ i ] || y [ j ] < 2 ) { m ++ ; }",
+        "bool z = 0 ;",
+        "bool n ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int’ to binary ‘operator|’"
+    },
+    {
+      "mod_line": [
+        7,
+        10,
+        0
+      ],
+      "mod_code": [
+        "int * m = 0 ;",
+        "if ( x [ j ] < x [ i ] && y [ j ] == y [ i ] || y [ j ] < 2 ) { m ++ ; }",
+        "bool n ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int’ to binary ‘operator|’"
+    },
+    {
+      "mod_line": [
+        7,
+        12
+      ],
+      "mod_code": [
+        "int * m = 0 ;",
+        "if ( y [ j ] < y [ i ] && x [ j ] == x [ i ] || x [ j ] < x ) { m = 8 ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int’ to binary ‘operator|’"
+    },
+    {
+      "mod_line": [
+        7,
+        12,
+        4
+      ],
+      "mod_code": [
+        "int * m = 0 ;",
+        "if ( y [ j ] < y [ i ] && x [ j ] == x [ i ] || x [ j ] < x ) { m = 8 ; }",
+        "bool z = 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int’ to binary ‘operator|’"
+    },
+    {
+      "mod_line": [
+        7,
+        12,
+        4,
+        0
+      ],
+      "mod_code": [
+        "int * m = 0 ;",
+        "if ( y [ j ] < y [ i ] && x [ j ] == x [ i ] || x [ j ] < x ) { m = 8 ; }",
+        "bool z = 0 ;",
+        "bool n ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int’ to binary ‘operator|’"
+    },
+    {
+      "mod_line": [
+        7,
+        12,
+        0
+      ],
+      "mod_code": [
+        "int * m = 0 ;",
+        "if ( y [ j ] < y [ i ] && x [ j ] == x [ i ] || x [ j ] < x ) { m = 8 ; }",
+        "bool n ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int’ to binary ‘operator|’"
+    },
+    {
+      "mod_line": [
+        7,
+        4
+      ],
+      "mod_code": [
+        "int * m = 0 ;",
+        "bool z = 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int’ to binary ‘operator|’"
+    },
+    {
+      "mod_line": [
+        7,
+        4,
+        0
+      ],
+      "mod_code": [
+        "int * m = 0 ;",
+        "bool z = 0 ;",
+        "bool n ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int’ to binary ‘operator|’"
+    },
+    {
+      "mod_line": [
+        7,
+        0
+      ],
+      "mod_code": [
+        "int * m = 0 ;",
+        "bool n ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int’ to binary ‘operator|’"
+    },
+    {
+      "mod_line": [
+        10,
+        12
+      ],
+      "mod_code": [
+        "if ( x [ j ] < x [ i ] && y [ j ] == y [ i ] || y [ j ] < 2 ) { m ++ ; }",
+        "if ( y [ j ] < y [ i ] && x [ j ] == x [ i ] || x [ j ] < x ) { m = 8 ; }"
+      ],
+      "err_line": 12,
+      "err_msg": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        12,
+        4
+      ],
+      "mod_code": [
+        "if ( x [ j ] < x [ i ] && y [ j ] == y [ i ] || y [ j ] < 2 ) { m ++ ; }",
+        "if ( y [ j ] < y [ i ] && x [ j ] == x [ i ] || x [ j ] < x ) { m = 8 ; }",
+        "bool z = 0 ;"
+      ],
+      "err_line": 12,
+      "err_msg": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        12,
+        4,
+        0
+      ],
+      "mod_code": [
+        "if ( x [ j ] < x [ i ] && y [ j ] == y [ i ] || y [ j ] < 2 ) { m ++ ; }",
+        "if ( y [ j ] < y [ i ] && x [ j ] == x [ i ] || x [ j ] < x ) { m = 8 ; }",
+        "bool z = 0 ;",
+        "bool n ;"
+      ],
+      "err_line": 12,
+      "err_msg": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        12,
+        0
+      ],
+      "mod_code": [
+        "if ( x [ j ] < x [ i ] && y [ j ] == y [ i ] || y [ j ] < 2 ) { m ++ ; }",
+        "if ( y [ j ] < y [ i ] && x [ j ] == x [ i ] || x [ j ] < x ) { m = 8 ; }",
+        "bool n ;"
+      ],
+      "err_line": 12,
+      "err_msg": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        4
+      ],
+      "mod_code": [
+        "if ( y [ j ] < y [ i ] && x [ j ] == x [ i ] || x [ j ] < x ) { m = 8 ; }",
+        "bool z = 0 ;"
+      ],
+      "err_line": 12,
+      "err_msg": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        4,
+        0
+      ],
+      "mod_code": [
+        "if ( y [ j ] < y [ i ] && x [ j ] == x [ i ] || x [ j ] < x ) { m = 8 ; }",
+        "bool z = 0 ;",
+        "bool n ;"
+      ],
+      "err_line": 12,
+      "err_msg": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        0
+      ],
+      "mod_code": [
+        "if ( y [ j ] < y [ i ] && x [ j ] == x [ i ] || x [ j ] < x ) { m = 8 ; }",
+        "bool n ;"
+      ],
+      "err_line": 12,
+      "err_msg": "ISO C++ forbids comparison between pointer and integer [-fpermissive]"
+    }
+  ]
+}

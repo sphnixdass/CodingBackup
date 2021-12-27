@@ -1,0 +1,889 @@
+{
+  "meta": {
+    "index": 251,
+    "hitid": "3IVKZBIBJ03GNEPMYE5H7QS21PFSHP",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "895A",
+    "subid": "47017310"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create integer n",
+      "code": "int n ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "create integer vector a initialized with n , 0",
+      "code": "vector < int > a ( n , 0 ) ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "create integer cs with cs = 0",
+      "code": "int cs = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( int i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "read a [ i ]",
+      "code": "cin >> a [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "increment cs by a [ i ]",
+      "code": "cs += a [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "create integers d , minn with d = 0 , minn = 1000000",
+      "code": "int d = 0 , minn = 1000000 ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( int i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "set d to a [ i ]",
+      "code": "d = a [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "set minn to minimum of minn and absolute value of ( cs - 2 * d )",
+      "code": "minn = min ( minn , abs ( cs - 2 * d ) ) ;",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "for j = ( i + 1 ) % n to j is not i , setting j to ( j + 1 ) % n",
+      "code": "for ( int j = ( i + 1 ) % n ; j != i ; j = ( j + 1 ) % n )",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "increment d by a [ j ]",
+      "code": "d += a [ j ] ;",
+      "indent": 3
+    },
+    {
+      "line": 15,
+      "text": "set minn to minimum of minn and absolute value of ( cs - 2 * d )",
+      "code": "minn = min ( minn , abs ( cs - 2 * d ) ) ;",
+      "indent": 3
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "print minn print newline",
+      "code": "cout << minn << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "int cs [ 0 ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "incompatible types in assignment of ‘int’ to ‘int [0]’"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "int d , minn = 0 , minn = 1000000 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "redeclaration of ‘int minn’"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        4,
+        5
+      ],
+      "mod_code": [
+        "int cs [ 0 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        10
+      ],
+      "mod_code": [
+        "int cs [ 0 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "mod_code": [
+        "int cs [ 0 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( int j = ( i + 1 ) % n ; j != i ; j = j + 1 )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        10,
+        9
+      ],
+      "mod_code": [
+        "int cs [ 0 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int d , minn = 0 , minn = 1000000 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        10,
+        1
+      ],
+      "mod_code": [
+        "int cs [ 0 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        13
+      ],
+      "mod_code": [
+        "int cs [ 0 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( int j = ( i + 1 ) % n ; j != i ; j = j + 1 )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        13,
+        9
+      ],
+      "mod_code": [
+        "int cs [ 0 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( int j = ( i + 1 ) % n ; j != i ; j = j + 1 )",
+        "int d , minn = 0 , minn = 1000000 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        13,
+        1
+      ],
+      "mod_code": [
+        "int cs [ 0 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( int j = ( i + 1 ) % n ; j != i ; j = j + 1 )",
+        "n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        9
+      ],
+      "mod_code": [
+        "int cs [ 0 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int d , minn = 0 , minn = 1000000 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        9,
+        1
+      ],
+      "mod_code": [
+        "int cs [ 0 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int d , minn = 0 , minn = 1000000 ;",
+        "n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        1
+      ],
+      "mod_code": [
+        "int cs [ 0 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        10
+      ],
+      "mod_code": [
+        "int cs [ 0 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "incompatible types in assignment of ‘int’ to ‘int [0]’"
+    },
+    {
+      "mod_line": [
+        4,
+        10,
+        13
+      ],
+      "mod_code": [
+        "int cs [ 0 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( int j = ( i + 1 ) % n ; j != i ; j = j + 1 )"
+      ],
+      "err_line": 7,
+      "err_msg": "incompatible types in assignment of ‘int’ to ‘int [0]’"
+    },
+    {
+      "mod_line": [
+        4,
+        10,
+        13,
+        9
+      ],
+      "mod_code": [
+        "int cs [ 0 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( int j = ( i + 1 ) % n ; j != i ; j = j + 1 )",
+        "int d , minn = 0 , minn = 1000000 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "incompatible types in assignment of ‘int’ to ‘int [0]’"
+    },
+    {
+      "mod_line": [
+        4,
+        10,
+        13,
+        1
+      ],
+      "mod_code": [
+        "int cs [ 0 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( int j = ( i + 1 ) % n ; j != i ; j = j + 1 )",
+        "n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        10,
+        9
+      ],
+      "mod_code": [
+        "int cs [ 0 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int d , minn = 0 , minn = 1000000 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "incompatible types in assignment of ‘int’ to ‘int [0]’"
+    },
+    {
+      "mod_line": [
+        4,
+        10,
+        9,
+        1
+      ],
+      "mod_code": [
+        "int cs [ 0 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int d , minn = 0 , minn = 1000000 ;",
+        "n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        10,
+        1
+      ],
+      "mod_code": [
+        "int cs [ 0 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        13
+      ],
+      "mod_code": [
+        "int cs [ 0 ] ;",
+        "for ( int j = ( i + 1 ) % n ; j != i ; j = j + 1 )"
+      ],
+      "err_line": 7,
+      "err_msg": "incompatible types in assignment of ‘int’ to ‘int [0]’"
+    },
+    {
+      "mod_line": [
+        4,
+        13,
+        9
+      ],
+      "mod_code": [
+        "int cs [ 0 ] ;",
+        "for ( int j = ( i + 1 ) % n ; j != i ; j = j + 1 )",
+        "int d , minn = 0 , minn = 1000000 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "incompatible types in assignment of ‘int’ to ‘int [0]’"
+    },
+    {
+      "mod_line": [
+        4,
+        13,
+        9,
+        1
+      ],
+      "mod_code": [
+        "int cs [ 0 ] ;",
+        "for ( int j = ( i + 1 ) % n ; j != i ; j = j + 1 )",
+        "int d , minn = 0 , minn = 1000000 ;",
+        "n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        13,
+        1
+      ],
+      "mod_code": [
+        "int cs [ 0 ] ;",
+        "for ( int j = ( i + 1 ) % n ; j != i ; j = j + 1 )",
+        "n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        9
+      ],
+      "mod_code": [
+        "int cs [ 0 ] ;",
+        "int d , minn = 0 , minn = 1000000 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "incompatible types in assignment of ‘int’ to ‘int [0]’"
+    },
+    {
+      "mod_line": [
+        4,
+        9,
+        1
+      ],
+      "mod_code": [
+        "int cs [ 0 ] ;",
+        "int d , minn = 0 , minn = 1000000 ;",
+        "n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        1
+      ],
+      "mod_code": [
+        "int cs [ 0 ] ;",
+        "n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        10
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        13
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( int j = ( i + 1 ) % n ; j != i ; j = j + 1 )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        13,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( int j = ( i + 1 ) % n ; j != i ; j = j + 1 )",
+        "int d , minn = 0 , minn = 1000000 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        13,
+        1
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( int j = ( i + 1 ) % n ; j != i ; j = j + 1 )",
+        "n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int d , minn = 0 , minn = 1000000 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        9,
+        1
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int d , minn = 0 , minn = 1000000 ;",
+        "n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        1
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        13
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( int j = ( i + 1 ) % n ; j != i ; j = j + 1 )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        13,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( int j = ( i + 1 ) % n ; j != i ; j = j + 1 )",
+        "int d , minn = 0 , minn = 1000000 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        13,
+        9,
+        1
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( int j = ( i + 1 ) % n ; j != i ; j = j + 1 )",
+        "int d , minn = 0 , minn = 1000000 ;",
+        "n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        13,
+        1
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( int j = ( i + 1 ) % n ; j != i ; j = j + 1 )",
+        "n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int d , minn = 0 , minn = 1000000 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        9,
+        1
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int d , minn = 0 , minn = 1000000 ;",
+        "n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        1
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        13
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( int j = ( i + 1 ) % n ; j != i ; j = j + 1 )"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        13,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( int j = ( i + 1 ) % n ; j != i ; j = j + 1 )",
+        "int d , minn = 0 , minn = 1000000 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "redeclaration of ‘int minn’"
+    },
+    {
+      "mod_line": [
+        10,
+        13,
+        9,
+        1
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( int j = ( i + 1 ) % n ; j != i ; j = j + 1 )",
+        "int d , minn = 0 , minn = 1000000 ;",
+        "n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        13,
+        1
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( int j = ( i + 1 ) % n ; j != i ; j = j + 1 )",
+        "n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int d , minn = 0 , minn = 1000000 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "redeclaration of ‘int minn’"
+    },
+    {
+      "mod_line": [
+        10,
+        9,
+        1
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int d , minn = 0 , minn = 1000000 ;",
+        "n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        1
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        9
+      ],
+      "mod_code": [
+        "for ( int j = ( i + 1 ) % n ; j != i ; j = j + 1 )",
+        "int d , minn = 0 , minn = 1000000 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "redeclaration of ‘int minn’"
+    },
+    {
+      "mod_line": [
+        13,
+        9,
+        1
+      ],
+      "mod_code": [
+        "for ( int j = ( i + 1 ) % n ; j != i ; j = j + 1 )",
+        "int d , minn = 0 , minn = 1000000 ;",
+        "n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        1
+      ],
+      "mod_code": [
+        "for ( int j = ( i + 1 ) % n ; j != i ; j = j + 1 )",
+        "n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        1
+      ],
+      "mod_code": [
+        "int d , minn = 0 , minn = 1000000 ;",
+        "n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ was not declared in this scope"
+    }
+  ]
+}

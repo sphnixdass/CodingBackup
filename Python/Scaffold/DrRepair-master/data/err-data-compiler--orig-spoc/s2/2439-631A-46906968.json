@@ -1,0 +1,745 @@
+{
+  "meta": {
+    "index": 2439,
+    "hitid": "3KL228NDMVG4ZZH39ZEXV4PR6IMGK5",
+    "workerid": "A1R0Q9CUUBSM5F",
+    "probid": "631A",
+    "subid": "46906968"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create int n",
+      "code": "int n ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "let int array arr of size n",
+      "code": "int arr [ n ] ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "make int array brr of size n",
+      "code": "int brr [ n ] ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i = 1 to n , read arr [ i ]",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) cin >> arr [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 1 to n , read brr [ i ]",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) cin >> brr [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "make integer maxi = 0",
+      "code": "int maxi = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "for i = 1 to n",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "for j = 1 to n",
+      "code": "for ( int j = 1 ; j <= n ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "let int var1 = 0",
+      "code": "int var1 = 0 ;",
+      "indent": 3
+    },
+    {
+      "line": 11,
+      "text": "make integer var2 = 0",
+      "code": "int var2 = 0 ;",
+      "indent": 3
+    },
+    {
+      "line": 12,
+      "text": "for k = i to j",
+      "code": "for ( int k = i ; k <= j ; k ++ )",
+      "indent": 3
+    },
+    {
+      "line": 13,
+      "text": "set var1 to var1 | arr [ k ]",
+      "code": "var1 = var1 | arr [ k ] ;",
+      "indent": 4
+    },
+    {
+      "line": 14,
+      "text": "set var2 to var2 | brr [ k ]",
+      "code": "var2 = var2 | brr [ k ] ;",
+      "indent": 4
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 16,
+      "text": "set maxi to max ( maxi , var1 + var2 )",
+      "code": "maxi = max ( maxi , var1 + var2 ) ;",
+      "indent": 3
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "print maxi",
+      "code": "cout << maxi << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "int * arr [ n ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int*’)"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "int arr [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int arr [n]’"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "var2 = 0 ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘var2’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "var1 = var1 [ k ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "var2 = brr | brr [ k ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid operands of types ‘int [n]’ and ‘int’ to binary ‘operator|’"
+    },
+    {
+      "mod_line": [
+        12,
+        16,
+        13
+      ],
+      "mod_code": [
+        "for ( int k = i ; k < j ; k ++ )",
+        "int maxi = max ( maxi , var1 + var2 ) ;",
+        "var1 = var1 [ k ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        12,
+        16,
+        13,
+        10
+      ],
+      "mod_code": [
+        "for ( int k = i ; k < j ; k ++ )",
+        "int maxi = max ( maxi , var1 + var2 ) ;",
+        "var1 = var1 [ k ] ;",
+        "int var1 = 1 ;"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        12,
+        16,
+        13,
+        9
+      ],
+      "mod_code": [
+        "for ( int k = i ; k < j ; k ++ )",
+        "int maxi = max ( maxi , var1 + var2 ) ;",
+        "var1 = var1 [ k ] ;",
+        "for ( int j = 1 ; j < n ; j ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        12,
+        16,
+        13,
+        4
+      ],
+      "mod_code": [
+        "for ( int k = i ; k < j ; k ++ )",
+        "int maxi = max ( maxi , var1 + var2 ) ;",
+        "var1 = var1 [ k ] ;",
+        "int arr [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int arr [n]’"
+    },
+    {
+      "mod_line": [
+        12,
+        16,
+        10,
+        4
+      ],
+      "mod_code": [
+        "for ( int k = i ; k < j ; k ++ )",
+        "int maxi = max ( maxi , var1 + var2 ) ;",
+        "int var1 = 1 ;",
+        "int arr [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int arr [n]’"
+    },
+    {
+      "mod_line": [
+        12,
+        16,
+        9,
+        4
+      ],
+      "mod_code": [
+        "for ( int k = i ; k < j ; k ++ )",
+        "int maxi = max ( maxi , var1 + var2 ) ;",
+        "for ( int j = 1 ; j < n ; j ++ )",
+        "int arr [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int arr [n]’"
+    },
+    {
+      "mod_line": [
+        12,
+        16,
+        4
+      ],
+      "mod_code": [
+        "for ( int k = i ; k < j ; k ++ )",
+        "int maxi = max ( maxi , var1 + var2 ) ;",
+        "int arr [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int arr [n]’"
+    },
+    {
+      "mod_line": [
+        12,
+        13
+      ],
+      "mod_code": [
+        "for ( int k = i ; k < j ; k ++ )",
+        "var1 = var1 [ k ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        12,
+        13,
+        10
+      ],
+      "mod_code": [
+        "for ( int k = i ; k < j ; k ++ )",
+        "var1 = var1 [ k ] ;",
+        "int var1 = 1 ;"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        12,
+        13,
+        10,
+        9
+      ],
+      "mod_code": [
+        "for ( int k = i ; k < j ; k ++ )",
+        "var1 = var1 [ k ] ;",
+        "int var1 = 1 ;",
+        "for ( int j = 1 ; j < n ; j ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        12,
+        13,
+        10,
+        4
+      ],
+      "mod_code": [
+        "for ( int k = i ; k < j ; k ++ )",
+        "var1 = var1 [ k ] ;",
+        "int var1 = 1 ;",
+        "int arr [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int arr [n]’"
+    },
+    {
+      "mod_line": [
+        12,
+        13,
+        9
+      ],
+      "mod_code": [
+        "for ( int k = i ; k < j ; k ++ )",
+        "var1 = var1 [ k ] ;",
+        "for ( int j = 1 ; j < n ; j ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        12,
+        13,
+        9,
+        4
+      ],
+      "mod_code": [
+        "for ( int k = i ; k < j ; k ++ )",
+        "var1 = var1 [ k ] ;",
+        "for ( int j = 1 ; j < n ; j ++ )",
+        "int arr [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int arr [n]’"
+    },
+    {
+      "mod_line": [
+        12,
+        13,
+        4
+      ],
+      "mod_code": [
+        "for ( int k = i ; k < j ; k ++ )",
+        "var1 = var1 [ k ] ;",
+        "int arr [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int arr [n]’"
+    },
+    {
+      "mod_line": [
+        12,
+        10,
+        9,
+        4
+      ],
+      "mod_code": [
+        "for ( int k = i ; k < j ; k ++ )",
+        "int var1 = 1 ;",
+        "for ( int j = 1 ; j < n ; j ++ )",
+        "int arr [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int arr [n]’"
+    },
+    {
+      "mod_line": [
+        12,
+        10,
+        4
+      ],
+      "mod_code": [
+        "for ( int k = i ; k < j ; k ++ )",
+        "int var1 = 1 ;",
+        "int arr [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int arr [n]’"
+    },
+    {
+      "mod_line": [
+        12,
+        9,
+        4
+      ],
+      "mod_code": [
+        "for ( int k = i ; k < j ; k ++ )",
+        "for ( int j = 1 ; j < n ; j ++ )",
+        "int arr [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int arr [n]’"
+    },
+    {
+      "mod_line": [
+        12,
+        4
+      ],
+      "mod_code": [
+        "for ( int k = i ; k < j ; k ++ )",
+        "int arr [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int arr [n]’"
+    },
+    {
+      "mod_line": [
+        16,
+        13
+      ],
+      "mod_code": [
+        "int maxi = max ( maxi , var1 + var2 ) ;",
+        "var1 = var1 [ k ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        16,
+        13,
+        10
+      ],
+      "mod_code": [
+        "int maxi = max ( maxi , var1 + var2 ) ;",
+        "var1 = var1 [ k ] ;",
+        "int var1 = 1 ;"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        16,
+        13,
+        10,
+        9
+      ],
+      "mod_code": [
+        "int maxi = max ( maxi , var1 + var2 ) ;",
+        "var1 = var1 [ k ] ;",
+        "int var1 = 1 ;",
+        "for ( int j = 1 ; j < n ; j ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        16,
+        13,
+        10,
+        4
+      ],
+      "mod_code": [
+        "int maxi = max ( maxi , var1 + var2 ) ;",
+        "var1 = var1 [ k ] ;",
+        "int var1 = 1 ;",
+        "int arr [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int arr [n]’"
+    },
+    {
+      "mod_line": [
+        16,
+        13,
+        9
+      ],
+      "mod_code": [
+        "int maxi = max ( maxi , var1 + var2 ) ;",
+        "var1 = var1 [ k ] ;",
+        "for ( int j = 1 ; j < n ; j ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        16,
+        13,
+        9,
+        4
+      ],
+      "mod_code": [
+        "int maxi = max ( maxi , var1 + var2 ) ;",
+        "var1 = var1 [ k ] ;",
+        "for ( int j = 1 ; j < n ; j ++ )",
+        "int arr [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int arr [n]’"
+    },
+    {
+      "mod_line": [
+        16,
+        13,
+        4
+      ],
+      "mod_code": [
+        "int maxi = max ( maxi , var1 + var2 ) ;",
+        "var1 = var1 [ k ] ;",
+        "int arr [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int arr [n]’"
+    },
+    {
+      "mod_line": [
+        16,
+        10,
+        9,
+        4
+      ],
+      "mod_code": [
+        "int maxi = max ( maxi , var1 + var2 ) ;",
+        "int var1 = 1 ;",
+        "for ( int j = 1 ; j < n ; j ++ )",
+        "int arr [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int arr [n]’"
+    },
+    {
+      "mod_line": [
+        16,
+        10,
+        4
+      ],
+      "mod_code": [
+        "int maxi = max ( maxi , var1 + var2 ) ;",
+        "int var1 = 1 ;",
+        "int arr [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int arr [n]’"
+    },
+    {
+      "mod_line": [
+        16,
+        9,
+        4
+      ],
+      "mod_code": [
+        "int maxi = max ( maxi , var1 + var2 ) ;",
+        "for ( int j = 1 ; j < n ; j ++ )",
+        "int arr [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int arr [n]’"
+    },
+    {
+      "mod_line": [
+        16,
+        4
+      ],
+      "mod_code": [
+        "int maxi = max ( maxi , var1 + var2 ) ;",
+        "int arr [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int arr [n]’"
+    },
+    {
+      "mod_line": [
+        13,
+        10
+      ],
+      "mod_code": [
+        "var1 = var1 [ k ] ;",
+        "int var1 = 1 ;"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        13,
+        10,
+        9
+      ],
+      "mod_code": [
+        "var1 = var1 [ k ] ;",
+        "int var1 = 1 ;",
+        "for ( int j = 1 ; j < n ; j ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        13,
+        10,
+        9,
+        4
+      ],
+      "mod_code": [
+        "var1 = var1 [ k ] ;",
+        "int var1 = 1 ;",
+        "for ( int j = 1 ; j < n ; j ++ )",
+        "int arr [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int arr [n]’"
+    },
+    {
+      "mod_line": [
+        13,
+        10,
+        4
+      ],
+      "mod_code": [
+        "var1 = var1 [ k ] ;",
+        "int var1 = 1 ;",
+        "int arr [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int arr [n]’"
+    },
+    {
+      "mod_line": [
+        13,
+        9
+      ],
+      "mod_code": [
+        "var1 = var1 [ k ] ;",
+        "for ( int j = 1 ; j < n ; j ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        13,
+        9,
+        4
+      ],
+      "mod_code": [
+        "var1 = var1 [ k ] ;",
+        "for ( int j = 1 ; j < n ; j ++ )",
+        "int arr [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int arr [n]’"
+    },
+    {
+      "mod_line": [
+        13,
+        4
+      ],
+      "mod_code": [
+        "var1 = var1 [ k ] ;",
+        "int arr [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int arr [n]’"
+    },
+    {
+      "mod_line": [
+        10,
+        9,
+        4
+      ],
+      "mod_code": [
+        "int var1 = 1 ;",
+        "for ( int j = 1 ; j < n ; j ++ )",
+        "int arr [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int arr [n]’"
+    },
+    {
+      "mod_line": [
+        10,
+        4
+      ],
+      "mod_code": [
+        "int var1 = 1 ;",
+        "int arr [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int arr [n]’"
+    },
+    {
+      "mod_line": [
+        9,
+        4
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j < n ; j ++ )",
+        "int arr [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int arr [n]’"
+    }
+  ]
+}

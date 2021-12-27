@@ -1,0 +1,1145 @@
+{
+  "meta": {
+    "index": 2014,
+    "hitid": "3P7QK0GJ3TF9908IALWIGFJ308XZ2U",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "1027A",
+    "subid": "48439069"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare new constant integer variable mod with value 998244353",
+      "code": "const int mod = 998244353 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "long long function qpow with long long arguments x and y",
+      "code": "long long qpow ( long long x , long long y )",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "create new long long s with value 1",
+      "code": "long long s = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "while y is not 0",
+      "code": "while ( y )",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "if y & 1 is 1 , assign s * x % mod to s",
+      "code": "if ( y & 1 ) s = s * x % mod ;",
+      "indent": 2
+    },
+    {
+      "line": 5,
+      "text": "assign x squared modulo mod to x",
+      "code": "x = x * x % mod ;",
+      "indent": 2
+    },
+    {
+      "line": 6,
+      "text": "change y to y > > 1",
+      "code": "y >>= 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "return s",
+      "code": "return s ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 10,
+      "text": "read is an inlined long long function",
+      "code": "inline long long read ( )",
+      "indent": 0
+    },
+    {
+      "line": 11,
+      "text": "define long longs x = 0 and f = 1",
+      "code": "long long x = 0 , f = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "create char variable ch with value from the input",
+      "code": "char ch = getchar ( ) ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "while ch < ' 0 ' or ch > ' 9 '",
+      "code": "while ( ch < ' 0 ' || ch > ' 9 ' )",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "if ch = ' - ' , set the value of f to - 1",
+      "code": "if ( ch == ' - ' ) f = - 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "change ch to the char , read from the input",
+      "code": "ch = getchar ( ) ;",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "while ch is a digit character , change x to x * 10 + ch - ' 0 ' and read ch from the input again",
+      "code": "while ( ch >= ' 0 ' && ch <= ' 9 ' ) x = x * 10 + ch - ' 0 ' , ch = getchar ( ) ;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "return x * f",
+      "code": "return x * f ;",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 20,
+      "text": "long long function inve with long long argument x",
+      "code": "long long inve ( long long x )",
+      "indent": 0
+    },
+    {
+      "line": 21,
+      "text": "return 1 if x = 1 or ( mod - mod / x ) * inve ( mod % x ) % mod otherwise",
+      "code": "return x == 1 ? 1 : ( mod - mod / x ) * inve ( mod % x ) % mod ;",
+      "indent": 1
+    },
+    {
+      "line": 22,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 23,
+      "text": "define constant integer variable N = 1e7 + 5",
+      "code": "const int N = 1e7 + 5 ;",
+      "indent": 0
+    },
+    {
+      "line": 24,
+      "text": "define an arrays of integers vis and prime with size N",
+      "code": "int vis [ N ] , prime [ N ] ;",
+      "indent": 0
+    },
+    {
+      "line": 25,
+      "text": "declare integer variable with name pri_num",
+      "code": "int pri_num ;",
+      "indent": 0
+    },
+    {
+      "line": 26,
+      "text": "init is a void function",
+      "code": "void init ( )",
+      "indent": 0
+    },
+    {
+      "line": 27,
+      "text": "for i from 2 to N exclusive",
+      "code": "for ( int i = 2 ; i < N ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 28,
+      "text": "if vis [ i ] is 0",
+      "code": "if ( ! vis [ i ] )",
+      "indent": 2
+    },
+    {
+      "line": 29,
+      "text": "assign i to prime [ pri_num ] and increment pri_num",
+      "code": "prime [ pri_num ++ ] = i ;",
+      "indent": 3
+    },
+    {
+      "line": 30,
+      "text": "for integer j = i to N exclusive increasing j by i , change the value of vis [ j ] to 1",
+      "code": "for ( int j = i ; j < N ; j += i ) vis [ j ] = 1 ;",
+      "indent": 3
+    },
+    {
+      "line": 31,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 32,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 33,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 34,
+      "text": "create new integer t",
+      "code": "int t ;",
+      "indent": 1
+    },
+    {
+      "line": 35,
+      "text": "read t in a loop , and decrement it if t is not 0",
+      "code": "for ( cin >> t ; t ; t -- )",
+      "indent": 1
+    },
+    {
+      "line": 36,
+      "text": "declare integer n",
+      "code": "int n ;",
+      "indent": 2
+    },
+    {
+      "line": 37,
+      "text": "declare new string called s",
+      "code": "string s ;",
+      "indent": 2
+    },
+    {
+      "line": 38,
+      "text": "read n and s",
+      "code": "cin >> n >> s ;",
+      "indent": 2
+    },
+    {
+      "line": 39,
+      "text": "define integer variable flag with value 1",
+      "code": "int flag = 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 40,
+      "text": "create ints l = 0 and r = n - 1",
+      "code": "int l = 0 , r = n - 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 41,
+      "text": "while l < r",
+      "code": "while ( l < r )",
+      "indent": 2
+    },
+    {
+      "line": 42,
+      "text": "if s [ l ] = s [ r ] or absolute value of s [ l ] - s [ r ] = 2",
+      "code": "if ( s [ l ] == s [ r ] || abs ( s [ l ] - s [ r ] ) == 2 )",
+      "indent": 3
+    },
+    {
+      "line": 43,
+      "text": "DUMMY",
+      "code": ";",
+      "indent": 4
+    },
+    {
+      "line": 44,
+      "text": "else",
+      "code": "else",
+      "indent": 3
+    },
+    {
+      "line": 45,
+      "text": "assign the new value = 0 to flag",
+      "code": "flag = 0 ;",
+      "indent": 4
+    },
+    {
+      "line": 46,
+      "text": "break",
+      "code": "break ;",
+      "indent": 4
+    },
+    {
+      "line": 47,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 48,
+      "text": "increment l by one and decrement r",
+      "code": "l ++ , r -- ;",
+      "indent": 3
+    },
+    {
+      "line": 49,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 50,
+      "text": "if flag is true",
+      "code": "if ( flag )",
+      "indent": 2
+    },
+    {
+      "line": 51,
+      "text": "print \" YES \"",
+      "code": "puts ( \" YES \" ) ;",
+      "indent": 3
+    },
+    {
+      "line": 52,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 53,
+      "text": "print \" NO \"",
+      "code": "puts ( \" NO \" ) ;",
+      "indent": 3
+    },
+    {
+      "line": 54,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 55,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 56,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "while ( isdigit ( ch , ch ) )"
+      ],
+      "err_line": 17,
+      "err_msg": "no matching function for call to ‘isdigit(char&, char&)’"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "long long qpow ( long long x , long long b )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘y’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "inlined ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘inlined’ does not name a type"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "char ch = input ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘input’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        20
+      ],
+      "mod_code": [
+        "long long inve ( long long x ) ;"
+      ],
+      "err_line": 21,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        24
+      ],
+      "mod_code": [
+        "int prime [ N ] , prime [ N ] ;"
+      ],
+      "err_line": 24,
+      "err_msg": "redefinition of ‘int prime [10000005]’"
+    },
+    {
+      "mod_line": [
+        26
+      ],
+      "mod_code": [
+        "void init ( ) { }"
+      ],
+      "err_line": 27,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        27
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i < N ; i ++ )"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        34
+      ],
+      "mod_code": [
+        "int n ;"
+      ],
+      "err_line": 35,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        37
+      ],
+      "mod_code": [
+        "string n ;"
+      ],
+      "err_line": 37,
+      "err_msg": "conflicting declaration ‘std::__cxx11::string n’"
+    },
+    {
+      "mod_line": [
+        40
+      ],
+      "mod_code": [
+        "int r = 0 , r = n - 1 ;"
+      ],
+      "err_line": 40,
+      "err_msg": "redeclaration of ‘int r’"
+    },
+    {
+      "mod_line": [
+        46
+      ],
+      "mod_code": [
+        "break break ;"
+      ],
+      "err_line": 46,
+      "err_msg": "expected ‘;’ before ‘break’"
+    },
+    {
+      "mod_line": [
+        48
+      ],
+      "mod_code": [
+        "l ++ one ++ ;"
+      ],
+      "err_line": 48,
+      "err_msg": "expected ‘;’ before ‘one’"
+    },
+    {
+      "mod_line": [
+        50
+      ],
+      "mod_code": [
+        "if ( flag ) return ;"
+      ],
+      "err_line": 50,
+      "err_msg": "return-statement with no value, in function returning ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        17,
+        35
+      ],
+      "mod_code": [
+        "while ( isdigit ( ch , ch ) )",
+        "while ( cin >> t )"
+      ],
+      "err_line": 17,
+      "err_msg": "no matching function for call to ‘isdigit(char&, char&)’"
+    },
+    {
+      "mod_line": [
+        17,
+        35,
+        42
+      ],
+      "mod_code": [
+        "while ( isdigit ( ch , ch ) )",
+        "while ( cin >> t )",
+        "if ( s [ l ] == s [ r ] || abs ( s [ l ] - s [ r ] ) )"
+      ],
+      "err_line": 17,
+      "err_msg": "no matching function for call to ‘isdigit(char&, char&)’"
+    },
+    {
+      "mod_line": [
+        17,
+        35,
+        42,
+        41
+      ],
+      "mod_code": [
+        "while ( isdigit ( ch , ch ) )",
+        "while ( cin >> t )",
+        "if ( s [ l ] == s [ r ] || abs ( s [ l ] - s [ r ] ) )",
+        "while ( l < ' r ' )"
+      ],
+      "err_line": 17,
+      "err_msg": "no matching function for call to ‘isdigit(char&, char&)’"
+    },
+    {
+      "mod_line": [
+        17,
+        35,
+        42,
+        50
+      ],
+      "mod_code": [
+        "while ( isdigit ( ch , ch ) )",
+        "while ( cin >> t )",
+        "if ( s [ l ] == s [ r ] || abs ( s [ l ] - s [ r ] ) )",
+        "if ( flag ) return ;"
+      ],
+      "err_line": 17,
+      "err_msg": "no matching function for call to ‘isdigit(char&, char&)’"
+    },
+    {
+      "mod_line": [
+        17,
+        35,
+        42,
+        1
+      ],
+      "mod_code": [
+        "while ( isdigit ( ch , ch ) )",
+        "while ( cin >> t )",
+        "if ( s [ l ] == s [ r ] || abs ( s [ l ] - s [ r ] ) )",
+        "long long qpow ( long long x , long long b )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘y’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17,
+        35,
+        41
+      ],
+      "mod_code": [
+        "while ( isdigit ( ch , ch ) )",
+        "while ( cin >> t )",
+        "while ( l < ' r ' )"
+      ],
+      "err_line": 17,
+      "err_msg": "no matching function for call to ‘isdigit(char&, char&)’"
+    },
+    {
+      "mod_line": [
+        17,
+        35,
+        41,
+        50
+      ],
+      "mod_code": [
+        "while ( isdigit ( ch , ch ) )",
+        "while ( cin >> t )",
+        "while ( l < ' r ' )",
+        "if ( flag ) return ;"
+      ],
+      "err_line": 17,
+      "err_msg": "no matching function for call to ‘isdigit(char&, char&)’"
+    },
+    {
+      "mod_line": [
+        17,
+        35,
+        41,
+        1
+      ],
+      "mod_code": [
+        "while ( isdigit ( ch , ch ) )",
+        "while ( cin >> t )",
+        "while ( l < ' r ' )",
+        "long long qpow ( long long x , long long b )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘y’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17,
+        35,
+        50
+      ],
+      "mod_code": [
+        "while ( isdigit ( ch , ch ) )",
+        "while ( cin >> t )",
+        "if ( flag ) return ;"
+      ],
+      "err_line": 17,
+      "err_msg": "no matching function for call to ‘isdigit(char&, char&)’"
+    },
+    {
+      "mod_line": [
+        17,
+        35,
+        50,
+        1
+      ],
+      "mod_code": [
+        "while ( isdigit ( ch , ch ) )",
+        "while ( cin >> t )",
+        "if ( flag ) return ;",
+        "long long qpow ( long long x , long long b )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘y’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17,
+        35,
+        1
+      ],
+      "mod_code": [
+        "while ( isdigit ( ch , ch ) )",
+        "while ( cin >> t )",
+        "long long qpow ( long long x , long long b )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘y’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17,
+        42
+      ],
+      "mod_code": [
+        "while ( isdigit ( ch , ch ) )",
+        "if ( s [ l ] == s [ r ] || abs ( s [ l ] - s [ r ] ) )"
+      ],
+      "err_line": 17,
+      "err_msg": "no matching function for call to ‘isdigit(char&, char&)’"
+    },
+    {
+      "mod_line": [
+        17,
+        42,
+        41
+      ],
+      "mod_code": [
+        "while ( isdigit ( ch , ch ) )",
+        "if ( s [ l ] == s [ r ] || abs ( s [ l ] - s [ r ] ) )",
+        "while ( l < ' r ' )"
+      ],
+      "err_line": 17,
+      "err_msg": "no matching function for call to ‘isdigit(char&, char&)’"
+    },
+    {
+      "mod_line": [
+        17,
+        42,
+        41,
+        50
+      ],
+      "mod_code": [
+        "while ( isdigit ( ch , ch ) )",
+        "if ( s [ l ] == s [ r ] || abs ( s [ l ] - s [ r ] ) )",
+        "while ( l < ' r ' )",
+        "if ( flag ) return ;"
+      ],
+      "err_line": 17,
+      "err_msg": "no matching function for call to ‘isdigit(char&, char&)’"
+    },
+    {
+      "mod_line": [
+        17,
+        42,
+        41,
+        1
+      ],
+      "mod_code": [
+        "while ( isdigit ( ch , ch ) )",
+        "if ( s [ l ] == s [ r ] || abs ( s [ l ] - s [ r ] ) )",
+        "while ( l < ' r ' )",
+        "long long qpow ( long long x , long long b )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘y’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17,
+        42,
+        50
+      ],
+      "mod_code": [
+        "while ( isdigit ( ch , ch ) )",
+        "if ( s [ l ] == s [ r ] || abs ( s [ l ] - s [ r ] ) )",
+        "if ( flag ) return ;"
+      ],
+      "err_line": 17,
+      "err_msg": "no matching function for call to ‘isdigit(char&, char&)’"
+    },
+    {
+      "mod_line": [
+        17,
+        42,
+        50,
+        1
+      ],
+      "mod_code": [
+        "while ( isdigit ( ch , ch ) )",
+        "if ( s [ l ] == s [ r ] || abs ( s [ l ] - s [ r ] ) )",
+        "if ( flag ) return ;",
+        "long long qpow ( long long x , long long b )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘y’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17,
+        42,
+        1
+      ],
+      "mod_code": [
+        "while ( isdigit ( ch , ch ) )",
+        "if ( s [ l ] == s [ r ] || abs ( s [ l ] - s [ r ] ) )",
+        "long long qpow ( long long x , long long b )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘y’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17,
+        41
+      ],
+      "mod_code": [
+        "while ( isdigit ( ch , ch ) )",
+        "while ( l < ' r ' )"
+      ],
+      "err_line": 17,
+      "err_msg": "no matching function for call to ‘isdigit(char&, char&)’"
+    },
+    {
+      "mod_line": [
+        17,
+        41,
+        50
+      ],
+      "mod_code": [
+        "while ( isdigit ( ch , ch ) )",
+        "while ( l < ' r ' )",
+        "if ( flag ) return ;"
+      ],
+      "err_line": 17,
+      "err_msg": "no matching function for call to ‘isdigit(char&, char&)’"
+    },
+    {
+      "mod_line": [
+        17,
+        41,
+        50,
+        1
+      ],
+      "mod_code": [
+        "while ( isdigit ( ch , ch ) )",
+        "while ( l < ' r ' )",
+        "if ( flag ) return ;",
+        "long long qpow ( long long x , long long b )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘y’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17,
+        41,
+        1
+      ],
+      "mod_code": [
+        "while ( isdigit ( ch , ch ) )",
+        "while ( l < ' r ' )",
+        "long long qpow ( long long x , long long b )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘y’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17,
+        50
+      ],
+      "mod_code": [
+        "while ( isdigit ( ch , ch ) )",
+        "if ( flag ) return ;"
+      ],
+      "err_line": 17,
+      "err_msg": "no matching function for call to ‘isdigit(char&, char&)’"
+    },
+    {
+      "mod_line": [
+        17,
+        50,
+        1
+      ],
+      "mod_code": [
+        "while ( isdigit ( ch , ch ) )",
+        "if ( flag ) return ;",
+        "long long qpow ( long long x , long long b )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘y’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17,
+        1
+      ],
+      "mod_code": [
+        "while ( isdigit ( ch , ch ) )",
+        "long long qpow ( long long x , long long b )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘y’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        35,
+        42,
+        41,
+        50
+      ],
+      "mod_code": [
+        "while ( cin >> t )",
+        "if ( s [ l ] == s [ r ] || abs ( s [ l ] - s [ r ] ) )",
+        "while ( l < ' r ' )",
+        "if ( flag ) return ;"
+      ],
+      "err_line": 50,
+      "err_msg": "return-statement with no value, in function returning ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        35,
+        42,
+        41,
+        1
+      ],
+      "mod_code": [
+        "while ( cin >> t )",
+        "if ( s [ l ] == s [ r ] || abs ( s [ l ] - s [ r ] ) )",
+        "while ( l < ' r ' )",
+        "long long qpow ( long long x , long long b )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘y’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        35,
+        42,
+        50
+      ],
+      "mod_code": [
+        "while ( cin >> t )",
+        "if ( s [ l ] == s [ r ] || abs ( s [ l ] - s [ r ] ) )",
+        "if ( flag ) return ;"
+      ],
+      "err_line": 50,
+      "err_msg": "return-statement with no value, in function returning ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        35,
+        42,
+        50,
+        1
+      ],
+      "mod_code": [
+        "while ( cin >> t )",
+        "if ( s [ l ] == s [ r ] || abs ( s [ l ] - s [ r ] ) )",
+        "if ( flag ) return ;",
+        "long long qpow ( long long x , long long b )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘y’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        35,
+        42,
+        1
+      ],
+      "mod_code": [
+        "while ( cin >> t )",
+        "if ( s [ l ] == s [ r ] || abs ( s [ l ] - s [ r ] ) )",
+        "long long qpow ( long long x , long long b )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘y’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        35,
+        41,
+        50
+      ],
+      "mod_code": [
+        "while ( cin >> t )",
+        "while ( l < ' r ' )",
+        "if ( flag ) return ;"
+      ],
+      "err_line": 50,
+      "err_msg": "return-statement with no value, in function returning ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        35,
+        41,
+        50,
+        1
+      ],
+      "mod_code": [
+        "while ( cin >> t )",
+        "while ( l < ' r ' )",
+        "if ( flag ) return ;",
+        "long long qpow ( long long x , long long b )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘y’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        35,
+        41,
+        1
+      ],
+      "mod_code": [
+        "while ( cin >> t )",
+        "while ( l < ' r ' )",
+        "long long qpow ( long long x , long long b )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘y’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        35,
+        50
+      ],
+      "mod_code": [
+        "while ( cin >> t )",
+        "if ( flag ) return ;"
+      ],
+      "err_line": 50,
+      "err_msg": "return-statement with no value, in function returning ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        35,
+        50,
+        1
+      ],
+      "mod_code": [
+        "while ( cin >> t )",
+        "if ( flag ) return ;",
+        "long long qpow ( long long x , long long b )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘y’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        35,
+        1
+      ],
+      "mod_code": [
+        "while ( cin >> t )",
+        "long long qpow ( long long x , long long b )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘y’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        42,
+        41,
+        50
+      ],
+      "mod_code": [
+        "if ( s [ l ] == s [ r ] || abs ( s [ l ] - s [ r ] ) )",
+        "while ( l < ' r ' )",
+        "if ( flag ) return ;"
+      ],
+      "err_line": 50,
+      "err_msg": "return-statement with no value, in function returning ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        42,
+        41,
+        50,
+        1
+      ],
+      "mod_code": [
+        "if ( s [ l ] == s [ r ] || abs ( s [ l ] - s [ r ] ) )",
+        "while ( l < ' r ' )",
+        "if ( flag ) return ;",
+        "long long qpow ( long long x , long long b )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘y’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        42,
+        41,
+        1
+      ],
+      "mod_code": [
+        "if ( s [ l ] == s [ r ] || abs ( s [ l ] - s [ r ] ) )",
+        "while ( l < ' r ' )",
+        "long long qpow ( long long x , long long b )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘y’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        42,
+        50
+      ],
+      "mod_code": [
+        "if ( s [ l ] == s [ r ] || abs ( s [ l ] - s [ r ] ) )",
+        "if ( flag ) return ;"
+      ],
+      "err_line": 50,
+      "err_msg": "return-statement with no value, in function returning ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        42,
+        50,
+        1
+      ],
+      "mod_code": [
+        "if ( s [ l ] == s [ r ] || abs ( s [ l ] - s [ r ] ) )",
+        "if ( flag ) return ;",
+        "long long qpow ( long long x , long long b )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘y’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        42,
+        1
+      ],
+      "mod_code": [
+        "if ( s [ l ] == s [ r ] || abs ( s [ l ] - s [ r ] ) )",
+        "long long qpow ( long long x , long long b )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘y’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        41,
+        50
+      ],
+      "mod_code": [
+        "while ( l < ' r ' )",
+        "if ( flag ) return ;"
+      ],
+      "err_line": 50,
+      "err_msg": "return-statement with no value, in function returning ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        41,
+        50,
+        1
+      ],
+      "mod_code": [
+        "while ( l < ' r ' )",
+        "if ( flag ) return ;",
+        "long long qpow ( long long x , long long b )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘y’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        41,
+        1
+      ],
+      "mod_code": [
+        "while ( l < ' r ' )",
+        "long long qpow ( long long x , long long b )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘y’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        50,
+        1
+      ],
+      "mod_code": [
+        "if ( flag ) return ;",
+        "long long qpow ( long long x , long long b )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘y’ was not declared in this scope"
+    }
+  ]
+}

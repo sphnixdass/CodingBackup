@@ -1,0 +1,167 @@
+{
+  "meta": {
+    "index": 739,
+    "hitid": "31GN6YMHLPMYK4KBTDRH8T2PH0MSWU",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "985A",
+    "subid": "48067322"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create long long n , create long long array p with size 1000",
+      "code": "long long n , p [ 1000 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "for i = 1 to n / 2 inclusive , read p [ i ]",
+      "code": "for ( int i = 1 ; i <= n / 2 ; i ++ ) cin >> p [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "sort elements from p + 1 to p + ( n / 2 ) + 1",
+      "code": "sort ( p + 1 , p + ( n / 2 ) + 1 ) ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "create long long B with B = 0",
+      "code": "long long B = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "create long long W with W = 0",
+      "code": "long long W = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for i = 1 to n / 2 inclusive",
+      "code": "for ( int i = 1 ; i <= n / 2 ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "increment B by absolute value of ( p [ i ] - ( i * 2 - 1 ) )",
+      "code": "B += abs ( p [ i ] - ( i * 2 - 1 ) ) ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "increment W by absolute value of ( p [ i ] - ( i * 2 ) )",
+      "code": "W += abs ( p [ i ] - ( i * 2 ) ) ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "print minimum of B and W print newline",
+      "code": "cout << min ( B , W ) << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "long long n , p , p [ 1000 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘long long int p [1000]’"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n / 2 ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        0,
+        7
+      ],
+      "mod_code": [
+        "long long n , p , p [ 1000 ] ;",
+        "for ( i = 1 ; i <= n / 2 ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘long long int p [1000]’"
+    },
+    {
+      "mod_line": [
+        0,
+        7,
+        11
+      ],
+      "mod_code": [
+        "long long n , p , p [ 1000 ] ;",
+        "for ( i = 1 ; i <= n / 2 ; i ++ )",
+        "cout << min ( B , W ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘long long int p [1000]’"
+    },
+    {
+      "mod_line": [
+        0,
+        11
+      ],
+      "mod_code": [
+        "long long n , p , p [ 1000 ] ;",
+        "cout << min ( B , W ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘long long int p [1000]’"
+    },
+    {
+      "mod_line": [
+        7,
+        11
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n / 2 ; i ++ )",
+        "cout << min ( B , W ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    }
+  ]
+}

@@ -1,0 +1,577 @@
+{
+  "meta": {
+    "index": 260,
+    "hitid": "3126F2F5F8X7QCISGWTHRIQENC9EPJ",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "209A",
+    "subid": "1898884"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create constant integer mod with mod = 1000000007",
+      "code": "const int mod = 1000000007 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create 2d integer array d with size 1000006 by 2",
+      "code": "int d [ 1000006 ] [ 2 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "create integer n",
+      "code": "int n ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "set d [ 0 ] [ 0 ] to d [ 0 ] [ 1 ] to 1",
+      "code": "d [ 0 ] [ 0 ] = d [ 0 ] [ 1 ] = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 1 to integer casted n inclusive",
+      "code": "for ( int i = 1 ; i <= int ( n ) ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for j = 0 to integer casted 2 exclusive",
+      "code": "for ( int j = 0 ; j < int ( 2 ) ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "set d [ i ] [ j ] to d [ i - 1 ] [ j ]",
+      "code": "d [ i ] [ j ] = d [ i - 1 ] [ j ] ;",
+      "indent": 3
+    },
+    {
+      "line": 9,
+      "text": "if i bitwise and 1 is j , set d [ i ] [ j ] to ( d [ i ] [ j ] + d [ i - 1 ] [ j ^ 1 ] ) % mod",
+      "code": "if ( ( i & 1 ) == j ) d [ i ] [ j ] = ( d [ i ] [ j ] + d [ i - 1 ] [ j ^ 1 ] ) % mod ;",
+      "indent": 3
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "set ans to ( d [ n ] [ 0 ] + d [ n ] [ 1 ] ) % mod",
+      "code": "int ans = ( d [ n ] [ 0 ] + d [ n ] [ 1 ] ) % mod ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "print ( ans + mod - 2 ) % mod print newline",
+      "code": "cout << ( ans + mod - 2 ) % mod << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "ans = ( d [ n ] [ 0 ] + d [ n ] [ 1 ] ) % mod ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘ans’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int d [ 1000006 1000006 ] [ 2 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected ‘]’ before numeric constant"
+    },
+    {
+      "mod_line": [
+        9,
+        12
+      ],
+      "mod_code": [
+        "if ( i & 1 ) d [ i ] [ j ] = ( d [ i ] [ j ] + d [ i - 1 ] [ j ] ) % mod ;",
+        "ans = ( d [ n ] [ 0 ] + d [ n ] [ 1 ] ) % mod ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘ans’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        5
+      ],
+      "mod_code": [
+        "if ( i & 1 ) d [ i ] [ j ] = ( d [ i ] [ j ] + d [ i - 1 ] [ j ] ) % mod ;",
+        "ans = ( d [ n ] [ 0 ] + d [ n ] [ 1 ] ) % mod ;",
+        "d [ 0 ] [ 1 ] = d [ 0 ] [ 1 ] = 1 ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘ans’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        5,
+        8
+      ],
+      "mod_code": [
+        "if ( i & 1 ) d [ i ] [ j ] = ( d [ i ] [ j ] + d [ i - 1 ] [ j ] ) % mod ;",
+        "ans = ( d [ n ] [ 0 ] + d [ n ] [ 1 ] ) % mod ;",
+        "d [ 0 ] [ 1 ] = d [ 0 ] [ 1 ] = 1 ;",
+        "d [ i ] [ j ] *= j ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘ans’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        5,
+        1
+      ],
+      "mod_code": [
+        "if ( i & 1 ) d [ i ] [ j ] = ( d [ i ] [ j ] + d [ i - 1 ] [ j ] ) % mod ;",
+        "ans = ( d [ n ] [ 0 ] + d [ n ] [ 1 ] ) % mod ;",
+        "d [ 0 ] [ 1 ] = d [ 0 ] [ 1 ] = 1 ;",
+        "int d [ 1000006 1000006 ] [ 2 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected ‘]’ before numeric constant"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        8
+      ],
+      "mod_code": [
+        "if ( i & 1 ) d [ i ] [ j ] = ( d [ i ] [ j ] + d [ i - 1 ] [ j ] ) % mod ;",
+        "ans = ( d [ n ] [ 0 ] + d [ n ] [ 1 ] ) % mod ;",
+        "d [ i ] [ j ] *= j ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘ans’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        8,
+        1
+      ],
+      "mod_code": [
+        "if ( i & 1 ) d [ i ] [ j ] = ( d [ i ] [ j ] + d [ i - 1 ] [ j ] ) % mod ;",
+        "ans = ( d [ n ] [ 0 ] + d [ n ] [ 1 ] ) % mod ;",
+        "d [ i ] [ j ] *= j ;",
+        "int d [ 1000006 1000006 ] [ 2 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected ‘]’ before numeric constant"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        1
+      ],
+      "mod_code": [
+        "if ( i & 1 ) d [ i ] [ j ] = ( d [ i ] [ j ] + d [ i - 1 ] [ j ] ) % mod ;",
+        "ans = ( d [ n ] [ 0 ] + d [ n ] [ 1 ] ) % mod ;",
+        "int d [ 1000006 1000006 ] [ 2 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected ‘]’ before numeric constant"
+    },
+    {
+      "mod_line": [
+        9,
+        5,
+        8,
+        1
+      ],
+      "mod_code": [
+        "if ( i & 1 ) d [ i ] [ j ] = ( d [ i ] [ j ] + d [ i - 1 ] [ j ] ) % mod ;",
+        "d [ 0 ] [ 1 ] = d [ 0 ] [ 1 ] = 1 ;",
+        "d [ i ] [ j ] *= j ;",
+        "int d [ 1000006 1000006 ] [ 2 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected ‘]’ before numeric constant"
+    },
+    {
+      "mod_line": [
+        9,
+        5,
+        1
+      ],
+      "mod_code": [
+        "if ( i & 1 ) d [ i ] [ j ] = ( d [ i ] [ j ] + d [ i - 1 ] [ j ] ) % mod ;",
+        "d [ 0 ] [ 1 ] = d [ 0 ] [ 1 ] = 1 ;",
+        "int d [ 1000006 1000006 ] [ 2 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected ‘]’ before numeric constant"
+    },
+    {
+      "mod_line": [
+        9,
+        8,
+        1
+      ],
+      "mod_code": [
+        "if ( i & 1 ) d [ i ] [ j ] = ( d [ i ] [ j ] + d [ i - 1 ] [ j ] ) % mod ;",
+        "d [ i ] [ j ] *= j ;",
+        "int d [ 1000006 1000006 ] [ 2 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected ‘]’ before numeric constant"
+    },
+    {
+      "mod_line": [
+        9,
+        1
+      ],
+      "mod_code": [
+        "if ( i & 1 ) d [ i ] [ j ] = ( d [ i ] [ j ] + d [ i - 1 ] [ j ] ) % mod ;",
+        "int d [ 1000006 1000006 ] [ 2 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected ‘]’ before numeric constant"
+    },
+    {
+      "mod_line": [
+        12,
+        5
+      ],
+      "mod_code": [
+        "ans = ( d [ n ] [ 0 ] + d [ n ] [ 1 ] ) % mod ;",
+        "d [ 0 ] [ 1 ] = d [ 0 ] [ 1 ] = 1 ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘ans’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        5,
+        9
+      ],
+      "mod_code": [
+        "ans = ( d [ n ] [ 0 ] + d [ n ] [ 1 ] ) % mod ;",
+        "d [ 0 ] [ 1 ] = d [ 0 ] [ 1 ] = 1 ;",
+        "if ( i & 1 ) { d [ i ] [ j ] = ( d [ i ] [ j ] + d [ i - 1 ] [ j ] ) % mod ; }"
+      ],
+      "err_line": 12,
+      "err_msg": "‘ans’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        5,
+        9,
+        8
+      ],
+      "mod_code": [
+        "ans = ( d [ n ] [ 0 ] + d [ n ] [ 1 ] ) % mod ;",
+        "d [ 0 ] [ 1 ] = d [ 0 ] [ 1 ] = 1 ;",
+        "if ( i & 1 ) { d [ i ] [ j ] = ( d [ i ] [ j ] + d [ i - 1 ] [ j ] ) % mod ; }",
+        "d [ i ] [ j ] *= j ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘ans’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        5,
+        9,
+        1
+      ],
+      "mod_code": [
+        "ans = ( d [ n ] [ 0 ] + d [ n ] [ 1 ] ) % mod ;",
+        "d [ 0 ] [ 1 ] = d [ 0 ] [ 1 ] = 1 ;",
+        "if ( i & 1 ) { d [ i ] [ j ] = ( d [ i ] [ j ] + d [ i - 1 ] [ j ] ) % mod ; }",
+        "int d [ 1000006 1000006 ] [ 2 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected ‘]’ before numeric constant"
+    },
+    {
+      "mod_line": [
+        12,
+        5,
+        8
+      ],
+      "mod_code": [
+        "ans = ( d [ n ] [ 0 ] + d [ n ] [ 1 ] ) % mod ;",
+        "d [ 0 ] [ 1 ] = d [ 0 ] [ 1 ] = 1 ;",
+        "d [ i ] [ j ] *= j ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘ans’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        5,
+        8,
+        1
+      ],
+      "mod_code": [
+        "ans = ( d [ n ] [ 0 ] + d [ n ] [ 1 ] ) % mod ;",
+        "d [ 0 ] [ 1 ] = d [ 0 ] [ 1 ] = 1 ;",
+        "d [ i ] [ j ] *= j ;",
+        "int d [ 1000006 1000006 ] [ 2 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected ‘]’ before numeric constant"
+    },
+    {
+      "mod_line": [
+        12,
+        5,
+        1
+      ],
+      "mod_code": [
+        "ans = ( d [ n ] [ 0 ] + d [ n ] [ 1 ] ) % mod ;",
+        "d [ 0 ] [ 1 ] = d [ 0 ] [ 1 ] = 1 ;",
+        "int d [ 1000006 1000006 ] [ 2 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected ‘]’ before numeric constant"
+    },
+    {
+      "mod_line": [
+        12,
+        9
+      ],
+      "mod_code": [
+        "ans = ( d [ n ] [ 0 ] + d [ n ] [ 1 ] ) % mod ;",
+        "if ( i & 1 ) { d [ i ] [ j ] = ( d [ i ] [ j ] + d [ i - 1 ] [ j ] ) % mod ; }"
+      ],
+      "err_line": 12,
+      "err_msg": "‘ans’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        9,
+        8
+      ],
+      "mod_code": [
+        "ans = ( d [ n ] [ 0 ] + d [ n ] [ 1 ] ) % mod ;",
+        "if ( i & 1 ) { d [ i ] [ j ] = ( d [ i ] [ j ] + d [ i - 1 ] [ j ] ) % mod ; }",
+        "d [ i ] [ j ] *= j ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘ans’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        9,
+        8,
+        1
+      ],
+      "mod_code": [
+        "ans = ( d [ n ] [ 0 ] + d [ n ] [ 1 ] ) % mod ;",
+        "if ( i & 1 ) { d [ i ] [ j ] = ( d [ i ] [ j ] + d [ i - 1 ] [ j ] ) % mod ; }",
+        "d [ i ] [ j ] *= j ;",
+        "int d [ 1000006 1000006 ] [ 2 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected ‘]’ before numeric constant"
+    },
+    {
+      "mod_line": [
+        12,
+        9,
+        1
+      ],
+      "mod_code": [
+        "ans = ( d [ n ] [ 0 ] + d [ n ] [ 1 ] ) % mod ;",
+        "if ( i & 1 ) { d [ i ] [ j ] = ( d [ i ] [ j ] + d [ i - 1 ] [ j ] ) % mod ; }",
+        "int d [ 1000006 1000006 ] [ 2 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected ‘]’ before numeric constant"
+    },
+    {
+      "mod_line": [
+        12,
+        8
+      ],
+      "mod_code": [
+        "ans = ( d [ n ] [ 0 ] + d [ n ] [ 1 ] ) % mod ;",
+        "d [ i ] [ j ] *= j ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘ans’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        8,
+        1
+      ],
+      "mod_code": [
+        "ans = ( d [ n ] [ 0 ] + d [ n ] [ 1 ] ) % mod ;",
+        "d [ i ] [ j ] *= j ;",
+        "int d [ 1000006 1000006 ] [ 2 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected ‘]’ before numeric constant"
+    },
+    {
+      "mod_line": [
+        12,
+        1
+      ],
+      "mod_code": [
+        "ans = ( d [ n ] [ 0 ] + d [ n ] [ 1 ] ) % mod ;",
+        "int d [ 1000006 1000006 ] [ 2 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected ‘]’ before numeric constant"
+    },
+    {
+      "mod_line": [
+        5,
+        9,
+        8,
+        1
+      ],
+      "mod_code": [
+        "d [ 0 ] [ 1 ] = d [ 0 ] [ 1 ] = 1 ;",
+        "if ( i & 1 ) { d [ i ] [ j ] = ( d [ i ] [ j ] + d [ i - 1 ] [ j ] ) % mod ; }",
+        "d [ i ] [ j ] *= j ;",
+        "int d [ 1000006 1000006 ] [ 2 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected ‘]’ before numeric constant"
+    },
+    {
+      "mod_line": [
+        5,
+        9,
+        1
+      ],
+      "mod_code": [
+        "d [ 0 ] [ 1 ] = d [ 0 ] [ 1 ] = 1 ;",
+        "if ( i & 1 ) { d [ i ] [ j ] = ( d [ i ] [ j ] + d [ i - 1 ] [ j ] ) % mod ; }",
+        "int d [ 1000006 1000006 ] [ 2 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected ‘]’ before numeric constant"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        1
+      ],
+      "mod_code": [
+        "d [ 0 ] [ 1 ] = d [ 0 ] [ 1 ] = 1 ;",
+        "d [ i ] [ j ] *= j ;",
+        "int d [ 1000006 1000006 ] [ 2 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected ‘]’ before numeric constant"
+    },
+    {
+      "mod_line": [
+        5,
+        1
+      ],
+      "mod_code": [
+        "d [ 0 ] [ 1 ] = d [ 0 ] [ 1 ] = 1 ;",
+        "int d [ 1000006 1000006 ] [ 2 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected ‘]’ before numeric constant"
+    },
+    {
+      "mod_line": [
+        9,
+        8,
+        1
+      ],
+      "mod_code": [
+        "if ( i & 1 ) { d [ i ] [ j ] = ( d [ i ] [ j ] + d [ i - 1 ] [ j ] ) % mod ; }",
+        "d [ i ] [ j ] *= j ;",
+        "int d [ 1000006 1000006 ] [ 2 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected ‘]’ before numeric constant"
+    },
+    {
+      "mod_line": [
+        9,
+        1
+      ],
+      "mod_code": [
+        "if ( i & 1 ) { d [ i ] [ j ] = ( d [ i ] [ j ] + d [ i - 1 ] [ j ] ) % mod ; }",
+        "int d [ 1000006 1000006 ] [ 2 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected ‘]’ before numeric constant"
+    },
+    {
+      "mod_line": [
+        8,
+        1
+      ],
+      "mod_code": [
+        "d [ i ] [ j ] *= j ;",
+        "int d [ 1000006 1000006 ] [ 2 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected ‘]’ before numeric constant"
+    }
+  ]
+}

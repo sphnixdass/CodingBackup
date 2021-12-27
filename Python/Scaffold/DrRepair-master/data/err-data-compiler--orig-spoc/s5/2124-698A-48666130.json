@@ -1,0 +1,1041 @@
+{
+  "meta": {
+    "index": 2124,
+    "hitid": "3FW4EL5A3LIJ3P56LEN4T49WFZU22L",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "698A",
+    "subid": "48666130"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare new constant long long inf = 1e18 + 1",
+      "code": "const long long inf = 1e18 + 1 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "function gcd with long long arguments x and y that returns long long",
+      "code": "long long gcd ( long long x , long long y )",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "if y = 0 , return x",
+      "code": "if ( y == 0 ) return x ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "return gcd ( y , x % y )",
+      "code": "return gcd ( y , x % y ) ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "long long function power with long long arguments A , B and mod",
+      "code": "long long power ( long long A , long long B , long long mod )",
+      "indent": 0
+    },
+    {
+      "line": 6,
+      "text": "create new long long r with value 1",
+      "code": "long long r = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "while B > 0",
+      "code": "while ( B > 0 )",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "if B & 1LL is true , assign the new value = ( r * A ) % mod to r",
+      "code": "if ( B & 1LL ) r = ( r * A ) % mod ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "assign a squared modulo mod to A",
+      "code": "A = ( A * A ) % mod ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "B > > = 1",
+      "code": "B >>= 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "return r",
+      "code": "return r ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 14,
+      "text": "declare new array of integers a with 101 element",
+      "code": "int a [ 101 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 15,
+      "text": "create new 2d array of integers dp 101 by 3",
+      "code": "int dp [ 101 ] [ 3 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 17,
+      "text": "declare new integer variables n and i",
+      "code": "int n , i ;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "read user input to n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "for i from 1 to n inclusive , read a [ i ]",
+      "code": "for ( i = 1 ; i <= n ; i ++ ) { cin >> a [ i ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "for i from 1 to n inclusive incrementing i",
+      "code": "for ( i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "assign the new value = min ( dp [ i - 1 ] [ 0 ] , min ( dp [ i - 1 ] [ 1 ] , dp [ i - 1 ] [ 2 ] ) ) + 1 to dp [ i ] [ 0 ]",
+      "code": "dp [ i ] [ 0 ] = min ( dp [ i - 1 ] [ 0 ] , min ( dp [ i - 1 ] [ 1 ] , dp [ i - 1 ] [ 2 ] ) ) + 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 22,
+      "text": "if a [ i ] is equal to 0",
+      "code": "if ( a [ i ] == 0 )",
+      "indent": 2
+    },
+    {
+      "line": 23,
+      "text": "assign 100002 to dp [ i ] [ 1 ]",
+      "code": "dp [ i ] [ 1 ] = 100002 ;",
+      "indent": 3
+    },
+    {
+      "line": 24,
+      "text": "assign the new value = 100002 to dp [ i ] [ 2 ]",
+      "code": "dp [ i ] [ 2 ] = 100002 ;",
+      "indent": 3
+    },
+    {
+      "line": 25,
+      "text": "else if a [ i ] = 1",
+      "code": "else if ( a [ i ] == 1 )",
+      "indent": 2
+    },
+    {
+      "line": 26,
+      "text": "assign min of dp [ i - 1 ] [ 0 ] and dp [ i - 1 ] [ 2 ] to dp [ i ] [ 1 ]",
+      "code": "dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;",
+      "indent": 3
+    },
+    {
+      "line": 27,
+      "text": "assign the new value = 100002 to dp [ i ] [ 2 ]",
+      "code": "dp [ i ] [ 2 ] = 100002 ;",
+      "indent": 3
+    },
+    {
+      "line": 28,
+      "text": "else if a [ i ] = 2",
+      "code": "else if ( a [ i ] == 2 )",
+      "indent": 2
+    },
+    {
+      "line": 29,
+      "text": "assign 100002 to dp [ i ] [ 1 ]",
+      "code": "dp [ i ] [ 1 ] = 100002 ;",
+      "indent": 3
+    },
+    {
+      "line": 30,
+      "text": "change the value of dp [ i ] [ 2 ] to min of dp [ i - 1 ] [ 0 ] and dp [ i - 1 ] [ 1 ]",
+      "code": "dp [ i ] [ 2 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 1 ] ) ;",
+      "indent": 3
+    },
+    {
+      "line": 31,
+      "text": "else if a [ i ] is equal to 3",
+      "code": "else if ( a [ i ] == 3 )",
+      "indent": 2
+    },
+    {
+      "line": 32,
+      "text": "assign the new value = min of dp [ i - 1 ] [ 0 ] and dp [ i - 1 ] [ 2 ] to dp [ i ] [ 1 ]",
+      "code": "dp [ i ] [ 1 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;",
+      "indent": 3
+    },
+    {
+      "line": 33,
+      "text": "assign the new value = min of dp [ i - 1 ] [ 0 ] and dp [ i - 1 ] [ 1 ] to dp [ i ] [ 2 ]",
+      "code": "dp [ i ] [ 2 ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 1 ] ) ;",
+      "indent": 3
+    },
+    {
+      "line": 34,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 35,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 36,
+      "text": "create integer variable called ans = min ( dp [ n ] [ 0 ] , min ( dp [ n ] [ 1 ] , dp [ n ] [ 2 ] ) )",
+      "code": "int ans = min ( dp [ n ] [ 0 ] , min ( dp [ n ] [ 1 ] , dp [ n ] [ 2 ] ) ) ;",
+      "indent": 1
+    },
+    {
+      "line": 37,
+      "text": "print ans to the standard output",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 38,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 39,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "A = ( a * a ) % mod ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        26
+      ],
+      "mod_code": [
+        "dp [ i ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 26,
+      "err_msg": "incompatible types in assignment of ‘const int’ to ‘int [3]’"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "long long gcd ( long long x , long long y ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "return gcd ( y , x % y ) ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "long long power ( long long A , long long B , long long mod ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "int n declare i ;"
+      ],
+      "err_line": 17,
+      "err_msg": "expected initializer before ‘declare’"
+    },
+    {
+      "mod_line": [
+        18
+      ],
+      "mod_code": [
+        "{ cin >> n ;"
+      ],
+      "err_line": 39,
+      "err_msg": "expected ‘}’ at end of input"
+    },
+    {
+      "mod_line": [
+        26
+      ],
+      "mod_code": [
+        "dp [ i ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 0 ] ) ;"
+      ],
+      "err_line": 26,
+      "err_msg": "incompatible types in assignment of ‘const int’ to ‘int [3]’"
+    },
+    {
+      "mod_line": [
+        30
+      ],
+      "mod_code": [
+        "dp [ i ] [ 2 ] = min ( dp [ i - 1 ] [ 0 ] && dp [ i - 1 ] [ 1 ] ) ;"
+      ],
+      "err_line": 30,
+      "err_msg": "no matching function for call to ‘min(bool)’"
+    },
+    {
+      "mod_line": [
+        36
+      ],
+      "mod_code": [
+        "int ans = min ( dp [ n ] [ 0 ] , min ( dp [ n ] [ 1 ] , dp [ n ] [ 2 ] ) ;"
+      ],
+      "err_line": 36,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        9,
+        26
+      ],
+      "mod_code": [
+        "A = ( a * a ) % mod ;",
+        "dp [ i ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        26,
+        22
+      ],
+      "mod_code": [
+        "A = ( a * a ) % mod ;",
+        "dp [ i ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;",
+        "if ( a [ i ] == ' 0 ' )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        26,
+        22,
+        15
+      ],
+      "mod_code": [
+        "A = ( a * a ) % mod ;",
+        "dp [ i ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;",
+        "if ( a [ i ] == ' 0 ' )",
+        "char dp [ 101 ] [ 3 ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        26,
+        22,
+        3
+      ],
+      "mod_code": [
+        "A = ( a * a ) % mod ;",
+        "dp [ i ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;",
+        "if ( a [ i ] == ' 0 ' )",
+        "return gcd ( y , x % y ) ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        9,
+        26,
+        22,
+        17
+      ],
+      "mod_code": [
+        "A = ( a * a ) % mod ;",
+        "dp [ i ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;",
+        "if ( a [ i ] == ' 0 ' )",
+        "int n declare i ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        26,
+        15
+      ],
+      "mod_code": [
+        "A = ( a * a ) % mod ;",
+        "dp [ i ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;",
+        "char dp [ 101 ] [ 3 ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        26,
+        15,
+        3
+      ],
+      "mod_code": [
+        "A = ( a * a ) % mod ;",
+        "dp [ i ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;",
+        "char dp [ 101 ] [ 3 ] ;",
+        "return gcd ( y , x % y ) ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        9,
+        26,
+        15,
+        17
+      ],
+      "mod_code": [
+        "A = ( a * a ) % mod ;",
+        "dp [ i ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;",
+        "char dp [ 101 ] [ 3 ] ;",
+        "int n declare i ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        26,
+        3
+      ],
+      "mod_code": [
+        "A = ( a * a ) % mod ;",
+        "dp [ i ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;",
+        "return gcd ( y , x % y ) ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        9,
+        26,
+        3,
+        17
+      ],
+      "mod_code": [
+        "A = ( a * a ) % mod ;",
+        "dp [ i ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;",
+        "return gcd ( y , x % y ) ) ;",
+        "int n declare i ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        9,
+        26,
+        17
+      ],
+      "mod_code": [
+        "A = ( a * a ) % mod ;",
+        "dp [ i ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;",
+        "int n declare i ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        22
+      ],
+      "mod_code": [
+        "A = ( a * a ) % mod ;",
+        "if ( a [ i ] == ' 0 ' )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        22,
+        15
+      ],
+      "mod_code": [
+        "A = ( a * a ) % mod ;",
+        "if ( a [ i ] == ' 0 ' )",
+        "char dp [ 101 ] [ 3 ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        22,
+        15,
+        3
+      ],
+      "mod_code": [
+        "A = ( a * a ) % mod ;",
+        "if ( a [ i ] == ' 0 ' )",
+        "char dp [ 101 ] [ 3 ] ;",
+        "return gcd ( y , x % y ) ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        9,
+        22,
+        15,
+        17
+      ],
+      "mod_code": [
+        "A = ( a * a ) % mod ;",
+        "if ( a [ i ] == ' 0 ' )",
+        "char dp [ 101 ] [ 3 ] ;",
+        "int n declare i ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        22,
+        3
+      ],
+      "mod_code": [
+        "A = ( a * a ) % mod ;",
+        "if ( a [ i ] == ' 0 ' )",
+        "return gcd ( y , x % y ) ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        9,
+        22,
+        3,
+        17
+      ],
+      "mod_code": [
+        "A = ( a * a ) % mod ;",
+        "if ( a [ i ] == ' 0 ' )",
+        "return gcd ( y , x % y ) ) ;",
+        "int n declare i ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        9,
+        22,
+        17
+      ],
+      "mod_code": [
+        "A = ( a * a ) % mod ;",
+        "if ( a [ i ] == ' 0 ' )",
+        "int n declare i ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        15
+      ],
+      "mod_code": [
+        "A = ( a * a ) % mod ;",
+        "char dp [ 101 ] [ 3 ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        15,
+        3
+      ],
+      "mod_code": [
+        "A = ( a * a ) % mod ;",
+        "char dp [ 101 ] [ 3 ] ;",
+        "return gcd ( y , x % y ) ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        9,
+        15,
+        3,
+        17
+      ],
+      "mod_code": [
+        "A = ( a * a ) % mod ;",
+        "char dp [ 101 ] [ 3 ] ;",
+        "return gcd ( y , x % y ) ) ;",
+        "int n declare i ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        9,
+        15,
+        17
+      ],
+      "mod_code": [
+        "A = ( a * a ) % mod ;",
+        "char dp [ 101 ] [ 3 ] ;",
+        "int n declare i ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        3
+      ],
+      "mod_code": [
+        "A = ( a * a ) % mod ;",
+        "return gcd ( y , x % y ) ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        17
+      ],
+      "mod_code": [
+        "A = ( a * a ) % mod ;",
+        "return gcd ( y , x % y ) ) ;",
+        "int n declare i ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        9,
+        17
+      ],
+      "mod_code": [
+        "A = ( a * a ) % mod ;",
+        "int n declare i ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        26,
+        22
+      ],
+      "mod_code": [
+        "dp [ i ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;",
+        "if ( a [ i ] == ' 0 ' )"
+      ],
+      "err_line": 26,
+      "err_msg": "incompatible types in assignment of ‘const int’ to ‘int [3]’"
+    },
+    {
+      "mod_line": [
+        26,
+        22,
+        15
+      ],
+      "mod_code": [
+        "dp [ i ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;",
+        "if ( a [ i ] == ' 0 ' )",
+        "char dp [ 101 ] [ 3 ] ;"
+      ],
+      "err_line": 26,
+      "err_msg": "incompatible types in assignment of ‘const char’ to ‘char [3]’"
+    },
+    {
+      "mod_line": [
+        26,
+        22,
+        15,
+        3
+      ],
+      "mod_code": [
+        "dp [ i ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;",
+        "if ( a [ i ] == ' 0 ' )",
+        "char dp [ 101 ] [ 3 ] ;",
+        "return gcd ( y , x % y ) ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        26,
+        22,
+        15,
+        17
+      ],
+      "mod_code": [
+        "dp [ i ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;",
+        "if ( a [ i ] == ' 0 ' )",
+        "char dp [ 101 ] [ 3 ] ;",
+        "int n declare i ;"
+      ],
+      "err_line": 17,
+      "err_msg": "expected initializer before ‘declare’"
+    },
+    {
+      "mod_line": [
+        26,
+        22,
+        3
+      ],
+      "mod_code": [
+        "dp [ i ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;",
+        "if ( a [ i ] == ' 0 ' )",
+        "return gcd ( y , x % y ) ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        26,
+        22,
+        3,
+        17
+      ],
+      "mod_code": [
+        "dp [ i ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;",
+        "if ( a [ i ] == ' 0 ' )",
+        "return gcd ( y , x % y ) ) ;",
+        "int n declare i ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        26,
+        22,
+        17
+      ],
+      "mod_code": [
+        "dp [ i ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;",
+        "if ( a [ i ] == ' 0 ' )",
+        "int n declare i ;"
+      ],
+      "err_line": 17,
+      "err_msg": "expected initializer before ‘declare’"
+    },
+    {
+      "mod_line": [
+        26,
+        15
+      ],
+      "mod_code": [
+        "dp [ i ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;",
+        "char dp [ 101 ] [ 3 ] ;"
+      ],
+      "err_line": 26,
+      "err_msg": "incompatible types in assignment of ‘const char’ to ‘char [3]’"
+    },
+    {
+      "mod_line": [
+        26,
+        15,
+        3
+      ],
+      "mod_code": [
+        "dp [ i ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;",
+        "char dp [ 101 ] [ 3 ] ;",
+        "return gcd ( y , x % y ) ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        26,
+        15,
+        3,
+        17
+      ],
+      "mod_code": [
+        "dp [ i ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;",
+        "char dp [ 101 ] [ 3 ] ;",
+        "return gcd ( y , x % y ) ) ;",
+        "int n declare i ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        26,
+        15,
+        17
+      ],
+      "mod_code": [
+        "dp [ i ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;",
+        "char dp [ 101 ] [ 3 ] ;",
+        "int n declare i ;"
+      ],
+      "err_line": 17,
+      "err_msg": "expected initializer before ‘declare’"
+    },
+    {
+      "mod_line": [
+        26,
+        3
+      ],
+      "mod_code": [
+        "dp [ i ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;",
+        "return gcd ( y , x % y ) ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        26,
+        3,
+        17
+      ],
+      "mod_code": [
+        "dp [ i ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;",
+        "return gcd ( y , x % y ) ) ;",
+        "int n declare i ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        26,
+        17
+      ],
+      "mod_code": [
+        "dp [ i ] = min ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 2 ] ) ;",
+        "int n declare i ;"
+      ],
+      "err_line": 17,
+      "err_msg": "expected initializer before ‘declare’"
+    },
+    {
+      "mod_line": [
+        22,
+        15,
+        3
+      ],
+      "mod_code": [
+        "if ( a [ i ] == ' 0 ' )",
+        "char dp [ 101 ] [ 3 ] ;",
+        "return gcd ( y , x % y ) ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        22,
+        15,
+        3,
+        17
+      ],
+      "mod_code": [
+        "if ( a [ i ] == ' 0 ' )",
+        "char dp [ 101 ] [ 3 ] ;",
+        "return gcd ( y , x % y ) ) ;",
+        "int n declare i ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        22,
+        15,
+        17
+      ],
+      "mod_code": [
+        "if ( a [ i ] == ' 0 ' )",
+        "char dp [ 101 ] [ 3 ] ;",
+        "int n declare i ;"
+      ],
+      "err_line": 17,
+      "err_msg": "expected initializer before ‘declare’"
+    },
+    {
+      "mod_line": [
+        22,
+        3
+      ],
+      "mod_code": [
+        "if ( a [ i ] == ' 0 ' )",
+        "return gcd ( y , x % y ) ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        22,
+        3,
+        17
+      ],
+      "mod_code": [
+        "if ( a [ i ] == ' 0 ' )",
+        "return gcd ( y , x % y ) ) ;",
+        "int n declare i ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        22,
+        17
+      ],
+      "mod_code": [
+        "if ( a [ i ] == ' 0 ' )",
+        "int n declare i ;"
+      ],
+      "err_line": 17,
+      "err_msg": "expected initializer before ‘declare’"
+    },
+    {
+      "mod_line": [
+        15,
+        3
+      ],
+      "mod_code": [
+        "char dp [ 101 ] [ 3 ] ;",
+        "return gcd ( y , x % y ) ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        15,
+        3,
+        17
+      ],
+      "mod_code": [
+        "char dp [ 101 ] [ 3 ] ;",
+        "return gcd ( y , x % y ) ) ;",
+        "int n declare i ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        15,
+        17
+      ],
+      "mod_code": [
+        "char dp [ 101 ] [ 3 ] ;",
+        "int n declare i ;"
+      ],
+      "err_line": 17,
+      "err_msg": "expected initializer before ‘declare’"
+    },
+    {
+      "mod_line": [
+        3,
+        17
+      ],
+      "mod_code": [
+        "return gcd ( y , x % y ) ) ;",
+        "int n declare i ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    }
+  ]
+}

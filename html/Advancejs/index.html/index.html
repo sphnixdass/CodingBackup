@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script type="text/javascript">
+
+
+
+
+const DassML = (str1 = '', str2 = '') => {
+    const track = Array(str2.length + 1).fill(null).map(() =>
+    Array(str1.length + 1).fill(null));
+    for (let i = 0; i <= str1.length; i += 1) {
+        track[0][i] = i;
+    }
+    for (let j = 0; j <= str2.length; j += 1) {
+        track[j][0] = j;
+    }
+    for (let j = 1; j <= str2.length; j += 1) {
+        for (let i = 1; i <= str1.length; i += 1) {
+            const indicator = str1[i - 1] === str2[j - 1] ? 0 : 1;
+            track[j][i] = Math.min(
+                track[j][i - 1] + 1, // deletion
+                track[j - 1][i] + 1, // insertion
+                track[j - 1][i - 1] + indicator, // substitution
+                );
+            }
+        }
+        return track[str2.length][str1.length];
+    };
+    
+    function calculatescore(searchelement, searchdiscription, totalValue)
+    {
+        var cutoffvalue = 40;
+
+        var calobj = {
+            totalValue : totalValue,
+            discription : "",
+            suggection: "",
+
+        };
+
+        var suggflag = 0;
+
+        var chars = searchdiscription.split(' ');
+            for (var i = 0; i < chars.length; i++) {
+
+                var wordlength = searchelement.length >= chars[i].length?searchelement.length:chars[i].length;
+                    var matchscore = DassML(chars[i], searchelement);
+                    var includescore = 0;
+
+                    if (chars[i].includes(searchelement)) {
+                        calobj.discription = calobj.discription + " " + "<b>" + chars[i] + "</b>";
+                        includescore = 50;
+                        if ((i +3) <= chars.length) {
+                            for (var j = i; j <= i + 3; j++) {
+                                calobj.suggection = calobj.suggection + " " + chars[j];
+                            }
+                        }
+                    } else if (((100 - (matchscore/wordlength) *100)/2) >= cutoffvalue){
+                        calobj.discription = calobj.discription + " " + "<b2>" + chars[i] + "</b2>";
+                        if ((i +3) <= chars.length) {
+                            for (var j = i; j <= i + 3; j++) {
+                                calobj.suggection = calobj.suggection + " " + chars[j];
+                            }
+                        }
+                    }
+                    else{
+                        calobj.discription = calobj.discription + " " + chars[i];
+                        includescore =0;
+                    }
+
+                    
+                    var matchscorefinal = ((100 - (matchscore/wordlength) *100)/2) + includescore;
+                    totalValue = matchscorefinal>=cutoffvalue? totalValue + matchscorefinal: totalValue
+                
+            }
+
+                calobj.totalValue = totalValue;
+                return calobj;
+
+    }
+
+
+    function findMatchstr(searchtext, searchdiscription, searchtitle, searchapplication){
+        
+        var cutoffSearchstrLen = 3;
+
+        searchtext = searchtext === undefined?"":searchtext.toLowerCase();
+        searchdiscription = searchdiscription === undefined?"":searchdiscription.toLowerCase();
+        searchtitle = searchtitle === undefined?"":searchtitle.toLowerCase();
+        searchapplication = searchapplication === undefined?"":searchapplication.toLowerCase();
+      
+        var matchobj = {
+            totalValue : 0,
+            discription : "",
+            title : "",
+            application: "",
+            sugdiscription : "",
+            sugtitle : "",
+            sugapplication: ""
+
+
+        };
+
+        var totalValue = 0;
+        var searchword = searchtext.split(' ');
+        matchobj.discription = searchdiscription;
+        matchobj.title = searchtitle;
+        matchobj.application = searchapplication;
+        matchobj.totalValue = totalValue;
+        
+        searchword.forEach(searchelement => {
+            if(searchelement.length >= cutoffSearchstrLen) {
+                
+
+                //discription
+                var resultobj = calculatescore(searchelement, matchobj.discription, matchobj.totalValue)
+                matchobj.totalValue = matchobj.totalValue + resultobj.totalValue;
+                matchobj.discription = resultobj.discription;
+                matchobj.sugdiscription = resultobj.suggection;
+
+                //title
+                var resultobj = calculatescore(searchelement, matchobj.title, matchobj.totalValue)
+                matchobj.totalValue = matchobj.totalValue + resultobj.totalValue;
+                matchobj.title = resultobj.discription;
+                matchobj.sugtitle = resultobj.suggection;
+
+                //searchapplication
+                var resultobj = calculatescore(searchelement, matchobj.application, matchobj.totalValue)
+                matchobj.totalValue = matchobj.totalValue + resultobj.totalValue;
+                matchobj.application = resultobj.discription;
+                matchobj.sugapplication = resultobj.suggection;
+
+                
+                
+        }
+        });
+        matchobj.totalValue = (matchobj.totalValue/100);
+        return matchobj;
+    }
+    
+
+    var jsondata = '[{"pr": "121211", "title": "PPI automation", "discription": "My name is Daess gnanadass letter testing is working fine"}, {"pr": "121211", "title": "PPI automation", "discription": "My name is Chris letter"}]';
+
+    var jsonobj = JSON.parse(jsondata);
+    for (var i = 0; i < jsonobj.length; i++) {
+        var FinalResultobj = findMatchstr("Dass letter", jsonobj[i].discription, jsonobj[i].title, jsonobj[i].application);
+        jsonobj[i].discription = FinalResultobj.discription;
+        jsonobj[i].Score = FinalResultobj.totalValue;
+        jsonobj[i].sugdiscription = FinalResultobj.sugdiscription;
+        jsonobj[i].sugtitle = FinalResultobj.sugtitle;
+        jsonobj[i].sugapplication = FinalResultobj.sugapplication;
+        console.log(FinalResultobj.totalValue, FinalResultobj.discription);
+    }
+    console.log(jsonobj.sort(function(a,b){
+        return a.Score < b.Score;
+    }));
+   
+</script>
+</html>

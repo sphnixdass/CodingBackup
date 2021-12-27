@@ -1,0 +1,841 @@
+{
+  "meta": {
+    "index": 956,
+    "hitid": "3QQUBC64ZE8GTRXWVM6HBI6Q33JXNF",
+    "workerid": "A2J7P30MA3S6OV",
+    "probid": "557A",
+    "subid": "40261908"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create int n",
+      "code": "int n ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "set a [ 5 ] , b [ 5 ] , c [ 5 ] to { 0 }",
+      "code": "int a [ 5 ] , b [ 5 ] , c [ 5 ] = { 0 } ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "while read n",
+      "code": "while ( cin >> n )",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "create int i",
+      "code": "int i ;",
+      "indent": 2
+    },
+    {
+      "line": 5,
+      "text": "for i = 0 to 3 exclusive , read a [ i ] and b [ i ]",
+      "code": "for ( i = 0 ; i < 3 ; i ++ ) cin >> a [ i ] >> b [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 6,
+      "text": "set c [ 0 ] to min of b [ 0 ] and n - a [ 1 ] - a [ 2 ]",
+      "code": "c [ 0 ] = min ( b [ 0 ] , n - a [ 1 ] - a [ 2 ] ) ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "assign min of b [ 1 ] and n - c [ 0 ] - a [ 2 ] to c [ 1 ]",
+      "code": "c [ 1 ] = min ( b [ 1 ] , n - c [ 0 ] - a [ 2 ] ) ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "set c [ 2 ] = n - c [ 0 ] - c [ 1 ]",
+      "code": "c [ 2 ] = n - c [ 0 ] - c [ 1 ] ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "print c [ 0 ] , \" \"",
+      "code": "cout << c [ 0 ] << \" \" ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "print c [ 1 ] and \" \"",
+      "code": "cout << c [ 1 ] << \" \" ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "print c [ 2 ]",
+      "code": "cout << c [ 2 ] << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "a [ 5 ] = b [ 5 ] , c [ 5 ] = { 0 } ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int t ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "while ( gets ( cin >> n )"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid user-defined conversion from ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ to ‘char*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "c [ 0 ] = min ( b [ 0 ] and n - a [ 1 ] - a [ 2 ] ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘min(bool)’"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "c [ 1 ] = min ( b [ 1 ] - n - c [ 0 ] - a [ 2 ] ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘min(int)’"
+    },
+    {
+      "mod_line": [
+        2,
+        10
+      ],
+      "mod_code": [
+        "a [ 5 ] = b [ 5 ] , c [ 5 ] = { 0 } ;",
+        "cout << c [ 1 ] << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        10,
+        1
+      ],
+      "mod_code": [
+        "a [ 5 ] = b [ 5 ] , c [ 5 ] = { 0 } ;",
+        "cout << c [ 1 ] << endl ;",
+        "int t ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        10,
+        1,
+        7
+      ],
+      "mod_code": [
+        "a [ 5 ] = b [ 5 ] , c [ 5 ] = { 0 } ;",
+        "cout << c [ 1 ] << endl ;",
+        "int t ;",
+        "c [ 1 ] = min ( b [ 1 ] - n - c [ 0 ] - a [ 2 ] ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        10,
+        1,
+        11
+      ],
+      "mod_code": [
+        "a [ 5 ] = b [ 5 ] , c [ 5 ] = { 0 } ;",
+        "cout << c [ 1 ] << endl ;",
+        "int t ;",
+        "cout << c [ 2 ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        10,
+        1,
+        6
+      ],
+      "mod_code": [
+        "a [ 5 ] = b [ 5 ] , c [ 5 ] = { 0 } ;",
+        "cout << c [ 1 ] << endl ;",
+        "int t ;",
+        "c [ 0 ] = min ( b [ 0 ] and n - a [ 1 ] - a [ 2 ] ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        10,
+        7
+      ],
+      "mod_code": [
+        "a [ 5 ] = b [ 5 ] , c [ 5 ] = { 0 } ;",
+        "cout << c [ 1 ] << endl ;",
+        "c [ 1 ] = min ( b [ 1 ] - n - c [ 0 ] - a [ 2 ] ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        10,
+        7,
+        11
+      ],
+      "mod_code": [
+        "a [ 5 ] = b [ 5 ] , c [ 5 ] = { 0 } ;",
+        "cout << c [ 1 ] << endl ;",
+        "c [ 1 ] = min ( b [ 1 ] - n - c [ 0 ] - a [ 2 ] ) ;",
+        "cout << c [ 2 ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        10,
+        7,
+        6
+      ],
+      "mod_code": [
+        "a [ 5 ] = b [ 5 ] , c [ 5 ] = { 0 } ;",
+        "cout << c [ 1 ] << endl ;",
+        "c [ 1 ] = min ( b [ 1 ] - n - c [ 0 ] - a [ 2 ] ) ;",
+        "c [ 0 ] = min ( b [ 0 ] and n - a [ 1 ] - a [ 2 ] ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        10,
+        11
+      ],
+      "mod_code": [
+        "a [ 5 ] = b [ 5 ] , c [ 5 ] = { 0 } ;",
+        "cout << c [ 1 ] << endl ;",
+        "cout << c [ 2 ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        10,
+        11,
+        6
+      ],
+      "mod_code": [
+        "a [ 5 ] = b [ 5 ] , c [ 5 ] = { 0 } ;",
+        "cout << c [ 1 ] << endl ;",
+        "cout << c [ 2 ] ;",
+        "c [ 0 ] = min ( b [ 0 ] and n - a [ 1 ] - a [ 2 ] ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        10,
+        6
+      ],
+      "mod_code": [
+        "a [ 5 ] = b [ 5 ] , c [ 5 ] = { 0 } ;",
+        "cout << c [ 1 ] << endl ;",
+        "c [ 0 ] = min ( b [ 0 ] and n - a [ 1 ] - a [ 2 ] ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        1
+      ],
+      "mod_code": [
+        "a [ 5 ] = b [ 5 ] , c [ 5 ] = { 0 } ;",
+        "int t ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        1,
+        7
+      ],
+      "mod_code": [
+        "a [ 5 ] = b [ 5 ] , c [ 5 ] = { 0 } ;",
+        "int t ;",
+        "c [ 1 ] = min ( b [ 1 ] - n - c [ 0 ] - a [ 2 ] ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        1,
+        7,
+        11
+      ],
+      "mod_code": [
+        "a [ 5 ] = b [ 5 ] , c [ 5 ] = { 0 } ;",
+        "int t ;",
+        "c [ 1 ] = min ( b [ 1 ] - n - c [ 0 ] - a [ 2 ] ) ;",
+        "cout << c [ 2 ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        1,
+        7,
+        6
+      ],
+      "mod_code": [
+        "a [ 5 ] = b [ 5 ] , c [ 5 ] = { 0 } ;",
+        "int t ;",
+        "c [ 1 ] = min ( b [ 1 ] - n - c [ 0 ] - a [ 2 ] ) ;",
+        "c [ 0 ] = min ( b [ 0 ] and n - a [ 1 ] - a [ 2 ] ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        1,
+        11
+      ],
+      "mod_code": [
+        "a [ 5 ] = b [ 5 ] , c [ 5 ] = { 0 } ;",
+        "int t ;",
+        "cout << c [ 2 ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        1,
+        11,
+        6
+      ],
+      "mod_code": [
+        "a [ 5 ] = b [ 5 ] , c [ 5 ] = { 0 } ;",
+        "int t ;",
+        "cout << c [ 2 ] ;",
+        "c [ 0 ] = min ( b [ 0 ] and n - a [ 1 ] - a [ 2 ] ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        1,
+        6
+      ],
+      "mod_code": [
+        "a [ 5 ] = b [ 5 ] , c [ 5 ] = { 0 } ;",
+        "int t ;",
+        "c [ 0 ] = min ( b [ 0 ] and n - a [ 1 ] - a [ 2 ] ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        7
+      ],
+      "mod_code": [
+        "a [ 5 ] = b [ 5 ] , c [ 5 ] = { 0 } ;",
+        "c [ 1 ] = min ( b [ 1 ] - n - c [ 0 ] - a [ 2 ] ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        7,
+        11
+      ],
+      "mod_code": [
+        "a [ 5 ] = b [ 5 ] , c [ 5 ] = { 0 } ;",
+        "c [ 1 ] = min ( b [ 1 ] - n - c [ 0 ] - a [ 2 ] ) ;",
+        "cout << c [ 2 ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        7,
+        11,
+        6
+      ],
+      "mod_code": [
+        "a [ 5 ] = b [ 5 ] , c [ 5 ] = { 0 } ;",
+        "c [ 1 ] = min ( b [ 1 ] - n - c [ 0 ] - a [ 2 ] ) ;",
+        "cout << c [ 2 ] ;",
+        "c [ 0 ] = min ( b [ 0 ] and n - a [ 1 ] - a [ 2 ] ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        7,
+        6
+      ],
+      "mod_code": [
+        "a [ 5 ] = b [ 5 ] , c [ 5 ] = { 0 } ;",
+        "c [ 1 ] = min ( b [ 1 ] - n - c [ 0 ] - a [ 2 ] ) ;",
+        "c [ 0 ] = min ( b [ 0 ] and n - a [ 1 ] - a [ 2 ] ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        11
+      ],
+      "mod_code": [
+        "a [ 5 ] = b [ 5 ] , c [ 5 ] = { 0 } ;",
+        "cout << c [ 2 ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        11,
+        6
+      ],
+      "mod_code": [
+        "a [ 5 ] = b [ 5 ] , c [ 5 ] = { 0 } ;",
+        "cout << c [ 2 ] ;",
+        "c [ 0 ] = min ( b [ 0 ] and n - a [ 1 ] - a [ 2 ] ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        6
+      ],
+      "mod_code": [
+        "a [ 5 ] = b [ 5 ] , c [ 5 ] = { 0 } ;",
+        "c [ 0 ] = min ( b [ 0 ] and n - a [ 1 ] - a [ 2 ] ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        1
+      ],
+      "mod_code": [
+        "cout << c [ 1 ] << endl ;",
+        "int t ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        1,
+        7
+      ],
+      "mod_code": [
+        "cout << c [ 1 ] << endl ;",
+        "int t ;",
+        "c [ 1 ] = min ( b [ 1 ] - n - c [ 0 ] - a [ 2 ] ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        1,
+        7,
+        11
+      ],
+      "mod_code": [
+        "cout << c [ 1 ] << endl ;",
+        "int t ;",
+        "c [ 1 ] = min ( b [ 1 ] - n - c [ 0 ] - a [ 2 ] ) ;",
+        "cout << c [ 2 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        1,
+        7,
+        6
+      ],
+      "mod_code": [
+        "cout << c [ 1 ] << endl ;",
+        "int t ;",
+        "c [ 1 ] = min ( b [ 1 ] - n - c [ 0 ] - a [ 2 ] ) ;",
+        "c [ 0 ] = min ( b [ 0 ] and n - a [ 1 ] - a [ 2 ] ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        1,
+        11
+      ],
+      "mod_code": [
+        "cout << c [ 1 ] << endl ;",
+        "int t ;",
+        "cout << c [ 2 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        1,
+        11,
+        6
+      ],
+      "mod_code": [
+        "cout << c [ 1 ] << endl ;",
+        "int t ;",
+        "cout << c [ 2 ] ;",
+        "c [ 0 ] = min ( b [ 0 ] and n - a [ 1 ] - a [ 2 ] ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        1,
+        6
+      ],
+      "mod_code": [
+        "cout << c [ 1 ] << endl ;",
+        "int t ;",
+        "c [ 0 ] = min ( b [ 0 ] and n - a [ 1 ] - a [ 2 ] ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        7
+      ],
+      "mod_code": [
+        "cout << c [ 1 ] << endl ;",
+        "c [ 1 ] = min ( b [ 1 ] - n - c [ 0 ] - a [ 2 ] ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘min(int)’"
+    },
+    {
+      "mod_line": [
+        10,
+        7,
+        11
+      ],
+      "mod_code": [
+        "cout << c [ 1 ] << endl ;",
+        "c [ 1 ] = min ( b [ 1 ] - n - c [ 0 ] - a [ 2 ] ) ;",
+        "cout << c [ 2 ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘min(int)’"
+    },
+    {
+      "mod_line": [
+        10,
+        7,
+        11,
+        6
+      ],
+      "mod_code": [
+        "cout << c [ 1 ] << endl ;",
+        "c [ 1 ] = min ( b [ 1 ] - n - c [ 0 ] - a [ 2 ] ) ;",
+        "cout << c [ 2 ] ;",
+        "c [ 0 ] = min ( b [ 0 ] and n - a [ 1 ] - a [ 2 ] ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘min(bool)’"
+    },
+    {
+      "mod_line": [
+        10,
+        7,
+        6
+      ],
+      "mod_code": [
+        "cout << c [ 1 ] << endl ;",
+        "c [ 1 ] = min ( b [ 1 ] - n - c [ 0 ] - a [ 2 ] ) ;",
+        "c [ 0 ] = min ( b [ 0 ] and n - a [ 1 ] - a [ 2 ] ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘min(bool)’"
+    },
+    {
+      "mod_line": [
+        10,
+        11,
+        6
+      ],
+      "mod_code": [
+        "cout << c [ 1 ] << endl ;",
+        "cout << c [ 2 ] ;",
+        "c [ 0 ] = min ( b [ 0 ] and n - a [ 1 ] - a [ 2 ] ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘min(bool)’"
+    },
+    {
+      "mod_line": [
+        10,
+        6
+      ],
+      "mod_code": [
+        "cout << c [ 1 ] << endl ;",
+        "c [ 0 ] = min ( b [ 0 ] and n - a [ 1 ] - a [ 2 ] ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘min(bool)’"
+    },
+    {
+      "mod_line": [
+        1,
+        7
+      ],
+      "mod_code": [
+        "int t ;",
+        "c [ 1 ] = min ( b [ 1 ] - n - c [ 0 ] - a [ 2 ] ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        11
+      ],
+      "mod_code": [
+        "int t ;",
+        "c [ 1 ] = min ( b [ 1 ] - n - c [ 0 ] - a [ 2 ] ) ;",
+        "cout << c [ 2 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        11,
+        6
+      ],
+      "mod_code": [
+        "int t ;",
+        "c [ 1 ] = min ( b [ 1 ] - n - c [ 0 ] - a [ 2 ] ) ;",
+        "cout << c [ 2 ] ;",
+        "c [ 0 ] = min ( b [ 0 ] and n - a [ 1 ] - a [ 2 ] ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        6
+      ],
+      "mod_code": [
+        "int t ;",
+        "c [ 1 ] = min ( b [ 1 ] - n - c [ 0 ] - a [ 2 ] ) ;",
+        "c [ 0 ] = min ( b [ 0 ] and n - a [ 1 ] - a [ 2 ] ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        11
+      ],
+      "mod_code": [
+        "int t ;",
+        "cout << c [ 2 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        11,
+        6
+      ],
+      "mod_code": [
+        "int t ;",
+        "cout << c [ 2 ] ;",
+        "c [ 0 ] = min ( b [ 0 ] and n - a [ 1 ] - a [ 2 ] ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        6
+      ],
+      "mod_code": [
+        "int t ;",
+        "c [ 0 ] = min ( b [ 0 ] and n - a [ 1 ] - a [ 2 ] ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        11
+      ],
+      "mod_code": [
+        "c [ 1 ] = min ( b [ 1 ] - n - c [ 0 ] - a [ 2 ] ) ;",
+        "cout << c [ 2 ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘min(int)’"
+    },
+    {
+      "mod_line": [
+        7,
+        11,
+        6
+      ],
+      "mod_code": [
+        "c [ 1 ] = min ( b [ 1 ] - n - c [ 0 ] - a [ 2 ] ) ;",
+        "cout << c [ 2 ] ;",
+        "c [ 0 ] = min ( b [ 0 ] and n - a [ 1 ] - a [ 2 ] ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘min(bool)’"
+    },
+    {
+      "mod_line": [
+        7,
+        6
+      ],
+      "mod_code": [
+        "c [ 1 ] = min ( b [ 1 ] - n - c [ 0 ] - a [ 2 ] ) ;",
+        "c [ 0 ] = min ( b [ 0 ] and n - a [ 1 ] - a [ 2 ] ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘min(bool)’"
+    },
+    {
+      "mod_line": [
+        11,
+        6
+      ],
+      "mod_code": [
+        "cout << c [ 2 ] ;",
+        "c [ 0 ] = min ( b [ 0 ] and n - a [ 1 ] - a [ 2 ] ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘min(bool)’"
+    }
+  ]
+}

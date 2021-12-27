@@ -1,0 +1,747 @@
+{
+  "meta": {
+    "index": 2021,
+    "hitid": "35NNO802AVQJ3W81W06G88JBE3MNI1",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "1032A",
+    "subid": "48388293"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create long longs tc , n , k",
+      "code": "long long tc , n , k ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "while read n read k",
+      "code": "while ( cin >> n >> k )",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "create long longs maxi , y with maxi = - 1 , y = 0 , create long long arrays a , mp , with a size n + 5 , mp size 100005",
+      "code": "long long maxi = - 1 , a [ n + 5 ] , mp [ 100005 ] , y = 0 ;",
+      "indent": 2
+    },
+    {
+      "line": 4,
+      "text": "set bytes from mp to size of mp to value 0",
+      "code": "memset ( mp , 0 , sizeof ( mp ) ) ;",
+      "indent": 2
+    },
+    {
+      "line": 5,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( int i = 0 ; i < n ; i ++ )",
+      "indent": 2
+    },
+    {
+      "line": 6,
+      "text": "read a [ i ]",
+      "code": "cin >> a [ i ] ;",
+      "indent": 3
+    },
+    {
+      "line": 7,
+      "text": "if mp [ a [ i ] ] is 0 , increment y",
+      "code": "if ( mp [ a [ i ] ] == 0 ) y ++ ;",
+      "indent": 3
+    },
+    {
+      "line": 8,
+      "text": "increment mp [ a [ i ] ]",
+      "code": "mp [ a [ i ] ] ++ ;",
+      "indent": 3
+    },
+    {
+      "line": 9,
+      "text": "set maxi to maximum of maxi and mp [ a [ i ] ]",
+      "code": "maxi = max ( maxi , mp [ a [ i ] ] ) ;",
+      "indent": 3
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "create long long x with x = maxi / k",
+      "code": "long long x = maxi / k ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "if maxi % k is not 0 , increment x",
+      "code": "if ( maxi % k != 0 ) x ++ ;",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "set x to x * k",
+      "code": "x *= k ;",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "create long long sum with sum = 0",
+      "code": "long long sum = 0 ;",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( int i = 0 ; i < n ; i ++ )",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "increment sum by ( x - mp [ a [ i ] ] )",
+      "code": "sum += ( x - mp [ a [ i ] ] ) ;",
+      "indent": 3
+    },
+    {
+      "line": 17,
+      "text": "set mp [ a [ i ] ] to x",
+      "code": "mp [ a [ i ] ] = x ;",
+      "indent": 3
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 19,
+      "text": "print sum print newline",
+      "code": "cout << sum << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 20,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 22,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "long long maxi [ n + 5 ] , mp [ 100005 + 5 ] , y [ 100005 + 5 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "long long maxi [ n + 5 ] , mp [ 100005 + 5 ] , mp [ 100005 + 5 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘long long int mp [100010]’"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "cin >> a . size ( ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘size’ in ‘a’, which is of non-class type ‘long long int [n]’"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "maxi = maxi ( maxi , mp [ a [ i ] ] ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘maxi’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "long long x /= k ;"
+      ],
+      "err_line": 11,
+      "err_msg": "expected initializer before ‘/=’ token"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "mp [ a [ i ] ] ] = x ;"
+      ],
+      "err_line": 17,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        9
+      ],
+      "mod_code": [
+        "long long maxi [ n + 5 ] , mp [ 100005 + 5 ] , y [ 100005 + 5 ] ;",
+        "maxi = maxi ( maxi , mp [ a [ i ] ] ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        9,
+        17
+      ],
+      "mod_code": [
+        "long long maxi [ n + 5 ] , mp [ 100005 + 5 ] , y [ 100005 + 5 ] ;",
+        "maxi = maxi ( maxi , mp [ a [ i ] ] ) ;",
+        "mp [ a [ i ] ] ] = x ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        9,
+        17,
+        6
+      ],
+      "mod_code": [
+        "long long maxi [ n + 5 ] , mp [ 100005 + 5 ] , y [ 100005 + 5 ] ;",
+        "maxi = maxi ( maxi , mp [ a [ i ] ] ) ;",
+        "mp [ a [ i ] ] ] = x ;",
+        "cin >> a . size ( ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        9,
+        17,
+        11
+      ],
+      "mod_code": [
+        "long long maxi [ n + 5 ] , mp [ 100005 + 5 ] , y [ 100005 + 5 ] ;",
+        "maxi = maxi ( maxi , mp [ a [ i ] ] ) ;",
+        "mp [ a [ i ] ] ] = x ;",
+        "long long x /= k ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        9,
+        6
+      ],
+      "mod_code": [
+        "long long maxi [ n + 5 ] , mp [ 100005 + 5 ] , y [ 100005 + 5 ] ;",
+        "maxi = maxi ( maxi , mp [ a [ i ] ] ) ;",
+        "cin >> a . size ( ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        9,
+        6,
+        11
+      ],
+      "mod_code": [
+        "long long maxi [ n + 5 ] , mp [ 100005 + 5 ] , y [ 100005 + 5 ] ;",
+        "maxi = maxi ( maxi , mp [ a [ i ] ] ) ;",
+        "cin >> a . size ( ) ;",
+        "long long x /= k ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        9,
+        11
+      ],
+      "mod_code": [
+        "long long maxi [ n + 5 ] , mp [ 100005 + 5 ] , y [ 100005 + 5 ] ;",
+        "maxi = maxi ( maxi , mp [ a [ i ] ] ) ;",
+        "long long x /= k ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        17
+      ],
+      "mod_code": [
+        "long long maxi [ n + 5 ] , mp [ 100005 + 5 ] , y [ 100005 + 5 ] ;",
+        "mp [ a [ i ] ] ] = x ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        17,
+        6
+      ],
+      "mod_code": [
+        "long long maxi [ n + 5 ] , mp [ 100005 + 5 ] , y [ 100005 + 5 ] ;",
+        "mp [ a [ i ] ] ] = x ;",
+        "cin >> a . size ( ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        17,
+        6,
+        11
+      ],
+      "mod_code": [
+        "long long maxi [ n + 5 ] , mp [ 100005 + 5 ] , y [ 100005 + 5 ] ;",
+        "mp [ a [ i ] ] ] = x ;",
+        "cin >> a . size ( ) ;",
+        "long long x /= k ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        17,
+        11
+      ],
+      "mod_code": [
+        "long long maxi [ n + 5 ] , mp [ 100005 + 5 ] , y [ 100005 + 5 ] ;",
+        "mp [ a [ i ] ] ] = x ;",
+        "long long x /= k ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        6
+      ],
+      "mod_code": [
+        "long long maxi [ n + 5 ] , mp [ 100005 + 5 ] , y [ 100005 + 5 ] ;",
+        "cin >> a . size ( ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        6,
+        11
+      ],
+      "mod_code": [
+        "long long maxi [ n + 5 ] , mp [ 100005 + 5 ] , y [ 100005 + 5 ] ;",
+        "cin >> a . size ( ) ;",
+        "long long x /= k ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        11
+      ],
+      "mod_code": [
+        "long long maxi [ n + 5 ] , mp [ 100005 + 5 ] , y [ 100005 + 5 ] ;",
+        "long long x /= k ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        17
+      ],
+      "mod_code": [
+        "maxi = maxi ( maxi , mp [ a [ i ] ] ) ;",
+        "mp [ a [ i ] ] ] = x ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘maxi’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        9,
+        17,
+        6
+      ],
+      "mod_code": [
+        "maxi = maxi ( maxi , mp [ a [ i ] ] ) ;",
+        "mp [ a [ i ] ] ] = x ;",
+        "cin >> a . size ( ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘size’ in ‘a’, which is of non-class type ‘long long int [n]’"
+    },
+    {
+      "mod_line": [
+        9,
+        17,
+        6,
+        11
+      ],
+      "mod_code": [
+        "maxi = maxi ( maxi , mp [ a [ i ] ] ) ;",
+        "mp [ a [ i ] ] ] = x ;",
+        "cin >> a . size ( ) ;",
+        "long long x /= k ;"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘size’ in ‘a’, which is of non-class type ‘long long int [n]’"
+    },
+    {
+      "mod_line": [
+        9,
+        17,
+        6,
+        3
+      ],
+      "mod_code": [
+        "maxi = maxi ( maxi , mp [ a [ i ] ] ) ;",
+        "mp [ a [ i ] ] ] = x ;",
+        "cin >> a . size ( ) ;",
+        "long long maxi [ n + 5 ] , mp [ 100005 + 5 ] , mp [ 100005 + 5 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘long long int mp [100010]’"
+    },
+    {
+      "mod_line": [
+        9,
+        17,
+        11
+      ],
+      "mod_code": [
+        "maxi = maxi ( maxi , mp [ a [ i ] ] ) ;",
+        "mp [ a [ i ] ] ] = x ;",
+        "long long x /= k ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘maxi’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        9,
+        17,
+        11,
+        3
+      ],
+      "mod_code": [
+        "maxi = maxi ( maxi , mp [ a [ i ] ] ) ;",
+        "mp [ a [ i ] ] ] = x ;",
+        "long long x /= k ;",
+        "long long maxi [ n + 5 ] , mp [ 100005 + 5 ] , mp [ 100005 + 5 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘long long int mp [100010]’"
+    },
+    {
+      "mod_line": [
+        9,
+        17,
+        3
+      ],
+      "mod_code": [
+        "maxi = maxi ( maxi , mp [ a [ i ] ] ) ;",
+        "mp [ a [ i ] ] ] = x ;",
+        "long long maxi [ n + 5 ] , mp [ 100005 + 5 ] , mp [ 100005 + 5 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘long long int mp [100010]’"
+    },
+    {
+      "mod_line": [
+        9,
+        6
+      ],
+      "mod_code": [
+        "maxi = maxi ( maxi , mp [ a [ i ] ] ) ;",
+        "cin >> a . size ( ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘size’ in ‘a’, which is of non-class type ‘long long int [n]’"
+    },
+    {
+      "mod_line": [
+        9,
+        6,
+        11
+      ],
+      "mod_code": [
+        "maxi = maxi ( maxi , mp [ a [ i ] ] ) ;",
+        "cin >> a . size ( ) ;",
+        "long long x /= k ;"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘size’ in ‘a’, which is of non-class type ‘long long int [n]’"
+    },
+    {
+      "mod_line": [
+        9,
+        6,
+        11,
+        3
+      ],
+      "mod_code": [
+        "maxi = maxi ( maxi , mp [ a [ i ] ] ) ;",
+        "cin >> a . size ( ) ;",
+        "long long x /= k ;",
+        "long long maxi [ n + 5 ] , mp [ 100005 + 5 ] , mp [ 100005 + 5 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘long long int mp [100010]’"
+    },
+    {
+      "mod_line": [
+        9,
+        6,
+        3
+      ],
+      "mod_code": [
+        "maxi = maxi ( maxi , mp [ a [ i ] ] ) ;",
+        "cin >> a . size ( ) ;",
+        "long long maxi [ n + 5 ] , mp [ 100005 + 5 ] , mp [ 100005 + 5 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘long long int mp [100010]’"
+    },
+    {
+      "mod_line": [
+        9,
+        11
+      ],
+      "mod_code": [
+        "maxi = maxi ( maxi , mp [ a [ i ] ] ) ;",
+        "long long x /= k ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘maxi’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        9,
+        11,
+        3
+      ],
+      "mod_code": [
+        "maxi = maxi ( maxi , mp [ a [ i ] ] ) ;",
+        "long long x /= k ;",
+        "long long maxi [ n + 5 ] , mp [ 100005 + 5 ] , mp [ 100005 + 5 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘long long int mp [100010]’"
+    },
+    {
+      "mod_line": [
+        9,
+        3
+      ],
+      "mod_code": [
+        "maxi = maxi ( maxi , mp [ a [ i ] ] ) ;",
+        "long long maxi [ n + 5 ] , mp [ 100005 + 5 ] , mp [ 100005 + 5 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘long long int mp [100010]’"
+    },
+    {
+      "mod_line": [
+        17,
+        6
+      ],
+      "mod_code": [
+        "mp [ a [ i ] ] ] = x ;",
+        "cin >> a . size ( ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘size’ in ‘a’, which is of non-class type ‘long long int [n]’"
+    },
+    {
+      "mod_line": [
+        17,
+        6,
+        11
+      ],
+      "mod_code": [
+        "mp [ a [ i ] ] ] = x ;",
+        "cin >> a . size ( ) ;",
+        "long long x /= k ;"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘size’ in ‘a’, which is of non-class type ‘long long int [n]’"
+    },
+    {
+      "mod_line": [
+        17,
+        6,
+        11,
+        3
+      ],
+      "mod_code": [
+        "mp [ a [ i ] ] ] = x ;",
+        "cin >> a . size ( ) ;",
+        "long long x /= k ;",
+        "long long maxi [ n + 5 ] , mp [ 100005 + 5 ] , mp [ 100005 + 5 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘long long int mp [100010]’"
+    },
+    {
+      "mod_line": [
+        17,
+        6,
+        3
+      ],
+      "mod_code": [
+        "mp [ a [ i ] ] ] = x ;",
+        "cin >> a . size ( ) ;",
+        "long long maxi [ n + 5 ] , mp [ 100005 + 5 ] , mp [ 100005 + 5 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘long long int mp [100010]’"
+    },
+    {
+      "mod_line": [
+        17,
+        11
+      ],
+      "mod_code": [
+        "mp [ a [ i ] ] ] = x ;",
+        "long long x /= k ;"
+      ],
+      "err_line": 11,
+      "err_msg": "expected initializer before ‘/=’ token"
+    },
+    {
+      "mod_line": [
+        17,
+        11,
+        3
+      ],
+      "mod_code": [
+        "mp [ a [ i ] ] ] = x ;",
+        "long long x /= k ;",
+        "long long maxi [ n + 5 ] , mp [ 100005 + 5 ] , mp [ 100005 + 5 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘long long int mp [100010]’"
+    },
+    {
+      "mod_line": [
+        17,
+        3
+      ],
+      "mod_code": [
+        "mp [ a [ i ] ] ] = x ;",
+        "long long maxi [ n + 5 ] , mp [ 100005 + 5 ] , mp [ 100005 + 5 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘long long int mp [100010]’"
+    },
+    {
+      "mod_line": [
+        6,
+        11
+      ],
+      "mod_code": [
+        "cin >> a . size ( ) ;",
+        "long long x /= k ;"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘size’ in ‘a’, which is of non-class type ‘long long int [n]’"
+    },
+    {
+      "mod_line": [
+        6,
+        11,
+        3
+      ],
+      "mod_code": [
+        "cin >> a . size ( ) ;",
+        "long long x /= k ;",
+        "long long maxi [ n + 5 ] , mp [ 100005 + 5 ] , mp [ 100005 + 5 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘long long int mp [100010]’"
+    },
+    {
+      "mod_line": [
+        6,
+        3
+      ],
+      "mod_code": [
+        "cin >> a . size ( ) ;",
+        "long long maxi [ n + 5 ] , mp [ 100005 + 5 ] , mp [ 100005 + 5 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘long long int mp [100010]’"
+    },
+    {
+      "mod_line": [
+        11,
+        3
+      ],
+      "mod_code": [
+        "long long x /= k ;",
+        "long long maxi [ n + 5 ] , mp [ 100005 + 5 ] , mp [ 100005 + 5 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘long long int mp [100010]’"
+    }
+  ]
+}

@@ -1,0 +1,801 @@
+{
+  "meta": {
+    "index": 1646,
+    "hitid": "32ZCLEW0BZEF1S4KUX48OY36RIVPJ0",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "17A",
+    "subid": "48782777"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create integers n , m",
+      "code": "int n , m ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create integer arrays p , can with p size 1001 , can size 1001",
+      "code": "int p [ 1001 ] , can [ 1001 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "create integers n , k , last with last = 0",
+      "code": "int n , k , last = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "read n read k",
+      "code": "cin >> n >> k ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i = 2 to n inclusive",
+      "code": "for ( int i = 2 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "if not p [ i ]",
+      "code": "if ( ! p [ i ] )",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "decrement k by can [ i ]",
+      "code": "k -= can [ i ] ;",
+      "indent": 3
+    },
+    {
+      "line": 8,
+      "text": "if last is not 0 and last + i + 1 is less than or equal to n , set can [ last + i + 1 ] to 1",
+      "code": "if ( last != 0 && last + i + 1 <= n ) can [ last + i + 1 ] = 1 ;",
+      "indent": 3
+    },
+    {
+      "line": 9,
+      "text": "set last to i",
+      "code": "last = i ;",
+      "indent": 3
+    },
+    {
+      "line": 10,
+      "text": "for j = i * i to n inclusive , incrementing j by i , set p [ j ] to 1",
+      "code": "for ( int j = i * i ; j <= n ; j += i ) p [ j ] = 1 ;",
+      "indent": 3
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "if k is greater than 0",
+      "code": "if ( k > 0 )",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "print \" NO \" print newline",
+      "code": "cout << \" NO \" << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "else",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "print \" YES \" print newline",
+      "code": "cout << \" YES \" << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int p [ 1001 ] , p [ 1001 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int p [1001]’"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "for ( j = i * i ; j <= n ; j += i ) { p [ j ] = 1 ; }"
+      ],
+      "err_line": 10,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        10
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "for ( j = i * i ; j <= n ; j += i ) { p [ j ] = 1 ; }"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        15
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "for ( j = i * i ; j <= n ; j += i ) { p [ j ] = 1 ; }",
+        "cout << \" YES\\n \" << endl ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        15,
+        1
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "for ( j = i * i ; j <= n ; j += i ) { p [ j ] = 1 ; }",
+        "cout << \" YES\\n \" << endl ;",
+        "int p [ 1001 ] , p [ 1001 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int p [1001]’"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        15,
+        6
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "for ( j = i * i ; j <= n ; j += i ) { p [ j ] = 1 ; }",
+        "cout << \" YES\\n \" << endl ;",
+        "if ( p [ i ] != p [ i ] )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        15,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "for ( j = i * i ; j <= n ; j += i ) { p [ j ] = 1 ; }",
+        "cout << \" YES\\n \" << endl ;",
+        "char last = i ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        1
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "for ( j = i * i ; j <= n ; j += i ) { p [ j ] = 1 ; }",
+        "int p [ 1001 ] , p [ 1001 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int p [1001]’"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        1,
+        6
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "for ( j = i * i ; j <= n ; j += i ) { p [ j ] = 1 ; }",
+        "int p [ 1001 ] , p [ 1001 ] ;",
+        "if ( p [ i ] != p [ i ] )"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int p [1001]’"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        1,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "for ( j = i * i ; j <= n ; j += i ) { p [ j ] = 1 ; }",
+        "int p [ 1001 ] , p [ 1001 ] ;",
+        "char last = i ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int p [1001]’"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        6
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "for ( j = i * i ; j <= n ; j += i ) { p [ j ] = 1 ; }",
+        "if ( p [ i ] != p [ i ] )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        6,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "for ( j = i * i ; j <= n ; j += i ) { p [ j ] = 1 ; }",
+        "if ( p [ i ] != p [ i ] )",
+        "char last = i ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "for ( j = i * i ; j <= n ; j += i ) { p [ j ] = 1 ; }",
+        "char last = i ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        15
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "cout << \" YES\\n \" << endl ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        15,
+        1
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "cout << \" YES\\n \" << endl ;",
+        "int p [ 1001 ] , p [ 1001 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int p [1001]’"
+    },
+    {
+      "mod_line": [
+        5,
+        15,
+        1,
+        6
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "cout << \" YES\\n \" << endl ;",
+        "int p [ 1001 ] , p [ 1001 ] ;",
+        "if ( p [ i ] != p [ i ] )"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int p [1001]’"
+    },
+    {
+      "mod_line": [
+        5,
+        15,
+        1,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "cout << \" YES\\n \" << endl ;",
+        "int p [ 1001 ] , p [ 1001 ] ;",
+        "char last = i ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int p [1001]’"
+    },
+    {
+      "mod_line": [
+        5,
+        15,
+        6
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "cout << \" YES\\n \" << endl ;",
+        "if ( p [ i ] != p [ i ] )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        15,
+        6,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "cout << \" YES\\n \" << endl ;",
+        "if ( p [ i ] != p [ i ] )",
+        "char last = i ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        15,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "cout << \" YES\\n \" << endl ;",
+        "char last = i ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        1
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "int p [ 1001 ] , p [ 1001 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int p [1001]’"
+    },
+    {
+      "mod_line": [
+        5,
+        1,
+        6
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "int p [ 1001 ] , p [ 1001 ] ;",
+        "if ( p [ i ] != p [ i ] )"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int p [1001]’"
+    },
+    {
+      "mod_line": [
+        5,
+        1,
+        6,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "int p [ 1001 ] , p [ 1001 ] ;",
+        "if ( p [ i ] != p [ i ] )",
+        "char last = i ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int p [1001]’"
+    },
+    {
+      "mod_line": [
+        5,
+        1,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "int p [ 1001 ] , p [ 1001 ] ;",
+        "char last = i ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int p [1001]’"
+    },
+    {
+      "mod_line": [
+        5,
+        6
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "if ( p [ i ] != p [ i ] )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        6,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "if ( p [ i ] != p [ i ] )",
+        "char last = i ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "char last = i ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        15
+      ],
+      "mod_code": [
+        "for ( j = i * i ; j <= n ; j += i ) { p [ j ] = 1 ; }",
+        "cout << \" YES\\n \" << endl ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        15,
+        1
+      ],
+      "mod_code": [
+        "for ( j = i * i ; j <= n ; j += i ) { p [ j ] = 1 ; }",
+        "cout << \" YES\\n \" << endl ;",
+        "int p [ 1001 ] , p [ 1001 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int p [1001]’"
+    },
+    {
+      "mod_line": [
+        10,
+        15,
+        1,
+        6
+      ],
+      "mod_code": [
+        "for ( j = i * i ; j <= n ; j += i ) { p [ j ] = 1 ; }",
+        "cout << \" YES\\n \" << endl ;",
+        "int p [ 1001 ] , p [ 1001 ] ;",
+        "if ( p [ i ] != p [ i ] )"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int p [1001]’"
+    },
+    {
+      "mod_line": [
+        10,
+        15,
+        1,
+        9
+      ],
+      "mod_code": [
+        "for ( j = i * i ; j <= n ; j += i ) { p [ j ] = 1 ; }",
+        "cout << \" YES\\n \" << endl ;",
+        "int p [ 1001 ] , p [ 1001 ] ;",
+        "char last = i ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int p [1001]’"
+    },
+    {
+      "mod_line": [
+        10,
+        15,
+        6
+      ],
+      "mod_code": [
+        "for ( j = i * i ; j <= n ; j += i ) { p [ j ] = 1 ; }",
+        "cout << \" YES\\n \" << endl ;",
+        "if ( p [ i ] != p [ i ] )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        15,
+        6,
+        9
+      ],
+      "mod_code": [
+        "for ( j = i * i ; j <= n ; j += i ) { p [ j ] = 1 ; }",
+        "cout << \" YES\\n \" << endl ;",
+        "if ( p [ i ] != p [ i ] )",
+        "char last = i ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        15,
+        9
+      ],
+      "mod_code": [
+        "for ( j = i * i ; j <= n ; j += i ) { p [ j ] = 1 ; }",
+        "cout << \" YES\\n \" << endl ;",
+        "char last = i ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        1
+      ],
+      "mod_code": [
+        "for ( j = i * i ; j <= n ; j += i ) { p [ j ] = 1 ; }",
+        "int p [ 1001 ] , p [ 1001 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int p [1001]’"
+    },
+    {
+      "mod_line": [
+        10,
+        1,
+        6
+      ],
+      "mod_code": [
+        "for ( j = i * i ; j <= n ; j += i ) { p [ j ] = 1 ; }",
+        "int p [ 1001 ] , p [ 1001 ] ;",
+        "if ( p [ i ] != p [ i ] )"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int p [1001]’"
+    },
+    {
+      "mod_line": [
+        10,
+        1,
+        6,
+        9
+      ],
+      "mod_code": [
+        "for ( j = i * i ; j <= n ; j += i ) { p [ j ] = 1 ; }",
+        "int p [ 1001 ] , p [ 1001 ] ;",
+        "if ( p [ i ] != p [ i ] )",
+        "char last = i ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int p [1001]’"
+    },
+    {
+      "mod_line": [
+        10,
+        1,
+        9
+      ],
+      "mod_code": [
+        "for ( j = i * i ; j <= n ; j += i ) { p [ j ] = 1 ; }",
+        "int p [ 1001 ] , p [ 1001 ] ;",
+        "char last = i ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int p [1001]’"
+    },
+    {
+      "mod_line": [
+        10,
+        6
+      ],
+      "mod_code": [
+        "for ( j = i * i ; j <= n ; j += i ) { p [ j ] = 1 ; }",
+        "if ( p [ i ] != p [ i ] )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        6,
+        9
+      ],
+      "mod_code": [
+        "for ( j = i * i ; j <= n ; j += i ) { p [ j ] = 1 ; }",
+        "if ( p [ i ] != p [ i ] )",
+        "char last = i ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        9
+      ],
+      "mod_code": [
+        "for ( j = i * i ; j <= n ; j += i ) { p [ j ] = 1 ; }",
+        "char last = i ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        1
+      ],
+      "mod_code": [
+        "cout << \" YES\\n \" << endl ;",
+        "int p [ 1001 ] , p [ 1001 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int p [1001]’"
+    },
+    {
+      "mod_line": [
+        15,
+        1,
+        6
+      ],
+      "mod_code": [
+        "cout << \" YES\\n \" << endl ;",
+        "int p [ 1001 ] , p [ 1001 ] ;",
+        "if ( p [ i ] != p [ i ] )"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int p [1001]’"
+    },
+    {
+      "mod_line": [
+        15,
+        1,
+        6,
+        9
+      ],
+      "mod_code": [
+        "cout << \" YES\\n \" << endl ;",
+        "int p [ 1001 ] , p [ 1001 ] ;",
+        "if ( p [ i ] != p [ i ] )",
+        "char last = i ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int p [1001]’"
+    },
+    {
+      "mod_line": [
+        15,
+        1,
+        9
+      ],
+      "mod_code": [
+        "cout << \" YES\\n \" << endl ;",
+        "int p [ 1001 ] , p [ 1001 ] ;",
+        "char last = i ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int p [1001]’"
+    },
+    {
+      "mod_line": [
+        1,
+        6
+      ],
+      "mod_code": [
+        "int p [ 1001 ] , p [ 1001 ] ;",
+        "if ( p [ i ] != p [ i ] )"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int p [1001]’"
+    },
+    {
+      "mod_line": [
+        1,
+        6,
+        9
+      ],
+      "mod_code": [
+        "int p [ 1001 ] , p [ 1001 ] ;",
+        "if ( p [ i ] != p [ i ] )",
+        "char last = i ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int p [1001]’"
+    },
+    {
+      "mod_line": [
+        1,
+        9
+      ],
+      "mod_code": [
+        "int p [ 1001 ] , p [ 1001 ] ;",
+        "char last = i ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int p [1001]’"
+    }
+  ]
+}

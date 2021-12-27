@@ -1,0 +1,679 @@
+{
+  "meta": {
+    "index": 1972,
+    "hitid": "3TD33TP5DLW2W506HM9U0FVYLTWBA0",
+    "workerid": "A2O34N3Y3RJLJ6",
+    "probid": "319A",
+    "subid": "39419632"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "define integer function power , taking integers b and p",
+      "code": "long long power ( long long b , long long p )",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "if p = 0 , return 1",
+      "code": "if ( p == 0 ) return 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "define integer ans and set it to 1",
+      "code": "long long ans = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "while p > 1",
+      "code": "while ( p > 1 )",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "if p is even",
+      "code": "if ( p % 2 == 0 )",
+      "indent": 2
+    },
+    {
+      "line": 5,
+      "text": "multiply b by itself",
+      "code": "b *= b ;",
+      "indent": 3
+    },
+    {
+      "line": 6,
+      "text": "set b to b modulo 1000000007",
+      "code": "b %= 1000000007 ;",
+      "indent": 3
+    },
+    {
+      "line": 7,
+      "text": "halve p",
+      "code": "p /= 2 ;",
+      "indent": 3
+    },
+    {
+      "line": 8,
+      "text": "otherwise",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "multiply ans by b",
+      "code": "ans *= b ;",
+      "indent": 3
+    },
+    {
+      "line": 10,
+      "text": "assign ans modulo 1000000007 to ans",
+      "code": "ans %= 1000000007 ;",
+      "indent": 3
+    },
+    {
+      "line": 11,
+      "text": "decrement p",
+      "code": "p -= 1 ;",
+      "indent": 3
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "set ans to ans * b",
+      "code": "ans *= b ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "set ans to itself modulo 1000000007",
+      "code": "ans %= 1000000007 ;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "return ans",
+      "code": "return ans ;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 19,
+      "text": "define string s",
+      "code": "string s ;",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "read s",
+      "code": "cin >> s ;",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "define integer n and set it to the length of s",
+      "code": "long long n = s . size ( ) ;",
+      "indent": 1
+    },
+    {
+      "line": 22,
+      "text": "define integer f , setting it to 0",
+      "code": "long long f = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "for integer i from n - 1 to 0 by - 1",
+      "code": "for ( int i = n - 1 ; i >= 0 ; i -- )",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "if f is 0 and s [ i ] is character 0",
+      "code": "if ( f == 0 && s [ i ] == ' 0 ' )",
+      "indent": 2
+    },
+    {
+      "line": 25,
+      "text": "continue to next iteration",
+      "code": "continue ;",
+      "indent": 3
+    },
+    {
+      "line": 26,
+      "text": "otherwise if f = 0 and s [ i ] is ' 1 '",
+      "code": "else if ( f == 0 && s [ i ] == ' 1 ' )",
+      "indent": 2
+    },
+    {
+      "line": 27,
+      "text": "set f to power ( 2 , 2 * ( n - 1 - i ) )",
+      "code": "f = power ( 2 , 2 * ( n - 1 - i ) ) ;",
+      "indent": 3
+    },
+    {
+      "line": 28,
+      "text": "else if f isn ' t 0 and s [ i ] is character ' 1 '",
+      "code": "else if ( f != 0 && s [ i ] == ' 1 ' )",
+      "indent": 2
+    },
+    {
+      "line": 29,
+      "text": "assign ( ( ( 2 * f ) modulo 1000000007 ) + power ( 2 , 2 * ( n - 1 - i ) ) ) modulo 1000000007 to f",
+      "code": "f = ( ( 2 * f ) % 1000000007 + power ( 2 , 2 * ( n - 1 - i ) ) ) % 1000000007 ;",
+      "indent": 3
+    },
+    {
+      "line": 30,
+      "text": "otherwise if f is not 0 and s [ i ] = character 0",
+      "code": "else if ( f != 0 && s [ i ] == ' 0 ' )",
+      "indent": 2
+    },
+    {
+      "line": 31,
+      "text": "set f to ( 2 * f ) modulo 1000000007",
+      "code": "f = ( 2 * f ) % 1000000007 ;",
+      "indent": 3
+    },
+    {
+      "line": 32,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 33,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 34,
+      "text": "print f and a newline",
+      "code": "cout << f << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 35,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int Mininum ( int b , int p )"
+      ],
+      "err_line": 27,
+      "err_msg": "‘power’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "int ans = 1 , ans = 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "redeclaration of ‘int ans’"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "otherwise"
+      ],
+      "err_line": 8,
+      "err_msg": "‘otherwise’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        19
+      ],
+      "mod_code": [
+        "char s ;"
+      ],
+      "err_line": 21,
+      "err_msg": "request for member ‘size’ in ‘s’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        20
+      ],
+      "mod_code": [
+        "s >> s ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        25
+      ],
+      "mod_code": [
+        "continue = continue ;"
+      ],
+      "err_line": 25,
+      "err_msg": "expected ‘;’ before ‘=’ token"
+    },
+    {
+      "mod_line": [
+        27
+      ],
+      "mod_code": [
+        "f = abs ( 2 , 2 * ( n - 1 - i ) ) ;"
+      ],
+      "err_line": 27,
+      "err_msg": "no matching function for call to ‘abs(int, long long int)’"
+    },
+    {
+      "mod_line": [
+        29
+      ],
+      "mod_code": [
+        "f = ( ( ( 2 * f ) % 1000000007 ) + max ( 2 , 2 * ( n - 1 - i ) ) % 1000000007 ) ;"
+      ],
+      "err_line": 29,
+      "err_msg": "no matching function for call to ‘max(int, long long int)’"
+    },
+    {
+      "mod_line": [
+        31
+      ],
+      "mod_code": [
+        "f = ( 2 * f ) modulo 1000000007 ;"
+      ],
+      "err_line": 31,
+      "err_msg": "expected ‘;’ before ‘modulo’"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        7,
+        20
+      ],
+      "mod_code": [
+        "int power ( int b , int p )",
+        "int ans = 1 ;",
+        "p = p + p ;",
+        "s >> s ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        29,
+        20
+      ],
+      "mod_code": [
+        "int power ( int b , int p )",
+        "int ans = 1 ;",
+        "f = ( ( ( 2 * f ) % 1000000007 ) + power ( 2 , 2 * ( n - 1 - i ) ) % 1000000007 ) ;",
+        "s >> s ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        20
+      ],
+      "mod_code": [
+        "int power ( int b , int p )",
+        "int ans = 1 ;",
+        "s >> s ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        20,
+        3
+      ],
+      "mod_code": [
+        "int power ( int b , int p )",
+        "int ans = 1 ;",
+        "s >> s ;",
+        "while ( p -- )"
+      ],
+      "err_line": 20,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        0,
+        7,
+        29,
+        20
+      ],
+      "mod_code": [
+        "int power ( int b , int p )",
+        "p = p + p ;",
+        "f = ( ( ( 2 * f ) % 1000000007 ) + power ( 2 , 2 * ( n - 1 - i ) ) % 1000000007 ) ;",
+        "s >> s ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        0,
+        7,
+        20
+      ],
+      "mod_code": [
+        "int power ( int b , int p )",
+        "p = p + p ;",
+        "s >> s ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        0,
+        7,
+        20,
+        3
+      ],
+      "mod_code": [
+        "int power ( int b , int p )",
+        "p = p + p ;",
+        "s >> s ;",
+        "while ( p -- )"
+      ],
+      "err_line": 20,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        0,
+        29,
+        20
+      ],
+      "mod_code": [
+        "int power ( int b , int p )",
+        "f = ( ( ( 2 * f ) % 1000000007 ) + power ( 2 , 2 * ( n - 1 - i ) ) % 1000000007 ) ;",
+        "s >> s ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        0,
+        29,
+        20,
+        3
+      ],
+      "mod_code": [
+        "int power ( int b , int p )",
+        "f = ( ( ( 2 * f ) % 1000000007 ) + power ( 2 , 2 * ( n - 1 - i ) ) % 1000000007 ) ;",
+        "s >> s ;",
+        "while ( p -- )"
+      ],
+      "err_line": 20,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        0,
+        20
+      ],
+      "mod_code": [
+        "int power ( int b , int p )",
+        "s >> s ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        0,
+        20,
+        3
+      ],
+      "mod_code": [
+        "int power ( int b , int p )",
+        "s >> s ;",
+        "while ( p -- )"
+      ],
+      "err_line": 20,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        2,
+        7,
+        29,
+        20
+      ],
+      "mod_code": [
+        "int ans = 1 ;",
+        "p = p + p ;",
+        "f = ( ( ( 2 * f ) % 1000000007 ) + power ( 2 , 2 * ( n - 1 - i ) ) % 1000000007 ) ;",
+        "s >> s ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        2,
+        7,
+        20
+      ],
+      "mod_code": [
+        "int ans = 1 ;",
+        "p = p + p ;",
+        "s >> s ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        2,
+        7,
+        20,
+        3
+      ],
+      "mod_code": [
+        "int ans = 1 ;",
+        "p = p + p ;",
+        "s >> s ;",
+        "while ( p -- )"
+      ],
+      "err_line": 20,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        2,
+        29,
+        20
+      ],
+      "mod_code": [
+        "int ans = 1 ;",
+        "f = ( ( ( 2 * f ) % 1000000007 ) + power ( 2 , 2 * ( n - 1 - i ) ) % 1000000007 ) ;",
+        "s >> s ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        2,
+        29,
+        20,
+        3
+      ],
+      "mod_code": [
+        "int ans = 1 ;",
+        "f = ( ( ( 2 * f ) % 1000000007 ) + power ( 2 , 2 * ( n - 1 - i ) ) % 1000000007 ) ;",
+        "s >> s ;",
+        "while ( p -- )"
+      ],
+      "err_line": 20,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        2,
+        20
+      ],
+      "mod_code": [
+        "int ans = 1 ;",
+        "s >> s ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        2,
+        20,
+        3
+      ],
+      "mod_code": [
+        "int ans = 1 ;",
+        "s >> s ;",
+        "while ( p -- )"
+      ],
+      "err_line": 20,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        7,
+        29,
+        20
+      ],
+      "mod_code": [
+        "p = p + p ;",
+        "f = ( ( ( 2 * f ) % 1000000007 ) + power ( 2 , 2 * ( n - 1 - i ) ) % 1000000007 ) ;",
+        "s >> s ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        7,
+        29,
+        20,
+        3
+      ],
+      "mod_code": [
+        "p = p + p ;",
+        "f = ( ( ( 2 * f ) % 1000000007 ) + power ( 2 , 2 * ( n - 1 - i ) ) % 1000000007 ) ;",
+        "s >> s ;",
+        "while ( p -- )"
+      ],
+      "err_line": 20,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        7,
+        20
+      ],
+      "mod_code": [
+        "p = p + p ;",
+        "s >> s ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        7,
+        20,
+        3
+      ],
+      "mod_code": [
+        "p = p + p ;",
+        "s >> s ;",
+        "while ( p -- )"
+      ],
+      "err_line": 20,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        29,
+        20
+      ],
+      "mod_code": [
+        "f = ( ( ( 2 * f ) % 1000000007 ) + power ( 2 , 2 * ( n - 1 - i ) ) % 1000000007 ) ;",
+        "s >> s ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        29,
+        20,
+        3
+      ],
+      "mod_code": [
+        "f = ( ( ( 2 * f ) % 1000000007 ) + power ( 2 , 2 * ( n - 1 - i ) ) % 1000000007 ) ;",
+        "s >> s ;",
+        "while ( p -- )"
+      ],
+      "err_line": 20,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        20,
+        3
+      ],
+      "mod_code": [
+        "s >> s ;",
+        "while ( p -- )"
+      ],
+      "err_line": 20,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    }
+  ]
+}

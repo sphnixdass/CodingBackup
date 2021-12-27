@@ -1,0 +1,979 @@
+{
+  "meta": {
+    "index": 120,
+    "hitid": "3FSEU3P2NRUHBT3CFUH6VKPC3JORR2",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "354A",
+    "subid": "31830255"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create new constant integer N = 150000",
+      "code": "const int N = 150000 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "declare integer variables n , l , r , ql and qr",
+      "code": "int n , l , r , ql , qr ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "a is a new array of integers with size N",
+      "code": "int a [ N ] ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "declare int arrays suml and sumr with size N",
+      "code": "int suml [ N ] , sumr [ N ] ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "read n , l , r , ql and qr and keep looping",
+      "code": "while ( cin >> n >> l >> r >> ql >> qr )",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "set first sizeof ( suml ) bytes at the pointer suml to 0",
+      "code": "memset ( suml , 0 , sizeof ( suml ) ) ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "set first sizeof ( sumr ) bytes at the pointer sumr to 0",
+      "code": "memset ( sumr , 0 , sizeof ( sumr ) ) ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "set first sizeof ( a ) bytes at the pointer a to 0",
+      "code": "memset ( a , 0 , sizeof ( a ) ) ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "set suml [ 0 ] to assign 0 to sumr [ 0 ]",
+      "code": "suml [ 0 ] = sumr [ 0 ] = 0 ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "for i = 1 to n inclusive , read a [ i ]",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) { cin >> a [ i ] ; }",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "for i from 1 to n inclusive , assign suml [ i - 1 ] + a [ i ] to suml [ i ]",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) suml [ i ] = suml [ i - 1 ] + a [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "for integer i = 1 and integer j = n while i < = n and j > = 1 , incrementing i and decrementing j , assign sumr [ i - 1 ] + a [ j ] to sumr [ i ]",
+      "code": "for ( int i = 1 , j = n ; i <= n , j >= 1 ; i ++ , j -- ) sumr [ i ] = sumr [ i - 1 ] + a [ j ] ;",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "declare integer maxx = 2147483640",
+      "code": "int maxx = 2147483640 ;",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "create integer variable ans = 0",
+      "code": "int ans = 0 ;",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "declare ints ll and rr",
+      "code": "int ll , rr ;",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "in a for loop , change i from 0 to n inclusive incrementing i",
+      "code": "for ( int i = 0 ; i <= n ; i ++ )",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "assign suml [ i ] * l + sumr [ n - i ] * r to ans",
+      "code": "ans = suml [ i ] * l + sumr [ n - i ] * r ;",
+      "indent": 3
+    },
+    {
+      "line": 18,
+      "text": "if 2 * i is greater than n , increase ans by ( 2 * i - n - 1 ) * ql",
+      "code": "if ( 2 * i > n ) ans += ( 2 * i - n - 1 ) * ql ;",
+      "indent": 3
+    },
+    {
+      "line": 19,
+      "text": "if 2 * i is less than n , add ( n - 2 * i - 1 ) * qr to ans",
+      "code": "if ( 2 * i < n ) ans += ( n - 2 * i - 1 ) * qr ;",
+      "indent": 3
+    },
+    {
+      "line": 20,
+      "text": "assign min of maxx and ans to maxx",
+      "code": "maxx = min ( maxx , ans ) ;",
+      "indent": 3
+    },
+    {
+      "line": 21,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 22,
+      "text": "print maxx to the standard output",
+      "code": "cout << maxx << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 23,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 25,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n && j >= 1 ; i ++ ) sumr [ i ] = sumr [ i - 1 ] + a [ j ] ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "ans = suml [ i ] * l + sumr + sumr [ n - i ] * r ;"
+      ],
+      "err_line": 17,
+      "err_msg": "invalid conversion from ‘int*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "int a [ N N ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘]’ before ‘N’"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "int sumr [ N ] , sumr [ N ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int sumr [150000]’"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "while ( cin >> n >> l >> r >> ql >> qr ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "memset ( suml ) , sizeof ( suml ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "memset ( sumr ) , sizeof ( sumr ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "memset ( a ) , sizeof ( a ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n && j >= 1 ; i ++ ) { sumr [ i ] = sumr [ i - 1 ] + a [ j ] ; }"
+      ],
+      "err_line": 12,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "long long ans = 0 ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no matching function for call to ‘min(int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= n ; i ++ )"
+      ],
+      "err_line": 16,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        17
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n && j >= 1 ; i ++ ) sumr [ i ] = sumr [ i - 1 ] + a [ j ] ;",
+        "ans = suml [ i ] * l + sumr + sumr [ n - i ] * r ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        17,
+        5
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n && j >= 1 ; i ++ ) sumr [ i ] = sumr [ i - 1 ] + a [ j ] ;",
+        "ans = suml [ i ] * l + sumr + sumr [ n - i ] * r ;",
+        "while ( cin >> n >> l >> r >> ql >> qr ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        17,
+        5,
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n && j >= 1 ; i ++ ) sumr [ i ] = sumr [ i - 1 ] + a [ j ] ;",
+        "ans = suml [ i ] * l + sumr + sumr [ n - i ] * r ;",
+        "while ( cin >> n >> l >> r >> ql >> qr ;",
+        "memset ( suml ) , sizeof ( suml ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        17,
+        5,
+        7
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n && j >= 1 ; i ++ ) sumr [ i ] = sumr [ i - 1 ] + a [ j ] ;",
+        "ans = suml [ i ] * l + sumr + sumr [ n - i ] * r ;",
+        "while ( cin >> n >> l >> r >> ql >> qr ;",
+        "memset ( sumr ) , sizeof ( sumr ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        17,
+        5,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n && j >= 1 ; i ++ ) sumr [ i ] = sumr [ i - 1 ] + a [ j ] ;",
+        "ans = suml [ i ] * l + sumr + sumr [ n - i ] * r ;",
+        "while ( cin >> n >> l >> r >> ql >> qr ;",
+        "int maxx = 1 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        17,
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n && j >= 1 ; i ++ ) sumr [ i ] = sumr [ i - 1 ] + a [ j ] ;",
+        "ans = suml [ i ] * l + sumr + sumr [ n - i ] * r ;",
+        "memset ( suml ) , sizeof ( suml ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        12,
+        17,
+        6,
+        7
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n && j >= 1 ; i ++ ) sumr [ i ] = sumr [ i - 1 ] + a [ j ] ;",
+        "ans = suml [ i ] * l + sumr + sumr [ n - i ] * r ;",
+        "memset ( suml ) , sizeof ( suml ) ;",
+        "memset ( sumr ) , sizeof ( sumr ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        12,
+        17,
+        6,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n && j >= 1 ; i ++ ) sumr [ i ] = sumr [ i - 1 ] + a [ j ] ;",
+        "ans = suml [ i ] * l + sumr + sumr [ n - i ] * r ;",
+        "memset ( suml ) , sizeof ( suml ) ;",
+        "int maxx = 1 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        12,
+        17,
+        7
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n && j >= 1 ; i ++ ) sumr [ i ] = sumr [ i - 1 ] + a [ j ] ;",
+        "ans = suml [ i ] * l + sumr + sumr [ n - i ] * r ;",
+        "memset ( sumr ) , sizeof ( sumr ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        12,
+        17,
+        7,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n && j >= 1 ; i ++ ) sumr [ i ] = sumr [ i - 1 ] + a [ j ] ;",
+        "ans = suml [ i ] * l + sumr + sumr [ n - i ] * r ;",
+        "memset ( sumr ) , sizeof ( sumr ) ;",
+        "int maxx = 1 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        12,
+        17,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n && j >= 1 ; i ++ ) sumr [ i ] = sumr [ i - 1 ] + a [ j ] ;",
+        "ans = suml [ i ] * l + sumr + sumr [ n - i ] * r ;",
+        "int maxx = 1 ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        5
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n && j >= 1 ; i ++ ) sumr [ i ] = sumr [ i - 1 ] + a [ j ] ;",
+        "while ( cin >> n >> l >> r >> ql >> qr ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        5,
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n && j >= 1 ; i ++ ) sumr [ i ] = sumr [ i - 1 ] + a [ j ] ;",
+        "while ( cin >> n >> l >> r >> ql >> qr ;",
+        "memset ( suml ) , sizeof ( suml ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        5,
+        6,
+        7
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n && j >= 1 ; i ++ ) sumr [ i ] = sumr [ i - 1 ] + a [ j ] ;",
+        "while ( cin >> n >> l >> r >> ql >> qr ;",
+        "memset ( suml ) , sizeof ( suml ) ;",
+        "memset ( sumr ) , sizeof ( sumr ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        5,
+        6,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n && j >= 1 ; i ++ ) sumr [ i ] = sumr [ i - 1 ] + a [ j ] ;",
+        "while ( cin >> n >> l >> r >> ql >> qr ;",
+        "memset ( suml ) , sizeof ( suml ) ;",
+        "int maxx = 1 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        5,
+        7
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n && j >= 1 ; i ++ ) sumr [ i ] = sumr [ i - 1 ] + a [ j ] ;",
+        "while ( cin >> n >> l >> r >> ql >> qr ;",
+        "memset ( sumr ) , sizeof ( sumr ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        5,
+        7,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n && j >= 1 ; i ++ ) sumr [ i ] = sumr [ i - 1 ] + a [ j ] ;",
+        "while ( cin >> n >> l >> r >> ql >> qr ;",
+        "memset ( sumr ) , sizeof ( sumr ) ;",
+        "int maxx = 1 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        5,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n && j >= 1 ; i ++ ) sumr [ i ] = sumr [ i - 1 ] + a [ j ] ;",
+        "while ( cin >> n >> l >> r >> ql >> qr ;",
+        "int maxx = 1 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n && j >= 1 ; i ++ ) sumr [ i ] = sumr [ i - 1 ] + a [ j ] ;",
+        "memset ( suml ) , sizeof ( suml ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        12,
+        6,
+        7
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n && j >= 1 ; i ++ ) sumr [ i ] = sumr [ i - 1 ] + a [ j ] ;",
+        "memset ( suml ) , sizeof ( suml ) ;",
+        "memset ( sumr ) , sizeof ( sumr ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        12,
+        6,
+        7,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n && j >= 1 ; i ++ ) sumr [ i ] = sumr [ i - 1 ] + a [ j ] ;",
+        "memset ( suml ) , sizeof ( suml ) ;",
+        "memset ( sumr ) , sizeof ( sumr ) ;",
+        "int maxx = 1 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        12,
+        6,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n && j >= 1 ; i ++ ) sumr [ i ] = sumr [ i - 1 ] + a [ j ] ;",
+        "memset ( suml ) , sizeof ( suml ) ;",
+        "int maxx = 1 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        12,
+        7
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n && j >= 1 ; i ++ ) sumr [ i ] = sumr [ i - 1 ] + a [ j ] ;",
+        "memset ( sumr ) , sizeof ( sumr ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        12,
+        7,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n && j >= 1 ; i ++ ) sumr [ i ] = sumr [ i - 1 ] + a [ j ] ;",
+        "memset ( sumr ) , sizeof ( sumr ) ;",
+        "int maxx = 1 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        12,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n && j >= 1 ; i ++ ) sumr [ i ] = sumr [ i - 1 ] + a [ j ] ;",
+        "int maxx = 1 ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17,
+        5
+      ],
+      "mod_code": [
+        "ans = suml [ i ] * l + sumr + sumr [ n - i ] * r ;",
+        "while ( cin >> n >> l >> r >> ql >> qr ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        17,
+        5,
+        6
+      ],
+      "mod_code": [
+        "ans = suml [ i ] * l + sumr + sumr [ n - i ] * r ;",
+        "while ( cin >> n >> l >> r >> ql >> qr ;",
+        "memset ( suml ) , sizeof ( suml ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        17,
+        5,
+        6,
+        7
+      ],
+      "mod_code": [
+        "ans = suml [ i ] * l + sumr + sumr [ n - i ] * r ;",
+        "while ( cin >> n >> l >> r >> ql >> qr ;",
+        "memset ( suml ) , sizeof ( suml ) ;",
+        "memset ( sumr ) , sizeof ( sumr ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        17,
+        5,
+        6,
+        13
+      ],
+      "mod_code": [
+        "ans = suml [ i ] * l + sumr + sumr [ n - i ] * r ;",
+        "while ( cin >> n >> l >> r >> ql >> qr ;",
+        "memset ( suml ) , sizeof ( suml ) ;",
+        "int maxx = 1 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        17,
+        5,
+        7
+      ],
+      "mod_code": [
+        "ans = suml [ i ] * l + sumr + sumr [ n - i ] * r ;",
+        "while ( cin >> n >> l >> r >> ql >> qr ;",
+        "memset ( sumr ) , sizeof ( sumr ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        17,
+        5,
+        7,
+        13
+      ],
+      "mod_code": [
+        "ans = suml [ i ] * l + sumr + sumr [ n - i ] * r ;",
+        "while ( cin >> n >> l >> r >> ql >> qr ;",
+        "memset ( sumr ) , sizeof ( sumr ) ;",
+        "int maxx = 1 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        17,
+        5,
+        13
+      ],
+      "mod_code": [
+        "ans = suml [ i ] * l + sumr + sumr [ n - i ] * r ;",
+        "while ( cin >> n >> l >> r >> ql >> qr ;",
+        "int maxx = 1 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        17,
+        6
+      ],
+      "mod_code": [
+        "ans = suml [ i ] * l + sumr + sumr [ n - i ] * r ;",
+        "memset ( suml ) , sizeof ( suml ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        17,
+        6,
+        7
+      ],
+      "mod_code": [
+        "ans = suml [ i ] * l + sumr + sumr [ n - i ] * r ;",
+        "memset ( suml ) , sizeof ( suml ) ;",
+        "memset ( sumr ) , sizeof ( sumr ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        17,
+        6,
+        7,
+        13
+      ],
+      "mod_code": [
+        "ans = suml [ i ] * l + sumr + sumr [ n - i ] * r ;",
+        "memset ( suml ) , sizeof ( suml ) ;",
+        "memset ( sumr ) , sizeof ( sumr ) ;",
+        "int maxx = 1 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        17,
+        6,
+        13
+      ],
+      "mod_code": [
+        "ans = suml [ i ] * l + sumr + sumr [ n - i ] * r ;",
+        "memset ( suml ) , sizeof ( suml ) ;",
+        "int maxx = 1 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        17,
+        7
+      ],
+      "mod_code": [
+        "ans = suml [ i ] * l + sumr + sumr [ n - i ] * r ;",
+        "memset ( sumr ) , sizeof ( sumr ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        17,
+        7,
+        13
+      ],
+      "mod_code": [
+        "ans = suml [ i ] * l + sumr + sumr [ n - i ] * r ;",
+        "memset ( sumr ) , sizeof ( sumr ) ;",
+        "int maxx = 1 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        17,
+        13
+      ],
+      "mod_code": [
+        "ans = suml [ i ] * l + sumr + sumr [ n - i ] * r ;",
+        "int maxx = 1 ;"
+      ],
+      "err_line": 17,
+      "err_msg": "invalid conversion from ‘int*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        6
+      ],
+      "mod_code": [
+        "while ( cin >> n >> l >> r >> ql >> qr ;",
+        "memset ( suml ) , sizeof ( suml ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        6,
+        7
+      ],
+      "mod_code": [
+        "while ( cin >> n >> l >> r >> ql >> qr ;",
+        "memset ( suml ) , sizeof ( suml ) ;",
+        "memset ( sumr ) , sizeof ( sumr ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        6,
+        7,
+        13
+      ],
+      "mod_code": [
+        "while ( cin >> n >> l >> r >> ql >> qr ;",
+        "memset ( suml ) , sizeof ( suml ) ;",
+        "memset ( sumr ) , sizeof ( sumr ) ;",
+        "int maxx = 1 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        6,
+        13
+      ],
+      "mod_code": [
+        "while ( cin >> n >> l >> r >> ql >> qr ;",
+        "memset ( suml ) , sizeof ( suml ) ;",
+        "int maxx = 1 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        7
+      ],
+      "mod_code": [
+        "while ( cin >> n >> l >> r >> ql >> qr ;",
+        "memset ( sumr ) , sizeof ( sumr ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        7,
+        13
+      ],
+      "mod_code": [
+        "while ( cin >> n >> l >> r >> ql >> qr ;",
+        "memset ( sumr ) , sizeof ( sumr ) ;",
+        "int maxx = 1 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        13
+      ],
+      "mod_code": [
+        "while ( cin >> n >> l >> r >> ql >> qr ;",
+        "int maxx = 1 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        7
+      ],
+      "mod_code": [
+        "memset ( suml ) , sizeof ( suml ) ;",
+        "memset ( sumr ) , sizeof ( sumr ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        13
+      ],
+      "mod_code": [
+        "memset ( suml ) , sizeof ( suml ) ;",
+        "memset ( sumr ) , sizeof ( sumr ) ;",
+        "int maxx = 1 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        6,
+        13
+      ],
+      "mod_code": [
+        "memset ( suml ) , sizeof ( suml ) ;",
+        "int maxx = 1 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        7,
+        13
+      ],
+      "mod_code": [
+        "memset ( sumr ) , sizeof ( sumr ) ;",
+        "int maxx = 1 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    }
+  ]
+}

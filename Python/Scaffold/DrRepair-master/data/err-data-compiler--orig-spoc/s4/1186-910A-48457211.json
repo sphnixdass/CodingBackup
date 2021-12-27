@@ -1,0 +1,501 @@
+{
+  "meta": {
+    "index": 1186,
+    "hitid": "3W3RSPVVGSLYON0GE4FFEJ3X338ULD",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "910A",
+    "subid": "48457211"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create constant integer inf with inf = 1e9 + 7",
+      "code": "const int inf = 1e9 + 7 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create constant integer N with N = 1e6 + 5",
+      "code": "const int N = 1e6 + 5 ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "create string s",
+      "code": "string s ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "create integer array dp with size N",
+      "code": "int dp [ N ] ;",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "create integers n , d",
+      "code": "int n , d ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "read n read d read s",
+      "code": "cin >> n >> d >> s ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for i = 1 to n exclusive , set dp [ i ] to inf",
+      "code": "for ( int i = 1 ; i < n ; i ++ ) { dp [ i ] = inf ; }",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( int i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "if s [ i ] is ' 1 '",
+      "code": "if ( s [ i ] == ' 1 ' )",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "for j = 1 to d inclusive",
+      "code": "for ( int j = 1 ; j <= d ; j ++ )",
+      "indent": 3
+    },
+    {
+      "line": 11,
+      "text": "if i - j is greater than or equal to 0 and s [ i - j ] is ' 1 ' , set dp [ i ] to minimum of dp [ i ] and dp [ i - j ] + 1",
+      "code": "if ( i - j >= 0 && s [ i - j ] == ' 1 ' ) dp [ i ] = min ( dp [ i ] , dp [ i - j ] + 1 ) ;",
+      "indent": 4
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "if dp [ n - 1 ] is inf , set dp [ n - 1 ] to - 1",
+      "code": "if ( dp [ n - 1 ] == inf ) dp [ n - 1 ] = - 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "print dp [ n - 1 ] to newline",
+      "code": "cout << dp [ n - 1 ] << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "string n ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "for ( j = 1 ; j <= d ; j ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "if ( i - j >= 0 && s [ i - j ] == ' 1 ' ) dp [ i ] = min ( dp [ i - j ] + 1 ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘min(int)’"
+    },
+    {
+      "mod_line": [
+        2,
+        9
+      ],
+      "mod_code": [
+        "string n ;",
+        "if ( s [ i ] == ' l ' )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        9,
+        8
+      ],
+      "mod_code": [
+        "string n ;",
+        "if ( s [ i ] == ' l ' )",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        9,
+        8,
+        11
+      ],
+      "mod_code": [
+        "string n ;",
+        "if ( s [ i ] == ' l ' )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "if ( i - j >= 0 && s [ i - j ] == ' 1 ' ) dp [ i ] = min ( dp [ i - j ] + 1 ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        9,
+        8,
+        10
+      ],
+      "mod_code": [
+        "string n ;",
+        "if ( s [ i ] == ' l ' )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( j = 1 ; j <= d ; j ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        9,
+        11
+      ],
+      "mod_code": [
+        "string n ;",
+        "if ( s [ i ] == ' l ' )",
+        "if ( i - j >= 0 && s [ i - j ] == ' 1 ' ) dp [ i ] = min ( dp [ i - j ] + 1 ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        9,
+        11,
+        10
+      ],
+      "mod_code": [
+        "string n ;",
+        "if ( s [ i ] == ' l ' )",
+        "if ( i - j >= 0 && s [ i - j ] == ' 1 ' ) dp [ i ] = min ( dp [ i - j ] + 1 ) ;",
+        "for ( j = 1 ; j <= d ; j ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        9,
+        10
+      ],
+      "mod_code": [
+        "string n ;",
+        "if ( s [ i ] == ' l ' )",
+        "for ( j = 1 ; j <= d ; j ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        8
+      ],
+      "mod_code": [
+        "string n ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        8,
+        11
+      ],
+      "mod_code": [
+        "string n ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "if ( i - j >= 0 && s [ i - j ] == ' 1 ' ) dp [ i ] = min ( dp [ i - j ] + 1 ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        8,
+        11,
+        10
+      ],
+      "mod_code": [
+        "string n ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "if ( i - j >= 0 && s [ i - j ] == ' 1 ' ) dp [ i ] = min ( dp [ i - j ] + 1 ) ;",
+        "for ( j = 1 ; j <= d ; j ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        8,
+        10
+      ],
+      "mod_code": [
+        "string n ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( j = 1 ; j <= d ; j ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        11
+      ],
+      "mod_code": [
+        "string n ;",
+        "if ( i - j >= 0 && s [ i - j ] == ' 1 ' ) dp [ i ] = min ( dp [ i - j ] + 1 ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        11,
+        10
+      ],
+      "mod_code": [
+        "string n ;",
+        "if ( i - j >= 0 && s [ i - j ] == ' 1 ' ) dp [ i ] = min ( dp [ i - j ] + 1 ) ;",
+        "for ( j = 1 ; j <= d ; j ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        10
+      ],
+      "mod_code": [
+        "string n ;",
+        "for ( j = 1 ; j <= d ; j ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        8
+      ],
+      "mod_code": [
+        "if ( s [ i ] == ' l ' )",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        8,
+        11
+      ],
+      "mod_code": [
+        "if ( s [ i ] == ' l ' )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "if ( i - j >= 0 && s [ i - j ] == ' 1 ' ) dp [ i ] = min ( dp [ i - j ] + 1 ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        8,
+        11,
+        10
+      ],
+      "mod_code": [
+        "if ( s [ i ] == ' l ' )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "if ( i - j >= 0 && s [ i - j ] == ' 1 ' ) dp [ i ] = min ( dp [ i - j ] + 1 ) ;",
+        "for ( j = 1 ; j <= d ; j ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        8,
+        10
+      ],
+      "mod_code": [
+        "if ( s [ i ] == ' l ' )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( j = 1 ; j <= d ; j ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        11
+      ],
+      "mod_code": [
+        "if ( s [ i ] == ' l ' )",
+        "if ( i - j >= 0 && s [ i - j ] == ' 1 ' ) dp [ i ] = min ( dp [ i - j ] + 1 ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘min(int)’"
+    },
+    {
+      "mod_line": [
+        9,
+        11,
+        10
+      ],
+      "mod_code": [
+        "if ( s [ i ] == ' l ' )",
+        "if ( i - j >= 0 && s [ i - j ] == ' 1 ' ) dp [ i ] = min ( dp [ i - j ] + 1 ) ;",
+        "for ( j = 1 ; j <= d ; j ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        10
+      ],
+      "mod_code": [
+        "if ( s [ i ] == ' l ' )",
+        "for ( j = 1 ; j <= d ; j ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        11
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "if ( i - j >= 0 && s [ i - j ] == ' 1 ' ) dp [ i ] = min ( dp [ i - j ] + 1 ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        8,
+        11,
+        10
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "if ( i - j >= 0 && s [ i - j ] == ' 1 ' ) dp [ i ] = min ( dp [ i - j ] + 1 ) ;",
+        "for ( j = 1 ; j <= d ; j ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        8,
+        10
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( j = 1 ; j <= d ; j ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        10
+      ],
+      "mod_code": [
+        "if ( i - j >= 0 && s [ i - j ] == ' 1 ' ) dp [ i ] = min ( dp [ i - j ] + 1 ) ;",
+        "for ( j = 1 ; j <= d ; j ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘j’ was not declared in this scope"
+    }
+  ]
+}

@@ -1,0 +1,549 @@
+{
+  "meta": {
+    "index": 765,
+    "hitid": "3X55NP42EOA4GE2VRCCL8RMHWNL3PJ",
+    "workerid": "A1R0Q9CUUBSM5F",
+    "probid": "985A",
+    "subid": "47242998"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create int a and int array b of size 101",
+      "code": "int a , b [ 101 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read a",
+      "code": "cin >> a ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "for i = 0 to a / 2 exclusive , read b [ i ]",
+      "code": "for ( int i = 0 ; i < a / 2 ; i ++ ) { cin >> b [ i ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "sort b using argument a / 2",
+      "code": "sort ( b , b + ( a / 2 ) ) ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "create ints ans1 = 0 and ans2 = 0",
+      "code": "int ans1 = 0 , ans2 = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 0 to a / 2 exclusive",
+      "code": "for ( int i = 0 ; i < a / 2 ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "set ans1 to ans1 + abs ( b [ i ] - ( i * 2 + 1 ) )",
+      "code": "ans1 += abs ( b [ i ] - ( i * 2 + 1 ) ) ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "set ans2 to ans2 + abs ( b [ i ] - ( i * 2 + 2 ) )",
+      "code": "ans2 += abs ( b [ i ] - ( i * 2 + 2 ) ) ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "print the min of ans1 and ans2",
+      "code": "cout << min ( ans1 , ans2 ) << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int b , b [ 101 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int b [101]’"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "sort ( b , a / 2 ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no matching function for call to ‘sort(int [101], int)’"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int a [ 101 ] , a [ 101 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int a [101]’"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "gets ( a ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid conversion from ‘int’ to ‘char*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "sort ( b , b / 2 ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid operands of types ‘int [101]’ and ‘int’ to binary ‘operator/’"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "int ans2 = 0 , ans2 = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int ans2’"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < a / 2 ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        1,
+        4
+      ],
+      "mod_code": [
+        "int b , b [ 101 ] ;",
+        "sort ( b , a / 2 ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int b [101]’"
+    },
+    {
+      "mod_line": [
+        1,
+        4,
+        6
+      ],
+      "mod_code": [
+        "int b , b [ 101 ] ;",
+        "sort ( b , a / 2 ) ;",
+        "for ( i = 0 ; i < a / 2 ; i ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int b [101]’"
+    },
+    {
+      "mod_line": [
+        1,
+        4,
+        6,
+        2
+      ],
+      "mod_code": [
+        "int b , b [ 101 ] ;",
+        "sort ( b , a / 2 ) ;",
+        "for ( i = 0 ; i < a / 2 ; i ++ )",
+        "gets ( a ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int b [101]’"
+    },
+    {
+      "mod_line": [
+        1,
+        4,
+        2
+      ],
+      "mod_code": [
+        "int b , b [ 101 ] ;",
+        "sort ( b , a / 2 ) ;",
+        "gets ( a ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int b [101]’"
+    },
+    {
+      "mod_line": [
+        1,
+        6
+      ],
+      "mod_code": [
+        "int b , b [ 101 ] ;",
+        "for ( i = 0 ; i < a / 2 ; i ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int b [101]’"
+    },
+    {
+      "mod_line": [
+        1,
+        6,
+        4
+      ],
+      "mod_code": [
+        "int b , b [ 101 ] ;",
+        "for ( i = 0 ; i < a / 2 ; i ++ )",
+        "sort ( b , b / 2 ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int b [101]’"
+    },
+    {
+      "mod_line": [
+        1,
+        6,
+        4,
+        2
+      ],
+      "mod_code": [
+        "int b , b [ 101 ] ;",
+        "for ( i = 0 ; i < a / 2 ; i ++ )",
+        "sort ( b , b / 2 ) ;",
+        "gets ( a ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int b [101]’"
+    },
+    {
+      "mod_line": [
+        1,
+        6,
+        2
+      ],
+      "mod_code": [
+        "int b , b [ 101 ] ;",
+        "for ( i = 0 ; i < a / 2 ; i ++ )",
+        "gets ( a ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int b [101]’"
+    },
+    {
+      "mod_line": [
+        1,
+        4
+      ],
+      "mod_code": [
+        "int b , b [ 101 ] ;",
+        "sort ( b , b / 2 ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int b [101]’"
+    },
+    {
+      "mod_line": [
+        1,
+        4,
+        2
+      ],
+      "mod_code": [
+        "int b , b [ 101 ] ;",
+        "sort ( b , b / 2 ) ;",
+        "gets ( a ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int b [101]’"
+    },
+    {
+      "mod_line": [
+        1,
+        2
+      ],
+      "mod_code": [
+        "int b , b [ 101 ] ;",
+        "gets ( a ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int b [101]’"
+    },
+    {
+      "mod_line": [
+        4,
+        6
+      ],
+      "mod_code": [
+        "sort ( b , a / 2 ) ;",
+        "for ( i = 0 ; i < a / 2 ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "no matching function for call to ‘sort(int [101], int)’"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        2
+      ],
+      "mod_code": [
+        "sort ( b , a / 2 ) ;",
+        "for ( i = 0 ; i < a / 2 ; i ++ )",
+        "gets ( a ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid conversion from ‘int’ to ‘char*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        2,
+        1
+      ],
+      "mod_code": [
+        "sort ( b , a / 2 ) ;",
+        "for ( i = 0 ; i < a / 2 ; i ++ )",
+        "gets ( a ) ;",
+        "int a [ 101 ] , a [ 101 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int a [101]’"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        1
+      ],
+      "mod_code": [
+        "sort ( b , a / 2 ) ;",
+        "for ( i = 0 ; i < a / 2 ; i ++ )",
+        "int a [ 101 ] , a [ 101 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int a [101]’"
+    },
+    {
+      "mod_line": [
+        4,
+        2
+      ],
+      "mod_code": [
+        "sort ( b , a / 2 ) ;",
+        "gets ( a ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid conversion from ‘int’ to ‘char*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        4,
+        2,
+        1
+      ],
+      "mod_code": [
+        "sort ( b , a / 2 ) ;",
+        "gets ( a ) ;",
+        "int a [ 101 ] , a [ 101 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int a [101]’"
+    },
+    {
+      "mod_line": [
+        4,
+        1
+      ],
+      "mod_code": [
+        "sort ( b , a / 2 ) ;",
+        "int a [ 101 ] , a [ 101 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int a [101]’"
+    },
+    {
+      "mod_line": [
+        6,
+        4
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < a / 2 ; i ++ )",
+        "sort ( b , b / 2 ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid operands of types ‘int [101]’ and ‘int’ to binary ‘operator/’"
+    },
+    {
+      "mod_line": [
+        6,
+        4,
+        2
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < a / 2 ; i ++ )",
+        "sort ( b , b / 2 ) ;",
+        "gets ( a ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid conversion from ‘int’ to ‘char*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        4,
+        2,
+        1
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < a / 2 ; i ++ )",
+        "sort ( b , b / 2 ) ;",
+        "gets ( a ) ;",
+        "int a [ 101 ] , a [ 101 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int a [101]’"
+    },
+    {
+      "mod_line": [
+        6,
+        4,
+        1
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < a / 2 ; i ++ )",
+        "sort ( b , b / 2 ) ;",
+        "int a [ 101 ] , a [ 101 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int a [101]’"
+    },
+    {
+      "mod_line": [
+        6,
+        2
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < a / 2 ; i ++ )",
+        "gets ( a ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid conversion from ‘int’ to ‘char*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        2,
+        1
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < a / 2 ; i ++ )",
+        "gets ( a ) ;",
+        "int a [ 101 ] , a [ 101 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int a [101]’"
+    },
+    {
+      "mod_line": [
+        6,
+        1
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < a / 2 ; i ++ )",
+        "int a [ 101 ] , a [ 101 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int a [101]’"
+    },
+    {
+      "mod_line": [
+        4,
+        2
+      ],
+      "mod_code": [
+        "sort ( b , b / 2 ) ;",
+        "gets ( a ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid conversion from ‘int’ to ‘char*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        4,
+        2,
+        1
+      ],
+      "mod_code": [
+        "sort ( b , b / 2 ) ;",
+        "gets ( a ) ;",
+        "int a [ 101 ] , a [ 101 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int a [101]’"
+    },
+    {
+      "mod_line": [
+        4,
+        1
+      ],
+      "mod_code": [
+        "sort ( b , b / 2 ) ;",
+        "int a [ 101 ] , a [ 101 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int a [101]’"
+    },
+    {
+      "mod_line": [
+        2,
+        1
+      ],
+      "mod_code": [
+        "gets ( a ) ;",
+        "int a [ 101 ] , a [ 101 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int a [101]’"
+    }
+  ]
+}

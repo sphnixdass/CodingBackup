@@ -1,0 +1,813 @@
+{
+  "meta": {
+    "index": 2403,
+    "hitid": "3ZZAYRN1I6LRUVOORR5X14LPFU6OTX",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "543A",
+    "subid": "48991079"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare read with integers x , y , as arguments , returning integer",
+      "code": "int read ( int x , int f )",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create character ch with ch = read character",
+      "code": "char ch = getchar ( ) ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "while ch is less than ' 0 ' or ch is greater than ' 9 '",
+      "code": "while ( ch < ' 0 ' || ch > ' 9 ' )",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "if ch is ' - ' , set f to - 1",
+      "code": "if ( ch == ' - ' ) f = - 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 4,
+      "text": "set ch to read character",
+      "code": "ch = getchar ( ) ;",
+      "indent": 2
+    },
+    {
+      "line": 5,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "while ch is greater than or equal to ' 0 ' and ch is less than or equal to ' 9 '",
+      "code": "while ( ch >= ' 0 ' && ch <= ' 9 ' )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "set x to x * 10 + ch - ' 0 '",
+      "code": "x = x * 10 + ch - ' 0 ' ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "set ch to read character",
+      "code": "ch = getchar ( ) ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "return x * f from function",
+      "code": "return x * f ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 12,
+      "text": "create 2d integer array dp with size 1000 by 1000",
+      "code": "int dp [ 1000 ] [ 1000 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 14,
+      "text": "create integers n , m , b , mod",
+      "code": "int n , m , b , mod ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "read n read m read b read mod",
+      "code": "cin >> n >> m >> b >> mod ;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "set dp [ 0 ] [ 0 ] to - 1",
+      "code": "dp [ 0 ] [ 0 ] = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "for i = 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "create integer x with x = result of run read with 0 , 1 as arguments",
+      "code": "int x = read ( 0 , 1 ) ;",
+      "indent": 2
+    },
+    {
+      "line": 19,
+      "text": "for j = 1 to m inclusive",
+      "code": "for ( int j = 1 ; j <= m ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 20,
+      "text": "for t = x to b inclusive , set dp [ j ] [ t ] to ( dp [ j ] [ t ] + dp [ j - 1 ] [ t - x ] ) % mod",
+      "code": "for ( int t = x ; t <= b ; t ++ ) dp [ j ] [ t ] = ( dp [ j ] [ t ] + dp [ j - 1 ] [ t - x ] ) % mod ;",
+      "indent": 3
+    },
+    {
+      "line": 21,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 22,
+      "text": "create integer ans with ans = 0",
+      "code": "int ans = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "for i = 0 to b inclusive , set ans to ( ans + dp [ m ] [ i ] ) % mod",
+      "code": "for ( int i = 0 ; i <= b ; i ++ ) ans = ( ans + dp [ m ] [ i ] ) % mod ;",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "print ans print newline",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 25,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int read ( int x , int y )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int read ( int x , int y , int as )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "char ch = read ( ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "too few arguments to function ‘int read(int, int)’"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "ch = read ( ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "too few arguments to function ‘int read(int, int)’"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "ch = read ( ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "too few arguments to function ‘int read(int, int)’"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "int dp [ 1000 [ 1000 ] ] ;"
+      ],
+      "err_line": 12,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "n , m , b , mod ;"
+      ],
+      "err_line": 14,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "int dp [ 0 ] [ 0 ] = - 1 ;"
+      ],
+      "err_line": 16,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 17,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        18
+      ],
+      "mod_code": [
+        "int x = read ( 0 ) ;"
+      ],
+      "err_line": 18,
+      "err_msg": "too few arguments to function ‘int read(int, int)’"
+    },
+    {
+      "mod_line": [
+        19
+      ],
+      "mod_code": [
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 19,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        22
+      ],
+      "mod_code": [
+        "ans = 0 ;"
+      ],
+      "err_line": 22,
+      "err_msg": "‘ans’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        16
+      ],
+      "mod_code": [
+        "int read ( int x , int y )",
+        "dp [ 0 ] [ 0 ] = - 1 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        4
+      ],
+      "mod_code": [
+        "int read ( int x , int y )",
+        "dp [ 0 ] [ 0 ] = - 1 ;",
+        "ch = read ( ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        4,
+        17
+      ],
+      "mod_code": [
+        "int read ( int x , int y )",
+        "dp [ 0 ] [ 0 ] = - 1 ;",
+        "ch = read ( ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        4,
+        2
+      ],
+      "mod_code": [
+        "int read ( int x , int y )",
+        "dp [ 0 ] [ 0 ] = - 1 ;",
+        "ch = read ( ) ;",
+        "while ( ch < ' 0 ' || ch > ' 9 ' ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        17
+      ],
+      "mod_code": [
+        "int read ( int x , int y )",
+        "dp [ 0 ] [ 0 ] = - 1 ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        17,
+        2
+      ],
+      "mod_code": [
+        "int read ( int x , int y )",
+        "dp [ 0 ] [ 0 ] = - 1 ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "while ( ch < ' 0 ' || ch > ' 9 ' ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        2
+      ],
+      "mod_code": [
+        "int read ( int x , int y )",
+        "dp [ 0 ] [ 0 ] = - 1 ;",
+        "while ( ch < ' 0 ' || ch > ' 9 ' ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        4
+      ],
+      "mod_code": [
+        "int read ( int x , int y )",
+        "ch = read ( ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        17
+      ],
+      "mod_code": [
+        "int read ( int x , int y )",
+        "ch = read ( ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        17,
+        2
+      ],
+      "mod_code": [
+        "int read ( int x , int y )",
+        "ch = read ( ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "while ( ch < ' 0 ' || ch > ' 9 ' ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        2
+      ],
+      "mod_code": [
+        "int read ( int x , int y )",
+        "ch = read ( ) ;",
+        "while ( ch < ' 0 ' || ch > ' 9 ' ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        17
+      ],
+      "mod_code": [
+        "int read ( int x , int y )",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        17,
+        2
+      ],
+      "mod_code": [
+        "int read ( int x , int y )",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "while ( ch < ' 0 ' || ch > ' 9 ' ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        2
+      ],
+      "mod_code": [
+        "int read ( int x , int y )",
+        "while ( ch < ' 0 ' || ch > ' 9 ' ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        4
+      ],
+      "mod_code": [
+        "dp [ 0 ] [ 0 ] = - 1 ;",
+        "ch = read ( ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "too few arguments to function ‘int read(int, int)’"
+    },
+    {
+      "mod_line": [
+        16,
+        4,
+        17
+      ],
+      "mod_code": [
+        "dp [ 0 ] [ 0 ] = - 1 ;",
+        "ch = read ( ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "too few arguments to function ‘int read(int, int)’"
+    },
+    {
+      "mod_line": [
+        16,
+        4,
+        17,
+        0
+      ],
+      "mod_code": [
+        "dp [ 0 ] [ 0 ] = - 1 ;",
+        "ch = read ( ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int read ( int x , int y , int as )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        4,
+        17,
+        2
+      ],
+      "mod_code": [
+        "dp [ 0 ] [ 0 ] = - 1 ;",
+        "ch = read ( ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "while ( ch < ' 0 ' || ch > ' 9 ' ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "too few arguments to function ‘int read(int, int)’"
+    },
+    {
+      "mod_line": [
+        16,
+        4,
+        0
+      ],
+      "mod_code": [
+        "dp [ 0 ] [ 0 ] = - 1 ;",
+        "ch = read ( ) ;",
+        "int read ( int x , int y , int as )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        4,
+        0,
+        2
+      ],
+      "mod_code": [
+        "dp [ 0 ] [ 0 ] = - 1 ;",
+        "ch = read ( ) ;",
+        "int read ( int x , int y , int as )",
+        "while ( ch < ' 0 ' || ch > ' 9 ' ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        4,
+        2
+      ],
+      "mod_code": [
+        "dp [ 0 ] [ 0 ] = - 1 ;",
+        "ch = read ( ) ;",
+        "while ( ch < ' 0 ' || ch > ' 9 ' ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "too few arguments to function ‘int read(int, int)’"
+    },
+    {
+      "mod_line": [
+        16,
+        17
+      ],
+      "mod_code": [
+        "dp [ 0 ] [ 0 ] = - 1 ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 17,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        17,
+        0
+      ],
+      "mod_code": [
+        "dp [ 0 ] [ 0 ] = - 1 ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int read ( int x , int y , int as )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        17,
+        0,
+        2
+      ],
+      "mod_code": [
+        "dp [ 0 ] [ 0 ] = - 1 ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int read ( int x , int y , int as )",
+        "while ( ch < ' 0 ' || ch > ' 9 ' ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        17,
+        2
+      ],
+      "mod_code": [
+        "dp [ 0 ] [ 0 ] = - 1 ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "while ( ch < ' 0 ' || ch > ' 9 ' ) ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        0
+      ],
+      "mod_code": [
+        "dp [ 0 ] [ 0 ] = - 1 ;",
+        "int read ( int x , int y , int as )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        0,
+        2
+      ],
+      "mod_code": [
+        "dp [ 0 ] [ 0 ] = - 1 ;",
+        "int read ( int x , int y , int as )",
+        "while ( ch < ' 0 ' || ch > ' 9 ' ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        17
+      ],
+      "mod_code": [
+        "ch = read ( ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "too few arguments to function ‘int read(int, int)’"
+    },
+    {
+      "mod_line": [
+        4,
+        17,
+        0
+      ],
+      "mod_code": [
+        "ch = read ( ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int read ( int x , int y , int as )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        17,
+        0,
+        2
+      ],
+      "mod_code": [
+        "ch = read ( ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int read ( int x , int y , int as )",
+        "while ( ch < ' 0 ' || ch > ' 9 ' ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        17,
+        2
+      ],
+      "mod_code": [
+        "ch = read ( ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "while ( ch < ' 0 ' || ch > ' 9 ' ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "too few arguments to function ‘int read(int, int)’"
+    },
+    {
+      "mod_line": [
+        4,
+        0
+      ],
+      "mod_code": [
+        "ch = read ( ) ;",
+        "int read ( int x , int y , int as )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        0,
+        2
+      ],
+      "mod_code": [
+        "ch = read ( ) ;",
+        "int read ( int x , int y , int as )",
+        "while ( ch < ' 0 ' || ch > ' 9 ' ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        2
+      ],
+      "mod_code": [
+        "ch = read ( ) ;",
+        "while ( ch < ' 0 ' || ch > ' 9 ' ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "too few arguments to function ‘int read(int, int)’"
+    },
+    {
+      "mod_line": [
+        17,
+        0
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int read ( int x , int y , int as )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17,
+        0,
+        2
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int read ( int x , int y , int as )",
+        "while ( ch < ' 0 ' || ch > ' 9 ' ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17,
+        2
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "while ( ch < ' 0 ' || ch > ' 9 ' ) ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        2
+      ],
+      "mod_code": [
+        "int read ( int x , int y , int as )",
+        "while ( ch < ' 0 ' || ch > ' 9 ' ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘f’ was not declared in this scope"
+    }
+  ]
+}

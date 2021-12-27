@@ -1,0 +1,647 @@
+{
+  "meta": {
+    "index": 2452,
+    "hitid": "3XBYQ44Z6PYZZ4XQIDW7IYYBJJZWTM",
+    "workerid": "A28Q0RBWI7B0V1",
+    "probid": "553A",
+    "subid": "47858263"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "mod = constant long long with value 1e9 + 7",
+      "code": "const long long mod = 1e9 + 7 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create long long array dp of size 1001x1001",
+      "code": "long long dp [ 1001 ] [ 1001 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "define function C that takes long long n , r and returns long long",
+      "code": "long long C ( long long n , long long r )",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "if n < r return 0",
+      "code": "if ( n < r ) return 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "if n equals r return dp [ n ] [ r ] = = 1",
+      "code": "if ( n == r ) return dp [ n ] [ r ] = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "if r is 0 return dp [ n ] [ r ] = = 1",
+      "code": "if ( r == 0 ) return dp [ n ] [ r ] = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "if dp [ n ] [ r ] is true",
+      "code": "if ( dp [ n ] [ r ] )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "return dp [ n ] [ r ] modulus mod",
+      "code": "return dp [ n ] [ r ] % ( mod ) ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "otherwise",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "set dp [ n ] [ r ] = ( the result of C called with n - 1 and r % ( mod ) + result of C ( n - 1 , r - 1 ) % ( mod ) ) % ( mod )",
+      "code": "dp [ n ] [ r ] = ( C ( n - 1 , r ) % ( mod ) + C ( n - 1 , r - 1 ) % ( mod ) ) % ( mod ) ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "return dp [ n ] [ r ] modulus mod",
+      "code": "return dp [ n ] [ r ] % ( mod ) ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 13,
+      "text": "k , i , j = long long",
+      "code": "long long k , i , j ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "input k",
+      "code": "cin >> k ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "create a vector of type long long called c with size k + 1",
+      "code": "vector < long long > c ( k + 1 ) ;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "input k values into c",
+      "code": "for ( i = 1 ; i < k + 1 ; i ++ ) cin >> c [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "curr = long long with value c [ 1 ]",
+      "code": "long long curr = c [ 1 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "ans = long long with value 1",
+      "code": "long long ans = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "create temp of type long long with value 0",
+      "code": "long long temp = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "n1 , n2 = long long",
+      "code": "long long n1 , n2 ;",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "set n1 and n2 both to 0",
+      "code": "n1 = n2 = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 22,
+      "text": "for i = 2 to k",
+      "code": "for ( i = 2 ; i < k + 1 ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "set temp = 0",
+      "code": "temp = 0 ;",
+      "indent": 2
+    },
+    {
+      "line": 24,
+      "text": "add curr to n1",
+      "code": "n1 += curr ;",
+      "indent": 2
+    },
+    {
+      "line": 25,
+      "text": "for j = 1 to c [ i ]",
+      "code": "for ( j = 1 ; j < c [ i ] + 1 ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 26,
+      "text": "set n2 = c [ i ] - j",
+      "code": "n2 = c [ i ] - j ;",
+      "indent": 3
+    },
+    {
+      "line": 27,
+      "text": "set temp = the result of C called with n1 + n2 - 1 and n1 - 1 % mod + temp % mod ) % mod",
+      "code": "temp = ( C ( n1 + n2 - 1 , n1 - 1 ) % mod + temp % mod ) % mod ;",
+      "indent": 3
+    },
+    {
+      "line": 28,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 29,
+      "text": "set curr = c [ i ]",
+      "code": "curr = c [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 30,
+      "text": "if ans is true set ans = ( ans % mod * temp % mod ) % mod",
+      "code": "if ( ans ) ans = ( ans % mod * temp % mod ) % mod ;",
+      "indent": 2
+    },
+    {
+      "line": 31,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 32,
+      "text": "print ( ans + mod ) modulus mod",
+      "code": "cout << ( ans + mod ) % mod << ' \\n ' ;",
+      "indent": 1
+    },
+    {
+      "line": 33,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "long long dp [ 1001x1001 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid suffix \"x1001\" on integer constant"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "long long dp [ 100000 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘long long int[long long int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "long long C ( long long n , long long r ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "dp [ n ] [ r ] = ( C ? ( n - 1 , r - ( mod ) % ( mod ) % ( mod ) % ( mod ) ) % ( mod ) % ( mod ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "vector < long long > c [ k + 1 ] ;"
+      ],
+      "err_line": 16,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘std::vector<long long int>’)"
+    },
+    {
+      "mod_line": [
+        21
+      ],
+      "mod_code": [
+        "int n1 = 0 , n2 = 0 ;"
+      ],
+      "err_line": 21,
+      "err_msg": "conflicting declaration ‘int n1’"
+    },
+    {
+      "mod_line": [
+        27
+      ],
+      "mod_code": [
+        "temp = C . result ( n1 + n2 - 1 , n1 - 1 % mod + temp ) % mod ;"
+      ],
+      "err_line": 27,
+      "err_msg": "request for member ‘result’ in ‘C’, which is of non-class type ‘long long int(long long int, long long int)’"
+    },
+    {
+      "mod_line": [
+        1,
+        9
+      ],
+      "mod_code": [
+        "long long dp [ 1001x1001 ] ;",
+        "dp [ n ] [ r ] = ( n - 1 , r % ( mod - 1 , r - 1 ) % ( mod ) % ( mod ) % ( mod ) ) % ( mod ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid suffix \"x1001\" on integer constant"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        16
+      ],
+      "mod_code": [
+        "long long dp [ 1001x1001 ] ;",
+        "dp [ n ] [ r ] = ( n - 1 , r % ( mod - 1 , r - 1 ) % ( mod ) % ( mod ) % ( mod ) ) % ( mod ) ;",
+        "for ( int i = 0 ; i < k ; i ++ ) cin >> c [ i ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid suffix \"x1001\" on integer constant"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        16,
+        27
+      ],
+      "mod_code": [
+        "long long dp [ 1001x1001 ] ;",
+        "dp [ n ] [ r ] = ( n - 1 , r % ( mod - 1 , r - 1 ) % ( mod ) % ( mod ) % ( mod ) ) % ( mod ) ;",
+        "for ( int i = 0 ; i < k ; i ++ ) cin >> c [ i ] ;",
+        "temp = C ( n1 + n2 - 1 , n1 - 1 % mod + temp % mod ) % mod ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid suffix \"x1001\" on integer constant"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        16,
+        29
+      ],
+      "mod_code": [
+        "long long dp [ 1001x1001 ] ;",
+        "dp [ n ] [ r ] = ( n - 1 , r % ( mod - 1 , r - 1 ) % ( mod ) % ( mod ) % ( mod ) ) % ( mod ) ;",
+        "for ( int i = 0 ; i < k ; i ++ ) cin >> c [ i ] ;",
+        "char curr = c [ i ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid suffix \"x1001\" on integer constant"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        16,
+        6
+      ],
+      "mod_code": [
+        "long long dp [ 1001x1001 ] ;",
+        "dp [ n ] [ r ] = ( n - 1 , r % ( mod - 1 , r - 1 ) % ( mod ) % ( mod ) % ( mod ) ) % ( mod ) ;",
+        "for ( int i = 0 ; i < k ; i ++ ) cin >> c [ i ] ;",
+        "if ( dp [ n ] [ r ] == true )"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid suffix \"x1001\" on integer constant"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        27
+      ],
+      "mod_code": [
+        "long long dp [ 1001x1001 ] ;",
+        "dp [ n ] [ r ] = ( n - 1 , r % ( mod - 1 , r - 1 ) % ( mod ) % ( mod ) % ( mod ) ) % ( mod ) ;",
+        "temp = C ( n1 + n2 - 1 , n1 - 1 % mod + temp % mod ) % mod ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid suffix \"x1001\" on integer constant"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        27,
+        29
+      ],
+      "mod_code": [
+        "long long dp [ 1001x1001 ] ;",
+        "dp [ n ] [ r ] = ( n - 1 , r % ( mod - 1 , r - 1 ) % ( mod ) % ( mod ) % ( mod ) ) % ( mod ) ;",
+        "temp = C ( n1 + n2 - 1 , n1 - 1 % mod + temp % mod ) % mod ;",
+        "char curr = c [ i ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid suffix \"x1001\" on integer constant"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        27,
+        6
+      ],
+      "mod_code": [
+        "long long dp [ 1001x1001 ] ;",
+        "dp [ n ] [ r ] = ( n - 1 , r % ( mod - 1 , r - 1 ) % ( mod ) % ( mod ) % ( mod ) ) % ( mod ) ;",
+        "temp = C ( n1 + n2 - 1 , n1 - 1 % mod + temp % mod ) % mod ;",
+        "if ( dp [ n ] [ r ] == true )"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid suffix \"x1001\" on integer constant"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        29
+      ],
+      "mod_code": [
+        "long long dp [ 1001x1001 ] ;",
+        "dp [ n ] [ r ] = ( n - 1 , r % ( mod - 1 , r - 1 ) % ( mod ) % ( mod ) % ( mod ) ) % ( mod ) ;",
+        "char curr = c [ i ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid suffix \"x1001\" on integer constant"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        29,
+        6
+      ],
+      "mod_code": [
+        "long long dp [ 1001x1001 ] ;",
+        "dp [ n ] [ r ] = ( n - 1 , r % ( mod - 1 , r - 1 ) % ( mod ) % ( mod ) % ( mod ) ) % ( mod ) ;",
+        "char curr = c [ i ] ;",
+        "if ( dp [ n ] [ r ] == true )"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid suffix \"x1001\" on integer constant"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        6
+      ],
+      "mod_code": [
+        "long long dp [ 1001x1001 ] ;",
+        "dp [ n ] [ r ] = ( n - 1 , r % ( mod - 1 , r - 1 ) % ( mod ) % ( mod ) % ( mod ) ) % ( mod ) ;",
+        "if ( dp [ n ] [ r ] == true )"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid suffix \"x1001\" on integer constant"
+    },
+    {
+      "mod_line": [
+        1,
+        16
+      ],
+      "mod_code": [
+        "long long dp [ 1001x1001 ] ;",
+        "for ( int i = 0 ; i < k ; i ++ ) cin >> c [ i ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid suffix \"x1001\" on integer constant"
+    },
+    {
+      "mod_line": [
+        1,
+        16,
+        27
+      ],
+      "mod_code": [
+        "long long dp [ 1001x1001 ] ;",
+        "for ( int i = 0 ; i < k ; i ++ ) cin >> c [ i ] ;",
+        "temp = C ( n1 + n2 - 1 , n1 - 1 % mod + temp % mod ) % mod ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid suffix \"x1001\" on integer constant"
+    },
+    {
+      "mod_line": [
+        1,
+        16,
+        27,
+        29
+      ],
+      "mod_code": [
+        "long long dp [ 1001x1001 ] ;",
+        "for ( int i = 0 ; i < k ; i ++ ) cin >> c [ i ] ;",
+        "temp = C ( n1 + n2 - 1 , n1 - 1 % mod + temp % mod ) % mod ;",
+        "char curr = c [ i ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid suffix \"x1001\" on integer constant"
+    },
+    {
+      "mod_line": [
+        1,
+        16,
+        27,
+        6
+      ],
+      "mod_code": [
+        "long long dp [ 1001x1001 ] ;",
+        "for ( int i = 0 ; i < k ; i ++ ) cin >> c [ i ] ;",
+        "temp = C ( n1 + n2 - 1 , n1 - 1 % mod + temp % mod ) % mod ;",
+        "if ( dp [ n ] [ r ] == true )"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid suffix \"x1001\" on integer constant"
+    },
+    {
+      "mod_line": [
+        1,
+        16,
+        29
+      ],
+      "mod_code": [
+        "long long dp [ 1001x1001 ] ;",
+        "for ( int i = 0 ; i < k ; i ++ ) cin >> c [ i ] ;",
+        "char curr = c [ i ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid suffix \"x1001\" on integer constant"
+    },
+    {
+      "mod_line": [
+        1,
+        16,
+        29,
+        6
+      ],
+      "mod_code": [
+        "long long dp [ 1001x1001 ] ;",
+        "for ( int i = 0 ; i < k ; i ++ ) cin >> c [ i ] ;",
+        "char curr = c [ i ] ;",
+        "if ( dp [ n ] [ r ] == true )"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid suffix \"x1001\" on integer constant"
+    },
+    {
+      "mod_line": [
+        1,
+        16,
+        6
+      ],
+      "mod_code": [
+        "long long dp [ 1001x1001 ] ;",
+        "for ( int i = 0 ; i < k ; i ++ ) cin >> c [ i ] ;",
+        "if ( dp [ n ] [ r ] == true )"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid suffix \"x1001\" on integer constant"
+    },
+    {
+      "mod_line": [
+        1,
+        27
+      ],
+      "mod_code": [
+        "long long dp [ 1001x1001 ] ;",
+        "temp = C ( n1 + n2 - 1 , n1 - 1 % mod + temp % mod ) % mod ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid suffix \"x1001\" on integer constant"
+    },
+    {
+      "mod_line": [
+        1,
+        27,
+        29
+      ],
+      "mod_code": [
+        "long long dp [ 1001x1001 ] ;",
+        "temp = C ( n1 + n2 - 1 , n1 - 1 % mod + temp % mod ) % mod ;",
+        "char curr = c [ i ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid suffix \"x1001\" on integer constant"
+    },
+    {
+      "mod_line": [
+        1,
+        27,
+        29,
+        6
+      ],
+      "mod_code": [
+        "long long dp [ 1001x1001 ] ;",
+        "temp = C ( n1 + n2 - 1 , n1 - 1 % mod + temp % mod ) % mod ;",
+        "char curr = c [ i ] ;",
+        "if ( dp [ n ] [ r ] == true )"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid suffix \"x1001\" on integer constant"
+    },
+    {
+      "mod_line": [
+        1,
+        27,
+        6
+      ],
+      "mod_code": [
+        "long long dp [ 1001x1001 ] ;",
+        "temp = C ( n1 + n2 - 1 , n1 - 1 % mod + temp % mod ) % mod ;",
+        "if ( dp [ n ] [ r ] == true )"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid suffix \"x1001\" on integer constant"
+    },
+    {
+      "mod_line": [
+        1,
+        29
+      ],
+      "mod_code": [
+        "long long dp [ 1001x1001 ] ;",
+        "char curr = c [ i ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid suffix \"x1001\" on integer constant"
+    },
+    {
+      "mod_line": [
+        1,
+        29,
+        6
+      ],
+      "mod_code": [
+        "long long dp [ 1001x1001 ] ;",
+        "char curr = c [ i ] ;",
+        "if ( dp [ n ] [ r ] == true )"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid suffix \"x1001\" on integer constant"
+    },
+    {
+      "mod_line": [
+        1,
+        6
+      ],
+      "mod_code": [
+        "long long dp [ 1001x1001 ] ;",
+        "if ( dp [ n ] [ r ] == true )"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid suffix \"x1001\" on integer constant"
+    }
+  ]
+}

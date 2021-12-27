@@ -1,0 +1,961 @@
+{
+  "meta": {
+    "index": 125,
+    "hitid": "3RKHNXPHGWQN4HIYT43EZJQIFQYUKG",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "354A",
+    "subid": "46199322"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create constant integer maxn with maxn = 1e5 + 10",
+      "code": "const int maxn = 1e5 + 10 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create integer array sumw with size maxn",
+      "code": "int sumw [ maxn ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "create integers n , l , r , Ql , Qr",
+      "code": "int n , l , r , Ql , Qr ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "read n read l read r read Ql read Qr",
+      "code": "cin >> n >> l >> r >> Ql >> Qr ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "create integer w",
+      "code": "int w ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "read w",
+      "code": "cin >> w ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "set sumw [ i ] to sumw [ i - 1 ] + w",
+      "code": "sumw [ i ] = sumw [ i - 1 ] + w ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "create long long mine with mine = sumw [ n ] * r + ( n - 1 ) * Qr",
+      "code": "long long mine = sumw [ n ] * r + ( n - 1 ) * Qr ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "for i = 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "create long long wheniEndFromLeft with wheniEndFromLeft = ( sumw [ i ] - sumw [ 0 ] ) * l + ( sumw [ n ] - sumw [ i ] ) * r",
+      "code": "long long wheniEndFromLeft = ( sumw [ i ] - sumw [ 0 ] ) * l + ( sumw [ n ] - sumw [ i ] ) * r ;",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "if n bitwise and 1",
+      "code": "if ( n & 1 )",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "if n is greater than 2 * i",
+      "code": "if ( n > 2 * i )",
+      "indent": 3
+    },
+    {
+      "line": 15,
+      "text": "increment wheniEndFromLeft by ( n - 2 * i - 1 ) * Qr",
+      "code": "wheniEndFromLeft += ( n - 2 * i - 1 ) * Qr ;",
+      "indent": 4
+    },
+    {
+      "line": 16,
+      "text": "else",
+      "code": "else",
+      "indent": 3
+    },
+    {
+      "line": 17,
+      "text": "increment wheniEndFromLeft by ( 2 * i - n - 1 ) * Ql",
+      "code": "wheniEndFromLeft += ( 2 * i - n - 1 ) * Ql ;",
+      "indent": 4
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 19,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 20,
+      "text": "if n is greater than 2 * i",
+      "code": "if ( n > 2 * i )",
+      "indent": 3
+    },
+    {
+      "line": 21,
+      "text": "increment wheniEndFromLeft by ( n - 2 * i - 1 ) * Qr",
+      "code": "wheniEndFromLeft += ( n - 2 * i - 1 ) * Qr ;",
+      "indent": 4
+    },
+    {
+      "line": 22,
+      "text": "else if n is 2 * i",
+      "code": "else if ( n == 2 * i )",
+      "indent": 3
+    },
+    {
+      "line": 23,
+      "text": "increment wheniEndFromLeft by ( n - 2 * i ) * Qr",
+      "code": "wheniEndFromLeft += ( n - 2 * i ) * Qr ;",
+      "indent": 4
+    },
+    {
+      "line": 24,
+      "text": "else",
+      "code": "else",
+      "indent": 3
+    },
+    {
+      "line": 25,
+      "text": "increment wheniEndFromLeft by ( 2 * i - n - 1 ) * Ql",
+      "code": "wheniEndFromLeft += ( 2 * i - n - 1 ) * Ql ;",
+      "indent": 4
+    },
+    {
+      "line": 26,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 27,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 28,
+      "text": "set mine to minimum of mine and wheniEndFromLeft",
+      "code": "mine = min ( mine , wheniEndFromLeft ) ;",
+      "indent": 2
+    },
+    {
+      "line": 29,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 30,
+      "text": "print mine print newline",
+      "code": "cout << mine << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 31,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 32,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int * sumw [ maxn ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "cin >> n read l >> r >> Ql >> Qr ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 11,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        28
+      ],
+      "mod_code": [
+        "int mine = min ( mine , wheniEndFromLeft ) ;"
+      ],
+      "err_line": 28,
+      "err_msg": "no matching function for call to ‘min(int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        6,
+        1
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int * sumw [ maxn ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        1,
+        28
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int * sumw [ maxn ] ;",
+        "int mine = min ( mine , wheniEndFromLeft ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        1,
+        28,
+        7
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int * sumw [ maxn ] ;",
+        "int mine = min ( mine , wheniEndFromLeft ) ;",
+        "w = w ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        1,
+        28,
+        4
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int * sumw [ maxn ] ;",
+        "int mine = min ( mine , wheniEndFromLeft ) ;",
+        "cin >> n read l >> r >> Ql >> Qr ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        6,
+        1,
+        28,
+        11
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int * sumw [ maxn ] ;",
+        "int mine = min ( mine , wheniEndFromLeft ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        1,
+        7
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int * sumw [ maxn ] ;",
+        "w = w ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        1,
+        7,
+        4
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int * sumw [ maxn ] ;",
+        "w = w ;",
+        "cin >> n read l >> r >> Ql >> Qr ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        6,
+        1,
+        7,
+        11
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int * sumw [ maxn ] ;",
+        "w = w ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        1,
+        4
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int * sumw [ maxn ] ;",
+        "cin >> n read l >> r >> Ql >> Qr ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        6,
+        1,
+        4,
+        11
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int * sumw [ maxn ] ;",
+        "cin >> n read l >> r >> Ql >> Qr ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        6,
+        1,
+        11
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int * sumw [ maxn ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        28
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int mine = min ( mine , wheniEndFromLeft ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        28,
+        7
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int mine = min ( mine , wheniEndFromLeft ) ;",
+        "w = w ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        28,
+        7,
+        4
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int mine = min ( mine , wheniEndFromLeft ) ;",
+        "w = w ;",
+        "cin >> n read l >> r >> Ql >> Qr ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        6,
+        28,
+        7,
+        11
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int mine = min ( mine , wheniEndFromLeft ) ;",
+        "w = w ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        28,
+        4
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int mine = min ( mine , wheniEndFromLeft ) ;",
+        "cin >> n read l >> r >> Ql >> Qr ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        6,
+        28,
+        4,
+        11
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int mine = min ( mine , wheniEndFromLeft ) ;",
+        "cin >> n read l >> r >> Ql >> Qr ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        6,
+        28,
+        11
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int mine = min ( mine , wheniEndFromLeft ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        7
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "w = w ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        4
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "w = w ;",
+        "cin >> n read l >> r >> Ql >> Qr ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        4,
+        11
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "w = w ;",
+        "cin >> n read l >> r >> Ql >> Qr ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        11
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "w = w ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        4
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "cin >> n read l >> r >> Ql >> Qr ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        6,
+        4,
+        11
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "cin >> n read l >> r >> Ql >> Qr ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        6,
+        11
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        28
+      ],
+      "mod_code": [
+        "int * sumw [ maxn ] ;",
+        "int mine = min ( mine , wheniEndFromLeft ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        1,
+        28,
+        7
+      ],
+      "mod_code": [
+        "int * sumw [ maxn ] ;",
+        "int mine = min ( mine , wheniEndFromLeft ) ;",
+        "w = w ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        1,
+        28,
+        7,
+        4
+      ],
+      "mod_code": [
+        "int * sumw [ maxn ] ;",
+        "int mine = min ( mine , wheniEndFromLeft ) ;",
+        "w = w ;",
+        "cin >> n read l >> r >> Ql >> Qr ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        1,
+        28,
+        7,
+        11
+      ],
+      "mod_code": [
+        "int * sumw [ maxn ] ;",
+        "int mine = min ( mine , wheniEndFromLeft ) ;",
+        "w = w ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        1,
+        28,
+        4
+      ],
+      "mod_code": [
+        "int * sumw [ maxn ] ;",
+        "int mine = min ( mine , wheniEndFromLeft ) ;",
+        "cin >> n read l >> r >> Ql >> Qr ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        1,
+        28,
+        4,
+        11
+      ],
+      "mod_code": [
+        "int * sumw [ maxn ] ;",
+        "int mine = min ( mine , wheniEndFromLeft ) ;",
+        "cin >> n read l >> r >> Ql >> Qr ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        1,
+        28,
+        11
+      ],
+      "mod_code": [
+        "int * sumw [ maxn ] ;",
+        "int mine = min ( mine , wheniEndFromLeft ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        1,
+        7
+      ],
+      "mod_code": [
+        "int * sumw [ maxn ] ;",
+        "w = w ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        4
+      ],
+      "mod_code": [
+        "int * sumw [ maxn ] ;",
+        "w = w ;",
+        "cin >> n read l >> r >> Ql >> Qr ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        4,
+        11
+      ],
+      "mod_code": [
+        "int * sumw [ maxn ] ;",
+        "w = w ;",
+        "cin >> n read l >> r >> Ql >> Qr ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        11
+      ],
+      "mod_code": [
+        "int * sumw [ maxn ] ;",
+        "w = w ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        1,
+        4
+      ],
+      "mod_code": [
+        "int * sumw [ maxn ] ;",
+        "cin >> n read l >> r >> Ql >> Qr ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        1,
+        4,
+        11
+      ],
+      "mod_code": [
+        "int * sumw [ maxn ] ;",
+        "cin >> n read l >> r >> Ql >> Qr ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        1,
+        11
+      ],
+      "mod_code": [
+        "int * sumw [ maxn ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid operands of types ‘int*’ and ‘int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        28,
+        7
+      ],
+      "mod_code": [
+        "int mine = min ( mine , wheniEndFromLeft ) ;",
+        "w = w ;"
+      ],
+      "err_line": 28,
+      "err_msg": "no matching function for call to ‘min(int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        28,
+        7,
+        4
+      ],
+      "mod_code": [
+        "int mine = min ( mine , wheniEndFromLeft ) ;",
+        "w = w ;",
+        "cin >> n read l >> r >> Ql >> Qr ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        28,
+        7,
+        4,
+        11
+      ],
+      "mod_code": [
+        "int mine = min ( mine , wheniEndFromLeft ) ;",
+        "w = w ;",
+        "cin >> n read l >> r >> Ql >> Qr ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        28,
+        7,
+        11
+      ],
+      "mod_code": [
+        "int mine = min ( mine , wheniEndFromLeft ) ;",
+        "w = w ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 11,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        28,
+        4
+      ],
+      "mod_code": [
+        "int mine = min ( mine , wheniEndFromLeft ) ;",
+        "cin >> n read l >> r >> Ql >> Qr ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        28,
+        4,
+        11
+      ],
+      "mod_code": [
+        "int mine = min ( mine , wheniEndFromLeft ) ;",
+        "cin >> n read l >> r >> Ql >> Qr ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        28,
+        11
+      ],
+      "mod_code": [
+        "int mine = min ( mine , wheniEndFromLeft ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 11,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7,
+        4
+      ],
+      "mod_code": [
+        "w = w ;",
+        "cin >> n read l >> r >> Ql >> Qr ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        7,
+        4,
+        11
+      ],
+      "mod_code": [
+        "w = w ;",
+        "cin >> n read l >> r >> Ql >> Qr ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        7,
+        11
+      ],
+      "mod_code": [
+        "w = w ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 11,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        4,
+        11
+      ],
+      "mod_code": [
+        "cin >> n read l >> r >> Ql >> Qr ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    }
+  ]
+}

@@ -1,0 +1,707 @@
+{
+  "meta": {
+    "index": 2385,
+    "hitid": "37MQ8Z1JQEQ94AYDEZUZ28A1TRT2YV",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "543A",
+    "subid": "48697760"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare integer variables m , n , b and mod and an array of integers a with size 505",
+      "code": "int m , n , b , mod , a [ 505 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read n , m , b and mod",
+      "code": "cin >> n >> m >> b >> mod ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "for integer i = 1 to n inclusive read a [ i ]",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "declare integer 2d array dp with size 505 by 505",
+      "code": "int dp [ 505 ] [ 505 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "set sizeof ( dp ) bytes at the pointer dp to 0",
+      "code": "memset ( dp , 0 , sizeof ( dp ) ) ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "dp [ 0 ] [ 0 ] = 1",
+      "code": "dp [ 0 ] [ 0 ] = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for integer i = 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "for integer j = 1 to m inclusive",
+      "code": "for ( int j = 1 ; j <= m ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "for integer t = a [ i ] to b inclusive",
+      "code": "for ( int t = a [ i ] ; t <= b ; t ++ )",
+      "indent": 3
+    },
+    {
+      "line": 10,
+      "text": "increase dp [ j ] [ t ] by dp [ j - 1 ] [ t - a [ i ] ]",
+      "code": "dp [ j ] [ t ] += dp [ j - 1 ] [ t - a [ i ] ] ;",
+      "indent": 4
+    },
+    {
+      "line": 11,
+      "text": "dp [ j ] [ t ] % = mod",
+      "code": "dp [ j ] [ t ] %= mod ;",
+      "indent": 4
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 13,
+      "text": "declare integer variable sum = 0",
+      "code": "int sum = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "for integer i = 0 to b inclusive , set sum to ( sum + dp [ m ] [ i ] ) % mod",
+      "code": "for ( int i = 0 ; i <= b ; i ++ ) sum = ( sum + dp [ m ] [ i ] ) % mod ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "print sum",
+      "code": "cout << sum << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , b [ 505 ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘int [505]’)"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "int dp [ 505 ] by { } ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected initializer before ‘by’"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "memset ( dp , 0 ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        1,
+        11
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , b [ 505 ] ;",
+        "dp [ j ] [ t ] = mod ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘int [505]’)"
+    },
+    {
+      "mod_line": [
+        1,
+        11,
+        5
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , b [ 505 ] ;",
+        "dp [ j ] [ t ] = mod ;",
+        "memset ( dp , 0 ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘int [505]’)"
+    },
+    {
+      "mod_line": [
+        1,
+        11,
+        5,
+        2
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , b [ 505 ] ;",
+        "dp [ j ] [ t ] = mod ;",
+        "memset ( dp , 0 ) ;",
+        "cin >> n >> m , b >> mod ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘mod’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        11,
+        5,
+        6
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , b [ 505 ] ;",
+        "dp [ j ] [ t ] = mod ;",
+        "memset ( dp , 0 ) ;",
+        "dp [ 0 ] [ 0 ] = ' 1 ' ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘int [505]’)"
+    },
+    {
+      "mod_line": [
+        1,
+        11,
+        5,
+        10
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , b [ 505 ] ;",
+        "dp [ j ] [ t ] = mod ;",
+        "memset ( dp , 0 ) ;",
+        "dp [ j ] [ t ] += dp [ j ] [ t - a [ i ] ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘int [505]’)"
+    },
+    {
+      "mod_line": [
+        1,
+        11,
+        2
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , b [ 505 ] ;",
+        "dp [ j ] [ t ] = mod ;",
+        "cin >> n >> m , b >> mod ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘mod’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        11,
+        2,
+        6
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , b [ 505 ] ;",
+        "dp [ j ] [ t ] = mod ;",
+        "cin >> n >> m , b >> mod ;",
+        "dp [ 0 ] [ 0 ] = ' 1 ' ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘mod’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        11,
+        2,
+        10
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , b [ 505 ] ;",
+        "dp [ j ] [ t ] = mod ;",
+        "cin >> n >> m , b >> mod ;",
+        "dp [ j ] [ t ] += dp [ j ] [ t - a [ i ] ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘mod’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        11,
+        6
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , b [ 505 ] ;",
+        "dp [ j ] [ t ] = mod ;",
+        "dp [ 0 ] [ 0 ] = ' 1 ' ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘int [505]’)"
+    },
+    {
+      "mod_line": [
+        1,
+        11,
+        6,
+        10
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , b [ 505 ] ;",
+        "dp [ j ] [ t ] = mod ;",
+        "dp [ 0 ] [ 0 ] = ' 1 ' ;",
+        "dp [ j ] [ t ] += dp [ j ] [ t - a [ i ] ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘int [505]’)"
+    },
+    {
+      "mod_line": [
+        1,
+        11,
+        10
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , b [ 505 ] ;",
+        "dp [ j ] [ t ] = mod ;",
+        "dp [ j ] [ t ] += dp [ j ] [ t - a [ i ] ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘int [505]’)"
+    },
+    {
+      "mod_line": [
+        1,
+        5
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , b [ 505 ] ;",
+        "memset ( dp , 0 ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘int [505]’)"
+    },
+    {
+      "mod_line": [
+        1,
+        5,
+        2
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , b [ 505 ] ;",
+        "memset ( dp , 0 ) ;",
+        "cin >> n >> m , b >> mod ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘mod’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        5,
+        2,
+        6
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , b [ 505 ] ;",
+        "memset ( dp , 0 ) ;",
+        "cin >> n >> m , b >> mod ;",
+        "dp [ 0 ] [ 0 ] = ' 1 ' ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘mod’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        5,
+        2,
+        10
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , b [ 505 ] ;",
+        "memset ( dp , 0 ) ;",
+        "cin >> n >> m , b >> mod ;",
+        "dp [ j ] [ t ] += dp [ j ] [ t - a [ i ] ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘mod’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        5,
+        6
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , b [ 505 ] ;",
+        "memset ( dp , 0 ) ;",
+        "dp [ 0 ] [ 0 ] = ' 1 ' ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘int [505]’)"
+    },
+    {
+      "mod_line": [
+        1,
+        5,
+        6,
+        10
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , b [ 505 ] ;",
+        "memset ( dp , 0 ) ;",
+        "dp [ 0 ] [ 0 ] = ' 1 ' ;",
+        "dp [ j ] [ t ] += dp [ j ] [ t - a [ i ] ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘int [505]’)"
+    },
+    {
+      "mod_line": [
+        1,
+        5,
+        10
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , b [ 505 ] ;",
+        "memset ( dp , 0 ) ;",
+        "dp [ j ] [ t ] += dp [ j ] [ t - a [ i ] ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘int [505]’)"
+    },
+    {
+      "mod_line": [
+        1,
+        2
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , b [ 505 ] ;",
+        "cin >> n >> m , b >> mod ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘mod’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        2,
+        6
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , b [ 505 ] ;",
+        "cin >> n >> m , b >> mod ;",
+        "dp [ 0 ] [ 0 ] = ' 1 ' ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘mod’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        2,
+        6,
+        10
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , b [ 505 ] ;",
+        "cin >> n >> m , b >> mod ;",
+        "dp [ 0 ] [ 0 ] = ' 1 ' ;",
+        "dp [ j ] [ t ] += dp [ j ] [ t - a [ i ] ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘mod’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        2,
+        10
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , b [ 505 ] ;",
+        "cin >> n >> m , b >> mod ;",
+        "dp [ j ] [ t ] += dp [ j ] [ t - a [ i ] ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘mod’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        6
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , b [ 505 ] ;",
+        "dp [ 0 ] [ 0 ] = ' 1 ' ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘int [505]’)"
+    },
+    {
+      "mod_line": [
+        1,
+        6,
+        10
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , b [ 505 ] ;",
+        "dp [ 0 ] [ 0 ] = ' 1 ' ;",
+        "dp [ j ] [ t ] += dp [ j ] [ t - a [ i ] ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘int [505]’)"
+    },
+    {
+      "mod_line": [
+        1,
+        10
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , b [ 505 ] ;",
+        "dp [ j ] [ t ] += dp [ j ] [ t - a [ i ] ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘int [505]’)"
+    },
+    {
+      "mod_line": [
+        11,
+        5
+      ],
+      "mod_code": [
+        "dp [ j ] [ t ] = mod ;",
+        "memset ( dp , 0 ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        11,
+        5,
+        2
+      ],
+      "mod_code": [
+        "dp [ j ] [ t ] = mod ;",
+        "memset ( dp , 0 ) ;",
+        "cin >> n >> m , b >> mod ;"
+      ],
+      "err_line": 5,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        11,
+        5,
+        2,
+        6
+      ],
+      "mod_code": [
+        "dp [ j ] [ t ] = mod ;",
+        "memset ( dp , 0 ) ;",
+        "cin >> n >> m , b >> mod ;",
+        "dp [ 0 ] [ 0 ] = ' 1 ' ;"
+      ],
+      "err_line": 5,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        11,
+        5,
+        2,
+        10
+      ],
+      "mod_code": [
+        "dp [ j ] [ t ] = mod ;",
+        "memset ( dp , 0 ) ;",
+        "cin >> n >> m , b >> mod ;",
+        "dp [ j ] [ t ] += dp [ j ] [ t - a [ i ] ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        11,
+        5,
+        6
+      ],
+      "mod_code": [
+        "dp [ j ] [ t ] = mod ;",
+        "memset ( dp , 0 ) ;",
+        "dp [ 0 ] [ 0 ] = ' 1 ' ;"
+      ],
+      "err_line": 5,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        11,
+        5,
+        6,
+        10
+      ],
+      "mod_code": [
+        "dp [ j ] [ t ] = mod ;",
+        "memset ( dp , 0 ) ;",
+        "dp [ 0 ] [ 0 ] = ' 1 ' ;",
+        "dp [ j ] [ t ] += dp [ j ] [ t - a [ i ] ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        11,
+        5,
+        10
+      ],
+      "mod_code": [
+        "dp [ j ] [ t ] = mod ;",
+        "memset ( dp , 0 ) ;",
+        "dp [ j ] [ t ] += dp [ j ] [ t - a [ i ] ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        5,
+        2
+      ],
+      "mod_code": [
+        "memset ( dp , 0 ) ;",
+        "cin >> n >> m , b >> mod ;"
+      ],
+      "err_line": 5,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        5,
+        2,
+        6
+      ],
+      "mod_code": [
+        "memset ( dp , 0 ) ;",
+        "cin >> n >> m , b >> mod ;",
+        "dp [ 0 ] [ 0 ] = ' 1 ' ;"
+      ],
+      "err_line": 5,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        5,
+        2,
+        6,
+        10
+      ],
+      "mod_code": [
+        "memset ( dp , 0 ) ;",
+        "cin >> n >> m , b >> mod ;",
+        "dp [ 0 ] [ 0 ] = ' 1 ' ;",
+        "dp [ j ] [ t ] += dp [ j ] [ t - a [ i ] ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        5,
+        2,
+        10
+      ],
+      "mod_code": [
+        "memset ( dp , 0 ) ;",
+        "cin >> n >> m , b >> mod ;",
+        "dp [ j ] [ t ] += dp [ j ] [ t - a [ i ] ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        5,
+        6
+      ],
+      "mod_code": [
+        "memset ( dp , 0 ) ;",
+        "dp [ 0 ] [ 0 ] = ' 1 ' ;"
+      ],
+      "err_line": 5,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        5,
+        6,
+        10
+      ],
+      "mod_code": [
+        "memset ( dp , 0 ) ;",
+        "dp [ 0 ] [ 0 ] = ' 1 ' ;",
+        "dp [ j ] [ t ] += dp [ j ] [ t - a [ i ] ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        5,
+        10
+      ],
+      "mod_code": [
+        "memset ( dp , 0 ) ;",
+        "dp [ j ] [ t ] += dp [ j ] [ t - a [ i ] ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    }
+  ]
+}

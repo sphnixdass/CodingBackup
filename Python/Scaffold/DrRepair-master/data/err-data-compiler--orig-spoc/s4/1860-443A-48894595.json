@@ -1,0 +1,275 @@
+{
+  "meta": {
+    "index": 1860,
+    "hitid": "3Y3N5A7N4G3ZBE26OHDJHHOZZW8MY4",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "443A",
+    "subid": "48894595"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "s is a character array with size 3005",
+      "code": "char s [ 3005 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "b is an integer array with size 3005",
+      "code": "int b [ 3005 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "call memset with arguments s , 0 and sizeof ( s )",
+      "code": "memset ( s , 0 , sizeof ( s ) ) ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for i = 0 until s [ i - 1 ] ! = ' } ' incrementing i , read s [ i ]",
+      "code": "for ( int i = 0 ; s [ i - 1 ] != ' } ' ; i ++ ) { cin >> s [ i ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "call memset with arguments b , 0 and sizeof ( b )",
+      "code": "memset ( b , 0 , sizeof ( b ) ) ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "create integer len = strlen ( s )",
+      "code": "int len = strlen ( s ) ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for i = 1 to len - 1 exclusive incrementing by 2 , b [ s [ i ] - ' a ' ] = 1",
+      "code": "for ( int i = 1 ; i < len - 1 ; i += 2 ) { b [ s [ i ] - ' a ' ] = 1 ; }",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "let sum be integer = 0",
+      "code": "int sum = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "for i = 0 to 26 exclusive",
+      "code": "for ( int i = 0 ; i < 26 ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "if b [ i ] is not 0 , increment sum",
+      "code": "if ( b [ i ] ) sum ++ ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "print sum and a new line",
+      "code": "cout << sum << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; s [ i - 1 ] != ' } ' ; i ++ , cin >> s [ i ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "memset ( b , 0 , sizeof ( b ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "len = strlen ( s ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘len’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < 26 ; i ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        4,
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; s [ i - 1 ] != ' } ' ; i ++ , cin >> s [ i ] ;",
+        "len = strlen ( s ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; s [ i - 1 ] != ' } ' ; i ++ , cin >> s [ i ] ;",
+        "len = strlen ( s ) ;",
+        "for ( i = 0 ; i < 26 ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        9,
+        5
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; s [ i - 1 ] != ' } ' ; i ++ , cin >> s [ i ] ;",
+        "len = strlen ( s ) ;",
+        "for ( i = 0 ; i < 26 ; i ++ )",
+        "memset ( b , 0 , sizeof ( b ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        5
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; s [ i - 1 ] != ' } ' ; i ++ , cin >> s [ i ] ;",
+        "len = strlen ( s ) ;",
+        "memset ( b , 0 , sizeof ( b ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; s [ i - 1 ] != ' } ' ; i ++ , cin >> s [ i ] ;",
+        "for ( i = 0 ; i < 26 ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        9,
+        5
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; s [ i - 1 ] != ' } ' ; i ++ , cin >> s [ i ] ;",
+        "for ( i = 0 ; i < 26 ; i ++ )",
+        "memset ( b , 0 , sizeof ( b ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        5
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; s [ i - 1 ] != ' } ' ; i ++ , cin >> s [ i ] ;",
+        "memset ( b , 0 , sizeof ( b ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        9
+      ],
+      "mod_code": [
+        "len = strlen ( s ) ;",
+        "for ( i = 0 ; i < 26 ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘len’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        9,
+        5
+      ],
+      "mod_code": [
+        "len = strlen ( s ) ;",
+        "for ( i = 0 ; i < 26 ; i ++ )",
+        "memset ( b , 0 , sizeof ( b ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        5
+      ],
+      "mod_code": [
+        "len = strlen ( s ) ;",
+        "memset ( b , 0 , sizeof ( b ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        9,
+        5
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < 26 ; i ++ )",
+        "memset ( b , 0 , sizeof ( b ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    }
+  ]
+}

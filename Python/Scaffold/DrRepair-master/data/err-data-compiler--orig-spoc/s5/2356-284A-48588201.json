@@ -1,0 +1,787 @@
+{
+  "meta": {
+    "index": 2356,
+    "hitid": "3EKZL9T8Y8G0GX0Q1SFHSLOKG9OCHL",
+    "workerid": "A1R0Q9CUUBSM5F",
+    "probid": "284A",
+    "subid": "48588201"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare pwr taking in ints x and p and const int & MOD and returning integer",
+      "code": "int pwr ( int x , int p , const int & MOD )",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "if p is equal to 0 , return 1",
+      "code": "if ( p == 0 ) return 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "if p is equal to 1 , return x % MOD",
+      "code": "if ( p == 1 ) return x % MOD ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "let int result = pwr ( x , p / 2 , MOD ) % MOD",
+      "code": "int result = pwr ( x , p / 2 , MOD ) % MOD ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "set result to ( result * result ) % MOD",
+      "code": "result = ( result * result ) % MOD ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "if p & 1 is truthy , set result to ( result * x ) % MOD",
+      "code": "if ( p & 1 ) result = ( result * x ) % MOD ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "return result",
+      "code": "return result ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 8,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 9,
+      "text": "let ints p , result = 0 , and valid",
+      "code": "int p , result = 0 , valid ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "read p",
+      "code": "cin >> p ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "for x = 1 to p",
+      "code": "for ( int x = 1 ; x <= p ; x ++ )",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "if ( pwr ( x , p - 1 , p ) + p - 1 ) modulo p is even",
+      "code": "if ( ( pwr ( x , p - 1 , p ) + p - 1 ) % p == 0 )",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "set valid to 1",
+      "code": "valid = 1 ;",
+      "indent": 3
+    },
+    {
+      "line": 14,
+      "text": "for i = 1 until i is not less than p - 1 and valid is falsy",
+      "code": "for ( int i = 1 ; ( i < p - 1 ) && valid ; i ++ )",
+      "indent": 3
+    },
+    {
+      "line": 15,
+      "text": "if ( pwr ( x , i , p ) + p - 1 ) modulo p is 0 , set valid to 0",
+      "code": "if ( ( pwr ( x , i , p ) + p - 1 ) % p == 0 ) { valid = 0 ; }",
+      "indent": 4
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 17,
+      "text": "set result to result + valid",
+      "code": "result += valid ;",
+      "indent": 3
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "print result",
+      "code": "cout << result << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 22,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "const int pwr ( const int & MOD , const int p , const int p )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const int p’"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "if ( pwr ( x , p - 1 , p ) + p - 1 ) % p % 2 == 0 )"
+      ],
+      "err_line": 12,
+      "err_msg": "expected primary-expression before ‘%’ token"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int pwr ( const int & MOD , const int p , const int p )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const int p’"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "int result = pwr ( ( x , p / 2 , MOD ) % MOD ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "too few arguments to function ‘int pwr(int, int, const int&)’"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "int result = ( result * result ) % MOD ;"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int result’"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "return ;"
+      ],
+      "err_line": 6,
+      "err_msg": "return-statement with no value, in function returning ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "int p , result = 0 ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘valid’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "for ( x = 1 ; x <= p ; x ++ )"
+      ],
+      "err_line": 11,
+      "err_msg": "‘x’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i < p - 1 ; i ++ )"
+      ],
+      "err_line": 14,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "if ( pwr ( x , i , p ) + p - 1 ) % p == 0 ) { valid = 0 ; }"
+      ],
+      "err_line": 15,
+      "err_msg": "expected primary-expression before ‘%’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        12
+      ],
+      "mod_code": [
+        "const int pwr ( const int & MOD , const int p , const int p )",
+        "if ( pwr ( x , p - 1 , p ) + p - 1 ) % p % 2 == 0 )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const int p’"
+    },
+    {
+      "mod_line": [
+        0,
+        12,
+        6
+      ],
+      "mod_code": [
+        "const int pwr ( const int & MOD , const int p , const int p )",
+        "if ( pwr ( x , p - 1 , p ) + p - 1 ) % p % 2 == 0 )",
+        "return ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const int p’"
+    },
+    {
+      "mod_line": [
+        0,
+        12,
+        6,
+        4
+      ],
+      "mod_code": [
+        "const int pwr ( const int & MOD , const int p , const int p )",
+        "if ( pwr ( x , p - 1 , p ) + p - 1 ) % p % 2 == 0 )",
+        "return ;",
+        "int result = ( result * result ) % MOD ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const int p’"
+    },
+    {
+      "mod_line": [
+        0,
+        12,
+        6,
+        10
+      ],
+      "mod_code": [
+        "const int pwr ( const int & MOD , const int p , const int p )",
+        "if ( pwr ( x , p - 1 , p ) + p - 1 ) % p % 2 == 0 )",
+        "return ;",
+        "cout << p << endl ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const int p’"
+    },
+    {
+      "mod_line": [
+        0,
+        12,
+        4
+      ],
+      "mod_code": [
+        "const int pwr ( const int & MOD , const int p , const int p )",
+        "if ( pwr ( x , p - 1 , p ) + p - 1 ) % p % 2 == 0 )",
+        "int result = ( result * result ) % MOD ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const int p’"
+    },
+    {
+      "mod_line": [
+        0,
+        12,
+        4,
+        10
+      ],
+      "mod_code": [
+        "const int pwr ( const int & MOD , const int p , const int p )",
+        "if ( pwr ( x , p - 1 , p ) + p - 1 ) % p % 2 == 0 )",
+        "int result = ( result * result ) % MOD ;",
+        "cout << p << endl ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const int p’"
+    },
+    {
+      "mod_line": [
+        0,
+        12,
+        10
+      ],
+      "mod_code": [
+        "const int pwr ( const int & MOD , const int p , const int p )",
+        "if ( pwr ( x , p - 1 , p ) + p - 1 ) % p % 2 == 0 )",
+        "cout << p << endl ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const int p’"
+    },
+    {
+      "mod_line": [
+        0,
+        6
+      ],
+      "mod_code": [
+        "const int pwr ( const int & MOD , const int p , const int p )",
+        "return ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const int p’"
+    },
+    {
+      "mod_line": [
+        0,
+        6,
+        4
+      ],
+      "mod_code": [
+        "const int pwr ( const int & MOD , const int p , const int p )",
+        "return ;",
+        "int result = ( result * result ) % MOD ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const int p’"
+    },
+    {
+      "mod_line": [
+        0,
+        6,
+        4,
+        10
+      ],
+      "mod_code": [
+        "const int pwr ( const int & MOD , const int p , const int p )",
+        "return ;",
+        "int result = ( result * result ) % MOD ;",
+        "cout << p << endl ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const int p’"
+    },
+    {
+      "mod_line": [
+        0,
+        6,
+        10
+      ],
+      "mod_code": [
+        "const int pwr ( const int & MOD , const int p , const int p )",
+        "return ;",
+        "cout << p << endl ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const int p’"
+    },
+    {
+      "mod_line": [
+        0,
+        4
+      ],
+      "mod_code": [
+        "const int pwr ( const int & MOD , const int p , const int p )",
+        "int result = ( result * result ) % MOD ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const int p’"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        10
+      ],
+      "mod_code": [
+        "const int pwr ( const int & MOD , const int p , const int p )",
+        "int result = ( result * result ) % MOD ;",
+        "cout << p << endl ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const int p’"
+    },
+    {
+      "mod_line": [
+        0,
+        10
+      ],
+      "mod_code": [
+        "const int pwr ( const int & MOD , const int p , const int p )",
+        "cout << p << endl ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const int p’"
+    },
+    {
+      "mod_line": [
+        12,
+        0
+      ],
+      "mod_code": [
+        "if ( pwr ( x , p - 1 , p ) + p - 1 ) % p % 2 == 0 )",
+        "int pwr ( const int & MOD , const int p , const int p )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const int p’"
+    },
+    {
+      "mod_line": [
+        12,
+        0,
+        6
+      ],
+      "mod_code": [
+        "if ( pwr ( x , p - 1 , p ) + p - 1 ) % p % 2 == 0 )",
+        "int pwr ( const int & MOD , const int p , const int p )",
+        "return ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const int p’"
+    },
+    {
+      "mod_line": [
+        12,
+        0,
+        6,
+        4
+      ],
+      "mod_code": [
+        "if ( pwr ( x , p - 1 , p ) + p - 1 ) % p % 2 == 0 )",
+        "int pwr ( const int & MOD , const int p , const int p )",
+        "return ;",
+        "int result = ( result * result ) % MOD ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const int p’"
+    },
+    {
+      "mod_line": [
+        12,
+        0,
+        6,
+        10
+      ],
+      "mod_code": [
+        "if ( pwr ( x , p - 1 , p ) + p - 1 ) % p % 2 == 0 )",
+        "int pwr ( const int & MOD , const int p , const int p )",
+        "return ;",
+        "cout << p << endl ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const int p’"
+    },
+    {
+      "mod_line": [
+        12,
+        0,
+        4
+      ],
+      "mod_code": [
+        "if ( pwr ( x , p - 1 , p ) + p - 1 ) % p % 2 == 0 )",
+        "int pwr ( const int & MOD , const int p , const int p )",
+        "int result = ( result * result ) % MOD ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const int p’"
+    },
+    {
+      "mod_line": [
+        12,
+        0,
+        4,
+        10
+      ],
+      "mod_code": [
+        "if ( pwr ( x , p - 1 , p ) + p - 1 ) % p % 2 == 0 )",
+        "int pwr ( const int & MOD , const int p , const int p )",
+        "int result = ( result * result ) % MOD ;",
+        "cout << p << endl ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const int p’"
+    },
+    {
+      "mod_line": [
+        12,
+        0,
+        10
+      ],
+      "mod_code": [
+        "if ( pwr ( x , p - 1 , p ) + p - 1 ) % p % 2 == 0 )",
+        "int pwr ( const int & MOD , const int p , const int p )",
+        "cout << p << endl ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const int p’"
+    },
+    {
+      "mod_line": [
+        12,
+        6
+      ],
+      "mod_code": [
+        "if ( pwr ( x , p - 1 , p ) + p - 1 ) % p % 2 == 0 )",
+        "return ;"
+      ],
+      "err_line": 6,
+      "err_msg": "return-statement with no value, in function returning ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        6,
+        4
+      ],
+      "mod_code": [
+        "if ( pwr ( x , p - 1 , p ) + p - 1 ) % p % 2 == 0 )",
+        "return ;",
+        "int result = ( result * result ) % MOD ;"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int result’"
+    },
+    {
+      "mod_line": [
+        12,
+        6,
+        4,
+        10
+      ],
+      "mod_code": [
+        "if ( pwr ( x , p - 1 , p ) + p - 1 ) % p % 2 == 0 )",
+        "return ;",
+        "int result = ( result * result ) % MOD ;",
+        "cout << p << endl ;"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int result’"
+    },
+    {
+      "mod_line": [
+        12,
+        6,
+        10
+      ],
+      "mod_code": [
+        "if ( pwr ( x , p - 1 , p ) + p - 1 ) % p % 2 == 0 )",
+        "return ;",
+        "cout << p << endl ;"
+      ],
+      "err_line": 6,
+      "err_msg": "return-statement with no value, in function returning ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        4
+      ],
+      "mod_code": [
+        "if ( pwr ( x , p - 1 , p ) + p - 1 ) % p % 2 == 0 )",
+        "int result = ( result * result ) % MOD ;"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int result’"
+    },
+    {
+      "mod_line": [
+        12,
+        4,
+        10
+      ],
+      "mod_code": [
+        "if ( pwr ( x , p - 1 , p ) + p - 1 ) % p % 2 == 0 )",
+        "int result = ( result * result ) % MOD ;",
+        "cout << p << endl ;"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int result’"
+    },
+    {
+      "mod_line": [
+        12,
+        10
+      ],
+      "mod_code": [
+        "if ( pwr ( x , p - 1 , p ) + p - 1 ) % p % 2 == 0 )",
+        "cout << p << endl ;"
+      ],
+      "err_line": 12,
+      "err_msg": "expected primary-expression before ‘%’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        6
+      ],
+      "mod_code": [
+        "int pwr ( const int & MOD , const int p , const int p )",
+        "return ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const int p’"
+    },
+    {
+      "mod_line": [
+        0,
+        6,
+        4
+      ],
+      "mod_code": [
+        "int pwr ( const int & MOD , const int p , const int p )",
+        "return ;",
+        "int result = ( result * result ) % MOD ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const int p’"
+    },
+    {
+      "mod_line": [
+        0,
+        6,
+        4,
+        10
+      ],
+      "mod_code": [
+        "int pwr ( const int & MOD , const int p , const int p )",
+        "return ;",
+        "int result = ( result * result ) % MOD ;",
+        "cout << p << endl ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const int p’"
+    },
+    {
+      "mod_line": [
+        0,
+        6,
+        10
+      ],
+      "mod_code": [
+        "int pwr ( const int & MOD , const int p , const int p )",
+        "return ;",
+        "cout << p << endl ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const int p’"
+    },
+    {
+      "mod_line": [
+        0,
+        4
+      ],
+      "mod_code": [
+        "int pwr ( const int & MOD , const int p , const int p )",
+        "int result = ( result * result ) % MOD ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const int p’"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        10
+      ],
+      "mod_code": [
+        "int pwr ( const int & MOD , const int p , const int p )",
+        "int result = ( result * result ) % MOD ;",
+        "cout << p << endl ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const int p’"
+    },
+    {
+      "mod_line": [
+        0,
+        10
+      ],
+      "mod_code": [
+        "int pwr ( const int & MOD , const int p , const int p )",
+        "cout << p << endl ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const int p’"
+    },
+    {
+      "mod_line": [
+        6,
+        4
+      ],
+      "mod_code": [
+        "return ;",
+        "int result = ( result * result ) % MOD ;"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int result’"
+    },
+    {
+      "mod_line": [
+        6,
+        4,
+        10
+      ],
+      "mod_code": [
+        "return ;",
+        "int result = ( result * result ) % MOD ;",
+        "cout << p << endl ;"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int result’"
+    },
+    {
+      "mod_line": [
+        6,
+        10
+      ],
+      "mod_code": [
+        "return ;",
+        "cout << p << endl ;"
+      ],
+      "err_line": 6,
+      "err_msg": "return-statement with no value, in function returning ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        4,
+        10
+      ],
+      "mod_code": [
+        "int result = ( result * result ) % MOD ;",
+        "cout << p << endl ;"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int result’"
+    }
+  ]
+}

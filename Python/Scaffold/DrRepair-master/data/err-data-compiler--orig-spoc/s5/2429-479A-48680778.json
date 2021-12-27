@@ -1,0 +1,863 @@
+{
+  "meta": {
+    "index": 2429,
+    "hitid": "3ROUCZ907FOBH3JGVAJY7UF2GMROOD",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "479A",
+    "subid": "48680778"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create constant integer mod with mod = 1e9 + 7",
+      "code": "const int mod = 1e9 + 7 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create constant integer MAX with MAX = 100001",
+      "code": "const int MAX = 100001 ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "create integer array An with size MAX",
+      "code": "int An [ MAX ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "create integers a , b , c",
+      "code": "int a , b , c ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "read a read b read c",
+      "code": "cin >> a >> b >> c ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "create integer t1 with t1 = a + b + c",
+      "code": "int t1 = a + b + c ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "set t1 to maximum of ( t1 and ( a + b ) * c )",
+      "code": "t1 = max ( t1 , ( a + b ) * c ) ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "set t1 to maximum of ( t1 and a * b + c )",
+      "code": "t1 = max ( t1 , a * b + c ) ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "set t1 to maximum of ( t1 and a * b * c )",
+      "code": "t1 = max ( t1 , a * b * c ) ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "set t1 to maximum of ( t1 and a + b * c )",
+      "code": "t1 = max ( t1 , a + b * c ) ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "set t1 to maximum of ( t1 and a * ( b + c ) )",
+      "code": "t1 = max ( t1 , a * ( b + c ) ) ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "print t1 print newline",
+      "code": "cout << t1 << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "long long a , b , c ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘max(int&, long long int)’"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "while ( cin >> a >> b >> c )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘t1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "int t1 = max ( t1 , ( a + b ) * c ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int t1’"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "int t1 = max ( t1 , a * b + c ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int t1’"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "int t1 = max ( t1 , a + b * c ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "redeclaration of ‘int t1’"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "int t1 = max ( t1 , a * ( b + c ) ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "redeclaration of ‘int t1’"
+    },
+    {
+      "mod_line": [
+        9,
+        8
+      ],
+      "mod_code": [
+        "t1 = max ( t1 , a * b ) ;",
+        "int t1 = max ( t1 , a * b + c ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int t1’"
+    },
+    {
+      "mod_line": [
+        9,
+        8,
+        10
+      ],
+      "mod_code": [
+        "t1 = max ( t1 , a * b ) ;",
+        "int t1 = max ( t1 , a * b + c ) ;",
+        "int t1 = max ( t1 , a + b * c ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int t1’"
+    },
+    {
+      "mod_line": [
+        9,
+        8,
+        10,
+        11
+      ],
+      "mod_code": [
+        "t1 = max ( t1 , a * b ) ;",
+        "int t1 = max ( t1 , a * b + c ) ;",
+        "int t1 = max ( t1 , a + b * c ) ;",
+        "int t1 = max ( t1 , a * ( b + c ) ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int t1’"
+    },
+    {
+      "mod_line": [
+        9,
+        8,
+        10,
+        4
+      ],
+      "mod_code": [
+        "t1 = max ( t1 , a * b ) ;",
+        "int t1 = max ( t1 , a * b + c ) ;",
+        "int t1 = max ( t1 , a + b * c ) ;",
+        "long long a , b , c ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘max(int&, long long int)’"
+    },
+    {
+      "mod_line": [
+        9,
+        8,
+        10,
+        7
+      ],
+      "mod_code": [
+        "t1 = max ( t1 , a * b ) ;",
+        "int t1 = max ( t1 , a * b + c ) ;",
+        "int t1 = max ( t1 , a + b * c ) ;",
+        "int t1 = max ( t1 , ( a + b ) * c ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int t1’"
+    },
+    {
+      "mod_line": [
+        9,
+        8,
+        11
+      ],
+      "mod_code": [
+        "t1 = max ( t1 , a * b ) ;",
+        "int t1 = max ( t1 , a * b + c ) ;",
+        "int t1 = max ( t1 , a * ( b + c ) ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int t1’"
+    },
+    {
+      "mod_line": [
+        9,
+        8,
+        11,
+        4
+      ],
+      "mod_code": [
+        "t1 = max ( t1 , a * b ) ;",
+        "int t1 = max ( t1 , a * b + c ) ;",
+        "int t1 = max ( t1 , a * ( b + c ) ) ;",
+        "long long a , b , c ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘max(int&, long long int)’"
+    },
+    {
+      "mod_line": [
+        9,
+        8,
+        11,
+        7
+      ],
+      "mod_code": [
+        "t1 = max ( t1 , a * b ) ;",
+        "int t1 = max ( t1 , a * b + c ) ;",
+        "int t1 = max ( t1 , a * ( b + c ) ) ;",
+        "int t1 = max ( t1 , ( a + b ) * c ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int t1’"
+    },
+    {
+      "mod_line": [
+        9,
+        8,
+        4
+      ],
+      "mod_code": [
+        "t1 = max ( t1 , a * b ) ;",
+        "int t1 = max ( t1 , a * b + c ) ;",
+        "long long a , b , c ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘max(int&, long long int)’"
+    },
+    {
+      "mod_line": [
+        9,
+        8,
+        4,
+        7
+      ],
+      "mod_code": [
+        "t1 = max ( t1 , a * b ) ;",
+        "int t1 = max ( t1 , a * b + c ) ;",
+        "long long a , b , c ;",
+        "int t1 = max ( t1 , ( a + b ) * c ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int t1’"
+    },
+    {
+      "mod_line": [
+        9,
+        8,
+        7
+      ],
+      "mod_code": [
+        "t1 = max ( t1 , a * b ) ;",
+        "int t1 = max ( t1 , a * b + c ) ;",
+        "int t1 = max ( t1 , ( a + b ) * c ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int t1’"
+    },
+    {
+      "mod_line": [
+        9,
+        10
+      ],
+      "mod_code": [
+        "t1 = max ( t1 , a * b ) ;",
+        "int t1 = max ( t1 , a + b * c ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "redeclaration of ‘int t1’"
+    },
+    {
+      "mod_line": [
+        9,
+        10,
+        11
+      ],
+      "mod_code": [
+        "t1 = max ( t1 , a * b ) ;",
+        "int t1 = max ( t1 , a + b * c ) ;",
+        "int t1 = max ( t1 , a * ( b + c ) ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "redeclaration of ‘int t1’"
+    },
+    {
+      "mod_line": [
+        9,
+        10,
+        11,
+        4
+      ],
+      "mod_code": [
+        "t1 = max ( t1 , a * b ) ;",
+        "int t1 = max ( t1 , a + b * c ) ;",
+        "int t1 = max ( t1 , a * ( b + c ) ) ;",
+        "long long a , b , c ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘max(int&, long long int)’"
+    },
+    {
+      "mod_line": [
+        9,
+        10,
+        11,
+        7
+      ],
+      "mod_code": [
+        "t1 = max ( t1 , a * b ) ;",
+        "int t1 = max ( t1 , a + b * c ) ;",
+        "int t1 = max ( t1 , a * ( b + c ) ) ;",
+        "int t1 = max ( t1 , ( a + b ) * c ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int t1’"
+    },
+    {
+      "mod_line": [
+        9,
+        10,
+        4
+      ],
+      "mod_code": [
+        "t1 = max ( t1 , a * b ) ;",
+        "int t1 = max ( t1 , a + b * c ) ;",
+        "long long a , b , c ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘max(int&, long long int)’"
+    },
+    {
+      "mod_line": [
+        9,
+        10,
+        4,
+        7
+      ],
+      "mod_code": [
+        "t1 = max ( t1 , a * b ) ;",
+        "int t1 = max ( t1 , a + b * c ) ;",
+        "long long a , b , c ;",
+        "int t1 = max ( t1 , ( a + b ) * c ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int t1’"
+    },
+    {
+      "mod_line": [
+        9,
+        10,
+        7
+      ],
+      "mod_code": [
+        "t1 = max ( t1 , a * b ) ;",
+        "int t1 = max ( t1 , a + b * c ) ;",
+        "int t1 = max ( t1 , ( a + b ) * c ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int t1’"
+    },
+    {
+      "mod_line": [
+        9,
+        11
+      ],
+      "mod_code": [
+        "t1 = max ( t1 , a * b ) ;",
+        "int t1 = max ( t1 , a * ( b + c ) ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "redeclaration of ‘int t1’"
+    },
+    {
+      "mod_line": [
+        9,
+        11,
+        4
+      ],
+      "mod_code": [
+        "t1 = max ( t1 , a * b ) ;",
+        "int t1 = max ( t1 , a * ( b + c ) ) ;",
+        "long long a , b , c ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘max(int&, long long int)’"
+    },
+    {
+      "mod_line": [
+        9,
+        11,
+        4,
+        7
+      ],
+      "mod_code": [
+        "t1 = max ( t1 , a * b ) ;",
+        "int t1 = max ( t1 , a * ( b + c ) ) ;",
+        "long long a , b , c ;",
+        "int t1 = max ( t1 , ( a + b ) * c ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int t1’"
+    },
+    {
+      "mod_line": [
+        9,
+        11,
+        7
+      ],
+      "mod_code": [
+        "t1 = max ( t1 , a * b ) ;",
+        "int t1 = max ( t1 , a * ( b + c ) ) ;",
+        "int t1 = max ( t1 , ( a + b ) * c ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int t1’"
+    },
+    {
+      "mod_line": [
+        9,
+        4
+      ],
+      "mod_code": [
+        "t1 = max ( t1 , a * b ) ;",
+        "long long a , b , c ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘max(int&, long long int)’"
+    },
+    {
+      "mod_line": [
+        9,
+        4,
+        7
+      ],
+      "mod_code": [
+        "t1 = max ( t1 , a * b ) ;",
+        "long long a , b , c ;",
+        "int t1 = max ( t1 , ( a + b ) * c ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int t1’"
+    },
+    {
+      "mod_line": [
+        9,
+        7
+      ],
+      "mod_code": [
+        "t1 = max ( t1 , a * b ) ;",
+        "int t1 = max ( t1 , ( a + b ) * c ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int t1’"
+    },
+    {
+      "mod_line": [
+        8,
+        10
+      ],
+      "mod_code": [
+        "int t1 = max ( t1 , a * b + c ) ;",
+        "int t1 = max ( t1 , a + b * c ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int t1’"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        11
+      ],
+      "mod_code": [
+        "int t1 = max ( t1 , a * b + c ) ;",
+        "int t1 = max ( t1 , a + b * c ) ;",
+        "int t1 = max ( t1 , a * ( b + c ) ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int t1’"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        11,
+        4
+      ],
+      "mod_code": [
+        "int t1 = max ( t1 , a * b + c ) ;",
+        "int t1 = max ( t1 , a + b * c ) ;",
+        "int t1 = max ( t1 , a * ( b + c ) ) ;",
+        "long long a , b , c ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘max(int&, long long int)’"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        11,
+        7
+      ],
+      "mod_code": [
+        "int t1 = max ( t1 , a * b + c ) ;",
+        "int t1 = max ( t1 , a + b * c ) ;",
+        "int t1 = max ( t1 , a * ( b + c ) ) ;",
+        "int t1 = max ( t1 , ( a + b ) * c ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int t1’"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        4
+      ],
+      "mod_code": [
+        "int t1 = max ( t1 , a * b + c ) ;",
+        "int t1 = max ( t1 , a + b * c ) ;",
+        "long long a , b , c ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘max(int&, long long int)’"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        4,
+        7
+      ],
+      "mod_code": [
+        "int t1 = max ( t1 , a * b + c ) ;",
+        "int t1 = max ( t1 , a + b * c ) ;",
+        "long long a , b , c ;",
+        "int t1 = max ( t1 , ( a + b ) * c ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int t1’"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        7
+      ],
+      "mod_code": [
+        "int t1 = max ( t1 , a * b + c ) ;",
+        "int t1 = max ( t1 , a + b * c ) ;",
+        "int t1 = max ( t1 , ( a + b ) * c ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int t1’"
+    },
+    {
+      "mod_line": [
+        8,
+        11
+      ],
+      "mod_code": [
+        "int t1 = max ( t1 , a * b + c ) ;",
+        "int t1 = max ( t1 , a * ( b + c ) ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int t1’"
+    },
+    {
+      "mod_line": [
+        8,
+        11,
+        4
+      ],
+      "mod_code": [
+        "int t1 = max ( t1 , a * b + c ) ;",
+        "int t1 = max ( t1 , a * ( b + c ) ) ;",
+        "long long a , b , c ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘max(int&, long long int)’"
+    },
+    {
+      "mod_line": [
+        8,
+        11,
+        4,
+        7
+      ],
+      "mod_code": [
+        "int t1 = max ( t1 , a * b + c ) ;",
+        "int t1 = max ( t1 , a * ( b + c ) ) ;",
+        "long long a , b , c ;",
+        "int t1 = max ( t1 , ( a + b ) * c ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int t1’"
+    },
+    {
+      "mod_line": [
+        8,
+        11,
+        7
+      ],
+      "mod_code": [
+        "int t1 = max ( t1 , a * b + c ) ;",
+        "int t1 = max ( t1 , a * ( b + c ) ) ;",
+        "int t1 = max ( t1 , ( a + b ) * c ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int t1’"
+    },
+    {
+      "mod_line": [
+        8,
+        4
+      ],
+      "mod_code": [
+        "int t1 = max ( t1 , a * b + c ) ;",
+        "long long a , b , c ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘max(int&, long long int)’"
+    },
+    {
+      "mod_line": [
+        8,
+        4,
+        7
+      ],
+      "mod_code": [
+        "int t1 = max ( t1 , a * b + c ) ;",
+        "long long a , b , c ;",
+        "int t1 = max ( t1 , ( a + b ) * c ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int t1’"
+    },
+    {
+      "mod_line": [
+        8,
+        7
+      ],
+      "mod_code": [
+        "int t1 = max ( t1 , a * b + c ) ;",
+        "int t1 = max ( t1 , ( a + b ) * c ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int t1’"
+    },
+    {
+      "mod_line": [
+        10,
+        11
+      ],
+      "mod_code": [
+        "int t1 = max ( t1 , a + b * c ) ;",
+        "int t1 = max ( t1 , a * ( b + c ) ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "redeclaration of ‘int t1’"
+    },
+    {
+      "mod_line": [
+        10,
+        11,
+        4
+      ],
+      "mod_code": [
+        "int t1 = max ( t1 , a + b * c ) ;",
+        "int t1 = max ( t1 , a * ( b + c ) ) ;",
+        "long long a , b , c ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘max(int&, long long int)’"
+    },
+    {
+      "mod_line": [
+        10,
+        11,
+        4,
+        7
+      ],
+      "mod_code": [
+        "int t1 = max ( t1 , a + b * c ) ;",
+        "int t1 = max ( t1 , a * ( b + c ) ) ;",
+        "long long a , b , c ;",
+        "int t1 = max ( t1 , ( a + b ) * c ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int t1’"
+    },
+    {
+      "mod_line": [
+        10,
+        11,
+        7
+      ],
+      "mod_code": [
+        "int t1 = max ( t1 , a + b * c ) ;",
+        "int t1 = max ( t1 , a * ( b + c ) ) ;",
+        "int t1 = max ( t1 , ( a + b ) * c ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int t1’"
+    },
+    {
+      "mod_line": [
+        10,
+        4
+      ],
+      "mod_code": [
+        "int t1 = max ( t1 , a + b * c ) ;",
+        "long long a , b , c ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘max(int&, long long int)’"
+    },
+    {
+      "mod_line": [
+        10,
+        4,
+        7
+      ],
+      "mod_code": [
+        "int t1 = max ( t1 , a + b * c ) ;",
+        "long long a , b , c ;",
+        "int t1 = max ( t1 , ( a + b ) * c ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int t1’"
+    },
+    {
+      "mod_line": [
+        10,
+        7
+      ],
+      "mod_code": [
+        "int t1 = max ( t1 , a + b * c ) ;",
+        "int t1 = max ( t1 , ( a + b ) * c ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int t1’"
+    },
+    {
+      "mod_line": [
+        11,
+        4
+      ],
+      "mod_code": [
+        "int t1 = max ( t1 , a * ( b + c ) ) ;",
+        "long long a , b , c ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘max(int&, long long int)’"
+    },
+    {
+      "mod_line": [
+        11,
+        4,
+        7
+      ],
+      "mod_code": [
+        "int t1 = max ( t1 , a * ( b + c ) ) ;",
+        "long long a , b , c ;",
+        "int t1 = max ( t1 , ( a + b ) * c ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int t1’"
+    },
+    {
+      "mod_line": [
+        11,
+        7
+      ],
+      "mod_code": [
+        "int t1 = max ( t1 , a * ( b + c ) ) ;",
+        "int t1 = max ( t1 , ( a + b ) * c ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int t1’"
+    },
+    {
+      "mod_line": [
+        4,
+        7
+      ],
+      "mod_code": [
+        "long long a , b , c ;",
+        "int t1 = max ( t1 , ( a + b ) * c ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "redeclaration of ‘int t1’"
+    }
+  ]
+}

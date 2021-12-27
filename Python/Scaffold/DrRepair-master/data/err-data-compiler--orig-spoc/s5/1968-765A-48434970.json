@@ -1,0 +1,761 @@
+{
+  "meta": {
+    "index": 1968,
+    "hitid": "3NRZ1LDP7W05179OCJ7UCSRWBIMZPE",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "765A",
+    "subid": "48434970"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create constant integer variable N = 100 + 5",
+      "code": "const int N = 100 + 5 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare string variable s and an array of strings t with N elements",
+      "code": "string s , t [ N ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "mark is a new array of booleans with N elements",
+      "code": "bool mark [ N ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "create new integer variable n",
+      "code": "int n ;",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "read user input to n and s",
+      "code": "cin >> n >> s ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "read n elements into t",
+      "code": "for ( int i = 0 ; i < n ; i ++ ) cin >> t [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "cur is a new string variable = s",
+      "code": "string cur = s ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "in a for loop , change i from 0 to n exclusive",
+      "code": "for ( int i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "start for loop from j = 0 to n exclusive incrementing j",
+      "code": "for ( int j = 0 ; j < n ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "if mark [ j ] is false and first 3 characters of t = cur",
+      "code": "if ( ! mark [ j ] && t [ j ] . substr ( 0 , 3 ) == cur )",
+      "indent": 3
+    },
+    {
+      "line": 11,
+      "text": "change the value of cur to substring of t from position 5 to the end",
+      "code": "cur = t [ j ] . substr ( 5 ) ;",
+      "indent": 4
+    },
+    {
+      "line": 12,
+      "text": "change the value of mark [ j ] to true",
+      "code": "mark [ j ] = true ;",
+      "indent": 4
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 14,
+      "text": "print \" home \\ n \" if cur = s or \" contest \\ n \" otherwise",
+      "code": "cout << ( cur == s ? \" home\\n \" : \" contest\\n \" ) ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "string s [ N ] , s [ N ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘std::__cxx11::string s [105]’"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "if ( mark [ j ] == false && t == cur ) { t = cur ; }"
+      ],
+      "err_line": 10,
+      "err_msg": "no match for ‘operator==’ (operand types are ‘std::__cxx11::string [105] {aka std::__cxx11::basic_string<char> [105]}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "cur = t . substr ( 5 , 5 ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "request for member ‘substr’ in ‘t’, which is of non-class type ‘std::__cxx11::string [105] {aka std::__cxx11::basic_string<char> [105]}’"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "string s [ N ] , s ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘std::__cxx11::string s’"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "int n , s ;"
+      ],
+      "err_line": 7,
+      "err_msg": "conversion from ‘int’ to non-scalar type ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ requested"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j < n ; j ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "if ( mark [ j ] == false && t == cur )"
+      ],
+      "err_line": 10,
+      "err_msg": "no match for ‘operator==’ (operand types are ‘std::__cxx11::string [105] {aka std::__cxx11::basic_string<char> [105]}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "cur = t . substr ( 5 ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "request for member ‘substr’ in ‘t’, which is of non-class type ‘std::__cxx11::string [105] {aka std::__cxx11::basic_string<char> [105]}’"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "mark [ j ] [ true ;"
+      ],
+      "err_line": 12,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "cout << ( cur == s || cur == s ) ? \" : \" ;"
+      ],
+      "err_line": 14,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        10
+      ],
+      "mod_code": [
+        "string s [ N ] , s [ N ] ;",
+        "if ( mark [ j ] == false && t == cur ) { t = cur ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘std::__cxx11::string s [105]’"
+    },
+    {
+      "mod_line": [
+        1,
+        10,
+        11
+      ],
+      "mod_code": [
+        "string s [ N ] , s [ N ] ;",
+        "if ( mark [ j ] == false && t == cur ) { t = cur ; }",
+        "cur = t . substr ( 5 , 5 ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘std::__cxx11::string s [105]’"
+    },
+    {
+      "mod_line": [
+        1,
+        10,
+        11,
+        14
+      ],
+      "mod_code": [
+        "string s [ N ] , s [ N ] ;",
+        "if ( mark [ j ] == false && t == cur ) { t = cur ; }",
+        "cur = t . substr ( 5 , 5 ) ;",
+        "cout << ( cur == s ? \" : \" : \" \\n \" ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘std::__cxx11::string s [105]’"
+    },
+    {
+      "mod_line": [
+        1,
+        10,
+        11,
+        5
+      ],
+      "mod_code": [
+        "string s [ N ] , s [ N ] ;",
+        "if ( mark [ j ] == false && t == cur ) { t = cur ; }",
+        "cur = t . substr ( 5 , 5 ) ;",
+        "int n , s ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘std::__cxx11::string s [105]’"
+    },
+    {
+      "mod_line": [
+        1,
+        10,
+        14
+      ],
+      "mod_code": [
+        "string s [ N ] , s [ N ] ;",
+        "if ( mark [ j ] == false && t == cur ) { t = cur ; }",
+        "cout << ( cur == s ? \" : \" : \" \\n \" ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘std::__cxx11::string s [105]’"
+    },
+    {
+      "mod_line": [
+        1,
+        10,
+        14,
+        5
+      ],
+      "mod_code": [
+        "string s [ N ] , s [ N ] ;",
+        "if ( mark [ j ] == false && t == cur ) { t = cur ; }",
+        "cout << ( cur == s ? \" : \" : \" \\n \" ) ;",
+        "int n , s ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘std::__cxx11::string s [105]’"
+    },
+    {
+      "mod_line": [
+        1,
+        10,
+        5
+      ],
+      "mod_code": [
+        "string s [ N ] , s [ N ] ;",
+        "if ( mark [ j ] == false && t == cur ) { t = cur ; }",
+        "int n , s ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘std::__cxx11::string s [105]’"
+    },
+    {
+      "mod_line": [
+        1,
+        11
+      ],
+      "mod_code": [
+        "string s [ N ] , s [ N ] ;",
+        "cur = t . substr ( 5 , 5 ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘std::__cxx11::string s [105]’"
+    },
+    {
+      "mod_line": [
+        1,
+        11,
+        14
+      ],
+      "mod_code": [
+        "string s [ N ] , s [ N ] ;",
+        "cur = t . substr ( 5 , 5 ) ;",
+        "cout << ( cur == s ? \" : \" : \" \\n \" ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘std::__cxx11::string s [105]’"
+    },
+    {
+      "mod_line": [
+        1,
+        11,
+        14,
+        5
+      ],
+      "mod_code": [
+        "string s [ N ] , s [ N ] ;",
+        "cur = t . substr ( 5 , 5 ) ;",
+        "cout << ( cur == s ? \" : \" : \" \\n \" ) ;",
+        "int n , s ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘std::__cxx11::string s [105]’"
+    },
+    {
+      "mod_line": [
+        1,
+        11,
+        5
+      ],
+      "mod_code": [
+        "string s [ N ] , s [ N ] ;",
+        "cur = t . substr ( 5 , 5 ) ;",
+        "int n , s ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘std::__cxx11::string s [105]’"
+    },
+    {
+      "mod_line": [
+        1,
+        14
+      ],
+      "mod_code": [
+        "string s [ N ] , s [ N ] ;",
+        "cout << ( cur == s ? \" : \" : \" \\n \" ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘std::__cxx11::string s [105]’"
+    },
+    {
+      "mod_line": [
+        1,
+        14,
+        5
+      ],
+      "mod_code": [
+        "string s [ N ] , s [ N ] ;",
+        "cout << ( cur == s ? \" : \" : \" \\n \" ) ;",
+        "int n , s ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘std::__cxx11::string s [105]’"
+    },
+    {
+      "mod_line": [
+        1,
+        5
+      ],
+      "mod_code": [
+        "string s [ N ] , s [ N ] ;",
+        "int n , s ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘std::__cxx11::string s [105]’"
+    },
+    {
+      "mod_line": [
+        10,
+        11
+      ],
+      "mod_code": [
+        "if ( mark [ j ] == false && t == cur ) { t = cur ; }",
+        "cur = t . substr ( 5 , 5 ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no match for ‘operator==’ (operand types are ‘std::__cxx11::string [105] {aka std::__cxx11::basic_string<char> [105]}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        10,
+        11,
+        14
+      ],
+      "mod_code": [
+        "if ( mark [ j ] == false && t == cur ) { t = cur ; }",
+        "cur = t . substr ( 5 , 5 ) ;",
+        "cout << ( cur == s ? \" : \" : \" \\n \" ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no match for ‘operator==’ (operand types are ‘std::__cxx11::string [105] {aka std::__cxx11::basic_string<char> [105]}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        10,
+        11,
+        14,
+        1
+      ],
+      "mod_code": [
+        "if ( mark [ j ] == false && t == cur ) { t = cur ; }",
+        "cur = t . substr ( 5 , 5 ) ;",
+        "cout << ( cur == s ? \" : \" : \" \\n \" ) ;",
+        "string s [ N ] , s ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘std::__cxx11::string s’"
+    },
+    {
+      "mod_line": [
+        10,
+        11,
+        14,
+        5
+      ],
+      "mod_code": [
+        "if ( mark [ j ] == false && t == cur ) { t = cur ; }",
+        "cur = t . substr ( 5 , 5 ) ;",
+        "cout << ( cur == s ? \" : \" : \" \\n \" ) ;",
+        "int n , s ;"
+      ],
+      "err_line": 7,
+      "err_msg": "conversion from ‘int’ to non-scalar type ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ requested"
+    },
+    {
+      "mod_line": [
+        10,
+        11,
+        1
+      ],
+      "mod_code": [
+        "if ( mark [ j ] == false && t == cur ) { t = cur ; }",
+        "cur = t . substr ( 5 , 5 ) ;",
+        "string s [ N ] , s ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘std::__cxx11::string s’"
+    },
+    {
+      "mod_line": [
+        10,
+        11,
+        1,
+        5
+      ],
+      "mod_code": [
+        "if ( mark [ j ] == false && t == cur ) { t = cur ; }",
+        "cur = t . substr ( 5 , 5 ) ;",
+        "string s [ N ] , s ;",
+        "int n , s ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘std::__cxx11::string s’"
+    },
+    {
+      "mod_line": [
+        10,
+        11,
+        5
+      ],
+      "mod_code": [
+        "if ( mark [ j ] == false && t == cur ) { t = cur ; }",
+        "cur = t . substr ( 5 , 5 ) ;",
+        "int n , s ;"
+      ],
+      "err_line": 7,
+      "err_msg": "conversion from ‘int’ to non-scalar type ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ requested"
+    },
+    {
+      "mod_line": [
+        10,
+        14
+      ],
+      "mod_code": [
+        "if ( mark [ j ] == false && t == cur ) { t = cur ; }",
+        "cout << ( cur == s ? \" : \" : \" \\n \" ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no match for ‘operator==’ (operand types are ‘std::__cxx11::string [105] {aka std::__cxx11::basic_string<char> [105]}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        10,
+        14,
+        1
+      ],
+      "mod_code": [
+        "if ( mark [ j ] == false && t == cur ) { t = cur ; }",
+        "cout << ( cur == s ? \" : \" : \" \\n \" ) ;",
+        "string s [ N ] , s ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘std::__cxx11::string s’"
+    },
+    {
+      "mod_line": [
+        10,
+        14,
+        1,
+        5
+      ],
+      "mod_code": [
+        "if ( mark [ j ] == false && t == cur ) { t = cur ; }",
+        "cout << ( cur == s ? \" : \" : \" \\n \" ) ;",
+        "string s [ N ] , s ;",
+        "int n , s ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘std::__cxx11::string s’"
+    },
+    {
+      "mod_line": [
+        10,
+        14,
+        5
+      ],
+      "mod_code": [
+        "if ( mark [ j ] == false && t == cur ) { t = cur ; }",
+        "cout << ( cur == s ? \" : \" : \" \\n \" ) ;",
+        "int n , s ;"
+      ],
+      "err_line": 7,
+      "err_msg": "conversion from ‘int’ to non-scalar type ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ requested"
+    },
+    {
+      "mod_line": [
+        10,
+        1
+      ],
+      "mod_code": [
+        "if ( mark [ j ] == false && t == cur ) { t = cur ; }",
+        "string s [ N ] , s ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘std::__cxx11::string s’"
+    },
+    {
+      "mod_line": [
+        10,
+        1,
+        5
+      ],
+      "mod_code": [
+        "if ( mark [ j ] == false && t == cur ) { t = cur ; }",
+        "string s [ N ] , s ;",
+        "int n , s ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘std::__cxx11::string s’"
+    },
+    {
+      "mod_line": [
+        10,
+        5
+      ],
+      "mod_code": [
+        "if ( mark [ j ] == false && t == cur ) { t = cur ; }",
+        "int n , s ;"
+      ],
+      "err_line": 7,
+      "err_msg": "conversion from ‘int’ to non-scalar type ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ requested"
+    },
+    {
+      "mod_line": [
+        11,
+        14
+      ],
+      "mod_code": [
+        "cur = t . substr ( 5 , 5 ) ;",
+        "cout << ( cur == s ? \" : \" : \" \\n \" ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "request for member ‘substr’ in ‘t’, which is of non-class type ‘std::__cxx11::string [105] {aka std::__cxx11::basic_string<char> [105]}’"
+    },
+    {
+      "mod_line": [
+        11,
+        14,
+        1
+      ],
+      "mod_code": [
+        "cur = t . substr ( 5 , 5 ) ;",
+        "cout << ( cur == s ? \" : \" : \" \\n \" ) ;",
+        "string s [ N ] , s ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘std::__cxx11::string s’"
+    },
+    {
+      "mod_line": [
+        11,
+        14,
+        1,
+        5
+      ],
+      "mod_code": [
+        "cur = t . substr ( 5 , 5 ) ;",
+        "cout << ( cur == s ? \" : \" : \" \\n \" ) ;",
+        "string s [ N ] , s ;",
+        "int n , s ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘std::__cxx11::string s’"
+    },
+    {
+      "mod_line": [
+        11,
+        14,
+        5
+      ],
+      "mod_code": [
+        "cur = t . substr ( 5 , 5 ) ;",
+        "cout << ( cur == s ? \" : \" : \" \\n \" ) ;",
+        "int n , s ;"
+      ],
+      "err_line": 7,
+      "err_msg": "conversion from ‘int’ to non-scalar type ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ requested"
+    },
+    {
+      "mod_line": [
+        11,
+        1
+      ],
+      "mod_code": [
+        "cur = t . substr ( 5 , 5 ) ;",
+        "string s [ N ] , s ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘std::__cxx11::string s’"
+    },
+    {
+      "mod_line": [
+        11,
+        1,
+        5
+      ],
+      "mod_code": [
+        "cur = t . substr ( 5 , 5 ) ;",
+        "string s [ N ] , s ;",
+        "int n , s ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘std::__cxx11::string s’"
+    },
+    {
+      "mod_line": [
+        11,
+        5
+      ],
+      "mod_code": [
+        "cur = t . substr ( 5 , 5 ) ;",
+        "int n , s ;"
+      ],
+      "err_line": 7,
+      "err_msg": "conversion from ‘int’ to non-scalar type ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ requested"
+    },
+    {
+      "mod_line": [
+        14,
+        1
+      ],
+      "mod_code": [
+        "cout << ( cur == s ? \" : \" : \" \\n \" ) ;",
+        "string s [ N ] , s ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘std::__cxx11::string s’"
+    },
+    {
+      "mod_line": [
+        14,
+        1,
+        5
+      ],
+      "mod_code": [
+        "cout << ( cur == s ? \" : \" : \" \\n \" ) ;",
+        "string s [ N ] , s ;",
+        "int n , s ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘std::__cxx11::string s’"
+    },
+    {
+      "mod_line": [
+        14,
+        5
+      ],
+      "mod_code": [
+        "cout << ( cur == s ? \" : \" : \" \\n \" ) ;",
+        "int n , s ;"
+      ],
+      "err_line": 7,
+      "err_msg": "conversion from ‘int’ to non-scalar type ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ requested"
+    },
+    {
+      "mod_line": [
+        1,
+        5
+      ],
+      "mod_code": [
+        "string s [ N ] , s ;",
+        "int n , s ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘std::__cxx11::string s’"
+    }
+  ]
+}

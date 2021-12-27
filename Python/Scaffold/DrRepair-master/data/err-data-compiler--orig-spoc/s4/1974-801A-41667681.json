@@ -1,0 +1,593 @@
+{
+  "meta": {
+    "index": 1974,
+    "hitid": "3MQKOF1EE2ISIF1TWNWSDUGPGXDDWM",
+    "workerid": "A1NBHCFZKJGHKW",
+    "probid": "801A",
+    "subid": "41667681"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "maxn = const int with maxn = 105",
+      "code": "const int maxn = 105 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "pow_base , base , tmp = unsigned long long with base = 131",
+      "code": "unsigned long long pow_base , base = 131 , tmp ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "ihash = unsigned long long array of size maxn",
+      "code": "unsigned long long ihash [ maxn ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "ans = int and vis = int array of size maxn",
+      "code": "int vis [ maxn ] , ans ;",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "s1 , s2 = string",
+      "code": "string s1 , s2 ;",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 6,
+      "text": "set all values of vis to 0",
+      "code": "memset ( vis , 0 , sizeof ( vis ) ) ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "set pow_base to base * base",
+      "code": "pow_base = base * base ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "len = int",
+      "code": "int len ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "read s1",
+      "code": "cin >> s1 ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "set len to size of s1",
+      "code": "len = s1 . size ( ) ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "prepend \" \" to s1",
+      "code": "s1 = \" \" + s1 ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "noop",
+      "code": ";",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "set s2 to \" VK \"",
+      "code": "s2 = \" VK \" ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "set tmp to 0",
+      "code": "tmp = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "for i = 0 to size of s2 set tmp to tmp * base + s2 [ i ]",
+      "code": "for ( int i = 0 ; i < s2 . size ( ) ; i ++ ) tmp = tmp * base + s2 [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "set ihash [ 0 ] to 0",
+      "code": "ihash [ 0 ] = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "for i = 1 to len inclusive set ihash [ i ] to ihash [ i - 1 ] * base + s1 [ i ]",
+      "code": "for ( int i = 1 ; i <= len ; i ++ ) ihash [ i ] = ihash [ i - 1 ] * base + s1 [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "for i = 2 to len inclusive",
+      "code": "for ( int i = 2 ; i <= len ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "tmp2 = unsigned long long with tmp2 = ihash [ i ] - ihash [ i - 2 ] * pow_base",
+      "code": "unsigned long long tmp2 = ihash [ i ] - ihash [ i - 2 ] * pow_base ;",
+      "indent": 2
+    },
+    {
+      "line": 20,
+      "text": "if tmp2 is tmp",
+      "code": "if ( tmp2 == tmp )",
+      "indent": 2
+    },
+    {
+      "line": 21,
+      "text": "set both vis [ i - 1 ] and vis [ i ] to 1",
+      "code": "vis [ i - 1 ] = vis [ i ] = 1 ;",
+      "indent": 3
+    },
+    {
+      "line": 22,
+      "text": "increment ans",
+      "code": "ans ++ ;",
+      "indent": 3
+    },
+    {
+      "line": 23,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 24,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 25,
+      "text": "for i = 1 to len inclusive",
+      "code": "for ( int i = 1 ; i <= len ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 26,
+      "text": "if s1 [ i ] is ' V ' and vis [ i ] is 0 and i + 1 is less or equal to len and vis [ i + 1 ] is 0",
+      "code": "if ( s1 [ i ] == ' V ' && ! vis [ i ] && ( i + 1 ) <= len && ! vis [ i + 1 ] )",
+      "indent": 2
+    },
+    {
+      "line": 27,
+      "text": "increment ans",
+      "code": "ans ++ ;",
+      "indent": 3
+    },
+    {
+      "line": 28,
+      "text": "break",
+      "code": "break ;",
+      "indent": 3
+    },
+    {
+      "line": 29,
+      "text": "else if s1 [ i ] is ' K ' and vis [ i ] is 0 and i - 1 is greater or equal to 1 and vis [ i - 1 ] is 0",
+      "code": "else if ( s1 [ i ] == ' K ' && ! vis [ i ] && ( i - 1 ) >= 1 && ! vis [ i - 1 ] )",
+      "indent": 2
+    },
+    {
+      "line": 30,
+      "text": "increment ans",
+      "code": "ans ++ ;",
+      "indent": 3
+    },
+    {
+      "line": 31,
+      "text": "break",
+      "code": "break ;",
+      "indent": 3
+    },
+    {
+      "line": 32,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 33,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 34,
+      "text": "print ans",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 35,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 36,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "char s1 , s2 ;"
+      ],
+      "err_line": 10,
+      "err_msg": "request for member ‘size’ in ‘s1’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "int * len ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid conversion from ‘std::__cxx11::basic_string<char>::size_type {aka long unsigned int}’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "gets ( s1 ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "int len = s1 . size ( ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "redeclaration of ‘int len’"
+    },
+    {
+      "mod_line": [
+        18
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= len ; i ++ )"
+      ],
+      "err_line": 18,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        25
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= len ; i ++ )"
+      ],
+      "err_line": 25,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        1,
+        11,
+        15,
+        4
+      ],
+      "mod_code": [
+        "unsigned long long pow_base = 131 , base , tmp ;",
+        "s1 = \" \" ;",
+        "for ( int i = 0 ; i < s2 . size ( ) ; i ++ ) { tmp += base + s2 [ i ] ; }",
+        "char s1 , s2 ;"
+      ],
+      "err_line": 10,
+      "err_msg": "request for member ‘size’ in ‘s1’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        1,
+        11,
+        4
+      ],
+      "mod_code": [
+        "unsigned long long pow_base = 131 , base , tmp ;",
+        "s1 = \" \" ;",
+        "char s1 , s2 ;"
+      ],
+      "err_line": 10,
+      "err_msg": "request for member ‘size’ in ‘s1’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        1,
+        11,
+        4,
+        34
+      ],
+      "mod_code": [
+        "unsigned long long pow_base = 131 , base , tmp ;",
+        "s1 = \" \" ;",
+        "char s1 , s2 ;",
+        "cout << ans ;"
+      ],
+      "err_line": 10,
+      "err_msg": "request for member ‘size’ in ‘s1’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        1,
+        15,
+        4
+      ],
+      "mod_code": [
+        "unsigned long long pow_base = 131 , base , tmp ;",
+        "for ( int i = 0 ; i < s2 . size ( ) ; i ++ ) { tmp += base + s2 [ i ] ; }",
+        "char s1 , s2 ;"
+      ],
+      "err_line": 10,
+      "err_msg": "request for member ‘size’ in ‘s1’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        1,
+        15,
+        4,
+        11
+      ],
+      "mod_code": [
+        "unsigned long long pow_base = 131 , base , tmp ;",
+        "for ( int i = 0 ; i < s2 . size ( ) ; i ++ ) { tmp += base + s2 [ i ] ; }",
+        "char s1 , s2 ;",
+        "s1 += \" \" ;"
+      ],
+      "err_line": 10,
+      "err_msg": "request for member ‘size’ in ‘s1’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        1,
+        15,
+        4,
+        34
+      ],
+      "mod_code": [
+        "unsigned long long pow_base = 131 , base , tmp ;",
+        "for ( int i = 0 ; i < s2 . size ( ) ; i ++ ) { tmp += base + s2 [ i ] ; }",
+        "char s1 , s2 ;",
+        "cout << ans ;"
+      ],
+      "err_line": 10,
+      "err_msg": "request for member ‘size’ in ‘s1’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        1,
+        4
+      ],
+      "mod_code": [
+        "unsigned long long pow_base = 131 , base , tmp ;",
+        "char s1 , s2 ;"
+      ],
+      "err_line": 10,
+      "err_msg": "request for member ‘size’ in ‘s1’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        1,
+        4,
+        11
+      ],
+      "mod_code": [
+        "unsigned long long pow_base = 131 , base , tmp ;",
+        "char s1 , s2 ;",
+        "s1 += \" \" ;"
+      ],
+      "err_line": 10,
+      "err_msg": "request for member ‘size’ in ‘s1’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        1,
+        4,
+        11,
+        34
+      ],
+      "mod_code": [
+        "unsigned long long pow_base = 131 , base , tmp ;",
+        "char s1 , s2 ;",
+        "s1 += \" \" ;",
+        "cout << ans ;"
+      ],
+      "err_line": 10,
+      "err_msg": "request for member ‘size’ in ‘s1’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        1,
+        4,
+        34
+      ],
+      "mod_code": [
+        "unsigned long long pow_base = 131 , base , tmp ;",
+        "char s1 , s2 ;",
+        "cout << ans ;"
+      ],
+      "err_line": 10,
+      "err_msg": "request for member ‘size’ in ‘s1’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        11,
+        15,
+        4
+      ],
+      "mod_code": [
+        "s1 = \" \" ;",
+        "for ( int i = 0 ; i < s2 . size ( ) ; i ++ ) { tmp += base + s2 [ i ] ; }",
+        "char s1 , s2 ;"
+      ],
+      "err_line": 10,
+      "err_msg": "request for member ‘size’ in ‘s1’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        11,
+        15,
+        4,
+        34
+      ],
+      "mod_code": [
+        "s1 = \" \" ;",
+        "for ( int i = 0 ; i < s2 . size ( ) ; i ++ ) { tmp += base + s2 [ i ] ; }",
+        "char s1 , s2 ;",
+        "cout << ans ;"
+      ],
+      "err_line": 10,
+      "err_msg": "request for member ‘size’ in ‘s1’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        11,
+        4
+      ],
+      "mod_code": [
+        "s1 = \" \" ;",
+        "char s1 , s2 ;"
+      ],
+      "err_line": 10,
+      "err_msg": "request for member ‘size’ in ‘s1’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        11,
+        4,
+        34
+      ],
+      "mod_code": [
+        "s1 = \" \" ;",
+        "char s1 , s2 ;",
+        "cout << ans ;"
+      ],
+      "err_line": 10,
+      "err_msg": "request for member ‘size’ in ‘s1’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        15,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < s2 . size ( ) ; i ++ ) { tmp += base + s2 [ i ] ; }",
+        "char s1 , s2 ;"
+      ],
+      "err_line": 10,
+      "err_msg": "request for member ‘size’ in ‘s1’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        15,
+        4,
+        11
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < s2 . size ( ) ; i ++ ) { tmp += base + s2 [ i ] ; }",
+        "char s1 , s2 ;",
+        "s1 += \" \" ;"
+      ],
+      "err_line": 10,
+      "err_msg": "request for member ‘size’ in ‘s1’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        15,
+        4,
+        11,
+        34
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < s2 . size ( ) ; i ++ ) { tmp += base + s2 [ i ] ; }",
+        "char s1 , s2 ;",
+        "s1 += \" \" ;",
+        "cout << ans ;"
+      ],
+      "err_line": 10,
+      "err_msg": "request for member ‘size’ in ‘s1’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        15,
+        4,
+        34
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < s2 . size ( ) ; i ++ ) { tmp += base + s2 [ i ] ; }",
+        "char s1 , s2 ;",
+        "cout << ans ;"
+      ],
+      "err_line": 10,
+      "err_msg": "request for member ‘size’ in ‘s1’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        4,
+        11
+      ],
+      "mod_code": [
+        "char s1 , s2 ;",
+        "s1 += \" \" ;"
+      ],
+      "err_line": 10,
+      "err_msg": "request for member ‘size’ in ‘s1’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        4,
+        11,
+        34
+      ],
+      "mod_code": [
+        "char s1 , s2 ;",
+        "s1 += \" \" ;",
+        "cout << ans ;"
+      ],
+      "err_line": 10,
+      "err_msg": "request for member ‘size’ in ‘s1’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        4,
+        34
+      ],
+      "mod_code": [
+        "char s1 , s2 ;",
+        "cout << ans ;"
+      ],
+      "err_line": 10,
+      "err_msg": "request for member ‘size’ in ‘s1’, which is of non-class type ‘char’"
+    }
+  ]
+}

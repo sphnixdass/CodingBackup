@@ -1,0 +1,827 @@
+{
+  "meta": {
+    "index": 840,
+    "hitid": "33BFF6QPI15U0NZW3YQG0LUDPKU3WK",
+    "workerid": "A2QLFQ2ZYR6B7M",
+    "probid": "171A",
+    "subid": "15338274"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "a , b = int",
+      "code": "int a , b ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read a , b",
+      "code": "cin >> a >> b ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "y = array of 30 int",
+      "code": "int y [ 30 ] = { } ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "r = b , d = 0",
+      "code": "int r = b , d = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "while r > 0",
+      "code": "while ( r > 0 )",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "y [ d ] = r modulo 10",
+      "code": "y [ d ] = r % 10 ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "divide r by 10",
+      "code": "r /= 10 ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "increment d",
+      "code": "d ++ ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "for i = 0 to d / 2 exclusive swap y [ i ] and y [ d - 1 - i ]",
+      "code": "for ( int i = 0 ; i < d / 2 ; i ++ ) swap ( y [ i ] , y [ d - 1 - i ] ) ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "w = 0 , k = 1",
+      "code": "int w = 0 , k = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "for i = 0 to d exclusive",
+      "code": "for ( int i = 0 ; i < d ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "add y [ i ] * k to w",
+      "code": "w += y [ i ] * k ;",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "multiply k by 10",
+      "code": "k *= 10 ;",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "print w + a",
+      "code": "cout << w + a << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int a , b , b ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b’"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "r = b , d = 0 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘r’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < d / 2 ; i ++ ) { swap ( y [ i ] - y [ d - 1 - i ] ) ; }"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘swap(int)’"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "w = 0 , k = 1 ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘w’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < d ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        16,
+        12
+      ],
+      "mod_code": [
+        "cout << w + a ;",
+        "for ( i = 0 ; i < d ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        16,
+        12,
+        10
+      ],
+      "mod_code": [
+        "cout << w + a ;",
+        "for ( i = 0 ; i < d ; i ++ )",
+        "for ( int i = 0 ; i < d / 2 ; i ++ ) { swap ( y [ i ] - y [ d - 1 - i ] ) ; }"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘swap(int)’"
+    },
+    {
+      "mod_line": [
+        16,
+        12,
+        10,
+        1
+      ],
+      "mod_code": [
+        "cout << w + a ;",
+        "for ( i = 0 ; i < d ; i ++ )",
+        "for ( int i = 0 ; i < d / 2 ; i ++ ) { swap ( y [ i ] - y [ d - 1 - i ] ) ; }",
+        "int a , b , b ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b’"
+    },
+    {
+      "mod_line": [
+        16,
+        12,
+        10,
+        2
+      ],
+      "mod_code": [
+        "cout << w + a ;",
+        "for ( i = 0 ; i < d ; i ++ )",
+        "for ( int i = 0 ; i < d / 2 ; i ++ ) { swap ( y [ i ] - y [ d - 1 - i ] ) ; }",
+        "cin >> a , b ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘swap(int)’"
+    },
+    {
+      "mod_line": [
+        16,
+        12,
+        10,
+        6
+      ],
+      "mod_code": [
+        "cout << w + a ;",
+        "for ( i = 0 ; i < d ; i ++ )",
+        "for ( int i = 0 ; i < d / 2 ; i ++ ) { swap ( y [ i ] - y [ d - 1 - i ] ) ; }",
+        "y [ d ++ ] = r % 10 ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘swap(int)’"
+    },
+    {
+      "mod_line": [
+        16,
+        12,
+        1
+      ],
+      "mod_code": [
+        "cout << w + a ;",
+        "for ( i = 0 ; i < d ; i ++ )",
+        "int a , b , b ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b’"
+    },
+    {
+      "mod_line": [
+        16,
+        12,
+        1,
+        2
+      ],
+      "mod_code": [
+        "cout << w + a ;",
+        "for ( i = 0 ; i < d ; i ++ )",
+        "int a , b , b ;",
+        "cin >> a , b ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b’"
+    },
+    {
+      "mod_line": [
+        16,
+        12,
+        1,
+        6
+      ],
+      "mod_code": [
+        "cout << w + a ;",
+        "for ( i = 0 ; i < d ; i ++ )",
+        "int a , b , b ;",
+        "y [ d ++ ] = r % 10 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b’"
+    },
+    {
+      "mod_line": [
+        16,
+        12,
+        2
+      ],
+      "mod_code": [
+        "cout << w + a ;",
+        "for ( i = 0 ; i < d ; i ++ )",
+        "cin >> a , b ;"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        16,
+        12,
+        2,
+        6
+      ],
+      "mod_code": [
+        "cout << w + a ;",
+        "for ( i = 0 ; i < d ; i ++ )",
+        "cin >> a , b ;",
+        "y [ d ++ ] = r % 10 ;"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        16,
+        12,
+        6
+      ],
+      "mod_code": [
+        "cout << w + a ;",
+        "for ( i = 0 ; i < d ; i ++ )",
+        "y [ d ++ ] = r % 10 ;"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        16,
+        10
+      ],
+      "mod_code": [
+        "cout << w + a ;",
+        "for ( int i = 0 ; i < d / 2 ; i ++ ) { swap ( y [ i ] - y [ d - 1 - i ] ) ; }"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘swap(int)’"
+    },
+    {
+      "mod_line": [
+        16,
+        10,
+        1
+      ],
+      "mod_code": [
+        "cout << w + a ;",
+        "for ( int i = 0 ; i < d / 2 ; i ++ ) { swap ( y [ i ] - y [ d - 1 - i ] ) ; }",
+        "int a , b , b ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b’"
+    },
+    {
+      "mod_line": [
+        16,
+        10,
+        1,
+        2
+      ],
+      "mod_code": [
+        "cout << w + a ;",
+        "for ( int i = 0 ; i < d / 2 ; i ++ ) { swap ( y [ i ] - y [ d - 1 - i ] ) ; }",
+        "int a , b , b ;",
+        "cin >> a , b ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b’"
+    },
+    {
+      "mod_line": [
+        16,
+        10,
+        1,
+        6
+      ],
+      "mod_code": [
+        "cout << w + a ;",
+        "for ( int i = 0 ; i < d / 2 ; i ++ ) { swap ( y [ i ] - y [ d - 1 - i ] ) ; }",
+        "int a , b , b ;",
+        "y [ d ++ ] = r % 10 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b’"
+    },
+    {
+      "mod_line": [
+        16,
+        10,
+        2
+      ],
+      "mod_code": [
+        "cout << w + a ;",
+        "for ( int i = 0 ; i < d / 2 ; i ++ ) { swap ( y [ i ] - y [ d - 1 - i ] ) ; }",
+        "cin >> a , b ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘swap(int)’"
+    },
+    {
+      "mod_line": [
+        16,
+        10,
+        2,
+        6
+      ],
+      "mod_code": [
+        "cout << w + a ;",
+        "for ( int i = 0 ; i < d / 2 ; i ++ ) { swap ( y [ i ] - y [ d - 1 - i ] ) ; }",
+        "cin >> a , b ;",
+        "y [ d ++ ] = r % 10 ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘swap(int)’"
+    },
+    {
+      "mod_line": [
+        16,
+        10,
+        6
+      ],
+      "mod_code": [
+        "cout << w + a ;",
+        "for ( int i = 0 ; i < d / 2 ; i ++ ) { swap ( y [ i ] - y [ d - 1 - i ] ) ; }",
+        "y [ d ++ ] = r % 10 ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘swap(int)’"
+    },
+    {
+      "mod_line": [
+        16,
+        1
+      ],
+      "mod_code": [
+        "cout << w + a ;",
+        "int a , b , b ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b’"
+    },
+    {
+      "mod_line": [
+        16,
+        1,
+        2
+      ],
+      "mod_code": [
+        "cout << w + a ;",
+        "int a , b , b ;",
+        "cin >> a , b ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b’"
+    },
+    {
+      "mod_line": [
+        16,
+        1,
+        2,
+        6
+      ],
+      "mod_code": [
+        "cout << w + a ;",
+        "int a , b , b ;",
+        "cin >> a , b ;",
+        "y [ d ++ ] = r % 10 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b’"
+    },
+    {
+      "mod_line": [
+        16,
+        1,
+        6
+      ],
+      "mod_code": [
+        "cout << w + a ;",
+        "int a , b , b ;",
+        "y [ d ++ ] = r % 10 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b’"
+    },
+    {
+      "mod_line": [
+        12,
+        10
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < d ; i ++ )",
+        "for ( int i = 0 ; i < d / 2 ; i ++ ) { swap ( y [ i ] - y [ d - 1 - i ] ) ; }"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘swap(int)’"
+    },
+    {
+      "mod_line": [
+        12,
+        10,
+        1
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < d ; i ++ )",
+        "for ( int i = 0 ; i < d / 2 ; i ++ ) { swap ( y [ i ] - y [ d - 1 - i ] ) ; }",
+        "int a , b , b ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b’"
+    },
+    {
+      "mod_line": [
+        12,
+        10,
+        1,
+        2
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < d ; i ++ )",
+        "for ( int i = 0 ; i < d / 2 ; i ++ ) { swap ( y [ i ] - y [ d - 1 - i ] ) ; }",
+        "int a , b , b ;",
+        "cin >> a , b ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b’"
+    },
+    {
+      "mod_line": [
+        12,
+        10,
+        1,
+        6
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < d ; i ++ )",
+        "for ( int i = 0 ; i < d / 2 ; i ++ ) { swap ( y [ i ] - y [ d - 1 - i ] ) ; }",
+        "int a , b , b ;",
+        "y [ d ++ ] = r % 10 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b’"
+    },
+    {
+      "mod_line": [
+        12,
+        10,
+        2
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < d ; i ++ )",
+        "for ( int i = 0 ; i < d / 2 ; i ++ ) { swap ( y [ i ] - y [ d - 1 - i ] ) ; }",
+        "cin >> a , b ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘swap(int)’"
+    },
+    {
+      "mod_line": [
+        12,
+        10,
+        2,
+        6
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < d ; i ++ )",
+        "for ( int i = 0 ; i < d / 2 ; i ++ ) { swap ( y [ i ] - y [ d - 1 - i ] ) ; }",
+        "cin >> a , b ;",
+        "y [ d ++ ] = r % 10 ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘swap(int)’"
+    },
+    {
+      "mod_line": [
+        12,
+        10,
+        6
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < d ; i ++ )",
+        "for ( int i = 0 ; i < d / 2 ; i ++ ) { swap ( y [ i ] - y [ d - 1 - i ] ) ; }",
+        "y [ d ++ ] = r % 10 ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘swap(int)’"
+    },
+    {
+      "mod_line": [
+        12,
+        1
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < d ; i ++ )",
+        "int a , b , b ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b’"
+    },
+    {
+      "mod_line": [
+        12,
+        1,
+        2
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < d ; i ++ )",
+        "int a , b , b ;",
+        "cin >> a , b ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b’"
+    },
+    {
+      "mod_line": [
+        12,
+        1,
+        2,
+        6
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < d ; i ++ )",
+        "int a , b , b ;",
+        "cin >> a , b ;",
+        "y [ d ++ ] = r % 10 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b’"
+    },
+    {
+      "mod_line": [
+        12,
+        1,
+        6
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < d ; i ++ )",
+        "int a , b , b ;",
+        "y [ d ++ ] = r % 10 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b’"
+    },
+    {
+      "mod_line": [
+        12,
+        2
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < d ; i ++ )",
+        "cin >> a , b ;"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        2,
+        6
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < d ; i ++ )",
+        "cin >> a , b ;",
+        "y [ d ++ ] = r % 10 ;"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        6
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < d ; i ++ )",
+        "y [ d ++ ] = r % 10 ;"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        1
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < d / 2 ; i ++ ) { swap ( y [ i ] - y [ d - 1 - i ] ) ; }",
+        "int a , b , b ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b’"
+    },
+    {
+      "mod_line": [
+        10,
+        1,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < d / 2 ; i ++ ) { swap ( y [ i ] - y [ d - 1 - i ] ) ; }",
+        "int a , b , b ;",
+        "cin >> a , b ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b’"
+    },
+    {
+      "mod_line": [
+        10,
+        1,
+        2,
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < d / 2 ; i ++ ) { swap ( y [ i ] - y [ d - 1 - i ] ) ; }",
+        "int a , b , b ;",
+        "cin >> a , b ;",
+        "y [ d ++ ] = r % 10 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b’"
+    },
+    {
+      "mod_line": [
+        10,
+        1,
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < d / 2 ; i ++ ) { swap ( y [ i ] - y [ d - 1 - i ] ) ; }",
+        "int a , b , b ;",
+        "y [ d ++ ] = r % 10 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b’"
+    },
+    {
+      "mod_line": [
+        10,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < d / 2 ; i ++ ) { swap ( y [ i ] - y [ d - 1 - i ] ) ; }",
+        "cin >> a , b ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘swap(int)’"
+    },
+    {
+      "mod_line": [
+        10,
+        2,
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < d / 2 ; i ++ ) { swap ( y [ i ] - y [ d - 1 - i ] ) ; }",
+        "cin >> a , b ;",
+        "y [ d ++ ] = r % 10 ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘swap(int)’"
+    },
+    {
+      "mod_line": [
+        10,
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < d / 2 ; i ++ ) { swap ( y [ i ] - y [ d - 1 - i ] ) ; }",
+        "y [ d ++ ] = r % 10 ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘swap(int)’"
+    },
+    {
+      "mod_line": [
+        1,
+        2
+      ],
+      "mod_code": [
+        "int a , b , b ;",
+        "cin >> a , b ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b’"
+    },
+    {
+      "mod_line": [
+        1,
+        2,
+        6
+      ],
+      "mod_code": [
+        "int a , b , b ;",
+        "cin >> a , b ;",
+        "y [ d ++ ] = r % 10 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b’"
+    },
+    {
+      "mod_line": [
+        1,
+        6
+      ],
+      "mod_code": [
+        "int a , b , b ;",
+        "y [ d ++ ] = r % 10 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b’"
+    }
+  ]
+}

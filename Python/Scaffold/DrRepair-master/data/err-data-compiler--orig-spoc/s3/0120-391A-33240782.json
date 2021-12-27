@@ -1,0 +1,655 @@
+{
+  "meta": {
+    "index": 120,
+    "hitid": "3OZ4VAIBEX9S6C1GG9D7UQSOE86VJ6",
+    "workerid": "A1R0Q9CUUBSM5F",
+    "probid": "391A",
+    "subid": "33240782"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create constant integers N = 100 * 1000 + 4",
+      "code": "const int N = 100 * 1000 + 4 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create integer n",
+      "code": "int n ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "create string s",
+      "code": "string s ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "read s",
+      "code": "cin >> s ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "set n to the size of s",
+      "code": "n = s . size ( ) ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "create integers ans = 0 and last = 0",
+      "code": "int ans = 0 , last = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for i = 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "if i is equal to n or s [ i ] is equal to s [ i - 1 ]",
+      "code": "if ( i == n || s [ i ] != s [ i - 1 ] )",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "if ( i - last ) modulo 2 is 0 , increment ans",
+      "code": "if ( ( i - last ) % 2 == 0 ) ++ ans ;",
+      "indent": 3
+    },
+    {
+      "line": 10,
+      "text": "set last to i",
+      "code": "last = i ;",
+      "indent": 3
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "print ans",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "int s ;"
+      ],
+      "err_line": 5,
+      "err_msg": "request for member ‘size’ in ‘s’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "s >> s ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "int ans = 0 = 0 , last = 0 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "C = i ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘C’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        4
+      ],
+      "mod_code": [
+        "if ( i == n || s [ i ] == s [ i - 1 ] )",
+        "s >> s ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        8,
+        4,
+        10
+      ],
+      "mod_code": [
+        "if ( i == n || s [ i ] == s [ i - 1 ] )",
+        "s >> s ;",
+        "C = i ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        8,
+        4,
+        10,
+        6
+      ],
+      "mod_code": [
+        "if ( i == n || s [ i ] == s [ i - 1 ] )",
+        "s >> s ;",
+        "C = i ;",
+        "int ans = 0 = 0 , last = 0 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        8,
+        4,
+        10,
+        13
+      ],
+      "mod_code": [
+        "if ( i == n || s [ i ] == s [ i - 1 ] )",
+        "s >> s ;",
+        "C = i ;",
+        "cout << ans ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        8,
+        4,
+        6
+      ],
+      "mod_code": [
+        "if ( i == n || s [ i ] == s [ i - 1 ] )",
+        "s >> s ;",
+        "int ans = 0 = 0 , last = 0 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        8,
+        4,
+        6,
+        13
+      ],
+      "mod_code": [
+        "if ( i == n || s [ i ] == s [ i - 1 ] )",
+        "s >> s ;",
+        "int ans = 0 = 0 , last = 0 ;",
+        "cout << ans ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        8,
+        4,
+        13
+      ],
+      "mod_code": [
+        "if ( i == n || s [ i ] == s [ i - 1 ] )",
+        "s >> s ;",
+        "cout << ans ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        8,
+        10
+      ],
+      "mod_code": [
+        "if ( i == n || s [ i ] == s [ i - 1 ] )",
+        "C = i ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘C’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        6
+      ],
+      "mod_code": [
+        "if ( i == n || s [ i ] == s [ i - 1 ] )",
+        "C = i ;",
+        "int ans = 0 = 0 , last = 0 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        6,
+        13
+      ],
+      "mod_code": [
+        "if ( i == n || s [ i ] == s [ i - 1 ] )",
+        "C = i ;",
+        "int ans = 0 = 0 , last = 0 ;",
+        "cout << ans ;"
+      ],
+      "err_line": 6,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        13
+      ],
+      "mod_code": [
+        "if ( i == n || s [ i ] == s [ i - 1 ] )",
+        "C = i ;",
+        "cout << ans ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘C’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        6
+      ],
+      "mod_code": [
+        "if ( i == n || s [ i ] == s [ i - 1 ] )",
+        "int ans = 0 = 0 , last = 0 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        8,
+        6,
+        13
+      ],
+      "mod_code": [
+        "if ( i == n || s [ i ] == s [ i - 1 ] )",
+        "int ans = 0 = 0 , last = 0 ;",
+        "cout << ans ;"
+      ],
+      "err_line": 6,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        4,
+        10
+      ],
+      "mod_code": [
+        "s >> s ;",
+        "C = i ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        4,
+        10,
+        6
+      ],
+      "mod_code": [
+        "s >> s ;",
+        "C = i ;",
+        "int ans = 0 = 0 , last = 0 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        4,
+        10,
+        6,
+        13
+      ],
+      "mod_code": [
+        "s >> s ;",
+        "C = i ;",
+        "int ans = 0 = 0 , last = 0 ;",
+        "cout << ans ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        4,
+        10,
+        6,
+        8
+      ],
+      "mod_code": [
+        "s >> s ;",
+        "C = i ;",
+        "int ans = 0 = 0 , last = 0 ;",
+        "if ( i == n or s [ i ] == s [ i - 1 ] )"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        4,
+        10,
+        13
+      ],
+      "mod_code": [
+        "s >> s ;",
+        "C = i ;",
+        "cout << ans ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        4,
+        10,
+        13,
+        8
+      ],
+      "mod_code": [
+        "s >> s ;",
+        "C = i ;",
+        "cout << ans ;",
+        "if ( i == n or s [ i ] == s [ i - 1 ] )"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        4,
+        10,
+        8
+      ],
+      "mod_code": [
+        "s >> s ;",
+        "C = i ;",
+        "if ( i == n or s [ i ] == s [ i - 1 ] )"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        4,
+        6
+      ],
+      "mod_code": [
+        "s >> s ;",
+        "int ans = 0 = 0 , last = 0 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        13
+      ],
+      "mod_code": [
+        "s >> s ;",
+        "int ans = 0 = 0 , last = 0 ;",
+        "cout << ans ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        13,
+        8
+      ],
+      "mod_code": [
+        "s >> s ;",
+        "int ans = 0 = 0 , last = 0 ;",
+        "cout << ans ;",
+        "if ( i == n or s [ i ] == s [ i - 1 ] )"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        8
+      ],
+      "mod_code": [
+        "s >> s ;",
+        "int ans = 0 = 0 , last = 0 ;",
+        "if ( i == n or s [ i ] == s [ i - 1 ] )"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        4,
+        13
+      ],
+      "mod_code": [
+        "s >> s ;",
+        "cout << ans ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        4,
+        13,
+        8
+      ],
+      "mod_code": [
+        "s >> s ;",
+        "cout << ans ;",
+        "if ( i == n or s [ i ] == s [ i - 1 ] )"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        4,
+        8
+      ],
+      "mod_code": [
+        "s >> s ;",
+        "if ( i == n or s [ i ] == s [ i - 1 ] )"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        10,
+        6
+      ],
+      "mod_code": [
+        "C = i ;",
+        "int ans = 0 = 0 , last = 0 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        10,
+        6,
+        13
+      ],
+      "mod_code": [
+        "C = i ;",
+        "int ans = 0 = 0 , last = 0 ;",
+        "cout << ans ;"
+      ],
+      "err_line": 6,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        10,
+        6,
+        13,
+        8
+      ],
+      "mod_code": [
+        "C = i ;",
+        "int ans = 0 = 0 , last = 0 ;",
+        "cout << ans ;",
+        "if ( i == n or s [ i ] == s [ i - 1 ] )"
+      ],
+      "err_line": 6,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        10,
+        6,
+        8
+      ],
+      "mod_code": [
+        "C = i ;",
+        "int ans = 0 = 0 , last = 0 ;",
+        "if ( i == n or s [ i ] == s [ i - 1 ] )"
+      ],
+      "err_line": 6,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        10,
+        13
+      ],
+      "mod_code": [
+        "C = i ;",
+        "cout << ans ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘C’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        13,
+        8
+      ],
+      "mod_code": [
+        "C = i ;",
+        "cout << ans ;",
+        "if ( i == n or s [ i ] == s [ i - 1 ] )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘C’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        8
+      ],
+      "mod_code": [
+        "C = i ;",
+        "if ( i == n or s [ i ] == s [ i - 1 ] )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘C’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        13
+      ],
+      "mod_code": [
+        "int ans = 0 = 0 , last = 0 ;",
+        "cout << ans ;"
+      ],
+      "err_line": 6,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        6,
+        13,
+        8
+      ],
+      "mod_code": [
+        "int ans = 0 = 0 , last = 0 ;",
+        "cout << ans ;",
+        "if ( i == n or s [ i ] == s [ i - 1 ] )"
+      ],
+      "err_line": 6,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        6,
+        8
+      ],
+      "mod_code": [
+        "int ans = 0 = 0 , last = 0 ;",
+        "if ( i == n or s [ i ] == s [ i - 1 ] )"
+      ],
+      "err_line": 6,
+      "err_msg": "lvalue required as left operand of assignment"
+    }
+  ]
+}

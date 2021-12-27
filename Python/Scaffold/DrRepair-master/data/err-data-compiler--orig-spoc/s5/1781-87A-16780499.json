@@ -1,0 +1,733 @@
+{
+  "meta": {
+    "index": 1781,
+    "hitid": "3BA7SXOG1JKBTOOGGLB643U7DR48RB",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "87A",
+    "subid": "16780499"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare nearest with constant long long addresses x , a , b as arguments , returning long long",
+      "code": "long long nearest ( const long long & x , const int & a , const int & b )",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "if x % a is 0 and x % b is 0",
+      "code": "if ( x % a == 0 && x % b == 0 )",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "return x + minimum of ( a and b )",
+      "code": "return x + min ( a , b ) ;",
+      "indent": 2
+    },
+    {
+      "line": 3,
+      "text": "else",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "return minimum of a * ( x / a + 1 ) and b * ( x / b + 1 )",
+      "code": "return min ( a * ( x / a + 1 ) , b * ( x / b + 1 ) ) ;",
+      "indent": 2
+    },
+    {
+      "line": 5,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 6,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 7,
+      "text": "declare integers a and b",
+      "code": "int a , b ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "read a and b",
+      "code": "cin >> a >> b ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "declare long long cur = 0",
+      "code": "long long cur = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "declare long long D = 0 , M = 0",
+      "code": "long long D = 0 , M = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "while not ( cur is greater than 0 and cur % a is 0 and cur % b is 0 )",
+      "code": "while ( ! ( cur > 0 && cur % a == 0 && cur % b == 0 ) )",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "declare long long n = result of run nearest ( cur , a , b )",
+      "code": "long long n = nearest ( cur , a , b ) ;",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "if n % a is 0 and n % b is 0",
+      "code": "if ( n % a == 0 && n % b == 0 )",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "if a is greater than b",
+      "code": "if ( a > b )",
+      "indent": 3
+    },
+    {
+      "line": 15,
+      "text": "increment D by n - cur",
+      "code": "D += n - cur ;",
+      "indent": 4
+    },
+    {
+      "line": 16,
+      "text": "else",
+      "code": "else",
+      "indent": 3
+    },
+    {
+      "line": 17,
+      "text": "increment M by n - cur",
+      "code": "M += n - cur ;",
+      "indent": 4
+    },
+    {
+      "line": 18,
+      "text": "else if n % a is 0",
+      "code": "else if ( n % a == 0 )",
+      "indent": 2
+    },
+    {
+      "line": 19,
+      "text": "increment D by n - cur",
+      "code": "D += n - cur ;",
+      "indent": 3
+    },
+    {
+      "line": 20,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 21,
+      "text": "increment M by n - cur",
+      "code": "M += n - cur ;",
+      "indent": 3
+    },
+    {
+      "line": 22,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 23,
+      "text": "let cur be n",
+      "code": "cur = n ;",
+      "indent": 2
+    },
+    {
+      "line": 24,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 25,
+      "text": "print \" Equal \" if D is M , else \" Dasha \" if D is greater than M , else \" Masha \" , newline",
+      "code": "cout << ( ( D == M ) ? \" Equal \" : ( D > M ? \" Dasha \" : \" Masha \" ) ) << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 26,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 27,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "long long nearest ( const long long & a , const long long & a , const long long & b )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const long long int& a’"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "while ( cin >> a >> b )"
+      ],
+      "err_line": 11,
+      "err_msg": "‘cur’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "long long D = 0 , tmp = 0 ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘M’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "long long n = nearest ( cur , a ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "too few arguments to function ‘long long int nearest(const long long int&, const int&, const int&)’"
+    },
+    {
+      "mod_line": [
+        25,
+        10
+      ],
+      "mod_code": [
+        "cout << ( D > M ? \" Equal \" : \" Equal \" ) ? \" Equal \" : \" Masha \" ;",
+        "long long D = 0 , tmp = 0 ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘M’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        25,
+        10,
+        2
+      ],
+      "mod_code": [
+        "cout << ( D > M ? \" Equal \" : \" Equal \" ) ? \" Equal \" : \" Masha \" ;",
+        "long long D = 0 , tmp = 0 ;",
+        "return x + ( a , b ) ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘M’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        25,
+        10,
+        2,
+        8
+      ],
+      "mod_code": [
+        "cout << ( D > M ? \" Equal \" : \" Equal \" ) ? \" Equal \" : \" Masha \" ;",
+        "long long D = 0 , tmp = 0 ;",
+        "return x + ( a , b ) ;",
+        "while ( cin >> a >> b )"
+      ],
+      "err_line": 11,
+      "err_msg": "‘cur’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        25,
+        10,
+        2,
+        0
+      ],
+      "mod_code": [
+        "cout << ( D > M ? \" Equal \" : \" Equal \" ) ? \" Equal \" : \" Masha \" ;",
+        "long long D = 0 , tmp = 0 ;",
+        "return x + ( a , b ) ;",
+        "long long nearest ( const long long & a , const long long & a , const long long & b )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const long long int& a’"
+    },
+    {
+      "mod_line": [
+        25,
+        10,
+        8
+      ],
+      "mod_code": [
+        "cout << ( D > M ? \" Equal \" : \" Equal \" ) ? \" Equal \" : \" Masha \" ;",
+        "long long D = 0 , tmp = 0 ;",
+        "while ( cin >> a >> b )"
+      ],
+      "err_line": 11,
+      "err_msg": "‘cur’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        25,
+        10,
+        8,
+        0
+      ],
+      "mod_code": [
+        "cout << ( D > M ? \" Equal \" : \" Equal \" ) ? \" Equal \" : \" Masha \" ;",
+        "long long D = 0 , tmp = 0 ;",
+        "while ( cin >> a >> b )",
+        "long long nearest ( const long long & a , const long long & a , const long long & b )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const long long int& a’"
+    },
+    {
+      "mod_line": [
+        25,
+        10,
+        0
+      ],
+      "mod_code": [
+        "cout << ( D > M ? \" Equal \" : \" Equal \" ) ? \" Equal \" : \" Masha \" ;",
+        "long long D = 0 , tmp = 0 ;",
+        "long long nearest ( const long long & a , const long long & a , const long long & b )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const long long int& a’"
+    },
+    {
+      "mod_line": [
+        25,
+        2,
+        8
+      ],
+      "mod_code": [
+        "cout << ( D > M ? \" Equal \" : \" Equal \" ) ? \" Equal \" : \" Masha \" ;",
+        "return x + ( a , b ) ;",
+        "while ( cin >> a >> b )"
+      ],
+      "err_line": 11,
+      "err_msg": "‘cur’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        25,
+        2,
+        8,
+        0
+      ],
+      "mod_code": [
+        "cout << ( D > M ? \" Equal \" : \" Equal \" ) ? \" Equal \" : \" Masha \" ;",
+        "return x + ( a , b ) ;",
+        "while ( cin >> a >> b )",
+        "long long nearest ( const long long & a , const long long & a , const long long & b )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const long long int& a’"
+    },
+    {
+      "mod_line": [
+        25,
+        2,
+        0
+      ],
+      "mod_code": [
+        "cout << ( D > M ? \" Equal \" : \" Equal \" ) ? \" Equal \" : \" Masha \" ;",
+        "return x + ( a , b ) ;",
+        "long long nearest ( const long long & a , const long long & a , const long long & b )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const long long int& a’"
+    },
+    {
+      "mod_line": [
+        25,
+        8
+      ],
+      "mod_code": [
+        "cout << ( D > M ? \" Equal \" : \" Equal \" ) ? \" Equal \" : \" Masha \" ;",
+        "while ( cin >> a >> b )"
+      ],
+      "err_line": 11,
+      "err_msg": "‘cur’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        25,
+        8,
+        0
+      ],
+      "mod_code": [
+        "cout << ( D > M ? \" Equal \" : \" Equal \" ) ? \" Equal \" : \" Masha \" ;",
+        "while ( cin >> a >> b )",
+        "long long nearest ( const long long & a , const long long & a , const long long & b )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const long long int& a’"
+    },
+    {
+      "mod_line": [
+        25,
+        0
+      ],
+      "mod_code": [
+        "cout << ( D > M ? \" Equal \" : \" Equal \" ) ? \" Equal \" : \" Masha \" ;",
+        "long long nearest ( const long long & a , const long long & a , const long long & b )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const long long int& a’"
+    },
+    {
+      "mod_line": [
+        10,
+        2
+      ],
+      "mod_code": [
+        "long long D = 0 , tmp = 0 ;",
+        "return x + ( a , b ) ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘M’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        2,
+        8
+      ],
+      "mod_code": [
+        "long long D = 0 , tmp = 0 ;",
+        "return x + ( a , b ) ;",
+        "while ( cin >> a >> b )"
+      ],
+      "err_line": 11,
+      "err_msg": "‘cur’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        2,
+        8,
+        0
+      ],
+      "mod_code": [
+        "long long D = 0 , tmp = 0 ;",
+        "return x + ( a , b ) ;",
+        "while ( cin >> a >> b )",
+        "long long nearest ( const long long & a , const long long & a , const long long & b )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const long long int& a’"
+    },
+    {
+      "mod_line": [
+        10,
+        2,
+        8,
+        25
+      ],
+      "mod_code": [
+        "long long D = 0 , tmp = 0 ;",
+        "return x + ( a , b ) ;",
+        "while ( cin >> a >> b )",
+        "cout << ( D > M ? \" Equal \" : \" Dasha \" ) ? \" Equal \" : \" Masha \" ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘cur’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        2,
+        0
+      ],
+      "mod_code": [
+        "long long D = 0 , tmp = 0 ;",
+        "return x + ( a , b ) ;",
+        "long long nearest ( const long long & a , const long long & a , const long long & b )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const long long int& a’"
+    },
+    {
+      "mod_line": [
+        10,
+        2,
+        0,
+        25
+      ],
+      "mod_code": [
+        "long long D = 0 , tmp = 0 ;",
+        "return x + ( a , b ) ;",
+        "long long nearest ( const long long & a , const long long & a , const long long & b )",
+        "cout << ( D > M ? \" Equal \" : \" Dasha \" ) ? \" Equal \" : \" Masha \" ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const long long int& a’"
+    },
+    {
+      "mod_line": [
+        10,
+        2,
+        25
+      ],
+      "mod_code": [
+        "long long D = 0 , tmp = 0 ;",
+        "return x + ( a , b ) ;",
+        "cout << ( D > M ? \" Equal \" : \" Dasha \" ) ? \" Equal \" : \" Masha \" ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘M’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        8
+      ],
+      "mod_code": [
+        "long long D = 0 , tmp = 0 ;",
+        "while ( cin >> a >> b )"
+      ],
+      "err_line": 11,
+      "err_msg": "‘cur’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        8,
+        0
+      ],
+      "mod_code": [
+        "long long D = 0 , tmp = 0 ;",
+        "while ( cin >> a >> b )",
+        "long long nearest ( const long long & a , const long long & a , const long long & b )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const long long int& a’"
+    },
+    {
+      "mod_line": [
+        10,
+        8,
+        0,
+        25
+      ],
+      "mod_code": [
+        "long long D = 0 , tmp = 0 ;",
+        "while ( cin >> a >> b )",
+        "long long nearest ( const long long & a , const long long & a , const long long & b )",
+        "cout << ( D > M ? \" Equal \" : \" Dasha \" ) ? \" Equal \" : \" Masha \" ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const long long int& a’"
+    },
+    {
+      "mod_line": [
+        10,
+        8,
+        25
+      ],
+      "mod_code": [
+        "long long D = 0 , tmp = 0 ;",
+        "while ( cin >> a >> b )",
+        "cout << ( D > M ? \" Equal \" : \" Dasha \" ) ? \" Equal \" : \" Masha \" ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘cur’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        0
+      ],
+      "mod_code": [
+        "long long D = 0 , tmp = 0 ;",
+        "long long nearest ( const long long & a , const long long & a , const long long & b )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const long long int& a’"
+    },
+    {
+      "mod_line": [
+        10,
+        0,
+        25
+      ],
+      "mod_code": [
+        "long long D = 0 , tmp = 0 ;",
+        "long long nearest ( const long long & a , const long long & a , const long long & b )",
+        "cout << ( D > M ? \" Equal \" : \" Dasha \" ) ? \" Equal \" : \" Masha \" ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const long long int& a’"
+    },
+    {
+      "mod_line": [
+        10,
+        25
+      ],
+      "mod_code": [
+        "long long D = 0 , tmp = 0 ;",
+        "cout << ( D > M ? \" Equal \" : \" Dasha \" ) ? \" Equal \" : \" Masha \" ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘M’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        8
+      ],
+      "mod_code": [
+        "return x + ( a , b ) ;",
+        "while ( cin >> a >> b )"
+      ],
+      "err_line": 11,
+      "err_msg": "‘cur’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        8,
+        0
+      ],
+      "mod_code": [
+        "return x + ( a , b ) ;",
+        "while ( cin >> a >> b )",
+        "long long nearest ( const long long & a , const long long & a , const long long & b )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const long long int& a’"
+    },
+    {
+      "mod_line": [
+        2,
+        8,
+        0,
+        25
+      ],
+      "mod_code": [
+        "return x + ( a , b ) ;",
+        "while ( cin >> a >> b )",
+        "long long nearest ( const long long & a , const long long & a , const long long & b )",
+        "cout << ( D > M ? \" Equal \" : \" Dasha \" ) ? \" Equal \" : \" Masha \" ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const long long int& a’"
+    },
+    {
+      "mod_line": [
+        2,
+        8,
+        25
+      ],
+      "mod_code": [
+        "return x + ( a , b ) ;",
+        "while ( cin >> a >> b )",
+        "cout << ( D > M ? \" Equal \" : \" Dasha \" ) ? \" Equal \" : \" Masha \" ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘cur’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        0
+      ],
+      "mod_code": [
+        "return x + ( a , b ) ;",
+        "long long nearest ( const long long & a , const long long & a , const long long & b )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const long long int& a’"
+    },
+    {
+      "mod_line": [
+        2,
+        0,
+        25
+      ],
+      "mod_code": [
+        "return x + ( a , b ) ;",
+        "long long nearest ( const long long & a , const long long & a , const long long & b )",
+        "cout << ( D > M ? \" Equal \" : \" Dasha \" ) ? \" Equal \" : \" Masha \" ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const long long int& a’"
+    },
+    {
+      "mod_line": [
+        8,
+        0
+      ],
+      "mod_code": [
+        "while ( cin >> a >> b )",
+        "long long nearest ( const long long & a , const long long & a , const long long & b )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const long long int& a’"
+    },
+    {
+      "mod_line": [
+        8,
+        0,
+        25
+      ],
+      "mod_code": [
+        "while ( cin >> a >> b )",
+        "long long nearest ( const long long & a , const long long & a , const long long & b )",
+        "cout << ( D > M ? \" Equal \" : \" Dasha \" ) ? \" Equal \" : \" Masha \" ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const long long int& a’"
+    },
+    {
+      "mod_line": [
+        8,
+        25
+      ],
+      "mod_code": [
+        "while ( cin >> a >> b )",
+        "cout << ( D > M ? \" Equal \" : \" Dasha \" ) ? \" Equal \" : \" Masha \" ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘cur’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        25
+      ],
+      "mod_code": [
+        "long long nearest ( const long long & a , const long long & a , const long long & b )",
+        "cout << ( D > M ? \" Equal \" : \" Dasha \" ) ? \" Equal \" : \" Masha \" ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘const long long int& a’"
+    }
+  ]
+}

@@ -1,0 +1,701 @@
+{
+  "meta": {
+    "index": 791,
+    "hitid": "3D4BBDG7ZHQLMPTRM7QFORNAX4A3C9",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "571A",
+    "subid": "35205913"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare long long integer getsum with integers a , b , c , l as arguments , returning long long integer",
+      "code": "long long int getsum ( int a , int b , int c , int l )",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "if a is less than b + c , return 0 from function",
+      "code": "if ( a < b + c ) return 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "declare long long integer mid = minimum of ( a - b - c and l )",
+      "code": "long long int mid = min ( a - b - c , l ) ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "return ( mid + 1 ) * ( mid + 2 ) / 2",
+      "code": "return ( mid + 1 ) * ( mid + 2 ) / 2 ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 6,
+      "text": "declare long long integers a , b , c , l",
+      "code": "long long int a , b , c , l ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "read a , b , c , l",
+      "code": "cin >> a >> b >> c >> l ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "declare long long integers ans = 1",
+      "code": "long long int ans = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "for i = 1 to l inclusive , increment ans by ( i + 1 ) * ( i + 2 ) / 2",
+      "code": "for ( long long int i = 1 ; i <= l ; i ++ ) ans += ( i + 1 ) * ( i + 2 ) / 2 ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "for i = 0 to l inclusive",
+      "code": "for ( long long int i = 0 ; i <= l ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "decrement ans by result of run getsum ( a + i , b , c , l - i )",
+      "code": "ans -= getsum ( a + i , b , c , l - i ) ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "decrement ans by result of run getsum with b + i , a , c , l - i as arguments",
+      "code": "ans -= getsum ( b + i , a , c , l - i ) ;",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "decrement ans by result of run getsum ( c + i , a , b , l - i )",
+      "code": "ans -= getsum ( c + i , a , b , l - i ) ;",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "print ans and newline",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "long long int getsum ( long long int a , long long int c , int c , int l )"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int c’"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "long long int getsum ( long long int a , long long int b , int c , int l )"
+      ],
+      "err_line": 2,
+      "err_msg": "no matching function for call to ‘min(long long int, int&)’"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "long long int mid = min ( a - b - c - l ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no matching function for call to ‘min(int)’"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "cin >> a >> b >> c >> n ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= l ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        0,
+        12
+      ],
+      "mod_code": [
+        "long long int getsum ( long long int a , long long int c , int c , int l )",
+        "ans -= ( getsum + i , a , c , l - i ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int c’"
+    },
+    {
+      "mod_line": [
+        0,
+        12,
+        7
+      ],
+      "mod_code": [
+        "long long int getsum ( long long int a , long long int c , int c , int l )",
+        "ans -= ( getsum + i , a , c , l - i ) ;",
+        "cin >> a >> b >> c >> n ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int c’"
+    },
+    {
+      "mod_line": [
+        0,
+        12,
+        7,
+        2
+      ],
+      "mod_code": [
+        "long long int getsum ( long long int a , long long int c , int c , int l )",
+        "ans -= ( getsum + i , a , c , l - i ) ;",
+        "cin >> a >> b >> c >> n ;",
+        "long long int mid = min ( a - b - c - l ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int c’"
+    },
+    {
+      "mod_line": [
+        0,
+        12,
+        7,
+        10
+      ],
+      "mod_code": [
+        "long long int getsum ( long long int a , long long int c , int c , int l )",
+        "ans -= ( getsum + i , a , c , l - i ) ;",
+        "cin >> a >> b >> c >> n ;",
+        "for ( i = 0 ; i <= l ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int c’"
+    },
+    {
+      "mod_line": [
+        0,
+        12,
+        2
+      ],
+      "mod_code": [
+        "long long int getsum ( long long int a , long long int c , int c , int l )",
+        "ans -= ( getsum + i , a , c , l - i ) ;",
+        "long long int mid = min ( a - b - c - l ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int c’"
+    },
+    {
+      "mod_line": [
+        0,
+        12,
+        2,
+        10
+      ],
+      "mod_code": [
+        "long long int getsum ( long long int a , long long int c , int c , int l )",
+        "ans -= ( getsum + i , a , c , l - i ) ;",
+        "long long int mid = min ( a - b - c - l ) ;",
+        "for ( i = 0 ; i <= l ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int c’"
+    },
+    {
+      "mod_line": [
+        0,
+        12,
+        10
+      ],
+      "mod_code": [
+        "long long int getsum ( long long int a , long long int c , int c , int l )",
+        "ans -= ( getsum + i , a , c , l - i ) ;",
+        "for ( i = 0 ; i <= l ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int c’"
+    },
+    {
+      "mod_line": [
+        0,
+        7
+      ],
+      "mod_code": [
+        "long long int getsum ( long long int a , long long int c , int c , int l )",
+        "cin >> a >> b >> c >> n ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int c’"
+    },
+    {
+      "mod_line": [
+        0,
+        7,
+        2
+      ],
+      "mod_code": [
+        "long long int getsum ( long long int a , long long int c , int c , int l )",
+        "cin >> a >> b >> c >> n ;",
+        "long long int mid = min ( a - b - c - l ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int c’"
+    },
+    {
+      "mod_line": [
+        0,
+        7,
+        2,
+        10
+      ],
+      "mod_code": [
+        "long long int getsum ( long long int a , long long int c , int c , int l )",
+        "cin >> a >> b >> c >> n ;",
+        "long long int mid = min ( a - b - c - l ) ;",
+        "for ( i = 0 ; i <= l ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int c’"
+    },
+    {
+      "mod_line": [
+        0,
+        7,
+        10
+      ],
+      "mod_code": [
+        "long long int getsum ( long long int a , long long int c , int c , int l )",
+        "cin >> a >> b >> c >> n ;",
+        "for ( i = 0 ; i <= l ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int c’"
+    },
+    {
+      "mod_line": [
+        0,
+        2
+      ],
+      "mod_code": [
+        "long long int getsum ( long long int a , long long int c , int c , int l )",
+        "long long int mid = min ( a - b - c - l ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int c’"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        10
+      ],
+      "mod_code": [
+        "long long int getsum ( long long int a , long long int c , int c , int l )",
+        "long long int mid = min ( a - b - c - l ) ;",
+        "for ( i = 0 ; i <= l ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int c’"
+    },
+    {
+      "mod_line": [
+        0,
+        10
+      ],
+      "mod_code": [
+        "long long int getsum ( long long int a , long long int c , int c , int l )",
+        "for ( i = 0 ; i <= l ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int c’"
+    },
+    {
+      "mod_line": [
+        12,
+        7
+      ],
+      "mod_code": [
+        "ans -= ( getsum + i , a , c , l - i ) ;",
+        "cin >> a >> b >> c >> n ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        7,
+        2
+      ],
+      "mod_code": [
+        "ans -= ( getsum + i , a , c , l - i ) ;",
+        "cin >> a >> b >> c >> n ;",
+        "long long int mid = min ( a - b - c - l ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no matching function for call to ‘min(int)’"
+    },
+    {
+      "mod_line": [
+        12,
+        7,
+        2,
+        10
+      ],
+      "mod_code": [
+        "ans -= ( getsum + i , a , c , l - i ) ;",
+        "cin >> a >> b >> c >> n ;",
+        "long long int mid = min ( a - b - c - l ) ;",
+        "for ( i = 0 ; i <= l ; i ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "no matching function for call to ‘min(int)’"
+    },
+    {
+      "mod_line": [
+        12,
+        7,
+        2,
+        0
+      ],
+      "mod_code": [
+        "ans -= ( getsum + i , a , c , l - i ) ;",
+        "cin >> a >> b >> c >> n ;",
+        "long long int mid = min ( a - b - c - l ) ;",
+        "long long int getsum ( long long int a , long long int b , int c , int l )"
+      ],
+      "err_line": 2,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        12,
+        7,
+        10
+      ],
+      "mod_code": [
+        "ans -= ( getsum + i , a , c , l - i ) ;",
+        "cin >> a >> b >> c >> n ;",
+        "for ( i = 0 ; i <= l ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        7,
+        10,
+        0
+      ],
+      "mod_code": [
+        "ans -= ( getsum + i , a , c , l - i ) ;",
+        "cin >> a >> b >> c >> n ;",
+        "for ( i = 0 ; i <= l ; i ++ )",
+        "long long int getsum ( long long int a , long long int b , int c , int l )"
+      ],
+      "err_line": 2,
+      "err_msg": "no matching function for call to ‘min(long long int, int&)’"
+    },
+    {
+      "mod_line": [
+        12,
+        7,
+        0
+      ],
+      "mod_code": [
+        "ans -= ( getsum + i , a , c , l - i ) ;",
+        "cin >> a >> b >> c >> n ;",
+        "long long int getsum ( long long int a , long long int b , int c , int l )"
+      ],
+      "err_line": 2,
+      "err_msg": "no matching function for call to ‘min(long long int, int&)’"
+    },
+    {
+      "mod_line": [
+        12,
+        2
+      ],
+      "mod_code": [
+        "ans -= ( getsum + i , a , c , l - i ) ;",
+        "long long int mid = min ( a - b - c - l ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no matching function for call to ‘min(int)’"
+    },
+    {
+      "mod_line": [
+        12,
+        2,
+        10
+      ],
+      "mod_code": [
+        "ans -= ( getsum + i , a , c , l - i ) ;",
+        "long long int mid = min ( a - b - c - l ) ;",
+        "for ( i = 0 ; i <= l ; i ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "no matching function for call to ‘min(int)’"
+    },
+    {
+      "mod_line": [
+        12,
+        2,
+        10,
+        0
+      ],
+      "mod_code": [
+        "ans -= ( getsum + i , a , c , l - i ) ;",
+        "long long int mid = min ( a - b - c - l ) ;",
+        "for ( i = 0 ; i <= l ; i ++ )",
+        "long long int getsum ( long long int a , long long int b , int c , int l )"
+      ],
+      "err_line": 2,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        12,
+        2,
+        0
+      ],
+      "mod_code": [
+        "ans -= ( getsum + i , a , c , l - i ) ;",
+        "long long int mid = min ( a - b - c - l ) ;",
+        "long long int getsum ( long long int a , long long int b , int c , int l )"
+      ],
+      "err_line": 2,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        12,
+        10
+      ],
+      "mod_code": [
+        "ans -= ( getsum + i , a , c , l - i ) ;",
+        "for ( i = 0 ; i <= l ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        10,
+        0
+      ],
+      "mod_code": [
+        "ans -= ( getsum + i , a , c , l - i ) ;",
+        "for ( i = 0 ; i <= l ; i ++ )",
+        "long long int getsum ( long long int a , long long int b , int c , int l )"
+      ],
+      "err_line": 2,
+      "err_msg": "no matching function for call to ‘min(long long int, int&)’"
+    },
+    {
+      "mod_line": [
+        12,
+        0
+      ],
+      "mod_code": [
+        "ans -= ( getsum + i , a , c , l - i ) ;",
+        "long long int getsum ( long long int a , long long int b , int c , int l )"
+      ],
+      "err_line": 2,
+      "err_msg": "no matching function for call to ‘min(long long int, int&)’"
+    },
+    {
+      "mod_line": [
+        7,
+        2
+      ],
+      "mod_code": [
+        "cin >> a >> b >> c >> n ;",
+        "long long int mid = min ( a - b - c - l ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no matching function for call to ‘min(int)’"
+    },
+    {
+      "mod_line": [
+        7,
+        2,
+        10
+      ],
+      "mod_code": [
+        "cin >> a >> b >> c >> n ;",
+        "long long int mid = min ( a - b - c - l ) ;",
+        "for ( i = 0 ; i <= l ; i ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "no matching function for call to ‘min(int)’"
+    },
+    {
+      "mod_line": [
+        7,
+        2,
+        10,
+        0
+      ],
+      "mod_code": [
+        "cin >> a >> b >> c >> n ;",
+        "long long int mid = min ( a - b - c - l ) ;",
+        "for ( i = 0 ; i <= l ; i ++ )",
+        "long long int getsum ( long long int a , long long int b , int c , int l )"
+      ],
+      "err_line": 2,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        7,
+        2,
+        0
+      ],
+      "mod_code": [
+        "cin >> a >> b >> c >> n ;",
+        "long long int mid = min ( a - b - c - l ) ;",
+        "long long int getsum ( long long int a , long long int b , int c , int l )"
+      ],
+      "err_line": 2,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        7,
+        10
+      ],
+      "mod_code": [
+        "cin >> a >> b >> c >> n ;",
+        "for ( i = 0 ; i <= l ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        10,
+        0
+      ],
+      "mod_code": [
+        "cin >> a >> b >> c >> n ;",
+        "for ( i = 0 ; i <= l ; i ++ )",
+        "long long int getsum ( long long int a , long long int b , int c , int l )"
+      ],
+      "err_line": 2,
+      "err_msg": "no matching function for call to ‘min(long long int, int&)’"
+    },
+    {
+      "mod_line": [
+        7,
+        0
+      ],
+      "mod_code": [
+        "cin >> a >> b >> c >> n ;",
+        "long long int getsum ( long long int a , long long int b , int c , int l )"
+      ],
+      "err_line": 2,
+      "err_msg": "no matching function for call to ‘min(long long int, int&)’"
+    },
+    {
+      "mod_line": [
+        2,
+        10
+      ],
+      "mod_code": [
+        "long long int mid = min ( a - b - c - l ) ;",
+        "for ( i = 0 ; i <= l ; i ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "no matching function for call to ‘min(int)’"
+    },
+    {
+      "mod_line": [
+        2,
+        10,
+        0
+      ],
+      "mod_code": [
+        "long long int mid = min ( a - b - c - l ) ;",
+        "for ( i = 0 ; i <= l ; i ++ )",
+        "long long int getsum ( long long int a , long long int b , int c , int l )"
+      ],
+      "err_line": 2,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        2,
+        0
+      ],
+      "mod_code": [
+        "long long int mid = min ( a - b - c - l ) ;",
+        "long long int getsum ( long long int a , long long int b , int c , int l )"
+      ],
+      "err_line": 2,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        10,
+        0
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= l ; i ++ )",
+        "long long int getsum ( long long int a , long long int b , int c , int l )"
+      ],
+      "err_line": 2,
+      "err_msg": "no matching function for call to ‘min(long long int, int&)’"
+    }
+  ]
+}

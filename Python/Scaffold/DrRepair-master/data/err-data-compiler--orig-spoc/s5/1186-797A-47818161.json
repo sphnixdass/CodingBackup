@@ -1,0 +1,1031 @@
+{
+  "meta": {
+    "index": 1186,
+    "hitid": "3P4ZBJFX2VXPGZFPNTRI1UJASATWFG",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "797A",
+    "subid": "47818161"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare vector of long longs d",
+      "code": "vector < long long > d ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare new array of booleans criba with 100001 elements",
+      "code": "bool criba [ 100001 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "function crearCriba with const long long reference argument & n",
+      "code": "void crearCriba ( const long long & n )",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "set first sizeof ( criba ) bytes at the pointer criba to 0",
+      "code": "memset ( criba , 0 , sizeof ( criba ) ) ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "set criba [ 0 ] and criba [ 1 ] to true",
+      "code": "criba [ 0 ] = criba [ 1 ] = true ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "in a for loop , increment i starting from 2 , while i * i < = n",
+      "code": "for ( long long i = 2 ; ( ( i * i ) <= n ) ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "if criba [ i ] is false",
+      "code": "if ( ! criba [ i ] )",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "start for loop from j = i * 2 to n inclusive adding i to j , set criba [ j ] to true on each loop",
+      "code": "for ( long long j = ( i * 2 ) ; j <= n ; j += i ) criba [ j ] = true ;",
+      "indent": 3
+    },
+    {
+      "line": 8,
+      "text": "in a for loop , change i from 2 to n inclusive incrementing i",
+      "code": "for ( long long i = 2 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "if criba [ i ] is false , push i to the end of d",
+      "code": "if ( ! criba [ i ] ) d . push_back ( i ) ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 12,
+      "text": "create long longs n , k and p where p = 0",
+      "code": "long long n , k , p = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "read from the input to n and k",
+      "code": "cin >> n >> k ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "call crearCriba ( n )",
+      "code": "crearCriba ( n ) ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "declare vector of long longs called r",
+      "code": "vector < long long > r ;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "while n > 1",
+      "code": "while ( n > 1 )",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "if n modulo d [ p ] is 0",
+      "code": "if ( ! ( n % d [ p ] ) )",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "divide n by d [ p ]",
+      "code": "n /= d [ p ] ;",
+      "indent": 3
+    },
+    {
+      "line": 19,
+      "text": "insert d [ p ] into r",
+      "code": "r . push_back ( d [ p ] ) ;",
+      "indent": 3
+    },
+    {
+      "line": 20,
+      "text": "else if p + 1 is less than length of d",
+      "code": "else if ( ( p + 1 ) < int ( d . size ( ) ) )",
+      "indent": 2
+    },
+    {
+      "line": 21,
+      "text": "increment p",
+      "code": "p ++ ;",
+      "indent": 3
+    },
+    {
+      "line": 22,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "if length of r > = k",
+      "code": "if ( int ( r . size ( ) ) >= k )",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "create long long variable with name mult = 1",
+      "code": "long long mult = 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 25,
+      "text": "in a for loop , change i from 0 to k - 1 exclusive , print r [ i ] and \" \" on each loop",
+      "code": "for ( long long i = 0 ; i < ( k - 1 ) ; i ++ ) cout << r [ i ] << \" \" ;",
+      "indent": 2
+    },
+    {
+      "line": 26,
+      "text": "for long long i = k - 1 to length of r exclusive , multiply mult by r [ i ]",
+      "code": "for ( long long i = ( k - 1 ) ; i < int ( r . size ( ) ) ; i ++ ) mult *= r [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 27,
+      "text": "if mult is greater than 1 , print mult and \" \\ n \"",
+      "code": "if ( mult > 1 ) cout << mult << \" \\n \" ;",
+      "indent": 2
+    },
+    {
+      "line": 28,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 2
+    },
+    {
+      "line": 29,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 30,
+      "text": "print \" - 1 \\ n \" to the standard output",
+      "code": "cout << \" -1\\n \" ;",
+      "indent": 1
+    },
+    {
+      "line": 31,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 32,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i * i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        19
+      ],
+      "mod_code": [
+        "r . insert ( d [ p ] ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "no matching function for call to ‘std::vector<long long int>::insert(long long int&)’"
+    },
+    {
+      "mod_line": [
+        20
+      ],
+      "mod_code": [
+        "else if ( p + 1 < d . length ( ) )"
+      ],
+      "err_line": 20,
+      "err_msg": "‘class std::vector<long long int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        23
+      ],
+      "mod_code": [
+        "if ( r . length ( ) >= k )"
+      ],
+      "err_line": 23,
+      "err_msg": "‘class std::vector<long long int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        26
+      ],
+      "mod_code": [
+        "for ( long long i = k - 1 ; i < r . length ( ) ; i ++ ) { mult *= r [ i ] ; }"
+      ],
+      "err_line": 26,
+      "err_msg": "‘class std::vector<long long int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "vector < long long longs ;"
+      ],
+      "err_line": 0,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "bool criba [ 100001 100001 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected ‘]’ before numeric constant"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "memset ( criba ) , sizeof ( criba ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "int n , k ;"
+      ],
+      "err_line": 13,
+      "err_msg": "conflicting declaration ‘int n’"
+    },
+    {
+      "mod_line": [
+        19
+      ],
+      "mod_code": [
+        "r . push ( d [ p ] ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "‘class std::vector<long long int>’ has no member named ‘push’"
+    },
+    {
+      "mod_line": [
+        26
+      ],
+      "mod_code": [
+        "for ( long long i = k - 1 ; i < r . length ( ) ; i ++ ) mult *= r [ i ] ;"
+      ],
+      "err_line": 26,
+      "err_msg": "‘class std::vector<long long int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        5,
+        19
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i * i <= n ; i ++ )",
+        "r . insert ( d [ p ] ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        19,
+        20
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i * i <= n ; i ++ )",
+        "r . insert ( d [ p ] ) ;",
+        "else if ( p + 1 < d . length ( ) )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        19,
+        20,
+        23
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i * i <= n ; i ++ )",
+        "r . insert ( d [ p ] ) ;",
+        "else if ( p + 1 < d . length ( ) )",
+        "if ( r . length ( ) >= k )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        19,
+        20,
+        26
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i * i <= n ; i ++ )",
+        "r . insert ( d [ p ] ) ;",
+        "else if ( p + 1 < d . length ( ) )",
+        "for ( long long i = k - 1 ; i < r . length ( ) ; i ++ ) { mult *= r [ i ] ; }"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        19,
+        20,
+        3
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i * i <= n ; i ++ )",
+        "r . insert ( d [ p ] ) ;",
+        "else if ( p + 1 < d . length ( ) )",
+        "memset ( criba ) , sizeof ( criba ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        5,
+        19,
+        23
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i * i <= n ; i ++ )",
+        "r . insert ( d [ p ] ) ;",
+        "if ( r . length ( ) >= k )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        19,
+        23,
+        26
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i * i <= n ; i ++ )",
+        "r . insert ( d [ p ] ) ;",
+        "if ( r . length ( ) >= k )",
+        "for ( long long i = k - 1 ; i < r . length ( ) ; i ++ ) { mult *= r [ i ] ; }"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        19,
+        23,
+        3
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i * i <= n ; i ++ )",
+        "r . insert ( d [ p ] ) ;",
+        "if ( r . length ( ) >= k )",
+        "memset ( criba ) , sizeof ( criba ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        5,
+        19,
+        26
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i * i <= n ; i ++ )",
+        "r . insert ( d [ p ] ) ;",
+        "for ( long long i = k - 1 ; i < r . length ( ) ; i ++ ) { mult *= r [ i ] ; }"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        19,
+        26,
+        3
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i * i <= n ; i ++ )",
+        "r . insert ( d [ p ] ) ;",
+        "for ( long long i = k - 1 ; i < r . length ( ) ; i ++ ) { mult *= r [ i ] ; }",
+        "memset ( criba ) , sizeof ( criba ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        5,
+        19,
+        3
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i * i <= n ; i ++ )",
+        "r . insert ( d [ p ] ) ;",
+        "memset ( criba ) , sizeof ( criba ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        5,
+        20
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i * i <= n ; i ++ )",
+        "else if ( p + 1 < d . length ( ) )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        20,
+        23
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i * i <= n ; i ++ )",
+        "else if ( p + 1 < d . length ( ) )",
+        "if ( r . length ( ) >= k )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        20,
+        23,
+        26
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i * i <= n ; i ++ )",
+        "else if ( p + 1 < d . length ( ) )",
+        "if ( r . length ( ) >= k )",
+        "for ( long long i = k - 1 ; i < r . length ( ) ; i ++ ) { mult *= r [ i ] ; }"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        20,
+        23,
+        3
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i * i <= n ; i ++ )",
+        "else if ( p + 1 < d . length ( ) )",
+        "if ( r . length ( ) >= k )",
+        "memset ( criba ) , sizeof ( criba ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        5,
+        20,
+        26
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i * i <= n ; i ++ )",
+        "else if ( p + 1 < d . length ( ) )",
+        "for ( long long i = k - 1 ; i < r . length ( ) ; i ++ ) { mult *= r [ i ] ; }"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        20,
+        26,
+        3
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i * i <= n ; i ++ )",
+        "else if ( p + 1 < d . length ( ) )",
+        "for ( long long i = k - 1 ; i < r . length ( ) ; i ++ ) { mult *= r [ i ] ; }",
+        "memset ( criba ) , sizeof ( criba ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        5,
+        20,
+        3
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i * i <= n ; i ++ )",
+        "else if ( p + 1 < d . length ( ) )",
+        "memset ( criba ) , sizeof ( criba ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        5,
+        23
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i * i <= n ; i ++ )",
+        "if ( r . length ( ) >= k )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        23,
+        26
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i * i <= n ; i ++ )",
+        "if ( r . length ( ) >= k )",
+        "for ( long long i = k - 1 ; i < r . length ( ) ; i ++ ) { mult *= r [ i ] ; }"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        23,
+        26,
+        3
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i * i <= n ; i ++ )",
+        "if ( r . length ( ) >= k )",
+        "for ( long long i = k - 1 ; i < r . length ( ) ; i ++ ) { mult *= r [ i ] ; }",
+        "memset ( criba ) , sizeof ( criba ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        5,
+        23,
+        3
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i * i <= n ; i ++ )",
+        "if ( r . length ( ) >= k )",
+        "memset ( criba ) , sizeof ( criba ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        5,
+        26
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i * i <= n ; i ++ )",
+        "for ( long long i = k - 1 ; i < r . length ( ) ; i ++ ) { mult *= r [ i ] ; }"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        26,
+        3
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i * i <= n ; i ++ )",
+        "for ( long long i = k - 1 ; i < r . length ( ) ; i ++ ) { mult *= r [ i ] ; }",
+        "memset ( criba ) , sizeof ( criba ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        5,
+        3
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i * i <= n ; i ++ )",
+        "memset ( criba ) , sizeof ( criba ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        19,
+        20
+      ],
+      "mod_code": [
+        "r . insert ( d [ p ] ) ;",
+        "else if ( p + 1 < d . length ( ) )"
+      ],
+      "err_line": 19,
+      "err_msg": "no matching function for call to ‘std::vector<long long int>::insert(long long int&)’"
+    },
+    {
+      "mod_line": [
+        19,
+        20,
+        23
+      ],
+      "mod_code": [
+        "r . insert ( d [ p ] ) ;",
+        "else if ( p + 1 < d . length ( ) )",
+        "if ( r . length ( ) >= k )"
+      ],
+      "err_line": 19,
+      "err_msg": "no matching function for call to ‘std::vector<long long int>::insert(long long int&)’"
+    },
+    {
+      "mod_line": [
+        19,
+        20,
+        23,
+        26
+      ],
+      "mod_code": [
+        "r . insert ( d [ p ] ) ;",
+        "else if ( p + 1 < d . length ( ) )",
+        "if ( r . length ( ) >= k )",
+        "for ( long long i = k - 1 ; i < r . length ( ) ; i ++ ) { mult *= r [ i ] ; }"
+      ],
+      "err_line": 19,
+      "err_msg": "no matching function for call to ‘std::vector<long long int>::insert(long long int&)’"
+    },
+    {
+      "mod_line": [
+        19,
+        20,
+        23,
+        3
+      ],
+      "mod_code": [
+        "r . insert ( d [ p ] ) ;",
+        "else if ( p + 1 < d . length ( ) )",
+        "if ( r . length ( ) >= k )",
+        "memset ( criba ) , sizeof ( criba ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        19,
+        20,
+        26
+      ],
+      "mod_code": [
+        "r . insert ( d [ p ] ) ;",
+        "else if ( p + 1 < d . length ( ) )",
+        "for ( long long i = k - 1 ; i < r . length ( ) ; i ++ ) { mult *= r [ i ] ; }"
+      ],
+      "err_line": 19,
+      "err_msg": "no matching function for call to ‘std::vector<long long int>::insert(long long int&)’"
+    },
+    {
+      "mod_line": [
+        19,
+        20,
+        26,
+        3
+      ],
+      "mod_code": [
+        "r . insert ( d [ p ] ) ;",
+        "else if ( p + 1 < d . length ( ) )",
+        "for ( long long i = k - 1 ; i < r . length ( ) ; i ++ ) { mult *= r [ i ] ; }",
+        "memset ( criba ) , sizeof ( criba ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        19,
+        20,
+        3
+      ],
+      "mod_code": [
+        "r . insert ( d [ p ] ) ;",
+        "else if ( p + 1 < d . length ( ) )",
+        "memset ( criba ) , sizeof ( criba ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        19,
+        23
+      ],
+      "mod_code": [
+        "r . insert ( d [ p ] ) ;",
+        "if ( r . length ( ) >= k )"
+      ],
+      "err_line": 19,
+      "err_msg": "no matching function for call to ‘std::vector<long long int>::insert(long long int&)’"
+    },
+    {
+      "mod_line": [
+        19,
+        23,
+        26
+      ],
+      "mod_code": [
+        "r . insert ( d [ p ] ) ;",
+        "if ( r . length ( ) >= k )",
+        "for ( long long i = k - 1 ; i < r . length ( ) ; i ++ ) { mult *= r [ i ] ; }"
+      ],
+      "err_line": 19,
+      "err_msg": "no matching function for call to ‘std::vector<long long int>::insert(long long int&)’"
+    },
+    {
+      "mod_line": [
+        19,
+        23,
+        26,
+        3
+      ],
+      "mod_code": [
+        "r . insert ( d [ p ] ) ;",
+        "if ( r . length ( ) >= k )",
+        "for ( long long i = k - 1 ; i < r . length ( ) ; i ++ ) { mult *= r [ i ] ; }",
+        "memset ( criba ) , sizeof ( criba ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        19,
+        23,
+        3
+      ],
+      "mod_code": [
+        "r . insert ( d [ p ] ) ;",
+        "if ( r . length ( ) >= k )",
+        "memset ( criba ) , sizeof ( criba ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        19,
+        26
+      ],
+      "mod_code": [
+        "r . insert ( d [ p ] ) ;",
+        "for ( long long i = k - 1 ; i < r . length ( ) ; i ++ ) { mult *= r [ i ] ; }"
+      ],
+      "err_line": 19,
+      "err_msg": "no matching function for call to ‘std::vector<long long int>::insert(long long int&)’"
+    },
+    {
+      "mod_line": [
+        19,
+        26,
+        3
+      ],
+      "mod_code": [
+        "r . insert ( d [ p ] ) ;",
+        "for ( long long i = k - 1 ; i < r . length ( ) ; i ++ ) { mult *= r [ i ] ; }",
+        "memset ( criba ) , sizeof ( criba ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        19,
+        3
+      ],
+      "mod_code": [
+        "r . insert ( d [ p ] ) ;",
+        "memset ( criba ) , sizeof ( criba ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        20,
+        23
+      ],
+      "mod_code": [
+        "else if ( p + 1 < d . length ( ) )",
+        "if ( r . length ( ) >= k )"
+      ],
+      "err_line": 20,
+      "err_msg": "‘class std::vector<long long int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        20,
+        23,
+        26
+      ],
+      "mod_code": [
+        "else if ( p + 1 < d . length ( ) )",
+        "if ( r . length ( ) >= k )",
+        "for ( long long i = k - 1 ; i < r . length ( ) ; i ++ ) { mult *= r [ i ] ; }"
+      ],
+      "err_line": 20,
+      "err_msg": "‘class std::vector<long long int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        20,
+        23,
+        26,
+        3
+      ],
+      "mod_code": [
+        "else if ( p + 1 < d . length ( ) )",
+        "if ( r . length ( ) >= k )",
+        "for ( long long i = k - 1 ; i < r . length ( ) ; i ++ ) { mult *= r [ i ] ; }",
+        "memset ( criba ) , sizeof ( criba ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        20,
+        23,
+        3
+      ],
+      "mod_code": [
+        "else if ( p + 1 < d . length ( ) )",
+        "if ( r . length ( ) >= k )",
+        "memset ( criba ) , sizeof ( criba ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        20,
+        26
+      ],
+      "mod_code": [
+        "else if ( p + 1 < d . length ( ) )",
+        "for ( long long i = k - 1 ; i < r . length ( ) ; i ++ ) { mult *= r [ i ] ; }"
+      ],
+      "err_line": 20,
+      "err_msg": "‘class std::vector<long long int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        20,
+        26,
+        3
+      ],
+      "mod_code": [
+        "else if ( p + 1 < d . length ( ) )",
+        "for ( long long i = k - 1 ; i < r . length ( ) ; i ++ ) { mult *= r [ i ] ; }",
+        "memset ( criba ) , sizeof ( criba ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        20,
+        3
+      ],
+      "mod_code": [
+        "else if ( p + 1 < d . length ( ) )",
+        "memset ( criba ) , sizeof ( criba ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        23,
+        26
+      ],
+      "mod_code": [
+        "if ( r . length ( ) >= k )",
+        "for ( long long i = k - 1 ; i < r . length ( ) ; i ++ ) { mult *= r [ i ] ; }"
+      ],
+      "err_line": 23,
+      "err_msg": "‘class std::vector<long long int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        23,
+        26,
+        3
+      ],
+      "mod_code": [
+        "if ( r . length ( ) >= k )",
+        "for ( long long i = k - 1 ; i < r . length ( ) ; i ++ ) { mult *= r [ i ] ; }",
+        "memset ( criba ) , sizeof ( criba ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        23,
+        3
+      ],
+      "mod_code": [
+        "if ( r . length ( ) >= k )",
+        "memset ( criba ) , sizeof ( criba ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        26,
+        3
+      ],
+      "mod_code": [
+        "for ( long long i = k - 1 ; i < r . length ( ) ; i ++ ) { mult *= r [ i ] ; }",
+        "memset ( criba ) , sizeof ( criba ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    }
+  ]
+}

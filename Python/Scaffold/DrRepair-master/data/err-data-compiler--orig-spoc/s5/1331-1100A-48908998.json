@@ -1,0 +1,383 @@
+{
+  "meta": {
+    "index": 1331,
+    "hitid": "37SQU136V7I5PJ5EJ6NCJ2PMVN011K",
+    "workerid": "A1R0Q9CUUBSM5F",
+    "probid": "1100A",
+    "subid": "48908998"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create ints n and k",
+      "code": "int n , k ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "create a map book from ints to ints",
+      "code": "map < int , int > book ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "read n and k",
+      "code": "cin >> n >> k ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "create integer array tables of size n + 1",
+      "code": "int tables [ n + 1 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "set book [ - 1 ] and book [ 1 ] to 0",
+      "code": "book [ - 1 ] = book [ 1 ] = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( int i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "read tables [ i ]",
+      "code": "cin >> tables [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "increment book [ tables [ i ] ]",
+      "code": "book [ tables [ i ] ] ++ ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "create integer maxSol = 0",
+      "code": "int maxSol = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "for b = 0 to k exclusive",
+      "code": "for ( int b = 0 ; b < k ; b ++ )",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "create a map cnt from ints to ints and set to book",
+      "code": "map < int , int > cnt = book ;",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "for i = b to n exclusive with increments of k , reduce cnt [ tables [ i ] ] by 1",
+      "code": "for ( int i = b ; i < n ; i += k ) cnt [ tables [ i ] ] -- ;",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "if maxSol is less than fabs ( cnt [ - 1 ] - cnt [ 1 ] ) , set maxSol to fabs ( cnt [ - 1 ] - cnt [ 1 ] )",
+      "code": "if ( maxSol < fabs ( cnt [ - 1 ] - cnt [ 1 ] ) ) maxSol = fabs ( cnt [ - 1 ] - cnt [ 1 ] ) ;",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "return maxSol",
+      "code": "cout << maxSol << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "map < book , int > book ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘book’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "int * tables [ n + 1 ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int*’)"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "for ( b = 0 ; b < k ; b ++ )"
+      ],
+      "err_line": 11,
+      "err_msg": "‘b’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "vector < int , int > cnt ;"
+      ],
+      "err_line": 13,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::vector<int, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "for ( int i = b ; i < n ; i ++ ) { cnt [ tables [ i ] ] = cnt + 1 ; }"
+      ],
+      "err_line": 13,
+      "err_msg": "no match for ‘operator+’ (operand types are ‘std::map<int, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        12,
+        16,
+        13
+      ],
+      "mod_code": [
+        "map < int , int > cnt ;",
+        "return maxSol ;",
+        "for ( int i = b ; i < n ; i ++ ) { cnt [ tables [ i ] ] = cnt + 1 ; }"
+      ],
+      "err_line": 13,
+      "err_msg": "no match for ‘operator+’ (operand types are ‘std::map<int, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        12,
+        16,
+        13,
+        7
+      ],
+      "mod_code": [
+        "map < int , int > cnt ;",
+        "return maxSol ;",
+        "for ( int i = b ; i < n ; i ++ ) { cnt [ tables [ i ] ] = cnt + 1 ; }",
+        "cout << tables [ i ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "no match for ‘operator+’ (operand types are ‘std::map<int, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        12,
+        16,
+        13,
+        3
+      ],
+      "mod_code": [
+        "map < int , int > cnt ;",
+        "return maxSol ;",
+        "for ( int i = b ; i < n ; i ++ ) { cnt [ tables [ i ] ] = cnt + 1 ; }",
+        "cin >> n and k ;"
+      ],
+      "err_line": 13,
+      "err_msg": "no match for ‘operator+’ (operand types are ‘std::map<int, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        12,
+        13
+      ],
+      "mod_code": [
+        "map < int , int > cnt ;",
+        "for ( int i = b ; i < n ; i ++ ) { cnt [ tables [ i ] ] = cnt + 1 ; }"
+      ],
+      "err_line": 13,
+      "err_msg": "no match for ‘operator+’ (operand types are ‘std::map<int, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        12,
+        13,
+        7
+      ],
+      "mod_code": [
+        "map < int , int > cnt ;",
+        "for ( int i = b ; i < n ; i ++ ) { cnt [ tables [ i ] ] = cnt + 1 ; }",
+        "cout << tables [ i ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "no match for ‘operator+’ (operand types are ‘std::map<int, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        12,
+        13,
+        7,
+        3
+      ],
+      "mod_code": [
+        "map < int , int > cnt ;",
+        "for ( int i = b ; i < n ; i ++ ) { cnt [ tables [ i ] ] = cnt + 1 ; }",
+        "cout << tables [ i ] ;",
+        "cin >> n and k ;"
+      ],
+      "err_line": 13,
+      "err_msg": "no match for ‘operator+’ (operand types are ‘std::map<int, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        12,
+        13,
+        3
+      ],
+      "mod_code": [
+        "map < int , int > cnt ;",
+        "for ( int i = b ; i < n ; i ++ ) { cnt [ tables [ i ] ] = cnt + 1 ; }",
+        "cin >> n and k ;"
+      ],
+      "err_line": 13,
+      "err_msg": "no match for ‘operator+’ (operand types are ‘std::map<int, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        16,
+        13
+      ],
+      "mod_code": [
+        "return maxSol ;",
+        "for ( int i = b ; i < n ; i ++ ) { cnt [ tables [ i ] ] = cnt + 1 ; }"
+      ],
+      "err_line": 13,
+      "err_msg": "no match for ‘operator+’ (operand types are ‘std::map<int, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        16,
+        13,
+        7
+      ],
+      "mod_code": [
+        "return maxSol ;",
+        "for ( int i = b ; i < n ; i ++ ) { cnt [ tables [ i ] ] = cnt + 1 ; }",
+        "cout << tables [ i ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "no match for ‘operator+’ (operand types are ‘std::map<int, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        16,
+        13,
+        7,
+        3
+      ],
+      "mod_code": [
+        "return maxSol ;",
+        "for ( int i = b ; i < n ; i ++ ) { cnt [ tables [ i ] ] = cnt + 1 ; }",
+        "cout << tables [ i ] ;",
+        "cin >> n and k ;"
+      ],
+      "err_line": 13,
+      "err_msg": "no match for ‘operator+’ (operand types are ‘std::map<int, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        16,
+        13,
+        3
+      ],
+      "mod_code": [
+        "return maxSol ;",
+        "for ( int i = b ; i < n ; i ++ ) { cnt [ tables [ i ] ] = cnt + 1 ; }",
+        "cin >> n and k ;"
+      ],
+      "err_line": 13,
+      "err_msg": "no match for ‘operator+’ (operand types are ‘std::map<int, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        13,
+        7
+      ],
+      "mod_code": [
+        "for ( int i = b ; i < n ; i ++ ) { cnt [ tables [ i ] ] = cnt + 1 ; }",
+        "cout << tables [ i ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "no match for ‘operator+’ (operand types are ‘std::map<int, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        13,
+        7,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = b ; i < n ; i ++ ) { cnt [ tables [ i ] ] = cnt + 1 ; }",
+        "cout << tables [ i ] ;",
+        "cin >> n and k ;"
+      ],
+      "err_line": 13,
+      "err_msg": "no match for ‘operator+’ (operand types are ‘std::map<int, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        13,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = b ; i < n ; i ++ ) { cnt [ tables [ i ] ] = cnt + 1 ; }",
+        "cin >> n and k ;"
+      ],
+      "err_line": 13,
+      "err_msg": "no match for ‘operator+’ (operand types are ‘std::map<int, int>’ and ‘int’)"
+    }
+  ]
+}

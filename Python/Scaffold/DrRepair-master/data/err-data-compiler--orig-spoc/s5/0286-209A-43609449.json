@@ -1,0 +1,437 @@
+{
+  "meta": {
+    "index": 286,
+    "hitid": "3YLTXLH3DF0JAM9U6X1NCLNRFS1PHA",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "209A",
+    "subid": "43609449"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create const int mod = 1e9 + 7",
+      "code": "const int mod = 1e9 + 7 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "declare integer n",
+      "code": "int n ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "read input to n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "dp is an array of ints with elements 1 and 1",
+      "code": "int dp [ 2 ] = { 1 , 1 } ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i = 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; ++ i )",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "if i & 1 ! = 0",
+      "code": "if ( i & 1 )",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "add dp [ 0 ] to dp [ 1 ] and set dp [ 1 ] to dp [ 1 ] modulo mod",
+      "code": "dp [ 1 ] += dp [ 0 ] , dp [ 1 ] %= mod ;",
+      "indent": 3
+    },
+    {
+      "line": 8,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "add dp [ 1 ] to dp [ 0 ] and set dp [ 0 ] to dp [ 0 ] modulo mod",
+      "code": "dp [ 0 ] += dp [ 1 ] , dp [ 0 ] %= mod ;",
+      "indent": 3
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "print ( dp [ 0 ] + dp [ 1 ] - 2 ) % mod",
+      "code": "cout << ( dp [ 0 ] + dp [ 1 ] - 2 ) % mod << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "{ cin >> n ;"
+      ],
+      "err_line": 13,
+      "err_msg": "expected ‘}’ at end of input"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "int dp [ 1 ] [ 1 ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid use of non-lvalue array"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "dp [ 1 ] += mod [ 0 ] , dp [ 1 ] + mod ;"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid types ‘const int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        7,
+        9,
+        5
+      ],
+      "mod_code": [
+        "int dp [ 1 ] = { 1 } ;",
+        "dp [ 1 ] += mod ;",
+        "dp [ 0 ] += mod , dp [ 0 ] + mod ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        7,
+        9,
+        5
+      ],
+      "mod_code": [
+        "int dp [ 1 ] = { 1 } ;",
+        "dp [ 1 ] += mod ;",
+        "dp [ 0 ] += mod ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        7,
+        5
+      ],
+      "mod_code": [
+        "int dp [ 1 ] = { 1 } ;",
+        "dp [ 1 ] += mod ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        9,
+        5
+      ],
+      "mod_code": [
+        "int dp [ 1 ] = { 1 } ;",
+        "dp [ 0 ] += mod , dp [ 0 ] + mod ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        9,
+        5
+      ],
+      "mod_code": [
+        "int dp [ 1 ] = { 1 } ;",
+        "dp [ 0 ] += mod ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        5
+      ],
+      "mod_code": [
+        "int dp [ 1 ] = { 1 } ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        9,
+        4
+      ],
+      "mod_code": [
+        "dp [ 1 ] += mod ;",
+        "dp [ 0 ] += mod , dp [ 0 ] + mod ;",
+        "int dp [ 1 ] [ 1 ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "incompatible types in assignment of ‘int’ to ‘int [1]’"
+    },
+    {
+      "mod_line": [
+        7,
+        9,
+        4,
+        5
+      ],
+      "mod_code": [
+        "dp [ 1 ] += mod ;",
+        "dp [ 0 ] += mod , dp [ 0 ] + mod ;",
+        "int dp [ 1 ] [ 1 ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        9,
+        5
+      ],
+      "mod_code": [
+        "dp [ 1 ] += mod ;",
+        "dp [ 0 ] += mod , dp [ 0 ] + mod ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        9,
+        4
+      ],
+      "mod_code": [
+        "dp [ 1 ] += mod ;",
+        "dp [ 0 ] += mod ;",
+        "int dp [ 1 ] [ 1 ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "incompatible types in assignment of ‘int’ to ‘int [1]’"
+    },
+    {
+      "mod_line": [
+        7,
+        9,
+        4,
+        5
+      ],
+      "mod_code": [
+        "dp [ 1 ] += mod ;",
+        "dp [ 0 ] += mod ;",
+        "int dp [ 1 ] [ 1 ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        9,
+        5
+      ],
+      "mod_code": [
+        "dp [ 1 ] += mod ;",
+        "dp [ 0 ] += mod ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        4
+      ],
+      "mod_code": [
+        "dp [ 1 ] += mod ;",
+        "int dp [ 1 ] [ 1 ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "incompatible types in assignment of ‘int’ to ‘int [1]’"
+    },
+    {
+      "mod_line": [
+        7,
+        4,
+        5
+      ],
+      "mod_code": [
+        "dp [ 1 ] += mod ;",
+        "int dp [ 1 ] [ 1 ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        5
+      ],
+      "mod_code": [
+        "dp [ 1 ] += mod ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        4
+      ],
+      "mod_code": [
+        "dp [ 0 ] += mod , dp [ 0 ] + mod ;",
+        "int dp [ 1 ] [ 1 ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid use of non-lvalue array"
+    },
+    {
+      "mod_line": [
+        9,
+        4,
+        5
+      ],
+      "mod_code": [
+        "dp [ 0 ] += mod , dp [ 0 ] + mod ;",
+        "int dp [ 1 ] [ 1 ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        5
+      ],
+      "mod_code": [
+        "dp [ 0 ] += mod , dp [ 0 ] + mod ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        4
+      ],
+      "mod_code": [
+        "dp [ 0 ] += mod ;",
+        "int dp [ 1 ] [ 1 ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid use of non-lvalue array"
+    },
+    {
+      "mod_line": [
+        9,
+        4,
+        5
+      ],
+      "mod_code": [
+        "dp [ 0 ] += mod ;",
+        "int dp [ 1 ] [ 1 ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        5
+      ],
+      "mod_code": [
+        "dp [ 0 ] += mod ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        5
+      ],
+      "mod_code": [
+        "int dp [ 1 ] [ 1 ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    }
+  ]
+}

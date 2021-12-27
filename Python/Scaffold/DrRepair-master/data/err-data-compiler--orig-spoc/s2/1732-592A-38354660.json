@@ -1,0 +1,761 @@
+{
+  "meta": {
+    "index": 1732,
+    "hitid": "3CIS7GGG65DKIHQOXISB1ODDVT7UE1",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "592A",
+    "subid": "38354660"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare character array map size 8 by 8",
+      "code": "char map [ 8 ] [ 8 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "declare integers af = 0 , bf = 0",
+      "code": "int af = 0 , bf = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "declare integer array blocka size 8",
+      "code": "int blocka [ 8 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "declare integer array blockb size 8 = { 0 }",
+      "code": "int blockb [ 8 ] = { 0 } ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "assign value 8 in from blocka to size 8",
+      "code": "fill_n ( blocka , 8 , 8 ) ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 0 to 8 exclusive",
+      "code": "for ( int i = 0 ; i < 8 ; ++ i )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for j = 0 to 8 exclusive",
+      "code": "for ( int j = 0 ; j < 8 ; ++ j )",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "read map [ i ] [ j ]",
+      "code": "cin >> map [ i ] [ j ] ;",
+      "indent": 3
+    },
+    {
+      "line": 9,
+      "text": "if map [ i ] [ j ] is ' B ' and blocka [ j ] is 8 , let bocka [ j ] be 7",
+      "code": "if ( map [ i ] [ j ] == ' B ' && blocka [ j ] == 8 ) blocka [ j ] = 7 ;",
+      "indent": 3
+    },
+    {
+      "line": 10,
+      "text": "if map [ i ] [ j ] is ' W ' and blocka [ j ] is 8 , let blocka [ j ] be i",
+      "code": "if ( map [ i ] [ j ] == ' W ' && blocka [ j ] == 8 ) blocka [ j ] = i ;",
+      "indent": 3
+    },
+    {
+      "line": 11,
+      "text": "if map [ i ] [ j ] is ' B ' and i is greater than or equal to blockb [ j ] , let blockb [ j ] be i",
+      "code": "if ( map [ i ] [ j ] == ' B ' && i >= blockb [ j ] ) blockb [ j ] = i ;",
+      "indent": 3
+    },
+    {
+      "line": 12,
+      "text": "if map [ i ] [ j ] is ' W ' and blockb [ j ] is not 0 , let blockb [ j ] be 0",
+      "code": "if ( map [ i ] [ j ] == ' W ' && blockb [ j ] != 0 ) blockb [ j ] = 0 ;",
+      "indent": 3
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "sort from blockb to blockb + 8",
+      "code": "sort ( blockb , blockb + 8 ) ;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "sort from blocka to blocka + 8",
+      "code": "sort ( blocka , blocka + 8 ) ;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "let af be blocka [ 0 ]",
+      "code": "af = blocka [ 0 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "let bf be blockb [ 7 ]",
+      "code": "bf = blockb [ 7 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "print ' A ' if af is less than or equal to 7 - bf , else ' B ' , newline",
+      "code": "cout << ( af <= 7 - bf ? ' A ' : ' B ' ) << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "blocka . push_back ( 8 ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "request for member ‘push_back’ in ‘blocka’, which is of non-class type ‘int [8]’"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "if ( map [ i ] [ j ] == ' B ' && blocka [ j ] == ' 8 ' ) bocka [ j ] = 7 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘bocka’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "int af = 0 ;"
+      ],
+      "err_line": 18,
+      "err_msg": "‘bf’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "int s [ 8 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘blocka’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < 8 ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j < 8 ; j ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "map << map [ i ] [ j ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid operands of types ‘char [8][8]’ and ‘char’ to binary ‘operator<<’"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "if ( map [ i ] [ j ] == ' B ' && blocka [ j ] == ' B ' ) bocka [ j ] = 7 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘bocka’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "sort ( blockb + blockb , blockb + 8 ) ;"
+      ],
+      "err_line": 15,
+      "err_msg": "invalid operands of types ‘int [8]’ and ‘int [8]’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "sort ( blocka + blocka , blocka + 8 ) ;"
+      ],
+      "err_line": 16,
+      "err_msg": "invalid operands of types ‘int [8]’ and ‘int [8]’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        18
+      ],
+      "mod_code": [
+        "bf %= blockb ;"
+      ],
+      "err_line": 18,
+      "err_msg": "invalid use of non-lvalue array"
+    },
+    {
+      "mod_line": [
+        5,
+        9
+      ],
+      "mod_code": [
+        "blocka . push_back ( 8 ) ;",
+        "if ( map [ i ] [ j ] == ' B ' && blocka [ j ] == ' 8 ' ) bocka [ j ] = 7 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "request for member ‘push_back’ in ‘blocka’, which is of non-class type ‘int [8]’"
+    },
+    {
+      "mod_line": [
+        5,
+        9,
+        10
+      ],
+      "mod_code": [
+        "blocka . push_back ( 8 ) ;",
+        "if ( map [ i ] [ j ] == ' B ' && blocka [ j ] == ' 8 ' ) bocka [ j ] = 7 ;",
+        "if ( map [ i ] [ j ] == ' W ' && blocka [ j ] == ' 8 ' ) blocka [ j ] = i ;"
+      ],
+      "err_line": 5,
+      "err_msg": "request for member ‘push_back’ in ‘blocka’, which is of non-class type ‘int [8]’"
+    },
+    {
+      "mod_line": [
+        5,
+        9,
+        10,
+        19
+      ],
+      "mod_code": [
+        "blocka . push_back ( 8 ) ;",
+        "if ( map [ i ] [ j ] == ' B ' && blocka [ j ] == ' 8 ' ) bocka [ j ] = 7 ;",
+        "if ( map [ i ] [ j ] == ' W ' && blocka [ j ] == ' 8 ' ) blocka [ j ] = i ;",
+        "cout << ( af <= 7 - bf ? ' A ' : ' B ' ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "request for member ‘push_back’ in ‘blocka’, which is of non-class type ‘int [8]’"
+    },
+    {
+      "mod_line": [
+        5,
+        9,
+        10,
+        2
+      ],
+      "mod_code": [
+        "blocka . push_back ( 8 ) ;",
+        "if ( map [ i ] [ j ] == ' B ' && blocka [ j ] == ' 8 ' ) bocka [ j ] = 7 ;",
+        "if ( map [ i ] [ j ] == ' W ' && blocka [ j ] == ' 8 ' ) blocka [ j ] = i ;",
+        "int af = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "request for member ‘push_back’ in ‘blocka’, which is of non-class type ‘int [8]’"
+    },
+    {
+      "mod_line": [
+        5,
+        9,
+        19
+      ],
+      "mod_code": [
+        "blocka . push_back ( 8 ) ;",
+        "if ( map [ i ] [ j ] == ' B ' && blocka [ j ] == ' 8 ' ) bocka [ j ] = 7 ;",
+        "cout << ( af <= 7 - bf ? ' A ' : ' B ' ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "request for member ‘push_back’ in ‘blocka’, which is of non-class type ‘int [8]’"
+    },
+    {
+      "mod_line": [
+        5,
+        9,
+        19,
+        10
+      ],
+      "mod_code": [
+        "blocka . push_back ( 8 ) ;",
+        "if ( map [ i ] [ j ] == ' B ' && blocka [ j ] == ' 8 ' ) bocka [ j ] = 7 ;",
+        "cout << ( af <= 7 - bf ? ' A ' : ' B ' ) ;",
+        "if ( map [ i ] [ j ] == ' W ' && blocka [ j ] == ' W ' ) blocka [ j ] = i ;"
+      ],
+      "err_line": 5,
+      "err_msg": "request for member ‘push_back’ in ‘blocka’, which is of non-class type ‘int [8]’"
+    },
+    {
+      "mod_line": [
+        5,
+        9,
+        19,
+        2
+      ],
+      "mod_code": [
+        "blocka . push_back ( 8 ) ;",
+        "if ( map [ i ] [ j ] == ' B ' && blocka [ j ] == ' 8 ' ) bocka [ j ] = 7 ;",
+        "cout << ( af <= 7 - bf ? ' A ' : ' B ' ) ;",
+        "int af = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "request for member ‘push_back’ in ‘blocka’, which is of non-class type ‘int [8]’"
+    },
+    {
+      "mod_line": [
+        5,
+        9,
+        10
+      ],
+      "mod_code": [
+        "blocka . push_back ( 8 ) ;",
+        "if ( map [ i ] [ j ] == ' B ' && blocka [ j ] == ' 8 ' ) bocka [ j ] = 7 ;",
+        "if ( map [ i ] [ j ] == ' W ' && blocka [ j ] == ' W ' ) blocka [ j ] = i ;"
+      ],
+      "err_line": 5,
+      "err_msg": "request for member ‘push_back’ in ‘blocka’, which is of non-class type ‘int [8]’"
+    },
+    {
+      "mod_line": [
+        5,
+        9,
+        10,
+        2
+      ],
+      "mod_code": [
+        "blocka . push_back ( 8 ) ;",
+        "if ( map [ i ] [ j ] == ' B ' && blocka [ j ] == ' 8 ' ) bocka [ j ] = 7 ;",
+        "if ( map [ i ] [ j ] == ' W ' && blocka [ j ] == ' W ' ) blocka [ j ] = i ;",
+        "int af = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "request for member ‘push_back’ in ‘blocka’, which is of non-class type ‘int [8]’"
+    },
+    {
+      "mod_line": [
+        5,
+        9,
+        2
+      ],
+      "mod_code": [
+        "blocka . push_back ( 8 ) ;",
+        "if ( map [ i ] [ j ] == ' B ' && blocka [ j ] == ' 8 ' ) bocka [ j ] = 7 ;",
+        "int af = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "request for member ‘push_back’ in ‘blocka’, which is of non-class type ‘int [8]’"
+    },
+    {
+      "mod_line": [
+        5,
+        10
+      ],
+      "mod_code": [
+        "blocka . push_back ( 8 ) ;",
+        "if ( map [ i ] [ j ] == ' W ' && blocka [ j ] == ' 8 ' ) blocka [ j ] = i ;"
+      ],
+      "err_line": 5,
+      "err_msg": "request for member ‘push_back’ in ‘blocka’, which is of non-class type ‘int [8]’"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        19
+      ],
+      "mod_code": [
+        "blocka . push_back ( 8 ) ;",
+        "if ( map [ i ] [ j ] == ' W ' && blocka [ j ] == ' 8 ' ) blocka [ j ] = i ;",
+        "cout << ( af <= 7 - bf ? ' A ' : ' B ' ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "request for member ‘push_back’ in ‘blocka’, which is of non-class type ‘int [8]’"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        19,
+        2
+      ],
+      "mod_code": [
+        "blocka . push_back ( 8 ) ;",
+        "if ( map [ i ] [ j ] == ' W ' && blocka [ j ] == ' 8 ' ) blocka [ j ] = i ;",
+        "cout << ( af <= 7 - bf ? ' A ' : ' B ' ) ;",
+        "int af = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "request for member ‘push_back’ in ‘blocka’, which is of non-class type ‘int [8]’"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        2
+      ],
+      "mod_code": [
+        "blocka . push_back ( 8 ) ;",
+        "if ( map [ i ] [ j ] == ' W ' && blocka [ j ] == ' 8 ' ) blocka [ j ] = i ;",
+        "int af = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "request for member ‘push_back’ in ‘blocka’, which is of non-class type ‘int [8]’"
+    },
+    {
+      "mod_line": [
+        5,
+        19
+      ],
+      "mod_code": [
+        "blocka . push_back ( 8 ) ;",
+        "cout << ( af <= 7 - bf ? ' A ' : ' B ' ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "request for member ‘push_back’ in ‘blocka’, which is of non-class type ‘int [8]’"
+    },
+    {
+      "mod_line": [
+        5,
+        19,
+        10
+      ],
+      "mod_code": [
+        "blocka . push_back ( 8 ) ;",
+        "cout << ( af <= 7 - bf ? ' A ' : ' B ' ) ;",
+        "if ( map [ i ] [ j ] == ' W ' && blocka [ j ] == ' W ' ) blocka [ j ] = i ;"
+      ],
+      "err_line": 5,
+      "err_msg": "request for member ‘push_back’ in ‘blocka’, which is of non-class type ‘int [8]’"
+    },
+    {
+      "mod_line": [
+        5,
+        19,
+        10,
+        2
+      ],
+      "mod_code": [
+        "blocka . push_back ( 8 ) ;",
+        "cout << ( af <= 7 - bf ? ' A ' : ' B ' ) ;",
+        "if ( map [ i ] [ j ] == ' W ' && blocka [ j ] == ' W ' ) blocka [ j ] = i ;",
+        "int af = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "request for member ‘push_back’ in ‘blocka’, which is of non-class type ‘int [8]’"
+    },
+    {
+      "mod_line": [
+        5,
+        19,
+        2
+      ],
+      "mod_code": [
+        "blocka . push_back ( 8 ) ;",
+        "cout << ( af <= 7 - bf ? ' A ' : ' B ' ) ;",
+        "int af = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "request for member ‘push_back’ in ‘blocka’, which is of non-class type ‘int [8]’"
+    },
+    {
+      "mod_line": [
+        5,
+        10
+      ],
+      "mod_code": [
+        "blocka . push_back ( 8 ) ;",
+        "if ( map [ i ] [ j ] == ' W ' && blocka [ j ] == ' W ' ) blocka [ j ] = i ;"
+      ],
+      "err_line": 5,
+      "err_msg": "request for member ‘push_back’ in ‘blocka’, which is of non-class type ‘int [8]’"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        2
+      ],
+      "mod_code": [
+        "blocka . push_back ( 8 ) ;",
+        "if ( map [ i ] [ j ] == ' W ' && blocka [ j ] == ' W ' ) blocka [ j ] = i ;",
+        "int af = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "request for member ‘push_back’ in ‘blocka’, which is of non-class type ‘int [8]’"
+    },
+    {
+      "mod_line": [
+        5,
+        2
+      ],
+      "mod_code": [
+        "blocka . push_back ( 8 ) ;",
+        "int af = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "request for member ‘push_back’ in ‘blocka’, which is of non-class type ‘int [8]’"
+    },
+    {
+      "mod_line": [
+        9,
+        10
+      ],
+      "mod_code": [
+        "if ( map [ i ] [ j ] == ' B ' && blocka [ j ] == ' 8 ' ) bocka [ j ] = 7 ;",
+        "if ( map [ i ] [ j ] == ' W ' && blocka [ j ] == ' 8 ' ) blocka [ j ] = i ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘bocka’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        10,
+        19
+      ],
+      "mod_code": [
+        "if ( map [ i ] [ j ] == ' B ' && blocka [ j ] == ' 8 ' ) bocka [ j ] = 7 ;",
+        "if ( map [ i ] [ j ] == ' W ' && blocka [ j ] == ' 8 ' ) blocka [ j ] = i ;",
+        "cout << ( af <= 7 - bf ? ' A ' : ' B ' ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘bocka’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        10,
+        19,
+        2
+      ],
+      "mod_code": [
+        "if ( map [ i ] [ j ] == ' B ' && blocka [ j ] == ' 8 ' ) bocka [ j ] = 7 ;",
+        "if ( map [ i ] [ j ] == ' W ' && blocka [ j ] == ' 8 ' ) blocka [ j ] = i ;",
+        "cout << ( af <= 7 - bf ? ' A ' : ' B ' ) ;",
+        "int af = 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘bocka’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        10,
+        2
+      ],
+      "mod_code": [
+        "if ( map [ i ] [ j ] == ' B ' && blocka [ j ] == ' 8 ' ) bocka [ j ] = 7 ;",
+        "if ( map [ i ] [ j ] == ' W ' && blocka [ j ] == ' 8 ' ) blocka [ j ] = i ;",
+        "int af = 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘bocka’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        19
+      ],
+      "mod_code": [
+        "if ( map [ i ] [ j ] == ' B ' && blocka [ j ] == ' 8 ' ) bocka [ j ] = 7 ;",
+        "cout << ( af <= 7 - bf ? ' A ' : ' B ' ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘bocka’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        19,
+        10
+      ],
+      "mod_code": [
+        "if ( map [ i ] [ j ] == ' B ' && blocka [ j ] == ' 8 ' ) bocka [ j ] = 7 ;",
+        "cout << ( af <= 7 - bf ? ' A ' : ' B ' ) ;",
+        "if ( map [ i ] [ j ] == ' W ' && blocka [ j ] == ' W ' ) blocka [ j ] = i ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘bocka’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        19,
+        10,
+        2
+      ],
+      "mod_code": [
+        "if ( map [ i ] [ j ] == ' B ' && blocka [ j ] == ' 8 ' ) bocka [ j ] = 7 ;",
+        "cout << ( af <= 7 - bf ? ' A ' : ' B ' ) ;",
+        "if ( map [ i ] [ j ] == ' W ' && blocka [ j ] == ' W ' ) blocka [ j ] = i ;",
+        "int af = 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘bocka’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        19,
+        2
+      ],
+      "mod_code": [
+        "if ( map [ i ] [ j ] == ' B ' && blocka [ j ] == ' 8 ' ) bocka [ j ] = 7 ;",
+        "cout << ( af <= 7 - bf ? ' A ' : ' B ' ) ;",
+        "int af = 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘bocka’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        10
+      ],
+      "mod_code": [
+        "if ( map [ i ] [ j ] == ' B ' && blocka [ j ] == ' 8 ' ) bocka [ j ] = 7 ;",
+        "if ( map [ i ] [ j ] == ' W ' && blocka [ j ] == ' W ' ) blocka [ j ] = i ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘bocka’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        10,
+        2
+      ],
+      "mod_code": [
+        "if ( map [ i ] [ j ] == ' B ' && blocka [ j ] == ' 8 ' ) bocka [ j ] = 7 ;",
+        "if ( map [ i ] [ j ] == ' W ' && blocka [ j ] == ' W ' ) blocka [ j ] = i ;",
+        "int af = 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘bocka’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        2
+      ],
+      "mod_code": [
+        "if ( map [ i ] [ j ] == ' B ' && blocka [ j ] == ' 8 ' ) bocka [ j ] = 7 ;",
+        "int af = 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘bocka’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        19,
+        2
+      ],
+      "mod_code": [
+        "if ( map [ i ] [ j ] == ' W ' && blocka [ j ] == ' 8 ' ) blocka [ j ] = i ;",
+        "cout << ( af <= 7 - bf ? ' A ' : ' B ' ) ;",
+        "int af = 0 ;"
+      ],
+      "err_line": 18,
+      "err_msg": "‘bf’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        2
+      ],
+      "mod_code": [
+        "if ( map [ i ] [ j ] == ' W ' && blocka [ j ] == ' 8 ' ) blocka [ j ] = i ;",
+        "int af = 0 ;"
+      ],
+      "err_line": 18,
+      "err_msg": "‘bf’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        19,
+        10,
+        2
+      ],
+      "mod_code": [
+        "cout << ( af <= 7 - bf ? ' A ' : ' B ' ) ;",
+        "if ( map [ i ] [ j ] == ' W ' && blocka [ j ] == ' W ' ) blocka [ j ] = i ;",
+        "int af = 0 ;"
+      ],
+      "err_line": 18,
+      "err_msg": "‘bf’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        19,
+        2
+      ],
+      "mod_code": [
+        "cout << ( af <= 7 - bf ? ' A ' : ' B ' ) ;",
+        "int af = 0 ;"
+      ],
+      "err_line": 18,
+      "err_msg": "‘bf’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        2
+      ],
+      "mod_code": [
+        "if ( map [ i ] [ j ] == ' W ' && blocka [ j ] == ' W ' ) blocka [ j ] = i ;",
+        "int af = 0 ;"
+      ],
+      "err_line": 18,
+      "err_msg": "‘bf’ was not declared in this scope"
+    }
+  ]
+}

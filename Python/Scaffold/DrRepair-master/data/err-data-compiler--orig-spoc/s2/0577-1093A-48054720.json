@@ -1,0 +1,993 @@
+{
+  "meta": {
+    "index": 577,
+    "hitid": "31ODACBENU9T07OPH4SBG4K3SC9SQJ",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "1093A",
+    "subid": "48054720"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare minCoins with integer array coins , integers m , v as arguments , returning integer",
+      "code": "int minCoins ( int coins [ ] , int m , int V )",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare integer pointer table with table = new integer array of size V + 1",
+      "code": "int * table = new int [ V + 1 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "set table [ 0 ] to 0",
+      "code": "table [ 0 ] = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "for i = 1 to V inclusive , set table [ i ] to INT_MAX",
+      "code": "for ( int i = 1 ; i <= V ; i ++ ) table [ i ] = INT_MAX ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for i = 1 to V inclusive",
+      "code": "for ( int i = 1 ; i <= V ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for j = 0 to m exclusive",
+      "code": "for ( int j = 0 ; j < m ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 6,
+      "text": "if coins [ j ] is less than or equal to i",
+      "code": "if ( coins [ j ] <= i )",
+      "indent": 3
+    },
+    {
+      "line": 7,
+      "text": "create integer sub_res with sub_res = table [ i - coins [ j ] ]",
+      "code": "int sub_res = table [ i - coins [ j ] ] ;",
+      "indent": 4
+    },
+    {
+      "line": 8,
+      "text": "if sub_res is not INT_MAX and sub_res + 1 is less than table [ i ] , set table [ i ] to sub_res + 1",
+      "code": "if ( sub_res != INT_MAX && sub_res + 1 < table [ i ] ) table [ i ] = sub_res + 1 ;",
+      "indent": 4
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "return table [ V ] from function",
+      "code": "return table [ V ] ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 14,
+      "text": "create integer t",
+      "code": "int t ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "read t",
+      "code": "cin >> t ;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "create integer array coins with coins = { 2 , 3 , 4 , 5 , 6 , 7 }",
+      "code": "int coins [ ] = { 2 , 3 , 4 , 5 , 6 , 7 } ;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "create integer m with m = size of ( coins ) / size of ( coins [ 0 ] )",
+      "code": "int m = sizeof ( coins ) / sizeof ( coins [ 0 ] ) ;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "create integer V",
+      "code": "int V ;",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "while decrement t is true",
+      "code": "while ( t -- )",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "read V",
+      "code": "cin >> V ;",
+      "indent": 2
+    },
+    {
+      "line": 21,
+      "text": "print result of run minCoins with coins , m , V as arguments , print newline",
+      "code": "cout << minCoins ( coins , m , V ) << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 22,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int minCoins ( int coins [ ] , int m , int v )"
+      ],
+      "err_line": 1,
+      "err_msg": "‘V’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "int m = ( coins . size ( ) / ( coins [ 0 ] ) ) / ( coins [ 0 ] ) ;"
+      ],
+      "err_line": 17,
+      "err_msg": "request for member ‘size’ in ‘coins’, which is of non-class type ‘int [6]’"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int minCoins ( int coins [ coins ] , int m , int v )"
+      ],
+      "err_line": 0,
+      "err_msg": "‘coins’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int table = new int [ V + 1 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid conversion from ‘int*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "int table [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conflicting declaration ‘int table [0]’"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= V ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j < m ; j ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "int sub_res = table [ i - coins [ j ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "int coins [ ] = { } , 2 , 4 , 5 , 6 , 7 } ;"
+      ],
+      "err_line": 16,
+      "err_msg": "expected unqualified-id before numeric constant"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "int m = ( coins . size ( ) / / ] . size ( ) ) / ( coins [ 0 ] ) ;"
+      ],
+      "err_line": 17,
+      "err_msg": "request for member ‘size’ in ‘coins’, which is of non-class type ‘int [6]’"
+    },
+    {
+      "mod_line": [
+        18
+      ],
+      "mod_code": [
+        "int n ;"
+      ],
+      "err_line": 20,
+      "err_msg": "‘V’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        20
+      ],
+      "mod_code": [
+        "getline ( cin , V ) ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no matching function for call to ‘getline(std::istream&, int&)’"
+    },
+    {
+      "mod_line": [
+        21
+      ],
+      "mod_code": [
+        "cout << minCoins << coins << m , V << endl ;"
+      ],
+      "err_line": 21,
+      "err_msg": "invalid operands of types ‘int’ and ‘<unresolved overloaded function type>’ to binary ‘operator<<’"
+    },
+    {
+      "mod_line": [
+        0,
+        17
+      ],
+      "mod_code": [
+        "int minCoins ( int coins [ ] , int m , int v )",
+        "int m = ( coins . size ( ) / ( coins [ 0 ] ) ) / ( coins [ 0 ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘V’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        17,
+        20
+      ],
+      "mod_code": [
+        "int minCoins ( int coins [ ] , int m , int v )",
+        "int m = ( coins . size ( ) / ( coins [ 0 ] ) ) / ( coins [ 0 ] ) ;",
+        "getline ( cin , V ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘V’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        17,
+        20,
+        16
+      ],
+      "mod_code": [
+        "int minCoins ( int coins [ ] , int m , int v )",
+        "int m = ( coins . size ( ) / ( coins [ 0 ] ) ) / ( coins [ 0 ] ) ;",
+        "getline ( cin , V ) ;",
+        "int coins [ ] = { } , 2 , 4 , 5 , 6 , 7 } ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘V’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        17,
+        20,
+        1
+      ],
+      "mod_code": [
+        "int minCoins ( int coins [ ] , int m , int v )",
+        "int m = ( coins . size ( ) / ( coins [ 0 ] ) ) / ( coins [ 0 ] ) ;",
+        "getline ( cin , V ) ;",
+        "int table = new int [ V + 1 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘V’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        17,
+        20,
+        2
+      ],
+      "mod_code": [
+        "int minCoins ( int coins [ ] , int m , int v )",
+        "int m = ( coins . size ( ) / ( coins [ 0 ] ) ) / ( coins [ 0 ] ) ;",
+        "getline ( cin , V ) ;",
+        "int table [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘V’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        17,
+        16
+      ],
+      "mod_code": [
+        "int minCoins ( int coins [ ] , int m , int v )",
+        "int m = ( coins . size ( ) / ( coins [ 0 ] ) ) / ( coins [ 0 ] ) ;",
+        "int coins [ ] = { } , 2 , 4 , 5 , 6 , 7 } ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘V’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        17,
+        16,
+        1
+      ],
+      "mod_code": [
+        "int minCoins ( int coins [ ] , int m , int v )",
+        "int m = ( coins . size ( ) / ( coins [ 0 ] ) ) / ( coins [ 0 ] ) ;",
+        "int coins [ ] = { } , 2 , 4 , 5 , 6 , 7 } ;",
+        "int table = new int [ V + 1 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘V’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        17,
+        16,
+        2
+      ],
+      "mod_code": [
+        "int minCoins ( int coins [ ] , int m , int v )",
+        "int m = ( coins . size ( ) / ( coins [ 0 ] ) ) / ( coins [ 0 ] ) ;",
+        "int coins [ ] = { } , 2 , 4 , 5 , 6 , 7 } ;",
+        "int table [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘V’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        17,
+        1
+      ],
+      "mod_code": [
+        "int minCoins ( int coins [ ] , int m , int v )",
+        "int m = ( coins . size ( ) / ( coins [ 0 ] ) ) / ( coins [ 0 ] ) ;",
+        "int table = new int [ V + 1 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘V’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        17,
+        1,
+        2
+      ],
+      "mod_code": [
+        "int minCoins ( int coins [ ] , int m , int v )",
+        "int m = ( coins . size ( ) / ( coins [ 0 ] ) ) / ( coins [ 0 ] ) ;",
+        "int table = new int [ V + 1 ] ;",
+        "int table [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘V’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        17,
+        2
+      ],
+      "mod_code": [
+        "int minCoins ( int coins [ ] , int m , int v )",
+        "int m = ( coins . size ( ) / ( coins [ 0 ] ) ) / ( coins [ 0 ] ) ;",
+        "int table [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘V’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        20
+      ],
+      "mod_code": [
+        "int minCoins ( int coins [ ] , int m , int v )",
+        "getline ( cin , V ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘V’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        20,
+        16
+      ],
+      "mod_code": [
+        "int minCoins ( int coins [ ] , int m , int v )",
+        "getline ( cin , V ) ;",
+        "int coins [ ] = { } , 2 , 4 , 5 , 6 , 7 } ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘V’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        20,
+        16,
+        1
+      ],
+      "mod_code": [
+        "int minCoins ( int coins [ ] , int m , int v )",
+        "getline ( cin , V ) ;",
+        "int coins [ ] = { } , 2 , 4 , 5 , 6 , 7 } ;",
+        "int table = new int [ V + 1 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘V’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        20,
+        16,
+        2
+      ],
+      "mod_code": [
+        "int minCoins ( int coins [ ] , int m , int v )",
+        "getline ( cin , V ) ;",
+        "int coins [ ] = { } , 2 , 4 , 5 , 6 , 7 } ;",
+        "int table [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘V’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        20,
+        1
+      ],
+      "mod_code": [
+        "int minCoins ( int coins [ ] , int m , int v )",
+        "getline ( cin , V ) ;",
+        "int table = new int [ V + 1 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘V’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        20,
+        1,
+        2
+      ],
+      "mod_code": [
+        "int minCoins ( int coins [ ] , int m , int v )",
+        "getline ( cin , V ) ;",
+        "int table = new int [ V + 1 ] ;",
+        "int table [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘V’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        20,
+        2
+      ],
+      "mod_code": [
+        "int minCoins ( int coins [ ] , int m , int v )",
+        "getline ( cin , V ) ;",
+        "int table [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘V’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        16
+      ],
+      "mod_code": [
+        "int minCoins ( int coins [ ] , int m , int v )",
+        "int coins [ ] = { } , 2 , 4 , 5 , 6 , 7 } ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘V’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        1
+      ],
+      "mod_code": [
+        "int minCoins ( int coins [ ] , int m , int v )",
+        "int coins [ ] = { } , 2 , 4 , 5 , 6 , 7 } ;",
+        "int table = new int [ V + 1 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘V’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        1,
+        2
+      ],
+      "mod_code": [
+        "int minCoins ( int coins [ ] , int m , int v )",
+        "int coins [ ] = { } , 2 , 4 , 5 , 6 , 7 } ;",
+        "int table = new int [ V + 1 ] ;",
+        "int table [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘V’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        2
+      ],
+      "mod_code": [
+        "int minCoins ( int coins [ ] , int m , int v )",
+        "int coins [ ] = { } , 2 , 4 , 5 , 6 , 7 } ;",
+        "int table [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘V’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        1
+      ],
+      "mod_code": [
+        "int minCoins ( int coins [ ] , int m , int v )",
+        "int table = new int [ V + 1 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘V’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        1,
+        2
+      ],
+      "mod_code": [
+        "int minCoins ( int coins [ ] , int m , int v )",
+        "int table = new int [ V + 1 ] ;",
+        "int table [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘V’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        2
+      ],
+      "mod_code": [
+        "int minCoins ( int coins [ ] , int m , int v )",
+        "int table [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘V’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17,
+        20
+      ],
+      "mod_code": [
+        "int m = ( coins . size ( ) / ( coins [ 0 ] ) ) / ( coins [ 0 ] ) ;",
+        "getline ( cin , V ) ;"
+      ],
+      "err_line": 17,
+      "err_msg": "request for member ‘size’ in ‘coins’, which is of non-class type ‘int [6]’"
+    },
+    {
+      "mod_line": [
+        17,
+        20,
+        16
+      ],
+      "mod_code": [
+        "int m = ( coins . size ( ) / ( coins [ 0 ] ) ) / ( coins [ 0 ] ) ;",
+        "getline ( cin , V ) ;",
+        "int coins [ ] = { } , 2 , 4 , 5 , 6 , 7 } ;"
+      ],
+      "err_line": 16,
+      "err_msg": "expected unqualified-id before numeric constant"
+    },
+    {
+      "mod_line": [
+        17,
+        20,
+        16,
+        1
+      ],
+      "mod_code": [
+        "int m = ( coins . size ( ) / ( coins [ 0 ] ) ) / ( coins [ 0 ] ) ;",
+        "getline ( cin , V ) ;",
+        "int coins [ ] = { } , 2 , 4 , 5 , 6 , 7 } ;",
+        "int table = new int [ V + 1 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid conversion from ‘int*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        17,
+        20,
+        16,
+        2
+      ],
+      "mod_code": [
+        "int m = ( coins . size ( ) / ( coins [ 0 ] ) ) / ( coins [ 0 ] ) ;",
+        "getline ( cin , V ) ;",
+        "int coins [ ] = { } , 2 , 4 , 5 , 6 , 7 } ;",
+        "int table [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conflicting declaration ‘int table [0]’"
+    },
+    {
+      "mod_line": [
+        17,
+        20,
+        1
+      ],
+      "mod_code": [
+        "int m = ( coins . size ( ) / ( coins [ 0 ] ) ) / ( coins [ 0 ] ) ;",
+        "getline ( cin , V ) ;",
+        "int table = new int [ V + 1 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid conversion from ‘int*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        17,
+        20,
+        1,
+        2
+      ],
+      "mod_code": [
+        "int m = ( coins . size ( ) / ( coins [ 0 ] ) ) / ( coins [ 0 ] ) ;",
+        "getline ( cin , V ) ;",
+        "int table = new int [ V + 1 ] ;",
+        "int table [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid conversion from ‘int*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        17,
+        20,
+        2
+      ],
+      "mod_code": [
+        "int m = ( coins . size ( ) / ( coins [ 0 ] ) ) / ( coins [ 0 ] ) ;",
+        "getline ( cin , V ) ;",
+        "int table [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conflicting declaration ‘int table [0]’"
+    },
+    {
+      "mod_line": [
+        17,
+        16
+      ],
+      "mod_code": [
+        "int m = ( coins . size ( ) / ( coins [ 0 ] ) ) / ( coins [ 0 ] ) ;",
+        "int coins [ ] = { } , 2 , 4 , 5 , 6 , 7 } ;"
+      ],
+      "err_line": 16,
+      "err_msg": "expected unqualified-id before numeric constant"
+    },
+    {
+      "mod_line": [
+        17,
+        16,
+        1
+      ],
+      "mod_code": [
+        "int m = ( coins . size ( ) / ( coins [ 0 ] ) ) / ( coins [ 0 ] ) ;",
+        "int coins [ ] = { } , 2 , 4 , 5 , 6 , 7 } ;",
+        "int table = new int [ V + 1 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid conversion from ‘int*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        17,
+        16,
+        1,
+        2
+      ],
+      "mod_code": [
+        "int m = ( coins . size ( ) / ( coins [ 0 ] ) ) / ( coins [ 0 ] ) ;",
+        "int coins [ ] = { } , 2 , 4 , 5 , 6 , 7 } ;",
+        "int table = new int [ V + 1 ] ;",
+        "int table [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid conversion from ‘int*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        17,
+        16,
+        2
+      ],
+      "mod_code": [
+        "int m = ( coins . size ( ) / ( coins [ 0 ] ) ) / ( coins [ 0 ] ) ;",
+        "int coins [ ] = { } , 2 , 4 , 5 , 6 , 7 } ;",
+        "int table [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conflicting declaration ‘int table [0]’"
+    },
+    {
+      "mod_line": [
+        17,
+        1
+      ],
+      "mod_code": [
+        "int m = ( coins . size ( ) / ( coins [ 0 ] ) ) / ( coins [ 0 ] ) ;",
+        "int table = new int [ V + 1 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid conversion from ‘int*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        17,
+        1,
+        2
+      ],
+      "mod_code": [
+        "int m = ( coins . size ( ) / ( coins [ 0 ] ) ) / ( coins [ 0 ] ) ;",
+        "int table = new int [ V + 1 ] ;",
+        "int table [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid conversion from ‘int*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        17,
+        2
+      ],
+      "mod_code": [
+        "int m = ( coins . size ( ) / ( coins [ 0 ] ) ) / ( coins [ 0 ] ) ;",
+        "int table [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conflicting declaration ‘int table [0]’"
+    },
+    {
+      "mod_line": [
+        20,
+        16
+      ],
+      "mod_code": [
+        "getline ( cin , V ) ;",
+        "int coins [ ] = { } , 2 , 4 , 5 , 6 , 7 } ;"
+      ],
+      "err_line": 16,
+      "err_msg": "expected unqualified-id before numeric constant"
+    },
+    {
+      "mod_line": [
+        20,
+        16,
+        1
+      ],
+      "mod_code": [
+        "getline ( cin , V ) ;",
+        "int coins [ ] = { } , 2 , 4 , 5 , 6 , 7 } ;",
+        "int table = new int [ V + 1 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid conversion from ‘int*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        20,
+        16,
+        1,
+        2
+      ],
+      "mod_code": [
+        "getline ( cin , V ) ;",
+        "int coins [ ] = { } , 2 , 4 , 5 , 6 , 7 } ;",
+        "int table = new int [ V + 1 ] ;",
+        "int table [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid conversion from ‘int*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        20,
+        16,
+        2
+      ],
+      "mod_code": [
+        "getline ( cin , V ) ;",
+        "int coins [ ] = { } , 2 , 4 , 5 , 6 , 7 } ;",
+        "int table [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conflicting declaration ‘int table [0]’"
+    },
+    {
+      "mod_line": [
+        20,
+        1
+      ],
+      "mod_code": [
+        "getline ( cin , V ) ;",
+        "int table = new int [ V + 1 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid conversion from ‘int*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        20,
+        1,
+        2
+      ],
+      "mod_code": [
+        "getline ( cin , V ) ;",
+        "int table = new int [ V + 1 ] ;",
+        "int table [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid conversion from ‘int*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        20,
+        2
+      ],
+      "mod_code": [
+        "getline ( cin , V ) ;",
+        "int table [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conflicting declaration ‘int table [0]’"
+    },
+    {
+      "mod_line": [
+        16,
+        1
+      ],
+      "mod_code": [
+        "int coins [ ] = { } , 2 , 4 , 5 , 6 , 7 } ;",
+        "int table = new int [ V + 1 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid conversion from ‘int*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        16,
+        1,
+        2
+      ],
+      "mod_code": [
+        "int coins [ ] = { } , 2 , 4 , 5 , 6 , 7 } ;",
+        "int table = new int [ V + 1 ] ;",
+        "int table [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid conversion from ‘int*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        16,
+        2
+      ],
+      "mod_code": [
+        "int coins [ ] = { } , 2 , 4 , 5 , 6 , 7 } ;",
+        "int table [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conflicting declaration ‘int table [0]’"
+    },
+    {
+      "mod_line": [
+        1,
+        2
+      ],
+      "mod_code": [
+        "int table = new int [ V + 1 ] ;",
+        "int table [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid conversion from ‘int*’ to ‘int’ [-fpermissive]"
+    }
+  ]
+}

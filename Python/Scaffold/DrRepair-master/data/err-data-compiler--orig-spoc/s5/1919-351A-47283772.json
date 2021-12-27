@@ -1,0 +1,2677 @@
+{
+  "meta": {
+    "index": 1919,
+    "hitid": "3PEG1BH7AEL88I9STDMJUTYUQ5SKBQ",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "351A",
+    "subid": "47283772"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create ifstrean called infile",
+      "code": "ifstream infile ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create ofstream outfile",
+      "code": "ofstream outfile ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "declare an array of long doubles a with 2 * 2005 elements and 2d array dp with size 2 * 2005 by 2005",
+      "code": "long double a [ 2 * 2005 ] , dp [ 2 * 2005 ] [ 2005 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "create new integer variable n",
+      "code": "int n ;",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "OpenFile is a integer function",
+      "code": "int OpenFile ( )",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "open file called \" 351A . INP \" with parameter ios : : in , to ifstream",
+      "code": "infile . open ( \" 351A.INP \" , ios :: in ) ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "open file called \" 351A . OUT \" with parameter ios : : out , to ofstream",
+      "code": "outfile . open ( \" 351A.OUT \" , ios :: out ) ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "if infile . fail ( )",
+      "code": "if ( infile . fail ( ) )",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "print \" Khong mo duoc file input ! \"",
+      "code": "cout << \" Khong mo duoc file input ! \" << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "return - 1",
+      "code": "return - 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "if outfile . fail ( )",
+      "code": "if ( outfile . fail ( ) )",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "print \" khong mo duoc file output ! \"",
+      "code": "cout << \" khong mo duoc file output! \" << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "return - 1",
+      "code": "return - 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 16,
+      "text": "function input",
+      "code": "void input ( )",
+      "indent": 0
+    },
+    {
+      "line": 17,
+      "text": "read n from the input",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "start for loop from i = 1 to 2 * n inclusive , read user input to a [ i ] on each loop",
+      "code": "for ( int i = 1 ; i <= 2 * n ; i ++ ) cin >> a [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 20,
+      "text": "define function init",
+      "code": "void init ( )",
+      "indent": 0
+    },
+    {
+      "line": 21,
+      "text": "in a for loop , change i from 0 to 2 * n inclusive incrementing i",
+      "code": "for ( int i = 0 ; i <= 2 * n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 22,
+      "text": "for loop , changing j from 0 to n inclusive and assigning INT_MAX to dp [ i ] [ j ] on each iteration",
+      "code": "for ( int j = 0 ; j <= n ; j ++ ) dp [ i ] [ j ] = INT_MAX ;",
+      "indent": 2
+    },
+    {
+      "line": 23,
+      "text": "change dp [ 0 ] [ 0 ] to 0",
+      "code": "dp [ 0 ] [ 0 ] = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 25,
+      "text": "function process",
+      "code": "void process ( )",
+      "indent": 0
+    },
+    {
+      "line": 26,
+      "text": "in a for loop , change i from 1 to 2 * n inclusive incrementing i",
+      "code": "for ( int i = 1 ; i <= 2 * n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 27,
+      "text": "for integer j = 0 to min of i and n inclusive",
+      "code": "for ( int j = 0 ; j <= min ( i , n ) ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 28,
+      "text": "create long double variables val1 with value INT_MAX and val2 = INT_MAX",
+      "code": "long double val1 = INT_MAX , val2 = INT_MAX ;",
+      "indent": 3
+    },
+    {
+      "line": 29,
+      "text": "if j is greater than 0 , change val1 to dp [ i - 1 ] [ j - 1 ] + ceil ( a [ i ] ) - a [ i ]",
+      "code": "if ( j > 0 ) val1 = dp [ i - 1 ] [ j - 1 ] + ceil ( a [ i ] ) - a [ i ] ;",
+      "indent": 3
+    },
+    {
+      "line": 30,
+      "text": "if ( i - j ) < = n , set val2 to dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ) rounded down",
+      "code": "if ( ( i - j ) <= n ) val2 = dp [ i - 1 ] [ j ] + floor ( a [ i ] ) - a [ i ] ;",
+      "indent": 3
+    },
+    {
+      "line": 31,
+      "text": "assign val1 to dp [ i ] [ j ]",
+      "code": "dp [ i ] [ j ] = val1 ;",
+      "indent": 3
+    },
+    {
+      "line": 32,
+      "text": "if fabs ( val2 ) is less than fabs ( val1 ) , change dp [ i ] [ j ] to val2",
+      "code": "if ( fabs ( val2 ) < fabs ( val1 ) ) dp [ i ] [ j ] = val2 ;",
+      "indent": 3
+    },
+    {
+      "line": 33,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 34,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 35,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 36,
+      "text": "void function output",
+      "code": "void output ( )",
+      "indent": 0
+    },
+    {
+      "line": 37,
+      "text": "change output format to fixed , set decimal precision to 3 and print fabs ( dp [ 2 * n ] [ n ] )",
+      "code": "cout << fixed << setprecision ( 3 ) << fabs ( dp [ 2 * n ] [ n ] ) << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 38,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 39,
+      "text": "in the function in",
+      "code": "void in ( )",
+      "indent": 0
+    },
+    {
+      "line": 40,
+      "text": "start for loop from i = 0 to 2 * n inclusive incrementing i",
+      "code": "for ( int i = 0 ; i <= 2 * n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 41,
+      "text": "start for loop from j = 0 to n inclusive",
+      "code": "for ( int j = 0 ; j <= n ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 42,
+      "text": "if dp [ i ] [ j ] is equal to INT_MAX",
+      "code": "if ( dp [ i ] [ j ] == INT_MAX )",
+      "indent": 3
+    },
+    {
+      "line": 43,
+      "text": "print 999999 and \" \" to the standard output",
+      "code": "cout << 999999 << \" \" ;",
+      "indent": 4
+    },
+    {
+      "line": 44,
+      "text": "else if dp [ i ] [ j ] > = 0",
+      "code": "else if ( dp [ i ] [ j ] >= 0 )",
+      "indent": 3
+    },
+    {
+      "line": 45,
+      "text": "print \" \" , dp [ i ] [ j ] and \" \"",
+      "code": "cout << \" \" << dp [ i ] [ j ] << \" \" ;",
+      "indent": 4
+    },
+    {
+      "line": 46,
+      "text": "else",
+      "code": "else",
+      "indent": 3
+    },
+    {
+      "line": 47,
+      "text": "print dp [ i ] [ j ] and \" \" to the standard output",
+      "code": "cout << dp [ i ] [ j ] << \" \" ;",
+      "indent": 4
+    },
+    {
+      "line": 48,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 49,
+      "text": "print new line",
+      "code": "cout << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 50,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 51,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 52,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 53,
+      "text": "call input ( )",
+      "code": "input ( ) ;",
+      "indent": 1
+    },
+    {
+      "line": 54,
+      "text": "call function init ( )",
+      "code": "init ( ) ;",
+      "indent": 1
+    },
+    {
+      "line": 55,
+      "text": "call method process ( )",
+      "code": "process ( ) ;",
+      "indent": 1
+    },
+    {
+      "line": 56,
+      "text": "call output ( )",
+      "code": "output ( ) ;",
+      "indent": 1
+    },
+    {
+      "line": 57,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "infile = 1 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2005]’)"
+    },
+    {
+      "mod_line": [
+        25
+      ],
+      "mod_code": [
+        "void process ( ) { }"
+      ],
+      "err_line": 26,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        36
+      ],
+      "mod_code": [
+        "void output ( ) { }"
+      ],
+      "err_line": 37,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "infile = 0 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "vector < int > outfile ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘open’"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "long long a [ 2 * 2005 ] [ 2005 ] [ 2005 ] ;"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2005][2005]’)"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "long long n ;"
+      ],
+      "err_line": 27,
+      "err_msg": "no matching function for call to ‘min(int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "freopen ( \" colors.in \" , \" : \" ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "too few arguments to function ‘FILE* freopen(const char*, const char*, FILE*)’"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "freopen ( \" colors.in \" , \" : \" ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "too few arguments to function ‘FILE* freopen(const char*, const char*, FILE*)’"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "void input ( ) { }"
+      ],
+      "err_line": 17,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        20
+      ],
+      "mod_code": [
+        "void init ( ) { }"
+      ],
+      "err_line": 21,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        21
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= 2 * n ; i ++ )"
+      ],
+      "err_line": 21,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        26
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= 2 * n ; i ++ )"
+      ],
+      "err_line": 26,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j <= min ( i and n ) ; j ++ )"
+      ],
+      "err_line": 27,
+      "err_msg": "no matching function for call to ‘min(bool)’"
+    },
+    {
+      "mod_line": [
+        28
+      ],
+      "mod_code": [
+        "long double val1 = INT_MAX , tmp = INT_MAX ;"
+      ],
+      "err_line": 30,
+      "err_msg": "‘val2’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        39
+      ],
+      "mod_code": [
+        "void in ( ) { }"
+      ],
+      "err_line": 40,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        41
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j <= n ; j ++ )"
+      ],
+      "err_line": 41,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        45
+      ],
+      "mod_code": [
+        "<< \" \" << dp [ i ] [ j ] , \" \" ;"
+      ],
+      "err_line": 45,
+      "err_msg": "expected primary-expression before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        54
+      ],
+      "mod_code": [
+        "void init ( ) { }"
+      ],
+      "err_line": 54,
+      "err_msg": "a function-definition is not allowed here before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        55
+      ],
+      "mod_code": [
+        "process ( ) << endl ;"
+      ],
+      "err_line": 55,
+      "err_msg": "invalid operands of types ‘void’ and ‘<unresolved overloaded function type>’ to binary ‘operator<<’"
+    },
+    {
+      "mod_line": [
+        56
+      ],
+      "mod_code": [
+        "output ( ) << endl ;"
+      ],
+      "err_line": 56,
+      "err_msg": "invalid operands of types ‘void’ and ‘<unresolved overloaded function type>’ to binary ‘operator<<’"
+    },
+    {
+      "mod_line": [
+        0,
+        2
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        25
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "void process ( ) { }"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        25,
+        30
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "void process ( ) { }",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        25,
+        31
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "void process ( ) { }",
+        "dp [ i ] [ j ] = ' val1 ' ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        25,
+        32
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "void process ( ) { }",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        25,
+        36
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "void process ( ) { }",
+        "void output ( ) { }"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        25,
+        37
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "void process ( ) { }",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        30
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        30,
+        31
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "dp [ i ] [ j ] = ' val1 ' ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        30,
+        32
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        30,
+        36
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "void output ( ) { }"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        30,
+        37
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        31
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "dp [ i ] [ j ] = ' val1 ' ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        31,
+        32
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "dp [ i ] [ j ] = ' val1 ' ;",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        31,
+        36
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "dp [ i ] [ j ] = ' val1 ' ;",
+        "void output ( ) { }"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        31,
+        37
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "dp [ i ] [ j ] = ' val1 ' ;",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        32
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        32,
+        36
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }",
+        "void output ( ) { }"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        32,
+        37
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        36
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "void output ( ) { }"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        36,
+        37
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "void output ( ) { }",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        37
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        25
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "void process ( ) { }"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        25,
+        30
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "void process ( ) { }",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        25,
+        30,
+        31
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "void process ( ) { }",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "dp [ i ] [ j ] = ' val1 ' ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        25,
+        30,
+        32
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "void process ( ) { }",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        25,
+        30,
+        36
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "void process ( ) { }",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "void output ( ) { }"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        25,
+        30,
+        37
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "void process ( ) { }",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        25,
+        31
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "void process ( ) { }",
+        "dp [ i ] [ j ] = ' val1 ' ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        25,
+        31,
+        32
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "void process ( ) { }",
+        "dp [ i ] [ j ] = ' val1 ' ;",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        25,
+        31,
+        36
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "void process ( ) { }",
+        "dp [ i ] [ j ] = ' val1 ' ;",
+        "void output ( ) { }"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        25,
+        31,
+        37
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "void process ( ) { }",
+        "dp [ i ] [ j ] = ' val1 ' ;",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        25,
+        32
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "void process ( ) { }",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        25,
+        32,
+        36
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "void process ( ) { }",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }",
+        "void output ( ) { }"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        25,
+        32,
+        37
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "void process ( ) { }",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        25,
+        36
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "void process ( ) { }",
+        "void output ( ) { }"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        25,
+        36,
+        37
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "void process ( ) { }",
+        "void output ( ) { }",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        25,
+        37
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "void process ( ) { }",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        30
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        30,
+        31
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "dp [ i ] [ j ] = ' val1 ' ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        30,
+        31,
+        32
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "dp [ i ] [ j ] = ' val1 ' ;",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        30,
+        31,
+        36
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "dp [ i ] [ j ] = ' val1 ' ;",
+        "void output ( ) { }"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        30,
+        31,
+        37
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "dp [ i ] [ j ] = ' val1 ' ;",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        30,
+        32
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        30,
+        32,
+        36
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }",
+        "void output ( ) { }"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        30,
+        32,
+        37
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        30,
+        36
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "void output ( ) { }"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        30,
+        36,
+        37
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "void output ( ) { }",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        30,
+        37
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        31
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "dp [ i ] [ j ] = ' val1 ' ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        31,
+        32
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "dp [ i ] [ j ] = ' val1 ' ;",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        31,
+        32,
+        36
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "dp [ i ] [ j ] = ' val1 ' ;",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }",
+        "void output ( ) { }"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        31,
+        32,
+        37
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "dp [ i ] [ j ] = ' val1 ' ;",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        31,
+        36
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "dp [ i ] [ j ] = ' val1 ' ;",
+        "void output ( ) { }"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        31,
+        36,
+        37
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "dp [ i ] [ j ] = ' val1 ' ;",
+        "void output ( ) { }",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        31,
+        37
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "dp [ i ] [ j ] = ' val1 ' ;",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        32
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        32,
+        36
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }",
+        "void output ( ) { }"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        32,
+        36,
+        37
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }",
+        "void output ( ) { }",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        32,
+        37
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        36
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "void output ( ) { }"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        36,
+        37
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "void output ( ) { }",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        0,
+        37
+      ],
+      "mod_code": [
+        "infile = 1 ;",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘infile’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        25
+      ],
+      "mod_code": [
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "void process ( ) { }"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2005]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        25,
+        30
+      ],
+      "mod_code": [
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "void process ( ) { }",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2005]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        25,
+        30,
+        31
+      ],
+      "mod_code": [
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "void process ( ) { }",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "dp [ i ] [ j ] = ' val1 ' ;"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2005]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        25,
+        30,
+        32
+      ],
+      "mod_code": [
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "void process ( ) { }",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2005]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        25,
+        30,
+        36
+      ],
+      "mod_code": [
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "void process ( ) { }",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "void output ( ) { }"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2005]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        25,
+        30,
+        37
+      ],
+      "mod_code": [
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "void process ( ) { }",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2005]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        25,
+        31
+      ],
+      "mod_code": [
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "void process ( ) { }",
+        "dp [ i ] [ j ] = ' val1 ' ;"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2005]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        25,
+        31,
+        32
+      ],
+      "mod_code": [
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "void process ( ) { }",
+        "dp [ i ] [ j ] = ' val1 ' ;",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2005]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        25,
+        31,
+        36
+      ],
+      "mod_code": [
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "void process ( ) { }",
+        "dp [ i ] [ j ] = ' val1 ' ;",
+        "void output ( ) { }"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2005]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        25,
+        31,
+        37
+      ],
+      "mod_code": [
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "void process ( ) { }",
+        "dp [ i ] [ j ] = ' val1 ' ;",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2005]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        25,
+        32
+      ],
+      "mod_code": [
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "void process ( ) { }",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2005]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        25,
+        32,
+        36
+      ],
+      "mod_code": [
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "void process ( ) { }",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }",
+        "void output ( ) { }"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2005]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        25,
+        32,
+        37
+      ],
+      "mod_code": [
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "void process ( ) { }",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2005]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        25,
+        36
+      ],
+      "mod_code": [
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "void process ( ) { }",
+        "void output ( ) { }"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2005]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        25,
+        36,
+        37
+      ],
+      "mod_code": [
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "void process ( ) { }",
+        "void output ( ) { }",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2005]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        25,
+        37
+      ],
+      "mod_code": [
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "void process ( ) { }",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2005]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        30
+      ],
+      "mod_code": [
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2005]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        30,
+        31
+      ],
+      "mod_code": [
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "dp [ i ] [ j ] = ' val1 ' ;"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2005]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        30,
+        31,
+        32
+      ],
+      "mod_code": [
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "dp [ i ] [ j ] = ' val1 ' ;",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2005]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        30,
+        31,
+        36
+      ],
+      "mod_code": [
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "dp [ i ] [ j ] = ' val1 ' ;",
+        "void output ( ) { }"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2005]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        30,
+        31,
+        37
+      ],
+      "mod_code": [
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "dp [ i ] [ j ] = ' val1 ' ;",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2005]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        30,
+        32
+      ],
+      "mod_code": [
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2005]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        30,
+        32,
+        36
+      ],
+      "mod_code": [
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }",
+        "void output ( ) { }"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2005]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        30,
+        32,
+        37
+      ],
+      "mod_code": [
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2005]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        30,
+        36
+      ],
+      "mod_code": [
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "void output ( ) { }"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2005]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        30,
+        36,
+        37
+      ],
+      "mod_code": [
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "void output ( ) { }",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2005]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        30,
+        37
+      ],
+      "mod_code": [
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2005]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        31
+      ],
+      "mod_code": [
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "dp [ i ] [ j ] = ' val1 ' ;"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2005]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        31,
+        32
+      ],
+      "mod_code": [
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "dp [ i ] [ j ] = ' val1 ' ;",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2005]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        31,
+        32,
+        36
+      ],
+      "mod_code": [
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "dp [ i ] [ j ] = ' val1 ' ;",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }",
+        "void output ( ) { }"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2005]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        31,
+        32,
+        37
+      ],
+      "mod_code": [
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "dp [ i ] [ j ] = ' val1 ' ;",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2005]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        31,
+        36
+      ],
+      "mod_code": [
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "dp [ i ] [ j ] = ' val1 ' ;",
+        "void output ( ) { }"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2005]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        31,
+        36,
+        37
+      ],
+      "mod_code": [
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "dp [ i ] [ j ] = ' val1 ' ;",
+        "void output ( ) { }",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2005]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        31,
+        37
+      ],
+      "mod_code": [
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "dp [ i ] [ j ] = ' val1 ' ;",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2005]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        32
+      ],
+      "mod_code": [
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2005]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        32,
+        36
+      ],
+      "mod_code": [
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }",
+        "void output ( ) { }"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2005]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        32,
+        36,
+        37
+      ],
+      "mod_code": [
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }",
+        "void output ( ) { }",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2005]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        32,
+        37
+      ],
+      "mod_code": [
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2005]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        36
+      ],
+      "mod_code": [
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "void output ( ) { }"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2005]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        36,
+        37
+      ],
+      "mod_code": [
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "void output ( ) { }",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2005]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        37
+      ],
+      "mod_code": [
+        "long long a [ 2 * 2005 ] [ 2005 ] , dp [ 2 * 2005 ] ;",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [2005]’)"
+    },
+    {
+      "mod_line": [
+        25,
+        30
+      ],
+      "mod_code": [
+        "void process ( ) { }",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }"
+      ],
+      "err_line": 26,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        25,
+        30,
+        31
+      ],
+      "mod_code": [
+        "void process ( ) { }",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "dp [ i ] [ j ] = ' val1 ' ;"
+      ],
+      "err_line": 26,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        25,
+        30,
+        31,
+        32
+      ],
+      "mod_code": [
+        "void process ( ) { }",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "dp [ i ] [ j ] = ' val1 ' ;",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }"
+      ],
+      "err_line": 26,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        25,
+        30,
+        31,
+        36
+      ],
+      "mod_code": [
+        "void process ( ) { }",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "dp [ i ] [ j ] = ' val1 ' ;",
+        "void output ( ) { }"
+      ],
+      "err_line": 26,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        25,
+        30,
+        31,
+        37
+      ],
+      "mod_code": [
+        "void process ( ) { }",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "dp [ i ] [ j ] = ' val1 ' ;",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 26,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        25,
+        30,
+        32
+      ],
+      "mod_code": [
+        "void process ( ) { }",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }"
+      ],
+      "err_line": 26,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        25,
+        30,
+        32,
+        36
+      ],
+      "mod_code": [
+        "void process ( ) { }",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }",
+        "void output ( ) { }"
+      ],
+      "err_line": 26,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        25,
+        30,
+        32,
+        37
+      ],
+      "mod_code": [
+        "void process ( ) { }",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 26,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        25,
+        30,
+        36
+      ],
+      "mod_code": [
+        "void process ( ) { }",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "void output ( ) { }"
+      ],
+      "err_line": 26,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        25,
+        30,
+        36,
+        37
+      ],
+      "mod_code": [
+        "void process ( ) { }",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "void output ( ) { }",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 26,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        25,
+        30,
+        37
+      ],
+      "mod_code": [
+        "void process ( ) { }",
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 26,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        25,
+        31
+      ],
+      "mod_code": [
+        "void process ( ) { }",
+        "dp [ i ] [ j ] = ' val1 ' ;"
+      ],
+      "err_line": 26,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        25,
+        31,
+        32
+      ],
+      "mod_code": [
+        "void process ( ) { }",
+        "dp [ i ] [ j ] = ' val1 ' ;",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }"
+      ],
+      "err_line": 26,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        25,
+        31,
+        32,
+        36
+      ],
+      "mod_code": [
+        "void process ( ) { }",
+        "dp [ i ] [ j ] = ' val1 ' ;",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }",
+        "void output ( ) { }"
+      ],
+      "err_line": 26,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        25,
+        31,
+        32,
+        37
+      ],
+      "mod_code": [
+        "void process ( ) { }",
+        "dp [ i ] [ j ] = ' val1 ' ;",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 26,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        25,
+        31,
+        36
+      ],
+      "mod_code": [
+        "void process ( ) { }",
+        "dp [ i ] [ j ] = ' val1 ' ;",
+        "void output ( ) { }"
+      ],
+      "err_line": 26,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        25,
+        31,
+        36,
+        37
+      ],
+      "mod_code": [
+        "void process ( ) { }",
+        "dp [ i ] [ j ] = ' val1 ' ;",
+        "void output ( ) { }",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 26,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        25,
+        31,
+        37
+      ],
+      "mod_code": [
+        "void process ( ) { }",
+        "dp [ i ] [ j ] = ' val1 ' ;",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 26,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        25,
+        32
+      ],
+      "mod_code": [
+        "void process ( ) { }",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }"
+      ],
+      "err_line": 26,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        25,
+        32,
+        36
+      ],
+      "mod_code": [
+        "void process ( ) { }",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }",
+        "void output ( ) { }"
+      ],
+      "err_line": 26,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        25,
+        32,
+        36,
+        37
+      ],
+      "mod_code": [
+        "void process ( ) { }",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }",
+        "void output ( ) { }",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 26,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        25,
+        32,
+        37
+      ],
+      "mod_code": [
+        "void process ( ) { }",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 26,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        25,
+        36
+      ],
+      "mod_code": [
+        "void process ( ) { }",
+        "void output ( ) { }"
+      ],
+      "err_line": 26,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        25,
+        36,
+        37
+      ],
+      "mod_code": [
+        "void process ( ) { }",
+        "void output ( ) { }",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 26,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        25,
+        37
+      ],
+      "mod_code": [
+        "void process ( ) { }",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 26,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        30,
+        31,
+        32,
+        36
+      ],
+      "mod_code": [
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "dp [ i ] [ j ] = ' val1 ' ;",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }",
+        "void output ( ) { }"
+      ],
+      "err_line": 37,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        30,
+        31,
+        36
+      ],
+      "mod_code": [
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "dp [ i ] [ j ] = ' val1 ' ;",
+        "void output ( ) { }"
+      ],
+      "err_line": 37,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        30,
+        31,
+        36,
+        37
+      ],
+      "mod_code": [
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "dp [ i ] [ j ] = ' val1 ' ;",
+        "void output ( ) { }",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 37,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        30,
+        32,
+        36
+      ],
+      "mod_code": [
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }",
+        "void output ( ) { }"
+      ],
+      "err_line": 37,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        30,
+        32,
+        36,
+        37
+      ],
+      "mod_code": [
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }",
+        "void output ( ) { }",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 37,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        30,
+        36
+      ],
+      "mod_code": [
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "void output ( ) { }"
+      ],
+      "err_line": 37,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        30,
+        36,
+        37
+      ],
+      "mod_code": [
+        "if ( ( i - j ) <= n ) { val2 = dp [ i - 1 ] [ j ] + ( a [ i ] ) - a [ i ] ; }",
+        "void output ( ) { }",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 37,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        31,
+        32,
+        36
+      ],
+      "mod_code": [
+        "dp [ i ] [ j ] = ' val1 ' ;",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }",
+        "void output ( ) { }"
+      ],
+      "err_line": 37,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        31,
+        32,
+        36,
+        37
+      ],
+      "mod_code": [
+        "dp [ i ] [ j ] = ' val1 ' ;",
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }",
+        "void output ( ) { }",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 37,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        31,
+        36
+      ],
+      "mod_code": [
+        "dp [ i ] [ j ] = ' val1 ' ;",
+        "void output ( ) { }"
+      ],
+      "err_line": 37,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        31,
+        36,
+        37
+      ],
+      "mod_code": [
+        "dp [ i ] [ j ] = ' val1 ' ;",
+        "void output ( ) { }",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 37,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        32,
+        36
+      ],
+      "mod_code": [
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }",
+        "void output ( ) { }"
+      ],
+      "err_line": 37,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        32,
+        36,
+        37
+      ],
+      "mod_code": [
+        "if ( fabs ( val2 ) < fabs ( val1 ) ) { dp [ i ] [ j ] = ' val2 ' ; }",
+        "void output ( ) { }",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 37,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        36,
+        37
+      ],
+      "mod_code": [
+        "void output ( ) { }",
+        "cout << fixed << fabs ( dp [ 2 * n ] [ n ] ) ;"
+      ],
+      "err_line": 37,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    }
+  ]
+}

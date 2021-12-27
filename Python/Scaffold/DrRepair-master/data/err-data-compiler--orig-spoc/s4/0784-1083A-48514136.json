@@ -1,0 +1,941 @@
+{
+  "meta": {
+    "index": 784,
+    "hitid": "30EMX9PEVKD7P4QU4Z8EKI8UUTBSKW",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "1083A",
+    "subid": "48514136"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare integers vector arrays mp and dis with size 100010 * 3",
+      "code": "vector < int > mp [ 100010 * 3 ] , dis [ 100010 * 3 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create ints u , v and c",
+      "code": "int u , v , c ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "declare long long res",
+      "code": "long long res ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "create long long array a with 100010 * 3 elements",
+      "code": "long long a [ 100010 * 3 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "create long long arrays dp and dp_max with 100010 * 3 elements",
+      "code": "long long dp [ 100010 * 3 ] , dp_max [ 100010 * 3 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "dfs is a void function with int arguments x and y",
+      "code": "void dfs ( int x , int y )",
+      "indent": 0
+    },
+    {
+      "line": 6,
+      "text": "create long long max1 = 0",
+      "code": "long long max1 = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "create long long max2 = 0",
+      "code": "long long max2 = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "loop i from 0 to length of mp [ x ] exclusive",
+      "code": "for ( int i = 0 ; i < mp [ x ] . size ( ) ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "declare integer f = mp [ x ] [ i ]",
+      "code": "int f = mp [ x ] [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "if f = y , skip the rest of the loop",
+      "code": "if ( f == y ) continue ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "call function dfs with arguments f and x",
+      "code": "dfs ( f , x ) ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "if dp [ f ] - dis [ x ] [ i ] is greater than max1",
+      "code": "if ( dp [ f ] - dis [ x ] [ i ] > max1 )",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "set max2 to max1",
+      "code": "max2 = max1 ;",
+      "indent": 3
+    },
+    {
+      "line": 14,
+      "text": "assign dp [ f ] - dis [ x ] [ i ] to max1",
+      "code": "max1 = dp [ f ] - dis [ x ] [ i ] ;",
+      "indent": 3
+    },
+    {
+      "line": 15,
+      "text": "else if dp [ f ] - dis [ x ] [ i ] = max1",
+      "code": "else if ( dp [ f ] - dis [ x ] [ i ] == max1 )",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "set value of max2 to max1",
+      "code": "max2 = max1 ;",
+      "indent": 3
+    },
+    {
+      "line": 17,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "if dp [ f ] - dis [ x ] [ i ] is greater than max2 , change max2 to dp [ f ] - dis [ x ] [ i ]",
+      "code": "if ( dp [ f ] - dis [ x ] [ i ] > max2 ) max2 = dp [ f ] - dis [ x ] [ i ] ;",
+      "indent": 3
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 20,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "assign max1 + max2 + a [ x ] to dp_max [ x ]",
+      "code": "dp_max [ x ] = max1 + max2 + a [ x ] ;",
+      "indent": 1
+    },
+    {
+      "line": 22,
+      "text": "change dp [ x ] to max1 + a [ x ]",
+      "code": "dp [ x ] = max1 + a [ x ] ;",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "assign max of max ( dp [ x ] , dp_max [ x ] ) and res to res",
+      "code": "res = max ( max ( dp [ x ] , dp_max [ x ] ) , res ) ;",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 25,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 26,
+      "text": "declare int t",
+      "code": "int t ;",
+      "indent": 1
+    },
+    {
+      "line": 27,
+      "text": "read t",
+      "code": "cin >> t ;",
+      "indent": 1
+    },
+    {
+      "line": 28,
+      "text": "set res to 0",
+      "code": "res = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 29,
+      "text": "for i = 1 to t inclusive , read a [ i ]",
+      "code": "for ( int i = 1 ; i <= t ; i ++ ) cin >> a [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 30,
+      "text": "subtract 1 from t",
+      "code": "t -= 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 31,
+      "text": "decrement t and loop further , while t is not 0",
+      "code": "while ( t -- )",
+      "indent": 1
+    },
+    {
+      "line": 32,
+      "text": "read u , v and c",
+      "code": "cin >> u >> v >> c ;",
+      "indent": 2
+    },
+    {
+      "line": 33,
+      "text": "push v into mp [ u ]",
+      "code": "mp [ u ] . push_back ( v ) ;",
+      "indent": 2
+    },
+    {
+      "line": 34,
+      "text": "push u into mp [ v ]",
+      "code": "mp [ v ] . push_back ( u ) ;",
+      "indent": 2
+    },
+    {
+      "line": 35,
+      "text": "push c into dis [ u ]",
+      "code": "dis [ u ] . push_back ( c ) ;",
+      "indent": 2
+    },
+    {
+      "line": 36,
+      "text": "push c into dis [ v ]",
+      "code": "dis [ v ] . push_back ( c ) ;",
+      "indent": 2
+    },
+    {
+      "line": 37,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 38,
+      "text": "call function dfs with arguments 1 and - 1",
+      "code": "dfs ( 1 , - 1 ) ;",
+      "indent": 1
+    },
+    {
+      "line": 39,
+      "text": "print res",
+      "code": "cout << res << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 40,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 41,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < mp [ x ] . length ( ) ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "long long a [ 100010 ] * 3 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected initializer before ‘*’ token"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "void dfs ( int x , int y ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "f = mp [ x ] [ i ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "dfs ( f f x ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "expected ‘)’ before ‘f’"
+    },
+    {
+      "mod_line": [
+        21
+      ],
+      "mod_code": [
+        "dp_max [ x ] += max2 [ x ] ;"
+      ],
+      "err_line": 21,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        26
+      ],
+      "mod_code": [
+        "int t t ;"
+      ],
+      "err_line": 26,
+      "err_msg": "expected initializer before ‘t’"
+    },
+    {
+      "mod_line": [
+        33
+      ],
+      "mod_code": [
+        "mp [ u ] . push ( v ) ;"
+      ],
+      "err_line": 33,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘push’"
+    },
+    {
+      "mod_line": [
+        34
+      ],
+      "mod_code": [
+        "mp [ v ] . push ( u ) ;"
+      ],
+      "err_line": 34,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘push’"
+    },
+    {
+      "mod_line": [
+        35
+      ],
+      "mod_code": [
+        "dis [ u ] . push ( c ) ;"
+      ],
+      "err_line": 35,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘push’"
+    },
+    {
+      "mod_line": [
+        36
+      ],
+      "mod_code": [
+        "dis [ v ] . push ( c ) ;"
+      ],
+      "err_line": 36,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘push’"
+    },
+    {
+      "mod_line": [
+        38
+      ],
+      "mod_code": [
+        "dfs ( 1 , - 1 , 1 ) ;"
+      ],
+      "err_line": 38,
+      "err_msg": "too many arguments to function ‘void dfs(int, int)’"
+    },
+    {
+      "mod_line": [
+        8,
+        23
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < mp [ x ] . length ( ) ; i ++ )",
+        "res = max ( dp [ x ] , dp_max [ x ] ) , res = res ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        8,
+        23,
+        32
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < mp [ x ] . length ( ) ; i ++ )",
+        "res = max ( dp [ x ] , dp_max [ x ] ) , res = res ;",
+        "cin >> u , v >> c ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        8,
+        23,
+        32,
+        28
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < mp [ x ] . length ( ) ; i ++ )",
+        "res = max ( dp [ x ] , dp_max [ x ] ) , res = res ;",
+        "cin >> u , v >> c ;",
+        "int res = 0 ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        8,
+        23,
+        32,
+        14
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < mp [ x ] . length ( ) ; i ++ )",
+        "res = max ( dp [ x ] , dp_max [ x ] ) , res = res ;",
+        "cin >> u , v >> c ;",
+        "max1 -= dp [ f ] - dis [ x ] [ i ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        8,
+        23,
+        32,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < mp [ x ] . length ( ) ; i ++ )",
+        "res = max ( dp [ x ] , dp_max [ x ] ) , res = res ;",
+        "cin >> u , v >> c ;",
+        "f = mp [ x ] [ i ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        8,
+        23,
+        28
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < mp [ x ] . length ( ) ; i ++ )",
+        "res = max ( dp [ x ] , dp_max [ x ] ) , res = res ;",
+        "int res = 0 ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        8,
+        23,
+        28,
+        14
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < mp [ x ] . length ( ) ; i ++ )",
+        "res = max ( dp [ x ] , dp_max [ x ] ) , res = res ;",
+        "int res = 0 ;",
+        "max1 -= dp [ f ] - dis [ x ] [ i ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        8,
+        23,
+        28,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < mp [ x ] . length ( ) ; i ++ )",
+        "res = max ( dp [ x ] , dp_max [ x ] ) , res = res ;",
+        "int res = 0 ;",
+        "f = mp [ x ] [ i ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        8,
+        23,
+        14
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < mp [ x ] . length ( ) ; i ++ )",
+        "res = max ( dp [ x ] , dp_max [ x ] ) , res = res ;",
+        "max1 -= dp [ f ] - dis [ x ] [ i ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        8,
+        23,
+        14,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < mp [ x ] . length ( ) ; i ++ )",
+        "res = max ( dp [ x ] , dp_max [ x ] ) , res = res ;",
+        "max1 -= dp [ f ] - dis [ x ] [ i ] ;",
+        "f = mp [ x ] [ i ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        8,
+        23,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < mp [ x ] . length ( ) ; i ++ )",
+        "res = max ( dp [ x ] , dp_max [ x ] ) , res = res ;",
+        "f = mp [ x ] [ i ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        8,
+        32
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < mp [ x ] . length ( ) ; i ++ )",
+        "cin >> u , v >> c ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        8,
+        32,
+        28
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < mp [ x ] . length ( ) ; i ++ )",
+        "cin >> u , v >> c ;",
+        "int res = 0 ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        8,
+        32,
+        28,
+        14
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < mp [ x ] . length ( ) ; i ++ )",
+        "cin >> u , v >> c ;",
+        "int res = 0 ;",
+        "max1 -= dp [ f ] - dis [ x ] [ i ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        8,
+        32,
+        28,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < mp [ x ] . length ( ) ; i ++ )",
+        "cin >> u , v >> c ;",
+        "int res = 0 ;",
+        "f = mp [ x ] [ i ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        8,
+        32,
+        14
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < mp [ x ] . length ( ) ; i ++ )",
+        "cin >> u , v >> c ;",
+        "max1 -= dp [ f ] - dis [ x ] [ i ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        8,
+        32,
+        14,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < mp [ x ] . length ( ) ; i ++ )",
+        "cin >> u , v >> c ;",
+        "max1 -= dp [ f ] - dis [ x ] [ i ] ;",
+        "f = mp [ x ] [ i ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        8,
+        32,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < mp [ x ] . length ( ) ; i ++ )",
+        "cin >> u , v >> c ;",
+        "f = mp [ x ] [ i ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        8,
+        28
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < mp [ x ] . length ( ) ; i ++ )",
+        "int res = 0 ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        8,
+        28,
+        14
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < mp [ x ] . length ( ) ; i ++ )",
+        "int res = 0 ;",
+        "max1 -= dp [ f ] - dis [ x ] [ i ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        8,
+        28,
+        14,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < mp [ x ] . length ( ) ; i ++ )",
+        "int res = 0 ;",
+        "max1 -= dp [ f ] - dis [ x ] [ i ] ;",
+        "f = mp [ x ] [ i ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        8,
+        28,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < mp [ x ] . length ( ) ; i ++ )",
+        "int res = 0 ;",
+        "f = mp [ x ] [ i ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        8,
+        14
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < mp [ x ] . length ( ) ; i ++ )",
+        "max1 -= dp [ f ] - dis [ x ] [ i ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        8,
+        14,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < mp [ x ] . length ( ) ; i ++ )",
+        "max1 -= dp [ f ] - dis [ x ] [ i ] ;",
+        "f = mp [ x ] [ i ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        8,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < mp [ x ] . length ( ) ; i ++ )",
+        "f = mp [ x ] [ i ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        23,
+        32,
+        28,
+        9
+      ],
+      "mod_code": [
+        "res = max ( dp [ x ] , dp_max [ x ] ) , res = res ;",
+        "cin >> u , v >> c ;",
+        "int res = 0 ;",
+        "f = mp [ x ] [ i ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        23,
+        32,
+        14,
+        9
+      ],
+      "mod_code": [
+        "res = max ( dp [ x ] , dp_max [ x ] ) , res = res ;",
+        "cin >> u , v >> c ;",
+        "max1 -= dp [ f ] - dis [ x ] [ i ] ;",
+        "f = mp [ x ] [ i ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        23,
+        32,
+        9
+      ],
+      "mod_code": [
+        "res = max ( dp [ x ] , dp_max [ x ] ) , res = res ;",
+        "cin >> u , v >> c ;",
+        "f = mp [ x ] [ i ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        23,
+        28,
+        14,
+        9
+      ],
+      "mod_code": [
+        "res = max ( dp [ x ] , dp_max [ x ] ) , res = res ;",
+        "int res = 0 ;",
+        "max1 -= dp [ f ] - dis [ x ] [ i ] ;",
+        "f = mp [ x ] [ i ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        23,
+        28,
+        9
+      ],
+      "mod_code": [
+        "res = max ( dp [ x ] , dp_max [ x ] ) , res = res ;",
+        "int res = 0 ;",
+        "f = mp [ x ] [ i ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        23,
+        14,
+        9
+      ],
+      "mod_code": [
+        "res = max ( dp [ x ] , dp_max [ x ] ) , res = res ;",
+        "max1 -= dp [ f ] - dis [ x ] [ i ] ;",
+        "f = mp [ x ] [ i ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        23,
+        9
+      ],
+      "mod_code": [
+        "res = max ( dp [ x ] , dp_max [ x ] ) , res = res ;",
+        "f = mp [ x ] [ i ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        32,
+        28,
+        14,
+        9
+      ],
+      "mod_code": [
+        "cin >> u , v >> c ;",
+        "int res = 0 ;",
+        "max1 -= dp [ f ] - dis [ x ] [ i ] ;",
+        "f = mp [ x ] [ i ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        32,
+        28,
+        9
+      ],
+      "mod_code": [
+        "cin >> u , v >> c ;",
+        "int res = 0 ;",
+        "f = mp [ x ] [ i ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        32,
+        14,
+        9
+      ],
+      "mod_code": [
+        "cin >> u , v >> c ;",
+        "max1 -= dp [ f ] - dis [ x ] [ i ] ;",
+        "f = mp [ x ] [ i ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        32,
+        9
+      ],
+      "mod_code": [
+        "cin >> u , v >> c ;",
+        "f = mp [ x ] [ i ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        28,
+        14,
+        9
+      ],
+      "mod_code": [
+        "int res = 0 ;",
+        "max1 -= dp [ f ] - dis [ x ] [ i ] ;",
+        "f = mp [ x ] [ i ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        28,
+        9
+      ],
+      "mod_code": [
+        "int res = 0 ;",
+        "f = mp [ x ] [ i ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        9
+      ],
+      "mod_code": [
+        "max1 -= dp [ f ] - dis [ x ] [ i ] ;",
+        "f = mp [ x ] [ i ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘f’ was not declared in this scope"
+    }
+  ]
+}

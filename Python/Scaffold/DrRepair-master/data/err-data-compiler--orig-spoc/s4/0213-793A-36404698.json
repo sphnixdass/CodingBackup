@@ -1,0 +1,1295 @@
+{
+  "meta": {
+    "index": 213,
+    "hitid": "3MWOYZD5WVITZIJ4UVJLS5FXQCJONV",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "793A",
+    "subid": "36404698"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare maxx with long long integers a , b , returning long long integer",
+      "code": "long long int maxx ( long long int a , long long int b )",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "return a if a is greater than b , else b , from function",
+      "code": "return a > b ? a : b ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "declare minn with long long integers a , b , returning long long integer",
+      "code": "long long int minn ( long long int a , long long int b )",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "return b if a is greater than b , else a , from function",
+      "code": "return a > b ? b : a ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 6,
+      "text": "create integer array dx with dx = { 1 , 1 , 1 , 0 , 0 , - 1 , - 1 , - 1 , 0 }",
+      "code": "int dx [ ] = { 1 , 1 , 1 , 0 , 0 , - 1 , - 1 , - 1 , 0 } ;",
+      "indent": 0
+    },
+    {
+      "line": 7,
+      "text": "create integer array dy with dy = { - 1 , 0 , 1 , 1 , - 1 , 0 , 1 , - 1 , 0 }",
+      "code": "int dy [ ] = { - 1 , 0 , 1 , 1 , - 1 , 0 , 1 , - 1 , 0 } ;",
+      "indent": 0
+    },
+    {
+      "line": 8,
+      "text": "declare boostIO with no arguments , returning void",
+      "code": "void boostIO ( ) { }",
+      "indent": 0
+    },
+    {
+      "line": 9,
+      "text": "declare gcd with long long integers a , b , returning long long integer",
+      "code": "long long int gcd ( long long int a , long long int b )",
+      "indent": 0
+    },
+    {
+      "line": 10,
+      "text": "return a if b is 0 , else result of run gcd with arguments ( b , a % b ) , from function",
+      "code": "return b == 0 ? a : gcd ( b , a % b ) ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 12,
+      "text": "declare lcm with long long integers a , b , returning long long integer",
+      "code": "long long int lcm ( long long int a , long long int b )",
+      "indent": 0
+    },
+    {
+      "line": 13,
+      "text": "return ( a * b ) / ( result of run gcd with arguments a , b ) from function",
+      "code": "return ( a * b ) / gcd ( a , b ) ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 15,
+      "text": "declare poww with long long integers base , exp as arguments , returning long long integer",
+      "code": "long long int poww ( long long int base , long long int exp )",
+      "indent": 0
+    },
+    {
+      "line": 16,
+      "text": "set base to base % 1000000007",
+      "code": "base %= 1000000007 ;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "declare long long integer result with result = 1",
+      "code": "long long int result = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "while exp is greater than 0",
+      "code": "while ( exp > 0 )",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "if exp bitshift and 1 , set result to ( result * base ) % 1000000007",
+      "code": "if ( exp & 1 ) result = ( result * base ) % 1000000007 ;",
+      "indent": 2
+    },
+    {
+      "line": 20,
+      "text": "set base to ( base * base ) % 1000000007",
+      "code": "base = ( base * base ) % 1000000007 ;",
+      "indent": 2
+    },
+    {
+      "line": 21,
+      "text": "set exp to exp bitshift right 1",
+      "code": "exp >>= 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 22,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "return result from function",
+      "code": "return result ;",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 25,
+      "text": "create integer vector a with size 200",
+      "code": "vector < int > a [ 200 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 26,
+      "text": "create 2d boolean array pos with size 120 by 120 , create boolean array vis with size 120",
+      "code": "bool pos [ 120 ] [ 120 ] , vis [ 120 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 27,
+      "text": "create integer n , m",
+      "code": "int n , m ;",
+      "indent": 0
+    },
+    {
+      "line": 28,
+      "text": "declare dfs with integer root as argument , returning void",
+      "code": "void dfs ( int root )",
+      "indent": 0
+    },
+    {
+      "line": 29,
+      "text": "set vis [ root ] is 1",
+      "code": "vis [ root ] = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 30,
+      "text": "for i = 0 to size of a [ root ] exclusive",
+      "code": "for ( int i = 0 ; i < a [ root ] . size ( ) ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 31,
+      "text": "if not vis [ a [ root ] [ i ] ] , run dfs with a [ root ] [ i ] as argument",
+      "code": "if ( ! vis [ a [ root ] [ i ] ] ) dfs ( a [ root ] [ i ] ) ;",
+      "indent": 2
+    },
+    {
+      "line": 32,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 33,
+      "text": "return from function",
+      "code": "return ;",
+      "indent": 1
+    },
+    {
+      "line": 34,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 35,
+      "text": "declare comp with no arguments , returning integer",
+      "code": "int comp ( )",
+      "indent": 0
+    },
+    {
+      "line": 36,
+      "text": "create integer ret with ret = 0",
+      "code": "int ret = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 37,
+      "text": "for i = 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 38,
+      "text": "if not vis [ i ]",
+      "code": "if ( ! vis [ i ] )",
+      "indent": 2
+    },
+    {
+      "line": 39,
+      "text": "increment ret",
+      "code": "ret ++ ;",
+      "indent": 3
+    },
+    {
+      "line": 40,
+      "text": "run dfs with i as argument",
+      "code": "dfs ( i ) ;",
+      "indent": 3
+    },
+    {
+      "line": 41,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 42,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 43,
+      "text": "return ret from function",
+      "code": "return ret ;",
+      "indent": 1
+    },
+    {
+      "line": 44,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 45,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 46,
+      "text": "create integers n , k",
+      "code": "int n , k ;",
+      "indent": 1
+    },
+    {
+      "line": 47,
+      "text": "read n read k",
+      "code": "cin >> n >> k ;",
+      "indent": 1
+    },
+    {
+      "line": 48,
+      "text": "create integer mi with mi = 1e9",
+      "code": "int mi = 1e9 ;",
+      "indent": 1
+    },
+    {
+      "line": 49,
+      "text": "create long long integer ans with ans = 0",
+      "code": "long long int ans = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 50,
+      "text": "create integer vector a",
+      "code": "vector < int > a ;",
+      "indent": 1
+    },
+    {
+      "line": 51,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( int i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 52,
+      "text": "create integer x",
+      "code": "int x ;",
+      "indent": 2
+    },
+    {
+      "line": 53,
+      "text": "read x",
+      "code": "cin >> x ;",
+      "indent": 2
+    },
+    {
+      "line": 54,
+      "text": "add element x to end of a",
+      "code": "a . push_back ( x ) ;",
+      "indent": 2
+    },
+    {
+      "line": 55,
+      "text": "set mi to minimum of mi and x",
+      "code": "mi = min ( mi , x ) ;",
+      "indent": 2
+    },
+    {
+      "line": 56,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 57,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( int i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 58,
+      "text": "if ( a [ i ] - mi ) % k is 0",
+      "code": "if ( ( a [ i ] - mi ) % k == 0 )",
+      "indent": 2
+    },
+    {
+      "line": 59,
+      "text": "set ans to ans + ( a [ i ] - mi ) / k",
+      "code": "ans = ans + ( a [ i ] - mi ) / k ;",
+      "indent": 3
+    },
+    {
+      "line": 60,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 61,
+      "text": "print - 1 print newline",
+      "code": "cout << - 1 << endl ;",
+      "indent": 3
+    },
+    {
+      "line": 62,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 3
+    },
+    {
+      "line": 63,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 64,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 65,
+      "text": "print ans print newline",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 66,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "long long gcd ( long long a , long long b ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "return ( a * b ) / ( a ( a , b ) ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘a’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        23
+      ],
+      "mod_code": [
+        "return ;"
+      ],
+      "err_line": 23,
+      "err_msg": "return-statement with no value, in function returning ‘long long int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        25
+      ],
+      "mod_code": [
+        "vector < int > a ( 200 ) ;"
+      ],
+      "err_line": 30,
+      "err_msg": "request for member ‘size’ in ‘a.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)root))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        26
+      ],
+      "mod_code": [
+        "bool pos [ 120 ] [ 120 ] ;"
+      ],
+      "err_line": 29,
+      "err_msg": "‘vis’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        28
+      ],
+      "mod_code": [
+        "void dfs ( int root ) ;"
+      ],
+      "err_line": 29,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        30
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < a [ root ] . size ( ) ; i ++ )"
+      ],
+      "err_line": 30,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        35
+      ],
+      "mod_code": [
+        "int comp ( ) ;"
+      ],
+      "err_line": 36,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        37
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 37,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        40
+      ],
+      "mod_code": [
+        "dfs ( ) ;"
+      ],
+      "err_line": 40,
+      "err_msg": "too few arguments to function ‘void dfs(int)’"
+    },
+    {
+      "mod_line": [
+        43
+      ],
+      "mod_code": [
+        "return ret ret ;"
+      ],
+      "err_line": 43,
+      "err_msg": "expected ‘;’ before ‘ret’"
+    },
+    {
+      "mod_line": [
+        48
+      ],
+      "mod_code": [
+        "long int mi = 1e9 ;"
+      ],
+      "err_line": 55,
+      "err_msg": "no matching function for call to ‘min(long int&, int&)’"
+    },
+    {
+      "mod_line": [
+        51
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 51,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        52
+      ],
+      "mod_code": [
+        "long int x ;"
+      ],
+      "err_line": 55,
+      "err_msg": "no matching function for call to ‘min(int&, long int&)’"
+    },
+    {
+      "mod_line": [
+        54
+      ],
+      "mod_code": [
+        "a . push ( x ) ;"
+      ],
+      "err_line": 54,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘push’"
+    },
+    {
+      "mod_line": [
+        55
+      ],
+      "mod_code": [
+        "mi = mi ( mi , x ) ;"
+      ],
+      "err_line": 55,
+      "err_msg": "‘mi’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        57
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 57,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        60
+      ],
+      "mod_code": [
+        "else else"
+      ],
+      "err_line": 60,
+      "err_msg": "expected primary-expression before ‘else’"
+    },
+    {
+      "mod_line": [
+        30,
+        54
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < a [ root ] . size ( ) ; i ++ )",
+        "a . push ( x ) ;"
+      ],
+      "err_line": 30,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        30,
+        54,
+        35
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < a [ root ] . size ( ) ; i ++ )",
+        "a . push ( x ) ;",
+        "int comp ( ) ;"
+      ],
+      "err_line": 30,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        30,
+        54,
+        35,
+        23
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < a [ root ] . size ( ) ; i ++ )",
+        "a . push ( x ) ;",
+        "int comp ( ) ;",
+        "return ;"
+      ],
+      "err_line": 23,
+      "err_msg": "return-statement with no value, in function returning ‘long long int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        30,
+        54,
+        35,
+        43
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < a [ root ] . size ( ) ; i ++ )",
+        "a . push ( x ) ;",
+        "int comp ( ) ;",
+        "return ret ret ;"
+      ],
+      "err_line": 30,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        30,
+        54,
+        35,
+        52
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < a [ root ] . size ( ) ; i ++ )",
+        "a . push ( x ) ;",
+        "int comp ( ) ;",
+        "long int x ;"
+      ],
+      "err_line": 30,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        30,
+        54,
+        23
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < a [ root ] . size ( ) ; i ++ )",
+        "a . push ( x ) ;",
+        "return ;"
+      ],
+      "err_line": 23,
+      "err_msg": "return-statement with no value, in function returning ‘long long int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        30,
+        54,
+        23,
+        43
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < a [ root ] . size ( ) ; i ++ )",
+        "a . push ( x ) ;",
+        "return ;",
+        "return ret ret ;"
+      ],
+      "err_line": 23,
+      "err_msg": "return-statement with no value, in function returning ‘long long int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        30,
+        54,
+        23,
+        52
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < a [ root ] . size ( ) ; i ++ )",
+        "a . push ( x ) ;",
+        "return ;",
+        "long int x ;"
+      ],
+      "err_line": 23,
+      "err_msg": "return-statement with no value, in function returning ‘long long int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        30,
+        54,
+        43
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < a [ root ] . size ( ) ; i ++ )",
+        "a . push ( x ) ;",
+        "return ret ret ;"
+      ],
+      "err_line": 30,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        30,
+        54,
+        43,
+        52
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < a [ root ] . size ( ) ; i ++ )",
+        "a . push ( x ) ;",
+        "return ret ret ;",
+        "long int x ;"
+      ],
+      "err_line": 30,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        30,
+        54,
+        52
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < a [ root ] . size ( ) ; i ++ )",
+        "a . push ( x ) ;",
+        "long int x ;"
+      ],
+      "err_line": 30,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        30,
+        35
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < a [ root ] . size ( ) ; i ++ )",
+        "int comp ( ) ;"
+      ],
+      "err_line": 30,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        30,
+        35,
+        23
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < a [ root ] . size ( ) ; i ++ )",
+        "int comp ( ) ;",
+        "return ;"
+      ],
+      "err_line": 23,
+      "err_msg": "return-statement with no value, in function returning ‘long long int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        30,
+        35,
+        23,
+        43
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < a [ root ] . size ( ) ; i ++ )",
+        "int comp ( ) ;",
+        "return ;",
+        "return ret ret ;"
+      ],
+      "err_line": 23,
+      "err_msg": "return-statement with no value, in function returning ‘long long int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        30,
+        35,
+        23,
+        52
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < a [ root ] . size ( ) ; i ++ )",
+        "int comp ( ) ;",
+        "return ;",
+        "long int x ;"
+      ],
+      "err_line": 23,
+      "err_msg": "return-statement with no value, in function returning ‘long long int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        30,
+        35,
+        43
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < a [ root ] . size ( ) ; i ++ )",
+        "int comp ( ) ;",
+        "return ret ret ;"
+      ],
+      "err_line": 30,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        30,
+        35,
+        43,
+        52
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < a [ root ] . size ( ) ; i ++ )",
+        "int comp ( ) ;",
+        "return ret ret ;",
+        "long int x ;"
+      ],
+      "err_line": 30,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        30,
+        35,
+        52
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < a [ root ] . size ( ) ; i ++ )",
+        "int comp ( ) ;",
+        "long int x ;"
+      ],
+      "err_line": 30,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        30,
+        23
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < a [ root ] . size ( ) ; i ++ )",
+        "return ;"
+      ],
+      "err_line": 23,
+      "err_msg": "return-statement with no value, in function returning ‘long long int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        30,
+        23,
+        43
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < a [ root ] . size ( ) ; i ++ )",
+        "return ;",
+        "return ret ret ;"
+      ],
+      "err_line": 23,
+      "err_msg": "return-statement with no value, in function returning ‘long long int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        30,
+        23,
+        43,
+        52
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < a [ root ] . size ( ) ; i ++ )",
+        "return ;",
+        "return ret ret ;",
+        "long int x ;"
+      ],
+      "err_line": 23,
+      "err_msg": "return-statement with no value, in function returning ‘long long int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        30,
+        23,
+        52
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < a [ root ] . size ( ) ; i ++ )",
+        "return ;",
+        "long int x ;"
+      ],
+      "err_line": 23,
+      "err_msg": "return-statement with no value, in function returning ‘long long int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        30,
+        43
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < a [ root ] . size ( ) ; i ++ )",
+        "return ret ret ;"
+      ],
+      "err_line": 30,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        30,
+        43,
+        52
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < a [ root ] . size ( ) ; i ++ )",
+        "return ret ret ;",
+        "long int x ;"
+      ],
+      "err_line": 30,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        30,
+        52
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < a [ root ] . size ( ) ; i ++ )",
+        "long int x ;"
+      ],
+      "err_line": 30,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        54,
+        35
+      ],
+      "mod_code": [
+        "a . push ( x ) ;",
+        "int comp ( ) ;"
+      ],
+      "err_line": 36,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        54,
+        35,
+        23
+      ],
+      "mod_code": [
+        "a . push ( x ) ;",
+        "int comp ( ) ;",
+        "return ;"
+      ],
+      "err_line": 23,
+      "err_msg": "return-statement with no value, in function returning ‘long long int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        54,
+        35,
+        23,
+        43
+      ],
+      "mod_code": [
+        "a . push ( x ) ;",
+        "int comp ( ) ;",
+        "return ;",
+        "return ret ret ;"
+      ],
+      "err_line": 23,
+      "err_msg": "return-statement with no value, in function returning ‘long long int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        54,
+        35,
+        23,
+        52
+      ],
+      "mod_code": [
+        "a . push ( x ) ;",
+        "int comp ( ) ;",
+        "return ;",
+        "long int x ;"
+      ],
+      "err_line": 23,
+      "err_msg": "return-statement with no value, in function returning ‘long long int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        54,
+        35,
+        43
+      ],
+      "mod_code": [
+        "a . push ( x ) ;",
+        "int comp ( ) ;",
+        "return ret ret ;"
+      ],
+      "err_line": 36,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        54,
+        35,
+        43,
+        52
+      ],
+      "mod_code": [
+        "a . push ( x ) ;",
+        "int comp ( ) ;",
+        "return ret ret ;",
+        "long int x ;"
+      ],
+      "err_line": 36,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        54,
+        35,
+        52
+      ],
+      "mod_code": [
+        "a . push ( x ) ;",
+        "int comp ( ) ;",
+        "long int x ;"
+      ],
+      "err_line": 36,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        54,
+        23
+      ],
+      "mod_code": [
+        "a . push ( x ) ;",
+        "return ;"
+      ],
+      "err_line": 23,
+      "err_msg": "return-statement with no value, in function returning ‘long long int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        54,
+        23,
+        43
+      ],
+      "mod_code": [
+        "a . push ( x ) ;",
+        "return ;",
+        "return ret ret ;"
+      ],
+      "err_line": 23,
+      "err_msg": "return-statement with no value, in function returning ‘long long int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        54,
+        23,
+        43,
+        52
+      ],
+      "mod_code": [
+        "a . push ( x ) ;",
+        "return ;",
+        "return ret ret ;",
+        "long int x ;"
+      ],
+      "err_line": 23,
+      "err_msg": "return-statement with no value, in function returning ‘long long int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        54,
+        23,
+        52
+      ],
+      "mod_code": [
+        "a . push ( x ) ;",
+        "return ;",
+        "long int x ;"
+      ],
+      "err_line": 23,
+      "err_msg": "return-statement with no value, in function returning ‘long long int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        54,
+        43
+      ],
+      "mod_code": [
+        "a . push ( x ) ;",
+        "return ret ret ;"
+      ],
+      "err_line": 43,
+      "err_msg": "expected ‘;’ before ‘ret’"
+    },
+    {
+      "mod_line": [
+        54,
+        43,
+        52
+      ],
+      "mod_code": [
+        "a . push ( x ) ;",
+        "return ret ret ;",
+        "long int x ;"
+      ],
+      "err_line": 43,
+      "err_msg": "expected ‘;’ before ‘ret’"
+    },
+    {
+      "mod_line": [
+        54,
+        52
+      ],
+      "mod_code": [
+        "a . push ( x ) ;",
+        "long int x ;"
+      ],
+      "err_line": 54,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘push’"
+    },
+    {
+      "mod_line": [
+        35,
+        23
+      ],
+      "mod_code": [
+        "int comp ( ) ;",
+        "return ;"
+      ],
+      "err_line": 23,
+      "err_msg": "return-statement with no value, in function returning ‘long long int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        35,
+        23,
+        43
+      ],
+      "mod_code": [
+        "int comp ( ) ;",
+        "return ;",
+        "return ret ret ;"
+      ],
+      "err_line": 23,
+      "err_msg": "return-statement with no value, in function returning ‘long long int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        35,
+        23,
+        43,
+        52
+      ],
+      "mod_code": [
+        "int comp ( ) ;",
+        "return ;",
+        "return ret ret ;",
+        "long int x ;"
+      ],
+      "err_line": 23,
+      "err_msg": "return-statement with no value, in function returning ‘long long int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        35,
+        23,
+        52
+      ],
+      "mod_code": [
+        "int comp ( ) ;",
+        "return ;",
+        "long int x ;"
+      ],
+      "err_line": 23,
+      "err_msg": "return-statement with no value, in function returning ‘long long int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        35,
+        43
+      ],
+      "mod_code": [
+        "int comp ( ) ;",
+        "return ret ret ;"
+      ],
+      "err_line": 36,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        35,
+        43,
+        52
+      ],
+      "mod_code": [
+        "int comp ( ) ;",
+        "return ret ret ;",
+        "long int x ;"
+      ],
+      "err_line": 36,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        35,
+        52
+      ],
+      "mod_code": [
+        "int comp ( ) ;",
+        "long int x ;"
+      ],
+      "err_line": 36,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        23,
+        43
+      ],
+      "mod_code": [
+        "return ;",
+        "return ret ret ;"
+      ],
+      "err_line": 23,
+      "err_msg": "return-statement with no value, in function returning ‘long long int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        23,
+        43,
+        52
+      ],
+      "mod_code": [
+        "return ;",
+        "return ret ret ;",
+        "long int x ;"
+      ],
+      "err_line": 23,
+      "err_msg": "return-statement with no value, in function returning ‘long long int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        23,
+        52
+      ],
+      "mod_code": [
+        "return ;",
+        "long int x ;"
+      ],
+      "err_line": 23,
+      "err_msg": "return-statement with no value, in function returning ‘long long int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        43,
+        52
+      ],
+      "mod_code": [
+        "return ret ret ;",
+        "long int x ;"
+      ],
+      "err_line": 43,
+      "err_msg": "expected ‘;’ before ‘ret’"
+    }
+  ]
+}

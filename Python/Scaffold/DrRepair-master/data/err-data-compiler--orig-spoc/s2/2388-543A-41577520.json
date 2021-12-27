@@ -1,0 +1,713 @@
+{
+  "meta": {
+    "index": 2388,
+    "hitid": "3EN4YVUOUCMKA16BGOEPIBP9TWKXJ6",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "543A",
+    "subid": "41577520"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare integers m , n , b and modd and array of integers a with 505 elements",
+      "code": "int m , n , b , modd , a [ 505 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read n , m , b and modd",
+      "code": "cin >> n >> m >> b >> modd ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "for i = 1 to n inclusive read a [ i ]",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "let d be integer array with size 505 by 505",
+      "code": "int d [ 505 ] [ 505 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "call memset with arguments d , 0 and sizeof ( d )",
+      "code": "memset ( d , 0 , sizeof ( d ) ) ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "assign value of 1 to d [ 0 ] [ 0 ]",
+      "code": "d [ 0 ] [ 0 ] = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for integer i = 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "for integer j = 1 to m inclusive",
+      "code": "for ( int j = 1 ; j <= m ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "for k = a [ i ] to b inclusive",
+      "code": "for ( int k = a [ i ] ; k <= b ; k ++ )",
+      "indent": 3
+    },
+    {
+      "line": 10,
+      "text": "increase d [ j ] [ k ] by d [ j - 1 ] [ k - a [ i ] ]",
+      "code": "d [ j ] [ k ] += d [ j - 1 ] [ k - a [ i ] ] ;",
+      "indent": 4
+    },
+    {
+      "line": 11,
+      "text": "d [ j ] [ k ] % = modd",
+      "code": "d [ j ] [ k ] %= modd ;",
+      "indent": 4
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 13,
+      "text": "declare integer variable ans = 0",
+      "code": "int ans = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "for i = 0 to b inclusive , change value of ans to ( ans + d [ m ] [ i ] ) % modd",
+      "code": "for ( int i = 0 ; i <= b ; i ++ ) ans = ( ans + d [ m ] [ i ] ) % modd ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "print ans",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , n , modd ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int n’"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "d [ j ] [ k ] += d - a [ i ] [ k - a [ i ] ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , b [ 505 ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘int [505]’)"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "int d [ 505 ] [ 505 ] be ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected initializer before ‘be’"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "memset ( ( d , 0 , sizeof ( d ) ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid conversion from ‘long unsigned int’ to ‘void*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "for ( k = a [ i ] ; k <= b ; k ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "d [ j ] [ k ] += d [ j ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid use of non-lvalue array"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "ans = 0 ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘ans’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        10
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , n , modd ;",
+        "d [ j ] [ k ] += d - a [ i ] [ k - a [ i ] ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int n’"
+    },
+    {
+      "mod_line": [
+        1,
+        10,
+        11
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , n , modd ;",
+        "d [ j ] [ k ] += d - a [ i ] [ k - a [ i ] ] ;",
+        "d [ j ] [ k ] = modd ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int n’"
+    },
+    {
+      "mod_line": [
+        1,
+        10,
+        11,
+        14
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , n , modd ;",
+        "d [ j ] [ k ] += d - a [ i ] [ k - a [ i ] ] ;",
+        "d [ j ] [ k ] = modd ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) ans = ( ans + d [ m ] [ m ] ) % modd ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int n’"
+    },
+    {
+      "mod_line": [
+        1,
+        10,
+        11,
+        9
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , n , modd ;",
+        "d [ j ] [ k ] += d - a [ i ] [ k - a [ i ] ] ;",
+        "d [ j ] [ k ] = modd ;",
+        "for ( k = a [ i ] ; k <= b ; k ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int n’"
+    },
+    {
+      "mod_line": [
+        1,
+        10,
+        14
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , n , modd ;",
+        "d [ j ] [ k ] += d - a [ i ] [ k - a [ i ] ] ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) ans = ( ans + d [ m ] [ m ] ) % modd ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int n’"
+    },
+    {
+      "mod_line": [
+        1,
+        10,
+        14,
+        9
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , n , modd ;",
+        "d [ j ] [ k ] += d - a [ i ] [ k - a [ i ] ] ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) ans = ( ans + d [ m ] [ m ] ) % modd ;",
+        "for ( k = a [ i ] ; k <= b ; k ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int n’"
+    },
+    {
+      "mod_line": [
+        1,
+        10,
+        14,
+        11
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , n , modd ;",
+        "d [ j ] [ k ] += d - a [ i ] [ k - a [ i ] ] ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) ans = ( ans + d [ m ] [ m ] ) % modd ;",
+        "d [ j ] [ k ] *= modd ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int n’"
+    },
+    {
+      "mod_line": [
+        1,
+        10,
+        9
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , n , modd ;",
+        "d [ j ] [ k ] += d - a [ i ] [ k - a [ i ] ] ;",
+        "for ( k = a [ i ] ; k <= b ; k ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int n’"
+    },
+    {
+      "mod_line": [
+        1,
+        10,
+        9,
+        11
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , n , modd ;",
+        "d [ j ] [ k ] += d - a [ i ] [ k - a [ i ] ] ;",
+        "for ( k = a [ i ] ; k <= b ; k ++ )",
+        "d [ j ] [ k ] *= modd ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int n’"
+    },
+    {
+      "mod_line": [
+        1,
+        10,
+        11
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , n , modd ;",
+        "d [ j ] [ k ] += d - a [ i ] [ k - a [ i ] ] ;",
+        "d [ j ] [ k ] *= modd ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int n’"
+    },
+    {
+      "mod_line": [
+        1,
+        11
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , n , modd ;",
+        "d [ j ] [ k ] = modd ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int n’"
+    },
+    {
+      "mod_line": [
+        1,
+        11,
+        14
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , n , modd ;",
+        "d [ j ] [ k ] = modd ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) ans = ( ans + d [ m ] [ m ] ) % modd ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int n’"
+    },
+    {
+      "mod_line": [
+        1,
+        11,
+        14,
+        9
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , n , modd ;",
+        "d [ j ] [ k ] = modd ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) ans = ( ans + d [ m ] [ m ] ) % modd ;",
+        "for ( k = a [ i ] ; k <= b ; k ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int n’"
+    },
+    {
+      "mod_line": [
+        1,
+        11,
+        9
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , n , modd ;",
+        "d [ j ] [ k ] = modd ;",
+        "for ( k = a [ i ] ; k <= b ; k ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int n’"
+    },
+    {
+      "mod_line": [
+        1,
+        14
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , n , modd ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) ans = ( ans + d [ m ] [ m ] ) % modd ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int n’"
+    },
+    {
+      "mod_line": [
+        1,
+        14,
+        9
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , n , modd ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) ans = ( ans + d [ m ] [ m ] ) % modd ;",
+        "for ( k = a [ i ] ; k <= b ; k ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int n’"
+    },
+    {
+      "mod_line": [
+        1,
+        14,
+        9,
+        11
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , n , modd ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) ans = ( ans + d [ m ] [ m ] ) % modd ;",
+        "for ( k = a [ i ] ; k <= b ; k ++ )",
+        "d [ j ] [ k ] *= modd ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int n’"
+    },
+    {
+      "mod_line": [
+        1,
+        14,
+        11
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , n , modd ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) ans = ( ans + d [ m ] [ m ] ) % modd ;",
+        "d [ j ] [ k ] *= modd ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int n’"
+    },
+    {
+      "mod_line": [
+        1,
+        9
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , n , modd ;",
+        "for ( k = a [ i ] ; k <= b ; k ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int n’"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        11
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , n , modd ;",
+        "for ( k = a [ i ] ; k <= b ; k ++ )",
+        "d [ j ] [ k ] *= modd ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int n’"
+    },
+    {
+      "mod_line": [
+        1,
+        11
+      ],
+      "mod_code": [
+        "int m , n , a [ 505 ] , n , modd ;",
+        "d [ j ] [ k ] *= modd ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int n’"
+    },
+    {
+      "mod_line": [
+        10,
+        11
+      ],
+      "mod_code": [
+        "d [ j ] [ k ] += d - a [ i ] [ k - a [ i ] ] ;",
+        "d [ j ] [ k ] = modd ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        10,
+        11,
+        14
+      ],
+      "mod_code": [
+        "d [ j ] [ k ] += d - a [ i ] [ k - a [ i ] ] ;",
+        "d [ j ] [ k ] = modd ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) ans = ( ans + d [ m ] [ m ] ) % modd ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        10,
+        11,
+        14,
+        9
+      ],
+      "mod_code": [
+        "d [ j ] [ k ] += d - a [ i ] [ k - a [ i ] ] ;",
+        "d [ j ] [ k ] = modd ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) ans = ( ans + d [ m ] [ m ] ) % modd ;",
+        "for ( k = a [ i ] ; k <= b ; k ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        11,
+        9
+      ],
+      "mod_code": [
+        "d [ j ] [ k ] += d - a [ i ] [ k - a [ i ] ] ;",
+        "d [ j ] [ k ] = modd ;",
+        "for ( k = a [ i ] ; k <= b ; k ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        14
+      ],
+      "mod_code": [
+        "d [ j ] [ k ] += d - a [ i ] [ k - a [ i ] ] ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) ans = ( ans + d [ m ] [ m ] ) % modd ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        10,
+        14,
+        9
+      ],
+      "mod_code": [
+        "d [ j ] [ k ] += d - a [ i ] [ k - a [ i ] ] ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) ans = ( ans + d [ m ] [ m ] ) % modd ;",
+        "for ( k = a [ i ] ; k <= b ; k ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        14,
+        9,
+        11
+      ],
+      "mod_code": [
+        "d [ j ] [ k ] += d - a [ i ] [ k - a [ i ] ] ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) ans = ( ans + d [ m ] [ m ] ) % modd ;",
+        "for ( k = a [ i ] ; k <= b ; k ++ )",
+        "d [ j ] [ k ] *= modd ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        14,
+        11
+      ],
+      "mod_code": [
+        "d [ j ] [ k ] += d - a [ i ] [ k - a [ i ] ] ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) ans = ( ans + d [ m ] [ m ] ) % modd ;",
+        "d [ j ] [ k ] *= modd ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        10,
+        9
+      ],
+      "mod_code": [
+        "d [ j ] [ k ] += d - a [ i ] [ k - a [ i ] ] ;",
+        "for ( k = a [ i ] ; k <= b ; k ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        9,
+        11
+      ],
+      "mod_code": [
+        "d [ j ] [ k ] += d - a [ i ] [ k - a [ i ] ] ;",
+        "for ( k = a [ i ] ; k <= b ; k ++ )",
+        "d [ j ] [ k ] *= modd ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        11
+      ],
+      "mod_code": [
+        "d [ j ] [ k ] += d - a [ i ] [ k - a [ i ] ] ;",
+        "d [ j ] [ k ] *= modd ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        11,
+        14,
+        9
+      ],
+      "mod_code": [
+        "d [ j ] [ k ] = modd ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) ans = ( ans + d [ m ] [ m ] ) % modd ;",
+        "for ( k = a [ i ] ; k <= b ; k ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        9
+      ],
+      "mod_code": [
+        "d [ j ] [ k ] = modd ;",
+        "for ( k = a [ i ] ; k <= b ; k ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i <= b ; i ++ ) ans = ( ans + d [ m ] [ m ] ) % modd ;",
+        "for ( k = a [ i ] ; k <= b ; k ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        9,
+        11
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i <= b ; i ++ ) ans = ( ans + d [ m ] [ m ] ) % modd ;",
+        "for ( k = a [ i ] ; k <= b ; k ++ )",
+        "d [ j ] [ k ] *= modd ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        11
+      ],
+      "mod_code": [
+        "for ( k = a [ i ] ; k <= b ; k ++ )",
+        "d [ j ] [ k ] *= modd ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘k’ was not declared in this scope"
+    }
+  ]
+}

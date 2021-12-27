@@ -1,0 +1,971 @@
+{
+  "meta": {
+    "index": 2115,
+    "hitid": "309D674SHZFQPKX4105L6ALMLWKCB6",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "698A",
+    "subid": "48973714"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare a as integer",
+      "code": "int a ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read a",
+      "code": "cin >> a ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "declare integer array arr with size a",
+      "code": "int arr [ a ] ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for i = 0 to a exclusive , read arr [ i ]",
+      "code": "for ( int i = 0 ; i < a ; i ++ ) cin >> arr [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "declare integer array dp with size a by 3 = { { 0 } }",
+      "code": "int dp [ a ] [ 3 ] = { { 0 } } ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "if arr [ 0 ] is 1 , let dp [ 0 ] [ 1 ] be 1",
+      "code": "if ( arr [ 0 ] == 1 ) dp [ 0 ] [ 1 ] = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "if arr [ 0 ] is 2 , let dp [ 0 ] [ 2 ] be 1",
+      "code": "if ( arr [ 0 ] == 2 ) dp [ 0 ] [ 2 ] = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "if arr [ 0 ] is 3 , let dp [ 0 ] [ 2 ] be dp [ 0 ] [ 1 ] be 1",
+      "code": "if ( arr [ 0 ] == 3 ) dp [ 0 ] [ 2 ] = dp [ 0 ] [ 1 ] = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "for i = 1 to a exclusive",
+      "code": "for ( int i = 1 ; i < a ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "let dp [ i ] [ 0 ] be maximum of ( dp [ i - 1 ] [ 1 ] and maximum of ( dp [ i - 1 ] [ 2 ] and dp [ i - 1 ] [ 0 ] ) )",
+      "code": "dp [ i ] [ 0 ] = max ( dp [ i - 1 ] [ 1 ] , max ( dp [ i - 1 ] [ 2 ] , dp [ i - 1 ] [ 0 ] ) ) ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "if arr [ i ] is 0 , let dp [ i ] [ 1 ] be dp [ i ] [ 2 ] be 0",
+      "code": "if ( arr [ i ] == 0 ) { dp [ i ] [ 1 ] = dp [ i ] [ 2 ] = 0 ; }",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "if arr [ i ] is 1",
+      "code": "if ( arr [ i ] == 1 )",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "let dp [ i ] [ 1 ] be maximum of ( dp [ i - 1 ] [ 2 ] + 1 and dp [ i - 1 ] [ 0 ] + 1 )",
+      "code": "dp [ i ] [ 1 ] = max ( dp [ i - 1 ] [ 2 ] + 1 , dp [ i - 1 ] [ 0 ] + 1 ) ;",
+      "indent": 3
+    },
+    {
+      "line": 14,
+      "text": "let dp [ i ] [ 2 ] be 0",
+      "code": "dp [ i ] [ 2 ] = 0 ;",
+      "indent": 3
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "if arr [ i ] is 2",
+      "code": "if ( arr [ i ] == 2 )",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "let dp [ i ] [ 2 ] be maximum of ( dp [ i - 1 ] [ 1 ] + 1 and dp [ i - 1 ] [ 0 ] + 1 )",
+      "code": "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 , dp [ i - 1 ] [ 0 ] + 1 ) ;",
+      "indent": 3
+    },
+    {
+      "line": 18,
+      "text": "let dp [ i ] [ 1 ] be 0",
+      "code": "dp [ i ] [ 1 ] = 0 ;",
+      "indent": 3
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 20,
+      "text": "if arr [ i ] is 3",
+      "code": "if ( arr [ i ] == 3 )",
+      "indent": 2
+    },
+    {
+      "line": 21,
+      "text": "let dp [ i ] [ 2 ] be maximum of ( dp [ i - 1 ] [ 1 ] + 1 and dp [ i - 1 ] [ 0 ] + 1 )",
+      "code": "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 , dp [ i - 1 ] [ 0 ] + 1 ) ;",
+      "indent": 3
+    },
+    {
+      "line": 22,
+      "text": "let dp [ i ] [ 1 ] be maximum of ( dp [ i - 1 ] [ 2 ] + 1 and dp [ i - 1 ] [ 0 ] + 1 )",
+      "code": "dp [ i ] [ 1 ] = max ( dp [ i - 1 ] [ 2 ] + 1 , dp [ i - 1 ] [ 0 ] + 1 ) ;",
+      "indent": 3
+    },
+    {
+      "line": 23,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 24,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 25,
+      "text": "print a - maximum of ( dp [ a - 1 ] [ 0 ] and maximum of ( dp [ a - 1 ] [ 1 ] and dp [ a - 1 ] [ 2 ] ) ) , newline",
+      "code": "cout << a - max ( dp [ a - 1 ] [ 0 ] , max ( dp [ a - 1 ] [ 1 ] , dp [ a - 1 ] [ 2 ] ) ) << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 26,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 27,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "cin >> n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "int arr [ a a ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘]’ before ‘a’"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "int dp [ a ] [ 3 ] = { { 0 } ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘}’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "dp [ i ] [ 0 ] = max ( dp [ i - 1 ] [ 1 ] , max ( dp [ i - 1 ] [ 2 ] ) , dp [ i - 1 ] [ 0 ] ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(int&)’"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "dp [ i ] [ 1 ] = max ( dp [ i - 1 ] [ 2 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "no matching function for call to ‘max(int)’"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;"
+      ],
+      "err_line": 17,
+      "err_msg": "no matching function for call to ‘max(int)’"
+    },
+    {
+      "mod_line": [
+        21
+      ],
+      "mod_code": [
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;"
+      ],
+      "err_line": 21,
+      "err_msg": "no matching function for call to ‘max(int)’"
+    },
+    {
+      "mod_line": [
+        22
+      ],
+      "mod_code": [
+        "dp [ i ] [ 1 ] = max ( dp [ i - 1 ] [ 2 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;"
+      ],
+      "err_line": 22,
+      "err_msg": "no matching function for call to ‘max(int)’"
+    },
+    {
+      "mod_line": [
+        25
+      ],
+      "mod_code": [
+        "cout << a - max ( dp [ a - 1 ] [ 0 ] , max ( dp [ a - 1 ] [ 1 ] && dp [ a - 1 ] [ 2 ] ) ) << endl ;"
+      ],
+      "err_line": 25,
+      "err_msg": "no matching function for call to ‘max(bool)’"
+    },
+    {
+      "mod_line": [
+        21,
+        13
+      ],
+      "mod_code": [
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "dp [ i ] [ 1 ] = max ( dp [ i - 1 ] [ 2 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "no matching function for call to ‘max(int)’"
+    },
+    {
+      "mod_line": [
+        21,
+        13,
+        17
+      ],
+      "mod_code": [
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "dp [ i ] [ 1 ] = max ( dp [ i - 1 ] [ 2 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "no matching function for call to ‘max(int)’"
+    },
+    {
+      "mod_line": [
+        21,
+        13,
+        17,
+        2
+      ],
+      "mod_code": [
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "dp [ i ] [ 1 ] = max ( dp [ i - 1 ] [ 2 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "cin >> n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        21,
+        13,
+        17,
+        3
+      ],
+      "mod_code": [
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "dp [ i ] [ 1 ] = max ( dp [ i - 1 ] [ 2 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "int arr [ a a ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘]’ before ‘a’"
+    },
+    {
+      "mod_line": [
+        21,
+        13,
+        17,
+        16
+      ],
+      "mod_code": [
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "dp [ i ] [ 1 ] = max ( dp [ i - 1 ] [ 2 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "if ( arr [ i ] == ' 2 ' )"
+      ],
+      "err_line": 13,
+      "err_msg": "no matching function for call to ‘max(int)’"
+    },
+    {
+      "mod_line": [
+        21,
+        13,
+        2
+      ],
+      "mod_code": [
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "dp [ i ] [ 1 ] = max ( dp [ i - 1 ] [ 2 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "cin >> n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        21,
+        13,
+        2,
+        3
+      ],
+      "mod_code": [
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "dp [ i ] [ 1 ] = max ( dp [ i - 1 ] [ 2 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "cin >> n ;",
+        "int arr [ a a ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        21,
+        13,
+        2,
+        16
+      ],
+      "mod_code": [
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "dp [ i ] [ 1 ] = max ( dp [ i - 1 ] [ 2 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "cin >> n ;",
+        "if ( arr [ i ] == ' 2 ' )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        21,
+        13,
+        3
+      ],
+      "mod_code": [
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "dp [ i ] [ 1 ] = max ( dp [ i - 1 ] [ 2 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "int arr [ a a ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘]’ before ‘a’"
+    },
+    {
+      "mod_line": [
+        21,
+        13,
+        3,
+        16
+      ],
+      "mod_code": [
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "dp [ i ] [ 1 ] = max ( dp [ i - 1 ] [ 2 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "int arr [ a a ] ;",
+        "if ( arr [ i ] == ' 2 ' )"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘]’ before ‘a’"
+    },
+    {
+      "mod_line": [
+        21,
+        13,
+        16
+      ],
+      "mod_code": [
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "dp [ i ] [ 1 ] = max ( dp [ i - 1 ] [ 2 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "if ( arr [ i ] == ' 2 ' )"
+      ],
+      "err_line": 13,
+      "err_msg": "no matching function for call to ‘max(int)’"
+    },
+    {
+      "mod_line": [
+        21,
+        17
+      ],
+      "mod_code": [
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;"
+      ],
+      "err_line": 17,
+      "err_msg": "no matching function for call to ‘max(int)’"
+    },
+    {
+      "mod_line": [
+        21,
+        17,
+        2
+      ],
+      "mod_code": [
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "cin >> n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        21,
+        17,
+        2,
+        3
+      ],
+      "mod_code": [
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "cin >> n ;",
+        "int arr [ a a ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        21,
+        17,
+        2,
+        16
+      ],
+      "mod_code": [
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "cin >> n ;",
+        "if ( arr [ i ] == ' 2 ' )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        21,
+        17,
+        3
+      ],
+      "mod_code": [
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "int arr [ a a ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘]’ before ‘a’"
+    },
+    {
+      "mod_line": [
+        21,
+        17,
+        3,
+        16
+      ],
+      "mod_code": [
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "int arr [ a a ] ;",
+        "if ( arr [ i ] == ' 2 ' )"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘]’ before ‘a’"
+    },
+    {
+      "mod_line": [
+        21,
+        17,
+        16
+      ],
+      "mod_code": [
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "if ( arr [ i ] == ' 2 ' )"
+      ],
+      "err_line": 17,
+      "err_msg": "no matching function for call to ‘max(int)’"
+    },
+    {
+      "mod_line": [
+        21,
+        2
+      ],
+      "mod_code": [
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "cin >> n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        21,
+        2,
+        3
+      ],
+      "mod_code": [
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "cin >> n ;",
+        "int arr [ a a ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        21,
+        2,
+        3,
+        16
+      ],
+      "mod_code": [
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "cin >> n ;",
+        "int arr [ a a ] ;",
+        "if ( arr [ i ] == ' 2 ' )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        21,
+        2,
+        16
+      ],
+      "mod_code": [
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "cin >> n ;",
+        "if ( arr [ i ] == ' 2 ' )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        21,
+        3
+      ],
+      "mod_code": [
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "int arr [ a a ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘]’ before ‘a’"
+    },
+    {
+      "mod_line": [
+        21,
+        3,
+        16
+      ],
+      "mod_code": [
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "int arr [ a a ] ;",
+        "if ( arr [ i ] == ' 2 ' )"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘]’ before ‘a’"
+    },
+    {
+      "mod_line": [
+        21,
+        16
+      ],
+      "mod_code": [
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "if ( arr [ i ] == ' 2 ' )"
+      ],
+      "err_line": 21,
+      "err_msg": "no matching function for call to ‘max(int)’"
+    },
+    {
+      "mod_line": [
+        13,
+        17
+      ],
+      "mod_code": [
+        "dp [ i ] [ 1 ] = max ( dp [ i - 1 ] [ 2 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "no matching function for call to ‘max(int)’"
+    },
+    {
+      "mod_line": [
+        13,
+        17,
+        2
+      ],
+      "mod_code": [
+        "dp [ i ] [ 1 ] = max ( dp [ i - 1 ] [ 2 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "cin >> n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        17,
+        2,
+        3
+      ],
+      "mod_code": [
+        "dp [ i ] [ 1 ] = max ( dp [ i - 1 ] [ 2 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "cin >> n ;",
+        "int arr [ a a ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        17,
+        2,
+        16
+      ],
+      "mod_code": [
+        "dp [ i ] [ 1 ] = max ( dp [ i - 1 ] [ 2 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "cin >> n ;",
+        "if ( arr [ i ] == ' 2 ' )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        17,
+        3
+      ],
+      "mod_code": [
+        "dp [ i ] [ 1 ] = max ( dp [ i - 1 ] [ 2 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "int arr [ a a ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘]’ before ‘a’"
+    },
+    {
+      "mod_line": [
+        13,
+        17,
+        3,
+        16
+      ],
+      "mod_code": [
+        "dp [ i ] [ 1 ] = max ( dp [ i - 1 ] [ 2 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "int arr [ a a ] ;",
+        "if ( arr [ i ] == ' 2 ' )"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘]’ before ‘a’"
+    },
+    {
+      "mod_line": [
+        13,
+        17,
+        16
+      ],
+      "mod_code": [
+        "dp [ i ] [ 1 ] = max ( dp [ i - 1 ] [ 2 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "if ( arr [ i ] == ' 2 ' )"
+      ],
+      "err_line": 13,
+      "err_msg": "no matching function for call to ‘max(int)’"
+    },
+    {
+      "mod_line": [
+        13,
+        2
+      ],
+      "mod_code": [
+        "dp [ i ] [ 1 ] = max ( dp [ i - 1 ] [ 2 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "cin >> n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        2,
+        3
+      ],
+      "mod_code": [
+        "dp [ i ] [ 1 ] = max ( dp [ i - 1 ] [ 2 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "cin >> n ;",
+        "int arr [ a a ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        2,
+        3,
+        16
+      ],
+      "mod_code": [
+        "dp [ i ] [ 1 ] = max ( dp [ i - 1 ] [ 2 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "cin >> n ;",
+        "int arr [ a a ] ;",
+        "if ( arr [ i ] == ' 2 ' )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        2,
+        16
+      ],
+      "mod_code": [
+        "dp [ i ] [ 1 ] = max ( dp [ i - 1 ] [ 2 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "cin >> n ;",
+        "if ( arr [ i ] == ' 2 ' )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        3
+      ],
+      "mod_code": [
+        "dp [ i ] [ 1 ] = max ( dp [ i - 1 ] [ 2 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "int arr [ a a ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘]’ before ‘a’"
+    },
+    {
+      "mod_line": [
+        13,
+        3,
+        16
+      ],
+      "mod_code": [
+        "dp [ i ] [ 1 ] = max ( dp [ i - 1 ] [ 2 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "int arr [ a a ] ;",
+        "if ( arr [ i ] == ' 2 ' )"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘]’ before ‘a’"
+    },
+    {
+      "mod_line": [
+        13,
+        16
+      ],
+      "mod_code": [
+        "dp [ i ] [ 1 ] = max ( dp [ i - 1 ] [ 2 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "if ( arr [ i ] == ' 2 ' )"
+      ],
+      "err_line": 13,
+      "err_msg": "no matching function for call to ‘max(int)’"
+    },
+    {
+      "mod_line": [
+        17,
+        2
+      ],
+      "mod_code": [
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "cin >> n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17,
+        2,
+        3
+      ],
+      "mod_code": [
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "cin >> n ;",
+        "int arr [ a a ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17,
+        2,
+        3,
+        16
+      ],
+      "mod_code": [
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "cin >> n ;",
+        "int arr [ a a ] ;",
+        "if ( arr [ i ] == ' 2 ' )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17,
+        2,
+        16
+      ],
+      "mod_code": [
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "cin >> n ;",
+        "if ( arr [ i ] == ' 2 ' )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17,
+        3
+      ],
+      "mod_code": [
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "int arr [ a a ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘]’ before ‘a’"
+    },
+    {
+      "mod_line": [
+        17,
+        3,
+        16
+      ],
+      "mod_code": [
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "int arr [ a a ] ;",
+        "if ( arr [ i ] == ' 2 ' )"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘]’ before ‘a’"
+    },
+    {
+      "mod_line": [
+        17,
+        16
+      ],
+      "mod_code": [
+        "dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 1 ] + 1 ) + 1 , dp [ i - 1 ] [ 0 ] ;",
+        "if ( arr [ i ] == ' 2 ' )"
+      ],
+      "err_line": 17,
+      "err_msg": "no matching function for call to ‘max(int)’"
+    },
+    {
+      "mod_line": [
+        2,
+        3
+      ],
+      "mod_code": [
+        "cin >> n ;",
+        "int arr [ a a ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        16
+      ],
+      "mod_code": [
+        "cin >> n ;",
+        "int arr [ a a ] ;",
+        "if ( arr [ i ] == ' 2 ' )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        16
+      ],
+      "mod_code": [
+        "cin >> n ;",
+        "if ( arr [ i ] == ' 2 ' )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        16
+      ],
+      "mod_code": [
+        "int arr [ a a ] ;",
+        "if ( arr [ i ] == ' 2 ' )"
+      ],
+      "err_line": 3,
+      "err_msg": "expected ‘]’ before ‘a’"
+    }
+  ]
+}

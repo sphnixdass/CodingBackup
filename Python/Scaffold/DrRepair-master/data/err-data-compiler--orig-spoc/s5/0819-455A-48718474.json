@@ -1,0 +1,899 @@
+{
+  "meta": {
+    "index": 819,
+    "hitid": "3ODOP6T3ASET63KTPS6SMJ6UYQU42C",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "455A",
+    "subid": "48718474"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create long long array a with 100005 elements",
+      "code": "long long a [ 100005 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create long long array cnt with 100005 elements",
+      "code": "long long cnt [ 100005 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "create long long array dp with 100005 elements",
+      "code": "long long dp [ 100005 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "declare long long variable num = 0 and an array A with 100005 elements",
+      "code": "long long A [ 100005 ] , num = 0 ;",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "declare long long n",
+      "code": "long long n ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "read n elements into a",
+      "code": "for ( long long i = 0 ; i < n ; i ++ ) cin >> a [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "sort a",
+      "code": "sort ( a , a + n ) ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( long long i = 0 ; i < n ; )",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "set value of A [ num ] to a [ i ]",
+      "code": "A [ num ] = a [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "while a [ i ] = A [ num ]",
+      "code": "while ( a [ i ] == A [ num ] )",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "increment i",
+      "code": "i ++ ;",
+      "indent": 3
+    },
+    {
+      "line": 13,
+      "text": "increment cnt [ num ]",
+      "code": "cnt [ num ] ++ ;",
+      "indent": 3
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "increase num by one",
+      "code": "num ++ ;",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "set value of dp [ 0 ] to A [ 0 ] * cnt [ 0 ]",
+      "code": "dp [ 0 ] = A [ 0 ] * cnt [ 0 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "if A [ 0 ] + 1 = A [ 1 ]",
+      "code": "if ( A [ 0 ] + 1 == A [ 1 ] )",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "set value of dp [ 1 ] to max ( dp [ 0 ] , A [ 1 ] * cnt [ 1 ] )",
+      "code": "dp [ 1 ] = max ( dp [ 0 ] , A [ 1 ] * cnt [ 1 ] ) ;",
+      "indent": 2
+    },
+    {
+      "line": 20,
+      "text": "else",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "set value of dp [ 1 ] to dp [ 0 ] + A [ 1 ] * cnt [ 1 ]",
+      "code": "dp [ 1 ] = dp [ 0 ] + A [ 1 ] * cnt [ 1 ] ;",
+      "indent": 2
+    },
+    {
+      "line": 22,
+      "text": "for long long i = 2 to num exclusive",
+      "code": "for ( long long i = 2 ; i < num ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "if A [ i - 1 ] + 1 = A [ i ]",
+      "code": "if ( A [ i - 1 ] + 1 == A [ i ] )",
+      "indent": 2
+    },
+    {
+      "line": 24,
+      "text": "dp [ i ] = max ( dp [ i - 1 ] , dp [ i - 2 ] + A [ i ] * cnt [ i ] )",
+      "code": "dp [ i ] = max ( dp [ i - 1 ] , dp [ i - 2 ] + A [ i ] * cnt [ i ] ) ;",
+      "indent": 3
+    },
+    {
+      "line": 25,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 26,
+      "text": "dp [ i ] = dp [ i - 1 ] + A [ i ] * cnt [ i ]",
+      "code": "dp [ i ] = dp [ i - 1 ] + A [ i ] * cnt [ i ] ;",
+      "indent": 3
+    },
+    {
+      "line": 27,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 28,
+      "text": "print dp [ num - 1 ]",
+      "code": "cout << dp [ num - 1 ] << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 29,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 30,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "long long num [ 100005 ] , num = 0 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘long long int num’"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "while ( a [ i ] ] == A [ num ] )"
+      ],
+      "err_line": 11,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        19
+      ],
+      "mod_code": [
+        "* dp [ 1 ] = max ( dp [ 0 ] , A [ 1 ] * cnt [ 1 ] ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "invalid type argument of unary ‘*’ (have ‘long long int’)"
+    },
+    {
+      "mod_line": [
+        26
+      ],
+      "mod_code": [
+        "dp [ i ] -= cnt + A [ i ] * cnt [ i ] ;"
+      ],
+      "err_line": 26,
+      "err_msg": "invalid operands of types ‘long long int’ and ‘long long int*’ to binary ‘operator-’"
+    },
+    {
+      "mod_line": [
+        3,
+        9
+      ],
+      "mod_code": [
+        "long long num [ 100005 ] , num = 0 ;",
+        "for ( int i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘long long int num’"
+    },
+    {
+      "mod_line": [
+        3,
+        9,
+        11
+      ],
+      "mod_code": [
+        "long long num [ 100005 ] , num = 0 ;",
+        "for ( int i = 0 ; i < n ; i ++ )",
+        "while ( a [ i ] ] == A [ num ] )"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘long long int num’"
+    },
+    {
+      "mod_line": [
+        3,
+        9,
+        11,
+        24
+      ],
+      "mod_code": [
+        "long long num [ 100005 ] , num = 0 ;",
+        "for ( int i = 0 ; i < n ; i ++ )",
+        "while ( a [ i ] ] == A [ num ] )",
+        "dp [ i ] = max ( dp [ i - 1 ] , dp [ i - 2 ] , dp [ i ] * cnt [ i ] ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘long long int num’"
+    },
+    {
+      "mod_line": [
+        3,
+        9,
+        11,
+        28
+      ],
+      "mod_code": [
+        "long long num [ 100005 ] , num = 0 ;",
+        "for ( int i = 0 ; i < n ; i ++ )",
+        "while ( a [ i ] ] == A [ num ] )",
+        "cout << dp [ num - 1 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘long long int num’"
+    },
+    {
+      "mod_line": [
+        3,
+        9,
+        11,
+        19
+      ],
+      "mod_code": [
+        "long long num [ 100005 ] , num = 0 ;",
+        "for ( int i = 0 ; i < n ; i ++ )",
+        "while ( a [ i ] ] == A [ num ] )",
+        "* dp [ 1 ] = max ( dp [ 0 ] , A [ 1 ] * cnt [ 1 ] ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘long long int num’"
+    },
+    {
+      "mod_line": [
+        3,
+        9,
+        24
+      ],
+      "mod_code": [
+        "long long num [ 100005 ] , num = 0 ;",
+        "for ( int i = 0 ; i < n ; i ++ )",
+        "dp [ i ] = max ( dp [ i - 1 ] , dp [ i - 2 ] , dp [ i ] * cnt [ i ] ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘long long int num’"
+    },
+    {
+      "mod_line": [
+        3,
+        9,
+        24,
+        28
+      ],
+      "mod_code": [
+        "long long num [ 100005 ] , num = 0 ;",
+        "for ( int i = 0 ; i < n ; i ++ )",
+        "dp [ i ] = max ( dp [ i - 1 ] , dp [ i - 2 ] , dp [ i ] * cnt [ i ] ) ;",
+        "cout << dp [ num - 1 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘long long int num’"
+    },
+    {
+      "mod_line": [
+        3,
+        9,
+        24,
+        19
+      ],
+      "mod_code": [
+        "long long num [ 100005 ] , num = 0 ;",
+        "for ( int i = 0 ; i < n ; i ++ )",
+        "dp [ i ] = max ( dp [ i - 1 ] , dp [ i - 2 ] , dp [ i ] * cnt [ i ] ) ;",
+        "* dp [ 1 ] = max ( dp [ 0 ] , A [ 1 ] * cnt [ 1 ] ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘long long int num’"
+    },
+    {
+      "mod_line": [
+        3,
+        9,
+        28
+      ],
+      "mod_code": [
+        "long long num [ 100005 ] , num = 0 ;",
+        "for ( int i = 0 ; i < n ; i ++ )",
+        "cout << dp [ num - 1 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘long long int num’"
+    },
+    {
+      "mod_line": [
+        3,
+        9,
+        28,
+        19
+      ],
+      "mod_code": [
+        "long long num [ 100005 ] , num = 0 ;",
+        "for ( int i = 0 ; i < n ; i ++ )",
+        "cout << dp [ num - 1 ] ;",
+        "* dp [ 1 ] = max ( dp [ 0 ] , A [ 1 ] * cnt [ 1 ] ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘long long int num’"
+    },
+    {
+      "mod_line": [
+        3,
+        9,
+        19
+      ],
+      "mod_code": [
+        "long long num [ 100005 ] , num = 0 ;",
+        "for ( int i = 0 ; i < n ; i ++ )",
+        "* dp [ 1 ] = max ( dp [ 0 ] , A [ 1 ] * cnt [ 1 ] ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘long long int num’"
+    },
+    {
+      "mod_line": [
+        3,
+        11
+      ],
+      "mod_code": [
+        "long long num [ 100005 ] , num = 0 ;",
+        "while ( a [ i ] ] == A [ num ] )"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘long long int num’"
+    },
+    {
+      "mod_line": [
+        3,
+        11,
+        24
+      ],
+      "mod_code": [
+        "long long num [ 100005 ] , num = 0 ;",
+        "while ( a [ i ] ] == A [ num ] )",
+        "dp [ i ] = max ( dp [ i - 1 ] , dp [ i - 2 ] , dp [ i ] * cnt [ i ] ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘long long int num’"
+    },
+    {
+      "mod_line": [
+        3,
+        11,
+        24,
+        28
+      ],
+      "mod_code": [
+        "long long num [ 100005 ] , num = 0 ;",
+        "while ( a [ i ] ] == A [ num ] )",
+        "dp [ i ] = max ( dp [ i - 1 ] , dp [ i - 2 ] , dp [ i ] * cnt [ i ] ) ;",
+        "cout << dp [ num - 1 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘long long int num’"
+    },
+    {
+      "mod_line": [
+        3,
+        11,
+        24,
+        19
+      ],
+      "mod_code": [
+        "long long num [ 100005 ] , num = 0 ;",
+        "while ( a [ i ] ] == A [ num ] )",
+        "dp [ i ] = max ( dp [ i - 1 ] , dp [ i - 2 ] , dp [ i ] * cnt [ i ] ) ;",
+        "* dp [ 1 ] = max ( dp [ 0 ] , A [ 1 ] * cnt [ 1 ] ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘long long int num’"
+    },
+    {
+      "mod_line": [
+        3,
+        11,
+        28
+      ],
+      "mod_code": [
+        "long long num [ 100005 ] , num = 0 ;",
+        "while ( a [ i ] ] == A [ num ] )",
+        "cout << dp [ num - 1 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘long long int num’"
+    },
+    {
+      "mod_line": [
+        3,
+        11,
+        28,
+        19
+      ],
+      "mod_code": [
+        "long long num [ 100005 ] , num = 0 ;",
+        "while ( a [ i ] ] == A [ num ] )",
+        "cout << dp [ num - 1 ] ;",
+        "* dp [ 1 ] = max ( dp [ 0 ] , A [ 1 ] * cnt [ 1 ] ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘long long int num’"
+    },
+    {
+      "mod_line": [
+        3,
+        11,
+        19
+      ],
+      "mod_code": [
+        "long long num [ 100005 ] , num = 0 ;",
+        "while ( a [ i ] ] == A [ num ] )",
+        "* dp [ 1 ] = max ( dp [ 0 ] , A [ 1 ] * cnt [ 1 ] ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘long long int num’"
+    },
+    {
+      "mod_line": [
+        3,
+        24
+      ],
+      "mod_code": [
+        "long long num [ 100005 ] , num = 0 ;",
+        "dp [ i ] = max ( dp [ i - 1 ] , dp [ i - 2 ] , dp [ i ] * cnt [ i ] ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘long long int num’"
+    },
+    {
+      "mod_line": [
+        3,
+        24,
+        28
+      ],
+      "mod_code": [
+        "long long num [ 100005 ] , num = 0 ;",
+        "dp [ i ] = max ( dp [ i - 1 ] , dp [ i - 2 ] , dp [ i ] * cnt [ i ] ) ;",
+        "cout << dp [ num - 1 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘long long int num’"
+    },
+    {
+      "mod_line": [
+        3,
+        24,
+        28,
+        19
+      ],
+      "mod_code": [
+        "long long num [ 100005 ] , num = 0 ;",
+        "dp [ i ] = max ( dp [ i - 1 ] , dp [ i - 2 ] , dp [ i ] * cnt [ i ] ) ;",
+        "cout << dp [ num - 1 ] ;",
+        "* dp [ 1 ] = max ( dp [ 0 ] , A [ 1 ] * cnt [ 1 ] ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘long long int num’"
+    },
+    {
+      "mod_line": [
+        3,
+        24,
+        19
+      ],
+      "mod_code": [
+        "long long num [ 100005 ] , num = 0 ;",
+        "dp [ i ] = max ( dp [ i - 1 ] , dp [ i - 2 ] , dp [ i ] * cnt [ i ] ) ;",
+        "* dp [ 1 ] = max ( dp [ 0 ] , A [ 1 ] * cnt [ 1 ] ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘long long int num’"
+    },
+    {
+      "mod_line": [
+        3,
+        28
+      ],
+      "mod_code": [
+        "long long num [ 100005 ] , num = 0 ;",
+        "cout << dp [ num - 1 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘long long int num’"
+    },
+    {
+      "mod_line": [
+        3,
+        28,
+        19
+      ],
+      "mod_code": [
+        "long long num [ 100005 ] , num = 0 ;",
+        "cout << dp [ num - 1 ] ;",
+        "* dp [ 1 ] = max ( dp [ 0 ] , A [ 1 ] * cnt [ 1 ] ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘long long int num’"
+    },
+    {
+      "mod_line": [
+        3,
+        19
+      ],
+      "mod_code": [
+        "long long num [ 100005 ] , num = 0 ;",
+        "* dp [ 1 ] = max ( dp [ 0 ] , A [ 1 ] * cnt [ 1 ] ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "conflicting declaration ‘long long int num’"
+    },
+    {
+      "mod_line": [
+        9,
+        11
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ )",
+        "while ( a [ i ] ] == A [ num ] )"
+      ],
+      "err_line": 11,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        9,
+        11,
+        24
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ )",
+        "while ( a [ i ] ] == A [ num ] )",
+        "dp [ i ] = max ( dp [ i - 1 ] , dp [ i - 2 ] , dp [ i ] * cnt [ i ] ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        9,
+        11,
+        24,
+        28
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ )",
+        "while ( a [ i ] ] == A [ num ] )",
+        "dp [ i ] = max ( dp [ i - 1 ] , dp [ i - 2 ] , dp [ i ] * cnt [ i ] ) ;",
+        "cout << dp [ num - 1 ] ;"
+      ],
+      "err_line": 11,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        9,
+        11,
+        24,
+        19
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ )",
+        "while ( a [ i ] ] == A [ num ] )",
+        "dp [ i ] = max ( dp [ i - 1 ] , dp [ i - 2 ] , dp [ i ] * cnt [ i ] ) ;",
+        "* dp [ 1 ] = max ( dp [ 0 ] , A [ 1 ] * cnt [ 1 ] ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        9,
+        11,
+        28
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ )",
+        "while ( a [ i ] ] == A [ num ] )",
+        "cout << dp [ num - 1 ] ;"
+      ],
+      "err_line": 11,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        9,
+        11,
+        28,
+        19
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ )",
+        "while ( a [ i ] ] == A [ num ] )",
+        "cout << dp [ num - 1 ] ;",
+        "* dp [ 1 ] = max ( dp [ 0 ] , A [ 1 ] * cnt [ 1 ] ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        9,
+        11,
+        19
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ )",
+        "while ( a [ i ] ] == A [ num ] )",
+        "* dp [ 1 ] = max ( dp [ 0 ] , A [ 1 ] * cnt [ 1 ] ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        9,
+        24,
+        28,
+        19
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ )",
+        "dp [ i ] = max ( dp [ i - 1 ] , dp [ i - 2 ] , dp [ i ] * cnt [ i ] ) ;",
+        "cout << dp [ num - 1 ] ;",
+        "* dp [ 1 ] = max ( dp [ 0 ] , A [ 1 ] * cnt [ 1 ] ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "invalid type argument of unary ‘*’ (have ‘long long int’)"
+    },
+    {
+      "mod_line": [
+        9,
+        24,
+        19
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ )",
+        "dp [ i ] = max ( dp [ i - 1 ] , dp [ i - 2 ] , dp [ i ] * cnt [ i ] ) ;",
+        "* dp [ 1 ] = max ( dp [ 0 ] , A [ 1 ] * cnt [ 1 ] ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "invalid type argument of unary ‘*’ (have ‘long long int’)"
+    },
+    {
+      "mod_line": [
+        9,
+        28,
+        19
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ )",
+        "cout << dp [ num - 1 ] ;",
+        "* dp [ 1 ] = max ( dp [ 0 ] , A [ 1 ] * cnt [ 1 ] ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "invalid type argument of unary ‘*’ (have ‘long long int’)"
+    },
+    {
+      "mod_line": [
+        9,
+        19
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ )",
+        "* dp [ 1 ] = max ( dp [ 0 ] , A [ 1 ] * cnt [ 1 ] ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "invalid type argument of unary ‘*’ (have ‘long long int’)"
+    },
+    {
+      "mod_line": [
+        11,
+        24
+      ],
+      "mod_code": [
+        "while ( a [ i ] ] == A [ num ] )",
+        "dp [ i ] = max ( dp [ i - 1 ] , dp [ i - 2 ] , dp [ i ] * cnt [ i ] ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        11,
+        24,
+        28
+      ],
+      "mod_code": [
+        "while ( a [ i ] ] == A [ num ] )",
+        "dp [ i ] = max ( dp [ i - 1 ] , dp [ i - 2 ] , dp [ i ] * cnt [ i ] ) ;",
+        "cout << dp [ num - 1 ] ;"
+      ],
+      "err_line": 11,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        11,
+        24,
+        28,
+        19
+      ],
+      "mod_code": [
+        "while ( a [ i ] ] == A [ num ] )",
+        "dp [ i ] = max ( dp [ i - 1 ] , dp [ i - 2 ] , dp [ i ] * cnt [ i ] ) ;",
+        "cout << dp [ num - 1 ] ;",
+        "* dp [ 1 ] = max ( dp [ 0 ] , A [ 1 ] * cnt [ 1 ] ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        11,
+        24,
+        19
+      ],
+      "mod_code": [
+        "while ( a [ i ] ] == A [ num ] )",
+        "dp [ i ] = max ( dp [ i - 1 ] , dp [ i - 2 ] , dp [ i ] * cnt [ i ] ) ;",
+        "* dp [ 1 ] = max ( dp [ 0 ] , A [ 1 ] * cnt [ 1 ] ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        11,
+        28
+      ],
+      "mod_code": [
+        "while ( a [ i ] ] == A [ num ] )",
+        "cout << dp [ num - 1 ] ;"
+      ],
+      "err_line": 11,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        11,
+        28,
+        19
+      ],
+      "mod_code": [
+        "while ( a [ i ] ] == A [ num ] )",
+        "cout << dp [ num - 1 ] ;",
+        "* dp [ 1 ] = max ( dp [ 0 ] , A [ 1 ] * cnt [ 1 ] ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        11,
+        19
+      ],
+      "mod_code": [
+        "while ( a [ i ] ] == A [ num ] )",
+        "* dp [ 1 ] = max ( dp [ 0 ] , A [ 1 ] * cnt [ 1 ] ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        24,
+        28,
+        19
+      ],
+      "mod_code": [
+        "dp [ i ] = max ( dp [ i - 1 ] , dp [ i - 2 ] , dp [ i ] * cnt [ i ] ) ;",
+        "cout << dp [ num - 1 ] ;",
+        "* dp [ 1 ] = max ( dp [ 0 ] , A [ 1 ] * cnt [ 1 ] ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "invalid type argument of unary ‘*’ (have ‘long long int’)"
+    },
+    {
+      "mod_line": [
+        24,
+        19
+      ],
+      "mod_code": [
+        "dp [ i ] = max ( dp [ i - 1 ] , dp [ i - 2 ] , dp [ i ] * cnt [ i ] ) ;",
+        "* dp [ 1 ] = max ( dp [ 0 ] , A [ 1 ] * cnt [ 1 ] ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "invalid type argument of unary ‘*’ (have ‘long long int’)"
+    },
+    {
+      "mod_line": [
+        28,
+        19
+      ],
+      "mod_code": [
+        "cout << dp [ num - 1 ] ;",
+        "* dp [ 1 ] = max ( dp [ 0 ] , A [ 1 ] * cnt [ 1 ] ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "invalid type argument of unary ‘*’ (have ‘long long int’)"
+    }
+  ]
+}

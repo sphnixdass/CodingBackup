@@ -1,0 +1,1727 @@
+{
+  "meta": {
+    "index": 2190,
+    "hitid": "3X55NP42EOA4GE2VRCCL8RMHWNMP36",
+    "workerid": "A1NBHCFZKJGHKW",
+    "probid": "744A",
+    "subid": "42316353"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "u , v , n , m , k , c , ans , mx , ind , sum = int and a = int array of size 1009 and visited = int array of size 1005",
+      "code": "int u , v , n , m , k , c , ans , mx , ind , a [ 1009 ] , visited [ 1005 ] , sum ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "s , adj = int vector array of size 1005 each",
+      "code": "vector < int > s [ 1005 ] , adj [ 1005 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "st = int set",
+      "code": "set < int > st ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "in function DFS taking int u , int x",
+      "code": "void DFS ( int u , int x )",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "set visited [ i ] to 1",
+      "code": "visited [ u ] = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "append u to s [ x ]",
+      "code": "s [ x ] . push_back ( u ) ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "insert u into st",
+      "code": "st . insert ( u ) ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for i = 0 to size of adj [ i ]",
+      "code": "for ( int i = 0 ; i < adj [ u ] . size ( ) ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "if visited [ adj [ u ] [ i ] ] is 0 call DFS of adj [ u ] [ i ] , x",
+      "code": "if ( visited [ adj [ u ] [ i ] ] == 0 ) DFS ( adj [ u ] [ i ] , x ) ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 11,
+      "text": "read n then m the k",
+      "code": "cin >> n >> m >> k ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "read k values into a",
+      "code": "for ( int i = 0 ; i < k ; i ++ ) cin >> a [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "for i = 0 to m",
+      "code": "for ( int i = 0 ; i < m ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "read u then v",
+      "code": "cin >> u >> v ;",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "append v to adj [ u ]",
+      "code": "adj [ u ] . push_back ( v ) ;",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "append u to adj [ v ]",
+      "code": "adj [ v ] . push_back ( u ) ;",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "for i = 0 to k",
+      "code": "for ( int i = 0 ; i < k ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "call DFS of a [ i ] , a [ i ]",
+      "code": "DFS ( a [ i ] , a [ i ] ) ;",
+      "indent": 2
+    },
+    {
+      "line": 20,
+      "text": "sz = int with sz = size of s [ a [ i ] ]",
+      "code": "int sz = s [ a [ i ] ] . size ( ) ;",
+      "indent": 2
+    },
+    {
+      "line": 21,
+      "text": "set sum to 0",
+      "code": "sum = 0 ;",
+      "indent": 2
+    },
+    {
+      "line": 22,
+      "text": "for j = 0 to sz increment sum by size of adj [ s [ a [ i ] ] [ j ] ]",
+      "code": "for ( int j = 0 ; j < sz ; j ++ ) sum += adj [ s [ a [ i ] ] [ j ] ] . size ( ) ;",
+      "indent": 2
+    },
+    {
+      "line": 23,
+      "text": "set sum to sum / 2",
+      "code": "sum /= 2 ;",
+      "indent": 2
+    },
+    {
+      "line": 24,
+      "text": "increment ans by ( sz * ( sz - 1 ) ) / 2 - sum",
+      "code": "ans += ( sz * ( sz - 1 ) ) / 2 - sum ;",
+      "indent": 2
+    },
+    {
+      "line": 25,
+      "text": "set mx to max of mx , sz",
+      "code": "mx = max ( mx , sz ) ;",
+      "indent": 2
+    },
+    {
+      "line": 26,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 27,
+      "text": "set sum and c to 0",
+      "code": "sum = 0 , c = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 28,
+      "text": "for i = 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 29,
+      "text": "if st does not contain i",
+      "code": "if ( st . find ( i ) == st . end ( ) )",
+      "indent": 2
+    },
+    {
+      "line": 30,
+      "text": "increment c",
+      "code": "c ++ ;",
+      "indent": 3
+    },
+    {
+      "line": 31,
+      "text": "increment sum by size of adj [ i ]",
+      "code": "sum += adj [ i ] . size ( ) ;",
+      "indent": 3
+    },
+    {
+      "line": 32,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 33,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 34,
+      "text": "set sum to sum / 2",
+      "code": "sum /= 2 ;",
+      "indent": 1
+    },
+    {
+      "line": 35,
+      "text": "increment ans by ( c * ( c - 1 ) ) / 2 - sum + ( mx * c )",
+      "code": "ans += ( c * ( c - 1 ) ) / 2 - sum + ( mx * c ) ;",
+      "indent": 1
+    },
+    {
+      "line": 36,
+      "text": "print ans",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 37,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 38,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int u [ 1005 ] , v [ 1005 ] , v [ 1005 ] , v [ 1005 ] , m , k , mx , ind , ind , sum ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int v [1005]’"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "visited [ i ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        20
+      ],
+      "mod_code": [
+        "int sz = s [ a [ i ] ] ;"
+      ],
+      "err_line": 20,
+      "err_msg": "cannot convert ‘std::vector<int>’ to ‘int’ in initialization"
+    },
+    {
+      "mod_line": [
+        22
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < sz ; j ++ ) { sum += adj [ a [ a [ i ] ] ] += adj [ j ] ] ; }"
+      ],
+      "err_line": 22,
+      "err_msg": "no match for ‘operator+=’ (operand types are ‘std::vector<int>’ and ‘std::vector<int>’)"
+    },
+    {
+      "mod_line": [
+        29
+      ],
+      "mod_code": [
+        "if ( st . find ( i ) == 0 )"
+      ],
+      "err_line": 29,
+      "err_msg": "no match for ‘operator==’ (operand types are ‘std::set<int>::iterator {aka std::_Rb_tree_const_iterator<int>}’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int u [ 1005 ] , v [ 1005 ] , v [ 1005 ] , v [ 1005 ] , m , m , mx , ind , ind , sum ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int v [1005]’"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "vector < int > s [ 1005 ] , s [ 1005 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘std::vector<int> s [1005]’"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "set < int = st ;"
+      ],
+      "err_line": 2,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "visited [ i ] = ' 1 ' ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "s [ x ] += u ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator+=’ (operand types are ‘std::vector<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "st . push ( u ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘class std::set<int>’ has no member named ‘push’"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < adj [ i ] . size ( ) ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < m ; i ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "adj [ u ] += v ;"
+      ],
+      "err_line": 15,
+      "err_msg": "no match for ‘operator+=’ (operand types are ‘std::vector<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "adj [ v ] += u ;"
+      ],
+      "err_line": 16,
+      "err_msg": "no match for ‘operator+=’ (operand types are ‘std::vector<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        18
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < k ; i ++ )"
+      ],
+      "err_line": 18,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        22
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < sz ; j ++ ) { sum += adj [ a [ a [ i ] ] [ j ] ] ; }"
+      ],
+      "err_line": 22,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        28
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 28,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        29
+      ],
+      "mod_code": [
+        "if ( st . find ( i ) )"
+      ],
+      "err_line": 29,
+      "err_msg": "could not convert ‘st.std::set<_Key, _Compare, _Alloc>::find<int, std::less<int>, std::allocator<int> >(i)’ from ‘std::set<int>::iterator {aka std::_Rb_tree_const_iterator<int>}’ to ‘bool’"
+    },
+    {
+      "mod_line": [
+        0,
+        4
+      ],
+      "mod_code": [
+        "int u [ 1005 ] , v [ 1005 ] , v [ 1005 ] , v [ 1005 ] , m , k , mx , ind , ind , sum ;",
+        "visited [ i ] = 1 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int v [1005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        7
+      ],
+      "mod_code": [
+        "int u [ 1005 ] , v [ 1005 ] , v [ 1005 ] , v [ 1005 ] , m , k , mx , ind , ind , sum ;",
+        "visited [ i ] = 1 ;",
+        "for ( int i = 0 ; i < adj [ i ] . size ( ) ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int v [1005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        7,
+        11
+      ],
+      "mod_code": [
+        "int u [ 1005 ] , v [ 1005 ] , v [ 1005 ] , v [ 1005 ] , m , k , mx , ind , ind , sum ;",
+        "visited [ i ] = 1 ;",
+        "for ( int i = 0 ; i < adj [ i ] . size ( ) ; i ++ )",
+        "cin >> n >> m ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int v [1005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        7,
+        20
+      ],
+      "mod_code": [
+        "int u [ 1005 ] , v [ 1005 ] , v [ 1005 ] , v [ 1005 ] , m , k , mx , ind , ind , sum ;",
+        "visited [ i ] = 1 ;",
+        "for ( int i = 0 ; i < adj [ i ] . size ( ) ; i ++ )",
+        "int sz = s [ a [ i ] ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int v [1005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        7,
+        22
+      ],
+      "mod_code": [
+        "int u [ 1005 ] , v [ 1005 ] , v [ 1005 ] , v [ 1005 ] , m , k , mx , ind , ind , sum ;",
+        "visited [ i ] = 1 ;",
+        "for ( int i = 0 ; i < adj [ i ] . size ( ) ; i ++ )",
+        "for ( int j = 0 ; j < sz ; j ++ ) { sum += adj [ a [ a [ i ] ] ] += adj [ j ] ] ; }"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int v [1005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        7,
+        29
+      ],
+      "mod_code": [
+        "int u [ 1005 ] , v [ 1005 ] , v [ 1005 ] , v [ 1005 ] , m , k , mx , ind , ind , sum ;",
+        "visited [ i ] = 1 ;",
+        "for ( int i = 0 ; i < adj [ i ] . size ( ) ; i ++ )",
+        "if ( st . find ( i ) == 0 )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int v [1005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        11
+      ],
+      "mod_code": [
+        "int u [ 1005 ] , v [ 1005 ] , v [ 1005 ] , v [ 1005 ] , m , k , mx , ind , ind , sum ;",
+        "visited [ i ] = 1 ;",
+        "cin >> n >> m ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int v [1005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        11,
+        20
+      ],
+      "mod_code": [
+        "int u [ 1005 ] , v [ 1005 ] , v [ 1005 ] , v [ 1005 ] , m , k , mx , ind , ind , sum ;",
+        "visited [ i ] = 1 ;",
+        "cin >> n >> m ;",
+        "int sz = s [ a [ i ] ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int v [1005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        11,
+        22
+      ],
+      "mod_code": [
+        "int u [ 1005 ] , v [ 1005 ] , v [ 1005 ] , v [ 1005 ] , m , k , mx , ind , ind , sum ;",
+        "visited [ i ] = 1 ;",
+        "cin >> n >> m ;",
+        "for ( int j = 0 ; j < sz ; j ++ ) { sum += adj [ a [ a [ i ] ] ] += adj [ j ] ] ; }"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int v [1005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        11,
+        29
+      ],
+      "mod_code": [
+        "int u [ 1005 ] , v [ 1005 ] , v [ 1005 ] , v [ 1005 ] , m , k , mx , ind , ind , sum ;",
+        "visited [ i ] = 1 ;",
+        "cin >> n >> m ;",
+        "if ( st . find ( i ) == 0 )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int v [1005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        20
+      ],
+      "mod_code": [
+        "int u [ 1005 ] , v [ 1005 ] , v [ 1005 ] , v [ 1005 ] , m , k , mx , ind , ind , sum ;",
+        "visited [ i ] = 1 ;",
+        "int sz = s [ a [ i ] ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int v [1005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        20,
+        22
+      ],
+      "mod_code": [
+        "int u [ 1005 ] , v [ 1005 ] , v [ 1005 ] , v [ 1005 ] , m , k , mx , ind , ind , sum ;",
+        "visited [ i ] = 1 ;",
+        "int sz = s [ a [ i ] ] ;",
+        "for ( int j = 0 ; j < sz ; j ++ ) { sum += adj [ a [ a [ i ] ] ] += adj [ j ] ] ; }"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int v [1005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        20,
+        29
+      ],
+      "mod_code": [
+        "int u [ 1005 ] , v [ 1005 ] , v [ 1005 ] , v [ 1005 ] , m , k , mx , ind , ind , sum ;",
+        "visited [ i ] = 1 ;",
+        "int sz = s [ a [ i ] ] ;",
+        "if ( st . find ( i ) == 0 )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int v [1005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        22
+      ],
+      "mod_code": [
+        "int u [ 1005 ] , v [ 1005 ] , v [ 1005 ] , v [ 1005 ] , m , k , mx , ind , ind , sum ;",
+        "visited [ i ] = 1 ;",
+        "for ( int j = 0 ; j < sz ; j ++ ) { sum += adj [ a [ a [ i ] ] ] += adj [ j ] ] ; }"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int v [1005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        22,
+        29
+      ],
+      "mod_code": [
+        "int u [ 1005 ] , v [ 1005 ] , v [ 1005 ] , v [ 1005 ] , m , k , mx , ind , ind , sum ;",
+        "visited [ i ] = 1 ;",
+        "for ( int j = 0 ; j < sz ; j ++ ) { sum += adj [ a [ a [ i ] ] ] += adj [ j ] ] ; }",
+        "if ( st . find ( i ) == 0 )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int v [1005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        29
+      ],
+      "mod_code": [
+        "int u [ 1005 ] , v [ 1005 ] , v [ 1005 ] , v [ 1005 ] , m , k , mx , ind , ind , sum ;",
+        "visited [ i ] = 1 ;",
+        "if ( st . find ( i ) == 0 )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int v [1005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        7
+      ],
+      "mod_code": [
+        "int u [ 1005 ] , v [ 1005 ] , v [ 1005 ] , v [ 1005 ] , m , k , mx , ind , ind , sum ;",
+        "for ( int i = 0 ; i < adj [ i ] . size ( ) ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int v [1005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        7,
+        11
+      ],
+      "mod_code": [
+        "int u [ 1005 ] , v [ 1005 ] , v [ 1005 ] , v [ 1005 ] , m , k , mx , ind , ind , sum ;",
+        "for ( int i = 0 ; i < adj [ i ] . size ( ) ; i ++ )",
+        "cin >> n >> m ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int v [1005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        7,
+        11,
+        20
+      ],
+      "mod_code": [
+        "int u [ 1005 ] , v [ 1005 ] , v [ 1005 ] , v [ 1005 ] , m , k , mx , ind , ind , sum ;",
+        "for ( int i = 0 ; i < adj [ i ] . size ( ) ; i ++ )",
+        "cin >> n >> m ;",
+        "int sz = s [ a [ i ] ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int v [1005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        7,
+        11,
+        22
+      ],
+      "mod_code": [
+        "int u [ 1005 ] , v [ 1005 ] , v [ 1005 ] , v [ 1005 ] , m , k , mx , ind , ind , sum ;",
+        "for ( int i = 0 ; i < adj [ i ] . size ( ) ; i ++ )",
+        "cin >> n >> m ;",
+        "for ( int j = 0 ; j < sz ; j ++ ) { sum += adj [ a [ a [ i ] ] ] += adj [ j ] ] ; }"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int v [1005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        7,
+        11,
+        29
+      ],
+      "mod_code": [
+        "int u [ 1005 ] , v [ 1005 ] , v [ 1005 ] , v [ 1005 ] , m , k , mx , ind , ind , sum ;",
+        "for ( int i = 0 ; i < adj [ i ] . size ( ) ; i ++ )",
+        "cin >> n >> m ;",
+        "if ( st . find ( i ) == 0 )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int v [1005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        7,
+        20
+      ],
+      "mod_code": [
+        "int u [ 1005 ] , v [ 1005 ] , v [ 1005 ] , v [ 1005 ] , m , k , mx , ind , ind , sum ;",
+        "for ( int i = 0 ; i < adj [ i ] . size ( ) ; i ++ )",
+        "int sz = s [ a [ i ] ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int v [1005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        7,
+        20,
+        22
+      ],
+      "mod_code": [
+        "int u [ 1005 ] , v [ 1005 ] , v [ 1005 ] , v [ 1005 ] , m , k , mx , ind , ind , sum ;",
+        "for ( int i = 0 ; i < adj [ i ] . size ( ) ; i ++ )",
+        "int sz = s [ a [ i ] ] ;",
+        "for ( int j = 0 ; j < sz ; j ++ ) { sum += adj [ a [ a [ i ] ] ] += adj [ j ] ] ; }"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int v [1005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        7,
+        20,
+        29
+      ],
+      "mod_code": [
+        "int u [ 1005 ] , v [ 1005 ] , v [ 1005 ] , v [ 1005 ] , m , k , mx , ind , ind , sum ;",
+        "for ( int i = 0 ; i < adj [ i ] . size ( ) ; i ++ )",
+        "int sz = s [ a [ i ] ] ;",
+        "if ( st . find ( i ) == 0 )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int v [1005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        7,
+        22
+      ],
+      "mod_code": [
+        "int u [ 1005 ] , v [ 1005 ] , v [ 1005 ] , v [ 1005 ] , m , k , mx , ind , ind , sum ;",
+        "for ( int i = 0 ; i < adj [ i ] . size ( ) ; i ++ )",
+        "for ( int j = 0 ; j < sz ; j ++ ) { sum += adj [ a [ a [ i ] ] ] += adj [ j ] ] ; }"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int v [1005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        7,
+        22,
+        29
+      ],
+      "mod_code": [
+        "int u [ 1005 ] , v [ 1005 ] , v [ 1005 ] , v [ 1005 ] , m , k , mx , ind , ind , sum ;",
+        "for ( int i = 0 ; i < adj [ i ] . size ( ) ; i ++ )",
+        "for ( int j = 0 ; j < sz ; j ++ ) { sum += adj [ a [ a [ i ] ] ] += adj [ j ] ] ; }",
+        "if ( st . find ( i ) == 0 )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int v [1005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        7,
+        29
+      ],
+      "mod_code": [
+        "int u [ 1005 ] , v [ 1005 ] , v [ 1005 ] , v [ 1005 ] , m , k , mx , ind , ind , sum ;",
+        "for ( int i = 0 ; i < adj [ i ] . size ( ) ; i ++ )",
+        "if ( st . find ( i ) == 0 )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int v [1005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        11
+      ],
+      "mod_code": [
+        "int u [ 1005 ] , v [ 1005 ] , v [ 1005 ] , v [ 1005 ] , m , k , mx , ind , ind , sum ;",
+        "cin >> n >> m ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int v [1005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        11,
+        20
+      ],
+      "mod_code": [
+        "int u [ 1005 ] , v [ 1005 ] , v [ 1005 ] , v [ 1005 ] , m , k , mx , ind , ind , sum ;",
+        "cin >> n >> m ;",
+        "int sz = s [ a [ i ] ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int v [1005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        11,
+        20,
+        22
+      ],
+      "mod_code": [
+        "int u [ 1005 ] , v [ 1005 ] , v [ 1005 ] , v [ 1005 ] , m , k , mx , ind , ind , sum ;",
+        "cin >> n >> m ;",
+        "int sz = s [ a [ i ] ] ;",
+        "for ( int j = 0 ; j < sz ; j ++ ) { sum += adj [ a [ a [ i ] ] ] += adj [ j ] ] ; }"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int v [1005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        11,
+        20,
+        29
+      ],
+      "mod_code": [
+        "int u [ 1005 ] , v [ 1005 ] , v [ 1005 ] , v [ 1005 ] , m , k , mx , ind , ind , sum ;",
+        "cin >> n >> m ;",
+        "int sz = s [ a [ i ] ] ;",
+        "if ( st . find ( i ) == 0 )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int v [1005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        11,
+        22
+      ],
+      "mod_code": [
+        "int u [ 1005 ] , v [ 1005 ] , v [ 1005 ] , v [ 1005 ] , m , k , mx , ind , ind , sum ;",
+        "cin >> n >> m ;",
+        "for ( int j = 0 ; j < sz ; j ++ ) { sum += adj [ a [ a [ i ] ] ] += adj [ j ] ] ; }"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int v [1005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        11,
+        22,
+        29
+      ],
+      "mod_code": [
+        "int u [ 1005 ] , v [ 1005 ] , v [ 1005 ] , v [ 1005 ] , m , k , mx , ind , ind , sum ;",
+        "cin >> n >> m ;",
+        "for ( int j = 0 ; j < sz ; j ++ ) { sum += adj [ a [ a [ i ] ] ] += adj [ j ] ] ; }",
+        "if ( st . find ( i ) == 0 )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int v [1005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        11,
+        29
+      ],
+      "mod_code": [
+        "int u [ 1005 ] , v [ 1005 ] , v [ 1005 ] , v [ 1005 ] , m , k , mx , ind , ind , sum ;",
+        "cin >> n >> m ;",
+        "if ( st . find ( i ) == 0 )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int v [1005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        20
+      ],
+      "mod_code": [
+        "int u [ 1005 ] , v [ 1005 ] , v [ 1005 ] , v [ 1005 ] , m , k , mx , ind , ind , sum ;",
+        "int sz = s [ a [ i ] ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int v [1005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        20,
+        22
+      ],
+      "mod_code": [
+        "int u [ 1005 ] , v [ 1005 ] , v [ 1005 ] , v [ 1005 ] , m , k , mx , ind , ind , sum ;",
+        "int sz = s [ a [ i ] ] ;",
+        "for ( int j = 0 ; j < sz ; j ++ ) { sum += adj [ a [ a [ i ] ] ] += adj [ j ] ] ; }"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int v [1005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        20,
+        22,
+        29
+      ],
+      "mod_code": [
+        "int u [ 1005 ] , v [ 1005 ] , v [ 1005 ] , v [ 1005 ] , m , k , mx , ind , ind , sum ;",
+        "int sz = s [ a [ i ] ] ;",
+        "for ( int j = 0 ; j < sz ; j ++ ) { sum += adj [ a [ a [ i ] ] ] += adj [ j ] ] ; }",
+        "if ( st . find ( i ) == 0 )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int v [1005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        20,
+        29
+      ],
+      "mod_code": [
+        "int u [ 1005 ] , v [ 1005 ] , v [ 1005 ] , v [ 1005 ] , m , k , mx , ind , ind , sum ;",
+        "int sz = s [ a [ i ] ] ;",
+        "if ( st . find ( i ) == 0 )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int v [1005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        22
+      ],
+      "mod_code": [
+        "int u [ 1005 ] , v [ 1005 ] , v [ 1005 ] , v [ 1005 ] , m , k , mx , ind , ind , sum ;",
+        "for ( int j = 0 ; j < sz ; j ++ ) { sum += adj [ a [ a [ i ] ] ] += adj [ j ] ] ; }"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int v [1005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        22,
+        29
+      ],
+      "mod_code": [
+        "int u [ 1005 ] , v [ 1005 ] , v [ 1005 ] , v [ 1005 ] , m , k , mx , ind , ind , sum ;",
+        "for ( int j = 0 ; j < sz ; j ++ ) { sum += adj [ a [ a [ i ] ] ] += adj [ j ] ] ; }",
+        "if ( st . find ( i ) == 0 )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int v [1005]’"
+    },
+    {
+      "mod_line": [
+        0,
+        29
+      ],
+      "mod_code": [
+        "int u [ 1005 ] , v [ 1005 ] , v [ 1005 ] , v [ 1005 ] , m , k , mx , ind , ind , sum ;",
+        "if ( st . find ( i ) == 0 )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int v [1005]’"
+    },
+    {
+      "mod_line": [
+        4,
+        7
+      ],
+      "mod_code": [
+        "visited [ i ] = 1 ;",
+        "for ( int i = 0 ; i < adj [ i ] . size ( ) ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        7,
+        11
+      ],
+      "mod_code": [
+        "visited [ i ] = 1 ;",
+        "for ( int i = 0 ; i < adj [ i ] . size ( ) ; i ++ )",
+        "cin >> n >> m ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        7,
+        11,
+        20
+      ],
+      "mod_code": [
+        "visited [ i ] = 1 ;",
+        "for ( int i = 0 ; i < adj [ i ] . size ( ) ; i ++ )",
+        "cin >> n >> m ;",
+        "int sz = s [ a [ i ] ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        7,
+        11,
+        22
+      ],
+      "mod_code": [
+        "visited [ i ] = 1 ;",
+        "for ( int i = 0 ; i < adj [ i ] . size ( ) ; i ++ )",
+        "cin >> n >> m ;",
+        "for ( int j = 0 ; j < sz ; j ++ ) { sum += adj [ a [ a [ i ] ] ] += adj [ j ] ] ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        7,
+        11,
+        29
+      ],
+      "mod_code": [
+        "visited [ i ] = 1 ;",
+        "for ( int i = 0 ; i < adj [ i ] . size ( ) ; i ++ )",
+        "cin >> n >> m ;",
+        "if ( st . find ( i ) == 0 )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        7,
+        20
+      ],
+      "mod_code": [
+        "visited [ i ] = 1 ;",
+        "for ( int i = 0 ; i < adj [ i ] . size ( ) ; i ++ )",
+        "int sz = s [ a [ i ] ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        7,
+        20,
+        22
+      ],
+      "mod_code": [
+        "visited [ i ] = 1 ;",
+        "for ( int i = 0 ; i < adj [ i ] . size ( ) ; i ++ )",
+        "int sz = s [ a [ i ] ] ;",
+        "for ( int j = 0 ; j < sz ; j ++ ) { sum += adj [ a [ a [ i ] ] ] += adj [ j ] ] ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        7,
+        20,
+        29
+      ],
+      "mod_code": [
+        "visited [ i ] = 1 ;",
+        "for ( int i = 0 ; i < adj [ i ] . size ( ) ; i ++ )",
+        "int sz = s [ a [ i ] ] ;",
+        "if ( st . find ( i ) == 0 )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        7,
+        22
+      ],
+      "mod_code": [
+        "visited [ i ] = 1 ;",
+        "for ( int i = 0 ; i < adj [ i ] . size ( ) ; i ++ )",
+        "for ( int j = 0 ; j < sz ; j ++ ) { sum += adj [ a [ a [ i ] ] ] += adj [ j ] ] ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        7,
+        22,
+        29
+      ],
+      "mod_code": [
+        "visited [ i ] = 1 ;",
+        "for ( int i = 0 ; i < adj [ i ] . size ( ) ; i ++ )",
+        "for ( int j = 0 ; j < sz ; j ++ ) { sum += adj [ a [ a [ i ] ] ] += adj [ j ] ] ; }",
+        "if ( st . find ( i ) == 0 )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        7,
+        29
+      ],
+      "mod_code": [
+        "visited [ i ] = 1 ;",
+        "for ( int i = 0 ; i < adj [ i ] . size ( ) ; i ++ )",
+        "if ( st . find ( i ) == 0 )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        11
+      ],
+      "mod_code": [
+        "visited [ i ] = 1 ;",
+        "cin >> n >> m ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        11,
+        20
+      ],
+      "mod_code": [
+        "visited [ i ] = 1 ;",
+        "cin >> n >> m ;",
+        "int sz = s [ a [ i ] ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        11,
+        20,
+        22
+      ],
+      "mod_code": [
+        "visited [ i ] = 1 ;",
+        "cin >> n >> m ;",
+        "int sz = s [ a [ i ] ] ;",
+        "for ( int j = 0 ; j < sz ; j ++ ) { sum += adj [ a [ a [ i ] ] ] += adj [ j ] ] ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        11,
+        20,
+        29
+      ],
+      "mod_code": [
+        "visited [ i ] = 1 ;",
+        "cin >> n >> m ;",
+        "int sz = s [ a [ i ] ] ;",
+        "if ( st . find ( i ) == 0 )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        11,
+        22
+      ],
+      "mod_code": [
+        "visited [ i ] = 1 ;",
+        "cin >> n >> m ;",
+        "for ( int j = 0 ; j < sz ; j ++ ) { sum += adj [ a [ a [ i ] ] ] += adj [ j ] ] ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        11,
+        22,
+        29
+      ],
+      "mod_code": [
+        "visited [ i ] = 1 ;",
+        "cin >> n >> m ;",
+        "for ( int j = 0 ; j < sz ; j ++ ) { sum += adj [ a [ a [ i ] ] ] += adj [ j ] ] ; }",
+        "if ( st . find ( i ) == 0 )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        11,
+        29
+      ],
+      "mod_code": [
+        "visited [ i ] = 1 ;",
+        "cin >> n >> m ;",
+        "if ( st . find ( i ) == 0 )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        20
+      ],
+      "mod_code": [
+        "visited [ i ] = 1 ;",
+        "int sz = s [ a [ i ] ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        20,
+        22
+      ],
+      "mod_code": [
+        "visited [ i ] = 1 ;",
+        "int sz = s [ a [ i ] ] ;",
+        "for ( int j = 0 ; j < sz ; j ++ ) { sum += adj [ a [ a [ i ] ] ] += adj [ j ] ] ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        20,
+        22,
+        29
+      ],
+      "mod_code": [
+        "visited [ i ] = 1 ;",
+        "int sz = s [ a [ i ] ] ;",
+        "for ( int j = 0 ; j < sz ; j ++ ) { sum += adj [ a [ a [ i ] ] ] += adj [ j ] ] ; }",
+        "if ( st . find ( i ) == 0 )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        20,
+        29
+      ],
+      "mod_code": [
+        "visited [ i ] = 1 ;",
+        "int sz = s [ a [ i ] ] ;",
+        "if ( st . find ( i ) == 0 )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        22
+      ],
+      "mod_code": [
+        "visited [ i ] = 1 ;",
+        "for ( int j = 0 ; j < sz ; j ++ ) { sum += adj [ a [ a [ i ] ] ] += adj [ j ] ] ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        22,
+        29
+      ],
+      "mod_code": [
+        "visited [ i ] = 1 ;",
+        "for ( int j = 0 ; j < sz ; j ++ ) { sum += adj [ a [ a [ i ] ] ] += adj [ j ] ] ; }",
+        "if ( st . find ( i ) == 0 )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        29
+      ],
+      "mod_code": [
+        "visited [ i ] = 1 ;",
+        "if ( st . find ( i ) == 0 )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        11,
+        20
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < adj [ i ] . size ( ) ; i ++ )",
+        "cin >> n >> m ;",
+        "int sz = s [ a [ i ] ] ;"
+      ],
+      "err_line": 20,
+      "err_msg": "cannot convert ‘std::vector<int>’ to ‘int’ in initialization"
+    },
+    {
+      "mod_line": [
+        7,
+        11,
+        20,
+        22
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < adj [ i ] . size ( ) ; i ++ )",
+        "cin >> n >> m ;",
+        "int sz = s [ a [ i ] ] ;",
+        "for ( int j = 0 ; j < sz ; j ++ ) { sum += adj [ a [ a [ i ] ] ] += adj [ j ] ] ; }"
+      ],
+      "err_line": 20,
+      "err_msg": "cannot convert ‘std::vector<int>’ to ‘int’ in initialization"
+    },
+    {
+      "mod_line": [
+        7,
+        11,
+        20,
+        29
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < adj [ i ] . size ( ) ; i ++ )",
+        "cin >> n >> m ;",
+        "int sz = s [ a [ i ] ] ;",
+        "if ( st . find ( i ) == 0 )"
+      ],
+      "err_line": 20,
+      "err_msg": "cannot convert ‘std::vector<int>’ to ‘int’ in initialization"
+    },
+    {
+      "mod_line": [
+        7,
+        11,
+        22
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < adj [ i ] . size ( ) ; i ++ )",
+        "cin >> n >> m ;",
+        "for ( int j = 0 ; j < sz ; j ++ ) { sum += adj [ a [ a [ i ] ] ] += adj [ j ] ] ; }"
+      ],
+      "err_line": 22,
+      "err_msg": "no match for ‘operator+=’ (operand types are ‘std::vector<int>’ and ‘std::vector<int>’)"
+    },
+    {
+      "mod_line": [
+        7,
+        11,
+        22,
+        29
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < adj [ i ] . size ( ) ; i ++ )",
+        "cin >> n >> m ;",
+        "for ( int j = 0 ; j < sz ; j ++ ) { sum += adj [ a [ a [ i ] ] ] += adj [ j ] ] ; }",
+        "if ( st . find ( i ) == 0 )"
+      ],
+      "err_line": 22,
+      "err_msg": "no match for ‘operator+=’ (operand types are ‘std::vector<int>’ and ‘std::vector<int>’)"
+    },
+    {
+      "mod_line": [
+        7,
+        11,
+        29
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < adj [ i ] . size ( ) ; i ++ )",
+        "cin >> n >> m ;",
+        "if ( st . find ( i ) == 0 )"
+      ],
+      "err_line": 29,
+      "err_msg": "no match for ‘operator==’ (operand types are ‘std::set<int>::iterator {aka std::_Rb_tree_const_iterator<int>}’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        7,
+        20
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < adj [ i ] . size ( ) ; i ++ )",
+        "int sz = s [ a [ i ] ] ;"
+      ],
+      "err_line": 20,
+      "err_msg": "cannot convert ‘std::vector<int>’ to ‘int’ in initialization"
+    },
+    {
+      "mod_line": [
+        7,
+        20,
+        22
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < adj [ i ] . size ( ) ; i ++ )",
+        "int sz = s [ a [ i ] ] ;",
+        "for ( int j = 0 ; j < sz ; j ++ ) { sum += adj [ a [ a [ i ] ] ] += adj [ j ] ] ; }"
+      ],
+      "err_line": 20,
+      "err_msg": "cannot convert ‘std::vector<int>’ to ‘int’ in initialization"
+    },
+    {
+      "mod_line": [
+        7,
+        20,
+        22,
+        29
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < adj [ i ] . size ( ) ; i ++ )",
+        "int sz = s [ a [ i ] ] ;",
+        "for ( int j = 0 ; j < sz ; j ++ ) { sum += adj [ a [ a [ i ] ] ] += adj [ j ] ] ; }",
+        "if ( st . find ( i ) == 0 )"
+      ],
+      "err_line": 20,
+      "err_msg": "cannot convert ‘std::vector<int>’ to ‘int’ in initialization"
+    },
+    {
+      "mod_line": [
+        7,
+        20,
+        29
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < adj [ i ] . size ( ) ; i ++ )",
+        "int sz = s [ a [ i ] ] ;",
+        "if ( st . find ( i ) == 0 )"
+      ],
+      "err_line": 20,
+      "err_msg": "cannot convert ‘std::vector<int>’ to ‘int’ in initialization"
+    },
+    {
+      "mod_line": [
+        7,
+        22
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < adj [ i ] . size ( ) ; i ++ )",
+        "for ( int j = 0 ; j < sz ; j ++ ) { sum += adj [ a [ a [ i ] ] ] += adj [ j ] ] ; }"
+      ],
+      "err_line": 22,
+      "err_msg": "no match for ‘operator+=’ (operand types are ‘std::vector<int>’ and ‘std::vector<int>’)"
+    },
+    {
+      "mod_line": [
+        7,
+        22,
+        29
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < adj [ i ] . size ( ) ; i ++ )",
+        "for ( int j = 0 ; j < sz ; j ++ ) { sum += adj [ a [ a [ i ] ] ] += adj [ j ] ] ; }",
+        "if ( st . find ( i ) == 0 )"
+      ],
+      "err_line": 22,
+      "err_msg": "no match for ‘operator+=’ (operand types are ‘std::vector<int>’ and ‘std::vector<int>’)"
+    },
+    {
+      "mod_line": [
+        7,
+        29
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < adj [ i ] . size ( ) ; i ++ )",
+        "if ( st . find ( i ) == 0 )"
+      ],
+      "err_line": 29,
+      "err_msg": "no match for ‘operator==’ (operand types are ‘std::set<int>::iterator {aka std::_Rb_tree_const_iterator<int>}’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        11,
+        20
+      ],
+      "mod_code": [
+        "cin >> n >> m ;",
+        "int sz = s [ a [ i ] ] ;"
+      ],
+      "err_line": 20,
+      "err_msg": "cannot convert ‘std::vector<int>’ to ‘int’ in initialization"
+    },
+    {
+      "mod_line": [
+        11,
+        20,
+        22
+      ],
+      "mod_code": [
+        "cin >> n >> m ;",
+        "int sz = s [ a [ i ] ] ;",
+        "for ( int j = 0 ; j < sz ; j ++ ) { sum += adj [ a [ a [ i ] ] ] += adj [ j ] ] ; }"
+      ],
+      "err_line": 20,
+      "err_msg": "cannot convert ‘std::vector<int>’ to ‘int’ in initialization"
+    },
+    {
+      "mod_line": [
+        11,
+        20,
+        22,
+        29
+      ],
+      "mod_code": [
+        "cin >> n >> m ;",
+        "int sz = s [ a [ i ] ] ;",
+        "for ( int j = 0 ; j < sz ; j ++ ) { sum += adj [ a [ a [ i ] ] ] += adj [ j ] ] ; }",
+        "if ( st . find ( i ) == 0 )"
+      ],
+      "err_line": 20,
+      "err_msg": "cannot convert ‘std::vector<int>’ to ‘int’ in initialization"
+    },
+    {
+      "mod_line": [
+        11,
+        20,
+        29
+      ],
+      "mod_code": [
+        "cin >> n >> m ;",
+        "int sz = s [ a [ i ] ] ;",
+        "if ( st . find ( i ) == 0 )"
+      ],
+      "err_line": 20,
+      "err_msg": "cannot convert ‘std::vector<int>’ to ‘int’ in initialization"
+    },
+    {
+      "mod_line": [
+        11,
+        22
+      ],
+      "mod_code": [
+        "cin >> n >> m ;",
+        "for ( int j = 0 ; j < sz ; j ++ ) { sum += adj [ a [ a [ i ] ] ] += adj [ j ] ] ; }"
+      ],
+      "err_line": 22,
+      "err_msg": "no match for ‘operator+=’ (operand types are ‘std::vector<int>’ and ‘std::vector<int>’)"
+    },
+    {
+      "mod_line": [
+        11,
+        22,
+        29
+      ],
+      "mod_code": [
+        "cin >> n >> m ;",
+        "for ( int j = 0 ; j < sz ; j ++ ) { sum += adj [ a [ a [ i ] ] ] += adj [ j ] ] ; }",
+        "if ( st . find ( i ) == 0 )"
+      ],
+      "err_line": 22,
+      "err_msg": "no match for ‘operator+=’ (operand types are ‘std::vector<int>’ and ‘std::vector<int>’)"
+    },
+    {
+      "mod_line": [
+        11,
+        29
+      ],
+      "mod_code": [
+        "cin >> n >> m ;",
+        "if ( st . find ( i ) == 0 )"
+      ],
+      "err_line": 29,
+      "err_msg": "no match for ‘operator==’ (operand types are ‘std::set<int>::iterator {aka std::_Rb_tree_const_iterator<int>}’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        20,
+        22
+      ],
+      "mod_code": [
+        "int sz = s [ a [ i ] ] ;",
+        "for ( int j = 0 ; j < sz ; j ++ ) { sum += adj [ a [ a [ i ] ] ] += adj [ j ] ] ; }"
+      ],
+      "err_line": 20,
+      "err_msg": "cannot convert ‘std::vector<int>’ to ‘int’ in initialization"
+    },
+    {
+      "mod_line": [
+        20,
+        22,
+        29
+      ],
+      "mod_code": [
+        "int sz = s [ a [ i ] ] ;",
+        "for ( int j = 0 ; j < sz ; j ++ ) { sum += adj [ a [ a [ i ] ] ] += adj [ j ] ] ; }",
+        "if ( st . find ( i ) == 0 )"
+      ],
+      "err_line": 20,
+      "err_msg": "cannot convert ‘std::vector<int>’ to ‘int’ in initialization"
+    },
+    {
+      "mod_line": [
+        20,
+        29
+      ],
+      "mod_code": [
+        "int sz = s [ a [ i ] ] ;",
+        "if ( st . find ( i ) == 0 )"
+      ],
+      "err_line": 20,
+      "err_msg": "cannot convert ‘std::vector<int>’ to ‘int’ in initialization"
+    },
+    {
+      "mod_line": [
+        22,
+        29
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < sz ; j ++ ) { sum += adj [ a [ a [ i ] ] ] += adj [ j ] ] ; }",
+        "if ( st . find ( i ) == 0 )"
+      ],
+      "err_line": 22,
+      "err_msg": "no match for ‘operator+=’ (operand types are ‘std::vector<int>’ and ‘std::vector<int>’)"
+    }
+  ]
+}

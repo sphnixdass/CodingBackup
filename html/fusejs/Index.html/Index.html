@@ -1,0 +1,596 @@
+<html lang="en">
+    
+<head>
+
+    <meta charset="UTF-8">
+    
+  <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+  <meta name="apple-mobile-web-app-title" content="CodePen">
+  
+  <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+  
+  <link rel="mask-icon" type="" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+  
+  
+    <title>CodePen - Fuse.js</title>
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.min.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    
+  <style>
+  .results {
+    border: 1px solid #ddd;
+    margin-top: 10px;
+  }
+  
+  .content {
+    width:95%;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  
+  .wide {
+    position:relative;
+    width:100% !important;
+  }
+  </style>
+  
+    <script>
+    window.console = window.console || function(t) {};
+  </script>
+  
+    
+    
+    <script>
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage("resize", "*");
+    }
+  </script>
+  
+  
+  </head>
+  
+  <body translate="no" data-new-gr-c-s-check-loaded="8.869.0" data-gr-ext-installed="">
+    
+  
+    
+      <meta name="viewport" content="width=device-width initial-scale=1">
+    
+  
+  
+    <div class="content">
+  
+      <div class="row">
+        <div class="col-md-6">
+          <h3>Search Items</h3>
+          <hr>
+          <textarea id="itemsTextArea" style="min-width: 100%; min-height: 500px">         [{
+              formName: "ABC-100",
+              formTitle: "Food Establishment Application",
+              businessType: "KDA"
+            },
+            {
+              formName: "ABC-200",
+              formTitle: "Plan Review Application for Food Establishments",
+              businessType: "KDA"
+            },
+            {
+              formName: "ABC-300",
+              formTitle: "Food Processor or Storage Application",
+              businessType: "KDA"
+            },
+            {
+              formName: "ABC-400",
+              formTitle: "Kansas Liquor License Application",
+              businessType: "KDOR"
+            },
+            {
+              formName: "DEF-700",
+              formTitle: "Business Registration",
+              businessType: "KSOS"
+            },
+            {
+              formName: "DEF-800",
+              formTitle: "Employer Identification Number",
+              businessType: "IRS"
+            },
+            {
+              formName: "GHI-900",
+              formTitle: "Business Tax Registration",
+              businessType: "KDOR"
+            }]
+        </textarea>
+        </div>
+  
+        <div class="col-md-6">
+  
+          <section id="search">
+            <h3>Search</h3>
+            <hr>
+  
+            <div class="form-group form-inline">
+              <span id="helpBlock" class="help-block">Search by form name, form title, or business type.</span>
+              <input type="text" class="form-control wide" id="searchTextbox" placeholder="Food Establishment Application, etc...">
+            </div>
+  
+          </section>
+  
+          <hr>
+  
+          <div class="hidden">
+            <section id="js">
+              <h4>Here's the JavaScript:</h4>
+              <pre><code id="jsTextArea" class="nohighlight">var options = {
+    shouldSort: true,
+    threshold: 0.6,
+    location: 0,
+    distance: 100,
+    maxPatternLength: 32,
+    keys: [
+      "formName",
+      "formTitle",
+      "businessType"
+  ]
+  };
+  var fuse = new Fuse(list, options); // "list" is the item array
+  var result = fuse.search("ssd");</code>
+  </pre>
+            </section>
+  
+            <hr>
+          </div>
+  
+          <section id="output">
+            <h4>Your search results:</h4>
+            <pre id="resultTextAreaContainer"><code id="resultTextArea" class="nohighlight">[
+    {
+      "formName": "DEF-700",
+      "formTitle": "Business Registration",
+      "businessType": "KSOS"
+    },
+    {
+      "formName": "GHI-900",
+      "formTitle": "Business Tax Registration",
+      "businessType": "KDOR"
+    },
+    {
+      "formName": "ABC-300",
+      "formTitle": "Food Processor or Storage Application",
+      "businessType": "KDA"
+    }
+  ]</code>
+  </pre>
+            <label>Search time:</label>
+            <span id="searchTimeLabel">1 ms</span>
+          </section>
+  
+        </div>
+  
+      </div>
+  
+      <div class="row">
+        <div class="hidden">
+          <div class="col-md-12">
+  
+            <h3>Set the options</h3>
+  
+            <hr>
+  
+            <div class="form-group">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" id="caseSensitiveCheckbox"> Case sensitive
+                </label>
+                <span id="helpBlock" class="help-block">Indicates whether comparisons should be case sensitive.</span>
+              </div>
+            </div>
+  
+            <div class="form-group">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" id="scoreCheckbox">Include score
+                </label>
+                <span id="helpBlock" class="help-block">Whether the score should be included in the result set. A score of <code>0</code> indicates a perfect match, while a score of <code>1</code> indicates a complete mismatch.
+              </span></div>
+            </div>
+  
+            <div class="form-group">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" id="matchesCheckbox">Include matches
+                </label>
+                <span id="helpBlock" class="help-block">Whether the matches should be included in the result set. When <code>true</code>, each record in the result set will include the indices of the matched characters: <code>indices: [start, length]</code>. These can consequently be used for highlighting purposes.</span>
+              </div>
+            </div>
+  
+            <div class="form-group">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" id="sortCheckbox" checked="checked">Sort
+                </label>
+                <span id="helpBlock" class="help-block">Whether to sort the result list, by score.</span>
+              </div>
+            </div>
+  
+            <div class="form-group">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" id="tokenizeCheckbox">Tokenize
+                </label>
+                <span id="helpBlock" class="help-block">When <code>true</code>, the algorithm will search individual words <strong>and</strong> the full string, computing the final score as a function of both. In this case, the <code>threshold</code>, <code>distance</code>, and <code>location</code> are inconsequential for individual tokens, and are thus ignored.</span>
+              </div>
+            </div>
+  
+            <div class="form-group">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" id="matchAllTokensCheckbox">Match all tokens
+                </label>
+                <span id="helpBlock" class="help-block">When <code>true</code>, the result set will only include records that match all tokens. Will only work if <code>tokenize</code> is also <code>true</code>.</span>
+              </div>
+            </div>
+  
+            <div class="form-group form-inline">
+              <label for="identifierTextbox">ID</label>
+              <input type="text" class="form-control" id="identifierTextbox">
+              <span id="helpBlock" class="help-block">
+                The name of the identifier property. If specified, the returned result will be a               list of the items' identifiers, otherwise it will be a list of the items.
+              </span>
+            </div>
+  
+            <div class="form-group form-inline">
+              <label>Keys</label>
+              <br>
+              <textarea class="form-control" id="keysTextbox" style="min-width: 100%; min-height: 20px">["formName","formTitle", "businessType]
+              </textarea>
+              <span id="helpBlock" class="help-block">List of properties that will be searched. This supports       nested properties, weighted search, searching in arrays</span>
+            </div>
+  
+            <div class="form-group form-inline">
+              <label for="locationRange">Location</label>
+              <input type="number" id="locationRange" min="0" max="100" value="0">
+              <span id="helpBlock" class="help-block">Determines approximately where in the text is the pattern expected to be found.</span>
+            </div>
+  
+            <div class="form-group form-inline">
+              <label for="thresholdRange">Threshold</label>
+              <input type="number" id="thresholdRange" min="0" step="0.1" max="1" value="0.6">
+              <span id="helpBlock" class="help-block">At what point does the match algorithm give up. A threshold of <code>0.0</code> requires a perfect match (of both letters and location), a threshold of <code>1.0</code> would match anything.</span>
+            </div>
+  
+            <div class="form-group form-inline">
+              <label for="distanceRange">Distance</label>
+              <input type="number" id="distanceRange" min="0" max="1000" value="100">
+              <span id="helpBlock" class="help-block">Determines how close the match must be to the fuzzy location (specified by <code>location</code>). An exact letter match which is <code>distance</code> characters away from the fuzzy location would score as a complete mismatch. A <code>distance</code> of <code>0</code> requires the match be at the exact <code>location</code> specified, a <code>distance</code> of <code>1000</code> would require a perfect match to be within <code>800</code> characters of the <code>location</code> to be found using a <code>threshold</code> of <code>0.8</code>.</span>
+            </div>
+  
+            <div class="form-group form-inline">
+              <label for="maxPatternLength">Max pattern length</label>
+              <input type="number" id="maxPatternLength" min="0" max="64" value="32">
+              <span id="helpBlock" class="help-block">The maximum length of the pattern. The longer the pattern (i.e. the search query), the more intensive the search operation will be. Whenever the pattern exceeds the <code>maxPatternLength</code>, an error will be thrown. Why is this important? Read <a href="https://en.wikipedia.org/wiki/Word_(computer_architecture)#Word_size_choice" alt="word size choice" target="_blank">this</a>.</span>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <hr>
+  
+      <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/2.5.0/fuse.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fiber/1.0.5/fiber.min.js"></script>
+        <script id="rendered-js">
+  $(function (window) {
+    // Mixins
+    var Mixins = {};
+    Mixins.Event = function (base) {
+      return {
+        _hook: function () {
+          if (!this._$hook) {
+            this._$hook = $({});
+          }
+          return this._$hook;
+        },
+        on: function () {
+          var hook = this._hook();
+          hook.on.apply(hook, arguments);
+        },
+        off: function () {
+          var hook = this._hook();
+          hook.off.apply(hook, arguments);
+        },
+        trigger: function () {
+          var hook = this._hook();
+          hook.trigger.apply(hook, arguments);
+        } };
+  
+    };
+  
+    // Core
+    var App = {};
+  
+    App.Options = Fiber.extend(function () {
+      return {
+        init: function () {
+          this.setupNodes();
+          this.bindEvents();
+          this.data = {
+            include: [] };
+  
+  
+          _.each(this.checkboxItems, _.bind(function (item) {
+            this.setupCheckboxItems(item, false);
+          }, this));
+  
+          _.each(this.rangeItems, _.bind(function (item) {
+            this.setupRangeItems(item, false);
+          }, this));
+  
+          this.setupKeys(true);
+  
+          this.setupIdentifier(false);
+  
+          this.setupPatternLength(false);
+        },
+        setupNodes: function () {
+          this.$caseSensitiveCheckbox = $('#caseSensitiveCheckbox');
+          this.$scoreCheckbox = $('#scoreCheckbox');
+          this.$matchesCheckbox = $('#matchesCheckbox');
+          this.$sortCheckbox = $('#sortCheckbox');
+          this.$tokenizeCheckbox = $('#tokenizeCheckbox');
+          this.$matchAllTokensCheckbox = $('#matchAllTokensCheckbox');
+          this.$identifierTextbox = $('#identifierTextbox');
+  
+          this.$locationRange = $('#locationRange');
+          this.$thresholdRange = $('#thresholdRange');
+          this.$distanceRange = $('#distanceRange');
+          this.$maxPatternLength = $('#maxPatternLength');
+          this.$keysTextbox = $('#keysTextbox');
+  
+          this.checkboxItems = [{
+            node: this.$caseSensitiveCheckbox,
+            name: 'caseSensitive' },
+          {
+            node: this.$sortCheckbox,
+            name: 'shouldSort' },
+          {
+            node: this.$tokenizeCheckbox,
+            name: 'tokenize' },
+          {
+            node: this.$matchAllTokensCheckbox,
+            name: 'matchAllTokens' }];
+  
+  
+          this.includeItems = [{
+            node: this.$scoreCheckbox,
+            name: 'score' },
+          {
+            node: this.$matchesCheckbox,
+            name: 'matches' }];
+  
+  
+          this.rangeItems = [{
+            node: this.$thresholdRange,
+            name: 'threshold' },
+          {
+            node: this.$locationRange,
+            name: 'location' },
+          {
+            node: this.$distanceRange,
+            name: 'distance' }];
+  
+        },
+        bindEvents: function () {
+          // Checkboxes
+          _.each(this.checkboxItems, _.bind(function (item) {
+            item.node.on('change', _.bind(function () {
+              this.setupCheckboxItems(item, true);
+            }, this));
+          }, this));
+  
+          // Checkboxes
+          _.each(this.includeItems, _.bind(function (item) {
+            item.node.on('change', _.bind(function () {
+              this.setupIncludetems(item, true);
+            }, this));
+          }, this));
+  
+          // Ranges
+          _.each(this.rangeItems, _.bind(function (item) {
+            item.node.on('change', _.bind(function () {
+              this.setupRangeItems(item, true);
+            }, this));
+          }, this));
+  
+          this.$identifierTextbox.on('change', _.bind(this.setupIdentifier, this));
+  
+          // keys
+          this.$keysTextbox.on('change', _.bind(this.setupKeys, this));
+  
+          // Pattern length
+          this.$maxPatternLength.on('change', _.bind(this.setupPatternLength, this));
+  
+          // Google events
+          this.$caseSensitiveCheckbox.on('change', function () {
+            ga('send', 'event', 'Demo', 'change', 'option:case-sensitive');
+          });
+          this.$scoreCheckbox.on('change', function () {
+            ga('send', 'event', 'Demo', 'change', 'option:score');
+          });
+          this.$matchesCheckbox.on('change', function () {
+            ga('send', 'event', 'Demo', 'change', 'option:matches');
+          });
+          this.$sortCheckbox.on('change', function () {
+            ga('send', 'event', 'Demo', 'change', 'option:sort');
+          });
+          this.$tokenizeCheckbox.on('change', function () {
+            ga('send', 'event', 'Demo', 'change', 'option:tokenize');
+          });
+          this.$matchAllTokensCheckbox.on('change', function () {
+            ga('send', 'event', 'Demo', 'change', 'option:match-all-tokens');
+          });
+          this.$identifierTextbox.on('change', function () {
+            ga('send', 'event', 'Demo', 'change', 'option:identifier');
+          });
+          this.$keysTextbox.on('change', function () {
+            ga('send', 'event', 'Demo', 'change', 'option:keys');
+          });
+        },
+        setupCheckboxItems: function (item, trigger) {
+          var checked = item.node.prop('checked');
+          this.data[item.name] = checked;
+          if (trigger || trigger === undefined) {
+            this.trigger('change');
+          }
+        },
+        setupIncludetems: function (item, trigger) {
+          var checked = item.node.prop('checked');
+          var index = this.data.include.indexOf(item.name);
+          if (checked) {
+            if (index == -1) {
+              this.data.include.push(item.name);
+            }
+          } else {
+            if (index !== -1) {
+              this.data.include.splice(index, 1);
+            }
+          }
+          if (trigger || trigger === undefined) {
+            this.trigger('change');
+          }
+        },
+        setupRangeItems: function (item, trigger) {
+          var value = item.node.val();
+          this.data[item.name] = parseFloat(value);
+          if (trigger || trigger === undefined) {
+            this.trigger('change');
+          }
+        },
+        setupIdentifier: function (trigger) {
+          this.data.id = this.$identifierTextbox.val();
+          if (trigger) {
+            this.trigger('change');
+          }
+        },
+        setupKeys: function (trigger) {
+          var text = this.$keysTextbox.val();
+          this.data.keys = ['formName', 'formTitle', 'businessType'];
+          if (trigger) {
+            this.trigger('change');
+          }
+        },
+        setupPatternLength: function (trigger) {
+          var value = this.$maxPatternLength.val();
+          this.data['maxPatternLength'] = parseInt(value);
+          if (trigger || trigger === undefined) {
+            this.trigger('change');
+          }
+        } };
+  
+    });
+    Fiber.mixin(App.Options, Mixins.Event);
+  
+    App.Main = new (Fiber.extend(function () {
+      return {
+        init: function () {
+          this.setupNodes();
+          this.bindEvents();
+          this.setupItems();
+        },
+        setupNodes: function () {
+          this.$itemsTextArea = $('#itemsTextArea');
+          this.$searchTextbox = $('#searchTextbox');
+          this.$resultTextArea = $('#resultTextArea');
+          this.$jsTextArea = $('#jsTextArea');
+          this.$searchTimeLabel = $('#searchTimeLabel');
+        },
+        bindEvents: function () {
+          this.options = new App.Options();
+          this.options.on('change', _.bind(this.setupFuse, this));
+          this.$itemsTextArea.on('change', _.bind(this.setupItems, this));
+  
+          this.$searchTextbox.on('keyup', _.debounce(_.bind(function () {
+            this.search(this.$searchTextbox.val());
+          }, this), 0));
+  
+          this.$itemsTextArea.on('change', function () {
+            ga('send', 'event', 'Demo', 'change', 'items');
+          });
+          this.$searchTextbox.on('change', function () {
+            ga('send', 'event', 'Demo', 'change', 'search');
+          });
+        },
+        setupItems: function () {
+          var list = this.$itemsTextArea.val();
+          this.list = eval(list);
+          this.setupFuse();
+        },
+        setupFuse: function () {
+          this.fuse = new Fuse(this.list, this.options.data);
+          this.search(this.$searchTextbox.val());
+        },
+        search: function (pattern) {
+          if (pattern.length > this.options.data.maxPatternLength) {
+            this.$resultTextArea.html('Pattern length is too long');
+            return;
+          }
+          this.pattern = pattern;
+          var start = new Date().getTime();
+          var result = this.fuse.search(pattern);
+          var end = new Date().getTime();
+          this.$searchTimeLabel.text(end - start + ' ms');
+          this.$resultTextArea.html(JSON.stringify(result, null, '  '));
+          this.updateJS();
+        },
+        updateJS: function () {
+          var arr = [];
+          arr.push('var options = {');
+          if (this.options.data.id) {
+            arr.push('  id: "' + this.options.data.id + '",');
+          }
+          if (this.options.data.caseSensitive) {
+            arr.push('  caseSensitive: ' + this.options.data.caseSensitive + ',');
+          }
+          if (this.options.data.include.length) {
+            var items = _.map(this.options.data.include, function (item) {
+              return '"' + item + '"';
+            }).join(',');
+            arr.push('  include: [' + items + '],');
+          }
+          if (this.options.data.shouldSort) {
+            arr.push('  shouldSort: ' + this.options.data.shouldSort + ',');
+          }
+          if (this.options.data.tokenize) {
+            arr.push('  tokenize: ' + this.options.data.tokenize + ',');
+          }
+          if (this.options.data.matchAllTokens) {
+            arr.push('  matchAllTokens: ' + this.options.data.matchAllTokens + ',');
+          }
+          arr.push('  threshold: ' + this.options.data.threshold + ',');
+          arr.push('  location: ' + this.options.data.location + ',');
+          arr.push('  distance: ' + this.options.data.distance + ',');
+          arr.push('  maxPatternLength: ' + this.options.data.maxPatternLength + ',');
+          arr.push('  keys: ' + JSON.stringify(this.options.data.keys, null, '    '));
+          arr.push('};');
+          arr.push('var fuse = new Fuse(list, options); // "list" is the item array');
+          arr.push('var result = fuse.search("' + this.pattern + '");');
+          arr = arr.join('\n');
+          this.$jsTextArea.html(arr);
+        } };
+  
+    }))();
+  });
+  //# sourceURL=pen.js
+      </script>
+  
+    
+  
+  
+  
+  
+   
+  </body></html>

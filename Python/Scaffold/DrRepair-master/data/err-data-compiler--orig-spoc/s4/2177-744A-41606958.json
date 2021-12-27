@@ -1,0 +1,1583 @@
+{
+  "meta": {
+    "index": 2177,
+    "hitid": "3CKVGCS3PGZ5CEJQ06YW1YTLGV9S0U",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "744A",
+    "subid": "41606958"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare integer array father size 1005",
+      "code": "int father [ 1005 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare n , m , k as integers",
+      "code": "int n , m , k ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "declare find with integer x as argument , returning integer",
+      "code": "int find ( int x )",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "return x if father [ x ] is x , else let father [ x ] be run find with father [ x ] as argument",
+      "code": "return father [ x ] == x ? x : father [ x ] = find ( father [ x ] ) ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "declare integer array node size 1005",
+      "code": "int node [ 1005 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 6,
+      "text": "declare integer array fathercnt size 1005",
+      "code": "int fathercnt [ 1005 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 7,
+      "text": "declare integer cnt",
+      "code": "int cnt ;",
+      "indent": 0
+    },
+    {
+      "line": 8,
+      "text": "declare integer array isgro size 1005",
+      "code": "int isgro [ 1005 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 10,
+      "text": "set bytes from isgro to size of isgro to value 0",
+      "code": "memset ( isgro , 0 , sizeof ( isgro ) ) ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "read n , m , k",
+      "code": "cin >> n >> m >> k ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "declare integer gro",
+      "code": "int gro ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "for j = 1 to n inclusive , let father [ j ] be j",
+      "code": "for ( int j = 1 ; j <= n ; j ++ ) { father [ j ] = j ; }",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "for i = 0 to k exclusive",
+      "code": "for ( int i = 0 ; i < k ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "declare integer g",
+      "code": "int g ;",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "read g",
+      "code": "cin >> g ;",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "let isgro [ g ] be 1",
+      "code": "isgro [ g ] = 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "let gro be g",
+      "code": "gro = g ;",
+      "indent": 2
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "for j = 1 to n inclusive , let fathercnt [ j ] be 1",
+      "code": "for ( int j = 1 ; j <= n ; j ++ ) { fathercnt [ j ] = 1 ; }",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "for i = 0 to m exclusive",
+      "code": "for ( int i = 0 ; i < m ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 22,
+      "text": "declare p , q as integers",
+      "code": "int p , q ;",
+      "indent": 2
+    },
+    {
+      "line": 23,
+      "text": "read p and q",
+      "code": "cin >> p >> q ;",
+      "indent": 2
+    },
+    {
+      "line": 24,
+      "text": "if isgro [ p ] is true",
+      "code": "if ( isgro [ p ] )",
+      "indent": 2
+    },
+    {
+      "line": 25,
+      "text": "declare integer x",
+      "code": "int x ;",
+      "indent": 3
+    },
+    {
+      "line": 26,
+      "text": "let x be result of run find ( q )",
+      "code": "x = find ( q ) ;",
+      "indent": 3
+    },
+    {
+      "line": 27,
+      "text": "if father [ run find ( q ) ] is not father [ run find ( p ) ]",
+      "code": "if ( father [ find ( q ) ] != father [ find ( p ) ] )",
+      "indent": 3
+    },
+    {
+      "line": 28,
+      "text": "let father [ run find ( q ) ] be father [ run find ( p ) ]",
+      "code": "father [ find ( q ) ] = father [ find ( p ) ] ;",
+      "indent": 4
+    },
+    {
+      "line": 29,
+      "text": "increment fathercnt [ run find ( p ) ] by fathercnt [ x ]",
+      "code": "fathercnt [ find ( p ) ] += fathercnt [ x ] ;",
+      "indent": 4
+    },
+    {
+      "line": 30,
+      "text": "let fathercnt [ x ] be 0",
+      "code": "fathercnt [ x ] = 0 ;",
+      "indent": 4
+    },
+    {
+      "line": 31,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 32,
+      "text": "else if isgro [ q ] is true",
+      "code": "else if ( isgro [ q ] )",
+      "indent": 2
+    },
+    {
+      "line": 33,
+      "text": "declare integer x",
+      "code": "int x ;",
+      "indent": 3
+    },
+    {
+      "line": 34,
+      "text": "let x be result of run find ( p )",
+      "code": "x = find ( p ) ;",
+      "indent": 3
+    },
+    {
+      "line": 35,
+      "text": "if father [ run find ( p ) ] is not father [ run find ( q ) ]",
+      "code": "if ( father [ find ( p ) ] != father [ find ( q ) ] )",
+      "indent": 3
+    },
+    {
+      "line": 36,
+      "text": "let father [ run find ( p ) ] be father [ run find ( q ) ]",
+      "code": "father [ find ( p ) ] = father [ find ( q ) ] ;",
+      "indent": 4
+    },
+    {
+      "line": 37,
+      "text": "increment fathercnt [ run find ( q ) ] by fathercnt [ x ]",
+      "code": "fathercnt [ find ( q ) ] += fathercnt [ x ] ;",
+      "indent": 4
+    },
+    {
+      "line": 38,
+      "text": "let fathercnt [ x ] be 0",
+      "code": "fathercnt [ x ] = 0 ;",
+      "indent": 4
+    },
+    {
+      "line": 39,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 40,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 41,
+      "text": "declare integer x",
+      "code": "int x ;",
+      "indent": 3
+    },
+    {
+      "line": 42,
+      "text": "if isgro [ father [ result of run find ( p ) ] ] is true",
+      "code": "if ( isgro [ father [ find ( p ) ] ] )",
+      "indent": 3
+    },
+    {
+      "line": 43,
+      "text": "let x be result of run find ( q )",
+      "code": "x = find ( q ) ;",
+      "indent": 4
+    },
+    {
+      "line": 44,
+      "text": "if father [ run find ( q ) ] is not father [ run find ( p ) ]",
+      "code": "if ( father [ find ( q ) ] != father [ find ( p ) ] )",
+      "indent": 4
+    },
+    {
+      "line": 45,
+      "text": "let father [ run find ( q ) ] be father [ run find ( p ) ]",
+      "code": "father [ find ( q ) ] = father [ find ( p ) ] ;",
+      "indent": 5
+    },
+    {
+      "line": 46,
+      "text": "increment fathercnt [ run find ( p ) ] by fathercnt [ x ]",
+      "code": "fathercnt [ find ( p ) ] += fathercnt [ x ] ;",
+      "indent": 5
+    },
+    {
+      "line": 47,
+      "text": "let fathercnt [ x ] be 0",
+      "code": "fathercnt [ x ] = 0 ;",
+      "indent": 5
+    },
+    {
+      "line": 48,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 4
+    },
+    {
+      "line": 49,
+      "text": "else",
+      "code": "else",
+      "indent": 3
+    },
+    {
+      "line": 50,
+      "text": "let x be result of run find ( p )",
+      "code": "x = find ( p ) ;",
+      "indent": 4
+    },
+    {
+      "line": 51,
+      "text": "if father [ run find ( p ) ] is not father [ run find ( q ) ]",
+      "code": "if ( father [ find ( p ) ] != father [ find ( q ) ] )",
+      "indent": 4
+    },
+    {
+      "line": 52,
+      "text": "let father [ run find ( p ) ] be father [ run find ( q ) ]",
+      "code": "father [ find ( p ) ] = father [ find ( q ) ] ;",
+      "indent": 5
+    },
+    {
+      "line": 53,
+      "text": "increment fathercnt [ run find ( q ) ] by fathercnt [ x ]",
+      "code": "fathercnt [ find ( q ) ] += fathercnt [ x ] ;",
+      "indent": 5
+    },
+    {
+      "line": 54,
+      "text": "let fathercnt [ x ] be 0",
+      "code": "fathercnt [ x ] = 0 ;",
+      "indent": 5
+    },
+    {
+      "line": 55,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 4
+    },
+    {
+      "line": 56,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 57,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 58,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 59,
+      "text": "declare integer maxfather = 0",
+      "code": "int maxfather = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 60,
+      "text": "declare integer strunity",
+      "code": "int strunity ;",
+      "indent": 1
+    },
+    {
+      "line": 61,
+      "text": "for i = 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 62,
+      "text": "if fathercnt [ i ] is greater than maxfather",
+      "code": "if ( fathercnt [ i ] > maxfather )",
+      "indent": 2
+    },
+    {
+      "line": 63,
+      "text": "let maxfather be fathercnt [ i ]",
+      "code": "maxfather = fathercnt [ i ] ;",
+      "indent": 3
+    },
+    {
+      "line": 64,
+      "text": "let strunity be i",
+      "code": "strunity = i ;",
+      "indent": 3
+    },
+    {
+      "line": 65,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 66,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 67,
+      "text": "declare integer maxgro = 0",
+      "code": "int maxgro = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 68,
+      "text": "declare integer strgro = gro",
+      "code": "int strgro = gro ;",
+      "indent": 1
+    },
+    {
+      "line": 69,
+      "text": "for i = 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 70,
+      "text": "if isgro [ i ] and fathercnt [ i ] is greater than maxgro",
+      "code": "if ( isgro [ i ] && fathercnt [ i ] > maxgro )",
+      "indent": 2
+    },
+    {
+      "line": 71,
+      "text": "let maxgro be fathercnt [ i ]",
+      "code": "maxgro = fathercnt [ i ] ;",
+      "indent": 3
+    },
+    {
+      "line": 72,
+      "text": "let strgro be i",
+      "code": "strgro = i ;",
+      "indent": 3
+    },
+    {
+      "line": 73,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 74,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 75,
+      "text": "for i = 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 76,
+      "text": "if fathercnt [ i ] is not 0",
+      "code": "if ( fathercnt [ i ] != 0 )",
+      "indent": 2
+    },
+    {
+      "line": 77,
+      "text": "if isgro [ run find ( i ) ] is not 1",
+      "code": "if ( isgro [ find ( i ) ] != 1 )",
+      "indent": 3
+    },
+    {
+      "line": 78,
+      "text": "increment fathercnt [ strgro ] by fathercnt [ i ]",
+      "code": "fathercnt [ strgro ] += fathercnt [ i ] ;",
+      "indent": 4
+    },
+    {
+      "line": 79,
+      "text": "let fathercnt [ i ] be 0",
+      "code": "fathercnt [ i ] = 0 ;",
+      "indent": 4
+    },
+    {
+      "line": 80,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 81,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 82,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 83,
+      "text": "let cnt be 0",
+      "code": "cnt = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 84,
+      "text": "for i = 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 85,
+      "text": "if isgro [ i ] is true , increment cnt by fathercnt [ i ] * ( fathercnt [ i ] - 1 ) ) / 2",
+      "code": "if ( isgro [ i ] ) { cnt += ( fathercnt [ i ] * ( fathercnt [ i ] - 1 ) ) / 2 ; }",
+      "indent": 2
+    },
+    {
+      "line": 86,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 87,
+      "text": "print cnt - m , newline",
+      "code": "cout << cnt - m << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 88,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 89,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "int find ( int x ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        27
+      ],
+      "mod_code": [
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )"
+      ],
+      "err_line": 27,
+      "err_msg": "request for member ‘find’ in ‘p’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        35
+      ],
+      "mod_code": [
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )"
+      ],
+      "err_line": 35,
+      "err_msg": "request for member ‘find’ in ‘q’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        42
+      ],
+      "mod_code": [
+        "if ( isgro [ father [ father ] ] ] == true )"
+      ],
+      "err_line": 42,
+      "err_msg": "invalid types ‘int [1005][int [1005]]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        44
+      ],
+      "mod_code": [
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )"
+      ],
+      "err_line": 44,
+      "err_msg": "request for member ‘find’ in ‘p’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        51
+      ],
+      "mod_code": [
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )"
+      ],
+      "err_line": 51,
+      "err_msg": "request for member ‘find’ in ‘q’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "int t ;"
+      ],
+      "err_line": 18,
+      "err_msg": "‘gro’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < k ; i ++ )"
+      ],
+      "err_line": 14,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "gets ( g ) ;"
+      ],
+      "err_line": 16,
+      "err_msg": "invalid conversion from ‘int’ to ‘char*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        21
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < m ; i ++ )"
+      ],
+      "err_line": 21,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26
+      ],
+      "mod_code": [
+        "char x = find ( q ) ;"
+      ],
+      "err_line": 26,
+      "err_msg": "conflicting declaration ‘char x’"
+    },
+    {
+      "mod_line": [
+        27
+      ],
+      "mod_code": [
+        "if ( father [ find ( q ) ] != father [ find ( p ) ) ] ;"
+      ],
+      "err_line": 27,
+      "err_msg": "expected ‘]’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        28
+      ],
+      "mod_code": [
+        "father [ find ( q ) ] = father [ p . find ( p ) ] ;"
+      ],
+      "err_line": 28,
+      "err_msg": "request for member ‘find’ in ‘p’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        29
+      ],
+      "mod_code": [
+        "fathercnt [ find ( p ) ] [ fathercnt [ x ] ;"
+      ],
+      "err_line": 29,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        34
+      ],
+      "mod_code": [
+        "char x = find ( p ) ;"
+      ],
+      "err_line": 34,
+      "err_msg": "conflicting declaration ‘char x’"
+    },
+    {
+      "mod_line": [
+        36
+      ],
+      "mod_code": [
+        "father [ find ( p ) ] = father [ q . find ( q ) ] ;"
+      ],
+      "err_line": 36,
+      "err_msg": "request for member ‘find’ in ‘q’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        37
+      ],
+      "mod_code": [
+        "fathercnt [ find ( q ) ] [ fathercnt [ x ] ;"
+      ],
+      "err_line": 37,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        40
+      ],
+      "mod_code": [
+        "else else"
+      ],
+      "err_line": 40,
+      "err_msg": "expected primary-expression before ‘else’"
+    },
+    {
+      "mod_line": [
+        42
+      ],
+      "mod_code": [
+        "if ( isgro [ father [ father ] ] == true )"
+      ],
+      "err_line": 42,
+      "err_msg": "invalid types ‘int [1005][int [1005]]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        44
+      ],
+      "mod_code": [
+        "if ( father [ find ( q ) ] != father [ find ( p ) ) ] ;"
+      ],
+      "err_line": 44,
+      "err_msg": "expected ‘]’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        45
+      ],
+      "mod_code": [
+        "father [ find ( q ) ] = father [ p . find ( p ) ] ;"
+      ],
+      "err_line": 45,
+      "err_msg": "request for member ‘find’ in ‘p’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        46
+      ],
+      "mod_code": [
+        "fathercnt [ find ( p ) ] [ fathercnt [ x ] ;"
+      ],
+      "err_line": 46,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        49
+      ],
+      "mod_code": [
+        "else else"
+      ],
+      "err_line": 49,
+      "err_msg": "expected primary-expression before ‘else’"
+    },
+    {
+      "mod_line": [
+        52
+      ],
+      "mod_code": [
+        "father [ find ( p ) ] = father [ q . find ( q ) ] ;"
+      ],
+      "err_line": 52,
+      "err_msg": "request for member ‘find’ in ‘q’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        53
+      ],
+      "mod_code": [
+        "fathercnt [ find ( q ) ] [ fathercnt [ x ] ;"
+      ],
+      "err_line": 53,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        59
+      ],
+      "mod_code": [
+        "maxfather = 0 ;"
+      ],
+      "err_line": 59,
+      "err_msg": "‘maxfather’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        60
+      ],
+      "mod_code": [
+        "int t ;"
+      ],
+      "err_line": 64,
+      "err_msg": "‘strunity’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        61
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 61,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        67
+      ],
+      "mod_code": [
+        "maxgro = 0 ;"
+      ],
+      "err_line": 67,
+      "err_msg": "‘maxgro’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        69
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 69,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        75
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 75,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        84
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 84,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        85
+      ],
+      "mod_code": [
+        "if ( isgro [ i ] ) cnt += fathercnt [ i ] * ( fathercnt [ i ] - 1 ) ) / 2 ;"
+      ],
+      "err_line": 85,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        27
+      ],
+      "mod_code": [
+        "int find ( int x ) ;",
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        27,
+        35
+      ],
+      "mod_code": [
+        "int find ( int x ) ;",
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )",
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        27,
+        35,
+        42
+      ],
+      "mod_code": [
+        "int find ( int x ) ;",
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )",
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )",
+        "if ( isgro [ father [ father ] ] ] == true )"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        27,
+        35,
+        44
+      ],
+      "mod_code": [
+        "int find ( int x ) ;",
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )",
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )",
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        27,
+        35,
+        51
+      ],
+      "mod_code": [
+        "int find ( int x ) ;",
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )",
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )",
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        27,
+        42
+      ],
+      "mod_code": [
+        "int find ( int x ) ;",
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )",
+        "if ( isgro [ father [ father ] ] ] == true )"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        27,
+        42,
+        44
+      ],
+      "mod_code": [
+        "int find ( int x ) ;",
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )",
+        "if ( isgro [ father [ father ] ] ] == true )",
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        27,
+        42,
+        51
+      ],
+      "mod_code": [
+        "int find ( int x ) ;",
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )",
+        "if ( isgro [ father [ father ] ] ] == true )",
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        27,
+        44
+      ],
+      "mod_code": [
+        "int find ( int x ) ;",
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )",
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        27,
+        44,
+        51
+      ],
+      "mod_code": [
+        "int find ( int x ) ;",
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )",
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )",
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        27,
+        51
+      ],
+      "mod_code": [
+        "int find ( int x ) ;",
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )",
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        35
+      ],
+      "mod_code": [
+        "int find ( int x ) ;",
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        35,
+        42
+      ],
+      "mod_code": [
+        "int find ( int x ) ;",
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )",
+        "if ( isgro [ father [ father ] ] ] == true )"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        35,
+        42,
+        44
+      ],
+      "mod_code": [
+        "int find ( int x ) ;",
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )",
+        "if ( isgro [ father [ father ] ] ] == true )",
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        35,
+        42,
+        51
+      ],
+      "mod_code": [
+        "int find ( int x ) ;",
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )",
+        "if ( isgro [ father [ father ] ] ] == true )",
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        35,
+        44
+      ],
+      "mod_code": [
+        "int find ( int x ) ;",
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )",
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        35,
+        44,
+        51
+      ],
+      "mod_code": [
+        "int find ( int x ) ;",
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )",
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )",
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        35,
+        51
+      ],
+      "mod_code": [
+        "int find ( int x ) ;",
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )",
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        42
+      ],
+      "mod_code": [
+        "int find ( int x ) ;",
+        "if ( isgro [ father [ father ] ] ] == true )"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        42,
+        44
+      ],
+      "mod_code": [
+        "int find ( int x ) ;",
+        "if ( isgro [ father [ father ] ] ] == true )",
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        42,
+        44,
+        51
+      ],
+      "mod_code": [
+        "int find ( int x ) ;",
+        "if ( isgro [ father [ father ] ] ] == true )",
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )",
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        42,
+        51
+      ],
+      "mod_code": [
+        "int find ( int x ) ;",
+        "if ( isgro [ father [ father ] ] ] == true )",
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        44
+      ],
+      "mod_code": [
+        "int find ( int x ) ;",
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        44,
+        51
+      ],
+      "mod_code": [
+        "int find ( int x ) ;",
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )",
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        51
+      ],
+      "mod_code": [
+        "int find ( int x ) ;",
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        27,
+        35
+      ],
+      "mod_code": [
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )",
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )"
+      ],
+      "err_line": 27,
+      "err_msg": "request for member ‘find’ in ‘p’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        27,
+        35,
+        42
+      ],
+      "mod_code": [
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )",
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )",
+        "if ( isgro [ father [ father ] ] ] == true )"
+      ],
+      "err_line": 27,
+      "err_msg": "request for member ‘find’ in ‘p’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        27,
+        35,
+        42,
+        44
+      ],
+      "mod_code": [
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )",
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )",
+        "if ( isgro [ father [ father ] ] ] == true )",
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )"
+      ],
+      "err_line": 27,
+      "err_msg": "request for member ‘find’ in ‘p’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        27,
+        35,
+        42,
+        51
+      ],
+      "mod_code": [
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )",
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )",
+        "if ( isgro [ father [ father ] ] ] == true )",
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )"
+      ],
+      "err_line": 27,
+      "err_msg": "request for member ‘find’ in ‘p’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        27,
+        35,
+        44
+      ],
+      "mod_code": [
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )",
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )",
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )"
+      ],
+      "err_line": 27,
+      "err_msg": "request for member ‘find’ in ‘p’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        27,
+        35,
+        44,
+        51
+      ],
+      "mod_code": [
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )",
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )",
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )",
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )"
+      ],
+      "err_line": 27,
+      "err_msg": "request for member ‘find’ in ‘p’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        27,
+        35,
+        51
+      ],
+      "mod_code": [
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )",
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )",
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )"
+      ],
+      "err_line": 27,
+      "err_msg": "request for member ‘find’ in ‘p’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        27,
+        42
+      ],
+      "mod_code": [
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )",
+        "if ( isgro [ father [ father ] ] ] == true )"
+      ],
+      "err_line": 27,
+      "err_msg": "request for member ‘find’ in ‘p’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        27,
+        42,
+        44
+      ],
+      "mod_code": [
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )",
+        "if ( isgro [ father [ father ] ] ] == true )",
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )"
+      ],
+      "err_line": 27,
+      "err_msg": "request for member ‘find’ in ‘p’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        27,
+        42,
+        44,
+        51
+      ],
+      "mod_code": [
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )",
+        "if ( isgro [ father [ father ] ] ] == true )",
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )",
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )"
+      ],
+      "err_line": 27,
+      "err_msg": "request for member ‘find’ in ‘p’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        27,
+        42,
+        51
+      ],
+      "mod_code": [
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )",
+        "if ( isgro [ father [ father ] ] ] == true )",
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )"
+      ],
+      "err_line": 27,
+      "err_msg": "request for member ‘find’ in ‘p’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        27,
+        44
+      ],
+      "mod_code": [
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )",
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )"
+      ],
+      "err_line": 27,
+      "err_msg": "request for member ‘find’ in ‘p’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        27,
+        44,
+        51
+      ],
+      "mod_code": [
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )",
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )",
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )"
+      ],
+      "err_line": 27,
+      "err_msg": "request for member ‘find’ in ‘p’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        27,
+        51
+      ],
+      "mod_code": [
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )",
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )"
+      ],
+      "err_line": 27,
+      "err_msg": "request for member ‘find’ in ‘p’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        35,
+        42
+      ],
+      "mod_code": [
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )",
+        "if ( isgro [ father [ father ] ] ] == true )"
+      ],
+      "err_line": 35,
+      "err_msg": "request for member ‘find’ in ‘q’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        35,
+        42,
+        44
+      ],
+      "mod_code": [
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )",
+        "if ( isgro [ father [ father ] ] ] == true )",
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )"
+      ],
+      "err_line": 35,
+      "err_msg": "request for member ‘find’ in ‘q’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        35,
+        42,
+        44,
+        51
+      ],
+      "mod_code": [
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )",
+        "if ( isgro [ father [ father ] ] ] == true )",
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )",
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )"
+      ],
+      "err_line": 35,
+      "err_msg": "request for member ‘find’ in ‘q’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        35,
+        42,
+        51
+      ],
+      "mod_code": [
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )",
+        "if ( isgro [ father [ father ] ] ] == true )",
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )"
+      ],
+      "err_line": 35,
+      "err_msg": "request for member ‘find’ in ‘q’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        35,
+        44
+      ],
+      "mod_code": [
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )",
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )"
+      ],
+      "err_line": 35,
+      "err_msg": "request for member ‘find’ in ‘q’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        35,
+        44,
+        51
+      ],
+      "mod_code": [
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )",
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )",
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )"
+      ],
+      "err_line": 35,
+      "err_msg": "request for member ‘find’ in ‘q’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        35,
+        51
+      ],
+      "mod_code": [
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )",
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )"
+      ],
+      "err_line": 35,
+      "err_msg": "request for member ‘find’ in ‘q’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        42,
+        44
+      ],
+      "mod_code": [
+        "if ( isgro [ father [ father ] ] ] == true )",
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )"
+      ],
+      "err_line": 42,
+      "err_msg": "invalid types ‘int [1005][int [1005]]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        42,
+        44,
+        51
+      ],
+      "mod_code": [
+        "if ( isgro [ father [ father ] ] ] == true )",
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )",
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )"
+      ],
+      "err_line": 42,
+      "err_msg": "invalid types ‘int [1005][int [1005]]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        42,
+        51
+      ],
+      "mod_code": [
+        "if ( isgro [ father [ father ] ] ] == true )",
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )"
+      ],
+      "err_line": 42,
+      "err_msg": "invalid types ‘int [1005][int [1005]]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        44,
+        51
+      ],
+      "mod_code": [
+        "if ( father [ find ( q ) ] != father [ p . find ( p ) )",
+        "if ( father [ find ( p ) ] != father [ q . find ( q ) )"
+      ],
+      "err_line": 44,
+      "err_msg": "request for member ‘find’ in ‘p’, which is of non-class type ‘int’"
+    }
+  ]
+}

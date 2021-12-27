@@ -1,0 +1,695 @@
+{
+  "meta": {
+    "index": 1265,
+    "hitid": "3TD33TP5DLW2W506HM9U0FVYLT3AB6",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "1042A",
+    "subid": "48660139"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create long long ints n and m",
+      "code": "long long int n , m ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read from the input to n and m",
+      "code": "cin >> n >> m ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "declare vector of long long integers called a with size n",
+      "code": "vector < long long int > a ( n ) ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for i = 0 to n exclusive , read standard input to a [ i ]",
+      "code": "for ( long long int i = 0 ; i < n ; i ++ ) { cin >> a [ i ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "sort a from start to end",
+      "code": "sort ( a . begin ( ) , a . end ( ) ) ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "define new long long integer called sum with value 0",
+      "code": "long long int sum = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "create long long ints mini and maxi",
+      "code": "long long int mini , maxi ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "change i in a loop from 0 to n - 1 exclusive , and assign sum + abs ( a [ n - 1 ] - a [ i ] ) to sum on each loop",
+      "code": "for ( long long int i = 0 ; i < n - 1 ; i ++ ) { sum = sum + abs ( a [ n - 1 ] - a [ i ] ) ; }",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "if sum > = m",
+      "code": "if ( sum >= m )",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "assign a [ n - 1 ] to mini",
+      "code": "mini = a [ n - 1 ] ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "else",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "change mini to a [ n - 1 ] + ( m - sum + n - 1 ) / n",
+      "code": "mini = a [ n - 1 ] + ( m - sum + n - 1 ) / n ;",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "print mini , \" \" , a [ n - 1 ] + m and \" \\ n \" to the standard output",
+      "code": "cout << mini << \" \" << a [ n - 1 ] + m << \" \\n \" ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "sort ( a , a + end ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘end’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "sort ( a . rbegin ( ) , a . end ( ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘sort(std::vector<long long int>::reverse_iterator, std::vector<long long int>::iterator)’"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "else if ( sum >= m )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "do"
+      ],
+      "err_line": 13,
+      "err_msg": "expected ‘while’ before ‘cout’"
+    },
+    {
+      "mod_line": [
+        5,
+        10
+      ],
+      "mod_code": [
+        "sort ( a , a + end ) ;",
+        "mini -= a [ n - 1 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘end’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        2
+      ],
+      "mod_code": [
+        "sort ( a , a + end ) ;",
+        "mini -= a [ n - 1 ] ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        2,
+        9
+      ],
+      "mod_code": [
+        "sort ( a , a + end ) ;",
+        "mini -= a [ n - 1 ] ;",
+        "while ( cin >> n >> m )",
+        "else if ( sum >= m )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        2,
+        11
+      ],
+      "mod_code": [
+        "sort ( a , a + end ) ;",
+        "mini -= a [ n - 1 ] ;",
+        "while ( cin >> n >> m )",
+        "do"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        9
+      ],
+      "mod_code": [
+        "sort ( a , a + end ) ;",
+        "mini -= a [ n - 1 ] ;",
+        "else if ( sum >= m )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘end’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        9,
+        11
+      ],
+      "mod_code": [
+        "sort ( a , a + end ) ;",
+        "mini -= a [ n - 1 ] ;",
+        "else if ( sum >= m )",
+        "do"
+      ],
+      "err_line": 5,
+      "err_msg": "‘end’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        11
+      ],
+      "mod_code": [
+        "sort ( a , a + end ) ;",
+        "mini -= a [ n - 1 ] ;",
+        "do"
+      ],
+      "err_line": 5,
+      "err_msg": "‘end’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        2
+      ],
+      "mod_code": [
+        "sort ( a , a + end ) ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        2,
+        9
+      ],
+      "mod_code": [
+        "sort ( a , a + end ) ;",
+        "while ( cin >> n >> m )",
+        "else if ( sum >= m )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        2,
+        9,
+        11
+      ],
+      "mod_code": [
+        "sort ( a , a + end ) ;",
+        "while ( cin >> n >> m )",
+        "else if ( sum >= m )",
+        "do"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        2,
+        11
+      ],
+      "mod_code": [
+        "sort ( a , a + end ) ;",
+        "while ( cin >> n >> m )",
+        "do"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        9
+      ],
+      "mod_code": [
+        "sort ( a , a + end ) ;",
+        "else if ( sum >= m )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘end’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        9,
+        11
+      ],
+      "mod_code": [
+        "sort ( a , a + end ) ;",
+        "else if ( sum >= m )",
+        "do"
+      ],
+      "err_line": 5,
+      "err_msg": "‘end’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        11
+      ],
+      "mod_code": [
+        "sort ( a , a + end ) ;",
+        "do"
+      ],
+      "err_line": 5,
+      "err_msg": "‘end’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        10
+      ],
+      "mod_code": [
+        "sort ( a . rbegin ( ) , a . end ( ) ) ;",
+        "mini -= a [ n - 1 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘sort(std::vector<long long int>::reverse_iterator, std::vector<long long int>::iterator)’"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        2
+      ],
+      "mod_code": [
+        "sort ( a . rbegin ( ) , a . end ( ) ) ;",
+        "mini -= a [ n - 1 ] ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        2,
+        9
+      ],
+      "mod_code": [
+        "sort ( a . rbegin ( ) , a . end ( ) ) ;",
+        "mini -= a [ n - 1 ] ;",
+        "while ( cin >> n >> m )",
+        "else if ( sum >= m )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        2,
+        11
+      ],
+      "mod_code": [
+        "sort ( a . rbegin ( ) , a . end ( ) ) ;",
+        "mini -= a [ n - 1 ] ;",
+        "while ( cin >> n >> m )",
+        "do"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        9
+      ],
+      "mod_code": [
+        "sort ( a . rbegin ( ) , a . end ( ) ) ;",
+        "mini -= a [ n - 1 ] ;",
+        "else if ( sum >= m )"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘sort(std::vector<long long int>::reverse_iterator, std::vector<long long int>::iterator)’"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        9,
+        11
+      ],
+      "mod_code": [
+        "sort ( a . rbegin ( ) , a . end ( ) ) ;",
+        "mini -= a [ n - 1 ] ;",
+        "else if ( sum >= m )",
+        "do"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘sort(std::vector<long long int>::reverse_iterator, std::vector<long long int>::iterator)’"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        11
+      ],
+      "mod_code": [
+        "sort ( a . rbegin ( ) , a . end ( ) ) ;",
+        "mini -= a [ n - 1 ] ;",
+        "do"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘sort(std::vector<long long int>::reverse_iterator, std::vector<long long int>::iterator)’"
+    },
+    {
+      "mod_line": [
+        5,
+        2
+      ],
+      "mod_code": [
+        "sort ( a . rbegin ( ) , a . end ( ) ) ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        2,
+        9
+      ],
+      "mod_code": [
+        "sort ( a . rbegin ( ) , a . end ( ) ) ;",
+        "while ( cin >> n >> m )",
+        "else if ( sum >= m )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        2,
+        9,
+        11
+      ],
+      "mod_code": [
+        "sort ( a . rbegin ( ) , a . end ( ) ) ;",
+        "while ( cin >> n >> m )",
+        "else if ( sum >= m )",
+        "do"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        2,
+        11
+      ],
+      "mod_code": [
+        "sort ( a . rbegin ( ) , a . end ( ) ) ;",
+        "while ( cin >> n >> m )",
+        "do"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        9
+      ],
+      "mod_code": [
+        "sort ( a . rbegin ( ) , a . end ( ) ) ;",
+        "else if ( sum >= m )"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘sort(std::vector<long long int>::reverse_iterator, std::vector<long long int>::iterator)’"
+    },
+    {
+      "mod_line": [
+        5,
+        9,
+        11
+      ],
+      "mod_code": [
+        "sort ( a . rbegin ( ) , a . end ( ) ) ;",
+        "else if ( sum >= m )",
+        "do"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘sort(std::vector<long long int>::reverse_iterator, std::vector<long long int>::iterator)’"
+    },
+    {
+      "mod_line": [
+        5,
+        11
+      ],
+      "mod_code": [
+        "sort ( a . rbegin ( ) , a . end ( ) ) ;",
+        "do"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘sort(std::vector<long long int>::reverse_iterator, std::vector<long long int>::iterator)’"
+    },
+    {
+      "mod_line": [
+        10,
+        2
+      ],
+      "mod_code": [
+        "mini -= a [ n - 1 ] ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        2,
+        9
+      ],
+      "mod_code": [
+        "mini -= a [ n - 1 ] ;",
+        "while ( cin >> n >> m )",
+        "else if ( sum >= m )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        2,
+        9,
+        11
+      ],
+      "mod_code": [
+        "mini -= a [ n - 1 ] ;",
+        "while ( cin >> n >> m )",
+        "else if ( sum >= m )",
+        "do"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        2,
+        11
+      ],
+      "mod_code": [
+        "mini -= a [ n - 1 ] ;",
+        "while ( cin >> n >> m )",
+        "do"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        9
+      ],
+      "mod_code": [
+        "mini -= a [ n - 1 ] ;",
+        "else if ( sum >= m )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        10,
+        9,
+        11
+      ],
+      "mod_code": [
+        "mini -= a [ n - 1 ] ;",
+        "else if ( sum >= m )",
+        "do"
+      ],
+      "err_line": 9,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        10,
+        11
+      ],
+      "mod_code": [
+        "mini -= a [ n - 1 ] ;",
+        "do"
+      ],
+      "err_line": 13,
+      "err_msg": "expected ‘while’ before ‘cout’"
+    },
+    {
+      "mod_line": [
+        2,
+        9
+      ],
+      "mod_code": [
+        "while ( cin >> n >> m )",
+        "else if ( sum >= m )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        9,
+        11
+      ],
+      "mod_code": [
+        "while ( cin >> n >> m )",
+        "else if ( sum >= m )",
+        "do"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        11
+      ],
+      "mod_code": [
+        "while ( cin >> n >> m )",
+        "do"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        11
+      ],
+      "mod_code": [
+        "else if ( sum >= m )",
+        "do"
+      ],
+      "err_line": 9,
+      "err_msg": "‘else’ without a previous ‘if’"
+    }
+  ]
+}

@@ -1,0 +1,753 @@
+{
+  "meta": {
+    "index": 2523,
+    "hitid": "3B286OTISEB8EOYI5EMBY3EBSBCAJG",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "499A",
+    "subid": "40839297"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare bigmod with long longs a , b , m as arguments , returning long long",
+      "code": "long long bigmod ( long long a , long long b , long long m )",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "if b is 0 , return 1 % m from function",
+      "code": "if ( b == 0 ) return 1 % m ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "create long long x with x = result of run bigmod with a , b / 2 , m as arguments",
+      "code": "long long x = bigmod ( a , b / 2 , m ) ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "set x to ( x * x ) % m",
+      "code": "x = ( x * x ) % m ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "if b % 2 , set x to ( x * a ) % m",
+      "code": "if ( b % 2 ) x = ( x * a ) % m ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "return x from function",
+      "code": "return x ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 7,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 8,
+      "text": "create integers p , an , t , n , k , i , create integer arrays x , y , with x size 100000 + 5 , y size 100000 + 5",
+      "code": "int p , an = 0 , t , x [ 100000 + 5 ] , y [ 100000 + 5 ] , n , k , i ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "read n read k",
+      "code": "cin >> n >> k ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "read x [ i ]",
+      "code": "cin >> x [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "read y [ i ]",
+      "code": "cin >> y [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "increment an by ( x [ 0 ] - 1 ) % k",
+      "code": "an += ( x [ 0 ] - 1 ) % k ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "increment an by y [ 0 ] - x [ 0 ] + 1",
+      "code": "an += y [ 0 ] - x [ 0 ] + 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "for i = 1 to n exclusive",
+      "code": "for ( i = 1 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "if ( x [ i ] - y [ i - 1 ] + 1 ) is greater than or equal to k",
+      "code": "if ( ( x [ i ] - y [ i - 1 ] + 1 ) >= k )",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "increment an by y [ i ] - x [ i ] + 1",
+      "code": "an += y [ i ] - x [ i ] + 1 ;",
+      "indent": 3
+    },
+    {
+      "line": 19,
+      "text": "increment an by ( x [ i ] - y [ i - 1 ] - 1 ) % k",
+      "code": "an += ( x [ i ] - y [ i - 1 ] - 1 ) % k ;",
+      "indent": 3
+    },
+    {
+      "line": 20,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 21,
+      "text": "increment an by y [ i ] - y [ i - 1 ]",
+      "code": "an += y [ i ] - y [ i - 1 ] ;",
+      "indent": 3
+    },
+    {
+      "line": 22,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 23,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "print an print newline",
+      "code": "cout << an << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 25,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "int p , an [ 100000 + 5 ] , y [ 100000 + 5 ] , y [ 100000 + 5 ] , y , i ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int y [100005]’"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "long long x = bigmod ( a , b / 2 ) , m ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too few arguments to function ‘long long int bigmod(long long int, long long int, long long int)’"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "int p , an [ 100000 + 5 ] , y [ 100000 + 5 ] , y [ 100000 + 5 ] , y , k ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int y [100005]’"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "cin >> x . at ( i ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "request for member ‘at’ in ‘x’, which is of non-class type ‘int [100005]’"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "cin >> y . at ( i ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "request for member ‘at’ in ‘y’, which is of non-class type ‘int [100005]’"
+    },
+    {
+      "mod_line": [
+        20
+      ],
+      "mod_code": [
+        "n"
+      ],
+      "err_line": 21,
+      "err_msg": "expected ‘;’ before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        20
+      ],
+      "mod_code": [
+        "int p , an [ 100000 + 5 ] , y [ 100000 + 5 ] , y [ 100000 + 5 ] , y , i ;",
+        "n"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int y [100005]’"
+    },
+    {
+      "mod_line": [
+        8,
+        20,
+        2
+      ],
+      "mod_code": [
+        "int p , an [ 100000 + 5 ] , y [ 100000 + 5 ] , y [ 100000 + 5 ] , y , i ;",
+        "n",
+        "long long x = bigmod ( a , b / 2 ) , m ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too few arguments to function ‘long long int bigmod(long long int, long long int, long long int)’"
+    },
+    {
+      "mod_line": [
+        8,
+        20,
+        2,
+        14
+      ],
+      "mod_code": [
+        "int p , an [ 100000 + 5 ] , y [ 100000 + 5 ] , y [ 100000 + 5 ] , y , i ;",
+        "n",
+        "long long x = bigmod ( a , b / 2 ) , m ;",
+        "an ++ % ( x [ 0 ] - 1 ) % k ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too few arguments to function ‘long long int bigmod(long long int, long long int, long long int)’"
+    },
+    {
+      "mod_line": [
+        8,
+        20,
+        2,
+        19
+      ],
+      "mod_code": [
+        "int p , an [ 100000 + 5 ] , y [ 100000 + 5 ] , y [ 100000 + 5 ] , y , i ;",
+        "n",
+        "long long x = bigmod ( a , b / 2 ) , m ;",
+        "an ++ % ( x [ i ] - y [ i - 1 ] - 1 ) % k ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too few arguments to function ‘long long int bigmod(long long int, long long int, long long int)’"
+    },
+    {
+      "mod_line": [
+        8,
+        20,
+        14
+      ],
+      "mod_code": [
+        "int p , an [ 100000 + 5 ] , y [ 100000 + 5 ] , y [ 100000 + 5 ] , y , i ;",
+        "n",
+        "an ++ % ( x [ 0 ] - 1 ) % k ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int y [100005]’"
+    },
+    {
+      "mod_line": [
+        8,
+        20,
+        14,
+        19
+      ],
+      "mod_code": [
+        "int p , an [ 100000 + 5 ] , y [ 100000 + 5 ] , y [ 100000 + 5 ] , y , i ;",
+        "n",
+        "an ++ % ( x [ 0 ] - 1 ) % k ;",
+        "an ++ % ( x [ i ] - y [ i - 1 ] - 1 ) % k ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int y [100005]’"
+    },
+    {
+      "mod_line": [
+        8,
+        20,
+        19
+      ],
+      "mod_code": [
+        "int p , an [ 100000 + 5 ] , y [ 100000 + 5 ] , y [ 100000 + 5 ] , y , i ;",
+        "n",
+        "an ++ % ( x [ i ] - y [ i - 1 ] - 1 ) % k ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int y [100005]’"
+    },
+    {
+      "mod_line": [
+        8,
+        2
+      ],
+      "mod_code": [
+        "int p , an [ 100000 + 5 ] , y [ 100000 + 5 ] , y [ 100000 + 5 ] , y , i ;",
+        "long long x = bigmod ( a , b / 2 ) , m ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too few arguments to function ‘long long int bigmod(long long int, long long int, long long int)’"
+    },
+    {
+      "mod_line": [
+        8,
+        2,
+        14
+      ],
+      "mod_code": [
+        "int p , an [ 100000 + 5 ] , y [ 100000 + 5 ] , y [ 100000 + 5 ] , y , i ;",
+        "long long x = bigmod ( a , b / 2 ) , m ;",
+        "an ++ % ( x [ 0 ] - 1 ) % k ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too few arguments to function ‘long long int bigmod(long long int, long long int, long long int)’"
+    },
+    {
+      "mod_line": [
+        8,
+        2,
+        14,
+        19
+      ],
+      "mod_code": [
+        "int p , an [ 100000 + 5 ] , y [ 100000 + 5 ] , y [ 100000 + 5 ] , y , i ;",
+        "long long x = bigmod ( a , b / 2 ) , m ;",
+        "an ++ % ( x [ 0 ] - 1 ) % k ;",
+        "an ++ % ( x [ i ] - y [ i - 1 ] - 1 ) % k ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too few arguments to function ‘long long int bigmod(long long int, long long int, long long int)’"
+    },
+    {
+      "mod_line": [
+        8,
+        2,
+        19
+      ],
+      "mod_code": [
+        "int p , an [ 100000 + 5 ] , y [ 100000 + 5 ] , y [ 100000 + 5 ] , y , i ;",
+        "long long x = bigmod ( a , b / 2 ) , m ;",
+        "an ++ % ( x [ i ] - y [ i - 1 ] - 1 ) % k ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too few arguments to function ‘long long int bigmod(long long int, long long int, long long int)’"
+    },
+    {
+      "mod_line": [
+        8,
+        14
+      ],
+      "mod_code": [
+        "int p , an [ 100000 + 5 ] , y [ 100000 + 5 ] , y [ 100000 + 5 ] , y , i ;",
+        "an ++ % ( x [ 0 ] - 1 ) % k ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int y [100005]’"
+    },
+    {
+      "mod_line": [
+        8,
+        14,
+        19
+      ],
+      "mod_code": [
+        "int p , an [ 100000 + 5 ] , y [ 100000 + 5 ] , y [ 100000 + 5 ] , y , i ;",
+        "an ++ % ( x [ 0 ] - 1 ) % k ;",
+        "an ++ % ( x [ i ] - y [ i - 1 ] - 1 ) % k ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int y [100005]’"
+    },
+    {
+      "mod_line": [
+        8,
+        19
+      ],
+      "mod_code": [
+        "int p , an [ 100000 + 5 ] , y [ 100000 + 5 ] , y [ 100000 + 5 ] , y , i ;",
+        "an ++ % ( x [ i ] - y [ i - 1 ] - 1 ) % k ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int y [100005]’"
+    },
+    {
+      "mod_line": [
+        20,
+        2
+      ],
+      "mod_code": [
+        "n",
+        "long long x = bigmod ( a , b / 2 ) , m ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too few arguments to function ‘long long int bigmod(long long int, long long int, long long int)’"
+    },
+    {
+      "mod_line": [
+        20,
+        2,
+        14
+      ],
+      "mod_code": [
+        "n",
+        "long long x = bigmod ( a , b / 2 ) , m ;",
+        "an ++ % ( x [ 0 ] - 1 ) % k ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too few arguments to function ‘long long int bigmod(long long int, long long int, long long int)’"
+    },
+    {
+      "mod_line": [
+        20,
+        2,
+        14,
+        19
+      ],
+      "mod_code": [
+        "n",
+        "long long x = bigmod ( a , b / 2 ) , m ;",
+        "an ++ % ( x [ 0 ] - 1 ) % k ;",
+        "an ++ % ( x [ i ] - y [ i - 1 ] - 1 ) % k ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too few arguments to function ‘long long int bigmod(long long int, long long int, long long int)’"
+    },
+    {
+      "mod_line": [
+        20,
+        2,
+        14,
+        8
+      ],
+      "mod_code": [
+        "n",
+        "long long x = bigmod ( a , b / 2 ) , m ;",
+        "an ++ % ( x [ 0 ] - 1 ) % k ;",
+        "int p , an [ 100000 + 5 ] , y [ 100000 + 5 ] , y [ 100000 + 5 ] , y , k ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too few arguments to function ‘long long int bigmod(long long int, long long int, long long int)’"
+    },
+    {
+      "mod_line": [
+        20,
+        2,
+        19
+      ],
+      "mod_code": [
+        "n",
+        "long long x = bigmod ( a , b / 2 ) , m ;",
+        "an ++ % ( x [ i ] - y [ i - 1 ] - 1 ) % k ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too few arguments to function ‘long long int bigmod(long long int, long long int, long long int)’"
+    },
+    {
+      "mod_line": [
+        20,
+        2,
+        19,
+        8
+      ],
+      "mod_code": [
+        "n",
+        "long long x = bigmod ( a , b / 2 ) , m ;",
+        "an ++ % ( x [ i ] - y [ i - 1 ] - 1 ) % k ;",
+        "int p , an [ 100000 + 5 ] , y [ 100000 + 5 ] , y [ 100000 + 5 ] , y , k ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too few arguments to function ‘long long int bigmod(long long int, long long int, long long int)’"
+    },
+    {
+      "mod_line": [
+        20,
+        2,
+        8
+      ],
+      "mod_code": [
+        "n",
+        "long long x = bigmod ( a , b / 2 ) , m ;",
+        "int p , an [ 100000 + 5 ] , y [ 100000 + 5 ] , y [ 100000 + 5 ] , y , k ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too few arguments to function ‘long long int bigmod(long long int, long long int, long long int)’"
+    },
+    {
+      "mod_line": [
+        20,
+        14
+      ],
+      "mod_code": [
+        "n",
+        "an ++ % ( x [ 0 ] - 1 ) % k ;"
+      ],
+      "err_line": 21,
+      "err_msg": "expected ‘;’ before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        20,
+        14,
+        19
+      ],
+      "mod_code": [
+        "n",
+        "an ++ % ( x [ 0 ] - 1 ) % k ;",
+        "an ++ % ( x [ i ] - y [ i - 1 ] - 1 ) % k ;"
+      ],
+      "err_line": 21,
+      "err_msg": "expected ‘;’ before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        20,
+        14,
+        19,
+        8
+      ],
+      "mod_code": [
+        "n",
+        "an ++ % ( x [ 0 ] - 1 ) % k ;",
+        "an ++ % ( x [ i ] - y [ i - 1 ] - 1 ) % k ;",
+        "int p , an [ 100000 + 5 ] , y [ 100000 + 5 ] , y [ 100000 + 5 ] , y , k ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int y [100005]’"
+    },
+    {
+      "mod_line": [
+        20,
+        14,
+        8
+      ],
+      "mod_code": [
+        "n",
+        "an ++ % ( x [ 0 ] - 1 ) % k ;",
+        "int p , an [ 100000 + 5 ] , y [ 100000 + 5 ] , y [ 100000 + 5 ] , y , k ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int y [100005]’"
+    },
+    {
+      "mod_line": [
+        20,
+        19
+      ],
+      "mod_code": [
+        "n",
+        "an ++ % ( x [ i ] - y [ i - 1 ] - 1 ) % k ;"
+      ],
+      "err_line": 21,
+      "err_msg": "expected ‘;’ before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        20,
+        19,
+        8
+      ],
+      "mod_code": [
+        "n",
+        "an ++ % ( x [ i ] - y [ i - 1 ] - 1 ) % k ;",
+        "int p , an [ 100000 + 5 ] , y [ 100000 + 5 ] , y [ 100000 + 5 ] , y , k ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int y [100005]’"
+    },
+    {
+      "mod_line": [
+        20,
+        8
+      ],
+      "mod_code": [
+        "n",
+        "int p , an [ 100000 + 5 ] , y [ 100000 + 5 ] , y [ 100000 + 5 ] , y , k ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int y [100005]’"
+    },
+    {
+      "mod_line": [
+        2,
+        14
+      ],
+      "mod_code": [
+        "long long x = bigmod ( a , b / 2 ) , m ;",
+        "an ++ % ( x [ 0 ] - 1 ) % k ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too few arguments to function ‘long long int bigmod(long long int, long long int, long long int)’"
+    },
+    {
+      "mod_line": [
+        2,
+        14,
+        19
+      ],
+      "mod_code": [
+        "long long x = bigmod ( a , b / 2 ) , m ;",
+        "an ++ % ( x [ 0 ] - 1 ) % k ;",
+        "an ++ % ( x [ i ] - y [ i - 1 ] - 1 ) % k ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too few arguments to function ‘long long int bigmod(long long int, long long int, long long int)’"
+    },
+    {
+      "mod_line": [
+        2,
+        14,
+        19,
+        8
+      ],
+      "mod_code": [
+        "long long x = bigmod ( a , b / 2 ) , m ;",
+        "an ++ % ( x [ 0 ] - 1 ) % k ;",
+        "an ++ % ( x [ i ] - y [ i - 1 ] - 1 ) % k ;",
+        "int p , an [ 100000 + 5 ] , y [ 100000 + 5 ] , y [ 100000 + 5 ] , y , k ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too few arguments to function ‘long long int bigmod(long long int, long long int, long long int)’"
+    },
+    {
+      "mod_line": [
+        2,
+        14,
+        8
+      ],
+      "mod_code": [
+        "long long x = bigmod ( a , b / 2 ) , m ;",
+        "an ++ % ( x [ 0 ] - 1 ) % k ;",
+        "int p , an [ 100000 + 5 ] , y [ 100000 + 5 ] , y [ 100000 + 5 ] , y , k ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too few arguments to function ‘long long int bigmod(long long int, long long int, long long int)’"
+    },
+    {
+      "mod_line": [
+        2,
+        19
+      ],
+      "mod_code": [
+        "long long x = bigmod ( a , b / 2 ) , m ;",
+        "an ++ % ( x [ i ] - y [ i - 1 ] - 1 ) % k ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too few arguments to function ‘long long int bigmod(long long int, long long int, long long int)’"
+    },
+    {
+      "mod_line": [
+        2,
+        19,
+        8
+      ],
+      "mod_code": [
+        "long long x = bigmod ( a , b / 2 ) , m ;",
+        "an ++ % ( x [ i ] - y [ i - 1 ] - 1 ) % k ;",
+        "int p , an [ 100000 + 5 ] , y [ 100000 + 5 ] , y [ 100000 + 5 ] , y , k ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too few arguments to function ‘long long int bigmod(long long int, long long int, long long int)’"
+    },
+    {
+      "mod_line": [
+        2,
+        8
+      ],
+      "mod_code": [
+        "long long x = bigmod ( a , b / 2 ) , m ;",
+        "int p , an [ 100000 + 5 ] , y [ 100000 + 5 ] , y [ 100000 + 5 ] , y , k ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too few arguments to function ‘long long int bigmod(long long int, long long int, long long int)’"
+    },
+    {
+      "mod_line": [
+        14,
+        19,
+        8
+      ],
+      "mod_code": [
+        "an ++ % ( x [ 0 ] - 1 ) % k ;",
+        "an ++ % ( x [ i ] - y [ i - 1 ] - 1 ) % k ;",
+        "int p , an [ 100000 + 5 ] , y [ 100000 + 5 ] , y [ 100000 + 5 ] , y , k ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int y [100005]’"
+    },
+    {
+      "mod_line": [
+        14,
+        8
+      ],
+      "mod_code": [
+        "an ++ % ( x [ 0 ] - 1 ) % k ;",
+        "int p , an [ 100000 + 5 ] , y [ 100000 + 5 ] , y [ 100000 + 5 ] , y , k ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int y [100005]’"
+    },
+    {
+      "mod_line": [
+        19,
+        8
+      ],
+      "mod_code": [
+        "an ++ % ( x [ i ] - y [ i - 1 ] - 1 ) % k ;",
+        "int p , an [ 100000 + 5 ] , y [ 100000 + 5 ] , y [ 100000 + 5 ] , y , k ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int y [100005]’"
+    }
+  ]
+}

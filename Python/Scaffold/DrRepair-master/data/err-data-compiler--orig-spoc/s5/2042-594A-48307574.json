@@ -1,0 +1,859 @@
+{
+  "meta": {
+    "index": 2042,
+    "hitid": "36KM3FWE3R6JTGZYC30L67XPTHU07D",
+    "workerid": "A1NBHCFZKJGHKW",
+    "probid": "594A",
+    "subid": "48307574"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "n = long long",
+      "code": "long long n ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "a = long long vector of size n",
+      "code": "vector < long long > a ( n ) ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "read n values into a",
+      "code": "for ( long long i = 0 ; i < n ; i ++ ) { cin >> a [ i ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "sort a",
+      "code": "sort ( a . begin ( ) , a . end ( ) ) ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "choice = long long with choice = ( n - 2 ) / 2",
+      "code": "long long choice = ( n - 2 ) / 2 ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "ans = long long with ans = 1e15",
+      "code": "long long ans = 1e15 ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "for i = 0 to choice inclusive",
+      "code": "for ( long long i = 0 ; i <= choice ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "pre = long long with pre = a [ i ]",
+      "code": "long long pre = a [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "suf = long long with suf = a [ n - 1 - ( choice - i ) ]",
+      "code": "long long suf = a [ n - 1 - ( choice - i ) ] ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "set ans to min of ans and suf - pre",
+      "code": "ans = min ( ans , suf - pre ) ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "print ans",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "sort ( a , a + n ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator+’ (operand types are ‘std::vector<long long int>’ and ‘long long int’)"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "while ( cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "vector < long long > a [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘std::vector<long long int>’)"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= choice ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "int ans = min ( ans , suf - pre ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘min(int&, long long int)’"
+    },
+    {
+      "mod_line": [
+        5,
+        2
+      ],
+      "mod_code": [
+        "sort ( a , a + n ) ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        2,
+        8
+      ],
+      "mod_code": [
+        "sort ( a , a + n ) ;",
+        "while ( cin >> n )",
+        "for ( i = 0 ; i <= choice ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        2,
+        8,
+        11
+      ],
+      "mod_code": [
+        "sort ( a , a + n ) ;",
+        "while ( cin >> n )",
+        "for ( i = 0 ; i <= choice ; i ++ )",
+        "int ans = min ( ans , suf - pre ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        2,
+        8,
+        10
+      ],
+      "mod_code": [
+        "sort ( a , a + n ) ;",
+        "while ( cin >> n )",
+        "for ( i = 0 ; i <= choice ; i ++ )",
+        "long long suf = a [ n - 1 - 1 - i ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        2,
+        8,
+        3
+      ],
+      "mod_code": [
+        "sort ( a , a + n ) ;",
+        "while ( cin >> n )",
+        "for ( i = 0 ; i <= choice ; i ++ )",
+        "vector < long long > a [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        2,
+        11
+      ],
+      "mod_code": [
+        "sort ( a , a + n ) ;",
+        "while ( cin >> n )",
+        "int ans = min ( ans , suf - pre ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        2,
+        11,
+        10
+      ],
+      "mod_code": [
+        "sort ( a , a + n ) ;",
+        "while ( cin >> n )",
+        "int ans = min ( ans , suf - pre ) ;",
+        "long long suf = a [ n - 1 - 1 - i ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        2,
+        11,
+        3
+      ],
+      "mod_code": [
+        "sort ( a , a + n ) ;",
+        "while ( cin >> n )",
+        "int ans = min ( ans , suf - pre ) ;",
+        "vector < long long > a [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        2,
+        10
+      ],
+      "mod_code": [
+        "sort ( a , a + n ) ;",
+        "while ( cin >> n )",
+        "long long suf = a [ n - 1 - 1 - i ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        2,
+        10,
+        3
+      ],
+      "mod_code": [
+        "sort ( a , a + n ) ;",
+        "while ( cin >> n )",
+        "long long suf = a [ n - 1 - 1 - i ] ;",
+        "vector < long long > a [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        2,
+        3
+      ],
+      "mod_code": [
+        "sort ( a , a + n ) ;",
+        "while ( cin >> n )",
+        "vector < long long > a [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        8
+      ],
+      "mod_code": [
+        "sort ( a , a + n ) ;",
+        "for ( i = 0 ; i <= choice ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator+’ (operand types are ‘std::vector<long long int>’ and ‘long long int’)"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        11
+      ],
+      "mod_code": [
+        "sort ( a , a + n ) ;",
+        "for ( i = 0 ; i <= choice ; i ++ )",
+        "int ans = min ( ans , suf - pre ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator+’ (operand types are ‘std::vector<long long int>’ and ‘long long int’)"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        11,
+        10
+      ],
+      "mod_code": [
+        "sort ( a , a + n ) ;",
+        "for ( i = 0 ; i <= choice ; i ++ )",
+        "int ans = min ( ans , suf - pre ) ;",
+        "long long suf = a [ n - 1 - 1 - i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator+’ (operand types are ‘std::vector<long long int>’ and ‘long long int’)"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        11,
+        3
+      ],
+      "mod_code": [
+        "sort ( a , a + n ) ;",
+        "for ( i = 0 ; i <= choice ; i ++ )",
+        "int ans = min ( ans , suf - pre ) ;",
+        "vector < long long > a [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘std::vector<long long int>’)"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        10
+      ],
+      "mod_code": [
+        "sort ( a , a + n ) ;",
+        "for ( i = 0 ; i <= choice ; i ++ )",
+        "long long suf = a [ n - 1 - 1 - i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator+’ (operand types are ‘std::vector<long long int>’ and ‘long long int’)"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        10,
+        3
+      ],
+      "mod_code": [
+        "sort ( a , a + n ) ;",
+        "for ( i = 0 ; i <= choice ; i ++ )",
+        "long long suf = a [ n - 1 - 1 - i ] ;",
+        "vector < long long > a [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘std::vector<long long int>’)"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        3
+      ],
+      "mod_code": [
+        "sort ( a , a + n ) ;",
+        "for ( i = 0 ; i <= choice ; i ++ )",
+        "vector < long long > a [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘std::vector<long long int>’)"
+    },
+    {
+      "mod_line": [
+        5,
+        11
+      ],
+      "mod_code": [
+        "sort ( a , a + n ) ;",
+        "int ans = min ( ans , suf - pre ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator+’ (operand types are ‘std::vector<long long int>’ and ‘long long int’)"
+    },
+    {
+      "mod_line": [
+        5,
+        11,
+        10
+      ],
+      "mod_code": [
+        "sort ( a , a + n ) ;",
+        "int ans = min ( ans , suf - pre ) ;",
+        "long long suf = a [ n - 1 - 1 - i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator+’ (operand types are ‘std::vector<long long int>’ and ‘long long int’)"
+    },
+    {
+      "mod_line": [
+        5,
+        11,
+        10,
+        3
+      ],
+      "mod_code": [
+        "sort ( a , a + n ) ;",
+        "int ans = min ( ans , suf - pre ) ;",
+        "long long suf = a [ n - 1 - 1 - i ] ;",
+        "vector < long long > a [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘std::vector<long long int>’)"
+    },
+    {
+      "mod_line": [
+        5,
+        11,
+        3
+      ],
+      "mod_code": [
+        "sort ( a , a + n ) ;",
+        "int ans = min ( ans , suf - pre ) ;",
+        "vector < long long > a [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘std::vector<long long int>’)"
+    },
+    {
+      "mod_line": [
+        5,
+        10
+      ],
+      "mod_code": [
+        "sort ( a , a + n ) ;",
+        "long long suf = a [ n - 1 - 1 - i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator+’ (operand types are ‘std::vector<long long int>’ and ‘long long int’)"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        3
+      ],
+      "mod_code": [
+        "sort ( a , a + n ) ;",
+        "long long suf = a [ n - 1 - 1 - i ] ;",
+        "vector < long long > a [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘std::vector<long long int>’)"
+    },
+    {
+      "mod_line": [
+        5,
+        3
+      ],
+      "mod_code": [
+        "sort ( a , a + n ) ;",
+        "vector < long long > a [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘std::vector<long long int>’)"
+    },
+    {
+      "mod_line": [
+        2,
+        8
+      ],
+      "mod_code": [
+        "while ( cin >> n )",
+        "for ( i = 0 ; i <= choice ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        8,
+        11
+      ],
+      "mod_code": [
+        "while ( cin >> n )",
+        "for ( i = 0 ; i <= choice ; i ++ )",
+        "int ans = min ( ans , suf - pre ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        8,
+        11,
+        10
+      ],
+      "mod_code": [
+        "while ( cin >> n )",
+        "for ( i = 0 ; i <= choice ; i ++ )",
+        "int ans = min ( ans , suf - pre ) ;",
+        "long long suf = a [ n - 1 - 1 - i ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        8,
+        11,
+        3
+      ],
+      "mod_code": [
+        "while ( cin >> n )",
+        "for ( i = 0 ; i <= choice ; i ++ )",
+        "int ans = min ( ans , suf - pre ) ;",
+        "vector < long long > a [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        8,
+        10
+      ],
+      "mod_code": [
+        "while ( cin >> n )",
+        "for ( i = 0 ; i <= choice ; i ++ )",
+        "long long suf = a [ n - 1 - 1 - i ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        8,
+        10,
+        3
+      ],
+      "mod_code": [
+        "while ( cin >> n )",
+        "for ( i = 0 ; i <= choice ; i ++ )",
+        "long long suf = a [ n - 1 - 1 - i ] ;",
+        "vector < long long > a [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        8,
+        3
+      ],
+      "mod_code": [
+        "while ( cin >> n )",
+        "for ( i = 0 ; i <= choice ; i ++ )",
+        "vector < long long > a [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        11
+      ],
+      "mod_code": [
+        "while ( cin >> n )",
+        "int ans = min ( ans , suf - pre ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        11,
+        10
+      ],
+      "mod_code": [
+        "while ( cin >> n )",
+        "int ans = min ( ans , suf - pre ) ;",
+        "long long suf = a [ n - 1 - 1 - i ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        11,
+        10,
+        3
+      ],
+      "mod_code": [
+        "while ( cin >> n )",
+        "int ans = min ( ans , suf - pre ) ;",
+        "long long suf = a [ n - 1 - 1 - i ] ;",
+        "vector < long long > a [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        11,
+        3
+      ],
+      "mod_code": [
+        "while ( cin >> n )",
+        "int ans = min ( ans , suf - pre ) ;",
+        "vector < long long > a [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        10
+      ],
+      "mod_code": [
+        "while ( cin >> n )",
+        "long long suf = a [ n - 1 - 1 - i ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        10,
+        3
+      ],
+      "mod_code": [
+        "while ( cin >> n )",
+        "long long suf = a [ n - 1 - 1 - i ] ;",
+        "vector < long long > a [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        3
+      ],
+      "mod_code": [
+        "while ( cin >> n )",
+        "vector < long long > a [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        11
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= choice ; i ++ )",
+        "int ans = min ( ans , suf - pre ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        8,
+        11,
+        10
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= choice ; i ++ )",
+        "int ans = min ( ans , suf - pre ) ;",
+        "long long suf = a [ n - 1 - 1 - i ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        8,
+        11,
+        10,
+        3
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= choice ; i ++ )",
+        "int ans = min ( ans , suf - pre ) ;",
+        "long long suf = a [ n - 1 - 1 - i ] ;",
+        "vector < long long > a [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘std::vector<long long int>’)"
+    },
+    {
+      "mod_line": [
+        8,
+        11,
+        3
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= choice ; i ++ )",
+        "int ans = min ( ans , suf - pre ) ;",
+        "vector < long long > a [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘std::vector<long long int>’)"
+    },
+    {
+      "mod_line": [
+        8,
+        10
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= choice ; i ++ )",
+        "long long suf = a [ n - 1 - 1 - i ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        3
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= choice ; i ++ )",
+        "long long suf = a [ n - 1 - 1 - i ] ;",
+        "vector < long long > a [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘std::vector<long long int>’)"
+    },
+    {
+      "mod_line": [
+        8,
+        3
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= choice ; i ++ )",
+        "vector < long long > a [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘std::vector<long long int>’)"
+    },
+    {
+      "mod_line": [
+        11,
+        10
+      ],
+      "mod_code": [
+        "int ans = min ( ans , suf - pre ) ;",
+        "long long suf = a [ n - 1 - 1 - i ] ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘min(int&, long long int)’"
+    },
+    {
+      "mod_line": [
+        11,
+        10,
+        3
+      ],
+      "mod_code": [
+        "int ans = min ( ans , suf - pre ) ;",
+        "long long suf = a [ n - 1 - 1 - i ] ;",
+        "vector < long long > a [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘std::vector<long long int>’)"
+    },
+    {
+      "mod_line": [
+        11,
+        3
+      ],
+      "mod_code": [
+        "int ans = min ( ans , suf - pre ) ;",
+        "vector < long long > a [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘std::vector<long long int>’)"
+    },
+    {
+      "mod_line": [
+        10,
+        3
+      ],
+      "mod_code": [
+        "long long suf = a [ n - 1 - 1 - i ] ;",
+        "vector < long long > a [ n ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘std::vector<long long int>’)"
+    }
+  ]
+}

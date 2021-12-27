@@ -1,0 +1,1163 @@
+{
+  "meta": {
+    "index": 676,
+    "hitid": "3CRWSLD91KYNH0Y4IU4LFQQXM9BOM8",
+    "workerid": "A2QLFQ2ZYR6B7M",
+    "probid": "346A",
+    "subid": "49087549"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "INF = 2 ^ 45",
+      "code": "const long long INF = ( 1LL << 45LL ) ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "MAXLL = 9223372036854775807",
+      "code": "const long long MAXLL = 9223372036854775807LL ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "MAXULL = 18446744073709551615",
+      "code": "const unsigned long long MAXULL = 18446744073709551615LLU ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "MOD = 1000000007",
+      "code": "const long long MOD = 1000000007 ;",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "DELTA = 0 . 000000001",
+      "code": "const long double DELTA = 0.000000001L ;",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "function mpow ( get long long x and n1 , return long long )",
+      "code": "long long mpow ( long long x , long long n1 )",
+      "indent": 0
+    },
+    {
+      "line": 6,
+      "text": "ret = 1",
+      "code": "long long ret = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "while n1 > 0",
+      "code": "while ( n1 > 0 )",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "if n1 is odd ret = ret * x modulo MOD",
+      "code": "if ( n1 % 2 == 1 ) ret = ret * x % MOD ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "x = x * x modulo MOD",
+      "code": "x = x * x % MOD ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "divide n1 by 2",
+      "code": "n1 /= 2 ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "return ret",
+      "code": "return ret ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 14,
+      "text": "function inverse ( get long long x , return long long )",
+      "code": "long long inverse ( long long x )",
+      "indent": 0
+    },
+    {
+      "line": 15,
+      "text": "return mpow ( x , MOD - 2 )",
+      "code": "return mpow ( x , MOD - 2 ) ;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 17,
+      "text": "function _gcd ( get long long a and b , return long long )",
+      "code": "long long _gcd ( long long a , long long b )",
+      "indent": 0
+    },
+    {
+      "line": 18,
+      "text": "if b is 0 return a",
+      "code": "if ( b == 0 ) return a ;",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "return _gcd ( b , a modulo b )",
+      "code": "return _gcd ( b , a % b ) ;",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 21,
+      "text": "dx = array of 4 long long filled with 0 , 0 , 1 , - 1",
+      "code": "long long dx [ 4 ] = { 0 , 0 , 1 , - 1 } ;",
+      "indent": 0
+    },
+    {
+      "line": 22,
+      "text": "dy = array of 4 long long filled with 1 , - 1 , 0 , 0",
+      "code": "long long dy [ 4 ] = { 1 , - 1 , 0 , 0 } ;",
+      "indent": 0
+    },
+    {
+      "line": 23,
+      "text": "cnt = array of 5005 long long",
+      "code": "long long cnt [ 5005 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 24,
+      "text": "vec = array of 5005 by 5005 long long",
+      "code": "long long vec [ 5005 ] [ 5005 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 25,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 26,
+      "text": "n , gcd = long long",
+      "code": "long long n , gcd ;",
+      "indent": 1
+    },
+    {
+      "line": 27,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 28,
+      "text": "A = array of n long long",
+      "code": "long long A [ n ] ;",
+      "indent": 1
+    },
+    {
+      "line": 29,
+      "text": "for i = 0 to n exclusive read A [ i ]",
+      "code": "for ( long long i = 0 ; i < ( n ) ; ++ i ) { cin >> A [ i ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 30,
+      "text": "mx1 = A [ 0 ]",
+      "code": "long long mx1 = A [ 0 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 31,
+      "text": "gcd = A [ 0 ]",
+      "code": "gcd = A [ 0 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 32,
+      "text": "st = set of long long",
+      "code": "set < long long > st ;",
+      "indent": 1
+    },
+    {
+      "line": 33,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( long long i = 0 ; i < ( n ) ; ++ i )",
+      "indent": 1
+    },
+    {
+      "line": 34,
+      "text": "mx1 = max ( mx1 , A [ i ] )",
+      "code": "mx1 = max ( mx1 , A [ i ] ) ;",
+      "indent": 2
+    },
+    {
+      "line": 35,
+      "text": "gcd = _gcd ( gcd , A [ i ] )",
+      "code": "gcd = _gcd ( gcd , A [ i ] ) ;",
+      "indent": 2
+    },
+    {
+      "line": 36,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 37,
+      "text": "ans = mx1 / gcd",
+      "code": "long long ans = mx1 / gcd ;",
+      "indent": 1
+    },
+    {
+      "line": 38,
+      "text": "if abs ( ans - n ) is odd",
+      "code": "if ( abs ( ans - n ) % 2 == 1 )",
+      "indent": 1
+    },
+    {
+      "line": 39,
+      "text": "print Alice",
+      "code": "cout << \" Alice\\n \" ;",
+      "indent": 2
+    },
+    {
+      "line": 40,
+      "text": "else",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 41,
+      "text": "print Bob",
+      "code": "cout << \" Bob\\n \" ;",
+      "indent": 2
+    },
+    {
+      "line": 42,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 43,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 44,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "MAXULL = 18446744073709551615 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘MAXULL’ does not name a type"
+    },
+    {
+      "mod_line": [
+        30
+      ],
+      "mod_code": [
+        "mx1 = A [ 0 ] ;"
+      ],
+      "err_line": 30,
+      "err_msg": "‘mx1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        35
+      ],
+      "mod_code": [
+        "gcd = _gcd ( gcd ( gcd , A [ i ] ) ) ;"
+      ],
+      "err_line": 35,
+      "err_msg": "‘gcd’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        37
+      ],
+      "mod_code": [
+        "ans = mx1 / gcd ;"
+      ],
+      "err_line": 37,
+      "err_msg": "‘ans’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        39
+      ],
+      "mod_code": [
+        "cout << Alice << endl ;"
+      ],
+      "err_line": 39,
+      "err_msg": "‘Alice’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        41
+      ],
+      "mod_code": [
+        "cout << Bob << endl ;"
+      ],
+      "err_line": 41,
+      "err_msg": "‘Bob’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "MAXLL = 9223372036854775807 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘MAXLL’ does not name a type"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "while ( ret )"
+      ],
+      "err_line": 13,
+      "err_msg": "expected primary-expression before ‘}’ token"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "void _gcd ( long long a , long long b )"
+      ],
+      "err_line": 18,
+      "err_msg": "return-statement with a value, in function returning 'void' [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        27
+      ],
+      "mod_code": [
+        "while ( cin >> n )"
+      ],
+      "err_line": 29,
+      "err_msg": "‘A’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        30
+      ],
+      "mod_code": [
+        "int mx1 = A [ 0 ] ;"
+      ],
+      "err_line": 34,
+      "err_msg": "no matching function for call to ‘max(int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        31
+      ],
+      "mod_code": [
+        "int gcd = A [ 0 ] ;"
+      ],
+      "err_line": 31,
+      "err_msg": "conflicting declaration ‘int gcd’"
+    },
+    {
+      "mod_line": [
+        32
+      ],
+      "mod_code": [
+        "set < long long = > st ;"
+      ],
+      "err_line": 32,
+      "err_msg": "template argument 1 is invalid"
+    },
+    {
+      "mod_line": [
+        33
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 33,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        34
+      ],
+      "mod_code": [
+        "int mx1 = max ( mx1 , A [ i ] ) ;"
+      ],
+      "err_line": 34,
+      "err_msg": "no matching function for call to ‘max(int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        37
+      ],
+      "mod_code": [
+        "ans *= gcd ;"
+      ],
+      "err_line": 37,
+      "err_msg": "‘ans’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        39
+      ],
+      "mod_code": [
+        "cout << Alice ;"
+      ],
+      "err_line": 39,
+      "err_msg": "‘Alice’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        41
+      ],
+      "mod_code": [
+        "cout << Bob ;"
+      ],
+      "err_line": 41,
+      "err_msg": "‘Bob’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        30
+      ],
+      "mod_code": [
+        "MAXULL = 18446744073709551615 ;",
+        "mx1 = A [ 0 ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘MAXULL’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        30,
+        35
+      ],
+      "mod_code": [
+        "MAXULL = 18446744073709551615 ;",
+        "mx1 = A [ 0 ] ;",
+        "gcd = _gcd ( gcd ( gcd , A [ i ] ) ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘MAXULL’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        30,
+        35,
+        37
+      ],
+      "mod_code": [
+        "MAXULL = 18446744073709551615 ;",
+        "mx1 = A [ 0 ] ;",
+        "gcd = _gcd ( gcd ( gcd , A [ i ] ) ) ;",
+        "ans = mx1 / gcd ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘MAXULL’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        30,
+        35,
+        39
+      ],
+      "mod_code": [
+        "MAXULL = 18446744073709551615 ;",
+        "mx1 = A [ 0 ] ;",
+        "gcd = _gcd ( gcd ( gcd , A [ i ] ) ) ;",
+        "cout << Alice << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘MAXULL’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        30,
+        35,
+        41
+      ],
+      "mod_code": [
+        "MAXULL = 18446744073709551615 ;",
+        "mx1 = A [ 0 ] ;",
+        "gcd = _gcd ( gcd ( gcd , A [ i ] ) ) ;",
+        "cout << Bob << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘MAXULL’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        30,
+        37
+      ],
+      "mod_code": [
+        "MAXULL = 18446744073709551615 ;",
+        "mx1 = A [ 0 ] ;",
+        "ans = mx1 / gcd ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘MAXULL’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        30,
+        37,
+        39
+      ],
+      "mod_code": [
+        "MAXULL = 18446744073709551615 ;",
+        "mx1 = A [ 0 ] ;",
+        "ans = mx1 / gcd ;",
+        "cout << Alice << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘MAXULL’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        30,
+        37,
+        41
+      ],
+      "mod_code": [
+        "MAXULL = 18446744073709551615 ;",
+        "mx1 = A [ 0 ] ;",
+        "ans = mx1 / gcd ;",
+        "cout << Bob << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘MAXULL’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        30,
+        39
+      ],
+      "mod_code": [
+        "MAXULL = 18446744073709551615 ;",
+        "mx1 = A [ 0 ] ;",
+        "cout << Alice << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘MAXULL’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        30,
+        39,
+        41
+      ],
+      "mod_code": [
+        "MAXULL = 18446744073709551615 ;",
+        "mx1 = A [ 0 ] ;",
+        "cout << Alice << endl ;",
+        "cout << Bob << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘MAXULL’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        30,
+        41
+      ],
+      "mod_code": [
+        "MAXULL = 18446744073709551615 ;",
+        "mx1 = A [ 0 ] ;",
+        "cout << Bob << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘MAXULL’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        35
+      ],
+      "mod_code": [
+        "MAXULL = 18446744073709551615 ;",
+        "gcd = _gcd ( gcd ( gcd , A [ i ] ) ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘MAXULL’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        35,
+        37
+      ],
+      "mod_code": [
+        "MAXULL = 18446744073709551615 ;",
+        "gcd = _gcd ( gcd ( gcd , A [ i ] ) ) ;",
+        "ans = mx1 / gcd ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘MAXULL’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        35,
+        37,
+        39
+      ],
+      "mod_code": [
+        "MAXULL = 18446744073709551615 ;",
+        "gcd = _gcd ( gcd ( gcd , A [ i ] ) ) ;",
+        "ans = mx1 / gcd ;",
+        "cout << Alice << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘MAXULL’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        35,
+        37,
+        41
+      ],
+      "mod_code": [
+        "MAXULL = 18446744073709551615 ;",
+        "gcd = _gcd ( gcd ( gcd , A [ i ] ) ) ;",
+        "ans = mx1 / gcd ;",
+        "cout << Bob << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘MAXULL’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        35,
+        39
+      ],
+      "mod_code": [
+        "MAXULL = 18446744073709551615 ;",
+        "gcd = _gcd ( gcd ( gcd , A [ i ] ) ) ;",
+        "cout << Alice << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘MAXULL’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        35,
+        39,
+        41
+      ],
+      "mod_code": [
+        "MAXULL = 18446744073709551615 ;",
+        "gcd = _gcd ( gcd ( gcd , A [ i ] ) ) ;",
+        "cout << Alice << endl ;",
+        "cout << Bob << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘MAXULL’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        35,
+        41
+      ],
+      "mod_code": [
+        "MAXULL = 18446744073709551615 ;",
+        "gcd = _gcd ( gcd ( gcd , A [ i ] ) ) ;",
+        "cout << Bob << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘MAXULL’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        37
+      ],
+      "mod_code": [
+        "MAXULL = 18446744073709551615 ;",
+        "ans = mx1 / gcd ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘MAXULL’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        37,
+        39
+      ],
+      "mod_code": [
+        "MAXULL = 18446744073709551615 ;",
+        "ans = mx1 / gcd ;",
+        "cout << Alice << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘MAXULL’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        37,
+        39,
+        41
+      ],
+      "mod_code": [
+        "MAXULL = 18446744073709551615 ;",
+        "ans = mx1 / gcd ;",
+        "cout << Alice << endl ;",
+        "cout << Bob << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘MAXULL’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        37,
+        41
+      ],
+      "mod_code": [
+        "MAXULL = 18446744073709551615 ;",
+        "ans = mx1 / gcd ;",
+        "cout << Bob << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘MAXULL’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        39
+      ],
+      "mod_code": [
+        "MAXULL = 18446744073709551615 ;",
+        "cout << Alice << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘MAXULL’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        39,
+        41
+      ],
+      "mod_code": [
+        "MAXULL = 18446744073709551615 ;",
+        "cout << Alice << endl ;",
+        "cout << Bob << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘MAXULL’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2,
+        41
+      ],
+      "mod_code": [
+        "MAXULL = 18446744073709551615 ;",
+        "cout << Bob << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘MAXULL’ does not name a type"
+    },
+    {
+      "mod_line": [
+        30,
+        35
+      ],
+      "mod_code": [
+        "mx1 = A [ 0 ] ;",
+        "gcd = _gcd ( gcd ( gcd , A [ i ] ) ) ;"
+      ],
+      "err_line": 30,
+      "err_msg": "‘mx1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        30,
+        35,
+        37
+      ],
+      "mod_code": [
+        "mx1 = A [ 0 ] ;",
+        "gcd = _gcd ( gcd ( gcd , A [ i ] ) ) ;",
+        "ans = mx1 / gcd ;"
+      ],
+      "err_line": 30,
+      "err_msg": "‘mx1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        30,
+        35,
+        37,
+        39
+      ],
+      "mod_code": [
+        "mx1 = A [ 0 ] ;",
+        "gcd = _gcd ( gcd ( gcd , A [ i ] ) ) ;",
+        "ans = mx1 / gcd ;",
+        "cout << Alice << endl ;"
+      ],
+      "err_line": 30,
+      "err_msg": "‘mx1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        30,
+        35,
+        37,
+        41
+      ],
+      "mod_code": [
+        "mx1 = A [ 0 ] ;",
+        "gcd = _gcd ( gcd ( gcd , A [ i ] ) ) ;",
+        "ans = mx1 / gcd ;",
+        "cout << Bob << endl ;"
+      ],
+      "err_line": 30,
+      "err_msg": "‘mx1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        30,
+        35,
+        39
+      ],
+      "mod_code": [
+        "mx1 = A [ 0 ] ;",
+        "gcd = _gcd ( gcd ( gcd , A [ i ] ) ) ;",
+        "cout << Alice << endl ;"
+      ],
+      "err_line": 30,
+      "err_msg": "‘mx1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        30,
+        35,
+        39,
+        41
+      ],
+      "mod_code": [
+        "mx1 = A [ 0 ] ;",
+        "gcd = _gcd ( gcd ( gcd , A [ i ] ) ) ;",
+        "cout << Alice << endl ;",
+        "cout << Bob << endl ;"
+      ],
+      "err_line": 30,
+      "err_msg": "‘mx1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        30,
+        35,
+        41
+      ],
+      "mod_code": [
+        "mx1 = A [ 0 ] ;",
+        "gcd = _gcd ( gcd ( gcd , A [ i ] ) ) ;",
+        "cout << Bob << endl ;"
+      ],
+      "err_line": 30,
+      "err_msg": "‘mx1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        30,
+        37
+      ],
+      "mod_code": [
+        "mx1 = A [ 0 ] ;",
+        "ans = mx1 / gcd ;"
+      ],
+      "err_line": 30,
+      "err_msg": "‘mx1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        30,
+        37,
+        39
+      ],
+      "mod_code": [
+        "mx1 = A [ 0 ] ;",
+        "ans = mx1 / gcd ;",
+        "cout << Alice << endl ;"
+      ],
+      "err_line": 30,
+      "err_msg": "‘mx1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        30,
+        37,
+        39,
+        41
+      ],
+      "mod_code": [
+        "mx1 = A [ 0 ] ;",
+        "ans = mx1 / gcd ;",
+        "cout << Alice << endl ;",
+        "cout << Bob << endl ;"
+      ],
+      "err_line": 30,
+      "err_msg": "‘mx1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        30,
+        37,
+        41
+      ],
+      "mod_code": [
+        "mx1 = A [ 0 ] ;",
+        "ans = mx1 / gcd ;",
+        "cout << Bob << endl ;"
+      ],
+      "err_line": 30,
+      "err_msg": "‘mx1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        30,
+        39
+      ],
+      "mod_code": [
+        "mx1 = A [ 0 ] ;",
+        "cout << Alice << endl ;"
+      ],
+      "err_line": 30,
+      "err_msg": "‘mx1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        30,
+        39,
+        41
+      ],
+      "mod_code": [
+        "mx1 = A [ 0 ] ;",
+        "cout << Alice << endl ;",
+        "cout << Bob << endl ;"
+      ],
+      "err_line": 30,
+      "err_msg": "‘mx1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        30,
+        41
+      ],
+      "mod_code": [
+        "mx1 = A [ 0 ] ;",
+        "cout << Bob << endl ;"
+      ],
+      "err_line": 30,
+      "err_msg": "‘mx1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        35,
+        37
+      ],
+      "mod_code": [
+        "gcd = _gcd ( gcd ( gcd , A [ i ] ) ) ;",
+        "ans = mx1 / gcd ;"
+      ],
+      "err_line": 35,
+      "err_msg": "‘gcd’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        35,
+        37,
+        39
+      ],
+      "mod_code": [
+        "gcd = _gcd ( gcd ( gcd , A [ i ] ) ) ;",
+        "ans = mx1 / gcd ;",
+        "cout << Alice << endl ;"
+      ],
+      "err_line": 35,
+      "err_msg": "‘gcd’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        35,
+        37,
+        39,
+        41
+      ],
+      "mod_code": [
+        "gcd = _gcd ( gcd ( gcd , A [ i ] ) ) ;",
+        "ans = mx1 / gcd ;",
+        "cout << Alice << endl ;",
+        "cout << Bob << endl ;"
+      ],
+      "err_line": 35,
+      "err_msg": "‘gcd’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        35,
+        37,
+        41
+      ],
+      "mod_code": [
+        "gcd = _gcd ( gcd ( gcd , A [ i ] ) ) ;",
+        "ans = mx1 / gcd ;",
+        "cout << Bob << endl ;"
+      ],
+      "err_line": 35,
+      "err_msg": "‘gcd’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        35,
+        39
+      ],
+      "mod_code": [
+        "gcd = _gcd ( gcd ( gcd , A [ i ] ) ) ;",
+        "cout << Alice << endl ;"
+      ],
+      "err_line": 35,
+      "err_msg": "‘gcd’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        35,
+        39,
+        41
+      ],
+      "mod_code": [
+        "gcd = _gcd ( gcd ( gcd , A [ i ] ) ) ;",
+        "cout << Alice << endl ;",
+        "cout << Bob << endl ;"
+      ],
+      "err_line": 35,
+      "err_msg": "‘gcd’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        35,
+        41
+      ],
+      "mod_code": [
+        "gcd = _gcd ( gcd ( gcd , A [ i ] ) ) ;",
+        "cout << Bob << endl ;"
+      ],
+      "err_line": 35,
+      "err_msg": "‘gcd’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        37,
+        39
+      ],
+      "mod_code": [
+        "ans = mx1 / gcd ;",
+        "cout << Alice << endl ;"
+      ],
+      "err_line": 37,
+      "err_msg": "‘ans’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        37,
+        39,
+        41
+      ],
+      "mod_code": [
+        "ans = mx1 / gcd ;",
+        "cout << Alice << endl ;",
+        "cout << Bob << endl ;"
+      ],
+      "err_line": 37,
+      "err_msg": "‘ans’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        37,
+        41
+      ],
+      "mod_code": [
+        "ans = mx1 / gcd ;",
+        "cout << Bob << endl ;"
+      ],
+      "err_line": 37,
+      "err_msg": "‘ans’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        39,
+        41
+      ],
+      "mod_code": [
+        "cout << Alice << endl ;",
+        "cout << Bob << endl ;"
+      ],
+      "err_line": 39,
+      "err_msg": "‘Alice’ was not declared in this scope"
+    }
+  ]
+}

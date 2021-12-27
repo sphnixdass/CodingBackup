@@ -1,0 +1,833 @@
+{
+  "meta": {
+    "index": 2270,
+    "hitid": "35F6NGNVM8DK9PWPA5OVQIZUP5W7TQ",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "201A",
+    "subid": "32350446"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create constant integer maxn with maxn = 105",
+      "code": "const int maxn = 105 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create integer array f with size maxn",
+      "code": "int f [ maxn ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "set f [ 1 ] to f [ 2 ] to 1",
+      "code": "f [ 1 ] = f [ 2 ] = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for i = 3 to maxn exclusive , incrementing i by 2 , set f [ i ] to f [ i + 1 ] to ( i / 2 ) * 2 ( i / 2 + 1 )",
+      "code": "for ( int i = 3 ; i < maxn ; i += 2 ) { f [ i ] = f [ i + 1 ] = ( i / 2 ) * i + ( i / 2 + 1 ) ; }",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "create integer n",
+      "code": "int n ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "while n",
+      "code": "while ( cin >> n )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "if n is 3",
+      "code": "if ( n == 3 )",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "print 5 print newline",
+      "code": "cout << 5 << endl ;",
+      "indent": 3
+    },
+    {
+      "line": 9,
+      "text": "break current loop iteration",
+      "code": "continue ;",
+      "indent": 3
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "for i = 1 to maxn exclusive , incrementing i by 2",
+      "code": "for ( int i = 1 ; i < maxn ; i += 2 )",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "if n is less than or equal to f [ i ]",
+      "code": "if ( n <= f [ i ] )",
+      "indent": 3
+    },
+    {
+      "line": 13,
+      "text": "print i print newline",
+      "code": "cout << i << endl ;",
+      "indent": 4
+    },
+    {
+      "line": 14,
+      "text": "break loop",
+      "code": "break ;",
+      "indent": 4
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 3 ; i < maxn ; i += 2 ) f [ i ] = f [ i + 1 ] * 2 ( i / 2 + 1 ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expression cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "const int maxn = maxn ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 3 ; i < maxn ; i += 2 ) f [ i ] = f [ i + 1 ] = f [ i + 2 ] * 2 ( i / 2 + 1 ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expression cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i < maxn ; i += 2 )"
+      ],
+      "err_line": 11,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "break break ;"
+      ],
+      "err_line": 14,
+      "err_msg": "expected ‘;’ before ‘break’"
+    },
+    {
+      "mod_line": [
+        4,
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 3 ; i < maxn ; i += 2 ) f [ i ] = f [ i + 1 ] * 2 ( i / 2 + 1 ) ;",
+        "while ( n )"
+      ],
+      "err_line": 4,
+      "err_msg": "expression cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        12
+      ],
+      "mod_code": [
+        "for ( int i = 3 ; i < maxn ; i += 2 ) f [ i ] = f [ i + 1 ] * 2 ( i / 2 + 1 ) ;",
+        "while ( n )",
+        "if ( n >= f [ i ] )"
+      ],
+      "err_line": 4,
+      "err_msg": "expression cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        12,
+        11
+      ],
+      "mod_code": [
+        "for ( int i = 3 ; i < maxn ; i += 2 ) f [ i ] = f [ i + 1 ] * 2 ( i / 2 + 1 ) ;",
+        "while ( n )",
+        "if ( n >= f [ i ] )",
+        "for ( i = 1 ; i < maxn ; i += 2 )"
+      ],
+      "err_line": 4,
+      "err_msg": "expression cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        12,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = 3 ; i < maxn ; i += 2 ) f [ i ] = f [ i + 1 ] * 2 ( i / 2 + 1 ) ;",
+        "while ( n )",
+        "if ( n >= f [ i ] )",
+        "f [ ' 1 ' ] = f [ 2 ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expression cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        12,
+        0
+      ],
+      "mod_code": [
+        "for ( int i = 3 ; i < maxn ; i += 2 ) f [ i ] = f [ i + 1 ] * 2 ( i / 2 + 1 ) ;",
+        "while ( n )",
+        "if ( n >= f [ i ] )",
+        "const int maxn = maxn ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        11
+      ],
+      "mod_code": [
+        "for ( int i = 3 ; i < maxn ; i += 2 ) f [ i ] = f [ i + 1 ] * 2 ( i / 2 + 1 ) ;",
+        "while ( n )",
+        "for ( i = 1 ; i < maxn ; i += 2 )"
+      ],
+      "err_line": 4,
+      "err_msg": "expression cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        11,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = 3 ; i < maxn ; i += 2 ) f [ i ] = f [ i + 1 ] * 2 ( i / 2 + 1 ) ;",
+        "while ( n )",
+        "for ( i = 1 ; i < maxn ; i += 2 )",
+        "f [ ' 1 ' ] = f [ 2 ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expression cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        11,
+        0
+      ],
+      "mod_code": [
+        "for ( int i = 3 ; i < maxn ; i += 2 ) f [ i ] = f [ i + 1 ] * 2 ( i / 2 + 1 ) ;",
+        "while ( n )",
+        "for ( i = 1 ; i < maxn ; i += 2 )",
+        "const int maxn = maxn ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = 3 ; i < maxn ; i += 2 ) f [ i ] = f [ i + 1 ] * 2 ( i / 2 + 1 ) ;",
+        "while ( n )",
+        "f [ ' 1 ' ] = f [ 2 ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expression cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        3,
+        0
+      ],
+      "mod_code": [
+        "for ( int i = 3 ; i < maxn ; i += 2 ) f [ i ] = f [ i + 1 ] * 2 ( i / 2 + 1 ) ;",
+        "while ( n )",
+        "f [ ' 1 ' ] = f [ 2 ] = 1 ;",
+        "const int maxn = maxn ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        0
+      ],
+      "mod_code": [
+        "for ( int i = 3 ; i < maxn ; i += 2 ) f [ i ] = f [ i + 1 ] * 2 ( i / 2 + 1 ) ;",
+        "while ( n )",
+        "const int maxn = maxn ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        12
+      ],
+      "mod_code": [
+        "for ( int i = 3 ; i < maxn ; i += 2 ) f [ i ] = f [ i + 1 ] * 2 ( i / 2 + 1 ) ;",
+        "if ( n >= f [ i ] )"
+      ],
+      "err_line": 4,
+      "err_msg": "expression cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        4,
+        12,
+        11
+      ],
+      "mod_code": [
+        "for ( int i = 3 ; i < maxn ; i += 2 ) f [ i ] = f [ i + 1 ] * 2 ( i / 2 + 1 ) ;",
+        "if ( n >= f [ i ] )",
+        "for ( i = 1 ; i < maxn ; i += 2 )"
+      ],
+      "err_line": 4,
+      "err_msg": "expression cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        4,
+        12,
+        11,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = 3 ; i < maxn ; i += 2 ) f [ i ] = f [ i + 1 ] * 2 ( i / 2 + 1 ) ;",
+        "if ( n >= f [ i ] )",
+        "for ( i = 1 ; i < maxn ; i += 2 )",
+        "f [ ' 1 ' ] = f [ 2 ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expression cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        4,
+        12,
+        11,
+        0
+      ],
+      "mod_code": [
+        "for ( int i = 3 ; i < maxn ; i += 2 ) f [ i ] = f [ i + 1 ] * 2 ( i / 2 + 1 ) ;",
+        "if ( n >= f [ i ] )",
+        "for ( i = 1 ; i < maxn ; i += 2 )",
+        "const int maxn = maxn ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        12,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = 3 ; i < maxn ; i += 2 ) f [ i ] = f [ i + 1 ] * 2 ( i / 2 + 1 ) ;",
+        "if ( n >= f [ i ] )",
+        "f [ ' 1 ' ] = f [ 2 ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expression cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        4,
+        12,
+        3,
+        0
+      ],
+      "mod_code": [
+        "for ( int i = 3 ; i < maxn ; i += 2 ) f [ i ] = f [ i + 1 ] * 2 ( i / 2 + 1 ) ;",
+        "if ( n >= f [ i ] )",
+        "f [ ' 1 ' ] = f [ 2 ] = 1 ;",
+        "const int maxn = maxn ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        12,
+        0
+      ],
+      "mod_code": [
+        "for ( int i = 3 ; i < maxn ; i += 2 ) f [ i ] = f [ i + 1 ] * 2 ( i / 2 + 1 ) ;",
+        "if ( n >= f [ i ] )",
+        "const int maxn = maxn ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        11
+      ],
+      "mod_code": [
+        "for ( int i = 3 ; i < maxn ; i += 2 ) f [ i ] = f [ i + 1 ] * 2 ( i / 2 + 1 ) ;",
+        "for ( i = 1 ; i < maxn ; i += 2 )"
+      ],
+      "err_line": 4,
+      "err_msg": "expression cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        4,
+        11,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = 3 ; i < maxn ; i += 2 ) f [ i ] = f [ i + 1 ] * 2 ( i / 2 + 1 ) ;",
+        "for ( i = 1 ; i < maxn ; i += 2 )",
+        "f [ ' 1 ' ] = f [ 2 ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expression cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        4,
+        11,
+        3,
+        0
+      ],
+      "mod_code": [
+        "for ( int i = 3 ; i < maxn ; i += 2 ) f [ i ] = f [ i + 1 ] * 2 ( i / 2 + 1 ) ;",
+        "for ( i = 1 ; i < maxn ; i += 2 )",
+        "f [ ' 1 ' ] = f [ 2 ] = 1 ;",
+        "const int maxn = maxn ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        11,
+        0
+      ],
+      "mod_code": [
+        "for ( int i = 3 ; i < maxn ; i += 2 ) f [ i ] = f [ i + 1 ] * 2 ( i / 2 + 1 ) ;",
+        "for ( i = 1 ; i < maxn ; i += 2 )",
+        "const int maxn = maxn ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = 3 ; i < maxn ; i += 2 ) f [ i ] = f [ i + 1 ] * 2 ( i / 2 + 1 ) ;",
+        "f [ ' 1 ' ] = f [ 2 ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expression cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        4,
+        3,
+        0
+      ],
+      "mod_code": [
+        "for ( int i = 3 ; i < maxn ; i += 2 ) f [ i ] = f [ i + 1 ] * 2 ( i / 2 + 1 ) ;",
+        "f [ ' 1 ' ] = f [ 2 ] = 1 ;",
+        "const int maxn = maxn ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        0
+      ],
+      "mod_code": [
+        "for ( int i = 3 ; i < maxn ; i += 2 ) f [ i ] = f [ i + 1 ] * 2 ( i / 2 + 1 ) ;",
+        "const int maxn = maxn ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        12,
+        11
+      ],
+      "mod_code": [
+        "while ( n )",
+        "if ( n >= f [ i ] )",
+        "for ( i = 1 ; i < maxn ; i += 2 )"
+      ],
+      "err_line": 11,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        12,
+        11,
+        3
+      ],
+      "mod_code": [
+        "while ( n )",
+        "if ( n >= f [ i ] )",
+        "for ( i = 1 ; i < maxn ; i += 2 )",
+        "f [ ' 1 ' ] = f [ 2 ] = 1 ;"
+      ],
+      "err_line": 11,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        12,
+        11,
+        0
+      ],
+      "mod_code": [
+        "while ( n )",
+        "if ( n >= f [ i ] )",
+        "for ( i = 1 ; i < maxn ; i += 2 )",
+        "const int maxn = maxn ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        12,
+        3,
+        0
+      ],
+      "mod_code": [
+        "while ( n )",
+        "if ( n >= f [ i ] )",
+        "f [ ' 1 ' ] = f [ 2 ] = 1 ;",
+        "const int maxn = maxn ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        12,
+        0
+      ],
+      "mod_code": [
+        "while ( n )",
+        "if ( n >= f [ i ] )",
+        "const int maxn = maxn ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        11
+      ],
+      "mod_code": [
+        "while ( n )",
+        "for ( i = 1 ; i < maxn ; i += 2 )"
+      ],
+      "err_line": 11,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        11,
+        3
+      ],
+      "mod_code": [
+        "while ( n )",
+        "for ( i = 1 ; i < maxn ; i += 2 )",
+        "f [ ' 1 ' ] = f [ 2 ] = 1 ;"
+      ],
+      "err_line": 11,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        11,
+        3,
+        0
+      ],
+      "mod_code": [
+        "while ( n )",
+        "for ( i = 1 ; i < maxn ; i += 2 )",
+        "f [ ' 1 ' ] = f [ 2 ] = 1 ;",
+        "const int maxn = maxn ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        11,
+        0
+      ],
+      "mod_code": [
+        "while ( n )",
+        "for ( i = 1 ; i < maxn ; i += 2 )",
+        "const int maxn = maxn ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        3,
+        0
+      ],
+      "mod_code": [
+        "while ( n )",
+        "f [ ' 1 ' ] = f [ 2 ] = 1 ;",
+        "const int maxn = maxn ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        0
+      ],
+      "mod_code": [
+        "while ( n )",
+        "const int maxn = maxn ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        11
+      ],
+      "mod_code": [
+        "if ( n >= f [ i ] )",
+        "for ( i = 1 ; i < maxn ; i += 2 )"
+      ],
+      "err_line": 11,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        11,
+        3
+      ],
+      "mod_code": [
+        "if ( n >= f [ i ] )",
+        "for ( i = 1 ; i < maxn ; i += 2 )",
+        "f [ ' 1 ' ] = f [ 2 ] = 1 ;"
+      ],
+      "err_line": 11,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        11,
+        3,
+        0
+      ],
+      "mod_code": [
+        "if ( n >= f [ i ] )",
+        "for ( i = 1 ; i < maxn ; i += 2 )",
+        "f [ ' 1 ' ] = f [ 2 ] = 1 ;",
+        "const int maxn = maxn ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        11,
+        0
+      ],
+      "mod_code": [
+        "if ( n >= f [ i ] )",
+        "for ( i = 1 ; i < maxn ; i += 2 )",
+        "const int maxn = maxn ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        3,
+        0
+      ],
+      "mod_code": [
+        "if ( n >= f [ i ] )",
+        "f [ ' 1 ' ] = f [ 2 ] = 1 ;",
+        "const int maxn = maxn ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        0
+      ],
+      "mod_code": [
+        "if ( n >= f [ i ] )",
+        "const int maxn = maxn ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        11,
+        3
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i < maxn ; i += 2 )",
+        "f [ ' 1 ' ] = f [ 2 ] = 1 ;"
+      ],
+      "err_line": 11,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        3,
+        0
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i < maxn ; i += 2 )",
+        "f [ ' 1 ' ] = f [ 2 ] = 1 ;",
+        "const int maxn = maxn ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        11,
+        0
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i < maxn ; i += 2 )",
+        "const int maxn = maxn ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        0
+      ],
+      "mod_code": [
+        "f [ ' 1 ' ] = f [ 2 ] = 1 ;",
+        "const int maxn = maxn ;"
+      ],
+      "err_line": 1,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    }
+  ]
+}

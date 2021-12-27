@@ -1,0 +1,899 @@
+{
+  "meta": {
+    "index": 122,
+    "hitid": "3NCN4N1H1GB9GOUVQQEZMLFYK0WNBX",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "354A",
+    "subid": "33010293"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare long long variables n , l , r , ql and qr",
+      "code": "long long n , l , r , ql , qr ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read input to n , l , r , ql and qr",
+      "code": "cin >> n >> l >> r >> ql >> qr ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "create long long array weights with size n",
+      "code": "long long weights [ n ] ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for i = 0 to n exclusive , read weights [ i ]",
+      "code": "for ( long long i = 0 ; i < n ; i ++ ) { cin >> weights [ i ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "declare long long arrays firstSum and lastSum with size n + 1",
+      "code": "long long firstSum [ n + 1 ] , lastSum [ n + 1 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "assign 0 to firstSum [ 0 ]",
+      "code": "firstSum [ 0 ] = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "assign 0 to lastSum [ 0 ]",
+      "code": "lastSum [ 0 ] = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "for i from 1 to n inclusive",
+      "code": "for ( long long i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "set firstSum [ i ] to firstSum [ i - 1 ] + weights [ i - 1 ]",
+      "code": "firstSum [ i ] = firstSum [ i - 1 ] + weights [ i - 1 ] ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "set lastSum [ i ] to lastSum [ i - 1 ] + weights [ n - i ]",
+      "code": "lastSum [ i ] = lastSum [ i - 1 ] + weights [ n - i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "create long long total_cost = LLONG_MAX",
+      "code": "long long total_cost = LLONG_MAX ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "for i = 0 to n inclusive",
+      "code": "for ( long long i = 0 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "create long long cost = firstSum [ i ] * l + lastSum [ n - i ] * r",
+      "code": "long long cost = firstSum [ i ] * l + lastSum [ n - i ] * r ;",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "if i is greater than n - i",
+      "code": "if ( i > n - i )",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "add ( 2 * i - n - 1 ) * ql to cost",
+      "code": "cost += ( 2 * i - n - 1 ) * ql ;",
+      "indent": 3
+    },
+    {
+      "line": 17,
+      "text": "elseif ( i < n - i )",
+      "code": "else if ( i < n - i )",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "add ( n - 2 * i - 1 ) * qr to cost",
+      "code": "cost += ( n - 2 * i - 1 ) * qr ;",
+      "indent": 3
+    },
+    {
+      "line": 19,
+      "text": "change total_cost to min of total_cost and cost",
+      "code": "total_cost = min ( total_cost , cost ) ;",
+      "indent": 2
+    },
+    {
+      "line": 20,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "print total_cost",
+      "code": "cout << total_cost << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 22,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "elseif ( i < n - i ) ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘elseif’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "char firstSum [ 0 ] = 0 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "conflicting declaration ‘char firstSum [0]’"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "char lastSum [ 0 ] = 0 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "conflicting declaration ‘char lastSum [0]’"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= n ; i ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        19
+      ],
+      "mod_code": [
+        "int total_cost = min ( total_cost , cost ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "no matching function for call to ‘min(int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        17,
+        7
+      ],
+      "mod_code": [
+        "elseif ( i < n - i ) ;",
+        "char lastSum [ 0 ] = 0 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "conflicting declaration ‘char lastSum [0]’"
+    },
+    {
+      "mod_line": [
+        17,
+        7,
+        6
+      ],
+      "mod_code": [
+        "elseif ( i < n - i ) ;",
+        "char lastSum [ 0 ] = 0 ;",
+        "char firstSum [ 0 ] = 0 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "conflicting declaration ‘char firstSum [0]’"
+    },
+    {
+      "mod_line": [
+        17,
+        7,
+        6,
+        2
+      ],
+      "mod_code": [
+        "elseif ( i < n - i ) ;",
+        "char lastSum [ 0 ] = 0 ;",
+        "char firstSum [ 0 ] = 0 ;",
+        "cin >> n >> l >> r >> ql ;"
+      ],
+      "err_line": 6,
+      "err_msg": "conflicting declaration ‘char firstSum [0]’"
+    },
+    {
+      "mod_line": [
+        17,
+        7,
+        6,
+        19
+      ],
+      "mod_code": [
+        "elseif ( i < n - i ) ;",
+        "char lastSum [ 0 ] = 0 ;",
+        "char firstSum [ 0 ] = 0 ;",
+        "int total_cost = min ( total_cost , cost ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "conflicting declaration ‘char firstSum [0]’"
+    },
+    {
+      "mod_line": [
+        17,
+        7,
+        6,
+        21
+      ],
+      "mod_code": [
+        "elseif ( i < n - i ) ;",
+        "char lastSum [ 0 ] = 0 ;",
+        "char firstSum [ 0 ] = 0 ;",
+        "cout << total_cost ;"
+      ],
+      "err_line": 6,
+      "err_msg": "conflicting declaration ‘char firstSum [0]’"
+    },
+    {
+      "mod_line": [
+        17,
+        7,
+        2
+      ],
+      "mod_code": [
+        "elseif ( i < n - i ) ;",
+        "char lastSum [ 0 ] = 0 ;",
+        "cin >> n >> l >> r >> ql ;"
+      ],
+      "err_line": 7,
+      "err_msg": "conflicting declaration ‘char lastSum [0]’"
+    },
+    {
+      "mod_line": [
+        17,
+        7,
+        2,
+        19
+      ],
+      "mod_code": [
+        "elseif ( i < n - i ) ;",
+        "char lastSum [ 0 ] = 0 ;",
+        "cin >> n >> l >> r >> ql ;",
+        "int total_cost = min ( total_cost , cost ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "conflicting declaration ‘char lastSum [0]’"
+    },
+    {
+      "mod_line": [
+        17,
+        7,
+        2,
+        21
+      ],
+      "mod_code": [
+        "elseif ( i < n - i ) ;",
+        "char lastSum [ 0 ] = 0 ;",
+        "cin >> n >> l >> r >> ql ;",
+        "cout << total_cost ;"
+      ],
+      "err_line": 7,
+      "err_msg": "conflicting declaration ‘char lastSum [0]’"
+    },
+    {
+      "mod_line": [
+        17,
+        7,
+        19
+      ],
+      "mod_code": [
+        "elseif ( i < n - i ) ;",
+        "char lastSum [ 0 ] = 0 ;",
+        "int total_cost = min ( total_cost , cost ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "conflicting declaration ‘char lastSum [0]’"
+    },
+    {
+      "mod_line": [
+        17,
+        7,
+        19,
+        21
+      ],
+      "mod_code": [
+        "elseif ( i < n - i ) ;",
+        "char lastSum [ 0 ] = 0 ;",
+        "int total_cost = min ( total_cost , cost ) ;",
+        "cout << total_cost ;"
+      ],
+      "err_line": 7,
+      "err_msg": "conflicting declaration ‘char lastSum [0]’"
+    },
+    {
+      "mod_line": [
+        17,
+        7,
+        21
+      ],
+      "mod_code": [
+        "elseif ( i < n - i ) ;",
+        "char lastSum [ 0 ] = 0 ;",
+        "cout << total_cost ;"
+      ],
+      "err_line": 7,
+      "err_msg": "conflicting declaration ‘char lastSum [0]’"
+    },
+    {
+      "mod_line": [
+        17,
+        6
+      ],
+      "mod_code": [
+        "elseif ( i < n - i ) ;",
+        "char firstSum [ 0 ] = 0 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "conflicting declaration ‘char firstSum [0]’"
+    },
+    {
+      "mod_line": [
+        17,
+        6,
+        2
+      ],
+      "mod_code": [
+        "elseif ( i < n - i ) ;",
+        "char firstSum [ 0 ] = 0 ;",
+        "cin >> n >> l >> r >> ql ;"
+      ],
+      "err_line": 6,
+      "err_msg": "conflicting declaration ‘char firstSum [0]’"
+    },
+    {
+      "mod_line": [
+        17,
+        6,
+        2,
+        19
+      ],
+      "mod_code": [
+        "elseif ( i < n - i ) ;",
+        "char firstSum [ 0 ] = 0 ;",
+        "cin >> n >> l >> r >> ql ;",
+        "int total_cost = min ( total_cost , cost ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "conflicting declaration ‘char firstSum [0]’"
+    },
+    {
+      "mod_line": [
+        17,
+        6,
+        2,
+        21
+      ],
+      "mod_code": [
+        "elseif ( i < n - i ) ;",
+        "char firstSum [ 0 ] = 0 ;",
+        "cin >> n >> l >> r >> ql ;",
+        "cout << total_cost ;"
+      ],
+      "err_line": 6,
+      "err_msg": "conflicting declaration ‘char firstSum [0]’"
+    },
+    {
+      "mod_line": [
+        17,
+        6,
+        19
+      ],
+      "mod_code": [
+        "elseif ( i < n - i ) ;",
+        "char firstSum [ 0 ] = 0 ;",
+        "int total_cost = min ( total_cost , cost ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "conflicting declaration ‘char firstSum [0]’"
+    },
+    {
+      "mod_line": [
+        17,
+        6,
+        19,
+        21
+      ],
+      "mod_code": [
+        "elseif ( i < n - i ) ;",
+        "char firstSum [ 0 ] = 0 ;",
+        "int total_cost = min ( total_cost , cost ) ;",
+        "cout << total_cost ;"
+      ],
+      "err_line": 6,
+      "err_msg": "conflicting declaration ‘char firstSum [0]’"
+    },
+    {
+      "mod_line": [
+        17,
+        6,
+        21
+      ],
+      "mod_code": [
+        "elseif ( i < n - i ) ;",
+        "char firstSum [ 0 ] = 0 ;",
+        "cout << total_cost ;"
+      ],
+      "err_line": 6,
+      "err_msg": "conflicting declaration ‘char firstSum [0]’"
+    },
+    {
+      "mod_line": [
+        17,
+        2
+      ],
+      "mod_code": [
+        "elseif ( i < n - i ) ;",
+        "cin >> n >> l >> r >> ql ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘elseif’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17,
+        2,
+        19
+      ],
+      "mod_code": [
+        "elseif ( i < n - i ) ;",
+        "cin >> n >> l >> r >> ql ;",
+        "int total_cost = min ( total_cost , cost ) ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘elseif’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17,
+        2,
+        19,
+        21
+      ],
+      "mod_code": [
+        "elseif ( i < n - i ) ;",
+        "cin >> n >> l >> r >> ql ;",
+        "int total_cost = min ( total_cost , cost ) ;",
+        "cout << total_cost ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘elseif’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17,
+        2,
+        21
+      ],
+      "mod_code": [
+        "elseif ( i < n - i ) ;",
+        "cin >> n >> l >> r >> ql ;",
+        "cout << total_cost ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘elseif’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17,
+        19
+      ],
+      "mod_code": [
+        "elseif ( i < n - i ) ;",
+        "int total_cost = min ( total_cost , cost ) ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘elseif’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17,
+        19,
+        21
+      ],
+      "mod_code": [
+        "elseif ( i < n - i ) ;",
+        "int total_cost = min ( total_cost , cost ) ;",
+        "cout << total_cost ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘elseif’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17,
+        21
+      ],
+      "mod_code": [
+        "elseif ( i < n - i ) ;",
+        "cout << total_cost ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘elseif’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        6
+      ],
+      "mod_code": [
+        "char lastSum [ 0 ] = 0 ;",
+        "char firstSum [ 0 ] = 0 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "conflicting declaration ‘char firstSum [0]’"
+    },
+    {
+      "mod_line": [
+        7,
+        6,
+        2
+      ],
+      "mod_code": [
+        "char lastSum [ 0 ] = 0 ;",
+        "char firstSum [ 0 ] = 0 ;",
+        "cin >> n >> l >> r >> ql ;"
+      ],
+      "err_line": 6,
+      "err_msg": "conflicting declaration ‘char firstSum [0]’"
+    },
+    {
+      "mod_line": [
+        7,
+        6,
+        2,
+        19
+      ],
+      "mod_code": [
+        "char lastSum [ 0 ] = 0 ;",
+        "char firstSum [ 0 ] = 0 ;",
+        "cin >> n >> l >> r >> ql ;",
+        "int total_cost = min ( total_cost , cost ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "conflicting declaration ‘char firstSum [0]’"
+    },
+    {
+      "mod_line": [
+        7,
+        6,
+        2,
+        21
+      ],
+      "mod_code": [
+        "char lastSum [ 0 ] = 0 ;",
+        "char firstSum [ 0 ] = 0 ;",
+        "cin >> n >> l >> r >> ql ;",
+        "cout << total_cost ;"
+      ],
+      "err_line": 6,
+      "err_msg": "conflicting declaration ‘char firstSum [0]’"
+    },
+    {
+      "mod_line": [
+        7,
+        6,
+        19
+      ],
+      "mod_code": [
+        "char lastSum [ 0 ] = 0 ;",
+        "char firstSum [ 0 ] = 0 ;",
+        "int total_cost = min ( total_cost , cost ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "conflicting declaration ‘char firstSum [0]’"
+    },
+    {
+      "mod_line": [
+        7,
+        6,
+        19,
+        21
+      ],
+      "mod_code": [
+        "char lastSum [ 0 ] = 0 ;",
+        "char firstSum [ 0 ] = 0 ;",
+        "int total_cost = min ( total_cost , cost ) ;",
+        "cout << total_cost ;"
+      ],
+      "err_line": 6,
+      "err_msg": "conflicting declaration ‘char firstSum [0]’"
+    },
+    {
+      "mod_line": [
+        7,
+        6,
+        21
+      ],
+      "mod_code": [
+        "char lastSum [ 0 ] = 0 ;",
+        "char firstSum [ 0 ] = 0 ;",
+        "cout << total_cost ;"
+      ],
+      "err_line": 6,
+      "err_msg": "conflicting declaration ‘char firstSum [0]’"
+    },
+    {
+      "mod_line": [
+        7,
+        2
+      ],
+      "mod_code": [
+        "char lastSum [ 0 ] = 0 ;",
+        "cin >> n >> l >> r >> ql ;"
+      ],
+      "err_line": 7,
+      "err_msg": "conflicting declaration ‘char lastSum [0]’"
+    },
+    {
+      "mod_line": [
+        7,
+        2,
+        19
+      ],
+      "mod_code": [
+        "char lastSum [ 0 ] = 0 ;",
+        "cin >> n >> l >> r >> ql ;",
+        "int total_cost = min ( total_cost , cost ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "conflicting declaration ‘char lastSum [0]’"
+    },
+    {
+      "mod_line": [
+        7,
+        2,
+        19,
+        21
+      ],
+      "mod_code": [
+        "char lastSum [ 0 ] = 0 ;",
+        "cin >> n >> l >> r >> ql ;",
+        "int total_cost = min ( total_cost , cost ) ;",
+        "cout << total_cost ;"
+      ],
+      "err_line": 7,
+      "err_msg": "conflicting declaration ‘char lastSum [0]’"
+    },
+    {
+      "mod_line": [
+        7,
+        2,
+        21
+      ],
+      "mod_code": [
+        "char lastSum [ 0 ] = 0 ;",
+        "cin >> n >> l >> r >> ql ;",
+        "cout << total_cost ;"
+      ],
+      "err_line": 7,
+      "err_msg": "conflicting declaration ‘char lastSum [0]’"
+    },
+    {
+      "mod_line": [
+        7,
+        19
+      ],
+      "mod_code": [
+        "char lastSum [ 0 ] = 0 ;",
+        "int total_cost = min ( total_cost , cost ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "conflicting declaration ‘char lastSum [0]’"
+    },
+    {
+      "mod_line": [
+        7,
+        19,
+        21
+      ],
+      "mod_code": [
+        "char lastSum [ 0 ] = 0 ;",
+        "int total_cost = min ( total_cost , cost ) ;",
+        "cout << total_cost ;"
+      ],
+      "err_line": 7,
+      "err_msg": "conflicting declaration ‘char lastSum [0]’"
+    },
+    {
+      "mod_line": [
+        7,
+        21
+      ],
+      "mod_code": [
+        "char lastSum [ 0 ] = 0 ;",
+        "cout << total_cost ;"
+      ],
+      "err_line": 7,
+      "err_msg": "conflicting declaration ‘char lastSum [0]’"
+    },
+    {
+      "mod_line": [
+        6,
+        2
+      ],
+      "mod_code": [
+        "char firstSum [ 0 ] = 0 ;",
+        "cin >> n >> l >> r >> ql ;"
+      ],
+      "err_line": 6,
+      "err_msg": "conflicting declaration ‘char firstSum [0]’"
+    },
+    {
+      "mod_line": [
+        6,
+        2,
+        19
+      ],
+      "mod_code": [
+        "char firstSum [ 0 ] = 0 ;",
+        "cin >> n >> l >> r >> ql ;",
+        "int total_cost = min ( total_cost , cost ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "conflicting declaration ‘char firstSum [0]’"
+    },
+    {
+      "mod_line": [
+        6,
+        2,
+        19,
+        21
+      ],
+      "mod_code": [
+        "char firstSum [ 0 ] = 0 ;",
+        "cin >> n >> l >> r >> ql ;",
+        "int total_cost = min ( total_cost , cost ) ;",
+        "cout << total_cost ;"
+      ],
+      "err_line": 6,
+      "err_msg": "conflicting declaration ‘char firstSum [0]’"
+    },
+    {
+      "mod_line": [
+        6,
+        2,
+        21
+      ],
+      "mod_code": [
+        "char firstSum [ 0 ] = 0 ;",
+        "cin >> n >> l >> r >> ql ;",
+        "cout << total_cost ;"
+      ],
+      "err_line": 6,
+      "err_msg": "conflicting declaration ‘char firstSum [0]’"
+    },
+    {
+      "mod_line": [
+        6,
+        19
+      ],
+      "mod_code": [
+        "char firstSum [ 0 ] = 0 ;",
+        "int total_cost = min ( total_cost , cost ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "conflicting declaration ‘char firstSum [0]’"
+    },
+    {
+      "mod_line": [
+        6,
+        19,
+        21
+      ],
+      "mod_code": [
+        "char firstSum [ 0 ] = 0 ;",
+        "int total_cost = min ( total_cost , cost ) ;",
+        "cout << total_cost ;"
+      ],
+      "err_line": 6,
+      "err_msg": "conflicting declaration ‘char firstSum [0]’"
+    },
+    {
+      "mod_line": [
+        6,
+        21
+      ],
+      "mod_code": [
+        "char firstSum [ 0 ] = 0 ;",
+        "cout << total_cost ;"
+      ],
+      "err_line": 6,
+      "err_msg": "conflicting declaration ‘char firstSum [0]’"
+    },
+    {
+      "mod_line": [
+        2,
+        19
+      ],
+      "mod_code": [
+        "cin >> n >> l >> r >> ql ;",
+        "int total_cost = min ( total_cost , cost ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "no matching function for call to ‘min(int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        2,
+        19,
+        21
+      ],
+      "mod_code": [
+        "cin >> n >> l >> r >> ql ;",
+        "int total_cost = min ( total_cost , cost ) ;",
+        "cout << total_cost ;"
+      ],
+      "err_line": 19,
+      "err_msg": "no matching function for call to ‘min(int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        19,
+        21
+      ],
+      "mod_code": [
+        "int total_cost = min ( total_cost , cost ) ;",
+        "cout << total_cost ;"
+      ],
+      "err_line": 19,
+      "err_msg": "no matching function for call to ‘min(int&, long long int&)’"
+    }
+  ]
+}

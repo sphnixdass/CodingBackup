@@ -1,0 +1,961 @@
+{
+  "meta": {
+    "index": 2389,
+    "hitid": "3FULMHZ7OURJD7OMZAPC1SKS4VAM4K",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "543A",
+    "subid": "48970798"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create constant integer N with N = 502",
+      "code": "const int N = 502 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create integers n , m , b , M",
+      "code": "int n , m , b , M ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "create integer array a with size N",
+      "code": "int a [ N ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "create 2d integer array dpn with size N by N",
+      "code": "int dpn [ N ] [ N ] ;",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "create 2d integer array dp with size N by N",
+      "code": "int dp [ N ] [ N ] ;",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 6,
+      "text": "read n read m read b read M",
+      "code": "cin >> n >> m >> b >> M ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for i = 1 to n inclusive , read a [ i ]",
+      "code": "for ( int i = 1 ; i <= n ; ++ i ) cin >> a [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "set dpn [ 0 ] [ 0 ] to 1 % M",
+      "code": "dpn [ 0 ] [ 0 ] = 1 % M ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "for i = 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; ++ i )",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "for t = 0 to m inclusive",
+      "code": "for ( int t = 0 ; t <= m ; ++ t )",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "for s = 0 to b inclusive , set dp [ t ] [ s ] to 0",
+      "code": "for ( int s = 0 ; s <= b ; ++ s ) dp [ t ] [ s ] = 0 ;",
+      "indent": 3
+    },
+    {
+      "line": 12,
+      "text": "for t = 0 to m inclusive",
+      "code": "for ( int t = 0 ; t <= m ; ++ t )",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "for s = 0 to b inclusive",
+      "code": "for ( int s = 0 ; s <= b ; ++ s )",
+      "indent": 3
+    },
+    {
+      "line": 14,
+      "text": "if s - a [ i ] is greater than or equal to 0 and t - 1 is greater than or equal to 0",
+      "code": "if ( s - a [ i ] >= 0 && t - 1 >= 0 )",
+      "indent": 4
+    },
+    {
+      "line": 15,
+      "text": "set dp [ t ] [ s ] to ( dp [ t - 1 ] [ s - a [ i ] ] + dpn [ t ] [ s ] ) % M",
+      "code": "dp [ t ] [ s ] = ( dp [ t - 1 ] [ s - a [ i ] ] + dpn [ t ] [ s ] ) % M ;",
+      "indent": 5
+    },
+    {
+      "line": 16,
+      "text": "else",
+      "code": "else",
+      "indent": 4
+    },
+    {
+      "line": 17,
+      "text": "set dp [ t ] [ s ] to dpn [ t ] [ s ]",
+      "code": "dp [ t ] [ s ] = dpn [ t ] [ s ] ;",
+      "indent": 5
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 20,
+      "text": "for t = 0 to n inclusive",
+      "code": "for ( int t = 0 ; t <= m ; ++ t )",
+      "indent": 2
+    },
+    {
+      "line": 21,
+      "text": "for s = 0 to b inclusive , set dpn [ t ] [ s ] to dp [ t ] [ s ]",
+      "code": "for ( int s = 0 ; s <= b ; ++ s ) dpn [ t ] [ s ] = dp [ t ] [ s ] ;",
+      "indent": 3
+    },
+    {
+      "line": 22,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "create integer ans with ans = 0",
+      "code": "int ans = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "for s = 0 to b inclusive , set ans to ( ans + dp [ m ] [ s ] ) % M",
+      "code": "for ( int s = 0 ; s <= b ; ++ s ) ans = ( ans + dp [ m ] [ s ] ) % M ;",
+      "indent": 1
+    },
+    {
+      "line": 25,
+      "text": "print ans print newline",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 26,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 27,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "n , m , b , M ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "a [ N ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘a’ does not name a type"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "int dpn [ N [ N ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid types ‘const int[const int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "int dp [ N [ N ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘const int[const int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "dp [ t ] [ s ] = ( dp [ t - 1 ] [ s - a ] + dpn [ t ] [ s ] ) % M ;"
+      ],
+      "err_line": 15,
+      "err_msg": "invalid operands of types ‘int’ and ‘int [502]’ to binary ‘operator-’"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "n"
+      ],
+      "err_line": 17,
+      "err_msg": "expected ‘;’ before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        23
+      ],
+      "mod_code": [
+        "ans = 0 ;"
+      ],
+      "err_line": 23,
+      "err_msg": "‘ans’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        20,
+        3
+      ],
+      "mod_code": [
+        "for ( int t = 0 ; t <= n ; t ++ )",
+        "int dpn [ N [ N ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid types ‘const int[const int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        20,
+        3,
+        4
+      ],
+      "mod_code": [
+        "for ( int t = 0 ; t <= n ; t ++ )",
+        "int dpn [ N [ N ] ;",
+        "int dp [ N [ N ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid types ‘const int[const int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        20,
+        3,
+        4,
+        16
+      ],
+      "mod_code": [
+        "for ( int t = 0 ; t <= n ; t ++ )",
+        "int dpn [ N [ N ] ;",
+        "int dp [ N [ N ] ;",
+        "n"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid types ‘const int[const int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        20,
+        3,
+        4,
+        9
+      ],
+      "mod_code": [
+        "for ( int t = 0 ; t <= n ; t ++ )",
+        "int dpn [ N [ N ] ;",
+        "int dp [ N [ N ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid types ‘const int[const int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        20,
+        3,
+        4,
+        1
+      ],
+      "mod_code": [
+        "for ( int t = 0 ; t <= n ; t ++ )",
+        "int dpn [ N [ N ] ;",
+        "int dp [ N [ N ] ;",
+        "n , m , b , M ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        20,
+        3,
+        16
+      ],
+      "mod_code": [
+        "for ( int t = 0 ; t <= n ; t ++ )",
+        "int dpn [ N [ N ] ;",
+        "n"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid types ‘const int[const int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        20,
+        3,
+        16,
+        9
+      ],
+      "mod_code": [
+        "for ( int t = 0 ; t <= n ; t ++ )",
+        "int dpn [ N [ N ] ;",
+        "n",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid types ‘const int[const int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        20,
+        3,
+        16,
+        1
+      ],
+      "mod_code": [
+        "for ( int t = 0 ; t <= n ; t ++ )",
+        "int dpn [ N [ N ] ;",
+        "n",
+        "n , m , b , M ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        20,
+        3,
+        9
+      ],
+      "mod_code": [
+        "for ( int t = 0 ; t <= n ; t ++ )",
+        "int dpn [ N [ N ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid types ‘const int[const int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        20,
+        3,
+        9,
+        1
+      ],
+      "mod_code": [
+        "for ( int t = 0 ; t <= n ; t ++ )",
+        "int dpn [ N [ N ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "n , m , b , M ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        20,
+        3,
+        1
+      ],
+      "mod_code": [
+        "for ( int t = 0 ; t <= n ; t ++ )",
+        "int dpn [ N [ N ] ;",
+        "n , m , b , M ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        20,
+        4
+      ],
+      "mod_code": [
+        "for ( int t = 0 ; t <= n ; t ++ )",
+        "int dp [ N [ N ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘const int[const int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        20,
+        4,
+        16
+      ],
+      "mod_code": [
+        "for ( int t = 0 ; t <= n ; t ++ )",
+        "int dp [ N [ N ] ;",
+        "n"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘const int[const int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        20,
+        4,
+        16,
+        9
+      ],
+      "mod_code": [
+        "for ( int t = 0 ; t <= n ; t ++ )",
+        "int dp [ N [ N ] ;",
+        "n",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘const int[const int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        20,
+        4,
+        16,
+        1
+      ],
+      "mod_code": [
+        "for ( int t = 0 ; t <= n ; t ++ )",
+        "int dp [ N [ N ] ;",
+        "n",
+        "n , m , b , M ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        20,
+        4,
+        9
+      ],
+      "mod_code": [
+        "for ( int t = 0 ; t <= n ; t ++ )",
+        "int dp [ N [ N ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘const int[const int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        20,
+        4,
+        9,
+        1
+      ],
+      "mod_code": [
+        "for ( int t = 0 ; t <= n ; t ++ )",
+        "int dp [ N [ N ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "n , m , b , M ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        20,
+        4,
+        1
+      ],
+      "mod_code": [
+        "for ( int t = 0 ; t <= n ; t ++ )",
+        "int dp [ N [ N ] ;",
+        "n , m , b , M ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        20,
+        16
+      ],
+      "mod_code": [
+        "for ( int t = 0 ; t <= n ; t ++ )",
+        "n"
+      ],
+      "err_line": 17,
+      "err_msg": "expected ‘;’ before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        20,
+        16,
+        9
+      ],
+      "mod_code": [
+        "for ( int t = 0 ; t <= n ; t ++ )",
+        "n",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        20,
+        16,
+        9,
+        1
+      ],
+      "mod_code": [
+        "for ( int t = 0 ; t <= n ; t ++ )",
+        "n",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "n , m , b , M ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        20,
+        16,
+        1
+      ],
+      "mod_code": [
+        "for ( int t = 0 ; t <= n ; t ++ )",
+        "n",
+        "n , m , b , M ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        20,
+        9
+      ],
+      "mod_code": [
+        "for ( int t = 0 ; t <= n ; t ++ )",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        20,
+        9,
+        1
+      ],
+      "mod_code": [
+        "for ( int t = 0 ; t <= n ; t ++ )",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "n , m , b , M ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        20,
+        1
+      ],
+      "mod_code": [
+        "for ( int t = 0 ; t <= n ; t ++ )",
+        "n , m , b , M ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        3,
+        4
+      ],
+      "mod_code": [
+        "int dpn [ N [ N ] ;",
+        "int dp [ N [ N ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid types ‘const int[const int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        3,
+        4,
+        16
+      ],
+      "mod_code": [
+        "int dpn [ N [ N ] ;",
+        "int dp [ N [ N ] ;",
+        "n"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid types ‘const int[const int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        3,
+        4,
+        16,
+        9
+      ],
+      "mod_code": [
+        "int dpn [ N [ N ] ;",
+        "int dp [ N [ N ] ;",
+        "n",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid types ‘const int[const int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        3,
+        4,
+        16,
+        1
+      ],
+      "mod_code": [
+        "int dpn [ N [ N ] ;",
+        "int dp [ N [ N ] ;",
+        "n",
+        "n , m , b , M ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        3,
+        4,
+        9
+      ],
+      "mod_code": [
+        "int dpn [ N [ N ] ;",
+        "int dp [ N [ N ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid types ‘const int[const int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        3,
+        4,
+        9,
+        1
+      ],
+      "mod_code": [
+        "int dpn [ N [ N ] ;",
+        "int dp [ N [ N ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "n , m , b , M ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        3,
+        4,
+        1
+      ],
+      "mod_code": [
+        "int dpn [ N [ N ] ;",
+        "int dp [ N [ N ] ;",
+        "n , m , b , M ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        3,
+        16
+      ],
+      "mod_code": [
+        "int dpn [ N [ N ] ;",
+        "n"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid types ‘const int[const int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        3,
+        16,
+        9
+      ],
+      "mod_code": [
+        "int dpn [ N [ N ] ;",
+        "n",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid types ‘const int[const int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        3,
+        16,
+        9,
+        1
+      ],
+      "mod_code": [
+        "int dpn [ N [ N ] ;",
+        "n",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "n , m , b , M ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        3,
+        16,
+        1
+      ],
+      "mod_code": [
+        "int dpn [ N [ N ] ;",
+        "n",
+        "n , m , b , M ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        3,
+        9
+      ],
+      "mod_code": [
+        "int dpn [ N [ N ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid types ‘const int[const int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        3,
+        9,
+        1
+      ],
+      "mod_code": [
+        "int dpn [ N [ N ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "n , m , b , M ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        3,
+        1
+      ],
+      "mod_code": [
+        "int dpn [ N [ N ] ;",
+        "n , m , b , M ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        4,
+        16
+      ],
+      "mod_code": [
+        "int dp [ N [ N ] ;",
+        "n"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘const int[const int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        16,
+        9
+      ],
+      "mod_code": [
+        "int dp [ N [ N ] ;",
+        "n",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘const int[const int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        16,
+        9,
+        1
+      ],
+      "mod_code": [
+        "int dp [ N [ N ] ;",
+        "n",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "n , m , b , M ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        4,
+        16,
+        1
+      ],
+      "mod_code": [
+        "int dp [ N [ N ] ;",
+        "n",
+        "n , m , b , M ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        4,
+        9
+      ],
+      "mod_code": [
+        "int dp [ N [ N ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘const int[const int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        9,
+        1
+      ],
+      "mod_code": [
+        "int dp [ N [ N ] ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "n , m , b , M ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        4,
+        1
+      ],
+      "mod_code": [
+        "int dp [ N [ N ] ;",
+        "n , m , b , M ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        16,
+        9
+      ],
+      "mod_code": [
+        "n",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        16,
+        9,
+        1
+      ],
+      "mod_code": [
+        "n",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "n , m , b , M ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        16,
+        1
+      ],
+      "mod_code": [
+        "n",
+        "n , m , b , M ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ does not name a type"
+    },
+    {
+      "mod_line": [
+        9,
+        1
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "n , m , b , M ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘n’ does not name a type"
+    }
+  ]
+}

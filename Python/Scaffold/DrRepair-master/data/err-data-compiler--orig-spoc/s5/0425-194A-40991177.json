@@ -1,0 +1,723 @@
+{
+  "meta": {
+    "index": 425,
+    "hitid": "32FESTC2NHK5LJ6A1RMGB0DAAHXUCB",
+    "workerid": "A1AYVATMT88U1W",
+    "probid": "194A",
+    "subid": "40991177"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "TOLL be a constant double 1e - 9",
+      "code": "const double TOLL = 1e-9 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "memo is an integer array",
+      "code": "int memo [ 51 ] [ 255 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "recur is an integer function",
+      "code": "int recur ( int n , int k )",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "if n , k both equal 0 , return 0",
+      "code": "if ( n == 0 && k == 0 ) return 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "if n equal 0 , return 1000",
+      "code": "if ( n == 0 ) return 1000 ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "if k equal 0 , return 1000",
+      "code": "if ( k == 0 ) return 1000 ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "if memo [ n ] [ k ] not equal - 1 , return memo [ n ] [ k ]",
+      "code": "if ( memo [ n ] [ k ] != - 1 ) return memo [ n ] [ k ] ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "rv is integer 1000",
+      "code": "int rv = 1000 ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "for integer i = 2 to 5 inclusive",
+      "code": "for ( int i = 2 ; i <= 5 ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "if i is less than or equal to k",
+      "code": "if ( i <= k )",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "integer now equals recur ( n - 1 , k - i )",
+      "code": "int now = recur ( n - 1 , k - i ) ;",
+      "indent": 3
+    },
+    {
+      "line": 11,
+      "text": "if i equals 2 , increase now by 1",
+      "code": "if ( i == 2 ) now ++ ;",
+      "indent": 3
+    },
+    {
+      "line": 12,
+      "text": "rv = min ( now , rv )",
+      "code": "rv = min ( now , rv ) ;",
+      "indent": 3
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "return memo [ n ] [ k ] equals rv",
+      "code": "return memo [ n ] [ k ] = rv ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 17,
+      "text": "memset ( memo , - 1 , sizeof memo )",
+      "code": "memset ( memo , - 1 , sizeof memo ) ;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "n , k be integers",
+      "code": "int n , k ;",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "while read n , k , print recur ( n , k ) and newline",
+      "code": "while ( cin >> n >> k ) { cout << recur ( n , k ) << endl ; }",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int memo ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "int recur ( )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int memo [ 100 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "int recur ( ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "int now - recur ( n - 1 , k - i ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "expected initializer before ‘-’ token"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "memset ( memset , - 1 , sizeof memo ) ;"
+      ],
+      "err_line": 17,
+      "err_msg": "invalid conversion from ‘void* (*)(void*, int, size_t) throw () {aka void* (*)(void*, int, long unsigned int) throw ()}’ to ‘void*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        1,
+        2
+      ],
+      "mod_code": [
+        "int memo ;",
+        "int recur ( )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        2,
+        14
+      ],
+      "mod_code": [
+        "int memo ;",
+        "int recur ( )",
+        "return memo [ n ] [ k ] = ' rv ' ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        2,
+        14,
+        7
+      ],
+      "mod_code": [
+        "int memo ;",
+        "int recur ( )",
+        "return memo [ n ] [ k ] = ' rv ' ;",
+        "int rv ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        2,
+        14,
+        10
+      ],
+      "mod_code": [
+        "int memo ;",
+        "int recur ( )",
+        "return memo [ n ] [ k ] = ' rv ' ;",
+        "int now - recur ( n - 1 , k - i ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        2,
+        7
+      ],
+      "mod_code": [
+        "int memo ;",
+        "int recur ( )",
+        "int rv ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        2,
+        7,
+        10
+      ],
+      "mod_code": [
+        "int memo ;",
+        "int recur ( )",
+        "int rv ;",
+        "int now - recur ( n - 1 , k - i ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        2,
+        10
+      ],
+      "mod_code": [
+        "int memo ;",
+        "int recur ( )",
+        "int now - recur ( n - 1 , k - i ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        14
+      ],
+      "mod_code": [
+        "int memo ;",
+        "return memo [ n ] [ k ] = ' rv ' ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        14,
+        7
+      ],
+      "mod_code": [
+        "int memo ;",
+        "return memo [ n ] [ k ] = ' rv ' ;",
+        "int rv ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        14,
+        7,
+        2
+      ],
+      "mod_code": [
+        "int memo ;",
+        "return memo [ n ] [ k ] = ' rv ' ;",
+        "int rv ;",
+        "int recur ( ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        14,
+        7,
+        10
+      ],
+      "mod_code": [
+        "int memo ;",
+        "return memo [ n ] [ k ] = ' rv ' ;",
+        "int rv ;",
+        "int now - recur ( n - 1 , k - i ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        14,
+        2
+      ],
+      "mod_code": [
+        "int memo ;",
+        "return memo [ n ] [ k ] = ' rv ' ;",
+        "int recur ( ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        14,
+        2,
+        10
+      ],
+      "mod_code": [
+        "int memo ;",
+        "return memo [ n ] [ k ] = ' rv ' ;",
+        "int recur ( ) ;",
+        "int now - recur ( n - 1 , k - i ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        14,
+        10
+      ],
+      "mod_code": [
+        "int memo ;",
+        "return memo [ n ] [ k ] = ' rv ' ;",
+        "int now - recur ( n - 1 , k - i ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        7
+      ],
+      "mod_code": [
+        "int memo ;",
+        "int rv ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        2
+      ],
+      "mod_code": [
+        "int memo ;",
+        "int rv ;",
+        "int recur ( ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        2,
+        10
+      ],
+      "mod_code": [
+        "int memo ;",
+        "int rv ;",
+        "int recur ( ) ;",
+        "int now - recur ( n - 1 , k - i ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        10
+      ],
+      "mod_code": [
+        "int memo ;",
+        "int rv ;",
+        "int now - recur ( n - 1 , k - i ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        2
+      ],
+      "mod_code": [
+        "int memo ;",
+        "int recur ( ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        2,
+        10
+      ],
+      "mod_code": [
+        "int memo ;",
+        "int recur ( ) ;",
+        "int now - recur ( n - 1 , k - i ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        10
+      ],
+      "mod_code": [
+        "int memo ;",
+        "int now - recur ( n - 1 , k - i ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        14
+      ],
+      "mod_code": [
+        "int recur ( )",
+        "return memo [ n ] [ k ] = ' rv ' ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        14,
+        7
+      ],
+      "mod_code": [
+        "int recur ( )",
+        "return memo [ n ] [ k ] = ' rv ' ;",
+        "int rv ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        14,
+        7,
+        10
+      ],
+      "mod_code": [
+        "int recur ( )",
+        "return memo [ n ] [ k ] = ' rv ' ;",
+        "int rv ;",
+        "int now - recur ( n - 1 , k - i ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        14,
+        10
+      ],
+      "mod_code": [
+        "int recur ( )",
+        "return memo [ n ] [ k ] = ' rv ' ;",
+        "int now - recur ( n - 1 , k - i ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        7
+      ],
+      "mod_code": [
+        "int recur ( )",
+        "int rv ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        7,
+        10
+      ],
+      "mod_code": [
+        "int recur ( )",
+        "int rv ;",
+        "int now - recur ( n - 1 , k - i ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        10
+      ],
+      "mod_code": [
+        "int recur ( )",
+        "int now - recur ( n - 1 , k - i ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        7,
+        2
+      ],
+      "mod_code": [
+        "return memo [ n ] [ k ] = ' rv ' ;",
+        "int rv ;",
+        "int recur ( ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        7,
+        2,
+        10
+      ],
+      "mod_code": [
+        "return memo [ n ] [ k ] = ' rv ' ;",
+        "int rv ;",
+        "int recur ( ) ;",
+        "int now - recur ( n - 1 , k - i ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        7,
+        10
+      ],
+      "mod_code": [
+        "return memo [ n ] [ k ] = ' rv ' ;",
+        "int rv ;",
+        "int now - recur ( n - 1 , k - i ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "expected initializer before ‘-’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        2
+      ],
+      "mod_code": [
+        "return memo [ n ] [ k ] = ' rv ' ;",
+        "int recur ( ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        2,
+        10
+      ],
+      "mod_code": [
+        "return memo [ n ] [ k ] = ' rv ' ;",
+        "int recur ( ) ;",
+        "int now - recur ( n - 1 , k - i ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        10
+      ],
+      "mod_code": [
+        "return memo [ n ] [ k ] = ' rv ' ;",
+        "int now - recur ( n - 1 , k - i ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "expected initializer before ‘-’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        2
+      ],
+      "mod_code": [
+        "int rv ;",
+        "int recur ( ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        2,
+        10
+      ],
+      "mod_code": [
+        "int rv ;",
+        "int recur ( ) ;",
+        "int now - recur ( n - 1 , k - i ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        10
+      ],
+      "mod_code": [
+        "int rv ;",
+        "int now - recur ( n - 1 , k - i ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "expected initializer before ‘-’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        10
+      ],
+      "mod_code": [
+        "int recur ( ) ;",
+        "int now - recur ( n - 1 , k - i ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    }
+  ]
+}

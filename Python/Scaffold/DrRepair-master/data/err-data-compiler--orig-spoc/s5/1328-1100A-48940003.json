@@ -1,0 +1,669 @@
+{
+  "meta": {
+    "index": 1328,
+    "hitid": "33NOQL7T9OTKVFA7Q25JQ6W6M8J8Z0",
+    "workerid": "A2J7P30MA3S6OV",
+    "probid": "1100A",
+    "subid": "48940003"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create int n , k , a [ 105 ] , b , Max",
+      "code": "int n , k , a [ 105 ] , b , Max ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create map m from int to int",
+      "code": "map < int , int > m ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "create map mm from int to int",
+      "code": "map < int , int > mm ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "read n and k",
+      "code": "cin >> n >> k ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i = 1 to n inclusive , read a [ i ] , increment m [ a [ i ] ]",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] , m [ a [ i ] ] ++ ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "if k equal to 0 , add 1 to Max",
+      "code": "if ( k == 0 ) Max ++ ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for i = 1 to k inclusive",
+      "code": "for ( int i = 1 ; i <= k ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "set mm [ 1 ] to m [ 1 ] , assign m [ - 1 ] to mm [ - 1 ]",
+      "code": "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] = m [ - 1 ] ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "for j = 1 to n inclusive with increment of j = j + k , decrement mm [ a [ j ] ]",
+      "code": "for ( int j = i ; j <= n ; j += k ) mm [ a [ j ] ] -- ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "set max to max of Max and abs of mm [ 1 ] - mm [ - 1 ]",
+      "code": "Max = max ( Max , abs ( mm [ 1 ] - mm [ - 1 ] ) ) ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "print Max and a newline",
+      "code": "cout << Max << \" \\n \" ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "max = max ( Max , abs ( mm [ 1 ] - mm [ - 1 ] ) ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "overloaded function with no contextual type information"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int n , k , a [ 105 ] , b ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘Max’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "map < int , int > :: int > m ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘int’"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "map < int , int create ;"
+      ],
+      "err_line": 2,
+      "err_msg": "template argument 2 is invalid"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "int max = max ( Max , abs ( mm [ 1 ] - mm [ - 1 ] ) ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘max’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        8,
+        9,
+        10
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] ;",
+        "for ( int j = 1 ; j <= n ; j += k ) { mm [ a [ j ] ] -- ; }",
+        "max = max ( Max , abs ( mm [ 1 ] - mm [ - 1 ] ) ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "overloaded function with no contextual type information"
+    },
+    {
+      "mod_line": [
+        8,
+        9,
+        10,
+        1
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] ;",
+        "for ( int j = 1 ; j <= n ; j += k ) { mm [ a [ j ] ] -- ; }",
+        "max = max ( Max , abs ( mm [ 1 ] - mm [ - 1 ] ) ) ;",
+        "map < int , int > :: int > m ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘int’"
+    },
+    {
+      "mod_line": [
+        8,
+        9,
+        10,
+        7
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] ;",
+        "for ( int j = 1 ; j <= n ; j += k ) { mm [ a [ j ] ] -- ; }",
+        "max = max ( Max , abs ( mm [ 1 ] - mm [ - 1 ] ) ) ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        8,
+        9,
+        1
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] ;",
+        "for ( int j = 1 ; j <= n ; j += k ) { mm [ a [ j ] ] -- ; }",
+        "map < int , int > :: int > m ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘int’"
+    },
+    {
+      "mod_line": [
+        8,
+        9,
+        1,
+        7
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] ;",
+        "for ( int j = 1 ; j <= n ; j += k ) { mm [ a [ j ] ] -- ; }",
+        "map < int , int > :: int > m ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘int’"
+    },
+    {
+      "mod_line": [
+        8,
+        9,
+        7
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] ;",
+        "for ( int j = 1 ; j <= n ; j += k ) { mm [ a [ j ] ] -- ; }",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        8,
+        10
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] ;",
+        "max = max ( Max , abs ( mm [ 1 ] - mm [ - 1 ] ) ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "overloaded function with no contextual type information"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        1
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] ;",
+        "max = max ( Max , abs ( mm [ 1 ] - mm [ - 1 ] ) ) ;",
+        "map < int , int > :: int > m ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘int’"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        1,
+        9
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] ;",
+        "max = max ( Max , abs ( mm [ 1 ] - mm [ - 1 ] ) ) ;",
+        "map < int , int > :: int > m ;",
+        "for ( int j = 1 ; j <= n ; j += k ) mm [ a [ j ] ] -- ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘int’"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        1,
+        7
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] ;",
+        "max = max ( Max , abs ( mm [ 1 ] - mm [ - 1 ] ) ) ;",
+        "map < int , int > :: int > m ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘int’"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        9
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] ;",
+        "max = max ( Max , abs ( mm [ 1 ] - mm [ - 1 ] ) ) ;",
+        "for ( int j = 1 ; j <= n ; j += k ) mm [ a [ j ] ] -- ;"
+      ],
+      "err_line": 10,
+      "err_msg": "overloaded function with no contextual type information"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        9,
+        7
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] ;",
+        "max = max ( Max , abs ( mm [ 1 ] - mm [ - 1 ] ) ) ;",
+        "for ( int j = 1 ; j <= n ; j += k ) mm [ a [ j ] ] -- ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        7
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] ;",
+        "max = max ( Max , abs ( mm [ 1 ] - mm [ - 1 ] ) ) ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        8,
+        1
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] ;",
+        "map < int , int > :: int > m ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘int’"
+    },
+    {
+      "mod_line": [
+        8,
+        1,
+        9
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] ;",
+        "map < int , int > :: int > m ;",
+        "for ( int j = 1 ; j <= n ; j += k ) mm [ a [ j ] ] -- ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘int’"
+    },
+    {
+      "mod_line": [
+        8,
+        1,
+        9,
+        7
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] ;",
+        "map < int , int > :: int > m ;",
+        "for ( int j = 1 ; j <= n ; j += k ) mm [ a [ j ] ] -- ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘int’"
+    },
+    {
+      "mod_line": [
+        8,
+        1,
+        7
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] ;",
+        "map < int , int > :: int > m ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘int’"
+    },
+    {
+      "mod_line": [
+        8,
+        9,
+        7
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] ;",
+        "for ( int j = 1 ; j <= n ; j += k ) mm [ a [ j ] ] -- ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        8,
+        7
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        10
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= n ; j += k ) { mm [ a [ j ] ] -- ; }",
+        "max = max ( Max , abs ( mm [ 1 ] - mm [ - 1 ] ) ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "overloaded function with no contextual type information"
+    },
+    {
+      "mod_line": [
+        9,
+        10,
+        1
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= n ; j += k ) { mm [ a [ j ] ] -- ; }",
+        "max = max ( Max , abs ( mm [ 1 ] - mm [ - 1 ] ) ) ;",
+        "map < int , int > :: int > m ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘int’"
+    },
+    {
+      "mod_line": [
+        9,
+        10,
+        1,
+        7
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= n ; j += k ) { mm [ a [ j ] ] -- ; }",
+        "max = max ( Max , abs ( mm [ 1 ] - mm [ - 1 ] ) ) ;",
+        "map < int , int > :: int > m ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘int’"
+    },
+    {
+      "mod_line": [
+        9,
+        10,
+        7
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= n ; j += k ) { mm [ a [ j ] ] -- ; }",
+        "max = max ( Max , abs ( mm [ 1 ] - mm [ - 1 ] ) ) ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        1
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= n ; j += k ) { mm [ a [ j ] ] -- ; }",
+        "map < int , int > :: int > m ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘int’"
+    },
+    {
+      "mod_line": [
+        9,
+        1,
+        7
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= n ; j += k ) { mm [ a [ j ] ] -- ; }",
+        "map < int , int > :: int > m ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘int’"
+    },
+    {
+      "mod_line": [
+        9,
+        7
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= n ; j += k ) { mm [ a [ j ] ] -- ; }",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        1
+      ],
+      "mod_code": [
+        "max = max ( Max , abs ( mm [ 1 ] - mm [ - 1 ] ) ) ;",
+        "map < int , int > :: int > m ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘int’"
+    },
+    {
+      "mod_line": [
+        10,
+        1,
+        9
+      ],
+      "mod_code": [
+        "max = max ( Max , abs ( mm [ 1 ] - mm [ - 1 ] ) ) ;",
+        "map < int , int > :: int > m ;",
+        "for ( int j = 1 ; j <= n ; j += k ) mm [ a [ j ] ] -- ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘int’"
+    },
+    {
+      "mod_line": [
+        10,
+        1,
+        9,
+        7
+      ],
+      "mod_code": [
+        "max = max ( Max , abs ( mm [ 1 ] - mm [ - 1 ] ) ) ;",
+        "map < int , int > :: int > m ;",
+        "for ( int j = 1 ; j <= n ; j += k ) mm [ a [ j ] ] -- ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘int’"
+    },
+    {
+      "mod_line": [
+        10,
+        1,
+        7
+      ],
+      "mod_code": [
+        "max = max ( Max , abs ( mm [ 1 ] - mm [ - 1 ] ) ) ;",
+        "map < int , int > :: int > m ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘int’"
+    },
+    {
+      "mod_line": [
+        10,
+        9
+      ],
+      "mod_code": [
+        "max = max ( Max , abs ( mm [ 1 ] - mm [ - 1 ] ) ) ;",
+        "for ( int j = 1 ; j <= n ; j += k ) mm [ a [ j ] ] -- ;"
+      ],
+      "err_line": 10,
+      "err_msg": "overloaded function with no contextual type information"
+    },
+    {
+      "mod_line": [
+        10,
+        9,
+        7
+      ],
+      "mod_code": [
+        "max = max ( Max , abs ( mm [ 1 ] - mm [ - 1 ] ) ) ;",
+        "for ( int j = 1 ; j <= n ; j += k ) mm [ a [ j ] ] -- ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        7
+      ],
+      "mod_code": [
+        "max = max ( Max , abs ( mm [ 1 ] - mm [ - 1 ] ) ) ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        1,
+        9
+      ],
+      "mod_code": [
+        "map < int , int > :: int > m ;",
+        "for ( int j = 1 ; j <= n ; j += k ) mm [ a [ j ] ] -- ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘int’"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        7
+      ],
+      "mod_code": [
+        "map < int , int > :: int > m ;",
+        "for ( int j = 1 ; j <= n ; j += k ) mm [ a [ j ] ] -- ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘int’"
+    },
+    {
+      "mod_line": [
+        1,
+        7
+      ],
+      "mod_code": [
+        "map < int , int > :: int > m ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘int’"
+    },
+    {
+      "mod_line": [
+        9,
+        7
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= n ; j += k ) mm [ a [ j ] ] -- ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    }
+  ]
+}

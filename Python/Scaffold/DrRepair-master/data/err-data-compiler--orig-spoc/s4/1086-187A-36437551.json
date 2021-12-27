@@ -1,0 +1,921 @@
+{
+  "meta": {
+    "index": 1086,
+    "hitid": "3KG2UQJ0MJIWKUWK98BPHAAX5D2NQ3",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "187A",
+    "subid": "36437551"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create integer arrays A , B , pos , mark , ans with A size 200010 , B size 200010 , pos size 200010 , mark size 200010 , ans size 200010",
+      "code": "int A [ 200010 ] , B [ 200010 ] , pos [ 200010 ] , mark [ 200010 ] , ans [ 200010 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "create integer n",
+      "code": "int n ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for i = 0 to n exclusive , read A [ i ] , set pos [ A [ i ] ] to i",
+      "code": "for ( int i = 0 ; i < n ; i ++ ) cin >> A [ i ] , pos [ A [ i ] ] = i ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( int i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "read B [ i ]",
+      "code": "cin >> B [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "set A [ pos [ B [ i ] ] ] to i + 1",
+      "code": "A [ pos [ B [ i ] ] ] = i + 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "create integer stack d",
+      "code": "stack < int > d ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "add element 0 to top of d",
+      "code": "d . push ( 0 ) ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "set ans [ 0 ] to 0",
+      "code": "ans [ 0 ] = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "for i = 1 to n exclusive",
+      "code": "for ( int i = 1 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "while size of d and A [ top of d ] is less than A [ i ] , remove top of d",
+      "code": "while ( d . size ( ) && A [ d . top ( ) ] < A [ i ] ) d . pop ( ) ;",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "if size of d",
+      "code": "if ( d . size ( ) )",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "set ans [ i ] to top of d",
+      "code": "ans [ i ] = d . top ( ) ;",
+      "indent": 3
+    },
+    {
+      "line": 16,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "set ans [ i ] to i",
+      "code": "ans [ i ] = i ;",
+      "indent": 3
+    },
+    {
+      "line": 18,
+      "text": "add i to top of d",
+      "code": "d . push ( i ) ;",
+      "indent": 2
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "for i = 1 to n exclusive",
+      "code": "for ( int i = 1 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "set mark [ i ] to mark [ i - 1 ]",
+      "code": "mark [ i ] = mark [ i - 1 ] ;",
+      "indent": 2
+    },
+    {
+      "line": 22,
+      "text": "if ans [ i ] is not i , set mark [ i ] to 1",
+      "code": "if ( ans [ i ] != i ) mark [ i ] = 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 23,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "create integers res , cur with res = 0 , cur = n - 1",
+      "code": "int res = 0 , cur = n - 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 25,
+      "text": "while cur is greater than or equal to 0",
+      "code": "while ( cur >= 0 )",
+      "indent": 1
+    },
+    {
+      "line": 26,
+      "text": "increment res by cur - ans [ cur ]",
+      "code": "res += cur - ans [ cur ] ;",
+      "indent": 2
+    },
+    {
+      "line": 27,
+      "text": "if not mark [ cur ] break loop",
+      "code": "if ( ! mark [ cur ] ) break ;",
+      "indent": 2
+    },
+    {
+      "line": 28,
+      "text": "if cur is ans [ cur ]",
+      "code": "if ( cur == ans [ cur ] )",
+      "indent": 2
+    },
+    {
+      "line": 29,
+      "text": "increment res",
+      "code": "res ++ ;",
+      "indent": 3
+    },
+    {
+      "line": 30,
+      "text": "decrement cur",
+      "code": "cur -- ;",
+      "indent": 3
+    },
+    {
+      "line": 31,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 32,
+      "text": "set cur to ans [ cur ]",
+      "code": "cur = ans [ cur ] ;",
+      "indent": 3
+    },
+    {
+      "line": 33,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 34,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 35,
+      "text": "print res print ' \\ n '",
+      "code": "cout << res << ' \\n ' ;",
+      "indent": 1
+    },
+    {
+      "line": 36,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int A [ 200010 ] , B [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] , mark [ 200010 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int pos [200010]’"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "while ( d . size ( ) && A [ top . top ( ) ] < A [ i ] ) { d . pop ( ) ; }"
+      ],
+      "err_line": 13,
+      "err_msg": "‘top’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int A [ 200010 ] , B [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int pos [200010]’"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "B >> B [ i ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid operands of types ‘int [200010]’ and ‘int’ to binary ‘operator>>’"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "A [ pos [ B [ i ] ] = i + 1 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "d . push_back ( 0 ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘class std::stack<int>’ has no member named ‘push_back’"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "while ( d . size ( ) && A [ top . top ( ) ] < A [ i ] ) d . pop ( ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘top’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "if ( d . size ( ) . size ( ) )"
+      ],
+      "err_line": 14,
+      "err_msg": "request for member ‘size’ in ‘d.std::stack<_Tp, _Sequence>::size<int, std::deque<int, std::allocator<int> > >()’, which is of non-class type ‘std::stack<int>::size_type {aka long unsigned int}’"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "ans [ i ] = top . top ( ) ;"
+      ],
+      "err_line": 15,
+      "err_msg": "‘top’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        18
+      ],
+      "mod_code": [
+        "d . push_back ( i ) ;"
+      ],
+      "err_line": 18,
+      "err_msg": "‘class std::stack<int>’ has no member named ‘push_back’"
+    },
+    {
+      "mod_line": [
+        21
+      ],
+      "mod_code": [
+        "mark [ i ] ] = mark [ i - 1 ] ;"
+      ],
+      "err_line": 21,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        24
+      ],
+      "mod_code": [
+        "int res = 0 ;"
+      ],
+      "err_line": 25,
+      "err_msg": "‘cur’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        28
+      ],
+      "mod_code": [
+        "if ( ! cur [ cur ] )"
+      ],
+      "err_line": 28,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        32
+      ],
+      "mod_code": [
+        "cur -= ans ;"
+      ],
+      "err_line": 32,
+      "err_msg": "invalid use of non-lvalue array"
+    },
+    {
+      "mod_line": [
+        0,
+        13
+      ],
+      "mod_code": [
+        "int A [ 200010 ] , B [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] , mark [ 200010 ] ;",
+        "while ( d . size ( ) && A [ top . top ( ) ] < A [ i ] ) { d . pop ( ) ; }"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int pos [200010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        13,
+        21
+      ],
+      "mod_code": [
+        "int A [ 200010 ] , B [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] , mark [ 200010 ] ;",
+        "while ( d . size ( ) && A [ top . top ( ) ] < A [ i ] ) { d . pop ( ) ; }",
+        "mark [ i ] ] = mark [ i - 1 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int pos [200010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        13,
+        21,
+        14
+      ],
+      "mod_code": [
+        "int A [ 200010 ] , B [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] , mark [ 200010 ] ;",
+        "while ( d . size ( ) && A [ top . top ( ) ] < A [ i ] ) { d . pop ( ) ; }",
+        "mark [ i ] ] = mark [ i - 1 ] ;",
+        "if ( d . size ( ) . size ( ) )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int pos [200010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        13,
+        21,
+        5
+      ],
+      "mod_code": [
+        "int A [ 200010 ] , B [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] , mark [ 200010 ] ;",
+        "while ( d . size ( ) && A [ top . top ( ) ] < A [ i ] ) { d . pop ( ) ; }",
+        "mark [ i ] ] = mark [ i - 1 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int pos [200010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        13,
+        14
+      ],
+      "mod_code": [
+        "int A [ 200010 ] , B [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] , mark [ 200010 ] ;",
+        "while ( d . size ( ) && A [ top . top ( ) ] < A [ i ] ) { d . pop ( ) ; }",
+        "if ( d . size ( ) . size ( ) )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int pos [200010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        13,
+        14,
+        5
+      ],
+      "mod_code": [
+        "int A [ 200010 ] , B [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] , mark [ 200010 ] ;",
+        "while ( d . size ( ) && A [ top . top ( ) ] < A [ i ] ) { d . pop ( ) ; }",
+        "if ( d . size ( ) . size ( ) )",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int pos [200010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        13,
+        5
+      ],
+      "mod_code": [
+        "int A [ 200010 ] , B [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] , mark [ 200010 ] ;",
+        "while ( d . size ( ) && A [ top . top ( ) ] < A [ i ] ) { d . pop ( ) ; }",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int pos [200010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        21
+      ],
+      "mod_code": [
+        "int A [ 200010 ] , B [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] , mark [ 200010 ] ;",
+        "mark [ i ] ] = mark [ i - 1 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int pos [200010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        21,
+        14
+      ],
+      "mod_code": [
+        "int A [ 200010 ] , B [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] , mark [ 200010 ] ;",
+        "mark [ i ] ] = mark [ i - 1 ] ;",
+        "if ( d . size ( ) . size ( ) )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int pos [200010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        21,
+        14,
+        5
+      ],
+      "mod_code": [
+        "int A [ 200010 ] , B [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] , mark [ 200010 ] ;",
+        "mark [ i ] ] = mark [ i - 1 ] ;",
+        "if ( d . size ( ) . size ( ) )",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int pos [200010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        21,
+        5
+      ],
+      "mod_code": [
+        "int A [ 200010 ] , B [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] , mark [ 200010 ] ;",
+        "mark [ i ] ] = mark [ i - 1 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int pos [200010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        14
+      ],
+      "mod_code": [
+        "int A [ 200010 ] , B [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] , mark [ 200010 ] ;",
+        "if ( d . size ( ) . size ( ) )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int pos [200010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        14,
+        5
+      ],
+      "mod_code": [
+        "int A [ 200010 ] , B [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] , mark [ 200010 ] ;",
+        "if ( d . size ( ) . size ( ) )",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int pos [200010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        5
+      ],
+      "mod_code": [
+        "int A [ 200010 ] , B [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] , mark [ 200010 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int pos [200010]’"
+    },
+    {
+      "mod_line": [
+        13,
+        21
+      ],
+      "mod_code": [
+        "while ( d . size ( ) && A [ top . top ( ) ] < A [ i ] ) { d . pop ( ) ; }",
+        "mark [ i ] ] = mark [ i - 1 ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘top’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        21,
+        14
+      ],
+      "mod_code": [
+        "while ( d . size ( ) && A [ top . top ( ) ] < A [ i ] ) { d . pop ( ) ; }",
+        "mark [ i ] ] = mark [ i - 1 ] ;",
+        "if ( d . size ( ) . size ( ) )"
+      ],
+      "err_line": 13,
+      "err_msg": "‘top’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        21,
+        14,
+        5
+      ],
+      "mod_code": [
+        "while ( d . size ( ) && A [ top . top ( ) ] < A [ i ] ) { d . pop ( ) ; }",
+        "mark [ i ] ] = mark [ i - 1 ] ;",
+        "if ( d . size ( ) . size ( ) )",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        21,
+        14,
+        0
+      ],
+      "mod_code": [
+        "while ( d . size ( ) && A [ top . top ( ) ] < A [ i ] ) { d . pop ( ) ; }",
+        "mark [ i ] ] = mark [ i - 1 ] ;",
+        "if ( d . size ( ) . size ( ) )",
+        "int A [ 200010 ] , B [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int pos [200010]’"
+    },
+    {
+      "mod_line": [
+        13,
+        21,
+        5
+      ],
+      "mod_code": [
+        "while ( d . size ( ) && A [ top . top ( ) ] < A [ i ] ) { d . pop ( ) ; }",
+        "mark [ i ] ] = mark [ i - 1 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        21,
+        5,
+        0
+      ],
+      "mod_code": [
+        "while ( d . size ( ) && A [ top . top ( ) ] < A [ i ] ) { d . pop ( ) ; }",
+        "mark [ i ] ] = mark [ i - 1 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int A [ 200010 ] , B [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int pos [200010]’"
+    },
+    {
+      "mod_line": [
+        13,
+        21,
+        0
+      ],
+      "mod_code": [
+        "while ( d . size ( ) && A [ top . top ( ) ] < A [ i ] ) { d . pop ( ) ; }",
+        "mark [ i ] ] = mark [ i - 1 ] ;",
+        "int A [ 200010 ] , B [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int pos [200010]’"
+    },
+    {
+      "mod_line": [
+        13,
+        14
+      ],
+      "mod_code": [
+        "while ( d . size ( ) && A [ top . top ( ) ] < A [ i ] ) { d . pop ( ) ; }",
+        "if ( d . size ( ) . size ( ) )"
+      ],
+      "err_line": 13,
+      "err_msg": "‘top’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        14,
+        5
+      ],
+      "mod_code": [
+        "while ( d . size ( ) && A [ top . top ( ) ] < A [ i ] ) { d . pop ( ) ; }",
+        "if ( d . size ( ) . size ( ) )",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        14,
+        5,
+        0
+      ],
+      "mod_code": [
+        "while ( d . size ( ) && A [ top . top ( ) ] < A [ i ] ) { d . pop ( ) ; }",
+        "if ( d . size ( ) . size ( ) )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int A [ 200010 ] , B [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int pos [200010]’"
+    },
+    {
+      "mod_line": [
+        13,
+        14,
+        0
+      ],
+      "mod_code": [
+        "while ( d . size ( ) && A [ top . top ( ) ] < A [ i ] ) { d . pop ( ) ; }",
+        "if ( d . size ( ) . size ( ) )",
+        "int A [ 200010 ] , B [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int pos [200010]’"
+    },
+    {
+      "mod_line": [
+        13,
+        5
+      ],
+      "mod_code": [
+        "while ( d . size ( ) && A [ top . top ( ) ] < A [ i ] ) { d . pop ( ) ; }",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        5,
+        0
+      ],
+      "mod_code": [
+        "while ( d . size ( ) && A [ top . top ( ) ] < A [ i ] ) { d . pop ( ) ; }",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int A [ 200010 ] , B [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int pos [200010]’"
+    },
+    {
+      "mod_line": [
+        13,
+        0
+      ],
+      "mod_code": [
+        "while ( d . size ( ) && A [ top . top ( ) ] < A [ i ] ) { d . pop ( ) ; }",
+        "int A [ 200010 ] , B [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int pos [200010]’"
+    },
+    {
+      "mod_line": [
+        21,
+        14
+      ],
+      "mod_code": [
+        "mark [ i ] ] = mark [ i - 1 ] ;",
+        "if ( d . size ( ) . size ( ) )"
+      ],
+      "err_line": 14,
+      "err_msg": "request for member ‘size’ in ‘d.std::stack<_Tp, _Sequence>::size<int, std::deque<int, std::allocator<int> > >()’, which is of non-class type ‘std::stack<int>::size_type {aka long unsigned int}’"
+    },
+    {
+      "mod_line": [
+        21,
+        14,
+        5
+      ],
+      "mod_code": [
+        "mark [ i ] ] = mark [ i - 1 ] ;",
+        "if ( d . size ( ) . size ( ) )",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        21,
+        14,
+        5,
+        0
+      ],
+      "mod_code": [
+        "mark [ i ] ] = mark [ i - 1 ] ;",
+        "if ( d . size ( ) . size ( ) )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int A [ 200010 ] , B [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int pos [200010]’"
+    },
+    {
+      "mod_line": [
+        21,
+        14,
+        0
+      ],
+      "mod_code": [
+        "mark [ i ] ] = mark [ i - 1 ] ;",
+        "if ( d . size ( ) . size ( ) )",
+        "int A [ 200010 ] , B [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int pos [200010]’"
+    },
+    {
+      "mod_line": [
+        21,
+        5
+      ],
+      "mod_code": [
+        "mark [ i ] ] = mark [ i - 1 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        21,
+        5,
+        0
+      ],
+      "mod_code": [
+        "mark [ i ] ] = mark [ i - 1 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int A [ 200010 ] , B [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int pos [200010]’"
+    },
+    {
+      "mod_line": [
+        21,
+        0
+      ],
+      "mod_code": [
+        "mark [ i ] ] = mark [ i - 1 ] ;",
+        "int A [ 200010 ] , B [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int pos [200010]’"
+    },
+    {
+      "mod_line": [
+        14,
+        5
+      ],
+      "mod_code": [
+        "if ( d . size ( ) . size ( ) )",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        14,
+        5,
+        0
+      ],
+      "mod_code": [
+        "if ( d . size ( ) . size ( ) )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int A [ 200010 ] , B [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int pos [200010]’"
+    },
+    {
+      "mod_line": [
+        14,
+        0
+      ],
+      "mod_code": [
+        "if ( d . size ( ) . size ( ) )",
+        "int A [ 200010 ] , B [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int pos [200010]’"
+    },
+    {
+      "mod_line": [
+        5,
+        0
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int A [ 200010 ] , B [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] , pos [ 200010 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int pos [200010]’"
+    }
+  ]
+}

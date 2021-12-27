@@ -1,0 +1,933 @@
+{
+  "meta": {
+    "index": 2390,
+    "hitid": "3HRWUH63QUW7R8DMPGNMJZF69HG5N9",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "543A",
+    "subid": "48787817"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "constant long long integer INF = 8e16",
+      "code": "const long long int INF = ( long long int ) ( 8e16 ) ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "constant long long integer MOD = 1000000007",
+      "code": "const long long int MOD = 1000000007 ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "long long integer arrays a with 501 elements , and 2d arrays dp and Dp with size 501 by 501",
+      "code": "long long int a [ 501 ] , dp [ 501 ] [ 501 ] , Dp [ 501 ] [ 501 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "create long long integers n , m , b and mod",
+      "code": "long long int n , m , b , mod ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "read n , m , b and mod",
+      "code": "cin >> n >> m >> b >> mod ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for integer i = 1 to n inclusive read a",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for integer i = 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "for integer j = 1 to m inclusive",
+      "code": "for ( int j = 1 ; j <= m ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "if j = 1 , increment dp [ j ] [ a [ i ] ]",
+      "code": "if ( j == 1 ) dp [ j ] [ a [ i ] ] ++ ;",
+      "indent": 3
+    },
+    {
+      "line": 10,
+      "text": "for integer k = 0 to b inclusive",
+      "code": "for ( int k = 0 ; k <= b ; k ++ )",
+      "indent": 3
+    },
+    {
+      "line": 11,
+      "text": "if j = 1",
+      "code": "if ( j == 1 )",
+      "indent": 4
+    },
+    {
+      "line": 12,
+      "text": "increase dp [ j ] [ k ] by Dp [ j ] [ k ]",
+      "code": "dp [ j ] [ k ] += Dp [ j ] [ k ] ;",
+      "indent": 5
+    },
+    {
+      "line": 13,
+      "text": "skip the rest of the loop",
+      "code": "continue ;",
+      "indent": 5
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 4
+    },
+    {
+      "line": 15,
+      "text": "if k > = a [ i ] , increment dp [ j ] [ k ] by dp [ j - 1 ] [ k - a [ i ] ]",
+      "code": "if ( k >= a [ i ] ) { dp [ j ] [ k ] += dp [ j - 1 ] [ k - a [ i ] ] ; }",
+      "indent": 4
+    },
+    {
+      "line": 16,
+      "text": "increase dp [ j ] [ k ] by Dp [ j ] [ k ]",
+      "code": "dp [ j ] [ k ] += Dp [ j ] [ k ] ;",
+      "indent": 4
+    },
+    {
+      "line": 17,
+      "text": "dp [ j ] [ k ] = dp [ j ] [ k ] modulo mod",
+      "code": "dp [ j ] [ k ] %= mod ;",
+      "indent": 4
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 20,
+      "text": "for integer j = 1 to m inclusive",
+      "code": "for ( int j = 1 ; j <= m ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 21,
+      "text": "for integer k = 0 to b inclusive",
+      "code": "for ( int k = 0 ; k <= b ; k ++ )",
+      "indent": 3
+    },
+    {
+      "line": 22,
+      "text": "assign value of dp [ j ] [ k ] to Dp [ j ] [ k ]",
+      "code": "Dp [ j ] [ k ] = dp [ j ] [ k ] ;",
+      "indent": 4
+    },
+    {
+      "line": 23,
+      "text": "dp [ j ] [ k ] = 0",
+      "code": "dp [ j ] [ k ] = 0 ;",
+      "indent": 4
+    },
+    {
+      "line": 24,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 25,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 26,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 27,
+      "text": "create long long integer ans = 0",
+      "code": "long long int ans = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 28,
+      "text": "for integer j = 0 to b inclusive",
+      "code": "for ( int j = 0 ; j <= b ; j ++ )",
+      "indent": 1
+    },
+    {
+      "line": 29,
+      "text": "increase ans by Dp [ m ] [ j ]",
+      "code": "ans += Dp [ m ] [ j ] ;",
+      "indent": 2
+    },
+    {
+      "line": 30,
+      "text": "ans = ans modulo mod",
+      "code": "ans %= mod ;",
+      "indent": 2
+    },
+    {
+      "line": 31,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 32,
+      "text": "print ans and ' \\ n '",
+      "code": "cout << ans << ' \\n ' ;",
+      "indent": 1
+    },
+    {
+      "line": 33,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 34,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "long long a [ 501 ] [ 501 ] , dp [ 501 ] [ 501 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [501]’)"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [501]’)"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "long long int a [ 501 ] [ 501 ] , dp [ 501 ] [ 501 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [501]’)"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "rest ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘rest’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "if ( k >= a [ i ] ) dp [ j ] [ k ] += dp - a [ j - 1 ] [ k - a [ i ] ;"
+      ],
+      "err_line": 15,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        22
+      ],
+      "mod_code": [
+        "Dp [ j ] [ k ] [ k ] = dp [ j ] ;"
+      ],
+      "err_line": 22,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        6
+      ],
+      "mod_code": [
+        "long long a [ 501 ] [ 501 ] , dp [ 501 ] [ 501 ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [501][501]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        17
+      ],
+      "mod_code": [
+        "long long a [ 501 ] [ 501 ] , dp [ 501 ] [ 501 ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a ;",
+        "dp [ j ] [ k ] *= mod ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [501][501]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        17,
+        32
+      ],
+      "mod_code": [
+        "long long a [ 501 ] [ 501 ] , dp [ 501 ] [ 501 ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a ;",
+        "dp [ j ] [ k ] *= mod ;",
+        "ans << ans << ' \\n ' ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [501][501]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        17,
+        15
+      ],
+      "mod_code": [
+        "long long a [ 501 ] [ 501 ] , dp [ 501 ] [ 501 ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a ;",
+        "dp [ j ] [ k ] *= mod ;",
+        "if ( k >= a [ i ] ) dp [ j ] [ k ] += dp - a [ j - 1 ] [ k - a [ i ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [501][501]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        17,
+        16
+      ],
+      "mod_code": [
+        "long long a [ 501 ] [ 501 ] , dp [ 501 ] [ 501 ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a ;",
+        "dp [ j ] [ k ] *= mod ;",
+        "dp [ j ] [ k ] = dp [ j ] [ k ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [501][501]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        32
+      ],
+      "mod_code": [
+        "long long a [ 501 ] [ 501 ] , dp [ 501 ] [ 501 ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a ;",
+        "ans << ans << ' \\n ' ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [501][501]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        32,
+        15
+      ],
+      "mod_code": [
+        "long long a [ 501 ] [ 501 ] , dp [ 501 ] [ 501 ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a ;",
+        "ans << ans << ' \\n ' ;",
+        "if ( k >= a [ i ] ) dp [ j ] [ k ] += dp - a [ j - 1 ] [ k - a [ i ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [501][501]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        32,
+        16
+      ],
+      "mod_code": [
+        "long long a [ 501 ] [ 501 ] , dp [ 501 ] [ 501 ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a ;",
+        "ans << ans << ' \\n ' ;",
+        "dp [ j ] [ k ] = dp [ j ] [ k ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [501][501]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        15
+      ],
+      "mod_code": [
+        "long long a [ 501 ] [ 501 ] , dp [ 501 ] [ 501 ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a ;",
+        "if ( k >= a [ i ] ) dp [ j ] [ k ] += dp - a [ j - 1 ] [ k - a [ i ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [501][501]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        15,
+        16
+      ],
+      "mod_code": [
+        "long long a [ 501 ] [ 501 ] , dp [ 501 ] [ 501 ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a ;",
+        "if ( k >= a [ i ] ) dp [ j ] [ k ] += dp - a [ j - 1 ] [ k - a [ i ] ;",
+        "dp [ j ] [ k ] = dp [ j ] [ k ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [501][501]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        16
+      ],
+      "mod_code": [
+        "long long a [ 501 ] [ 501 ] , dp [ 501 ] [ 501 ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a ;",
+        "dp [ j ] [ k ] = dp [ j ] [ k ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [501][501]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        17
+      ],
+      "mod_code": [
+        "long long a [ 501 ] [ 501 ] , dp [ 501 ] [ 501 ] ;",
+        "dp [ j ] [ k ] *= mod ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [501]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        17,
+        32
+      ],
+      "mod_code": [
+        "long long a [ 501 ] [ 501 ] , dp [ 501 ] [ 501 ] ;",
+        "dp [ j ] [ k ] *= mod ;",
+        "ans << ans << ' \\n ' ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [501]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        17,
+        32,
+        15
+      ],
+      "mod_code": [
+        "long long a [ 501 ] [ 501 ] , dp [ 501 ] [ 501 ] ;",
+        "dp [ j ] [ k ] *= mod ;",
+        "ans << ans << ' \\n ' ;",
+        "if ( k >= a [ i ] ) dp [ j ] [ k ] += dp - a [ j - 1 ] [ k - a [ i ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [501]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        17,
+        32,
+        16
+      ],
+      "mod_code": [
+        "long long a [ 501 ] [ 501 ] , dp [ 501 ] [ 501 ] ;",
+        "dp [ j ] [ k ] *= mod ;",
+        "ans << ans << ' \\n ' ;",
+        "dp [ j ] [ k ] = dp [ j ] [ k ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [501]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        17,
+        15
+      ],
+      "mod_code": [
+        "long long a [ 501 ] [ 501 ] , dp [ 501 ] [ 501 ] ;",
+        "dp [ j ] [ k ] *= mod ;",
+        "if ( k >= a [ i ] ) dp [ j ] [ k ] += dp - a [ j - 1 ] [ k - a [ i ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [501]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        17,
+        15,
+        16
+      ],
+      "mod_code": [
+        "long long a [ 501 ] [ 501 ] , dp [ 501 ] [ 501 ] ;",
+        "dp [ j ] [ k ] *= mod ;",
+        "if ( k >= a [ i ] ) dp [ j ] [ k ] += dp - a [ j - 1 ] [ k - a [ i ] ;",
+        "dp [ j ] [ k ] = dp [ j ] [ k ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [501]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        17,
+        16
+      ],
+      "mod_code": [
+        "long long a [ 501 ] [ 501 ] , dp [ 501 ] [ 501 ] ;",
+        "dp [ j ] [ k ] *= mod ;",
+        "dp [ j ] [ k ] = dp [ j ] [ k ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [501]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        32
+      ],
+      "mod_code": [
+        "long long a [ 501 ] [ 501 ] , dp [ 501 ] [ 501 ] ;",
+        "ans << ans << ' \\n ' ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [501]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        32,
+        15
+      ],
+      "mod_code": [
+        "long long a [ 501 ] [ 501 ] , dp [ 501 ] [ 501 ] ;",
+        "ans << ans << ' \\n ' ;",
+        "if ( k >= a [ i ] ) dp [ j ] [ k ] += dp - a [ j - 1 ] [ k - a [ i ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [501]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        32,
+        15,
+        16
+      ],
+      "mod_code": [
+        "long long a [ 501 ] [ 501 ] , dp [ 501 ] [ 501 ] ;",
+        "ans << ans << ' \\n ' ;",
+        "if ( k >= a [ i ] ) dp [ j ] [ k ] += dp - a [ j - 1 ] [ k - a [ i ] ;",
+        "dp [ j ] [ k ] = dp [ j ] [ k ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [501]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        32,
+        16
+      ],
+      "mod_code": [
+        "long long a [ 501 ] [ 501 ] , dp [ 501 ] [ 501 ] ;",
+        "ans << ans << ' \\n ' ;",
+        "dp [ j ] [ k ] = dp [ j ] [ k ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [501]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        15
+      ],
+      "mod_code": [
+        "long long a [ 501 ] [ 501 ] , dp [ 501 ] [ 501 ] ;",
+        "if ( k >= a [ i ] ) dp [ j ] [ k ] += dp - a [ j - 1 ] [ k - a [ i ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [501]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        15,
+        16
+      ],
+      "mod_code": [
+        "long long a [ 501 ] [ 501 ] , dp [ 501 ] [ 501 ] ;",
+        "if ( k >= a [ i ] ) dp [ j ] [ k ] += dp - a [ j - 1 ] [ k - a [ i ] ;",
+        "dp [ j ] [ k ] = dp [ j ] [ k ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [501]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        16
+      ],
+      "mod_code": [
+        "long long a [ 501 ] [ 501 ] , dp [ 501 ] [ 501 ] ;",
+        "dp [ j ] [ k ] = dp [ j ] [ k ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [501]’)"
+    },
+    {
+      "mod_line": [
+        6,
+        17
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a ;",
+        "dp [ j ] [ k ] *= mod ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [501]’)"
+    },
+    {
+      "mod_line": [
+        6,
+        17,
+        32
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a ;",
+        "dp [ j ] [ k ] *= mod ;",
+        "ans << ans << ' \\n ' ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [501]’)"
+    },
+    {
+      "mod_line": [
+        6,
+        17,
+        32,
+        15
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a ;",
+        "dp [ j ] [ k ] *= mod ;",
+        "ans << ans << ' \\n ' ;",
+        "if ( k >= a [ i ] ) dp [ j ] [ k ] += dp - a [ j - 1 ] [ k - a [ i ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [501]’)"
+    },
+    {
+      "mod_line": [
+        6,
+        17,
+        32,
+        16
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a ;",
+        "dp [ j ] [ k ] *= mod ;",
+        "ans << ans << ' \\n ' ;",
+        "dp [ j ] [ k ] = dp [ j ] [ k ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [501]’)"
+    },
+    {
+      "mod_line": [
+        6,
+        17,
+        15
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a ;",
+        "dp [ j ] [ k ] *= mod ;",
+        "if ( k >= a [ i ] ) dp [ j ] [ k ] += dp - a [ j - 1 ] [ k - a [ i ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [501]’)"
+    },
+    {
+      "mod_line": [
+        6,
+        17,
+        15,
+        16
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a ;",
+        "dp [ j ] [ k ] *= mod ;",
+        "if ( k >= a [ i ] ) dp [ j ] [ k ] += dp - a [ j - 1 ] [ k - a [ i ] ;",
+        "dp [ j ] [ k ] = dp [ j ] [ k ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [501]’)"
+    },
+    {
+      "mod_line": [
+        6,
+        17,
+        16
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a ;",
+        "dp [ j ] [ k ] *= mod ;",
+        "dp [ j ] [ k ] = dp [ j ] [ k ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [501]’)"
+    },
+    {
+      "mod_line": [
+        6,
+        32
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a ;",
+        "ans << ans << ' \\n ' ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [501]’)"
+    },
+    {
+      "mod_line": [
+        6,
+        32,
+        15
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a ;",
+        "ans << ans << ' \\n ' ;",
+        "if ( k >= a [ i ] ) dp [ j ] [ k ] += dp - a [ j - 1 ] [ k - a [ i ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [501]’)"
+    },
+    {
+      "mod_line": [
+        6,
+        32,
+        15,
+        16
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a ;",
+        "ans << ans << ' \\n ' ;",
+        "if ( k >= a [ i ] ) dp [ j ] [ k ] += dp - a [ j - 1 ] [ k - a [ i ] ;",
+        "dp [ j ] [ k ] = dp [ j ] [ k ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [501]’)"
+    },
+    {
+      "mod_line": [
+        6,
+        32,
+        16
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a ;",
+        "ans << ans << ' \\n ' ;",
+        "dp [ j ] [ k ] = dp [ j ] [ k ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [501]’)"
+    },
+    {
+      "mod_line": [
+        6,
+        15
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a ;",
+        "if ( k >= a [ i ] ) dp [ j ] [ k ] += dp - a [ j - 1 ] [ k - a [ i ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [501]’)"
+    },
+    {
+      "mod_line": [
+        6,
+        15,
+        16
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a ;",
+        "if ( k >= a [ i ] ) dp [ j ] [ k ] += dp - a [ j - 1 ] [ k - a [ i ] ;",
+        "dp [ j ] [ k ] = dp [ j ] [ k ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [501]’)"
+    },
+    {
+      "mod_line": [
+        6,
+        16
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a ;",
+        "dp [ j ] [ k ] = dp [ j ] [ k ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [501]’)"
+    },
+    {
+      "mod_line": [
+        17,
+        32,
+        15
+      ],
+      "mod_code": [
+        "dp [ j ] [ k ] *= mod ;",
+        "ans << ans << ' \\n ' ;",
+        "if ( k >= a [ i ] ) dp [ j ] [ k ] += dp - a [ j - 1 ] [ k - a [ i ] ;"
+      ],
+      "err_line": 15,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        17,
+        32,
+        15,
+        16
+      ],
+      "mod_code": [
+        "dp [ j ] [ k ] *= mod ;",
+        "ans << ans << ' \\n ' ;",
+        "if ( k >= a [ i ] ) dp [ j ] [ k ] += dp - a [ j - 1 ] [ k - a [ i ] ;",
+        "dp [ j ] [ k ] = dp [ j ] [ k ] ;"
+      ],
+      "err_line": 15,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        17,
+        15
+      ],
+      "mod_code": [
+        "dp [ j ] [ k ] *= mod ;",
+        "if ( k >= a [ i ] ) dp [ j ] [ k ] += dp - a [ j - 1 ] [ k - a [ i ] ;"
+      ],
+      "err_line": 15,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        17,
+        15,
+        16
+      ],
+      "mod_code": [
+        "dp [ j ] [ k ] *= mod ;",
+        "if ( k >= a [ i ] ) dp [ j ] [ k ] += dp - a [ j - 1 ] [ k - a [ i ] ;",
+        "dp [ j ] [ k ] = dp [ j ] [ k ] ;"
+      ],
+      "err_line": 15,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        32,
+        15
+      ],
+      "mod_code": [
+        "ans << ans << ' \\n ' ;",
+        "if ( k >= a [ i ] ) dp [ j ] [ k ] += dp - a [ j - 1 ] [ k - a [ i ] ;"
+      ],
+      "err_line": 15,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        32,
+        15,
+        16
+      ],
+      "mod_code": [
+        "ans << ans << ' \\n ' ;",
+        "if ( k >= a [ i ] ) dp [ j ] [ k ] += dp - a [ j - 1 ] [ k - a [ i ] ;",
+        "dp [ j ] [ k ] = dp [ j ] [ k ] ;"
+      ],
+      "err_line": 15,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        15,
+        16
+      ],
+      "mod_code": [
+        "if ( k >= a [ i ] ) dp [ j ] [ k ] += dp - a [ j - 1 ] [ k - a [ i ] ;",
+        "dp [ j ] [ k ] = dp [ j ] [ k ] ;"
+      ],
+      "err_line": 15,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    }
+  ]
+}

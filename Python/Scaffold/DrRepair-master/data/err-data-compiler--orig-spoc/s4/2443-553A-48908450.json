@@ -1,0 +1,865 @@
+{
+  "meta": {
+    "index": 2443,
+    "hitid": "3HYV4299H0QMKKJBUFR65WVOY2AE80",
+    "workerid": "A1NBHCFZKJGHKW",
+    "probid": "553A",
+    "subid": "48908450"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "k = int and c = int array of size 1010",
+      "code": "int k , c [ 1010 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "f = two dimensional long long array of sizes 1010 and 1010",
+      "code": "long long f [ 1010 ] [ 1010 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "dp = long long array of size 1010",
+      "code": "long long dp [ 1010 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "read k",
+      "code": "cin >> k ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i = 1 to k inclusive read c [ i ]",
+      "code": "for ( int i = ( 1 ) , _n = ( k ) ; i <= _n ; i ++ ) cin >> c [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "set f [ 0 ] [ 0 ] to 1",
+      "code": "f [ 0 ] [ 0 ] = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for i = 1 to 1005 inclusive",
+      "code": "for ( int i = ( 1 ) , _n = ( 1005 ) ; i <= _n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "set f [ i ] [ 0 ] to 1",
+      "code": "f [ i ] [ 0 ] = 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "for j = 1 to 1005 inclusive set f [ i ] [ j ] to ( f [ i - 1 ] [ j ] + f [ i - 1 ] [ j - 1 ] ) mod 1000000007",
+      "code": "for ( int j = ( 1 ) , _n = ( 1005 ) ; j <= _n ; j ++ ) { f [ i ] [ j ] = ( f [ i - 1 ] [ j ] + f [ i - 1 ] [ j - 1 ] ) % 1000000007 ; }",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "set dp [ 0 ] to 1",
+      "code": "dp [ 0 ] = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "sum = long long with sum = 0",
+      "code": "long long sum = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "fori = 1 to k inclusive",
+      "code": "for ( int i = ( 1 ) , _n = ( k ) ; i <= _n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "set dp [ i ] to ( dp [ i - 1 ] * f [ sum + c [ i ] - 1 ] [ c [ i ] - 1 ] ) mod 1000000007",
+      "code": "dp [ i ] = ( dp [ i - 1 ] * f [ sum + c [ i ] - 1 ] [ c [ i ] - 1 ] ) % 1000000007 ;",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "increment sum by c [ i ]",
+      "code": "sum += c [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "print dp [ k ]",
+      "code": "cout << dp [ k ] << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "cin >> n ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= 1005 ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "f [ ' i ' ] = 1 ;"
+      ],
+      "err_line": 8,
+      "err_msg": "incompatible types in assignment of ‘int’ to ‘long long int [1010]’"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "dp [ i ] = ( dp [ i - 1 ] * f [ sum + c [ i ] - 1 ] - 1 ] ) % 1000000007 ;"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid operands of types ‘long long int’ and ‘long long int [1010]’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        13,
+        11
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= k ; i ++ )",
+        "dp [ ' 0 ' ] = 1 ;"
+      ],
+      "err_line": 13,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        11,
+        4
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= k ; i ++ )",
+        "dp [ ' 0 ' ] = 1 ;",
+        "cin >> n ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        11,
+        4,
+        7
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= k ; i ++ )",
+        "dp [ ' 0 ' ] = 1 ;",
+        "cin >> n ;",
+        "for ( i = 1 ; i <= 1005 ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        11,
+        4,
+        14
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= k ; i ++ )",
+        "dp [ ' 0 ' ] = 1 ;",
+        "cin >> n ;",
+        "dp [ i ] = ( dp [ i - 1 ] * f [ sum + c [ i ] - 1 ] - 1 ] ) % 1000000007 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        11,
+        4,
+        6
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= k ; i ++ )",
+        "dp [ ' 0 ' ] = 1 ;",
+        "cin >> n ;",
+        "f [ 0 ] [ ' 0 ' ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        11,
+        7
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= k ; i ++ )",
+        "dp [ ' 0 ' ] = 1 ;",
+        "for ( i = 1 ; i <= 1005 ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        11,
+        7,
+        14
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= k ; i ++ )",
+        "dp [ ' 0 ' ] = 1 ;",
+        "for ( i = 1 ; i <= 1005 ; i ++ )",
+        "dp [ i ] = ( dp [ i - 1 ] * f [ sum + c [ i ] - 1 ] - 1 ] ) % 1000000007 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        11,
+        7,
+        6
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= k ; i ++ )",
+        "dp [ ' 0 ' ] = 1 ;",
+        "for ( i = 1 ; i <= 1005 ; i ++ )",
+        "f [ 0 ] [ ' 0 ' ] = 1 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        11,
+        14
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= k ; i ++ )",
+        "dp [ ' 0 ' ] = 1 ;",
+        "dp [ i ] = ( dp [ i - 1 ] * f [ sum + c [ i ] - 1 ] - 1 ] ) % 1000000007 ;"
+      ],
+      "err_line": 13,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        11,
+        14,
+        6
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= k ; i ++ )",
+        "dp [ ' 0 ' ] = 1 ;",
+        "dp [ i ] = ( dp [ i - 1 ] * f [ sum + c [ i ] - 1 ] - 1 ] ) % 1000000007 ;",
+        "f [ 0 ] [ ' 0 ' ] = 1 ;"
+      ],
+      "err_line": 13,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        11,
+        6
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= k ; i ++ )",
+        "dp [ ' 0 ' ] = 1 ;",
+        "f [ 0 ] [ ' 0 ' ] = 1 ;"
+      ],
+      "err_line": 13,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        4
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= k ; i ++ )",
+        "cin >> n ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        4,
+        7
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= k ; i ++ )",
+        "cin >> n ;",
+        "for ( i = 1 ; i <= 1005 ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        4,
+        7,
+        14
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= k ; i ++ )",
+        "cin >> n ;",
+        "for ( i = 1 ; i <= 1005 ; i ++ )",
+        "dp [ i ] = ( dp [ i - 1 ] * f [ sum + c [ i ] - 1 ] - 1 ] ) % 1000000007 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        4,
+        7,
+        6
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= k ; i ++ )",
+        "cin >> n ;",
+        "for ( i = 1 ; i <= 1005 ; i ++ )",
+        "f [ 0 ] [ ' 0 ' ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        4,
+        14
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= k ; i ++ )",
+        "cin >> n ;",
+        "dp [ i ] = ( dp [ i - 1 ] * f [ sum + c [ i ] - 1 ] - 1 ] ) % 1000000007 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        4,
+        14,
+        6
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= k ; i ++ )",
+        "cin >> n ;",
+        "dp [ i ] = ( dp [ i - 1 ] * f [ sum + c [ i ] - 1 ] - 1 ] ) % 1000000007 ;",
+        "f [ 0 ] [ ' 0 ' ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        4,
+        6
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= k ; i ++ )",
+        "cin >> n ;",
+        "f [ 0 ] [ ' 0 ' ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        7
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= k ; i ++ )",
+        "for ( i = 1 ; i <= 1005 ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        7,
+        14
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= k ; i ++ )",
+        "for ( i = 1 ; i <= 1005 ; i ++ )",
+        "dp [ i ] = ( dp [ i - 1 ] * f [ sum + c [ i ] - 1 ] - 1 ] ) % 1000000007 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        7,
+        14,
+        6
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= k ; i ++ )",
+        "for ( i = 1 ; i <= 1005 ; i ++ )",
+        "dp [ i ] = ( dp [ i - 1 ] * f [ sum + c [ i ] - 1 ] - 1 ] ) % 1000000007 ;",
+        "f [ 0 ] [ ' 0 ' ] = 1 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        7,
+        6
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= k ; i ++ )",
+        "for ( i = 1 ; i <= 1005 ; i ++ )",
+        "f [ 0 ] [ ' 0 ' ] = 1 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        14
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= k ; i ++ )",
+        "dp [ i ] = ( dp [ i - 1 ] * f [ sum + c [ i ] - 1 ] - 1 ] ) % 1000000007 ;"
+      ],
+      "err_line": 13,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        14,
+        6
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= k ; i ++ )",
+        "dp [ i ] = ( dp [ i - 1 ] * f [ sum + c [ i ] - 1 ] - 1 ] ) % 1000000007 ;",
+        "f [ 0 ] [ ' 0 ' ] = 1 ;"
+      ],
+      "err_line": 13,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        6
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= k ; i ++ )",
+        "f [ 0 ] [ ' 0 ' ] = 1 ;"
+      ],
+      "err_line": 13,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        4
+      ],
+      "mod_code": [
+        "dp [ ' 0 ' ] = 1 ;",
+        "cin >> n ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        4,
+        7
+      ],
+      "mod_code": [
+        "dp [ ' 0 ' ] = 1 ;",
+        "cin >> n ;",
+        "for ( i = 1 ; i <= 1005 ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        4,
+        7,
+        14
+      ],
+      "mod_code": [
+        "dp [ ' 0 ' ] = 1 ;",
+        "cin >> n ;",
+        "for ( i = 1 ; i <= 1005 ; i ++ )",
+        "dp [ i ] = ( dp [ i - 1 ] * f [ sum + c [ i ] - 1 ] - 1 ] ) % 1000000007 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        4,
+        7,
+        6
+      ],
+      "mod_code": [
+        "dp [ ' 0 ' ] = 1 ;",
+        "cin >> n ;",
+        "for ( i = 1 ; i <= 1005 ; i ++ )",
+        "f [ 0 ] [ ' 0 ' ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        4,
+        14
+      ],
+      "mod_code": [
+        "dp [ ' 0 ' ] = 1 ;",
+        "cin >> n ;",
+        "dp [ i ] = ( dp [ i - 1 ] * f [ sum + c [ i ] - 1 ] - 1 ] ) % 1000000007 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        4,
+        14,
+        6
+      ],
+      "mod_code": [
+        "dp [ ' 0 ' ] = 1 ;",
+        "cin >> n ;",
+        "dp [ i ] = ( dp [ i - 1 ] * f [ sum + c [ i ] - 1 ] - 1 ] ) % 1000000007 ;",
+        "f [ 0 ] [ ' 0 ' ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        4,
+        6
+      ],
+      "mod_code": [
+        "dp [ ' 0 ' ] = 1 ;",
+        "cin >> n ;",
+        "f [ 0 ] [ ' 0 ' ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        7
+      ],
+      "mod_code": [
+        "dp [ ' 0 ' ] = 1 ;",
+        "for ( i = 1 ; i <= 1005 ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        7,
+        14
+      ],
+      "mod_code": [
+        "dp [ ' 0 ' ] = 1 ;",
+        "for ( i = 1 ; i <= 1005 ; i ++ )",
+        "dp [ i ] = ( dp [ i - 1 ] * f [ sum + c [ i ] - 1 ] - 1 ] ) % 1000000007 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        7,
+        14,
+        6
+      ],
+      "mod_code": [
+        "dp [ ' 0 ' ] = 1 ;",
+        "for ( i = 1 ; i <= 1005 ; i ++ )",
+        "dp [ i ] = ( dp [ i - 1 ] * f [ sum + c [ i ] - 1 ] - 1 ] ) % 1000000007 ;",
+        "f [ 0 ] [ ' 0 ' ] = 1 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        7,
+        6
+      ],
+      "mod_code": [
+        "dp [ ' 0 ' ] = 1 ;",
+        "for ( i = 1 ; i <= 1005 ; i ++ )",
+        "f [ 0 ] [ ' 0 ' ] = 1 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        14
+      ],
+      "mod_code": [
+        "dp [ ' 0 ' ] = 1 ;",
+        "dp [ i ] = ( dp [ i - 1 ] * f [ sum + c [ i ] - 1 ] - 1 ] ) % 1000000007 ;"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid operands of types ‘long long int’ and ‘long long int [1010]’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        11,
+        14,
+        6
+      ],
+      "mod_code": [
+        "dp [ ' 0 ' ] = 1 ;",
+        "dp [ i ] = ( dp [ i - 1 ] * f [ sum + c [ i ] - 1 ] - 1 ] ) % 1000000007 ;",
+        "f [ 0 ] [ ' 0 ' ] = 1 ;"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid operands of types ‘long long int’ and ‘long long int [1010]’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        4,
+        7
+      ],
+      "mod_code": [
+        "cin >> n ;",
+        "for ( i = 1 ; i <= 1005 ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        7,
+        14
+      ],
+      "mod_code": [
+        "cin >> n ;",
+        "for ( i = 1 ; i <= 1005 ; i ++ )",
+        "dp [ i ] = ( dp [ i - 1 ] * f [ sum + c [ i ] - 1 ] - 1 ] ) % 1000000007 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        7,
+        14,
+        6
+      ],
+      "mod_code": [
+        "cin >> n ;",
+        "for ( i = 1 ; i <= 1005 ; i ++ )",
+        "dp [ i ] = ( dp [ i - 1 ] * f [ sum + c [ i ] - 1 ] - 1 ] ) % 1000000007 ;",
+        "f [ 0 ] [ ' 0 ' ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        7,
+        6
+      ],
+      "mod_code": [
+        "cin >> n ;",
+        "for ( i = 1 ; i <= 1005 ; i ++ )",
+        "f [ 0 ] [ ' 0 ' ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        14
+      ],
+      "mod_code": [
+        "cin >> n ;",
+        "dp [ i ] = ( dp [ i - 1 ] * f [ sum + c [ i ] - 1 ] - 1 ] ) % 1000000007 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        14,
+        6
+      ],
+      "mod_code": [
+        "cin >> n ;",
+        "dp [ i ] = ( dp [ i - 1 ] * f [ sum + c [ i ] - 1 ] - 1 ] ) % 1000000007 ;",
+        "f [ 0 ] [ ' 0 ' ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        6
+      ],
+      "mod_code": [
+        "cin >> n ;",
+        "f [ 0 ] [ ' 0 ' ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        14
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= 1005 ; i ++ )",
+        "dp [ i ] = ( dp [ i - 1 ] * f [ sum + c [ i ] - 1 ] - 1 ] ) % 1000000007 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7,
+        14,
+        6
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= 1005 ; i ++ )",
+        "dp [ i ] = ( dp [ i - 1 ] * f [ sum + c [ i ] - 1 ] - 1 ] ) % 1000000007 ;",
+        "f [ 0 ] [ ' 0 ' ] = 1 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7,
+        6
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= 1005 ; i ++ )",
+        "f [ 0 ] [ ' 0 ' ] = 1 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        14,
+        6
+      ],
+      "mod_code": [
+        "dp [ i ] = ( dp [ i - 1 ] * f [ sum + c [ i ] - 1 ] - 1 ] ) % 1000000007 ;",
+        "f [ 0 ] [ ' 0 ' ] = 1 ;"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid operands of types ‘long long int’ and ‘long long int [1010]’ to binary ‘operator*’"
+    }
+  ]
+}

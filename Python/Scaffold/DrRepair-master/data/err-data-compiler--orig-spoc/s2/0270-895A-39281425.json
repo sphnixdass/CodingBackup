@@ -1,0 +1,507 @@
+{
+  "meta": {
+    "index": 270,
+    "hitid": "31GECDVA9JGV3R78VIBA9U7KB9V66K",
+    "workerid": "A1AYVATMT88U1W",
+    "probid": "895A",
+    "subid": "39281425"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "let a = array of integers of length 400 , pre_sum = array of integers of length 800",
+      "code": "int a [ 400 ] , pre_sum [ 800 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "let n , i , j be integers",
+      "code": "int n , i , j ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "while read n",
+      "code": "while ( cin >> n )",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "memset of pre_sum , 0 , sizeof ( pre_sum )",
+      "code": "memset ( pre_sum , 0 , sizeof ( pre_sum ) ) ;",
+      "indent": 2
+    },
+    {
+      "line": 5,
+      "text": "let integer sum is equal to 0",
+      "code": "int sum = 0 ;",
+      "indent": 2
+    },
+    {
+      "line": 6,
+      "text": "for i = 1 to n inclusive , read a [ i ] , pre_sum [ i ] is equal to pre_sum [ i - 1 ] + a [ i ]",
+      "code": "for ( i = 1 ; i <= n ; i ++ ) cin >> a [ i ] , pre_sum [ i ] = pre_sum [ i - 1 ] + a [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "for i is equal to n + 1 , i < = n , increase i by 1 , pre_sum [ i ] is equal to pre_sum [ i - 1 ] + a [ i - n ]",
+      "code": "for ( i = n + 1 ; i <= n ; i ++ ) { pre_sum [ i ] = pre_sum [ i - 1 ] + a [ i - n ] ; }",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "let integer mina = 0x3f3f3f3f",
+      "code": "int mina = 0x3f3f3f3f ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "for i = 1 to 2 * n inclusive",
+      "code": "for ( i = 1 ; i <= 2 * n ; i ++ )",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "for j = i to 2 * n inclusive",
+      "code": "for ( j = i ; j <= 2 * n ; j ++ )",
+      "indent": 3
+    },
+    {
+      "line": 11,
+      "text": "let the integer tmp = pre_sum [ j ] - pre_sum [ i - 1 ]",
+      "code": "int tmp = pre_sum [ j ] - pre_sum [ i - 1 ] ;",
+      "indent": 4
+    },
+    {
+      "line": 12,
+      "text": "if absolute of ( 360 - 2 * tmp ) is less than mina ) , mina is equal to absolute of ( 360 - 2 * tmp )",
+      "code": "if ( abs ( 360 - 2 * tmp ) < mina ) { mina = abs ( 360 - 2 * tmp ) ; }",
+      "indent": 4
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "print mina and newline",
+      "code": "cout << mina << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "memset ( pre_sum , 0 , sizeof ( pre_sum ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "sum = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘sum’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] >> pre_sum [ i - 1 ] + a [ i ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "const int mina = 0x3f3f3f3f ;"
+      ],
+      "err_line": 12,
+      "err_msg": "assignment of read-only variable ‘mina’"
+    },
+    {
+      "mod_line": [
+        6,
+        5
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] >> pre_sum [ i - 1 ] + a [ i ] ;",
+        "sum = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘sum’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        5,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] >> pre_sum [ i - 1 ] + a [ i ] ;",
+        "sum = 0 ;",
+        "while ( n )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘sum’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        5,
+        3,
+        8
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] >> pre_sum [ i - 1 ] + a [ i ] ;",
+        "sum = 0 ;",
+        "while ( n )",
+        "const int mina = 0x3f3f3f3f ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘sum’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        5,
+        3,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] >> pre_sum [ i - 1 ] + a [ i ] ;",
+        "sum = 0 ;",
+        "while ( n )",
+        "memset ( pre_sum , 0 , sizeof ( pre_sum ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        5,
+        8
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] >> pre_sum [ i - 1 ] + a [ i ] ;",
+        "sum = 0 ;",
+        "const int mina = 0x3f3f3f3f ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘sum’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        5,
+        8,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] >> pre_sum [ i - 1 ] + a [ i ] ;",
+        "sum = 0 ;",
+        "const int mina = 0x3f3f3f3f ;",
+        "memset ( pre_sum , 0 , sizeof ( pre_sum ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        5,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] >> pre_sum [ i - 1 ] + a [ i ] ;",
+        "sum = 0 ;",
+        "memset ( pre_sum , 0 , sizeof ( pre_sum ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] >> pre_sum [ i - 1 ] + a [ i ] ;",
+        "while ( n )"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        6,
+        3,
+        8
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] >> pre_sum [ i - 1 ] + a [ i ] ;",
+        "while ( n )",
+        "const int mina = 0x3f3f3f3f ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        6,
+        3,
+        8,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] >> pre_sum [ i - 1 ] + a [ i ] ;",
+        "while ( n )",
+        "const int mina = 0x3f3f3f3f ;",
+        "memset ( pre_sum , 0 , sizeof ( pre_sum ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        3,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] >> pre_sum [ i - 1 ] + a [ i ] ;",
+        "while ( n )",
+        "memset ( pre_sum , 0 , sizeof ( pre_sum ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        8
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] >> pre_sum [ i - 1 ] + a [ i ] ;",
+        "const int mina = 0x3f3f3f3f ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        6,
+        8,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] >> pre_sum [ i - 1 ] + a [ i ] ;",
+        "const int mina = 0x3f3f3f3f ;",
+        "memset ( pre_sum , 0 , sizeof ( pre_sum ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] >> pre_sum [ i - 1 ] + a [ i ] ;",
+        "memset ( pre_sum , 0 , sizeof ( pre_sum ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        3
+      ],
+      "mod_code": [
+        "sum = 0 ;",
+        "while ( n )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘sum’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        3,
+        8
+      ],
+      "mod_code": [
+        "sum = 0 ;",
+        "while ( n )",
+        "const int mina = 0x3f3f3f3f ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘sum’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        3,
+        8,
+        4
+      ],
+      "mod_code": [
+        "sum = 0 ;",
+        "while ( n )",
+        "const int mina = 0x3f3f3f3f ;",
+        "memset ( pre_sum , 0 , sizeof ( pre_sum ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        3,
+        4
+      ],
+      "mod_code": [
+        "sum = 0 ;",
+        "while ( n )",
+        "memset ( pre_sum , 0 , sizeof ( pre_sum ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        8
+      ],
+      "mod_code": [
+        "sum = 0 ;",
+        "const int mina = 0x3f3f3f3f ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘sum’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        4
+      ],
+      "mod_code": [
+        "sum = 0 ;",
+        "const int mina = 0x3f3f3f3f ;",
+        "memset ( pre_sum , 0 , sizeof ( pre_sum ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        4
+      ],
+      "mod_code": [
+        "sum = 0 ;",
+        "memset ( pre_sum , 0 , sizeof ( pre_sum ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        8
+      ],
+      "mod_code": [
+        "while ( n )",
+        "const int mina = 0x3f3f3f3f ;"
+      ],
+      "err_line": 12,
+      "err_msg": "assignment of read-only variable ‘mina’"
+    },
+    {
+      "mod_line": [
+        3,
+        8,
+        4
+      ],
+      "mod_code": [
+        "while ( n )",
+        "const int mina = 0x3f3f3f3f ;",
+        "memset ( pre_sum , 0 , sizeof ( pre_sum ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        4
+      ],
+      "mod_code": [
+        "while ( n )",
+        "memset ( pre_sum , 0 , sizeof ( pre_sum ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        4
+      ],
+      "mod_code": [
+        "const int mina = 0x3f3f3f3f ;",
+        "memset ( pre_sum , 0 , sizeof ( pre_sum ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    }
+  ]
+}

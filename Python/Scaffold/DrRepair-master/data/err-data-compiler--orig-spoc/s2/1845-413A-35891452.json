@@ -1,0 +1,715 @@
+{
+  "meta": {
+    "index": 1845,
+    "hitid": "3K1H3NEY7LTWLTBTHISARRU1M9TGDW",
+    "workerid": "A1AYVATMT88U1W",
+    "probid": "413A",
+    "subid": "35891452"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "let N be a constant integer with N = 1e2 + 5",
+      "code": "const int N = 1e2 + 5 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "f = array of integers of length N",
+      "code": "int f [ N ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "let n , m , mn , mx be integers",
+      "code": "int n , m , mn , mx ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "read n , m , mn , mx",
+      "code": "cin >> n >> m >> mn >> mx ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "create a vector of integers with name v and size m",
+      "code": "vector < int > v ( m ) ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 0 to m exclusive",
+      "code": "for ( int i = 0 ; i < m ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "read v [ i ]",
+      "code": "cin >> v [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "if v [ i ] is greater than mx or v [ i ] is less than mn , return 0 , print Incorrect and newline",
+      "code": "if ( v [ i ] > mx || v [ i ] < mn ) return puts ( \" Incorrect \" ) , 0 ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "f [ v [ i ] ] is equal to 1",
+      "code": "f [ v [ i ] ] = 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "decrement n by m",
+      "code": "n -= m ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "m is equal to ( mx - mn + 1 ) - accumulate ( f + mn , f + mx + 1 , 0 )",
+      "code": "m = ( mx - mn + 1 ) - accumulate ( f + mn , f + mx + 1 , 0 ) ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "if n is equal to 1 and not f [ mn ] and and f [ mx ] print Incorrect and newline else print Correct and newline",
+      "code": "puts ( n == 1 && ! f [ mn ] && ! f [ mx ] ? \" Incorrect \" : \" Correct \" ) ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "if ( v [ i ] > mx || v [ i ] < mn ) return cout << Incorrect << endl ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘Incorrect’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "if ( n == 1 && f [ mn ] && f [ mx ] && f [ mx ] ) cout << Correct << endl ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘Correct’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "f [ N ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘f’ does not name a type"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "vector < int > v [ m ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘std::vector<int>’)"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < m ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "if ( v [ i ] > mx || v [ i ] < mn ) { return cout << Incorrect << endl ; }"
+      ],
+      "err_line": 8,
+      "err_msg": "‘Incorrect’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "if ( n == 1 && n != f [ mn ] && f [ mx ] ) cout << Correct << endl ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘Correct’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        13
+      ],
+      "mod_code": [
+        "if ( v [ i ] > mx || v [ i ] < mn ) return cout << Incorrect << endl ;",
+        "if ( n == 1 && f [ mn ] && f [ mx ] && f [ mx ] ) cout << Correct << endl ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘Incorrect’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        13,
+        5
+      ],
+      "mod_code": [
+        "if ( v [ i ] > mx || v [ i ] < mn ) return cout << Incorrect << endl ;",
+        "if ( n == 1 && f [ mn ] && f [ mx ] && f [ mx ] ) cout << Correct << endl ;",
+        "vector < int > v [ m ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘std::vector<int>’)"
+    },
+    {
+      "mod_line": [
+        8,
+        13,
+        5,
+        4
+      ],
+      "mod_code": [
+        "if ( v [ i ] > mx || v [ i ] < mn ) return cout << Incorrect << endl ;",
+        "if ( n == 1 && f [ mn ] && f [ mx ] && f [ mx ] ) cout << Correct << endl ;",
+        "vector < int > v [ m ] ;",
+        "cin >> n >> m >> mn , mx ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘std::vector<int>’)"
+    },
+    {
+      "mod_line": [
+        8,
+        13,
+        5,
+        6
+      ],
+      "mod_code": [
+        "if ( v [ i ] > mx || v [ i ] < mn ) return cout << Incorrect << endl ;",
+        "if ( n == 1 && f [ mn ] && f [ mx ] && f [ mx ] ) cout << Correct << endl ;",
+        "vector < int > v [ m ] ;",
+        "for ( i = 0 ; i < m ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        13,
+        4
+      ],
+      "mod_code": [
+        "if ( v [ i ] > mx || v [ i ] < mn ) return cout << Incorrect << endl ;",
+        "if ( n == 1 && f [ mn ] && f [ mx ] && f [ mx ] ) cout << Correct << endl ;",
+        "cin >> n >> m >> mn , mx ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘Incorrect’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        13,
+        4,
+        6
+      ],
+      "mod_code": [
+        "if ( v [ i ] > mx || v [ i ] < mn ) return cout << Incorrect << endl ;",
+        "if ( n == 1 && f [ mn ] && f [ mx ] && f [ mx ] ) cout << Correct << endl ;",
+        "cin >> n >> m >> mn , mx ;",
+        "for ( i = 0 ; i < m ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        13,
+        6
+      ],
+      "mod_code": [
+        "if ( v [ i ] > mx || v [ i ] < mn ) return cout << Incorrect << endl ;",
+        "if ( n == 1 && f [ mn ] && f [ mx ] && f [ mx ] ) cout << Correct << endl ;",
+        "for ( i = 0 ; i < m ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        5
+      ],
+      "mod_code": [
+        "if ( v [ i ] > mx || v [ i ] < mn ) return cout << Incorrect << endl ;",
+        "vector < int > v [ m ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘std::vector<int>’)"
+    },
+    {
+      "mod_line": [
+        8,
+        5,
+        4
+      ],
+      "mod_code": [
+        "if ( v [ i ] > mx || v [ i ] < mn ) return cout << Incorrect << endl ;",
+        "vector < int > v [ m ] ;",
+        "cin >> n >> m >> mn , mx ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘std::vector<int>’)"
+    },
+    {
+      "mod_line": [
+        8,
+        5,
+        4,
+        6
+      ],
+      "mod_code": [
+        "if ( v [ i ] > mx || v [ i ] < mn ) return cout << Incorrect << endl ;",
+        "vector < int > v [ m ] ;",
+        "cin >> n >> m >> mn , mx ;",
+        "for ( i = 0 ; i < m ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        5,
+        6
+      ],
+      "mod_code": [
+        "if ( v [ i ] > mx || v [ i ] < mn ) return cout << Incorrect << endl ;",
+        "vector < int > v [ m ] ;",
+        "for ( i = 0 ; i < m ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        4
+      ],
+      "mod_code": [
+        "if ( v [ i ] > mx || v [ i ] < mn ) return cout << Incorrect << endl ;",
+        "cin >> n >> m >> mn , mx ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘Incorrect’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        4,
+        6
+      ],
+      "mod_code": [
+        "if ( v [ i ] > mx || v [ i ] < mn ) return cout << Incorrect << endl ;",
+        "cin >> n >> m >> mn , mx ;",
+        "for ( i = 0 ; i < m ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        6
+      ],
+      "mod_code": [
+        "if ( v [ i ] > mx || v [ i ] < mn ) return cout << Incorrect << endl ;",
+        "for ( i = 0 ; i < m ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        5
+      ],
+      "mod_code": [
+        "if ( n == 1 && f [ mn ] && f [ mx ] && f [ mx ] ) cout << Correct << endl ;",
+        "vector < int > v [ m ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘std::vector<int>’)"
+    },
+    {
+      "mod_line": [
+        13,
+        5,
+        8
+      ],
+      "mod_code": [
+        "if ( n == 1 && f [ mn ] && f [ mx ] && f [ mx ] ) cout << Correct << endl ;",
+        "vector < int > v [ m ] ;",
+        "if ( v [ i ] > mx || v [ i ] < mn ) { return cout << Incorrect << endl ; }"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘std::vector<int>’)"
+    },
+    {
+      "mod_line": [
+        13,
+        5,
+        8,
+        4
+      ],
+      "mod_code": [
+        "if ( n == 1 && f [ mn ] && f [ mx ] && f [ mx ] ) cout << Correct << endl ;",
+        "vector < int > v [ m ] ;",
+        "if ( v [ i ] > mx || v [ i ] < mn ) { return cout << Incorrect << endl ; }",
+        "cin >> n >> m >> mn , mx ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘std::vector<int>’)"
+    },
+    {
+      "mod_line": [
+        13,
+        5,
+        8,
+        6
+      ],
+      "mod_code": [
+        "if ( n == 1 && f [ mn ] && f [ mx ] && f [ mx ] ) cout << Correct << endl ;",
+        "vector < int > v [ m ] ;",
+        "if ( v [ i ] > mx || v [ i ] < mn ) { return cout << Incorrect << endl ; }",
+        "for ( i = 0 ; i < m ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        5,
+        4
+      ],
+      "mod_code": [
+        "if ( n == 1 && f [ mn ] && f [ mx ] && f [ mx ] ) cout << Correct << endl ;",
+        "vector < int > v [ m ] ;",
+        "cin >> n >> m >> mn , mx ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘std::vector<int>’)"
+    },
+    {
+      "mod_line": [
+        13,
+        5,
+        4,
+        6
+      ],
+      "mod_code": [
+        "if ( n == 1 && f [ mn ] && f [ mx ] && f [ mx ] ) cout << Correct << endl ;",
+        "vector < int > v [ m ] ;",
+        "cin >> n >> m >> mn , mx ;",
+        "for ( i = 0 ; i < m ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        5,
+        6
+      ],
+      "mod_code": [
+        "if ( n == 1 && f [ mn ] && f [ mx ] && f [ mx ] ) cout << Correct << endl ;",
+        "vector < int > v [ m ] ;",
+        "for ( i = 0 ; i < m ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        8
+      ],
+      "mod_code": [
+        "if ( n == 1 && f [ mn ] && f [ mx ] && f [ mx ] ) cout << Correct << endl ;",
+        "if ( v [ i ] > mx || v [ i ] < mn ) { return cout << Incorrect << endl ; }"
+      ],
+      "err_line": 8,
+      "err_msg": "‘Incorrect’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        8,
+        4
+      ],
+      "mod_code": [
+        "if ( n == 1 && f [ mn ] && f [ mx ] && f [ mx ] ) cout << Correct << endl ;",
+        "if ( v [ i ] > mx || v [ i ] < mn ) { return cout << Incorrect << endl ; }",
+        "cin >> n >> m >> mn , mx ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘Incorrect’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        8,
+        4,
+        6
+      ],
+      "mod_code": [
+        "if ( n == 1 && f [ mn ] && f [ mx ] && f [ mx ] ) cout << Correct << endl ;",
+        "if ( v [ i ] > mx || v [ i ] < mn ) { return cout << Incorrect << endl ; }",
+        "cin >> n >> m >> mn , mx ;",
+        "for ( i = 0 ; i < m ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        8,
+        6
+      ],
+      "mod_code": [
+        "if ( n == 1 && f [ mn ] && f [ mx ] && f [ mx ] ) cout << Correct << endl ;",
+        "if ( v [ i ] > mx || v [ i ] < mn ) { return cout << Incorrect << endl ; }",
+        "for ( i = 0 ; i < m ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        4
+      ],
+      "mod_code": [
+        "if ( n == 1 && f [ mn ] && f [ mx ] && f [ mx ] ) cout << Correct << endl ;",
+        "cin >> n >> m >> mn , mx ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘Correct’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        4,
+        6
+      ],
+      "mod_code": [
+        "if ( n == 1 && f [ mn ] && f [ mx ] && f [ mx ] ) cout << Correct << endl ;",
+        "cin >> n >> m >> mn , mx ;",
+        "for ( i = 0 ; i < m ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        6
+      ],
+      "mod_code": [
+        "if ( n == 1 && f [ mn ] && f [ mx ] && f [ mx ] ) cout << Correct << endl ;",
+        "for ( i = 0 ; i < m ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        8
+      ],
+      "mod_code": [
+        "vector < int > v [ m ] ;",
+        "if ( v [ i ] > mx || v [ i ] < mn ) { return cout << Incorrect << endl ; }"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘std::vector<int>’)"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        4
+      ],
+      "mod_code": [
+        "vector < int > v [ m ] ;",
+        "if ( v [ i ] > mx || v [ i ] < mn ) { return cout << Incorrect << endl ; }",
+        "cin >> n >> m >> mn , mx ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘std::vector<int>’)"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        4,
+        6
+      ],
+      "mod_code": [
+        "vector < int > v [ m ] ;",
+        "if ( v [ i ] > mx || v [ i ] < mn ) { return cout << Incorrect << endl ; }",
+        "cin >> n >> m >> mn , mx ;",
+        "for ( i = 0 ; i < m ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        6
+      ],
+      "mod_code": [
+        "vector < int > v [ m ] ;",
+        "if ( v [ i ] > mx || v [ i ] < mn ) { return cout << Incorrect << endl ; }",
+        "for ( i = 0 ; i < m ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        4
+      ],
+      "mod_code": [
+        "vector < int > v [ m ] ;",
+        "cin >> n >> m >> mn , mx ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘std::vector<int>’)"
+    },
+    {
+      "mod_line": [
+        5,
+        4,
+        6
+      ],
+      "mod_code": [
+        "vector < int > v [ m ] ;",
+        "cin >> n >> m >> mn , mx ;",
+        "for ( i = 0 ; i < m ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        6
+      ],
+      "mod_code": [
+        "vector < int > v [ m ] ;",
+        "for ( i = 0 ; i < m ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        4
+      ],
+      "mod_code": [
+        "if ( v [ i ] > mx || v [ i ] < mn ) { return cout << Incorrect << endl ; }",
+        "cin >> n >> m >> mn , mx ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘Incorrect’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        4,
+        6
+      ],
+      "mod_code": [
+        "if ( v [ i ] > mx || v [ i ] < mn ) { return cout << Incorrect << endl ; }",
+        "cin >> n >> m >> mn , mx ;",
+        "for ( i = 0 ; i < m ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        6
+      ],
+      "mod_code": [
+        "if ( v [ i ] > mx || v [ i ] < mn ) { return cout << Incorrect << endl ; }",
+        "for ( i = 0 ; i < m ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        6
+      ],
+      "mod_code": [
+        "cin >> n >> m >> mn , mx ;",
+        "for ( i = 0 ; i < m ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    }
+  ]
+}

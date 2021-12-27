@@ -1,0 +1,871 @@
+{
+  "meta": {
+    "index": 1256,
+    "hitid": "3P7RGTLO6E73P840NZMNZIEO8N8KAW",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "496A",
+    "subid": "35960367"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare integer n , integer arrays a size 100 , b size 100",
+      "code": "int n , a [ 100 ] , b [ 100 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "for i = 0 to n exclusive , read a [ i ]",
+      "code": "for ( int i = 0 ; i < n ; i ++ ) cin >> a [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for i = 0 to n exclusive , let b [ i ] be a [ i ]",
+      "code": "for ( int i = 0 ; i < n ; i ++ ) b [ i ] = a [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "declare integers max = a [ n - 1 ] , max1",
+      "code": "int max = a [ n - 1 ] , max1 ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 1 to n - 1 exclusive",
+      "code": "for ( int i = 1 ; i < ( n - 1 ) ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "let max1 be 0",
+      "code": "max1 = 0 ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "for k = 0 to n exclusive , let a [ k ] be b [ k ]",
+      "code": "for ( int k = 0 ; k < n ; k ++ ) a [ k ] = b [ k ] ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "for j = 1 to n - 1 exclusive",
+      "code": "for ( int j = 1 ; j < ( n - 1 ) ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "if j is greater than or equal to i , let a [ j ] be a [ j + 1 ]",
+      "code": "if ( j >= i ) a [ j ] = a [ j + 1 ] ;",
+      "indent": 3
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "for j = 0 to n - 1 exclusive",
+      "code": "for ( int j = 0 ; j < ( n - 1 ) ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "let x be a [ j + 1 ] - a [ j ]",
+      "code": "int x = a [ j + 1 ] - a [ j ] ;",
+      "indent": 3
+    },
+    {
+      "line": 14,
+      "text": "if x is greater than max1 and x is not 0 , let max1 be x",
+      "code": "if ( x > max1 && x != 0 ) max1 = x ;",
+      "indent": 3
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "if max1 is less than max , let max be max1",
+      "code": "if ( max1 < max ) max = max1 ;",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "print max , newline",
+      "code": "cout << max << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "x = a [ j + 1 ] - a [ j ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘x’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int n , b [ 100 ] , b [ 100 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b [100]’"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "int max ( a [ n - 1 ] , max1 ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘max1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j < n - 1 ; j ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "x -= a [ j + 1 ] - a [ j ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘x’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        5
+      ],
+      "mod_code": [
+        "x = a [ j + 1 ] - a [ j ] ;",
+        "int max ( a [ n - 1 ] , max1 ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘max1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        5,
+        9
+      ],
+      "mod_code": [
+        "x = a [ j + 1 ] - a [ j ] ;",
+        "int max ( a [ n - 1 ] , max1 ) ;",
+        "for ( int j = 1 ; j <= n - 1 ; j ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘max1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        5,
+        9,
+        12
+      ],
+      "mod_code": [
+        "x = a [ j + 1 ] - a [ j ] ;",
+        "int max ( a [ n - 1 ] , max1 ) ;",
+        "for ( int j = 1 ; j <= n - 1 ; j ++ )",
+        "for ( j = 0 ; j < n - 1 ; j ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘max1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        5,
+        9,
+        6
+      ],
+      "mod_code": [
+        "x = a [ j + 1 ] - a [ j ] ;",
+        "int max ( a [ n - 1 ] , max1 ) ;",
+        "for ( int j = 1 ; j <= n - 1 ; j ++ )",
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘max1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        5,
+        9,
+        1
+      ],
+      "mod_code": [
+        "x = a [ j + 1 ] - a [ j ] ;",
+        "int max ( a [ n - 1 ] , max1 ) ;",
+        "for ( int j = 1 ; j <= n - 1 ; j ++ )",
+        "int n , b [ 100 ] , b [ 100 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b [100]’"
+    },
+    {
+      "mod_line": [
+        13,
+        5,
+        12
+      ],
+      "mod_code": [
+        "x = a [ j + 1 ] - a [ j ] ;",
+        "int max ( a [ n - 1 ] , max1 ) ;",
+        "for ( j = 0 ; j < n - 1 ; j ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘max1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        5,
+        12,
+        6
+      ],
+      "mod_code": [
+        "x = a [ j + 1 ] - a [ j ] ;",
+        "int max ( a [ n - 1 ] , max1 ) ;",
+        "for ( j = 0 ; j < n - 1 ; j ++ )",
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘max1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        5,
+        12,
+        1
+      ],
+      "mod_code": [
+        "x = a [ j + 1 ] - a [ j ] ;",
+        "int max ( a [ n - 1 ] , max1 ) ;",
+        "for ( j = 0 ; j < n - 1 ; j ++ )",
+        "int n , b [ 100 ] , b [ 100 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b [100]’"
+    },
+    {
+      "mod_line": [
+        13,
+        5,
+        6
+      ],
+      "mod_code": [
+        "x = a [ j + 1 ] - a [ j ] ;",
+        "int max ( a [ n - 1 ] , max1 ) ;",
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘max1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        5,
+        6,
+        1
+      ],
+      "mod_code": [
+        "x = a [ j + 1 ] - a [ j ] ;",
+        "int max ( a [ n - 1 ] , max1 ) ;",
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )",
+        "int n , b [ 100 ] , b [ 100 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b [100]’"
+    },
+    {
+      "mod_line": [
+        13,
+        5,
+        1
+      ],
+      "mod_code": [
+        "x = a [ j + 1 ] - a [ j ] ;",
+        "int max ( a [ n - 1 ] , max1 ) ;",
+        "int n , b [ 100 ] , b [ 100 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b [100]’"
+    },
+    {
+      "mod_line": [
+        13,
+        9
+      ],
+      "mod_code": [
+        "x = a [ j + 1 ] - a [ j ] ;",
+        "for ( int j = 1 ; j <= n - 1 ; j ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "‘x’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        9,
+        12
+      ],
+      "mod_code": [
+        "x = a [ j + 1 ] - a [ j ] ;",
+        "for ( int j = 1 ; j <= n - 1 ; j ++ )",
+        "for ( j = 0 ; j < n - 1 ; j ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        9,
+        12,
+        6
+      ],
+      "mod_code": [
+        "x = a [ j + 1 ] - a [ j ] ;",
+        "for ( int j = 1 ; j <= n - 1 ; j ++ )",
+        "for ( j = 0 ; j < n - 1 ; j ++ )",
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        9,
+        12,
+        1
+      ],
+      "mod_code": [
+        "x = a [ j + 1 ] - a [ j ] ;",
+        "for ( int j = 1 ; j <= n - 1 ; j ++ )",
+        "for ( j = 0 ; j < n - 1 ; j ++ )",
+        "int n , b [ 100 ] , b [ 100 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b [100]’"
+    },
+    {
+      "mod_line": [
+        13,
+        9,
+        6
+      ],
+      "mod_code": [
+        "x = a [ j + 1 ] - a [ j ] ;",
+        "for ( int j = 1 ; j <= n - 1 ; j ++ )",
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "‘x’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        9,
+        6,
+        1
+      ],
+      "mod_code": [
+        "x = a [ j + 1 ] - a [ j ] ;",
+        "for ( int j = 1 ; j <= n - 1 ; j ++ )",
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )",
+        "int n , b [ 100 ] , b [ 100 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b [100]’"
+    },
+    {
+      "mod_line": [
+        13,
+        9,
+        1
+      ],
+      "mod_code": [
+        "x = a [ j + 1 ] - a [ j ] ;",
+        "for ( int j = 1 ; j <= n - 1 ; j ++ )",
+        "int n , b [ 100 ] , b [ 100 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b [100]’"
+    },
+    {
+      "mod_line": [
+        13,
+        12
+      ],
+      "mod_code": [
+        "x = a [ j + 1 ] - a [ j ] ;",
+        "for ( j = 0 ; j < n - 1 ; j ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        12,
+        6
+      ],
+      "mod_code": [
+        "x = a [ j + 1 ] - a [ j ] ;",
+        "for ( j = 0 ; j < n - 1 ; j ++ )",
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        12,
+        6,
+        1
+      ],
+      "mod_code": [
+        "x = a [ j + 1 ] - a [ j ] ;",
+        "for ( j = 0 ; j < n - 1 ; j ++ )",
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )",
+        "int n , b [ 100 ] , b [ 100 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b [100]’"
+    },
+    {
+      "mod_line": [
+        13,
+        12,
+        1
+      ],
+      "mod_code": [
+        "x = a [ j + 1 ] - a [ j ] ;",
+        "for ( j = 0 ; j < n - 1 ; j ++ )",
+        "int n , b [ 100 ] , b [ 100 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b [100]’"
+    },
+    {
+      "mod_line": [
+        13,
+        6
+      ],
+      "mod_code": [
+        "x = a [ j + 1 ] - a [ j ] ;",
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "‘x’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        6,
+        1
+      ],
+      "mod_code": [
+        "x = a [ j + 1 ] - a [ j ] ;",
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )",
+        "int n , b [ 100 ] , b [ 100 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b [100]’"
+    },
+    {
+      "mod_line": [
+        13,
+        1
+      ],
+      "mod_code": [
+        "x = a [ j + 1 ] - a [ j ] ;",
+        "int n , b [ 100 ] , b [ 100 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b [100]’"
+    },
+    {
+      "mod_line": [
+        5,
+        9
+      ],
+      "mod_code": [
+        "int max ( a [ n - 1 ] , max1 ) ;",
+        "for ( int j = 1 ; j <= n - 1 ; j ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘max1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        9,
+        12
+      ],
+      "mod_code": [
+        "int max ( a [ n - 1 ] , max1 ) ;",
+        "for ( int j = 1 ; j <= n - 1 ; j ++ )",
+        "for ( j = 0 ; j < n - 1 ; j ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘max1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        9,
+        12,
+        6
+      ],
+      "mod_code": [
+        "int max ( a [ n - 1 ] , max1 ) ;",
+        "for ( int j = 1 ; j <= n - 1 ; j ++ )",
+        "for ( j = 0 ; j < n - 1 ; j ++ )",
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘max1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        9,
+        12,
+        1
+      ],
+      "mod_code": [
+        "int max ( a [ n - 1 ] , max1 ) ;",
+        "for ( int j = 1 ; j <= n - 1 ; j ++ )",
+        "for ( j = 0 ; j < n - 1 ; j ++ )",
+        "int n , b [ 100 ] , b [ 100 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b [100]’"
+    },
+    {
+      "mod_line": [
+        5,
+        9,
+        6
+      ],
+      "mod_code": [
+        "int max ( a [ n - 1 ] , max1 ) ;",
+        "for ( int j = 1 ; j <= n - 1 ; j ++ )",
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘max1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        9,
+        6,
+        1
+      ],
+      "mod_code": [
+        "int max ( a [ n - 1 ] , max1 ) ;",
+        "for ( int j = 1 ; j <= n - 1 ; j ++ )",
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )",
+        "int n , b [ 100 ] , b [ 100 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b [100]’"
+    },
+    {
+      "mod_line": [
+        5,
+        9,
+        1
+      ],
+      "mod_code": [
+        "int max ( a [ n - 1 ] , max1 ) ;",
+        "for ( int j = 1 ; j <= n - 1 ; j ++ )",
+        "int n , b [ 100 ] , b [ 100 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b [100]’"
+    },
+    {
+      "mod_line": [
+        5,
+        12
+      ],
+      "mod_code": [
+        "int max ( a [ n - 1 ] , max1 ) ;",
+        "for ( j = 0 ; j < n - 1 ; j ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘max1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        12,
+        6
+      ],
+      "mod_code": [
+        "int max ( a [ n - 1 ] , max1 ) ;",
+        "for ( j = 0 ; j < n - 1 ; j ++ )",
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘max1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        12,
+        6,
+        1
+      ],
+      "mod_code": [
+        "int max ( a [ n - 1 ] , max1 ) ;",
+        "for ( j = 0 ; j < n - 1 ; j ++ )",
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )",
+        "int n , b [ 100 ] , b [ 100 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b [100]’"
+    },
+    {
+      "mod_line": [
+        5,
+        12,
+        1
+      ],
+      "mod_code": [
+        "int max ( a [ n - 1 ] , max1 ) ;",
+        "for ( j = 0 ; j < n - 1 ; j ++ )",
+        "int n , b [ 100 ] , b [ 100 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b [100]’"
+    },
+    {
+      "mod_line": [
+        5,
+        6
+      ],
+      "mod_code": [
+        "int max ( a [ n - 1 ] , max1 ) ;",
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘max1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        6,
+        1
+      ],
+      "mod_code": [
+        "int max ( a [ n - 1 ] , max1 ) ;",
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )",
+        "int n , b [ 100 ] , b [ 100 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b [100]’"
+    },
+    {
+      "mod_line": [
+        5,
+        1
+      ],
+      "mod_code": [
+        "int max ( a [ n - 1 ] , max1 ) ;",
+        "int n , b [ 100 ] , b [ 100 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b [100]’"
+    },
+    {
+      "mod_line": [
+        9,
+        12
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= n - 1 ; j ++ )",
+        "for ( j = 0 ; j < n - 1 ; j ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        6
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= n - 1 ; j ++ )",
+        "for ( j = 0 ; j < n - 1 ; j ++ )",
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        6,
+        1
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= n - 1 ; j ++ )",
+        "for ( j = 0 ; j < n - 1 ; j ++ )",
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )",
+        "int n , b [ 100 ] , b [ 100 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b [100]’"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        1
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= n - 1 ; j ++ )",
+        "for ( j = 0 ; j < n - 1 ; j ++ )",
+        "int n , b [ 100 ] , b [ 100 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b [100]’"
+    },
+    {
+      "mod_line": [
+        9,
+        6,
+        1
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= n - 1 ; j ++ )",
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )",
+        "int n , b [ 100 ] , b [ 100 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b [100]’"
+    },
+    {
+      "mod_line": [
+        9,
+        1
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= n - 1 ; j ++ )",
+        "int n , b [ 100 ] , b [ 100 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b [100]’"
+    },
+    {
+      "mod_line": [
+        12,
+        6
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j < n - 1 ; j ++ )",
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        6,
+        1
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j < n - 1 ; j ++ )",
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )",
+        "int n , b [ 100 ] , b [ 100 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b [100]’"
+    },
+    {
+      "mod_line": [
+        12,
+        1
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j < n - 1 ; j ++ )",
+        "int n , b [ 100 ] , b [ 100 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b [100]’"
+    },
+    {
+      "mod_line": [
+        6,
+        1
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n - 1 ; i ++ )",
+        "int n , b [ 100 ] , b [ 100 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int b [100]’"
+    }
+  ]
+}

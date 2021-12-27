@@ -1,0 +1,967 @@
+{
+  "meta": {
+    "index": 395,
+    "hitid": "3SA4EMRVJVW8ZM3Y8PU26TOATB00PK",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "215A",
+    "subid": "46441325"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create const int MAXN = 100",
+      "code": "const int MAXN = 100 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare integer array a with size MAXN",
+      "code": "int a [ MAXN ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "declare integer array b with size MAXN",
+      "code": "int b [ MAXN ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "declare integer array c with size MAXN * MAXN",
+      "code": "int c [ MAXN * MAXN ] ;",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "boolean function cmp with int arguments x and y",
+      "code": "bool cmp ( int x , int y )",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "return x > y",
+      "code": "return x > y ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 7,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 8,
+      "text": "declare integers n and m",
+      "code": "int n , m ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "loop i from 0 to n exclusive , read a [ i ]",
+      "code": "for ( int i = 0 ; i < n ; i ++ ) cin >> a [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "read input to m",
+      "code": "cin >> m ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "for integer j = 0 to m exclusive",
+      "code": "for ( int j = 0 ; j < m ; ++ j ) cin >> b [ j ] ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "declare integer cnt = 0",
+      "code": "int cnt = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "for integer i = 0 to n exclusive",
+      "code": "for ( int i = 0 ; i < n ; ++ i )",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "for j = 0 to m exclusive",
+      "code": "for ( int j = 0 ; j < m ; ++ j )",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "if b [ j ] % a [ i ] = 0 , set c [ cnt ] to b [ j ] / a [ i ] and increment cnt",
+      "code": "if ( b [ j ] % a [ i ] == 0 ) c [ cnt ++ ] = b [ j ] / a [ i ] ;",
+      "indent": 3
+    },
+    {
+      "line": 17,
+      "text": "sort c using function cmp as a comparer",
+      "code": "sort ( c , c + cnt , cmp ) ;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "declare integer variable ans = 0",
+      "code": "int ans = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "loop i from 0 to cnt exclusive",
+      "code": "for ( int i = 0 ; i < cnt ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "if c [ i ] = c [ 0 ] , increment ans",
+      "code": "if ( c [ i ] == c [ 0 ] ) ans ++ ;",
+      "indent": 2
+    },
+    {
+      "line": 21,
+      "text": "print ans",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 22,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < m ; j ++ )"
+      ],
+      "err_line": 16,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "sort ( c , c + cmp ) ;"
+      ],
+      "err_line": 17,
+      "err_msg": "invalid operands of types ‘int [10000]’ and ‘bool(int, int)’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "a [ MAXN ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘a’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "b [ MAXN ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘b’ does not name a type"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "int c * MAXN [ MAXN ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected initializer before ‘*’ token"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "bool cmp ( int x , int y ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < m ; ++ j )"
+      ],
+      "err_line": 16,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "cnt = 0 ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j < m ; j ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "sort ( c , c + c ) ;"
+      ],
+      "err_line": 17,
+      "err_msg": "invalid operands of types ‘int [10000]’ and ‘int [10000]’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        18
+      ],
+      "mod_code": [
+        "ans = 0 ;"
+      ],
+      "err_line": 18,
+      "err_msg": "‘ans’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        17
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < m ; j ++ )",
+        "sort ( c , c + cmp ) ;"
+      ],
+      "err_line": 16,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        17,
+        9
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < m ; j ++ )",
+        "sort ( c , c + cmp ) ;",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 16,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        17,
+        9,
+        1
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < m ; j ++ )",
+        "sort ( c , c + cmp ) ;",
+        "n = getchar ( ) ;",
+        "a [ MAXN ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘a’ does not name a type"
+    },
+    {
+      "mod_line": [
+        12,
+        17,
+        9,
+        15
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < m ; j ++ )",
+        "sort ( c , c + cmp ) ;",
+        "n = getchar ( ) ;",
+        "for ( j = 0 ; j < m ; j ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        17,
+        9,
+        4
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < m ; j ++ )",
+        "sort ( c , c + cmp ) ;",
+        "n = getchar ( ) ;",
+        "bool cmp ( int x , int y ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        17,
+        1
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < m ; j ++ )",
+        "sort ( c , c + cmp ) ;",
+        "a [ MAXN ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘a’ does not name a type"
+    },
+    {
+      "mod_line": [
+        12,
+        17,
+        1,
+        15
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < m ; j ++ )",
+        "sort ( c , c + cmp ) ;",
+        "a [ MAXN ] ;",
+        "for ( j = 0 ; j < m ; j ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "‘a’ does not name a type"
+    },
+    {
+      "mod_line": [
+        12,
+        17,
+        1,
+        4
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < m ; j ++ )",
+        "sort ( c , c + cmp ) ;",
+        "a [ MAXN ] ;",
+        "bool cmp ( int x , int y ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘a’ does not name a type"
+    },
+    {
+      "mod_line": [
+        12,
+        17,
+        15
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < m ; j ++ )",
+        "sort ( c , c + cmp ) ;",
+        "for ( j = 0 ; j < m ; j ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        17,
+        15,
+        4
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < m ; j ++ )",
+        "sort ( c , c + cmp ) ;",
+        "for ( j = 0 ; j < m ; j ++ )",
+        "bool cmp ( int x , int y ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        17,
+        4
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < m ; j ++ )",
+        "sort ( c , c + cmp ) ;",
+        "bool cmp ( int x , int y ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        9
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < m ; j ++ )",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 16,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        9,
+        1
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < m ; j ++ )",
+        "n = getchar ( ) ;",
+        "a [ MAXN ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘a’ does not name a type"
+    },
+    {
+      "mod_line": [
+        12,
+        9,
+        1,
+        15
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < m ; j ++ )",
+        "n = getchar ( ) ;",
+        "a [ MAXN ] ;",
+        "for ( j = 0 ; j < m ; j ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "‘a’ does not name a type"
+    },
+    {
+      "mod_line": [
+        12,
+        9,
+        1,
+        4
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < m ; j ++ )",
+        "n = getchar ( ) ;",
+        "a [ MAXN ] ;",
+        "bool cmp ( int x , int y ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘a’ does not name a type"
+    },
+    {
+      "mod_line": [
+        12,
+        9,
+        15
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < m ; j ++ )",
+        "n = getchar ( ) ;",
+        "for ( j = 0 ; j < m ; j ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        9,
+        15,
+        4
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < m ; j ++ )",
+        "n = getchar ( ) ;",
+        "for ( j = 0 ; j < m ; j ++ )",
+        "bool cmp ( int x , int y ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        9,
+        4
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < m ; j ++ )",
+        "n = getchar ( ) ;",
+        "bool cmp ( int x , int y ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        1
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < m ; j ++ )",
+        "a [ MAXN ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘a’ does not name a type"
+    },
+    {
+      "mod_line": [
+        12,
+        1,
+        15
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < m ; j ++ )",
+        "a [ MAXN ] ;",
+        "for ( j = 0 ; j < m ; j ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "‘a’ does not name a type"
+    },
+    {
+      "mod_line": [
+        12,
+        1,
+        15,
+        4
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < m ; j ++ )",
+        "a [ MAXN ] ;",
+        "for ( j = 0 ; j < m ; j ++ )",
+        "bool cmp ( int x , int y ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘a’ does not name a type"
+    },
+    {
+      "mod_line": [
+        12,
+        1,
+        4
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < m ; j ++ )",
+        "a [ MAXN ] ;",
+        "bool cmp ( int x , int y ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘a’ does not name a type"
+    },
+    {
+      "mod_line": [
+        12,
+        15
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < m ; j ++ )",
+        "for ( j = 0 ; j < m ; j ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        15,
+        4
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < m ; j ++ )",
+        "for ( j = 0 ; j < m ; j ++ )",
+        "bool cmp ( int x , int y ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        4
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < m ; j ++ )",
+        "bool cmp ( int x , int y ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        17,
+        9
+      ],
+      "mod_code": [
+        "sort ( c , c + cmp ) ;",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 17,
+      "err_msg": "invalid operands of types ‘int [10000]’ and ‘bool(int, int)’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        17,
+        9,
+        1
+      ],
+      "mod_code": [
+        "sort ( c , c + cmp ) ;",
+        "n = getchar ( ) ;",
+        "a [ MAXN ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘a’ does not name a type"
+    },
+    {
+      "mod_line": [
+        17,
+        9,
+        1,
+        15
+      ],
+      "mod_code": [
+        "sort ( c , c + cmp ) ;",
+        "n = getchar ( ) ;",
+        "a [ MAXN ] ;",
+        "for ( j = 0 ; j < m ; j ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "‘a’ does not name a type"
+    },
+    {
+      "mod_line": [
+        17,
+        9,
+        1,
+        4
+      ],
+      "mod_code": [
+        "sort ( c , c + cmp ) ;",
+        "n = getchar ( ) ;",
+        "a [ MAXN ] ;",
+        "bool cmp ( int x , int y ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘a’ does not name a type"
+    },
+    {
+      "mod_line": [
+        17,
+        9,
+        15
+      ],
+      "mod_code": [
+        "sort ( c , c + cmp ) ;",
+        "n = getchar ( ) ;",
+        "for ( j = 0 ; j < m ; j ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        17,
+        9,
+        15,
+        4
+      ],
+      "mod_code": [
+        "sort ( c , c + cmp ) ;",
+        "n = getchar ( ) ;",
+        "for ( j = 0 ; j < m ; j ++ )",
+        "bool cmp ( int x , int y ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        17,
+        9,
+        4
+      ],
+      "mod_code": [
+        "sort ( c , c + cmp ) ;",
+        "n = getchar ( ) ;",
+        "bool cmp ( int x , int y ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        17,
+        1
+      ],
+      "mod_code": [
+        "sort ( c , c + cmp ) ;",
+        "a [ MAXN ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘a’ does not name a type"
+    },
+    {
+      "mod_line": [
+        17,
+        1,
+        15
+      ],
+      "mod_code": [
+        "sort ( c , c + cmp ) ;",
+        "a [ MAXN ] ;",
+        "for ( j = 0 ; j < m ; j ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "‘a’ does not name a type"
+    },
+    {
+      "mod_line": [
+        17,
+        1,
+        15,
+        4
+      ],
+      "mod_code": [
+        "sort ( c , c + cmp ) ;",
+        "a [ MAXN ] ;",
+        "for ( j = 0 ; j < m ; j ++ )",
+        "bool cmp ( int x , int y ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘a’ does not name a type"
+    },
+    {
+      "mod_line": [
+        17,
+        1,
+        4
+      ],
+      "mod_code": [
+        "sort ( c , c + cmp ) ;",
+        "a [ MAXN ] ;",
+        "bool cmp ( int x , int y ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘a’ does not name a type"
+    },
+    {
+      "mod_line": [
+        17,
+        15
+      ],
+      "mod_code": [
+        "sort ( c , c + cmp ) ;",
+        "for ( j = 0 ; j < m ; j ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        17,
+        15,
+        4
+      ],
+      "mod_code": [
+        "sort ( c , c + cmp ) ;",
+        "for ( j = 0 ; j < m ; j ++ )",
+        "bool cmp ( int x , int y ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        17,
+        4
+      ],
+      "mod_code": [
+        "sort ( c , c + cmp ) ;",
+        "bool cmp ( int x , int y ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        9,
+        1
+      ],
+      "mod_code": [
+        "n = getchar ( ) ;",
+        "a [ MAXN ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘a’ does not name a type"
+    },
+    {
+      "mod_line": [
+        9,
+        1,
+        15
+      ],
+      "mod_code": [
+        "n = getchar ( ) ;",
+        "a [ MAXN ] ;",
+        "for ( j = 0 ; j < m ; j ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "‘a’ does not name a type"
+    },
+    {
+      "mod_line": [
+        9,
+        1,
+        15,
+        4
+      ],
+      "mod_code": [
+        "n = getchar ( ) ;",
+        "a [ MAXN ] ;",
+        "for ( j = 0 ; j < m ; j ++ )",
+        "bool cmp ( int x , int y ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘a’ does not name a type"
+    },
+    {
+      "mod_line": [
+        9,
+        1,
+        4
+      ],
+      "mod_code": [
+        "n = getchar ( ) ;",
+        "a [ MAXN ] ;",
+        "bool cmp ( int x , int y ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘a’ does not name a type"
+    },
+    {
+      "mod_line": [
+        9,
+        15
+      ],
+      "mod_code": [
+        "n = getchar ( ) ;",
+        "for ( j = 0 ; j < m ; j ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘j’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        15,
+        4
+      ],
+      "mod_code": [
+        "n = getchar ( ) ;",
+        "for ( j = 0 ; j < m ; j ++ )",
+        "bool cmp ( int x , int y ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        9,
+        4
+      ],
+      "mod_code": [
+        "n = getchar ( ) ;",
+        "bool cmp ( int x , int y ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        15
+      ],
+      "mod_code": [
+        "a [ MAXN ] ;",
+        "for ( j = 0 ; j < m ; j ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "‘a’ does not name a type"
+    },
+    {
+      "mod_line": [
+        1,
+        15,
+        4
+      ],
+      "mod_code": [
+        "a [ MAXN ] ;",
+        "for ( j = 0 ; j < m ; j ++ )",
+        "bool cmp ( int x , int y ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘a’ does not name a type"
+    },
+    {
+      "mod_line": [
+        1,
+        4
+      ],
+      "mod_code": [
+        "a [ MAXN ] ;",
+        "bool cmp ( int x , int y ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘a’ does not name a type"
+    },
+    {
+      "mod_line": [
+        15,
+        4
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j < m ; j ++ )",
+        "bool cmp ( int x , int y ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    }
+  ]
+}

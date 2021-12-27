@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment - Assignment A</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script>
+        
+        var arrValue = new Array();
+
+           function fnameInput() {
+                document.getElementById("subError").innerHTML = "";
+                var value = fname.value;
+                var lblError = document.getElementById("lblError");
+                lblError.innerHTML = "";
+                var expr = /^[a-zA-Z]+$/;
+                if (!expr.test(value)) {
+                    lblError.innerHTML = "Invalid unsername.";
+                     
+                } else if(value.length < 8)
+                {
+                    lblError.innerHTML = "username should be a minimum length of 8 characters";
+                }
+
+                if (value.length == 0 || value.length < 8 ||!expr.test(value)) {
+                    fname.style.backgroundColor = 'red';
+                } else {
+                    fname.style.backgroundColor = 'green';
+                }
+            }
+
+            function password() {
+                document.getElementById("subError").innerHTML = "";
+                var value = document.getElementById("password").value;
+                var lblError = document.getElementById("pwError");
+               
+                if (value.length < 8) {
+                    lblError.innerHTML = "password should be a minimum length of 8 characters";
+                } else {
+                    lblError.innerHTML = "";
+                }
+            }
+
+            
+            function validate() {
+
+        
+                var lblError = document.getElementById("subError");
+                var value = document.getElementById("password").value;
+                lblError.innerHTML = "";
+                lblError.style.color = "red";
+                var expr = /^[a-zA-Z]+$/;
+                if (!expr.test(fname.value)) {
+                    lblError.innerHTML = "Invalid unsername.";
+                     
+                } else if(fname.value.length < 8)
+                {
+                    lblError.innerHTML = "username should be a minimum length of 8 characters";
+                } else if (value.length < 8) {
+                    lblError.innerHTML = "password should be a minimum length of 8 characters";
+                } else {
+                    lblError.innerHTML = "Successfully submitted";
+                    lblError.style.color = "green";
+                }
+                
+            }
+
+        </script>
+
+</head>
+<body>
+
+    <h1>Assignment A --- by S. Gnanadass</h1>
+    <div class="container">
+        <form name="myForm" action="#" onsubmit="return validateForm()" method="post"></form>
+            <label for="fname">First name:</label>
+            <input type="text" id="fname" name="fname" onKeyUp="fnameInput()" autocomplete="off"><br><span id="lblError" style="color: red"></span><br>
+            
+            <label for="password">password:</label>
+            <input type="password" id="password" name="password" onKeyUp="password()" autocomplete="off" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+            <br><span id="pwError" style="color: red"></span><br>
+
+            <input type="button" value="Submit" onclick="validate()">
+            <br><span id="subError" style="color: red"></span>
+    </form>
+    </div>
+    <div class="container" id="tableOutput"></div>
+</body>
+</html>

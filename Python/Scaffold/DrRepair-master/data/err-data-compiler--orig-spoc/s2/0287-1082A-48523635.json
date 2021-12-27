@@ -1,0 +1,379 @@
+{
+  "meta": {
+    "index": 287,
+    "hitid": "3N2YPY1GI6SKVWFO282GXAFW90DVEO",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "1082A",
+    "subid": "48523635"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare integer o",
+      "code": "int o ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read o",
+      "code": "cin >> o ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "while decrement o is true",
+      "code": "while ( o -- )",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "declare long longs n , x , y , d",
+      "code": "long long n , x , y , d ;",
+      "indent": 2
+    },
+    {
+      "line": 5,
+      "text": "read n and x and y and d",
+      "code": "cin >> n >> x >> y >> d ;",
+      "indent": 2
+    },
+    {
+      "line": 6,
+      "text": "declare long long ans = 1e10",
+      "code": "long long ans = 1e10 ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "if absolute value of ( x - y ) % d is 0 , let ans be minimum of ( ans and absolute value of ( x - y ) / d )",
+      "code": "if ( abs ( x - y ) % d == 0 ) ans = min ( ans , abs ( x - y ) / d ) ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "if absolute value of ( y - 1 ) % d is 0 , let ans be minimum of ( ans and ( x - 1 ) / d + ( 1 if ( x - 1 ) % d , else 0 ) + ( y - 1 ) / d",
+      "code": "if ( abs ( y - 1 ) % d == 0 ) ans = min ( ans , ( x - 1 ) / d + ( ( ( x - 1 ) % d ) ? 1 : 0 ) + ( y - 1 ) / d ) ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "if absolute value of ( y - n ) % d is 0 , let ans be minimum of ( ans and ( n - x ) / d + ( 1 if n - x % d is true , else 0 ) + ( n - y ) / d",
+      "code": "if ( abs ( y - n ) % d == 0 ) ans = min ( ans , ( n - x ) / d + ( ( ( n - x ) % d ) ? 1 : 0 ) + ( n - y ) / d ) ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "if ans is 1e10 , let ans be - 1",
+      "code": "if ( ans == 1e10 ) ans = - 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "print ans , newline",
+      "code": "cout << ans << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "if ( abs ( x - y ) % d == 0 ) ans = min ( ans , abs ( x , y ) / d ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘abs(long long int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘o’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "cin >> t ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "if ( abs ( x - y ) % d == 0 ) ans = min ( ans , abs ( x , ( x - y ) / d ) ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘abs(long long int&, long long int)’"
+    },
+    {
+      "mod_line": [
+        7,
+        8
+      ],
+      "mod_code": [
+        "if ( abs ( x - y ) % d == 0 ) ans = min ( ans , abs ( x , y ) / d ) ;",
+        "if ( abs ( y - 1 ) % d == 0 ) ans = min ( ans , ( x - 1 ) % d + ( ( x - 1 ) % d ) + ( y - 1 ) / d ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘abs(long long int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        7,
+        8,
+        9
+      ],
+      "mod_code": [
+        "if ( abs ( x - y ) % d == 0 ) ans = min ( ans , abs ( x , y ) / d ) ;",
+        "if ( abs ( y - 1 ) % d == 0 ) ans = min ( ans , ( x - 1 ) % d + ( ( x - 1 ) % d ) + ( y - 1 ) / d ) ;",
+        "if ( abs ( y - n ) % d == 0 ) ans = min ( ans , ( n - x ) / d + ( n - x ) / d + ( n - y ) / d ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘abs(long long int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        7,
+        8,
+        9,
+        5
+      ],
+      "mod_code": [
+        "if ( abs ( x - y ) % d == 0 ) ans = min ( ans , abs ( x , y ) / d ) ;",
+        "if ( abs ( y - 1 ) % d == 0 ) ans = min ( ans , ( x - 1 ) % d + ( ( x - 1 ) % d ) + ( y - 1 ) / d ) ;",
+        "if ( abs ( y - n ) % d == 0 ) ans = min ( ans , ( n - x ) / d + ( n - x ) / d + ( n - y ) / d ) ;",
+        "cin >> n >> x >> x >> d ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘abs(long long int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        7,
+        8,
+        5
+      ],
+      "mod_code": [
+        "if ( abs ( x - y ) % d == 0 ) ans = min ( ans , abs ( x , y ) / d ) ;",
+        "if ( abs ( y - 1 ) % d == 0 ) ans = min ( ans , ( x - 1 ) % d + ( ( x - 1 ) % d ) + ( y - 1 ) / d ) ;",
+        "cin >> n >> x >> x >> d ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘abs(long long int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        7,
+        8,
+        5,
+        9
+      ],
+      "mod_code": [
+        "if ( abs ( x - y ) % d == 0 ) ans = min ( ans , abs ( x , y ) / d ) ;",
+        "if ( abs ( y - 1 ) % d == 0 ) ans = min ( ans , ( x - 1 ) % d + ( ( x - 1 ) % d ) + ( y - 1 ) / d ) ;",
+        "cin >> n >> x >> x >> d ;",
+        "if ( abs ( y - n ) % d == 0 ) { ans = min ( ans , ( n - x ) / d + ( n - x ) / d ) + ( n - y ) / ( n - y ) ; }"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘abs(long long int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        7,
+        8,
+        9
+      ],
+      "mod_code": [
+        "if ( abs ( x - y ) % d == 0 ) ans = min ( ans , abs ( x , y ) / d ) ;",
+        "if ( abs ( y - 1 ) % d == 0 ) ans = min ( ans , ( x - 1 ) % d + ( ( x - 1 ) % d ) + ( y - 1 ) / d ) ;",
+        "if ( abs ( y - n ) % d == 0 ) { ans = min ( ans , ( n - x ) / d + ( n - x ) / d ) + ( n - y ) / ( n - y ) ; }"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘abs(long long int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        7,
+        9
+      ],
+      "mod_code": [
+        "if ( abs ( x - y ) % d == 0 ) ans = min ( ans , abs ( x , y ) / d ) ;",
+        "if ( abs ( y - n ) % d == 0 ) ans = min ( ans , ( n - x ) / d + ( n - x ) / d + ( n - y ) / d ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘abs(long long int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        7,
+        9,
+        5
+      ],
+      "mod_code": [
+        "if ( abs ( x - y ) % d == 0 ) ans = min ( ans , abs ( x , y ) / d ) ;",
+        "if ( abs ( y - n ) % d == 0 ) ans = min ( ans , ( n - x ) / d + ( n - x ) / d + ( n - y ) / d ) ;",
+        "cin >> n >> x >> x >> d ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘abs(long long int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        7,
+        9,
+        5,
+        8
+      ],
+      "mod_code": [
+        "if ( abs ( x - y ) % d == 0 ) ans = min ( ans , abs ( x , y ) / d ) ;",
+        "if ( abs ( y - n ) % d == 0 ) ans = min ( ans , ( n - x ) / d + ( n - x ) / d + ( n - y ) / d ) ;",
+        "cin >> n >> x >> x >> d ;",
+        "if ( abs ( y - 1 ) % d == 0 ) ans = min ( ans , ( x - 1 ) % d + ( ( x - 1 ) % d ) + ( y - 1 ) / ( y - 1 ) / d ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘abs(long long int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        7,
+        9,
+        8
+      ],
+      "mod_code": [
+        "if ( abs ( x - y ) % d == 0 ) ans = min ( ans , abs ( x , y ) / d ) ;",
+        "if ( abs ( y - n ) % d == 0 ) ans = min ( ans , ( n - x ) / d + ( n - x ) / d + ( n - y ) / d ) ;",
+        "if ( abs ( y - 1 ) % d == 0 ) ans = min ( ans , ( x - 1 ) % d + ( ( x - 1 ) % d ) + ( y - 1 ) / ( y - 1 ) / d ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘abs(long long int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        7,
+        5
+      ],
+      "mod_code": [
+        "if ( abs ( x - y ) % d == 0 ) ans = min ( ans , abs ( x , y ) / d ) ;",
+        "cin >> n >> x >> x >> d ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘abs(long long int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        7,
+        5,
+        9
+      ],
+      "mod_code": [
+        "if ( abs ( x - y ) % d == 0 ) ans = min ( ans , abs ( x , y ) / d ) ;",
+        "cin >> n >> x >> x >> d ;",
+        "if ( abs ( y - n ) % d == 0 ) { ans = min ( ans , ( n - x ) / d + ( n - x ) / d ) + ( n - y ) / ( n - y ) ; }"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘abs(long long int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        7,
+        5,
+        9,
+        8
+      ],
+      "mod_code": [
+        "if ( abs ( x - y ) % d == 0 ) ans = min ( ans , abs ( x , y ) / d ) ;",
+        "cin >> n >> x >> x >> d ;",
+        "if ( abs ( y - n ) % d == 0 ) { ans = min ( ans , ( n - x ) / d + ( n - x ) / d ) + ( n - y ) / ( n - y ) ; }",
+        "if ( abs ( y - 1 ) % d == 0 ) ans = min ( ans , ( x - 1 ) % d + ( ( x - 1 ) % d ) + ( y - 1 ) / ( y - 1 ) / d ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘abs(long long int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        7,
+        5,
+        8
+      ],
+      "mod_code": [
+        "if ( abs ( x - y ) % d == 0 ) ans = min ( ans , abs ( x , y ) / d ) ;",
+        "cin >> n >> x >> x >> d ;",
+        "if ( abs ( y - 1 ) % d == 0 ) ans = min ( ans , ( x - 1 ) % d + ( ( x - 1 ) % d ) + ( y - 1 ) / ( y - 1 ) / d ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘abs(long long int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        7,
+        9
+      ],
+      "mod_code": [
+        "if ( abs ( x - y ) % d == 0 ) ans = min ( ans , abs ( x , y ) / d ) ;",
+        "if ( abs ( y - n ) % d == 0 ) { ans = min ( ans , ( n - x ) / d + ( n - x ) / d ) + ( n - y ) / ( n - y ) ; }"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘abs(long long int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        7,
+        9,
+        8
+      ],
+      "mod_code": [
+        "if ( abs ( x - y ) % d == 0 ) ans = min ( ans , abs ( x , y ) / d ) ;",
+        "if ( abs ( y - n ) % d == 0 ) { ans = min ( ans , ( n - x ) / d + ( n - x ) / d ) + ( n - y ) / ( n - y ) ; }",
+        "if ( abs ( y - 1 ) % d == 0 ) ans = min ( ans , ( x - 1 ) % d + ( ( x - 1 ) % d ) + ( y - 1 ) / ( y - 1 ) / d ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘abs(long long int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        7,
+        8
+      ],
+      "mod_code": [
+        "if ( abs ( x - y ) % d == 0 ) ans = min ( ans , abs ( x , y ) / d ) ;",
+        "if ( abs ( y - 1 ) % d == 0 ) ans = min ( ans , ( x - 1 ) % d + ( ( x - 1 ) % d ) + ( y - 1 ) / ( y - 1 ) / d ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘abs(long long int&, long long int&)’"
+    }
+  ]
+}

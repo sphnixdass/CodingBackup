@@ -1,0 +1,915 @@
+{
+  "meta": {
+    "index": 2431,
+    "hitid": "31HLTCK4BLPIFABF83S4XD08MGQGVO",
+    "workerid": "A1R0Q9CUUBSM5F",
+    "probid": "553A",
+    "subid": "47713672"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create integer k and integer arrays c of size 1010 within an array of size 1010 , s of size 1010 , dp of size 1010 , and c of size 1010",
+      "code": "int C [ 1010 ] [ 1010 ] , k , s [ 1010 ] , dp [ 1010 ] , c [ 1010 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "set c [ 0 ] [ 0 ] to 1",
+      "code": "C [ 0 ] [ 0 ] = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "for i = 1 to 1000",
+      "code": "for ( int i = 1 ; i <= 1000 ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "set c [ i ] [ 0 ] to 1",
+      "code": "C [ i ] [ 0 ] = 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 5,
+      "text": "for j = 1 to i , set c [ i ] [ j ] to the result of ( C [ i - 1 ] [ j - 1 ] + C [ i - 1 ] [ j ] ) % 1000000007",
+      "code": "for ( int j = 1 ; j <= i ; j ++ ) { C [ i ] [ j ] = ( C [ i - 1 ] [ j - 1 ] + C [ i - 1 ] [ j ] ) % 1000000007 ; }",
+      "indent": 2
+    },
+    {
+      "line": 6,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "read k",
+      "code": "cin >> k ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "for i = 1 to k",
+      "code": "for ( int i = 1 ; i <= k ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "read c [ i ]",
+      "code": "cin >> c [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "set s [ i ] to the result of s [ i - 1 ] + c [ i ]",
+      "code": "s [ i ] = s [ i - 1 ] + c [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "set dp [ 0 ] to 1",
+      "code": "dp [ 0 ] = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "for i = 1 to k , set dp [ i ] to the result of 1LL * C [ s [ i ] - 1 ] [ c [ i ] - 1 ] * dp [ i - 1 ] % 1000000007",
+      "code": "for ( int i = 1 ; i <= k ; i ++ ) { dp [ i ] = 1LL * C [ s [ i ] - 1 ] [ c [ i ] - 1 ] * dp [ i - 1 ] % 1000000007 ; }",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "print dp [ k ]",
+      "code": "cout << dp [ k ] << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int k , s [ 1010 ] , s [ 1010 ] , dp [ 1010 ] , dp [ 1010 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int s [1010]’"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "c [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "c [ i ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= i ; j ++ ) c [ i ] [ j ] = ( C [ i - 1 ] [ j - 1 ] + C [ i - 1 ] [ j ] ) % 1000000007 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= k ; i ++ ) { dp [ i ] = 1LL * C [ s [ i ] - 1 ] * dp [ i - 1 ] - 1 ] * dp [ i - 1 ] % 1000000007 ; }"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid operands of types ‘long long int’ and ‘int [1010]’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int k , s [ 1010 ] , s [ 1010 ] , dp [ 1010 ] , c [ 1010 ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int s [1010]’"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= i ; j ++ ) { c [ i ] [ j ] = ( C [ i - 1 ] [ j - 1 ] + C [ i - 1 ] [ j ] ) % 1000000007 ; }"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "cin >> n ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "cin >> c >> c [ i ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [1010]’)"
+    },
+    {
+      "mod_line": [
+        0,
+        2
+      ],
+      "mod_code": [
+        "int k , s [ 1010 ] , s [ 1010 ] , dp [ 1010 ] , dp [ 1010 ] ;",
+        "c [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int s [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        4
+      ],
+      "mod_code": [
+        "int k , s [ 1010 ] , s [ 1010 ] , dp [ 1010 ] , dp [ 1010 ] ;",
+        "c [ 0 ] [ 0 ] = 1 ;",
+        "c [ i ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int s [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        4,
+        5
+      ],
+      "mod_code": [
+        "int k , s [ 1010 ] , s [ 1010 ] , dp [ 1010 ] , dp [ 1010 ] ;",
+        "c [ 0 ] [ 0 ] = 1 ;",
+        "c [ i ] [ 0 ] = 1 ;",
+        "for ( int j = 1 ; j <= i ; j ++ ) c [ i ] [ j ] = ( C [ i - 1 ] [ j - 1 ] + C [ i - 1 ] [ j ] ) % 1000000007 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int s [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        4,
+        13
+      ],
+      "mod_code": [
+        "int k , s [ 1010 ] , s [ 1010 ] , dp [ 1010 ] , dp [ 1010 ] ;",
+        "c [ 0 ] [ 0 ] = 1 ;",
+        "c [ i ] [ 0 ] = 1 ;",
+        "for ( int i = 1 ; i <= k ; i ++ ) { dp [ i ] = 1LL * C [ s [ i ] - 1 ] * dp [ i - 1 ] - 1 ] * dp [ i - 1 ] % 1000000007 ; }"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int s [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        4,
+        9
+      ],
+      "mod_code": [
+        "int k , s [ 1010 ] , s [ 1010 ] , dp [ 1010 ] , dp [ 1010 ] ;",
+        "c [ 0 ] [ 0 ] = 1 ;",
+        "c [ i ] [ 0 ] = 1 ;",
+        "cin >> c >> c [ i ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int s [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        5
+      ],
+      "mod_code": [
+        "int k , s [ 1010 ] , s [ 1010 ] , dp [ 1010 ] , dp [ 1010 ] ;",
+        "c [ 0 ] [ 0 ] = 1 ;",
+        "for ( int j = 1 ; j <= i ; j ++ ) c [ i ] [ j ] = ( C [ i - 1 ] [ j - 1 ] + C [ i - 1 ] [ j ] ) % 1000000007 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int s [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        5,
+        13
+      ],
+      "mod_code": [
+        "int k , s [ 1010 ] , s [ 1010 ] , dp [ 1010 ] , dp [ 1010 ] ;",
+        "c [ 0 ] [ 0 ] = 1 ;",
+        "for ( int j = 1 ; j <= i ; j ++ ) c [ i ] [ j ] = ( C [ i - 1 ] [ j - 1 ] + C [ i - 1 ] [ j ] ) % 1000000007 ;",
+        "for ( int i = 1 ; i <= k ; i ++ ) { dp [ i ] = 1LL * C [ s [ i ] - 1 ] * dp [ i - 1 ] - 1 ] * dp [ i - 1 ] % 1000000007 ; }"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int s [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        5,
+        9
+      ],
+      "mod_code": [
+        "int k , s [ 1010 ] , s [ 1010 ] , dp [ 1010 ] , dp [ 1010 ] ;",
+        "c [ 0 ] [ 0 ] = 1 ;",
+        "for ( int j = 1 ; j <= i ; j ++ ) c [ i ] [ j ] = ( C [ i - 1 ] [ j - 1 ] + C [ i - 1 ] [ j ] ) % 1000000007 ;",
+        "cin >> c >> c [ i ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int s [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        13
+      ],
+      "mod_code": [
+        "int k , s [ 1010 ] , s [ 1010 ] , dp [ 1010 ] , dp [ 1010 ] ;",
+        "c [ 0 ] [ 0 ] = 1 ;",
+        "for ( int i = 1 ; i <= k ; i ++ ) { dp [ i ] = 1LL * C [ s [ i ] - 1 ] * dp [ i - 1 ] - 1 ] * dp [ i - 1 ] % 1000000007 ; }"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int s [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        13,
+        9
+      ],
+      "mod_code": [
+        "int k , s [ 1010 ] , s [ 1010 ] , dp [ 1010 ] , dp [ 1010 ] ;",
+        "c [ 0 ] [ 0 ] = 1 ;",
+        "for ( int i = 1 ; i <= k ; i ++ ) { dp [ i ] = 1LL * C [ s [ i ] - 1 ] * dp [ i - 1 ] - 1 ] * dp [ i - 1 ] % 1000000007 ; }",
+        "cin >> c >> c [ i ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int s [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        2,
+        9
+      ],
+      "mod_code": [
+        "int k , s [ 1010 ] , s [ 1010 ] , dp [ 1010 ] , dp [ 1010 ] ;",
+        "c [ 0 ] [ 0 ] = 1 ;",
+        "cin >> c >> c [ i ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int s [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        4
+      ],
+      "mod_code": [
+        "int k , s [ 1010 ] , s [ 1010 ] , dp [ 1010 ] , dp [ 1010 ] ;",
+        "c [ i ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int s [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        5
+      ],
+      "mod_code": [
+        "int k , s [ 1010 ] , s [ 1010 ] , dp [ 1010 ] , dp [ 1010 ] ;",
+        "c [ i ] [ 0 ] = 1 ;",
+        "for ( int j = 1 ; j <= i ; j ++ ) c [ i ] [ j ] = ( C [ i - 1 ] [ j - 1 ] + C [ i - 1 ] [ j ] ) % 1000000007 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int s [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        5,
+        13
+      ],
+      "mod_code": [
+        "int k , s [ 1010 ] , s [ 1010 ] , dp [ 1010 ] , dp [ 1010 ] ;",
+        "c [ i ] [ 0 ] = 1 ;",
+        "for ( int j = 1 ; j <= i ; j ++ ) c [ i ] [ j ] = ( C [ i - 1 ] [ j - 1 ] + C [ i - 1 ] [ j ] ) % 1000000007 ;",
+        "for ( int i = 1 ; i <= k ; i ++ ) { dp [ i ] = 1LL * C [ s [ i ] - 1 ] * dp [ i - 1 ] - 1 ] * dp [ i - 1 ] % 1000000007 ; }"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int s [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        5,
+        9
+      ],
+      "mod_code": [
+        "int k , s [ 1010 ] , s [ 1010 ] , dp [ 1010 ] , dp [ 1010 ] ;",
+        "c [ i ] [ 0 ] = 1 ;",
+        "for ( int j = 1 ; j <= i ; j ++ ) c [ i ] [ j ] = ( C [ i - 1 ] [ j - 1 ] + C [ i - 1 ] [ j ] ) % 1000000007 ;",
+        "cin >> c >> c [ i ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int s [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        13
+      ],
+      "mod_code": [
+        "int k , s [ 1010 ] , s [ 1010 ] , dp [ 1010 ] , dp [ 1010 ] ;",
+        "c [ i ] [ 0 ] = 1 ;",
+        "for ( int i = 1 ; i <= k ; i ++ ) { dp [ i ] = 1LL * C [ s [ i ] - 1 ] * dp [ i - 1 ] - 1 ] * dp [ i - 1 ] % 1000000007 ; }"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int s [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        13,
+        9
+      ],
+      "mod_code": [
+        "int k , s [ 1010 ] , s [ 1010 ] , dp [ 1010 ] , dp [ 1010 ] ;",
+        "c [ i ] [ 0 ] = 1 ;",
+        "for ( int i = 1 ; i <= k ; i ++ ) { dp [ i ] = 1LL * C [ s [ i ] - 1 ] * dp [ i - 1 ] - 1 ] * dp [ i - 1 ] % 1000000007 ; }",
+        "cin >> c >> c [ i ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int s [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        9
+      ],
+      "mod_code": [
+        "int k , s [ 1010 ] , s [ 1010 ] , dp [ 1010 ] , dp [ 1010 ] ;",
+        "c [ i ] [ 0 ] = 1 ;",
+        "cin >> c >> c [ i ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int s [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        5
+      ],
+      "mod_code": [
+        "int k , s [ 1010 ] , s [ 1010 ] , dp [ 1010 ] , dp [ 1010 ] ;",
+        "for ( int j = 1 ; j <= i ; j ++ ) c [ i ] [ j ] = ( C [ i - 1 ] [ j - 1 ] + C [ i - 1 ] [ j ] ) % 1000000007 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int s [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        5,
+        13
+      ],
+      "mod_code": [
+        "int k , s [ 1010 ] , s [ 1010 ] , dp [ 1010 ] , dp [ 1010 ] ;",
+        "for ( int j = 1 ; j <= i ; j ++ ) c [ i ] [ j ] = ( C [ i - 1 ] [ j - 1 ] + C [ i - 1 ] [ j ] ) % 1000000007 ;",
+        "for ( int i = 1 ; i <= k ; i ++ ) { dp [ i ] = 1LL * C [ s [ i ] - 1 ] * dp [ i - 1 ] - 1 ] * dp [ i - 1 ] % 1000000007 ; }"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int s [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        5,
+        13,
+        9
+      ],
+      "mod_code": [
+        "int k , s [ 1010 ] , s [ 1010 ] , dp [ 1010 ] , dp [ 1010 ] ;",
+        "for ( int j = 1 ; j <= i ; j ++ ) c [ i ] [ j ] = ( C [ i - 1 ] [ j - 1 ] + C [ i - 1 ] [ j ] ) % 1000000007 ;",
+        "for ( int i = 1 ; i <= k ; i ++ ) { dp [ i ] = 1LL * C [ s [ i ] - 1 ] * dp [ i - 1 ] - 1 ] * dp [ i - 1 ] % 1000000007 ; }",
+        "cin >> c >> c [ i ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int s [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        5,
+        9
+      ],
+      "mod_code": [
+        "int k , s [ 1010 ] , s [ 1010 ] , dp [ 1010 ] , dp [ 1010 ] ;",
+        "for ( int j = 1 ; j <= i ; j ++ ) c [ i ] [ j ] = ( C [ i - 1 ] [ j - 1 ] + C [ i - 1 ] [ j ] ) % 1000000007 ;",
+        "cin >> c >> c [ i ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int s [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        13
+      ],
+      "mod_code": [
+        "int k , s [ 1010 ] , s [ 1010 ] , dp [ 1010 ] , dp [ 1010 ] ;",
+        "for ( int i = 1 ; i <= k ; i ++ ) { dp [ i ] = 1LL * C [ s [ i ] - 1 ] * dp [ i - 1 ] - 1 ] * dp [ i - 1 ] % 1000000007 ; }"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int s [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        13,
+        9
+      ],
+      "mod_code": [
+        "int k , s [ 1010 ] , s [ 1010 ] , dp [ 1010 ] , dp [ 1010 ] ;",
+        "for ( int i = 1 ; i <= k ; i ++ ) { dp [ i ] = 1LL * C [ s [ i ] - 1 ] * dp [ i - 1 ] - 1 ] * dp [ i - 1 ] % 1000000007 ; }",
+        "cin >> c >> c [ i ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int s [1010]’"
+    },
+    {
+      "mod_line": [
+        0,
+        9
+      ],
+      "mod_code": [
+        "int k , s [ 1010 ] , s [ 1010 ] , dp [ 1010 ] , dp [ 1010 ] ;",
+        "cin >> c >> c [ i ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘int s [1010]’"
+    },
+    {
+      "mod_line": [
+        2,
+        4
+      ],
+      "mod_code": [
+        "c [ 0 ] [ 0 ] = 1 ;",
+        "c [ i ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        4,
+        5
+      ],
+      "mod_code": [
+        "c [ 0 ] [ 0 ] = 1 ;",
+        "c [ i ] [ 0 ] = 1 ;",
+        "for ( int j = 1 ; j <= i ; j ++ ) c [ i ] [ j ] = ( C [ i - 1 ] [ j - 1 ] + C [ i - 1 ] [ j ] ) % 1000000007 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        4,
+        5,
+        13
+      ],
+      "mod_code": [
+        "c [ 0 ] [ 0 ] = 1 ;",
+        "c [ i ] [ 0 ] = 1 ;",
+        "for ( int j = 1 ; j <= i ; j ++ ) c [ i ] [ j ] = ( C [ i - 1 ] [ j - 1 ] + C [ i - 1 ] [ j ] ) % 1000000007 ;",
+        "for ( int i = 1 ; i <= k ; i ++ ) { dp [ i ] = 1LL * C [ s [ i ] - 1 ] * dp [ i - 1 ] - 1 ] * dp [ i - 1 ] % 1000000007 ; }"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        4,
+        5,
+        9
+      ],
+      "mod_code": [
+        "c [ 0 ] [ 0 ] = 1 ;",
+        "c [ i ] [ 0 ] = 1 ;",
+        "for ( int j = 1 ; j <= i ; j ++ ) c [ i ] [ j ] = ( C [ i - 1 ] [ j - 1 ] + C [ i - 1 ] [ j ] ) % 1000000007 ;",
+        "cin >> c >> c [ i ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        4,
+        13
+      ],
+      "mod_code": [
+        "c [ 0 ] [ 0 ] = 1 ;",
+        "c [ i ] [ 0 ] = 1 ;",
+        "for ( int i = 1 ; i <= k ; i ++ ) { dp [ i ] = 1LL * C [ s [ i ] - 1 ] * dp [ i - 1 ] - 1 ] * dp [ i - 1 ] % 1000000007 ; }"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        4,
+        13,
+        9
+      ],
+      "mod_code": [
+        "c [ 0 ] [ 0 ] = 1 ;",
+        "c [ i ] [ 0 ] = 1 ;",
+        "for ( int i = 1 ; i <= k ; i ++ ) { dp [ i ] = 1LL * C [ s [ i ] - 1 ] * dp [ i - 1 ] - 1 ] * dp [ i - 1 ] % 1000000007 ; }",
+        "cin >> c >> c [ i ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        4,
+        9
+      ],
+      "mod_code": [
+        "c [ 0 ] [ 0 ] = 1 ;",
+        "c [ i ] [ 0 ] = 1 ;",
+        "cin >> c >> c [ i ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        5
+      ],
+      "mod_code": [
+        "c [ 0 ] [ 0 ] = 1 ;",
+        "for ( int j = 1 ; j <= i ; j ++ ) c [ i ] [ j ] = ( C [ i - 1 ] [ j - 1 ] + C [ i - 1 ] [ j ] ) % 1000000007 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        5,
+        13
+      ],
+      "mod_code": [
+        "c [ 0 ] [ 0 ] = 1 ;",
+        "for ( int j = 1 ; j <= i ; j ++ ) c [ i ] [ j ] = ( C [ i - 1 ] [ j - 1 ] + C [ i - 1 ] [ j ] ) % 1000000007 ;",
+        "for ( int i = 1 ; i <= k ; i ++ ) { dp [ i ] = 1LL * C [ s [ i ] - 1 ] * dp [ i - 1 ] - 1 ] * dp [ i - 1 ] % 1000000007 ; }"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        5,
+        13,
+        9
+      ],
+      "mod_code": [
+        "c [ 0 ] [ 0 ] = 1 ;",
+        "for ( int j = 1 ; j <= i ; j ++ ) c [ i ] [ j ] = ( C [ i - 1 ] [ j - 1 ] + C [ i - 1 ] [ j ] ) % 1000000007 ;",
+        "for ( int i = 1 ; i <= k ; i ++ ) { dp [ i ] = 1LL * C [ s [ i ] - 1 ] * dp [ i - 1 ] - 1 ] * dp [ i - 1 ] % 1000000007 ; }",
+        "cin >> c >> c [ i ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        5,
+        9
+      ],
+      "mod_code": [
+        "c [ 0 ] [ 0 ] = 1 ;",
+        "for ( int j = 1 ; j <= i ; j ++ ) c [ i ] [ j ] = ( C [ i - 1 ] [ j - 1 ] + C [ i - 1 ] [ j ] ) % 1000000007 ;",
+        "cin >> c >> c [ i ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        13
+      ],
+      "mod_code": [
+        "c [ 0 ] [ 0 ] = 1 ;",
+        "for ( int i = 1 ; i <= k ; i ++ ) { dp [ i ] = 1LL * C [ s [ i ] - 1 ] * dp [ i - 1 ] - 1 ] * dp [ i - 1 ] % 1000000007 ; }"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        13,
+        9
+      ],
+      "mod_code": [
+        "c [ 0 ] [ 0 ] = 1 ;",
+        "for ( int i = 1 ; i <= k ; i ++ ) { dp [ i ] = 1LL * C [ s [ i ] - 1 ] * dp [ i - 1 ] - 1 ] * dp [ i - 1 ] % 1000000007 ; }",
+        "cin >> c >> c [ i ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2,
+        9
+      ],
+      "mod_code": [
+        "c [ 0 ] [ 0 ] = 1 ;",
+        "cin >> c >> c [ i ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        5
+      ],
+      "mod_code": [
+        "c [ i ] [ 0 ] = 1 ;",
+        "for ( int j = 1 ; j <= i ; j ++ ) c [ i ] [ j ] = ( C [ i - 1 ] [ j - 1 ] + C [ i - 1 ] [ j ] ) % 1000000007 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        13
+      ],
+      "mod_code": [
+        "c [ i ] [ 0 ] = 1 ;",
+        "for ( int j = 1 ; j <= i ; j ++ ) c [ i ] [ j ] = ( C [ i - 1 ] [ j - 1 ] + C [ i - 1 ] [ j ] ) % 1000000007 ;",
+        "for ( int i = 1 ; i <= k ; i ++ ) { dp [ i ] = 1LL * C [ s [ i ] - 1 ] * dp [ i - 1 ] - 1 ] * dp [ i - 1 ] % 1000000007 ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        13,
+        9
+      ],
+      "mod_code": [
+        "c [ i ] [ 0 ] = 1 ;",
+        "for ( int j = 1 ; j <= i ; j ++ ) c [ i ] [ j ] = ( C [ i - 1 ] [ j - 1 ] + C [ i - 1 ] [ j ] ) % 1000000007 ;",
+        "for ( int i = 1 ; i <= k ; i ++ ) { dp [ i ] = 1LL * C [ s [ i ] - 1 ] * dp [ i - 1 ] - 1 ] * dp [ i - 1 ] % 1000000007 ; }",
+        "cin >> c >> c [ i ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        9
+      ],
+      "mod_code": [
+        "c [ i ] [ 0 ] = 1 ;",
+        "for ( int j = 1 ; j <= i ; j ++ ) c [ i ] [ j ] = ( C [ i - 1 ] [ j - 1 ] + C [ i - 1 ] [ j ] ) % 1000000007 ;",
+        "cin >> c >> c [ i ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        13
+      ],
+      "mod_code": [
+        "c [ i ] [ 0 ] = 1 ;",
+        "for ( int i = 1 ; i <= k ; i ++ ) { dp [ i ] = 1LL * C [ s [ i ] - 1 ] * dp [ i - 1 ] - 1 ] * dp [ i - 1 ] % 1000000007 ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        13,
+        9
+      ],
+      "mod_code": [
+        "c [ i ] [ 0 ] = 1 ;",
+        "for ( int i = 1 ; i <= k ; i ++ ) { dp [ i ] = 1LL * C [ s [ i ] - 1 ] * dp [ i - 1 ] - 1 ] * dp [ i - 1 ] % 1000000007 ; }",
+        "cin >> c >> c [ i ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4,
+        9
+      ],
+      "mod_code": [
+        "c [ i ] [ 0 ] = 1 ;",
+        "cin >> c >> c [ i ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        5,
+        13
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= i ; j ++ ) c [ i ] [ j ] = ( C [ i - 1 ] [ j - 1 ] + C [ i - 1 ] [ j ] ) % 1000000007 ;",
+        "for ( int i = 1 ; i <= k ; i ++ ) { dp [ i ] = 1LL * C [ s [ i ] - 1 ] * dp [ i - 1 ] - 1 ] * dp [ i - 1 ] % 1000000007 ; }"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        5,
+        13,
+        9
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= i ; j ++ ) c [ i ] [ j ] = ( C [ i - 1 ] [ j - 1 ] + C [ i - 1 ] [ j ] ) % 1000000007 ;",
+        "for ( int i = 1 ; i <= k ; i ++ ) { dp [ i ] = 1LL * C [ s [ i ] - 1 ] * dp [ i - 1 ] - 1 ] * dp [ i - 1 ] % 1000000007 ; }",
+        "cin >> c >> c [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        5,
+        9
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= i ; j ++ ) c [ i ] [ j ] = ( C [ i - 1 ] [ j - 1 ] + C [ i - 1 ] [ j ] ) % 1000000007 ;",
+        "cin >> c >> c [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        13,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= k ; i ++ ) { dp [ i ] = 1LL * C [ s [ i ] - 1 ] * dp [ i - 1 ] - 1 ] * dp [ i - 1 ] % 1000000007 ; }",
+        "cin >> c >> c [ i ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [1010]’)"
+    }
+  ]
+}

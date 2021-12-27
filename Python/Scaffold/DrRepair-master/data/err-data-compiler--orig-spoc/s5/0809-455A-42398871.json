@@ -1,0 +1,347 @@
+{
+  "meta": {
+    "index": 809,
+    "hitid": "37VE3DA4YUBH6S8KNSJMH1I2X1THBD",
+    "workerid": "A1C5H6OY3HGO4U",
+    "probid": "455A",
+    "subid": "42398871"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "dp = long long array of length 100005",
+      "code": "long long dp [ 100005 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "freq = long long array of length 100005",
+      "code": "long long freq [ 100005 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "a = long long array of length 100005",
+      "code": "long long a [ 100005 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "n = long long",
+      "code": "long long n ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for long long i = 0 to n exclusive",
+      "code": "for ( long long i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "read a [ i ]",
+      "code": "cin >> a [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "add 1 to freq [ a [ i ] ]",
+      "code": "freq [ a [ i ] ] ++ ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "for long long i = 100000 to 0 exclusive decreasing set dp [ i ] to the max of i * freq [ i ] + dp [ i + 2 ] and dp [ i + 1 ]",
+      "code": "for ( long long i = 100000 ; i > 0 ; i -- ) { dp [ i ] = max ( i * freq [ i ] + dp [ i + 2 ] , dp [ i + 1 ] ) ; }",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "print dp [ 1 ]",
+      "code": "cout << dp [ 1 ] << \" \\n \" ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "for ( long long i = 100000 ; i > 0 ; i -- ) { dp [ i ] = max ( i * freq [ i ] + dp [ i + 2 ] + dp [ i + 1 ] ) ; }"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(long long int)’"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "++ freq [ i ] ] ++ ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "for ( long long i = 100000 ; i > 0 ; i -- ) dp [ i ] = max ( i * freq [ i ] + dp [ i + 2 ] + dp [ i + 1 ] ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(long long int)’"
+    },
+    {
+      "mod_line": [
+        10,
+        8
+      ],
+      "mod_code": [
+        "for ( long long i = 100000 ; i > 0 ; i -- ) { dp [ i ] = max ( i * freq [ i ] + dp [ i + 2 ] + dp [ i + 1 ] ) ; }",
+        "++ freq [ i ] ] ++ ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        8,
+        7
+      ],
+      "mod_code": [
+        "for ( long long i = 100000 ; i > 0 ; i -- ) { dp [ i ] = max ( i * freq [ i ] + dp [ i + 2 ] + dp [ i + 1 ] ) ; }",
+        "++ freq [ i ] ] ++ ;",
+        "cout << a [ i ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        8,
+        7,
+        11
+      ],
+      "mod_code": [
+        "for ( long long i = 100000 ; i > 0 ; i -- ) { dp [ i ] = max ( i * freq [ i ] + dp [ i + 2 ] + dp [ i + 1 ] ) ; }",
+        "++ freq [ i ] ] ++ ;",
+        "cout << a [ i ] ;",
+        "cout << dp [ 1 ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        8,
+        11
+      ],
+      "mod_code": [
+        "for ( long long i = 100000 ; i > 0 ; i -- ) { dp [ i ] = max ( i * freq [ i ] + dp [ i + 2 ] + dp [ i + 1 ] ) ; }",
+        "++ freq [ i ] ] ++ ;",
+        "cout << dp [ 1 ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        7
+      ],
+      "mod_code": [
+        "for ( long long i = 100000 ; i > 0 ; i -- ) { dp [ i ] = max ( i * freq [ i ] + dp [ i + 2 ] + dp [ i + 1 ] ) ; }",
+        "cout << a [ i ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(long long int)’"
+    },
+    {
+      "mod_line": [
+        10,
+        7,
+        11
+      ],
+      "mod_code": [
+        "for ( long long i = 100000 ; i > 0 ; i -- ) { dp [ i ] = max ( i * freq [ i ] + dp [ i + 2 ] + dp [ i + 1 ] ) ; }",
+        "cout << a [ i ] ;",
+        "cout << dp [ 1 ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(long long int)’"
+    },
+    {
+      "mod_line": [
+        10,
+        11
+      ],
+      "mod_code": [
+        "for ( long long i = 100000 ; i > 0 ; i -- ) { dp [ i ] = max ( i * freq [ i ] + dp [ i + 2 ] + dp [ i + 1 ] ) ; }",
+        "cout << dp [ 1 ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(long long int)’"
+    },
+    {
+      "mod_line": [
+        8,
+        7
+      ],
+      "mod_code": [
+        "++ freq [ i ] ] ++ ;",
+        "cout << a [ i ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        7,
+        10
+      ],
+      "mod_code": [
+        "++ freq [ i ] ] ++ ;",
+        "cout << a [ i ] ;",
+        "for ( long long i = 100000 ; i > 0 ; i -- ) dp [ i ] = max ( i * freq [ i ] + dp [ i + 2 ] + dp [ i + 1 ] ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        7,
+        10,
+        11
+      ],
+      "mod_code": [
+        "++ freq [ i ] ] ++ ;",
+        "cout << a [ i ] ;",
+        "for ( long long i = 100000 ; i > 0 ; i -- ) dp [ i ] = max ( i * freq [ i ] + dp [ i + 2 ] + dp [ i + 1 ] ) ;",
+        "cout << dp [ 1 ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        7,
+        11
+      ],
+      "mod_code": [
+        "++ freq [ i ] ] ++ ;",
+        "cout << a [ i ] ;",
+        "cout << dp [ 1 ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        10
+      ],
+      "mod_code": [
+        "++ freq [ i ] ] ++ ;",
+        "for ( long long i = 100000 ; i > 0 ; i -- ) dp [ i ] = max ( i * freq [ i ] + dp [ i + 2 ] + dp [ i + 1 ] ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        11
+      ],
+      "mod_code": [
+        "++ freq [ i ] ] ++ ;",
+        "for ( long long i = 100000 ; i > 0 ; i -- ) dp [ i ] = max ( i * freq [ i ] + dp [ i + 2 ] + dp [ i + 1 ] ) ;",
+        "cout << dp [ 1 ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        11
+      ],
+      "mod_code": [
+        "++ freq [ i ] ] ++ ;",
+        "cout << dp [ 1 ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        10
+      ],
+      "mod_code": [
+        "cout << a [ i ] ;",
+        "for ( long long i = 100000 ; i > 0 ; i -- ) dp [ i ] = max ( i * freq [ i ] + dp [ i + 2 ] + dp [ i + 1 ] ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(long long int)’"
+    },
+    {
+      "mod_line": [
+        7,
+        10,
+        11
+      ],
+      "mod_code": [
+        "cout << a [ i ] ;",
+        "for ( long long i = 100000 ; i > 0 ; i -- ) dp [ i ] = max ( i * freq [ i ] + dp [ i + 2 ] + dp [ i + 1 ] ) ;",
+        "cout << dp [ 1 ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(long long int)’"
+    },
+    {
+      "mod_line": [
+        10,
+        11
+      ],
+      "mod_code": [
+        "for ( long long i = 100000 ; i > 0 ; i -- ) dp [ i ] = max ( i * freq [ i ] + dp [ i + 2 ] + dp [ i + 1 ] ) ;",
+        "cout << dp [ 1 ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(long long int)’"
+    }
+  ]
+}

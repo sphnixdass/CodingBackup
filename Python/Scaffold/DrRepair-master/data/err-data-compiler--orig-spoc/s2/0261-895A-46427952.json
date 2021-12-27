@@ -1,0 +1,705 @@
+{
+  "meta": {
+    "index": 261,
+    "hitid": "3Q7TKIAPOT4C7LPUS9PQ4JZ9H3ELDV",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "895A",
+    "subid": "46427952"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare integers n , i , j , k and ans",
+      "code": "int n , i , j , k , ans ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "declare vector of int a and s , both with n + 1 element",
+      "code": "vector < int > a ( n + 1 ) , s ( n + 1 ) ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "set value of s [ 0 ] to 0",
+      "code": "s [ 0 ] = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i = 1 to n inclusive",
+      "code": "for ( i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "read a [ i ]",
+      "code": "cin >> a [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "set s [ i ] to s [ i - 1 ] + a [ i ]",
+      "code": "s [ i ] = s [ i - 1 ] + a [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "set ans to 360",
+      "code": "ans = 360 ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "for i = 1 to n inclusive",
+      "code": "for ( i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "for j = i to n inclusive , ans = min ( ans , abs ( ( s [ j ] - s [ i - 1 ] ) - ( 360 - ( s [ j ] - s [ i - 1 ] ) ) ) )",
+      "code": "for ( j = i ; j <= n ; j ++ ) ans = min ( ans , abs ( ( s [ j ] - s [ i - 1 ] ) - ( 360 - ( s [ j ] - s [ i - 1 ] ) ) ) ) ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "print ans and \" \\ n \"",
+      "code": "cout << ans << \" \\n \" ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "for ( int j = i ; j <= n ; j ++ ) ans = min ( ans , abs ( ( s [ j ] - s [ i - 1 ] ) - ( 360 - ( s [ j ] - s [ i - 1 ] ) ) ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "vector < int > a ( n + 1 ) , both ( n + 1 ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "int s [ i ] = s [ i - 1 ] + a [ i ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "int ans = 360 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "redeclaration of ‘int ans’"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "for ( int j = i ; j <= n ; j ++ ) { ans = min ( ans , abs ( ( s [ j ] - s [ i - 1 ] ) - ( 360 - ( s [ j ] - s [ i - 1 ] ) ) ) ; }"
+      ],
+      "err_line": 11,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "\" cout << ans << \" \\n \" ;"
+      ],
+      "err_line": 13,
+      "err_msg": "stray ‘\\’ in program"
+    },
+    {
+      "mod_line": [
+        11,
+        13
+      ],
+      "mod_code": [
+        "for ( int j = i ; j <= n ; j ++ ) ans = min ( ans , abs ( ( s [ j ] - s [ i - 1 ] ) - ( 360 - ( s [ j ] - s [ i - 1 ] ) ) ) ;",
+        "\" cout << ans << \" \\n \" ;"
+      ],
+      "err_line": 13,
+      "err_msg": "stray ‘\\’ in program"
+    },
+    {
+      "mod_line": [
+        11,
+        13,
+        9
+      ],
+      "mod_code": [
+        "for ( int j = i ; j <= n ; j ++ ) ans = min ( ans , abs ( ( s [ j ] - s [ i - 1 ] ) - ( 360 - ( s [ j ] - s [ i - 1 ] ) ) ) ;",
+        "\" cout << ans << \" \\n \" ;",
+        "int ans = 360 ;"
+      ],
+      "err_line": 13,
+      "err_msg": "stray ‘\\’ in program"
+    },
+    {
+      "mod_line": [
+        11,
+        13,
+        9,
+        7
+      ],
+      "mod_code": [
+        "for ( int j = i ; j <= n ; j ++ ) ans = min ( ans , abs ( ( s [ j ] - s [ i - 1 ] ) - ( 360 - ( s [ j ] - s [ i - 1 ] ) ) ) ;",
+        "\" cout << ans << \" \\n \" ;",
+        "int ans = 360 ;",
+        "int s [ i ] = s [ i - 1 ] + a [ i ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "stray ‘\\’ in program"
+    },
+    {
+      "mod_line": [
+        11,
+        13,
+        9,
+        3
+      ],
+      "mod_code": [
+        "for ( int j = i ; j <= n ; j ++ ) ans = min ( ans , abs ( ( s [ j ] - s [ i - 1 ] ) - ( 360 - ( s [ j ] - s [ i - 1 ] ) ) ) ;",
+        "\" cout << ans << \" \\n \" ;",
+        "int ans = 360 ;",
+        "vector < int > a ( n + 1 ) , both ( n + 1 ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "stray ‘\\’ in program"
+    },
+    {
+      "mod_line": [
+        11,
+        13,
+        7
+      ],
+      "mod_code": [
+        "for ( int j = i ; j <= n ; j ++ ) ans = min ( ans , abs ( ( s [ j ] - s [ i - 1 ] ) - ( 360 - ( s [ j ] - s [ i - 1 ] ) ) ) ;",
+        "\" cout << ans << \" \\n \" ;",
+        "int s [ i ] = s [ i - 1 ] + a [ i ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "stray ‘\\’ in program"
+    },
+    {
+      "mod_line": [
+        11,
+        13,
+        7,
+        3
+      ],
+      "mod_code": [
+        "for ( int j = i ; j <= n ; j ++ ) ans = min ( ans , abs ( ( s [ j ] - s [ i - 1 ] ) - ( 360 - ( s [ j ] - s [ i - 1 ] ) ) ) ;",
+        "\" cout << ans << \" \\n \" ;",
+        "int s [ i ] = s [ i - 1 ] + a [ i ] ;",
+        "vector < int > a ( n + 1 ) , both ( n + 1 ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "stray ‘\\’ in program"
+    },
+    {
+      "mod_line": [
+        11,
+        13,
+        3
+      ],
+      "mod_code": [
+        "for ( int j = i ; j <= n ; j ++ ) ans = min ( ans , abs ( ( s [ j ] - s [ i - 1 ] ) - ( 360 - ( s [ j ] - s [ i - 1 ] ) ) ) ;",
+        "\" cout << ans << \" \\n \" ;",
+        "vector < int > a ( n + 1 ) , both ( n + 1 ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "stray ‘\\’ in program"
+    },
+    {
+      "mod_line": [
+        11,
+        9
+      ],
+      "mod_code": [
+        "for ( int j = i ; j <= n ; j ++ ) ans = min ( ans , abs ( ( s [ j ] - s [ i - 1 ] ) - ( 360 - ( s [ j ] - s [ i - 1 ] ) ) ) ;",
+        "int ans = 360 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "redeclaration of ‘int ans’"
+    },
+    {
+      "mod_line": [
+        11,
+        9,
+        7
+      ],
+      "mod_code": [
+        "for ( int j = i ; j <= n ; j ++ ) ans = min ( ans , abs ( ( s [ j ] - s [ i - 1 ] ) - ( 360 - ( s [ j ] - s [ i - 1 ] ) ) ) ;",
+        "int ans = 360 ;",
+        "int s [ i ] = s [ i - 1 ] + a [ i ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        11,
+        9,
+        7,
+        3
+      ],
+      "mod_code": [
+        "for ( int j = i ; j <= n ; j ++ ) ans = min ( ans , abs ( ( s [ j ] - s [ i - 1 ] ) - ( 360 - ( s [ j ] - s [ i - 1 ] ) ) ) ;",
+        "int ans = 360 ;",
+        "int s [ i ] = s [ i - 1 ] + a [ i ] ;",
+        "vector < int > a ( n + 1 ) , both ( n + 1 ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        9,
+        3
+      ],
+      "mod_code": [
+        "for ( int j = i ; j <= n ; j ++ ) ans = min ( ans , abs ( ( s [ j ] - s [ i - 1 ] ) - ( 360 - ( s [ j ] - s [ i - 1 ] ) ) ) ;",
+        "int ans = 360 ;",
+        "vector < int > a ( n + 1 ) , both ( n + 1 ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        7
+      ],
+      "mod_code": [
+        "for ( int j = i ; j <= n ; j ++ ) ans = min ( ans , abs ( ( s [ j ] - s [ i - 1 ] ) - ( 360 - ( s [ j ] - s [ i - 1 ] ) ) ) ;",
+        "int s [ i ] = s [ i - 1 ] + a [ i ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        11,
+        7,
+        3
+      ],
+      "mod_code": [
+        "for ( int j = i ; j <= n ; j ++ ) ans = min ( ans , abs ( ( s [ j ] - s [ i - 1 ] ) - ( 360 - ( s [ j ] - s [ i - 1 ] ) ) ) ;",
+        "int s [ i ] = s [ i - 1 ] + a [ i ] ;",
+        "vector < int > a ( n + 1 ) , both ( n + 1 ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        3
+      ],
+      "mod_code": [
+        "for ( int j = i ; j <= n ; j ++ ) ans = min ( ans , abs ( ( s [ j ] - s [ i - 1 ] ) - ( 360 - ( s [ j ] - s [ i - 1 ] ) ) ) ;",
+        "vector < int > a ( n + 1 ) , both ( n + 1 ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        9
+      ],
+      "mod_code": [
+        "\" cout << ans << \" \\n \" ;",
+        "int ans = 360 ;"
+      ],
+      "err_line": 13,
+      "err_msg": "stray ‘\\’ in program"
+    },
+    {
+      "mod_line": [
+        13,
+        9,
+        7
+      ],
+      "mod_code": [
+        "\" cout << ans << \" \\n \" ;",
+        "int ans = 360 ;",
+        "int s [ i ] = s [ i - 1 ] + a [ i ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "stray ‘\\’ in program"
+    },
+    {
+      "mod_line": [
+        13,
+        9,
+        7,
+        3
+      ],
+      "mod_code": [
+        "\" cout << ans << \" \\n \" ;",
+        "int ans = 360 ;",
+        "int s [ i ] = s [ i - 1 ] + a [ i ] ;",
+        "vector < int > a ( n + 1 ) , both ( n + 1 ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "stray ‘\\’ in program"
+    },
+    {
+      "mod_line": [
+        13,
+        9,
+        7,
+        11
+      ],
+      "mod_code": [
+        "\" cout << ans << \" \\n \" ;",
+        "int ans = 360 ;",
+        "int s [ i ] = s [ i - 1 ] + a [ i ] ;",
+        "for ( int j = i ; j <= n ; j ++ ) { ans = min ( ans , abs ( ( s [ j ] - s [ i - 1 ] ) - ( 360 - ( s [ j ] - s [ i - 1 ] ) ) ) ; }"
+      ],
+      "err_line": 13,
+      "err_msg": "stray ‘\\’ in program"
+    },
+    {
+      "mod_line": [
+        13,
+        9,
+        3
+      ],
+      "mod_code": [
+        "\" cout << ans << \" \\n \" ;",
+        "int ans = 360 ;",
+        "vector < int > a ( n + 1 ) , both ( n + 1 ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "stray ‘\\’ in program"
+    },
+    {
+      "mod_line": [
+        13,
+        9,
+        3,
+        11
+      ],
+      "mod_code": [
+        "\" cout << ans << \" \\n \" ;",
+        "int ans = 360 ;",
+        "vector < int > a ( n + 1 ) , both ( n + 1 ) ;",
+        "for ( int j = i ; j <= n ; j ++ ) { ans = min ( ans , abs ( ( s [ j ] - s [ i - 1 ] ) - ( 360 - ( s [ j ] - s [ i - 1 ] ) ) ) ; }"
+      ],
+      "err_line": 13,
+      "err_msg": "stray ‘\\’ in program"
+    },
+    {
+      "mod_line": [
+        13,
+        9,
+        11
+      ],
+      "mod_code": [
+        "\" cout << ans << \" \\n \" ;",
+        "int ans = 360 ;",
+        "for ( int j = i ; j <= n ; j ++ ) { ans = min ( ans , abs ( ( s [ j ] - s [ i - 1 ] ) - ( 360 - ( s [ j ] - s [ i - 1 ] ) ) ) ; }"
+      ],
+      "err_line": 13,
+      "err_msg": "stray ‘\\’ in program"
+    },
+    {
+      "mod_line": [
+        13,
+        7
+      ],
+      "mod_code": [
+        "\" cout << ans << \" \\n \" ;",
+        "int s [ i ] = s [ i - 1 ] + a [ i ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "stray ‘\\’ in program"
+    },
+    {
+      "mod_line": [
+        13,
+        7,
+        3
+      ],
+      "mod_code": [
+        "\" cout << ans << \" \\n \" ;",
+        "int s [ i ] = s [ i - 1 ] + a [ i ] ;",
+        "vector < int > a ( n + 1 ) , both ( n + 1 ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "stray ‘\\’ in program"
+    },
+    {
+      "mod_line": [
+        13,
+        7,
+        3,
+        11
+      ],
+      "mod_code": [
+        "\" cout << ans << \" \\n \" ;",
+        "int s [ i ] = s [ i - 1 ] + a [ i ] ;",
+        "vector < int > a ( n + 1 ) , both ( n + 1 ) ;",
+        "for ( int j = i ; j <= n ; j ++ ) { ans = min ( ans , abs ( ( s [ j ] - s [ i - 1 ] ) - ( 360 - ( s [ j ] - s [ i - 1 ] ) ) ) ; }"
+      ],
+      "err_line": 13,
+      "err_msg": "stray ‘\\’ in program"
+    },
+    {
+      "mod_line": [
+        13,
+        7,
+        11
+      ],
+      "mod_code": [
+        "\" cout << ans << \" \\n \" ;",
+        "int s [ i ] = s [ i - 1 ] + a [ i ] ;",
+        "for ( int j = i ; j <= n ; j ++ ) { ans = min ( ans , abs ( ( s [ j ] - s [ i - 1 ] ) - ( 360 - ( s [ j ] - s [ i - 1 ] ) ) ) ; }"
+      ],
+      "err_line": 13,
+      "err_msg": "stray ‘\\’ in program"
+    },
+    {
+      "mod_line": [
+        13,
+        3
+      ],
+      "mod_code": [
+        "\" cout << ans << \" \\n \" ;",
+        "vector < int > a ( n + 1 ) , both ( n + 1 ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "stray ‘\\’ in program"
+    },
+    {
+      "mod_line": [
+        13,
+        3,
+        11
+      ],
+      "mod_code": [
+        "\" cout << ans << \" \\n \" ;",
+        "vector < int > a ( n + 1 ) , both ( n + 1 ) ;",
+        "for ( int j = i ; j <= n ; j ++ ) { ans = min ( ans , abs ( ( s [ j ] - s [ i - 1 ] ) - ( 360 - ( s [ j ] - s [ i - 1 ] ) ) ) ; }"
+      ],
+      "err_line": 13,
+      "err_msg": "stray ‘\\’ in program"
+    },
+    {
+      "mod_line": [
+        13,
+        11
+      ],
+      "mod_code": [
+        "\" cout << ans << \" \\n \" ;",
+        "for ( int j = i ; j <= n ; j ++ ) { ans = min ( ans , abs ( ( s [ j ] - s [ i - 1 ] ) - ( 360 - ( s [ j ] - s [ i - 1 ] ) ) ) ; }"
+      ],
+      "err_line": 13,
+      "err_msg": "stray ‘\\’ in program"
+    },
+    {
+      "mod_line": [
+        9,
+        7
+      ],
+      "mod_code": [
+        "int ans = 360 ;",
+        "int s [ i ] = s [ i - 1 ] + a [ i ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        9,
+        7,
+        3
+      ],
+      "mod_code": [
+        "int ans = 360 ;",
+        "int s [ i ] = s [ i - 1 ] + a [ i ] ;",
+        "vector < int > a ( n + 1 ) , both ( n + 1 ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        7,
+        3,
+        11
+      ],
+      "mod_code": [
+        "int ans = 360 ;",
+        "int s [ i ] = s [ i - 1 ] + a [ i ] ;",
+        "vector < int > a ( n + 1 ) , both ( n + 1 ) ;",
+        "for ( int j = i ; j <= n ; j ++ ) { ans = min ( ans , abs ( ( s [ j ] - s [ i - 1 ] ) - ( 360 - ( s [ j ] - s [ i - 1 ] ) ) ) ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        7,
+        11
+      ],
+      "mod_code": [
+        "int ans = 360 ;",
+        "int s [ i ] = s [ i - 1 ] + a [ i ] ;",
+        "for ( int j = i ; j <= n ; j ++ ) { ans = min ( ans , abs ( ( s [ j ] - s [ i - 1 ] ) - ( 360 - ( s [ j ] - s [ i - 1 ] ) ) ) ; }"
+      ],
+      "err_line": 7,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        9,
+        3
+      ],
+      "mod_code": [
+        "int ans = 360 ;",
+        "vector < int > a ( n + 1 ) , both ( n + 1 ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        11
+      ],
+      "mod_code": [
+        "int ans = 360 ;",
+        "vector < int > a ( n + 1 ) , both ( n + 1 ) ;",
+        "for ( int j = i ; j <= n ; j ++ ) { ans = min ( ans , abs ( ( s [ j ] - s [ i - 1 ] ) - ( 360 - ( s [ j ] - s [ i - 1 ] ) ) ) ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        11
+      ],
+      "mod_code": [
+        "int ans = 360 ;",
+        "for ( int j = i ; j <= n ; j ++ ) { ans = min ( ans , abs ( ( s [ j ] - s [ i - 1 ] ) - ( 360 - ( s [ j ] - s [ i - 1 ] ) ) ) ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "redeclaration of ‘int ans’"
+    },
+    {
+      "mod_line": [
+        7,
+        3
+      ],
+      "mod_code": [
+        "int s [ i ] = s [ i - 1 ] + a [ i ] ;",
+        "vector < int > a ( n + 1 ) , both ( n + 1 ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        3,
+        11
+      ],
+      "mod_code": [
+        "int s [ i ] = s [ i - 1 ] + a [ i ] ;",
+        "vector < int > a ( n + 1 ) , both ( n + 1 ) ;",
+        "for ( int j = i ; j <= n ; j ++ ) { ans = min ( ans , abs ( ( s [ j ] - s [ i - 1 ] ) - ( 360 - ( s [ j ] - s [ i - 1 ] ) ) ) ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        11
+      ],
+      "mod_code": [
+        "int s [ i ] = s [ i - 1 ] + a [ i ] ;",
+        "for ( int j = i ; j <= n ; j ++ ) { ans = min ( ans , abs ( ( s [ j ] - s [ i - 1 ] ) - ( 360 - ( s [ j ] - s [ i - 1 ] ) ) ) ; }"
+      ],
+      "err_line": 7,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        3,
+        11
+      ],
+      "mod_code": [
+        "vector < int > a ( n + 1 ) , both ( n + 1 ) ;",
+        "for ( int j = i ; j <= n ; j ++ ) { ans = min ( ans , abs ( ( s [ j ] - s [ i - 1 ] ) - ( 360 - ( s [ j ] - s [ i - 1 ] ) ) ) ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "‘s’ was not declared in this scope"
+    }
+  ]
+}

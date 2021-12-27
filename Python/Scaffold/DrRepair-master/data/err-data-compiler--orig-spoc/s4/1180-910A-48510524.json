@@ -1,0 +1,561 @@
+{
+  "meta": {
+    "index": 1180,
+    "hitid": "3PUOXASB57XK9KTHVUBXQ2RH5R69ZK",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "910A",
+    "subid": "48510524"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "set constant integer MAXN to 101",
+      "code": "const int MAXN = 101 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "data is an character array with size MAXN",
+      "code": "char data [ MAXN ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "dp is an integer array with size MAXN",
+      "code": "int dp [ MAXN ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "let n and d be integers",
+      "code": "int n , d ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "read n and d",
+      "code": "cin >> n >> d ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 1 to n + 1 exclusive read data from the input",
+      "code": "for ( int i = 1 ; i < n + 1 ; i ++ ) { cin >> data [ i ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "fill dp from index 1 to n + 1 exclusive with value 1e9",
+      "code": "for ( int i = 1 ; i < n + 1 ; i ++ ) { dp [ i ] = 1e9 ; }",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "set value of dp [ 1 ] to 0",
+      "code": "dp [ 1 ] = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "for i = 1 to n + 1 exclusive",
+      "code": "for ( int i = 1 ; i < n + 1 ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "if data [ i ] = ' 1 '",
+      "code": "if ( data [ i ] == ' 1 ' )",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "for integer j = i + 1 to i + d + 1 exclusive",
+      "code": "for ( int j = i + 1 ; j < i + d + 1 ; j ++ )",
+      "indent": 3
+    },
+    {
+      "line": 12,
+      "text": "if j < = n",
+      "code": "if ( j <= n )",
+      "indent": 4
+    },
+    {
+      "line": 13,
+      "text": "if data [ j ] = ' 1 ' , dp [ j ] = min of dp [ j ] and dp [ i ] + 1",
+      "code": "if ( data [ j ] == ' 1 ' ) { dp [ j ] = min ( dp [ j ] , dp [ i ] + 1 ) ; }",
+      "indent": 5
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 4
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "if dp [ n ] = 1e9 , set dp [ n ] to - 1",
+      "code": "if ( dp [ n ] == 1e9 ) { dp [ n ] = - 1 ; }",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "print dp [ n ] and a new line",
+      "code": "cout << dp [ n ] << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘data’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "cin >> n >> k ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "memset ( dp , n , n + 1 , 1e9 ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "too many arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        7,
+        5
+      ],
+      "mod_code": [
+        "memset ( dp , 1 , sizeof ( dp + 1 ) ) ;",
+        "cin >> n >> k ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        5,
+        10
+      ],
+      "mod_code": [
+        "memset ( dp , 1 , sizeof ( dp + 1 ) ) ;",
+        "cin >> n >> k ;",
+        "if ( data [ i ] == ' l ' )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        5,
+        10,
+        8
+      ],
+      "mod_code": [
+        "memset ( dp , 1 , sizeof ( dp + 1 ) ) ;",
+        "cin >> n >> k ;",
+        "if ( data [ i ] == ' l ' )",
+        "dp [ ' 1 ' ] = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        5,
+        10,
+        12
+      ],
+      "mod_code": [
+        "memset ( dp , 1 , sizeof ( dp + 1 ) ) ;",
+        "cin >> n >> k ;",
+        "if ( data [ i ] == ' l ' )",
+        "if ( j < n )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        5,
+        8
+      ],
+      "mod_code": [
+        "memset ( dp , 1 , sizeof ( dp + 1 ) ) ;",
+        "cin >> n >> k ;",
+        "dp [ ' 1 ' ] = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        5,
+        8,
+        12
+      ],
+      "mod_code": [
+        "memset ( dp , 1 , sizeof ( dp + 1 ) ) ;",
+        "cin >> n >> k ;",
+        "dp [ ' 1 ' ] = 0 ;",
+        "if ( j < n )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        5,
+        12
+      ],
+      "mod_code": [
+        "memset ( dp , 1 , sizeof ( dp + 1 ) ) ;",
+        "cin >> n >> k ;",
+        "if ( j < n )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        10
+      ],
+      "mod_code": [
+        "cin >> n >> k ;",
+        "if ( data [ i ] == ' l ' )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        8
+      ],
+      "mod_code": [
+        "cin >> n >> k ;",
+        "if ( data [ i ] == ' l ' )",
+        "dp [ ' 1 ' ] = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        8,
+        7
+      ],
+      "mod_code": [
+        "cin >> n >> k ;",
+        "if ( data [ i ] == ' l ' )",
+        "dp [ ' 1 ' ] = 0 ;",
+        "memset ( dp , n , n + 1 , 1e9 ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        8,
+        12
+      ],
+      "mod_code": [
+        "cin >> n >> k ;",
+        "if ( data [ i ] == ' l ' )",
+        "dp [ ' 1 ' ] = 0 ;",
+        "if ( j < n )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        7
+      ],
+      "mod_code": [
+        "cin >> n >> k ;",
+        "if ( data [ i ] == ' l ' )",
+        "memset ( dp , n , n + 1 , 1e9 ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        7,
+        12
+      ],
+      "mod_code": [
+        "cin >> n >> k ;",
+        "if ( data [ i ] == ' l ' )",
+        "memset ( dp , n , n + 1 , 1e9 ) ;",
+        "if ( j < n )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        12
+      ],
+      "mod_code": [
+        "cin >> n >> k ;",
+        "if ( data [ i ] == ' l ' )",
+        "if ( j < n )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        8
+      ],
+      "mod_code": [
+        "cin >> n >> k ;",
+        "dp [ ' 1 ' ] = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        7
+      ],
+      "mod_code": [
+        "cin >> n >> k ;",
+        "dp [ ' 1 ' ] = 0 ;",
+        "memset ( dp , n , n + 1 , 1e9 ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        7,
+        12
+      ],
+      "mod_code": [
+        "cin >> n >> k ;",
+        "dp [ ' 1 ' ] = 0 ;",
+        "memset ( dp , n , n + 1 , 1e9 ) ;",
+        "if ( j < n )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        12
+      ],
+      "mod_code": [
+        "cin >> n >> k ;",
+        "dp [ ' 1 ' ] = 0 ;",
+        "if ( j < n )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        7
+      ],
+      "mod_code": [
+        "cin >> n >> k ;",
+        "memset ( dp , n , n + 1 , 1e9 ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        7,
+        12
+      ],
+      "mod_code": [
+        "cin >> n >> k ;",
+        "memset ( dp , n , n + 1 , 1e9 ) ;",
+        "if ( j < n )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        12
+      ],
+      "mod_code": [
+        "cin >> n >> k ;",
+        "if ( j < n )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        8,
+        7
+      ],
+      "mod_code": [
+        "if ( data [ i ] == ' l ' )",
+        "dp [ ' 1 ' ] = 0 ;",
+        "memset ( dp , n , n + 1 , 1e9 ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "too many arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        10,
+        8,
+        7,
+        12
+      ],
+      "mod_code": [
+        "if ( data [ i ] == ' l ' )",
+        "dp [ ' 1 ' ] = 0 ;",
+        "memset ( dp , n , n + 1 , 1e9 ) ;",
+        "if ( j < n )"
+      ],
+      "err_line": 7,
+      "err_msg": "too many arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        10,
+        7
+      ],
+      "mod_code": [
+        "if ( data [ i ] == ' l ' )",
+        "memset ( dp , n , n + 1 , 1e9 ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "too many arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        10,
+        7,
+        12
+      ],
+      "mod_code": [
+        "if ( data [ i ] == ' l ' )",
+        "memset ( dp , n , n + 1 , 1e9 ) ;",
+        "if ( j < n )"
+      ],
+      "err_line": 7,
+      "err_msg": "too many arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        8,
+        7
+      ],
+      "mod_code": [
+        "dp [ ' 1 ' ] = 0 ;",
+        "memset ( dp , n , n + 1 , 1e9 ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "too many arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        8,
+        7,
+        12
+      ],
+      "mod_code": [
+        "dp [ ' 1 ' ] = 0 ;",
+        "memset ( dp , n , n + 1 , 1e9 ) ;",
+        "if ( j < n )"
+      ],
+      "err_line": 7,
+      "err_msg": "too many arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        7,
+        12
+      ],
+      "mod_code": [
+        "memset ( dp , n , n + 1 , 1e9 ) ;",
+        "if ( j < n )"
+      ],
+      "err_line": 7,
+      "err_msg": "too many arguments to function ‘void* memset(void*, int, size_t)’"
+    }
+  ]
+}

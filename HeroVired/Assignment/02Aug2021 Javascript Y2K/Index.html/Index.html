@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function getinput()
+            {
+                var daterange = window.prompt("Enter 2 digit date range : ");
+                alert("output year format : " + convertY2K(daterange));
+            }
+
+            function convertY2K(Year2Digit)
+            {
+                if(!isNaN(Year2Digit)){
+
+                    var a = parseInt(Year2Digit);
+                    var outputyear = "";
+
+                    if (a < 35)
+                    {
+                        outputyear = "20" + a.toString();
+                    } else
+                    {
+                        outputyear = "19" + a.toString();
+                    }
+
+                    return outputyear;
+
+                } else {
+                    console.log("Incorrect input format");
+                }
+
+                return "Unable to find the year";
+            }
+
+        </script>
+    </head>
+    <body>
+        <button onclick="getinput()">Check Y2K date</button>
+    </body>
+</html>

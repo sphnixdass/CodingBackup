@@ -1,0 +1,745 @@
+{
+  "meta": {
+    "index": 2399,
+    "hitid": "3UQVX1UPFSBC7F2S6RJQAGGHHEE02S",
+    "workerid": "A1EKVUFWL7OJMO",
+    "probid": "543A",
+    "subid": "47545558"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "let N , inf = const int with N = 5e2 + 1 and inf = 1e9 + 7",
+      "code": "const int N = 5e2 + 1 , inf = 1e9 + 7 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "hot = 2D array of N rows and columns",
+      "code": "int hot [ N ] [ N ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "n , m , b , mod = integers and Arr = array of N integers",
+      "code": "int n , m , b , mod , Arr [ N ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "read n , m , b , mod",
+      "code": "cin >> n >> m >> b >> mod ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i = 1 to n inclusive read Arr [ i ]",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) cin >> Arr [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "set hot [ 0 ] [ 0 ] = 1",
+      "code": "hot [ 0 ] [ 0 ] = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for i = 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "for j = 1 to m inclusive",
+      "code": "for ( int j = 1 ; j <= m ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "for k = i index of Arr to b inclusive set hot [ j ] [ k ] = hot [ j ] [ k ] + hot [ j - 1 ] [ k - Arr [ i ] ] , hot [ j ] [ k ] = hot [ j ] [ k ] % mod",
+      "code": "for ( int k = Arr [ i ] ; k <= b ; k ++ ) hot [ j ] [ k ] += hot [ j - 1 ] [ k - Arr [ i ] ] , hot [ j ] [ k ] %= mod ;",
+      "indent": 3
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "set res to 0",
+      "code": "int res = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "for i = 0 to b inclusive res = ( res + hot [ m ] [ i ] ) % mod",
+      "code": "for ( int i = 0 ; i <= b ; i ++ ) res = ( res + hot [ m ] [ i ] ) % mod ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "print res",
+      "code": "cout << res << ' \\n ' ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int hot [ N ] [ ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "declaration of ‘hot’ as multidimensional array must have bounds for all dimensions except the first"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "int n , m , Arr [ N ] , b [ N ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘int [501]’)"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "for ( int k = i ; k <= b + b ; k ++ ) { hot [ j ] [ k ] = hot [ j ] [ k ] + hot [ j - 1 ] [ k - Arr [ i ] % k - Arr [ j ] [ k ] % mod ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "res = 0 ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘res’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "char hot [ N ] [ ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "declaration of ‘hot’ as multidimensional array must have bounds for all dimensions except the first"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "int n , m , b [ N ] , b [ N ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "redefinition of ‘int b [501]’"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "int hot [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "for ( int k = i ; k <= b + b ; k ++ ) { hot [ j ] [ k ] = hot [ j ] [ k ] + hot [ j - 1 ] [ k - Arr [ j ] % k - Arr [ j ] [ k ] % mod ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        2
+      ],
+      "mod_code": [
+        "int hot [ N ] [ ] ;",
+        "int n , m , Arr [ N ] , b [ N ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "declaration of ‘hot’ as multidimensional array must have bounds for all dimensions except the first"
+    },
+    {
+      "mod_line": [
+        1,
+        2,
+        9
+      ],
+      "mod_code": [
+        "int hot [ N ] [ ] ;",
+        "int n , m , Arr [ N ] , b [ N ] ;",
+        "for ( int k = i ; k <= b + b ; k ++ ) { hot [ j ] [ k ] = hot [ j ] [ k ] + hot [ j - 1 ] [ k - Arr [ i ] % k - Arr [ j ] [ k ] % mod ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "declaration of ‘hot’ as multidimensional array must have bounds for all dimensions except the first"
+    },
+    {
+      "mod_line": [
+        1,
+        2,
+        9,
+        12
+      ],
+      "mod_code": [
+        "int hot [ N ] [ ] ;",
+        "int n , m , Arr [ N ] , b [ N ] ;",
+        "for ( int k = i ; k <= b + b ; k ++ ) { hot [ j ] [ k ] = hot [ j ] [ k ] + hot [ j - 1 ] [ k - Arr [ i ] % k - Arr [ j ] [ k ] % mod ; }",
+        "res = 0 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "declaration of ‘hot’ as multidimensional array must have bounds for all dimensions except the first"
+    },
+    {
+      "mod_line": [
+        1,
+        2,
+        9,
+        8
+      ],
+      "mod_code": [
+        "int hot [ N ] [ ] ;",
+        "int n , m , Arr [ N ] , b [ N ] ;",
+        "for ( int k = i ; k <= b + b ; k ++ ) { hot [ j ] [ k ] = hot [ j ] [ k ] + hot [ j - 1 ] [ k - Arr [ i ] % k - Arr [ j ] [ k ] % mod ; }",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "declaration of ‘hot’ as multidimensional array must have bounds for all dimensions except the first"
+    },
+    {
+      "mod_line": [
+        1,
+        2,
+        12
+      ],
+      "mod_code": [
+        "int hot [ N ] [ ] ;",
+        "int n , m , Arr [ N ] , b [ N ] ;",
+        "res = 0 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "declaration of ‘hot’ as multidimensional array must have bounds for all dimensions except the first"
+    },
+    {
+      "mod_line": [
+        1,
+        2,
+        12,
+        8
+      ],
+      "mod_code": [
+        "int hot [ N ] [ ] ;",
+        "int n , m , Arr [ N ] , b [ N ] ;",
+        "res = 0 ;",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "declaration of ‘hot’ as multidimensional array must have bounds for all dimensions except the first"
+    },
+    {
+      "mod_line": [
+        1,
+        2,
+        12,
+        9
+      ],
+      "mod_code": [
+        "int hot [ N ] [ ] ;",
+        "int n , m , Arr [ N ] , b [ N ] ;",
+        "res = 0 ;",
+        "for ( int k = i ; k <= b + b ; k ++ ) { hot [ j ] [ k ] = hot [ j ] [ k ] + hot [ j - 1 ] [ k - Arr [ j ] % k - Arr [ j ] [ k ] % mod ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "declaration of ‘hot’ as multidimensional array must have bounds for all dimensions except the first"
+    },
+    {
+      "mod_line": [
+        1,
+        2,
+        8
+      ],
+      "mod_code": [
+        "int hot [ N ] [ ] ;",
+        "int n , m , Arr [ N ] , b [ N ] ;",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "declaration of ‘hot’ as multidimensional array must have bounds for all dimensions except the first"
+    },
+    {
+      "mod_line": [
+        1,
+        2,
+        8,
+        9
+      ],
+      "mod_code": [
+        "int hot [ N ] [ ] ;",
+        "int n , m , Arr [ N ] , b [ N ] ;",
+        "for ( j = 1 ; j <= m ; j ++ )",
+        "for ( int k = i ; k <= b + b ; k ++ ) { hot [ j ] [ k ] = hot [ j ] [ k ] + hot [ j - 1 ] [ k - Arr [ j ] % k - Arr [ j ] [ k ] % mod ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "declaration of ‘hot’ as multidimensional array must have bounds for all dimensions except the first"
+    },
+    {
+      "mod_line": [
+        1,
+        2,
+        9
+      ],
+      "mod_code": [
+        "int hot [ N ] [ ] ;",
+        "int n , m , Arr [ N ] , b [ N ] ;",
+        "for ( int k = i ; k <= b + b ; k ++ ) { hot [ j ] [ k ] = hot [ j ] [ k ] + hot [ j - 1 ] [ k - Arr [ j ] % k - Arr [ j ] [ k ] % mod ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "declaration of ‘hot’ as multidimensional array must have bounds for all dimensions except the first"
+    },
+    {
+      "mod_line": [
+        1,
+        9
+      ],
+      "mod_code": [
+        "int hot [ N ] [ ] ;",
+        "for ( int k = i ; k <= b + b ; k ++ ) { hot [ j ] [ k ] = hot [ j ] [ k ] + hot [ j - 1 ] [ k - Arr [ i ] % k - Arr [ j ] [ k ] % mod ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "declaration of ‘hot’ as multidimensional array must have bounds for all dimensions except the first"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        12
+      ],
+      "mod_code": [
+        "int hot [ N ] [ ] ;",
+        "for ( int k = i ; k <= b + b ; k ++ ) { hot [ j ] [ k ] = hot [ j ] [ k ] + hot [ j - 1 ] [ k - Arr [ i ] % k - Arr [ j ] [ k ] % mod ; }",
+        "res = 0 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "declaration of ‘hot’ as multidimensional array must have bounds for all dimensions except the first"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        12,
+        8
+      ],
+      "mod_code": [
+        "int hot [ N ] [ ] ;",
+        "for ( int k = i ; k <= b + b ; k ++ ) { hot [ j ] [ k ] = hot [ j ] [ k ] + hot [ j - 1 ] [ k - Arr [ i ] % k - Arr [ j ] [ k ] % mod ; }",
+        "res = 0 ;",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "declaration of ‘hot’ as multidimensional array must have bounds for all dimensions except the first"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        8
+      ],
+      "mod_code": [
+        "int hot [ N ] [ ] ;",
+        "for ( int k = i ; k <= b + b ; k ++ ) { hot [ j ] [ k ] = hot [ j ] [ k ] + hot [ j - 1 ] [ k - Arr [ i ] % k - Arr [ j ] [ k ] % mod ; }",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "declaration of ‘hot’ as multidimensional array must have bounds for all dimensions except the first"
+    },
+    {
+      "mod_line": [
+        1,
+        12
+      ],
+      "mod_code": [
+        "int hot [ N ] [ ] ;",
+        "res = 0 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "declaration of ‘hot’ as multidimensional array must have bounds for all dimensions except the first"
+    },
+    {
+      "mod_line": [
+        1,
+        12,
+        8
+      ],
+      "mod_code": [
+        "int hot [ N ] [ ] ;",
+        "res = 0 ;",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "declaration of ‘hot’ as multidimensional array must have bounds for all dimensions except the first"
+    },
+    {
+      "mod_line": [
+        1,
+        12,
+        8,
+        9
+      ],
+      "mod_code": [
+        "int hot [ N ] [ ] ;",
+        "res = 0 ;",
+        "for ( j = 1 ; j <= m ; j ++ )",
+        "for ( int k = i ; k <= b + b ; k ++ ) { hot [ j ] [ k ] = hot [ j ] [ k ] + hot [ j - 1 ] [ k - Arr [ j ] % k - Arr [ j ] [ k ] % mod ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "declaration of ‘hot’ as multidimensional array must have bounds for all dimensions except the first"
+    },
+    {
+      "mod_line": [
+        1,
+        12,
+        9
+      ],
+      "mod_code": [
+        "int hot [ N ] [ ] ;",
+        "res = 0 ;",
+        "for ( int k = i ; k <= b + b ; k ++ ) { hot [ j ] [ k ] = hot [ j ] [ k ] + hot [ j - 1 ] [ k - Arr [ j ] % k - Arr [ j ] [ k ] % mod ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "declaration of ‘hot’ as multidimensional array must have bounds for all dimensions except the first"
+    },
+    {
+      "mod_line": [
+        1,
+        8
+      ],
+      "mod_code": [
+        "int hot [ N ] [ ] ;",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "declaration of ‘hot’ as multidimensional array must have bounds for all dimensions except the first"
+    },
+    {
+      "mod_line": [
+        1,
+        8,
+        9
+      ],
+      "mod_code": [
+        "int hot [ N ] [ ] ;",
+        "for ( j = 1 ; j <= m ; j ++ )",
+        "for ( int k = i ; k <= b + b ; k ++ ) { hot [ j ] [ k ] = hot [ j ] [ k ] + hot [ j - 1 ] [ k - Arr [ j ] % k - Arr [ j ] [ k ] % mod ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "declaration of ‘hot’ as multidimensional array must have bounds for all dimensions except the first"
+    },
+    {
+      "mod_line": [
+        1,
+        9
+      ],
+      "mod_code": [
+        "int hot [ N ] [ ] ;",
+        "for ( int k = i ; k <= b + b ; k ++ ) { hot [ j ] [ k ] = hot [ j ] [ k ] + hot [ j - 1 ] [ k - Arr [ j ] % k - Arr [ j ] [ k ] % mod ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "declaration of ‘hot’ as multidimensional array must have bounds for all dimensions except the first"
+    },
+    {
+      "mod_line": [
+        2,
+        9
+      ],
+      "mod_code": [
+        "int n , m , Arr [ N ] , b [ N ] ;",
+        "for ( int k = i ; k <= b + b ; k ++ ) { hot [ j ] [ k ] = hot [ j ] [ k ] + hot [ j - 1 ] [ k - Arr [ i ] % k - Arr [ j ] [ k ] % mod ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘int [501]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        9,
+        12
+      ],
+      "mod_code": [
+        "int n , m , Arr [ N ] , b [ N ] ;",
+        "for ( int k = i ; k <= b + b ; k ++ ) { hot [ j ] [ k ] = hot [ j ] [ k ] + hot [ j - 1 ] [ k - Arr [ i ] % k - Arr [ j ] [ k ] % mod ; }",
+        "res = 0 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘int [501]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        9,
+        12,
+        8
+      ],
+      "mod_code": [
+        "int n , m , Arr [ N ] , b [ N ] ;",
+        "for ( int k = i ; k <= b + b ; k ++ ) { hot [ j ] [ k ] = hot [ j ] [ k ] + hot [ j - 1 ] [ k - Arr [ i ] % k - Arr [ j ] [ k ] % mod ; }",
+        "res = 0 ;",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘int [501]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        9,
+        8
+      ],
+      "mod_code": [
+        "int n , m , Arr [ N ] , b [ N ] ;",
+        "for ( int k = i ; k <= b + b ; k ++ ) { hot [ j ] [ k ] = hot [ j ] [ k ] + hot [ j - 1 ] [ k - Arr [ i ] % k - Arr [ j ] [ k ] % mod ; }",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘int [501]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        12
+      ],
+      "mod_code": [
+        "int n , m , Arr [ N ] , b [ N ] ;",
+        "res = 0 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘int [501]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        12,
+        8
+      ],
+      "mod_code": [
+        "int n , m , Arr [ N ] , b [ N ] ;",
+        "res = 0 ;",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘int [501]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        12,
+        8,
+        9
+      ],
+      "mod_code": [
+        "int n , m , Arr [ N ] , b [ N ] ;",
+        "res = 0 ;",
+        "for ( j = 1 ; j <= m ; j ++ )",
+        "for ( int k = i ; k <= b + b ; k ++ ) { hot [ j ] [ k ] = hot [ j ] [ k ] + hot [ j - 1 ] [ k - Arr [ j ] % k - Arr [ j ] [ k ] % mod ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘int [501]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        12,
+        9
+      ],
+      "mod_code": [
+        "int n , m , Arr [ N ] , b [ N ] ;",
+        "res = 0 ;",
+        "for ( int k = i ; k <= b + b ; k ++ ) { hot [ j ] [ k ] = hot [ j ] [ k ] + hot [ j - 1 ] [ k - Arr [ j ] % k - Arr [ j ] [ k ] % mod ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘int [501]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        8
+      ],
+      "mod_code": [
+        "int n , m , Arr [ N ] , b [ N ] ;",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘int [501]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        8,
+        9
+      ],
+      "mod_code": [
+        "int n , m , Arr [ N ] , b [ N ] ;",
+        "for ( j = 1 ; j <= m ; j ++ )",
+        "for ( int k = i ; k <= b + b ; k ++ ) { hot [ j ] [ k ] = hot [ j ] [ k ] + hot [ j - 1 ] [ k - Arr [ j ] % k - Arr [ j ] [ k ] % mod ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘int [501]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        9
+      ],
+      "mod_code": [
+        "int n , m , Arr [ N ] , b [ N ] ;",
+        "for ( int k = i ; k <= b + b ; k ++ ) { hot [ j ] [ k ] = hot [ j ] [ k ] + hot [ j - 1 ] [ k - Arr [ j ] % k - Arr [ j ] [ k ] % mod ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘int [501]’)"
+    },
+    {
+      "mod_line": [
+        9,
+        12
+      ],
+      "mod_code": [
+        "for ( int k = i ; k <= b + b ; k ++ ) { hot [ j ] [ k ] = hot [ j ] [ k ] + hot [ j - 1 ] [ k - Arr [ i ] % k - Arr [ j ] [ k ] % mod ; }",
+        "res = 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        8
+      ],
+      "mod_code": [
+        "for ( int k = i ; k <= b + b ; k ++ ) { hot [ j ] [ k ] = hot [ j ] [ k ] + hot [ j - 1 ] [ k - Arr [ i ] % k - Arr [ j ] [ k ] % mod ; }",
+        "res = 0 ;",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        8
+      ],
+      "mod_code": [
+        "for ( int k = i ; k <= b + b ; k ++ ) { hot [ j ] [ k ] = hot [ j ] [ k ] + hot [ j - 1 ] [ k - Arr [ i ] % k - Arr [ j ] [ k ] % mod ; }",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        8
+      ],
+      "mod_code": [
+        "res = 0 ;",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        8,
+        9
+      ],
+      "mod_code": [
+        "res = 0 ;",
+        "for ( j = 1 ; j <= m ; j ++ )",
+        "for ( int k = i ; k <= b + b ; k ++ ) { hot [ j ] [ k ] = hot [ j ] [ k ] + hot [ j - 1 ] [ k - Arr [ j ] % k - Arr [ j ] [ k ] % mod ; }"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        9
+      ],
+      "mod_code": [
+        "res = 0 ;",
+        "for ( int k = i ; k <= b + b ; k ++ ) { hot [ j ] [ k ] = hot [ j ] [ k ] + hot [ j - 1 ] [ k - Arr [ j ] % k - Arr [ j ] [ k ] % mod ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        8,
+        9
+      ],
+      "mod_code": [
+        "for ( j = 1 ; j <= m ; j ++ )",
+        "for ( int k = i ; k <= b + b ; k ++ ) { hot [ j ] [ k ] = hot [ j ] [ k ] + hot [ j - 1 ] [ k - Arr [ j ] % k - Arr [ j ] [ k ] % mod ; }"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    }
+  ]
+}

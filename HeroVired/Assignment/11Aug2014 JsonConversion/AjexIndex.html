@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>HeroVired Assignment - A</h1>
+<button type="button" onclick="loadDoc()">Request data</button>
+<p id="demo"></p>
+<p id="firstName"></p>
+<p id="lastName"></p>
+
+<script>
+function loadDoc() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    document.getElementById("demo").innerHTML = this.responseText;
+    const obj = JSON.parse(this.responseText);
+    console.log(obj);
+    document.getElementById("firstName").innerHTML = obj["firstName"];
+    document.getElementById("lastName").innerHTML = obj["lastName"];
+
+  }
+  xhttp.open("GET", "demo_get.txt");
+  xhttp.send();
+}
+</script>
+
+</body>
+</html>

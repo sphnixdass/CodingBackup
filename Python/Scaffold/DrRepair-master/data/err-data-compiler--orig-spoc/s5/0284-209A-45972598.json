@@ -1,0 +1,963 @@
+{
+  "meta": {
+    "index": 284,
+    "hitid": "3RKHNXPHGWQN4HIYT43EZJQIFQXUKF",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "209A",
+    "subid": "45972598"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "gcd1 is a long long function with long long arguments a and b",
+      "code": "long long gcd1 ( long long a , long long b )",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "if a = 0 , return b",
+      "code": "if ( a == 0 ) return b ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "return gcd1 ( b % a , a )",
+      "code": "return gcd1 ( b % a , a ) ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "long long function modx with long long arguments base and ex",
+      "code": "long long modx ( long long base , long long ex )",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "declare long longs ans = 1LL and val = base",
+      "code": "long long ans = 1LL , val = base ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "while ex > 0LL",
+      "code": "while ( ex > 0LL )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "if ex & 1LL ! = 0 , set ans to ( ans * val ) % 998244353LL",
+      "code": "if ( ex & 1LL ) ans = ( ans * val ) % 998244353LL ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "assign ( val * val ) % 998244353LL to val",
+      "code": "val = ( val * val ) % 998244353LL ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "set ex to ex",
+      "code": "ex = ex >> 1LL ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "return ans",
+      "code": "return ans ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 13,
+      "text": "declare const int maxn = 1e6 + 5",
+      "code": "const int maxn = 1e6 + 5 ;",
+      "indent": 0
+    },
+    {
+      "line": 14,
+      "text": "create long long n and 2d long long array dp with size maxn by 2",
+      "code": "long long dp [ maxn ] [ 2 ] , n ;",
+      "indent": 0
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 16,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "change dp [ 1 ] [ 0 ] to 1",
+      "code": "dp [ 1 ] [ 0 ] = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "loop i from 2 to n inclusive",
+      "code": "for ( int i = 2 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "if i is even",
+      "code": "if ( i % 2 == 0 )",
+      "indent": 2
+    },
+    {
+      "line": 20,
+      "text": "assign ( dp [ i - 1 ] [ 0 ] + dp [ i - 1 ] [ 1 ] + 1LL ) % 1000000007LL to dp [ i ] [ 1 ]",
+      "code": "dp [ i ] [ 1 ] = ( dp [ i - 1 ] [ 0 ] + dp [ i - 1 ] [ 1 ] + 1LL ) % 1000000007LL ;",
+      "indent": 3
+    },
+    {
+      "line": 21,
+      "text": "change dp [ i ] [ 0 ] to dp [ i - 1 ] [ 0 ]",
+      "code": "dp [ i ] [ 0 ] = dp [ i - 1 ] [ 0 ] ;",
+      "indent": 3
+    },
+    {
+      "line": 22,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 23,
+      "text": "assign ( dp [ i - 1 ] [ 0 ] + dp [ i - 1 ] [ 1 ] + 1 ) % 1000000007LL to dp [ i ] [ 0 ]",
+      "code": "dp [ i ] [ 0 ] = ( dp [ i - 1 ] [ 0 ] + dp [ i - 1 ] [ 1 ] + 1 ) % 1000000007LL ;",
+      "indent": 3
+    },
+    {
+      "line": 24,
+      "text": "set dp [ i ] [ 1 ] to dp [ i - 1 ] [ 1 ]",
+      "code": "dp [ i ] [ 1 ] = dp [ i - 1 ] [ 1 ] ;",
+      "indent": 3
+    },
+    {
+      "line": 25,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 26,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 27,
+      "text": "print ( dp [ n ] [ 0 ] + dp [ n ] [ 1 ] ) % 1000000007LL",
+      "code": "cout << ( dp [ n ] [ 0 ] + dp [ n ] [ 1 ] ) % 1000000007LL << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 28,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 29,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "long long gcd1 ( long long a , long long b ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "return gcd1 ( b % a , a ) ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "long long modx ( long long base , long long ex ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "char maxn = 1e6 + 5 ;"
+      ],
+      "err_line": 14,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "long long n [ maxn ] [ 2 ] ;"
+      ],
+      "err_line": 16,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int [1000005][2]’)"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "dp [ 1 ] [ j ] = 1 ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        18
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 18,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        18
+      ],
+      "mod_code": [
+        "long long modx ( long long base , long long ex ) ;",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        18,
+        0
+      ],
+      "mod_code": [
+        "long long modx ( long long base , long long ex ) ;",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "long long gcd1 ( long long a , long long b ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        18,
+        0,
+        17
+      ],
+      "mod_code": [
+        "long long modx ( long long base , long long ex ) ;",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "long long gcd1 ( long long a , long long b ) ;",
+        "dp [ 1 ] [ j ] = 1 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        18,
+        0,
+        13
+      ],
+      "mod_code": [
+        "long long modx ( long long base , long long ex ) ;",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "long long gcd1 ( long long a , long long b ) ;",
+        "char maxn = 1e6 + 5 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        18,
+        0,
+        2
+      ],
+      "mod_code": [
+        "long long modx ( long long base , long long ex ) ;",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "long long gcd1 ( long long a , long long b ) ;",
+        "return gcd1 ( b % a , a ) ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        18,
+        17
+      ],
+      "mod_code": [
+        "long long modx ( long long base , long long ex ) ;",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "dp [ 1 ] [ j ] = 1 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        18,
+        17,
+        13
+      ],
+      "mod_code": [
+        "long long modx ( long long base , long long ex ) ;",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "dp [ 1 ] [ j ] = 1 ;",
+        "char maxn = 1e6 + 5 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        18,
+        17,
+        2
+      ],
+      "mod_code": [
+        "long long modx ( long long base , long long ex ) ;",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "dp [ 1 ] [ j ] = 1 ;",
+        "return gcd1 ( b % a , a ) ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        18,
+        13
+      ],
+      "mod_code": [
+        "long long modx ( long long base , long long ex ) ;",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "char maxn = 1e6 + 5 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        18,
+        13,
+        2
+      ],
+      "mod_code": [
+        "long long modx ( long long base , long long ex ) ;",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "char maxn = 1e6 + 5 ;",
+        "return gcd1 ( b % a , a ) ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        18,
+        2
+      ],
+      "mod_code": [
+        "long long modx ( long long base , long long ex ) ;",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "return gcd1 ( b % a , a ) ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        0
+      ],
+      "mod_code": [
+        "long long modx ( long long base , long long ex ) ;",
+        "long long gcd1 ( long long a , long long b ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        0,
+        17
+      ],
+      "mod_code": [
+        "long long modx ( long long base , long long ex ) ;",
+        "long long gcd1 ( long long a , long long b ) ;",
+        "dp [ 1 ] [ j ] = 1 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        0,
+        17,
+        13
+      ],
+      "mod_code": [
+        "long long modx ( long long base , long long ex ) ;",
+        "long long gcd1 ( long long a , long long b ) ;",
+        "dp [ 1 ] [ j ] = 1 ;",
+        "char maxn = 1e6 + 5 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        0,
+        17,
+        2
+      ],
+      "mod_code": [
+        "long long modx ( long long base , long long ex ) ;",
+        "long long gcd1 ( long long a , long long b ) ;",
+        "dp [ 1 ] [ j ] = 1 ;",
+        "return gcd1 ( b % a , a ) ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        0,
+        13
+      ],
+      "mod_code": [
+        "long long modx ( long long base , long long ex ) ;",
+        "long long gcd1 ( long long a , long long b ) ;",
+        "char maxn = 1e6 + 5 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        0,
+        13,
+        2
+      ],
+      "mod_code": [
+        "long long modx ( long long base , long long ex ) ;",
+        "long long gcd1 ( long long a , long long b ) ;",
+        "char maxn = 1e6 + 5 ;",
+        "return gcd1 ( b % a , a ) ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        0,
+        2
+      ],
+      "mod_code": [
+        "long long modx ( long long base , long long ex ) ;",
+        "long long gcd1 ( long long a , long long b ) ;",
+        "return gcd1 ( b % a , a ) ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        17
+      ],
+      "mod_code": [
+        "long long modx ( long long base , long long ex ) ;",
+        "dp [ 1 ] [ j ] = 1 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        17,
+        13
+      ],
+      "mod_code": [
+        "long long modx ( long long base , long long ex ) ;",
+        "dp [ 1 ] [ j ] = 1 ;",
+        "char maxn = 1e6 + 5 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        17,
+        13,
+        2
+      ],
+      "mod_code": [
+        "long long modx ( long long base , long long ex ) ;",
+        "dp [ 1 ] [ j ] = 1 ;",
+        "char maxn = 1e6 + 5 ;",
+        "return gcd1 ( b % a , a ) ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        17,
+        2
+      ],
+      "mod_code": [
+        "long long modx ( long long base , long long ex ) ;",
+        "dp [ 1 ] [ j ] = 1 ;",
+        "return gcd1 ( b % a , a ) ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        13
+      ],
+      "mod_code": [
+        "long long modx ( long long base , long long ex ) ;",
+        "char maxn = 1e6 + 5 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        13,
+        2
+      ],
+      "mod_code": [
+        "long long modx ( long long base , long long ex ) ;",
+        "char maxn = 1e6 + 5 ;",
+        "return gcd1 ( b % a , a ) ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        2
+      ],
+      "mod_code": [
+        "long long modx ( long long base , long long ex ) ;",
+        "return gcd1 ( b % a , a ) ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        18,
+        0
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "long long gcd1 ( long long a , long long b ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        18,
+        0,
+        17
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "long long gcd1 ( long long a , long long b ) ;",
+        "dp [ 1 ] [ j ] = 1 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        18,
+        0,
+        17,
+        13
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "long long gcd1 ( long long a , long long b ) ;",
+        "dp [ 1 ] [ j ] = 1 ;",
+        "char maxn = 1e6 + 5 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        18,
+        0,
+        17,
+        2
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "long long gcd1 ( long long a , long long b ) ;",
+        "dp [ 1 ] [ j ] = 1 ;",
+        "return gcd1 ( b % a , a ) ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        18,
+        0,
+        13
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "long long gcd1 ( long long a , long long b ) ;",
+        "char maxn = 1e6 + 5 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        18,
+        0,
+        13,
+        2
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "long long gcd1 ( long long a , long long b ) ;",
+        "char maxn = 1e6 + 5 ;",
+        "return gcd1 ( b % a , a ) ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        18,
+        0,
+        2
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "long long gcd1 ( long long a , long long b ) ;",
+        "return gcd1 ( b % a , a ) ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        18,
+        17
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "dp [ 1 ] [ j ] = 1 ;"
+      ],
+      "err_line": 17,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        18,
+        17,
+        13
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "dp [ 1 ] [ j ] = 1 ;",
+        "char maxn = 1e6 + 5 ;"
+      ],
+      "err_line": 14,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        18,
+        17,
+        13,
+        2
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "dp [ 1 ] [ j ] = 1 ;",
+        "char maxn = 1e6 + 5 ;",
+        "return gcd1 ( b % a , a ) ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        18,
+        17,
+        2
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "dp [ 1 ] [ j ] = 1 ;",
+        "return gcd1 ( b % a , a ) ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        18,
+        13
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "char maxn = 1e6 + 5 ;"
+      ],
+      "err_line": 14,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        18,
+        13,
+        2
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "char maxn = 1e6 + 5 ;",
+        "return gcd1 ( b % a , a ) ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        18,
+        2
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "return gcd1 ( b % a , a ) ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        17
+      ],
+      "mod_code": [
+        "long long gcd1 ( long long a , long long b ) ;",
+        "dp [ 1 ] [ j ] = 1 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        17,
+        13
+      ],
+      "mod_code": [
+        "long long gcd1 ( long long a , long long b ) ;",
+        "dp [ 1 ] [ j ] = 1 ;",
+        "char maxn = 1e6 + 5 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        17,
+        13,
+        2
+      ],
+      "mod_code": [
+        "long long gcd1 ( long long a , long long b ) ;",
+        "dp [ 1 ] [ j ] = 1 ;",
+        "char maxn = 1e6 + 5 ;",
+        "return gcd1 ( b % a , a ) ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        17,
+        2
+      ],
+      "mod_code": [
+        "long long gcd1 ( long long a , long long b ) ;",
+        "dp [ 1 ] [ j ] = 1 ;",
+        "return gcd1 ( b % a , a ) ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        13
+      ],
+      "mod_code": [
+        "long long gcd1 ( long long a , long long b ) ;",
+        "char maxn = 1e6 + 5 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        13,
+        2
+      ],
+      "mod_code": [
+        "long long gcd1 ( long long a , long long b ) ;",
+        "char maxn = 1e6 + 5 ;",
+        "return gcd1 ( b % a , a ) ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        2
+      ],
+      "mod_code": [
+        "long long gcd1 ( long long a , long long b ) ;",
+        "return gcd1 ( b % a , a ) ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        17,
+        13
+      ],
+      "mod_code": [
+        "dp [ 1 ] [ j ] = 1 ;",
+        "char maxn = 1e6 + 5 ;"
+      ],
+      "err_line": 14,
+      "err_msg": "array bound is not an integer constant before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        17,
+        13,
+        2
+      ],
+      "mod_code": [
+        "dp [ 1 ] [ j ] = 1 ;",
+        "char maxn = 1e6 + 5 ;",
+        "return gcd1 ( b % a , a ) ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        17,
+        2
+      ],
+      "mod_code": [
+        "dp [ 1 ] [ j ] = 1 ;",
+        "return gcd1 ( b % a , a ) ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        13,
+        2
+      ],
+      "mod_code": [
+        "char maxn = 1e6 + 5 ;",
+        "return gcd1 ( b % a , a ) ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    }
+  ]
+}

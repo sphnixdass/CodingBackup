@@ -1,0 +1,439 @@
+{
+  "meta": {
+    "index": 1606,
+    "hitid": "3BPP3MA3TCEHZR3UO40AA1HUH0YLED",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "17A",
+    "subid": "48883466"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "let n and m be integers",
+      "code": "int n , m ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "let p and can be arrays of integers with size 1001",
+      "code": "int p [ 1001 ] , can [ 1001 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "integers n , k and last where last = 0",
+      "code": "int n , k , last = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "read n and k",
+      "code": "cin >> n >> k ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i = 2 to n inclusive",
+      "code": "for ( int i = 2 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "if p [ i ] is false",
+      "code": "if ( ! p [ i ] )",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "subtract can [ i ] from k",
+      "code": "k -= can [ i ] ;",
+      "indent": 3
+    },
+    {
+      "line": 8,
+      "text": "if last ! = 0 & & last + i + 1 is less than or equal to n , set can [ last + i + 1 ] to 1",
+      "code": "if ( last != 0 && last + i + 1 <= n ) can [ last + i + 1 ] = 1 ;",
+      "indent": 3
+    },
+    {
+      "line": 9,
+      "text": "last = i",
+      "code": "last = i ;",
+      "indent": 3
+    },
+    {
+      "line": 10,
+      "text": "for j = i * i to n inclusive with step of i , set p [ j ] to 1",
+      "code": "for ( int j = i * i ; j <= n ; j += i ) p [ j ] = 1 ;",
+      "indent": 3
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "if k is greater than 0",
+      "code": "if ( k > 0 )",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "print \" NO \" and a new line",
+      "code": "cout << \" NO \" << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "else",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "print \" YES \" and a new line",
+      "code": "cout << \" YES \" << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int p [ 1001 ] , p [ 1001 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int p [1001]’"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        15,
+        5
+      ],
+      "mod_code": [
+        "for ( int j = i * i ; j <= n ; j ++ ) { p [ j ] = 1 ; }",
+        "cout << \" YES\\n \" << endl ;",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        15,
+        5,
+        12
+      ],
+      "mod_code": [
+        "for ( int j = i * i ; j <= n ; j ++ ) { p [ j ] = 1 ; }",
+        "cout << \" YES\\n \" << endl ;",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "if ( k >= 0 )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        15,
+        5,
+        9
+      ],
+      "mod_code": [
+        "for ( int j = i * i ; j <= n ; j ++ ) { p [ j ] = 1 ; }",
+        "cout << \" YES\\n \" << endl ;",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "int last = i ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        5
+      ],
+      "mod_code": [
+        "for ( int j = i * i ; j <= n ; j ++ ) { p [ j ] = 1 ; }",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        5,
+        12
+      ],
+      "mod_code": [
+        "for ( int j = i * i ; j <= n ; j ++ ) { p [ j ] = 1 ; }",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "if ( k >= 0 )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        5,
+        12,
+        9
+      ],
+      "mod_code": [
+        "for ( int j = i * i ; j <= n ; j ++ ) { p [ j ] = 1 ; }",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "if ( k >= 0 )",
+        "int last = i ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        5,
+        9
+      ],
+      "mod_code": [
+        "for ( int j = i * i ; j <= n ; j ++ ) { p [ j ] = 1 ; }",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "int last = i ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        15,
+        5
+      ],
+      "mod_code": [
+        "for ( int j = i * i ; j <= n ; j ++ ) p [ j ] = 1 ;",
+        "cout << \" YES\\n \" << endl ;",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        15,
+        5,
+        12
+      ],
+      "mod_code": [
+        "for ( int j = i * i ; j <= n ; j ++ ) p [ j ] = 1 ;",
+        "cout << \" YES\\n \" << endl ;",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "if ( k >= 0 )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        15,
+        5,
+        9
+      ],
+      "mod_code": [
+        "for ( int j = i * i ; j <= n ; j ++ ) p [ j ] = 1 ;",
+        "cout << \" YES\\n \" << endl ;",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "int last = i ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        5
+      ],
+      "mod_code": [
+        "for ( int j = i * i ; j <= n ; j ++ ) p [ j ] = 1 ;",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        5,
+        12
+      ],
+      "mod_code": [
+        "for ( int j = i * i ; j <= n ; j ++ ) p [ j ] = 1 ;",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "if ( k >= 0 )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        5,
+        12,
+        9
+      ],
+      "mod_code": [
+        "for ( int j = i * i ; j <= n ; j ++ ) p [ j ] = 1 ;",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "if ( k >= 0 )",
+        "int last = i ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        5,
+        9
+      ],
+      "mod_code": [
+        "for ( int j = i * i ; j <= n ; j ++ ) p [ j ] = 1 ;",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "int last = i ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        5
+      ],
+      "mod_code": [
+        "cout << \" YES\\n \" << endl ;",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        5,
+        12
+      ],
+      "mod_code": [
+        "cout << \" YES\\n \" << endl ;",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "if ( k >= 0 )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        5,
+        12,
+        9
+      ],
+      "mod_code": [
+        "cout << \" YES\\n \" << endl ;",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "if ( k >= 0 )",
+        "int last = i ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        5,
+        9
+      ],
+      "mod_code": [
+        "cout << \" YES\\n \" << endl ;",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "int last = i ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        12
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "if ( k >= 0 )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        12,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "if ( k >= 0 )",
+        "int last = i ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "int last = i ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    }
+  ]
+}

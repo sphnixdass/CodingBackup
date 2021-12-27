@@ -1,0 +1,213 @@
+{
+  "meta": {
+    "index": 2393,
+    "hitid": "3MYASTQBG75NYI57KEXML5Y3R90DQB",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "543A",
+    "subid": "48936032"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create constant integer MAXN with MAXN = 520",
+      "code": "const int MAXN = 520 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create 2d integer array dp with size MAXN by MAXN , create integer array a with size MAXN , create integers n , m , b , p",
+      "code": "int dp [ MAXN ] [ MAXN ] , a [ MAXN ] , n , m , b , p ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "read n read m read b read p",
+      "code": "cin >> n >> m >> b >> p ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for i = 1 to n inclusive , read a [ i ]",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i = 0 to b inclusive , set dp [ 0 ] [ i ] to 1",
+      "code": "for ( int i = 0 ; i <= b ; i ++ ) dp [ 0 ] [ i ] = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for j = 1 to m inclusive",
+      "code": "for ( int j = 1 ; j <= m ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "for k = a [ i ] to b inclusive , set dp [ j ] [ k ] to ( dp [ j ] [ k ] + dp [ j - 1 ] [ k - a [ i ] ] ) % p",
+      "code": "for ( int k = a [ i ] ; k <= b ; k ++ ) dp [ j ] [ k ] = ( dp [ j ] [ k ] + dp [ j - 1 ] [ k - a [ i ] ] ) % p ;",
+      "indent": 3
+    },
+    {
+      "line": 9,
+      "text": "print dp [ m ] [ b ] print newline",
+      "code": "cout << dp [ m ] [ b ] << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int dp [ MAXN ] [ MAXN ] , n , m , m , b , b , p ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int m’"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int dp [ MAXN ] [ MAXN ] , n , m , m , b , p , p ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int m’"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        7
+      ],
+      "mod_code": [
+        "int dp [ MAXN ] [ MAXN ] , n , m , m , b , b , p ;",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int m’"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        6
+      ],
+      "mod_code": [
+        "int dp [ MAXN ] [ MAXN ] , n , m , m , b , b , p ;",
+        "for ( j = 1 ; j <= m ; j ++ )",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int m’"
+    },
+    {
+      "mod_line": [
+        1,
+        6
+      ],
+      "mod_code": [
+        "int dp [ MAXN ] [ MAXN ] , n , m , m , b , b , p ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int m’"
+    },
+    {
+      "mod_line": [
+        7,
+        1
+      ],
+      "mod_code": [
+        "for ( j = 1 ; j <= m ; j ++ )",
+        "int dp [ MAXN ] [ MAXN ] , n , m , m , b , p , p ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int m’"
+    },
+    {
+      "mod_line": [
+        7,
+        1,
+        6
+      ],
+      "mod_code": [
+        "for ( j = 1 ; j <= m ; j ++ )",
+        "int dp [ MAXN ] [ MAXN ] , n , m , m , b , p , p ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int m’"
+    },
+    {
+      "mod_line": [
+        7,
+        6
+      ],
+      "mod_code": [
+        "for ( j = 1 ; j <= m ; j ++ )",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        1,
+        6
+      ],
+      "mod_code": [
+        "int dp [ MAXN ] [ MAXN ] , n , m , m , b , p , p ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int m’"
+    }
+  ]
+}

@@ -1,0 +1,895 @@
+{
+  "meta": {
+    "index": 1161,
+    "hitid": "3E6L1VR4XWGRMK0JWBEE30KX3L4F6R",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "910A",
+    "subid": "48437039"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare integer variables n and d and integer array dp with 101 element",
+      "code": "int n , d , dp [ 101 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "create string str",
+      "code": "string str ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "read n and d",
+      "code": "cin >> n >> d ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "read str",
+      "code": "cin >> str ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "create int queue q",
+      "code": "queue < int > q ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for integer i = 0 to n exclusive",
+      "code": "for ( int i = 0 ; i < n ; ++ i )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "assign value of - 1 to dp [ i ]",
+      "code": "dp [ i ] = - 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "if str [ i ] = ' 1 ' , push i into q",
+      "code": "if ( str [ i ] == ' 1 ' ) q . push ( i ) ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "dp [ 0 ] = 0",
+      "code": "dp [ 0 ] = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "for integer i = 1 to n exclusive",
+      "code": "for ( int i = 1 ; i < n ; ++ i )",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "if str [ i ] = ' 1 '",
+      "code": "if ( str [ i ] == ' 1 ' )",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "remove first element from the q while it is less than i - d",
+      "code": "while ( q . front ( ) < i - d ) { q . pop ( ) ; }",
+      "indent": 3
+    },
+    {
+      "line": 14,
+      "text": "dp [ i ] = - 1 if dp [ q . front ( ) ] = - 1 , else dp [ q . front ( ) ] + 1",
+      "code": "dp [ i ] = ( dp [ q . front ( ) ] == - 1 ) ? - 1 : ( dp [ q . front ( ) ] + 1 ) ;",
+      "indent": 3
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "print dp [ n - 1 ] and a new line",
+      "code": "cout << dp [ n - 1 ] << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "while ( q < i - d )"
+      ],
+      "err_line": 13,
+      "err_msg": "no match for ‘operator<’ (operand types are ‘std::queue<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "dp [ i ] = - 1 ] = - 1 ? - 1 : dp [ q . front ( ) ] + 1 ;"
+      ],
+      "err_line": 14,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int dp , d , dp [ 101 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int dp [101]’"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "char str ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid types ‘char[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "cin >> n >> k ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "gets ( str ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "dp [ i ] ] = - 1 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "q . erase ( i - d ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘class std::queue<int>’ has no member named ‘erase’"
+    },
+    {
+      "mod_line": [
+        13,
+        14
+      ],
+      "mod_code": [
+        "while ( q < i - d )",
+        "dp [ i ] = - 1 ] = - 1 ? - 1 : dp [ q . front ( ) ] + 1 ;"
+      ],
+      "err_line": 13,
+      "err_msg": "no match for ‘operator<’ (operand types are ‘std::queue<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        13,
+        14,
+        12
+      ],
+      "mod_code": [
+        "while ( q < i - d )",
+        "dp [ i ] = - 1 ] = - 1 ? - 1 : dp [ q . front ( ) ] + 1 ;",
+        "if ( str [ i ] == ' l ' )"
+      ],
+      "err_line": 13,
+      "err_msg": "no match for ‘operator<’ (operand types are ‘std::queue<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        13,
+        14,
+        12,
+        7
+      ],
+      "mod_code": [
+        "while ( q < i - d )",
+        "dp [ i ] = - 1 ] = - 1 ? - 1 : dp [ q . front ( ) ] + 1 ;",
+        "if ( str [ i ] == ' l ' )",
+        "dp [ i ] ] = - 1 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        13,
+        14,
+        12,
+        1
+      ],
+      "mod_code": [
+        "while ( q < i - d )",
+        "dp [ i ] = - 1 ] = - 1 ? - 1 : dp [ q . front ( ) ] + 1 ;",
+        "if ( str [ i ] == ' l ' )",
+        "int dp , d , dp [ 101 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int dp [101]’"
+    },
+    {
+      "mod_line": [
+        13,
+        14,
+        12,
+        10
+      ],
+      "mod_code": [
+        "while ( q < i - d )",
+        "dp [ i ] = - 1 ] = - 1 ? - 1 : dp [ q . front ( ) ] + 1 ;",
+        "if ( str [ i ] == ' l ' )",
+        "dp [ 0 ] = ' 0 ' ;"
+      ],
+      "err_line": 13,
+      "err_msg": "no match for ‘operator<’ (operand types are ‘std::queue<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        13,
+        14,
+        7
+      ],
+      "mod_code": [
+        "while ( q < i - d )",
+        "dp [ i ] = - 1 ] = - 1 ? - 1 : dp [ q . front ( ) ] + 1 ;",
+        "dp [ i ] ] = - 1 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        13,
+        14,
+        7,
+        1
+      ],
+      "mod_code": [
+        "while ( q < i - d )",
+        "dp [ i ] = - 1 ] = - 1 ? - 1 : dp [ q . front ( ) ] + 1 ;",
+        "dp [ i ] ] = - 1 ;",
+        "int dp , d , dp [ 101 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int dp [101]’"
+    },
+    {
+      "mod_line": [
+        13,
+        14,
+        7,
+        10
+      ],
+      "mod_code": [
+        "while ( q < i - d )",
+        "dp [ i ] = - 1 ] = - 1 ? - 1 : dp [ q . front ( ) ] + 1 ;",
+        "dp [ i ] ] = - 1 ;",
+        "dp [ 0 ] = ' 0 ' ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        13,
+        14,
+        1
+      ],
+      "mod_code": [
+        "while ( q < i - d )",
+        "dp [ i ] = - 1 ] = - 1 ? - 1 : dp [ q . front ( ) ] + 1 ;",
+        "int dp , d , dp [ 101 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int dp [101]’"
+    },
+    {
+      "mod_line": [
+        13,
+        14,
+        1,
+        10
+      ],
+      "mod_code": [
+        "while ( q < i - d )",
+        "dp [ i ] = - 1 ] = - 1 ? - 1 : dp [ q . front ( ) ] + 1 ;",
+        "int dp , d , dp [ 101 ] ;",
+        "dp [ 0 ] = ' 0 ' ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int dp [101]’"
+    },
+    {
+      "mod_line": [
+        13,
+        14,
+        10
+      ],
+      "mod_code": [
+        "while ( q < i - d )",
+        "dp [ i ] = - 1 ] = - 1 ? - 1 : dp [ q . front ( ) ] + 1 ;",
+        "dp [ 0 ] = ' 0 ' ;"
+      ],
+      "err_line": 13,
+      "err_msg": "no match for ‘operator<’ (operand types are ‘std::queue<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        13,
+        12
+      ],
+      "mod_code": [
+        "while ( q < i - d )",
+        "if ( str [ i ] == ' l ' )"
+      ],
+      "err_line": 13,
+      "err_msg": "no match for ‘operator<’ (operand types are ‘std::queue<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        13,
+        12,
+        7
+      ],
+      "mod_code": [
+        "while ( q < i - d )",
+        "if ( str [ i ] == ' l ' )",
+        "dp [ i ] ] = - 1 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        13,
+        12,
+        7,
+        1
+      ],
+      "mod_code": [
+        "while ( q < i - d )",
+        "if ( str [ i ] == ' l ' )",
+        "dp [ i ] ] = - 1 ;",
+        "int dp , d , dp [ 101 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int dp [101]’"
+    },
+    {
+      "mod_line": [
+        13,
+        12,
+        7,
+        10
+      ],
+      "mod_code": [
+        "while ( q < i - d )",
+        "if ( str [ i ] == ' l ' )",
+        "dp [ i ] ] = - 1 ;",
+        "dp [ 0 ] = ' 0 ' ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        13,
+        12,
+        1
+      ],
+      "mod_code": [
+        "while ( q < i - d )",
+        "if ( str [ i ] == ' l ' )",
+        "int dp , d , dp [ 101 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int dp [101]’"
+    },
+    {
+      "mod_line": [
+        13,
+        12,
+        1,
+        10
+      ],
+      "mod_code": [
+        "while ( q < i - d )",
+        "if ( str [ i ] == ' l ' )",
+        "int dp , d , dp [ 101 ] ;",
+        "dp [ 0 ] = ' 0 ' ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int dp [101]’"
+    },
+    {
+      "mod_line": [
+        13,
+        12,
+        10
+      ],
+      "mod_code": [
+        "while ( q < i - d )",
+        "if ( str [ i ] == ' l ' )",
+        "dp [ 0 ] = ' 0 ' ;"
+      ],
+      "err_line": 13,
+      "err_msg": "no match for ‘operator<’ (operand types are ‘std::queue<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        13,
+        7
+      ],
+      "mod_code": [
+        "while ( q < i - d )",
+        "dp [ i ] ] = - 1 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        13,
+        7,
+        1
+      ],
+      "mod_code": [
+        "while ( q < i - d )",
+        "dp [ i ] ] = - 1 ;",
+        "int dp , d , dp [ 101 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int dp [101]’"
+    },
+    {
+      "mod_line": [
+        13,
+        7,
+        1,
+        10
+      ],
+      "mod_code": [
+        "while ( q < i - d )",
+        "dp [ i ] ] = - 1 ;",
+        "int dp , d , dp [ 101 ] ;",
+        "dp [ 0 ] = ' 0 ' ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int dp [101]’"
+    },
+    {
+      "mod_line": [
+        13,
+        7,
+        10
+      ],
+      "mod_code": [
+        "while ( q < i - d )",
+        "dp [ i ] ] = - 1 ;",
+        "dp [ 0 ] = ' 0 ' ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        13,
+        1
+      ],
+      "mod_code": [
+        "while ( q < i - d )",
+        "int dp , d , dp [ 101 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int dp [101]’"
+    },
+    {
+      "mod_line": [
+        13,
+        1,
+        10
+      ],
+      "mod_code": [
+        "while ( q < i - d )",
+        "int dp , d , dp [ 101 ] ;",
+        "dp [ 0 ] = ' 0 ' ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int dp [101]’"
+    },
+    {
+      "mod_line": [
+        13,
+        10
+      ],
+      "mod_code": [
+        "while ( q < i - d )",
+        "dp [ 0 ] = ' 0 ' ;"
+      ],
+      "err_line": 13,
+      "err_msg": "no match for ‘operator<’ (operand types are ‘std::queue<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        14,
+        12
+      ],
+      "mod_code": [
+        "dp [ i ] = - 1 ] = - 1 ? - 1 : dp [ q . front ( ) ] + 1 ;",
+        "if ( str [ i ] == ' l ' )"
+      ],
+      "err_line": 14,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        12,
+        7
+      ],
+      "mod_code": [
+        "dp [ i ] = - 1 ] = - 1 ? - 1 : dp [ q . front ( ) ] + 1 ;",
+        "if ( str [ i ] == ' l ' )",
+        "dp [ i ] ] = - 1 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        12,
+        7,
+        1
+      ],
+      "mod_code": [
+        "dp [ i ] = - 1 ] = - 1 ? - 1 : dp [ q . front ( ) ] + 1 ;",
+        "if ( str [ i ] == ' l ' )",
+        "dp [ i ] ] = - 1 ;",
+        "int dp , d , dp [ 101 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int dp [101]’"
+    },
+    {
+      "mod_line": [
+        14,
+        12,
+        7,
+        10
+      ],
+      "mod_code": [
+        "dp [ i ] = - 1 ] = - 1 ? - 1 : dp [ q . front ( ) ] + 1 ;",
+        "if ( str [ i ] == ' l ' )",
+        "dp [ i ] ] = - 1 ;",
+        "dp [ 0 ] = ' 0 ' ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        12,
+        1
+      ],
+      "mod_code": [
+        "dp [ i ] = - 1 ] = - 1 ? - 1 : dp [ q . front ( ) ] + 1 ;",
+        "if ( str [ i ] == ' l ' )",
+        "int dp , d , dp [ 101 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int dp [101]’"
+    },
+    {
+      "mod_line": [
+        14,
+        12,
+        1,
+        10
+      ],
+      "mod_code": [
+        "dp [ i ] = - 1 ] = - 1 ? - 1 : dp [ q . front ( ) ] + 1 ;",
+        "if ( str [ i ] == ' l ' )",
+        "int dp , d , dp [ 101 ] ;",
+        "dp [ 0 ] = ' 0 ' ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int dp [101]’"
+    },
+    {
+      "mod_line": [
+        14,
+        12,
+        10
+      ],
+      "mod_code": [
+        "dp [ i ] = - 1 ] = - 1 ? - 1 : dp [ q . front ( ) ] + 1 ;",
+        "if ( str [ i ] == ' l ' )",
+        "dp [ 0 ] = ' 0 ' ;"
+      ],
+      "err_line": 14,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        7
+      ],
+      "mod_code": [
+        "dp [ i ] = - 1 ] = - 1 ? - 1 : dp [ q . front ( ) ] + 1 ;",
+        "dp [ i ] ] = - 1 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        7,
+        1
+      ],
+      "mod_code": [
+        "dp [ i ] = - 1 ] = - 1 ? - 1 : dp [ q . front ( ) ] + 1 ;",
+        "dp [ i ] ] = - 1 ;",
+        "int dp , d , dp [ 101 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int dp [101]’"
+    },
+    {
+      "mod_line": [
+        14,
+        7,
+        1,
+        10
+      ],
+      "mod_code": [
+        "dp [ i ] = - 1 ] = - 1 ? - 1 : dp [ q . front ( ) ] + 1 ;",
+        "dp [ i ] ] = - 1 ;",
+        "int dp , d , dp [ 101 ] ;",
+        "dp [ 0 ] = ' 0 ' ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int dp [101]’"
+    },
+    {
+      "mod_line": [
+        14,
+        7,
+        10
+      ],
+      "mod_code": [
+        "dp [ i ] = - 1 ] = - 1 ? - 1 : dp [ q . front ( ) ] + 1 ;",
+        "dp [ i ] ] = - 1 ;",
+        "dp [ 0 ] = ' 0 ' ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        1
+      ],
+      "mod_code": [
+        "dp [ i ] = - 1 ] = - 1 ? - 1 : dp [ q . front ( ) ] + 1 ;",
+        "int dp , d , dp [ 101 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int dp [101]’"
+    },
+    {
+      "mod_line": [
+        14,
+        1,
+        10
+      ],
+      "mod_code": [
+        "dp [ i ] = - 1 ] = - 1 ? - 1 : dp [ q . front ( ) ] + 1 ;",
+        "int dp , d , dp [ 101 ] ;",
+        "dp [ 0 ] = ' 0 ' ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int dp [101]’"
+    },
+    {
+      "mod_line": [
+        14,
+        10
+      ],
+      "mod_code": [
+        "dp [ i ] = - 1 ] = - 1 ? - 1 : dp [ q . front ( ) ] + 1 ;",
+        "dp [ 0 ] = ' 0 ' ;"
+      ],
+      "err_line": 14,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        7
+      ],
+      "mod_code": [
+        "if ( str [ i ] == ' l ' )",
+        "dp [ i ] ] = - 1 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        7,
+        1
+      ],
+      "mod_code": [
+        "if ( str [ i ] == ' l ' )",
+        "dp [ i ] ] = - 1 ;",
+        "int dp , d , dp [ 101 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int dp [101]’"
+    },
+    {
+      "mod_line": [
+        12,
+        7,
+        1,
+        10
+      ],
+      "mod_code": [
+        "if ( str [ i ] == ' l ' )",
+        "dp [ i ] ] = - 1 ;",
+        "int dp , d , dp [ 101 ] ;",
+        "dp [ 0 ] = ' 0 ' ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int dp [101]’"
+    },
+    {
+      "mod_line": [
+        12,
+        7,
+        10
+      ],
+      "mod_code": [
+        "if ( str [ i ] == ' l ' )",
+        "dp [ i ] ] = - 1 ;",
+        "dp [ 0 ] = ' 0 ' ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        1
+      ],
+      "mod_code": [
+        "if ( str [ i ] == ' l ' )",
+        "int dp , d , dp [ 101 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int dp [101]’"
+    },
+    {
+      "mod_line": [
+        12,
+        1,
+        10
+      ],
+      "mod_code": [
+        "if ( str [ i ] == ' l ' )",
+        "int dp , d , dp [ 101 ] ;",
+        "dp [ 0 ] = ' 0 ' ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int dp [101]’"
+    },
+    {
+      "mod_line": [
+        7,
+        1
+      ],
+      "mod_code": [
+        "dp [ i ] ] = - 1 ;",
+        "int dp , d , dp [ 101 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int dp [101]’"
+    },
+    {
+      "mod_line": [
+        7,
+        1,
+        10
+      ],
+      "mod_code": [
+        "dp [ i ] ] = - 1 ;",
+        "int dp , d , dp [ 101 ] ;",
+        "dp [ 0 ] = ' 0 ' ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int dp [101]’"
+    },
+    {
+      "mod_line": [
+        7,
+        10
+      ],
+      "mod_code": [
+        "dp [ i ] ] = - 1 ;",
+        "dp [ 0 ] = ' 0 ' ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        10
+      ],
+      "mod_code": [
+        "int dp , d , dp [ 101 ] ;",
+        "dp [ 0 ] = ' 0 ' ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int dp [101]’"
+    }
+  ]
+}

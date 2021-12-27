@@ -1,0 +1,931 @@
+{
+  "meta": {
+    "index": 1727,
+    "hitid": "371QPA24C2I6Y3HNLP7MP88HN6X1TZ",
+    "workerid": "A1NBHCFZKJGHKW",
+    "probid": "592A",
+    "subid": "36607034"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "maxn = const int with maxn = 100",
+      "code": "const int maxn = 100 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "board = two dimensional char array of sizes 9 and 9",
+      "code": "char board [ 9 ] [ 9 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "Bstep = int with Bstep = maxn",
+      "code": "int Bstep = maxn ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "Wstep = int with Wstep = maxn",
+      "code": "int Wstep = maxn ;",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "in function isboundary taking int r and returning bool",
+      "code": "bool isboundary ( int r )",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "if r is 1 or 8 return true",
+      "code": "if ( r == 1 || r == 8 ) return true ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "return false",
+      "code": "return false ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 8,
+      "text": "in function countstep taking int r , int c , char colour",
+      "code": "void countstep ( int r , int c , char colour )",
+      "indent": 0
+    },
+    {
+      "line": 9,
+      "text": "step = int with step = - 1 if colour is ' W ' else 1",
+      "code": "int step = ( colour == ' W ' ) ? - 1 : 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "count = int with count = 1",
+      "code": "int count = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "for i = r + step incrementing i by step",
+      "code": "for ( int i = r + step ; ; i += step )",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "if board [ i ] [ c ] is not ' . '",
+      "code": "if ( board [ i ] [ c ] != ' . ' )",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "set count to maxn",
+      "code": "count = maxn ;",
+      "indent": 3
+    },
+    {
+      "line": 14,
+      "text": "break",
+      "code": "break ;",
+      "indent": 3
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "if isboundary of i break",
+      "code": "if ( isboundary ( i ) ) break ;",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "increment count",
+      "code": "count ++ ;",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "if colour is ' W '",
+      "code": "if ( colour == ' W ' )",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "if count < Wstep set Wstep to count",
+      "code": "if ( count < Wstep ) Wstep = count ;",
+      "indent": 2
+    },
+    {
+      "line": 21,
+      "text": "else",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 22,
+      "text": "if count < Bstep set Bstep to count",
+      "code": "if ( count < Bstep ) Bstep = count ;",
+      "indent": 2
+    },
+    {
+      "line": 23,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 25,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 26,
+      "text": "for r = 1 to 8 inclusive",
+      "code": "for ( int r = 1 ; r <= 8 ; r ++ )",
+      "indent": 1
+    },
+    {
+      "line": 27,
+      "text": "for c = 1 to 8 inclusive read board [ r ] [ c ]",
+      "code": "for ( int c = 1 ; c <= 8 ; c ++ ) { cin >> board [ r ] [ c ] ; }",
+      "indent": 2
+    },
+    {
+      "line": 28,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 29,
+      "text": "for r = 1 to 8 inclusive",
+      "code": "for ( int r = 1 ; r <= 8 ; r ++ )",
+      "indent": 1
+    },
+    {
+      "line": 30,
+      "text": "for c = 1 to 8 inclusive",
+      "code": "for ( int c = 1 ; c <= 8 ; c ++ )",
+      "indent": 2
+    },
+    {
+      "line": 31,
+      "text": "if board [ r ] [ c ] is not ' . ' call countstep of r , c , board [ r ] [ c ]",
+      "code": "if ( board [ r ] [ c ] != ' . ' ) { countstep ( r , c , board [ r ] [ c ] ) ; }",
+      "indent": 3
+    },
+    {
+      "line": 32,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 33,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 34,
+      "text": "ans = char with ans = ' A ' if Wstep - 1 < Bstep else ' B '",
+      "code": "char ans = ( Wstep - 1 < Bstep ) ? ' A ' : ' B ' ;",
+      "indent": 1
+    },
+    {
+      "line": 35,
+      "text": "print ans",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 36,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "if ( isboundary . find ( i ) ) break ;"
+      ],
+      "err_line": 16,
+      "err_msg": "request for member ‘find’ in ‘isboundary’, which is of non-class type ‘bool(int)’"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "int * Bstep = maxn ;"
+      ],
+      "err_line": 2,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "int * Wstep = maxn ;"
+      ],
+      "err_line": 3,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "bool isboundary ( int r ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "int count = l ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "for ( int i = r + step ; i += step )"
+      ],
+      "err_line": 11,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "if ( board [ i ] [ j ] != ' . ' )"
+      ],
+      "err_line": 12,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "if ( isboundary . isboundary ( ) ) break ;"
+      ],
+      "err_line": 16,
+      "err_msg": "request for member ‘isboundary’ in ‘isboundary’, which is of non-class type ‘bool(int)’"
+    },
+    {
+      "mod_line": [
+        19
+      ],
+      "mod_code": [
+        "else if ( colour == ' W ' )"
+      ],
+      "err_line": 19,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        21
+      ],
+      "mod_code": [
+        "n"
+      ],
+      "err_line": 21,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        26
+      ],
+      "mod_code": [
+        "for ( r = 1 ; r <= 8 ; r ++ )"
+      ],
+      "err_line": 26,
+      "err_msg": "‘r’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        29
+      ],
+      "mod_code": [
+        "for ( r = 1 ; r <= 8 ; r ++ )"
+      ],
+      "err_line": 29,
+      "err_msg": "name lookup of ‘r’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        30
+      ],
+      "mod_code": [
+        "for ( c = 1 ; c <= 8 ; c ++ )"
+      ],
+      "err_line": 30,
+      "err_msg": "‘c’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        31
+      ],
+      "mod_code": [
+        "if ( board [ r ] [ c ] != ' . ' ) countstep ++ , c [ r ] [ c ] ++ ;"
+      ],
+      "err_line": 31,
+      "err_msg": "lvalue required as increment operand"
+    },
+    {
+      "mod_line": [
+        9,
+        11,
+        13,
+        16
+      ],
+      "mod_code": [
+        "int step = colour == ' W ' ? colour : 1 ;",
+        "for ( int i = r ; i < step ; i += step )",
+        "const int count = maxn ;",
+        "if ( isboundary . find ( i ) ) break ;"
+      ],
+      "err_line": 16,
+      "err_msg": "request for member ‘find’ in ‘isboundary’, which is of non-class type ‘bool(int)’"
+    },
+    {
+      "mod_line": [
+        9,
+        11,
+        13,
+        21
+      ],
+      "mod_code": [
+        "int step = colour == ' W ' ? colour : 1 ;",
+        "for ( int i = r ; i < step ; i += step )",
+        "const int count = maxn ;",
+        "n"
+      ],
+      "err_line": 21,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        11,
+        16
+      ],
+      "mod_code": [
+        "int step = colour == ' W ' ? colour : 1 ;",
+        "for ( int i = r ; i < step ; i += step )",
+        "if ( isboundary . find ( i ) ) break ;"
+      ],
+      "err_line": 16,
+      "err_msg": "request for member ‘find’ in ‘isboundary’, which is of non-class type ‘bool(int)’"
+    },
+    {
+      "mod_line": [
+        9,
+        11,
+        16,
+        21
+      ],
+      "mod_code": [
+        "int step = colour == ' W ' ? colour : 1 ;",
+        "for ( int i = r ; i < step ; i += step )",
+        "if ( isboundary . find ( i ) ) break ;",
+        "n"
+      ],
+      "err_line": 16,
+      "err_msg": "request for member ‘find’ in ‘isboundary’, which is of non-class type ‘bool(int)’"
+    },
+    {
+      "mod_line": [
+        9,
+        11,
+        16,
+        0
+      ],
+      "mod_code": [
+        "int step = colour == ' W ' ? colour : 1 ;",
+        "for ( int i = r ; i < step ; i += step )",
+        "if ( isboundary . find ( i ) ) break ;",
+        "const int maxn = 100 << 100 ;"
+      ],
+      "err_line": 16,
+      "err_msg": "request for member ‘find’ in ‘isboundary’, which is of non-class type ‘bool(int)’"
+    },
+    {
+      "mod_line": [
+        9,
+        11,
+        21
+      ],
+      "mod_code": [
+        "int step = colour == ' W ' ? colour : 1 ;",
+        "for ( int i = r ; i < step ; i += step )",
+        "n"
+      ],
+      "err_line": 21,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        11,
+        21,
+        0
+      ],
+      "mod_code": [
+        "int step = colour == ' W ' ? colour : 1 ;",
+        "for ( int i = r ; i < step ; i += step )",
+        "n",
+        "const int maxn = 100 << 100 ;"
+      ],
+      "err_line": 21,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        13,
+        16
+      ],
+      "mod_code": [
+        "int step = colour == ' W ' ? colour : 1 ;",
+        "const int count = maxn ;",
+        "if ( isboundary . find ( i ) ) break ;"
+      ],
+      "err_line": 16,
+      "err_msg": "request for member ‘find’ in ‘isboundary’, which is of non-class type ‘bool(int)’"
+    },
+    {
+      "mod_line": [
+        9,
+        13,
+        16,
+        21
+      ],
+      "mod_code": [
+        "int step = colour == ' W ' ? colour : 1 ;",
+        "const int count = maxn ;",
+        "if ( isboundary . find ( i ) ) break ;",
+        "n"
+      ],
+      "err_line": 16,
+      "err_msg": "request for member ‘find’ in ‘isboundary’, which is of non-class type ‘bool(int)’"
+    },
+    {
+      "mod_line": [
+        9,
+        13,
+        16,
+        0
+      ],
+      "mod_code": [
+        "int step = colour == ' W ' ? colour : 1 ;",
+        "const int count = maxn ;",
+        "if ( isboundary . find ( i ) ) break ;",
+        "const int maxn = 100 << 100 ;"
+      ],
+      "err_line": 16,
+      "err_msg": "request for member ‘find’ in ‘isboundary’, which is of non-class type ‘bool(int)’"
+    },
+    {
+      "mod_line": [
+        9,
+        13,
+        21
+      ],
+      "mod_code": [
+        "int step = colour == ' W ' ? colour : 1 ;",
+        "const int count = maxn ;",
+        "n"
+      ],
+      "err_line": 21,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        13,
+        21,
+        0
+      ],
+      "mod_code": [
+        "int step = colour == ' W ' ? colour : 1 ;",
+        "const int count = maxn ;",
+        "n",
+        "const int maxn = 100 << 100 ;"
+      ],
+      "err_line": 21,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        16
+      ],
+      "mod_code": [
+        "int step = colour == ' W ' ? colour : 1 ;",
+        "if ( isboundary . find ( i ) ) break ;"
+      ],
+      "err_line": 16,
+      "err_msg": "request for member ‘find’ in ‘isboundary’, which is of non-class type ‘bool(int)’"
+    },
+    {
+      "mod_line": [
+        9,
+        16,
+        21
+      ],
+      "mod_code": [
+        "int step = colour == ' W ' ? colour : 1 ;",
+        "if ( isboundary . find ( i ) ) break ;",
+        "n"
+      ],
+      "err_line": 16,
+      "err_msg": "request for member ‘find’ in ‘isboundary’, which is of non-class type ‘bool(int)’"
+    },
+    {
+      "mod_line": [
+        9,
+        16,
+        21,
+        0
+      ],
+      "mod_code": [
+        "int step = colour == ' W ' ? colour : 1 ;",
+        "if ( isboundary . find ( i ) ) break ;",
+        "n",
+        "const int maxn = 100 << 100 ;"
+      ],
+      "err_line": 16,
+      "err_msg": "request for member ‘find’ in ‘isboundary’, which is of non-class type ‘bool(int)’"
+    },
+    {
+      "mod_line": [
+        9,
+        16,
+        0
+      ],
+      "mod_code": [
+        "int step = colour == ' W ' ? colour : 1 ;",
+        "if ( isboundary . find ( i ) ) break ;",
+        "const int maxn = 100 << 100 ;"
+      ],
+      "err_line": 16,
+      "err_msg": "request for member ‘find’ in ‘isboundary’, which is of non-class type ‘bool(int)’"
+    },
+    {
+      "mod_line": [
+        9,
+        21
+      ],
+      "mod_code": [
+        "int step = colour == ' W ' ? colour : 1 ;",
+        "n"
+      ],
+      "err_line": 21,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        21,
+        0
+      ],
+      "mod_code": [
+        "int step = colour == ' W ' ? colour : 1 ;",
+        "n",
+        "const int maxn = 100 << 100 ;"
+      ],
+      "err_line": 21,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        13,
+        16
+      ],
+      "mod_code": [
+        "for ( int i = r ; i < step ; i += step )",
+        "const int count = maxn ;",
+        "if ( isboundary . find ( i ) ) break ;"
+      ],
+      "err_line": 16,
+      "err_msg": "request for member ‘find’ in ‘isboundary’, which is of non-class type ‘bool(int)’"
+    },
+    {
+      "mod_line": [
+        11,
+        13,
+        16,
+        21
+      ],
+      "mod_code": [
+        "for ( int i = r ; i < step ; i += step )",
+        "const int count = maxn ;",
+        "if ( isboundary . find ( i ) ) break ;",
+        "n"
+      ],
+      "err_line": 16,
+      "err_msg": "request for member ‘find’ in ‘isboundary’, which is of non-class type ‘bool(int)’"
+    },
+    {
+      "mod_line": [
+        11,
+        13,
+        16,
+        0
+      ],
+      "mod_code": [
+        "for ( int i = r ; i < step ; i += step )",
+        "const int count = maxn ;",
+        "if ( isboundary . find ( i ) ) break ;",
+        "const int maxn = 100 << 100 ;"
+      ],
+      "err_line": 16,
+      "err_msg": "request for member ‘find’ in ‘isboundary’, which is of non-class type ‘bool(int)’"
+    },
+    {
+      "mod_line": [
+        11,
+        13,
+        21
+      ],
+      "mod_code": [
+        "for ( int i = r ; i < step ; i += step )",
+        "const int count = maxn ;",
+        "n"
+      ],
+      "err_line": 21,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        13,
+        21,
+        0
+      ],
+      "mod_code": [
+        "for ( int i = r ; i < step ; i += step )",
+        "const int count = maxn ;",
+        "n",
+        "const int maxn = 100 << 100 ;"
+      ],
+      "err_line": 21,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        16
+      ],
+      "mod_code": [
+        "for ( int i = r ; i < step ; i += step )",
+        "if ( isboundary . find ( i ) ) break ;"
+      ],
+      "err_line": 16,
+      "err_msg": "request for member ‘find’ in ‘isboundary’, which is of non-class type ‘bool(int)’"
+    },
+    {
+      "mod_line": [
+        11,
+        16,
+        21
+      ],
+      "mod_code": [
+        "for ( int i = r ; i < step ; i += step )",
+        "if ( isboundary . find ( i ) ) break ;",
+        "n"
+      ],
+      "err_line": 16,
+      "err_msg": "request for member ‘find’ in ‘isboundary’, which is of non-class type ‘bool(int)’"
+    },
+    {
+      "mod_line": [
+        11,
+        16,
+        21,
+        0
+      ],
+      "mod_code": [
+        "for ( int i = r ; i < step ; i += step )",
+        "if ( isboundary . find ( i ) ) break ;",
+        "n",
+        "const int maxn = 100 << 100 ;"
+      ],
+      "err_line": 16,
+      "err_msg": "request for member ‘find’ in ‘isboundary’, which is of non-class type ‘bool(int)’"
+    },
+    {
+      "mod_line": [
+        11,
+        16,
+        0
+      ],
+      "mod_code": [
+        "for ( int i = r ; i < step ; i += step )",
+        "if ( isboundary . find ( i ) ) break ;",
+        "const int maxn = 100 << 100 ;"
+      ],
+      "err_line": 16,
+      "err_msg": "request for member ‘find’ in ‘isboundary’, which is of non-class type ‘bool(int)’"
+    },
+    {
+      "mod_line": [
+        11,
+        21
+      ],
+      "mod_code": [
+        "for ( int i = r ; i < step ; i += step )",
+        "n"
+      ],
+      "err_line": 21,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        21,
+        0
+      ],
+      "mod_code": [
+        "for ( int i = r ; i < step ; i += step )",
+        "n",
+        "const int maxn = 100 << 100 ;"
+      ],
+      "err_line": 21,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        16
+      ],
+      "mod_code": [
+        "const int count = maxn ;",
+        "if ( isboundary . find ( i ) ) break ;"
+      ],
+      "err_line": 16,
+      "err_msg": "request for member ‘find’ in ‘isboundary’, which is of non-class type ‘bool(int)’"
+    },
+    {
+      "mod_line": [
+        13,
+        16,
+        21
+      ],
+      "mod_code": [
+        "const int count = maxn ;",
+        "if ( isboundary . find ( i ) ) break ;",
+        "n"
+      ],
+      "err_line": 16,
+      "err_msg": "request for member ‘find’ in ‘isboundary’, which is of non-class type ‘bool(int)’"
+    },
+    {
+      "mod_line": [
+        13,
+        16,
+        21,
+        0
+      ],
+      "mod_code": [
+        "const int count = maxn ;",
+        "if ( isboundary . find ( i ) ) break ;",
+        "n",
+        "const int maxn = 100 << 100 ;"
+      ],
+      "err_line": 16,
+      "err_msg": "request for member ‘find’ in ‘isboundary’, which is of non-class type ‘bool(int)’"
+    },
+    {
+      "mod_line": [
+        13,
+        16,
+        0
+      ],
+      "mod_code": [
+        "const int count = maxn ;",
+        "if ( isboundary . find ( i ) ) break ;",
+        "const int maxn = 100 << 100 ;"
+      ],
+      "err_line": 16,
+      "err_msg": "request for member ‘find’ in ‘isboundary’, which is of non-class type ‘bool(int)’"
+    },
+    {
+      "mod_line": [
+        13,
+        21
+      ],
+      "mod_code": [
+        "const int count = maxn ;",
+        "n"
+      ],
+      "err_line": 21,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        21,
+        0
+      ],
+      "mod_code": [
+        "const int count = maxn ;",
+        "n",
+        "const int maxn = 100 << 100 ;"
+      ],
+      "err_line": 21,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        21
+      ],
+      "mod_code": [
+        "if ( isboundary . find ( i ) ) break ;",
+        "n"
+      ],
+      "err_line": 16,
+      "err_msg": "request for member ‘find’ in ‘isboundary’, which is of non-class type ‘bool(int)’"
+    },
+    {
+      "mod_line": [
+        16,
+        21,
+        0
+      ],
+      "mod_code": [
+        "if ( isboundary . find ( i ) ) break ;",
+        "n",
+        "const int maxn = 100 << 100 ;"
+      ],
+      "err_line": 16,
+      "err_msg": "request for member ‘find’ in ‘isboundary’, which is of non-class type ‘bool(int)’"
+    },
+    {
+      "mod_line": [
+        16,
+        0
+      ],
+      "mod_code": [
+        "if ( isboundary . find ( i ) ) break ;",
+        "const int maxn = 100 << 100 ;"
+      ],
+      "err_line": 16,
+      "err_msg": "request for member ‘find’ in ‘isboundary’, which is of non-class type ‘bool(int)’"
+    },
+    {
+      "mod_line": [
+        21,
+        0
+      ],
+      "mod_code": [
+        "n",
+        "const int maxn = 100 << 100 ;"
+      ],
+      "err_line": 21,
+      "err_msg": "‘n’ was not declared in this scope"
+    }
+  ]
+}

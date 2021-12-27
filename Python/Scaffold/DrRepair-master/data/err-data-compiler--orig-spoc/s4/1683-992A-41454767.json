@@ -1,0 +1,795 @@
+{
+  "meta": {
+    "index": 1683,
+    "hitid": "3KI0JD2ZU1CE7RLDESG2F87G6KN76S",
+    "workerid": "A1R0Q9CUUBSM5F",
+    "probid": "992A",
+    "subid": "41454767"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create int array a of size 100005",
+      "code": "int a [ 100005 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "make ints n and m = 0",
+      "code": "int n , m = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "read n and while n is truthy",
+      "code": "while ( cin >> n )",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for i = 0 to n exclusive , read a [ i ]",
+      "code": "for ( int i = 0 ; i < n ; i ++ ) cin >> a [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 5,
+      "text": "sort a using a + n",
+      "code": "sort ( a , a + n ) ;",
+      "indent": 2
+    },
+    {
+      "line": 6,
+      "text": "if a [ 0 ] is not equal to 0",
+      "code": "if ( a [ 0 ] != 0 )",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "set m to 1",
+      "code": "m = 1 ;",
+      "indent": 3
+    },
+    {
+      "line": 8,
+      "text": "else do",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "set m to 0",
+      "code": "m = 0 ;",
+      "indent": 3
+    },
+    {
+      "line": 10,
+      "text": "for i = 0 to n - 1 exclusive",
+      "code": "for ( int i = 0 ; i < n - 1 ; i ++ )",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "if a [ i ] is not equal to a [ i + 1 ] and a [ i + 1 ] is not equal to 0 , increment m",
+      "code": "if ( a [ i ] != a [ i + 1 ] && a [ i + 1 ] != 0 ) { m ++ ; }",
+      "indent": 3
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "show m",
+      "code": "cout << m << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "sort ( ( a , a + n ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘sort(int*)’"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "else do"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘while’ before ‘(’ token"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n - 1 ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        7
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n - 1 ; i ++ )",
+        "int m = 1 ;"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        7,
+        13
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n - 1 ; i ++ )",
+        "int m = 1 ;",
+        "cout << m ;"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        7,
+        13,
+        3
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n - 1 ; i ++ )",
+        "int m = 1 ;",
+        "cout << m ;",
+        "while ( n -- )"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        7,
+        13,
+        5
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n - 1 ; i ++ )",
+        "int m = 1 ;",
+        "cout << m ;",
+        "sort ( ( a , a + n ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘sort(int*)’"
+    },
+    {
+      "mod_line": [
+        10,
+        7,
+        13,
+        8
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n - 1 ; i ++ )",
+        "int m = 1 ;",
+        "cout << m ;",
+        "else do"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘while’ before ‘(’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        7,
+        3
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n - 1 ; i ++ )",
+        "int m = 1 ;",
+        "while ( n -- )"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        7,
+        3,
+        5
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n - 1 ; i ++ )",
+        "int m = 1 ;",
+        "while ( n -- )",
+        "sort ( ( a , a + n ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘sort(int*)’"
+    },
+    {
+      "mod_line": [
+        10,
+        7,
+        3,
+        8
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n - 1 ; i ++ )",
+        "int m = 1 ;",
+        "while ( n -- )",
+        "else do"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘while’ before ‘(’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        7,
+        5
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n - 1 ; i ++ )",
+        "int m = 1 ;",
+        "sort ( ( a , a + n ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘sort(int*)’"
+    },
+    {
+      "mod_line": [
+        10,
+        7,
+        5,
+        8
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n - 1 ; i ++ )",
+        "int m = 1 ;",
+        "sort ( ( a , a + n ) ) ;",
+        "else do"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘sort(int*)’"
+    },
+    {
+      "mod_line": [
+        10,
+        7,
+        8
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n - 1 ; i ++ )",
+        "int m = 1 ;",
+        "else do"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘while’ before ‘(’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        13
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n - 1 ; i ++ )",
+        "cout << m ;"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        13,
+        3
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n - 1 ; i ++ )",
+        "cout << m ;",
+        "while ( n -- )"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        13,
+        3,
+        5
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n - 1 ; i ++ )",
+        "cout << m ;",
+        "while ( n -- )",
+        "sort ( ( a , a + n ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘sort(int*)’"
+    },
+    {
+      "mod_line": [
+        10,
+        13,
+        3,
+        8
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n - 1 ; i ++ )",
+        "cout << m ;",
+        "while ( n -- )",
+        "else do"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘while’ before ‘(’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        13,
+        5
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n - 1 ; i ++ )",
+        "cout << m ;",
+        "sort ( ( a , a + n ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘sort(int*)’"
+    },
+    {
+      "mod_line": [
+        10,
+        13,
+        5,
+        8
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n - 1 ; i ++ )",
+        "cout << m ;",
+        "sort ( ( a , a + n ) ) ;",
+        "else do"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘sort(int*)’"
+    },
+    {
+      "mod_line": [
+        10,
+        13,
+        8
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n - 1 ; i ++ )",
+        "cout << m ;",
+        "else do"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘while’ before ‘(’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        3
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n - 1 ; i ++ )",
+        "while ( n -- )"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        5
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n - 1 ; i ++ )",
+        "while ( n -- )",
+        "sort ( ( a , a + n ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘sort(int*)’"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        5,
+        8
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n - 1 ; i ++ )",
+        "while ( n -- )",
+        "sort ( ( a , a + n ) ) ;",
+        "else do"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘sort(int*)’"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        8
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n - 1 ; i ++ )",
+        "while ( n -- )",
+        "else do"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘while’ before ‘(’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        5
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n - 1 ; i ++ )",
+        "sort ( ( a , a + n ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘sort(int*)’"
+    },
+    {
+      "mod_line": [
+        10,
+        5,
+        8
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n - 1 ; i ++ )",
+        "sort ( ( a , a + n ) ) ;",
+        "else do"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘sort(int*)’"
+    },
+    {
+      "mod_line": [
+        10,
+        8
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n - 1 ; i ++ )",
+        "else do"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘while’ before ‘(’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        13,
+        3,
+        5
+      ],
+      "mod_code": [
+        "int m = 1 ;",
+        "cout << m ;",
+        "while ( n -- )",
+        "sort ( ( a , a + n ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘sort(int*)’"
+    },
+    {
+      "mod_line": [
+        7,
+        13,
+        3,
+        8
+      ],
+      "mod_code": [
+        "int m = 1 ;",
+        "cout << m ;",
+        "while ( n -- )",
+        "else do"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘while’ before ‘(’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        13,
+        5
+      ],
+      "mod_code": [
+        "int m = 1 ;",
+        "cout << m ;",
+        "sort ( ( a , a + n ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘sort(int*)’"
+    },
+    {
+      "mod_line": [
+        7,
+        13,
+        5,
+        8
+      ],
+      "mod_code": [
+        "int m = 1 ;",
+        "cout << m ;",
+        "sort ( ( a , a + n ) ) ;",
+        "else do"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘sort(int*)’"
+    },
+    {
+      "mod_line": [
+        7,
+        13,
+        8
+      ],
+      "mod_code": [
+        "int m = 1 ;",
+        "cout << m ;",
+        "else do"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘while’ before ‘(’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        3,
+        5
+      ],
+      "mod_code": [
+        "int m = 1 ;",
+        "while ( n -- )",
+        "sort ( ( a , a + n ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘sort(int*)’"
+    },
+    {
+      "mod_line": [
+        7,
+        3,
+        5,
+        8
+      ],
+      "mod_code": [
+        "int m = 1 ;",
+        "while ( n -- )",
+        "sort ( ( a , a + n ) ) ;",
+        "else do"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘sort(int*)’"
+    },
+    {
+      "mod_line": [
+        7,
+        3,
+        8
+      ],
+      "mod_code": [
+        "int m = 1 ;",
+        "while ( n -- )",
+        "else do"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘while’ before ‘(’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        5
+      ],
+      "mod_code": [
+        "int m = 1 ;",
+        "sort ( ( a , a + n ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘sort(int*)’"
+    },
+    {
+      "mod_line": [
+        7,
+        5,
+        8
+      ],
+      "mod_code": [
+        "int m = 1 ;",
+        "sort ( ( a , a + n ) ) ;",
+        "else do"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘sort(int*)’"
+    },
+    {
+      "mod_line": [
+        7,
+        8
+      ],
+      "mod_code": [
+        "int m = 1 ;",
+        "else do"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘while’ before ‘(’ token"
+    },
+    {
+      "mod_line": [
+        13,
+        3,
+        5
+      ],
+      "mod_code": [
+        "cout << m ;",
+        "while ( n -- )",
+        "sort ( ( a , a + n ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘sort(int*)’"
+    },
+    {
+      "mod_line": [
+        13,
+        3,
+        5,
+        8
+      ],
+      "mod_code": [
+        "cout << m ;",
+        "while ( n -- )",
+        "sort ( ( a , a + n ) ) ;",
+        "else do"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘sort(int*)’"
+    },
+    {
+      "mod_line": [
+        13,
+        3,
+        8
+      ],
+      "mod_code": [
+        "cout << m ;",
+        "while ( n -- )",
+        "else do"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘while’ before ‘(’ token"
+    },
+    {
+      "mod_line": [
+        13,
+        5
+      ],
+      "mod_code": [
+        "cout << m ;",
+        "sort ( ( a , a + n ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘sort(int*)’"
+    },
+    {
+      "mod_line": [
+        13,
+        5,
+        8
+      ],
+      "mod_code": [
+        "cout << m ;",
+        "sort ( ( a , a + n ) ) ;",
+        "else do"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘sort(int*)’"
+    },
+    {
+      "mod_line": [
+        13,
+        8
+      ],
+      "mod_code": [
+        "cout << m ;",
+        "else do"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘while’ before ‘(’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        5
+      ],
+      "mod_code": [
+        "while ( n -- )",
+        "sort ( ( a , a + n ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘sort(int*)’"
+    },
+    {
+      "mod_line": [
+        3,
+        5,
+        8
+      ],
+      "mod_code": [
+        "while ( n -- )",
+        "sort ( ( a , a + n ) ) ;",
+        "else do"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘sort(int*)’"
+    },
+    {
+      "mod_line": [
+        3,
+        8
+      ],
+      "mod_code": [
+        "while ( n -- )",
+        "else do"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘while’ before ‘(’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        8
+      ],
+      "mod_code": [
+        "sort ( ( a , a + n ) ) ;",
+        "else do"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘sort(int*)’"
+    }
+  ]
+}

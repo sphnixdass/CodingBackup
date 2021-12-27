@@ -1,0 +1,1089 @@
+{
+  "meta": {
+    "index": 957,
+    "hitid": "32ZCLEW0BZEF1S4KUX48OY36RXCJP5",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "778A",
+    "subid": "47967942"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "let MAX_N = 2e5 + 10 and MOD = 1e9 + 7 be constant integers",
+      "code": "const int MAX_N = 2e5 + 10 , MOD = 1e9 + 7 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "let Arr be integer array with size MAX_N",
+      "code": "int Arr [ MAX_N ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "let Mark be boolean array with size MAX_N",
+      "code": "bool Mark [ MAX_N ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "create strings S and T",
+      "code": "string S , T ;",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "function del with integer argument tmp that returns string",
+      "code": "string del ( int tmp )",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "for i = 1 to tmp inclusive , set Mark [ Arr [ i ] ] to true",
+      "code": "for ( int i = 1 ; i <= tmp ; i ++ ) Mark [ Arr [ i ] ] = true ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "declare string variable res",
+      "code": "string res ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for integer i = 0 to length of S exclusive",
+      "code": "for ( int i = 0 ; i < S . size ( ) ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "if Mark [ i ] is 0 , increase res by S [ i ]",
+      "code": "if ( ! Mark [ i ] ) res += S [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "for i = 1 to tmp inclusive , set Mark [ Arr [ i ] ] to false",
+      "code": "for ( int i = 1 ; i <= tmp ; i ++ ) Mark [ Arr [ i ] ] = false ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "return res",
+      "code": "return res ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 12,
+      "text": "in is a boolean function with string argument tmp",
+      "code": "bool in ( string tmp )",
+      "indent": 0
+    },
+    {
+      "line": 13,
+      "text": "declare integer ind = 0",
+      "code": "int ind = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "for i = 0 to length of tmp exclusive",
+      "code": "for ( int i = 0 ; i < tmp . size ( ) ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "increment ind if ind < length of T and tmp [ i ] = T [ ind ]",
+      "code": "if ( ind < T . size ( ) && tmp [ i ] == T [ ind ] ) ind ++ ;",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "return true ind = length of T of false otherwise",
+      "code": "return ( ind == T . size ( ) ) ;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 19,
+      "text": "read S and T",
+      "code": "cin >> S >> T ;",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "for integer i = 1 to length of S inclusive",
+      "code": "for ( int i = 1 ; i <= S . size ( ) ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "read Arr [ i ]",
+      "code": "cin >> Arr [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 22,
+      "text": "decrease Arr [ i ] by one",
+      "code": "Arr [ i ] -- ;",
+      "indent": 2
+    },
+    {
+      "line": 23,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "declare integers s = 0 and e = length of S",
+      "code": "int s = 0 , e = S . size ( ) ;",
+      "indent": 1
+    },
+    {
+      "line": 25,
+      "text": "while e - s is greater than 1",
+      "code": "while ( e - s > 1 )",
+      "indent": 1
+    },
+    {
+      "line": 26,
+      "text": "create integer mid = e + s > > 1",
+      "code": "int mid = e + s >> 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 27,
+      "text": "declare string variable tmp = del ( mid )",
+      "code": "string tmp = del ( mid ) ;",
+      "indent": 2
+    },
+    {
+      "line": 28,
+      "text": "if in ( tmp ) returned true",
+      "code": "if ( in ( tmp ) )",
+      "indent": 2
+    },
+    {
+      "line": 29,
+      "text": "assign value of mid to s",
+      "code": "s = mid ;",
+      "indent": 3
+    },
+    {
+      "line": 30,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 31,
+      "text": "set e to mid",
+      "code": "e = mid ;",
+      "indent": 3
+    },
+    {
+      "line": 32,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 33,
+      "text": "print s and \" \\ n \"",
+      "code": "cout << s << \" \\n \" ;",
+      "indent": 1
+    },
+    {
+      "line": 34,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 35,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "return true = strlen ( T ) ;"
+      ],
+      "err_line": 16,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘const char*’ for argument ‘1’ to ‘size_t strlen(const char*)’"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "const const int MAX_N = 2e5 + 10 , MOD = 1e9 + 7 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "duplicate ‘const’"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int * Arr [ MAX_N ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "invalid types ‘bool [200010][int*]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "bool * Mark [ MAX_N ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "cannot convert ‘bool’ to ‘bool*’ in assignment"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "S , T ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘S’ does not name a type"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "string del ( string tmp )"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator<=’ (operand types are ‘int’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "string res << endl ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected initializer before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "exit ( res ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘int’ for argument ‘1’ to ‘void exit(int)’"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "string in ( string tmp )"
+      ],
+      "err_line": 16,
+      "err_msg": "could not convert ‘(((std::__cxx11::basic_string<char>::size_type)ind) == T.std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::size<char, std::char_traits<char>, std::allocator<char> >())’ from ‘bool’ to ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "return true = T . length ( ) ;"
+      ],
+      "err_line": 16,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        19
+      ],
+      "mod_code": [
+        "cin >> n >> T ;"
+      ],
+      "err_line": 19,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        21
+      ],
+      "mod_code": [
+        "cin >> Arr . at ( i ) ;"
+      ],
+      "err_line": 21,
+      "err_msg": "request for member ‘at’ in ‘Arr’, which is of non-class type ‘int [200010]’"
+    },
+    {
+      "mod_line": [
+        27
+      ],
+      "mod_code": [
+        "string tmp = del ( del ) ;"
+      ],
+      "err_line": 27,
+      "err_msg": "invalid conversion from ‘std::__cxx11::string (*)(int) {aka std::__cxx11::basic_string<char> (*)(int)}’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        29
+      ],
+      "mod_code": [
+        "s assign mid ;"
+      ],
+      "err_line": 29,
+      "err_msg": "expected ‘;’ before ‘assign’"
+    },
+    {
+      "mod_line": [
+        30
+      ],
+      "mod_code": [
+        "n"
+      ],
+      "err_line": 30,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        33
+      ],
+      "mod_code": [
+        "\" cout << s << \" \\n \" ;"
+      ],
+      "err_line": 33,
+      "err_msg": "stray ‘\\’ in program"
+    },
+    {
+      "mod_line": [
+        16,
+        19
+      ],
+      "mod_code": [
+        "return true = strlen ( T ) ;",
+        "cin >> n >> T ;"
+      ],
+      "err_line": 16,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘const char*’ for argument ‘1’ to ‘size_t strlen(const char*)’"
+    },
+    {
+      "mod_line": [
+        16,
+        19,
+        29
+      ],
+      "mod_code": [
+        "return true = strlen ( T ) ;",
+        "cin >> n >> T ;",
+        "s assign mid ;"
+      ],
+      "err_line": 16,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘const char*’ for argument ‘1’ to ‘size_t strlen(const char*)’"
+    },
+    {
+      "mod_line": [
+        16,
+        19,
+        29,
+        21
+      ],
+      "mod_code": [
+        "return true = strlen ( T ) ;",
+        "cin >> n >> T ;",
+        "s assign mid ;",
+        "cin >> Arr . at ( i ) ;"
+      ],
+      "err_line": 16,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘const char*’ for argument ‘1’ to ‘size_t strlen(const char*)’"
+    },
+    {
+      "mod_line": [
+        16,
+        19,
+        29,
+        27
+      ],
+      "mod_code": [
+        "return true = strlen ( T ) ;",
+        "cin >> n >> T ;",
+        "s assign mid ;",
+        "string tmp = del ( del ) ;"
+      ],
+      "err_line": 16,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘const char*’ for argument ‘1’ to ‘size_t strlen(const char*)’"
+    },
+    {
+      "mod_line": [
+        16,
+        19,
+        29,
+        2
+      ],
+      "mod_code": [
+        "return true = strlen ( T ) ;",
+        "cin >> n >> T ;",
+        "s assign mid ;",
+        "bool * Mark [ MAX_N ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "cannot convert ‘bool’ to ‘bool*’ in assignment"
+    },
+    {
+      "mod_line": [
+        16,
+        19,
+        21
+      ],
+      "mod_code": [
+        "return true = strlen ( T ) ;",
+        "cin >> n >> T ;",
+        "cin >> Arr . at ( i ) ;"
+      ],
+      "err_line": 16,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘const char*’ for argument ‘1’ to ‘size_t strlen(const char*)’"
+    },
+    {
+      "mod_line": [
+        16,
+        19,
+        21,
+        27
+      ],
+      "mod_code": [
+        "return true = strlen ( T ) ;",
+        "cin >> n >> T ;",
+        "cin >> Arr . at ( i ) ;",
+        "string tmp = del ( del ) ;"
+      ],
+      "err_line": 16,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘const char*’ for argument ‘1’ to ‘size_t strlen(const char*)’"
+    },
+    {
+      "mod_line": [
+        16,
+        19,
+        21,
+        2
+      ],
+      "mod_code": [
+        "return true = strlen ( T ) ;",
+        "cin >> n >> T ;",
+        "cin >> Arr . at ( i ) ;",
+        "bool * Mark [ MAX_N ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "cannot convert ‘bool’ to ‘bool*’ in assignment"
+    },
+    {
+      "mod_line": [
+        16,
+        19,
+        27
+      ],
+      "mod_code": [
+        "return true = strlen ( T ) ;",
+        "cin >> n >> T ;",
+        "string tmp = del ( del ) ;"
+      ],
+      "err_line": 16,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘const char*’ for argument ‘1’ to ‘size_t strlen(const char*)’"
+    },
+    {
+      "mod_line": [
+        16,
+        19,
+        27,
+        2
+      ],
+      "mod_code": [
+        "return true = strlen ( T ) ;",
+        "cin >> n >> T ;",
+        "string tmp = del ( del ) ;",
+        "bool * Mark [ MAX_N ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "cannot convert ‘bool’ to ‘bool*’ in assignment"
+    },
+    {
+      "mod_line": [
+        16,
+        19,
+        2
+      ],
+      "mod_code": [
+        "return true = strlen ( T ) ;",
+        "cin >> n >> T ;",
+        "bool * Mark [ MAX_N ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "cannot convert ‘bool’ to ‘bool*’ in assignment"
+    },
+    {
+      "mod_line": [
+        16,
+        29
+      ],
+      "mod_code": [
+        "return true = strlen ( T ) ;",
+        "s assign mid ;"
+      ],
+      "err_line": 16,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘const char*’ for argument ‘1’ to ‘size_t strlen(const char*)’"
+    },
+    {
+      "mod_line": [
+        16,
+        29,
+        21
+      ],
+      "mod_code": [
+        "return true = strlen ( T ) ;",
+        "s assign mid ;",
+        "cin >> Arr . at ( i ) ;"
+      ],
+      "err_line": 16,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘const char*’ for argument ‘1’ to ‘size_t strlen(const char*)’"
+    },
+    {
+      "mod_line": [
+        16,
+        29,
+        21,
+        27
+      ],
+      "mod_code": [
+        "return true = strlen ( T ) ;",
+        "s assign mid ;",
+        "cin >> Arr . at ( i ) ;",
+        "string tmp = del ( del ) ;"
+      ],
+      "err_line": 16,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘const char*’ for argument ‘1’ to ‘size_t strlen(const char*)’"
+    },
+    {
+      "mod_line": [
+        16,
+        29,
+        21,
+        2
+      ],
+      "mod_code": [
+        "return true = strlen ( T ) ;",
+        "s assign mid ;",
+        "cin >> Arr . at ( i ) ;",
+        "bool * Mark [ MAX_N ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "cannot convert ‘bool’ to ‘bool*’ in assignment"
+    },
+    {
+      "mod_line": [
+        16,
+        29,
+        27
+      ],
+      "mod_code": [
+        "return true = strlen ( T ) ;",
+        "s assign mid ;",
+        "string tmp = del ( del ) ;"
+      ],
+      "err_line": 16,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘const char*’ for argument ‘1’ to ‘size_t strlen(const char*)’"
+    },
+    {
+      "mod_line": [
+        16,
+        29,
+        27,
+        2
+      ],
+      "mod_code": [
+        "return true = strlen ( T ) ;",
+        "s assign mid ;",
+        "string tmp = del ( del ) ;",
+        "bool * Mark [ MAX_N ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "cannot convert ‘bool’ to ‘bool*’ in assignment"
+    },
+    {
+      "mod_line": [
+        16,
+        29,
+        2
+      ],
+      "mod_code": [
+        "return true = strlen ( T ) ;",
+        "s assign mid ;",
+        "bool * Mark [ MAX_N ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "cannot convert ‘bool’ to ‘bool*’ in assignment"
+    },
+    {
+      "mod_line": [
+        16,
+        21
+      ],
+      "mod_code": [
+        "return true = strlen ( T ) ;",
+        "cin >> Arr . at ( i ) ;"
+      ],
+      "err_line": 16,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘const char*’ for argument ‘1’ to ‘size_t strlen(const char*)’"
+    },
+    {
+      "mod_line": [
+        16,
+        21,
+        27
+      ],
+      "mod_code": [
+        "return true = strlen ( T ) ;",
+        "cin >> Arr . at ( i ) ;",
+        "string tmp = del ( del ) ;"
+      ],
+      "err_line": 16,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘const char*’ for argument ‘1’ to ‘size_t strlen(const char*)’"
+    },
+    {
+      "mod_line": [
+        16,
+        21,
+        27,
+        2
+      ],
+      "mod_code": [
+        "return true = strlen ( T ) ;",
+        "cin >> Arr . at ( i ) ;",
+        "string tmp = del ( del ) ;",
+        "bool * Mark [ MAX_N ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "cannot convert ‘bool’ to ‘bool*’ in assignment"
+    },
+    {
+      "mod_line": [
+        16,
+        21,
+        2
+      ],
+      "mod_code": [
+        "return true = strlen ( T ) ;",
+        "cin >> Arr . at ( i ) ;",
+        "bool * Mark [ MAX_N ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "cannot convert ‘bool’ to ‘bool*’ in assignment"
+    },
+    {
+      "mod_line": [
+        16,
+        27
+      ],
+      "mod_code": [
+        "return true = strlen ( T ) ;",
+        "string tmp = del ( del ) ;"
+      ],
+      "err_line": 16,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘const char*’ for argument ‘1’ to ‘size_t strlen(const char*)’"
+    },
+    {
+      "mod_line": [
+        16,
+        27,
+        2
+      ],
+      "mod_code": [
+        "return true = strlen ( T ) ;",
+        "string tmp = del ( del ) ;",
+        "bool * Mark [ MAX_N ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "cannot convert ‘bool’ to ‘bool*’ in assignment"
+    },
+    {
+      "mod_line": [
+        16,
+        2
+      ],
+      "mod_code": [
+        "return true = strlen ( T ) ;",
+        "bool * Mark [ MAX_N ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "cannot convert ‘bool’ to ‘bool*’ in assignment"
+    },
+    {
+      "mod_line": [
+        19,
+        29
+      ],
+      "mod_code": [
+        "cin >> n >> T ;",
+        "s assign mid ;"
+      ],
+      "err_line": 19,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        19,
+        29,
+        21
+      ],
+      "mod_code": [
+        "cin >> n >> T ;",
+        "s assign mid ;",
+        "cin >> Arr . at ( i ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        19,
+        29,
+        21,
+        27
+      ],
+      "mod_code": [
+        "cin >> n >> T ;",
+        "s assign mid ;",
+        "cin >> Arr . at ( i ) ;",
+        "string tmp = del ( del ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        19,
+        29,
+        21,
+        2
+      ],
+      "mod_code": [
+        "cin >> n >> T ;",
+        "s assign mid ;",
+        "cin >> Arr . at ( i ) ;",
+        "bool * Mark [ MAX_N ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "cannot convert ‘bool’ to ‘bool*’ in assignment"
+    },
+    {
+      "mod_line": [
+        19,
+        29,
+        27
+      ],
+      "mod_code": [
+        "cin >> n >> T ;",
+        "s assign mid ;",
+        "string tmp = del ( del ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        19,
+        29,
+        27,
+        2
+      ],
+      "mod_code": [
+        "cin >> n >> T ;",
+        "s assign mid ;",
+        "string tmp = del ( del ) ;",
+        "bool * Mark [ MAX_N ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "cannot convert ‘bool’ to ‘bool*’ in assignment"
+    },
+    {
+      "mod_line": [
+        19,
+        29,
+        2
+      ],
+      "mod_code": [
+        "cin >> n >> T ;",
+        "s assign mid ;",
+        "bool * Mark [ MAX_N ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "cannot convert ‘bool’ to ‘bool*’ in assignment"
+    },
+    {
+      "mod_line": [
+        19,
+        21
+      ],
+      "mod_code": [
+        "cin >> n >> T ;",
+        "cin >> Arr . at ( i ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        19,
+        21,
+        27
+      ],
+      "mod_code": [
+        "cin >> n >> T ;",
+        "cin >> Arr . at ( i ) ;",
+        "string tmp = del ( del ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        19,
+        21,
+        27,
+        2
+      ],
+      "mod_code": [
+        "cin >> n >> T ;",
+        "cin >> Arr . at ( i ) ;",
+        "string tmp = del ( del ) ;",
+        "bool * Mark [ MAX_N ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "cannot convert ‘bool’ to ‘bool*’ in assignment"
+    },
+    {
+      "mod_line": [
+        19,
+        21,
+        2
+      ],
+      "mod_code": [
+        "cin >> n >> T ;",
+        "cin >> Arr . at ( i ) ;",
+        "bool * Mark [ MAX_N ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "cannot convert ‘bool’ to ‘bool*’ in assignment"
+    },
+    {
+      "mod_line": [
+        19,
+        27
+      ],
+      "mod_code": [
+        "cin >> n >> T ;",
+        "string tmp = del ( del ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        19,
+        27,
+        2
+      ],
+      "mod_code": [
+        "cin >> n >> T ;",
+        "string tmp = del ( del ) ;",
+        "bool * Mark [ MAX_N ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "cannot convert ‘bool’ to ‘bool*’ in assignment"
+    },
+    {
+      "mod_line": [
+        19,
+        2
+      ],
+      "mod_code": [
+        "cin >> n >> T ;",
+        "bool * Mark [ MAX_N ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "cannot convert ‘bool’ to ‘bool*’ in assignment"
+    },
+    {
+      "mod_line": [
+        29,
+        21
+      ],
+      "mod_code": [
+        "s assign mid ;",
+        "cin >> Arr . at ( i ) ;"
+      ],
+      "err_line": 21,
+      "err_msg": "request for member ‘at’ in ‘Arr’, which is of non-class type ‘int [200010]’"
+    },
+    {
+      "mod_line": [
+        29,
+        21,
+        27
+      ],
+      "mod_code": [
+        "s assign mid ;",
+        "cin >> Arr . at ( i ) ;",
+        "string tmp = del ( del ) ;"
+      ],
+      "err_line": 21,
+      "err_msg": "request for member ‘at’ in ‘Arr’, which is of non-class type ‘int [200010]’"
+    },
+    {
+      "mod_line": [
+        29,
+        21,
+        27,
+        2
+      ],
+      "mod_code": [
+        "s assign mid ;",
+        "cin >> Arr . at ( i ) ;",
+        "string tmp = del ( del ) ;",
+        "bool * Mark [ MAX_N ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "cannot convert ‘bool’ to ‘bool*’ in assignment"
+    },
+    {
+      "mod_line": [
+        29,
+        21,
+        2
+      ],
+      "mod_code": [
+        "s assign mid ;",
+        "cin >> Arr . at ( i ) ;",
+        "bool * Mark [ MAX_N ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "cannot convert ‘bool’ to ‘bool*’ in assignment"
+    },
+    {
+      "mod_line": [
+        29,
+        27
+      ],
+      "mod_code": [
+        "s assign mid ;",
+        "string tmp = del ( del ) ;"
+      ],
+      "err_line": 27,
+      "err_msg": "invalid conversion from ‘std::__cxx11::string (*)(int) {aka std::__cxx11::basic_string<char> (*)(int)}’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        29,
+        27,
+        2
+      ],
+      "mod_code": [
+        "s assign mid ;",
+        "string tmp = del ( del ) ;",
+        "bool * Mark [ MAX_N ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "cannot convert ‘bool’ to ‘bool*’ in assignment"
+    },
+    {
+      "mod_line": [
+        29,
+        2
+      ],
+      "mod_code": [
+        "s assign mid ;",
+        "bool * Mark [ MAX_N ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "cannot convert ‘bool’ to ‘bool*’ in assignment"
+    },
+    {
+      "mod_line": [
+        21,
+        27
+      ],
+      "mod_code": [
+        "cin >> Arr . at ( i ) ;",
+        "string tmp = del ( del ) ;"
+      ],
+      "err_line": 21,
+      "err_msg": "request for member ‘at’ in ‘Arr’, which is of non-class type ‘int [200010]’"
+    },
+    {
+      "mod_line": [
+        21,
+        27,
+        2
+      ],
+      "mod_code": [
+        "cin >> Arr . at ( i ) ;",
+        "string tmp = del ( del ) ;",
+        "bool * Mark [ MAX_N ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "cannot convert ‘bool’ to ‘bool*’ in assignment"
+    },
+    {
+      "mod_line": [
+        21,
+        2
+      ],
+      "mod_code": [
+        "cin >> Arr . at ( i ) ;",
+        "bool * Mark [ MAX_N ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "cannot convert ‘bool’ to ‘bool*’ in assignment"
+    },
+    {
+      "mod_line": [
+        27,
+        2
+      ],
+      "mod_code": [
+        "string tmp = del ( del ) ;",
+        "bool * Mark [ MAX_N ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "cannot convert ‘bool’ to ‘bool*’ in assignment"
+    }
+  ]
+}

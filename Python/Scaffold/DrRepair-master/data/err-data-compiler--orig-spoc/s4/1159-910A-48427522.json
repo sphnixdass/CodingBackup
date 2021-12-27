@@ -1,0 +1,1109 @@
+{
+  "meta": {
+    "index": 1159,
+    "hitid": "3BDORL6HKK7D5RETXXRB6PQQ2VQCRB",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "910A",
+    "subid": "48427522"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create constant integer N with value 101",
+      "code": "const int N = 101 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "bool vectors adj and l of size N with l filled with 1e9",
+      "code": "vector < int > adj [ N ] , l ( N , 1e9 ) ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "bool vector vis of size N",
+      "code": "vector < bool > vis ( N ) ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "void function f with integer argument s",
+      "code": "void f ( int s )",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "set vis [ s ] to true",
+      "code": "vis [ s ] = true ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "q is an queue of integers",
+      "code": "queue < int > q ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "push s to q",
+      "code": "q . push ( s ) ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "assign value of 0 to l [ s ]",
+      "code": "l [ s ] = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "while q is not empty",
+      "code": "while ( ! q . empty ( ) )",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "create integer p = q . front ( )",
+      "code": "int p = q . front ( ) ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "remove top element from q",
+      "code": "q . pop ( ) ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "for integer i = 0 to length of adj [ p ] exclusive",
+      "code": "for ( int i = 0 ; i < adj [ p ] . size ( ) ; i ++ )",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "if vis [ adj [ p ] [ i ] ] = false",
+      "code": "if ( vis [ adj [ p ] [ i ] ] == false )",
+      "indent": 3
+    },
+    {
+      "line": 13,
+      "text": "set value of l [ adj [ p ] [ i ] ] to min of l [ adj [ p ] [ i ] ] and l [ p ] + 1",
+      "code": "l [ adj [ p ] [ i ] ] = min ( l [ adj [ p ] [ i ] ] , l [ p ] + 1 ) ;",
+      "indent": 4
+    },
+    {
+      "line": 14,
+      "text": "assign value of true to vis [ adj [ p ] [ i ] ]",
+      "code": "vis [ adj [ p ] [ i ] ] = true ;",
+      "indent": 4
+    },
+    {
+      "line": 15,
+      "text": "enqueue adj [ p ] [ i ] in q",
+      "code": "q . push ( adj [ p ] [ i ] ) ;",
+      "indent": 4
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 20,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 21,
+      "text": "declare integer variables n and k",
+      "code": "int n , k ;",
+      "indent": 1
+    },
+    {
+      "line": 22,
+      "text": "read n and k",
+      "code": "cin >> n >> k ;",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "declare string variable s",
+      "code": "string s ;",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "read s",
+      "code": "cin >> s ;",
+      "indent": 1
+    },
+    {
+      "line": 25,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( int i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 26,
+      "text": "if s [ i ] = ' 0 ' continue",
+      "code": "if ( s [ i ] == ' 0 ' ) continue ;",
+      "indent": 2
+    },
+    {
+      "line": 27,
+      "text": "for integer j = i + 1 to min of n and i + k + 1 exclusive",
+      "code": "for ( int j = i + 1 ; j < min ( n , i + k + 1 ) ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 28,
+      "text": "if s [ j ] = ' 1 ' , push i into adj [ i ] , push i into adj [ j ]",
+      "code": "if ( s [ j ] == ' 1 ' ) adj [ i ] . push_back ( j ) , adj [ j ] . push_back ( i ) ;",
+      "indent": 3
+    },
+    {
+      "line": 29,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 30,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 31,
+      "text": "call f ( 0 )",
+      "code": "f ( 0 ) ;",
+      "indent": 1
+    },
+    {
+      "line": 32,
+      "text": "if l [ n - 1 ] = 1e9 , assign - 1 to l [ n - 1 ]",
+      "code": "if ( l [ n - 1 ] == 1e9 ) l [ n - 1 ] = - 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 33,
+      "text": "print l [ n - 1 ]",
+      "code": "cout << l [ n - 1 ] << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 34,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 35,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "vector < bool > adj [ N ] , l [ N ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator=’ (operand types are ‘std::vector<bool>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < adj [ p ] . length ( ) ; i ++ )"
+      ],
+      "err_line": 11,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "q [ p ] [ i ] = q . end ( ) ;"
+      ],
+      "err_line": 15,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::queue<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        28
+      ],
+      "mod_code": [
+        "if ( s [ j ] == ' 1 ' ) adj [ i ] . push ( i , adj [ i ] ) ;"
+      ],
+      "err_line": 28,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘push’"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "vectors . size ( ) , l [ N ] = 1e9 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘vectors’ does not name a type"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "vector < bool > vis [ N ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator=’ (operand types are ‘std::vector<bool>’ and ‘bool’)"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "void f ( int s ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "vis [ s ] ] = true ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "q . push_back ( s ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘class std::queue<int>’ has no member named ‘push_back’"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "p = q . front ( ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘p’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "q . top ( ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘class std::queue<int>’ has no member named ‘top’"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "l [ adj [ p ] [ i ] ] = min ( l [ p [ p ] [ i ] ] , l [ p ] + 1 ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "q [ p ] [ i ] = q . begin ( ) ;"
+      ],
+      "err_line": 15,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::queue<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        23
+      ],
+      "mod_code": [
+        "string n ;"
+      ],
+      "err_line": 23,
+      "err_msg": "conflicting declaration ‘std::__cxx11::string n’"
+    },
+    {
+      "mod_line": [
+        24
+      ],
+      "mod_code": [
+        "gets ( s ) ;"
+      ],
+      "err_line": 24,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    },
+    {
+      "mod_line": [
+        25
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 25,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        28
+      ],
+      "mod_code": [
+        "if ( s [ j ] == ' 1 ' ) adj [ i ] . push ( i , adj [ j ] ) ;"
+      ],
+      "err_line": 28,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘push’"
+    },
+    {
+      "mod_line": [
+        31
+      ],
+      "mod_code": [
+        "f ( 0 ) ) ;"
+      ],
+      "err_line": 31,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        11
+      ],
+      "mod_code": [
+        "vector < bool > adj [ N ] , l [ N ] ;",
+        "for ( int i = 0 ; i < adj [ p ] . length ( ) ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator=’ (operand types are ‘std::vector<bool>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        1,
+        11,
+        15
+      ],
+      "mod_code": [
+        "vector < bool > adj [ N ] , l [ N ] ;",
+        "for ( int i = 0 ; i < adj [ p ] . length ( ) ; i ++ )",
+        "q [ p ] [ i ] = q . end ( ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator=’ (operand types are ‘std::vector<bool>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        1,
+        11,
+        15,
+        27
+      ],
+      "mod_code": [
+        "vector < bool > adj [ N ] , l [ N ] ;",
+        "for ( int i = 0 ; i < adj [ p ] . length ( ) ; i ++ )",
+        "q [ p ] [ i ] = q . end ( ) ;",
+        "for ( int j = i + 1 ; j < min ( n , i + k ) ; j ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator=’ (operand types are ‘std::vector<bool>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        1,
+        11,
+        15,
+        28
+      ],
+      "mod_code": [
+        "vector < bool > adj [ N ] , l [ N ] ;",
+        "for ( int i = 0 ; i < adj [ p ] . length ( ) ; i ++ )",
+        "q [ p ] [ i ] = q . end ( ) ;",
+        "if ( s [ j ] == ' 1 ' ) adj [ i ] . push ( i , adj [ i ] ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator=’ (operand types are ‘std::vector<bool>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        1,
+        11,
+        15,
+        4
+      ],
+      "mod_code": [
+        "vector < bool > adj [ N ] , l [ N ] ;",
+        "for ( int i = 0 ; i < adj [ p ] . length ( ) ; i ++ )",
+        "q [ p ] [ i ] = q . end ( ) ;",
+        "vis [ s ] ] = true ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        11,
+        27
+      ],
+      "mod_code": [
+        "vector < bool > adj [ N ] , l [ N ] ;",
+        "for ( int i = 0 ; i < adj [ p ] . length ( ) ; i ++ )",
+        "for ( int j = i + 1 ; j < min ( n , i + k ) ; j ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator=’ (operand types are ‘std::vector<bool>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        1,
+        11,
+        27,
+        28
+      ],
+      "mod_code": [
+        "vector < bool > adj [ N ] , l [ N ] ;",
+        "for ( int i = 0 ; i < adj [ p ] . length ( ) ; i ++ )",
+        "for ( int j = i + 1 ; j < min ( n , i + k ) ; j ++ )",
+        "if ( s [ j ] == ' 1 ' ) adj [ i ] . push ( i , adj [ i ] ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator=’ (operand types are ‘std::vector<bool>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        1,
+        11,
+        27,
+        4
+      ],
+      "mod_code": [
+        "vector < bool > adj [ N ] , l [ N ] ;",
+        "for ( int i = 0 ; i < adj [ p ] . length ( ) ; i ++ )",
+        "for ( int j = i + 1 ; j < min ( n , i + k ) ; j ++ )",
+        "vis [ s ] ] = true ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        11,
+        28
+      ],
+      "mod_code": [
+        "vector < bool > adj [ N ] , l [ N ] ;",
+        "for ( int i = 0 ; i < adj [ p ] . length ( ) ; i ++ )",
+        "if ( s [ j ] == ' 1 ' ) adj [ i ] . push ( i , adj [ i ] ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator=’ (operand types are ‘std::vector<bool>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        1,
+        11,
+        28,
+        4
+      ],
+      "mod_code": [
+        "vector < bool > adj [ N ] , l [ N ] ;",
+        "for ( int i = 0 ; i < adj [ p ] . length ( ) ; i ++ )",
+        "if ( s [ j ] == ' 1 ' ) adj [ i ] . push ( i , adj [ i ] ) ;",
+        "vis [ s ] ] = true ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        11,
+        4
+      ],
+      "mod_code": [
+        "vector < bool > adj [ N ] , l [ N ] ;",
+        "for ( int i = 0 ; i < adj [ p ] . length ( ) ; i ++ )",
+        "vis [ s ] ] = true ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        15
+      ],
+      "mod_code": [
+        "vector < bool > adj [ N ] , l [ N ] ;",
+        "q [ p ] [ i ] = q . end ( ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator=’ (operand types are ‘std::vector<bool>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        1,
+        15,
+        27
+      ],
+      "mod_code": [
+        "vector < bool > adj [ N ] , l [ N ] ;",
+        "q [ p ] [ i ] = q . end ( ) ;",
+        "for ( int j = i + 1 ; j < min ( n , i + k ) ; j ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator=’ (operand types are ‘std::vector<bool>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        1,
+        15,
+        27,
+        28
+      ],
+      "mod_code": [
+        "vector < bool > adj [ N ] , l [ N ] ;",
+        "q [ p ] [ i ] = q . end ( ) ;",
+        "for ( int j = i + 1 ; j < min ( n , i + k ) ; j ++ )",
+        "if ( s [ j ] == ' 1 ' ) adj [ i ] . push ( i , adj [ i ] ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator=’ (operand types are ‘std::vector<bool>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        1,
+        15,
+        27,
+        4
+      ],
+      "mod_code": [
+        "vector < bool > adj [ N ] , l [ N ] ;",
+        "q [ p ] [ i ] = q . end ( ) ;",
+        "for ( int j = i + 1 ; j < min ( n , i + k ) ; j ++ )",
+        "vis [ s ] ] = true ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        15,
+        28
+      ],
+      "mod_code": [
+        "vector < bool > adj [ N ] , l [ N ] ;",
+        "q [ p ] [ i ] = q . end ( ) ;",
+        "if ( s [ j ] == ' 1 ' ) adj [ i ] . push ( i , adj [ i ] ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator=’ (operand types are ‘std::vector<bool>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        1,
+        15,
+        28,
+        4
+      ],
+      "mod_code": [
+        "vector < bool > adj [ N ] , l [ N ] ;",
+        "q [ p ] [ i ] = q . end ( ) ;",
+        "if ( s [ j ] == ' 1 ' ) adj [ i ] . push ( i , adj [ i ] ) ;",
+        "vis [ s ] ] = true ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        15,
+        4
+      ],
+      "mod_code": [
+        "vector < bool > adj [ N ] , l [ N ] ;",
+        "q [ p ] [ i ] = q . end ( ) ;",
+        "vis [ s ] ] = true ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        27
+      ],
+      "mod_code": [
+        "vector < bool > adj [ N ] , l [ N ] ;",
+        "for ( int j = i + 1 ; j < min ( n , i + k ) ; j ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator=’ (operand types are ‘std::vector<bool>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        1,
+        27,
+        28
+      ],
+      "mod_code": [
+        "vector < bool > adj [ N ] , l [ N ] ;",
+        "for ( int j = i + 1 ; j < min ( n , i + k ) ; j ++ )",
+        "if ( s [ j ] == ' 1 ' ) adj [ i ] . push ( i , adj [ i ] ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator=’ (operand types are ‘std::vector<bool>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        1,
+        27,
+        28,
+        4
+      ],
+      "mod_code": [
+        "vector < bool > adj [ N ] , l [ N ] ;",
+        "for ( int j = i + 1 ; j < min ( n , i + k ) ; j ++ )",
+        "if ( s [ j ] == ' 1 ' ) adj [ i ] . push ( i , adj [ i ] ) ;",
+        "vis [ s ] ] = true ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        27,
+        4
+      ],
+      "mod_code": [
+        "vector < bool > adj [ N ] , l [ N ] ;",
+        "for ( int j = i + 1 ; j < min ( n , i + k ) ; j ++ )",
+        "vis [ s ] ] = true ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        28
+      ],
+      "mod_code": [
+        "vector < bool > adj [ N ] , l [ N ] ;",
+        "if ( s [ j ] == ' 1 ' ) adj [ i ] . push ( i , adj [ i ] ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator=’ (operand types are ‘std::vector<bool>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        1,
+        28,
+        4
+      ],
+      "mod_code": [
+        "vector < bool > adj [ N ] , l [ N ] ;",
+        "if ( s [ j ] == ' 1 ' ) adj [ i ] . push ( i , adj [ i ] ) ;",
+        "vis [ s ] ] = true ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        4
+      ],
+      "mod_code": [
+        "vector < bool > adj [ N ] , l [ N ] ;",
+        "vis [ s ] ] = true ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        11,
+        15
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < adj [ p ] . length ( ) ; i ++ )",
+        "q [ p ] [ i ] = q . end ( ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        11,
+        15,
+        27
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < adj [ p ] . length ( ) ; i ++ )",
+        "q [ p ] [ i ] = q . end ( ) ;",
+        "for ( int j = i + 1 ; j < min ( n , i + k ) ; j ++ )"
+      ],
+      "err_line": 11,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        11,
+        15,
+        27,
+        28
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < adj [ p ] . length ( ) ; i ++ )",
+        "q [ p ] [ i ] = q . end ( ) ;",
+        "for ( int j = i + 1 ; j < min ( n , i + k ) ; j ++ )",
+        "if ( s [ j ] == ' 1 ' ) adj [ i ] . push ( i , adj [ i ] ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        11,
+        15,
+        27,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < adj [ p ] . length ( ) ; i ++ )",
+        "q [ p ] [ i ] = q . end ( ) ;",
+        "for ( int j = i + 1 ; j < min ( n , i + k ) ; j ++ )",
+        "vis [ s ] ] = true ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        11,
+        15,
+        28
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < adj [ p ] . length ( ) ; i ++ )",
+        "q [ p ] [ i ] = q . end ( ) ;",
+        "if ( s [ j ] == ' 1 ' ) adj [ i ] . push ( i , adj [ i ] ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        11,
+        15,
+        28,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < adj [ p ] . length ( ) ; i ++ )",
+        "q [ p ] [ i ] = q . end ( ) ;",
+        "if ( s [ j ] == ' 1 ' ) adj [ i ] . push ( i , adj [ i ] ) ;",
+        "vis [ s ] ] = true ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        11,
+        15,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < adj [ p ] . length ( ) ; i ++ )",
+        "q [ p ] [ i ] = q . end ( ) ;",
+        "vis [ s ] ] = true ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        11,
+        27
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < adj [ p ] . length ( ) ; i ++ )",
+        "for ( int j = i + 1 ; j < min ( n , i + k ) ; j ++ )"
+      ],
+      "err_line": 11,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        11,
+        27,
+        28
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < adj [ p ] . length ( ) ; i ++ )",
+        "for ( int j = i + 1 ; j < min ( n , i + k ) ; j ++ )",
+        "if ( s [ j ] == ' 1 ' ) adj [ i ] . push ( i , adj [ i ] ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        11,
+        27,
+        28,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < adj [ p ] . length ( ) ; i ++ )",
+        "for ( int j = i + 1 ; j < min ( n , i + k ) ; j ++ )",
+        "if ( s [ j ] == ' 1 ' ) adj [ i ] . push ( i , adj [ i ] ) ;",
+        "vis [ s ] ] = true ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        11,
+        27,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < adj [ p ] . length ( ) ; i ++ )",
+        "for ( int j = i + 1 ; j < min ( n , i + k ) ; j ++ )",
+        "vis [ s ] ] = true ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        11,
+        28
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < adj [ p ] . length ( ) ; i ++ )",
+        "if ( s [ j ] == ' 1 ' ) adj [ i ] . push ( i , adj [ i ] ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘length’"
+    },
+    {
+      "mod_line": [
+        11,
+        28,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < adj [ p ] . length ( ) ; i ++ )",
+        "if ( s [ j ] == ' 1 ' ) adj [ i ] . push ( i , adj [ i ] ) ;",
+        "vis [ s ] ] = true ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        11,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < adj [ p ] . length ( ) ; i ++ )",
+        "vis [ s ] ] = true ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        15,
+        27
+      ],
+      "mod_code": [
+        "q [ p ] [ i ] = q . end ( ) ;",
+        "for ( int j = i + 1 ; j < min ( n , i + k ) ; j ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::queue<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        15,
+        27,
+        28
+      ],
+      "mod_code": [
+        "q [ p ] [ i ] = q . end ( ) ;",
+        "for ( int j = i + 1 ; j < min ( n , i + k ) ; j ++ )",
+        "if ( s [ j ] == ' 1 ' ) adj [ i ] . push ( i , adj [ i ] ) ;"
+      ],
+      "err_line": 15,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::queue<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        15,
+        27,
+        28,
+        4
+      ],
+      "mod_code": [
+        "q [ p ] [ i ] = q . end ( ) ;",
+        "for ( int j = i + 1 ; j < min ( n , i + k ) ; j ++ )",
+        "if ( s [ j ] == ' 1 ' ) adj [ i ] . push ( i , adj [ i ] ) ;",
+        "vis [ s ] ] = true ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        15,
+        27,
+        4
+      ],
+      "mod_code": [
+        "q [ p ] [ i ] = q . end ( ) ;",
+        "for ( int j = i + 1 ; j < min ( n , i + k ) ; j ++ )",
+        "vis [ s ] ] = true ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        15,
+        28
+      ],
+      "mod_code": [
+        "q [ p ] [ i ] = q . end ( ) ;",
+        "if ( s [ j ] == ' 1 ' ) adj [ i ] . push ( i , adj [ i ] ) ;"
+      ],
+      "err_line": 15,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::queue<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        15,
+        28,
+        4
+      ],
+      "mod_code": [
+        "q [ p ] [ i ] = q . end ( ) ;",
+        "if ( s [ j ] == ' 1 ' ) adj [ i ] . push ( i , adj [ i ] ) ;",
+        "vis [ s ] ] = true ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        15,
+        4
+      ],
+      "mod_code": [
+        "q [ p ] [ i ] = q . end ( ) ;",
+        "vis [ s ] ] = true ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        27,
+        28
+      ],
+      "mod_code": [
+        "for ( int j = i + 1 ; j < min ( n , i + k ) ; j ++ )",
+        "if ( s [ j ] == ' 1 ' ) adj [ i ] . push ( i , adj [ i ] ) ;"
+      ],
+      "err_line": 28,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘push’"
+    },
+    {
+      "mod_line": [
+        27,
+        28,
+        4
+      ],
+      "mod_code": [
+        "for ( int j = i + 1 ; j < min ( n , i + k ) ; j ++ )",
+        "if ( s [ j ] == ' 1 ' ) adj [ i ] . push ( i , adj [ i ] ) ;",
+        "vis [ s ] ] = true ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        27,
+        4
+      ],
+      "mod_code": [
+        "for ( int j = i + 1 ; j < min ( n , i + k ) ; j ++ )",
+        "vis [ s ] ] = true ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        28,
+        4
+      ],
+      "mod_code": [
+        "if ( s [ j ] == ' 1 ' ) adj [ i ] . push ( i , adj [ i ] ) ;",
+        "vis [ s ] ] = true ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    }
+  ]
+}

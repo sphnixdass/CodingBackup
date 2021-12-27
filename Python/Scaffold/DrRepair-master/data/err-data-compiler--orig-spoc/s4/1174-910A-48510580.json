@@ -1,0 +1,643 @@
+{
+  "meta": {
+    "index": 1174,
+    "hitid": "3M67TQBQQHIJ8CL9J2VY9908W6ZA9K",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "910A",
+    "subid": "48510580"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create constant integer MAXN with MAXN = 101",
+      "code": "const int MAXN = 101 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create character array data with size MAXN",
+      "code": "char data [ MAXN ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "create integer dp with size MAXN",
+      "code": "int dp [ MAXN ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "create integers n , d",
+      "code": "int n , d ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "read n read d",
+      "code": "cin >> n >> d ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 1 to n + 1 exclusive , read data [ i ]",
+      "code": "for ( int i = 1 ; i < n + 1 ; i ++ ) { cin >> data [ i ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for i = 1 to n + 1 exclusive , set dp [ i ] to 1e9",
+      "code": "for ( int i = 1 ; i < n + 1 ; i ++ ) { dp [ i ] = 1e9 ; }",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "set dp [ 1 ] to 0",
+      "code": "dp [ 1 ] = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "for i 1 to n + 1 exclusive",
+      "code": "for ( int i = 1 ; i < n + 1 ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "if data [ i ] is ' 1 '",
+      "code": "if ( data [ i ] == ' 1 ' )",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "for j = i + 1 to minimum of ( i + d and n ) + 1 exclusive",
+      "code": "for ( int j = i + 1 ; j < min ( i + d , n ) + 1 ; j ++ )",
+      "indent": 3
+    },
+    {
+      "line": 12,
+      "text": "if data [ j ] is ' 1 ' , set dp [ j ] to minimum of dp [ j ] and dp [ i ] + 1",
+      "code": "if ( data [ j ] == ' 1 ' ) { dp [ j ] = min ( dp [ j ] , dp [ i ] + 1 ) ; }",
+      "indent": 4
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "if dp [ n ] is 1e9 , set dp [ n ] to - 1",
+      "code": "if ( dp [ n ] == 1e9 ) { dp [ n ] = - 1 ; }",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "print dp [ n ] print newline",
+      "code": "cout << dp [ n ] << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘data’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "cin >> n >> k ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "for ( int j = i + 1 ; j <= min ( i + d && n ) + 1 ; j ++ )"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘min(bool)’"
+    },
+    {
+      "mod_line": [
+        11,
+        10,
+        5
+      ],
+      "mod_code": [
+        "for ( int j = i + 1 ; j <= min ( i + d , n ) + 1 ; j ++ )",
+        "if ( data [ i ] == ' l ' )",
+        "cin >> n >> k ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        10,
+        5,
+        8
+      ],
+      "mod_code": [
+        "for ( int j = i + 1 ; j <= min ( i + d , n ) + 1 ; j ++ )",
+        "if ( data [ i ] == ' l ' )",
+        "cin >> n >> k ;",
+        "dp [ ' 1 ' ] = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        10,
+        5,
+        1
+      ],
+      "mod_code": [
+        "for ( int j = i + 1 ; j <= min ( i + d , n ) + 1 ; j ++ )",
+        "if ( data [ i ] == ' l ' )",
+        "cin >> n >> k ;",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        10,
+        8,
+        1
+      ],
+      "mod_code": [
+        "for ( int j = i + 1 ; j <= min ( i + d , n ) + 1 ; j ++ )",
+        "if ( data [ i ] == ' l ' )",
+        "dp [ ' 1 ' ] = 0 ;",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘data’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        10,
+        1
+      ],
+      "mod_code": [
+        "for ( int j = i + 1 ; j <= min ( i + d , n ) + 1 ; j ++ )",
+        "if ( data [ i ] == ' l ' )",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘data’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        5
+      ],
+      "mod_code": [
+        "for ( int j = i + 1 ; j <= min ( i + d , n ) + 1 ; j ++ )",
+        "cin >> n >> k ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        5,
+        8
+      ],
+      "mod_code": [
+        "for ( int j = i + 1 ; j <= min ( i + d , n ) + 1 ; j ++ )",
+        "cin >> n >> k ;",
+        "dp [ ' 1 ' ] = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        5,
+        8,
+        1
+      ],
+      "mod_code": [
+        "for ( int j = i + 1 ; j <= min ( i + d , n ) + 1 ; j ++ )",
+        "cin >> n >> k ;",
+        "dp [ ' 1 ' ] = 0 ;",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        5,
+        1
+      ],
+      "mod_code": [
+        "for ( int j = i + 1 ; j <= min ( i + d , n ) + 1 ; j ++ )",
+        "cin >> n >> k ;",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        8,
+        1
+      ],
+      "mod_code": [
+        "for ( int j = i + 1 ; j <= min ( i + d , n ) + 1 ; j ++ )",
+        "dp [ ' 1 ' ] = 0 ;",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘data’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        1
+      ],
+      "mod_code": [
+        "for ( int j = i + 1 ; j <= min ( i + d , n ) + 1 ; j ++ )",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘data’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        5
+      ],
+      "mod_code": [
+        "if ( data [ i ] == ' l ' )",
+        "cin >> n >> k ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        5,
+        8
+      ],
+      "mod_code": [
+        "if ( data [ i ] == ' l ' )",
+        "cin >> n >> k ;",
+        "dp [ ' 1 ' ] = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        5,
+        8,
+        11
+      ],
+      "mod_code": [
+        "if ( data [ i ] == ' l ' )",
+        "cin >> n >> k ;",
+        "dp [ ' 1 ' ] = 0 ;",
+        "for ( int j = i + 1 ; j <= min ( i + d && n ) + 1 ; j ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        5,
+        8,
+        1
+      ],
+      "mod_code": [
+        "if ( data [ i ] == ' l ' )",
+        "cin >> n >> k ;",
+        "dp [ ' 1 ' ] = 0 ;",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        5,
+        11
+      ],
+      "mod_code": [
+        "if ( data [ i ] == ' l ' )",
+        "cin >> n >> k ;",
+        "for ( int j = i + 1 ; j <= min ( i + d && n ) + 1 ; j ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        5,
+        11,
+        1
+      ],
+      "mod_code": [
+        "if ( data [ i ] == ' l ' )",
+        "cin >> n >> k ;",
+        "for ( int j = i + 1 ; j <= min ( i + d && n ) + 1 ; j ++ )",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        5,
+        1
+      ],
+      "mod_code": [
+        "if ( data [ i ] == ' l ' )",
+        "cin >> n >> k ;",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        8,
+        11
+      ],
+      "mod_code": [
+        "if ( data [ i ] == ' l ' )",
+        "dp [ ' 1 ' ] = 0 ;",
+        "for ( int j = i + 1 ; j <= min ( i + d && n ) + 1 ; j ++ )"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘min(bool)’"
+    },
+    {
+      "mod_line": [
+        10,
+        8,
+        11,
+        1
+      ],
+      "mod_code": [
+        "if ( data [ i ] == ' l ' )",
+        "dp [ ' 1 ' ] = 0 ;",
+        "for ( int j = i + 1 ; j <= min ( i + d && n ) + 1 ; j ++ )",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘data’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        8,
+        1
+      ],
+      "mod_code": [
+        "if ( data [ i ] == ' l ' )",
+        "dp [ ' 1 ' ] = 0 ;",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘data’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        11
+      ],
+      "mod_code": [
+        "if ( data [ i ] == ' l ' )",
+        "for ( int j = i + 1 ; j <= min ( i + d && n ) + 1 ; j ++ )"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘min(bool)’"
+    },
+    {
+      "mod_line": [
+        10,
+        11,
+        1
+      ],
+      "mod_code": [
+        "if ( data [ i ] == ' l ' )",
+        "for ( int j = i + 1 ; j <= min ( i + d && n ) + 1 ; j ++ )",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘data’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        1
+      ],
+      "mod_code": [
+        "if ( data [ i ] == ' l ' )",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘data’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        8
+      ],
+      "mod_code": [
+        "cin >> n >> k ;",
+        "dp [ ' 1 ' ] = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        11
+      ],
+      "mod_code": [
+        "cin >> n >> k ;",
+        "dp [ ' 1 ' ] = 0 ;",
+        "for ( int j = i + 1 ; j <= min ( i + d && n ) + 1 ; j ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        11,
+        1
+      ],
+      "mod_code": [
+        "cin >> n >> k ;",
+        "dp [ ' 1 ' ] = 0 ;",
+        "for ( int j = i + 1 ; j <= min ( i + d && n ) + 1 ; j ++ )",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        1
+      ],
+      "mod_code": [
+        "cin >> n >> k ;",
+        "dp [ ' 1 ' ] = 0 ;",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        11
+      ],
+      "mod_code": [
+        "cin >> n >> k ;",
+        "for ( int j = i + 1 ; j <= min ( i + d && n ) + 1 ; j ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        11,
+        1
+      ],
+      "mod_code": [
+        "cin >> n >> k ;",
+        "for ( int j = i + 1 ; j <= min ( i + d && n ) + 1 ; j ++ )",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        1
+      ],
+      "mod_code": [
+        "cin >> n >> k ;",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        11
+      ],
+      "mod_code": [
+        "dp [ ' 1 ' ] = 0 ;",
+        "for ( int j = i + 1 ; j <= min ( i + d && n ) + 1 ; j ++ )"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘min(bool)’"
+    },
+    {
+      "mod_line": [
+        8,
+        11,
+        1
+      ],
+      "mod_code": [
+        "dp [ ' 1 ' ] = 0 ;",
+        "for ( int j = i + 1 ; j <= min ( i + d && n ) + 1 ; j ++ )",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘data’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        1
+      ],
+      "mod_code": [
+        "dp [ ' 1 ' ] = 0 ;",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘data’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        1
+      ],
+      "mod_code": [
+        "for ( int j = i + 1 ; j <= min ( i + d && n ) + 1 ; j ++ )",
+        "char a [ MAXN ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘data’ was not declared in this scope"
+    }
+  ]
+}

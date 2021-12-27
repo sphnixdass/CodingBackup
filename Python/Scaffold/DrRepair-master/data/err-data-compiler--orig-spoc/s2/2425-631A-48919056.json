@@ -1,0 +1,839 @@
+{
+  "meta": {
+    "index": 2425,
+    "hitid": "3BA7SXOG1JKBTOOGGLB643U7DR3R8T",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "631A",
+    "subid": "48919056"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "integer function calc with an array of int argument c and int arguments x and y",
+      "code": "int calc ( int c [ ] , int x , int y )",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare integer variable sum = 0",
+      "code": "int sum = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "for integer i = x to y inclusive , change sum to sum | = c [ i ]",
+      "code": "for ( int i = x ; i <= y ; i ++ ) sum |= c [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "return sum",
+      "code": "return sum ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 6,
+      "text": "create new integer variable n",
+      "code": "int n ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "read n from the input",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "declare an arrays of integers a and b with n elements",
+      "code": "int a [ n ] , b [ n ] ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "in a for loop fo i = 0 to n exclusive , read from the input to a [ i ] on each loop",
+      "code": "for ( int i = 0 ; i < n ; i ++ ) cin >> a [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "in a for loop , change i from 0 to n exclusive , reading b [ i ] on each iteration",
+      "code": "for ( int i = 0 ; i < n ; i ++ ) cin >> b [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "create new integer variables x = INT_MIN and y = INT_MIN",
+      "code": "int x = INT_MIN , y = INT_MIN ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "start for loop from i = 0 to n exclusive",
+      "code": "for ( int i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "for j from i to n exclusive , change x to max of x and calc ( a , i , j )",
+      "code": "for ( int j = i ; j < n ; j ++ ) { x = max ( x , calc ( a , i , j ) ) ; }",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "in a for loop , change i from 0 to n exclusive incrementing i",
+      "code": "for ( int i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "for j from i to n exclusive , change y to max of y and calc ( b , i , j )",
+      "code": "for ( int j = i ; j < n ; j ++ ) { y = max ( y , calc ( b , i , j ) ) ; }",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "print x + y",
+      "code": "cout << x + y << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int calc ( int c [ ] , int x , int y ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "int a [ n ] , a [ n ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int a [n]’"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "int x = INT_MIN and y = INT_MIN ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘y’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        12
+      ],
+      "mod_code": [
+        "for ( int i = x ; i <= y ; i ++ ) sum = c [ i ] ;",
+        "sum = sum ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        12,
+        8
+      ],
+      "mod_code": [
+        "for ( int i = x ; i <= y ; i ++ ) sum = c [ i ] ;",
+        "sum = sum ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int a [ n ] , a [ n ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int a [n]’"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        12,
+        7
+      ],
+      "mod_code": [
+        "for ( int i = x ; i <= y ; i ++ ) sum = c [ i ] ;",
+        "sum = sum ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        12,
+        15
+      ],
+      "mod_code": [
+        "for ( int i = x ; i <= y ; i ++ ) sum = c [ i ] ;",
+        "sum = sum ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        8
+      ],
+      "mod_code": [
+        "for ( int i = x ; i <= y ; i ++ ) sum = c [ i ] ;",
+        "sum = sum ;",
+        "int a [ n ] , a [ n ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int a [n]’"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        8,
+        7
+      ],
+      "mod_code": [
+        "for ( int i = x ; i <= y ; i ++ ) sum = c [ i ] ;",
+        "sum = sum ;",
+        "int a [ n ] , a [ n ] ;",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int a [n]’"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        8,
+        15
+      ],
+      "mod_code": [
+        "for ( int i = x ; i <= y ; i ++ ) sum = c [ i ] ;",
+        "sum = sum ;",
+        "int a [ n ] , a [ n ] ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int a [n]’"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        7,
+        15
+      ],
+      "mod_code": [
+        "for ( int i = x ; i <= y ; i ++ ) sum = c [ i ] ;",
+        "sum = sum ;",
+        "n = getchar ( ) ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        15
+      ],
+      "mod_code": [
+        "for ( int i = x ; i <= y ; i ++ ) sum = c [ i ] ;",
+        "sum = sum ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2,
+        12
+      ],
+      "mod_code": [
+        "for ( int i = x ; i <= y ; i ++ ) sum = c [ i ] ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2,
+        12,
+        8
+      ],
+      "mod_code": [
+        "for ( int i = x ; i <= y ; i ++ ) sum = c [ i ] ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int a [ n ] , a [ n ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int a [n]’"
+    },
+    {
+      "mod_line": [
+        2,
+        12,
+        8,
+        7
+      ],
+      "mod_code": [
+        "for ( int i = x ; i <= y ; i ++ ) sum = c [ i ] ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int a [ n ] , a [ n ] ;",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int a [n]’"
+    },
+    {
+      "mod_line": [
+        2,
+        12,
+        8,
+        15
+      ],
+      "mod_code": [
+        "for ( int i = x ; i <= y ; i ++ ) sum = c [ i ] ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int a [ n ] , a [ n ] ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int a [n]’"
+    },
+    {
+      "mod_line": [
+        2,
+        12,
+        7
+      ],
+      "mod_code": [
+        "for ( int i = x ; i <= y ; i ++ ) sum = c [ i ] ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2,
+        12,
+        7,
+        15
+      ],
+      "mod_code": [
+        "for ( int i = x ; i <= y ; i ++ ) sum = c [ i ] ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "n = getchar ( ) ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2,
+        12,
+        15
+      ],
+      "mod_code": [
+        "for ( int i = x ; i <= y ; i ++ ) sum = c [ i ] ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2,
+        8
+      ],
+      "mod_code": [
+        "for ( int i = x ; i <= y ; i ++ ) sum = c [ i ] ;",
+        "int a [ n ] , a [ n ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int a [n]’"
+    },
+    {
+      "mod_line": [
+        2,
+        8,
+        7
+      ],
+      "mod_code": [
+        "for ( int i = x ; i <= y ; i ++ ) sum = c [ i ] ;",
+        "int a [ n ] , a [ n ] ;",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int a [n]’"
+    },
+    {
+      "mod_line": [
+        2,
+        8,
+        7,
+        15
+      ],
+      "mod_code": [
+        "for ( int i = x ; i <= y ; i ++ ) sum = c [ i ] ;",
+        "int a [ n ] , a [ n ] ;",
+        "n = getchar ( ) ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int a [n]’"
+    },
+    {
+      "mod_line": [
+        2,
+        8,
+        15
+      ],
+      "mod_code": [
+        "for ( int i = x ; i <= y ; i ++ ) sum = c [ i ] ;",
+        "int a [ n ] , a [ n ] ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int a [n]’"
+    },
+    {
+      "mod_line": [
+        2,
+        7,
+        15
+      ],
+      "mod_code": [
+        "for ( int i = x ; i <= y ; i ++ ) sum = c [ i ] ;",
+        "n = getchar ( ) ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2,
+        15
+      ],
+      "mod_code": [
+        "for ( int i = x ; i <= y ; i ++ ) sum = c [ i ] ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        12
+      ],
+      "mod_code": [
+        "sum = sum ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        12,
+        8
+      ],
+      "mod_code": [
+        "sum = sum ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int a [ n ] , a [ n ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int a [n]’"
+    },
+    {
+      "mod_line": [
+        3,
+        12,
+        8,
+        7
+      ],
+      "mod_code": [
+        "sum = sum ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int a [ n ] , a [ n ] ;",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int a [n]’"
+    },
+    {
+      "mod_line": [
+        3,
+        12,
+        8,
+        15
+      ],
+      "mod_code": [
+        "sum = sum ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int a [ n ] , a [ n ] ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int a [n]’"
+    },
+    {
+      "mod_line": [
+        3,
+        12,
+        7
+      ],
+      "mod_code": [
+        "sum = sum ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        12,
+        7,
+        15
+      ],
+      "mod_code": [
+        "sum = sum ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "n = getchar ( ) ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        12,
+        15
+      ],
+      "mod_code": [
+        "sum = sum ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        8
+      ],
+      "mod_code": [
+        "sum = sum ;",
+        "int a [ n ] , a [ n ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int a [n]’"
+    },
+    {
+      "mod_line": [
+        3,
+        8,
+        7
+      ],
+      "mod_code": [
+        "sum = sum ;",
+        "int a [ n ] , a [ n ] ;",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int a [n]’"
+    },
+    {
+      "mod_line": [
+        3,
+        8,
+        7,
+        15
+      ],
+      "mod_code": [
+        "sum = sum ;",
+        "int a [ n ] , a [ n ] ;",
+        "n = getchar ( ) ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int a [n]’"
+    },
+    {
+      "mod_line": [
+        3,
+        8,
+        15
+      ],
+      "mod_code": [
+        "sum = sum ;",
+        "int a [ n ] , a [ n ] ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int a [n]’"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        15
+      ],
+      "mod_code": [
+        "sum = sum ;",
+        "n = getchar ( ) ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        15
+      ],
+      "mod_code": [
+        "sum = sum ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        8
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int a [ n ] , a [ n ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int a [n]’"
+    },
+    {
+      "mod_line": [
+        12,
+        8,
+        7
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int a [ n ] , a [ n ] ;",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int a [n]’"
+    },
+    {
+      "mod_line": [
+        12,
+        8,
+        7,
+        15
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int a [ n ] , a [ n ] ;",
+        "n = getchar ( ) ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int a [n]’"
+    },
+    {
+      "mod_line": [
+        12,
+        8,
+        15
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int a [ n ] , a [ n ] ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int a [n]’"
+    },
+    {
+      "mod_line": [
+        12,
+        7
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        7,
+        15
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "n = getchar ( ) ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        15
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        8,
+        7
+      ],
+      "mod_code": [
+        "int a [ n ] , a [ n ] ;",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int a [n]’"
+    },
+    {
+      "mod_line": [
+        8,
+        7,
+        15
+      ],
+      "mod_code": [
+        "int a [ n ] , a [ n ] ;",
+        "n = getchar ( ) ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int a [n]’"
+    },
+    {
+      "mod_line": [
+        8,
+        15
+      ],
+      "mod_code": [
+        "int a [ n ] , a [ n ] ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int a [n]’"
+    },
+    {
+      "mod_line": [
+        7,
+        15
+      ],
+      "mod_code": [
+        "n = getchar ( ) ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    }
+  ]
+}

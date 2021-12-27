@@ -1,0 +1,867 @@
+{
+  "meta": {
+    "index": 2409,
+    "hitid": "39N6W9XWRDHZJ46KDEFO4C424XZGY4",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "962A",
+    "subid": "41605677"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare integer variable a and an array l with size 500000 filled with 0",
+      "code": "int l [ 500000 ] = { 0 } , a ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "define new doubles max and s = 0",
+      "code": "double max = 0 , s = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "read variable a from the input",
+      "code": "cin >> a ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for b from 1 to a inclusive incrementing b",
+      "code": "for ( int b = 1 ; b <= a ; b ++ )",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "read l [ b ]",
+      "code": "cin >> l [ b ] ;",
+      "indent": 2
+    },
+    {
+      "line": 6,
+      "text": "assign l [ b ] + max , casted to a float , to max",
+      "code": "max = ( float ) l [ b ] + max ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "start for loop from b = 1 to a inclusive",
+      "code": "for ( int b = 1 ; b <= a ; b ++ )",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "change the value of s to s + l [ b ] casted to a float",
+      "code": "s = s + ( float ) l [ b ] ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "if s > = max / 2",
+      "code": "if ( s >= max / 2 )",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "print b to the standard output",
+      "code": "cout << b << endl ;",
+      "indent": 3
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 3
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int l = 0 , l [ 500000 ] = { 0 } ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int l [500000]’"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "float max = l [ b ] + max ( b [ b ] ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int l = 0 , a [ 500000 ] = { 0 } ;"
+      ],
+      "err_line": 3,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [500000]’)"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "for ( b = 1 ; b <= a ; b ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘b’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "cin >> l >> l [ b ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [500000]’)"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "max = l [ b ] + max ( b [ b ] ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "for ( b = 1 ; b <= a ; b ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘b’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        1,
+        6
+      ],
+      "mod_code": [
+        "int l = 0 , l [ 500000 ] = { 0 } ;",
+        "float max = l [ b ] + max ( b [ b ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int l [500000]’"
+    },
+    {
+      "mod_line": [
+        1,
+        6,
+        5
+      ],
+      "mod_code": [
+        "int l = 0 , l [ 500000 ] = { 0 } ;",
+        "float max = l [ b ] + max ( b [ b ] ) ;",
+        "cin >> l >> l [ b ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int l [500000]’"
+    },
+    {
+      "mod_line": [
+        1,
+        6,
+        5,
+        2
+      ],
+      "mod_code": [
+        "int l = 0 , l [ 500000 ] = { 0 } ;",
+        "float max = l [ b ] + max ( b [ b ] ) ;",
+        "cin >> l >> l [ b ] ;",
+        "bool max = 0 , s = 0 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int l [500000]’"
+    },
+    {
+      "mod_line": [
+        1,
+        6,
+        5,
+        11
+      ],
+      "mod_code": [
+        "int l = 0 , l [ 500000 ] = { 0 } ;",
+        "float max = l [ b ] + max ( b [ b ] ) ;",
+        "cin >> l >> l [ b ] ;",
+        "cout << b ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int l [500000]’"
+    },
+    {
+      "mod_line": [
+        1,
+        6,
+        5,
+        8
+      ],
+      "mod_code": [
+        "int l = 0 , l [ 500000 ] = { 0 } ;",
+        "float max = l [ b ] + max ( b [ b ] ) ;",
+        "cin >> l >> l [ b ] ;",
+        "for ( b = 1 ; b <= a ; b ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int l [500000]’"
+    },
+    {
+      "mod_line": [
+        1,
+        6,
+        2
+      ],
+      "mod_code": [
+        "int l = 0 , l [ 500000 ] = { 0 } ;",
+        "float max = l [ b ] + max ( b [ b ] ) ;",
+        "bool max = 0 , s = 0 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int l [500000]’"
+    },
+    {
+      "mod_line": [
+        1,
+        6,
+        2,
+        11
+      ],
+      "mod_code": [
+        "int l = 0 , l [ 500000 ] = { 0 } ;",
+        "float max = l [ b ] + max ( b [ b ] ) ;",
+        "bool max = 0 , s = 0 ;",
+        "cout << b ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int l [500000]’"
+    },
+    {
+      "mod_line": [
+        1,
+        6,
+        2,
+        8
+      ],
+      "mod_code": [
+        "int l = 0 , l [ 500000 ] = { 0 } ;",
+        "float max = l [ b ] + max ( b [ b ] ) ;",
+        "bool max = 0 , s = 0 ;",
+        "for ( b = 1 ; b <= a ; b ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int l [500000]’"
+    },
+    {
+      "mod_line": [
+        1,
+        6,
+        11
+      ],
+      "mod_code": [
+        "int l = 0 , l [ 500000 ] = { 0 } ;",
+        "float max = l [ b ] + max ( b [ b ] ) ;",
+        "cout << b ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int l [500000]’"
+    },
+    {
+      "mod_line": [
+        1,
+        6,
+        11,
+        8
+      ],
+      "mod_code": [
+        "int l = 0 , l [ 500000 ] = { 0 } ;",
+        "float max = l [ b ] + max ( b [ b ] ) ;",
+        "cout << b ;",
+        "for ( b = 1 ; b <= a ; b ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int l [500000]’"
+    },
+    {
+      "mod_line": [
+        1,
+        6,
+        8
+      ],
+      "mod_code": [
+        "int l = 0 , l [ 500000 ] = { 0 } ;",
+        "float max = l [ b ] + max ( b [ b ] ) ;",
+        "for ( b = 1 ; b <= a ; b ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int l [500000]’"
+    },
+    {
+      "mod_line": [
+        1,
+        5
+      ],
+      "mod_code": [
+        "int l = 0 , l [ 500000 ] = { 0 } ;",
+        "cin >> l >> l [ b ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int l [500000]’"
+    },
+    {
+      "mod_line": [
+        1,
+        5,
+        2
+      ],
+      "mod_code": [
+        "int l = 0 , l [ 500000 ] = { 0 } ;",
+        "cin >> l >> l [ b ] ;",
+        "bool max = 0 , s = 0 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int l [500000]’"
+    },
+    {
+      "mod_line": [
+        1,
+        5,
+        2,
+        11
+      ],
+      "mod_code": [
+        "int l = 0 , l [ 500000 ] = { 0 } ;",
+        "cin >> l >> l [ b ] ;",
+        "bool max = 0 , s = 0 ;",
+        "cout << b ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int l [500000]’"
+    },
+    {
+      "mod_line": [
+        1,
+        5,
+        2,
+        8
+      ],
+      "mod_code": [
+        "int l = 0 , l [ 500000 ] = { 0 } ;",
+        "cin >> l >> l [ b ] ;",
+        "bool max = 0 , s = 0 ;",
+        "for ( b = 1 ; b <= a ; b ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int l [500000]’"
+    },
+    {
+      "mod_line": [
+        1,
+        5,
+        11
+      ],
+      "mod_code": [
+        "int l = 0 , l [ 500000 ] = { 0 } ;",
+        "cin >> l >> l [ b ] ;",
+        "cout << b ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int l [500000]’"
+    },
+    {
+      "mod_line": [
+        1,
+        5,
+        11,
+        8
+      ],
+      "mod_code": [
+        "int l = 0 , l [ 500000 ] = { 0 } ;",
+        "cin >> l >> l [ b ] ;",
+        "cout << b ;",
+        "for ( b = 1 ; b <= a ; b ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int l [500000]’"
+    },
+    {
+      "mod_line": [
+        1,
+        5,
+        8
+      ],
+      "mod_code": [
+        "int l = 0 , l [ 500000 ] = { 0 } ;",
+        "cin >> l >> l [ b ] ;",
+        "for ( b = 1 ; b <= a ; b ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int l [500000]’"
+    },
+    {
+      "mod_line": [
+        1,
+        2
+      ],
+      "mod_code": [
+        "int l = 0 , l [ 500000 ] = { 0 } ;",
+        "bool max = 0 , s = 0 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int l [500000]’"
+    },
+    {
+      "mod_line": [
+        1,
+        2,
+        11
+      ],
+      "mod_code": [
+        "int l = 0 , l [ 500000 ] = { 0 } ;",
+        "bool max = 0 , s = 0 ;",
+        "cout << b ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int l [500000]’"
+    },
+    {
+      "mod_line": [
+        1,
+        2,
+        11,
+        8
+      ],
+      "mod_code": [
+        "int l = 0 , l [ 500000 ] = { 0 } ;",
+        "bool max = 0 , s = 0 ;",
+        "cout << b ;",
+        "for ( b = 1 ; b <= a ; b ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int l [500000]’"
+    },
+    {
+      "mod_line": [
+        1,
+        2,
+        8
+      ],
+      "mod_code": [
+        "int l = 0 , l [ 500000 ] = { 0 } ;",
+        "bool max = 0 , s = 0 ;",
+        "for ( b = 1 ; b <= a ; b ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int l [500000]’"
+    },
+    {
+      "mod_line": [
+        1,
+        11
+      ],
+      "mod_code": [
+        "int l = 0 , l [ 500000 ] = { 0 } ;",
+        "cout << b ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int l [500000]’"
+    },
+    {
+      "mod_line": [
+        1,
+        11,
+        8
+      ],
+      "mod_code": [
+        "int l = 0 , l [ 500000 ] = { 0 } ;",
+        "cout << b ;",
+        "for ( b = 1 ; b <= a ; b ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int l [500000]’"
+    },
+    {
+      "mod_line": [
+        1,
+        8
+      ],
+      "mod_code": [
+        "int l = 0 , l [ 500000 ] = { 0 } ;",
+        "for ( b = 1 ; b <= a ; b ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int l [500000]’"
+    },
+    {
+      "mod_line": [
+        6,
+        5
+      ],
+      "mod_code": [
+        "float max = l [ b ] + max ( b [ b ] ) ;",
+        "cin >> l >> l [ b ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [500000]’)"
+    },
+    {
+      "mod_line": [
+        6,
+        5,
+        2
+      ],
+      "mod_code": [
+        "float max = l [ b ] + max ( b [ b ] ) ;",
+        "cin >> l >> l [ b ] ;",
+        "bool max = 0 , s = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [500000]’)"
+    },
+    {
+      "mod_line": [
+        6,
+        5,
+        2,
+        11
+      ],
+      "mod_code": [
+        "float max = l [ b ] + max ( b [ b ] ) ;",
+        "cin >> l >> l [ b ] ;",
+        "bool max = 0 , s = 0 ;",
+        "cout << b ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [500000]’)"
+    },
+    {
+      "mod_line": [
+        6,
+        5,
+        2,
+        8
+      ],
+      "mod_code": [
+        "float max = l [ b ] + max ( b [ b ] ) ;",
+        "cin >> l >> l [ b ] ;",
+        "bool max = 0 , s = 0 ;",
+        "for ( b = 1 ; b <= a ; b ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [500000]’)"
+    },
+    {
+      "mod_line": [
+        6,
+        5,
+        11
+      ],
+      "mod_code": [
+        "float max = l [ b ] + max ( b [ b ] ) ;",
+        "cin >> l >> l [ b ] ;",
+        "cout << b ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [500000]’)"
+    },
+    {
+      "mod_line": [
+        6,
+        5,
+        11,
+        8
+      ],
+      "mod_code": [
+        "float max = l [ b ] + max ( b [ b ] ) ;",
+        "cin >> l >> l [ b ] ;",
+        "cout << b ;",
+        "for ( b = 1 ; b <= a ; b ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [500000]’)"
+    },
+    {
+      "mod_line": [
+        6,
+        5,
+        8
+      ],
+      "mod_code": [
+        "float max = l [ b ] + max ( b [ b ] ) ;",
+        "cin >> l >> l [ b ] ;",
+        "for ( b = 1 ; b <= a ; b ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [500000]’)"
+    },
+    {
+      "mod_line": [
+        6,
+        2
+      ],
+      "mod_code": [
+        "float max = l [ b ] + max ( b [ b ] ) ;",
+        "bool max = 0 , s = 0 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        6,
+        2,
+        11
+      ],
+      "mod_code": [
+        "float max = l [ b ] + max ( b [ b ] ) ;",
+        "bool max = 0 , s = 0 ;",
+        "cout << b ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        6,
+        2,
+        11,
+        8
+      ],
+      "mod_code": [
+        "float max = l [ b ] + max ( b [ b ] ) ;",
+        "bool max = 0 , s = 0 ;",
+        "cout << b ;",
+        "for ( b = 1 ; b <= a ; b ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        6,
+        2,
+        8
+      ],
+      "mod_code": [
+        "float max = l [ b ] + max ( b [ b ] ) ;",
+        "bool max = 0 , s = 0 ;",
+        "for ( b = 1 ; b <= a ; b ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        6,
+        11
+      ],
+      "mod_code": [
+        "float max = l [ b ] + max ( b [ b ] ) ;",
+        "cout << b ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        6,
+        11,
+        8
+      ],
+      "mod_code": [
+        "float max = l [ b ] + max ( b [ b ] ) ;",
+        "cout << b ;",
+        "for ( b = 1 ; b <= a ; b ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        6,
+        8
+      ],
+      "mod_code": [
+        "float max = l [ b ] + max ( b [ b ] ) ;",
+        "for ( b = 1 ; b <= a ; b ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        5,
+        2
+      ],
+      "mod_code": [
+        "cin >> l >> l [ b ] ;",
+        "bool max = 0 , s = 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [500000]’)"
+    },
+    {
+      "mod_line": [
+        5,
+        2,
+        11
+      ],
+      "mod_code": [
+        "cin >> l >> l [ b ] ;",
+        "bool max = 0 , s = 0 ;",
+        "cout << b ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [500000]’)"
+    },
+    {
+      "mod_line": [
+        5,
+        2,
+        11,
+        8
+      ],
+      "mod_code": [
+        "cin >> l >> l [ b ] ;",
+        "bool max = 0 , s = 0 ;",
+        "cout << b ;",
+        "for ( b = 1 ; b <= a ; b ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [500000]’)"
+    },
+    {
+      "mod_line": [
+        5,
+        2,
+        8
+      ],
+      "mod_code": [
+        "cin >> l >> l [ b ] ;",
+        "bool max = 0 , s = 0 ;",
+        "for ( b = 1 ; b <= a ; b ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [500000]’)"
+    },
+    {
+      "mod_line": [
+        5,
+        11
+      ],
+      "mod_code": [
+        "cin >> l >> l [ b ] ;",
+        "cout << b ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [500000]’)"
+    },
+    {
+      "mod_line": [
+        5,
+        11,
+        8
+      ],
+      "mod_code": [
+        "cin >> l >> l [ b ] ;",
+        "cout << b ;",
+        "for ( b = 1 ; b <= a ; b ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [500000]’)"
+    },
+    {
+      "mod_line": [
+        5,
+        8
+      ],
+      "mod_code": [
+        "cin >> l >> l [ b ] ;",
+        "for ( b = 1 ; b <= a ; b ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int [500000]’)"
+    },
+    {
+      "mod_line": [
+        2,
+        11,
+        8
+      ],
+      "mod_code": [
+        "bool max = 0 , s = 0 ;",
+        "cout << b ;",
+        "for ( b = 1 ; b <= a ; b ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘b’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2,
+        8
+      ],
+      "mod_code": [
+        "bool max = 0 , s = 0 ;",
+        "for ( b = 1 ; b <= a ; b ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘b’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        8
+      ],
+      "mod_code": [
+        "cout << b ;",
+        "for ( b = 1 ; b <= a ; b ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘b’ changed for ISO ‘for’ scoping [-fpermissive]"
+    }
+  ]
+}

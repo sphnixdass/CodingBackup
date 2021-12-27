@@ -1,0 +1,913 @@
+{
+  "meta": {
+    "index": 504,
+    "hitid": "3W1K7D6QSBB3XD8ETEPTH8M7TR9ZBK",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "408A",
+    "subid": "23029863"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create integer n , create integer arrays n1 , n2 , sum , with n1 size 100 , n2 size 100 , sum size 100",
+      "code": "int n , n1 [ 100 ] , n2 [ 100 ] , sum [ 100 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "for i = 0 to 100 exclusive , set sum [ i ] to 0",
+      "code": "for ( int i = 0 ; i < 100 ; i ++ ) sum [ i ] = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for i = 0 to n exclusive , read n1 [ i ]",
+      "code": "for ( int i = 0 ; i < n ; i ++ ) cin >> n1 [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( int i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for j = 0 to n1 [ i ] exclusive",
+      "code": "for ( int j = 0 ; j < n1 [ i ] ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "read n2 [ j ]",
+      "code": "cin >> n2 [ j ] ;",
+      "indent": 3
+    },
+    {
+      "line": 8,
+      "text": "set n2 [ j ] to n2 [ j ] * 5",
+      "code": "n2 [ j ] *= 5 ;",
+      "indent": 3
+    },
+    {
+      "line": 9,
+      "text": "increment n2 [ j ] by 15",
+      "code": "n2 [ j ] += 15 ;",
+      "indent": 3
+    },
+    {
+      "line": 10,
+      "text": "increment sum [ i ] by n2 [ j ]",
+      "code": "sum [ i ] += n2 [ j ] ;",
+      "indent": 3
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "create integer x with x = sum [ 0 ]",
+      "code": "int x = sum [ 0 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( int i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "if sum [ i ] is less than x , set x to sum [ i ]",
+      "code": "if ( sum [ i ] < x ) x = sum [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "print x print newline",
+      "code": "cout << x << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int n , n2 , n1 [ 100 ] , n2 [ 100 ] , sum [ 100 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n2 [100]’"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int n , n2 , n1 [ 100 ] , sum [ 100 ] , sum [ 100 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redeclaration of ‘int sum [100]’"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j < n1 [ i ] ; j ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "n2 [ j ] [ 15 ] ++ ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "sum += n2 ] += n2 [ j ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid use of non-lvalue array"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "int x = sum [ 0 ] [ 0 ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 14,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        1,
+        13
+      ],
+      "mod_code": [
+        "int n , n2 , n1 [ 100 ] , n2 [ 100 ] , sum [ 100 ] ;",
+        "int x = sum [ 0 ] [ 0 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n2 [100]’"
+    },
+    {
+      "mod_line": [
+        1,
+        13,
+        7
+      ],
+      "mod_code": [
+        "int n , n2 , n1 [ 100 ] , n2 [ 100 ] , sum [ 100 ] ;",
+        "int x = sum [ 0 ] [ 0 ] ;",
+        "cout << n2 [ j ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n2 [100]’"
+    },
+    {
+      "mod_line": [
+        1,
+        13,
+        7,
+        6
+      ],
+      "mod_code": [
+        "int n , n2 , n1 [ 100 ] , n2 [ 100 ] , sum [ 100 ] ;",
+        "int x = sum [ 0 ] [ 0 ] ;",
+        "cout << n2 [ j ] ;",
+        "for ( j = 0 ; j < n1 [ i ] ; j ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n2 [100]’"
+    },
+    {
+      "mod_line": [
+        1,
+        13,
+        7,
+        10
+      ],
+      "mod_code": [
+        "int n , n2 , n1 [ 100 ] , n2 [ 100 ] , sum [ 100 ] ;",
+        "int x = sum [ 0 ] [ 0 ] ;",
+        "cout << n2 [ j ] ;",
+        "sum += n2 ] += n2 [ j ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n2 [100]’"
+    },
+    {
+      "mod_line": [
+        1,
+        13,
+        7,
+        14
+      ],
+      "mod_code": [
+        "int n , n2 , n1 [ 100 ] , n2 [ 100 ] , sum [ 100 ] ;",
+        "int x = sum [ 0 ] [ 0 ] ;",
+        "cout << n2 [ j ] ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n2 [100]’"
+    },
+    {
+      "mod_line": [
+        1,
+        13,
+        6
+      ],
+      "mod_code": [
+        "int n , n2 , n1 [ 100 ] , n2 [ 100 ] , sum [ 100 ] ;",
+        "int x = sum [ 0 ] [ 0 ] ;",
+        "for ( j = 0 ; j < n1 [ i ] ; j ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n2 [100]’"
+    },
+    {
+      "mod_line": [
+        1,
+        13,
+        6,
+        10
+      ],
+      "mod_code": [
+        "int n , n2 , n1 [ 100 ] , n2 [ 100 ] , sum [ 100 ] ;",
+        "int x = sum [ 0 ] [ 0 ] ;",
+        "for ( j = 0 ; j < n1 [ i ] ; j ++ )",
+        "sum += n2 ] += n2 [ j ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n2 [100]’"
+    },
+    {
+      "mod_line": [
+        1,
+        13,
+        6,
+        14
+      ],
+      "mod_code": [
+        "int n , n2 , n1 [ 100 ] , n2 [ 100 ] , sum [ 100 ] ;",
+        "int x = sum [ 0 ] [ 0 ] ;",
+        "for ( j = 0 ; j < n1 [ i ] ; j ++ )",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n2 [100]’"
+    },
+    {
+      "mod_line": [
+        1,
+        13,
+        10
+      ],
+      "mod_code": [
+        "int n , n2 , n1 [ 100 ] , n2 [ 100 ] , sum [ 100 ] ;",
+        "int x = sum [ 0 ] [ 0 ] ;",
+        "sum += n2 ] += n2 [ j ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n2 [100]’"
+    },
+    {
+      "mod_line": [
+        1,
+        13,
+        10,
+        14
+      ],
+      "mod_code": [
+        "int n , n2 , n1 [ 100 ] , n2 [ 100 ] , sum [ 100 ] ;",
+        "int x = sum [ 0 ] [ 0 ] ;",
+        "sum += n2 ] += n2 [ j ] ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n2 [100]’"
+    },
+    {
+      "mod_line": [
+        1,
+        13,
+        14
+      ],
+      "mod_code": [
+        "int n , n2 , n1 [ 100 ] , n2 [ 100 ] , sum [ 100 ] ;",
+        "int x = sum [ 0 ] [ 0 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n2 [100]’"
+    },
+    {
+      "mod_line": [
+        1,
+        7
+      ],
+      "mod_code": [
+        "int n , n2 , n1 [ 100 ] , n2 [ 100 ] , sum [ 100 ] ;",
+        "cout << n2 [ j ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n2 [100]’"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        6
+      ],
+      "mod_code": [
+        "int n , n2 , n1 [ 100 ] , n2 [ 100 ] , sum [ 100 ] ;",
+        "cout << n2 [ j ] ;",
+        "for ( j = 0 ; j < n1 [ i ] ; j ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n2 [100]’"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        6,
+        10
+      ],
+      "mod_code": [
+        "int n , n2 , n1 [ 100 ] , n2 [ 100 ] , sum [ 100 ] ;",
+        "cout << n2 [ j ] ;",
+        "for ( j = 0 ; j < n1 [ i ] ; j ++ )",
+        "sum += n2 ] += n2 [ j ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n2 [100]’"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        6,
+        14
+      ],
+      "mod_code": [
+        "int n , n2 , n1 [ 100 ] , n2 [ 100 ] , sum [ 100 ] ;",
+        "cout << n2 [ j ] ;",
+        "for ( j = 0 ; j < n1 [ i ] ; j ++ )",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n2 [100]’"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        10
+      ],
+      "mod_code": [
+        "int n , n2 , n1 [ 100 ] , n2 [ 100 ] , sum [ 100 ] ;",
+        "cout << n2 [ j ] ;",
+        "sum += n2 ] += n2 [ j ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n2 [100]’"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        10,
+        14
+      ],
+      "mod_code": [
+        "int n , n2 , n1 [ 100 ] , n2 [ 100 ] , sum [ 100 ] ;",
+        "cout << n2 [ j ] ;",
+        "sum += n2 ] += n2 [ j ] ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n2 [100]’"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        14
+      ],
+      "mod_code": [
+        "int n , n2 , n1 [ 100 ] , n2 [ 100 ] , sum [ 100 ] ;",
+        "cout << n2 [ j ] ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n2 [100]’"
+    },
+    {
+      "mod_line": [
+        1,
+        6
+      ],
+      "mod_code": [
+        "int n , n2 , n1 [ 100 ] , n2 [ 100 ] , sum [ 100 ] ;",
+        "for ( j = 0 ; j < n1 [ i ] ; j ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n2 [100]’"
+    },
+    {
+      "mod_line": [
+        1,
+        6,
+        10
+      ],
+      "mod_code": [
+        "int n , n2 , n1 [ 100 ] , n2 [ 100 ] , sum [ 100 ] ;",
+        "for ( j = 0 ; j < n1 [ i ] ; j ++ )",
+        "sum += n2 ] += n2 [ j ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n2 [100]’"
+    },
+    {
+      "mod_line": [
+        1,
+        6,
+        10,
+        14
+      ],
+      "mod_code": [
+        "int n , n2 , n1 [ 100 ] , n2 [ 100 ] , sum [ 100 ] ;",
+        "for ( j = 0 ; j < n1 [ i ] ; j ++ )",
+        "sum += n2 ] += n2 [ j ] ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n2 [100]’"
+    },
+    {
+      "mod_line": [
+        1,
+        6,
+        14
+      ],
+      "mod_code": [
+        "int n , n2 , n1 [ 100 ] , n2 [ 100 ] , sum [ 100 ] ;",
+        "for ( j = 0 ; j < n1 [ i ] ; j ++ )",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n2 [100]’"
+    },
+    {
+      "mod_line": [
+        1,
+        10
+      ],
+      "mod_code": [
+        "int n , n2 , n1 [ 100 ] , n2 [ 100 ] , sum [ 100 ] ;",
+        "sum += n2 ] += n2 [ j ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n2 [100]’"
+    },
+    {
+      "mod_line": [
+        1,
+        10,
+        14
+      ],
+      "mod_code": [
+        "int n , n2 , n1 [ 100 ] , n2 [ 100 ] , sum [ 100 ] ;",
+        "sum += n2 ] += n2 [ j ] ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n2 [100]’"
+    },
+    {
+      "mod_line": [
+        1,
+        14
+      ],
+      "mod_code": [
+        "int n , n2 , n1 [ 100 ] , n2 [ 100 ] , sum [ 100 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n2 [100]’"
+    },
+    {
+      "mod_line": [
+        13,
+        7
+      ],
+      "mod_code": [
+        "int x = sum [ 0 ] [ 0 ] ;",
+        "cout << n2 [ j ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        13,
+        7,
+        6
+      ],
+      "mod_code": [
+        "int x = sum [ 0 ] [ 0 ] ;",
+        "cout << n2 [ j ] ;",
+        "for ( j = 0 ; j < n1 [ i ] ; j ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        7,
+        6,
+        10
+      ],
+      "mod_code": [
+        "int x = sum [ 0 ] [ 0 ] ;",
+        "cout << n2 [ j ] ;",
+        "for ( j = 0 ; j < n1 [ i ] ; j ++ )",
+        "sum += n2 ] += n2 [ j ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        7,
+        6,
+        14
+      ],
+      "mod_code": [
+        "int x = sum [ 0 ] [ 0 ] ;",
+        "cout << n2 [ j ] ;",
+        "for ( j = 0 ; j < n1 [ i ] ; j ++ )",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        7,
+        10
+      ],
+      "mod_code": [
+        "int x = sum [ 0 ] [ 0 ] ;",
+        "cout << n2 [ j ] ;",
+        "sum += n2 ] += n2 [ j ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid use of non-lvalue array"
+    },
+    {
+      "mod_line": [
+        13,
+        7,
+        10,
+        14
+      ],
+      "mod_code": [
+        "int x = sum [ 0 ] [ 0 ] ;",
+        "cout << n2 [ j ] ;",
+        "sum += n2 ] += n2 [ j ] ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid use of non-lvalue array"
+    },
+    {
+      "mod_line": [
+        13,
+        7,
+        14
+      ],
+      "mod_code": [
+        "int x = sum [ 0 ] [ 0 ] ;",
+        "cout << n2 [ j ] ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        13,
+        6
+      ],
+      "mod_code": [
+        "int x = sum [ 0 ] [ 0 ] ;",
+        "for ( j = 0 ; j < n1 [ i ] ; j ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        6,
+        10
+      ],
+      "mod_code": [
+        "int x = sum [ 0 ] [ 0 ] ;",
+        "for ( j = 0 ; j < n1 [ i ] ; j ++ )",
+        "sum += n2 ] += n2 [ j ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        6,
+        10,
+        14
+      ],
+      "mod_code": [
+        "int x = sum [ 0 ] [ 0 ] ;",
+        "for ( j = 0 ; j < n1 [ i ] ; j ++ )",
+        "sum += n2 ] += n2 [ j ] ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        6,
+        14
+      ],
+      "mod_code": [
+        "int x = sum [ 0 ] [ 0 ] ;",
+        "for ( j = 0 ; j < n1 [ i ] ; j ++ )",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        10
+      ],
+      "mod_code": [
+        "int x = sum [ 0 ] [ 0 ] ;",
+        "sum += n2 ] += n2 [ j ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid use of non-lvalue array"
+    },
+    {
+      "mod_line": [
+        13,
+        10,
+        14
+      ],
+      "mod_code": [
+        "int x = sum [ 0 ] [ 0 ] ;",
+        "sum += n2 ] += n2 [ j ] ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid use of non-lvalue array"
+    },
+    {
+      "mod_line": [
+        13,
+        14
+      ],
+      "mod_code": [
+        "int x = sum [ 0 ] [ 0 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        7,
+        6
+      ],
+      "mod_code": [
+        "cout << n2 [ j ] ;",
+        "for ( j = 0 ; j < n1 [ i ] ; j ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        6,
+        10
+      ],
+      "mod_code": [
+        "cout << n2 [ j ] ;",
+        "for ( j = 0 ; j < n1 [ i ] ; j ++ )",
+        "sum += n2 ] += n2 [ j ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        6,
+        10,
+        14
+      ],
+      "mod_code": [
+        "cout << n2 [ j ] ;",
+        "for ( j = 0 ; j < n1 [ i ] ; j ++ )",
+        "sum += n2 ] += n2 [ j ] ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        6,
+        14
+      ],
+      "mod_code": [
+        "cout << n2 [ j ] ;",
+        "for ( j = 0 ; j < n1 [ i ] ; j ++ )",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        10
+      ],
+      "mod_code": [
+        "cout << n2 [ j ] ;",
+        "sum += n2 ] += n2 [ j ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid use of non-lvalue array"
+    },
+    {
+      "mod_line": [
+        7,
+        10,
+        14
+      ],
+      "mod_code": [
+        "cout << n2 [ j ] ;",
+        "sum += n2 ] += n2 [ j ] ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid use of non-lvalue array"
+    },
+    {
+      "mod_line": [
+        7,
+        14
+      ],
+      "mod_code": [
+        "cout << n2 [ j ] ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 14,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        10
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j < n1 [ i ] ; j ++ )",
+        "sum += n2 ] += n2 [ j ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        10,
+        14
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j < n1 [ i ] ; j ++ )",
+        "sum += n2 ] += n2 [ j ] ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        14
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j < n1 [ i ] ; j ++ )",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        14
+      ],
+      "mod_code": [
+        "sum += n2 ] += n2 [ j ] ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid use of non-lvalue array"
+    }
+  ]
+}

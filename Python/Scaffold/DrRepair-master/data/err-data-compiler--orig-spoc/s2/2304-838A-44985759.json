@@ -1,0 +1,1017 @@
+{
+  "meta": {
+    "index": 2304,
+    "hitid": "3NSM4HLQNROHNR9CP036L452BBOQQ3",
+    "workerid": "A1NBHCFZKJGHKW",
+    "probid": "838A",
+    "subid": "44985759"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "MAXN , MAXM = const int with MAXN = 2500 and MAXM = 2500",
+      "code": "const int MAXN = 2500 , MAXM = 2500 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "S = two dimensional int array of sizes MAXN + 1 and MAXM + 1",
+      "code": "int S [ MAXN + 1 ] [ MAXM + 1 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "N , M = int",
+      "code": "int N , M ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "read N then M",
+      "code": "cin >> N >> M ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i = 1 to N inclusive",
+      "code": "for ( int i = 1 ; i <= N ; ++ i )",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "R = string",
+      "code": "string R ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "read R",
+      "code": "cin >> R ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "for j = 1 to M inclusive set S [ i ] [ j ] to ( R [ j - 1 ] - ' 0 ' ) + S [ i - 1 ] [ j ] + S [ i ] [ j - 1 ] - S [ i - 1 ] [ j - 1 ]",
+      "code": "for ( int j = 1 ; j <= M ; ++ j ) S [ i ] [ j ] = ( R [ j - 1 ] - ' 0 ' ) + S [ i - 1 ] [ j ] + S [ i ] [ j - 1 ] - S [ i - 1 ] [ j - 1 ] ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "ans = int with ans = INT_MAX",
+      "code": "int ans = INT_MAX ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "iterate k from 2 while k < = N or k < = M",
+      "code": "for ( int k = 2 ; k <= N || k <= M ; ++ k )",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "aux = int with aux = 0",
+      "code": "int aux = 0 ;",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "for i = 1 to N inclusive incrementing i by k",
+      "code": "for ( int i = 1 ; i <= N ; i += k )",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "for j = 1 to M inclusive incrementing j by k",
+      "code": "for ( int j = 1 ; j <= M ; j += k )",
+      "indent": 3
+    },
+    {
+      "line": 15,
+      "text": "ii , jj = int with ii = min of N , i + k - 1 and jj = min of M , j + k - 1",
+      "code": "int ii = min ( N , i + k - 1 ) , jj = min ( M , j + k - 1 ) ;",
+      "indent": 4
+    },
+    {
+      "line": 16,
+      "text": "q = int with q = S [ ii ] [ jj ] - S [ ii ] [ j - 1 ] - S [ i - 1 ] [ jj ] + S [ i - 1 ] [ j - 1 ]",
+      "code": "int q = S [ ii ] [ jj ] - S [ ii ] [ j - 1 ] - S [ i - 1 ] [ jj ] + S [ i - 1 ] [ j - 1 ] ;",
+      "indent": 4
+    },
+    {
+      "line": 17,
+      "text": "increment aux by min of q , k * k - q",
+      "code": "aux += min ( q , k * k - q ) ;",
+      "indent": 4
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 19,
+      "text": "set ans to min of ans , aux",
+      "code": "ans = min ( ans , aux ) ;",
+      "indent": 2
+    },
+    {
+      "line": 20,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "print ans",
+      "code": "cout << ans << ' \\n ' ;",
+      "indent": 1
+    },
+    {
+      "line": 22,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= M ; j ++ ) { S [ i ] [ j ] = ( R [ j - 1 ] - ' 0 ' ) + S [ i ] [ j ] + S [ i ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ; }"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "int ii = min ( N , i + k - 1 , jj = min ( M , j + k - 1 ) ;"
+      ],
+      "err_line": 15,
+      "err_msg": "‘jj’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "int q = S [ ii ] [ jj ] - S [ ii ] [ j - 1 ] - S [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ;"
+      ],
+      "err_line": 16,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "const int MAXN = 2500 + MAXM ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘MAXM’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int S [ MAXN + 1 ] + MAXM + 1 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected initializer before ‘+’ token"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "int N , N ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘int N’"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= N ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "string S ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘R’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "cin >> t ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘t’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= M ; j ++ ) { S [ i ] [ j ] = ( R [ j - 1 ] - ' 0 ' ) + S [ i - 1 ] [ j ] + S [ i ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ; }"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "bool ans = INT_MAX ;"
+      ],
+      "err_line": 19,
+      "err_msg": "no matching function for call to ‘min(bool&, int&)’"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "int * aux = 0 ;"
+      ],
+      "err_line": 19,
+      "err_msg": "no matching function for call to ‘min(int&, int*&)’"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= N ; i += k )"
+      ],
+      "err_line": 13,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "for ( j = 1 ; j <= M ; j += k )"
+      ],
+      "err_line": 14,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "int ii = min ( N , i + k - 1 , jj = min ( M , j + k - 1 ) ) ;"
+      ],
+      "err_line": 15,
+      "err_msg": "‘jj’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "int q = S [ ii ] [ jj ] - S [ ii ] [ j - 1 ] + S [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ;"
+      ],
+      "err_line": 16,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        8,
+        15
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= M ; j ++ ) { S [ i ] [ j ] = ( R [ j - 1 ] - ' 0 ' ) + S [ i ] [ j ] + S [ i ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ; }",
+        "int ii = min ( N , i + k - 1 , jj = min ( M , j + k - 1 ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        8,
+        15,
+        16
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= M ; j ++ ) { S [ i ] [ j ] = ( R [ j - 1 ] - ' 0 ' ) + S [ i ] [ j ] + S [ i ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ; }",
+        "int ii = min ( N , i + k - 1 , jj = min ( M , j + k - 1 ) ;",
+        "int q = S [ ii ] [ jj ] - S [ ii ] [ j - 1 ] - S [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        8,
+        15,
+        16,
+        10
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= M ; j ++ ) { S [ i ] [ j ] = ( R [ j - 1 ] - ' 0 ' ) + S [ i ] [ j ] + S [ i ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ; }",
+        "int ii = min ( N , i + k - 1 , jj = min ( M , j + k - 1 ) ;",
+        "int q = S [ ii ] [ jj ] - S [ ii ] [ j - 1 ] - S [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ;",
+        "bool ans = INT_MAX ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        8,
+        15,
+        16,
+        6
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= M ; j ++ ) { S [ i ] [ j ] = ( R [ j - 1 ] - ' 0 ' ) + S [ i ] [ j ] + S [ i ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ; }",
+        "int ii = min ( N , i + k - 1 , jj = min ( M , j + k - 1 ) ;",
+        "int q = S [ ii ] [ jj ] - S [ ii ] [ j - 1 ] - S [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ;",
+        "string S ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘R’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        15,
+        16,
+        5
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= M ; j ++ ) { S [ i ] [ j ] = ( R [ j - 1 ] - ' 0 ' ) + S [ i ] [ j ] + S [ i ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ; }",
+        "int ii = min ( N , i + k - 1 , jj = min ( M , j + k - 1 ) ;",
+        "int q = S [ ii ] [ jj ] - S [ ii ] [ j - 1 ] - S [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ;",
+        "for ( i = 1 ; i <= N ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        15,
+        10
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= M ; j ++ ) { S [ i ] [ j ] = ( R [ j - 1 ] - ' 0 ' ) + S [ i ] [ j ] + S [ i ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ; }",
+        "int ii = min ( N , i + k - 1 , jj = min ( M , j + k - 1 ) ;",
+        "bool ans = INT_MAX ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        8,
+        15,
+        10,
+        6
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= M ; j ++ ) { S [ i ] [ j ] = ( R [ j - 1 ] - ' 0 ' ) + S [ i ] [ j ] + S [ i ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ; }",
+        "int ii = min ( N , i + k - 1 , jj = min ( M , j + k - 1 ) ;",
+        "bool ans = INT_MAX ;",
+        "string S ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘R’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        15,
+        10,
+        5
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= M ; j ++ ) { S [ i ] [ j ] = ( R [ j - 1 ] - ' 0 ' ) + S [ i ] [ j ] + S [ i ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ; }",
+        "int ii = min ( N , i + k - 1 , jj = min ( M , j + k - 1 ) ;",
+        "bool ans = INT_MAX ;",
+        "for ( i = 1 ; i <= N ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        15,
+        6
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= M ; j ++ ) { S [ i ] [ j ] = ( R [ j - 1 ] - ' 0 ' ) + S [ i ] [ j ] + S [ i ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ; }",
+        "int ii = min ( N , i + k - 1 , jj = min ( M , j + k - 1 ) ;",
+        "string S ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘R’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        15,
+        6,
+        5
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= M ; j ++ ) { S [ i ] [ j ] = ( R [ j - 1 ] - ' 0 ' ) + S [ i ] [ j ] + S [ i ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ; }",
+        "int ii = min ( N , i + k - 1 , jj = min ( M , j + k - 1 ) ;",
+        "string S ;",
+        "for ( i = 1 ; i <= N ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        15,
+        5
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= M ; j ++ ) { S [ i ] [ j ] = ( R [ j - 1 ] - ' 0 ' ) + S [ i ] [ j ] + S [ i ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ; }",
+        "int ii = min ( N , i + k - 1 , jj = min ( M , j + k - 1 ) ;",
+        "for ( i = 1 ; i <= N ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        16
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= M ; j ++ ) { S [ i ] [ j ] = ( R [ j - 1 ] - ' 0 ' ) + S [ i ] [ j ] + S [ i ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ; }",
+        "int q = S [ ii ] [ jj ] - S [ ii ] [ j - 1 ] - S [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        8,
+        16,
+        10
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= M ; j ++ ) { S [ i ] [ j ] = ( R [ j - 1 ] - ' 0 ' ) + S [ i ] [ j ] + S [ i ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ; }",
+        "int q = S [ ii ] [ jj ] - S [ ii ] [ j - 1 ] - S [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ;",
+        "bool ans = INT_MAX ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        8,
+        16,
+        10,
+        6
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= M ; j ++ ) { S [ i ] [ j ] = ( R [ j - 1 ] - ' 0 ' ) + S [ i ] [ j ] + S [ i ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ; }",
+        "int q = S [ ii ] [ jj ] - S [ ii ] [ j - 1 ] - S [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ;",
+        "bool ans = INT_MAX ;",
+        "string S ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘R’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        16,
+        10,
+        5
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= M ; j ++ ) { S [ i ] [ j ] = ( R [ j - 1 ] - ' 0 ' ) + S [ i ] [ j ] + S [ i ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ; }",
+        "int q = S [ ii ] [ jj ] - S [ ii ] [ j - 1 ] - S [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ;",
+        "bool ans = INT_MAX ;",
+        "for ( i = 1 ; i <= N ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        16,
+        6
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= M ; j ++ ) { S [ i ] [ j ] = ( R [ j - 1 ] - ' 0 ' ) + S [ i ] [ j ] + S [ i ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ; }",
+        "int q = S [ ii ] [ jj ] - S [ ii ] [ j - 1 ] - S [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ;",
+        "string S ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘R’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        16,
+        6,
+        5
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= M ; j ++ ) { S [ i ] [ j ] = ( R [ j - 1 ] - ' 0 ' ) + S [ i ] [ j ] + S [ i ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ; }",
+        "int q = S [ ii ] [ jj ] - S [ ii ] [ j - 1 ] - S [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ;",
+        "string S ;",
+        "for ( i = 1 ; i <= N ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        16,
+        5
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= M ; j ++ ) { S [ i ] [ j ] = ( R [ j - 1 ] - ' 0 ' ) + S [ i ] [ j ] + S [ i ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ; }",
+        "int q = S [ ii ] [ jj ] - S [ ii ] [ j - 1 ] - S [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ;",
+        "for ( i = 1 ; i <= N ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        10
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= M ; j ++ ) { S [ i ] [ j ] = ( R [ j - 1 ] - ' 0 ' ) + S [ i ] [ j ] + S [ i ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ; }",
+        "bool ans = INT_MAX ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        6
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= M ; j ++ ) { S [ i ] [ j ] = ( R [ j - 1 ] - ' 0 ' ) + S [ i ] [ j ] + S [ i ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ; }",
+        "bool ans = INT_MAX ;",
+        "string S ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘R’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        6,
+        5
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= M ; j ++ ) { S [ i ] [ j ] = ( R [ j - 1 ] - ' 0 ' ) + S [ i ] [ j ] + S [ i ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ; }",
+        "bool ans = INT_MAX ;",
+        "string S ;",
+        "for ( i = 1 ; i <= N ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        5
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= M ; j ++ ) { S [ i ] [ j ] = ( R [ j - 1 ] - ' 0 ' ) + S [ i ] [ j ] + S [ i ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ; }",
+        "bool ans = INT_MAX ;",
+        "for ( i = 1 ; i <= N ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        6
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= M ; j ++ ) { S [ i ] [ j ] = ( R [ j - 1 ] - ' 0 ' ) + S [ i ] [ j ] + S [ i ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ; }",
+        "string S ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘R’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        6,
+        5
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= M ; j ++ ) { S [ i ] [ j ] = ( R [ j - 1 ] - ' 0 ' ) + S [ i ] [ j ] + S [ i ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ; }",
+        "string S ;",
+        "for ( i = 1 ; i <= N ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        5
+      ],
+      "mod_code": [
+        "for ( int j = 1 ; j <= M ; j ++ ) { S [ i ] [ j ] = ( R [ j - 1 ] - ' 0 ' ) + S [ i ] [ j ] + S [ i ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ; }",
+        "for ( i = 1 ; i <= N ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        16
+      ],
+      "mod_code": [
+        "int ii = min ( N , i + k - 1 , jj = min ( M , j + k - 1 ) ;",
+        "int q = S [ ii ] [ jj ] - S [ ii ] [ j - 1 ] - S [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ;"
+      ],
+      "err_line": 15,
+      "err_msg": "‘jj’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        16,
+        10
+      ],
+      "mod_code": [
+        "int ii = min ( N , i + k - 1 , jj = min ( M , j + k - 1 ) ;",
+        "int q = S [ ii ] [ jj ] - S [ ii ] [ j - 1 ] - S [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ;",
+        "bool ans = INT_MAX ;"
+      ],
+      "err_line": 15,
+      "err_msg": "‘jj’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        16,
+        10,
+        6
+      ],
+      "mod_code": [
+        "int ii = min ( N , i + k - 1 , jj = min ( M , j + k - 1 ) ;",
+        "int q = S [ ii ] [ jj ] - S [ ii ] [ j - 1 ] - S [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ;",
+        "bool ans = INT_MAX ;",
+        "string S ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘R’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        16,
+        10,
+        5
+      ],
+      "mod_code": [
+        "int ii = min ( N , i + k - 1 , jj = min ( M , j + k - 1 ) ;",
+        "int q = S [ ii ] [ jj ] - S [ ii ] [ j - 1 ] - S [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ;",
+        "bool ans = INT_MAX ;",
+        "for ( i = 1 ; i <= N ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        16,
+        6
+      ],
+      "mod_code": [
+        "int ii = min ( N , i + k - 1 , jj = min ( M , j + k - 1 ) ;",
+        "int q = S [ ii ] [ jj ] - S [ ii ] [ j - 1 ] - S [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ;",
+        "string S ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘R’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        16,
+        6,
+        5
+      ],
+      "mod_code": [
+        "int ii = min ( N , i + k - 1 , jj = min ( M , j + k - 1 ) ;",
+        "int q = S [ ii ] [ jj ] - S [ ii ] [ j - 1 ] - S [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ;",
+        "string S ;",
+        "for ( i = 1 ; i <= N ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        16,
+        5
+      ],
+      "mod_code": [
+        "int ii = min ( N , i + k - 1 , jj = min ( M , j + k - 1 ) ;",
+        "int q = S [ ii ] [ jj ] - S [ ii ] [ j - 1 ] - S [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ;",
+        "for ( i = 1 ; i <= N ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        10
+      ],
+      "mod_code": [
+        "int ii = min ( N , i + k - 1 , jj = min ( M , j + k - 1 ) ;",
+        "bool ans = INT_MAX ;"
+      ],
+      "err_line": 15,
+      "err_msg": "‘jj’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        10,
+        6
+      ],
+      "mod_code": [
+        "int ii = min ( N , i + k - 1 , jj = min ( M , j + k - 1 ) ;",
+        "bool ans = INT_MAX ;",
+        "string S ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘R’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        10,
+        6,
+        5
+      ],
+      "mod_code": [
+        "int ii = min ( N , i + k - 1 , jj = min ( M , j + k - 1 ) ;",
+        "bool ans = INT_MAX ;",
+        "string S ;",
+        "for ( i = 1 ; i <= N ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        10,
+        5
+      ],
+      "mod_code": [
+        "int ii = min ( N , i + k - 1 , jj = min ( M , j + k - 1 ) ;",
+        "bool ans = INT_MAX ;",
+        "for ( i = 1 ; i <= N ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        6
+      ],
+      "mod_code": [
+        "int ii = min ( N , i + k - 1 , jj = min ( M , j + k - 1 ) ;",
+        "string S ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘R’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        6,
+        5
+      ],
+      "mod_code": [
+        "int ii = min ( N , i + k - 1 , jj = min ( M , j + k - 1 ) ;",
+        "string S ;",
+        "for ( i = 1 ; i <= N ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        5
+      ],
+      "mod_code": [
+        "int ii = min ( N , i + k - 1 , jj = min ( M , j + k - 1 ) ;",
+        "for ( i = 1 ; i <= N ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        10
+      ],
+      "mod_code": [
+        "int q = S [ ii ] [ jj ] - S [ ii ] [ j - 1 ] - S [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ;",
+        "bool ans = INT_MAX ;"
+      ],
+      "err_line": 16,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        16,
+        10,
+        6
+      ],
+      "mod_code": [
+        "int q = S [ ii ] [ jj ] - S [ ii ] [ j - 1 ] - S [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ;",
+        "bool ans = INT_MAX ;",
+        "string S ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘R’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        10,
+        6,
+        5
+      ],
+      "mod_code": [
+        "int q = S [ ii ] [ jj ] - S [ ii ] [ j - 1 ] - S [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ;",
+        "bool ans = INT_MAX ;",
+        "string S ;",
+        "for ( i = 1 ; i <= N ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        10,
+        5
+      ],
+      "mod_code": [
+        "int q = S [ ii ] [ jj ] - S [ ii ] [ j - 1 ] - S [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ;",
+        "bool ans = INT_MAX ;",
+        "for ( i = 1 ; i <= N ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        6
+      ],
+      "mod_code": [
+        "int q = S [ ii ] [ jj ] - S [ ii ] [ j - 1 ] - S [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ;",
+        "string S ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘R’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        6,
+        5
+      ],
+      "mod_code": [
+        "int q = S [ ii ] [ jj ] - S [ ii ] [ j - 1 ] - S [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ;",
+        "string S ;",
+        "for ( i = 1 ; i <= N ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        5
+      ],
+      "mod_code": [
+        "int q = S [ ii ] [ jj ] - S [ ii ] [ j - 1 ] - S [ i - 1 ] [ j - 1 ] [ j - 1 ] [ j - 1 ] ;",
+        "for ( i = 1 ; i <= N ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        6
+      ],
+      "mod_code": [
+        "bool ans = INT_MAX ;",
+        "string S ;"
+      ],
+      "err_line": 7,
+      "err_msg": "‘R’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        6,
+        5
+      ],
+      "mod_code": [
+        "bool ans = INT_MAX ;",
+        "string S ;",
+        "for ( i = 1 ; i <= N ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        5
+      ],
+      "mod_code": [
+        "bool ans = INT_MAX ;",
+        "for ( i = 1 ; i <= N ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        5
+      ],
+      "mod_code": [
+        "string S ;",
+        "for ( i = 1 ; i <= N ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    }
+  ]
+}

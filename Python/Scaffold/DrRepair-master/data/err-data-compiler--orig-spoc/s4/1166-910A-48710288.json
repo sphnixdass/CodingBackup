@@ -1,0 +1,717 @@
+{
+  "meta": {
+    "index": 1166,
+    "hitid": "3H1C3QRA01DOWN9OBR7B7IR7N60CEY",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "910A",
+    "subid": "48710288"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create long longs dp with size 105",
+      "code": "long long dp [ 105 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "set dp [ 0 ] to 0",
+      "code": "dp [ 0 ] = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "create long longs n , d",
+      "code": "long long n , d ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "read n read d",
+      "code": "cin >> n >> d ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "create string s",
+      "code": "string s ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "read s",
+      "code": "cin >> s ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for i = 1 to n exclusive",
+      "code": "for ( int i = 1 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "set dp [ i ] to INT_MAX",
+      "code": "dp [ i ] = INT_MAX ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "if s [ i ] is ' 1 '",
+      "code": "if ( s [ i ] == ' 1 ' )",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "for j = i - 1 to j is greater than or equal to 0 and absolute value of ( i - j ) is less than or equal to d , decrementing j , set dp [ i ] to minimum of dp [ i ] and ( dp [ j ] + 1 )",
+      "code": "for ( int j = i - 1 ; j >= 0 && abs ( i - j ) <= d ; j -- ) dp [ i ] = min ( dp [ i ] , dp [ j ] + 1 ) ;",
+      "indent": 3
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "if dp [ n - 1 ] is INT_MAX",
+      "code": "if ( dp [ n - 1 ] == INT_MAX )",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "print - 1 print newline",
+      "code": "cout << - 1 << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "else",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "print dp [ n - 1 ] print newline",
+      "code": "cout << dp [ n - 1 ] << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "for ( int j = i - 1 ; j >= 0 && abs ( i - j ) <= d ; j -- ) { dp [ i ] = min ( dp [ i ] + 1 ) ; }"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "cin >> n >> k ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "string n ;"
+      ],
+      "err_line": 5,
+      "err_msg": "conflicting declaration ‘std::__cxx11::string n’"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "gets ( s ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "dp [ i ] ] = INT_MAX ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "for ( int j = i - 1 ; j >= 0 && abs ( i - j ) <= d ; j -- ) { dp [ i ] = min ( dp [ j ] + 1 ) ; }"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        10,
+        9
+      ],
+      "mod_code": [
+        "for ( int j = i - 1 ; j >= 0 && abs ( i - j ) <= d ; j -- ) { dp [ i ] = min ( dp [ i ] + 1 ) ; }",
+        "if ( s [ i ] == ' l ' )"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        10,
+        9,
+        4
+      ],
+      "mod_code": [
+        "for ( int j = i - 1 ; j >= 0 && abs ( i - j ) <= d ; j -- ) { dp [ i ] = min ( dp [ i ] + 1 ) ; }",
+        "if ( s [ i ] == ' l ' )",
+        "cin >> n >> k ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        9,
+        4,
+        6
+      ],
+      "mod_code": [
+        "for ( int j = i - 1 ; j >= 0 && abs ( i - j ) <= d ; j -- ) { dp [ i ] = min ( dp [ i ] + 1 ) ; }",
+        "if ( s [ i ] == ' l ' )",
+        "cin >> n >> k ;",
+        "gets ( s ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        9,
+        4,
+        8
+      ],
+      "mod_code": [
+        "for ( int j = i - 1 ; j >= 0 && abs ( i - j ) <= d ; j -- ) { dp [ i ] = min ( dp [ i ] + 1 ) ; }",
+        "if ( s [ i ] == ' l ' )",
+        "cin >> n >> k ;",
+        "dp [ i ] ] = INT_MAX ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        9,
+        6
+      ],
+      "mod_code": [
+        "for ( int j = i - 1 ; j >= 0 && abs ( i - j ) <= d ; j -- ) { dp [ i ] = min ( dp [ i ] + 1 ) ; }",
+        "if ( s [ i ] == ' l ' )",
+        "gets ( s ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    },
+    {
+      "mod_line": [
+        10,
+        9,
+        6,
+        8
+      ],
+      "mod_code": [
+        "for ( int j = i - 1 ; j >= 0 && abs ( i - j ) <= d ; j -- ) { dp [ i ] = min ( dp [ i ] + 1 ) ; }",
+        "if ( s [ i ] == ' l ' )",
+        "gets ( s ) ;",
+        "dp [ i ] ] = INT_MAX ;"
+      ],
+      "err_line": 6,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    },
+    {
+      "mod_line": [
+        10,
+        9,
+        8
+      ],
+      "mod_code": [
+        "for ( int j = i - 1 ; j >= 0 && abs ( i - j ) <= d ; j -- ) { dp [ i ] = min ( dp [ i ] + 1 ) ; }",
+        "if ( s [ i ] == ' l ' )",
+        "dp [ i ] ] = INT_MAX ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        4
+      ],
+      "mod_code": [
+        "for ( int j = i - 1 ; j >= 0 && abs ( i - j ) <= d ; j -- ) { dp [ i ] = min ( dp [ i ] + 1 ) ; }",
+        "cin >> n >> k ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        4,
+        6
+      ],
+      "mod_code": [
+        "for ( int j = i - 1 ; j >= 0 && abs ( i - j ) <= d ; j -- ) { dp [ i ] = min ( dp [ i ] + 1 ) ; }",
+        "cin >> n >> k ;",
+        "gets ( s ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        4,
+        6,
+        8
+      ],
+      "mod_code": [
+        "for ( int j = i - 1 ; j >= 0 && abs ( i - j ) <= d ; j -- ) { dp [ i ] = min ( dp [ i ] + 1 ) ; }",
+        "cin >> n >> k ;",
+        "gets ( s ) ;",
+        "dp [ i ] ] = INT_MAX ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        4,
+        8
+      ],
+      "mod_code": [
+        "for ( int j = i - 1 ; j >= 0 && abs ( i - j ) <= d ; j -- ) { dp [ i ] = min ( dp [ i ] + 1 ) ; }",
+        "cin >> n >> k ;",
+        "dp [ i ] ] = INT_MAX ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        6
+      ],
+      "mod_code": [
+        "for ( int j = i - 1 ; j >= 0 && abs ( i - j ) <= d ; j -- ) { dp [ i ] = min ( dp [ i ] + 1 ) ; }",
+        "gets ( s ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    },
+    {
+      "mod_line": [
+        10,
+        6,
+        8
+      ],
+      "mod_code": [
+        "for ( int j = i - 1 ; j >= 0 && abs ( i - j ) <= d ; j -- ) { dp [ i ] = min ( dp [ i ] + 1 ) ; }",
+        "gets ( s ) ;",
+        "dp [ i ] ] = INT_MAX ;"
+      ],
+      "err_line": 6,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    },
+    {
+      "mod_line": [
+        10,
+        8
+      ],
+      "mod_code": [
+        "for ( int j = i - 1 ; j >= 0 && abs ( i - j ) <= d ; j -- ) { dp [ i ] = min ( dp [ i ] + 1 ) ; }",
+        "dp [ i ] ] = INT_MAX ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        9,
+        4
+      ],
+      "mod_code": [
+        "if ( s [ i ] == ' l ' )",
+        "cin >> n >> k ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        4,
+        10
+      ],
+      "mod_code": [
+        "if ( s [ i ] == ' l ' )",
+        "cin >> n >> k ;",
+        "for ( int j = i - 1 ; j >= 0 && abs ( i - j ) <= d ; j -- ) { dp [ i ] = min ( dp [ j ] + 1 ) ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        4,
+        10,
+        6
+      ],
+      "mod_code": [
+        "if ( s [ i ] == ' l ' )",
+        "cin >> n >> k ;",
+        "for ( int j = i - 1 ; j >= 0 && abs ( i - j ) <= d ; j -- ) { dp [ i ] = min ( dp [ j ] + 1 ) ; }",
+        "gets ( s ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        4,
+        10,
+        8
+      ],
+      "mod_code": [
+        "if ( s [ i ] == ' l ' )",
+        "cin >> n >> k ;",
+        "for ( int j = i - 1 ; j >= 0 && abs ( i - j ) <= d ; j -- ) { dp [ i ] = min ( dp [ j ] + 1 ) ; }",
+        "dp [ i ] ] = INT_MAX ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        4,
+        6
+      ],
+      "mod_code": [
+        "if ( s [ i ] == ' l ' )",
+        "cin >> n >> k ;",
+        "gets ( s ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        4,
+        6,
+        8
+      ],
+      "mod_code": [
+        "if ( s [ i ] == ' l ' )",
+        "cin >> n >> k ;",
+        "gets ( s ) ;",
+        "dp [ i ] ] = INT_MAX ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        4,
+        8
+      ],
+      "mod_code": [
+        "if ( s [ i ] == ' l ' )",
+        "cin >> n >> k ;",
+        "dp [ i ] ] = INT_MAX ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        10
+      ],
+      "mod_code": [
+        "if ( s [ i ] == ' l ' )",
+        "for ( int j = i - 1 ; j >= 0 && abs ( i - j ) <= d ; j -- ) { dp [ i ] = min ( dp [ j ] + 1 ) ; }"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        9,
+        10,
+        6
+      ],
+      "mod_code": [
+        "if ( s [ i ] == ' l ' )",
+        "for ( int j = i - 1 ; j >= 0 && abs ( i - j ) <= d ; j -- ) { dp [ i ] = min ( dp [ j ] + 1 ) ; }",
+        "gets ( s ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    },
+    {
+      "mod_line": [
+        9,
+        10,
+        6,
+        8
+      ],
+      "mod_code": [
+        "if ( s [ i ] == ' l ' )",
+        "for ( int j = i - 1 ; j >= 0 && abs ( i - j ) <= d ; j -- ) { dp [ i ] = min ( dp [ j ] + 1 ) ; }",
+        "gets ( s ) ;",
+        "dp [ i ] ] = INT_MAX ;"
+      ],
+      "err_line": 6,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    },
+    {
+      "mod_line": [
+        9,
+        10,
+        8
+      ],
+      "mod_code": [
+        "if ( s [ i ] == ' l ' )",
+        "for ( int j = i - 1 ; j >= 0 && abs ( i - j ) <= d ; j -- ) { dp [ i ] = min ( dp [ j ] + 1 ) ; }",
+        "dp [ i ] ] = INT_MAX ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        9,
+        6
+      ],
+      "mod_code": [
+        "if ( s [ i ] == ' l ' )",
+        "gets ( s ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    },
+    {
+      "mod_line": [
+        9,
+        6,
+        8
+      ],
+      "mod_code": [
+        "if ( s [ i ] == ' l ' )",
+        "gets ( s ) ;",
+        "dp [ i ] ] = INT_MAX ;"
+      ],
+      "err_line": 6,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    },
+    {
+      "mod_line": [
+        9,
+        8
+      ],
+      "mod_code": [
+        "if ( s [ i ] == ' l ' )",
+        "dp [ i ] ] = INT_MAX ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        10
+      ],
+      "mod_code": [
+        "cin >> n >> k ;",
+        "for ( int j = i - 1 ; j >= 0 && abs ( i - j ) <= d ; j -- ) { dp [ i ] = min ( dp [ j ] + 1 ) ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        10,
+        6
+      ],
+      "mod_code": [
+        "cin >> n >> k ;",
+        "for ( int j = i - 1 ; j >= 0 && abs ( i - j ) <= d ; j -- ) { dp [ i ] = min ( dp [ j ] + 1 ) ; }",
+        "gets ( s ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        10,
+        6,
+        8
+      ],
+      "mod_code": [
+        "cin >> n >> k ;",
+        "for ( int j = i - 1 ; j >= 0 && abs ( i - j ) <= d ; j -- ) { dp [ i ] = min ( dp [ j ] + 1 ) ; }",
+        "gets ( s ) ;",
+        "dp [ i ] ] = INT_MAX ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        10,
+        8
+      ],
+      "mod_code": [
+        "cin >> n >> k ;",
+        "for ( int j = i - 1 ; j >= 0 && abs ( i - j ) <= d ; j -- ) { dp [ i ] = min ( dp [ j ] + 1 ) ; }",
+        "dp [ i ] ] = INT_MAX ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        6
+      ],
+      "mod_code": [
+        "cin >> n >> k ;",
+        "gets ( s ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        8
+      ],
+      "mod_code": [
+        "cin >> n >> k ;",
+        "gets ( s ) ;",
+        "dp [ i ] ] = INT_MAX ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        8
+      ],
+      "mod_code": [
+        "cin >> n >> k ;",
+        "dp [ i ] ] = INT_MAX ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        6
+      ],
+      "mod_code": [
+        "for ( int j = i - 1 ; j >= 0 && abs ( i - j ) <= d ; j -- ) { dp [ i ] = min ( dp [ j ] + 1 ) ; }",
+        "gets ( s ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    },
+    {
+      "mod_line": [
+        10,
+        6,
+        8
+      ],
+      "mod_code": [
+        "for ( int j = i - 1 ; j >= 0 && abs ( i - j ) <= d ; j -- ) { dp [ i ] = min ( dp [ j ] + 1 ) ; }",
+        "gets ( s ) ;",
+        "dp [ i ] ] = INT_MAX ;"
+      ],
+      "err_line": 6,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    },
+    {
+      "mod_line": [
+        10,
+        8
+      ],
+      "mod_code": [
+        "for ( int j = i - 1 ; j >= 0 && abs ( i - j ) <= d ; j -- ) { dp [ i ] = min ( dp [ j ] + 1 ) ; }",
+        "dp [ i ] ] = INT_MAX ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        8
+      ],
+      "mod_code": [
+        "gets ( s ) ;",
+        "dp [ i ] ] = INT_MAX ;"
+      ],
+      "err_line": 6,
+      "err_msg": "cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘char*’ for argument ‘1’ to ‘char* gets(char*)’"
+    }
+  ]
+}

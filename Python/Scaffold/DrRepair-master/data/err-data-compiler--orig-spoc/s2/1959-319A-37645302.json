@@ -1,0 +1,745 @@
+{
+  "meta": {
+    "index": 1959,
+    "hitid": "3PIOQ99R7YGOCN31QHVURB7M8YBNUB",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "319A",
+    "subid": "37645302"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare constant long double pi = acos ( - 1 )",
+      "code": "const long double pi = acos ( - 1 ) ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "long long function power with long long arguments x and y",
+      "code": "long long power ( long long x , long long y )",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "if y = 0",
+      "code": "if ( y == 0 ) return 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "long long temp = power ( x , y / 2 ) modulo 1000000007",
+      "code": "long long temp = power ( x , y / 2 ) % 1000000007 ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "multiply temp by temp",
+      "code": "temp *= temp ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "temp = temp modulo 1000000007",
+      "code": "temp %= 1000000007 ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "if y is odd , multiply temp by x",
+      "code": "if ( y % 2 ) temp *= x ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "return temp % 1000000007",
+      "code": "return temp % 1000000007 ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 10,
+      "text": "create string second",
+      "code": "string second ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "read second",
+      "code": "cin >> second ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "create bitset b with size 200",
+      "code": "bitset < 200 > b ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "for integer i = 0 to length of second exclusive",
+      "code": "for ( int i = 0 ; i < second . size ( ) ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "if length of second [ second - i - 1 ] = ' 1 ' , change b [ i ] to 1",
+      "code": "if ( second [ second . size ( ) - i - 1 ] == ' 1 ' ) b [ i ] = 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "declare long long ans = 0",
+      "code": "long long ans = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "for i = 0 to length of second exclusive",
+      "code": "for ( int i = 0 ; i < second . size ( ) ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "increase ans by power ( 2 , i ) * b [ i ]",
+      "code": "ans += power ( 2 , i ) * ( long long ) b [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 19,
+      "text": "ans = ans modulo 1000000007",
+      "code": "ans %= 1000000007 ;",
+      "indent": 2
+    },
+    {
+      "line": 20,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "print ( ans * power ( 2 , length of second - 1 ) % 1000000007 ) % 1000000007",
+      "code": "cout << ( ans * power ( 2 , second . size ( ) - 1 ) % 1000000007 ) % 1000000007 << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 22,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "if ( y == 0 )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘temp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "bitset < int > b [ 200 ] ;"
+      ],
+      "err_line": 12,
+      "err_msg": "type/value mismatch at argument 1 in template parameter list for ‘template<long unsigned int _Nb> class std::bitset’"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "if ( second [ second - i - 1 ] == ' 1 ' ) b [ i ] = 1 ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no match for ‘operator-’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "if ( ! y )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘temp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "string str ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘second’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "bitset < bitset > b [ 200 ] ;"
+      ],
+      "err_line": 12,
+      "err_msg": "type/value mismatch at argument 1 in template parameter list for ‘template<long unsigned int _Nb> class std::bitset’"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "if ( second [ second - i - 1 ] == ' 1 ' ) { b [ i ] = 1 ; }"
+      ],
+      "err_line": 14,
+      "err_msg": "no match for ‘operator-’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        2,
+        3
+      ],
+      "mod_code": [
+        "if ( y == 0 )",
+        "long long temp = max ( x , y / 2 ) % 1000000007 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘temp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        12
+      ],
+      "mod_code": [
+        "if ( y == 0 )",
+        "long long temp = max ( x , y / 2 ) % 1000000007 ;",
+        "bitset < int > b [ 200 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘temp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        12,
+        14
+      ],
+      "mod_code": [
+        "if ( y == 0 )",
+        "long long temp = max ( x , y / 2 ) % 1000000007 ;",
+        "bitset < int > b [ 200 ] ;",
+        "if ( second [ second - i - 1 ] == ' 1 ' ) b [ i ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘temp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        12,
+        11
+      ],
+      "mod_code": [
+        "if ( y == 0 )",
+        "long long temp = max ( x , y / 2 ) % 1000000007 ;",
+        "bitset < int > b [ 200 ] ;",
+        "cout << second << endl ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘temp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        14
+      ],
+      "mod_code": [
+        "if ( y == 0 )",
+        "long long temp = max ( x , y / 2 ) % 1000000007 ;",
+        "if ( second [ second - i - 1 ] == ' 1 ' ) b [ i ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘temp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        14,
+        12
+      ],
+      "mod_code": [
+        "if ( y == 0 )",
+        "long long temp = max ( x , y / 2 ) % 1000000007 ;",
+        "if ( second [ second - i - 1 ] == ' 1 ' ) b [ i ] = 1 ;",
+        "bitset < bitset > b [ 200 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘temp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        14,
+        11
+      ],
+      "mod_code": [
+        "if ( y == 0 )",
+        "long long temp = max ( x , y / 2 ) % 1000000007 ;",
+        "if ( second [ second - i - 1 ] == ' 1 ' ) b [ i ] = 1 ;",
+        "cout << second << endl ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘temp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        12
+      ],
+      "mod_code": [
+        "if ( y == 0 )",
+        "long long temp = max ( x , y / 2 ) % 1000000007 ;",
+        "bitset < bitset > b [ 200 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘temp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        12,
+        11
+      ],
+      "mod_code": [
+        "if ( y == 0 )",
+        "long long temp = max ( x , y / 2 ) % 1000000007 ;",
+        "bitset < bitset > b [ 200 ] ;",
+        "cout << second << endl ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘temp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        11
+      ],
+      "mod_code": [
+        "if ( y == 0 )",
+        "long long temp = max ( x , y / 2 ) % 1000000007 ;",
+        "cout << second << endl ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘temp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        12
+      ],
+      "mod_code": [
+        "if ( y == 0 )",
+        "bitset < int > b [ 200 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘temp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        12,
+        14
+      ],
+      "mod_code": [
+        "if ( y == 0 )",
+        "bitset < int > b [ 200 ] ;",
+        "if ( second [ second - i - 1 ] == ' 1 ' ) b [ i ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘temp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        12,
+        14,
+        11
+      ],
+      "mod_code": [
+        "if ( y == 0 )",
+        "bitset < int > b [ 200 ] ;",
+        "if ( second [ second - i - 1 ] == ' 1 ' ) b [ i ] = 1 ;",
+        "cout << second << endl ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘temp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        12,
+        11
+      ],
+      "mod_code": [
+        "if ( y == 0 )",
+        "bitset < int > b [ 200 ] ;",
+        "cout << second << endl ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘temp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        14
+      ],
+      "mod_code": [
+        "if ( y == 0 )",
+        "if ( second [ second - i - 1 ] == ' 1 ' ) b [ i ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘temp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        14,
+        12
+      ],
+      "mod_code": [
+        "if ( y == 0 )",
+        "if ( second [ second - i - 1 ] == ' 1 ' ) b [ i ] = 1 ;",
+        "bitset < bitset > b [ 200 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘temp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        14,
+        12,
+        11
+      ],
+      "mod_code": [
+        "if ( y == 0 )",
+        "if ( second [ second - i - 1 ] == ' 1 ' ) b [ i ] = 1 ;",
+        "bitset < bitset > b [ 200 ] ;",
+        "cout << second << endl ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘temp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        14,
+        11
+      ],
+      "mod_code": [
+        "if ( y == 0 )",
+        "if ( second [ second - i - 1 ] == ' 1 ' ) b [ i ] = 1 ;",
+        "cout << second << endl ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘temp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        12
+      ],
+      "mod_code": [
+        "if ( y == 0 )",
+        "bitset < bitset > b [ 200 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘temp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        12,
+        11
+      ],
+      "mod_code": [
+        "if ( y == 0 )",
+        "bitset < bitset > b [ 200 ] ;",
+        "cout << second << endl ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘temp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        11
+      ],
+      "mod_code": [
+        "if ( y == 0 )",
+        "cout << second << endl ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘temp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        12
+      ],
+      "mod_code": [
+        "long long temp = max ( x , y / 2 ) % 1000000007 ;",
+        "bitset < int > b [ 200 ] ;"
+      ],
+      "err_line": 12,
+      "err_msg": "type/value mismatch at argument 1 in template parameter list for ‘template<long unsigned int _Nb> class std::bitset’"
+    },
+    {
+      "mod_line": [
+        3,
+        12,
+        14
+      ],
+      "mod_code": [
+        "long long temp = max ( x , y / 2 ) % 1000000007 ;",
+        "bitset < int > b [ 200 ] ;",
+        "if ( second [ second - i - 1 ] == ' 1 ' ) b [ i ] = 1 ;"
+      ],
+      "err_line": 12,
+      "err_msg": "type/value mismatch at argument 1 in template parameter list for ‘template<long unsigned int _Nb> class std::bitset’"
+    },
+    {
+      "mod_line": [
+        3,
+        12,
+        14,
+        11
+      ],
+      "mod_code": [
+        "long long temp = max ( x , y / 2 ) % 1000000007 ;",
+        "bitset < int > b [ 200 ] ;",
+        "if ( second [ second - i - 1 ] == ' 1 ' ) b [ i ] = 1 ;",
+        "cout << second << endl ;"
+      ],
+      "err_line": 12,
+      "err_msg": "type/value mismatch at argument 1 in template parameter list for ‘template<long unsigned int _Nb> class std::bitset’"
+    },
+    {
+      "mod_line": [
+        3,
+        12,
+        11
+      ],
+      "mod_code": [
+        "long long temp = max ( x , y / 2 ) % 1000000007 ;",
+        "bitset < int > b [ 200 ] ;",
+        "cout << second << endl ;"
+      ],
+      "err_line": 12,
+      "err_msg": "type/value mismatch at argument 1 in template parameter list for ‘template<long unsigned int _Nb> class std::bitset’"
+    },
+    {
+      "mod_line": [
+        3,
+        14
+      ],
+      "mod_code": [
+        "long long temp = max ( x , y / 2 ) % 1000000007 ;",
+        "if ( second [ second - i - 1 ] == ' 1 ' ) b [ i ] = 1 ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no match for ‘operator-’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        3,
+        14,
+        12
+      ],
+      "mod_code": [
+        "long long temp = max ( x , y / 2 ) % 1000000007 ;",
+        "if ( second [ second - i - 1 ] == ' 1 ' ) b [ i ] = 1 ;",
+        "bitset < bitset > b [ 200 ] ;"
+      ],
+      "err_line": 12,
+      "err_msg": "type/value mismatch at argument 1 in template parameter list for ‘template<long unsigned int _Nb> class std::bitset’"
+    },
+    {
+      "mod_line": [
+        3,
+        14,
+        12,
+        11
+      ],
+      "mod_code": [
+        "long long temp = max ( x , y / 2 ) % 1000000007 ;",
+        "if ( second [ second - i - 1 ] == ' 1 ' ) b [ i ] = 1 ;",
+        "bitset < bitset > b [ 200 ] ;",
+        "cout << second << endl ;"
+      ],
+      "err_line": 12,
+      "err_msg": "type/value mismatch at argument 1 in template parameter list for ‘template<long unsigned int _Nb> class std::bitset’"
+    },
+    {
+      "mod_line": [
+        3,
+        14,
+        11
+      ],
+      "mod_code": [
+        "long long temp = max ( x , y / 2 ) % 1000000007 ;",
+        "if ( second [ second - i - 1 ] == ' 1 ' ) b [ i ] = 1 ;",
+        "cout << second << endl ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no match for ‘operator-’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        3,
+        12
+      ],
+      "mod_code": [
+        "long long temp = max ( x , y / 2 ) % 1000000007 ;",
+        "bitset < bitset > b [ 200 ] ;"
+      ],
+      "err_line": 12,
+      "err_msg": "type/value mismatch at argument 1 in template parameter list for ‘template<long unsigned int _Nb> class std::bitset’"
+    },
+    {
+      "mod_line": [
+        3,
+        12,
+        11
+      ],
+      "mod_code": [
+        "long long temp = max ( x , y / 2 ) % 1000000007 ;",
+        "bitset < bitset > b [ 200 ] ;",
+        "cout << second << endl ;"
+      ],
+      "err_line": 12,
+      "err_msg": "type/value mismatch at argument 1 in template parameter list for ‘template<long unsigned int _Nb> class std::bitset’"
+    },
+    {
+      "mod_line": [
+        12,
+        14
+      ],
+      "mod_code": [
+        "bitset < int > b [ 200 ] ;",
+        "if ( second [ second - i - 1 ] == ' 1 ' ) b [ i ] = 1 ;"
+      ],
+      "err_line": 12,
+      "err_msg": "type/value mismatch at argument 1 in template parameter list for ‘template<long unsigned int _Nb> class std::bitset’"
+    },
+    {
+      "mod_line": [
+        12,
+        14,
+        11
+      ],
+      "mod_code": [
+        "bitset < int > b [ 200 ] ;",
+        "if ( second [ second - i - 1 ] == ' 1 ' ) b [ i ] = 1 ;",
+        "cout << second << endl ;"
+      ],
+      "err_line": 12,
+      "err_msg": "type/value mismatch at argument 1 in template parameter list for ‘template<long unsigned int _Nb> class std::bitset’"
+    },
+    {
+      "mod_line": [
+        12,
+        11
+      ],
+      "mod_code": [
+        "bitset < int > b [ 200 ] ;",
+        "cout << second << endl ;"
+      ],
+      "err_line": 12,
+      "err_msg": "type/value mismatch at argument 1 in template parameter list for ‘template<long unsigned int _Nb> class std::bitset’"
+    },
+    {
+      "mod_line": [
+        14,
+        12
+      ],
+      "mod_code": [
+        "if ( second [ second - i - 1 ] == ' 1 ' ) b [ i ] = 1 ;",
+        "bitset < bitset > b [ 200 ] ;"
+      ],
+      "err_line": 12,
+      "err_msg": "type/value mismatch at argument 1 in template parameter list for ‘template<long unsigned int _Nb> class std::bitset’"
+    },
+    {
+      "mod_line": [
+        14,
+        12,
+        11
+      ],
+      "mod_code": [
+        "if ( second [ second - i - 1 ] == ' 1 ' ) b [ i ] = 1 ;",
+        "bitset < bitset > b [ 200 ] ;",
+        "cout << second << endl ;"
+      ],
+      "err_line": 12,
+      "err_msg": "type/value mismatch at argument 1 in template parameter list for ‘template<long unsigned int _Nb> class std::bitset’"
+    },
+    {
+      "mod_line": [
+        14,
+        11
+      ],
+      "mod_code": [
+        "if ( second [ second - i - 1 ] == ' 1 ' ) b [ i ] = 1 ;",
+        "cout << second << endl ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no match for ‘operator-’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        12,
+        11
+      ],
+      "mod_code": [
+        "bitset < bitset > b [ 200 ] ;",
+        "cout << second << endl ;"
+      ],
+      "err_line": 12,
+      "err_msg": "type/value mismatch at argument 1 in template parameter list for ‘template<long unsigned int _Nb> class std::bitset’"
+    }
+  ]
+}

@@ -1,0 +1,897 @@
+{
+  "meta": {
+    "index": 2035,
+    "hitid": "3RTFSSG7T80BGRPL94UGW7OUOJKLW4",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "1032A",
+    "subid": "48415025"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare BigMod with long longs N , P , returning long long",
+      "code": "long long BigMod ( long long N , long long P )",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "if P is 0 , return 1 from function",
+      "code": "if ( P == 0 ) return 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "if P % 2 is 0",
+      "code": "if ( P % 2 == 0 )",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "create long long ret with result of run BigMod with N , P / 2 as arguments",
+      "code": "long long ret = BigMod ( N , P / 2 ) ;",
+      "indent": 2
+    },
+    {
+      "line": 4,
+      "text": "return ( ( ret % 998244353 ) * ( ret % 998244353 ) ) % 998244353 from function",
+      "code": "return ( ( ret % 998244353 ) * ( ret % 998244353 ) ) % 998244353 ;",
+      "indent": 2
+    },
+    {
+      "line": 5,
+      "text": "else",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "return ( ( N % 998244353 ) * ( BigMod ( N , P - 1 ) % 998244353 ) ) % 998244353 from function",
+      "code": "return ( ( N % 998244353 ) * ( BigMod ( N , P - 1 ) % 998244353 ) ) % 998244353 ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 8,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 9,
+      "text": "create long longs n , k , x",
+      "code": "long long n , k , x ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "while read n read k",
+      "code": "while ( cin >> n >> k )",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "create long long mx with mx = 0",
+      "code": "long long mx = 0 ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "create long long set st",
+      "code": "set < long long > st ;",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "create map mp from long long to long long",
+      "code": "map < long long , long long > mp ;",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "for i = 1 to n inclusive",
+      "code": "for ( long long i = 1 ; i <= n ; i ++ )",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "read x",
+      "code": "cin >> x ;",
+      "indent": 3
+    },
+    {
+      "line": 16,
+      "text": "insert x into st",
+      "code": "st . insert ( x ) ;",
+      "indent": 3
+    },
+    {
+      "line": 17,
+      "text": "increment mp [ x ]",
+      "code": "mp [ x ] ++ ;",
+      "indent": 3
+    },
+    {
+      "line": 18,
+      "text": "set mx to maximum of mx and mp [ x ]",
+      "code": "mx = max ( mx , mp [ x ] ) ;",
+      "indent": 3
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 20,
+      "text": "set x to round up ( ( mx * 1 . 0 ) / k ) * k * size of st",
+      "code": "x = ceil ( ( mx * 1.0 ) / k ) * k * st . size ( ) ;",
+      "indent": 2
+    },
+    {
+      "line": 21,
+      "text": "decrement x by n",
+      "code": "x -= n ;",
+      "indent": 2
+    },
+    {
+      "line": 22,
+      "text": "print x print newline",
+      "code": "cout << x << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 23,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 25,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "long long ret ( BigMod , P / 2 ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "do"
+      ],
+      "err_line": 7,
+      "err_msg": "expected ‘while’ before ‘}’ token"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "map < long long to ;"
+      ],
+      "err_line": 13,
+      "err_msg": "wrong number of template arguments (1, should be at least 2)"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "st . push ( x ) ;"
+      ],
+      "err_line": 16,
+      "err_msg": "‘class std::set<long long int>’ has no member named ‘push’"
+    },
+    {
+      "mod_line": [
+        5,
+        10
+      ],
+      "mod_code": [
+        "do",
+        "while ( n >> n >> k )"
+      ],
+      "err_line": 7,
+      "err_msg": "expected ‘while’ before ‘}’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        3
+      ],
+      "mod_code": [
+        "do",
+        "while ( n >> n >> k )",
+        "long long ret ( BigMod , P / 2 ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        3,
+        15
+      ],
+      "mod_code": [
+        "do",
+        "while ( n >> n >> k )",
+        "long long ret ( BigMod , P / 2 ) ;",
+        "while ( cin >> x )"
+      ],
+      "err_line": 3,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        3,
+        16
+      ],
+      "mod_code": [
+        "do",
+        "while ( n >> n >> k )",
+        "long long ret ( BigMod , P / 2 ) ;",
+        "st . push ( x ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        3,
+        13
+      ],
+      "mod_code": [
+        "do",
+        "while ( n >> n >> k )",
+        "long long ret ( BigMod , P / 2 ) ;",
+        "map < long long to ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        15
+      ],
+      "mod_code": [
+        "do",
+        "while ( n >> n >> k )",
+        "while ( cin >> x )"
+      ],
+      "err_line": 7,
+      "err_msg": "expected ‘while’ before ‘}’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        15,
+        16
+      ],
+      "mod_code": [
+        "do",
+        "while ( n >> n >> k )",
+        "while ( cin >> x )",
+        "st . push ( x ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected ‘while’ before ‘}’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        15,
+        13
+      ],
+      "mod_code": [
+        "do",
+        "while ( n >> n >> k )",
+        "while ( cin >> x )",
+        "map < long long to ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected ‘while’ before ‘}’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        16
+      ],
+      "mod_code": [
+        "do",
+        "while ( n >> n >> k )",
+        "st . push ( x ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected ‘while’ before ‘}’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        16,
+        13
+      ],
+      "mod_code": [
+        "do",
+        "while ( n >> n >> k )",
+        "st . push ( x ) ;",
+        "map < long long to ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected ‘while’ before ‘}’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        13
+      ],
+      "mod_code": [
+        "do",
+        "while ( n >> n >> k )",
+        "map < long long to ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected ‘while’ before ‘}’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        3
+      ],
+      "mod_code": [
+        "do",
+        "long long ret ( BigMod , P / 2 ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        3,
+        15
+      ],
+      "mod_code": [
+        "do",
+        "long long ret ( BigMod , P / 2 ) ;",
+        "while ( cin >> x )"
+      ],
+      "err_line": 3,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        3,
+        15,
+        16
+      ],
+      "mod_code": [
+        "do",
+        "long long ret ( BigMod , P / 2 ) ;",
+        "while ( cin >> x )",
+        "st . push ( x ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        3,
+        15,
+        13
+      ],
+      "mod_code": [
+        "do",
+        "long long ret ( BigMod , P / 2 ) ;",
+        "while ( cin >> x )",
+        "map < long long to ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        3,
+        16
+      ],
+      "mod_code": [
+        "do",
+        "long long ret ( BigMod , P / 2 ) ;",
+        "st . push ( x ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        3,
+        16,
+        13
+      ],
+      "mod_code": [
+        "do",
+        "long long ret ( BigMod , P / 2 ) ;",
+        "st . push ( x ) ;",
+        "map < long long to ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        3,
+        13
+      ],
+      "mod_code": [
+        "do",
+        "long long ret ( BigMod , P / 2 ) ;",
+        "map < long long to ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        15
+      ],
+      "mod_code": [
+        "do",
+        "while ( cin >> x )"
+      ],
+      "err_line": 7,
+      "err_msg": "expected ‘while’ before ‘}’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        15,
+        16
+      ],
+      "mod_code": [
+        "do",
+        "while ( cin >> x )",
+        "st . push ( x ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected ‘while’ before ‘}’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        15,
+        16,
+        13
+      ],
+      "mod_code": [
+        "do",
+        "while ( cin >> x )",
+        "st . push ( x ) ;",
+        "map < long long to ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected ‘while’ before ‘}’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        15,
+        13
+      ],
+      "mod_code": [
+        "do",
+        "while ( cin >> x )",
+        "map < long long to ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected ‘while’ before ‘}’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        16
+      ],
+      "mod_code": [
+        "do",
+        "st . push ( x ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected ‘while’ before ‘}’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        16,
+        13
+      ],
+      "mod_code": [
+        "do",
+        "st . push ( x ) ;",
+        "map < long long to ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected ‘while’ before ‘}’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        13
+      ],
+      "mod_code": [
+        "do",
+        "map < long long to ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected ‘while’ before ‘}’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        3
+      ],
+      "mod_code": [
+        "while ( n >> n >> k )",
+        "long long ret ( BigMod , P / 2 ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        15
+      ],
+      "mod_code": [
+        "while ( n >> n >> k )",
+        "long long ret ( BigMod , P / 2 ) ;",
+        "while ( cin >> x )"
+      ],
+      "err_line": 3,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        15,
+        16
+      ],
+      "mod_code": [
+        "while ( n >> n >> k )",
+        "long long ret ( BigMod , P / 2 ) ;",
+        "while ( cin >> x )",
+        "st . push ( x ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        15,
+        13
+      ],
+      "mod_code": [
+        "while ( n >> n >> k )",
+        "long long ret ( BigMod , P / 2 ) ;",
+        "while ( cin >> x )",
+        "map < long long to ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        16
+      ],
+      "mod_code": [
+        "while ( n >> n >> k )",
+        "long long ret ( BigMod , P / 2 ) ;",
+        "st . push ( x ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        16,
+        13
+      ],
+      "mod_code": [
+        "while ( n >> n >> k )",
+        "long long ret ( BigMod , P / 2 ) ;",
+        "st . push ( x ) ;",
+        "map < long long to ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        13
+      ],
+      "mod_code": [
+        "while ( n >> n >> k )",
+        "long long ret ( BigMod , P / 2 ) ;",
+        "map < long long to ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        15,
+        16
+      ],
+      "mod_code": [
+        "while ( n >> n >> k )",
+        "while ( cin >> x )",
+        "st . push ( x ) ;"
+      ],
+      "err_line": 16,
+      "err_msg": "‘class std::set<long long int>’ has no member named ‘push’"
+    },
+    {
+      "mod_line": [
+        10,
+        15,
+        16,
+        13
+      ],
+      "mod_code": [
+        "while ( n >> n >> k )",
+        "while ( cin >> x )",
+        "st . push ( x ) ;",
+        "map < long long to ;"
+      ],
+      "err_line": 13,
+      "err_msg": "wrong number of template arguments (1, should be at least 2)"
+    },
+    {
+      "mod_line": [
+        10,
+        15,
+        13
+      ],
+      "mod_code": [
+        "while ( n >> n >> k )",
+        "while ( cin >> x )",
+        "map < long long to ;"
+      ],
+      "err_line": 13,
+      "err_msg": "wrong number of template arguments (1, should be at least 2)"
+    },
+    {
+      "mod_line": [
+        10,
+        16
+      ],
+      "mod_code": [
+        "while ( n >> n >> k )",
+        "st . push ( x ) ;"
+      ],
+      "err_line": 16,
+      "err_msg": "‘class std::set<long long int>’ has no member named ‘push’"
+    },
+    {
+      "mod_line": [
+        10,
+        16,
+        13
+      ],
+      "mod_code": [
+        "while ( n >> n >> k )",
+        "st . push ( x ) ;",
+        "map < long long to ;"
+      ],
+      "err_line": 13,
+      "err_msg": "wrong number of template arguments (1, should be at least 2)"
+    },
+    {
+      "mod_line": [
+        10,
+        13
+      ],
+      "mod_code": [
+        "while ( n >> n >> k )",
+        "map < long long to ;"
+      ],
+      "err_line": 13,
+      "err_msg": "wrong number of template arguments (1, should be at least 2)"
+    },
+    {
+      "mod_line": [
+        3,
+        15
+      ],
+      "mod_code": [
+        "long long ret ( BigMod , P / 2 ) ;",
+        "while ( cin >> x )"
+      ],
+      "err_line": 3,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        15,
+        16
+      ],
+      "mod_code": [
+        "long long ret ( BigMod , P / 2 ) ;",
+        "while ( cin >> x )",
+        "st . push ( x ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        15,
+        16,
+        13
+      ],
+      "mod_code": [
+        "long long ret ( BigMod , P / 2 ) ;",
+        "while ( cin >> x )",
+        "st . push ( x ) ;",
+        "map < long long to ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        15,
+        13
+      ],
+      "mod_code": [
+        "long long ret ( BigMod , P / 2 ) ;",
+        "while ( cin >> x )",
+        "map < long long to ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        16
+      ],
+      "mod_code": [
+        "long long ret ( BigMod , P / 2 ) ;",
+        "st . push ( x ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        16,
+        13
+      ],
+      "mod_code": [
+        "long long ret ( BigMod , P / 2 ) ;",
+        "st . push ( x ) ;",
+        "map < long long to ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        13
+      ],
+      "mod_code": [
+        "long long ret ( BigMod , P / 2 ) ;",
+        "map < long long to ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        15,
+        16
+      ],
+      "mod_code": [
+        "while ( cin >> x )",
+        "st . push ( x ) ;"
+      ],
+      "err_line": 16,
+      "err_msg": "‘class std::set<long long int>’ has no member named ‘push’"
+    },
+    {
+      "mod_line": [
+        15,
+        16,
+        13
+      ],
+      "mod_code": [
+        "while ( cin >> x )",
+        "st . push ( x ) ;",
+        "map < long long to ;"
+      ],
+      "err_line": 13,
+      "err_msg": "wrong number of template arguments (1, should be at least 2)"
+    },
+    {
+      "mod_line": [
+        15,
+        13
+      ],
+      "mod_code": [
+        "while ( cin >> x )",
+        "map < long long to ;"
+      ],
+      "err_line": 13,
+      "err_msg": "wrong number of template arguments (1, should be at least 2)"
+    },
+    {
+      "mod_line": [
+        16,
+        13
+      ],
+      "mod_code": [
+        "st . push ( x ) ;",
+        "map < long long to ;"
+      ],
+      "err_line": 13,
+      "err_msg": "wrong number of template arguments (1, should be at least 2)"
+    }
+  ]
+}

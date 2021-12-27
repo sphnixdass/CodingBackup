@@ -1,0 +1,889 @@
+{
+  "meta": {
+    "index": 1644,
+    "hitid": "30U1YOGZGAQZBYKKCIMRG5D4AKMSDR",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "70A",
+    "subid": "48814416"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare constant integer N = 1010",
+      "code": "const int N = 1010 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare constant integer MOD = integer casted 1e6 + 3",
+      "code": "const int MOD = ( int ) 1e6 + 3 ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "declare long long integer n , long long integer arrays dp size N , twoPow size 2 * N",
+      "code": "long long int n , dp [ N ] , twoPow [ 2 * N ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "declare init with no arguments , returning void",
+      "code": "void init ( )",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "let twoPow [ 0 ] be 1",
+      "code": "twoPow [ 0 ] = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i = 1 to 2 * N inclusive , let twoPow [ i ] be ( twoPow [ i - 1 ] * 2 ) % MOD",
+      "code": "for ( int i = 1 ; i <= 2 * N ; i ++ ) twoPow [ i ] = ( twoPow [ i - 1 ] * 2 ) % MOD ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "set bytes from dp to size of dp to value - 1",
+      "code": "memset ( dp , - 1 , sizeof ( dp ) ) ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 8,
+      "text": "declare cookie with long long integer a as argument , returning long long integer",
+      "code": "long long int cookie ( long long int a )",
+      "indent": 0
+    },
+    {
+      "line": 9,
+      "text": "return ( twoPow [ a - 1 ] * ( twoPow [ a ] + 1 ) ) % MOD from function",
+      "code": "return ( twoPow [ a - 1 ] * ( twoPow [ a ] + 1 ) ) % MOD ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 11,
+      "text": "declare solve with long long integer a as argument , returning long long integer",
+      "code": "long long int solve ( long long int a )",
+      "indent": 0
+    },
+    {
+      "line": 12,
+      "text": "if a is less than or equal to 0 , return 0",
+      "code": "if ( a <= 0 ) return 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "if dp [ a ] is not - 1 , return dp [ a ]",
+      "code": "if ( dp [ a ] != - 1 ) return dp [ a ] ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "let dp [ a ] be result of run cookie ( a ) % MOD",
+      "code": "dp [ a ] = cookie ( a ) % MOD ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "for i = 1 to a - 1 is greater than 0 , let dp [ a ] be ( dp [ a ] + result of run solve ( a - i ) * twoPow [ i - 1 ] ) % MOD",
+      "code": "for ( int i = 1 ; a - i > 0 ; i ++ ) { dp [ a ] = ( dp [ a ] + solve ( a - i ) * twoPow [ i - 1 ] ) % MOD ; }",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "return dp [ a ] from function",
+      "code": "return dp [ a ] ;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 19,
+      "text": "run init",
+      "code": "init ( ) ;",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "print ( twoPow [ 2 * n ] - result of run solve ( n ) + MOD ) % MOD , newline",
+      "code": "cout << ( twoPow [ 2 * n ] - solve ( n ) + MOD ) % MOD << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 22,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "long long int n [ N ] , twoPow [ 2 ] , twoPow [ 2 ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "redefinition of ‘long long int twoPow [2]’"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "void init ( ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "return dp [ i ] ;"
+      ],
+      "err_line": 16,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        19
+      ],
+      "mod_code": [
+        "init ( )"
+      ],
+      "err_line": 20,
+      "err_msg": "expected ‘;’ before ‘cin’"
+    },
+    {
+      "mod_line": [
+        20
+      ],
+      "mod_code": [
+        "cin >> N ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘const int’)"
+    },
+    {
+      "mod_line": [
+        15,
+        4,
+        20
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i > 0 ; i -- ) { dp [ a ] = ( dp [ a ] + twoPow [ i ] + twoPow [ i - 1 ] * MOD ) % MOD ; }",
+        "twoPow [ 0 ] = ' 1 ' ;",
+        "cin >> N ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘const int’)"
+    },
+    {
+      "mod_line": [
+        15,
+        4,
+        20,
+        16
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i > 0 ; i -- ) { dp [ a ] = ( dp [ a ] + twoPow [ i ] + twoPow [ i - 1 ] * MOD ) % MOD ; }",
+        "twoPow [ 0 ] = ' 1 ' ;",
+        "cin >> N ;",
+        "return dp [ i ] ;"
+      ],
+      "err_line": 16,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        15,
+        4,
+        20,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i > 0 ; i -- ) { dp [ a ] = ( dp [ a ] + twoPow [ i ] + twoPow [ i - 1 ] * MOD ) % MOD ; }",
+        "twoPow [ 0 ] = ' 1 ' ;",
+        "cin >> N ;",
+        "void init ( ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        15,
+        4,
+        20,
+        19
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i > 0 ; i -- ) { dp [ a ] = ( dp [ a ] + twoPow [ i ] + twoPow [ i - 1 ] * MOD ) % MOD ; }",
+        "twoPow [ 0 ] = ' 1 ' ;",
+        "cin >> N ;",
+        "init ( )"
+      ],
+      "err_line": 20,
+      "err_msg": "expected ‘;’ before ‘cin’"
+    },
+    {
+      "mod_line": [
+        15,
+        4,
+        16
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i > 0 ; i -- ) { dp [ a ] = ( dp [ a ] + twoPow [ i ] + twoPow [ i - 1 ] * MOD ) % MOD ; }",
+        "twoPow [ 0 ] = ' 1 ' ;",
+        "return dp [ i ] ;"
+      ],
+      "err_line": 16,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        15,
+        4,
+        16,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i > 0 ; i -- ) { dp [ a ] = ( dp [ a ] + twoPow [ i ] + twoPow [ i - 1 ] * MOD ) % MOD ; }",
+        "twoPow [ 0 ] = ' 1 ' ;",
+        "return dp [ i ] ;",
+        "void init ( ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        15,
+        4,
+        16,
+        19
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i > 0 ; i -- ) { dp [ a ] = ( dp [ a ] + twoPow [ i ] + twoPow [ i - 1 ] * MOD ) % MOD ; }",
+        "twoPow [ 0 ] = ' 1 ' ;",
+        "return dp [ i ] ;",
+        "init ( )"
+      ],
+      "err_line": 16,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        15,
+        4,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i > 0 ; i -- ) { dp [ a ] = ( dp [ a ] + twoPow [ i ] + twoPow [ i - 1 ] * MOD ) % MOD ; }",
+        "twoPow [ 0 ] = ' 1 ' ;",
+        "void init ( ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        15,
+        4,
+        3,
+        19
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i > 0 ; i -- ) { dp [ a ] = ( dp [ a ] + twoPow [ i ] + twoPow [ i - 1 ] * MOD ) % MOD ; }",
+        "twoPow [ 0 ] = ' 1 ' ;",
+        "void init ( ) ;",
+        "init ( )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        15,
+        4,
+        19
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i > 0 ; i -- ) { dp [ a ] = ( dp [ a ] + twoPow [ i ] + twoPow [ i - 1 ] * MOD ) % MOD ; }",
+        "twoPow [ 0 ] = ' 1 ' ;",
+        "init ( )"
+      ],
+      "err_line": 20,
+      "err_msg": "expected ‘;’ before ‘cin’"
+    },
+    {
+      "mod_line": [
+        15,
+        20
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i > 0 ; i -- ) { dp [ a ] = ( dp [ a ] + twoPow [ i ] + twoPow [ i - 1 ] * MOD ) % MOD ; }",
+        "cin >> N ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘const int’)"
+    },
+    {
+      "mod_line": [
+        15,
+        20,
+        16
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i > 0 ; i -- ) { dp [ a ] = ( dp [ a ] + twoPow [ i ] + twoPow [ i - 1 ] * MOD ) % MOD ; }",
+        "cin >> N ;",
+        "return dp [ i ] ;"
+      ],
+      "err_line": 16,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        15,
+        20,
+        16,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i > 0 ; i -- ) { dp [ a ] = ( dp [ a ] + twoPow [ i ] + twoPow [ i - 1 ] * MOD ) % MOD ; }",
+        "cin >> N ;",
+        "return dp [ i ] ;",
+        "void init ( ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        15,
+        20,
+        16,
+        19
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i > 0 ; i -- ) { dp [ a ] = ( dp [ a ] + twoPow [ i ] + twoPow [ i - 1 ] * MOD ) % MOD ; }",
+        "cin >> N ;",
+        "return dp [ i ] ;",
+        "init ( )"
+      ],
+      "err_line": 16,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        15,
+        20,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i > 0 ; i -- ) { dp [ a ] = ( dp [ a ] + twoPow [ i ] + twoPow [ i - 1 ] * MOD ) % MOD ; }",
+        "cin >> N ;",
+        "void init ( ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        15,
+        20,
+        3,
+        19
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i > 0 ; i -- ) { dp [ a ] = ( dp [ a ] + twoPow [ i ] + twoPow [ i - 1 ] * MOD ) % MOD ; }",
+        "cin >> N ;",
+        "void init ( ) ;",
+        "init ( )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        15,
+        20,
+        19
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i > 0 ; i -- ) { dp [ a ] = ( dp [ a ] + twoPow [ i ] + twoPow [ i - 1 ] * MOD ) % MOD ; }",
+        "cin >> N ;",
+        "init ( )"
+      ],
+      "err_line": 20,
+      "err_msg": "expected ‘;’ before ‘cin’"
+    },
+    {
+      "mod_line": [
+        15,
+        16
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i > 0 ; i -- ) { dp [ a ] = ( dp [ a ] + twoPow [ i ] + twoPow [ i - 1 ] * MOD ) % MOD ; }",
+        "return dp [ i ] ;"
+      ],
+      "err_line": 16,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        15,
+        16,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i > 0 ; i -- ) { dp [ a ] = ( dp [ a ] + twoPow [ i ] + twoPow [ i - 1 ] * MOD ) % MOD ; }",
+        "return dp [ i ] ;",
+        "void init ( ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        15,
+        16,
+        3,
+        19
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i > 0 ; i -- ) { dp [ a ] = ( dp [ a ] + twoPow [ i ] + twoPow [ i - 1 ] * MOD ) % MOD ; }",
+        "return dp [ i ] ;",
+        "void init ( ) ;",
+        "init ( )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        15,
+        16,
+        19
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i > 0 ; i -- ) { dp [ a ] = ( dp [ a ] + twoPow [ i ] + twoPow [ i - 1 ] * MOD ) % MOD ; }",
+        "return dp [ i ] ;",
+        "init ( )"
+      ],
+      "err_line": 16,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        15,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i > 0 ; i -- ) { dp [ a ] = ( dp [ a ] + twoPow [ i ] + twoPow [ i - 1 ] * MOD ) % MOD ; }",
+        "void init ( ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        15,
+        3,
+        19
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i > 0 ; i -- ) { dp [ a ] = ( dp [ a ] + twoPow [ i ] + twoPow [ i - 1 ] * MOD ) % MOD ; }",
+        "void init ( ) ;",
+        "init ( )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        15,
+        19
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i > 0 ; i -- ) { dp [ a ] = ( dp [ a ] + twoPow [ i ] + twoPow [ i - 1 ] * MOD ) % MOD ; }",
+        "init ( )"
+      ],
+      "err_line": 20,
+      "err_msg": "expected ‘;’ before ‘cin’"
+    },
+    {
+      "mod_line": [
+        4,
+        20
+      ],
+      "mod_code": [
+        "twoPow [ 0 ] = ' 1 ' ;",
+        "cin >> N ;"
+      ],
+      "err_line": 20,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘const int’)"
+    },
+    {
+      "mod_line": [
+        4,
+        20,
+        16
+      ],
+      "mod_code": [
+        "twoPow [ 0 ] = ' 1 ' ;",
+        "cin >> N ;",
+        "return dp [ i ] ;"
+      ],
+      "err_line": 16,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        4,
+        20,
+        16,
+        3
+      ],
+      "mod_code": [
+        "twoPow [ 0 ] = ' 1 ' ;",
+        "cin >> N ;",
+        "return dp [ i ] ;",
+        "void init ( ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        20,
+        16,
+        19
+      ],
+      "mod_code": [
+        "twoPow [ 0 ] = ' 1 ' ;",
+        "cin >> N ;",
+        "return dp [ i ] ;",
+        "init ( )"
+      ],
+      "err_line": 16,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        4,
+        20,
+        3
+      ],
+      "mod_code": [
+        "twoPow [ 0 ] = ' 1 ' ;",
+        "cin >> N ;",
+        "void init ( ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        20,
+        3,
+        19
+      ],
+      "mod_code": [
+        "twoPow [ 0 ] = ' 1 ' ;",
+        "cin >> N ;",
+        "void init ( ) ;",
+        "init ( )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        20,
+        19
+      ],
+      "mod_code": [
+        "twoPow [ 0 ] = ' 1 ' ;",
+        "cin >> N ;",
+        "init ( )"
+      ],
+      "err_line": 20,
+      "err_msg": "expected ‘;’ before ‘cin’"
+    },
+    {
+      "mod_line": [
+        4,
+        16
+      ],
+      "mod_code": [
+        "twoPow [ 0 ] = ' 1 ' ;",
+        "return dp [ i ] ;"
+      ],
+      "err_line": 16,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        4,
+        16,
+        3
+      ],
+      "mod_code": [
+        "twoPow [ 0 ] = ' 1 ' ;",
+        "return dp [ i ] ;",
+        "void init ( ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        16,
+        3,
+        19
+      ],
+      "mod_code": [
+        "twoPow [ 0 ] = ' 1 ' ;",
+        "return dp [ i ] ;",
+        "void init ( ) ;",
+        "init ( )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        16,
+        19
+      ],
+      "mod_code": [
+        "twoPow [ 0 ] = ' 1 ' ;",
+        "return dp [ i ] ;",
+        "init ( )"
+      ],
+      "err_line": 16,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        4,
+        3
+      ],
+      "mod_code": [
+        "twoPow [ 0 ] = ' 1 ' ;",
+        "void init ( ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        3,
+        19
+      ],
+      "mod_code": [
+        "twoPow [ 0 ] = ' 1 ' ;",
+        "void init ( ) ;",
+        "init ( )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        19
+      ],
+      "mod_code": [
+        "twoPow [ 0 ] = ' 1 ' ;",
+        "init ( )"
+      ],
+      "err_line": 20,
+      "err_msg": "expected ‘;’ before ‘cin’"
+    },
+    {
+      "mod_line": [
+        20,
+        16
+      ],
+      "mod_code": [
+        "cin >> N ;",
+        "return dp [ i ] ;"
+      ],
+      "err_line": 16,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        20,
+        16,
+        3
+      ],
+      "mod_code": [
+        "cin >> N ;",
+        "return dp [ i ] ;",
+        "void init ( ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        20,
+        16,
+        3,
+        19
+      ],
+      "mod_code": [
+        "cin >> N ;",
+        "return dp [ i ] ;",
+        "void init ( ) ;",
+        "init ( )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        20,
+        16,
+        19
+      ],
+      "mod_code": [
+        "cin >> N ;",
+        "return dp [ i ] ;",
+        "init ( )"
+      ],
+      "err_line": 16,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        20,
+        3
+      ],
+      "mod_code": [
+        "cin >> N ;",
+        "void init ( ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        20,
+        3,
+        19
+      ],
+      "mod_code": [
+        "cin >> N ;",
+        "void init ( ) ;",
+        "init ( )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        20,
+        19
+      ],
+      "mod_code": [
+        "cin >> N ;",
+        "init ( )"
+      ],
+      "err_line": 20,
+      "err_msg": "expected ‘;’ before ‘cin’"
+    },
+    {
+      "mod_line": [
+        16,
+        3
+      ],
+      "mod_code": [
+        "return dp [ i ] ;",
+        "void init ( ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        3,
+        19
+      ],
+      "mod_code": [
+        "return dp [ i ] ;",
+        "void init ( ) ;",
+        "init ( )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        19
+      ],
+      "mod_code": [
+        "return dp [ i ] ;",
+        "init ( )"
+      ],
+      "err_line": 16,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        19
+      ],
+      "mod_code": [
+        "void init ( ) ;",
+        "init ( )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    }
+  ]
+}

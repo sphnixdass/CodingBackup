@@ -1,0 +1,1473 @@
+{
+  "meta": {
+    "index": 2126,
+    "hitid": "3M7OI89LVYIKJ8G959ODVUZU7V9C6L",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "698A",
+    "subid": "48675755"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare integer array dp size 101 by 3",
+      "code": "int dp [ 101 ] [ 3 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare f with integers n , i , act , integer array a as arguments , returning integer",
+      "code": "int f ( int n , int a [ ] , int i , int act )",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "if i is greater than or equal to n , return 0 from function",
+      "code": "if ( i >= n ) return 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "if dp [ i ] [ act ] is not - 1 , return dp [ i ] [ act ]",
+      "code": "if ( dp [ i ] [ act ] != - 1 ) return dp [ i ] [ act ] ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "declare integer rest with rest = INT_MAX",
+      "code": "int rest = INT_MAX ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "if a [ i ] is 0",
+      "code": "if ( a [ i ] == 0 )",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "declare frest as integer",
+      "code": "int frest ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "if i + 1 is less than n",
+      "code": "if ( i + 1 < n )",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "let fres = 1 + result of run f with n , a , i + 1 , 0 as arguments",
+      "code": "frest = 1 + f ( n , a , i + 1 , 0 ) ;",
+      "indent": 3
+    },
+    {
+      "line": 9,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "let frest be 1",
+      "code": "frest = 1 ;",
+      "indent": 3
+    },
+    {
+      "line": 11,
+      "text": "let rest be minimum of frest and rest",
+      "code": "rest = min ( frest , rest ) ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "if a [ i ] is 1",
+      "code": "if ( a [ i ] == 1 )",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "declare integers frest = INT_MAX , grest = INT_MAX",
+      "code": "int frest = INT_MAX , grest = INT_MAX ;",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "if act is not 2",
+      "code": "if ( act != 2 )",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "if i + 1 is less than n",
+      "code": "if ( i + 1 < n )",
+      "indent": 3
+    },
+    {
+      "line": 17,
+      "text": "let frest = result of run f ( n , a , i + 1 , 2 )",
+      "code": "frest = f ( n , a , i + 1 , 2 ) ;",
+      "indent": 4
+    },
+    {
+      "line": 18,
+      "text": "else",
+      "code": "else",
+      "indent": 3
+    },
+    {
+      "line": 19,
+      "text": "let frest be 0",
+      "code": "frest = 0 ;",
+      "indent": 4
+    },
+    {
+      "line": 20,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 21,
+      "text": "if i + 1 is less than n",
+      "code": "if ( i + 1 < n )",
+      "indent": 2
+    },
+    {
+      "line": 22,
+      "text": "let grest = result of run f ( n , a , i + 1 , 0 ) + 1",
+      "code": "grest = f ( n , a , i + 1 , 0 ) + 1 ;",
+      "indent": 3
+    },
+    {
+      "line": 23,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 24,
+      "text": "let grest = 1",
+      "code": "grest = 1 ;",
+      "indent": 3
+    },
+    {
+      "line": 25,
+      "text": "let rest be minimum of rest and frest",
+      "code": "rest = min ( rest , frest ) ;",
+      "indent": 2
+    },
+    {
+      "line": 26,
+      "text": "let rest be minimum of rest nad grest",
+      "code": "rest = min ( rest , grest ) ;",
+      "indent": 2
+    },
+    {
+      "line": 27,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 28,
+      "text": "if a [ i ] is 2",
+      "code": "if ( a [ i ] == 2 )",
+      "indent": 1
+    },
+    {
+      "line": 29,
+      "text": "declare integers frest , grest",
+      "code": "int frest , grest ;",
+      "indent": 2
+    },
+    {
+      "line": 30,
+      "text": "let frest be grest be INT_MAX",
+      "code": "frest = grest = INT_MAX ;",
+      "indent": 2
+    },
+    {
+      "line": 31,
+      "text": "if act is not 1",
+      "code": "if ( act != 1 )",
+      "indent": 2
+    },
+    {
+      "line": 32,
+      "text": "if i + 1 is less than n",
+      "code": "if ( i + 1 < n )",
+      "indent": 3
+    },
+    {
+      "line": 33,
+      "text": "let frest be result of run f with n , a , i + 1 , 1 as arguments",
+      "code": "frest = f ( n , a , i + 1 , 1 ) ;",
+      "indent": 4
+    },
+    {
+      "line": 34,
+      "text": "else",
+      "code": "else",
+      "indent": 3
+    },
+    {
+      "line": 35,
+      "text": "let frest = 0",
+      "code": "frest = 0 ;",
+      "indent": 4
+    },
+    {
+      "line": 36,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 37,
+      "text": "if i + 1 is less than n",
+      "code": "if ( i + 1 < n )",
+      "indent": 2
+    },
+    {
+      "line": 38,
+      "text": "let grest = result of run f with ( n , a , i + 1 , 0 ) + 1 as argument",
+      "code": "grest = f ( n , a , i + 1 , 0 ) + 1 ;",
+      "indent": 3
+    },
+    {
+      "line": 39,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 40,
+      "text": "let grest be 1",
+      "code": "grest = 1 ;",
+      "indent": 3
+    },
+    {
+      "line": 41,
+      "text": "let rest be minimum of rest and frest",
+      "code": "rest = min ( rest , frest ) ;",
+      "indent": 2
+    },
+    {
+      "line": 42,
+      "text": "let rest be minimum of rest and grest",
+      "code": "rest = min ( rest , grest ) ;",
+      "indent": 2
+    },
+    {
+      "line": 43,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 44,
+      "text": "if a [ i ] is 3",
+      "code": "if ( a [ i ] == 3 )",
+      "indent": 1
+    },
+    {
+      "line": 45,
+      "text": "declare integers frest , grest , crest",
+      "code": "int frest , grest , crest ;",
+      "indent": 2
+    },
+    {
+      "line": 46,
+      "text": "let frest be grest be crest be INT_MAX",
+      "code": "frest = grest = crest = INT_MAX ;",
+      "indent": 2
+    },
+    {
+      "line": 47,
+      "text": "if act is not 1",
+      "code": "if ( act != 1 )",
+      "indent": 2
+    },
+    {
+      "line": 48,
+      "text": "if i + 1 is less than n",
+      "code": "if ( i + 1 < n )",
+      "indent": 3
+    },
+    {
+      "line": 49,
+      "text": "let frest be f ( n , a , i + 1 , 1 )",
+      "code": "frest = f ( n , a , i + 1 , 1 ) ;",
+      "indent": 4
+    },
+    {
+      "line": 50,
+      "text": "else",
+      "code": "else",
+      "indent": 3
+    },
+    {
+      "line": 51,
+      "text": "let frest be 0",
+      "code": "frest = 0 ;",
+      "indent": 4
+    },
+    {
+      "line": 52,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 53,
+      "text": "if act is not 2",
+      "code": "if ( act != 2 )",
+      "indent": 2
+    },
+    {
+      "line": 54,
+      "text": "if i + 1 is less than n",
+      "code": "if ( i + 1 < n )",
+      "indent": 3
+    },
+    {
+      "line": 55,
+      "text": "let grest be result of run f ( n , a , i + 1 , 2 )",
+      "code": "grest = f ( n , a , i + 1 , 2 ) ;",
+      "indent": 4
+    },
+    {
+      "line": 56,
+      "text": "else",
+      "code": "else",
+      "indent": 3
+    },
+    {
+      "line": 57,
+      "text": "let grest be 0",
+      "code": "grest = 0 ;",
+      "indent": 4
+    },
+    {
+      "line": 58,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 59,
+      "text": "if i + 1 is less than n",
+      "code": "if ( i + 1 < n )",
+      "indent": 2
+    },
+    {
+      "line": 60,
+      "text": "let crest be result of run f with ( n , a , i + 1 , 0 ) as arguments + 1",
+      "code": "crest = f ( n , a , i + 1 , 0 ) + 1 ;",
+      "indent": 3
+    },
+    {
+      "line": 61,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 62,
+      "text": "let crest be 1",
+      "code": "crest = 1 ;",
+      "indent": 3
+    },
+    {
+      "line": 63,
+      "text": "let rest be minimum of rest and frest",
+      "code": "rest = min ( rest , frest ) ;",
+      "indent": 2
+    },
+    {
+      "line": 64,
+      "text": "let rest be minimum of rest and grest",
+      "code": "rest = min ( rest , grest ) ;",
+      "indent": 2
+    },
+    {
+      "line": 65,
+      "text": "let rest be minimum of rest and crest",
+      "code": "rest = min ( rest , crest ) ;",
+      "indent": 2
+    },
+    {
+      "line": 66,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 67,
+      "text": "return let dp [ i ] [ act ] be rest from function",
+      "code": "return dp [ i ] [ act ] = rest ;",
+      "indent": 1
+    },
+    {
+      "line": 68,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 69,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 70,
+      "text": "declare integer n",
+      "code": "int n ;",
+      "indent": 1
+    },
+    {
+      "line": 71,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 72,
+      "text": "declare integer array a size n",
+      "code": "int a [ n ] ;",
+      "indent": 1
+    },
+    {
+      "line": 73,
+      "text": "for i = 0 to n exclusive , read a [ i ]",
+      "code": "for ( int i = 0 ; i < n ; ++ i ) cin >> a [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 74,
+      "text": "set bytes from dp to size of dp to value - 1",
+      "code": "memset ( dp , - 1 , sizeof ( dp ) ) ;",
+      "indent": 1
+    },
+    {
+      "line": 75,
+      "text": "declare integer rest = result of run f with ( n , a , 0 , 0 ) as arguments",
+      "code": "int rest = f ( n , a , 0 , 0 ) ;",
+      "indent": 1
+    },
+    {
+      "line": 76,
+      "text": "if rest is INT_MAX , let rest = 0",
+      "code": "if ( rest == INT_MAX ) rest = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 77,
+      "text": "print rest and newline",
+      "code": "cout << rest << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 78,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 79,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int f ( int n , int i , int act [ ] , int act )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int act’"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "fres = 1 + f ( n , a + 1 , 0 ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘fres’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        26
+      ],
+      "mod_code": [
+        "rest = min ( nad ) ;"
+      ],
+      "err_line": 26,
+      "err_msg": "‘nad’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        46
+      ],
+      "mod_code": [
+        "frest = grest = INT_MAX = INT_MAX ;"
+      ],
+      "err_line": 46,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int arr [ 101 ] [ 3 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘dp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int f ( int n , int i , int act [ ] ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "long int rest = INT_MAX ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘min(int&, long int&)’"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "int frest ( )"
+      ],
+      "err_line": 7,
+      "err_msg": "expected initializer before ‘if’"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "int fres = 1 + f ( n , a + 1 , 0 ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "too few arguments to function ‘int f(int, int*, int, int)’"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "rest = rest ( frest , rest ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘rest’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "int frest = INT_MAX , tmp = INT_MAX ;"
+      ],
+      "err_line": 22,
+      "err_msg": "‘grest’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        25
+      ],
+      "mod_code": [
+        "rest = rest ( rest , frest ) ;"
+      ],
+      "err_line": 25,
+      "err_msg": "‘rest’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        26
+      ],
+      "mod_code": [
+        "rest = min ( nad , grest ) ;"
+      ],
+      "err_line": 26,
+      "err_msg": "‘nad’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        29
+      ],
+      "mod_code": [
+        "long long frest , grest ;"
+      ],
+      "err_line": 41,
+      "err_msg": "no matching function for call to ‘min(int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        30
+      ],
+      "mod_code": [
+        "frest = INT_MAX = INT_MAX ;"
+      ],
+      "err_line": 30,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        33
+      ],
+      "mod_code": [
+        "frest ( n , a , i + 1 , 1 ) ;"
+      ],
+      "err_line": 33,
+      "err_msg": "‘frest’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        38
+      ],
+      "mod_code": [
+        "grest = f ( ( n , a , i + 1 , 0 ) + 1 ) ;"
+      ],
+      "err_line": 38,
+      "err_msg": "too few arguments to function ‘int f(int, int*, int, int)’"
+    },
+    {
+      "mod_line": [
+        41
+      ],
+      "mod_code": [
+        "rest = rest ( rest , frest ) ;"
+      ],
+      "err_line": 41,
+      "err_msg": "‘rest’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        42
+      ],
+      "mod_code": [
+        "rest = rest ( rest , grest ) ;"
+      ],
+      "err_line": 42,
+      "err_msg": "‘rest’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        45
+      ],
+      "mod_code": [
+        "long long frest , grest , crest ;"
+      ],
+      "err_line": 63,
+      "err_msg": "no matching function for call to ‘min(int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        55
+      ],
+      "mod_code": [
+        "grest *= f ( n , i + 1 , 2 ) ;"
+      ],
+      "err_line": 55,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        63
+      ],
+      "mod_code": [
+        "char rest = min ( rest , frest ) ;"
+      ],
+      "err_line": 63,
+      "err_msg": "no matching function for call to ‘min(char&, int&)’"
+    },
+    {
+      "mod_line": [
+        64
+      ],
+      "mod_code": [
+        "char rest = min ( rest , grest ) ;"
+      ],
+      "err_line": 64,
+      "err_msg": "no matching function for call to ‘min(char&, int&)’"
+    },
+    {
+      "mod_line": [
+        65
+      ],
+      "mod_code": [
+        "char rest = min ( rest , crest ) ;"
+      ],
+      "err_line": 65,
+      "err_msg": "no matching function for call to ‘min(char&, int&)’"
+    },
+    {
+      "mod_line": [
+        71
+      ],
+      "mod_code": [
+        "while ( cin >> n )"
+      ],
+      "err_line": 73,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        72
+      ],
+      "mod_code": [
+        "int * a [ n ] ;"
+      ],
+      "err_line": 73,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘int*’)"
+    },
+    {
+      "mod_line": [
+        74
+      ],
+      "mod_code": [
+        "memset ( dp , value , sizeof ( dp ) ) ;"
+      ],
+      "err_line": 74,
+      "err_msg": "‘value’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        75
+      ],
+      "mod_code": [
+        "int rest = f ( ( n , a , 0 , 0 ) ) ;"
+      ],
+      "err_line": 75,
+      "err_msg": "too few arguments to function ‘int f(int, int*, int, int)’"
+    },
+    {
+      "mod_line": [
+        1,
+        8
+      ],
+      "mod_code": [
+        "int f ( int n , int i , int act [ ] , int act )",
+        "fres = 1 + f ( n , a + 1 , 0 ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int act’"
+    },
+    {
+      "mod_line": [
+        1,
+        8,
+        26
+      ],
+      "mod_code": [
+        "int f ( int n , int i , int act [ ] , int act )",
+        "fres = 1 + f ( n , a + 1 , 0 ) ;",
+        "rest = min ( nad ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int act’"
+    },
+    {
+      "mod_line": [
+        1,
+        8,
+        26,
+        46
+      ],
+      "mod_code": [
+        "int f ( int n , int i , int act [ ] , int act )",
+        "fres = 1 + f ( n , a + 1 , 0 ) ;",
+        "rest = min ( nad ) ;",
+        "frest = grest = INT_MAX = INT_MAX ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int act’"
+    },
+    {
+      "mod_line": [
+        1,
+        8,
+        26,
+        67
+      ],
+      "mod_code": [
+        "int f ( int n , int i , int act [ ] , int act )",
+        "fres = 1 + f ( n , a + 1 , 0 ) ;",
+        "rest = min ( nad ) ;",
+        "return dp [ i ] [ act ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int act’"
+    },
+    {
+      "mod_line": [
+        1,
+        8,
+        26,
+        33
+      ],
+      "mod_code": [
+        "int f ( int n , int i , int act [ ] , int act )",
+        "fres = 1 + f ( n , a + 1 , 0 ) ;",
+        "rest = min ( nad ) ;",
+        "frest ( n , a , i + 1 , 1 ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int act’"
+    },
+    {
+      "mod_line": [
+        1,
+        8,
+        46
+      ],
+      "mod_code": [
+        "int f ( int n , int i , int act [ ] , int act )",
+        "fres = 1 + f ( n , a + 1 , 0 ) ;",
+        "frest = grest = INT_MAX = INT_MAX ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int act’"
+    },
+    {
+      "mod_line": [
+        1,
+        8,
+        46,
+        67
+      ],
+      "mod_code": [
+        "int f ( int n , int i , int act [ ] , int act )",
+        "fres = 1 + f ( n , a + 1 , 0 ) ;",
+        "frest = grest = INT_MAX = INT_MAX ;",
+        "return dp [ i ] [ act ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int act’"
+    },
+    {
+      "mod_line": [
+        1,
+        8,
+        46,
+        33
+      ],
+      "mod_code": [
+        "int f ( int n , int i , int act [ ] , int act )",
+        "fres = 1 + f ( n , a + 1 , 0 ) ;",
+        "frest = grest = INT_MAX = INT_MAX ;",
+        "frest ( n , a , i + 1 , 1 ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int act’"
+    },
+    {
+      "mod_line": [
+        1,
+        8,
+        67
+      ],
+      "mod_code": [
+        "int f ( int n , int i , int act [ ] , int act )",
+        "fres = 1 + f ( n , a + 1 , 0 ) ;",
+        "return dp [ i ] [ act ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int act’"
+    },
+    {
+      "mod_line": [
+        1,
+        8,
+        67,
+        33
+      ],
+      "mod_code": [
+        "int f ( int n , int i , int act [ ] , int act )",
+        "fres = 1 + f ( n , a + 1 , 0 ) ;",
+        "return dp [ i ] [ act ] ;",
+        "frest ( n , a , i + 1 , 1 ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int act’"
+    },
+    {
+      "mod_line": [
+        1,
+        8,
+        33
+      ],
+      "mod_code": [
+        "int f ( int n , int i , int act [ ] , int act )",
+        "fres = 1 + f ( n , a + 1 , 0 ) ;",
+        "frest ( n , a , i + 1 , 1 ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int act’"
+    },
+    {
+      "mod_line": [
+        1,
+        26
+      ],
+      "mod_code": [
+        "int f ( int n , int i , int act [ ] , int act )",
+        "rest = min ( nad ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int act’"
+    },
+    {
+      "mod_line": [
+        1,
+        26,
+        46
+      ],
+      "mod_code": [
+        "int f ( int n , int i , int act [ ] , int act )",
+        "rest = min ( nad ) ;",
+        "frest = grest = INT_MAX = INT_MAX ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int act’"
+    },
+    {
+      "mod_line": [
+        1,
+        26,
+        46,
+        67
+      ],
+      "mod_code": [
+        "int f ( int n , int i , int act [ ] , int act )",
+        "rest = min ( nad ) ;",
+        "frest = grest = INT_MAX = INT_MAX ;",
+        "return dp [ i ] [ act ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int act’"
+    },
+    {
+      "mod_line": [
+        1,
+        26,
+        46,
+        33
+      ],
+      "mod_code": [
+        "int f ( int n , int i , int act [ ] , int act )",
+        "rest = min ( nad ) ;",
+        "frest = grest = INT_MAX = INT_MAX ;",
+        "frest ( n , a , i + 1 , 1 ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int act’"
+    },
+    {
+      "mod_line": [
+        1,
+        26,
+        67
+      ],
+      "mod_code": [
+        "int f ( int n , int i , int act [ ] , int act )",
+        "rest = min ( nad ) ;",
+        "return dp [ i ] [ act ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int act’"
+    },
+    {
+      "mod_line": [
+        1,
+        26,
+        67,
+        33
+      ],
+      "mod_code": [
+        "int f ( int n , int i , int act [ ] , int act )",
+        "rest = min ( nad ) ;",
+        "return dp [ i ] [ act ] ;",
+        "frest ( n , a , i + 1 , 1 ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int act’"
+    },
+    {
+      "mod_line": [
+        1,
+        26,
+        33
+      ],
+      "mod_code": [
+        "int f ( int n , int i , int act [ ] , int act )",
+        "rest = min ( nad ) ;",
+        "frest ( n , a , i + 1 , 1 ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int act’"
+    },
+    {
+      "mod_line": [
+        1,
+        46
+      ],
+      "mod_code": [
+        "int f ( int n , int i , int act [ ] , int act )",
+        "frest = grest = INT_MAX = INT_MAX ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int act’"
+    },
+    {
+      "mod_line": [
+        1,
+        46,
+        67
+      ],
+      "mod_code": [
+        "int f ( int n , int i , int act [ ] , int act )",
+        "frest = grest = INT_MAX = INT_MAX ;",
+        "return dp [ i ] [ act ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int act’"
+    },
+    {
+      "mod_line": [
+        1,
+        46,
+        67,
+        33
+      ],
+      "mod_code": [
+        "int f ( int n , int i , int act [ ] , int act )",
+        "frest = grest = INT_MAX = INT_MAX ;",
+        "return dp [ i ] [ act ] ;",
+        "frest ( n , a , i + 1 , 1 ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int act’"
+    },
+    {
+      "mod_line": [
+        1,
+        46,
+        33
+      ],
+      "mod_code": [
+        "int f ( int n , int i , int act [ ] , int act )",
+        "frest = grest = INT_MAX = INT_MAX ;",
+        "frest ( n , a , i + 1 , 1 ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int act’"
+    },
+    {
+      "mod_line": [
+        1,
+        67
+      ],
+      "mod_code": [
+        "int f ( int n , int i , int act [ ] , int act )",
+        "return dp [ i ] [ act ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int act’"
+    },
+    {
+      "mod_line": [
+        1,
+        67,
+        33
+      ],
+      "mod_code": [
+        "int f ( int n , int i , int act [ ] , int act )",
+        "return dp [ i ] [ act ] ;",
+        "frest ( n , a , i + 1 , 1 ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int act’"
+    },
+    {
+      "mod_line": [
+        1,
+        33
+      ],
+      "mod_code": [
+        "int f ( int n , int i , int act [ ] , int act )",
+        "frest ( n , a , i + 1 , 1 ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int act’"
+    },
+    {
+      "mod_line": [
+        8,
+        26
+      ],
+      "mod_code": [
+        "fres = 1 + f ( n , a + 1 , 0 ) ;",
+        "rest = min ( nad ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘fres’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        26,
+        46
+      ],
+      "mod_code": [
+        "fres = 1 + f ( n , a + 1 , 0 ) ;",
+        "rest = min ( nad ) ;",
+        "frest = grest = INT_MAX = INT_MAX ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘fres’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        26,
+        46,
+        67
+      ],
+      "mod_code": [
+        "fres = 1 + f ( n , a + 1 , 0 ) ;",
+        "rest = min ( nad ) ;",
+        "frest = grest = INT_MAX = INT_MAX ;",
+        "return dp [ i ] [ act ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘fres’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        26,
+        46,
+        33
+      ],
+      "mod_code": [
+        "fres = 1 + f ( n , a + 1 , 0 ) ;",
+        "rest = min ( nad ) ;",
+        "frest = grest = INT_MAX = INT_MAX ;",
+        "frest ( n , a , i + 1 , 1 ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘fres’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        26,
+        67
+      ],
+      "mod_code": [
+        "fres = 1 + f ( n , a + 1 , 0 ) ;",
+        "rest = min ( nad ) ;",
+        "return dp [ i ] [ act ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘fres’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        26,
+        67,
+        33
+      ],
+      "mod_code": [
+        "fres = 1 + f ( n , a + 1 , 0 ) ;",
+        "rest = min ( nad ) ;",
+        "return dp [ i ] [ act ] ;",
+        "frest ( n , a , i + 1 , 1 ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘fres’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        26,
+        33
+      ],
+      "mod_code": [
+        "fres = 1 + f ( n , a + 1 , 0 ) ;",
+        "rest = min ( nad ) ;",
+        "frest ( n , a , i + 1 , 1 ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘fres’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        46
+      ],
+      "mod_code": [
+        "fres = 1 + f ( n , a + 1 , 0 ) ;",
+        "frest = grest = INT_MAX = INT_MAX ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘fres’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        46,
+        67
+      ],
+      "mod_code": [
+        "fres = 1 + f ( n , a + 1 , 0 ) ;",
+        "frest = grest = INT_MAX = INT_MAX ;",
+        "return dp [ i ] [ act ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘fres’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        46,
+        67,
+        33
+      ],
+      "mod_code": [
+        "fres = 1 + f ( n , a + 1 , 0 ) ;",
+        "frest = grest = INT_MAX = INT_MAX ;",
+        "return dp [ i ] [ act ] ;",
+        "frest ( n , a , i + 1 , 1 ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘fres’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        46,
+        33
+      ],
+      "mod_code": [
+        "fres = 1 + f ( n , a + 1 , 0 ) ;",
+        "frest = grest = INT_MAX = INT_MAX ;",
+        "frest ( n , a , i + 1 , 1 ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘fres’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        67
+      ],
+      "mod_code": [
+        "fres = 1 + f ( n , a + 1 , 0 ) ;",
+        "return dp [ i ] [ act ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘fres’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        67,
+        33
+      ],
+      "mod_code": [
+        "fres = 1 + f ( n , a + 1 , 0 ) ;",
+        "return dp [ i ] [ act ] ;",
+        "frest ( n , a , i + 1 , 1 ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘fres’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        33
+      ],
+      "mod_code": [
+        "fres = 1 + f ( n , a + 1 , 0 ) ;",
+        "frest ( n , a , i + 1 , 1 ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘fres’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        26,
+        46
+      ],
+      "mod_code": [
+        "rest = min ( nad ) ;",
+        "frest = grest = INT_MAX = INT_MAX ;"
+      ],
+      "err_line": 26,
+      "err_msg": "‘nad’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        26,
+        46,
+        67
+      ],
+      "mod_code": [
+        "rest = min ( nad ) ;",
+        "frest = grest = INT_MAX = INT_MAX ;",
+        "return dp [ i ] [ act ] ;"
+      ],
+      "err_line": 26,
+      "err_msg": "‘nad’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        26,
+        46,
+        67,
+        33
+      ],
+      "mod_code": [
+        "rest = min ( nad ) ;",
+        "frest = grest = INT_MAX = INT_MAX ;",
+        "return dp [ i ] [ act ] ;",
+        "frest ( n , a , i + 1 , 1 ) ;"
+      ],
+      "err_line": 26,
+      "err_msg": "‘nad’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        26,
+        46,
+        33
+      ],
+      "mod_code": [
+        "rest = min ( nad ) ;",
+        "frest = grest = INT_MAX = INT_MAX ;",
+        "frest ( n , a , i + 1 , 1 ) ;"
+      ],
+      "err_line": 26,
+      "err_msg": "‘nad’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        26,
+        67
+      ],
+      "mod_code": [
+        "rest = min ( nad ) ;",
+        "return dp [ i ] [ act ] ;"
+      ],
+      "err_line": 26,
+      "err_msg": "‘nad’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        26,
+        67,
+        33
+      ],
+      "mod_code": [
+        "rest = min ( nad ) ;",
+        "return dp [ i ] [ act ] ;",
+        "frest ( n , a , i + 1 , 1 ) ;"
+      ],
+      "err_line": 26,
+      "err_msg": "‘nad’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        26,
+        33
+      ],
+      "mod_code": [
+        "rest = min ( nad ) ;",
+        "frest ( n , a , i + 1 , 1 ) ;"
+      ],
+      "err_line": 26,
+      "err_msg": "‘nad’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        46,
+        67
+      ],
+      "mod_code": [
+        "frest = grest = INT_MAX = INT_MAX ;",
+        "return dp [ i ] [ act ] ;"
+      ],
+      "err_line": 46,
+      "err_msg": "lvalue required as left operand of assignment"
+    },
+    {
+      "mod_line": [
+        46,
+        67,
+        33
+      ],
+      "mod_code": [
+        "frest = grest = INT_MAX = INT_MAX ;",
+        "return dp [ i ] [ act ] ;",
+        "frest ( n , a , i + 1 , 1 ) ;"
+      ],
+      "err_line": 33,
+      "err_msg": "‘frest’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        46,
+        33
+      ],
+      "mod_code": [
+        "frest = grest = INT_MAX = INT_MAX ;",
+        "frest ( n , a , i + 1 , 1 ) ;"
+      ],
+      "err_line": 33,
+      "err_msg": "‘frest’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        67,
+        33
+      ],
+      "mod_code": [
+        "return dp [ i ] [ act ] ;",
+        "frest ( n , a , i + 1 , 1 ) ;"
+      ],
+      "err_line": 33,
+      "err_msg": "‘frest’ cannot be used as a function"
+    }
+  ]
+}

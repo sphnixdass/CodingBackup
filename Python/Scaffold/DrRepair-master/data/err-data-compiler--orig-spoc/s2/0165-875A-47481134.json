@@ -1,0 +1,727 @@
+{
+  "meta": {
+    "index": 165,
+    "hitid": "30F94FBDNRE7B1ZFNM0BVKLQ9IOBTS",
+    "workerid": "A1NBHCFZKJGHKW",
+    "probid": "875A",
+    "subid": "47481134"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "n , d = int",
+      "code": "int n , d ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "work = int vector",
+      "code": "vector < int > work ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "n0 = int with n0 = n",
+      "code": "int n0 = n ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "loop while n0 > 0",
+      "code": "while ( n0 > 0 )",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "set n0 to n0 / 10",
+      "code": "n0 /= 10 ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "increment d",
+      "code": "d ++ ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "for i = n - 9 * d to n inclusive",
+      "code": "for ( int i = n - 9 * d ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "j , s = int with j = i and s = 0",
+      "code": "int j = i , s = 0 ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "loop while j > 0",
+      "code": "while ( j > 0 )",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "increment s by j mod 10",
+      "code": "s += j % 10 ;",
+      "indent": 3
+    },
+    {
+      "line": 13,
+      "text": "set j to j / 10",
+      "code": "j /= 10 ;",
+      "indent": 3
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "if s + i is n append i to work",
+      "code": "if ( s + i == n ) { work . push_back ( i ) ; }",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "print size of work",
+      "code": "cout << work . size ( ) << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "for i = 0 to size of work print work [ i ]",
+      "code": "for ( int i = 0 ; i < work . size ( ) ; i ++ ) { cout << work [ i ] << endl ; }",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "if ( s + i == n ) { work ( i ) ; }"
+      ],
+      "err_line": 15,
+      "err_msg": "no match for call to ‘(std::vector<int>) (int&)’"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "cout << work ( work ( ) ) << endl ;"
+      ],
+      "err_line": 17,
+      "err_msg": "no match for call to ‘(std::vector<int>) ()’"
+    },
+    {
+      "mod_line": [
+        18
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < work ( work ( ) ) ; i ++ ) cout << work ( work ( work ) ) ;"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for call to ‘(std::vector<int>) ()’"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "vector < int > work ( ) ;"
+      ],
+      "err_line": 15,
+      "err_msg": "request for member ‘push_back’ in ‘work’, which is of non-class type ‘std::vector<int>()’"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "if ( s + i == n ) work ( i ) ;"
+      ],
+      "err_line": 15,
+      "err_msg": "no match for call to ‘(std::vector<int>) (int&)’"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "cout << work ( work ( work ) ) << endl ;"
+      ],
+      "err_line": 17,
+      "err_msg": "no match for call to ‘(std::vector<int>) (std::vector<int>&)’"
+    },
+    {
+      "mod_line": [
+        18
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < work ( work ( ) ) ; i ++ ) cout << work ( work ) ;"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for call to ‘(std::vector<int>) ()’"
+    },
+    {
+      "mod_line": [
+        15,
+        17
+      ],
+      "mod_code": [
+        "if ( s + i == n ) { work ( i ) ; }",
+        "cout << work ( work ( ) ) << endl ;"
+      ],
+      "err_line": 15,
+      "err_msg": "no match for call to ‘(std::vector<int>) (int&)’"
+    },
+    {
+      "mod_line": [
+        15,
+        17,
+        18
+      ],
+      "mod_code": [
+        "if ( s + i == n ) { work ( i ) ; }",
+        "cout << work ( work ( ) ) << endl ;",
+        "for ( int i = 0 ; i < work ( work ( ) ) ; i ++ ) cout << work ( work ( work ) ) ;"
+      ],
+      "err_line": 15,
+      "err_msg": "no match for call to ‘(std::vector<int>) (int&)’"
+    },
+    {
+      "mod_line": [
+        15,
+        17,
+        18,
+        10
+      ],
+      "mod_code": [
+        "if ( s + i == n ) { work ( i ) ; }",
+        "cout << work ( work ( ) ) << endl ;",
+        "for ( int i = 0 ; i < work ( work ( ) ) ; i ++ ) cout << work ( work ( work ) ) ;",
+        "int j = 0 , s = 0 ;"
+      ],
+      "err_line": 15,
+      "err_msg": "no match for call to ‘(std::vector<int>) (int&)’"
+    },
+    {
+      "mod_line": [
+        15,
+        17,
+        18,
+        3
+      ],
+      "mod_code": [
+        "if ( s + i == n ) { work ( i ) ; }",
+        "cout << work ( work ( ) ) << endl ;",
+        "for ( int i = 0 ; i < work ( work ( ) ) ; i ++ ) cout << work ( work ( work ) ) ;",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 15,
+      "err_msg": "no match for call to ‘(std::vector<int>) (int&)’"
+    },
+    {
+      "mod_line": [
+        15,
+        17,
+        10
+      ],
+      "mod_code": [
+        "if ( s + i == n ) { work ( i ) ; }",
+        "cout << work ( work ( ) ) << endl ;",
+        "int j = 0 , s = 0 ;"
+      ],
+      "err_line": 15,
+      "err_msg": "no match for call to ‘(std::vector<int>) (int&)’"
+    },
+    {
+      "mod_line": [
+        15,
+        17,
+        10,
+        3
+      ],
+      "mod_code": [
+        "if ( s + i == n ) { work ( i ) ; }",
+        "cout << work ( work ( ) ) << endl ;",
+        "int j = 0 , s = 0 ;",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 15,
+      "err_msg": "no match for call to ‘(std::vector<int>) (int&)’"
+    },
+    {
+      "mod_line": [
+        15,
+        17,
+        3
+      ],
+      "mod_code": [
+        "if ( s + i == n ) { work ( i ) ; }",
+        "cout << work ( work ( ) ) << endl ;",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 15,
+      "err_msg": "no match for call to ‘(std::vector<int>) (int&)’"
+    },
+    {
+      "mod_line": [
+        15,
+        18
+      ],
+      "mod_code": [
+        "if ( s + i == n ) { work ( i ) ; }",
+        "for ( int i = 0 ; i < work ( work ( ) ) ; i ++ ) cout << work ( work ( work ) ) ;"
+      ],
+      "err_line": 15,
+      "err_msg": "no match for call to ‘(std::vector<int>) (int&)’"
+    },
+    {
+      "mod_line": [
+        15,
+        18,
+        10
+      ],
+      "mod_code": [
+        "if ( s + i == n ) { work ( i ) ; }",
+        "for ( int i = 0 ; i < work ( work ( ) ) ; i ++ ) cout << work ( work ( work ) ) ;",
+        "int j = 0 , s = 0 ;"
+      ],
+      "err_line": 15,
+      "err_msg": "no match for call to ‘(std::vector<int>) (int&)’"
+    },
+    {
+      "mod_line": [
+        15,
+        18,
+        10,
+        3
+      ],
+      "mod_code": [
+        "if ( s + i == n ) { work ( i ) ; }",
+        "for ( int i = 0 ; i < work ( work ( ) ) ; i ++ ) cout << work ( work ( work ) ) ;",
+        "int j = 0 , s = 0 ;",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 15,
+      "err_msg": "no match for call to ‘(std::vector<int>) (int&)’"
+    },
+    {
+      "mod_line": [
+        15,
+        18,
+        3
+      ],
+      "mod_code": [
+        "if ( s + i == n ) { work ( i ) ; }",
+        "for ( int i = 0 ; i < work ( work ( ) ) ; i ++ ) cout << work ( work ( work ) ) ;",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 15,
+      "err_msg": "no match for call to ‘(std::vector<int>) (int&)’"
+    },
+    {
+      "mod_line": [
+        15,
+        10
+      ],
+      "mod_code": [
+        "if ( s + i == n ) { work ( i ) ; }",
+        "int j = 0 , s = 0 ;"
+      ],
+      "err_line": 15,
+      "err_msg": "no match for call to ‘(std::vector<int>) (int&)’"
+    },
+    {
+      "mod_line": [
+        15,
+        10,
+        3
+      ],
+      "mod_code": [
+        "if ( s + i == n ) { work ( i ) ; }",
+        "int j = 0 , s = 0 ;",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 15,
+      "err_msg": "no match for call to ‘(std::vector<int>) (int&)’"
+    },
+    {
+      "mod_line": [
+        15,
+        3
+      ],
+      "mod_code": [
+        "if ( s + i == n ) { work ( i ) ; }",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 15,
+      "err_msg": "no match for call to ‘(std::vector<int>) (int&)’"
+    },
+    {
+      "mod_line": [
+        17,
+        18
+      ],
+      "mod_code": [
+        "cout << work ( work ( ) ) << endl ;",
+        "for ( int i = 0 ; i < work ( work ( ) ) ; i ++ ) cout << work ( work ( work ) ) ;"
+      ],
+      "err_line": 17,
+      "err_msg": "no match for call to ‘(std::vector<int>) ()’"
+    },
+    {
+      "mod_line": [
+        17,
+        18,
+        10
+      ],
+      "mod_code": [
+        "cout << work ( work ( ) ) << endl ;",
+        "for ( int i = 0 ; i < work ( work ( ) ) ; i ++ ) cout << work ( work ( work ) ) ;",
+        "int j = 0 , s = 0 ;"
+      ],
+      "err_line": 17,
+      "err_msg": "no match for call to ‘(std::vector<int>) ()’"
+    },
+    {
+      "mod_line": [
+        17,
+        18,
+        10,
+        3
+      ],
+      "mod_code": [
+        "cout << work ( work ( ) ) << endl ;",
+        "for ( int i = 0 ; i < work ( work ( ) ) ; i ++ ) cout << work ( work ( work ) ) ;",
+        "int j = 0 , s = 0 ;",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 17,
+      "err_msg": "no match for call to ‘(std::vector<int>) ()’"
+    },
+    {
+      "mod_line": [
+        17,
+        18,
+        10,
+        15
+      ],
+      "mod_code": [
+        "cout << work ( work ( ) ) << endl ;",
+        "for ( int i = 0 ; i < work ( work ( ) ) ; i ++ ) cout << work ( work ( work ) ) ;",
+        "int j = 0 , s = 0 ;",
+        "if ( s + i == n ) work ( i ) ;"
+      ],
+      "err_line": 15,
+      "err_msg": "no match for call to ‘(std::vector<int>) (int&)’"
+    },
+    {
+      "mod_line": [
+        17,
+        18,
+        3
+      ],
+      "mod_code": [
+        "cout << work ( work ( ) ) << endl ;",
+        "for ( int i = 0 ; i < work ( work ( ) ) ; i ++ ) cout << work ( work ( work ) ) ;",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 17,
+      "err_msg": "no match for call to ‘(std::vector<int>) ()’"
+    },
+    {
+      "mod_line": [
+        17,
+        18,
+        3,
+        15
+      ],
+      "mod_code": [
+        "cout << work ( work ( ) ) << endl ;",
+        "for ( int i = 0 ; i < work ( work ( ) ) ; i ++ ) cout << work ( work ( work ) ) ;",
+        "n = getchar ( ) ;",
+        "if ( s + i == n ) work ( i ) ;"
+      ],
+      "err_line": 15,
+      "err_msg": "no match for call to ‘(std::vector<int>) (int&)’"
+    },
+    {
+      "mod_line": [
+        17,
+        18,
+        15
+      ],
+      "mod_code": [
+        "cout << work ( work ( ) ) << endl ;",
+        "for ( int i = 0 ; i < work ( work ( ) ) ; i ++ ) cout << work ( work ( work ) ) ;",
+        "if ( s + i == n ) work ( i ) ;"
+      ],
+      "err_line": 15,
+      "err_msg": "no match for call to ‘(std::vector<int>) (int&)’"
+    },
+    {
+      "mod_line": [
+        17,
+        10
+      ],
+      "mod_code": [
+        "cout << work ( work ( ) ) << endl ;",
+        "int j = 0 , s = 0 ;"
+      ],
+      "err_line": 17,
+      "err_msg": "no match for call to ‘(std::vector<int>) ()’"
+    },
+    {
+      "mod_line": [
+        17,
+        10,
+        3
+      ],
+      "mod_code": [
+        "cout << work ( work ( ) ) << endl ;",
+        "int j = 0 , s = 0 ;",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 17,
+      "err_msg": "no match for call to ‘(std::vector<int>) ()’"
+    },
+    {
+      "mod_line": [
+        17,
+        10,
+        3,
+        15
+      ],
+      "mod_code": [
+        "cout << work ( work ( ) ) << endl ;",
+        "int j = 0 , s = 0 ;",
+        "n = getchar ( ) ;",
+        "if ( s + i == n ) work ( i ) ;"
+      ],
+      "err_line": 15,
+      "err_msg": "no match for call to ‘(std::vector<int>) (int&)’"
+    },
+    {
+      "mod_line": [
+        17,
+        10,
+        15
+      ],
+      "mod_code": [
+        "cout << work ( work ( ) ) << endl ;",
+        "int j = 0 , s = 0 ;",
+        "if ( s + i == n ) work ( i ) ;"
+      ],
+      "err_line": 15,
+      "err_msg": "no match for call to ‘(std::vector<int>) (int&)’"
+    },
+    {
+      "mod_line": [
+        17,
+        3
+      ],
+      "mod_code": [
+        "cout << work ( work ( ) ) << endl ;",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 17,
+      "err_msg": "no match for call to ‘(std::vector<int>) ()’"
+    },
+    {
+      "mod_line": [
+        17,
+        3,
+        15
+      ],
+      "mod_code": [
+        "cout << work ( work ( ) ) << endl ;",
+        "n = getchar ( ) ;",
+        "if ( s + i == n ) work ( i ) ;"
+      ],
+      "err_line": 15,
+      "err_msg": "no match for call to ‘(std::vector<int>) (int&)’"
+    },
+    {
+      "mod_line": [
+        17,
+        15
+      ],
+      "mod_code": [
+        "cout << work ( work ( ) ) << endl ;",
+        "if ( s + i == n ) work ( i ) ;"
+      ],
+      "err_line": 15,
+      "err_msg": "no match for call to ‘(std::vector<int>) (int&)’"
+    },
+    {
+      "mod_line": [
+        18,
+        10
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < work ( work ( ) ) ; i ++ ) cout << work ( work ( work ) ) ;",
+        "int j = 0 , s = 0 ;"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for call to ‘(std::vector<int>) ()’"
+    },
+    {
+      "mod_line": [
+        18,
+        10,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < work ( work ( ) ) ; i ++ ) cout << work ( work ( work ) ) ;",
+        "int j = 0 , s = 0 ;",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for call to ‘(std::vector<int>) ()’"
+    },
+    {
+      "mod_line": [
+        18,
+        10,
+        3,
+        15
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < work ( work ( ) ) ; i ++ ) cout << work ( work ( work ) ) ;",
+        "int j = 0 , s = 0 ;",
+        "n = getchar ( ) ;",
+        "if ( s + i == n ) work ( i ) ;"
+      ],
+      "err_line": 15,
+      "err_msg": "no match for call to ‘(std::vector<int>) (int&)’"
+    },
+    {
+      "mod_line": [
+        18,
+        10,
+        15
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < work ( work ( ) ) ; i ++ ) cout << work ( work ( work ) ) ;",
+        "int j = 0 , s = 0 ;",
+        "if ( s + i == n ) work ( i ) ;"
+      ],
+      "err_line": 15,
+      "err_msg": "no match for call to ‘(std::vector<int>) (int&)’"
+    },
+    {
+      "mod_line": [
+        18,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < work ( work ( ) ) ; i ++ ) cout << work ( work ( work ) ) ;",
+        "n = getchar ( ) ;"
+      ],
+      "err_line": 18,
+      "err_msg": "no match for call to ‘(std::vector<int>) ()’"
+    },
+    {
+      "mod_line": [
+        18,
+        3,
+        15
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < work ( work ( ) ) ; i ++ ) cout << work ( work ( work ) ) ;",
+        "n = getchar ( ) ;",
+        "if ( s + i == n ) work ( i ) ;"
+      ],
+      "err_line": 15,
+      "err_msg": "no match for call to ‘(std::vector<int>) (int&)’"
+    },
+    {
+      "mod_line": [
+        18,
+        15
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < work ( work ( ) ) ; i ++ ) cout << work ( work ( work ) ) ;",
+        "if ( s + i == n ) work ( i ) ;"
+      ],
+      "err_line": 15,
+      "err_msg": "no match for call to ‘(std::vector<int>) (int&)’"
+    },
+    {
+      "mod_line": [
+        10,
+        3,
+        15
+      ],
+      "mod_code": [
+        "int j = 0 , s = 0 ;",
+        "n = getchar ( ) ;",
+        "if ( s + i == n ) work ( i ) ;"
+      ],
+      "err_line": 15,
+      "err_msg": "no match for call to ‘(std::vector<int>) (int&)’"
+    },
+    {
+      "mod_line": [
+        10,
+        15
+      ],
+      "mod_code": [
+        "int j = 0 , s = 0 ;",
+        "if ( s + i == n ) work ( i ) ;"
+      ],
+      "err_line": 15,
+      "err_msg": "no match for call to ‘(std::vector<int>) (int&)’"
+    },
+    {
+      "mod_line": [
+        3,
+        15
+      ],
+      "mod_code": [
+        "n = getchar ( ) ;",
+        "if ( s + i == n ) work ( i ) ;"
+      ],
+      "err_line": 15,
+      "err_msg": "no match for call to ‘(std::vector<int>) (int&)’"
+    }
+  ]
+}

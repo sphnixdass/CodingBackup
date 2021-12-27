@@ -1,0 +1,751 @@
+{
+  "meta": {
+    "index": 168,
+    "hitid": "33NOQL7T9OTKVFA7Q25JQ6W6M8P8Z6",
+    "workerid": "A1R0Q9CUUBSM5F",
+    "probid": "875A",
+    "subid": "47547375"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create constant int size = pow ( 10 , 6 ) + 1",
+      "code": "const int size = pow ( 10 , 6 ) + 1 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "let const integer tsize = 4 * size",
+      "code": "const int tsize = 4 * size ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "make constant long long integer mod = pow ( 10 , 9 ) + 7",
+      "code": "const long long int mod = pow ( 10 , 9 ) + 7 ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "declare sumofdigit taking in long long int n and returning long long int",
+      "code": "long long int sumofdigit ( long long int n )",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "make long long integer sum = 0",
+      "code": "long long int sum = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "while n is greater than 0",
+      "code": "while ( n > 0 )",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "set sum to sum + n % 10",
+      "code": "sum += n % 10 ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "set n to n / 10",
+      "code": "n /= 10 ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "return sum",
+      "code": "return sum ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 12,
+      "text": "make long long n",
+      "code": "long long int n ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "create long long limit = min ( ( long long int ) 200 , n )",
+      "code": "long long int limit = min ( ( long long int ) 200 , n ) ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "create long long set st",
+      "code": "set < long long int > st ;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "make long long set iterator it",
+      "code": "set < long long int > :: iterator it ;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "for i = 1 to limit",
+      "code": "for ( int i = 1 ; i <= limit ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "create long long integer a = n - i",
+      "code": "long long int a = n - i ;",
+      "indent": 2
+    },
+    {
+      "line": 19,
+      "text": "if sumofdigit ( a ) is equal to i , insert a into st",
+      "code": "if ( sumofdigit ( a ) == i ) { st . insert ( a ) ; }",
+      "indent": 2
+    },
+    {
+      "line": 20,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "show st . size ( )",
+      "code": "cout << st . size ( ) << \" \\n \" ;",
+      "indent": 1
+    },
+    {
+      "line": 22,
+      "text": "for it = st . begin ( ) while it is not st . end ( ) , show * it",
+      "code": "for ( it = st . begin ( ) ; it != st . end ( ) ; it ++ ) { cout << * it << \" \\n \" ; }",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        22
+      ],
+      "mod_code": [
+        "for ( it = st . begin ( ) ; it != st . end ( ) ; it ++ ) cout << st . begin ( ) ;"
+      ],
+      "err_line": 22,
+      "err_msg": "no match for ‘operator<<’ (operand types are ‘std::ostream {aka std::basic_ostream<char>}’ and ‘std::set<long long int>::iterator {aka std::_Rb_tree_const_iterator<long long int>}’)"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "long long limit = min ( ( long long int ) 200 ) , n ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "set < long > st ;"
+      ],
+      "err_line": 22,
+      "err_msg": "no match for ‘operator=’ (operand types are ‘std::set<long long int>::iterator {aka std::_Rb_tree_const_iterator<long long int>}’ and ‘std::set<long int>::iterator {aka std::_Rb_tree_const_iterator<long int>}’)"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "set < long long > it ;"
+      ],
+      "err_line": 22,
+      "err_msg": "no match for ‘operator=’ (operand types are ‘std::set<long long int>’ and ‘std::set<long long int>::iterator {aka std::_Rb_tree_const_iterator<long long int>}’)"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= limit ; i ++ )"
+      ],
+      "err_line": 17,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        19
+      ],
+      "mod_code": [
+        "if ( sumofdigit ( a , i ) == i ) st . insert ( a ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "too many arguments to function ‘long long int sumofdigit(long long int)’"
+    },
+    {
+      "mod_line": [
+        22
+      ],
+      "mod_code": [
+        "for ( int it = st . begin ( ) ; it != st . end ( ) ; it ++ ) cout << st . begin ( ) ;"
+      ],
+      "err_line": 22,
+      "err_msg": "cannot convert ‘std::set<long long int>::iterator {aka std::_Rb_tree_const_iterator<long long int>}’ to ‘int’ in initialization"
+    },
+    {
+      "mod_line": [
+        22,
+        19
+      ],
+      "mod_code": [
+        "for ( it = st . begin ( ) ; it != st . end ( ) ; it ++ ) cout << st . begin ( ) ;",
+        "if ( sumofdigit ( a , i ) == i ) st . insert ( a ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "too many arguments to function ‘long long int sumofdigit(long long int)’"
+    },
+    {
+      "mod_line": [
+        22,
+        19,
+        9
+      ],
+      "mod_code": [
+        "for ( it = st . begin ( ) ; it != st . end ( ) ; it ++ ) cout << st . begin ( ) ;",
+        "if ( sumofdigit ( a , i ) == i ) st . insert ( a ) ;",
+        "sum = sum ;"
+      ],
+      "err_line": 19,
+      "err_msg": "too many arguments to function ‘long long int sumofdigit(long long int)’"
+    },
+    {
+      "mod_line": [
+        22,
+        19,
+        9,
+        21
+      ],
+      "mod_code": [
+        "for ( it = st . begin ( ) ; it != st . end ( ) ; it ++ ) cout << st . begin ( ) ;",
+        "if ( sumofdigit ( a , i ) == i ) st . insert ( a ) ;",
+        "sum = sum ;",
+        "cout << st . size ( ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "too many arguments to function ‘long long int sumofdigit(long long int)’"
+    },
+    {
+      "mod_line": [
+        22,
+        19,
+        9,
+        14
+      ],
+      "mod_code": [
+        "for ( it = st . begin ( ) ; it != st . end ( ) ; it ++ ) cout << st . begin ( ) ;",
+        "if ( sumofdigit ( a , i ) == i ) st . insert ( a ) ;",
+        "sum = sum ;",
+        "long long limit = min ( ( long long int ) 200 ) , n ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        22,
+        19,
+        21
+      ],
+      "mod_code": [
+        "for ( it = st . begin ( ) ; it != st . end ( ) ; it ++ ) cout << st . begin ( ) ;",
+        "if ( sumofdigit ( a , i ) == i ) st . insert ( a ) ;",
+        "cout << st . size ( ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "too many arguments to function ‘long long int sumofdigit(long long int)’"
+    },
+    {
+      "mod_line": [
+        22,
+        19,
+        21,
+        14
+      ],
+      "mod_code": [
+        "for ( it = st . begin ( ) ; it != st . end ( ) ; it ++ ) cout << st . begin ( ) ;",
+        "if ( sumofdigit ( a , i ) == i ) st . insert ( a ) ;",
+        "cout << st . size ( ) ;",
+        "long long limit = min ( ( long long int ) 200 ) , n ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        22,
+        19,
+        14
+      ],
+      "mod_code": [
+        "for ( it = st . begin ( ) ; it != st . end ( ) ; it ++ ) cout << st . begin ( ) ;",
+        "if ( sumofdigit ( a , i ) == i ) st . insert ( a ) ;",
+        "long long limit = min ( ( long long int ) 200 ) , n ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        22,
+        9
+      ],
+      "mod_code": [
+        "for ( it = st . begin ( ) ; it != st . end ( ) ; it ++ ) cout << st . begin ( ) ;",
+        "sum = sum ;"
+      ],
+      "err_line": 22,
+      "err_msg": "no match for ‘operator<<’ (operand types are ‘std::ostream {aka std::basic_ostream<char>}’ and ‘std::set<long long int>::iterator {aka std::_Rb_tree_const_iterator<long long int>}’)"
+    },
+    {
+      "mod_line": [
+        22,
+        9,
+        21
+      ],
+      "mod_code": [
+        "for ( it = st . begin ( ) ; it != st . end ( ) ; it ++ ) cout << st . begin ( ) ;",
+        "sum = sum ;",
+        "cout << st . size ( ) ;"
+      ],
+      "err_line": 22,
+      "err_msg": "no match for ‘operator<<’ (operand types are ‘std::ostream {aka std::basic_ostream<char>}’ and ‘std::set<long long int>::iterator {aka std::_Rb_tree_const_iterator<long long int>}’)"
+    },
+    {
+      "mod_line": [
+        22,
+        9,
+        21,
+        14
+      ],
+      "mod_code": [
+        "for ( it = st . begin ( ) ; it != st . end ( ) ; it ++ ) cout << st . begin ( ) ;",
+        "sum = sum ;",
+        "cout << st . size ( ) ;",
+        "long long limit = min ( ( long long int ) 200 ) , n ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        22,
+        9,
+        14
+      ],
+      "mod_code": [
+        "for ( it = st . begin ( ) ; it != st . end ( ) ; it ++ ) cout << st . begin ( ) ;",
+        "sum = sum ;",
+        "long long limit = min ( ( long long int ) 200 ) , n ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        22,
+        21
+      ],
+      "mod_code": [
+        "for ( it = st . begin ( ) ; it != st . end ( ) ; it ++ ) cout << st . begin ( ) ;",
+        "cout << st . size ( ) ;"
+      ],
+      "err_line": 22,
+      "err_msg": "no match for ‘operator<<’ (operand types are ‘std::ostream {aka std::basic_ostream<char>}’ and ‘std::set<long long int>::iterator {aka std::_Rb_tree_const_iterator<long long int>}’)"
+    },
+    {
+      "mod_line": [
+        22,
+        21,
+        14
+      ],
+      "mod_code": [
+        "for ( it = st . begin ( ) ; it != st . end ( ) ; it ++ ) cout << st . begin ( ) ;",
+        "cout << st . size ( ) ;",
+        "long long limit = min ( ( long long int ) 200 ) , n ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        22,
+        14
+      ],
+      "mod_code": [
+        "for ( it = st . begin ( ) ; it != st . end ( ) ; it ++ ) cout << st . begin ( ) ;",
+        "long long limit = min ( ( long long int ) 200 ) , n ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        19,
+        9
+      ],
+      "mod_code": [
+        "if ( sumofdigit ( a , i ) == i ) st . insert ( a ) ;",
+        "sum = sum ;"
+      ],
+      "err_line": 19,
+      "err_msg": "too many arguments to function ‘long long int sumofdigit(long long int)’"
+    },
+    {
+      "mod_line": [
+        19,
+        9,
+        21
+      ],
+      "mod_code": [
+        "if ( sumofdigit ( a , i ) == i ) st . insert ( a ) ;",
+        "sum = sum ;",
+        "cout << st . size ( ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "too many arguments to function ‘long long int sumofdigit(long long int)’"
+    },
+    {
+      "mod_line": [
+        19,
+        9,
+        21,
+        14
+      ],
+      "mod_code": [
+        "if ( sumofdigit ( a , i ) == i ) st . insert ( a ) ;",
+        "sum = sum ;",
+        "cout << st . size ( ) ;",
+        "long long limit = min ( ( long long int ) 200 ) , n ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        19,
+        9,
+        21,
+        22
+      ],
+      "mod_code": [
+        "if ( sumofdigit ( a , i ) == i ) st . insert ( a ) ;",
+        "sum = sum ;",
+        "cout << st . size ( ) ;",
+        "for ( int it = st . begin ( ) ; it != st . end ( ) ; it ++ ) cout << st . begin ( ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "too many arguments to function ‘long long int sumofdigit(long long int)’"
+    },
+    {
+      "mod_line": [
+        19,
+        9,
+        14
+      ],
+      "mod_code": [
+        "if ( sumofdigit ( a , i ) == i ) st . insert ( a ) ;",
+        "sum = sum ;",
+        "long long limit = min ( ( long long int ) 200 ) , n ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        19,
+        9,
+        14,
+        22
+      ],
+      "mod_code": [
+        "if ( sumofdigit ( a , i ) == i ) st . insert ( a ) ;",
+        "sum = sum ;",
+        "long long limit = min ( ( long long int ) 200 ) , n ;",
+        "for ( int it = st . begin ( ) ; it != st . end ( ) ; it ++ ) cout << st . begin ( ) ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        19,
+        9,
+        22
+      ],
+      "mod_code": [
+        "if ( sumofdigit ( a , i ) == i ) st . insert ( a ) ;",
+        "sum = sum ;",
+        "for ( int it = st . begin ( ) ; it != st . end ( ) ; it ++ ) cout << st . begin ( ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "too many arguments to function ‘long long int sumofdigit(long long int)’"
+    },
+    {
+      "mod_line": [
+        19,
+        21
+      ],
+      "mod_code": [
+        "if ( sumofdigit ( a , i ) == i ) st . insert ( a ) ;",
+        "cout << st . size ( ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "too many arguments to function ‘long long int sumofdigit(long long int)’"
+    },
+    {
+      "mod_line": [
+        19,
+        21,
+        14
+      ],
+      "mod_code": [
+        "if ( sumofdigit ( a , i ) == i ) st . insert ( a ) ;",
+        "cout << st . size ( ) ;",
+        "long long limit = min ( ( long long int ) 200 ) , n ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        19,
+        21,
+        14,
+        22
+      ],
+      "mod_code": [
+        "if ( sumofdigit ( a , i ) == i ) st . insert ( a ) ;",
+        "cout << st . size ( ) ;",
+        "long long limit = min ( ( long long int ) 200 ) , n ;",
+        "for ( int it = st . begin ( ) ; it != st . end ( ) ; it ++ ) cout << st . begin ( ) ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        19,
+        21,
+        22
+      ],
+      "mod_code": [
+        "if ( sumofdigit ( a , i ) == i ) st . insert ( a ) ;",
+        "cout << st . size ( ) ;",
+        "for ( int it = st . begin ( ) ; it != st . end ( ) ; it ++ ) cout << st . begin ( ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "too many arguments to function ‘long long int sumofdigit(long long int)’"
+    },
+    {
+      "mod_line": [
+        19,
+        14
+      ],
+      "mod_code": [
+        "if ( sumofdigit ( a , i ) == i ) st . insert ( a ) ;",
+        "long long limit = min ( ( long long int ) 200 ) , n ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        19,
+        14,
+        22
+      ],
+      "mod_code": [
+        "if ( sumofdigit ( a , i ) == i ) st . insert ( a ) ;",
+        "long long limit = min ( ( long long int ) 200 ) , n ;",
+        "for ( int it = st . begin ( ) ; it != st . end ( ) ; it ++ ) cout << st . begin ( ) ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        19,
+        22
+      ],
+      "mod_code": [
+        "if ( sumofdigit ( a , i ) == i ) st . insert ( a ) ;",
+        "for ( int it = st . begin ( ) ; it != st . end ( ) ; it ++ ) cout << st . begin ( ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "too many arguments to function ‘long long int sumofdigit(long long int)’"
+    },
+    {
+      "mod_line": [
+        9,
+        21,
+        14
+      ],
+      "mod_code": [
+        "sum = sum ;",
+        "cout << st . size ( ) ;",
+        "long long limit = min ( ( long long int ) 200 ) , n ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        9,
+        21,
+        14,
+        22
+      ],
+      "mod_code": [
+        "sum = sum ;",
+        "cout << st . size ( ) ;",
+        "long long limit = min ( ( long long int ) 200 ) , n ;",
+        "for ( int it = st . begin ( ) ; it != st . end ( ) ; it ++ ) cout << st . begin ( ) ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        9,
+        21,
+        22
+      ],
+      "mod_code": [
+        "sum = sum ;",
+        "cout << st . size ( ) ;",
+        "for ( int it = st . begin ( ) ; it != st . end ( ) ; it ++ ) cout << st . begin ( ) ;"
+      ],
+      "err_line": 22,
+      "err_msg": "cannot convert ‘std::set<long long int>::iterator {aka std::_Rb_tree_const_iterator<long long int>}’ to ‘int’ in initialization"
+    },
+    {
+      "mod_line": [
+        9,
+        14
+      ],
+      "mod_code": [
+        "sum = sum ;",
+        "long long limit = min ( ( long long int ) 200 ) , n ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        9,
+        14,
+        22
+      ],
+      "mod_code": [
+        "sum = sum ;",
+        "long long limit = min ( ( long long int ) 200 ) , n ;",
+        "for ( int it = st . begin ( ) ; it != st . end ( ) ; it ++ ) cout << st . begin ( ) ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        9,
+        22
+      ],
+      "mod_code": [
+        "sum = sum ;",
+        "for ( int it = st . begin ( ) ; it != st . end ( ) ; it ++ ) cout << st . begin ( ) ;"
+      ],
+      "err_line": 22,
+      "err_msg": "cannot convert ‘std::set<long long int>::iterator {aka std::_Rb_tree_const_iterator<long long int>}’ to ‘int’ in initialization"
+    },
+    {
+      "mod_line": [
+        21,
+        14
+      ],
+      "mod_code": [
+        "cout << st . size ( ) ;",
+        "long long limit = min ( ( long long int ) 200 ) , n ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        21,
+        14,
+        22
+      ],
+      "mod_code": [
+        "cout << st . size ( ) ;",
+        "long long limit = min ( ( long long int ) 200 ) , n ;",
+        "for ( int it = st . begin ( ) ; it != st . end ( ) ; it ++ ) cout << st . begin ( ) ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    },
+    {
+      "mod_line": [
+        21,
+        22
+      ],
+      "mod_code": [
+        "cout << st . size ( ) ;",
+        "for ( int it = st . begin ( ) ; it != st . end ( ) ; it ++ ) cout << st . begin ( ) ;"
+      ],
+      "err_line": 22,
+      "err_msg": "cannot convert ‘std::set<long long int>::iterator {aka std::_Rb_tree_const_iterator<long long int>}’ to ‘int’ in initialization"
+    },
+    {
+      "mod_line": [
+        14,
+        22
+      ],
+      "mod_code": [
+        "long long limit = min ( ( long long int ) 200 ) , n ;",
+        "for ( int it = st . begin ( ) ; it != st . end ( ) ; it ++ ) cout << st . begin ( ) ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘min(long long int)’"
+    }
+  ]
+}

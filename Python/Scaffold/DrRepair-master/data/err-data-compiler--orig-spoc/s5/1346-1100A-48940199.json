@@ -1,0 +1,869 @@
+{
+  "meta": {
+    "index": 1346,
+    "hitid": "3TKSOBLOHLA7FF5YN09QVQF43BIBBW",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "1100A",
+    "subid": "48940199"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare integer variables n , k , b , Max and now with now = - 2147483647 , and an array of integers a with size 1000005",
+      "code": "int n , k , a [ 1000005 ] , b , Max , now = - 2147483647 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "m is a map of int to int",
+      "code": "map < int , int > m ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "mm is a map of int to int",
+      "code": "map < int , int > mm ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "read input to n and k",
+      "code": "cin >> n >> k ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i from 1 to n inclusive , read input to a [ i ] and increment m [ a [ i ] ]",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] , m [ a [ i ] ] ++ ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for b from 0 to n inclusive",
+      "code": "for ( int b = 0 ; b <= n ; b ++ )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] = m [ - 1 ]",
+      "code": "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] = m [ - 1 ] ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "for i from - 1000 to 1000 inclusive",
+      "code": "for ( int i = - 1000 ; i <= 1000 ; i ++ )",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "create integer c = b + i * k",
+      "code": "int c = b + i * k ;",
+      "indent": 3
+    },
+    {
+      "line": 10,
+      "text": "if c = now , break the loop",
+      "code": "if ( c == now ) break ;",
+      "indent": 3
+    },
+    {
+      "line": 11,
+      "text": "if c < 0 or c > n , skip the rest of the loop",
+      "code": "if ( c < 0 || c > n ) continue ;",
+      "indent": 3
+    },
+    {
+      "line": 12,
+      "text": "if a [ c ] = 1 , decrement mm [ 1 ]",
+      "code": "if ( a [ c ] == 1 ) mm [ 1 ] -- ;",
+      "indent": 3
+    },
+    {
+      "line": 13,
+      "text": "if a [ c ] is equal to - 1 , decrement mm [ - 1 ] by one",
+      "code": "if ( a [ c ] == - 1 ) mm [ - 1 ] -- ;",
+      "indent": 3
+    },
+    {
+      "line": 14,
+      "text": "assign c to now",
+      "code": "now = c ;",
+      "indent": 3
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "declare integer variable flag = abs ( mm [ 1 ] - mm [ - 1 ] )",
+      "code": "int flag = abs ( mm [ 1 ] - mm [ - 1 ] ) ;",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "assign max of Max and flag to Max",
+      "code": "Max = max ( Max , flag ) ;",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "loop i from 1 to k inclusive",
+      "code": "for ( int i = 1 ; i <= k ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] = m [ - 1 ]",
+      "code": "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] = m [ - 1 ] ;",
+      "indent": 2
+    },
+    {
+      "line": 21,
+      "text": "for integer j = i to n inclusive",
+      "code": "for ( int j = i ; j <= n ; j += k ) { mm [ a [ j ] ] -- ; }",
+      "indent": 2
+    },
+    {
+      "line": 22,
+      "text": "set Max to max of Max and abs ( mm [ 1 ] - mm [ - 1 ] )",
+      "code": "Max = max ( Max , abs ( mm [ 1 ] - mm [ - 1 ] ) ) ;",
+      "indent": 2
+    },
+    {
+      "line": 23,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "print Max and \" \\ n \"",
+      "code": "cout << Max << \" \\n \" ;",
+      "indent": 1
+    },
+    {
+      "line": 25,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int n , k , b , Max = - 2147483647 , a [ 1000005 ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘now’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "map < int is , int > m ;"
+      ],
+      "err_line": 1,
+      "err_msg": "wrong number of template arguments (1, should be at least 2)"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "vector < int , int > mm ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::vector<int, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "int c += i * k ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected initializer before ‘+=’ token"
+    },
+    {
+      "mod_line": [
+        19
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 19,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        20,
+        2
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] -= m [ - 1 ] ;",
+        "vector < int , int > mm ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::vector<int, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        20,
+        2,
+        7
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] -= m [ - 1 ] ;",
+        "vector < int , int > mm ;",
+        "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] -= m [ - 1 ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::vector<int, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        20,
+        2,
+        7,
+        0
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] -= m [ - 1 ] ;",
+        "vector < int , int > mm ;",
+        "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] -= m [ - 1 ] ;",
+        "int n , k , b , Max = - 2147483647 , a [ 1000005 ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::vector<int, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        20,
+        2,
+        7,
+        4
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] -= m [ - 1 ] ;",
+        "vector < int , int > mm ;",
+        "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] -= m [ - 1 ] ;",
+        "cin >> k >> k ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::vector<int, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        20,
+        2,
+        7,
+        19
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] -= m [ - 1 ] ;",
+        "vector < int , int > mm ;",
+        "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] -= m [ - 1 ] ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::vector<int, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        20,
+        2,
+        0
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] -= m [ - 1 ] ;",
+        "vector < int , int > mm ;",
+        "int n , k , b , Max = - 2147483647 , a [ 1000005 ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::vector<int, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        20,
+        2,
+        0,
+        4
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] -= m [ - 1 ] ;",
+        "vector < int , int > mm ;",
+        "int n , k , b , Max = - 2147483647 , a [ 1000005 ] ;",
+        "cin >> k >> k ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::vector<int, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        20,
+        2,
+        0,
+        19
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] -= m [ - 1 ] ;",
+        "vector < int , int > mm ;",
+        "int n , k , b , Max = - 2147483647 , a [ 1000005 ] ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::vector<int, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        20,
+        2,
+        4
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] -= m [ - 1 ] ;",
+        "vector < int , int > mm ;",
+        "cin >> k >> k ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::vector<int, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        20,
+        2,
+        4,
+        19
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] -= m [ - 1 ] ;",
+        "vector < int , int > mm ;",
+        "cin >> k >> k ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::vector<int, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        20,
+        2,
+        19
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] -= m [ - 1 ] ;",
+        "vector < int , int > mm ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::vector<int, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        20,
+        7,
+        0
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] -= m [ - 1 ] ;",
+        "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] -= m [ - 1 ] ;",
+        "int n , k , b , Max = - 2147483647 , a [ 1000005 ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘now’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        20,
+        7,
+        0,
+        4
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] -= m [ - 1 ] ;",
+        "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] -= m [ - 1 ] ;",
+        "int n , k , b , Max = - 2147483647 , a [ 1000005 ] ;",
+        "cin >> k >> k ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘now’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        20,
+        7,
+        0,
+        19
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] -= m [ - 1 ] ;",
+        "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] -= m [ - 1 ] ;",
+        "int n , k , b , Max = - 2147483647 , a [ 1000005 ] ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘now’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        20,
+        7,
+        4,
+        19
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] -= m [ - 1 ] ;",
+        "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] -= m [ - 1 ] ;",
+        "cin >> k >> k ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 19,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        20,
+        7,
+        19
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] -= m [ - 1 ] ;",
+        "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] -= m [ - 1 ] ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 19,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        20,
+        0
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] -= m [ - 1 ] ;",
+        "int n , k , b , Max = - 2147483647 , a [ 1000005 ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘now’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        20,
+        0,
+        4
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] -= m [ - 1 ] ;",
+        "int n , k , b , Max = - 2147483647 , a [ 1000005 ] ;",
+        "cin >> k >> k ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘now’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        20,
+        0,
+        4,
+        19
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] -= m [ - 1 ] ;",
+        "int n , k , b , Max = - 2147483647 , a [ 1000005 ] ;",
+        "cin >> k >> k ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘now’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        20,
+        0,
+        19
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] -= m [ - 1 ] ;",
+        "int n , k , b , Max = - 2147483647 , a [ 1000005 ] ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘now’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        20,
+        4,
+        19
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] -= m [ - 1 ] ;",
+        "cin >> k >> k ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 19,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        20,
+        19
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] -= m [ - 1 ] ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 19,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2,
+        7
+      ],
+      "mod_code": [
+        "vector < int , int > mm ;",
+        "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] -= m [ - 1 ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::vector<int, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        2,
+        7,
+        0
+      ],
+      "mod_code": [
+        "vector < int , int > mm ;",
+        "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] -= m [ - 1 ] ;",
+        "int n , k , b , Max = - 2147483647 , a [ 1000005 ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::vector<int, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        2,
+        7,
+        0,
+        4
+      ],
+      "mod_code": [
+        "vector < int , int > mm ;",
+        "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] -= m [ - 1 ] ;",
+        "int n , k , b , Max = - 2147483647 , a [ 1000005 ] ;",
+        "cin >> k >> k ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::vector<int, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        2,
+        7,
+        0,
+        19
+      ],
+      "mod_code": [
+        "vector < int , int > mm ;",
+        "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] -= m [ - 1 ] ;",
+        "int n , k , b , Max = - 2147483647 , a [ 1000005 ] ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::vector<int, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        2,
+        7,
+        4
+      ],
+      "mod_code": [
+        "vector < int , int > mm ;",
+        "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] -= m [ - 1 ] ;",
+        "cin >> k >> k ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::vector<int, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        2,
+        7,
+        4,
+        19
+      ],
+      "mod_code": [
+        "vector < int , int > mm ;",
+        "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] -= m [ - 1 ] ;",
+        "cin >> k >> k ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::vector<int, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        2,
+        7,
+        19
+      ],
+      "mod_code": [
+        "vector < int , int > mm ;",
+        "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] -= m [ - 1 ] ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::vector<int, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        2,
+        0
+      ],
+      "mod_code": [
+        "vector < int , int > mm ;",
+        "int n , k , b , Max = - 2147483647 , a [ 1000005 ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::vector<int, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        2,
+        0,
+        4
+      ],
+      "mod_code": [
+        "vector < int , int > mm ;",
+        "int n , k , b , Max = - 2147483647 , a [ 1000005 ] ;",
+        "cin >> k >> k ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::vector<int, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        2,
+        0,
+        4,
+        19
+      ],
+      "mod_code": [
+        "vector < int , int > mm ;",
+        "int n , k , b , Max = - 2147483647 , a [ 1000005 ] ;",
+        "cin >> k >> k ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::vector<int, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        2,
+        0,
+        19
+      ],
+      "mod_code": [
+        "vector < int , int > mm ;",
+        "int n , k , b , Max = - 2147483647 , a [ 1000005 ] ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::vector<int, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        2,
+        4
+      ],
+      "mod_code": [
+        "vector < int , int > mm ;",
+        "cin >> k >> k ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::vector<int, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        2,
+        4,
+        19
+      ],
+      "mod_code": [
+        "vector < int , int > mm ;",
+        "cin >> k >> k ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::vector<int, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        2,
+        19
+      ],
+      "mod_code": [
+        "vector < int , int > mm ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::vector<int, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        7,
+        0
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] -= m [ - 1 ] ;",
+        "int n , k , b , Max = - 2147483647 , a [ 1000005 ] ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘now’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        0,
+        4
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] -= m [ - 1 ] ;",
+        "int n , k , b , Max = - 2147483647 , a [ 1000005 ] ;",
+        "cin >> k >> k ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘now’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        0,
+        4,
+        19
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] -= m [ - 1 ] ;",
+        "int n , k , b , Max = - 2147483647 , a [ 1000005 ] ;",
+        "cin >> k >> k ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘now’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        0,
+        19
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] -= m [ - 1 ] ;",
+        "int n , k , b , Max = - 2147483647 , a [ 1000005 ] ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘now’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        4,
+        19
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] -= m [ - 1 ] ;",
+        "cin >> k >> k ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 19,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7,
+        19
+      ],
+      "mod_code": [
+        "mm [ 1 ] = m [ 1 ] , mm [ - 1 ] -= m [ - 1 ] ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 19,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        0,
+        4
+      ],
+      "mod_code": [
+        "int n , k , b , Max = - 2147483647 , a [ 1000005 ] ;",
+        "cin >> k >> k ;"
+      ],
+      "err_line": 10,
+      "err_msg": "‘now’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        19
+      ],
+      "mod_code": [
+        "int n , k , b , Max = - 2147483647 , a [ 1000005 ] ;",
+        "cin >> k >> k ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘now’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        19
+      ],
+      "mod_code": [
+        "int n , k , b , Max = - 2147483647 , a [ 1000005 ] ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘now’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        19
+      ],
+      "mod_code": [
+        "cin >> k >> k ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 19,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    }
+  ]
+}

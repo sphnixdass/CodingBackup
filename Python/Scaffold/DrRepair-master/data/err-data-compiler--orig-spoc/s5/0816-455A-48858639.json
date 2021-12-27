@@ -1,0 +1,539 @@
+{
+  "meta": {
+    "index": 816,
+    "hitid": "3INZSNUD80KH6JOL3CM0ZA8EH9X9DM",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "455A",
+    "subid": "48858639"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare integer n",
+      "code": "int n ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "let arr , c and ans be long long arrays with size 100009",
+      "code": "long long arr [ 100009 ] , c [ 100009 ] , ans [ 100009 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( int i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "read arr [ i ]",
+      "code": "cin >> arr [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 6,
+      "text": "increment c [ arr [ i ] ]",
+      "code": "c [ arr [ i ] ] ++ ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "ans [ 0 ] = 0",
+      "code": "ans [ 0 ] = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "ans [ 1 ] = c [ 1 ]",
+      "code": "ans [ 1 ] = c [ 1 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "for integer i = 2 to 100000 inclusive , set ans [ i ] to max of ans [ i - 1 ] and ans [ i - 2 ] + i * c [ i ] )",
+      "code": "for ( int i = 2 ; i <= 100000 ; i ++ ) { ans [ i ] = max ( ans [ i - 1 ] , ans [ i - 2 ] + i * c [ i ] ) ; }",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "print ans [ 100000 ] and \" \\ n \"",
+      "code": "cout << ans [ 100000 ] << \" \\n \" ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "long long arr [ 100009 ] , c [ 100009 ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘ans’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= 100000 ; i ++ ) { ans [ i ] = max ( ans [ i - 1 ] + i * c [ i ] ) + i * c [ i ] ) ; }"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(long long int)’"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "long long arr [ 100009 ] , c [ 100009 ] , ans ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "int ans [ 1 ] = c [ 1 ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= 100000 ; i ++ ) ans [ i ] = max ( ans [ i - 1 ] + i * c [ 2 ] ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘max(long long int)’"
+    },
+    {
+      "mod_line": [
+        1,
+        10
+      ],
+      "mod_code": [
+        "long long arr [ 100009 ] , c [ 100009 ] ;",
+        "for ( int i = 2 ; i <= 100000 ; i ++ ) { ans [ i ] = max ( ans [ i - 1 ] + i * c [ i ] ) + i * c [ i ] ) ; }"
+      ],
+      "err_line": 8,
+      "err_msg": "‘ans’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        10,
+        9
+      ],
+      "mod_code": [
+        "long long arr [ 100009 ] , c [ 100009 ] ;",
+        "for ( int i = 2 ; i <= 100000 ; i ++ ) { ans [ i ] = max ( ans [ i - 1 ] + i * c [ i ] ) + i * c [ i ] ) ; }",
+        "int ans [ 1 ] = c [ 1 ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘ans’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        10,
+        9,
+        4
+      ],
+      "mod_code": [
+        "long long arr [ 100009 ] , c [ 100009 ] ;",
+        "for ( int i = 2 ; i <= 100000 ; i ++ ) { ans [ i ] = max ( ans [ i - 1 ] + i * c [ i ] ) + i * c [ i ] ) ; }",
+        "int ans [ 1 ] = c [ 1 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        10,
+        4
+      ],
+      "mod_code": [
+        "long long arr [ 100009 ] , c [ 100009 ] ;",
+        "for ( int i = 2 ; i <= 100000 ; i ++ ) { ans [ i ] = max ( ans [ i - 1 ] + i * c [ i ] ) + i * c [ i ] ) ; }",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        10
+      ],
+      "mod_code": [
+        "long long arr [ 100009 ] , c [ 100009 ] ;",
+        "for ( int i = 2 ; i <= 100000 ; i ++ ) ans [ i ] = max ( ans [ i - 1 ] + i * c [ 2 ] ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘ans’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        10,
+        9
+      ],
+      "mod_code": [
+        "long long arr [ 100009 ] , c [ 100009 ] ;",
+        "for ( int i = 2 ; i <= 100000 ; i ++ ) ans [ i ] = max ( ans [ i - 1 ] + i * c [ 2 ] ) ;",
+        "int ans [ 1 ] = c [ 1 ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘ans’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        10,
+        9,
+        4
+      ],
+      "mod_code": [
+        "long long arr [ 100009 ] , c [ 100009 ] ;",
+        "for ( int i = 2 ; i <= 100000 ; i ++ ) ans [ i ] = max ( ans [ i - 1 ] + i * c [ 2 ] ) ;",
+        "int ans [ 1 ] = c [ 1 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        10,
+        4
+      ],
+      "mod_code": [
+        "long long arr [ 100009 ] , c [ 100009 ] ;",
+        "for ( int i = 2 ; i <= 100000 ; i ++ ) ans [ i ] = max ( ans [ i - 1 ] + i * c [ 2 ] ) ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        9
+      ],
+      "mod_code": [
+        "long long arr [ 100009 ] , c [ 100009 ] ;",
+        "int ans [ 1 ] = c [ 1 ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘ans’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        4
+      ],
+      "mod_code": [
+        "long long arr [ 100009 ] , c [ 100009 ] ;",
+        "int ans [ 1 ] = c [ 1 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        4
+      ],
+      "mod_code": [
+        "long long arr [ 100009 ] , c [ 100009 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= 100000 ; i ++ ) { ans [ i ] = max ( ans [ i - 1 ] + i * c [ i ] ) + i * c [ i ] ) ; }",
+        "int ans [ 1 ] = c [ 1 ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        10,
+        9,
+        1
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= 100000 ; i ++ ) { ans [ i ] = max ( ans [ i - 1 ] + i * c [ i ] ) + i * c [ i ] ) ; }",
+        "int ans [ 1 ] = c [ 1 ] ;",
+        "long long arr [ 100009 ] , c [ 100009 ] , ans ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        10,
+        9,
+        1,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= 100000 ; i ++ ) { ans [ i ] = max ( ans [ i - 1 ] + i * c [ i ] ) + i * c [ i ] ) ; }",
+        "int ans [ 1 ] = c [ 1 ] ;",
+        "long long arr [ 100009 ] , c [ 100009 ] , ans ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        9,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= 100000 ; i ++ ) { ans [ i ] = max ( ans [ i - 1 ] + i * c [ i ] ) + i * c [ i ] ) ; }",
+        "int ans [ 1 ] = c [ 1 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        1
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= 100000 ; i ++ ) { ans [ i ] = max ( ans [ i - 1 ] + i * c [ i ] ) + i * c [ i ] ) ; }",
+        "long long arr [ 100009 ] , c [ 100009 ] , ans ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        10,
+        1,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= 100000 ; i ++ ) { ans [ i ] = max ( ans [ i - 1 ] + i * c [ i ] ) + i * c [ i ] ) ; }",
+        "long long arr [ 100009 ] , c [ 100009 ] , ans ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= 100000 ; i ++ ) { ans [ i ] = max ( ans [ i - 1 ] + i * c [ i ] ) + i * c [ i ] ) ; }",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= 100000 ; i ++ ) ans [ i ] = max ( ans [ i - 1 ] + i * c [ 2 ] ) ;",
+        "int ans [ 1 ] = c [ 1 ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        10,
+        9,
+        1
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= 100000 ; i ++ ) ans [ i ] = max ( ans [ i - 1 ] + i * c [ 2 ] ) ;",
+        "int ans [ 1 ] = c [ 1 ] ;",
+        "long long arr [ 100009 ] , c [ 100009 ] , ans ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        10,
+        9,
+        1,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= 100000 ; i ++ ) ans [ i ] = max ( ans [ i - 1 ] + i * c [ 2 ] ) ;",
+        "int ans [ 1 ] = c [ 1 ] ;",
+        "long long arr [ 100009 ] , c [ 100009 ] , ans ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        9,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= 100000 ; i ++ ) ans [ i ] = max ( ans [ i - 1 ] + i * c [ 2 ] ) ;",
+        "int ans [ 1 ] = c [ 1 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        1
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= 100000 ; i ++ ) ans [ i ] = max ( ans [ i - 1 ] + i * c [ 2 ] ) ;",
+        "long long arr [ 100009 ] , c [ 100009 ] , ans ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        10,
+        1,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= 100000 ; i ++ ) ans [ i ] = max ( ans [ i - 1 ] + i * c [ 2 ] ) ;",
+        "long long arr [ 100009 ] , c [ 100009 ] , ans ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i <= 100000 ; i ++ ) ans [ i ] = max ( ans [ i - 1 ] + i * c [ 2 ] ) ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        1
+      ],
+      "mod_code": [
+        "int ans [ 1 ] = c [ 1 ] ;",
+        "long long arr [ 100009 ] , c [ 100009 ] , ans ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        9,
+        1,
+        4
+      ],
+      "mod_code": [
+        "int ans [ 1 ] = c [ 1 ] ;",
+        "long long arr [ 100009 ] , c [ 100009 ] , ans ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        4
+      ],
+      "mod_code": [
+        "int ans [ 1 ] = c [ 1 ] ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        4
+      ],
+      "mod_code": [
+        "long long arr [ 100009 ] , c [ 100009 ] , ans ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    }
+  ]
+}

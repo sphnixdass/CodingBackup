@@ -1,0 +1,1055 @@
+{
+  "meta": {
+    "index": 967,
+    "hitid": "3EKZL9T8Y8G0GX0Q1SFHSLOKFMTCHF",
+    "workerid": "A1NBHCFZKJGHKW",
+    "probid": "778A",
+    "subid": "41526304"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "n = const int with n = 2e5 + 5",
+      "code": "const int N = 2e5 + 5 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "n , m = int and s , t , p , a , taken = array of ints with size N each",
+      "code": "int n , m , s [ N ] , t [ N ] , p [ N ] , a [ N ] , taken [ N ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "in function Input",
+      "code": "void Input ( )",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "t1 , t2 = string",
+      "code": "string t1 , t2 ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "read t1 then t2",
+      "code": "cin >> t1 >> t2 ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "set n to length of t1 and m to length of t2",
+      "code": "n = t1 . size ( ) , m = t2 . size ( ) ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 0 to n set s [ i + 1 ] to t1 [ i ] - 48 * 2",
+      "code": "for ( int i = 0 ; i < n ; i ++ ) s [ i + 1 ] = t1 [ i ] - 48 * 2 ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for i = 0 to m set t [ i + 1 ] to t2 [ i ] - 48 * 2",
+      "code": "for ( int i = 0 ; i < m ; i ++ ) t [ i + 1 ] = t2 [ i ] - 48 * 2 ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "for i = 1 to n inclusive read a [ i ]",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 10,
+      "text": "in function check taking an int moves_so_far and returning a bool",
+      "code": "bool check ( int moves_so_far )",
+      "indent": 0
+    },
+    {
+      "line": 11,
+      "text": "for i = 1 to n inclusive set p [ i ] to a [ i ]",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) p [ i ] = a [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "call sort on p + moves_so_far + 1 and p + n + 1",
+      "code": "sort ( p + moves_so_far + 1 , p + n + 1 ) ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "for i = moves_so_far + 1 to n inclusive set p [ i ] to s [ p [ i ] ]",
+      "code": "for ( int i = moves_so_far + 1 ; i <= n ; i ++ ) p [ i ] = s [ p [ i ] ] ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "curr = int with curr = 1",
+      "code": "int curr = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "for i = moves_so_far + 1 to n inclusive",
+      "code": "for ( int i = moves_so_far + 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "if t [ curr ] equals p [ i ] then increment curr",
+      "code": "if ( t [ curr ] == p [ i ] ) curr ++ ;",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "if curr is greater than m thenr eturn false",
+      "code": "if ( curr > m ) return false ;",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "return true",
+      "code": "return true ;",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 21,
+      "text": "in function Solve",
+      "code": "void Solve ( )",
+      "indent": 0
+    },
+    {
+      "line": 22,
+      "text": "l , r , res = int with l = 1 and r = n - m and res = 0",
+      "code": "int l = 1 , r = n - m , res = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "loop while l is less or equal to r",
+      "code": "while ( l <= r )",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "mid = int with mid = ( l + r ) / 2",
+      "code": "int mid = ( l + r ) / 2 ;",
+      "indent": 2
+    },
+    {
+      "line": 25,
+      "text": "if check of mid return true",
+      "code": "if ( check ( mid ) == true )",
+      "indent": 2
+    },
+    {
+      "line": 26,
+      "text": "set r to mid - 1",
+      "code": "r = mid - 1 ;",
+      "indent": 3
+    },
+    {
+      "line": 27,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 28,
+      "text": "set res to mid and l to mid + 1",
+      "code": "res = mid , l = mid + 1 ;",
+      "indent": 3
+    },
+    {
+      "line": 29,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 30,
+      "text": "print res",
+      "code": "cout << res << ' \\n ' ;",
+      "indent": 1
+    },
+    {
+      "line": 31,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 32,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 33,
+      "text": "call Input",
+      "code": "Input ( ) ;",
+      "indent": 1
+    },
+    {
+      "line": 34,
+      "text": "call Solve",
+      "code": "Solve ( ) ;",
+      "indent": 1
+    },
+    {
+      "line": 35,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 36,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "const int n = 2e5 + 5 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n’"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int n , s [ N ] , s [ N ] , t , t , taken , taken ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int s [200005]’"
+    },
+    {
+      "mod_line": [
+        25
+      ],
+      "mod_code": [
+        "if ( check ( mid ) ) return true ;"
+      ],
+      "err_line": 25,
+      "err_msg": "return-statement with a value, in function returning 'void' [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "const int n = int + 5 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "expected primary-expression before ‘int’"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int n , s [ N ] , s [ N ] , t , p , taken , taken ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int s [200005]’"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "string n , t2 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘t1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "t1 >> t1 >> t2 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "bool check ( int moves_so_far ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "sort ( p + moves_so_far + 1 and p + n + 1 ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "no matching function for call to ‘sort(bool)’"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "int * curr = 1 ;"
+      ],
+      "err_line": 14,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "for ( i = moves_so_far + 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "if ( curr > m )"
+      ],
+      "err_line": 18,
+      "err_msg": "expected primary-expression before ‘}’ token"
+    },
+    {
+      "mod_line": [
+        21
+      ],
+      "mod_code": [
+        "Solve ( ) ;"
+      ],
+      "err_line": 21,
+      "err_msg": "expected constructor, destructor, or type conversion before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        22
+      ],
+      "mod_code": [
+        "int l = 1 , r = n - m , res = 0 , res ;"
+      ],
+      "err_line": 22,
+      "err_msg": "redeclaration of ‘int res’"
+    },
+    {
+      "mod_line": [
+        25
+      ],
+      "mod_code": [
+        "if ( check ( mid ) ) return ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        27
+      ],
+      "mod_code": [
+        "n"
+      ],
+      "err_line": 28,
+      "err_msg": "expected ‘;’ before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        33
+      ],
+      "mod_code": [
+        "Input ) ;"
+      ],
+      "err_line": 33,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        1
+      ],
+      "mod_code": [
+        "const int n = 2e5 + 5 ;",
+        "int n , s [ N ] , s [ N ] , t , t , taken , taken ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n’"
+    },
+    {
+      "mod_line": [
+        0,
+        1,
+        5
+      ],
+      "mod_code": [
+        "const int n = 2e5 + 5 ;",
+        "int n , s [ N ] , s [ N ] , t , t , taken , taken ;",
+        "int n = t1 . length ( ) , m = t2 . length ( ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n’"
+    },
+    {
+      "mod_line": [
+        0,
+        1,
+        5,
+        17
+      ],
+      "mod_code": [
+        "const int n = 2e5 + 5 ;",
+        "int n , s [ N ] , s [ N ] , t , t , taken , taken ;",
+        "int n = t1 . length ( ) , m = t2 . length ( ) ;",
+        "if ( curr > m ) { curr = false ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n’"
+    },
+    {
+      "mod_line": [
+        0,
+        1,
+        5,
+        25
+      ],
+      "mod_code": [
+        "const int n = 2e5 + 5 ;",
+        "int n , s [ N ] , s [ N ] , t , t , taken , taken ;",
+        "int n = t1 . length ( ) , m = t2 . length ( ) ;",
+        "if ( check ( mid ) ) return true ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n’"
+    },
+    {
+      "mod_line": [
+        0,
+        1,
+        5,
+        26
+      ],
+      "mod_code": [
+        "const int n = 2e5 + 5 ;",
+        "int n , s [ N ] , s [ N ] , t , t , taken , taken ;",
+        "int n = t1 . length ( ) , m = t2 . length ( ) ;",
+        "int r = mid - 1 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n’"
+    },
+    {
+      "mod_line": [
+        0,
+        1,
+        17
+      ],
+      "mod_code": [
+        "const int n = 2e5 + 5 ;",
+        "int n , s [ N ] , s [ N ] , t , t , taken , taken ;",
+        "if ( curr > m ) { curr = false ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n’"
+    },
+    {
+      "mod_line": [
+        0,
+        1,
+        17,
+        25
+      ],
+      "mod_code": [
+        "const int n = 2e5 + 5 ;",
+        "int n , s [ N ] , s [ N ] , t , t , taken , taken ;",
+        "if ( curr > m ) { curr = false ; }",
+        "if ( check ( mid ) ) return true ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n’"
+    },
+    {
+      "mod_line": [
+        0,
+        1,
+        17,
+        26
+      ],
+      "mod_code": [
+        "const int n = 2e5 + 5 ;",
+        "int n , s [ N ] , s [ N ] , t , t , taken , taken ;",
+        "if ( curr > m ) { curr = false ; }",
+        "int r = mid - 1 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n’"
+    },
+    {
+      "mod_line": [
+        0,
+        1,
+        25
+      ],
+      "mod_code": [
+        "const int n = 2e5 + 5 ;",
+        "int n , s [ N ] , s [ N ] , t , t , taken , taken ;",
+        "if ( check ( mid ) ) return true ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n’"
+    },
+    {
+      "mod_line": [
+        0,
+        1,
+        25,
+        26
+      ],
+      "mod_code": [
+        "const int n = 2e5 + 5 ;",
+        "int n , s [ N ] , s [ N ] , t , t , taken , taken ;",
+        "if ( check ( mid ) ) return true ;",
+        "int r = mid - 1 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n’"
+    },
+    {
+      "mod_line": [
+        0,
+        1,
+        26
+      ],
+      "mod_code": [
+        "const int n = 2e5 + 5 ;",
+        "int n , s [ N ] , s [ N ] , t , t , taken , taken ;",
+        "int r = mid - 1 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n’"
+    },
+    {
+      "mod_line": [
+        0,
+        5
+      ],
+      "mod_code": [
+        "const int n = 2e5 + 5 ;",
+        "int n = t1 . length ( ) , m = t2 . length ( ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n’"
+    },
+    {
+      "mod_line": [
+        0,
+        5,
+        17
+      ],
+      "mod_code": [
+        "const int n = 2e5 + 5 ;",
+        "int n = t1 . length ( ) , m = t2 . length ( ) ;",
+        "if ( curr > m ) { curr = false ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n’"
+    },
+    {
+      "mod_line": [
+        0,
+        5,
+        17,
+        25
+      ],
+      "mod_code": [
+        "const int n = 2e5 + 5 ;",
+        "int n = t1 . length ( ) , m = t2 . length ( ) ;",
+        "if ( curr > m ) { curr = false ; }",
+        "if ( check ( mid ) ) return true ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n’"
+    },
+    {
+      "mod_line": [
+        0,
+        5,
+        17,
+        26
+      ],
+      "mod_code": [
+        "const int n = 2e5 + 5 ;",
+        "int n = t1 . length ( ) , m = t2 . length ( ) ;",
+        "if ( curr > m ) { curr = false ; }",
+        "int r = mid - 1 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n’"
+    },
+    {
+      "mod_line": [
+        0,
+        5,
+        25
+      ],
+      "mod_code": [
+        "const int n = 2e5 + 5 ;",
+        "int n = t1 . length ( ) , m = t2 . length ( ) ;",
+        "if ( check ( mid ) ) return true ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n’"
+    },
+    {
+      "mod_line": [
+        0,
+        5,
+        25,
+        26
+      ],
+      "mod_code": [
+        "const int n = 2e5 + 5 ;",
+        "int n = t1 . length ( ) , m = t2 . length ( ) ;",
+        "if ( check ( mid ) ) return true ;",
+        "int r = mid - 1 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n’"
+    },
+    {
+      "mod_line": [
+        0,
+        5,
+        26
+      ],
+      "mod_code": [
+        "const int n = 2e5 + 5 ;",
+        "int n = t1 . length ( ) , m = t2 . length ( ) ;",
+        "int r = mid - 1 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n’"
+    },
+    {
+      "mod_line": [
+        0,
+        17
+      ],
+      "mod_code": [
+        "const int n = 2e5 + 5 ;",
+        "if ( curr > m ) { curr = false ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n’"
+    },
+    {
+      "mod_line": [
+        0,
+        17,
+        25
+      ],
+      "mod_code": [
+        "const int n = 2e5 + 5 ;",
+        "if ( curr > m ) { curr = false ; }",
+        "if ( check ( mid ) ) return true ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n’"
+    },
+    {
+      "mod_line": [
+        0,
+        17,
+        25,
+        26
+      ],
+      "mod_code": [
+        "const int n = 2e5 + 5 ;",
+        "if ( curr > m ) { curr = false ; }",
+        "if ( check ( mid ) ) return true ;",
+        "int r = mid - 1 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n’"
+    },
+    {
+      "mod_line": [
+        0,
+        17,
+        26
+      ],
+      "mod_code": [
+        "const int n = 2e5 + 5 ;",
+        "if ( curr > m ) { curr = false ; }",
+        "int r = mid - 1 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n’"
+    },
+    {
+      "mod_line": [
+        0,
+        25
+      ],
+      "mod_code": [
+        "const int n = 2e5 + 5 ;",
+        "if ( check ( mid ) ) return true ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n’"
+    },
+    {
+      "mod_line": [
+        0,
+        25,
+        26
+      ],
+      "mod_code": [
+        "const int n = 2e5 + 5 ;",
+        "if ( check ( mid ) ) return true ;",
+        "int r = mid - 1 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n’"
+    },
+    {
+      "mod_line": [
+        0,
+        26
+      ],
+      "mod_code": [
+        "const int n = 2e5 + 5 ;",
+        "int r = mid - 1 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int n’"
+    },
+    {
+      "mod_line": [
+        1,
+        5
+      ],
+      "mod_code": [
+        "int n , s [ N ] , s [ N ] , t , t , taken , taken ;",
+        "int n = t1 . length ( ) , m = t2 . length ( ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int s [200005]’"
+    },
+    {
+      "mod_line": [
+        1,
+        5,
+        17
+      ],
+      "mod_code": [
+        "int n , s [ N ] , s [ N ] , t , t , taken , taken ;",
+        "int n = t1 . length ( ) , m = t2 . length ( ) ;",
+        "if ( curr > m ) { curr = false ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int s [200005]’"
+    },
+    {
+      "mod_line": [
+        1,
+        5,
+        17,
+        25
+      ],
+      "mod_code": [
+        "int n , s [ N ] , s [ N ] , t , t , taken , taken ;",
+        "int n = t1 . length ( ) , m = t2 . length ( ) ;",
+        "if ( curr > m ) { curr = false ; }",
+        "if ( check ( mid ) ) return true ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int s [200005]’"
+    },
+    {
+      "mod_line": [
+        1,
+        5,
+        17,
+        26
+      ],
+      "mod_code": [
+        "int n , s [ N ] , s [ N ] , t , t , taken , taken ;",
+        "int n = t1 . length ( ) , m = t2 . length ( ) ;",
+        "if ( curr > m ) { curr = false ; }",
+        "int r = mid - 1 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int s [200005]’"
+    },
+    {
+      "mod_line": [
+        1,
+        5,
+        25
+      ],
+      "mod_code": [
+        "int n , s [ N ] , s [ N ] , t , t , taken , taken ;",
+        "int n = t1 . length ( ) , m = t2 . length ( ) ;",
+        "if ( check ( mid ) ) return true ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int s [200005]’"
+    },
+    {
+      "mod_line": [
+        1,
+        5,
+        25,
+        26
+      ],
+      "mod_code": [
+        "int n , s [ N ] , s [ N ] , t , t , taken , taken ;",
+        "int n = t1 . length ( ) , m = t2 . length ( ) ;",
+        "if ( check ( mid ) ) return true ;",
+        "int r = mid - 1 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int s [200005]’"
+    },
+    {
+      "mod_line": [
+        1,
+        5,
+        26
+      ],
+      "mod_code": [
+        "int n , s [ N ] , s [ N ] , t , t , taken , taken ;",
+        "int n = t1 . length ( ) , m = t2 . length ( ) ;",
+        "int r = mid - 1 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int s [200005]’"
+    },
+    {
+      "mod_line": [
+        1,
+        17
+      ],
+      "mod_code": [
+        "int n , s [ N ] , s [ N ] , t , t , taken , taken ;",
+        "if ( curr > m ) { curr = false ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int s [200005]’"
+    },
+    {
+      "mod_line": [
+        1,
+        17,
+        25
+      ],
+      "mod_code": [
+        "int n , s [ N ] , s [ N ] , t , t , taken , taken ;",
+        "if ( curr > m ) { curr = false ; }",
+        "if ( check ( mid ) ) return true ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int s [200005]’"
+    },
+    {
+      "mod_line": [
+        1,
+        17,
+        25,
+        26
+      ],
+      "mod_code": [
+        "int n , s [ N ] , s [ N ] , t , t , taken , taken ;",
+        "if ( curr > m ) { curr = false ; }",
+        "if ( check ( mid ) ) return true ;",
+        "int r = mid - 1 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int s [200005]’"
+    },
+    {
+      "mod_line": [
+        1,
+        17,
+        26
+      ],
+      "mod_code": [
+        "int n , s [ N ] , s [ N ] , t , t , taken , taken ;",
+        "if ( curr > m ) { curr = false ; }",
+        "int r = mid - 1 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int s [200005]’"
+    },
+    {
+      "mod_line": [
+        1,
+        25
+      ],
+      "mod_code": [
+        "int n , s [ N ] , s [ N ] , t , t , taken , taken ;",
+        "if ( check ( mid ) ) return true ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int s [200005]’"
+    },
+    {
+      "mod_line": [
+        1,
+        25,
+        26
+      ],
+      "mod_code": [
+        "int n , s [ N ] , s [ N ] , t , t , taken , taken ;",
+        "if ( check ( mid ) ) return true ;",
+        "int r = mid - 1 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int s [200005]’"
+    },
+    {
+      "mod_line": [
+        1,
+        26
+      ],
+      "mod_code": [
+        "int n , s [ N ] , s [ N ] , t , t , taken , taken ;",
+        "int r = mid - 1 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int s [200005]’"
+    },
+    {
+      "mod_line": [
+        5,
+        17,
+        25
+      ],
+      "mod_code": [
+        "int n = t1 . length ( ) , m = t2 . length ( ) ;",
+        "if ( curr > m ) { curr = false ; }",
+        "if ( check ( mid ) ) return true ;"
+      ],
+      "err_line": 25,
+      "err_msg": "return-statement with a value, in function returning 'void' [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        17,
+        25,
+        26
+      ],
+      "mod_code": [
+        "int n = t1 . length ( ) , m = t2 . length ( ) ;",
+        "if ( curr > m ) { curr = false ; }",
+        "if ( check ( mid ) ) return true ;",
+        "int r = mid - 1 ;"
+      ],
+      "err_line": 25,
+      "err_msg": "return-statement with a value, in function returning 'void' [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        25
+      ],
+      "mod_code": [
+        "int n = t1 . length ( ) , m = t2 . length ( ) ;",
+        "if ( check ( mid ) ) return true ;"
+      ],
+      "err_line": 25,
+      "err_msg": "return-statement with a value, in function returning 'void' [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        5,
+        25,
+        26
+      ],
+      "mod_code": [
+        "int n = t1 . length ( ) , m = t2 . length ( ) ;",
+        "if ( check ( mid ) ) return true ;",
+        "int r = mid - 1 ;"
+      ],
+      "err_line": 25,
+      "err_msg": "return-statement with a value, in function returning 'void' [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        17,
+        25
+      ],
+      "mod_code": [
+        "if ( curr > m ) { curr = false ; }",
+        "if ( check ( mid ) ) return true ;"
+      ],
+      "err_line": 25,
+      "err_msg": "return-statement with a value, in function returning 'void' [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        17,
+        25,
+        26
+      ],
+      "mod_code": [
+        "if ( curr > m ) { curr = false ; }",
+        "if ( check ( mid ) ) return true ;",
+        "int r = mid - 1 ;"
+      ],
+      "err_line": 25,
+      "err_msg": "return-statement with a value, in function returning 'void' [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        25,
+        26
+      ],
+      "mod_code": [
+        "if ( check ( mid ) ) return true ;",
+        "int r = mid - 1 ;"
+      ],
+      "err_line": 25,
+      "err_msg": "return-statement with a value, in function returning 'void' [-fpermissive]"
+    }
+  ]
+}

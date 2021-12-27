@@ -1,0 +1,1085 @@
+{
+  "meta": {
+    "index": 2581,
+    "hitid": "351S7I5UG9QFY7S7EIRGK9YBS53NJG",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "154A",
+    "subid": "19050530"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare 2d int array dp with size 26 by 26",
+      "code": "int dp [ 26 ] [ 26 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create character array p with 5 elements",
+      "code": "char p [ 5 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "create string s",
+      "code": "string s ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "read s",
+      "code": "cin >> s ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "declare integer len = length of s",
+      "code": "int len = s . length ( ) ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "create int n",
+      "code": "int n ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "read input to n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "loop i from 0 to n exclusive",
+      "code": "for ( int i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "read input to p",
+      "code": "cin >> p ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "set dp [ p [ 0 ] - ' a ' ] [ p [ 1 ] - ' a ' ] and dp [ p [ 1 ] - ' a ' ] [ p [ 0 ] - ' a ' ] to 1",
+      "code": "dp [ p [ 0 ] - ' a ' ] [ p [ 1 ] - ' a ' ] = dp [ p [ 1 ] - ' a ' ] [ p [ 0 ] - ' a ' ] = 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "if len is equal to 1",
+      "code": "if ( len == 1 )",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "print \" 0 \"",
+      "code": "cout << \" 0 \" << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "else",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "declare integer ans = 0",
+      "code": "int ans = 0 ;",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "for i from 0 to 25 inclusive",
+      "code": "for ( int i = 0 ; i <= 25 ; i ++ )",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "loop j from i + 1 to 25 inclusive",
+      "code": "for ( int j = i + 1 ; j <= 25 ; j ++ )",
+      "indent": 3
+    },
+    {
+      "line": 18,
+      "text": "skip the rest of the loop if dp [ i ] [ j ] is 0",
+      "code": "if ( ! dp [ i ] [ j ] ) continue ;",
+      "indent": 4
+    },
+    {
+      "line": 19,
+      "text": "create character array c with 2 elements",
+      "code": "char c [ 2 ] ;",
+      "indent": 4
+    },
+    {
+      "line": 20,
+      "text": "assign i + ' a ' to c [ 0 ]",
+      "code": "c [ 0 ] = i + ' a ' ;",
+      "indent": 4
+    },
+    {
+      "line": 21,
+      "text": "change c [ 1 ] to j + ' a '",
+      "code": "c [ 1 ] = j + ' a ' ;",
+      "indent": 4
+    },
+    {
+      "line": 22,
+      "text": "let g be integer array with size 2",
+      "code": "int g [ 2 ] ;",
+      "indent": 4
+    },
+    {
+      "line": 23,
+      "text": "change g [ 0 ] and g [ 1 ] to 0",
+      "code": "g [ 0 ] = g [ 1 ] = 0 ;",
+      "indent": 4
+    },
+    {
+      "line": 24,
+      "text": "for integer k = 0 to length of s exclusive",
+      "code": "for ( int k = 0 ; k < s . length ( ) ; k ++ )",
+      "indent": 4
+    },
+    {
+      "line": 25,
+      "text": "if s [ k ] = c [ 0 ]",
+      "code": "if ( s [ k ] == c [ 0 ] )",
+      "indent": 5
+    },
+    {
+      "line": 26,
+      "text": "increment g [ 0 ] by one",
+      "code": "g [ 0 ] ++ ;",
+      "indent": 6
+    },
+    {
+      "line": 27,
+      "text": "else if s [ k ] = c [ 1 ]",
+      "code": "else if ( s [ k ] == c [ 1 ] )",
+      "indent": 5
+    },
+    {
+      "line": 28,
+      "text": "increment g [ 1 ] by one",
+      "code": "g [ 1 ] ++ ;",
+      "indent": 6
+    },
+    {
+      "line": 29,
+      "text": "else",
+      "code": "else",
+      "indent": 5
+    },
+    {
+      "line": 30,
+      "text": "add min of g [ 0 ] and g [ 1 ] to ans",
+      "code": "ans += min ( g [ 0 ] , g [ 1 ] ) ;",
+      "indent": 6
+    },
+    {
+      "line": 31,
+      "text": "change g [ 0 ] and g [ 1 ] to 0",
+      "code": "g [ 0 ] = g [ 1 ] = 0 ;",
+      "indent": 6
+    },
+    {
+      "line": 32,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 5
+    },
+    {
+      "line": 33,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 4
+    },
+    {
+      "line": 34,
+      "text": "increase ans by min of g [ 0 ] and g [ 1 ]",
+      "code": "ans += min ( g [ 0 ] , g [ 1 ] ) ;",
+      "indent": 4
+    },
+    {
+      "line": 35,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 36,
+      "text": "print ans",
+      "code": "cout << ans << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 37,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 38,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "char p [ 5 ] [ 5 ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘char [5][5]’)"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "string n ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "{ cin >> n ;"
+      ],
+      "err_line": 38,
+      "err_msg": "expected ‘}’ at end of input"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "dp [ p [ 0 ] - ' a ' ] [ p [ 1 ] - ' a ' ] [ p [ 1 ] - ' a ' ] [ p [ 0 ] - ' a ' ] = 1 ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "else if ( len == 1 )"
+      ],
+      "err_line": 12,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "for ( j = i + 1 ; j <= 25 ; j ++ )"
+      ],
+      "err_line": 17,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        19
+      ],
+      "mod_code": [
+        "char c [ 2 ] [ 2 ] ;"
+      ],
+      "err_line": 20,
+      "err_msg": "incompatible types in assignment of ‘int’ to ‘char [2]’"
+    },
+    {
+      "mod_line": [
+        20
+      ],
+      "mod_code": [
+        "c [ 0 ] = c + ' a ' ;"
+      ],
+      "err_line": 20,
+      "err_msg": "invalid conversion from ‘char*’ to ‘char’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        22
+      ],
+      "mod_code": [
+        "int * g [ 2 ] ;"
+      ],
+      "err_line": 30,
+      "err_msg": "invalid conversion from ‘int*’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        25
+      ],
+      "mod_code": [
+        "if ( s [ k ] == c [ ' 0 ' )"
+      ],
+      "err_line": 25,
+      "err_msg": "expected ‘]’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        26
+      ],
+      "mod_code": [
+        "g [ 0 ] += one ;"
+      ],
+      "err_line": 26,
+      "err_msg": "‘one’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27
+      ],
+      "mod_code": [
+        "else if ( s [ k ] ] == c [ 1 ] )"
+      ],
+      "err_line": 27,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        28
+      ],
+      "mod_code": [
+        "g [ 1 ] += one ;"
+      ],
+      "err_line": 28,
+      "err_msg": "‘one’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        30
+      ],
+      "mod_code": [
+        "ans . push ( g [ 0 ] , g [ 1 ] ) ;"
+      ],
+      "err_line": 30,
+      "err_msg": "request for member ‘push’ in ‘ans’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        23,
+        12
+      ],
+      "mod_code": [
+        "g [ 0 ] = g [ 1 ] = ' 0 ' ;",
+        "else if ( len == 1 )"
+      ],
+      "err_line": 12,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        23,
+        12,
+        8
+      ],
+      "mod_code": [
+        "g [ 0 ] = g [ 1 ] = ' 0 ' ;",
+        "else if ( len == 1 )",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        23,
+        12,
+        8,
+        25
+      ],
+      "mod_code": [
+        "g [ 0 ] = g [ 1 ] = ' 0 ' ;",
+        "else if ( len == 1 )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "if ( s [ k ] == c [ ' 0 ' )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        23,
+        12,
+        8,
+        28
+      ],
+      "mod_code": [
+        "g [ 0 ] = g [ 1 ] = ' 0 ' ;",
+        "else if ( len == 1 )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "g [ 1 ] += one ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        23,
+        12,
+        8,
+        9
+      ],
+      "mod_code": [
+        "g [ 0 ] = g [ 1 ] = ' 0 ' ;",
+        "else if ( len == 1 )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "cin >> n ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        23,
+        12,
+        25
+      ],
+      "mod_code": [
+        "g [ 0 ] = g [ 1 ] = ' 0 ' ;",
+        "else if ( len == 1 )",
+        "if ( s [ k ] == c [ ' 0 ' )"
+      ],
+      "err_line": 12,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        23,
+        12,
+        25,
+        28
+      ],
+      "mod_code": [
+        "g [ 0 ] = g [ 1 ] = ' 0 ' ;",
+        "else if ( len == 1 )",
+        "if ( s [ k ] == c [ ' 0 ' )",
+        "g [ 1 ] += one ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        23,
+        12,
+        25,
+        9
+      ],
+      "mod_code": [
+        "g [ 0 ] = g [ 1 ] = ' 0 ' ;",
+        "else if ( len == 1 )",
+        "if ( s [ k ] == c [ ' 0 ' )",
+        "cin >> n ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        23,
+        12,
+        28
+      ],
+      "mod_code": [
+        "g [ 0 ] = g [ 1 ] = ' 0 ' ;",
+        "else if ( len == 1 )",
+        "g [ 1 ] += one ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        23,
+        12,
+        28,
+        9
+      ],
+      "mod_code": [
+        "g [ 0 ] = g [ 1 ] = ' 0 ' ;",
+        "else if ( len == 1 )",
+        "g [ 1 ] += one ;",
+        "cin >> n ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        23,
+        12,
+        9
+      ],
+      "mod_code": [
+        "g [ 0 ] = g [ 1 ] = ' 0 ' ;",
+        "else if ( len == 1 )",
+        "cin >> n ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        23,
+        8
+      ],
+      "mod_code": [
+        "g [ 0 ] = g [ 1 ] = ' 0 ' ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        23,
+        8,
+        25
+      ],
+      "mod_code": [
+        "g [ 0 ] = g [ 1 ] = ' 0 ' ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "if ( s [ k ] == c [ ' 0 ' )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        23,
+        8,
+        25,
+        28
+      ],
+      "mod_code": [
+        "g [ 0 ] = g [ 1 ] = ' 0 ' ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "if ( s [ k ] == c [ ' 0 ' )",
+        "g [ 1 ] += one ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        23,
+        8,
+        25,
+        9
+      ],
+      "mod_code": [
+        "g [ 0 ] = g [ 1 ] = ' 0 ' ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "if ( s [ k ] == c [ ' 0 ' )",
+        "cin >> n ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        23,
+        8,
+        28
+      ],
+      "mod_code": [
+        "g [ 0 ] = g [ 1 ] = ' 0 ' ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "g [ 1 ] += one ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        23,
+        8,
+        28,
+        9
+      ],
+      "mod_code": [
+        "g [ 0 ] = g [ 1 ] = ' 0 ' ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "g [ 1 ] += one ;",
+        "cin >> n ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        23,
+        8,
+        9
+      ],
+      "mod_code": [
+        "g [ 0 ] = g [ 1 ] = ' 0 ' ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "cin >> n ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        23,
+        25
+      ],
+      "mod_code": [
+        "g [ 0 ] = g [ 1 ] = ' 0 ' ;",
+        "if ( s [ k ] == c [ ' 0 ' )"
+      ],
+      "err_line": 25,
+      "err_msg": "expected ‘]’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        23,
+        25,
+        28
+      ],
+      "mod_code": [
+        "g [ 0 ] = g [ 1 ] = ' 0 ' ;",
+        "if ( s [ k ] == c [ ' 0 ' )",
+        "g [ 1 ] += one ;"
+      ],
+      "err_line": 25,
+      "err_msg": "expected ‘]’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        23,
+        25,
+        28,
+        9
+      ],
+      "mod_code": [
+        "g [ 0 ] = g [ 1 ] = ' 0 ' ;",
+        "if ( s [ k ] == c [ ' 0 ' )",
+        "g [ 1 ] += one ;",
+        "cin >> n ;"
+      ],
+      "err_line": 25,
+      "err_msg": "expected ‘]’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        23,
+        25,
+        9
+      ],
+      "mod_code": [
+        "g [ 0 ] = g [ 1 ] = ' 0 ' ;",
+        "if ( s [ k ] == c [ ' 0 ' )",
+        "cin >> n ;"
+      ],
+      "err_line": 25,
+      "err_msg": "expected ‘]’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        23,
+        28
+      ],
+      "mod_code": [
+        "g [ 0 ] = g [ 1 ] = ' 0 ' ;",
+        "g [ 1 ] += one ;"
+      ],
+      "err_line": 28,
+      "err_msg": "‘one’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        23,
+        28,
+        9
+      ],
+      "mod_code": [
+        "g [ 0 ] = g [ 1 ] = ' 0 ' ;",
+        "g [ 1 ] += one ;",
+        "cin >> n ;"
+      ],
+      "err_line": 28,
+      "err_msg": "‘one’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        8
+      ],
+      "mod_code": [
+        "else if ( len == 1 )",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        8,
+        25
+      ],
+      "mod_code": [
+        "else if ( len == 1 )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "if ( s [ k ] == c [ ' 0 ' )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        8,
+        25,
+        28
+      ],
+      "mod_code": [
+        "else if ( len == 1 )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "if ( s [ k ] == c [ ' 0 ' )",
+        "g [ 1 ] += one ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        8,
+        25,
+        9
+      ],
+      "mod_code": [
+        "else if ( len == 1 )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "if ( s [ k ] == c [ ' 0 ' )",
+        "cin >> n ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        8,
+        28
+      ],
+      "mod_code": [
+        "else if ( len == 1 )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "g [ 1 ] += one ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        8,
+        28,
+        9
+      ],
+      "mod_code": [
+        "else if ( len == 1 )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "g [ 1 ] += one ;",
+        "cin >> n ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        8,
+        9
+      ],
+      "mod_code": [
+        "else if ( len == 1 )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "cin >> n ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        25
+      ],
+      "mod_code": [
+        "else if ( len == 1 )",
+        "if ( s [ k ] == c [ ' 0 ' )"
+      ],
+      "err_line": 12,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        12,
+        25,
+        28
+      ],
+      "mod_code": [
+        "else if ( len == 1 )",
+        "if ( s [ k ] == c [ ' 0 ' )",
+        "g [ 1 ] += one ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        12,
+        25,
+        28,
+        9
+      ],
+      "mod_code": [
+        "else if ( len == 1 )",
+        "if ( s [ k ] == c [ ' 0 ' )",
+        "g [ 1 ] += one ;",
+        "cin >> n ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        12,
+        25,
+        9
+      ],
+      "mod_code": [
+        "else if ( len == 1 )",
+        "if ( s [ k ] == c [ ' 0 ' )",
+        "cin >> n ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        12,
+        28
+      ],
+      "mod_code": [
+        "else if ( len == 1 )",
+        "g [ 1 ] += one ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        12,
+        28,
+        9
+      ],
+      "mod_code": [
+        "else if ( len == 1 )",
+        "g [ 1 ] += one ;",
+        "cin >> n ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        12,
+        9
+      ],
+      "mod_code": [
+        "else if ( len == 1 )",
+        "cin >> n ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        8,
+        25
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "if ( s [ k ] == c [ ' 0 ' )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        25,
+        28
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "if ( s [ k ] == c [ ' 0 ' )",
+        "g [ 1 ] += one ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        25,
+        28,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "if ( s [ k ] == c [ ' 0 ' )",
+        "g [ 1 ] += one ;",
+        "cin >> n ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        25,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "if ( s [ k ] == c [ ' 0 ' )",
+        "cin >> n ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        28
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "g [ 1 ] += one ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        28,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "g [ 1 ] += one ;",
+        "cin >> n ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "cin >> n ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        25,
+        28
+      ],
+      "mod_code": [
+        "if ( s [ k ] == c [ ' 0 ' )",
+        "g [ 1 ] += one ;"
+      ],
+      "err_line": 25,
+      "err_msg": "expected ‘]’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        25,
+        28,
+        9
+      ],
+      "mod_code": [
+        "if ( s [ k ] == c [ ' 0 ' )",
+        "g [ 1 ] += one ;",
+        "cin >> n ;"
+      ],
+      "err_line": 25,
+      "err_msg": "expected ‘]’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        25,
+        9
+      ],
+      "mod_code": [
+        "if ( s [ k ] == c [ ' 0 ' )",
+        "cin >> n ;"
+      ],
+      "err_line": 25,
+      "err_msg": "expected ‘]’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        28,
+        9
+      ],
+      "mod_code": [
+        "g [ 1 ] += one ;",
+        "cin >> n ;"
+      ],
+      "err_line": 28,
+      "err_msg": "‘one’ was not declared in this scope"
+    }
+  ]
+}

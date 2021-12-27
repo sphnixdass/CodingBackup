@@ -1,0 +1,779 @@
+{
+  "meta": {
+    "index": 905,
+    "hitid": "31KPKEKW4A76VS2OPKC1B9JLC7M0B0",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "213A",
+    "subid": "40750056"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create integer vectors pc , req , creq , vis , empty with pc initialized with 210 , req initialized with 210 , creq initialized with 210 , vis initialized with 210 , 0 , empty initialized with 210 , 0 , create integer vector array adj with size 210",
+      "code": "vector < int > pc ( 210 ) , adj [ 210 ] , req ( 210 ) , creq ( 210 ) , vis ( 210 , 0 ) , empty ( 210 , 0 ) ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create integer n",
+      "code": "int n ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "declare solve with integer cur as argument , returning integer",
+      "code": "int solve ( int cur )",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "for i = 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "if not vis [ i ] , break loop",
+      "code": "if ( ! vis [ i ] ) break ;",
+      "indent": 2
+    },
+    {
+      "line": 5,
+      "text": "if i is n , return 0 from function",
+      "code": "if ( i == n ) return 0 ;",
+      "indent": 2
+    },
+    {
+      "line": 6,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "create integer cnt with cnt = 0",
+      "code": "int cnt = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "while true",
+      "code": "while ( true )",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "create boolean ok with ok = 0",
+      "code": "bool ok = 0 ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "for i = 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "if pc [ i ] is cur and not creq [ i ] and not vis [ i ]",
+      "code": "if ( pc [ i ] == cur && ! creq [ i ] && ! vis [ i ] )",
+      "indent": 3
+    },
+    {
+      "line": 12,
+      "text": "for j = 0 to size of adj [ i ] , decrement creq [ adj [ i ] [ j ] ] , set ok to 1",
+      "code": "for ( int j = 0 ; j < adj [ i ] . size ( ) ; j ++ ) creq [ adj [ i ] [ j ] ] -- , ok = 1 ;",
+      "indent": 4
+    },
+    {
+      "line": 13,
+      "text": "set vis [ i ] to 1",
+      "code": "vis [ i ] = 1 ;",
+      "indent": 4
+    },
+    {
+      "line": 14,
+      "text": "increment cnt",
+      "code": "cnt ++ ;",
+      "indent": 4
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "if not ok , break loop",
+      "code": "if ( ! ok ) break ;",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "return result of run solve with cur % 3 + 1 as argument + cnt + 1 from function",
+      "code": "return solve ( cur % 3 + 1 ) + cnt + 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 21,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 22,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "for i = 1 to n inclusive , read pc [ i ]",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) cin >> pc [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "for i = 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 25,
+      "text": "create integer k",
+      "code": "int k ;",
+      "indent": 2
+    },
+    {
+      "line": 26,
+      "text": "read k",
+      "code": "cin >> k ;",
+      "indent": 2
+    },
+    {
+      "line": 27,
+      "text": "set req [ i ] to k",
+      "code": "req [ i ] = k ;",
+      "indent": 2
+    },
+    {
+      "line": 28,
+      "text": "while decrement k is true",
+      "code": "while ( k -- )",
+      "indent": 2
+    },
+    {
+      "line": 29,
+      "text": "create integer a",
+      "code": "int a ;",
+      "indent": 3
+    },
+    {
+      "line": 30,
+      "text": "read a",
+      "code": "cin >> a ;",
+      "indent": 3
+    },
+    {
+      "line": 31,
+      "text": "add element i to end of adj [ a ]",
+      "code": "adj [ a ] . push_back ( i ) ;",
+      "indent": 3
+    },
+    {
+      "line": 32,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 33,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 34,
+      "text": "create integer mn with mn = 1e9",
+      "code": "int mn = 1e9 ;",
+      "indent": 1
+    },
+    {
+      "line": 35,
+      "text": "for i = 1 to 3 inclusive , set creq to req , set vis to empty , set mn to minimum of ( mn ans result of run solve with i as argument - 1 )",
+      "code": "for ( int i = 1 ; i <= 3 ; i ++ ) creq = req , vis = empty , mn = min ( mn , solve ( i ) - 1 ) ;",
+      "indent": 1
+    },
+    {
+      "line": 36,
+      "text": "print mn print newline",
+      "code": "cout << mn << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 37,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "vector < int > pc ( 210 , req , creq ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘req’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < adj [ i ] . size ( ) ; j ++ ) ok [ adj [ i ] [ j ] , ok = 1 ;"
+      ],
+      "err_line": 12,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "vector < int > pc ( 210 , req ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘req’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "int solve ( int cur ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < adj [ i ] . size ( ) ; j ++ ) { creq [ adj [ i ] [ j ] , ok = 1 ; }"
+      ],
+      "err_line": 12,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        24
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 24,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        25
+      ],
+      "mod_code": [
+        "int n ;"
+      ],
+      "err_line": 26,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        12
+      ],
+      "mod_code": [
+        "vector < int > pc ( 210 , req , creq ) ;",
+        "for ( int j = 0 ; j < adj [ i ] . size ( ) ; j ++ ) ok [ adj [ i ] [ j ] , ok = 1 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘req’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        12,
+        35
+      ],
+      "mod_code": [
+        "vector < int > pc ( 210 , req , creq ) ;",
+        "for ( int j = 0 ; j < adj [ i ] . size ( ) ; j ++ ) ok [ adj [ i ] [ j ] , ok = 1 ;",
+        "for ( int i = 1 ; i <= 3 ; i ++ ) { mn = min ( mn , solve ( i ) - 1 ) ; }"
+      ],
+      "err_line": 0,
+      "err_msg": "‘req’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        12,
+        35,
+        22
+      ],
+      "mod_code": [
+        "vector < int > pc ( 210 , req , creq ) ;",
+        "for ( int j = 0 ; j < adj [ i ] . size ( ) ; j ++ ) ok [ adj [ i ] [ j ] , ok = 1 ;",
+        "for ( int i = 1 ; i <= 3 ; i ++ ) { mn = min ( mn , solve ( i ) - 1 ) ; }",
+        "while ( cin >> n )"
+      ],
+      "err_line": 0,
+      "err_msg": "‘req’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        12,
+        35,
+        28
+      ],
+      "mod_code": [
+        "vector < int > pc ( 210 , req , creq ) ;",
+        "for ( int j = 0 ; j < adj [ i ] . size ( ) ; j ++ ) ok [ adj [ i ] [ j ] , ok = 1 ;",
+        "for ( int i = 1 ; i <= 3 ; i ++ ) { mn = min ( mn , solve ( i ) - 1 ) ; }",
+        "while ( k -- ) k -- ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘req’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        12,
+        22
+      ],
+      "mod_code": [
+        "vector < int > pc ( 210 , req , creq ) ;",
+        "for ( int j = 0 ; j < adj [ i ] . size ( ) ; j ++ ) ok [ adj [ i ] [ j ] , ok = 1 ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 0,
+      "err_msg": "‘req’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        12,
+        22,
+        35
+      ],
+      "mod_code": [
+        "vector < int > pc ( 210 , req , creq ) ;",
+        "for ( int j = 0 ; j < adj [ i ] . size ( ) ; j ++ ) ok [ adj [ i ] [ j ] , ok = 1 ;",
+        "while ( cin >> n )",
+        "for ( int i = 1 ; i <= 3 ; i ++ ) mn = min ( mn , solve ( i ) - 1 ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘req’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        12,
+        22,
+        28
+      ],
+      "mod_code": [
+        "vector < int > pc ( 210 , req , creq ) ;",
+        "for ( int j = 0 ; j < adj [ i ] . size ( ) ; j ++ ) ok [ adj [ i ] [ j ] , ok = 1 ;",
+        "while ( cin >> n )",
+        "while ( k -- ) k -- ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘req’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        12,
+        35
+      ],
+      "mod_code": [
+        "vector < int > pc ( 210 , req , creq ) ;",
+        "for ( int j = 0 ; j < adj [ i ] . size ( ) ; j ++ ) ok [ adj [ i ] [ j ] , ok = 1 ;",
+        "for ( int i = 1 ; i <= 3 ; i ++ ) mn = min ( mn , solve ( i ) - 1 ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘req’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        12,
+        35,
+        28
+      ],
+      "mod_code": [
+        "vector < int > pc ( 210 , req , creq ) ;",
+        "for ( int j = 0 ; j < adj [ i ] . size ( ) ; j ++ ) ok [ adj [ i ] [ j ] , ok = 1 ;",
+        "for ( int i = 1 ; i <= 3 ; i ++ ) mn = min ( mn , solve ( i ) - 1 ) ;",
+        "while ( k -- ) k -- ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘req’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        12,
+        28
+      ],
+      "mod_code": [
+        "vector < int > pc ( 210 , req , creq ) ;",
+        "for ( int j = 0 ; j < adj [ i ] . size ( ) ; j ++ ) ok [ adj [ i ] [ j ] , ok = 1 ;",
+        "while ( k -- ) k -- ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘req’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        35
+      ],
+      "mod_code": [
+        "vector < int > pc ( 210 , req , creq ) ;",
+        "for ( int i = 1 ; i <= 3 ; i ++ ) { mn = min ( mn , solve ( i ) - 1 ) ; }"
+      ],
+      "err_line": 0,
+      "err_msg": "‘req’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        35,
+        22
+      ],
+      "mod_code": [
+        "vector < int > pc ( 210 , req , creq ) ;",
+        "for ( int i = 1 ; i <= 3 ; i ++ ) { mn = min ( mn , solve ( i ) - 1 ) ; }",
+        "while ( cin >> n )"
+      ],
+      "err_line": 0,
+      "err_msg": "‘req’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        35,
+        22,
+        28
+      ],
+      "mod_code": [
+        "vector < int > pc ( 210 , req , creq ) ;",
+        "for ( int i = 1 ; i <= 3 ; i ++ ) { mn = min ( mn , solve ( i ) - 1 ) ; }",
+        "while ( cin >> n )",
+        "while ( k -- ) k -- ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘req’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        35,
+        28
+      ],
+      "mod_code": [
+        "vector < int > pc ( 210 , req , creq ) ;",
+        "for ( int i = 1 ; i <= 3 ; i ++ ) { mn = min ( mn , solve ( i ) - 1 ) ; }",
+        "while ( k -- ) k -- ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘req’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        22
+      ],
+      "mod_code": [
+        "vector < int > pc ( 210 , req , creq ) ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 0,
+      "err_msg": "‘req’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        22,
+        35
+      ],
+      "mod_code": [
+        "vector < int > pc ( 210 , req , creq ) ;",
+        "while ( cin >> n )",
+        "for ( int i = 1 ; i <= 3 ; i ++ ) mn = min ( mn , solve ( i ) - 1 ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘req’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        22,
+        35,
+        28
+      ],
+      "mod_code": [
+        "vector < int > pc ( 210 , req , creq ) ;",
+        "while ( cin >> n )",
+        "for ( int i = 1 ; i <= 3 ; i ++ ) mn = min ( mn , solve ( i ) - 1 ) ;",
+        "while ( k -- ) k -- ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘req’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        22,
+        28
+      ],
+      "mod_code": [
+        "vector < int > pc ( 210 , req , creq ) ;",
+        "while ( cin >> n )",
+        "while ( k -- ) k -- ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘req’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        35
+      ],
+      "mod_code": [
+        "vector < int > pc ( 210 , req , creq ) ;",
+        "for ( int i = 1 ; i <= 3 ; i ++ ) mn = min ( mn , solve ( i ) - 1 ) ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘req’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        35,
+        28
+      ],
+      "mod_code": [
+        "vector < int > pc ( 210 , req , creq ) ;",
+        "for ( int i = 1 ; i <= 3 ; i ++ ) mn = min ( mn , solve ( i ) - 1 ) ;",
+        "while ( k -- ) k -- ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘req’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        28
+      ],
+      "mod_code": [
+        "vector < int > pc ( 210 , req , creq ) ;",
+        "while ( k -- ) k -- ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘req’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        35
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < adj [ i ] . size ( ) ; j ++ ) ok [ adj [ i ] [ j ] , ok = 1 ;",
+        "for ( int i = 1 ; i <= 3 ; i ++ ) { mn = min ( mn , solve ( i ) - 1 ) ; }"
+      ],
+      "err_line": 12,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        35,
+        22
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < adj [ i ] . size ( ) ; j ++ ) ok [ adj [ i ] [ j ] , ok = 1 ;",
+        "for ( int i = 1 ; i <= 3 ; i ++ ) { mn = min ( mn , solve ( i ) - 1 ) ; }",
+        "while ( cin >> n )"
+      ],
+      "err_line": 12,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        35,
+        22,
+        28
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < adj [ i ] . size ( ) ; j ++ ) ok [ adj [ i ] [ j ] , ok = 1 ;",
+        "for ( int i = 1 ; i <= 3 ; i ++ ) { mn = min ( mn , solve ( i ) - 1 ) ; }",
+        "while ( cin >> n )",
+        "while ( k -- ) k -- ;"
+      ],
+      "err_line": 12,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        35,
+        28
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < adj [ i ] . size ( ) ; j ++ ) ok [ adj [ i ] [ j ] , ok = 1 ;",
+        "for ( int i = 1 ; i <= 3 ; i ++ ) { mn = min ( mn , solve ( i ) - 1 ) ; }",
+        "while ( k -- ) k -- ;"
+      ],
+      "err_line": 12,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        22
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < adj [ i ] . size ( ) ; j ++ ) ok [ adj [ i ] [ j ] , ok = 1 ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 12,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        22,
+        35
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < adj [ i ] . size ( ) ; j ++ ) ok [ adj [ i ] [ j ] , ok = 1 ;",
+        "while ( cin >> n )",
+        "for ( int i = 1 ; i <= 3 ; i ++ ) mn = min ( mn , solve ( i ) - 1 ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        22,
+        35,
+        28
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < adj [ i ] . size ( ) ; j ++ ) ok [ adj [ i ] [ j ] , ok = 1 ;",
+        "while ( cin >> n )",
+        "for ( int i = 1 ; i <= 3 ; i ++ ) mn = min ( mn , solve ( i ) - 1 ) ;",
+        "while ( k -- ) k -- ;"
+      ],
+      "err_line": 12,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        22,
+        28
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < adj [ i ] . size ( ) ; j ++ ) ok [ adj [ i ] [ j ] , ok = 1 ;",
+        "while ( cin >> n )",
+        "while ( k -- ) k -- ;"
+      ],
+      "err_line": 12,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        35
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < adj [ i ] . size ( ) ; j ++ ) ok [ adj [ i ] [ j ] , ok = 1 ;",
+        "for ( int i = 1 ; i <= 3 ; i ++ ) mn = min ( mn , solve ( i ) - 1 ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        35,
+        28
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < adj [ i ] . size ( ) ; j ++ ) ok [ adj [ i ] [ j ] , ok = 1 ;",
+        "for ( int i = 1 ; i <= 3 ; i ++ ) mn = min ( mn , solve ( i ) - 1 ) ;",
+        "while ( k -- ) k -- ;"
+      ],
+      "err_line": 12,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        28
+      ],
+      "mod_code": [
+        "for ( int j = 0 ; j < adj [ i ] . size ( ) ; j ++ ) ok [ adj [ i ] [ j ] , ok = 1 ;",
+        "while ( k -- ) k -- ;"
+      ],
+      "err_line": 12,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    }
+  ]
+}

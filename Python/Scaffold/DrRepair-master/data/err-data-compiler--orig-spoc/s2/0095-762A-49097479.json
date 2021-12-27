@@ -1,0 +1,541 @@
+{
+  "meta": {
+    "index": 95,
+    "hitid": "3GKAWYFRAPN2Y64SK1IXL08TMDFDPL",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "762A",
+    "subid": "49097479"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create constant integer N with N = 4e7",
+      "code": "const int N = 4e7 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create integer p with size N",
+      "code": "int p [ N ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "create long longs n , k",
+      "code": "long long n , k ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "read n read k",
+      "code": "cin >> n >> k ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "create integer index with index = 0",
+      "code": "int index = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 1 to i * i is less than or equal to n",
+      "code": "for ( long long i = 1 ; i * i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "if n % i is 0 , set p [ increment index ] to i",
+      "code": "if ( n % i == 0 ) p [ ++ index ] = i ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "create boolean is_square with is_square = long long casted p [ index ] * p [ index ] is n",
+      "code": "bool is_square = ( long long ) p [ index ] * p [ index ] == n ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "create integer cnt with cnt = index * 2 - is_square",
+      "code": "int cnt = index * 2 - is_square ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "if k is less than or equal to index",
+      "code": "if ( k <= index )",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "print p [ k ] print newline",
+      "code": "cout << p [ k ] << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "else if k is greater than cnt",
+      "code": "else if ( k > cnt )",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "print - 1 print newline",
+      "code": "cout << - 1 << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "else",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "print n / p [ 2 * index - k + not is_square ] print newline",
+      "code": "cout << n / p [ 2 * index - k + ! is_square ] << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "bool is_square = long long ) p [ index ] * p [ index ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "const N = 4e7 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "‘N’ does not name a type"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int p = N [ N ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid types ‘const int[const int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "while ( cin >> n >> k )"
+      ],
+      "err_line": 7,
+      "err_msg": "no pre-increment operator for type"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "bool is_square = p . at ( p [ index ] * p [ index ] ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "request for member ‘at’ in ‘p’, which is of non-class type ‘int [40000000]’"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "n"
+      ],
+      "err_line": 15,
+      "err_msg": "expected ‘;’ before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        8
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i * i <= n ; i ++ )",
+        "if ( n % i == 0 ) p [ index ++ ] = i ;",
+        "bool is_square = long long ) p [ index ] * p [ index ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        8,
+        15
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i * i <= n ; i ++ )",
+        "if ( n % i == 0 ) p [ index ++ ] = i ;",
+        "bool is_square = long long ) p [ index ] * p [ index ] ;",
+        "cout << n / p [ 2 * index - k + is_square ] << endl ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        8,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i * i <= n ; i ++ )",
+        "if ( n % i == 0 ) p [ index ++ ] = i ;",
+        "bool is_square = long long ) p [ index ] * p [ index ] ;",
+        "cout << \" 1 \" << endl ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        8,
+        10
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i * i <= n ; i ++ )",
+        "if ( n % i == 0 ) p [ index ++ ] = i ;",
+        "bool is_square = long long ) p [ index ] * p [ index ] ;",
+        "if ( k >= index )"
+      ],
+      "err_line": 8,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        6,
+        8
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i * i <= n ; i ++ )",
+        "bool is_square = long long ) p [ index ] * p [ index ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        6,
+        8,
+        15
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i * i <= n ; i ++ )",
+        "bool is_square = long long ) p [ index ] * p [ index ] ;",
+        "cout << n / p [ 2 * index - k + is_square ] << endl ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        6,
+        8,
+        15,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i * i <= n ; i ++ )",
+        "bool is_square = long long ) p [ index ] * p [ index ] ;",
+        "cout << n / p [ 2 * index - k + is_square ] << endl ;",
+        "cout << \" 1 \" << endl ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        6,
+        8,
+        15,
+        10
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i * i <= n ; i ++ )",
+        "bool is_square = long long ) p [ index ] * p [ index ] ;",
+        "cout << n / p [ 2 * index - k + is_square ] << endl ;",
+        "if ( k >= index )"
+      ],
+      "err_line": 8,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        6,
+        8,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i * i <= n ; i ++ )",
+        "bool is_square = long long ) p [ index ] * p [ index ] ;",
+        "cout << \" 1 \" << endl ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        6,
+        8,
+        13,
+        10
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i * i <= n ; i ++ )",
+        "bool is_square = long long ) p [ index ] * p [ index ] ;",
+        "cout << \" 1 \" << endl ;",
+        "if ( k >= index )"
+      ],
+      "err_line": 8,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        6,
+        8,
+        10
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i * i <= n ; i ++ )",
+        "bool is_square = long long ) p [ index ] * p [ index ] ;",
+        "if ( k >= index )"
+      ],
+      "err_line": 8,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        7,
+        8
+      ],
+      "mod_code": [
+        "if ( n % i == 0 ) p [ index ++ ] = i ;",
+        "bool is_square = long long ) p [ index ] * p [ index ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        7,
+        8,
+        15
+      ],
+      "mod_code": [
+        "if ( n % i == 0 ) p [ index ++ ] = i ;",
+        "bool is_square = long long ) p [ index ] * p [ index ] ;",
+        "cout << n / p [ 2 * index - k + is_square ] << endl ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        7,
+        8,
+        15,
+        13
+      ],
+      "mod_code": [
+        "if ( n % i == 0 ) p [ index ++ ] = i ;",
+        "bool is_square = long long ) p [ index ] * p [ index ] ;",
+        "cout << n / p [ 2 * index - k + is_square ] << endl ;",
+        "cout << \" 1 \" << endl ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        7,
+        8,
+        15,
+        10
+      ],
+      "mod_code": [
+        "if ( n % i == 0 ) p [ index ++ ] = i ;",
+        "bool is_square = long long ) p [ index ] * p [ index ] ;",
+        "cout << n / p [ 2 * index - k + is_square ] << endl ;",
+        "if ( k >= index )"
+      ],
+      "err_line": 8,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        7,
+        8,
+        13
+      ],
+      "mod_code": [
+        "if ( n % i == 0 ) p [ index ++ ] = i ;",
+        "bool is_square = long long ) p [ index ] * p [ index ] ;",
+        "cout << \" 1 \" << endl ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        7,
+        8,
+        13,
+        10
+      ],
+      "mod_code": [
+        "if ( n % i == 0 ) p [ index ++ ] = i ;",
+        "bool is_square = long long ) p [ index ] * p [ index ] ;",
+        "cout << \" 1 \" << endl ;",
+        "if ( k >= index )"
+      ],
+      "err_line": 8,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        7,
+        8,
+        10
+      ],
+      "mod_code": [
+        "if ( n % i == 0 ) p [ index ++ ] = i ;",
+        "bool is_square = long long ) p [ index ] * p [ index ] ;",
+        "if ( k >= index )"
+      ],
+      "err_line": 8,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        8,
+        15
+      ],
+      "mod_code": [
+        "bool is_square = long long ) p [ index ] * p [ index ] ;",
+        "cout << n / p [ 2 * index - k + is_square ] << endl ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        8,
+        15,
+        13
+      ],
+      "mod_code": [
+        "bool is_square = long long ) p [ index ] * p [ index ] ;",
+        "cout << n / p [ 2 * index - k + is_square ] << endl ;",
+        "cout << \" 1 \" << endl ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        8,
+        15,
+        13,
+        10
+      ],
+      "mod_code": [
+        "bool is_square = long long ) p [ index ] * p [ index ] ;",
+        "cout << n / p [ 2 * index - k + is_square ] << endl ;",
+        "cout << \" 1 \" << endl ;",
+        "if ( k >= index )"
+      ],
+      "err_line": 8,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        8,
+        15,
+        10
+      ],
+      "mod_code": [
+        "bool is_square = long long ) p [ index ] * p [ index ] ;",
+        "cout << n / p [ 2 * index - k + is_square ] << endl ;",
+        "if ( k >= index )"
+      ],
+      "err_line": 8,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        8,
+        13
+      ],
+      "mod_code": [
+        "bool is_square = long long ) p [ index ] * p [ index ] ;",
+        "cout << \" 1 \" << endl ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        8,
+        13,
+        10
+      ],
+      "mod_code": [
+        "bool is_square = long long ) p [ index ] * p [ index ] ;",
+        "cout << \" 1 \" << endl ;",
+        "if ( k >= index )"
+      ],
+      "err_line": 8,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        8,
+        10
+      ],
+      "mod_code": [
+        "bool is_square = long long ) p [ index ] * p [ index ] ;",
+        "if ( k >= index )"
+      ],
+      "err_line": 8,
+      "err_msg": "expected primary-expression before ‘long’"
+    }
+  ]
+}

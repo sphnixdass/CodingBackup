@@ -1,0 +1,597 @@
+{
+  "meta": {
+    "index": 2391,
+    "hitid": "3JMNNNO3B1Y5F53DZYCBHBPLIJT2WW",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "543A",
+    "subid": "48953060"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create integers n , m , b , mod , ans with ans = 0",
+      "code": "int n , m , b , mod , ans = 0 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create 2d integer array dp with size 505 by 505",
+      "code": "int dp [ 505 ] [ 505 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "read n read m read b read mod",
+      "code": "cin >> n >> m >> b >> mod ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "set dp [ 0 ] [ 0 ] to 1",
+      "code": "dp [ 0 ] [ 0 ] = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i = 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "create integer x",
+      "code": "int x ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "read x",
+      "code": "cin >> x ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "for j = 1 to m inclusive",
+      "code": "for ( int j = 1 ; j <= m ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "for k = x to b inclusive , ( increment dp [ j ] [ k ] by dp [ j - 1 ] [ k - x ] ) % = mod",
+      "code": "for ( int k = x ; k <= b ; k ++ ) ( dp [ j ] [ k ] += dp [ j - 1 ] [ k - x ] ) %= mod ;",
+      "indent": 3
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "for i = 0 to b inclusive ( increment ans by dp [ m ] [ i ] ) % = mod",
+      "code": "for ( int i = 0 ; i <= b ; i ++ ) { ( ans += dp [ m ] [ i ] ) %= mod ; }",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "print ans print newline",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int dp [ 505 ] by { } ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected initializer before ‘by’"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "int dp [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        3,
+        4
+      ],
+      "mod_code": [
+        "for ( int k = x ; k <= b ; k ++ ) dp [ j ] [ k ] += dp [ j - 1 ] [ k - x ] = mod ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) ans += dp [ m ] [ i ] % mod ;",
+        "while ( cin >> n >> m >> b >> mod )",
+        "int dp [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        3,
+        5
+      ],
+      "mod_code": [
+        "for ( int k = x ; k <= b ; k ++ ) dp [ j ] [ k ] += dp [ j - 1 ] [ k - x ] = mod ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) ans += dp [ m ] [ i ] % mod ;",
+        "while ( cin >> n >> m >> b >> mod )",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        4
+      ],
+      "mod_code": [
+        "for ( int k = x ; k <= b ; k ++ ) dp [ j ] [ k ] += dp [ j - 1 ] [ k - x ] = mod ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) ans += dp [ m ] [ i ] % mod ;",
+        "int dp [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        4,
+        5
+      ],
+      "mod_code": [
+        "for ( int k = x ; k <= b ; k ++ ) dp [ j ] [ k ] += dp [ j - 1 ] [ k - x ] = mod ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) ans += dp [ m ] [ i ] % mod ;",
+        "int dp [ 0 ] [ 0 ] = 1 ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        5
+      ],
+      "mod_code": [
+        "for ( int k = x ; k <= b ; k ++ ) dp [ j ] [ k ] += dp [ j - 1 ] [ k - x ] = mod ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) ans += dp [ m ] [ i ] % mod ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        3,
+        4
+      ],
+      "mod_code": [
+        "for ( int k = x ; k <= b ; k ++ ) dp [ j ] [ k ] += dp [ j - 1 ] [ k - x ] = mod ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) { ans += dp [ m ] [ i ] % mod ; }",
+        "while ( cin >> n >> m >> b >> mod )",
+        "int dp [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        3,
+        5
+      ],
+      "mod_code": [
+        "for ( int k = x ; k <= b ; k ++ ) dp [ j ] [ k ] += dp [ j - 1 ] [ k - x ] = mod ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) { ans += dp [ m ] [ i ] % mod ; }",
+        "while ( cin >> n >> m >> b >> mod )",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        4
+      ],
+      "mod_code": [
+        "for ( int k = x ; k <= b ; k ++ ) dp [ j ] [ k ] += dp [ j - 1 ] [ k - x ] = mod ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) { ans += dp [ m ] [ i ] % mod ; }",
+        "int dp [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        4,
+        5
+      ],
+      "mod_code": [
+        "for ( int k = x ; k <= b ; k ++ ) dp [ j ] [ k ] += dp [ j - 1 ] [ k - x ] = mod ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) { ans += dp [ m ] [ i ] % mod ; }",
+        "int dp [ 0 ] [ 0 ] = 1 ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        9,
+        12,
+        5
+      ],
+      "mod_code": [
+        "for ( int k = x ; k <= b ; k ++ ) dp [ j ] [ k ] += dp [ j - 1 ] [ k - x ] = mod ;",
+        "for ( int i = 0 ; i <= b ; i ++ ) { ans += dp [ m ] [ i ] % mod ; }",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        4
+      ],
+      "mod_code": [
+        "for ( int k = x ; k <= b ; k ++ ) dp [ j ] [ k ] += dp [ j - 1 ] [ k - x ] = mod ;",
+        "while ( cin >> n >> m >> b >> mod )",
+        "int dp [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        4,
+        5
+      ],
+      "mod_code": [
+        "for ( int k = x ; k <= b ; k ++ ) dp [ j ] [ k ] += dp [ j - 1 ] [ k - x ] = mod ;",
+        "while ( cin >> n >> m >> b >> mod )",
+        "int dp [ 0 ] [ 0 ] = 1 ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        5
+      ],
+      "mod_code": [
+        "for ( int k = x ; k <= b ; k ++ ) dp [ j ] [ k ] += dp [ j - 1 ] [ k - x ] = mod ;",
+        "while ( cin >> n >> m >> b >> mod )",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        4
+      ],
+      "mod_code": [
+        "for ( int k = x ; k <= b ; k ++ ) dp [ j ] [ k ] += dp [ j - 1 ] [ k - x ] = mod ;",
+        "int dp [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        9,
+        4,
+        5
+      ],
+      "mod_code": [
+        "for ( int k = x ; k <= b ; k ++ ) dp [ j ] [ k ] += dp [ j - 1 ] [ k - x ] = mod ;",
+        "int dp [ 0 ] [ 0 ] = 1 ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        9,
+        5
+      ],
+      "mod_code": [
+        "for ( int k = x ; k <= b ; k ++ ) dp [ j ] [ k ] += dp [ j - 1 ] [ k - x ] = mod ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        3,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i <= b ; i ++ ) ans += dp [ m ] [ i ] % mod ;",
+        "while ( cin >> n >> m >> b >> mod )",
+        "int dp [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        12,
+        3,
+        4,
+        5
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i <= b ; i ++ ) ans += dp [ m ] [ i ] % mod ;",
+        "while ( cin >> n >> m >> b >> mod )",
+        "int dp [ 0 ] [ 0 ] = 1 ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        12,
+        3,
+        5
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i <= b ; i ++ ) ans += dp [ m ] [ i ] % mod ;",
+        "while ( cin >> n >> m >> b >> mod )",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i <= b ; i ++ ) ans += dp [ m ] [ i ] % mod ;",
+        "int dp [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        12,
+        4,
+        5
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i <= b ; i ++ ) ans += dp [ m ] [ i ] % mod ;",
+        "int dp [ 0 ] [ 0 ] = 1 ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        12,
+        5
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i <= b ; i ++ ) ans += dp [ m ] [ i ] % mod ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        3,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i <= b ; i ++ ) { ans += dp [ m ] [ i ] % mod ; }",
+        "while ( cin >> n >> m >> b >> mod )",
+        "int dp [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        12,
+        3,
+        4,
+        5
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i <= b ; i ++ ) { ans += dp [ m ] [ i ] % mod ; }",
+        "while ( cin >> n >> m >> b >> mod )",
+        "int dp [ 0 ] [ 0 ] = 1 ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        12,
+        3,
+        5
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i <= b ; i ++ ) { ans += dp [ m ] [ i ] % mod ; }",
+        "while ( cin >> n >> m >> b >> mod )",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i <= b ; i ++ ) { ans += dp [ m ] [ i ] % mod ; }",
+        "int dp [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        12,
+        4,
+        5
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i <= b ; i ++ ) { ans += dp [ m ] [ i ] % mod ; }",
+        "int dp [ 0 ] [ 0 ] = 1 ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        12,
+        5
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i <= b ; i ++ ) { ans += dp [ m ] [ i ] % mod ; }",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        4
+      ],
+      "mod_code": [
+        "while ( cin >> n >> m >> b >> mod )",
+        "int dp [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        3,
+        4,
+        5
+      ],
+      "mod_code": [
+        "while ( cin >> n >> m >> b >> mod )",
+        "int dp [ 0 ] [ 0 ] = 1 ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        3,
+        5
+      ],
+      "mod_code": [
+        "while ( cin >> n >> m >> b >> mod )",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        5
+      ],
+      "mod_code": [
+        "int dp [ 0 ] [ 0 ] = 1 ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    }
+  ]
+}

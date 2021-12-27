@@ -1,0 +1,839 @@
+{
+  "meta": {
+    "index": 822,
+    "hitid": "3SNR5F7R92NF9QVO313XILP20BLEI3",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "455A",
+    "subid": "48786712"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare long long variable n and an arrays of long longs a and dp with size 100001",
+      "code": "long long n , a [ 100001 ] = { 0 } , dp [ 100001 ] = { 0 } ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "for i = 1 to n inclusive",
+      "code": "for ( long long i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "declare long long x",
+      "code": "long long x ;",
+      "indent": 2
+    },
+    {
+      "line": 5,
+      "text": "read x",
+      "code": "cin >> x ;",
+      "indent": 2
+    },
+    {
+      "line": 6,
+      "text": "increase a [ x ] by one",
+      "code": "a [ x ] ++ ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "dp [ 1 ] = a [ 1 ]",
+      "code": "dp [ 1 ] = a [ 1 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "for long long i = 2 to 100000 inclusive , assign max of i * a [ i ] + dp [ i - 2 ] and dp [ i - 1 ] to dp [ i ]",
+      "code": "for ( long long i = 2 ; i <= 100000 ; i ++ ) { dp [ i ] = max ( i * a [ i ] + dp [ i - 2 ] , dp [ i - 1 ] ) ; }",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "print dp [ 100000 ] and ' \\ n '",
+      "code": "cout << dp [ 100000 ] << ' \\n ' ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "for ( long long i = 2 ; i <= 100000 ; i ++ ) { dp [ i ] = max ( i * a [ i ] + dp [ i - 2 ] + dp [ i - 1 ] ) ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "no matching function for call to ‘max(long long int)’"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "long long a [ 100001 ] , dp [ 100001 ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "a [ x ] += one ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘one’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "int dp [ 1 ] = a [ 1 ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "for ( long long i = 2 ; i <= 100000 ; i ++ ) { dp [ i ] = max ( i * a [ i ] + dp [ i - 2 ] + dp [ i - 2 ] ) ; }"
+      ],
+      "err_line": 9,
+      "err_msg": "no matching function for call to ‘max(long long int)’"
+    },
+    {
+      "mod_line": [
+        9,
+        3
+      ],
+      "mod_code": [
+        "for ( long long i = 2 ; i <= 100000 ; i ++ ) { dp [ i ] = max ( i * a [ i ] + dp [ i - 2 ] + dp [ i - 1 ] ) ; }",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        10
+      ],
+      "mod_code": [
+        "for ( long long i = 2 ; i <= 100000 ; i ++ ) { dp [ i ] = max ( i * a [ i ] + dp [ i - 2 ] + dp [ i - 1 ] ) ; }",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "cout << dp [ 100000 ] << ' ' ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        10,
+        6
+      ],
+      "mod_code": [
+        "for ( long long i = 2 ; i <= 100000 ; i ++ ) { dp [ i ] = max ( i * a [ i ] + dp [ i - 2 ] + dp [ i - 1 ] ) ; }",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "cout << dp [ 100000 ] << ' ' ;",
+        "a [ x ] += one ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        10,
+        0
+      ],
+      "mod_code": [
+        "for ( long long i = 2 ; i <= 100000 ; i ++ ) { dp [ i ] = max ( i * a [ i ] + dp [ i - 2 ] + dp [ i - 1 ] ) ; }",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "cout << dp [ 100000 ] << ' ' ;",
+        "long long a [ 100001 ] , dp [ 100001 ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        10,
+        5
+      ],
+      "mod_code": [
+        "for ( long long i = 2 ; i <= 100000 ; i ++ ) { dp [ i ] = max ( i * a [ i ] + dp [ i - 2 ] + dp [ i - 1 ] ) ; }",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "cout << dp [ 100000 ] << ' ' ;",
+        "cin >> n ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        6
+      ],
+      "mod_code": [
+        "for ( long long i = 2 ; i <= 100000 ; i ++ ) { dp [ i ] = max ( i * a [ i ] + dp [ i - 2 ] + dp [ i - 1 ] ) ; }",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "a [ x ] += one ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        6,
+        0
+      ],
+      "mod_code": [
+        "for ( long long i = 2 ; i <= 100000 ; i ++ ) { dp [ i ] = max ( i * a [ i ] + dp [ i - 2 ] + dp [ i - 1 ] ) ; }",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "a [ x ] += one ;",
+        "long long a [ 100001 ] , dp [ 100001 ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        6,
+        5
+      ],
+      "mod_code": [
+        "for ( long long i = 2 ; i <= 100000 ; i ++ ) { dp [ i ] = max ( i * a [ i ] + dp [ i - 2 ] + dp [ i - 1 ] ) ; }",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "a [ x ] += one ;",
+        "cin >> n ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        0
+      ],
+      "mod_code": [
+        "for ( long long i = 2 ; i <= 100000 ; i ++ ) { dp [ i ] = max ( i * a [ i ] + dp [ i - 2 ] + dp [ i - 1 ] ) ; }",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "long long a [ 100001 ] , dp [ 100001 ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        0,
+        5
+      ],
+      "mod_code": [
+        "for ( long long i = 2 ; i <= 100000 ; i ++ ) { dp [ i ] = max ( i * a [ i ] + dp [ i - 2 ] + dp [ i - 1 ] ) ; }",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "long long a [ 100001 ] , dp [ 100001 ] ;",
+        "cin >> n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        3,
+        5
+      ],
+      "mod_code": [
+        "for ( long long i = 2 ; i <= 100000 ; i ++ ) { dp [ i ] = max ( i * a [ i ] + dp [ i - 2 ] + dp [ i - 1 ] ) ; }",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "cin >> n ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        10
+      ],
+      "mod_code": [
+        "for ( long long i = 2 ; i <= 100000 ; i ++ ) { dp [ i ] = max ( i * a [ i ] + dp [ i - 2 ] + dp [ i - 1 ] ) ; }",
+        "cout << dp [ 100000 ] << ' ' ;"
+      ],
+      "err_line": 9,
+      "err_msg": "no matching function for call to ‘max(long long int)’"
+    },
+    {
+      "mod_line": [
+        9,
+        10,
+        6
+      ],
+      "mod_code": [
+        "for ( long long i = 2 ; i <= 100000 ; i ++ ) { dp [ i ] = max ( i * a [ i ] + dp [ i - 2 ] + dp [ i - 1 ] ) ; }",
+        "cout << dp [ 100000 ] << ' ' ;",
+        "a [ x ] += one ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘one’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        10,
+        6,
+        0
+      ],
+      "mod_code": [
+        "for ( long long i = 2 ; i <= 100000 ; i ++ ) { dp [ i ] = max ( i * a [ i ] + dp [ i - 2 ] + dp [ i - 1 ] ) ; }",
+        "cout << dp [ 100000 ] << ' ' ;",
+        "a [ x ] += one ;",
+        "long long a [ 100001 ] , dp [ 100001 ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        10,
+        6,
+        5
+      ],
+      "mod_code": [
+        "for ( long long i = 2 ; i <= 100000 ; i ++ ) { dp [ i ] = max ( i * a [ i ] + dp [ i - 2 ] + dp [ i - 1 ] ) ; }",
+        "cout << dp [ 100000 ] << ' ' ;",
+        "a [ x ] += one ;",
+        "cin >> n ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘one’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        10,
+        0
+      ],
+      "mod_code": [
+        "for ( long long i = 2 ; i <= 100000 ; i ++ ) { dp [ i ] = max ( i * a [ i ] + dp [ i - 2 ] + dp [ i - 1 ] ) ; }",
+        "cout << dp [ 100000 ] << ' ' ;",
+        "long long a [ 100001 ] , dp [ 100001 ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        10,
+        0,
+        5
+      ],
+      "mod_code": [
+        "for ( long long i = 2 ; i <= 100000 ; i ++ ) { dp [ i ] = max ( i * a [ i ] + dp [ i - 2 ] + dp [ i - 1 ] ) ; }",
+        "cout << dp [ 100000 ] << ' ' ;",
+        "long long a [ 100001 ] , dp [ 100001 ] ;",
+        "cin >> n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        10,
+        5
+      ],
+      "mod_code": [
+        "for ( long long i = 2 ; i <= 100000 ; i ++ ) { dp [ i ] = max ( i * a [ i ] + dp [ i - 2 ] + dp [ i - 1 ] ) ; }",
+        "cout << dp [ 100000 ] << ' ' ;",
+        "cin >> n ;"
+      ],
+      "err_line": 9,
+      "err_msg": "no matching function for call to ‘max(long long int)’"
+    },
+    {
+      "mod_line": [
+        9,
+        6
+      ],
+      "mod_code": [
+        "for ( long long i = 2 ; i <= 100000 ; i ++ ) { dp [ i ] = max ( i * a [ i ] + dp [ i - 2 ] + dp [ i - 1 ] ) ; }",
+        "a [ x ] += one ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘one’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        6,
+        0
+      ],
+      "mod_code": [
+        "for ( long long i = 2 ; i <= 100000 ; i ++ ) { dp [ i ] = max ( i * a [ i ] + dp [ i - 2 ] + dp [ i - 1 ] ) ; }",
+        "a [ x ] += one ;",
+        "long long a [ 100001 ] , dp [ 100001 ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        6,
+        0,
+        5
+      ],
+      "mod_code": [
+        "for ( long long i = 2 ; i <= 100000 ; i ++ ) { dp [ i ] = max ( i * a [ i ] + dp [ i - 2 ] + dp [ i - 1 ] ) ; }",
+        "a [ x ] += one ;",
+        "long long a [ 100001 ] , dp [ 100001 ] ;",
+        "cin >> n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        6,
+        5
+      ],
+      "mod_code": [
+        "for ( long long i = 2 ; i <= 100000 ; i ++ ) { dp [ i ] = max ( i * a [ i ] + dp [ i - 2 ] + dp [ i - 1 ] ) ; }",
+        "a [ x ] += one ;",
+        "cin >> n ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘one’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        0
+      ],
+      "mod_code": [
+        "for ( long long i = 2 ; i <= 100000 ; i ++ ) { dp [ i ] = max ( i * a [ i ] + dp [ i - 2 ] + dp [ i - 1 ] ) ; }",
+        "long long a [ 100001 ] , dp [ 100001 ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        0,
+        5
+      ],
+      "mod_code": [
+        "for ( long long i = 2 ; i <= 100000 ; i ++ ) { dp [ i ] = max ( i * a [ i ] + dp [ i - 2 ] + dp [ i - 1 ] ) ; }",
+        "long long a [ 100001 ] , dp [ 100001 ] ;",
+        "cin >> n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        5
+      ],
+      "mod_code": [
+        "for ( long long i = 2 ; i <= 100000 ; i ++ ) { dp [ i ] = max ( i * a [ i ] + dp [ i - 2 ] + dp [ i - 1 ] ) ; }",
+        "cin >> n ;"
+      ],
+      "err_line": 9,
+      "err_msg": "no matching function for call to ‘max(long long int)’"
+    },
+    {
+      "mod_line": [
+        3,
+        10
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "cout << dp [ 100000 ] << ' ' ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        10,
+        6
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "cout << dp [ 100000 ] << ' ' ;",
+        "a [ x ] += one ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        10,
+        6,
+        0
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "cout << dp [ 100000 ] << ' ' ;",
+        "a [ x ] += one ;",
+        "long long a [ 100001 ] , dp [ 100001 ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        10,
+        6,
+        5
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "cout << dp [ 100000 ] << ' ' ;",
+        "a [ x ] += one ;",
+        "cin >> n ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        10,
+        0
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "cout << dp [ 100000 ] << ' ' ;",
+        "long long a [ 100001 ] , dp [ 100001 ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        10,
+        0,
+        5
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "cout << dp [ 100000 ] << ' ' ;",
+        "long long a [ 100001 ] , dp [ 100001 ] ;",
+        "cin >> n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        10,
+        5
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "cout << dp [ 100000 ] << ' ' ;",
+        "cin >> n ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        6
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "a [ x ] += one ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        6,
+        0
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "a [ x ] += one ;",
+        "long long a [ 100001 ] , dp [ 100001 ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        6,
+        0,
+        5
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "a [ x ] += one ;",
+        "long long a [ 100001 ] , dp [ 100001 ] ;",
+        "cin >> n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        6,
+        5
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "a [ x ] += one ;",
+        "cin >> n ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        0
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "long long a [ 100001 ] , dp [ 100001 ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        0,
+        5
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "long long a [ 100001 ] , dp [ 100001 ] ;",
+        "cin >> n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        5
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "cin >> n ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        6
+      ],
+      "mod_code": [
+        "cout << dp [ 100000 ] << ' ' ;",
+        "a [ x ] += one ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘one’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        6,
+        0
+      ],
+      "mod_code": [
+        "cout << dp [ 100000 ] << ' ' ;",
+        "a [ x ] += one ;",
+        "long long a [ 100001 ] , dp [ 100001 ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        6,
+        0,
+        5
+      ],
+      "mod_code": [
+        "cout << dp [ 100000 ] << ' ' ;",
+        "a [ x ] += one ;",
+        "long long a [ 100001 ] , dp [ 100001 ] ;",
+        "cin >> n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        6,
+        5
+      ],
+      "mod_code": [
+        "cout << dp [ 100000 ] << ' ' ;",
+        "a [ x ] += one ;",
+        "cin >> n ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘one’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        0
+      ],
+      "mod_code": [
+        "cout << dp [ 100000 ] << ' ' ;",
+        "long long a [ 100001 ] , dp [ 100001 ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        0,
+        5
+      ],
+      "mod_code": [
+        "cout << dp [ 100000 ] << ' ' ;",
+        "long long a [ 100001 ] , dp [ 100001 ] ;",
+        "cin >> n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        0
+      ],
+      "mod_code": [
+        "a [ x ] += one ;",
+        "long long a [ 100001 ] , dp [ 100001 ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        0,
+        5
+      ],
+      "mod_code": [
+        "a [ x ] += one ;",
+        "long long a [ 100001 ] , dp [ 100001 ] ;",
+        "cin >> n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        5
+      ],
+      "mod_code": [
+        "a [ x ] += one ;",
+        "cin >> n ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘one’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        5
+      ],
+      "mod_code": [
+        "long long a [ 100001 ] , dp [ 100001 ] ;",
+        "cin >> n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    }
+  ]
+}

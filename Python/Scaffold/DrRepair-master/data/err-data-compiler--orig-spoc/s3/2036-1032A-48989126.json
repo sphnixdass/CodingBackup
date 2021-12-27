@@ -1,0 +1,701 @@
+{
+  "meta": {
+    "index": 2036,
+    "hitid": "3THR0FZ95PN3BIGJII36FDB8LHLLOS",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "1032A",
+    "subid": "48989126"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create integer N with N = 1e2 + 2",
+      "code": "int N = 1e2 + 2 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "create integers n , k , create integer array cnt with size N",
+      "code": "int n , k , cnt [ N ] ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "set bytes from cnt to size of cnt to value 0",
+      "code": "memset ( cnt , 0 , sizeof ( cnt ) ) ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "read n read k",
+      "code": "cin >> n >> k ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "create integers all , cal with all = 0 , cal = 0",
+      "code": "int all = 0 , cal = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "create integer tmp",
+      "code": "int tmp ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "read tmp",
+      "code": "cin >> tmp ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "increment cnt [ tmp ]",
+      "code": "cnt [ tmp ] ++ ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "set all to maximum of all and cnt [ tmp ]",
+      "code": "all = max ( all , cnt [ tmp ] ) ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "while all % k is not 0 , increment all",
+      "code": "while ( all % k != 0 ) all ++ ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "for i = 1 to N exclusive",
+      "code": "for ( int i = 1 ; i < N ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "if cnt [ i ] , increment cal",
+      "code": "if ( cnt [ i ] ) cal ++ ;",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "print all * cal - n print newline",
+      "code": "cout << all * cal - n << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "int n , k , cnt , cnt [ N ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conflicting declaration ‘int cnt [N]’"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "while ( cin >> n >> k )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘all’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "int all = 0 , cal = 0 , cal ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int cal’"
+    },
+    {
+      "mod_line": [
+        8,
+        13,
+        2
+      ],
+      "mod_code": [
+        "cout << tmp ;",
+        "for ( int i = 1 ; i <= N ; i ++ )",
+        "int n , k , cnt , cnt [ N ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conflicting declaration ‘int cnt [N]’"
+    },
+    {
+      "mod_line": [
+        8,
+        13,
+        2,
+        15
+      ],
+      "mod_code": [
+        "cout << tmp ;",
+        "for ( int i = 1 ; i <= N ; i ++ )",
+        "int n , k , cnt , cnt [ N ] ;",
+        "cout << all * n - n << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conflicting declaration ‘int cnt [N]’"
+    },
+    {
+      "mod_line": [
+        8,
+        13,
+        2,
+        10
+      ],
+      "mod_code": [
+        "cout << tmp ;",
+        "for ( int i = 1 ; i <= N ; i ++ )",
+        "int n , k , cnt , cnt [ N ] ;",
+        "all = max ( tmp , cnt [ tmp ] ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conflicting declaration ‘int cnt [N]’"
+    },
+    {
+      "mod_line": [
+        8,
+        13,
+        2,
+        5
+      ],
+      "mod_code": [
+        "cout << tmp ;",
+        "for ( int i = 1 ; i <= N ; i ++ )",
+        "int n , k , cnt , cnt [ N ] ;",
+        "int all = 0 , cal = 0 , cal ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conflicting declaration ‘int cnt [N]’"
+    },
+    {
+      "mod_line": [
+        8,
+        13,
+        15,
+        5
+      ],
+      "mod_code": [
+        "cout << tmp ;",
+        "for ( int i = 1 ; i <= N ; i ++ )",
+        "cout << all * n - n << endl ;",
+        "int all = 0 , cal = 0 , cal ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int cal’"
+    },
+    {
+      "mod_line": [
+        8,
+        13,
+        10,
+        5
+      ],
+      "mod_code": [
+        "cout << tmp ;",
+        "for ( int i = 1 ; i <= N ; i ++ )",
+        "all = max ( tmp , cnt [ tmp ] ) ;",
+        "int all = 0 , cal = 0 , cal ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int cal’"
+    },
+    {
+      "mod_line": [
+        8,
+        13,
+        5
+      ],
+      "mod_code": [
+        "cout << tmp ;",
+        "for ( int i = 1 ; i <= N ; i ++ )",
+        "int all = 0 , cal = 0 , cal ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int cal’"
+    },
+    {
+      "mod_line": [
+        8,
+        2
+      ],
+      "mod_code": [
+        "cout << tmp ;",
+        "int n , k , cnt , cnt [ N ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conflicting declaration ‘int cnt [N]’"
+    },
+    {
+      "mod_line": [
+        8,
+        2,
+        15
+      ],
+      "mod_code": [
+        "cout << tmp ;",
+        "int n , k , cnt , cnt [ N ] ;",
+        "cout << all * n - n << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conflicting declaration ‘int cnt [N]’"
+    },
+    {
+      "mod_line": [
+        8,
+        2,
+        15,
+        10
+      ],
+      "mod_code": [
+        "cout << tmp ;",
+        "int n , k , cnt , cnt [ N ] ;",
+        "cout << all * n - n << endl ;",
+        "all = max ( tmp , cnt [ tmp ] ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conflicting declaration ‘int cnt [N]’"
+    },
+    {
+      "mod_line": [
+        8,
+        2,
+        15,
+        5
+      ],
+      "mod_code": [
+        "cout << tmp ;",
+        "int n , k , cnt , cnt [ N ] ;",
+        "cout << all * n - n << endl ;",
+        "int all = 0 , cal = 0 , cal ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conflicting declaration ‘int cnt [N]’"
+    },
+    {
+      "mod_line": [
+        8,
+        2,
+        10
+      ],
+      "mod_code": [
+        "cout << tmp ;",
+        "int n , k , cnt , cnt [ N ] ;",
+        "all = max ( tmp , cnt [ tmp ] ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conflicting declaration ‘int cnt [N]’"
+    },
+    {
+      "mod_line": [
+        8,
+        2,
+        10,
+        5
+      ],
+      "mod_code": [
+        "cout << tmp ;",
+        "int n , k , cnt , cnt [ N ] ;",
+        "all = max ( tmp , cnt [ tmp ] ) ;",
+        "int all = 0 , cal = 0 , cal ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conflicting declaration ‘int cnt [N]’"
+    },
+    {
+      "mod_line": [
+        8,
+        2,
+        5
+      ],
+      "mod_code": [
+        "cout << tmp ;",
+        "int n , k , cnt , cnt [ N ] ;",
+        "int all = 0 , cal = 0 , cal ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conflicting declaration ‘int cnt [N]’"
+    },
+    {
+      "mod_line": [
+        8,
+        15,
+        10,
+        5
+      ],
+      "mod_code": [
+        "cout << tmp ;",
+        "cout << all * n - n << endl ;",
+        "all = max ( tmp , cnt [ tmp ] ) ;",
+        "int all = 0 , cal = 0 , cal ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int cal’"
+    },
+    {
+      "mod_line": [
+        8,
+        15,
+        5
+      ],
+      "mod_code": [
+        "cout << tmp ;",
+        "cout << all * n - n << endl ;",
+        "int all = 0 , cal = 0 , cal ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int cal’"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        5
+      ],
+      "mod_code": [
+        "cout << tmp ;",
+        "all = max ( tmp , cnt [ tmp ] ) ;",
+        "int all = 0 , cal = 0 , cal ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int cal’"
+    },
+    {
+      "mod_line": [
+        8,
+        5
+      ],
+      "mod_code": [
+        "cout << tmp ;",
+        "int all = 0 , cal = 0 , cal ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int cal’"
+    },
+    {
+      "mod_line": [
+        13,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= N ; i ++ )",
+        "int n , k , cnt , cnt [ N ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conflicting declaration ‘int cnt [N]’"
+    },
+    {
+      "mod_line": [
+        13,
+        2,
+        15
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= N ; i ++ )",
+        "int n , k , cnt , cnt [ N ] ;",
+        "cout << all * n - n << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conflicting declaration ‘int cnt [N]’"
+    },
+    {
+      "mod_line": [
+        13,
+        2,
+        15,
+        10
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= N ; i ++ )",
+        "int n , k , cnt , cnt [ N ] ;",
+        "cout << all * n - n << endl ;",
+        "all = max ( tmp , cnt [ tmp ] ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conflicting declaration ‘int cnt [N]’"
+    },
+    {
+      "mod_line": [
+        13,
+        2,
+        15,
+        5
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= N ; i ++ )",
+        "int n , k , cnt , cnt [ N ] ;",
+        "cout << all * n - n << endl ;",
+        "int all = 0 , cal = 0 , cal ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conflicting declaration ‘int cnt [N]’"
+    },
+    {
+      "mod_line": [
+        13,
+        2,
+        10
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= N ; i ++ )",
+        "int n , k , cnt , cnt [ N ] ;",
+        "all = max ( tmp , cnt [ tmp ] ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conflicting declaration ‘int cnt [N]’"
+    },
+    {
+      "mod_line": [
+        13,
+        2,
+        10,
+        5
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= N ; i ++ )",
+        "int n , k , cnt , cnt [ N ] ;",
+        "all = max ( tmp , cnt [ tmp ] ) ;",
+        "int all = 0 , cal = 0 , cal ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conflicting declaration ‘int cnt [N]’"
+    },
+    {
+      "mod_line": [
+        13,
+        2,
+        5
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= N ; i ++ )",
+        "int n , k , cnt , cnt [ N ] ;",
+        "int all = 0 , cal = 0 , cal ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conflicting declaration ‘int cnt [N]’"
+    },
+    {
+      "mod_line": [
+        13,
+        15,
+        10,
+        5
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= N ; i ++ )",
+        "cout << all * n - n << endl ;",
+        "all = max ( tmp , cnt [ tmp ] ) ;",
+        "int all = 0 , cal = 0 , cal ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int cal’"
+    },
+    {
+      "mod_line": [
+        13,
+        15,
+        5
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= N ; i ++ )",
+        "cout << all * n - n << endl ;",
+        "int all = 0 , cal = 0 , cal ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int cal’"
+    },
+    {
+      "mod_line": [
+        13,
+        10,
+        5
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= N ; i ++ )",
+        "all = max ( tmp , cnt [ tmp ] ) ;",
+        "int all = 0 , cal = 0 , cal ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int cal’"
+    },
+    {
+      "mod_line": [
+        13,
+        5
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= N ; i ++ )",
+        "int all = 0 , cal = 0 , cal ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int cal’"
+    },
+    {
+      "mod_line": [
+        2,
+        15
+      ],
+      "mod_code": [
+        "int n , k , cnt , cnt [ N ] ;",
+        "cout << all * n - n << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conflicting declaration ‘int cnt [N]’"
+    },
+    {
+      "mod_line": [
+        2,
+        15,
+        10
+      ],
+      "mod_code": [
+        "int n , k , cnt , cnt [ N ] ;",
+        "cout << all * n - n << endl ;",
+        "all = max ( tmp , cnt [ tmp ] ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conflicting declaration ‘int cnt [N]’"
+    },
+    {
+      "mod_line": [
+        2,
+        15,
+        10,
+        5
+      ],
+      "mod_code": [
+        "int n , k , cnt , cnt [ N ] ;",
+        "cout << all * n - n << endl ;",
+        "all = max ( tmp , cnt [ tmp ] ) ;",
+        "int all = 0 , cal = 0 , cal ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conflicting declaration ‘int cnt [N]’"
+    },
+    {
+      "mod_line": [
+        2,
+        15,
+        5
+      ],
+      "mod_code": [
+        "int n , k , cnt , cnt [ N ] ;",
+        "cout << all * n - n << endl ;",
+        "int all = 0 , cal = 0 , cal ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conflicting declaration ‘int cnt [N]’"
+    },
+    {
+      "mod_line": [
+        2,
+        10
+      ],
+      "mod_code": [
+        "int n , k , cnt , cnt [ N ] ;",
+        "all = max ( tmp , cnt [ tmp ] ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conflicting declaration ‘int cnt [N]’"
+    },
+    {
+      "mod_line": [
+        2,
+        10,
+        5
+      ],
+      "mod_code": [
+        "int n , k , cnt , cnt [ N ] ;",
+        "all = max ( tmp , cnt [ tmp ] ) ;",
+        "int all = 0 , cal = 0 , cal ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conflicting declaration ‘int cnt [N]’"
+    },
+    {
+      "mod_line": [
+        2,
+        5
+      ],
+      "mod_code": [
+        "int n , k , cnt , cnt [ N ] ;",
+        "int all = 0 , cal = 0 , cal ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conflicting declaration ‘int cnt [N]’"
+    },
+    {
+      "mod_line": [
+        15,
+        10,
+        5
+      ],
+      "mod_code": [
+        "cout << all * n - n << endl ;",
+        "all = max ( tmp , cnt [ tmp ] ) ;",
+        "int all = 0 , cal = 0 , cal ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int cal’"
+    },
+    {
+      "mod_line": [
+        15,
+        5
+      ],
+      "mod_code": [
+        "cout << all * n - n << endl ;",
+        "int all = 0 , cal = 0 , cal ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int cal’"
+    },
+    {
+      "mod_line": [
+        10,
+        5
+      ],
+      "mod_code": [
+        "all = max ( tmp , cnt [ tmp ] ) ;",
+        "int all = 0 , cal = 0 , cal ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘int cal’"
+    }
+  ]
+}

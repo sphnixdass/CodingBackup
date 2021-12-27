@@ -1,0 +1,641 @@
+{
+  "meta": {
+    "index": 2041,
+    "hitid": "35A1YQPVFEAFD72VS0AUERJPO5G5IY",
+    "workerid": "A1R0Q9CUUBSM5F",
+    "probid": "594A",
+    "subid": "32739785"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "let long long N",
+      "code": "long long N ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read N",
+      "code": "cin >> N ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "create long long array x of size N + 5",
+      "code": "long long x [ N + 5 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for i = 1 to N , read x [ i ]",
+      "code": "for ( int i = 1 ; i <= N ; i ++ ) { cin >> x [ i ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "let bool array cek of size N + 5",
+      "code": "bool cek [ N + 5 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "sort x + 1 using argument x + N + 1",
+      "code": "sort ( x + 1 , x + N + 1 ) ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "let long long tmp = ( N - 1 ) / 2",
+      "code": "long long tmp = ( N - 1 ) / 2 ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "let long long int mini = 1e18",
+      "code": "long long mini = 1e18 ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "let ints kanan = N and kiri = 1",
+      "code": "int kanan = N , kiri = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "for i = 0 to tmp",
+      "code": "for ( int i = 0 ; i <= tmp ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "let int j = tmp - i",
+      "code": "int j = tmp - i ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "set kanan to N - j",
+      "code": "kanan = N - j ;",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "set mini to the min of x [ kanan ] - x [ i + 1 ] and mini",
+      "code": "mini = min ( x [ kanan ] - x [ i + 1 ] , mini ) ;",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "print mini",
+      "code": "cout << mini << \" \\n \" ;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "cin >> n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "sort ( x + 1 , 1 + N + 1 ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘sort(long long int*, long long int)’"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < tmp ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "mini = min min min ( x [ kanan ] - x [ i + 1 ] , mini ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "cannot resolve overloaded function ‘min’ based on conversion to type ‘long long int’"
+    },
+    {
+      "mod_line": [
+        10,
+        12,
+        15,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < tmp ; i ++ )",
+        "kanan -= j ;",
+        "cout << mini ;",
+        "mini = min min min ( x [ kanan ] - x [ i + 1 ] , mini ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "cannot resolve overloaded function ‘min’ based on conversion to type ‘long long int’"
+    },
+    {
+      "mod_line": [
+        10,
+        12,
+        15,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < tmp ; i ++ )",
+        "kanan -= j ;",
+        "cout << mini ;",
+        "cin >> n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        12,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < tmp ; i ++ )",
+        "kanan -= j ;",
+        "mini = min min min ( x [ kanan ] - x [ i + 1 ] , mini ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "cannot resolve overloaded function ‘min’ based on conversion to type ‘long long int’"
+    },
+    {
+      "mod_line": [
+        10,
+        12,
+        13,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < tmp ; i ++ )",
+        "kanan -= j ;",
+        "mini = min min min ( x [ kanan ] - x [ i + 1 ] , mini ) ;",
+        "cin >> n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        12,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < tmp ; i ++ )",
+        "kanan -= j ;",
+        "cin >> n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        15,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < tmp ; i ++ )",
+        "cout << mini ;",
+        "mini = min min min ( x [ kanan ] - x [ i + 1 ] , mini ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "cannot resolve overloaded function ‘min’ based on conversion to type ‘long long int’"
+    },
+    {
+      "mod_line": [
+        10,
+        15,
+        13,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < tmp ; i ++ )",
+        "cout << mini ;",
+        "mini = min min min ( x [ kanan ] - x [ i + 1 ] , mini ) ;",
+        "cin >> n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        15,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < tmp ; i ++ )",
+        "cout << mini ;",
+        "cin >> n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < tmp ; i ++ )",
+        "mini = min min min ( x [ kanan ] - x [ i + 1 ] , mini ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "cannot resolve overloaded function ‘min’ based on conversion to type ‘long long int’"
+    },
+    {
+      "mod_line": [
+        10,
+        13,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < tmp ; i ++ )",
+        "mini = min min min ( x [ kanan ] - x [ i + 1 ] , mini ) ;",
+        "cin >> n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < tmp ; i ++ )",
+        "cin >> n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        15,
+        13
+      ],
+      "mod_code": [
+        "kanan -= j ;",
+        "cout << mini ;",
+        "mini = min min min ( x [ kanan ] - x [ i + 1 ] , mini ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "cannot resolve overloaded function ‘min’ based on conversion to type ‘long long int’"
+    },
+    {
+      "mod_line": [
+        12,
+        15,
+        13,
+        2
+      ],
+      "mod_code": [
+        "kanan -= j ;",
+        "cout << mini ;",
+        "mini = min min min ( x [ kanan ] - x [ i + 1 ] , mini ) ;",
+        "cin >> n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        15,
+        13,
+        10
+      ],
+      "mod_code": [
+        "kanan -= j ;",
+        "cout << mini ;",
+        "mini = min min min ( x [ kanan ] - x [ i + 1 ] , mini ) ;",
+        "for ( i = 0 ; i < tmp ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        15,
+        2
+      ],
+      "mod_code": [
+        "kanan -= j ;",
+        "cout << mini ;",
+        "cin >> n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        15,
+        2,
+        10
+      ],
+      "mod_code": [
+        "kanan -= j ;",
+        "cout << mini ;",
+        "cin >> n ;",
+        "for ( i = 0 ; i < tmp ; i ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        15,
+        10
+      ],
+      "mod_code": [
+        "kanan -= j ;",
+        "cout << mini ;",
+        "for ( i = 0 ; i < tmp ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        13
+      ],
+      "mod_code": [
+        "kanan -= j ;",
+        "mini = min min min ( x [ kanan ] - x [ i + 1 ] , mini ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "cannot resolve overloaded function ‘min’ based on conversion to type ‘long long int’"
+    },
+    {
+      "mod_line": [
+        12,
+        13,
+        2
+      ],
+      "mod_code": [
+        "kanan -= j ;",
+        "mini = min min min ( x [ kanan ] - x [ i + 1 ] , mini ) ;",
+        "cin >> n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        13,
+        2,
+        10
+      ],
+      "mod_code": [
+        "kanan -= j ;",
+        "mini = min min min ( x [ kanan ] - x [ i + 1 ] , mini ) ;",
+        "cin >> n ;",
+        "for ( i = 0 ; i < tmp ; i ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        13,
+        10
+      ],
+      "mod_code": [
+        "kanan -= j ;",
+        "mini = min min min ( x [ kanan ] - x [ i + 1 ] , mini ) ;",
+        "for ( i = 0 ; i < tmp ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        2
+      ],
+      "mod_code": [
+        "kanan -= j ;",
+        "cin >> n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        2,
+        10
+      ],
+      "mod_code": [
+        "kanan -= j ;",
+        "cin >> n ;",
+        "for ( i = 0 ; i < tmp ; i ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        10
+      ],
+      "mod_code": [
+        "kanan -= j ;",
+        "for ( i = 0 ; i < tmp ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        15,
+        13
+      ],
+      "mod_code": [
+        "cout << mini ;",
+        "mini = min min min ( x [ kanan ] - x [ i + 1 ] , mini ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "cannot resolve overloaded function ‘min’ based on conversion to type ‘long long int’"
+    },
+    {
+      "mod_line": [
+        15,
+        13,
+        2
+      ],
+      "mod_code": [
+        "cout << mini ;",
+        "mini = min min min ( x [ kanan ] - x [ i + 1 ] , mini ) ;",
+        "cin >> n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        13,
+        2,
+        10
+      ],
+      "mod_code": [
+        "cout << mini ;",
+        "mini = min min min ( x [ kanan ] - x [ i + 1 ] , mini ) ;",
+        "cin >> n ;",
+        "for ( i = 0 ; i < tmp ; i ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        13,
+        10
+      ],
+      "mod_code": [
+        "cout << mini ;",
+        "mini = min min min ( x [ kanan ] - x [ i + 1 ] , mini ) ;",
+        "for ( i = 0 ; i < tmp ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        15,
+        2
+      ],
+      "mod_code": [
+        "cout << mini ;",
+        "cin >> n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        2,
+        10
+      ],
+      "mod_code": [
+        "cout << mini ;",
+        "cin >> n ;",
+        "for ( i = 0 ; i < tmp ; i ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        10
+      ],
+      "mod_code": [
+        "cout << mini ;",
+        "for ( i = 0 ; i < tmp ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        2
+      ],
+      "mod_code": [
+        "mini = min min min ( x [ kanan ] - x [ i + 1 ] , mini ) ;",
+        "cin >> n ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        2,
+        10
+      ],
+      "mod_code": [
+        "mini = min min min ( x [ kanan ] - x [ i + 1 ] , mini ) ;",
+        "cin >> n ;",
+        "for ( i = 0 ; i < tmp ; i ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        10
+      ],
+      "mod_code": [
+        "mini = min min min ( x [ kanan ] - x [ i + 1 ] , mini ) ;",
+        "for ( i = 0 ; i < tmp ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        2,
+        10
+      ],
+      "mod_code": [
+        "cin >> n ;",
+        "for ( i = 0 ; i < tmp ; i ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘n’ was not declared in this scope"
+    }
+  ]
+}

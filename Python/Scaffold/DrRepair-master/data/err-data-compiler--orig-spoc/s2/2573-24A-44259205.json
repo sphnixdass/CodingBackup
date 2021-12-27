@@ -1,0 +1,1289 @@
+{
+  "meta": {
+    "index": 2573,
+    "hitid": "3SD15I2WD2OW68KQCGDC2RV00GK36X",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "24A",
+    "subid": "44259205"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare gcd1 with integers a , b as arguments , returning integer",
+      "code": "int gcd1 ( int a , int b )",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "if a is 0 return b from function",
+      "code": "if ( a == 0 ) return b ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "return result of run gcd1 with b % a , a as arguments",
+      "code": "return gcd1 ( b % a , a ) ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "declare modx with long longs base , ex as arguments , returning long long",
+      "code": "long long modx ( long long base , long long ex )",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "create long longs ans , val with ans = 1LL , val = base",
+      "code": "long long ans = 1LL , val = base ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "while ex is greater than 0LL",
+      "code": "while ( ex > 0LL )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "if ex bitwise and 1LL , set ans to ( ans * val ) % 1000000007LL",
+      "code": "if ( ex & 1LL ) ans = ( ans * val ) % 1000000007LL ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "set val to ( val * val ) % 1000000007LL",
+      "code": "val = ( val * val ) % 1000000007LL ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "set ex to ex bitshift right 1LL",
+      "code": "ex = ex >> 1LL ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "return ans",
+      "code": "return ans ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 13,
+      "text": "declare vector integer array adj of size 500005",
+      "code": "vector < int > adj [ 500005 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 14,
+      "text": "declare boolean array visit of size 500005",
+      "code": "bool visit [ 500005 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 15,
+      "text": "create map mp1 from pair of integer , integer , to integer",
+      "code": "map < pair < int , int > , int > mp1 ;",
+      "indent": 0
+    },
+    {
+      "line": 16,
+      "text": "create integer vector cycle",
+      "code": "vector < int > cycle ;",
+      "indent": 0
+    },
+    {
+      "line": 17,
+      "text": "declare dfs with integer start as argument , returning void",
+      "code": "void dfs ( int start )",
+      "indent": 0
+    },
+    {
+      "line": 18,
+      "text": "set visit [ start ] to true",
+      "code": "visit [ start ] = true ;",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "add element start to end of cycle",
+      "code": "cycle . push_back ( start ) ;",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "for i = 0 to size of adj [ start ] exclusive",
+      "code": "for ( int i = 0 ; i < adj [ start ] . size ( ) ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "if not visit [ adj [ start ] [ i ] ] , run dfs with adj [ start ] [ i ] as argument",
+      "code": "if ( ! visit [ adj [ start ] [ i ] ] ) dfs ( adj [ start ] [ i ] ) ;",
+      "indent": 2
+    },
+    {
+      "line": 22,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 24,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 25,
+      "text": "create integer n",
+      "code": "int n ;",
+      "indent": 1
+    },
+    {
+      "line": 26,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 27,
+      "text": "create integers a , b , c",
+      "code": "int a , b , c ;",
+      "indent": 1
+    },
+    {
+      "line": 28,
+      "text": "for i = 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 29,
+      "text": "read a read b read c",
+      "code": "cin >> a >> b >> c ;",
+      "indent": 2
+    },
+    {
+      "line": 30,
+      "text": "add element b to end of adj [ a ]",
+      "code": "adj [ a ] . push_back ( b ) ;",
+      "indent": 2
+    },
+    {
+      "line": 31,
+      "text": "add element a to end of adj [ b ]",
+      "code": "adj [ b ] . push_back ( a ) ;",
+      "indent": 2
+    },
+    {
+      "line": 32,
+      "text": "set mp1 [ create new pair from b to a ] to c",
+      "code": "mp1 [ make_pair ( b , a ) ] = c ;",
+      "indent": 2
+    },
+    {
+      "line": 33,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 34,
+      "text": "run dfs with 1 as argument",
+      "code": "dfs ( 1 ) ;",
+      "indent": 1
+    },
+    {
+      "line": 35,
+      "text": "create long longs ans1 , ans2 with ans1 = 0 , ans2 = 0",
+      "code": "long long ans1 = 0 , ans2 = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 36,
+      "text": "create integer sz with sz = size of cycle",
+      "code": "int sz = cycle . size ( ) ;",
+      "indent": 1
+    },
+    {
+      "line": 37,
+      "text": "for i = 0 to sz - 1 exclusive",
+      "code": "for ( int i = 0 ; i < sz - 1 ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 38,
+      "text": "increment ans1 by mp1 [ create new pair from cycle [ i ] to cycle [ i + 1 ] ]",
+      "code": "ans1 += mp1 [ make_pair ( cycle [ i ] , cycle [ i + 1 ] ) ] ;",
+      "indent": 2
+    },
+    {
+      "line": 39,
+      "text": "increment ans2 by mp1 [ create new pair from cycle [ i + 1 ] to cycle [ i ] ]",
+      "code": "ans2 += mp1 [ make_pair ( cycle [ i + 1 ] , cycle [ i ] ) ] ;",
+      "indent": 2
+    },
+    {
+      "line": 40,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 41,
+      "text": "increment ans1 by mp1 [ create new pair from cycle [ sz - 1 ] to cycle [ 0 ] ]",
+      "code": "ans1 += mp1 [ make_pair ( cycle [ sz - 1 ] , cycle [ 0 ] ) ] ;",
+      "indent": 1
+    },
+    {
+      "line": 42,
+      "text": "increment ans2 by mp1 [ create new pair from cycle [ 0 ] to cycle [ sz - 1 ] ]",
+      "code": "ans2 += mp1 [ make_pair ( cycle [ 0 ] , cycle [ sz - 1 ] ) ] ;",
+      "indent": 1
+    },
+    {
+      "line": 43,
+      "text": "print minimum of ans1 and ans2 print newline",
+      "code": "cout << min ( ans1 , ans2 ) << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 44,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 45,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "map < int , int > mp1 , to ;"
+      ],
+      "err_line": 32,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::map<int, int>’ and ‘std::pair<int, int>’)"
+    },
+    {
+      "mod_line": [
+        32
+      ],
+      "mod_code": [
+        "mp1 [ ceil ( b , a ) ] = c ;"
+      ],
+      "err_line": 32,
+      "err_msg": "no matching function for call to ‘ceil(int&, int&)’"
+    },
+    {
+      "mod_line": [
+        38
+      ],
+      "mod_code": [
+        "ans1 += mp1 [ i ] . substr ( cycle [ i + 1 ] ] ) ;"
+      ],
+      "err_line": 38,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::map<std::pair<int, int>, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        39
+      ],
+      "mod_code": [
+        "ans2 += mp1 [ i + 1 ] . find ( cycle [ i + 1 ] ) ;"
+      ],
+      "err_line": 39,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::map<std::pair<int, int>, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        41
+      ],
+      "mod_code": [
+        "ans1 += mp1 [ sz - 1 ] . find ( cycle [ sz - 1 ] ) ;"
+      ],
+      "err_line": 41,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::map<std::pair<int, int>, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        42
+      ],
+      "mod_code": [
+        "ans2 += mp1 [ 0 ] . substr ( 0 ] , cycle [ sz - 1 ] ) ;"
+      ],
+      "err_line": 42,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::map<std::pair<int, int>, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "return gcd1 ( b % a ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too few arguments to function ‘int gcd1(int, int)’"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "long long modx ( long long base , long long ex ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "long long ans = 1LL , ans = base ;"
+      ],
+      "err_line": 5,
+      "err_msg": "redeclaration of ‘long long int ans’"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "vector < adj > adj [ 500005 ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘adj’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "map < int , int > :: mp1 , to ;"
+      ],
+      "err_line": 15,
+      "err_msg": "‘mp1’ in ‘class std::map<int, int>’ does not name a type"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "vector < int > cycle ( ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "request for member ‘push_back’ in ‘cycle’, which is of non-class type ‘std::vector<int>()’"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "void dfs ( int start ) ;"
+      ],
+      "err_line": 18,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        18
+      ],
+      "mod_code": [
+        "bool visit [ start ] = true ;"
+      ],
+      "err_line": 18,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        19
+      ],
+      "mod_code": [
+        "cycle . end ( start ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "no matching function for call to ‘std::vector<int>::end(int&)’"
+    },
+    {
+      "mod_line": [
+        20
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < adj [ start ] . size ( ) ; i ++ )"
+      ],
+      "err_line": 20,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        25
+      ],
+      "mod_code": [
+        "n ;"
+      ],
+      "err_line": 25,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27
+      ],
+      "mod_code": [
+        "a , b , c ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        28
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 28,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        30
+      ],
+      "mod_code": [
+        "adj [ a ] . end ( b ) ;"
+      ],
+      "err_line": 30,
+      "err_msg": "no matching function for call to ‘std::vector<int>::end(int&)’"
+    },
+    {
+      "mod_line": [
+        31
+      ],
+      "mod_code": [
+        "adj [ b ] . end ( a ) ;"
+      ],
+      "err_line": 31,
+      "err_msg": "no matching function for call to ‘std::vector<int>::end(int&)’"
+    },
+    {
+      "mod_line": [
+        32
+      ],
+      "mod_code": [
+        "mp1 [ pair < pair < c , b ++ , c ++ ;"
+      ],
+      "err_line": 32,
+      "err_msg": "‘c’ cannot appear in a constant-expression"
+    },
+    {
+      "mod_line": [
+        34
+      ],
+      "mod_code": [
+        "dfs ( l ) ;"
+      ],
+      "err_line": 34,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        35
+      ],
+      "mod_code": [
+        "long long ans1 = 0 , ans1 = 0 ;"
+      ],
+      "err_line": 35,
+      "err_msg": "redeclaration of ‘long long int ans1’"
+    },
+    {
+      "mod_line": [
+        36
+      ],
+      "mod_code": [
+        "int sz = strlen ( cycle ) ;"
+      ],
+      "err_line": 36,
+      "err_msg": "cannot convert ‘std::vector<int>’ to ‘const char*’ for argument ‘1’ to ‘size_t strlen(const char*)’"
+    },
+    {
+      "mod_line": [
+        37
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < sz - 1 ; i ++ )"
+      ],
+      "err_line": 37,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        38
+      ],
+      "mod_code": [
+        "ans1 += mp1 [ i ] . find ( cycle [ i + 1 ] ] ) ;"
+      ],
+      "err_line": 38,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::map<std::pair<int, int>, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        39
+      ],
+      "mod_code": [
+        "ans2 += mp1 [ i + 1 ] . substr ( cycle [ i + 1 ] ) ;"
+      ],
+      "err_line": 39,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::map<std::pair<int, int>, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        41
+      ],
+      "mod_code": [
+        "ans1 += mp1 [ sz - 1 ] . substr ( cycle [ sz - 1 ] ) ;"
+      ],
+      "err_line": 41,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::map<std::pair<int, int>, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        42
+      ],
+      "mod_code": [
+        "ans2 += mp1 [ 0 ] . find ( cycle [ 0 ] , cycle [ sz - 1 ] ) ;"
+      ],
+      "err_line": 42,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::map<std::pair<int, int>, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        15,
+        32
+      ],
+      "mod_code": [
+        "map < int , int > mp1 , to ;",
+        "mp1 [ ceil ( b , a ) ] = c ;"
+      ],
+      "err_line": 32,
+      "err_msg": "no matching function for call to ‘ceil(int&, int&)’"
+    },
+    {
+      "mod_line": [
+        15,
+        32,
+        38
+      ],
+      "mod_code": [
+        "map < int , int > mp1 , to ;",
+        "mp1 [ ceil ( b , a ) ] = c ;",
+        "ans1 += mp1 [ i ] . substr ( cycle [ i + 1 ] ] ) ;"
+      ],
+      "err_line": 32,
+      "err_msg": "no matching function for call to ‘ceil(int&, int&)’"
+    },
+    {
+      "mod_line": [
+        15,
+        32,
+        38,
+        39
+      ],
+      "mod_code": [
+        "map < int , int > mp1 , to ;",
+        "mp1 [ ceil ( b , a ) ] = c ;",
+        "ans1 += mp1 [ i ] . substr ( cycle [ i + 1 ] ] ) ;",
+        "ans2 += mp1 [ i + 1 ] . find ( cycle [ i + 1 ] ) ;"
+      ],
+      "err_line": 32,
+      "err_msg": "no matching function for call to ‘ceil(int&, int&)’"
+    },
+    {
+      "mod_line": [
+        15,
+        32,
+        38,
+        41
+      ],
+      "mod_code": [
+        "map < int , int > mp1 , to ;",
+        "mp1 [ ceil ( b , a ) ] = c ;",
+        "ans1 += mp1 [ i ] . substr ( cycle [ i + 1 ] ] ) ;",
+        "ans1 += mp1 [ sz - 1 ] . find ( cycle [ sz - 1 ] ) ;"
+      ],
+      "err_line": 32,
+      "err_msg": "no matching function for call to ‘ceil(int&, int&)’"
+    },
+    {
+      "mod_line": [
+        15,
+        32,
+        38,
+        42
+      ],
+      "mod_code": [
+        "map < int , int > mp1 , to ;",
+        "mp1 [ ceil ( b , a ) ] = c ;",
+        "ans1 += mp1 [ i ] . substr ( cycle [ i + 1 ] ] ) ;",
+        "ans2 += mp1 [ 0 ] . substr ( 0 ] , cycle [ sz - 1 ] ) ;"
+      ],
+      "err_line": 32,
+      "err_msg": "no matching function for call to ‘ceil(int&, int&)’"
+    },
+    {
+      "mod_line": [
+        15,
+        32,
+        39
+      ],
+      "mod_code": [
+        "map < int , int > mp1 , to ;",
+        "mp1 [ ceil ( b , a ) ] = c ;",
+        "ans2 += mp1 [ i + 1 ] . find ( cycle [ i + 1 ] ) ;"
+      ],
+      "err_line": 32,
+      "err_msg": "no matching function for call to ‘ceil(int&, int&)’"
+    },
+    {
+      "mod_line": [
+        15,
+        32,
+        39,
+        41
+      ],
+      "mod_code": [
+        "map < int , int > mp1 , to ;",
+        "mp1 [ ceil ( b , a ) ] = c ;",
+        "ans2 += mp1 [ i + 1 ] . find ( cycle [ i + 1 ] ) ;",
+        "ans1 += mp1 [ sz - 1 ] . find ( cycle [ sz - 1 ] ) ;"
+      ],
+      "err_line": 32,
+      "err_msg": "no matching function for call to ‘ceil(int&, int&)’"
+    },
+    {
+      "mod_line": [
+        15,
+        32,
+        39,
+        42
+      ],
+      "mod_code": [
+        "map < int , int > mp1 , to ;",
+        "mp1 [ ceil ( b , a ) ] = c ;",
+        "ans2 += mp1 [ i + 1 ] . find ( cycle [ i + 1 ] ) ;",
+        "ans2 += mp1 [ 0 ] . substr ( 0 ] , cycle [ sz - 1 ] ) ;"
+      ],
+      "err_line": 32,
+      "err_msg": "no matching function for call to ‘ceil(int&, int&)’"
+    },
+    {
+      "mod_line": [
+        15,
+        32,
+        41
+      ],
+      "mod_code": [
+        "map < int , int > mp1 , to ;",
+        "mp1 [ ceil ( b , a ) ] = c ;",
+        "ans1 += mp1 [ sz - 1 ] . find ( cycle [ sz - 1 ] ) ;"
+      ],
+      "err_line": 32,
+      "err_msg": "no matching function for call to ‘ceil(int&, int&)’"
+    },
+    {
+      "mod_line": [
+        15,
+        32,
+        41,
+        42
+      ],
+      "mod_code": [
+        "map < int , int > mp1 , to ;",
+        "mp1 [ ceil ( b , a ) ] = c ;",
+        "ans1 += mp1 [ sz - 1 ] . find ( cycle [ sz - 1 ] ) ;",
+        "ans2 += mp1 [ 0 ] . substr ( 0 ] , cycle [ sz - 1 ] ) ;"
+      ],
+      "err_line": 32,
+      "err_msg": "no matching function for call to ‘ceil(int&, int&)’"
+    },
+    {
+      "mod_line": [
+        15,
+        32,
+        42
+      ],
+      "mod_code": [
+        "map < int , int > mp1 , to ;",
+        "mp1 [ ceil ( b , a ) ] = c ;",
+        "ans2 += mp1 [ 0 ] . substr ( 0 ] , cycle [ sz - 1 ] ) ;"
+      ],
+      "err_line": 32,
+      "err_msg": "no matching function for call to ‘ceil(int&, int&)’"
+    },
+    {
+      "mod_line": [
+        15,
+        38
+      ],
+      "mod_code": [
+        "map < int , int > mp1 , to ;",
+        "ans1 += mp1 [ i ] . substr ( cycle [ i + 1 ] ] ) ;"
+      ],
+      "err_line": 32,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::map<int, int>’ and ‘std::pair<int, int>’)"
+    },
+    {
+      "mod_line": [
+        15,
+        38,
+        39
+      ],
+      "mod_code": [
+        "map < int , int > mp1 , to ;",
+        "ans1 += mp1 [ i ] . substr ( cycle [ i + 1 ] ] ) ;",
+        "ans2 += mp1 [ i + 1 ] . find ( cycle [ i + 1 ] ) ;"
+      ],
+      "err_line": 32,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::map<int, int>’ and ‘std::pair<int, int>’)"
+    },
+    {
+      "mod_line": [
+        15,
+        38,
+        39,
+        41
+      ],
+      "mod_code": [
+        "map < int , int > mp1 , to ;",
+        "ans1 += mp1 [ i ] . substr ( cycle [ i + 1 ] ] ) ;",
+        "ans2 += mp1 [ i + 1 ] . find ( cycle [ i + 1 ] ) ;",
+        "ans1 += mp1 [ sz - 1 ] . find ( cycle [ sz - 1 ] ) ;"
+      ],
+      "err_line": 32,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::map<int, int>’ and ‘std::pair<int, int>’)"
+    },
+    {
+      "mod_line": [
+        15,
+        38,
+        39,
+        42
+      ],
+      "mod_code": [
+        "map < int , int > mp1 , to ;",
+        "ans1 += mp1 [ i ] . substr ( cycle [ i + 1 ] ] ) ;",
+        "ans2 += mp1 [ i + 1 ] . find ( cycle [ i + 1 ] ) ;",
+        "ans2 += mp1 [ 0 ] . substr ( 0 ] , cycle [ sz - 1 ] ) ;"
+      ],
+      "err_line": 32,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::map<int, int>’ and ‘std::pair<int, int>’)"
+    },
+    {
+      "mod_line": [
+        15,
+        38,
+        41
+      ],
+      "mod_code": [
+        "map < int , int > mp1 , to ;",
+        "ans1 += mp1 [ i ] . substr ( cycle [ i + 1 ] ] ) ;",
+        "ans1 += mp1 [ sz - 1 ] . find ( cycle [ sz - 1 ] ) ;"
+      ],
+      "err_line": 32,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::map<int, int>’ and ‘std::pair<int, int>’)"
+    },
+    {
+      "mod_line": [
+        15,
+        38,
+        41,
+        42
+      ],
+      "mod_code": [
+        "map < int , int > mp1 , to ;",
+        "ans1 += mp1 [ i ] . substr ( cycle [ i + 1 ] ] ) ;",
+        "ans1 += mp1 [ sz - 1 ] . find ( cycle [ sz - 1 ] ) ;",
+        "ans2 += mp1 [ 0 ] . substr ( 0 ] , cycle [ sz - 1 ] ) ;"
+      ],
+      "err_line": 32,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::map<int, int>’ and ‘std::pair<int, int>’)"
+    },
+    {
+      "mod_line": [
+        15,
+        38,
+        42
+      ],
+      "mod_code": [
+        "map < int , int > mp1 , to ;",
+        "ans1 += mp1 [ i ] . substr ( cycle [ i + 1 ] ] ) ;",
+        "ans2 += mp1 [ 0 ] . substr ( 0 ] , cycle [ sz - 1 ] ) ;"
+      ],
+      "err_line": 32,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::map<int, int>’ and ‘std::pair<int, int>’)"
+    },
+    {
+      "mod_line": [
+        15,
+        39
+      ],
+      "mod_code": [
+        "map < int , int > mp1 , to ;",
+        "ans2 += mp1 [ i + 1 ] . find ( cycle [ i + 1 ] ) ;"
+      ],
+      "err_line": 32,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::map<int, int>’ and ‘std::pair<int, int>’)"
+    },
+    {
+      "mod_line": [
+        15,
+        39,
+        41
+      ],
+      "mod_code": [
+        "map < int , int > mp1 , to ;",
+        "ans2 += mp1 [ i + 1 ] . find ( cycle [ i + 1 ] ) ;",
+        "ans1 += mp1 [ sz - 1 ] . find ( cycle [ sz - 1 ] ) ;"
+      ],
+      "err_line": 32,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::map<int, int>’ and ‘std::pair<int, int>’)"
+    },
+    {
+      "mod_line": [
+        15,
+        39,
+        41,
+        42
+      ],
+      "mod_code": [
+        "map < int , int > mp1 , to ;",
+        "ans2 += mp1 [ i + 1 ] . find ( cycle [ i + 1 ] ) ;",
+        "ans1 += mp1 [ sz - 1 ] . find ( cycle [ sz - 1 ] ) ;",
+        "ans2 += mp1 [ 0 ] . substr ( 0 ] , cycle [ sz - 1 ] ) ;"
+      ],
+      "err_line": 32,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::map<int, int>’ and ‘std::pair<int, int>’)"
+    },
+    {
+      "mod_line": [
+        15,
+        39,
+        42
+      ],
+      "mod_code": [
+        "map < int , int > mp1 , to ;",
+        "ans2 += mp1 [ i + 1 ] . find ( cycle [ i + 1 ] ) ;",
+        "ans2 += mp1 [ 0 ] . substr ( 0 ] , cycle [ sz - 1 ] ) ;"
+      ],
+      "err_line": 32,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::map<int, int>’ and ‘std::pair<int, int>’)"
+    },
+    {
+      "mod_line": [
+        15,
+        41
+      ],
+      "mod_code": [
+        "map < int , int > mp1 , to ;",
+        "ans1 += mp1 [ sz - 1 ] . find ( cycle [ sz - 1 ] ) ;"
+      ],
+      "err_line": 32,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::map<int, int>’ and ‘std::pair<int, int>’)"
+    },
+    {
+      "mod_line": [
+        15,
+        41,
+        42
+      ],
+      "mod_code": [
+        "map < int , int > mp1 , to ;",
+        "ans1 += mp1 [ sz - 1 ] . find ( cycle [ sz - 1 ] ) ;",
+        "ans2 += mp1 [ 0 ] . substr ( 0 ] , cycle [ sz - 1 ] ) ;"
+      ],
+      "err_line": 32,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::map<int, int>’ and ‘std::pair<int, int>’)"
+    },
+    {
+      "mod_line": [
+        15,
+        42
+      ],
+      "mod_code": [
+        "map < int , int > mp1 , to ;",
+        "ans2 += mp1 [ 0 ] . substr ( 0 ] , cycle [ sz - 1 ] ) ;"
+      ],
+      "err_line": 32,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::map<int, int>’ and ‘std::pair<int, int>’)"
+    },
+    {
+      "mod_line": [
+        32,
+        38
+      ],
+      "mod_code": [
+        "mp1 [ ceil ( b , a ) ] = c ;",
+        "ans1 += mp1 [ i ] . substr ( cycle [ i + 1 ] ] ) ;"
+      ],
+      "err_line": 32,
+      "err_msg": "no matching function for call to ‘ceil(int&, int&)’"
+    },
+    {
+      "mod_line": [
+        32,
+        38,
+        39
+      ],
+      "mod_code": [
+        "mp1 [ ceil ( b , a ) ] = c ;",
+        "ans1 += mp1 [ i ] . substr ( cycle [ i + 1 ] ] ) ;",
+        "ans2 += mp1 [ i + 1 ] . find ( cycle [ i + 1 ] ) ;"
+      ],
+      "err_line": 32,
+      "err_msg": "no matching function for call to ‘ceil(int&, int&)’"
+    },
+    {
+      "mod_line": [
+        32,
+        38,
+        39,
+        41
+      ],
+      "mod_code": [
+        "mp1 [ ceil ( b , a ) ] = c ;",
+        "ans1 += mp1 [ i ] . substr ( cycle [ i + 1 ] ] ) ;",
+        "ans2 += mp1 [ i + 1 ] . find ( cycle [ i + 1 ] ) ;",
+        "ans1 += mp1 [ sz - 1 ] . find ( cycle [ sz - 1 ] ) ;"
+      ],
+      "err_line": 32,
+      "err_msg": "no matching function for call to ‘ceil(int&, int&)’"
+    },
+    {
+      "mod_line": [
+        32,
+        38,
+        39,
+        42
+      ],
+      "mod_code": [
+        "mp1 [ ceil ( b , a ) ] = c ;",
+        "ans1 += mp1 [ i ] . substr ( cycle [ i + 1 ] ] ) ;",
+        "ans2 += mp1 [ i + 1 ] . find ( cycle [ i + 1 ] ) ;",
+        "ans2 += mp1 [ 0 ] . substr ( 0 ] , cycle [ sz - 1 ] ) ;"
+      ],
+      "err_line": 32,
+      "err_msg": "no matching function for call to ‘ceil(int&, int&)’"
+    },
+    {
+      "mod_line": [
+        32,
+        38,
+        41
+      ],
+      "mod_code": [
+        "mp1 [ ceil ( b , a ) ] = c ;",
+        "ans1 += mp1 [ i ] . substr ( cycle [ i + 1 ] ] ) ;",
+        "ans1 += mp1 [ sz - 1 ] . find ( cycle [ sz - 1 ] ) ;"
+      ],
+      "err_line": 32,
+      "err_msg": "no matching function for call to ‘ceil(int&, int&)’"
+    },
+    {
+      "mod_line": [
+        32,
+        38,
+        41,
+        42
+      ],
+      "mod_code": [
+        "mp1 [ ceil ( b , a ) ] = c ;",
+        "ans1 += mp1 [ i ] . substr ( cycle [ i + 1 ] ] ) ;",
+        "ans1 += mp1 [ sz - 1 ] . find ( cycle [ sz - 1 ] ) ;",
+        "ans2 += mp1 [ 0 ] . substr ( 0 ] , cycle [ sz - 1 ] ) ;"
+      ],
+      "err_line": 32,
+      "err_msg": "no matching function for call to ‘ceil(int&, int&)’"
+    },
+    {
+      "mod_line": [
+        32,
+        38,
+        42
+      ],
+      "mod_code": [
+        "mp1 [ ceil ( b , a ) ] = c ;",
+        "ans1 += mp1 [ i ] . substr ( cycle [ i + 1 ] ] ) ;",
+        "ans2 += mp1 [ 0 ] . substr ( 0 ] , cycle [ sz - 1 ] ) ;"
+      ],
+      "err_line": 32,
+      "err_msg": "no matching function for call to ‘ceil(int&, int&)’"
+    },
+    {
+      "mod_line": [
+        32,
+        39
+      ],
+      "mod_code": [
+        "mp1 [ ceil ( b , a ) ] = c ;",
+        "ans2 += mp1 [ i + 1 ] . find ( cycle [ i + 1 ] ) ;"
+      ],
+      "err_line": 32,
+      "err_msg": "no matching function for call to ‘ceil(int&, int&)’"
+    },
+    {
+      "mod_line": [
+        32,
+        39,
+        41
+      ],
+      "mod_code": [
+        "mp1 [ ceil ( b , a ) ] = c ;",
+        "ans2 += mp1 [ i + 1 ] . find ( cycle [ i + 1 ] ) ;",
+        "ans1 += mp1 [ sz - 1 ] . find ( cycle [ sz - 1 ] ) ;"
+      ],
+      "err_line": 32,
+      "err_msg": "no matching function for call to ‘ceil(int&, int&)’"
+    },
+    {
+      "mod_line": [
+        32,
+        39,
+        41,
+        42
+      ],
+      "mod_code": [
+        "mp1 [ ceil ( b , a ) ] = c ;",
+        "ans2 += mp1 [ i + 1 ] . find ( cycle [ i + 1 ] ) ;",
+        "ans1 += mp1 [ sz - 1 ] . find ( cycle [ sz - 1 ] ) ;",
+        "ans2 += mp1 [ 0 ] . substr ( 0 ] , cycle [ sz - 1 ] ) ;"
+      ],
+      "err_line": 32,
+      "err_msg": "no matching function for call to ‘ceil(int&, int&)’"
+    },
+    {
+      "mod_line": [
+        32,
+        39,
+        42
+      ],
+      "mod_code": [
+        "mp1 [ ceil ( b , a ) ] = c ;",
+        "ans2 += mp1 [ i + 1 ] . find ( cycle [ i + 1 ] ) ;",
+        "ans2 += mp1 [ 0 ] . substr ( 0 ] , cycle [ sz - 1 ] ) ;"
+      ],
+      "err_line": 32,
+      "err_msg": "no matching function for call to ‘ceil(int&, int&)’"
+    },
+    {
+      "mod_line": [
+        32,
+        41
+      ],
+      "mod_code": [
+        "mp1 [ ceil ( b , a ) ] = c ;",
+        "ans1 += mp1 [ sz - 1 ] . find ( cycle [ sz - 1 ] ) ;"
+      ],
+      "err_line": 32,
+      "err_msg": "no matching function for call to ‘ceil(int&, int&)’"
+    },
+    {
+      "mod_line": [
+        32,
+        41,
+        42
+      ],
+      "mod_code": [
+        "mp1 [ ceil ( b , a ) ] = c ;",
+        "ans1 += mp1 [ sz - 1 ] . find ( cycle [ sz - 1 ] ) ;",
+        "ans2 += mp1 [ 0 ] . substr ( 0 ] , cycle [ sz - 1 ] ) ;"
+      ],
+      "err_line": 32,
+      "err_msg": "no matching function for call to ‘ceil(int&, int&)’"
+    },
+    {
+      "mod_line": [
+        32,
+        42
+      ],
+      "mod_code": [
+        "mp1 [ ceil ( b , a ) ] = c ;",
+        "ans2 += mp1 [ 0 ] . substr ( 0 ] , cycle [ sz - 1 ] ) ;"
+      ],
+      "err_line": 32,
+      "err_msg": "no matching function for call to ‘ceil(int&, int&)’"
+    },
+    {
+      "mod_line": [
+        38,
+        39
+      ],
+      "mod_code": [
+        "ans1 += mp1 [ i ] . substr ( cycle [ i + 1 ] ] ) ;",
+        "ans2 += mp1 [ i + 1 ] . find ( cycle [ i + 1 ] ) ;"
+      ],
+      "err_line": 38,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::map<std::pair<int, int>, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        38,
+        39,
+        41
+      ],
+      "mod_code": [
+        "ans1 += mp1 [ i ] . substr ( cycle [ i + 1 ] ] ) ;",
+        "ans2 += mp1 [ i + 1 ] . find ( cycle [ i + 1 ] ) ;",
+        "ans1 += mp1 [ sz - 1 ] . find ( cycle [ sz - 1 ] ) ;"
+      ],
+      "err_line": 38,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::map<std::pair<int, int>, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        38,
+        39,
+        41,
+        42
+      ],
+      "mod_code": [
+        "ans1 += mp1 [ i ] . substr ( cycle [ i + 1 ] ] ) ;",
+        "ans2 += mp1 [ i + 1 ] . find ( cycle [ i + 1 ] ) ;",
+        "ans1 += mp1 [ sz - 1 ] . find ( cycle [ sz - 1 ] ) ;",
+        "ans2 += mp1 [ 0 ] . substr ( 0 ] , cycle [ sz - 1 ] ) ;"
+      ],
+      "err_line": 38,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::map<std::pair<int, int>, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        38,
+        39,
+        42
+      ],
+      "mod_code": [
+        "ans1 += mp1 [ i ] . substr ( cycle [ i + 1 ] ] ) ;",
+        "ans2 += mp1 [ i + 1 ] . find ( cycle [ i + 1 ] ) ;",
+        "ans2 += mp1 [ 0 ] . substr ( 0 ] , cycle [ sz - 1 ] ) ;"
+      ],
+      "err_line": 38,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::map<std::pair<int, int>, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        38,
+        41
+      ],
+      "mod_code": [
+        "ans1 += mp1 [ i ] . substr ( cycle [ i + 1 ] ] ) ;",
+        "ans1 += mp1 [ sz - 1 ] . find ( cycle [ sz - 1 ] ) ;"
+      ],
+      "err_line": 38,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::map<std::pair<int, int>, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        38,
+        41,
+        42
+      ],
+      "mod_code": [
+        "ans1 += mp1 [ i ] . substr ( cycle [ i + 1 ] ] ) ;",
+        "ans1 += mp1 [ sz - 1 ] . find ( cycle [ sz - 1 ] ) ;",
+        "ans2 += mp1 [ 0 ] . substr ( 0 ] , cycle [ sz - 1 ] ) ;"
+      ],
+      "err_line": 38,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::map<std::pair<int, int>, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        38,
+        42
+      ],
+      "mod_code": [
+        "ans1 += mp1 [ i ] . substr ( cycle [ i + 1 ] ] ) ;",
+        "ans2 += mp1 [ 0 ] . substr ( 0 ] , cycle [ sz - 1 ] ) ;"
+      ],
+      "err_line": 38,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::map<std::pair<int, int>, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        39,
+        41
+      ],
+      "mod_code": [
+        "ans2 += mp1 [ i + 1 ] . find ( cycle [ i + 1 ] ) ;",
+        "ans1 += mp1 [ sz - 1 ] . find ( cycle [ sz - 1 ] ) ;"
+      ],
+      "err_line": 39,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::map<std::pair<int, int>, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        39,
+        41,
+        42
+      ],
+      "mod_code": [
+        "ans2 += mp1 [ i + 1 ] . find ( cycle [ i + 1 ] ) ;",
+        "ans1 += mp1 [ sz - 1 ] . find ( cycle [ sz - 1 ] ) ;",
+        "ans2 += mp1 [ 0 ] . substr ( 0 ] , cycle [ sz - 1 ] ) ;"
+      ],
+      "err_line": 39,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::map<std::pair<int, int>, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        39,
+        42
+      ],
+      "mod_code": [
+        "ans2 += mp1 [ i + 1 ] . find ( cycle [ i + 1 ] ) ;",
+        "ans2 += mp1 [ 0 ] . substr ( 0 ] , cycle [ sz - 1 ] ) ;"
+      ],
+      "err_line": 39,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::map<std::pair<int, int>, int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        41,
+        42
+      ],
+      "mod_code": [
+        "ans1 += mp1 [ sz - 1 ] . find ( cycle [ sz - 1 ] ) ;",
+        "ans2 += mp1 [ 0 ] . substr ( 0 ] , cycle [ sz - 1 ] ) ;"
+      ],
+      "err_line": 41,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::map<std::pair<int, int>, int>’ and ‘int’)"
+    }
+  ]
+}

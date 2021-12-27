@@ -1,0 +1,483 @@
+{
+  "meta": {
+    "index": 821,
+    "hitid": "3S1WOPCJFGNB41FULJOXUM42DQAEJF",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "455A",
+    "subid": "49056027"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create long long n",
+      "code": "long long n ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "create long long array val with size 100005 with val = { 0 }",
+      "code": "long long val [ 100005 ] = { 0 } ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "create long long array dp with size 100005 with dp = { 0 }",
+      "code": "long long dp [ 100005 ] = { 0 } ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "create long long x",
+      "code": "long long x ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( long long i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "read x",
+      "code": "cin >> x ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "increment val [ x ]",
+      "code": "val [ x ] ++ ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "set dp [ 0 ] to 0",
+      "code": "dp [ 0 ] = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "set dp [ 1 ] to val [ 1 ]",
+      "code": "dp [ 1 ] = val [ 1 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "for i = 2 to 100005 exclusive , set dp [ i ] to maximum of dp [ i - 1 ] and dp [ i - 2 ] + val [ i ] * i",
+      "code": "for ( long long i = 2 ; i < 100005 ; i ++ ) { dp [ i ] = max ( dp [ i - 1 ] , dp [ i - 2 ] + val [ i ] * i ) ; }",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "print dp [ 100004 ] print newline",
+      "code": "cout << dp [ 100004 ] << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "while ( cin >> n )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘val’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "int dp [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 10,
+      "err_msg": "conflicting declaration ‘int dp [0]’"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "char dp [ 1 ] = val [ 1 ] ;"
+      ],
+      "err_line": 11,
+      "err_msg": "conflicting declaration ‘char dp [1]’"
+    },
+    {
+      "mod_line": [
+        7,
+        6
+      ],
+      "mod_code": [
+        "cin >> n ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        6,
+        11
+      ],
+      "mod_code": [
+        "cin >> n ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "char dp [ 1 ] = val [ 1 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        6,
+        11,
+        10
+      ],
+      "mod_code": [
+        "cin >> n ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "char dp [ 1 ] = val [ 1 ] ;",
+        "int dp [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        6,
+        11,
+        2
+      ],
+      "mod_code": [
+        "cin >> n ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "char dp [ 1 ] = val [ 1 ] ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        6,
+        10
+      ],
+      "mod_code": [
+        "cin >> n ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int dp [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        6,
+        10,
+        2
+      ],
+      "mod_code": [
+        "cin >> n ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int dp [ 0 ] = { 0 } ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        6,
+        2
+      ],
+      "mod_code": [
+        "cin >> n ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        11
+      ],
+      "mod_code": [
+        "cin >> n ;",
+        "char dp [ 1 ] = val [ 1 ] ;"
+      ],
+      "err_line": 11,
+      "err_msg": "conflicting declaration ‘char dp [1]’"
+    },
+    {
+      "mod_line": [
+        7,
+        11,
+        10
+      ],
+      "mod_code": [
+        "cin >> n ;",
+        "char dp [ 1 ] = val [ 1 ] ;",
+        "int dp [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 10,
+      "err_msg": "conflicting declaration ‘int dp [0]’"
+    },
+    {
+      "mod_line": [
+        7,
+        11,
+        10,
+        2
+      ],
+      "mod_code": [
+        "cin >> n ;",
+        "char dp [ 1 ] = val [ 1 ] ;",
+        "int dp [ 0 ] = { 0 } ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘val’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        11,
+        2
+      ],
+      "mod_code": [
+        "cin >> n ;",
+        "char dp [ 1 ] = val [ 1 ] ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘val’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        10
+      ],
+      "mod_code": [
+        "cin >> n ;",
+        "int dp [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 10,
+      "err_msg": "conflicting declaration ‘int dp [0]’"
+    },
+    {
+      "mod_line": [
+        7,
+        10,
+        2
+      ],
+      "mod_code": [
+        "cin >> n ;",
+        "int dp [ 0 ] = { 0 } ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘val’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        2
+      ],
+      "mod_code": [
+        "cin >> n ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘val’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        11
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "char dp [ 1 ] = val [ 1 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        11,
+        10
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "char dp [ 1 ] = val [ 1 ] ;",
+        "int dp [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        11,
+        10,
+        2
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "char dp [ 1 ] = val [ 1 ] ;",
+        "int dp [ 0 ] = { 0 } ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        11,
+        2
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "char dp [ 1 ] = val [ 1 ] ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        10
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int dp [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        10,
+        2
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int dp [ 0 ] = { 0 } ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        2
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "while ( cin >> n )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        10
+      ],
+      "mod_code": [
+        "char dp [ 1 ] = val [ 1 ] ;",
+        "int dp [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 10,
+      "err_msg": "conflicting declaration ‘int dp [0]’"
+    },
+    {
+      "mod_line": [
+        11,
+        10,
+        2
+      ],
+      "mod_code": [
+        "char dp [ 1 ] = val [ 1 ] ;",
+        "int dp [ 0 ] = { 0 } ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘val’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11,
+        2
+      ],
+      "mod_code": [
+        "char dp [ 1 ] = val [ 1 ] ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘val’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        2
+      ],
+      "mod_code": [
+        "int dp [ 0 ] = { 0 } ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘val’ was not declared in this scope"
+    }
+  ]
+}

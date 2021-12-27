@@ -1,0 +1,1019 @@
+{
+  "meta": {
+    "index": 2346,
+    "hitid": "31YWE12TE06RQ659FFPSFLK03OG7XG",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "284A",
+    "subid": "23655472"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare integer p and 2d array of integers dp with size 2005 by 2005",
+      "code": "int p , dp [ 2005 ] [ 2005 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "void function helper",
+      "code": "void helper ( )",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "set first sizeof ( dp ) bytes at the pointer dp to 0",
+      "code": "memset ( dp , 0 , sizeof ( dp ) ) ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "for i from 0 to p exclusive , change dp [ i ] [ 0 ] to 1",
+      "code": "for ( int i = 0 ; i < p ; i ++ ) { dp [ i ] [ 0 ] = 1 ; }",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for x from 1 to p exclusive",
+      "code": "for ( int x = 1 ; x < p ; x ++ )",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i = 1 to p exclusive , set dp [ x ] [ i ] to ( ( dp [ x ] [ i - 1 ] ) * x ) % p",
+      "code": "for ( int i = 1 ; i < p ; i ++ ) { dp [ x ] [ i ] = ( ( dp [ x ] [ i - 1 ] ) * x ) % p ; }",
+      "indent": 2
+    },
+    {
+      "line": 6,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 8,
+      "text": "isPrimeRoot is a bool function with int argument x",
+      "code": "bool isPrimeRoot ( int x )",
+      "indent": 0
+    },
+    {
+      "line": 9,
+      "text": "declare int curr = 0",
+      "code": "int curr = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "for k from 0 to p - 2 exclusive",
+      "code": "for ( int k = 0 ; k < p - 2 ; k ++ )",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "add dp [ x ] [ k ] to curr",
+      "code": "curr += dp [ x ] [ k ] ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "return false if curr % p = 0",
+      "code": "if ( curr % p == 0 ) { return false ; }",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "set curr to curr + dp [ x ] [ p - 2 ]",
+      "code": "curr = curr + dp [ x ] [ p - 2 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "return false if curr % p ! = 0",
+      "code": "if ( curr % p != 0 ) { return false ; }",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "return true",
+      "code": "return true ;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 18,
+      "text": "integer function solve",
+      "code": "int solve ( )",
+      "indent": 0
+    },
+    {
+      "line": 19,
+      "text": "if p is equal to 2 , return 1",
+      "code": "if ( p == 2 ) return 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "call helper ( )",
+      "code": "helper ( ) ;",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "create integer ans = 0",
+      "code": "int ans = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 22,
+      "text": "change x from 1 to p exclusive in a loop",
+      "code": "for ( int x = 1 ; x < p ; x ++ )",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "if isPrimeRoot ( x ) returned true , increment ans",
+      "code": "if ( isPrimeRoot ( x ) ) { ans ++ ; }",
+      "indent": 2
+    },
+    {
+      "line": 24,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 25,
+      "text": "return ans",
+      "code": "return ans ;",
+      "indent": 1
+    },
+    {
+      "line": 26,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 27,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 28,
+      "text": "read p",
+      "code": "cin >> p ;",
+      "indent": 1
+    },
+    {
+      "line": 29,
+      "text": "declare integer ans = result of the solve ( )",
+      "code": "int ans = solve ( ) ;",
+      "indent": 1
+    },
+    {
+      "line": 30,
+      "text": "print ans",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 31,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 32,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int p [ 2005 ] [ 2005 ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘dp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "void helper ( ) { }"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int dp [ 2005 ] [ 2005 ] ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘p’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "memset ( dp ) , sizeof ( dp ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "for ( x = 1 ; x < p ; x ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘x’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "bool isPrimeRoot ( int x ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "for ( k = 0 ; k < p - 2 ; k ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "curr = dp + dp [ x ] [ k ] ;"
+      ],
+      "err_line": 11,
+      "err_msg": "invalid conversion from ‘int (*)[2005]’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        18
+      ],
+      "mod_code": [
+        "void solve ( )"
+      ],
+      "err_line": 19,
+      "err_msg": "return-statement with a value, in function returning 'void' [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        20
+      ],
+      "mod_code": [
+        "void helper ( ) { }"
+      ],
+      "err_line": 20,
+      "err_msg": "a function-definition is not allowed here before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        22
+      ],
+      "mod_code": [
+        "for ( x = 1 ; x < p ; x ++ )"
+      ],
+      "err_line": 22,
+      "err_msg": "‘x’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        29
+      ],
+      "mod_code": [
+        "int ans = * solve ( ) ;"
+      ],
+      "err_line": 29,
+      "err_msg": "invalid type argument of unary ‘*’ (have ‘int’)"
+    },
+    {
+      "mod_line": [
+        0,
+        1
+      ],
+      "mod_code": [
+        "int p [ 2005 ] [ 2005 ] ;",
+        "void helper ( ) { }"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        1,
+        9
+      ],
+      "mod_code": [
+        "int p [ 2005 ] [ 2005 ] ;",
+        "void helper ( ) { }",
+        "int curr = 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        1,
+        9,
+        28
+      ],
+      "mod_code": [
+        "int p [ 2005 ] [ 2005 ] ;",
+        "void helper ( ) { }",
+        "int curr = 1 ;",
+        "cout << p << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        1,
+        9,
+        11
+      ],
+      "mod_code": [
+        "int p [ 2005 ] [ 2005 ] ;",
+        "void helper ( ) { }",
+        "int curr = 1 ;",
+        "curr = dp + dp [ x ] [ k ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        1,
+        9,
+        2
+      ],
+      "mod_code": [
+        "int p [ 2005 ] [ 2005 ] ;",
+        "void helper ( ) { }",
+        "int curr = 1 ;",
+        "memset ( dp ) , sizeof ( dp ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        1,
+        28
+      ],
+      "mod_code": [
+        "int p [ 2005 ] [ 2005 ] ;",
+        "void helper ( ) { }",
+        "cout << p << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        1,
+        28,
+        11
+      ],
+      "mod_code": [
+        "int p [ 2005 ] [ 2005 ] ;",
+        "void helper ( ) { }",
+        "cout << p << endl ;",
+        "curr = dp + dp [ x ] [ k ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        1,
+        28,
+        2
+      ],
+      "mod_code": [
+        "int p [ 2005 ] [ 2005 ] ;",
+        "void helper ( ) { }",
+        "cout << p << endl ;",
+        "memset ( dp ) , sizeof ( dp ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        1,
+        11
+      ],
+      "mod_code": [
+        "int p [ 2005 ] [ 2005 ] ;",
+        "void helper ( ) { }",
+        "curr = dp + dp [ x ] [ k ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        1,
+        11,
+        2
+      ],
+      "mod_code": [
+        "int p [ 2005 ] [ 2005 ] ;",
+        "void helper ( ) { }",
+        "curr = dp + dp [ x ] [ k ] ;",
+        "memset ( dp ) , sizeof ( dp ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        1,
+        2
+      ],
+      "mod_code": [
+        "int p [ 2005 ] [ 2005 ] ;",
+        "void helper ( ) { }",
+        "memset ( dp ) , sizeof ( dp ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        9
+      ],
+      "mod_code": [
+        "int p [ 2005 ] [ 2005 ] ;",
+        "int curr = 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘dp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        9,
+        28
+      ],
+      "mod_code": [
+        "int p [ 2005 ] [ 2005 ] ;",
+        "int curr = 1 ;",
+        "cout << p << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘dp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        9,
+        28,
+        11
+      ],
+      "mod_code": [
+        "int p [ 2005 ] [ 2005 ] ;",
+        "int curr = 1 ;",
+        "cout << p << endl ;",
+        "curr = dp + dp [ x ] [ k ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘dp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        9,
+        28,
+        2
+      ],
+      "mod_code": [
+        "int p [ 2005 ] [ 2005 ] ;",
+        "int curr = 1 ;",
+        "cout << p << endl ;",
+        "memset ( dp ) , sizeof ( dp ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘dp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        9,
+        11
+      ],
+      "mod_code": [
+        "int p [ 2005 ] [ 2005 ] ;",
+        "int curr = 1 ;",
+        "curr = dp + dp [ x ] [ k ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘dp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        9,
+        11,
+        2
+      ],
+      "mod_code": [
+        "int p [ 2005 ] [ 2005 ] ;",
+        "int curr = 1 ;",
+        "curr = dp + dp [ x ] [ k ] ;",
+        "memset ( dp ) , sizeof ( dp ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘dp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        9,
+        2
+      ],
+      "mod_code": [
+        "int p [ 2005 ] [ 2005 ] ;",
+        "int curr = 1 ;",
+        "memset ( dp ) , sizeof ( dp ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘dp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        28
+      ],
+      "mod_code": [
+        "int p [ 2005 ] [ 2005 ] ;",
+        "cout << p << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘dp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        28,
+        11
+      ],
+      "mod_code": [
+        "int p [ 2005 ] [ 2005 ] ;",
+        "cout << p << endl ;",
+        "curr = dp + dp [ x ] [ k ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘dp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        28,
+        11,
+        2
+      ],
+      "mod_code": [
+        "int p [ 2005 ] [ 2005 ] ;",
+        "cout << p << endl ;",
+        "curr = dp + dp [ x ] [ k ] ;",
+        "memset ( dp ) , sizeof ( dp ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘dp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        28,
+        2
+      ],
+      "mod_code": [
+        "int p [ 2005 ] [ 2005 ] ;",
+        "cout << p << endl ;",
+        "memset ( dp ) , sizeof ( dp ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘dp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        11
+      ],
+      "mod_code": [
+        "int p [ 2005 ] [ 2005 ] ;",
+        "curr = dp + dp [ x ] [ k ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘dp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        11,
+        2
+      ],
+      "mod_code": [
+        "int p [ 2005 ] [ 2005 ] ;",
+        "curr = dp + dp [ x ] [ k ] ;",
+        "memset ( dp ) , sizeof ( dp ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘dp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        2
+      ],
+      "mod_code": [
+        "int p [ 2005 ] [ 2005 ] ;",
+        "memset ( dp ) , sizeof ( dp ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘dp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        9
+      ],
+      "mod_code": [
+        "void helper ( ) { }",
+        "int curr = 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        28
+      ],
+      "mod_code": [
+        "void helper ( ) { }",
+        "int curr = 1 ;",
+        "cout << p << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        28,
+        11
+      ],
+      "mod_code": [
+        "void helper ( ) { }",
+        "int curr = 1 ;",
+        "cout << p << endl ;",
+        "curr = dp + dp [ x ] [ k ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        28,
+        2
+      ],
+      "mod_code": [
+        "void helper ( ) { }",
+        "int curr = 1 ;",
+        "cout << p << endl ;",
+        "memset ( dp ) , sizeof ( dp ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        11
+      ],
+      "mod_code": [
+        "void helper ( ) { }",
+        "int curr = 1 ;",
+        "curr = dp + dp [ x ] [ k ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        11,
+        2
+      ],
+      "mod_code": [
+        "void helper ( ) { }",
+        "int curr = 1 ;",
+        "curr = dp + dp [ x ] [ k ] ;",
+        "memset ( dp ) , sizeof ( dp ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        2
+      ],
+      "mod_code": [
+        "void helper ( ) { }",
+        "int curr = 1 ;",
+        "memset ( dp ) , sizeof ( dp ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        28
+      ],
+      "mod_code": [
+        "void helper ( ) { }",
+        "cout << p << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        28,
+        11
+      ],
+      "mod_code": [
+        "void helper ( ) { }",
+        "cout << p << endl ;",
+        "curr = dp + dp [ x ] [ k ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        28,
+        11,
+        2
+      ],
+      "mod_code": [
+        "void helper ( ) { }",
+        "cout << p << endl ;",
+        "curr = dp + dp [ x ] [ k ] ;",
+        "memset ( dp ) , sizeof ( dp ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        28,
+        2
+      ],
+      "mod_code": [
+        "void helper ( ) { }",
+        "cout << p << endl ;",
+        "memset ( dp ) , sizeof ( dp ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        11
+      ],
+      "mod_code": [
+        "void helper ( ) { }",
+        "curr = dp + dp [ x ] [ k ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        11,
+        2
+      ],
+      "mod_code": [
+        "void helper ( ) { }",
+        "curr = dp + dp [ x ] [ k ] ;",
+        "memset ( dp ) , sizeof ( dp ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        2
+      ],
+      "mod_code": [
+        "void helper ( ) { }",
+        "memset ( dp ) , sizeof ( dp ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        9,
+        28,
+        11
+      ],
+      "mod_code": [
+        "int curr = 1 ;",
+        "cout << p << endl ;",
+        "curr = dp + dp [ x ] [ k ] ;"
+      ],
+      "err_line": 11,
+      "err_msg": "invalid conversion from ‘int (*)[2005]’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        28,
+        11,
+        2
+      ],
+      "mod_code": [
+        "int curr = 1 ;",
+        "cout << p << endl ;",
+        "curr = dp + dp [ x ] [ k ] ;",
+        "memset ( dp ) , sizeof ( dp ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        9,
+        28,
+        2
+      ],
+      "mod_code": [
+        "int curr = 1 ;",
+        "cout << p << endl ;",
+        "memset ( dp ) , sizeof ( dp ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        9,
+        11
+      ],
+      "mod_code": [
+        "int curr = 1 ;",
+        "curr = dp + dp [ x ] [ k ] ;"
+      ],
+      "err_line": 11,
+      "err_msg": "invalid conversion from ‘int (*)[2005]’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        11,
+        2
+      ],
+      "mod_code": [
+        "int curr = 1 ;",
+        "curr = dp + dp [ x ] [ k ] ;",
+        "memset ( dp ) , sizeof ( dp ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        9,
+        2
+      ],
+      "mod_code": [
+        "int curr = 1 ;",
+        "memset ( dp ) , sizeof ( dp ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        28,
+        11
+      ],
+      "mod_code": [
+        "cout << p << endl ;",
+        "curr = dp + dp [ x ] [ k ] ;"
+      ],
+      "err_line": 11,
+      "err_msg": "invalid conversion from ‘int (*)[2005]’ to ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        28,
+        11,
+        2
+      ],
+      "mod_code": [
+        "cout << p << endl ;",
+        "curr = dp + dp [ x ] [ k ] ;",
+        "memset ( dp ) , sizeof ( dp ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        28,
+        2
+      ],
+      "mod_code": [
+        "cout << p << endl ;",
+        "memset ( dp ) , sizeof ( dp ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        11,
+        2
+      ],
+      "mod_code": [
+        "curr = dp + dp [ x ] [ k ] ;",
+        "memset ( dp ) , sizeof ( dp ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    }
+  ]
+}

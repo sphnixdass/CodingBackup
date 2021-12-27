@@ -1,0 +1,1047 @@
+{
+  "meta": {
+    "index": 2447,
+    "hitid": "3O0M2G5VC6W46N5SA1L7W6E85JY499",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "553A",
+    "subid": "48716950"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare long long int variable mod = 1000000007",
+      "code": "long long int mod = 1000000007 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare 2d integer array ncr with size 1001 by 1001",
+      "code": "int ncr [ 1001 ] [ 1001 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "declare int variables k and tot",
+      "code": "int k , tot ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "declare an array of ints ct with 1001 element",
+      "code": "int ct [ 1001 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "declare an array of long long ints dp with 1001 element",
+      "code": "long long int dp [ 1001 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "in the function init",
+      "code": "void init ( )",
+      "indent": 0
+    },
+    {
+      "line": 6,
+      "text": "for i = 1 to 1000 inclusive",
+      "code": "for ( int i = 1 ; i <= 1000 ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "change ncr [ i ] [ 0 ] to 1",
+      "code": "ncr [ i ] [ 0 ] = 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "change ncr [ i ] [ 1 ] to i",
+      "code": "ncr [ i ] [ 1 ] = i ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "for j from 2 to i inclusive , set ncr [ i ] [ j ] to ( ( ncr [ i - 1 ] [ j ] ) % mod + ( ncr [ i - 1 ] [ j - 1 ] ) % mod ) % mod",
+      "code": "for ( int j = 2 ; j <= i ; j ++ ) { ncr [ i ] [ j ] = ( ( ncr [ i - 1 ] [ j ] ) % mod + ( ncr [ i - 1 ] [ j - 1 ] ) % mod ) % mod ; }",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 12,
+      "text": "calc is a long long int function with int argument x",
+      "code": "long long int calc ( int x )",
+      "indent": 0
+    },
+    {
+      "line": 13,
+      "text": "if dp [ x ] ! = - 1 , return dp [ x ]",
+      "code": "if ( dp [ x ] != - 1 ) { return dp [ x ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "if x = 1",
+      "code": "if ( x == 1 )",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "assign 1 to dp [ x ]",
+      "code": "dp [ x ] = 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "return dp [ x ]",
+      "code": "return dp [ x ] ;",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "create integer n = ct [ x ]",
+      "code": "int n = ct [ x ] ;",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "declare int variable r = ct [ x ] - ct [ x - 1 ]",
+      "code": "int r = ct [ x ] - ct [ x - 1 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "create long long int ans = ( ncr [ n - 1 ] [ r - 1 ] * ( calc ( x - 1 ) ) % mod )",
+      "code": "long long int ans = ( ncr [ n - 1 ] [ r - 1 ] * ( calc ( x - 1 ) ) % mod ) ;",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "set dp [ x ] to ans",
+      "code": "dp [ x ] = ( int ) ans ;",
+      "indent": 1
+    },
+    {
+      "line": 22,
+      "text": "return dp [ x ]",
+      "code": "return dp [ x ] ;",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 24,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 25,
+      "text": "call init",
+      "code": "init ( ) ;",
+      "indent": 1
+    },
+    {
+      "line": 26,
+      "text": "read k",
+      "code": "cin >> k ;",
+      "indent": 1
+    },
+    {
+      "line": 27,
+      "text": "for i = 1 to k inclusive",
+      "code": "for ( int i = 1 ; i <= k ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 28,
+      "text": "read input to ct [ i ]",
+      "code": "cin >> ct [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 29,
+      "text": "add ct [ i ] to tot",
+      "code": "tot += ct [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 30,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 31,
+      "text": "loop i from 2 to k inclusive , increase ct [ i ] by ct [ i - 1 ]",
+      "code": "for ( int i = 2 ; i <= k ; i ++ ) { ct [ i ] += ct [ i - 1 ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 32,
+      "text": "set first sizeof ( dp ) bytes at the pointer dp to - 1",
+      "code": "memset ( dp , - 1 , sizeof ( dp ) ) ;",
+      "indent": 1
+    },
+    {
+      "line": 33,
+      "text": "print the result of calc ( k )",
+      "code": "cout << calc ( k ) << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 34,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 35,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "int k , tot tot ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected initializer before ‘tot’"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "void init ( ) { }"
+      ],
+      "err_line": 6,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "ncr [ i ] [ j ] = i ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "for ( int j = 2 ; j <= i ; j ++ ) ncr [ i ] [ j ] [ j ] [ j ] [ i ] = ( ( ncr [ i - 1 ] [ j - 1 ] ) % mod ) % mod ;"
+      ],
+      "err_line": 9,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "long long int calc ( int x ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "char dp [ x ] = 1 ;"
+      ],
+      "err_line": 15,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "return dp [ x ] << ;"
+      ],
+      "err_line": 16,
+      "err_msg": "expected primary-expression before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        18
+      ],
+      "mod_code": [
+        "n = ct [ x ] ;"
+      ],
+      "err_line": 18,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        22
+      ],
+      "mod_code": [
+        "return dp [ x ] << ;"
+      ],
+      "err_line": 22,
+      "err_msg": "expected primary-expression before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        26
+      ],
+      "mod_code": [
+        "cin >> n ;"
+      ],
+      "err_line": 26,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        28
+      ],
+      "mod_code": [
+        "ct += ct [ i ] ;"
+      ],
+      "err_line": 28,
+      "err_msg": "incompatible types in assignment of ‘int’ to ‘int [1001]’"
+    },
+    {
+      "mod_line": [
+        32
+      ],
+      "mod_code": [
+        "memset ( dp , - dp , sizeof ( dp ) ) ;"
+      ],
+      "err_line": 32,
+      "err_msg": "wrong type argument to unary minus"
+    },
+    {
+      "mod_line": [
+        0,
+        16
+      ],
+      "mod_code": [
+        "long long int mod = 1e9 ;",
+        "return dp [ x ] << ;"
+      ],
+      "err_line": 16,
+      "err_msg": "expected primary-expression before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        8
+      ],
+      "mod_code": [
+        "long long int mod = 1e9 ;",
+        "return dp [ x ] << ;",
+        "ncr [ i ] [ j ] = i ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        8,
+        28
+      ],
+      "mod_code": [
+        "long long int mod = 1e9 ;",
+        "return dp [ x ] << ;",
+        "ncr [ i ] [ j ] = i ;",
+        "ct += ct [ i ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        8,
+        7
+      ],
+      "mod_code": [
+        "long long int mod = 1e9 ;",
+        "return dp [ x ] << ;",
+        "ncr [ i ] [ j ] = i ;",
+        "ncr [ i ] [ 0 ] = ' 1 ' ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        8,
+        27
+      ],
+      "mod_code": [
+        "long long int mod = 1e9 ;",
+        "return dp [ x ] << ;",
+        "ncr [ i ] [ j ] = i ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        28
+      ],
+      "mod_code": [
+        "long long int mod = 1e9 ;",
+        "return dp [ x ] << ;",
+        "ct += ct [ i ] ;"
+      ],
+      "err_line": 16,
+      "err_msg": "expected primary-expression before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        28,
+        7
+      ],
+      "mod_code": [
+        "long long int mod = 1e9 ;",
+        "return dp [ x ] << ;",
+        "ct += ct [ i ] ;",
+        "ncr [ i ] [ 0 ] = ' 1 ' ;"
+      ],
+      "err_line": 16,
+      "err_msg": "expected primary-expression before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        28,
+        27
+      ],
+      "mod_code": [
+        "long long int mod = 1e9 ;",
+        "return dp [ x ] << ;",
+        "ct += ct [ i ] ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 16,
+      "err_msg": "expected primary-expression before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        7
+      ],
+      "mod_code": [
+        "long long int mod = 1e9 ;",
+        "return dp [ x ] << ;",
+        "ncr [ i ] [ 0 ] = ' 1 ' ;"
+      ],
+      "err_line": 16,
+      "err_msg": "expected primary-expression before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        7,
+        27
+      ],
+      "mod_code": [
+        "long long int mod = 1e9 ;",
+        "return dp [ x ] << ;",
+        "ncr [ i ] [ 0 ] = ' 1 ' ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 16,
+      "err_msg": "expected primary-expression before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        27
+      ],
+      "mod_code": [
+        "long long int mod = 1e9 ;",
+        "return dp [ x ] << ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 16,
+      "err_msg": "expected primary-expression before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        8
+      ],
+      "mod_code": [
+        "long long int mod = 1e9 ;",
+        "ncr [ i ] [ j ] = i ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        8,
+        28
+      ],
+      "mod_code": [
+        "long long int mod = 1e9 ;",
+        "ncr [ i ] [ j ] = i ;",
+        "ct += ct [ i ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        8,
+        28,
+        7
+      ],
+      "mod_code": [
+        "long long int mod = 1e9 ;",
+        "ncr [ i ] [ j ] = i ;",
+        "ct += ct [ i ] ;",
+        "ncr [ i ] [ 0 ] = ' 1 ' ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        8,
+        28,
+        27
+      ],
+      "mod_code": [
+        "long long int mod = 1e9 ;",
+        "ncr [ i ] [ j ] = i ;",
+        "ct += ct [ i ] ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        8,
+        7
+      ],
+      "mod_code": [
+        "long long int mod = 1e9 ;",
+        "ncr [ i ] [ j ] = i ;",
+        "ncr [ i ] [ 0 ] = ' 1 ' ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        8,
+        7,
+        27
+      ],
+      "mod_code": [
+        "long long int mod = 1e9 ;",
+        "ncr [ i ] [ j ] = i ;",
+        "ncr [ i ] [ 0 ] = ' 1 ' ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        8,
+        27
+      ],
+      "mod_code": [
+        "long long int mod = 1e9 ;",
+        "ncr [ i ] [ j ] = i ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        28
+      ],
+      "mod_code": [
+        "long long int mod = 1e9 ;",
+        "ct += ct [ i ] ;"
+      ],
+      "err_line": 28,
+      "err_msg": "incompatible types in assignment of ‘int’ to ‘int [1001]’"
+    },
+    {
+      "mod_line": [
+        0,
+        28,
+        7
+      ],
+      "mod_code": [
+        "long long int mod = 1e9 ;",
+        "ct += ct [ i ] ;",
+        "ncr [ i ] [ 0 ] = ' 1 ' ;"
+      ],
+      "err_line": 28,
+      "err_msg": "incompatible types in assignment of ‘int’ to ‘int [1001]’"
+    },
+    {
+      "mod_line": [
+        0,
+        28,
+        7,
+        27
+      ],
+      "mod_code": [
+        "long long int mod = 1e9 ;",
+        "ct += ct [ i ] ;",
+        "ncr [ i ] [ 0 ] = ' 1 ' ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        28,
+        27
+      ],
+      "mod_code": [
+        "long long int mod = 1e9 ;",
+        "ct += ct [ i ] ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        7,
+        27
+      ],
+      "mod_code": [
+        "long long int mod = 1e9 ;",
+        "ncr [ i ] [ 0 ] = ' 1 ' ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        27
+      ],
+      "mod_code": [
+        "long long int mod = 1e9 ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        8
+      ],
+      "mod_code": [
+        "return dp [ x ] << ;",
+        "ncr [ i ] [ j ] = i ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        8,
+        28
+      ],
+      "mod_code": [
+        "return dp [ x ] << ;",
+        "ncr [ i ] [ j ] = i ;",
+        "ct += ct [ i ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        8,
+        28,
+        7
+      ],
+      "mod_code": [
+        "return dp [ x ] << ;",
+        "ncr [ i ] [ j ] = i ;",
+        "ct += ct [ i ] ;",
+        "ncr [ i ] [ 0 ] = ' 1 ' ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        8,
+        28,
+        27
+      ],
+      "mod_code": [
+        "return dp [ x ] << ;",
+        "ncr [ i ] [ j ] = i ;",
+        "ct += ct [ i ] ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        8,
+        7
+      ],
+      "mod_code": [
+        "return dp [ x ] << ;",
+        "ncr [ i ] [ j ] = i ;",
+        "ncr [ i ] [ 0 ] = ' 1 ' ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        8,
+        7,
+        27
+      ],
+      "mod_code": [
+        "return dp [ x ] << ;",
+        "ncr [ i ] [ j ] = i ;",
+        "ncr [ i ] [ 0 ] = ' 1 ' ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        8,
+        27
+      ],
+      "mod_code": [
+        "return dp [ x ] << ;",
+        "ncr [ i ] [ j ] = i ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        28
+      ],
+      "mod_code": [
+        "return dp [ x ] << ;",
+        "ct += ct [ i ] ;"
+      ],
+      "err_line": 16,
+      "err_msg": "expected primary-expression before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        28,
+        7
+      ],
+      "mod_code": [
+        "return dp [ x ] << ;",
+        "ct += ct [ i ] ;",
+        "ncr [ i ] [ 0 ] = ' 1 ' ;"
+      ],
+      "err_line": 16,
+      "err_msg": "expected primary-expression before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        28,
+        7,
+        27
+      ],
+      "mod_code": [
+        "return dp [ x ] << ;",
+        "ct += ct [ i ] ;",
+        "ncr [ i ] [ 0 ] = ' 1 ' ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 16,
+      "err_msg": "expected primary-expression before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        28,
+        27
+      ],
+      "mod_code": [
+        "return dp [ x ] << ;",
+        "ct += ct [ i ] ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 16,
+      "err_msg": "expected primary-expression before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        7
+      ],
+      "mod_code": [
+        "return dp [ x ] << ;",
+        "ncr [ i ] [ 0 ] = ' 1 ' ;"
+      ],
+      "err_line": 16,
+      "err_msg": "expected primary-expression before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        7,
+        27
+      ],
+      "mod_code": [
+        "return dp [ x ] << ;",
+        "ncr [ i ] [ 0 ] = ' 1 ' ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 16,
+      "err_msg": "expected primary-expression before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        27
+      ],
+      "mod_code": [
+        "return dp [ x ] << ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 16,
+      "err_msg": "expected primary-expression before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        28
+      ],
+      "mod_code": [
+        "ncr [ i ] [ j ] = i ;",
+        "ct += ct [ i ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        28,
+        7
+      ],
+      "mod_code": [
+        "ncr [ i ] [ j ] = i ;",
+        "ct += ct [ i ] ;",
+        "ncr [ i ] [ 0 ] = ' 1 ' ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        28,
+        7,
+        27
+      ],
+      "mod_code": [
+        "ncr [ i ] [ j ] = i ;",
+        "ct += ct [ i ] ;",
+        "ncr [ i ] [ 0 ] = ' 1 ' ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        28,
+        27
+      ],
+      "mod_code": [
+        "ncr [ i ] [ j ] = i ;",
+        "ct += ct [ i ] ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        7
+      ],
+      "mod_code": [
+        "ncr [ i ] [ j ] = i ;",
+        "ncr [ i ] [ 0 ] = ' 1 ' ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        7,
+        27
+      ],
+      "mod_code": [
+        "ncr [ i ] [ j ] = i ;",
+        "ncr [ i ] [ 0 ] = ' 1 ' ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        27
+      ],
+      "mod_code": [
+        "ncr [ i ] [ j ] = i ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        28,
+        7
+      ],
+      "mod_code": [
+        "ct += ct [ i ] ;",
+        "ncr [ i ] [ 0 ] = ' 1 ' ;"
+      ],
+      "err_line": 28,
+      "err_msg": "incompatible types in assignment of ‘int’ to ‘int [1001]’"
+    },
+    {
+      "mod_line": [
+        28,
+        7,
+        27
+      ],
+      "mod_code": [
+        "ct += ct [ i ] ;",
+        "ncr [ i ] [ 0 ] = ' 1 ' ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        28,
+        27
+      ],
+      "mod_code": [
+        "ct += ct [ i ] ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        27
+      ],
+      "mod_code": [
+        "ncr [ i ] [ 0 ] = ' 1 ' ;",
+        "for ( i = 1 ; i <= k ; i ++ )"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    }
+  ]
+}

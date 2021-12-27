@@ -1,0 +1,1183 @@
+{
+  "meta": {
+    "index": 2567,
+    "hitid": "3VMV5CHJZ8932I7Q38SPWVCNOTZTG5",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "24A",
+    "subid": "47823770"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create integer vector array v with size 101",
+      "code": "vector < int > v [ 101 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create boolean array vis with size 101",
+      "code": "bool vis [ 101 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "create integer cost with cost = 0",
+      "code": "int cost = 0 ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "create 2d integer array GRAPH with size 101 by 101",
+      "code": "int GRAPH [ 101 ] [ 101 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "declare DFS with integer x as argument , returning void",
+      "code": "void DFS ( int x )",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "set vis [ x ] to true",
+      "code": "vis [ x ] = true ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 0 to size of v [ x ] exclusive",
+      "code": "for ( int i = 0 ; i < v [ x ] . size ( ) ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "if not vis [ v [ x ] [ i ] ]",
+      "code": "if ( ! vis [ v [ x ] [ i ] ] )",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "if GRAPH [ v [ x ] [ i ] ] [ x ] is not - 1 , increment cost by GRAPH [ v [ x ] [ i ] ] [ x ]",
+      "code": "if ( GRAPH [ v [ x ] [ i ] ] [ x ] != - 1 ) cost += GRAPH [ v [ x ] [ i ] ] [ x ] ;",
+      "indent": 3
+    },
+    {
+      "line": 9,
+      "text": "run DFS with v [ x ] [ i ] as argument",
+      "code": "DFS ( v [ x ] [ i ] ) ;",
+      "indent": 3
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 14,
+      "text": "create integer n",
+      "code": "int n ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "for i = 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "for j = 1 to n inclusive , set GRAPH [ i ] [ j ] to - 1",
+      "code": "for ( int j = 1 ; j <= n ; j ++ ) GRAPH [ i ] [ j ] = - 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "for i = 1 to n inclusive , set vis [ i ] to false",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) vis [ i ] = false ;",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( int i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "create long long x , y , z",
+      "code": "long long x , y , z ;",
+      "indent": 2
+    },
+    {
+      "line": 22,
+      "text": "read x read y read z",
+      "code": "cin >> x >> y >> z ;",
+      "indent": 2
+    },
+    {
+      "line": 23,
+      "text": "set GRAPH [ x ] [ y ] to z",
+      "code": "GRAPH [ x ] [ y ] = z ;",
+      "indent": 2
+    },
+    {
+      "line": 24,
+      "text": "add element y to end of v [ x ]",
+      "code": "v [ x ] . push_back ( y ) ;",
+      "indent": 2
+    },
+    {
+      "line": 25,
+      "text": "add element x to end of v [ y ]",
+      "code": "v [ y ] . push_back ( x ) ;",
+      "indent": 2
+    },
+    {
+      "line": 26,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 27,
+      "text": "set vis [ 1 ] to true",
+      "code": "vis [ 1 ] = true ;",
+      "indent": 1
+    },
+    {
+      "line": 28,
+      "text": "run DFS with v [ 1 ] [ 0 ] as argument",
+      "code": "DFS ( v [ 1 ] [ 0 ] ) ;",
+      "indent": 1
+    },
+    {
+      "line": 29,
+      "text": "create integer cost1 with cost1 = cost",
+      "code": "int cost1 = cost ;",
+      "indent": 1
+    },
+    {
+      "line": 30,
+      "text": "if GRAPH [ 1 ] [ v [ 1 ] [ 0 ] ] is - 1 , increment cost1 by GRAPH [ v [ 1 ] [ 0 ] ] [ 1 ]",
+      "code": "if ( GRAPH [ 1 ] [ v [ 1 ] [ 0 ] ] == - 1 ) { cost1 += GRAPH [ v [ 1 ] [ 0 ] ] [ 1 ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 31,
+      "text": "if GRAPH [ v [ 1 ] [ 1 ] ] [ 1 ] is - 1 , increment cost1 by GRAPH [ 1 ] [ v [ 1 ] [ 1 ] ]",
+      "code": "if ( GRAPH [ v [ 1 ] [ 1 ] ] [ 1 ] == - 1 ) cost1 += GRAPH [ 1 ] [ v [ 1 ] [ 1 ] ] ;",
+      "indent": 1
+    },
+    {
+      "line": 32,
+      "text": "set cost to 0",
+      "code": "cost = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 33,
+      "text": "for i = 1 to n inclusive , set vis [ i ] to false",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) vis [ i ] = false ;",
+      "indent": 1
+    },
+    {
+      "line": 34,
+      "text": "set vis [ 1 ] to true",
+      "code": "vis [ 1 ] = true ;",
+      "indent": 1
+    },
+    {
+      "line": 35,
+      "text": "run DFS with v [ 1 ] [ 1 ] as argument",
+      "code": "DFS ( v [ 1 ] [ 1 ] ) ;",
+      "indent": 1
+    },
+    {
+      "line": 36,
+      "text": "create integer cost2 with cost2 = cost",
+      "code": "int cost2 = cost ;",
+      "indent": 1
+    },
+    {
+      "line": 37,
+      "text": "if GRAPH [ 1 ] [ v [ 1 ] [ 1 ] ] is - 1 , increment cost2 by GRAPH [ v [ 1 ] [ 1 ] ] [ 1 ]",
+      "code": "if ( GRAPH [ 1 ] [ v [ 1 ] [ 1 ] ] == - 1 ) { cost2 += GRAPH [ v [ 1 ] [ 1 ] ] [ 1 ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 38,
+      "text": "if GRAPH [ v [ 1 ] [ 0 ] ] [ 1 ] is - 1 , increment cost2 by GRAPH [ 1 ] [ v [ 1 ] [ 0 ] ]",
+      "code": "if ( GRAPH [ v [ 1 ] [ 0 ] ] [ 1 ] == - 1 ) cost2 += GRAPH [ 1 ] [ v [ 1 ] [ 0 ] ] ;",
+      "indent": 1
+    },
+    {
+      "line": 39,
+      "text": "print minimum of cost1 and cost2 , print newline",
+      "code": "cout << min ( cost1 , cost2 ) << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 40,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 41,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "if ( GRAPH [ v [ x ] [ i ] ] [ x ] ] != - 1 ) { cost += GRAPH [ v [ x ] [ i ] ] ; }"
+      ],
+      "err_line": 8,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        30
+      ],
+      "mod_code": [
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 0 ] ] == - 1 ) { cost1 += GRAPH [ v [ 1 ] [ 0 ] ] ++ ; }"
+      ],
+      "err_line": 30,
+      "err_msg": "lvalue required as increment operand"
+    },
+    {
+      "mod_line": [
+        37
+      ],
+      "mod_code": [
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 1 ] ] == - 1 ) cost2 += GRAPH [ v [ 1 ] [ 1 ] [ 1 ] ;"
+      ],
+      "err_line": 37,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "vector < int > v ( 101 ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "request for member ‘size’ in ‘v.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)x))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "bool arr [ 101 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘vis’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "int a [ 101 ] [ 101 ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘GRAPH’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "void DFS ( int x ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "bool vis [ x ] = true ;"
+      ],
+      "err_line": 5,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < v [ x ] . size ( ) ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "if ( ! vis [ v [ v ] [ i ] ] )"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid types ‘std::vector<int> [101][std::vector<int> [101]]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "if ( GRAPH [ v [ x ] [ i ] ] [ x ] ] != - 1 ) cost += GRAPH [ v [ x ] [ i ] ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "n ;"
+      ],
+      "err_line": 14,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 16,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        20
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 20,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        24
+      ],
+      "mod_code": [
+        "v . push_back ( y ) ;"
+      ],
+      "err_line": 24,
+      "err_msg": "request for member ‘push_back’ in ‘v’, which is of non-class type ‘std::vector<int> [101]’"
+    },
+    {
+      "mod_line": [
+        25
+      ],
+      "mod_code": [
+        "v . push_back ( x ) ;"
+      ],
+      "err_line": 25,
+      "err_msg": "request for member ‘push_back’ in ‘v’, which is of non-class type ‘std::vector<int> [101]’"
+    },
+    {
+      "mod_line": [
+        27
+      ],
+      "mod_code": [
+        "bool vis [ 1 ] = true ;"
+      ],
+      "err_line": 27,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        29
+      ],
+      "mod_code": [
+        "cost1 = cost ;"
+      ],
+      "err_line": 29,
+      "err_msg": "‘cost1’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        30
+      ],
+      "mod_code": [
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 0 ] ] == - 1 ) cost1 += GRAPH [ v [ 1 ] [ 0 ] [ 1 ] ;"
+      ],
+      "err_line": 30,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        34
+      ],
+      "mod_code": [
+        "bool vis [ 1 ] = true ;"
+      ],
+      "err_line": 34,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        36
+      ],
+      "mod_code": [
+        "cost2 = cost ;"
+      ],
+      "err_line": 36,
+      "err_msg": "‘cost2’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        37
+      ],
+      "mod_code": [
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 1 ] ] == - 1 ) { cost2 += GRAPH [ v [ 1 ] [ 1 ] ] ++ ; }"
+      ],
+      "err_line": 37,
+      "err_msg": "lvalue required as increment operand"
+    },
+    {
+      "mod_line": [
+        39
+      ],
+      "mod_code": [
+        "cout << min ( cost1 , cost2 , endl ) << endl ;"
+      ],
+      "err_line": 39,
+      "err_msg": "no matching function for call to ‘min(int&, int&, <unresolved overloaded function type>)’"
+    },
+    {
+      "mod_line": [
+        8,
+        30
+      ],
+      "mod_code": [
+        "if ( GRAPH [ v [ x ] [ i ] ] [ x ] ] != - 1 ) { cost += GRAPH [ v [ x ] [ i ] ] ; }",
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 0 ] ] == - 1 ) { cost1 += GRAPH [ v [ 1 ] [ 0 ] ] ++ ; }"
+      ],
+      "err_line": 8,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        30,
+        32
+      ],
+      "mod_code": [
+        "if ( GRAPH [ v [ x ] [ i ] ] [ x ] ] != - 1 ) { cost += GRAPH [ v [ x ] [ i ] ] ; }",
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 0 ] ] == - 1 ) { cost1 += GRAPH [ v [ 1 ] [ 0 ] ] ++ ; }",
+        "int cost = 0 ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        30,
+        32,
+        37
+      ],
+      "mod_code": [
+        "if ( GRAPH [ v [ x ] [ i ] ] [ x ] ] != - 1 ) { cost += GRAPH [ v [ x ] [ i ] ] ; }",
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 0 ] ] == - 1 ) { cost1 += GRAPH [ v [ 1 ] [ 0 ] ] ++ ; }",
+        "int cost = 0 ;",
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 1 ] ] == - 1 ) cost2 += GRAPH [ v [ 1 ] [ 1 ] [ 1 ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        30,
+        32,
+        22
+      ],
+      "mod_code": [
+        "if ( GRAPH [ v [ x ] [ i ] ] [ x ] ] != - 1 ) { cost += GRAPH [ v [ x ] [ i ] ] ; }",
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 0 ] ] == - 1 ) { cost1 += GRAPH [ v [ 1 ] [ 0 ] ] ++ ; }",
+        "int cost = 0 ;",
+        "while ( cin >> x >> y >> z )"
+      ],
+      "err_line": 8,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        30,
+        32,
+        1
+      ],
+      "mod_code": [
+        "if ( GRAPH [ v [ x ] [ i ] ] [ x ] ] != - 1 ) { cost += GRAPH [ v [ x ] [ i ] ] ; }",
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 0 ] ] == - 1 ) { cost1 += GRAPH [ v [ 1 ] [ 0 ] ] ++ ; }",
+        "int cost = 0 ;",
+        "bool arr [ 101 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘vis’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        30,
+        37
+      ],
+      "mod_code": [
+        "if ( GRAPH [ v [ x ] [ i ] ] [ x ] ] != - 1 ) { cost += GRAPH [ v [ x ] [ i ] ] ; }",
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 0 ] ] == - 1 ) { cost1 += GRAPH [ v [ 1 ] [ 0 ] ] ++ ; }",
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 1 ] ] == - 1 ) cost2 += GRAPH [ v [ 1 ] [ 1 ] [ 1 ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        30,
+        37,
+        22
+      ],
+      "mod_code": [
+        "if ( GRAPH [ v [ x ] [ i ] ] [ x ] ] != - 1 ) { cost += GRAPH [ v [ x ] [ i ] ] ; }",
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 0 ] ] == - 1 ) { cost1 += GRAPH [ v [ 1 ] [ 0 ] ] ++ ; }",
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 1 ] ] == - 1 ) cost2 += GRAPH [ v [ 1 ] [ 1 ] [ 1 ] ;",
+        "while ( cin >> x >> y >> z )"
+      ],
+      "err_line": 8,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        30,
+        37,
+        1
+      ],
+      "mod_code": [
+        "if ( GRAPH [ v [ x ] [ i ] ] [ x ] ] != - 1 ) { cost += GRAPH [ v [ x ] [ i ] ] ; }",
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 0 ] ] == - 1 ) { cost1 += GRAPH [ v [ 1 ] [ 0 ] ] ++ ; }",
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 1 ] ] == - 1 ) cost2 += GRAPH [ v [ 1 ] [ 1 ] [ 1 ] ;",
+        "bool arr [ 101 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘vis’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        30,
+        22
+      ],
+      "mod_code": [
+        "if ( GRAPH [ v [ x ] [ i ] ] [ x ] ] != - 1 ) { cost += GRAPH [ v [ x ] [ i ] ] ; }",
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 0 ] ] == - 1 ) { cost1 += GRAPH [ v [ 1 ] [ 0 ] ] ++ ; }",
+        "while ( cin >> x >> y >> z )"
+      ],
+      "err_line": 8,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        30,
+        22,
+        1
+      ],
+      "mod_code": [
+        "if ( GRAPH [ v [ x ] [ i ] ] [ x ] ] != - 1 ) { cost += GRAPH [ v [ x ] [ i ] ] ; }",
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 0 ] ] == - 1 ) { cost1 += GRAPH [ v [ 1 ] [ 0 ] ] ++ ; }",
+        "while ( cin >> x >> y >> z )",
+        "bool arr [ 101 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘vis’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        30,
+        1
+      ],
+      "mod_code": [
+        "if ( GRAPH [ v [ x ] [ i ] ] [ x ] ] != - 1 ) { cost += GRAPH [ v [ x ] [ i ] ] ; }",
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 0 ] ] == - 1 ) { cost1 += GRAPH [ v [ 1 ] [ 0 ] ] ++ ; }",
+        "bool arr [ 101 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘vis’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        32
+      ],
+      "mod_code": [
+        "if ( GRAPH [ v [ x ] [ i ] ] [ x ] ] != - 1 ) { cost += GRAPH [ v [ x ] [ i ] ] ; }",
+        "int cost = 0 ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        32,
+        37
+      ],
+      "mod_code": [
+        "if ( GRAPH [ v [ x ] [ i ] ] [ x ] ] != - 1 ) { cost += GRAPH [ v [ x ] [ i ] ] ; }",
+        "int cost = 0 ;",
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 1 ] ] == - 1 ) cost2 += GRAPH [ v [ 1 ] [ 1 ] [ 1 ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        32,
+        37,
+        22
+      ],
+      "mod_code": [
+        "if ( GRAPH [ v [ x ] [ i ] ] [ x ] ] != - 1 ) { cost += GRAPH [ v [ x ] [ i ] ] ; }",
+        "int cost = 0 ;",
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 1 ] ] == - 1 ) cost2 += GRAPH [ v [ 1 ] [ 1 ] [ 1 ] ;",
+        "while ( cin >> x >> y >> z )"
+      ],
+      "err_line": 8,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        32,
+        37,
+        1
+      ],
+      "mod_code": [
+        "if ( GRAPH [ v [ x ] [ i ] ] [ x ] ] != - 1 ) { cost += GRAPH [ v [ x ] [ i ] ] ; }",
+        "int cost = 0 ;",
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 1 ] ] == - 1 ) cost2 += GRAPH [ v [ 1 ] [ 1 ] [ 1 ] ;",
+        "bool arr [ 101 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘vis’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        32,
+        22
+      ],
+      "mod_code": [
+        "if ( GRAPH [ v [ x ] [ i ] ] [ x ] ] != - 1 ) { cost += GRAPH [ v [ x ] [ i ] ] ; }",
+        "int cost = 0 ;",
+        "while ( cin >> x >> y >> z )"
+      ],
+      "err_line": 8,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        32,
+        22,
+        1
+      ],
+      "mod_code": [
+        "if ( GRAPH [ v [ x ] [ i ] ] [ x ] ] != - 1 ) { cost += GRAPH [ v [ x ] [ i ] ] ; }",
+        "int cost = 0 ;",
+        "while ( cin >> x >> y >> z )",
+        "bool arr [ 101 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘vis’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        32,
+        1
+      ],
+      "mod_code": [
+        "if ( GRAPH [ v [ x ] [ i ] ] [ x ] ] != - 1 ) { cost += GRAPH [ v [ x ] [ i ] ] ; }",
+        "int cost = 0 ;",
+        "bool arr [ 101 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘vis’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        37
+      ],
+      "mod_code": [
+        "if ( GRAPH [ v [ x ] [ i ] ] [ x ] ] != - 1 ) { cost += GRAPH [ v [ x ] [ i ] ] ; }",
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 1 ] ] == - 1 ) cost2 += GRAPH [ v [ 1 ] [ 1 ] [ 1 ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        37,
+        22
+      ],
+      "mod_code": [
+        "if ( GRAPH [ v [ x ] [ i ] ] [ x ] ] != - 1 ) { cost += GRAPH [ v [ x ] [ i ] ] ; }",
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 1 ] ] == - 1 ) cost2 += GRAPH [ v [ 1 ] [ 1 ] [ 1 ] ;",
+        "while ( cin >> x >> y >> z )"
+      ],
+      "err_line": 8,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        37,
+        22,
+        1
+      ],
+      "mod_code": [
+        "if ( GRAPH [ v [ x ] [ i ] ] [ x ] ] != - 1 ) { cost += GRAPH [ v [ x ] [ i ] ] ; }",
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 1 ] ] == - 1 ) cost2 += GRAPH [ v [ 1 ] [ 1 ] [ 1 ] ;",
+        "while ( cin >> x >> y >> z )",
+        "bool arr [ 101 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘vis’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        37,
+        1
+      ],
+      "mod_code": [
+        "if ( GRAPH [ v [ x ] [ i ] ] [ x ] ] != - 1 ) { cost += GRAPH [ v [ x ] [ i ] ] ; }",
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 1 ] ] == - 1 ) cost2 += GRAPH [ v [ 1 ] [ 1 ] [ 1 ] ;",
+        "bool arr [ 101 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘vis’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        22
+      ],
+      "mod_code": [
+        "if ( GRAPH [ v [ x ] [ i ] ] [ x ] ] != - 1 ) { cost += GRAPH [ v [ x ] [ i ] ] ; }",
+        "while ( cin >> x >> y >> z )"
+      ],
+      "err_line": 8,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        22,
+        1
+      ],
+      "mod_code": [
+        "if ( GRAPH [ v [ x ] [ i ] ] [ x ] ] != - 1 ) { cost += GRAPH [ v [ x ] [ i ] ] ; }",
+        "while ( cin >> x >> y >> z )",
+        "bool arr [ 101 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘vis’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        1
+      ],
+      "mod_code": [
+        "if ( GRAPH [ v [ x ] [ i ] ] [ x ] ] != - 1 ) { cost += GRAPH [ v [ x ] [ i ] ] ; }",
+        "bool arr [ 101 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘vis’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        30,
+        32
+      ],
+      "mod_code": [
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 0 ] ] == - 1 ) { cost1 += GRAPH [ v [ 1 ] [ 0 ] ] ++ ; }",
+        "int cost = 0 ;"
+      ],
+      "err_line": 30,
+      "err_msg": "lvalue required as increment operand"
+    },
+    {
+      "mod_line": [
+        30,
+        32,
+        37
+      ],
+      "mod_code": [
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 0 ] ] == - 1 ) { cost1 += GRAPH [ v [ 1 ] [ 0 ] ] ++ ; }",
+        "int cost = 0 ;",
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 1 ] ] == - 1 ) cost2 += GRAPH [ v [ 1 ] [ 1 ] [ 1 ] ;"
+      ],
+      "err_line": 30,
+      "err_msg": "lvalue required as increment operand"
+    },
+    {
+      "mod_line": [
+        30,
+        32,
+        37,
+        22
+      ],
+      "mod_code": [
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 0 ] ] == - 1 ) { cost1 += GRAPH [ v [ 1 ] [ 0 ] ] ++ ; }",
+        "int cost = 0 ;",
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 1 ] ] == - 1 ) cost2 += GRAPH [ v [ 1 ] [ 1 ] [ 1 ] ;",
+        "while ( cin >> x >> y >> z )"
+      ],
+      "err_line": 30,
+      "err_msg": "lvalue required as increment operand"
+    },
+    {
+      "mod_line": [
+        30,
+        32,
+        37,
+        1
+      ],
+      "mod_code": [
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 0 ] ] == - 1 ) { cost1 += GRAPH [ v [ 1 ] [ 0 ] ] ++ ; }",
+        "int cost = 0 ;",
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 1 ] ] == - 1 ) cost2 += GRAPH [ v [ 1 ] [ 1 ] [ 1 ] ;",
+        "bool arr [ 101 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘vis’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        30,
+        32,
+        22
+      ],
+      "mod_code": [
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 0 ] ] == - 1 ) { cost1 += GRAPH [ v [ 1 ] [ 0 ] ] ++ ; }",
+        "int cost = 0 ;",
+        "while ( cin >> x >> y >> z )"
+      ],
+      "err_line": 30,
+      "err_msg": "lvalue required as increment operand"
+    },
+    {
+      "mod_line": [
+        30,
+        32,
+        22,
+        1
+      ],
+      "mod_code": [
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 0 ] ] == - 1 ) { cost1 += GRAPH [ v [ 1 ] [ 0 ] ] ++ ; }",
+        "int cost = 0 ;",
+        "while ( cin >> x >> y >> z )",
+        "bool arr [ 101 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘vis’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        30,
+        32,
+        1
+      ],
+      "mod_code": [
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 0 ] ] == - 1 ) { cost1 += GRAPH [ v [ 1 ] [ 0 ] ] ++ ; }",
+        "int cost = 0 ;",
+        "bool arr [ 101 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘vis’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        30,
+        37
+      ],
+      "mod_code": [
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 0 ] ] == - 1 ) { cost1 += GRAPH [ v [ 1 ] [ 0 ] ] ++ ; }",
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 1 ] ] == - 1 ) cost2 += GRAPH [ v [ 1 ] [ 1 ] [ 1 ] ;"
+      ],
+      "err_line": 30,
+      "err_msg": "lvalue required as increment operand"
+    },
+    {
+      "mod_line": [
+        30,
+        37,
+        22
+      ],
+      "mod_code": [
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 0 ] ] == - 1 ) { cost1 += GRAPH [ v [ 1 ] [ 0 ] ] ++ ; }",
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 1 ] ] == - 1 ) cost2 += GRAPH [ v [ 1 ] [ 1 ] [ 1 ] ;",
+        "while ( cin >> x >> y >> z )"
+      ],
+      "err_line": 30,
+      "err_msg": "lvalue required as increment operand"
+    },
+    {
+      "mod_line": [
+        30,
+        37,
+        22,
+        1
+      ],
+      "mod_code": [
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 0 ] ] == - 1 ) { cost1 += GRAPH [ v [ 1 ] [ 0 ] ] ++ ; }",
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 1 ] ] == - 1 ) cost2 += GRAPH [ v [ 1 ] [ 1 ] [ 1 ] ;",
+        "while ( cin >> x >> y >> z )",
+        "bool arr [ 101 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘vis’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        30,
+        37,
+        1
+      ],
+      "mod_code": [
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 0 ] ] == - 1 ) { cost1 += GRAPH [ v [ 1 ] [ 0 ] ] ++ ; }",
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 1 ] ] == - 1 ) cost2 += GRAPH [ v [ 1 ] [ 1 ] [ 1 ] ;",
+        "bool arr [ 101 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘vis’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        30,
+        22
+      ],
+      "mod_code": [
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 0 ] ] == - 1 ) { cost1 += GRAPH [ v [ 1 ] [ 0 ] ] ++ ; }",
+        "while ( cin >> x >> y >> z )"
+      ],
+      "err_line": 30,
+      "err_msg": "lvalue required as increment operand"
+    },
+    {
+      "mod_line": [
+        30,
+        22,
+        1
+      ],
+      "mod_code": [
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 0 ] ] == - 1 ) { cost1 += GRAPH [ v [ 1 ] [ 0 ] ] ++ ; }",
+        "while ( cin >> x >> y >> z )",
+        "bool arr [ 101 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘vis’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        30,
+        1
+      ],
+      "mod_code": [
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 0 ] ] == - 1 ) { cost1 += GRAPH [ v [ 1 ] [ 0 ] ] ++ ; }",
+        "bool arr [ 101 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘vis’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        32,
+        37
+      ],
+      "mod_code": [
+        "int cost = 0 ;",
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 1 ] ] == - 1 ) cost2 += GRAPH [ v [ 1 ] [ 1 ] [ 1 ] ;"
+      ],
+      "err_line": 37,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        32,
+        37,
+        22
+      ],
+      "mod_code": [
+        "int cost = 0 ;",
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 1 ] ] == - 1 ) cost2 += GRAPH [ v [ 1 ] [ 1 ] [ 1 ] ;",
+        "while ( cin >> x >> y >> z )"
+      ],
+      "err_line": 37,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        32,
+        37,
+        22,
+        1
+      ],
+      "mod_code": [
+        "int cost = 0 ;",
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 1 ] ] == - 1 ) cost2 += GRAPH [ v [ 1 ] [ 1 ] [ 1 ] ;",
+        "while ( cin >> x >> y >> z )",
+        "bool arr [ 101 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘vis’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        32,
+        37,
+        1
+      ],
+      "mod_code": [
+        "int cost = 0 ;",
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 1 ] ] == - 1 ) cost2 += GRAPH [ v [ 1 ] [ 1 ] [ 1 ] ;",
+        "bool arr [ 101 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘vis’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        32,
+        22,
+        1
+      ],
+      "mod_code": [
+        "int cost = 0 ;",
+        "while ( cin >> x >> y >> z )",
+        "bool arr [ 101 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘vis’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        32,
+        1
+      ],
+      "mod_code": [
+        "int cost = 0 ;",
+        "bool arr [ 101 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘vis’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        37,
+        22
+      ],
+      "mod_code": [
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 1 ] ] == - 1 ) cost2 += GRAPH [ v [ 1 ] [ 1 ] [ 1 ] ;",
+        "while ( cin >> x >> y >> z )"
+      ],
+      "err_line": 37,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        37,
+        22,
+        1
+      ],
+      "mod_code": [
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 1 ] ] == - 1 ) cost2 += GRAPH [ v [ 1 ] [ 1 ] [ 1 ] ;",
+        "while ( cin >> x >> y >> z )",
+        "bool arr [ 101 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘vis’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        37,
+        1
+      ],
+      "mod_code": [
+        "if ( GRAPH [ 1 ] [ v [ 1 ] [ 1 ] ] == - 1 ) cost2 += GRAPH [ v [ 1 ] [ 1 ] [ 1 ] ;",
+        "bool arr [ 101 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘vis’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        22,
+        1
+      ],
+      "mod_code": [
+        "while ( cin >> x >> y >> z )",
+        "bool arr [ 101 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘vis’ was not declared in this scope"
+    }
+  ]
+}

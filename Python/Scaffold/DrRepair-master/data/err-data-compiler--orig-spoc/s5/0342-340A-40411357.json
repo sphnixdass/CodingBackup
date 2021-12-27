@@ -1,0 +1,483 @@
+{
+  "meta": {
+    "index": 342,
+    "hitid": "3N3WJQXELSKP4BREVK598085LZL2LA",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "340A",
+    "subid": "40411357"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare gcd with integers x , y as arguments , returning integer",
+      "code": "int gcd ( int x , int y )",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "if y is 0 , return x",
+      "code": "if ( y == 0 ) return x ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "return result of run gcd with y , x % y as arguments from function",
+      "code": "return gcd ( y , x % y ) ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "declare lcm with integers x , y as arguments , returning integer",
+      "code": "int lcm ( int x , int y )",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "return ( x * y ) / run gcd ( x , y )",
+      "code": "return ( x * y ) / gcd ( x , y ) ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 7,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 8,
+      "text": "declare x , y , a , b , ans = 0 as integers",
+      "code": "int x , y , a , b , ans = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "read x , y , a , b",
+      "code": "cin >> x >> y >> a >> b ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "let ans be - a / result of run lcm ( x , y ) + b / result of run lcm ( x , y )",
+      "code": "ans = - a / lcm ( x , y ) + b / lcm ( x , y ) ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "if a % result of run lcm ( x , y ) is 0 , increment ans by 1",
+      "code": "if ( a % lcm ( x , y ) == 0 ) ans += 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "print ans , newline",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int gcd ( int x , int y ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "int lcm ( int x , int y ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "return ( x * y ) / gcd ( x , y ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "int x , y , a , b ;"
+      ],
+      "err_line": 9,
+      "err_msg": "redeclaration of ‘int x’"
+    },
+    {
+      "mod_line": [
+        10,
+        5
+      ],
+      "mod_code": [
+        "ans = - a / lcm ( x , y ) + b / b ;",
+        "return ( x * y ) / gcd ( x , y ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        5,
+        4
+      ],
+      "mod_code": [
+        "ans = - a / lcm ( x , y ) + b / b ;",
+        "return ( x * y ) / gcd ( x , y ) ) ;",
+        "int lcm ( int x , int y ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        5,
+        4,
+        0
+      ],
+      "mod_code": [
+        "ans = - a / lcm ( x , y ) + b / b ;",
+        "return ( x * y ) / gcd ( x , y ) ) ;",
+        "int lcm ( int x , int y ) ;",
+        "int gcd ( int x , int y ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        5,
+        4,
+        9
+      ],
+      "mod_code": [
+        "ans = - a / lcm ( x , y ) + b / b ;",
+        "return ( x * y ) / gcd ( x , y ) ) ;",
+        "int lcm ( int x , int y ) ;",
+        "int x , y , a , b ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        5,
+        0
+      ],
+      "mod_code": [
+        "ans = - a / lcm ( x , y ) + b / b ;",
+        "return ( x * y ) / gcd ( x , y ) ) ;",
+        "int gcd ( int x , int y ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        5,
+        0,
+        9
+      ],
+      "mod_code": [
+        "ans = - a / lcm ( x , y ) + b / b ;",
+        "return ( x * y ) / gcd ( x , y ) ) ;",
+        "int gcd ( int x , int y ) ;",
+        "int x , y , a , b ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        5,
+        9
+      ],
+      "mod_code": [
+        "ans = - a / lcm ( x , y ) + b / b ;",
+        "return ( x * y ) / gcd ( x , y ) ) ;",
+        "int x , y , a , b ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        4
+      ],
+      "mod_code": [
+        "ans = - a / lcm ( x , y ) + b / b ;",
+        "int lcm ( int x , int y ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        4,
+        0
+      ],
+      "mod_code": [
+        "ans = - a / lcm ( x , y ) + b / b ;",
+        "int lcm ( int x , int y ) ;",
+        "int gcd ( int x , int y ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        4,
+        0,
+        9
+      ],
+      "mod_code": [
+        "ans = - a / lcm ( x , y ) + b / b ;",
+        "int lcm ( int x , int y ) ;",
+        "int gcd ( int x , int y ) ;",
+        "int x , y , a , b ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        4,
+        9
+      ],
+      "mod_code": [
+        "ans = - a / lcm ( x , y ) + b / b ;",
+        "int lcm ( int x , int y ) ;",
+        "int x , y , a , b ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        0
+      ],
+      "mod_code": [
+        "ans = - a / lcm ( x , y ) + b / b ;",
+        "int gcd ( int x , int y ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        0,
+        9
+      ],
+      "mod_code": [
+        "ans = - a / lcm ( x , y ) + b / b ;",
+        "int gcd ( int x , int y ) ;",
+        "int x , y , a , b ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        9
+      ],
+      "mod_code": [
+        "ans = - a / lcm ( x , y ) + b / b ;",
+        "int x , y , a , b ;"
+      ],
+      "err_line": 9,
+      "err_msg": "redeclaration of ‘int x’"
+    },
+    {
+      "mod_line": [
+        5,
+        4
+      ],
+      "mod_code": [
+        "return ( x * y ) / gcd ( x , y ) ) ;",
+        "int lcm ( int x , int y ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        4,
+        0
+      ],
+      "mod_code": [
+        "return ( x * y ) / gcd ( x , y ) ) ;",
+        "int lcm ( int x , int y ) ;",
+        "int gcd ( int x , int y ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        4,
+        0,
+        9
+      ],
+      "mod_code": [
+        "return ( x * y ) / gcd ( x , y ) ) ;",
+        "int lcm ( int x , int y ) ;",
+        "int gcd ( int x , int y ) ;",
+        "int x , y , a , b ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        4,
+        9
+      ],
+      "mod_code": [
+        "return ( x * y ) / gcd ( x , y ) ) ;",
+        "int lcm ( int x , int y ) ;",
+        "int x , y , a , b ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        0
+      ],
+      "mod_code": [
+        "return ( x * y ) / gcd ( x , y ) ) ;",
+        "int gcd ( int x , int y ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        0,
+        9
+      ],
+      "mod_code": [
+        "return ( x * y ) / gcd ( x , y ) ) ;",
+        "int gcd ( int x , int y ) ;",
+        "int x , y , a , b ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        9
+      ],
+      "mod_code": [
+        "return ( x * y ) / gcd ( x , y ) ) ;",
+        "int x , y , a , b ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        0
+      ],
+      "mod_code": [
+        "int lcm ( int x , int y ) ;",
+        "int gcd ( int x , int y ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        0,
+        9
+      ],
+      "mod_code": [
+        "int lcm ( int x , int y ) ;",
+        "int gcd ( int x , int y ) ;",
+        "int x , y , a , b ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        9
+      ],
+      "mod_code": [
+        "int lcm ( int x , int y ) ;",
+        "int x , y , a , b ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        9
+      ],
+      "mod_code": [
+        "int gcd ( int x , int y ) ;",
+        "int x , y , a , b ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    }
+  ]
+}

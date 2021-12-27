@@ -1,0 +1,769 @@
+{
+  "meta": {
+    "index": 744,
+    "hitid": "36QZ6V15897LS0V6YDCGQ5HSWKBSUV",
+    "workerid": "A1EKVUFWL7OJMO",
+    "probid": "985A",
+    "subid": "49040467"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "n , k , x , data = integers , with data = integer array of size 105",
+      "code": "int n , k , x , data [ 105 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "for i = 1 to n / 2 , read data [ i ]",
+      "code": "for ( int i = 1 ; i <= n / 2 ; i ++ ) { cin >> data [ i ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "sort data + 1 and data + 1 + n / 2",
+      "code": "sort ( data + 1 , data + 1 + n / 2 ) ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "sum = integer with sum = 0",
+      "code": "int sum = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 1 to n / 2 , sum = sum + abs ( data [ i ] - 2 * i )",
+      "code": "for ( int i = 1 ; i <= n / 2 ; i ++ ) { sum += abs ( data [ i ] - 2 * i ) ; }",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "ans = integer with ans = sum",
+      "code": "int ans = sum ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "sum = 0",
+      "code": "sum = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "for i = 1 to n / 2 , sum = sum + abs ( data [ i ] - 2 * i + 1 )",
+      "code": "for ( int i = 1 ; i <= n / 2 ; i ++ ) { sum += abs ( data [ i ] - 2 * i + 1 ) ; }",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "ans = min ( ans , sum )",
+      "code": "ans = min ( ans , sum ) ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "print ans",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "int sum = 0 ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int sum’"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "long long sum = 0 ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘min(int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "long long ans = sum ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘min(long long int&, int&)’"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "int ans = min ( ans , sum ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "redeclaration of ‘int ans’"
+    },
+    {
+      "mod_line": [
+        8,
+        4
+      ],
+      "mod_code": [
+        "int sum = 0 ;",
+        "sort ( data + 1 , data + 1 + n + 2 ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int sum’"
+    },
+    {
+      "mod_line": [
+        8,
+        4,
+        5
+      ],
+      "mod_code": [
+        "int sum = 0 ;",
+        "sort ( data + 1 , data + 1 + n + 2 ) ;",
+        "long long sum = 0 ;"
+      ],
+      "err_line": 8,
+      "err_msg": "conflicting declaration ‘int sum’"
+    },
+    {
+      "mod_line": [
+        8,
+        4,
+        5,
+        10
+      ],
+      "mod_code": [
+        "int sum = 0 ;",
+        "sort ( data + 1 , data + 1 + n + 2 ) ;",
+        "long long sum = 0 ;",
+        "int ans = min ( ans , sum ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "conflicting declaration ‘int sum’"
+    },
+    {
+      "mod_line": [
+        8,
+        4,
+        5,
+        11
+      ],
+      "mod_code": [
+        "int sum = 0 ;",
+        "sort ( data + 1 , data + 1 + n + 2 ) ;",
+        "long long sum = 0 ;",
+        "cout << ans ;"
+      ],
+      "err_line": 8,
+      "err_msg": "conflicting declaration ‘int sum’"
+    },
+    {
+      "mod_line": [
+        8,
+        4,
+        5,
+        7
+      ],
+      "mod_code": [
+        "int sum = 0 ;",
+        "sort ( data + 1 , data + 1 + n + 2 ) ;",
+        "long long sum = 0 ;",
+        "long long ans = sum ;"
+      ],
+      "err_line": 8,
+      "err_msg": "conflicting declaration ‘int sum’"
+    },
+    {
+      "mod_line": [
+        8,
+        4,
+        10
+      ],
+      "mod_code": [
+        "int sum = 0 ;",
+        "sort ( data + 1 , data + 1 + n + 2 ) ;",
+        "int ans = min ( ans , sum ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int sum’"
+    },
+    {
+      "mod_line": [
+        8,
+        4,
+        10,
+        11
+      ],
+      "mod_code": [
+        "int sum = 0 ;",
+        "sort ( data + 1 , data + 1 + n + 2 ) ;",
+        "int ans = min ( ans , sum ) ;",
+        "cout << ans ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int sum’"
+    },
+    {
+      "mod_line": [
+        8,
+        4,
+        10,
+        7
+      ],
+      "mod_code": [
+        "int sum = 0 ;",
+        "sort ( data + 1 , data + 1 + n + 2 ) ;",
+        "int ans = min ( ans , sum ) ;",
+        "long long ans = sum ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int sum’"
+    },
+    {
+      "mod_line": [
+        8,
+        4,
+        11
+      ],
+      "mod_code": [
+        "int sum = 0 ;",
+        "sort ( data + 1 , data + 1 + n + 2 ) ;",
+        "cout << ans ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int sum’"
+    },
+    {
+      "mod_line": [
+        8,
+        4,
+        11,
+        7
+      ],
+      "mod_code": [
+        "int sum = 0 ;",
+        "sort ( data + 1 , data + 1 + n + 2 ) ;",
+        "cout << ans ;",
+        "long long ans = sum ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int sum’"
+    },
+    {
+      "mod_line": [
+        8,
+        4,
+        7
+      ],
+      "mod_code": [
+        "int sum = 0 ;",
+        "sort ( data + 1 , data + 1 + n + 2 ) ;",
+        "long long ans = sum ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int sum’"
+    },
+    {
+      "mod_line": [
+        8,
+        5
+      ],
+      "mod_code": [
+        "int sum = 0 ;",
+        "long long sum = 0 ;"
+      ],
+      "err_line": 8,
+      "err_msg": "conflicting declaration ‘int sum’"
+    },
+    {
+      "mod_line": [
+        8,
+        5,
+        10
+      ],
+      "mod_code": [
+        "int sum = 0 ;",
+        "long long sum = 0 ;",
+        "int ans = min ( ans , sum ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "conflicting declaration ‘int sum’"
+    },
+    {
+      "mod_line": [
+        8,
+        5,
+        10,
+        11
+      ],
+      "mod_code": [
+        "int sum = 0 ;",
+        "long long sum = 0 ;",
+        "int ans = min ( ans , sum ) ;",
+        "cout << ans ;"
+      ],
+      "err_line": 8,
+      "err_msg": "conflicting declaration ‘int sum’"
+    },
+    {
+      "mod_line": [
+        8,
+        5,
+        10,
+        7
+      ],
+      "mod_code": [
+        "int sum = 0 ;",
+        "long long sum = 0 ;",
+        "int ans = min ( ans , sum ) ;",
+        "long long ans = sum ;"
+      ],
+      "err_line": 8,
+      "err_msg": "conflicting declaration ‘int sum’"
+    },
+    {
+      "mod_line": [
+        8,
+        5,
+        11
+      ],
+      "mod_code": [
+        "int sum = 0 ;",
+        "long long sum = 0 ;",
+        "cout << ans ;"
+      ],
+      "err_line": 8,
+      "err_msg": "conflicting declaration ‘int sum’"
+    },
+    {
+      "mod_line": [
+        8,
+        5,
+        11,
+        7
+      ],
+      "mod_code": [
+        "int sum = 0 ;",
+        "long long sum = 0 ;",
+        "cout << ans ;",
+        "long long ans = sum ;"
+      ],
+      "err_line": 8,
+      "err_msg": "conflicting declaration ‘int sum’"
+    },
+    {
+      "mod_line": [
+        8,
+        5,
+        7
+      ],
+      "mod_code": [
+        "int sum = 0 ;",
+        "long long sum = 0 ;",
+        "long long ans = sum ;"
+      ],
+      "err_line": 8,
+      "err_msg": "conflicting declaration ‘int sum’"
+    },
+    {
+      "mod_line": [
+        8,
+        10
+      ],
+      "mod_code": [
+        "int sum = 0 ;",
+        "int ans = min ( ans , sum ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int sum’"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        11
+      ],
+      "mod_code": [
+        "int sum = 0 ;",
+        "int ans = min ( ans , sum ) ;",
+        "cout << ans ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int sum’"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        11,
+        7
+      ],
+      "mod_code": [
+        "int sum = 0 ;",
+        "int ans = min ( ans , sum ) ;",
+        "cout << ans ;",
+        "long long ans = sum ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int sum’"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        7
+      ],
+      "mod_code": [
+        "int sum = 0 ;",
+        "int ans = min ( ans , sum ) ;",
+        "long long ans = sum ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int sum’"
+    },
+    {
+      "mod_line": [
+        8,
+        11
+      ],
+      "mod_code": [
+        "int sum = 0 ;",
+        "cout << ans ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int sum’"
+    },
+    {
+      "mod_line": [
+        8,
+        11,
+        7
+      ],
+      "mod_code": [
+        "int sum = 0 ;",
+        "cout << ans ;",
+        "long long ans = sum ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int sum’"
+    },
+    {
+      "mod_line": [
+        8,
+        7
+      ],
+      "mod_code": [
+        "int sum = 0 ;",
+        "long long ans = sum ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redeclaration of ‘int sum’"
+    },
+    {
+      "mod_line": [
+        4,
+        5
+      ],
+      "mod_code": [
+        "sort ( data + 1 , data + 1 + n + 2 ) ;",
+        "long long sum = 0 ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘min(int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        10
+      ],
+      "mod_code": [
+        "sort ( data + 1 , data + 1 + n + 2 ) ;",
+        "long long sum = 0 ;",
+        "int ans = min ( ans , sum ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "redeclaration of ‘int ans’"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        10,
+        11
+      ],
+      "mod_code": [
+        "sort ( data + 1 , data + 1 + n + 2 ) ;",
+        "long long sum = 0 ;",
+        "int ans = min ( ans , sum ) ;",
+        "cout << ans ;"
+      ],
+      "err_line": 10,
+      "err_msg": "redeclaration of ‘int ans’"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        10,
+        7
+      ],
+      "mod_code": [
+        "sort ( data + 1 , data + 1 + n + 2 ) ;",
+        "long long sum = 0 ;",
+        "int ans = min ( ans , sum ) ;",
+        "long long ans = sum ;"
+      ],
+      "err_line": 10,
+      "err_msg": "conflicting declaration ‘int ans’"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        11
+      ],
+      "mod_code": [
+        "sort ( data + 1 , data + 1 + n + 2 ) ;",
+        "long long sum = 0 ;",
+        "cout << ans ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘min(int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        4,
+        10
+      ],
+      "mod_code": [
+        "sort ( data + 1 , data + 1 + n + 2 ) ;",
+        "int ans = min ( ans , sum ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "redeclaration of ‘int ans’"
+    },
+    {
+      "mod_line": [
+        4,
+        10,
+        11
+      ],
+      "mod_code": [
+        "sort ( data + 1 , data + 1 + n + 2 ) ;",
+        "int ans = min ( ans , sum ) ;",
+        "cout << ans ;"
+      ],
+      "err_line": 10,
+      "err_msg": "redeclaration of ‘int ans’"
+    },
+    {
+      "mod_line": [
+        4,
+        10,
+        11,
+        7
+      ],
+      "mod_code": [
+        "sort ( data + 1 , data + 1 + n + 2 ) ;",
+        "int ans = min ( ans , sum ) ;",
+        "cout << ans ;",
+        "long long ans = sum ;"
+      ],
+      "err_line": 10,
+      "err_msg": "conflicting declaration ‘int ans’"
+    },
+    {
+      "mod_line": [
+        4,
+        10,
+        7
+      ],
+      "mod_code": [
+        "sort ( data + 1 , data + 1 + n + 2 ) ;",
+        "int ans = min ( ans , sum ) ;",
+        "long long ans = sum ;"
+      ],
+      "err_line": 10,
+      "err_msg": "conflicting declaration ‘int ans’"
+    },
+    {
+      "mod_line": [
+        4,
+        11,
+        7
+      ],
+      "mod_code": [
+        "sort ( data + 1 , data + 1 + n + 2 ) ;",
+        "cout << ans ;",
+        "long long ans = sum ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘min(long long int&, int&)’"
+    },
+    {
+      "mod_line": [
+        4,
+        7
+      ],
+      "mod_code": [
+        "sort ( data + 1 , data + 1 + n + 2 ) ;",
+        "long long ans = sum ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘min(long long int&, int&)’"
+    },
+    {
+      "mod_line": [
+        5,
+        10
+      ],
+      "mod_code": [
+        "long long sum = 0 ;",
+        "int ans = min ( ans , sum ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "redeclaration of ‘int ans’"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        11
+      ],
+      "mod_code": [
+        "long long sum = 0 ;",
+        "int ans = min ( ans , sum ) ;",
+        "cout << ans ;"
+      ],
+      "err_line": 10,
+      "err_msg": "redeclaration of ‘int ans’"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        11,
+        7
+      ],
+      "mod_code": [
+        "long long sum = 0 ;",
+        "int ans = min ( ans , sum ) ;",
+        "cout << ans ;",
+        "long long ans = sum ;"
+      ],
+      "err_line": 10,
+      "err_msg": "conflicting declaration ‘int ans’"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        7
+      ],
+      "mod_code": [
+        "long long sum = 0 ;",
+        "int ans = min ( ans , sum ) ;",
+        "long long ans = sum ;"
+      ],
+      "err_line": 10,
+      "err_msg": "conflicting declaration ‘int ans’"
+    },
+    {
+      "mod_line": [
+        5,
+        11
+      ],
+      "mod_code": [
+        "long long sum = 0 ;",
+        "cout << ans ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘min(int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        10,
+        11
+      ],
+      "mod_code": [
+        "int ans = min ( ans , sum ) ;",
+        "cout << ans ;"
+      ],
+      "err_line": 10,
+      "err_msg": "redeclaration of ‘int ans’"
+    },
+    {
+      "mod_line": [
+        10,
+        11,
+        7
+      ],
+      "mod_code": [
+        "int ans = min ( ans , sum ) ;",
+        "cout << ans ;",
+        "long long ans = sum ;"
+      ],
+      "err_line": 10,
+      "err_msg": "conflicting declaration ‘int ans’"
+    },
+    {
+      "mod_line": [
+        10,
+        7
+      ],
+      "mod_code": [
+        "int ans = min ( ans , sum ) ;",
+        "long long ans = sum ;"
+      ],
+      "err_line": 10,
+      "err_msg": "conflicting declaration ‘int ans’"
+    },
+    {
+      "mod_line": [
+        11,
+        7
+      ],
+      "mod_code": [
+        "cout << ans ;",
+        "long long ans = sum ;"
+      ],
+      "err_line": 10,
+      "err_msg": "no matching function for call to ‘min(long long int&, int&)’"
+    }
+  ]
+}

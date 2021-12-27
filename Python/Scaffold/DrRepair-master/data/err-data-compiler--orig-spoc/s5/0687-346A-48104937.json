@@ -1,0 +1,627 @@
+{
+  "meta": {
+    "index": 687,
+    "hitid": "3UQ1LLR26A2E9EMI8ZYOEIR3XNHALT",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "346A",
+    "subid": "48104937"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare integers n , maxval and gcd",
+      "code": "int n , maxval , gcd ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read n from the user input",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "arr is a new vector of integers with n elements",
+      "code": "vector < int > arr ( n ) ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for i = 0 to n exclusive incrementing i",
+      "code": "for ( int i = 0 ; i < n ; ++ i )",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "read arr [ i ]",
+      "code": "cin >> arr [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 6,
+      "text": "assign the new value = arr [ i ] if i = 0 or max of maxval and arr [ i ] , to maxval",
+      "code": "maxval = i == 0 ? arr [ i ] : max ( maxval , arr [ i ] ) ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "change gcd to arr [ i ] if i = 0 , or __gcd ( gcd , arr [ i ] ) otherwise",
+      "code": "gcd = i == 0 ? arr [ i ] : __gcd ( gcd , arr [ i ] ) ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "divide maxval by gcd",
+      "code": "maxval /= gcd ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "divide n elements of array arr by gcd in a loop",
+      "code": "for ( int i = 0 ; i < n ; ++ i ) { arr [ i ] /= gcd ; }",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "print \" Alice \\ n \" if ( maxval - n ) is odd , or \" Bob \\ n \" otherwise",
+      "code": "cout << ( ( maxval - n ) % 2 ? \" Alice\\n \" : \" Bob\\n \" ) ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "if ( i == 0 || max ( maxval , arr [ i ] ) == maxval ) { arr = arr [ i ] ; }"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator=’ (operand types are ‘std::vector<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "gcd = i == 0 ? arr [ i ] == __gcd ( gcd , arr [ i ] ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "long long n , maxval , gcd ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘max(long long int&, int&)’"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "while ( cin >> n )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘arr’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        7
+      ],
+      "mod_code": [
+        "if ( i == 0 || max ( maxval , arr [ i ] ) == maxval ) { arr = arr [ i ] ; }",
+        "gcd = i == 0 ? arr [ i ] == __gcd ( gcd , arr [ i ] ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator=’ (operand types are ‘std::vector<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        11
+      ],
+      "mod_code": [
+        "if ( i == 0 || max ( maxval , arr [ i ] ) == maxval ) { arr = arr [ i ] ; }",
+        "gcd = i == 0 ? arr [ i ] == __gcd ( gcd , arr [ i ] ) ;",
+        "cout << ( ( maxval - n ) % ( maxval - n ) % 2 ) << \" \\n \" ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator=’ (operand types are ‘std::vector<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        11,
+        5
+      ],
+      "mod_code": [
+        "if ( i == 0 || max ( maxval , arr [ i ] ) == maxval ) { arr = arr [ i ] ; }",
+        "gcd = i == 0 ? arr [ i ] == __gcd ( gcd , arr [ i ] ) ;",
+        "cout << ( ( maxval - n ) % ( maxval - n ) % 2 ) << \" \\n \" ;",
+        "cout << arr [ i ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator=’ (operand types are ‘std::vector<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        11,
+        1
+      ],
+      "mod_code": [
+        "if ( i == 0 || max ( maxval , arr [ i ] ) == maxval ) { arr = arr [ i ] ; }",
+        "gcd = i == 0 ? arr [ i ] == __gcd ( gcd , arr [ i ] ) ;",
+        "cout << ( ( maxval - n ) % ( maxval - n ) % 2 ) << \" \\n \" ;",
+        "long long n , maxval , gcd ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘max(long long int&, int&)’"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        5
+      ],
+      "mod_code": [
+        "if ( i == 0 || max ( maxval , arr [ i ] ) == maxval ) { arr = arr [ i ] ; }",
+        "gcd = i == 0 ? arr [ i ] == __gcd ( gcd , arr [ i ] ) ;",
+        "cout << arr [ i ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator=’ (operand types are ‘std::vector<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        5,
+        1
+      ],
+      "mod_code": [
+        "if ( i == 0 || max ( maxval , arr [ i ] ) == maxval ) { arr = arr [ i ] ; }",
+        "gcd = i == 0 ? arr [ i ] == __gcd ( gcd , arr [ i ] ) ;",
+        "cout << arr [ i ] ;",
+        "long long n , maxval , gcd ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘max(long long int&, int&)’"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        1
+      ],
+      "mod_code": [
+        "if ( i == 0 || max ( maxval , arr [ i ] ) == maxval ) { arr = arr [ i ] ; }",
+        "gcd = i == 0 ? arr [ i ] == __gcd ( gcd , arr [ i ] ) ;",
+        "long long n , maxval , gcd ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘max(long long int&, int&)’"
+    },
+    {
+      "mod_line": [
+        6,
+        11
+      ],
+      "mod_code": [
+        "if ( i == 0 || max ( maxval , arr [ i ] ) == maxval ) { arr = arr [ i ] ; }",
+        "cout << ( ( maxval - n ) % ( maxval - n ) % 2 ) << \" \\n \" ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator=’ (operand types are ‘std::vector<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        6,
+        11,
+        5
+      ],
+      "mod_code": [
+        "if ( i == 0 || max ( maxval , arr [ i ] ) == maxval ) { arr = arr [ i ] ; }",
+        "cout << ( ( maxval - n ) % ( maxval - n ) % 2 ) << \" \\n \" ;",
+        "cout << arr [ i ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator=’ (operand types are ‘std::vector<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        6,
+        11,
+        5,
+        1
+      ],
+      "mod_code": [
+        "if ( i == 0 || max ( maxval , arr [ i ] ) == maxval ) { arr = arr [ i ] ; }",
+        "cout << ( ( maxval - n ) % ( maxval - n ) % 2 ) << \" \\n \" ;",
+        "cout << arr [ i ] ;",
+        "long long n , maxval , gcd ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘max(long long int&, int&)’"
+    },
+    {
+      "mod_line": [
+        6,
+        11,
+        1
+      ],
+      "mod_code": [
+        "if ( i == 0 || max ( maxval , arr [ i ] ) == maxval ) { arr = arr [ i ] ; }",
+        "cout << ( ( maxval - n ) % ( maxval - n ) % 2 ) << \" \\n \" ;",
+        "long long n , maxval , gcd ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘max(long long int&, int&)’"
+    },
+    {
+      "mod_line": [
+        6,
+        5
+      ],
+      "mod_code": [
+        "if ( i == 0 || max ( maxval , arr [ i ] ) == maxval ) { arr = arr [ i ] ; }",
+        "cout << arr [ i ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator=’ (operand types are ‘std::vector<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        6,
+        5,
+        1
+      ],
+      "mod_code": [
+        "if ( i == 0 || max ( maxval , arr [ i ] ) == maxval ) { arr = arr [ i ] ; }",
+        "cout << arr [ i ] ;",
+        "long long n , maxval , gcd ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘max(long long int&, int&)’"
+    },
+    {
+      "mod_line": [
+        6,
+        1
+      ],
+      "mod_code": [
+        "if ( i == 0 || max ( maxval , arr [ i ] ) == maxval ) { arr = arr [ i ] ; }",
+        "long long n , maxval , gcd ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘max(long long int&, int&)’"
+    },
+    {
+      "mod_line": [
+        7,
+        11
+      ],
+      "mod_code": [
+        "gcd = i == 0 ? arr [ i ] == __gcd ( gcd , arr [ i ] ) ;",
+        "cout << ( ( maxval - n ) % ( maxval - n ) % 2 ) << \" \\n \" ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        11,
+        5
+      ],
+      "mod_code": [
+        "gcd = i == 0 ? arr [ i ] == __gcd ( gcd , arr [ i ] ) ;",
+        "cout << ( ( maxval - n ) % ( maxval - n ) % 2 ) << \" \\n \" ;",
+        "cout << arr [ i ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        11,
+        5,
+        6
+      ],
+      "mod_code": [
+        "gcd = i == 0 ? arr [ i ] == __gcd ( gcd , arr [ i ] ) ;",
+        "cout << ( ( maxval - n ) % ( maxval - n ) % 2 ) << \" \\n \" ;",
+        "cout << arr [ i ] ;",
+        "if ( i == 0 || max ( maxval , arr [ i ] ) == maxval ) maxval = arr [ i ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        11,
+        5,
+        1
+      ],
+      "mod_code": [
+        "gcd = i == 0 ? arr [ i ] == __gcd ( gcd , arr [ i ] ) ;",
+        "cout << ( ( maxval - n ) % ( maxval - n ) % 2 ) << \" \\n \" ;",
+        "cout << arr [ i ] ;",
+        "long long n , maxval , gcd ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘max(long long int&, int&)’"
+    },
+    {
+      "mod_line": [
+        7,
+        11,
+        6
+      ],
+      "mod_code": [
+        "gcd = i == 0 ? arr [ i ] == __gcd ( gcd , arr [ i ] ) ;",
+        "cout << ( ( maxval - n ) % ( maxval - n ) % 2 ) << \" \\n \" ;",
+        "if ( i == 0 || max ( maxval , arr [ i ] ) == maxval ) maxval = arr [ i ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        11,
+        6,
+        1
+      ],
+      "mod_code": [
+        "gcd = i == 0 ? arr [ i ] == __gcd ( gcd , arr [ i ] ) ;",
+        "cout << ( ( maxval - n ) % ( maxval - n ) % 2 ) << \" \\n \" ;",
+        "if ( i == 0 || max ( maxval , arr [ i ] ) == maxval ) maxval = arr [ i ] ;",
+        "long long n , maxval , gcd ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘max(long long int&, int&)’"
+    },
+    {
+      "mod_line": [
+        7,
+        11,
+        1
+      ],
+      "mod_code": [
+        "gcd = i == 0 ? arr [ i ] == __gcd ( gcd , arr [ i ] ) ;",
+        "cout << ( ( maxval - n ) % ( maxval - n ) % 2 ) << \" \\n \" ;",
+        "long long n , maxval , gcd ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘max(long long int&, int&)’"
+    },
+    {
+      "mod_line": [
+        7,
+        5
+      ],
+      "mod_code": [
+        "gcd = i == 0 ? arr [ i ] == __gcd ( gcd , arr [ i ] ) ;",
+        "cout << arr [ i ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        5,
+        6
+      ],
+      "mod_code": [
+        "gcd = i == 0 ? arr [ i ] == __gcd ( gcd , arr [ i ] ) ;",
+        "cout << arr [ i ] ;",
+        "if ( i == 0 || max ( maxval , arr [ i ] ) == maxval ) maxval = arr [ i ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        5,
+        6,
+        1
+      ],
+      "mod_code": [
+        "gcd = i == 0 ? arr [ i ] == __gcd ( gcd , arr [ i ] ) ;",
+        "cout << arr [ i ] ;",
+        "if ( i == 0 || max ( maxval , arr [ i ] ) == maxval ) maxval = arr [ i ] ;",
+        "long long n , maxval , gcd ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘max(long long int&, int&)’"
+    },
+    {
+      "mod_line": [
+        7,
+        5,
+        1
+      ],
+      "mod_code": [
+        "gcd = i == 0 ? arr [ i ] == __gcd ( gcd , arr [ i ] ) ;",
+        "cout << arr [ i ] ;",
+        "long long n , maxval , gcd ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘max(long long int&, int&)’"
+    },
+    {
+      "mod_line": [
+        7,
+        6
+      ],
+      "mod_code": [
+        "gcd = i == 0 ? arr [ i ] == __gcd ( gcd , arr [ i ] ) ;",
+        "if ( i == 0 || max ( maxval , arr [ i ] ) == maxval ) maxval = arr [ i ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "expected ‘:’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        6,
+        1
+      ],
+      "mod_code": [
+        "gcd = i == 0 ? arr [ i ] == __gcd ( gcd , arr [ i ] ) ;",
+        "if ( i == 0 || max ( maxval , arr [ i ] ) == maxval ) maxval = arr [ i ] ;",
+        "long long n , maxval , gcd ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘max(long long int&, int&)’"
+    },
+    {
+      "mod_line": [
+        7,
+        1
+      ],
+      "mod_code": [
+        "gcd = i == 0 ? arr [ i ] == __gcd ( gcd , arr [ i ] ) ;",
+        "long long n , maxval , gcd ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘max(long long int&, int&)’"
+    },
+    {
+      "mod_line": [
+        11,
+        5,
+        6,
+        1
+      ],
+      "mod_code": [
+        "cout << ( ( maxval - n ) % ( maxval - n ) % 2 ) << \" \\n \" ;",
+        "cout << arr [ i ] ;",
+        "if ( i == 0 || max ( maxval , arr [ i ] ) == maxval ) maxval = arr [ i ] ;",
+        "long long n , maxval , gcd ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘max(long long int&, int&)’"
+    },
+    {
+      "mod_line": [
+        11,
+        5,
+        1
+      ],
+      "mod_code": [
+        "cout << ( ( maxval - n ) % ( maxval - n ) % 2 ) << \" \\n \" ;",
+        "cout << arr [ i ] ;",
+        "long long n , maxval , gcd ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘max(long long int&, int&)’"
+    },
+    {
+      "mod_line": [
+        11,
+        6,
+        1
+      ],
+      "mod_code": [
+        "cout << ( ( maxval - n ) % ( maxval - n ) % 2 ) << \" \\n \" ;",
+        "if ( i == 0 || max ( maxval , arr [ i ] ) == maxval ) maxval = arr [ i ] ;",
+        "long long n , maxval , gcd ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘max(long long int&, int&)’"
+    },
+    {
+      "mod_line": [
+        11,
+        1
+      ],
+      "mod_code": [
+        "cout << ( ( maxval - n ) % ( maxval - n ) % 2 ) << \" \\n \" ;",
+        "long long n , maxval , gcd ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘max(long long int&, int&)’"
+    },
+    {
+      "mod_line": [
+        5,
+        6,
+        1
+      ],
+      "mod_code": [
+        "cout << arr [ i ] ;",
+        "if ( i == 0 || max ( maxval , arr [ i ] ) == maxval ) maxval = arr [ i ] ;",
+        "long long n , maxval , gcd ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘max(long long int&, int&)’"
+    },
+    {
+      "mod_line": [
+        5,
+        1
+      ],
+      "mod_code": [
+        "cout << arr [ i ] ;",
+        "long long n , maxval , gcd ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘max(long long int&, int&)’"
+    },
+    {
+      "mod_line": [
+        6,
+        1
+      ],
+      "mod_code": [
+        "if ( i == 0 || max ( maxval , arr [ i ] ) == maxval ) maxval = arr [ i ] ;",
+        "long long n , maxval , gcd ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no matching function for call to ‘max(long long int&, int&)’"
+    }
+  ]
+}

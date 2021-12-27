@@ -1,0 +1,637 @@
+{
+  "meta": {
+    "index": 354,
+    "hitid": "3SBX2M1TKDHAYMMER3WTI14XFJ64QZ",
+    "workerid": "A1AYVATMT88U1W",
+    "probid": "339A",
+    "subid": "42461774"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "let s be a string",
+      "code": "string s ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read s",
+      "code": "cin >> s ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "let v be a vector of characters",
+      "code": "vector < char > v ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for i = 0 to length of s exclusive",
+      "code": "for ( int i = 0 ; i < s . size ( ) ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "if i modulo 2 is equal to 0 , push_back s [ i ] into vector v",
+      "code": "if ( i % 2 == 0 ) v . push_back ( s [ i ] ) ;",
+      "indent": 2
+    },
+    {
+      "line": 6,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "sort the values of the vector v from beginning to end",
+      "code": "sort ( v . begin ( ) , v . end ( ) ) ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "for i = 0 to ( length of v ) - 1 exclusive , print v [ i ] and +",
+      "code": "for ( int i = 0 ; i < v . size ( ) - 1 ; i ++ ) { cout << v [ i ] << \" + \" ; }",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "print v [ ( length of v ) - 1 ] and newline",
+      "code": "cout << v [ v . size ( ) - 1 ] << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "char s ;"
+      ],
+      "err_line": 4,
+      "err_msg": "request for member ‘size’ in ‘s’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "s >> s ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "vector < string > v ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘std::vector<std::__cxx11::basic_string<char> >::push_back(char&)’"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "sort ( v . rbegin ( ) , v . end ( ) ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘sort(std::vector<char>::reverse_iterator, std::vector<char>::iterator)’"
+    },
+    {
+      "mod_line": [
+        8,
+        3
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < ( int ) v . size ( ) - 1 ; i ++ ) cout << v [ i ] << \" \" ;",
+        "vector < string > v ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘std::vector<std::__cxx11::basic_string<char> >::push_back(char&)’"
+    },
+    {
+      "mod_line": [
+        8,
+        3,
+        7
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < ( int ) v . size ( ) - 1 ; i ++ ) cout << v [ i ] << \" \" ;",
+        "vector < string > v ;",
+        "sort ( v . rbegin ( ) , v . end ( ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘std::vector<std::__cxx11::basic_string<char> >::push_back(char&)’"
+    },
+    {
+      "mod_line": [
+        8,
+        3,
+        7,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < ( int ) v . size ( ) - 1 ; i ++ ) cout << v [ i ] << \" \" ;",
+        "vector < string > v ;",
+        "sort ( v . rbegin ( ) , v . end ( ) ) ;",
+        "s >> s ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        8,
+        3,
+        7,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < ( int ) v . size ( ) - 1 ; i ++ ) cout << v [ i ] << \" \" ;",
+        "vector < string > v ;",
+        "sort ( v . rbegin ( ) , v . end ( ) ) ;",
+        "cout << v [ ( v . size ( ) - 1 ) - 1 ] << endl ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘std::vector<std::__cxx11::basic_string<char> >::push_back(char&)’"
+    },
+    {
+      "mod_line": [
+        8,
+        3,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < ( int ) v . size ( ) - 1 ; i ++ ) cout << v [ i ] << \" \" ;",
+        "vector < string > v ;",
+        "s >> s ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        8,
+        3,
+        2,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < ( int ) v . size ( ) - 1 ; i ++ ) cout << v [ i ] << \" \" ;",
+        "vector < string > v ;",
+        "s >> s ;",
+        "cout << v [ ( v . size ( ) - 1 ) - 1 ] << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        8,
+        3,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < ( int ) v . size ( ) - 1 ; i ++ ) cout << v [ i ] << \" \" ;",
+        "vector < string > v ;",
+        "cout << v [ ( v . size ( ) - 1 ) - 1 ] << endl ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘std::vector<std::__cxx11::basic_string<char> >::push_back(char&)’"
+    },
+    {
+      "mod_line": [
+        8,
+        7
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < ( int ) v . size ( ) - 1 ; i ++ ) cout << v [ i ] << \" \" ;",
+        "sort ( v . rbegin ( ) , v . end ( ) ) ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘sort(std::vector<char>::reverse_iterator, std::vector<char>::iterator)’"
+    },
+    {
+      "mod_line": [
+        8,
+        7,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < ( int ) v . size ( ) - 1 ; i ++ ) cout << v [ i ] << \" \" ;",
+        "sort ( v . rbegin ( ) , v . end ( ) ) ;",
+        "s >> s ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        8,
+        7,
+        2,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < ( int ) v . size ( ) - 1 ; i ++ ) cout << v [ i ] << \" \" ;",
+        "sort ( v . rbegin ( ) , v . end ( ) ) ;",
+        "s >> s ;",
+        "cout << v [ ( v . size ( ) - 1 ) - 1 ] << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        8,
+        7,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < ( int ) v . size ( ) - 1 ; i ++ ) cout << v [ i ] << \" \" ;",
+        "sort ( v . rbegin ( ) , v . end ( ) ) ;",
+        "cout << v [ ( v . size ( ) - 1 ) - 1 ] << endl ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘sort(std::vector<char>::reverse_iterator, std::vector<char>::iterator)’"
+    },
+    {
+      "mod_line": [
+        8,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < ( int ) v . size ( ) - 1 ; i ++ ) cout << v [ i ] << \" \" ;",
+        "s >> s ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        8,
+        2,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < ( int ) v . size ( ) - 1 ; i ++ ) cout << v [ i ] << \" \" ;",
+        "s >> s ;",
+        "cout << v [ ( v . size ( ) - 1 ) - 1 ] << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        3,
+        7
+      ],
+      "mod_code": [
+        "vector < string > v ;",
+        "sort ( v . rbegin ( ) , v . end ( ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘std::vector<std::__cxx11::basic_string<char> >::push_back(char&)’"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        2
+      ],
+      "mod_code": [
+        "vector < string > v ;",
+        "sort ( v . rbegin ( ) , v . end ( ) ) ;",
+        "s >> s ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        2,
+        8
+      ],
+      "mod_code": [
+        "vector < string > v ;",
+        "sort ( v . rbegin ( ) , v . end ( ) ) ;",
+        "s >> s ;",
+        "for ( int i = 0 ; i < v . size ( ) - 1 ; i ++ ) cout << v [ i ] << \" \" ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        2,
+        9
+      ],
+      "mod_code": [
+        "vector < string > v ;",
+        "sort ( v . rbegin ( ) , v . end ( ) ) ;",
+        "s >> s ;",
+        "cout << v [ ( v . size ( ) - 1 ) - 1 ] << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        8
+      ],
+      "mod_code": [
+        "vector < string > v ;",
+        "sort ( v . rbegin ( ) , v . end ( ) ) ;",
+        "for ( int i = 0 ; i < v . size ( ) - 1 ; i ++ ) cout << v [ i ] << \" \" ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘std::vector<std::__cxx11::basic_string<char> >::push_back(char&)’"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        8,
+        9
+      ],
+      "mod_code": [
+        "vector < string > v ;",
+        "sort ( v . rbegin ( ) , v . end ( ) ) ;",
+        "for ( int i = 0 ; i < v . size ( ) - 1 ; i ++ ) cout << v [ i ] << \" \" ;",
+        "cout << v [ ( v . size ( ) - 1 ) - 1 ] << endl ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘std::vector<std::__cxx11::basic_string<char> >::push_back(char&)’"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        9
+      ],
+      "mod_code": [
+        "vector < string > v ;",
+        "sort ( v . rbegin ( ) , v . end ( ) ) ;",
+        "cout << v [ ( v . size ( ) - 1 ) - 1 ] << endl ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘std::vector<std::__cxx11::basic_string<char> >::push_back(char&)’"
+    },
+    {
+      "mod_line": [
+        3,
+        2
+      ],
+      "mod_code": [
+        "vector < string > v ;",
+        "s >> s ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        3,
+        2,
+        8
+      ],
+      "mod_code": [
+        "vector < string > v ;",
+        "s >> s ;",
+        "for ( int i = 0 ; i < v . size ( ) - 1 ; i ++ ) cout << v [ i ] << \" \" ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        3,
+        2,
+        8,
+        9
+      ],
+      "mod_code": [
+        "vector < string > v ;",
+        "s >> s ;",
+        "for ( int i = 0 ; i < v . size ( ) - 1 ; i ++ ) cout << v [ i ] << \" \" ;",
+        "cout << v [ ( v . size ( ) - 1 ) - 1 ] << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        3,
+        2,
+        9
+      ],
+      "mod_code": [
+        "vector < string > v ;",
+        "s >> s ;",
+        "cout << v [ ( v . size ( ) - 1 ) - 1 ] << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        3,
+        8
+      ],
+      "mod_code": [
+        "vector < string > v ;",
+        "for ( int i = 0 ; i < v . size ( ) - 1 ; i ++ ) cout << v [ i ] << \" \" ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘std::vector<std::__cxx11::basic_string<char> >::push_back(char&)’"
+    },
+    {
+      "mod_line": [
+        3,
+        8,
+        9
+      ],
+      "mod_code": [
+        "vector < string > v ;",
+        "for ( int i = 0 ; i < v . size ( ) - 1 ; i ++ ) cout << v [ i ] << \" \" ;",
+        "cout << v [ ( v . size ( ) - 1 ) - 1 ] << endl ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘std::vector<std::__cxx11::basic_string<char> >::push_back(char&)’"
+    },
+    {
+      "mod_line": [
+        3,
+        9
+      ],
+      "mod_code": [
+        "vector < string > v ;",
+        "cout << v [ ( v . size ( ) - 1 ) - 1 ] << endl ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no matching function for call to ‘std::vector<std::__cxx11::basic_string<char> >::push_back(char&)’"
+    },
+    {
+      "mod_line": [
+        7,
+        2
+      ],
+      "mod_code": [
+        "sort ( v . rbegin ( ) , v . end ( ) ) ;",
+        "s >> s ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        7,
+        2,
+        8
+      ],
+      "mod_code": [
+        "sort ( v . rbegin ( ) , v . end ( ) ) ;",
+        "s >> s ;",
+        "for ( int i = 0 ; i < v . size ( ) - 1 ; i ++ ) cout << v [ i ] << \" \" ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        7,
+        2,
+        8,
+        9
+      ],
+      "mod_code": [
+        "sort ( v . rbegin ( ) , v . end ( ) ) ;",
+        "s >> s ;",
+        "for ( int i = 0 ; i < v . size ( ) - 1 ; i ++ ) cout << v [ i ] << \" \" ;",
+        "cout << v [ ( v . size ( ) - 1 ) - 1 ] << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        7,
+        2,
+        9
+      ],
+      "mod_code": [
+        "sort ( v . rbegin ( ) , v . end ( ) ) ;",
+        "s >> s ;",
+        "cout << v [ ( v . size ( ) - 1 ) - 1 ] << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        7,
+        8
+      ],
+      "mod_code": [
+        "sort ( v . rbegin ( ) , v . end ( ) ) ;",
+        "for ( int i = 0 ; i < v . size ( ) - 1 ; i ++ ) cout << v [ i ] << \" \" ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘sort(std::vector<char>::reverse_iterator, std::vector<char>::iterator)’"
+    },
+    {
+      "mod_line": [
+        7,
+        8,
+        9
+      ],
+      "mod_code": [
+        "sort ( v . rbegin ( ) , v . end ( ) ) ;",
+        "for ( int i = 0 ; i < v . size ( ) - 1 ; i ++ ) cout << v [ i ] << \" \" ;",
+        "cout << v [ ( v . size ( ) - 1 ) - 1 ] << endl ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘sort(std::vector<char>::reverse_iterator, std::vector<char>::iterator)’"
+    },
+    {
+      "mod_line": [
+        7,
+        9
+      ],
+      "mod_code": [
+        "sort ( v . rbegin ( ) , v . end ( ) ) ;",
+        "cout << v [ ( v . size ( ) - 1 ) - 1 ] << endl ;"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘sort(std::vector<char>::reverse_iterator, std::vector<char>::iterator)’"
+    },
+    {
+      "mod_line": [
+        2,
+        8
+      ],
+      "mod_code": [
+        "s >> s ;",
+        "for ( int i = 0 ; i < v . size ( ) - 1 ; i ++ ) cout << v [ i ] << \" \" ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        2,
+        8,
+        9
+      ],
+      "mod_code": [
+        "s >> s ;",
+        "for ( int i = 0 ; i < v . size ( ) - 1 ; i ++ ) cout << v [ i ] << \" \" ;",
+        "cout << v [ ( v . size ( ) - 1 ) - 1 ] << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        2,
+        9
+      ],
+      "mod_code": [
+        "s >> s ;",
+        "cout << v [ ( v . size ( ) - 1 ) - 1 ] << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    }
+  ]
+}

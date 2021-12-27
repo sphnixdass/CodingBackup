@@ -1,0 +1,795 @@
+{
+  "meta": {
+    "index": 1169,
+    "hitid": "3NBFJK3IOHCNPQ2I7R6Q2L60QNUGON",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "757A",
+    "subid": "47269859"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create constant integer base with base = 1000 * 1000 * 1000",
+      "code": "const int base = 1000 * 1000 * 1000 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create constant integer N with N = integer casted 2e5 + 2",
+      "code": "const int N = ( int ) 2e5 + 2 ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "create constant integer INF with INF = integer casted 1e9 + 7",
+      "code": "const int INF = ( int ) 1e9 + 7 ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "create constant long double pi with pi = acosign of - 1",
+      "code": "const long double pi = acos ( - 1 ) ;",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "create constant long long linf with linf = long long casted 1e18",
+      "code": "const long long linf = ( long long ) 1e18 ;",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "create strings s , res with res = \" Bulbasaur \"",
+      "code": "string s , res = \" Bulbasaur \" ;",
+      "indent": 0
+    },
+    {
+      "line": 6,
+      "text": "create map kol from character to integer",
+      "code": "map < char , int > kol ;",
+      "indent": 0
+    },
+    {
+      "line": 7,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 8,
+      "text": "read s",
+      "code": "cin >> s ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "for i = 0 to integer casted size of s exclusive , increment kol [ s [ i ] ]",
+      "code": "for ( int i = 0 ; i < ( ( int ) ( s ) . size ( ) ) ; ++ i ) { kol [ s [ i ] ] ++ ; }",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "set kol [ ' u ' ] to kol [ ' u ' ] / 2",
+      "code": "kol [ ' u ' ] /= 2 ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "set kol [ ' a ' ] to kol [ ' a ' ] / 2",
+      "code": "kol [ ' a ' ] /= 2 ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "create integer ans with ans = INF",
+      "code": "int ans = INF ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "for i = 0 to integer casted size of res exclusive , set ans to minimum of ( ans and kol [ res [ i ] ] )",
+      "code": "for ( int i = 0 ; i < ( ( int ) ( res ) . size ( ) ) ; ++ i ) { ans = min ( ans , kol [ res [ i ] ] ) ; }",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "print ans print \" \\ n \"",
+      "code": "cout << ans << \" \\n \" ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "const long long linf = ( long long linf 1e18 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "map < character , int > kol ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘character’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "long long ans = INF ;"
+      ],
+      "err_line": 13,
+      "err_msg": "no matching function for call to ‘min(long long int&, std::map<char, int>::mapped_type&)’"
+    },
+    {
+      "mod_line": [
+        8,
+        12
+      ],
+      "mod_code": [
+        "cout << s << endl ;",
+        "long long ans = INF ;"
+      ],
+      "err_line": 13,
+      "err_msg": "no matching function for call to ‘min(long long int&, std::map<char, int>::mapped_type&)’"
+    },
+    {
+      "mod_line": [
+        8,
+        12,
+        6
+      ],
+      "mod_code": [
+        "cout << s << endl ;",
+        "long long ans = INF ;",
+        "map < character , int > kol ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘character’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        12,
+        6,
+        10
+      ],
+      "mod_code": [
+        "cout << s << endl ;",
+        "long long ans = INF ;",
+        "map < character , int > kol ;",
+        "kol [ ' u ' ] %= 2 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘character’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        12,
+        6,
+        4
+      ],
+      "mod_code": [
+        "cout << s << endl ;",
+        "long long ans = INF ;",
+        "map < character , int > kol ;",
+        "const long long linf = ( long long linf 1e18 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        8,
+        12,
+        6,
+        14
+      ],
+      "mod_code": [
+        "cout << s << endl ;",
+        "long long ans = INF ;",
+        "map < character , int > kol ;",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘character’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        12,
+        10
+      ],
+      "mod_code": [
+        "cout << s << endl ;",
+        "long long ans = INF ;",
+        "kol [ ' u ' ] %= 2 ;"
+      ],
+      "err_line": 13,
+      "err_msg": "no matching function for call to ‘min(long long int&, std::map<char, int>::mapped_type&)’"
+    },
+    {
+      "mod_line": [
+        8,
+        12,
+        10,
+        4
+      ],
+      "mod_code": [
+        "cout << s << endl ;",
+        "long long ans = INF ;",
+        "kol [ ' u ' ] %= 2 ;",
+        "const long long linf = ( long long linf 1e18 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        8,
+        12,
+        10,
+        14
+      ],
+      "mod_code": [
+        "cout << s << endl ;",
+        "long long ans = INF ;",
+        "kol [ ' u ' ] %= 2 ;",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 13,
+      "err_msg": "no matching function for call to ‘min(long long int&, std::map<char, int>::mapped_type&)’"
+    },
+    {
+      "mod_line": [
+        8,
+        12,
+        4
+      ],
+      "mod_code": [
+        "cout << s << endl ;",
+        "long long ans = INF ;",
+        "const long long linf = ( long long linf 1e18 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        8,
+        12,
+        4,
+        14
+      ],
+      "mod_code": [
+        "cout << s << endl ;",
+        "long long ans = INF ;",
+        "const long long linf = ( long long linf 1e18 ;",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        8,
+        12,
+        14
+      ],
+      "mod_code": [
+        "cout << s << endl ;",
+        "long long ans = INF ;",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 13,
+      "err_msg": "no matching function for call to ‘min(long long int&, std::map<char, int>::mapped_type&)’"
+    },
+    {
+      "mod_line": [
+        8,
+        6
+      ],
+      "mod_code": [
+        "cout << s << endl ;",
+        "map < character , int > kol ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘character’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        6,
+        10
+      ],
+      "mod_code": [
+        "cout << s << endl ;",
+        "map < character , int > kol ;",
+        "kol [ ' u ' ] %= 2 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘character’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        6,
+        10,
+        4
+      ],
+      "mod_code": [
+        "cout << s << endl ;",
+        "map < character , int > kol ;",
+        "kol [ ' u ' ] %= 2 ;",
+        "const long long linf = ( long long linf 1e18 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        8,
+        6,
+        10,
+        14
+      ],
+      "mod_code": [
+        "cout << s << endl ;",
+        "map < character , int > kol ;",
+        "kol [ ' u ' ] %= 2 ;",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘character’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        6,
+        4
+      ],
+      "mod_code": [
+        "cout << s << endl ;",
+        "map < character , int > kol ;",
+        "const long long linf = ( long long linf 1e18 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        8,
+        6,
+        4,
+        14
+      ],
+      "mod_code": [
+        "cout << s << endl ;",
+        "map < character , int > kol ;",
+        "const long long linf = ( long long linf 1e18 ;",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        8,
+        6,
+        14
+      ],
+      "mod_code": [
+        "cout << s << endl ;",
+        "map < character , int > kol ;",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘character’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        4
+      ],
+      "mod_code": [
+        "cout << s << endl ;",
+        "kol [ ' u ' ] %= 2 ;",
+        "const long long linf = ( long long linf 1e18 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        8,
+        10,
+        4,
+        14
+      ],
+      "mod_code": [
+        "cout << s << endl ;",
+        "kol [ ' u ' ] %= 2 ;",
+        "const long long linf = ( long long linf 1e18 ;",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        8,
+        4
+      ],
+      "mod_code": [
+        "cout << s << endl ;",
+        "const long long linf = ( long long linf 1e18 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        8,
+        4,
+        14
+      ],
+      "mod_code": [
+        "cout << s << endl ;",
+        "const long long linf = ( long long linf 1e18 ;",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        12,
+        6
+      ],
+      "mod_code": [
+        "long long ans = INF ;",
+        "map < character , int > kol ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘character’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        6,
+        10
+      ],
+      "mod_code": [
+        "long long ans = INF ;",
+        "map < character , int > kol ;",
+        "kol [ ' u ' ] %= 2 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘character’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        6,
+        10,
+        4
+      ],
+      "mod_code": [
+        "long long ans = INF ;",
+        "map < character , int > kol ;",
+        "kol [ ' u ' ] %= 2 ;",
+        "const long long linf = ( long long linf 1e18 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        12,
+        6,
+        10,
+        14
+      ],
+      "mod_code": [
+        "long long ans = INF ;",
+        "map < character , int > kol ;",
+        "kol [ ' u ' ] %= 2 ;",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘character’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        6,
+        4
+      ],
+      "mod_code": [
+        "long long ans = INF ;",
+        "map < character , int > kol ;",
+        "const long long linf = ( long long linf 1e18 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        12,
+        6,
+        4,
+        14
+      ],
+      "mod_code": [
+        "long long ans = INF ;",
+        "map < character , int > kol ;",
+        "const long long linf = ( long long linf 1e18 ;",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        12,
+        6,
+        14
+      ],
+      "mod_code": [
+        "long long ans = INF ;",
+        "map < character , int > kol ;",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘character’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        10
+      ],
+      "mod_code": [
+        "long long ans = INF ;",
+        "kol [ ' u ' ] %= 2 ;"
+      ],
+      "err_line": 13,
+      "err_msg": "no matching function for call to ‘min(long long int&, std::map<char, int>::mapped_type&)’"
+    },
+    {
+      "mod_line": [
+        12,
+        10,
+        4
+      ],
+      "mod_code": [
+        "long long ans = INF ;",
+        "kol [ ' u ' ] %= 2 ;",
+        "const long long linf = ( long long linf 1e18 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        12,
+        10,
+        4,
+        14
+      ],
+      "mod_code": [
+        "long long ans = INF ;",
+        "kol [ ' u ' ] %= 2 ;",
+        "const long long linf = ( long long linf 1e18 ;",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        12,
+        10,
+        14
+      ],
+      "mod_code": [
+        "long long ans = INF ;",
+        "kol [ ' u ' ] %= 2 ;",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 13,
+      "err_msg": "no matching function for call to ‘min(long long int&, std::map<char, int>::mapped_type&)’"
+    },
+    {
+      "mod_line": [
+        12,
+        4
+      ],
+      "mod_code": [
+        "long long ans = INF ;",
+        "const long long linf = ( long long linf 1e18 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        12,
+        4,
+        14
+      ],
+      "mod_code": [
+        "long long ans = INF ;",
+        "const long long linf = ( long long linf 1e18 ;",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        12,
+        14
+      ],
+      "mod_code": [
+        "long long ans = INF ;",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 13,
+      "err_msg": "no matching function for call to ‘min(long long int&, std::map<char, int>::mapped_type&)’"
+    },
+    {
+      "mod_line": [
+        6,
+        10
+      ],
+      "mod_code": [
+        "map < character , int > kol ;",
+        "kol [ ' u ' ] %= 2 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘character’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        10,
+        4
+      ],
+      "mod_code": [
+        "map < character , int > kol ;",
+        "kol [ ' u ' ] %= 2 ;",
+        "const long long linf = ( long long linf 1e18 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        6,
+        10,
+        4,
+        14
+      ],
+      "mod_code": [
+        "map < character , int > kol ;",
+        "kol [ ' u ' ] %= 2 ;",
+        "const long long linf = ( long long linf 1e18 ;",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        6,
+        10,
+        14
+      ],
+      "mod_code": [
+        "map < character , int > kol ;",
+        "kol [ ' u ' ] %= 2 ;",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘character’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        4
+      ],
+      "mod_code": [
+        "map < character , int > kol ;",
+        "const long long linf = ( long long linf 1e18 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        6,
+        4,
+        14
+      ],
+      "mod_code": [
+        "map < character , int > kol ;",
+        "const long long linf = ( long long linf 1e18 ;",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        6,
+        14
+      ],
+      "mod_code": [
+        "map < character , int > kol ;",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘character’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        4
+      ],
+      "mod_code": [
+        "kol [ ' u ' ] %= 2 ;",
+        "const long long linf = ( long long linf 1e18 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        10,
+        4,
+        14
+      ],
+      "mod_code": [
+        "kol [ ' u ' ] %= 2 ;",
+        "const long long linf = ( long long linf 1e18 ;",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected primary-expression before ‘long’"
+    },
+    {
+      "mod_line": [
+        4,
+        14
+      ],
+      "mod_code": [
+        "const long long linf = ( long long linf 1e18 ;",
+        "cout << ans << \" \" ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected primary-expression before ‘long’"
+    }
+  ]
+}

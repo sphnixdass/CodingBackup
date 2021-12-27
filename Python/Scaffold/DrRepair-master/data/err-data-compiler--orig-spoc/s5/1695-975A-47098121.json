@@ -1,0 +1,691 @@
+{
+  "meta": {
+    "index": 1695,
+    "hitid": "3BFF0DJK8X66SNGHY8M6L9VQD6CTSD",
+    "workerid": "A3QHJOSOK95QWB",
+    "probid": "975A",
+    "subid": "47098121"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "s = string",
+      "code": "string s ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "root = set of strings",
+      "code": "set < string > root ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "n = int",
+      "code": "int n ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i = 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "read s",
+      "code": "cin >> s ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "sort s form beginning of s to end of s + 1",
+      "code": "sort ( s . begin ( ) , s . end ( ) + 1 ) ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "erase form s unique ( beginning of s , end of s + 1 ) and end of s",
+      "code": "s . erase ( unique ( s . begin ( ) , s . end ( ) + 1 ) , s . end ( ) ) ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "insert s into root",
+      "code": "root . insert ( s ) ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "print size of root",
+      "code": "cout << root . size ( ) << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "s . erase ( unique ( unique ( s . begin ( ) , s + 1 ) ) ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "no match for ‘operator+’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "char s ;"
+      ],
+      "err_line": 7,
+      "err_msg": "request for member ‘begin’ in ‘s’, which is of non-class type ‘char’"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "set < string > :: root ;"
+      ],
+      "err_line": 1,
+      "err_msg": "‘root’ in ‘class std::set<std::__cxx11::basic_string<char> >’ does not name a type"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "sort ( s . begin ( ) , s . end ( ) ) + 1 ;"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid operands of types ‘void’ and ‘int’ to binary ‘operator+’"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "s . erase ( s . begin ( ) , unique ( s . begin ( ) + 1 ) ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "no matching function for call to ‘unique(__gnu_cxx::__normal_iterator<char*, std::__cxx11::basic_string<char> >)’"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "root . push ( s ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘class std::set<std::__cxx11::basic_string<char> >’ has no member named ‘push’"
+    },
+    {
+      "mod_line": [
+        8,
+        6
+      ],
+      "mod_code": [
+        "s . erase ( unique ( unique ( s . begin ( ) , s + 1 ) ) ) ;",
+        "cout << s << endl ;"
+      ],
+      "err_line": 8,
+      "err_msg": "no match for ‘operator+’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        8,
+        6,
+        9
+      ],
+      "mod_code": [
+        "s . erase ( unique ( unique ( s . begin ( ) , s + 1 ) ) ) ;",
+        "cout << s << endl ;",
+        "root . push ( s ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "no match for ‘operator+’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        8,
+        6,
+        9,
+        5
+      ],
+      "mod_code": [
+        "s . erase ( unique ( unique ( s . begin ( ) , s + 1 ) ) ) ;",
+        "cout << s << endl ;",
+        "root . push ( s ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        6,
+        9,
+        3
+      ],
+      "mod_code": [
+        "s . erase ( unique ( unique ( s . begin ( ) , s + 1 ) ) ) ;",
+        "cout << s << endl ;",
+        "root . push ( s ) ;",
+        "char n ;"
+      ],
+      "err_line": 8,
+      "err_msg": "no match for ‘operator+’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        8,
+        6,
+        5
+      ],
+      "mod_code": [
+        "s . erase ( unique ( unique ( s . begin ( ) , s + 1 ) ) ) ;",
+        "cout << s << endl ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        6,
+        5,
+        3
+      ],
+      "mod_code": [
+        "s . erase ( unique ( unique ( s . begin ( ) , s + 1 ) ) ) ;",
+        "cout << s << endl ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "char n ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        6,
+        3
+      ],
+      "mod_code": [
+        "s . erase ( unique ( unique ( s . begin ( ) , s + 1 ) ) ) ;",
+        "cout << s << endl ;",
+        "char n ;"
+      ],
+      "err_line": 8,
+      "err_msg": "no match for ‘operator+’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        8,
+        9
+      ],
+      "mod_code": [
+        "s . erase ( unique ( unique ( s . begin ( ) , s + 1 ) ) ) ;",
+        "root . push ( s ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "no match for ‘operator+’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        8,
+        9,
+        5
+      ],
+      "mod_code": [
+        "s . erase ( unique ( unique ( s . begin ( ) , s + 1 ) ) ) ;",
+        "root . push ( s ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        9,
+        5,
+        3
+      ],
+      "mod_code": [
+        "s . erase ( unique ( unique ( s . begin ( ) , s + 1 ) ) ) ;",
+        "root . push ( s ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "char n ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        9,
+        3
+      ],
+      "mod_code": [
+        "s . erase ( unique ( unique ( s . begin ( ) , s + 1 ) ) ) ;",
+        "root . push ( s ) ;",
+        "char n ;"
+      ],
+      "err_line": 8,
+      "err_msg": "no match for ‘operator+’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        8,
+        5
+      ],
+      "mod_code": [
+        "s . erase ( unique ( unique ( s . begin ( ) , s + 1 ) ) ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        5,
+        3
+      ],
+      "mod_code": [
+        "s . erase ( unique ( unique ( s . begin ( ) , s + 1 ) ) ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "char n ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        3
+      ],
+      "mod_code": [
+        "s . erase ( unique ( unique ( s . begin ( ) , s + 1 ) ) ) ;",
+        "char n ;"
+      ],
+      "err_line": 8,
+      "err_msg": "no match for ‘operator+’ (operand types are ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        6,
+        9
+      ],
+      "mod_code": [
+        "cout << s << endl ;",
+        "root . push ( s ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘class std::set<std::__cxx11::basic_string<char> >’ has no member named ‘push’"
+    },
+    {
+      "mod_line": [
+        6,
+        9,
+        5
+      ],
+      "mod_code": [
+        "cout << s << endl ;",
+        "root . push ( s ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        9,
+        5,
+        8
+      ],
+      "mod_code": [
+        "cout << s << endl ;",
+        "root . push ( s ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "s . erase ( s . begin ( ) , unique ( s . begin ( ) + 1 ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        9,
+        5,
+        3
+      ],
+      "mod_code": [
+        "cout << s << endl ;",
+        "root . push ( s ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "char n ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        9,
+        8
+      ],
+      "mod_code": [
+        "cout << s << endl ;",
+        "root . push ( s ) ;",
+        "s . erase ( s . begin ( ) , unique ( s . begin ( ) + 1 ) ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "no matching function for call to ‘unique(__gnu_cxx::__normal_iterator<char*, std::__cxx11::basic_string<char> >)’"
+    },
+    {
+      "mod_line": [
+        6,
+        9,
+        8,
+        3
+      ],
+      "mod_code": [
+        "cout << s << endl ;",
+        "root . push ( s ) ;",
+        "s . erase ( s . begin ( ) , unique ( s . begin ( ) + 1 ) ) ;",
+        "char n ;"
+      ],
+      "err_line": 8,
+      "err_msg": "no matching function for call to ‘unique(__gnu_cxx::__normal_iterator<char*, std::__cxx11::basic_string<char> >)’"
+    },
+    {
+      "mod_line": [
+        6,
+        9,
+        3
+      ],
+      "mod_code": [
+        "cout << s << endl ;",
+        "root . push ( s ) ;",
+        "char n ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘class std::set<std::__cxx11::basic_string<char> >’ has no member named ‘push’"
+    },
+    {
+      "mod_line": [
+        6,
+        5
+      ],
+      "mod_code": [
+        "cout << s << endl ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        5,
+        8
+      ],
+      "mod_code": [
+        "cout << s << endl ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "s . erase ( s . begin ( ) , unique ( s . begin ( ) + 1 ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        5,
+        8,
+        3
+      ],
+      "mod_code": [
+        "cout << s << endl ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "s . erase ( s . begin ( ) , unique ( s . begin ( ) + 1 ) ) ;",
+        "char n ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        5,
+        3
+      ],
+      "mod_code": [
+        "cout << s << endl ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "char n ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        8
+      ],
+      "mod_code": [
+        "cout << s << endl ;",
+        "s . erase ( s . begin ( ) , unique ( s . begin ( ) + 1 ) ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "no matching function for call to ‘unique(__gnu_cxx::__normal_iterator<char*, std::__cxx11::basic_string<char> >)’"
+    },
+    {
+      "mod_line": [
+        6,
+        8,
+        3
+      ],
+      "mod_code": [
+        "cout << s << endl ;",
+        "s . erase ( s . begin ( ) , unique ( s . begin ( ) + 1 ) ) ;",
+        "char n ;"
+      ],
+      "err_line": 8,
+      "err_msg": "no matching function for call to ‘unique(__gnu_cxx::__normal_iterator<char*, std::__cxx11::basic_string<char> >)’"
+    },
+    {
+      "mod_line": [
+        9,
+        5
+      ],
+      "mod_code": [
+        "root . push ( s ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        5,
+        8
+      ],
+      "mod_code": [
+        "root . push ( s ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "s . erase ( s . begin ( ) , unique ( s . begin ( ) + 1 ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        5,
+        8,
+        3
+      ],
+      "mod_code": [
+        "root . push ( s ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "s . erase ( s . begin ( ) , unique ( s . begin ( ) + 1 ) ) ;",
+        "char n ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        5,
+        3
+      ],
+      "mod_code": [
+        "root . push ( s ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "char n ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        8
+      ],
+      "mod_code": [
+        "root . push ( s ) ;",
+        "s . erase ( s . begin ( ) , unique ( s . begin ( ) + 1 ) ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "no matching function for call to ‘unique(__gnu_cxx::__normal_iterator<char*, std::__cxx11::basic_string<char> >)’"
+    },
+    {
+      "mod_line": [
+        9,
+        8,
+        3
+      ],
+      "mod_code": [
+        "root . push ( s ) ;",
+        "s . erase ( s . begin ( ) , unique ( s . begin ( ) + 1 ) ) ;",
+        "char n ;"
+      ],
+      "err_line": 8,
+      "err_msg": "no matching function for call to ‘unique(__gnu_cxx::__normal_iterator<char*, std::__cxx11::basic_string<char> >)’"
+    },
+    {
+      "mod_line": [
+        9,
+        3
+      ],
+      "mod_code": [
+        "root . push ( s ) ;",
+        "char n ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘class std::set<std::__cxx11::basic_string<char> >’ has no member named ‘push’"
+    },
+    {
+      "mod_line": [
+        5,
+        8
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "s . erase ( s . begin ( ) , unique ( s . begin ( ) + 1 ) ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        3
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "s . erase ( s . begin ( ) , unique ( s . begin ( ) + 1 ) ) ;",
+        "char n ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        3
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "char n ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        3
+      ],
+      "mod_code": [
+        "s . erase ( s . begin ( ) , unique ( s . begin ( ) + 1 ) ) ;",
+        "char n ;"
+      ],
+      "err_line": 8,
+      "err_msg": "no matching function for call to ‘unique(__gnu_cxx::__normal_iterator<char*, std::__cxx11::basic_string<char> >)’"
+    }
+  ]
+}

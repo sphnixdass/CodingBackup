@@ -1,0 +1,849 @@
+{
+  "meta": {
+    "index": 1958,
+    "hitid": "3OEWW2KGQJ5KD6SR515IW033C8LDO6",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "319A",
+    "subid": "46263173"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create constant long long MOD = 1e9 + 7",
+      "code": "const long long MOD = 1e9 + 7 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare constant integer MAXN = 101",
+      "code": "const int MAXN = 101 ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "let power be long long array with size MAXN",
+      "code": "long long power [ MAXN ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "declare string x",
+      "code": "string x ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "read x",
+      "code": "cin >> x ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "reverse x",
+      "code": "reverse ( x . begin ( ) , x . end ( ) ) ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "declare long long variable step = 1",
+      "code": "long long step = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "for i = 0 to length of x - 1 exclusive",
+      "code": "for ( int i = 0 ; i < x . size ( ) - 1 ; ++ i )",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "multiply step by 2",
+      "code": "step *= 2 ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "step % = MOD",
+      "code": "step %= MOD ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "set value of power [ 0 ] to 1",
+      "code": "power [ 0 ] = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "for integer i = 1 to MAXN exclusive , change power [ i ] to ( 2LL * power [ i - 1 ] ) % MOD",
+      "code": "for ( int i = 1 ; i < MAXN ; ++ i ) { power [ i ] = ( 2LL * power [ i - 1 ] ) % MOD ; }",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "declare long long ans = 0",
+      "code": "long long ans = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "for i = 0 to length of x exclusive",
+      "code": "for ( int i = 0 ; i < x . size ( ) ; ++ i )",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "increase ans by step * ( power [ i ] * ( x [ i ] - ' 0 ' ) )",
+      "code": "ans += step * ( power [ i ] * ( x [ i ] - ' 0 ' ) ) ;",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "ans % = MOD",
+      "code": "ans %= MOD ;",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "print ans",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "long long * power [ MAXN ] ;"
+      ],
+      "err_line": 12,
+      "err_msg": "invalid conversion from ‘int’ to ‘long long int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "string x << endl ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected initializer before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "reverse ( x , x + n ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "C [ 0 ] = 1 ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘C’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i < MAXN ; i ++ ) power ( 2LL * power ( 2LL * power [ i - 1 ] ) % MOD ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘power’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "int ans %= MOD ;"
+      ],
+      "err_line": 17,
+      "err_msg": "expected initializer before ‘%=’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        4
+      ],
+      "mod_code": [
+        "ans += step * ( power [ i ] * ( x [ i ] * ' 0 ' ) ) ;",
+        "string x << endl ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected initializer before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        4,
+        10
+      ],
+      "mod_code": [
+        "ans += step * ( power [ i ] * ( x [ i ] * ' 0 ' ) ) ;",
+        "string x << endl ;",
+        "step *= MOD ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected initializer before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        4,
+        10,
+        2
+      ],
+      "mod_code": [
+        "ans += step * ( power [ i ] * ( x [ i ] * ' 0 ' ) ) ;",
+        "string x << endl ;",
+        "step *= MOD ;",
+        "long long * power [ MAXN ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected initializer before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        4,
+        10,
+        6
+      ],
+      "mod_code": [
+        "ans += step * ( power [ i ] * ( x [ i ] * ' 0 ' ) ) ;",
+        "string x << endl ;",
+        "step *= MOD ;",
+        "reverse ( x , x + n ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected initializer before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        4,
+        10,
+        1
+      ],
+      "mod_code": [
+        "ans += step * ( power [ i ] * ( x [ i ] * ' 0 ' ) ) ;",
+        "string x << endl ;",
+        "step *= MOD ;",
+        "const int MAXN = 20 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected initializer before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        4,
+        2
+      ],
+      "mod_code": [
+        "ans += step * ( power [ i ] * ( x [ i ] * ' 0 ' ) ) ;",
+        "string x << endl ;",
+        "long long * power [ MAXN ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected initializer before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        4,
+        2,
+        6
+      ],
+      "mod_code": [
+        "ans += step * ( power [ i ] * ( x [ i ] * ' 0 ' ) ) ;",
+        "string x << endl ;",
+        "long long * power [ MAXN ] ;",
+        "reverse ( x , x + n ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected initializer before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        4,
+        2,
+        1
+      ],
+      "mod_code": [
+        "ans += step * ( power [ i ] * ( x [ i ] * ' 0 ' ) ) ;",
+        "string x << endl ;",
+        "long long * power [ MAXN ] ;",
+        "const int MAXN = 20 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected initializer before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        4,
+        6
+      ],
+      "mod_code": [
+        "ans += step * ( power [ i ] * ( x [ i ] * ' 0 ' ) ) ;",
+        "string x << endl ;",
+        "reverse ( x , x + n ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected initializer before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        4,
+        6,
+        1
+      ],
+      "mod_code": [
+        "ans += step * ( power [ i ] * ( x [ i ] * ' 0 ' ) ) ;",
+        "string x << endl ;",
+        "reverse ( x , x + n ) ;",
+        "const int MAXN = 20 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected initializer before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        4,
+        1
+      ],
+      "mod_code": [
+        "ans += step * ( power [ i ] * ( x [ i ] * ' 0 ' ) ) ;",
+        "string x << endl ;",
+        "const int MAXN = 20 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected initializer before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        10,
+        2
+      ],
+      "mod_code": [
+        "ans += step * ( power [ i ] * ( x [ i ] * ' 0 ' ) ) ;",
+        "step *= MOD ;",
+        "long long * power [ MAXN ] ;"
+      ],
+      "err_line": 12,
+      "err_msg": "invalid conversion from ‘int’ to ‘long long int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        16,
+        10,
+        2,
+        6
+      ],
+      "mod_code": [
+        "ans += step * ( power [ i ] * ( x [ i ] * ' 0 ' ) ) ;",
+        "step *= MOD ;",
+        "long long * power [ MAXN ] ;",
+        "reverse ( x , x + n ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        10,
+        2,
+        1
+      ],
+      "mod_code": [
+        "ans += step * ( power [ i ] * ( x [ i ] * ' 0 ' ) ) ;",
+        "step *= MOD ;",
+        "long long * power [ MAXN ] ;",
+        "const int MAXN = 20 ;"
+      ],
+      "err_line": 12,
+      "err_msg": "invalid conversion from ‘int’ to ‘long long int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        16,
+        10,
+        6
+      ],
+      "mod_code": [
+        "ans += step * ( power [ i ] * ( x [ i ] * ' 0 ' ) ) ;",
+        "step *= MOD ;",
+        "reverse ( x , x + n ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        10,
+        6,
+        1
+      ],
+      "mod_code": [
+        "ans += step * ( power [ i ] * ( x [ i ] * ' 0 ' ) ) ;",
+        "step *= MOD ;",
+        "reverse ( x , x + n ) ;",
+        "const int MAXN = 20 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        2
+      ],
+      "mod_code": [
+        "ans += step * ( power [ i ] * ( x [ i ] * ' 0 ' ) ) ;",
+        "long long * power [ MAXN ] ;"
+      ],
+      "err_line": 12,
+      "err_msg": "invalid conversion from ‘int’ to ‘long long int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        16,
+        2,
+        6
+      ],
+      "mod_code": [
+        "ans += step * ( power [ i ] * ( x [ i ] * ' 0 ' ) ) ;",
+        "long long * power [ MAXN ] ;",
+        "reverse ( x , x + n ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        2,
+        6,
+        1
+      ],
+      "mod_code": [
+        "ans += step * ( power [ i ] * ( x [ i ] * ' 0 ' ) ) ;",
+        "long long * power [ MAXN ] ;",
+        "reverse ( x , x + n ) ;",
+        "const int MAXN = 20 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        2,
+        1
+      ],
+      "mod_code": [
+        "ans += step * ( power [ i ] * ( x [ i ] * ' 0 ' ) ) ;",
+        "long long * power [ MAXN ] ;",
+        "const int MAXN = 20 ;"
+      ],
+      "err_line": 12,
+      "err_msg": "invalid conversion from ‘int’ to ‘long long int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        16,
+        6
+      ],
+      "mod_code": [
+        "ans += step * ( power [ i ] * ( x [ i ] * ' 0 ' ) ) ;",
+        "reverse ( x , x + n ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        6,
+        1
+      ],
+      "mod_code": [
+        "ans += step * ( power [ i ] * ( x [ i ] * ' 0 ' ) ) ;",
+        "reverse ( x , x + n ) ;",
+        "const int MAXN = 20 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        10
+      ],
+      "mod_code": [
+        "string x << endl ;",
+        "step *= MOD ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected initializer before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        10,
+        2
+      ],
+      "mod_code": [
+        "string x << endl ;",
+        "step *= MOD ;",
+        "long long * power [ MAXN ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected initializer before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        10,
+        2,
+        6
+      ],
+      "mod_code": [
+        "string x << endl ;",
+        "step *= MOD ;",
+        "long long * power [ MAXN ] ;",
+        "reverse ( x , x + n ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected initializer before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        10,
+        2,
+        1
+      ],
+      "mod_code": [
+        "string x << endl ;",
+        "step *= MOD ;",
+        "long long * power [ MAXN ] ;",
+        "const int MAXN = 20 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected initializer before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        10,
+        6
+      ],
+      "mod_code": [
+        "string x << endl ;",
+        "step *= MOD ;",
+        "reverse ( x , x + n ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected initializer before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        10,
+        6,
+        1
+      ],
+      "mod_code": [
+        "string x << endl ;",
+        "step *= MOD ;",
+        "reverse ( x , x + n ) ;",
+        "const int MAXN = 20 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected initializer before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        10,
+        1
+      ],
+      "mod_code": [
+        "string x << endl ;",
+        "step *= MOD ;",
+        "const int MAXN = 20 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected initializer before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        2
+      ],
+      "mod_code": [
+        "string x << endl ;",
+        "long long * power [ MAXN ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected initializer before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        2,
+        6
+      ],
+      "mod_code": [
+        "string x << endl ;",
+        "long long * power [ MAXN ] ;",
+        "reverse ( x , x + n ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected initializer before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        2,
+        6,
+        1
+      ],
+      "mod_code": [
+        "string x << endl ;",
+        "long long * power [ MAXN ] ;",
+        "reverse ( x , x + n ) ;",
+        "const int MAXN = 20 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected initializer before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        2,
+        1
+      ],
+      "mod_code": [
+        "string x << endl ;",
+        "long long * power [ MAXN ] ;",
+        "const int MAXN = 20 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected initializer before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        6
+      ],
+      "mod_code": [
+        "string x << endl ;",
+        "reverse ( x , x + n ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected initializer before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        1
+      ],
+      "mod_code": [
+        "string x << endl ;",
+        "reverse ( x , x + n ) ;",
+        "const int MAXN = 20 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected initializer before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        1
+      ],
+      "mod_code": [
+        "string x << endl ;",
+        "const int MAXN = 20 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected initializer before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        2
+      ],
+      "mod_code": [
+        "step *= MOD ;",
+        "long long * power [ MAXN ] ;"
+      ],
+      "err_line": 12,
+      "err_msg": "invalid conversion from ‘int’ to ‘long long int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        2,
+        6
+      ],
+      "mod_code": [
+        "step *= MOD ;",
+        "long long * power [ MAXN ] ;",
+        "reverse ( x , x + n ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        2,
+        6,
+        1
+      ],
+      "mod_code": [
+        "step *= MOD ;",
+        "long long * power [ MAXN ] ;",
+        "reverse ( x , x + n ) ;",
+        "const int MAXN = 20 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        2,
+        1
+      ],
+      "mod_code": [
+        "step *= MOD ;",
+        "long long * power [ MAXN ] ;",
+        "const int MAXN = 20 ;"
+      ],
+      "err_line": 12,
+      "err_msg": "invalid conversion from ‘int’ to ‘long long int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10,
+        6
+      ],
+      "mod_code": [
+        "step *= MOD ;",
+        "reverse ( x , x + n ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        6,
+        1
+      ],
+      "mod_code": [
+        "step *= MOD ;",
+        "reverse ( x , x + n ) ;",
+        "const int MAXN = 20 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        6
+      ],
+      "mod_code": [
+        "long long * power [ MAXN ] ;",
+        "reverse ( x , x + n ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        6,
+        1
+      ],
+      "mod_code": [
+        "long long * power [ MAXN ] ;",
+        "reverse ( x , x + n ) ;",
+        "const int MAXN = 20 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        1
+      ],
+      "mod_code": [
+        "long long * power [ MAXN ] ;",
+        "const int MAXN = 20 ;"
+      ],
+      "err_line": 12,
+      "err_msg": "invalid conversion from ‘int’ to ‘long long int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        1
+      ],
+      "mod_code": [
+        "reverse ( x , x + n ) ;",
+        "const int MAXN = 20 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘n’ was not declared in this scope"
+    }
+  ]
+}

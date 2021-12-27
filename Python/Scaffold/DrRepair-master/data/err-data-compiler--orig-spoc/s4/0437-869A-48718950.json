@@ -1,0 +1,673 @@
+{
+  "meta": {
+    "index": 437,
+    "hitid": "35NNO802AVQJ3W81W06G88JBFQIIN3",
+    "workerid": "A1R0Q9CUUBSM5F",
+    "probid": "869A",
+    "subid": "48718950"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create constant int maxn = 2 . 001e3",
+      "code": "const int maxn = 2.001e3 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create integer set st",
+      "code": "set < int > st ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "let integers n and cnt and integer arrays a of size maxn and b of size maxn",
+      "code": "int a [ maxn ] , b [ maxn ] , n , cnt ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i = 1 to n , read a [ i ] and insert a [ i ] into st",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] , st . insert ( a [ i ] ) ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 1 to n , read b [ i ] and insert b [ i ] into st",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) cin >> b [ i ] , st . insert ( b [ i ] ) ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for i = 1 to n",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "for j = 1 to n",
+      "code": "for ( int j = 1 ; j <= n ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "if st . find ( a [ i ] xor b [ j ] ) is not equal to st . end ( ) , increment cnt",
+      "code": "if ( st . find ( a [ i ] xor b [ j ] ) != st . end ( ) ) cnt ++ ;",
+      "indent": 3
+    },
+    {
+      "line": 10,
+      "text": "print ( ( cnt & 1 ) ? \" Koyomi \" : \" Karen \" )",
+      "code": "cout << ( ( cnt & 1 ) ? \" Koyomi \" : \" Karen \" ) << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] >> st [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::set<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> b [ i ] >> st [ i ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::set<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "cout << ( ( cnt & 1 ) ? \" Koyomi \" : \" Karen \" ) ) << endl ;"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "int n , a [ maxn ] , b [ maxn ] , cnt [ maxn ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "lvalue required as increment operand"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) { cin >> b [ i ] >> st [ i ] ; }"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::set<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "for ( j = 1 ; j <= n ; j ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        5
+      ],
+      "mod_code": [
+        "const int maxn = 2 ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] >> st [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::set<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        0,
+        5,
+        6
+      ],
+      "mod_code": [
+        "const int maxn = 2 ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] >> st [ i ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> b [ i ] >> st [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::set<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        0,
+        5,
+        6,
+        9
+      ],
+      "mod_code": [
+        "const int maxn = 2 ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] >> st [ i ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> b [ i ] >> st [ i ] ;",
+        "if ( st . find ( a [ i ] != b [ j ] ) != st . end ( ) ) cnt ++ ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::set<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        0,
+        5,
+        6,
+        10
+      ],
+      "mod_code": [
+        "const int maxn = 2 ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] >> st [ i ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> b [ i ] >> st [ i ] ;",
+        "cout << ( ( cnt & 1 ) ? \" Koyomi \" : \" Karen \" ) ) << endl ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::set<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        0,
+        5,
+        9
+      ],
+      "mod_code": [
+        "const int maxn = 2 ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] >> st [ i ] ;",
+        "if ( st . find ( a [ i ] != b [ j ] ) != st . end ( ) ) cnt ++ ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::set<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        0,
+        5,
+        9,
+        10
+      ],
+      "mod_code": [
+        "const int maxn = 2 ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] >> st [ i ] ;",
+        "if ( st . find ( a [ i ] != b [ j ] ) != st . end ( ) ) cnt ++ ;",
+        "cout << ( ( cnt & 1 ) ? \" Koyomi \" : \" Karen \" ) ) << endl ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::set<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        0,
+        5,
+        10
+      ],
+      "mod_code": [
+        "const int maxn = 2 ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] >> st [ i ] ;",
+        "cout << ( ( cnt & 1 ) ? \" Koyomi \" : \" Karen \" ) ) << endl ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::set<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        0,
+        6
+      ],
+      "mod_code": [
+        "const int maxn = 2 ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> b [ i ] >> st [ i ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::set<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        0,
+        6,
+        9
+      ],
+      "mod_code": [
+        "const int maxn = 2 ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> b [ i ] >> st [ i ] ;",
+        "if ( st . find ( a [ i ] != b [ j ] ) != st . end ( ) ) cnt ++ ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::set<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        0,
+        6,
+        9,
+        10
+      ],
+      "mod_code": [
+        "const int maxn = 2 ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> b [ i ] >> st [ i ] ;",
+        "if ( st . find ( a [ i ] != b [ j ] ) != st . end ( ) ) cnt ++ ;",
+        "cout << ( ( cnt & 1 ) ? \" Koyomi \" : \" Karen \" ) ) << endl ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::set<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        0,
+        6,
+        10
+      ],
+      "mod_code": [
+        "const int maxn = 2 ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> b [ i ] >> st [ i ] ;",
+        "cout << ( ( cnt & 1 ) ? \" Koyomi \" : \" Karen \" ) ) << endl ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::set<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        0,
+        9,
+        10
+      ],
+      "mod_code": [
+        "const int maxn = 2 ;",
+        "if ( st . find ( a [ i ] != b [ j ] ) != st . end ( ) ) cnt ++ ;",
+        "cout << ( ( cnt & 1 ) ? \" Koyomi \" : \" Karen \" ) ) << endl ;"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        10
+      ],
+      "mod_code": [
+        "const int maxn = 2 ;",
+        "cout << ( ( cnt & 1 ) ? \" Koyomi \" : \" Karen \" ) ) << endl ;"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] >> st [ i ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> b [ i ] >> st [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::set<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        5,
+        6,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] >> st [ i ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> b [ i ] >> st [ i ] ;",
+        "if ( st . find ( a [ i ] != b [ j ] ) != st . end ( ) ) cnt ++ ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::set<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        5,
+        6,
+        9,
+        10
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] >> st [ i ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> b [ i ] >> st [ i ] ;",
+        "if ( st . find ( a [ i ] != b [ j ] ) != st . end ( ) ) cnt ++ ;",
+        "cout << ( ( cnt & 1 ) ? \" Koyomi \" : \" Karen \" ) ) << endl ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::set<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        5,
+        6,
+        9,
+        0
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] >> st [ i ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> b [ i ] >> st [ i ] ;",
+        "if ( st . find ( a [ i ] != b [ j ] ) != st . end ( ) ) cnt ++ ;",
+        "const int maxn = 3.14159 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::set<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        5,
+        6,
+        10
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] >> st [ i ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> b [ i ] >> st [ i ] ;",
+        "cout << ( ( cnt & 1 ) ? \" Koyomi \" : \" Karen \" ) ) << endl ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::set<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        5,
+        6,
+        10,
+        0
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] >> st [ i ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> b [ i ] >> st [ i ] ;",
+        "cout << ( ( cnt & 1 ) ? \" Koyomi \" : \" Karen \" ) ) << endl ;",
+        "const int maxn = 3.14159 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::set<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        5,
+        6,
+        0
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] >> st [ i ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> b [ i ] >> st [ i ] ;",
+        "const int maxn = 3.14159 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::set<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        5,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] >> st [ i ] ;",
+        "if ( st . find ( a [ i ] != b [ j ] ) != st . end ( ) ) cnt ++ ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::set<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        5,
+        9,
+        10
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] >> st [ i ] ;",
+        "if ( st . find ( a [ i ] != b [ j ] ) != st . end ( ) ) cnt ++ ;",
+        "cout << ( ( cnt & 1 ) ? \" Koyomi \" : \" Karen \" ) ) << endl ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::set<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        5,
+        9,
+        10,
+        0
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] >> st [ i ] ;",
+        "if ( st . find ( a [ i ] != b [ j ] ) != st . end ( ) ) cnt ++ ;",
+        "cout << ( ( cnt & 1 ) ? \" Koyomi \" : \" Karen \" ) ) << endl ;",
+        "const int maxn = 3.14159 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::set<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        5,
+        9,
+        0
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] >> st [ i ] ;",
+        "if ( st . find ( a [ i ] != b [ j ] ) != st . end ( ) ) cnt ++ ;",
+        "const int maxn = 3.14159 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::set<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        5,
+        10
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] >> st [ i ] ;",
+        "cout << ( ( cnt & 1 ) ? \" Koyomi \" : \" Karen \" ) ) << endl ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::set<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        0
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] >> st [ i ] ;",
+        "cout << ( ( cnt & 1 ) ? \" Koyomi \" : \" Karen \" ) ) << endl ;",
+        "const int maxn = 3.14159 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::set<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        5,
+        0
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] >> st [ i ] ;",
+        "const int maxn = 3.14159 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::set<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        6,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> b [ i ] >> st [ i ] ;",
+        "if ( st . find ( a [ i ] != b [ j ] ) != st . end ( ) ) cnt ++ ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::set<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        6,
+        9,
+        10
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> b [ i ] >> st [ i ] ;",
+        "if ( st . find ( a [ i ] != b [ j ] ) != st . end ( ) ) cnt ++ ;",
+        "cout << ( ( cnt & 1 ) ? \" Koyomi \" : \" Karen \" ) ) << endl ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::set<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        6,
+        9,
+        10,
+        0
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> b [ i ] >> st [ i ] ;",
+        "if ( st . find ( a [ i ] != b [ j ] ) != st . end ( ) ) cnt ++ ;",
+        "cout << ( ( cnt & 1 ) ? \" Koyomi \" : \" Karen \" ) ) << endl ;",
+        "const int maxn = 3.14159 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::set<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        6,
+        9,
+        0
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> b [ i ] >> st [ i ] ;",
+        "if ( st . find ( a [ i ] != b [ j ] ) != st . end ( ) ) cnt ++ ;",
+        "const int maxn = 3.14159 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::set<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        6,
+        10
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> b [ i ] >> st [ i ] ;",
+        "cout << ( ( cnt & 1 ) ? \" Koyomi \" : \" Karen \" ) ) << endl ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::set<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        6,
+        10,
+        0
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> b [ i ] >> st [ i ] ;",
+        "cout << ( ( cnt & 1 ) ? \" Koyomi \" : \" Karen \" ) ) << endl ;",
+        "const int maxn = 3.14159 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::set<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        6,
+        0
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ ) cin >> b [ i ] >> st [ i ] ;",
+        "const int maxn = 3.14159 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘std::set<int>’ and ‘int’)"
+    },
+    {
+      "mod_line": [
+        9,
+        10
+      ],
+      "mod_code": [
+        "if ( st . find ( a [ i ] != b [ j ] ) != st . end ( ) ) cnt ++ ;",
+        "cout << ( ( cnt & 1 ) ? \" Koyomi \" : \" Karen \" ) ) << endl ;"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        9,
+        10,
+        0
+      ],
+      "mod_code": [
+        "if ( st . find ( a [ i ] != b [ j ] ) != st . end ( ) ) cnt ++ ;",
+        "cout << ( ( cnt & 1 ) ? \" Koyomi \" : \" Karen \" ) ) << endl ;",
+        "const int maxn = 3.14159 ;"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        0
+      ],
+      "mod_code": [
+        "cout << ( ( cnt & 1 ) ? \" Koyomi \" : \" Karen \" ) ) << endl ;",
+        "const int maxn = 3.14159 ;"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    }
+  ]
+}

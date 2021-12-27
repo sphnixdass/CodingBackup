@@ -1,0 +1,683 @@
+{
+  "meta": {
+    "index": 808,
+    "hitid": "37OPIVELUUXCNI3SHEJQMQYWFJ8HAI",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "455A",
+    "subid": "42293435"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create long long integer arrays dp , a and f with 100005 elements",
+      "code": "long long int dp [ 100005 ] , a [ 100005 ] , f [ 100005 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "declare long long integers n and i",
+      "code": "long long int n , i ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "read a [ i ]",
+      "code": "cin >> a [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 6,
+      "text": "increase f [ a [ i ] ] by one",
+      "code": "f [ a [ i ] ] ++ ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "set dp [ 0 ] to 0",
+      "code": "dp [ 0 ] = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "set dp [ 1 ] to f [ 1 ]",
+      "code": "dp [ 1 ] = f [ 1 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "for i = 2 to 100001 exclusive , set dp [ i ] to max of dp [ i - 1 ] and dp [ i - 2 ] + i * f [ i ]",
+      "code": "for ( i = 2 ; i < 100001 ; i ++ ) { dp [ i ] = max ( dp [ i - 1 ] , dp [ i - 2 ] + i * f [ i ] ) ; }",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "print dp [ 100000 ] and \" \\ n \"",
+      "code": "cout << dp [ 100000 ] << \" \\n \" ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "long long int dp [ 100005 ] , a [ 100005 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "long long int dp [ 100005 ] , f [ 100005 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "f [ a [ i ] ] += one ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘one’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "int dp [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 8,
+      "err_msg": "too many initializers for ‘int [0]’"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "char dp [ 1 ] = f [ 1 ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        0,
+        6
+      ],
+      "mod_code": [
+        "long long int dp [ 100005 ] , a [ 100005 ] ;",
+        "f [ a [ i ] ] += one ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        6,
+        9
+      ],
+      "mod_code": [
+        "long long int dp [ 100005 ] , a [ 100005 ] ;",
+        "f [ a [ i ] ] += one ;",
+        "char dp [ 1 ] = f [ 1 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        6,
+        9,
+        8
+      ],
+      "mod_code": [
+        "long long int dp [ 100005 ] , a [ 100005 ] ;",
+        "f [ a [ i ] ] += one ;",
+        "char dp [ 1 ] = f [ 1 ] ;",
+        "int dp [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        6,
+        9,
+        5
+      ],
+      "mod_code": [
+        "long long int dp [ 100005 ] , a [ 100005 ] ;",
+        "f [ a [ i ] ] += one ;",
+        "char dp [ 1 ] = f [ 1 ] ;",
+        "cout << a [ i ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        6,
+        8
+      ],
+      "mod_code": [
+        "long long int dp [ 100005 ] , a [ 100005 ] ;",
+        "f [ a [ i ] ] += one ;",
+        "int dp [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        6,
+        8,
+        5
+      ],
+      "mod_code": [
+        "long long int dp [ 100005 ] , a [ 100005 ] ;",
+        "f [ a [ i ] ] += one ;",
+        "int dp [ 0 ] = { 0 } ;",
+        "cout << a [ i ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        6,
+        5
+      ],
+      "mod_code": [
+        "long long int dp [ 100005 ] , a [ 100005 ] ;",
+        "f [ a [ i ] ] += one ;",
+        "cout << a [ i ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        9
+      ],
+      "mod_code": [
+        "long long int dp [ 100005 ] , a [ 100005 ] ;",
+        "char dp [ 1 ] = f [ 1 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        9,
+        8
+      ],
+      "mod_code": [
+        "long long int dp [ 100005 ] , a [ 100005 ] ;",
+        "char dp [ 1 ] = f [ 1 ] ;",
+        "int dp [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        9,
+        8,
+        5
+      ],
+      "mod_code": [
+        "long long int dp [ 100005 ] , a [ 100005 ] ;",
+        "char dp [ 1 ] = f [ 1 ] ;",
+        "int dp [ 0 ] = { 0 } ;",
+        "cout << a [ i ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        9,
+        5
+      ],
+      "mod_code": [
+        "long long int dp [ 100005 ] , a [ 100005 ] ;",
+        "char dp [ 1 ] = f [ 1 ] ;",
+        "cout << a [ i ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        8
+      ],
+      "mod_code": [
+        "long long int dp [ 100005 ] , a [ 100005 ] ;",
+        "int dp [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        8,
+        5
+      ],
+      "mod_code": [
+        "long long int dp [ 100005 ] , a [ 100005 ] ;",
+        "int dp [ 0 ] = { 0 } ;",
+        "cout << a [ i ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        5
+      ],
+      "mod_code": [
+        "long long int dp [ 100005 ] , a [ 100005 ] ;",
+        "cout << a [ i ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘f’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        9
+      ],
+      "mod_code": [
+        "f [ a [ i ] ] += one ;",
+        "char dp [ 1 ] = f [ 1 ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘one’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        9,
+        8
+      ],
+      "mod_code": [
+        "f [ a [ i ] ] += one ;",
+        "char dp [ 1 ] = f [ 1 ] ;",
+        "int dp [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘one’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        9,
+        8,
+        0
+      ],
+      "mod_code": [
+        "f [ a [ i ] ] += one ;",
+        "char dp [ 1 ] = f [ 1 ] ;",
+        "int dp [ 0 ] = { 0 } ;",
+        "long long int dp [ 100005 ] , f [ 100005 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        9,
+        8,
+        5
+      ],
+      "mod_code": [
+        "f [ a [ i ] ] += one ;",
+        "char dp [ 1 ] = f [ 1 ] ;",
+        "int dp [ 0 ] = { 0 } ;",
+        "cout << a [ i ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘one’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        9,
+        0
+      ],
+      "mod_code": [
+        "f [ a [ i ] ] += one ;",
+        "char dp [ 1 ] = f [ 1 ] ;",
+        "long long int dp [ 100005 ] , f [ 100005 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        9,
+        0,
+        5
+      ],
+      "mod_code": [
+        "f [ a [ i ] ] += one ;",
+        "char dp [ 1 ] = f [ 1 ] ;",
+        "long long int dp [ 100005 ] , f [ 100005 ] ;",
+        "cout << a [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        9,
+        5
+      ],
+      "mod_code": [
+        "f [ a [ i ] ] += one ;",
+        "char dp [ 1 ] = f [ 1 ] ;",
+        "cout << a [ i ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘one’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        8
+      ],
+      "mod_code": [
+        "f [ a [ i ] ] += one ;",
+        "int dp [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘one’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        8,
+        0
+      ],
+      "mod_code": [
+        "f [ a [ i ] ] += one ;",
+        "int dp [ 0 ] = { 0 } ;",
+        "long long int dp [ 100005 ] , f [ 100005 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        8,
+        0,
+        5
+      ],
+      "mod_code": [
+        "f [ a [ i ] ] += one ;",
+        "int dp [ 0 ] = { 0 } ;",
+        "long long int dp [ 100005 ] , f [ 100005 ] ;",
+        "cout << a [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        8,
+        5
+      ],
+      "mod_code": [
+        "f [ a [ i ] ] += one ;",
+        "int dp [ 0 ] = { 0 } ;",
+        "cout << a [ i ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘one’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        0
+      ],
+      "mod_code": [
+        "f [ a [ i ] ] += one ;",
+        "long long int dp [ 100005 ] , f [ 100005 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        0,
+        5
+      ],
+      "mod_code": [
+        "f [ a [ i ] ] += one ;",
+        "long long int dp [ 100005 ] , f [ 100005 ] ;",
+        "cout << a [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        5
+      ],
+      "mod_code": [
+        "f [ a [ i ] ] += one ;",
+        "cout << a [ i ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘one’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        8
+      ],
+      "mod_code": [
+        "char dp [ 1 ] = f [ 1 ] ;",
+        "int dp [ 0 ] = { 0 } ;"
+      ],
+      "err_line": 8,
+      "err_msg": "too many initializers for ‘int [0]’"
+    },
+    {
+      "mod_line": [
+        9,
+        8,
+        0
+      ],
+      "mod_code": [
+        "char dp [ 1 ] = f [ 1 ] ;",
+        "int dp [ 0 ] = { 0 } ;",
+        "long long int dp [ 100005 ] , f [ 100005 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        8,
+        0,
+        5
+      ],
+      "mod_code": [
+        "char dp [ 1 ] = f [ 1 ] ;",
+        "int dp [ 0 ] = { 0 } ;",
+        "long long int dp [ 100005 ] , f [ 100005 ] ;",
+        "cout << a [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        8,
+        5
+      ],
+      "mod_code": [
+        "char dp [ 1 ] = f [ 1 ] ;",
+        "int dp [ 0 ] = { 0 } ;",
+        "cout << a [ i ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "too many initializers for ‘int [0]’"
+    },
+    {
+      "mod_line": [
+        9,
+        0
+      ],
+      "mod_code": [
+        "char dp [ 1 ] = f [ 1 ] ;",
+        "long long int dp [ 100005 ] , f [ 100005 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        0,
+        5
+      ],
+      "mod_code": [
+        "char dp [ 1 ] = f [ 1 ] ;",
+        "long long int dp [ 100005 ] , f [ 100005 ] ;",
+        "cout << a [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        5
+      ],
+      "mod_code": [
+        "char dp [ 1 ] = f [ 1 ] ;",
+        "cout << a [ i ] ;"
+      ],
+      "err_line": 9,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        8,
+        0
+      ],
+      "mod_code": [
+        "int dp [ 0 ] = { 0 } ;",
+        "long long int dp [ 100005 ] , f [ 100005 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        0,
+        5
+      ],
+      "mod_code": [
+        "int dp [ 0 ] = { 0 } ;",
+        "long long int dp [ 100005 ] , f [ 100005 ] ;",
+        "cout << a [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘a’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        5
+      ],
+      "mod_code": [
+        "int dp [ 0 ] = { 0 } ;",
+        "cout << a [ i ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "too many initializers for ‘int [0]’"
+    },
+    {
+      "mod_line": [
+        0,
+        5
+      ],
+      "mod_code": [
+        "long long int dp [ 100005 ] , f [ 100005 ] ;",
+        "cout << a [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘a’ was not declared in this scope"
+    }
+  ]
+}

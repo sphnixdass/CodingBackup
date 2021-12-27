@@ -1,0 +1,671 @@
+{
+  "meta": {
+    "index": 1626,
+    "hitid": "37PGLWGSJT0IVQNYZNE0GG27KT0IKG",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "17A",
+    "subid": "41082308"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "set constant integer N to 20000",
+      "code": "const int N = 20000 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "f = array of boolean with size of [ N + 5 ] filled with 0",
+      "code": "bool f [ N + 5 ] = { 0 } ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "let prime be an array of integers of length 20000",
+      "code": "int prime [ 20000 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "fin = array of integers of length 30000",
+      "code": "int fin [ 30000 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "define function seive",
+      "code": "void seive ( )",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "set value of f [ 0 ] to f [ 1 ] to 1",
+      "code": "f [ 0 ] = f [ 1 ] = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 1 to N inclusive",
+      "code": "for ( int i = 1 ; i <= N ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "if f [ i ] exists continue the loop",
+      "code": "if ( f [ i ] ) continue ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "loop through j from i * i to N exclusive and set f [ j ] to 1",
+      "code": "for ( long long j = ( long long ) i * i ; j <= N ; j += i ) f [ j ] = 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 11,
+      "text": "in function primes",
+      "code": "void primes ( )",
+      "indent": 0
+    },
+    {
+      "line": 12,
+      "text": "invoke function seive",
+      "code": "seive ( ) ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "set int sum = 5 , prevI = 2 , c = 1",
+      "code": "int sum = 5 , prevI = 2 , c = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "set value of prime at index 0 to 6",
+      "code": "prime [ 0 ] = 6 ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "for integer i from 4 to 2000 exclusive",
+      "code": "for ( int i = 4 ; i < 2000 ; ++ i )",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "if f [ i ] is not defined",
+      "code": "if ( ! f [ i ] )",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "decrease sum by prevI",
+      "code": "sum -= prevI ;",
+      "indent": 3
+    },
+    {
+      "line": 18,
+      "text": "prevI = sum",
+      "code": "prevI = sum ;",
+      "indent": 3
+    },
+    {
+      "line": 19,
+      "text": "increase sum by i",
+      "code": "sum += i ;",
+      "indent": 3
+    },
+    {
+      "line": 20,
+      "text": "set prime [ c ] to sum + 1 and increment c",
+      "code": "prime [ c ++ ] = sum + 1 ;",
+      "indent": 3
+    },
+    {
+      "line": 21,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 22,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "invoke function memset with arguments fin , 0 and 3000",
+      "code": "memset ( fin , 0 , 3000 ) ;",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "declare integer variable test",
+      "code": "int test ;",
+      "indent": 1
+    },
+    {
+      "line": 25,
+      "text": "for integer i = 0 to 200 exclusive",
+      "code": "for ( int i = 0 ; i < 200 ; ++ i )",
+      "indent": 1
+    },
+    {
+      "line": 26,
+      "text": "test = prime [ i ]",
+      "code": "test = prime [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 27,
+      "text": "if f at index test is not defined set fin [ test ] to 1",
+      "code": "if ( ! f [ test ] ) fin [ test ] = 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 28,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 29,
+      "text": "for integer i = 1 to 3000 exclusive increase fin [ i ] by fin [ i - 1 ]",
+      "code": "for ( int i = 1 ; i < 3000 ; ++ i ) { fin [ i ] += fin [ i - 1 ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 30,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 31,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 32,
+      "text": "call function primes",
+      "code": "primes ( ) ;",
+      "indent": 1
+    },
+    {
+      "line": 33,
+      "text": "declare integers called num and k",
+      "code": "int num , k ;",
+      "indent": 1
+    },
+    {
+      "line": 34,
+      "text": "read num and k",
+      "code": "cin >> num >> k ;",
+      "indent": 1
+    },
+    {
+      "line": 35,
+      "text": "print \" YES \\ n \" if fin [ num ] is greater or equal than k , otherwise print \" NO \\ n \"",
+      "code": "cout << ( ( fin [ num ] >= k ) ? \" YES\\n \" : \" NO\\n \" ) ;",
+      "indent": 1
+    },
+    {
+      "line": 36,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 37,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "prime ( 0 , 6 ) ;"
+      ],
+      "err_line": 14,
+      "err_msg": "‘prime’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "bool f [ N [ N + 5 ] = { 0 } ;"
+      ],
+      "err_line": 1,
+      "err_msg": "invalid types ‘const int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "seive ( ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected constructor, destructor, or type conversion before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= N ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "void primes ( ) { }"
+      ],
+      "err_line": 12,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "prime ( 0 , 6 , 6 ) ;"
+      ],
+      "err_line": 14,
+      "err_msg": "‘prime’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        32
+      ],
+      "mod_code": [
+        "void primes ( ) { }"
+      ],
+      "err_line": 32,
+      "err_msg": "a function-definition is not allowed here before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        8,
+        14
+      ],
+      "mod_code": [
+        "if ( f [ i ] )",
+        "for ( int j = i * i ; j < N ; j ++ ) { f [ j ] = 1 ; }",
+        "prime ( 0 , 6 ) ;"
+      ],
+      "err_line": 14,
+      "err_msg": "‘prime’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        7,
+        8,
+        14,
+        16
+      ],
+      "mod_code": [
+        "if ( f [ i ] )",
+        "for ( int j = i * i ; j < N ; j ++ ) { f [ j ] = 1 ; }",
+        "prime ( 0 , 6 ) ;",
+        "if ( f [ i ] != ' defined ' )"
+      ],
+      "err_line": 14,
+      "err_msg": "‘prime’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        7,
+        8,
+        14,
+        20
+      ],
+      "mod_code": [
+        "if ( f [ i ] )",
+        "for ( int j = i * i ; j < N ; j ++ ) { f [ j ] = 1 ; }",
+        "prime ( 0 , 6 ) ;",
+        "prime [ c ] = sum + 1 ;"
+      ],
+      "err_line": 14,
+      "err_msg": "‘prime’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        7,
+        8,
+        14,
+        35
+      ],
+      "mod_code": [
+        "if ( f [ i ] )",
+        "for ( int j = i * i ; j < N ; j ++ ) { f [ j ] = 1 ; }",
+        "prime ( 0 , 6 ) ;",
+        "cout << ( fin [ num ] >= k ) ? \" YES\\n \" : \" NO\\n \" ;"
+      ],
+      "err_line": 14,
+      "err_msg": "‘prime’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        7,
+        14
+      ],
+      "mod_code": [
+        "if ( f [ i ] )",
+        "prime ( 0 , 6 ) ;"
+      ],
+      "err_line": 14,
+      "err_msg": "‘prime’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        7,
+        14,
+        16
+      ],
+      "mod_code": [
+        "if ( f [ i ] )",
+        "prime ( 0 , 6 ) ;",
+        "if ( f [ i ] != ' defined ' )"
+      ],
+      "err_line": 14,
+      "err_msg": "‘prime’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        7,
+        14,
+        16,
+        20
+      ],
+      "mod_code": [
+        "if ( f [ i ] )",
+        "prime ( 0 , 6 ) ;",
+        "if ( f [ i ] != ' defined ' )",
+        "prime [ c ] = sum + 1 ;"
+      ],
+      "err_line": 14,
+      "err_msg": "‘prime’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        7,
+        14,
+        16,
+        35
+      ],
+      "mod_code": [
+        "if ( f [ i ] )",
+        "prime ( 0 , 6 ) ;",
+        "if ( f [ i ] != ' defined ' )",
+        "cout << ( fin [ num ] >= k ) ? \" YES\\n \" : \" NO\\n \" ;"
+      ],
+      "err_line": 14,
+      "err_msg": "‘prime’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        7,
+        14,
+        20
+      ],
+      "mod_code": [
+        "if ( f [ i ] )",
+        "prime ( 0 , 6 ) ;",
+        "prime [ c ] = sum + 1 ;"
+      ],
+      "err_line": 14,
+      "err_msg": "‘prime’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        7,
+        14,
+        20,
+        35
+      ],
+      "mod_code": [
+        "if ( f [ i ] )",
+        "prime ( 0 , 6 ) ;",
+        "prime [ c ] = sum + 1 ;",
+        "cout << ( fin [ num ] >= k ) ? \" YES\\n \" : \" NO\\n \" ;"
+      ],
+      "err_line": 14,
+      "err_msg": "‘prime’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        7,
+        14,
+        35
+      ],
+      "mod_code": [
+        "if ( f [ i ] )",
+        "prime ( 0 , 6 ) ;",
+        "cout << ( fin [ num ] >= k ) ? \" YES\\n \" : \" NO\\n \" ;"
+      ],
+      "err_line": 14,
+      "err_msg": "‘prime’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        8,
+        14
+      ],
+      "mod_code": [
+        "for ( int j = i * i ; j < N ; j ++ ) { f [ j ] = 1 ; }",
+        "prime ( 0 , 6 ) ;"
+      ],
+      "err_line": 14,
+      "err_msg": "‘prime’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        8,
+        14,
+        16
+      ],
+      "mod_code": [
+        "for ( int j = i * i ; j < N ; j ++ ) { f [ j ] = 1 ; }",
+        "prime ( 0 , 6 ) ;",
+        "if ( f [ i ] != ' defined ' )"
+      ],
+      "err_line": 14,
+      "err_msg": "‘prime’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        8,
+        14,
+        16,
+        20
+      ],
+      "mod_code": [
+        "for ( int j = i * i ; j < N ; j ++ ) { f [ j ] = 1 ; }",
+        "prime ( 0 , 6 ) ;",
+        "if ( f [ i ] != ' defined ' )",
+        "prime [ c ] = sum + 1 ;"
+      ],
+      "err_line": 14,
+      "err_msg": "‘prime’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        8,
+        14,
+        16,
+        35
+      ],
+      "mod_code": [
+        "for ( int j = i * i ; j < N ; j ++ ) { f [ j ] = 1 ; }",
+        "prime ( 0 , 6 ) ;",
+        "if ( f [ i ] != ' defined ' )",
+        "cout << ( fin [ num ] >= k ) ? \" YES\\n \" : \" NO\\n \" ;"
+      ],
+      "err_line": 14,
+      "err_msg": "‘prime’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        8,
+        14,
+        20
+      ],
+      "mod_code": [
+        "for ( int j = i * i ; j < N ; j ++ ) { f [ j ] = 1 ; }",
+        "prime ( 0 , 6 ) ;",
+        "prime [ c ] = sum + 1 ;"
+      ],
+      "err_line": 14,
+      "err_msg": "‘prime’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        8,
+        14,
+        20,
+        35
+      ],
+      "mod_code": [
+        "for ( int j = i * i ; j < N ; j ++ ) { f [ j ] = 1 ; }",
+        "prime ( 0 , 6 ) ;",
+        "prime [ c ] = sum + 1 ;",
+        "cout << ( fin [ num ] >= k ) ? \" YES\\n \" : \" NO\\n \" ;"
+      ],
+      "err_line": 14,
+      "err_msg": "‘prime’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        8,
+        14,
+        35
+      ],
+      "mod_code": [
+        "for ( int j = i * i ; j < N ; j ++ ) { f [ j ] = 1 ; }",
+        "prime ( 0 , 6 ) ;",
+        "cout << ( fin [ num ] >= k ) ? \" YES\\n \" : \" NO\\n \" ;"
+      ],
+      "err_line": 14,
+      "err_msg": "‘prime’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        14,
+        16
+      ],
+      "mod_code": [
+        "prime ( 0 , 6 ) ;",
+        "if ( f [ i ] != ' defined ' )"
+      ],
+      "err_line": 14,
+      "err_msg": "‘prime’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        14,
+        16,
+        20
+      ],
+      "mod_code": [
+        "prime ( 0 , 6 ) ;",
+        "if ( f [ i ] != ' defined ' )",
+        "prime [ c ] = sum + 1 ;"
+      ],
+      "err_line": 14,
+      "err_msg": "‘prime’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        14,
+        16,
+        20,
+        35
+      ],
+      "mod_code": [
+        "prime ( 0 , 6 ) ;",
+        "if ( f [ i ] != ' defined ' )",
+        "prime [ c ] = sum + 1 ;",
+        "cout << ( fin [ num ] >= k ) ? \" YES\\n \" : \" NO\\n \" ;"
+      ],
+      "err_line": 14,
+      "err_msg": "‘prime’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        14,
+        16,
+        35
+      ],
+      "mod_code": [
+        "prime ( 0 , 6 ) ;",
+        "if ( f [ i ] != ' defined ' )",
+        "cout << ( fin [ num ] >= k ) ? \" YES\\n \" : \" NO\\n \" ;"
+      ],
+      "err_line": 14,
+      "err_msg": "‘prime’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        14,
+        20
+      ],
+      "mod_code": [
+        "prime ( 0 , 6 ) ;",
+        "prime [ c ] = sum + 1 ;"
+      ],
+      "err_line": 14,
+      "err_msg": "‘prime’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        14,
+        20,
+        35
+      ],
+      "mod_code": [
+        "prime ( 0 , 6 ) ;",
+        "prime [ c ] = sum + 1 ;",
+        "cout << ( fin [ num ] >= k ) ? \" YES\\n \" : \" NO\\n \" ;"
+      ],
+      "err_line": 14,
+      "err_msg": "‘prime’ cannot be used as a function"
+    },
+    {
+      "mod_line": [
+        14,
+        35
+      ],
+      "mod_code": [
+        "prime ( 0 , 6 ) ;",
+        "cout << ( fin [ num ] >= k ) ? \" YES\\n \" : \" NO\\n \" ;"
+      ],
+      "err_line": 14,
+      "err_msg": "‘prime’ cannot be used as a function"
+    }
+  ]
+}

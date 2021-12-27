@@ -1,0 +1,1061 @@
+{
+  "meta": {
+    "index": 2572,
+    "hitid": "3SX4X51T803MFZPFLREG6ZVXR5MOAD",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "154A",
+    "subid": "45761739"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create constant integer N with N = 1e5 + 5",
+      "code": "const int N = 1e5 + 5 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create 3d integer array dp with size N by 27",
+      "code": "int dp [ N ] [ 27 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "create boolean g with size 27 by 27",
+      "code": "bool g [ 27 ] [ 27 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "create string s",
+      "code": "string s ;",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "declare solve with integers ind , x as arguments , returning integer",
+      "code": "int solve ( int ind , int x )",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "if ind is size of s , return 0 from function",
+      "code": "if ( ind == s . size ( ) ) return 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "create integer address ret with ret = dp [ ind ] [ x ]",
+      "code": "int & ret = dp [ ind ] [ x ] ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "if ret is not - 1 , return ret from function",
+      "code": "if ( ret != - 1 ) return ret ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "set ret to 1e8",
+      "code": "ret = 1e8 ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "if x is 26",
+      "code": "if ( x == 26 )",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "set ret to result of run solve with ind + 1 , s [ ind ] - ' a ' as arguments",
+      "code": "ret = solve ( ind + 1 , s [ ind ] - ' a ' ) ;",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "set ret to minimum of ( ret and result of run solve with ( ind + 1 , 26 ) as arguments + 1 )",
+      "code": "ret = min ( ret , solve ( ind + 1 , 26 ) + 1 ) ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "else if not g [ x ] [ s [ ind ] - ' a ' ]",
+      "code": "else if ( ! g [ x ] [ s [ ind ] - ' a ' ] )",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "set ret to result of run solve with ind + 1 , s [ ind ] - ' a ' as arguments",
+      "code": "ret = solve ( ind + 1 , s [ ind ] - ' a ' ) ;",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "set ret to minimum of ret and result of run solve with ( ind + 1 , x ) as arguments + 1",
+      "code": "ret = min ( ret , solve ( ind + 1 , x ) + 1 ) ;",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "else",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "set ret to minimum or rest and result of run solve with ( ind + 1 , x ) as arguments + 1",
+      "code": "ret = min ( ret , solve ( ind + 1 , x ) + 1 ) ;",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "return ret from function",
+      "code": "return ret ;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 20,
+      "text": "read s",
+      "code": "cin >> s ;",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "create integer q",
+      "code": "int q ;",
+      "indent": 1
+    },
+    {
+      "line": 22,
+      "text": "read q",
+      "code": "cin >> q ;",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "while decrement q",
+      "code": "while ( q -- )",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "create string s",
+      "code": "string x ;",
+      "indent": 2
+    },
+    {
+      "line": 25,
+      "text": "read x",
+      "code": "cin >> x ;",
+      "indent": 2
+    },
+    {
+      "line": 26,
+      "text": "set g [ x [ 0 ] - ' a ' ] [ x [ 1 ] - ' a ' ] to 1",
+      "code": "g [ x [ 0 ] - ' a ' ] [ x [ 1 ] - ' a ' ] = 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 27,
+      "text": "set g [ x [ 1 ] - ' a ' ] [ x [ 0 ] - ' a ' ] to 1",
+      "code": "g [ x [ 1 ] - ' a ' ] [ x [ 0 ] - ' a ' ] = 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 28,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 29,
+      "text": "set bytes from dp to size of dp to value - 1",
+      "code": "memset ( dp , - 1 , sizeof dp ) ;",
+      "indent": 1
+    },
+    {
+      "line": 30,
+      "text": "print result of run solve with 0 , 26 as arguments print newline",
+      "code": "cout << solve ( 0 , 26 ) << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 31,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 32,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "int * ret = dp [ ind ] [ x ] ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "ret = solve ( ( ind + 1 , x ) + 1 ) + 1 ;"
+      ],
+      "err_line": 16,
+      "err_msg": "too few arguments to function ‘int solve(int, int)’"
+    },
+    {
+      "mod_line": [
+        24
+      ],
+      "mod_code": [
+        "string s ;"
+      ],
+      "err_line": 25,
+      "err_msg": "‘x’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int dp [ N N ] [ 27 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected ‘]’ before ‘N’"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "bool g create 27 [ 27 ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected initializer before ‘create’"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "string n ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘s’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "int solve ( int ind , int x ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "bool ret = 1e8 ;"
+      ],
+      "err_line": 8,
+      "err_msg": "conflicting declaration ‘bool ret’"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "ret = min ( solve ( ind + 1 , 26 ) + 1 ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘min(int)’"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "ret = solve ( ( ind + 1 , x ) ) + 1 ;"
+      ],
+      "err_line": 16,
+      "err_msg": "too few arguments to function ‘int solve(int, int)’"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "while ( ret )"
+      ],
+      "err_line": 18,
+      "err_msg": "expected primary-expression before ‘}’ token"
+    },
+    {
+      "mod_line": [
+        21
+      ],
+      "mod_code": [
+        "int n ;"
+      ],
+      "err_line": 22,
+      "err_msg": "‘q’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        22
+      ],
+      "mod_code": [
+        "cin >> n ;"
+      ],
+      "err_line": 22,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        24
+      ],
+      "mod_code": [
+        "string n ;"
+      ],
+      "err_line": 25,
+      "err_msg": "‘x’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        29
+      ],
+      "mod_code": [
+        "memset ( dp , value , sizeof ( dp ) ) ;"
+      ],
+      "err_line": 29,
+      "err_msg": "‘value’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        14
+      ],
+      "mod_code": [
+        "int * ret = dp [ ind ] [ x ] ;",
+        "ret = min ( ret , solve ( ind + 1 , x ) ) + 1 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        14,
+        16
+      ],
+      "mod_code": [
+        "int * ret = dp [ ind ] [ x ] ;",
+        "ret = min ( ret , solve ( ind + 1 , x ) ) + 1 ;",
+        "ret = solve ( ( ind + 1 , x ) + 1 ) + 1 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        14,
+        16,
+        24
+      ],
+      "mod_code": [
+        "int * ret = dp [ ind ] [ x ] ;",
+        "ret = min ( ret , solve ( ind + 1 , x ) ) + 1 ;",
+        "ret = solve ( ( ind + 1 , x ) + 1 ) + 1 ;",
+        "string s ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        14,
+        16,
+        17
+      ],
+      "mod_code": [
+        "int * ret = dp [ ind ] [ x ] ;",
+        "ret = min ( ret , solve ( ind + 1 , x ) ) + 1 ;",
+        "ret = solve ( ( ind + 1 , x ) + 1 ) + 1 ;",
+        "while ( ret )"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        14,
+        16,
+        11
+      ],
+      "mod_code": [
+        "int * ret = dp [ ind ] [ x ] ;",
+        "ret = min ( ret , solve ( ind + 1 , x ) ) + 1 ;",
+        "ret = solve ( ( ind + 1 , x ) + 1 ) + 1 ;",
+        "ret = min ( solve ( ind + 1 , 26 ) + 1 ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        14,
+        24
+      ],
+      "mod_code": [
+        "int * ret = dp [ ind ] [ x ] ;",
+        "ret = min ( ret , solve ( ind + 1 , x ) ) + 1 ;",
+        "string s ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        14,
+        24,
+        17
+      ],
+      "mod_code": [
+        "int * ret = dp [ ind ] [ x ] ;",
+        "ret = min ( ret , solve ( ind + 1 , x ) ) + 1 ;",
+        "string s ;",
+        "while ( ret )"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        14,
+        24,
+        11
+      ],
+      "mod_code": [
+        "int * ret = dp [ ind ] [ x ] ;",
+        "ret = min ( ret , solve ( ind + 1 , x ) ) + 1 ;",
+        "string s ;",
+        "ret = min ( solve ( ind + 1 , 26 ) + 1 ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        14,
+        17
+      ],
+      "mod_code": [
+        "int * ret = dp [ ind ] [ x ] ;",
+        "ret = min ( ret , solve ( ind + 1 , x ) ) + 1 ;",
+        "while ( ret )"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        14,
+        17,
+        11
+      ],
+      "mod_code": [
+        "int * ret = dp [ ind ] [ x ] ;",
+        "ret = min ( ret , solve ( ind + 1 , x ) ) + 1 ;",
+        "while ( ret )",
+        "ret = min ( solve ( ind + 1 , 26 ) + 1 ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        14,
+        11
+      ],
+      "mod_code": [
+        "int * ret = dp [ ind ] [ x ] ;",
+        "ret = min ( ret , solve ( ind + 1 , x ) ) + 1 ;",
+        "ret = min ( solve ( ind + 1 , 26 ) + 1 ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        16
+      ],
+      "mod_code": [
+        "int * ret = dp [ ind ] [ x ] ;",
+        "ret = solve ( ( ind + 1 , x ) + 1 ) + 1 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        16,
+        24
+      ],
+      "mod_code": [
+        "int * ret = dp [ ind ] [ x ] ;",
+        "ret = solve ( ( ind + 1 , x ) + 1 ) + 1 ;",
+        "string s ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        16,
+        24,
+        17
+      ],
+      "mod_code": [
+        "int * ret = dp [ ind ] [ x ] ;",
+        "ret = solve ( ( ind + 1 , x ) + 1 ) + 1 ;",
+        "string s ;",
+        "while ( ret )"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        16,
+        24,
+        11
+      ],
+      "mod_code": [
+        "int * ret = dp [ ind ] [ x ] ;",
+        "ret = solve ( ( ind + 1 , x ) + 1 ) + 1 ;",
+        "string s ;",
+        "ret = min ( solve ( ind + 1 , 26 ) + 1 ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        16,
+        17
+      ],
+      "mod_code": [
+        "int * ret = dp [ ind ] [ x ] ;",
+        "ret = solve ( ( ind + 1 , x ) + 1 ) + 1 ;",
+        "while ( ret )"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        16,
+        17,
+        11
+      ],
+      "mod_code": [
+        "int * ret = dp [ ind ] [ x ] ;",
+        "ret = solve ( ( ind + 1 , x ) + 1 ) + 1 ;",
+        "while ( ret )",
+        "ret = min ( solve ( ind + 1 , 26 ) + 1 ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        16,
+        11
+      ],
+      "mod_code": [
+        "int * ret = dp [ ind ] [ x ] ;",
+        "ret = solve ( ( ind + 1 , x ) + 1 ) + 1 ;",
+        "ret = min ( solve ( ind + 1 , 26 ) + 1 ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        24
+      ],
+      "mod_code": [
+        "int * ret = dp [ ind ] [ x ] ;",
+        "string s ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        24,
+        17
+      ],
+      "mod_code": [
+        "int * ret = dp [ ind ] [ x ] ;",
+        "string s ;",
+        "while ( ret )"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        24,
+        17,
+        11
+      ],
+      "mod_code": [
+        "int * ret = dp [ ind ] [ x ] ;",
+        "string s ;",
+        "while ( ret )",
+        "ret = min ( solve ( ind + 1 , 26 ) + 1 ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        24,
+        11
+      ],
+      "mod_code": [
+        "int * ret = dp [ ind ] [ x ] ;",
+        "string s ;",
+        "ret = min ( solve ( ind + 1 , 26 ) + 1 ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        17
+      ],
+      "mod_code": [
+        "int * ret = dp [ ind ] [ x ] ;",
+        "while ( ret )"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        17,
+        11
+      ],
+      "mod_code": [
+        "int * ret = dp [ ind ] [ x ] ;",
+        "while ( ret )",
+        "ret = min ( solve ( ind + 1 , 26 ) + 1 ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        11
+      ],
+      "mod_code": [
+        "int * ret = dp [ ind ] [ x ] ;",
+        "ret = min ( solve ( ind + 1 , 26 ) + 1 ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "invalid conversion from ‘int’ to ‘int*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        14,
+        16
+      ],
+      "mod_code": [
+        "ret = min ( ret , solve ( ind + 1 , x ) ) + 1 ;",
+        "ret = solve ( ( ind + 1 , x ) + 1 ) + 1 ;"
+      ],
+      "err_line": 16,
+      "err_msg": "too few arguments to function ‘int solve(int, int)’"
+    },
+    {
+      "mod_line": [
+        14,
+        16,
+        24
+      ],
+      "mod_code": [
+        "ret = min ( ret , solve ( ind + 1 , x ) ) + 1 ;",
+        "ret = solve ( ( ind + 1 , x ) + 1 ) + 1 ;",
+        "string s ;"
+      ],
+      "err_line": 16,
+      "err_msg": "too few arguments to function ‘int solve(int, int)’"
+    },
+    {
+      "mod_line": [
+        14,
+        16,
+        24,
+        17
+      ],
+      "mod_code": [
+        "ret = min ( ret , solve ( ind + 1 , x ) ) + 1 ;",
+        "ret = solve ( ( ind + 1 , x ) + 1 ) + 1 ;",
+        "string s ;",
+        "while ( ret )"
+      ],
+      "err_line": 16,
+      "err_msg": "too few arguments to function ‘int solve(int, int)’"
+    },
+    {
+      "mod_line": [
+        14,
+        16,
+        24,
+        11
+      ],
+      "mod_code": [
+        "ret = min ( ret , solve ( ind + 1 , x ) ) + 1 ;",
+        "ret = solve ( ( ind + 1 , x ) + 1 ) + 1 ;",
+        "string s ;",
+        "ret = min ( solve ( ind + 1 , 26 ) + 1 ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘min(int)’"
+    },
+    {
+      "mod_line": [
+        14,
+        16,
+        17
+      ],
+      "mod_code": [
+        "ret = min ( ret , solve ( ind + 1 , x ) ) + 1 ;",
+        "ret = solve ( ( ind + 1 , x ) + 1 ) + 1 ;",
+        "while ( ret )"
+      ],
+      "err_line": 16,
+      "err_msg": "too few arguments to function ‘int solve(int, int)’"
+    },
+    {
+      "mod_line": [
+        14,
+        16,
+        17,
+        11
+      ],
+      "mod_code": [
+        "ret = min ( ret , solve ( ind + 1 , x ) ) + 1 ;",
+        "ret = solve ( ( ind + 1 , x ) + 1 ) + 1 ;",
+        "while ( ret )",
+        "ret = min ( solve ( ind + 1 , 26 ) + 1 ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘min(int)’"
+    },
+    {
+      "mod_line": [
+        14,
+        16,
+        11
+      ],
+      "mod_code": [
+        "ret = min ( ret , solve ( ind + 1 , x ) ) + 1 ;",
+        "ret = solve ( ( ind + 1 , x ) + 1 ) + 1 ;",
+        "ret = min ( solve ( ind + 1 , 26 ) + 1 ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘min(int)’"
+    },
+    {
+      "mod_line": [
+        14,
+        24
+      ],
+      "mod_code": [
+        "ret = min ( ret , solve ( ind + 1 , x ) ) + 1 ;",
+        "string s ;"
+      ],
+      "err_line": 25,
+      "err_msg": "‘x’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14,
+        24,
+        17
+      ],
+      "mod_code": [
+        "ret = min ( ret , solve ( ind + 1 , x ) ) + 1 ;",
+        "string s ;",
+        "while ( ret )"
+      ],
+      "err_line": 18,
+      "err_msg": "expected primary-expression before ‘}’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        24,
+        17,
+        11
+      ],
+      "mod_code": [
+        "ret = min ( ret , solve ( ind + 1 , x ) ) + 1 ;",
+        "string s ;",
+        "while ( ret )",
+        "ret = min ( solve ( ind + 1 , 26 ) + 1 ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘min(int)’"
+    },
+    {
+      "mod_line": [
+        14,
+        24,
+        11
+      ],
+      "mod_code": [
+        "ret = min ( ret , solve ( ind + 1 , x ) ) + 1 ;",
+        "string s ;",
+        "ret = min ( solve ( ind + 1 , 26 ) + 1 ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘min(int)’"
+    },
+    {
+      "mod_line": [
+        14,
+        17
+      ],
+      "mod_code": [
+        "ret = min ( ret , solve ( ind + 1 , x ) ) + 1 ;",
+        "while ( ret )"
+      ],
+      "err_line": 18,
+      "err_msg": "expected primary-expression before ‘}’ token"
+    },
+    {
+      "mod_line": [
+        14,
+        17,
+        11
+      ],
+      "mod_code": [
+        "ret = min ( ret , solve ( ind + 1 , x ) ) + 1 ;",
+        "while ( ret )",
+        "ret = min ( solve ( ind + 1 , 26 ) + 1 ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘min(int)’"
+    },
+    {
+      "mod_line": [
+        14,
+        11
+      ],
+      "mod_code": [
+        "ret = min ( ret , solve ( ind + 1 , x ) ) + 1 ;",
+        "ret = min ( solve ( ind + 1 , 26 ) + 1 ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘min(int)’"
+    },
+    {
+      "mod_line": [
+        16,
+        24
+      ],
+      "mod_code": [
+        "ret = solve ( ( ind + 1 , x ) + 1 ) + 1 ;",
+        "string s ;"
+      ],
+      "err_line": 16,
+      "err_msg": "too few arguments to function ‘int solve(int, int)’"
+    },
+    {
+      "mod_line": [
+        16,
+        24,
+        17
+      ],
+      "mod_code": [
+        "ret = solve ( ( ind + 1 , x ) + 1 ) + 1 ;",
+        "string s ;",
+        "while ( ret )"
+      ],
+      "err_line": 16,
+      "err_msg": "too few arguments to function ‘int solve(int, int)’"
+    },
+    {
+      "mod_line": [
+        16,
+        24,
+        17,
+        11
+      ],
+      "mod_code": [
+        "ret = solve ( ( ind + 1 , x ) + 1 ) + 1 ;",
+        "string s ;",
+        "while ( ret )",
+        "ret = min ( solve ( ind + 1 , 26 ) + 1 ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘min(int)’"
+    },
+    {
+      "mod_line": [
+        16,
+        24,
+        11
+      ],
+      "mod_code": [
+        "ret = solve ( ( ind + 1 , x ) + 1 ) + 1 ;",
+        "string s ;",
+        "ret = min ( solve ( ind + 1 , 26 ) + 1 ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘min(int)’"
+    },
+    {
+      "mod_line": [
+        16,
+        17
+      ],
+      "mod_code": [
+        "ret = solve ( ( ind + 1 , x ) + 1 ) + 1 ;",
+        "while ( ret )"
+      ],
+      "err_line": 16,
+      "err_msg": "too few arguments to function ‘int solve(int, int)’"
+    },
+    {
+      "mod_line": [
+        16,
+        17,
+        11
+      ],
+      "mod_code": [
+        "ret = solve ( ( ind + 1 , x ) + 1 ) + 1 ;",
+        "while ( ret )",
+        "ret = min ( solve ( ind + 1 , 26 ) + 1 ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘min(int)’"
+    },
+    {
+      "mod_line": [
+        16,
+        11
+      ],
+      "mod_code": [
+        "ret = solve ( ( ind + 1 , x ) + 1 ) + 1 ;",
+        "ret = min ( solve ( ind + 1 , 26 ) + 1 ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘min(int)’"
+    },
+    {
+      "mod_line": [
+        24,
+        17
+      ],
+      "mod_code": [
+        "string s ;",
+        "while ( ret )"
+      ],
+      "err_line": 18,
+      "err_msg": "expected primary-expression before ‘}’ token"
+    },
+    {
+      "mod_line": [
+        24,
+        17,
+        11
+      ],
+      "mod_code": [
+        "string s ;",
+        "while ( ret )",
+        "ret = min ( solve ( ind + 1 , 26 ) + 1 ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘min(int)’"
+    },
+    {
+      "mod_line": [
+        24,
+        11
+      ],
+      "mod_code": [
+        "string s ;",
+        "ret = min ( solve ( ind + 1 , 26 ) + 1 ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘min(int)’"
+    },
+    {
+      "mod_line": [
+        17,
+        11
+      ],
+      "mod_code": [
+        "while ( ret )",
+        "ret = min ( solve ( ind + 1 , 26 ) + 1 ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘min(int)’"
+    }
+  ]
+}

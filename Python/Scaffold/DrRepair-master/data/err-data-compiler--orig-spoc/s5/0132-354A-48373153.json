@@ -1,0 +1,603 @@
+{
+  "meta": {
+    "index": 132,
+    "hitid": "3WRBLBQ2GR22M9AZ564FCKAISKDG0W",
+    "workerid": "A1NBHCFZKJGHKW",
+    "probid": "354A",
+    "subid": "48373153"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "MAXN = const long long with MAXN = 1e5 + 20",
+      "code": "const long long MAXN = 1e5 + 20 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "n , l , r , a , b = long long and vec , p = long long array of size MAXN each",
+      "code": "long long n , l , r , a , b , vec [ MAXN ] , p [ MAXN ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "read n then l then r then a then b",
+      "code": "cin >> n >> l >> r >> a >> b ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for i = 0 to n read vec [ i ] then set p [ i + 1 ] to p [ i ] + vec [ i ]",
+      "code": "for ( long long i = 0 ; i < n ; i ++ ) cin >> vec [ i ] , p [ i + 1 ] = p [ i ] + vec [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "ans = long long with ans = 1e18",
+      "code": "long long ans = 1e18 ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 0 to n inclusive",
+      "code": "for ( long long i = 0 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "ret = long long with ret = l * p [ i ] + r * ( p [ n ] - p [ i ] )",
+      "code": "long long ret = l * p [ i ] + r * ( p [ n ] - p [ i ] ) ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "if i is greater than n - i",
+      "code": "if ( i > ( n - i ) )",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "increment ret by a * max of 0LL and ( i - ( n - i ) ) - 1",
+      "code": "ret += a * max ( 0LL , ( i - ( n - i ) ) - 1 ) ;",
+      "indent": 3
+    },
+    {
+      "line": 10,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "increment ret by b * max of 0LL and ( ( n - i ) - i ) - 1",
+      "code": "ret += b * max ( 0LL , ( ( n - i ) - i ) - 1 ) ;",
+      "indent": 3
+    },
+    {
+      "line": 12,
+      "text": "set ans to min of ans and ret",
+      "code": "ans = min ( ans , ret ) ;",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "print ans",
+      "code": "cout << ans << \" \\n \" ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "long long n , l , r , a [ MAXN ] , r , b , b ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int r’"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { cin >> p [ i ] + vec [ i ] ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int’)"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "ret += a * max ( 0LL - ( n - i ) ) - 1 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "no matching function for call to ‘max(long long int)’"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "ret += b * max ( 0LL - i ) - i ) - 1 ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘max(long long int)’"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "long long n , l , r , a [ MAXN ] , a [ MAXN ] , b ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int a [100020]’"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { cin >> p [ i ] + vec [ i ] >> vec [ i ] + vec [ i ] ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int’)"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= n ; i ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "ret += ( a * max ( 0LL - ( n - i ) ) ) - 1 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "no matching function for call to ‘max(long long int)’"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "ret += ( b * max ( 0LL - i ) - i ) - 1 ;"
+      ],
+      "err_line": 11,
+      "err_msg": "no matching function for call to ‘max(long long int)’"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "int ans = min ( ans , ret ) ;"
+      ],
+      "err_line": 12,
+      "err_msg": "no matching function for call to ‘min(int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        1,
+        4
+      ],
+      "mod_code": [
+        "long long n , l , r , a [ MAXN ] , r , b , b ;",
+        "for ( int i = 0 ; i < n ; i ++ ) { cin >> p [ i ] + vec [ i ] ; }"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int r’"
+    },
+    {
+      "mod_line": [
+        1,
+        4,
+        9
+      ],
+      "mod_code": [
+        "long long n , l , r , a [ MAXN ] , r , b , b ;",
+        "for ( int i = 0 ; i < n ; i ++ ) { cin >> p [ i ] + vec [ i ] ; }",
+        "ret += a * max ( 0LL - ( n - i ) ) - 1 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int r’"
+    },
+    {
+      "mod_line": [
+        1,
+        4,
+        9,
+        11
+      ],
+      "mod_code": [
+        "long long n , l , r , a [ MAXN ] , r , b , b ;",
+        "for ( int i = 0 ; i < n ; i ++ ) { cin >> p [ i ] + vec [ i ] ; }",
+        "ret += a * max ( 0LL - ( n - i ) ) - 1 ;",
+        "ret += b * max ( 0LL - i ) - i ) - 1 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int r’"
+    },
+    {
+      "mod_line": [
+        1,
+        4,
+        9,
+        11
+      ],
+      "mod_code": [
+        "long long n , l , r , a [ MAXN ] , r , b , b ;",
+        "for ( int i = 0 ; i < n ; i ++ ) { cin >> p [ i ] + vec [ i ] ; }",
+        "ret += a * max ( 0LL - ( n - i ) ) - 1 ;",
+        "ret += ( b * max ( 0LL - i ) - i ) - 1 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int r’"
+    },
+    {
+      "mod_line": [
+        1,
+        4,
+        11
+      ],
+      "mod_code": [
+        "long long n , l , r , a [ MAXN ] , r , b , b ;",
+        "for ( int i = 0 ; i < n ; i ++ ) { cin >> p [ i ] + vec [ i ] ; }",
+        "ret += b * max ( 0LL - i ) - i ) - 1 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int r’"
+    },
+    {
+      "mod_line": [
+        1,
+        4,
+        11
+      ],
+      "mod_code": [
+        "long long n , l , r , a [ MAXN ] , r , b , b ;",
+        "for ( int i = 0 ; i < n ; i ++ ) { cin >> p [ i ] + vec [ i ] ; }",
+        "ret += ( b * max ( 0LL - i ) - i ) - 1 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int r’"
+    },
+    {
+      "mod_line": [
+        1,
+        9
+      ],
+      "mod_code": [
+        "long long n , l , r , a [ MAXN ] , r , b , b ;",
+        "ret += a * max ( 0LL - ( n - i ) ) - 1 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int r’"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        11
+      ],
+      "mod_code": [
+        "long long n , l , r , a [ MAXN ] , r , b , b ;",
+        "ret += a * max ( 0LL - ( n - i ) ) - 1 ;",
+        "ret += b * max ( 0LL - i ) - i ) - 1 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int r’"
+    },
+    {
+      "mod_line": [
+        1,
+        9,
+        11
+      ],
+      "mod_code": [
+        "long long n , l , r , a [ MAXN ] , r , b , b ;",
+        "ret += a * max ( 0LL - ( n - i ) ) - 1 ;",
+        "ret += ( b * max ( 0LL - i ) - i ) - 1 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int r’"
+    },
+    {
+      "mod_line": [
+        1,
+        11
+      ],
+      "mod_code": [
+        "long long n , l , r , a [ MAXN ] , r , b , b ;",
+        "ret += b * max ( 0LL - i ) - i ) - 1 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int r’"
+    },
+    {
+      "mod_line": [
+        1,
+        11
+      ],
+      "mod_code": [
+        "long long n , l , r , a [ MAXN ] , r , b , b ;",
+        "ret += ( b * max ( 0LL - i ) - i ) - 1 ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int r’"
+    },
+    {
+      "mod_line": [
+        4,
+        9
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { cin >> p [ i ] + vec [ i ] ; }",
+        "ret += a * max ( 0LL - ( n - i ) ) - 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int’)"
+    },
+    {
+      "mod_line": [
+        4,
+        9,
+        11
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { cin >> p [ i ] + vec [ i ] ; }",
+        "ret += a * max ( 0LL - ( n - i ) ) - 1 ;",
+        "ret += b * max ( 0LL - i ) - i ) - 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int’)"
+    },
+    {
+      "mod_line": [
+        4,
+        9,
+        11,
+        1
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { cin >> p [ i ] + vec [ i ] ; }",
+        "ret += a * max ( 0LL - ( n - i ) ) - 1 ;",
+        "ret += b * max ( 0LL - i ) - i ) - 1 ;",
+        "long long n , l , r , a [ MAXN ] , a [ MAXN ] , b ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int a [100020]’"
+    },
+    {
+      "mod_line": [
+        4,
+        9,
+        11
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { cin >> p [ i ] + vec [ i ] ; }",
+        "ret += a * max ( 0LL - ( n - i ) ) - 1 ;",
+        "ret += ( b * max ( 0LL - i ) - i ) - 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int’)"
+    },
+    {
+      "mod_line": [
+        4,
+        9,
+        11,
+        1
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { cin >> p [ i ] + vec [ i ] ; }",
+        "ret += a * max ( 0LL - ( n - i ) ) - 1 ;",
+        "ret += ( b * max ( 0LL - i ) - i ) - 1 ;",
+        "long long n , l , r , a [ MAXN ] , a [ MAXN ] , b ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int a [100020]’"
+    },
+    {
+      "mod_line": [
+        4,
+        9,
+        1
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { cin >> p [ i ] + vec [ i ] ; }",
+        "ret += a * max ( 0LL - ( n - i ) ) - 1 ;",
+        "long long n , l , r , a [ MAXN ] , a [ MAXN ] , b ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int a [100020]’"
+    },
+    {
+      "mod_line": [
+        4,
+        11
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { cin >> p [ i ] + vec [ i ] ; }",
+        "ret += b * max ( 0LL - i ) - i ) - 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int’)"
+    },
+    {
+      "mod_line": [
+        4,
+        11,
+        1
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { cin >> p [ i ] + vec [ i ] ; }",
+        "ret += b * max ( 0LL - i ) - i ) - 1 ;",
+        "long long n , l , r , a [ MAXN ] , a [ MAXN ] , b ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int a [100020]’"
+    },
+    {
+      "mod_line": [
+        4,
+        11
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { cin >> p [ i ] + vec [ i ] ; }",
+        "ret += ( b * max ( 0LL - i ) - i ) - 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘long long int’)"
+    },
+    {
+      "mod_line": [
+        4,
+        11,
+        1
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { cin >> p [ i ] + vec [ i ] ; }",
+        "ret += ( b * max ( 0LL - i ) - i ) - 1 ;",
+        "long long n , l , r , a [ MAXN ] , a [ MAXN ] , b ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int a [100020]’"
+    },
+    {
+      "mod_line": [
+        4,
+        1
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { cin >> p [ i ] + vec [ i ] ; }",
+        "long long n , l , r , a [ MAXN ] , a [ MAXN ] , b ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int a [100020]’"
+    },
+    {
+      "mod_line": [
+        9,
+        11
+      ],
+      "mod_code": [
+        "ret += a * max ( 0LL - ( n - i ) ) - 1 ;",
+        "ret += b * max ( 0LL - i ) - i ) - 1 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "no matching function for call to ‘max(long long int)’"
+    },
+    {
+      "mod_line": [
+        9,
+        11,
+        1
+      ],
+      "mod_code": [
+        "ret += a * max ( 0LL - ( n - i ) ) - 1 ;",
+        "ret += b * max ( 0LL - i ) - i ) - 1 ;",
+        "long long n , l , r , a [ MAXN ] , a [ MAXN ] , b ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int a [100020]’"
+    },
+    {
+      "mod_line": [
+        9,
+        11
+      ],
+      "mod_code": [
+        "ret += a * max ( 0LL - ( n - i ) ) - 1 ;",
+        "ret += ( b * max ( 0LL - i ) - i ) - 1 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "no matching function for call to ‘max(long long int)’"
+    },
+    {
+      "mod_line": [
+        9,
+        11,
+        1
+      ],
+      "mod_code": [
+        "ret += a * max ( 0LL - ( n - i ) ) - 1 ;",
+        "ret += ( b * max ( 0LL - i ) - i ) - 1 ;",
+        "long long n , l , r , a [ MAXN ] , a [ MAXN ] , b ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int a [100020]’"
+    },
+    {
+      "mod_line": [
+        9,
+        1
+      ],
+      "mod_code": [
+        "ret += a * max ( 0LL - ( n - i ) ) - 1 ;",
+        "long long n , l , r , a [ MAXN ] , a [ MAXN ] , b ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int a [100020]’"
+    },
+    {
+      "mod_line": [
+        11,
+        1
+      ],
+      "mod_code": [
+        "ret += b * max ( 0LL - i ) - i ) - 1 ;",
+        "long long n , l , r , a [ MAXN ] , a [ MAXN ] , b ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int a [100020]’"
+    },
+    {
+      "mod_line": [
+        11,
+        1
+      ],
+      "mod_code": [
+        "ret += ( b * max ( 0LL - i ) - i ) - 1 ;",
+        "long long n , l , r , a [ MAXN ] , a [ MAXN ] , b ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘long long int a [100020]’"
+    }
+  ]
+}

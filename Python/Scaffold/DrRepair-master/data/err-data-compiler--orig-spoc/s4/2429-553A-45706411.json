@@ -1,0 +1,881 @@
+{
+  "meta": {
+    "index": 2429,
+    "hitid": "31GECDVA9JGV3R78VIBA9U7KB9W66L",
+    "workerid": "A2QLFQ2ZYR6B7M",
+    "probid": "553A",
+    "subid": "45706411"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "N = 1005",
+      "code": "const int N = 1000 + 5 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "n , k = int , c , s = array of N int , DP = array of N by N int",
+      "code": "int n , k , c [ N ] , s [ N ] , DP [ N ] [ N ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "dp = array of N long long",
+      "code": "long long dp [ N ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "X = 1000000007",
+      "code": "const int X = 1e9 + 7 ;",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "read k",
+      "code": "cin >> k ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 1 to k inclusive read c [ i ]",
+      "code": "for ( int i = 1 ; i <= k ; i ++ ) cin >> c [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for i = 0 to N exclusive DP [ i ] [ 0 ] and DP [ i ] [ 1 ] = 1",
+      "code": "for ( int i = 0 ; i < N ; i ++ ) { DP [ i ] [ 0 ] = DP [ i ] [ i ] = 1 ; }",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "for i = 1 to N inclusive",
+      "code": "for ( int i = 1 ; i <= N ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "for j = 1 to i exclusive DP [ i ] [ j ] = ( DP [ i - 1 ] [ j ] + DP [ i - 1 ] [ j - 1 ] ) modulo X",
+      "code": "for ( int j = 1 ; j < i ; j ++ ) { DP [ i ] [ j ] = ( DP [ i - 1 ] [ j ] + DP [ i - 1 ] [ j - 1 ] ) % X ; }",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "dp [ 1 ] = 1",
+      "code": "dp [ 1 ] = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "sum = c [ 1 ]",
+      "code": "int sum = c [ 1 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "for i = 2 to k inclusive",
+      "code": "for ( int i = 2 ; i <= k ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "add c [ i ] to sum",
+      "code": "sum += c [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "dp [ i ] = ( DP [ sum - 1 ] [ c [ i ] - 1 ] * dp [ i - 1 ] ) modulo X",
+      "code": "dp [ i ] = ( DP [ sum - 1 ] [ c [ i ] - 1 ] * dp [ i - 1 ] ) % X ;",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "print dp [ k ]",
+      "code": "cout << dp [ k ] << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int n , k , c [ N ] , s [ N ] , DP [ N ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "sum = c [ 1 ] ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘sum’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int n , k , c [ N ] , DP [ N ] , DP [ N ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "redefinition of ‘int DP [1005]’"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= N ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= k ; i ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "dp [ i ] = ( DP [ sum - 1 ] [ c ] - dp [ i - 1 ] - 1 ] ) % X ;"
+      ],
+      "err_line": 15,
+      "err_msg": "invalid types ‘int [1005][int [1005]]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        7
+      ],
+      "mod_code": [
+        "int n , k , c [ N ] , s [ N ] , DP [ N ] ;",
+        "for ( int i = 0 ; i < N ; i ++ ) { DP [ i ] [ 0 ] = 1 , DP [ i ] [ 1 ] = 1 ; }"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        12
+      ],
+      "mod_code": [
+        "int n , k , c [ N ] , s [ N ] , DP [ N ] ;",
+        "for ( int i = 0 ; i < N ; i ++ ) { DP [ i ] [ 0 ] = 1 , DP [ i ] [ 1 ] = 1 ; }",
+        "sum = c [ 1 ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        12,
+        15
+      ],
+      "mod_code": [
+        "int n , k , c [ N ] , s [ N ] , DP [ N ] ;",
+        "for ( int i = 0 ; i < N ; i ++ ) { DP [ i ] [ 0 ] = 1 , DP [ i ] [ 1 ] = 1 ; }",
+        "sum = c [ 1 ] ;",
+        "dp [ i ] = ( DP [ sum - 1 ] [ c ] - dp [ i - 1 ] - 1 ] ) % X ;"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        12,
+        11
+      ],
+      "mod_code": [
+        "int n , k , c [ N ] , s [ N ] , DP [ N ] ;",
+        "for ( int i = 0 ; i < N ; i ++ ) { DP [ i ] [ 0 ] = 1 , DP [ i ] [ 1 ] = 1 ; }",
+        "sum = c [ 1 ] ;",
+        "dp [ 1 ] = ' 1 ' ;"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        12,
+        13
+      ],
+      "mod_code": [
+        "int n , k , c [ N ] , s [ N ] , DP [ N ] ;",
+        "for ( int i = 0 ; i < N ; i ++ ) { DP [ i ] [ 0 ] = 1 , DP [ i ] [ 1 ] = 1 ; }",
+        "sum = c [ 1 ] ;",
+        "for ( i = 2 ; i <= k ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        15
+      ],
+      "mod_code": [
+        "int n , k , c [ N ] , s [ N ] , DP [ N ] ;",
+        "for ( int i = 0 ; i < N ; i ++ ) { DP [ i ] [ 0 ] = 1 , DP [ i ] [ 1 ] = 1 ; }",
+        "dp [ i ] = ( DP [ sum - 1 ] [ c ] - dp [ i - 1 ] - 1 ] ) % X ;"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        15,
+        11
+      ],
+      "mod_code": [
+        "int n , k , c [ N ] , s [ N ] , DP [ N ] ;",
+        "for ( int i = 0 ; i < N ; i ++ ) { DP [ i ] [ 0 ] = 1 , DP [ i ] [ 1 ] = 1 ; }",
+        "dp [ i ] = ( DP [ sum - 1 ] [ c ] - dp [ i - 1 ] - 1 ] ) % X ;",
+        "dp [ 1 ] = ' 1 ' ;"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        15,
+        13
+      ],
+      "mod_code": [
+        "int n , k , c [ N ] , s [ N ] , DP [ N ] ;",
+        "for ( int i = 0 ; i < N ; i ++ ) { DP [ i ] [ 0 ] = 1 , DP [ i ] [ 1 ] = 1 ; }",
+        "dp [ i ] = ( DP [ sum - 1 ] [ c ] - dp [ i - 1 ] - 1 ] ) % X ;",
+        "for ( i = 2 ; i <= k ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        11
+      ],
+      "mod_code": [
+        "int n , k , c [ N ] , s [ N ] , DP [ N ] ;",
+        "for ( int i = 0 ; i < N ; i ++ ) { DP [ i ] [ 0 ] = 1 , DP [ i ] [ 1 ] = 1 ; }",
+        "dp [ 1 ] = ' 1 ' ;"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        11,
+        13
+      ],
+      "mod_code": [
+        "int n , k , c [ N ] , s [ N ] , DP [ N ] ;",
+        "for ( int i = 0 ; i < N ; i ++ ) { DP [ i ] [ 0 ] = 1 , DP [ i ] [ 1 ] = 1 ; }",
+        "dp [ 1 ] = ' 1 ' ;",
+        "for ( i = 2 ; i <= k ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        7,
+        13
+      ],
+      "mod_code": [
+        "int n , k , c [ N ] , s [ N ] , DP [ N ] ;",
+        "for ( int i = 0 ; i < N ; i ++ ) { DP [ i ] [ 0 ] = 1 , DP [ i ] [ 1 ] = 1 ; }",
+        "for ( i = 2 ; i <= k ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        12
+      ],
+      "mod_code": [
+        "int n , k , c [ N ] , s [ N ] , DP [ N ] ;",
+        "sum = c [ 1 ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        12,
+        15
+      ],
+      "mod_code": [
+        "int n , k , c [ N ] , s [ N ] , DP [ N ] ;",
+        "sum = c [ 1 ] ;",
+        "dp [ i ] = ( DP [ sum - 1 ] [ c ] - dp [ i - 1 ] - 1 ] ) % X ;"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        12,
+        15,
+        11
+      ],
+      "mod_code": [
+        "int n , k , c [ N ] , s [ N ] , DP [ N ] ;",
+        "sum = c [ 1 ] ;",
+        "dp [ i ] = ( DP [ sum - 1 ] [ c ] - dp [ i - 1 ] - 1 ] ) % X ;",
+        "dp [ 1 ] = ' 1 ' ;"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        12,
+        15,
+        13
+      ],
+      "mod_code": [
+        "int n , k , c [ N ] , s [ N ] , DP [ N ] ;",
+        "sum = c [ 1 ] ;",
+        "dp [ i ] = ( DP [ sum - 1 ] [ c ] - dp [ i - 1 ] - 1 ] ) % X ;",
+        "for ( i = 2 ; i <= k ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        12,
+        11
+      ],
+      "mod_code": [
+        "int n , k , c [ N ] , s [ N ] , DP [ N ] ;",
+        "sum = c [ 1 ] ;",
+        "dp [ 1 ] = ' 1 ' ;"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        12,
+        11,
+        13
+      ],
+      "mod_code": [
+        "int n , k , c [ N ] , s [ N ] , DP [ N ] ;",
+        "sum = c [ 1 ] ;",
+        "dp [ 1 ] = ' 1 ' ;",
+        "for ( i = 2 ; i <= k ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        12,
+        13
+      ],
+      "mod_code": [
+        "int n , k , c [ N ] , s [ N ] , DP [ N ] ;",
+        "sum = c [ 1 ] ;",
+        "for ( i = 2 ; i <= k ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        15
+      ],
+      "mod_code": [
+        "int n , k , c [ N ] , s [ N ] , DP [ N ] ;",
+        "dp [ i ] = ( DP [ sum - 1 ] [ c ] - dp [ i - 1 ] - 1 ] ) % X ;"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        15,
+        11
+      ],
+      "mod_code": [
+        "int n , k , c [ N ] , s [ N ] , DP [ N ] ;",
+        "dp [ i ] = ( DP [ sum - 1 ] [ c ] - dp [ i - 1 ] - 1 ] ) % X ;",
+        "dp [ 1 ] = ' 1 ' ;"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        15,
+        11,
+        13
+      ],
+      "mod_code": [
+        "int n , k , c [ N ] , s [ N ] , DP [ N ] ;",
+        "dp [ i ] = ( DP [ sum - 1 ] [ c ] - dp [ i - 1 ] - 1 ] ) % X ;",
+        "dp [ 1 ] = ' 1 ' ;",
+        "for ( i = 2 ; i <= k ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        15,
+        13
+      ],
+      "mod_code": [
+        "int n , k , c [ N ] , s [ N ] , DP [ N ] ;",
+        "dp [ i ] = ( DP [ sum - 1 ] [ c ] - dp [ i - 1 ] - 1 ] ) % X ;",
+        "for ( i = 2 ; i <= k ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        11
+      ],
+      "mod_code": [
+        "int n , k , c [ N ] , s [ N ] , DP [ N ] ;",
+        "dp [ 1 ] = ' 1 ' ;"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        11,
+        13
+      ],
+      "mod_code": [
+        "int n , k , c [ N ] , s [ N ] , DP [ N ] ;",
+        "dp [ 1 ] = ' 1 ' ;",
+        "for ( i = 2 ; i <= k ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        1,
+        13
+      ],
+      "mod_code": [
+        "int n , k , c [ N ] , s [ N ] , DP [ N ] ;",
+        "for ( i = 2 ; i <= k ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        7,
+        12
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < N ; i ++ ) { DP [ i ] [ 0 ] = 1 , DP [ i ] [ 1 ] = 1 ; }",
+        "sum = c [ 1 ] ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘sum’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        12,
+        15
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < N ; i ++ ) { DP [ i ] [ 0 ] = 1 , DP [ i ] [ 1 ] = 1 ; }",
+        "sum = c [ 1 ] ;",
+        "dp [ i ] = ( DP [ sum - 1 ] [ c ] - dp [ i - 1 ] - 1 ] ) % X ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘sum’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        12,
+        15,
+        11
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < N ; i ++ ) { DP [ i ] [ 0 ] = 1 , DP [ i ] [ 1 ] = 1 ; }",
+        "sum = c [ 1 ] ;",
+        "dp [ i ] = ( DP [ sum - 1 ] [ c ] - dp [ i - 1 ] - 1 ] ) % X ;",
+        "dp [ 1 ] = ' 1 ' ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘sum’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        12,
+        15,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < N ; i ++ ) { DP [ i ] [ 0 ] = 1 , DP [ i ] [ 1 ] = 1 ; }",
+        "sum = c [ 1 ] ;",
+        "dp [ i ] = ( DP [ sum - 1 ] [ c ] - dp [ i - 1 ] - 1 ] ) % X ;",
+        "for ( i = 2 ; i <= k ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "‘sum’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        12,
+        11
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < N ; i ++ ) { DP [ i ] [ 0 ] = 1 , DP [ i ] [ 1 ] = 1 ; }",
+        "sum = c [ 1 ] ;",
+        "dp [ 1 ] = ' 1 ' ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘sum’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        12,
+        11,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < N ; i ++ ) { DP [ i ] [ 0 ] = 1 , DP [ i ] [ 1 ] = 1 ; }",
+        "sum = c [ 1 ] ;",
+        "dp [ 1 ] = ' 1 ' ;",
+        "for ( i = 2 ; i <= k ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "‘sum’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        12,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < N ; i ++ ) { DP [ i ] [ 0 ] = 1 , DP [ i ] [ 1 ] = 1 ; }",
+        "sum = c [ 1 ] ;",
+        "for ( i = 2 ; i <= k ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "‘sum’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        15
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < N ; i ++ ) { DP [ i ] [ 0 ] = 1 , DP [ i ] [ 1 ] = 1 ; }",
+        "dp [ i ] = ( DP [ sum - 1 ] [ c ] - dp [ i - 1 ] - 1 ] ) % X ;"
+      ],
+      "err_line": 15,
+      "err_msg": "invalid types ‘int [1005][int [1005]]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        7,
+        15,
+        11
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < N ; i ++ ) { DP [ i ] [ 0 ] = 1 , DP [ i ] [ 1 ] = 1 ; }",
+        "dp [ i ] = ( DP [ sum - 1 ] [ c ] - dp [ i - 1 ] - 1 ] ) % X ;",
+        "dp [ 1 ] = ' 1 ' ;"
+      ],
+      "err_line": 15,
+      "err_msg": "invalid types ‘int [1005][int [1005]]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        7,
+        15,
+        11,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < N ; i ++ ) { DP [ i ] [ 0 ] = 1 , DP [ i ] [ 1 ] = 1 ; }",
+        "dp [ i ] = ( DP [ sum - 1 ] [ c ] - dp [ i - 1 ] - 1 ] ) % X ;",
+        "dp [ 1 ] = ' 1 ' ;",
+        "for ( i = 2 ; i <= k ; i ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7,
+        15,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < N ; i ++ ) { DP [ i ] [ 0 ] = 1 , DP [ i ] [ 1 ] = 1 ; }",
+        "dp [ i ] = ( DP [ sum - 1 ] [ c ] - dp [ i - 1 ] - 1 ] ) % X ;",
+        "for ( i = 2 ; i <= k ; i ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7,
+        11,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < N ; i ++ ) { DP [ i ] [ 0 ] = 1 , DP [ i ] [ 1 ] = 1 ; }",
+        "dp [ 1 ] = ' 1 ' ;",
+        "for ( i = 2 ; i <= k ; i ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7,
+        13
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < N ; i ++ ) { DP [ i ] [ 0 ] = 1 , DP [ i ] [ 1 ] = 1 ; }",
+        "for ( i = 2 ; i <= k ; i ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12,
+        15
+      ],
+      "mod_code": [
+        "sum = c [ 1 ] ;",
+        "dp [ i ] = ( DP [ sum - 1 ] [ c ] - dp [ i - 1 ] - 1 ] ) % X ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘sum’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        15,
+        11
+      ],
+      "mod_code": [
+        "sum = c [ 1 ] ;",
+        "dp [ i ] = ( DP [ sum - 1 ] [ c ] - dp [ i - 1 ] - 1 ] ) % X ;",
+        "dp [ 1 ] = ' 1 ' ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘sum’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        15,
+        11,
+        13
+      ],
+      "mod_code": [
+        "sum = c [ 1 ] ;",
+        "dp [ i ] = ( DP [ sum - 1 ] [ c ] - dp [ i - 1 ] - 1 ] ) % X ;",
+        "dp [ 1 ] = ' 1 ' ;",
+        "for ( i = 2 ; i <= k ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "‘sum’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        15,
+        13
+      ],
+      "mod_code": [
+        "sum = c [ 1 ] ;",
+        "dp [ i ] = ( DP [ sum - 1 ] [ c ] - dp [ i - 1 ] - 1 ] ) % X ;",
+        "for ( i = 2 ; i <= k ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "‘sum’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        11
+      ],
+      "mod_code": [
+        "sum = c [ 1 ] ;",
+        "dp [ 1 ] = ' 1 ' ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘sum’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        11,
+        13
+      ],
+      "mod_code": [
+        "sum = c [ 1 ] ;",
+        "dp [ 1 ] = ' 1 ' ;",
+        "for ( i = 2 ; i <= k ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "‘sum’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        13
+      ],
+      "mod_code": [
+        "sum = c [ 1 ] ;",
+        "for ( i = 2 ; i <= k ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "‘sum’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        11
+      ],
+      "mod_code": [
+        "dp [ i ] = ( DP [ sum - 1 ] [ c ] - dp [ i - 1 ] - 1 ] ) % X ;",
+        "dp [ 1 ] = ' 1 ' ;"
+      ],
+      "err_line": 15,
+      "err_msg": "invalid types ‘int [1005][int [1005]]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        15,
+        11,
+        13
+      ],
+      "mod_code": [
+        "dp [ i ] = ( DP [ sum - 1 ] [ c ] - dp [ i - 1 ] - 1 ] ) % X ;",
+        "dp [ 1 ] = ' 1 ' ;",
+        "for ( i = 2 ; i <= k ; i ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        15,
+        13
+      ],
+      "mod_code": [
+        "dp [ i ] = ( DP [ sum - 1 ] [ c ] - dp [ i - 1 ] - 1 ] ) % X ;",
+        "for ( i = 2 ; i <= k ; i ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11,
+        13
+      ],
+      "mod_code": [
+        "dp [ 1 ] = ' 1 ' ;",
+        "for ( i = 2 ; i <= k ; i ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    }
+  ]
+}

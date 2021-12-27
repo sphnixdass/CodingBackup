@@ -1,0 +1,497 @@
+{
+  "meta": {
+    "index": 797,
+    "hitid": "3QQUBC64ZE8GTRXWVM6HBI6Q33ONXA",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "571A",
+    "subid": "46926805"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare constant integer maxn = 1e5 + 5",
+      "code": "const int maxn = 1e5 + 5 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare constant integer MOD = 1e9 + 7",
+      "code": "const int MOD = 1e9 + 7 ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "declare calc with long longs a , b , c , add as arguments , returning long long",
+      "code": "long long calc ( long long a , long long b , long long c , long long add )",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "declare long long x = ( a - b - c + add ) bitshift right 1",
+      "code": "long long x = ( a - b - c + add ) >> 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "if x is less than 0 , return 0 from function",
+      "code": "if ( x < 0 ) return 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "if x is greater than add , let x be add",
+      "code": "if ( x > add ) x = add ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "return ( x + 2 ) * ( x + 1 ) / 2 from function",
+      "code": "return ( x + 2 ) * ( x + 1 ) / 2 ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 8,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 9,
+      "text": "declare long longs a , b , c , L",
+      "code": "long long a , b , c , L ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "while read a , b , c , L is true",
+      "code": "while ( cin >> a >> b >> c >> L )",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "declare long long sum = 0",
+      "code": "long long sum = 0 ;",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "for i = 0 to L inclusive",
+      "code": "for ( long long i = 0 ; i <= L ; i ++ )",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "increment sum by ( i + 2 ) * ( i + 1 ) / 2",
+      "code": "sum += ( i + 2 ) * ( i + 1 ) / 2 ;",
+      "indent": 3
+    },
+    {
+      "line": 14,
+      "text": "decrement sum by result of run calc ( a , b , c , i )",
+      "code": "sum -= calc ( a , b , c , i ) ;",
+      "indent": 3
+    },
+    {
+      "line": 15,
+      "text": "decrement sum by result of run calc ( b , a , c , i )",
+      "code": "sum -= calc ( b , a , c , i ) ;",
+      "indent": 3
+    },
+    {
+      "line": 16,
+      "text": "decrement sum by result of run calc ( c , a , b , i )",
+      "code": "sum -= calc ( c , a , b , i ) ;",
+      "indent": 3
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "print sum and newline",
+      "code": "cout << sum << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "long long calc ( long long a , long long b , long long c )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘add’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "while ( >> a >> b >> c >> L )"
+      ],
+      "err_line": 10,
+      "err_msg": "expected primary-expression before ‘>>’ token"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= L ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        5
+      ],
+      "mod_code": [
+        "long long calc ( long long a , long long b , long long c )",
+        "if ( x > add ) x += add ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘add’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        5,
+        12
+      ],
+      "mod_code": [
+        "long long calc ( long long a , long long b , long long c )",
+        "if ( x > add ) x += add ;",
+        "for ( i = 0 ; i <= L ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘add’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        5,
+        12,
+        3
+      ],
+      "mod_code": [
+        "long long calc ( long long a , long long b , long long c )",
+        "if ( x > add ) x += add ;",
+        "for ( i = 0 ; i <= L ; i ++ )",
+        "long long x = ( a - b - c + add ) << 1 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘add’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        5,
+        12,
+        10
+      ],
+      "mod_code": [
+        "long long calc ( long long a , long long b , long long c )",
+        "if ( x > add ) x += add ;",
+        "for ( i = 0 ; i <= L ; i ++ )",
+        "while ( >> a >> b >> c >> L )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘add’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        5,
+        3
+      ],
+      "mod_code": [
+        "long long calc ( long long a , long long b , long long c )",
+        "if ( x > add ) x += add ;",
+        "long long x = ( a - b - c + add ) << 1 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘add’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        5,
+        3,
+        10
+      ],
+      "mod_code": [
+        "long long calc ( long long a , long long b , long long c )",
+        "if ( x > add ) x += add ;",
+        "long long x = ( a - b - c + add ) << 1 ;",
+        "while ( >> a >> b >> c >> L )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘add’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        5,
+        10
+      ],
+      "mod_code": [
+        "long long calc ( long long a , long long b , long long c )",
+        "if ( x > add ) x += add ;",
+        "while ( >> a >> b >> c >> L )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘add’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        12
+      ],
+      "mod_code": [
+        "long long calc ( long long a , long long b , long long c )",
+        "for ( i = 0 ; i <= L ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘add’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        12,
+        3
+      ],
+      "mod_code": [
+        "long long calc ( long long a , long long b , long long c )",
+        "for ( i = 0 ; i <= L ; i ++ )",
+        "long long x = ( a - b - c + add ) << 1 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘add’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        12,
+        3,
+        10
+      ],
+      "mod_code": [
+        "long long calc ( long long a , long long b , long long c )",
+        "for ( i = 0 ; i <= L ; i ++ )",
+        "long long x = ( a - b - c + add ) << 1 ;",
+        "while ( >> a >> b >> c >> L )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘add’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        12,
+        10
+      ],
+      "mod_code": [
+        "long long calc ( long long a , long long b , long long c )",
+        "for ( i = 0 ; i <= L ; i ++ )",
+        "while ( >> a >> b >> c >> L )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘add’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        3
+      ],
+      "mod_code": [
+        "long long calc ( long long a , long long b , long long c )",
+        "long long x = ( a - b - c + add ) << 1 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "‘add’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        10
+      ],
+      "mod_code": [
+        "long long calc ( long long a , long long b , long long c )",
+        "long long x = ( a - b - c + add ) << 1 ;",
+        "while ( >> a >> b >> c >> L )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘add’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        10
+      ],
+      "mod_code": [
+        "long long calc ( long long a , long long b , long long c )",
+        "while ( >> a >> b >> c >> L )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘add’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        12
+      ],
+      "mod_code": [
+        "if ( x > add ) x += add ;",
+        "for ( i = 0 ; i <= L ; i ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        12,
+        3
+      ],
+      "mod_code": [
+        "if ( x > add ) x += add ;",
+        "for ( i = 0 ; i <= L ; i ++ )",
+        "long long x = ( a - b - c + add ) << 1 ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        12,
+        3,
+        10
+      ],
+      "mod_code": [
+        "if ( x > add ) x += add ;",
+        "for ( i = 0 ; i <= L ; i ++ )",
+        "long long x = ( a - b - c + add ) << 1 ;",
+        "while ( >> a >> b >> c >> L )"
+      ],
+      "err_line": 10,
+      "err_msg": "expected primary-expression before ‘>>’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        12,
+        10
+      ],
+      "mod_code": [
+        "if ( x > add ) x += add ;",
+        "for ( i = 0 ; i <= L ; i ++ )",
+        "while ( >> a >> b >> c >> L )"
+      ],
+      "err_line": 10,
+      "err_msg": "expected primary-expression before ‘>>’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        3,
+        10
+      ],
+      "mod_code": [
+        "if ( x > add ) x += add ;",
+        "long long x = ( a - b - c + add ) << 1 ;",
+        "while ( >> a >> b >> c >> L )"
+      ],
+      "err_line": 10,
+      "err_msg": "expected primary-expression before ‘>>’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        10
+      ],
+      "mod_code": [
+        "if ( x > add ) x += add ;",
+        "while ( >> a >> b >> c >> L )"
+      ],
+      "err_line": 10,
+      "err_msg": "expected primary-expression before ‘>>’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        3
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= L ; i ++ )",
+        "long long x = ( a - b - c + add ) << 1 ;"
+      ],
+      "err_line": 12,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        3,
+        10
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= L ; i ++ )",
+        "long long x = ( a - b - c + add ) << 1 ;",
+        "while ( >> a >> b >> c >> L )"
+      ],
+      "err_line": 10,
+      "err_msg": "expected primary-expression before ‘>>’ token"
+    },
+    {
+      "mod_line": [
+        12,
+        10
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i <= L ; i ++ )",
+        "while ( >> a >> b >> c >> L )"
+      ],
+      "err_line": 10,
+      "err_msg": "expected primary-expression before ‘>>’ token"
+    },
+    {
+      "mod_line": [
+        3,
+        10
+      ],
+      "mod_code": [
+        "long long x = ( a - b - c + add ) << 1 ;",
+        "while ( >> a >> b >> c >> L )"
+      ],
+      "err_line": 10,
+      "err_msg": "expected primary-expression before ‘>>’ token"
+    }
+  ]
+}

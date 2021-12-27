@@ -1,0 +1,101 @@
+<html>
+
+<head>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'jquery-3.5.1.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'socket.io.js') }}"></script>
+
+    <script type="text/javascript" src="{{ url_for('static', filename = 'bootstrap.bundle.min.js') }}"></script>
+
+    <script type="text/javascript" src="{{ url_for('static', filename = 'bootstrap.min.js') }}"></script>
+
+
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'bootstrap.min.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'dstyle.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+
+
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-2"></div>
+            <div class="col-lg-6 col-md-8 login-box">
+                <div class="col-lg-12 login-key">
+                    <i class="fa fa-key" aria-hidden="true"></i>
+                </div>
+                <div class="col-lg-12 login-title">
+                    Welcome to Hackathon
+                </div>
+
+                <div class="col-lg-12 login-form">
+                    <div class="col-lg-12 login-form">
+                        <div>
+                            <img style="width:200px;height:200px;" id="videofeed">
+                            <!-- <img style="width:200px;height:200px;" id="videofeed" src="{{ url_for('video_feed') }}"> -->
+
+                        <div id=formid>
+                            <div class="form-group">
+                                <label class="form-control-label">USERNAME</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label">PASSWORD</label>
+                                <input type="password" class="form-control" i>
+                            </div>
+                        </div>
+                            <div class="col-lg-12 loginbttm">
+                                <div class="col-lg-6 login-btm login-text">
+                                    <!-- Error Message -->
+                                </div>
+                                <div class="col-lg-6 login-btm login-button">
+                                    <button id="btnlogin" class="btn btn-outline-primary">LOGIN</button>
+                                    <button id="btnloginface" type="submit"
+                                        class="btn btn-outline-primary">FACE ID</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+</body>
+<script type="text/javascript">
+
+$(document).ready(function(){
+    $("#videofeed").hide();
+    $("#videofeed").attr("src","");
+  $("#btnloginface").click(function(){
+    $("#formid").hide();
+    $("#videofeed").show();
+    $("#videofeed").attr("src","{{ url_for('video_feed') }}");
+
+  });
+});
+
+
+
+        var socket = io();
+        // socket.emit('myevent', { data: 'Issss connected!' });
+        
+        socket.on('myresponse', function(msg) {
+            console.log(msg)
+            location.href = "{{ url_for('main_menu') }}";  
+        });
+
+    document.getElementById("btnlogin").onclick = function () {
+        location.href = "{{ url_for('main_menu') }}";
+    };
+</script>
+
+</html>

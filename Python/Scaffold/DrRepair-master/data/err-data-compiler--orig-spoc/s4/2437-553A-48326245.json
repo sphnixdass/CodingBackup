@@ -1,0 +1,1127 @@
+{
+  "meta": {
+    "index": 2437,
+    "hitid": "3DA79LNS59P286V28TL5D1NELQ53TN",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "553A",
+    "subid": "48326245"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "integer function fastMax with int arguments x and y",
+      "code": "int fastMax ( int x , int y )",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "return ( ( ( y - x ) > > ( 32 - 1 ) ) & ( x ^ y ) ) ^ y",
+      "code": "return ( ( ( y - x ) >> ( 32 - 1 ) ) & ( x ^ y ) ) ^ y ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "fastMin is a integer function with int arguments x and y",
+      "code": "int fastMin ( int x , int y )",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "return ( ( ( y - x ) > > ( 32 - 1 ) ) & ( x ^ y ) ) ^ x",
+      "code": "return ( ( ( y - x ) >> ( 32 - 1 ) ) & ( x ^ y ) ) ^ x ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 6,
+      "text": "declare const long long int MOD = 1e9 + 7",
+      "code": "const long long int MOD = 1e9 + 7 ;",
+      "indent": 0
+    },
+    {
+      "line": 7,
+      "text": "let C be long long int array with size 1005",
+      "code": "long long int C [ 1005 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 8,
+      "text": "let dp and fact be long long int arrays with size 1005",
+      "code": "long long int dp [ 1005 ] , fact [ 1005 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 9,
+      "text": "long long int function power with long long int arguments x and y",
+      "code": "long long int power ( long long int x , long long int y )",
+      "indent": 0
+    },
+    {
+      "line": 10,
+      "text": "declare long long int res = 1",
+      "code": "long long int res = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "while y is not 0",
+      "code": "while ( y )",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "if y & 1 ! = 0 , set res to ( res * x ) % MOD",
+      "code": "if ( y & 1 ) res = ( res * x ) % MOD ;",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "change x to ( x * x ) % MOD",
+      "code": "x = ( x * x ) % MOD ;",
+      "indent": 2
+    },
+    {
+      "line": 14,
+      "text": "assign y > > 1 to y",
+      "code": "y = y >> 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "return res",
+      "code": "return res ;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 18,
+      "text": "inverse is a long long int function with long long int argument N",
+      "code": "long long int inverse ( long long int N )",
+      "indent": 0
+    },
+    {
+      "line": 19,
+      "text": "return power ( N , MOD - 2 )",
+      "code": "return power ( N , MOD - 2 ) ;",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 21,
+      "text": "long long int function nCr with long long int arguments N and R",
+      "code": "long long int nCr ( long long int N , long long int R )",
+      "indent": 0
+    },
+    {
+      "line": 22,
+      "text": "if N is less than R , return 0",
+      "code": "if ( N < R ) return 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "return ( ( ( fact [ N ] * inverse ( fact [ N - R ] ) ) % MOD ) * inverse ( fact [ R ] ) ) % MOD",
+      "code": "return ( ( ( fact [ N ] * inverse ( fact [ N - R ] ) ) % MOD ) * inverse ( fact [ R ] ) ) % MOD ;",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 25,
+      "text": "define function solve",
+      "code": "void solve ( )",
+      "indent": 0
+    },
+    {
+      "line": 26,
+      "text": "create long long int k",
+      "code": "long long int k ;",
+      "indent": 1
+    },
+    {
+      "line": 27,
+      "text": "read k",
+      "code": "cin >> k ;",
+      "indent": 1
+    },
+    {
+      "line": 28,
+      "text": "set fact [ 0 ] to 1",
+      "code": "fact [ 0 ] = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 29,
+      "text": "for i = 1 to 1001 inclusive , change fact [ i ] to ( fact [ i - 1 ] * i ) % MOD",
+      "code": "for ( long long int i = 1 ; i <= 1001 ; i ++ ) fact [ i ] = ( fact [ i - 1 ] * i ) % MOD ;",
+      "indent": 1
+    },
+    {
+      "line": 30,
+      "text": "for i = 1 to k inclusive print C [ i ]",
+      "code": "for ( int i = ( 1 ) ; i <= ( k ) ; ++ i ) cin >> C [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 31,
+      "text": "new long long int array prev_sum with 1 element",
+      "code": "long long int prev_sum = C [ 1 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 32,
+      "text": "set dp [ 1 ] to 1",
+      "code": "dp [ 1 ] = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 33,
+      "text": "for integer i = 2 to k inclusive",
+      "code": "for ( int i = ( 2 ) ; i <= ( k ) ; ++ i )",
+      "indent": 1
+    },
+    {
+      "line": 34,
+      "text": "change dp [ i ] to ( dp [ i - 1 ] * nCr ( C [ i ] + prev_sum - 1 , C [ i ] - 1 ) ) % MOD",
+      "code": "dp [ i ] = ( dp [ i - 1 ] * nCr ( C [ i ] + prev_sum - 1 , C [ i ] - 1 ) ) % MOD ;",
+      "indent": 2
+    },
+    {
+      "line": 35,
+      "text": "increase prev_sum by C [ i ]",
+      "code": "prev_sum += C [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 36,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 37,
+      "text": "print dp [ k ]",
+      "code": "cout << dp [ k ] << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 38,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 39,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 40,
+      "text": "declare long long int variable t",
+      "code": "long long int t ;",
+      "indent": 1
+    },
+    {
+      "line": 41,
+      "text": "assign 1 to t",
+      "code": "t = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 42,
+      "text": "decrement t and loop further , while t ! = 0 , calling solve on each iteration",
+      "code": "while ( t -- ) { solve ( ) ; }",
+      "indent": 1
+    },
+    {
+      "line": 43,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int fastMax ( int x , int y ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        31
+      ],
+      "mod_code": [
+        "long long int prev_sum [ 1 ] ;"
+      ],
+      "err_line": 34,
+      "err_msg": "invalid conversion from ‘long long int*’ to ‘long long int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "int fastMin ( int x , int y ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "return ( ( y - x ) >> ( 32 - 1 ) ) & ( x ^ y ) ) ^ x ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "long long int dp [ 1005 ] , dp [ 1005 ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "redefinition of ‘long long int dp [1005]’"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "long long int power ( long long int x , long long int y ) ;"
+      ],
+      "err_line": 10,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        18
+      ],
+      "mod_code": [
+        "long long int inverse ( long long int N ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        19
+      ],
+      "mod_code": [
+        "return -= power ( N , MOD - 2 ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "expected primary-expression before ‘-=’ token"
+    },
+    {
+      "mod_line": [
+        21
+      ],
+      "mod_code": [
+        "long long int nCr ( long long int N , long long int R ) ;"
+      ],
+      "err_line": 22,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        27
+      ],
+      "mod_code": [
+        "cin >> n ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        28
+      ],
+      "mod_code": [
+        "fact [ 0 ] ] = 1 ;"
+      ],
+      "err_line": 28,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        31
+      ],
+      "mod_code": [
+        "long long prev_sum [ 1 ] ;"
+      ],
+      "err_line": 34,
+      "err_msg": "invalid conversion from ‘long long int*’ to ‘long long int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        34
+      ],
+      "mod_code": [
+        "dp [ i ] = ( dp [ i - 1 ] * nCr ( C [ i ] + prev_sum - C , C [ i ] - 1 ) ) % MOD ;"
+      ],
+      "err_line": 34,
+      "err_msg": "invalid operands of types ‘long long int’ and ‘long long int [1005]’ to binary ‘operator-’"
+    },
+    {
+      "mod_line": [
+        40
+      ],
+      "mod_code": [
+        "long long int t t ;"
+      ],
+      "err_line": 40,
+      "err_msg": "expected initializer before ‘t’"
+    },
+    {
+      "mod_line": [
+        41
+      ],
+      "mod_code": [
+        "int t = 1 ;"
+      ],
+      "err_line": 41,
+      "err_msg": "conflicting declaration ‘int t’"
+    },
+    {
+      "mod_line": [
+        0,
+        30
+      ],
+      "mod_code": [
+        "int fastMax ( int x , int y ) ;",
+        "for ( int i = 1 ; i <= k ; i ++ ) cout << C [ i ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        30,
+        31
+      ],
+      "mod_code": [
+        "int fastMax ( int x , int y ) ;",
+        "for ( int i = 1 ; i <= k ; i ++ ) cout << C [ i ] ;",
+        "long long int prev_sum [ 1 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        30,
+        31,
+        40
+      ],
+      "mod_code": [
+        "int fastMax ( int x , int y ) ;",
+        "for ( int i = 1 ; i <= k ; i ++ ) cout << C [ i ] ;",
+        "long long int prev_sum [ 1 ] ;",
+        "long long int t t ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        30,
+        31,
+        18
+      ],
+      "mod_code": [
+        "int fastMax ( int x , int y ) ;",
+        "for ( int i = 1 ; i <= k ; i ++ ) cout << C [ i ] ;",
+        "long long int prev_sum [ 1 ] ;",
+        "long long int inverse ( long long int N ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        30,
+        31,
+        19
+      ],
+      "mod_code": [
+        "int fastMax ( int x , int y ) ;",
+        "for ( int i = 1 ; i <= k ; i ++ ) cout << C [ i ] ;",
+        "long long int prev_sum [ 1 ] ;",
+        "return -= power ( N , MOD - 2 ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        30,
+        40
+      ],
+      "mod_code": [
+        "int fastMax ( int x , int y ) ;",
+        "for ( int i = 1 ; i <= k ; i ++ ) cout << C [ i ] ;",
+        "long long int t t ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        30,
+        40,
+        18
+      ],
+      "mod_code": [
+        "int fastMax ( int x , int y ) ;",
+        "for ( int i = 1 ; i <= k ; i ++ ) cout << C [ i ] ;",
+        "long long int t t ;",
+        "long long int inverse ( long long int N ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        30,
+        40,
+        19
+      ],
+      "mod_code": [
+        "int fastMax ( int x , int y ) ;",
+        "for ( int i = 1 ; i <= k ; i ++ ) cout << C [ i ] ;",
+        "long long int t t ;",
+        "return -= power ( N , MOD - 2 ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        30,
+        18
+      ],
+      "mod_code": [
+        "int fastMax ( int x , int y ) ;",
+        "for ( int i = 1 ; i <= k ; i ++ ) cout << C [ i ] ;",
+        "long long int inverse ( long long int N ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        30,
+        18,
+        19
+      ],
+      "mod_code": [
+        "int fastMax ( int x , int y ) ;",
+        "for ( int i = 1 ; i <= k ; i ++ ) cout << C [ i ] ;",
+        "long long int inverse ( long long int N ) ;",
+        "return -= power ( N , MOD - 2 ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        30,
+        19
+      ],
+      "mod_code": [
+        "int fastMax ( int x , int y ) ;",
+        "for ( int i = 1 ; i <= k ; i ++ ) cout << C [ i ] ;",
+        "return -= power ( N , MOD - 2 ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        31
+      ],
+      "mod_code": [
+        "int fastMax ( int x , int y ) ;",
+        "long long int prev_sum [ 1 ] ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        31,
+        40
+      ],
+      "mod_code": [
+        "int fastMax ( int x , int y ) ;",
+        "long long int prev_sum [ 1 ] ;",
+        "long long int t t ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        31,
+        40,
+        18
+      ],
+      "mod_code": [
+        "int fastMax ( int x , int y ) ;",
+        "long long int prev_sum [ 1 ] ;",
+        "long long int t t ;",
+        "long long int inverse ( long long int N ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        31,
+        40,
+        19
+      ],
+      "mod_code": [
+        "int fastMax ( int x , int y ) ;",
+        "long long int prev_sum [ 1 ] ;",
+        "long long int t t ;",
+        "return -= power ( N , MOD - 2 ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        31,
+        18
+      ],
+      "mod_code": [
+        "int fastMax ( int x , int y ) ;",
+        "long long int prev_sum [ 1 ] ;",
+        "long long int inverse ( long long int N ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        31,
+        18,
+        19
+      ],
+      "mod_code": [
+        "int fastMax ( int x , int y ) ;",
+        "long long int prev_sum [ 1 ] ;",
+        "long long int inverse ( long long int N ) ;",
+        "return -= power ( N , MOD - 2 ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        31,
+        19
+      ],
+      "mod_code": [
+        "int fastMax ( int x , int y ) ;",
+        "long long int prev_sum [ 1 ] ;",
+        "return -= power ( N , MOD - 2 ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        40
+      ],
+      "mod_code": [
+        "int fastMax ( int x , int y ) ;",
+        "long long int t t ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        40,
+        18
+      ],
+      "mod_code": [
+        "int fastMax ( int x , int y ) ;",
+        "long long int t t ;",
+        "long long int inverse ( long long int N ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        40,
+        18,
+        19
+      ],
+      "mod_code": [
+        "int fastMax ( int x , int y ) ;",
+        "long long int t t ;",
+        "long long int inverse ( long long int N ) ;",
+        "return -= power ( N , MOD - 2 ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        40,
+        19
+      ],
+      "mod_code": [
+        "int fastMax ( int x , int y ) ;",
+        "long long int t t ;",
+        "return -= power ( N , MOD - 2 ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        18
+      ],
+      "mod_code": [
+        "int fastMax ( int x , int y ) ;",
+        "long long int inverse ( long long int N ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        18,
+        19
+      ],
+      "mod_code": [
+        "int fastMax ( int x , int y ) ;",
+        "long long int inverse ( long long int N ) ;",
+        "return -= power ( N , MOD - 2 ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        0,
+        19
+      ],
+      "mod_code": [
+        "int fastMax ( int x , int y ) ;",
+        "return -= power ( N , MOD - 2 ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        30,
+        31
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= k ; i ++ ) cout << C [ i ] ;",
+        "long long int prev_sum [ 1 ] ;"
+      ],
+      "err_line": 34,
+      "err_msg": "invalid conversion from ‘long long int*’ to ‘long long int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        30,
+        31,
+        40
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= k ; i ++ ) cout << C [ i ] ;",
+        "long long int prev_sum [ 1 ] ;",
+        "long long int t t ;"
+      ],
+      "err_line": 34,
+      "err_msg": "invalid conversion from ‘long long int*’ to ‘long long int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        30,
+        31,
+        40,
+        18
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= k ; i ++ ) cout << C [ i ] ;",
+        "long long int prev_sum [ 1 ] ;",
+        "long long int t t ;",
+        "long long int inverse ( long long int N ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        30,
+        31,
+        40,
+        19
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= k ; i ++ ) cout << C [ i ] ;",
+        "long long int prev_sum [ 1 ] ;",
+        "long long int t t ;",
+        "return -= power ( N , MOD - 2 ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "expected primary-expression before ‘-=’ token"
+    },
+    {
+      "mod_line": [
+        30,
+        31,
+        18
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= k ; i ++ ) cout << C [ i ] ;",
+        "long long int prev_sum [ 1 ] ;",
+        "long long int inverse ( long long int N ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        30,
+        31,
+        18,
+        19
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= k ; i ++ ) cout << C [ i ] ;",
+        "long long int prev_sum [ 1 ] ;",
+        "long long int inverse ( long long int N ) ;",
+        "return -= power ( N , MOD - 2 ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        30,
+        31,
+        19
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= k ; i ++ ) cout << C [ i ] ;",
+        "long long int prev_sum [ 1 ] ;",
+        "return -= power ( N , MOD - 2 ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "expected primary-expression before ‘-=’ token"
+    },
+    {
+      "mod_line": [
+        30,
+        40
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= k ; i ++ ) cout << C [ i ] ;",
+        "long long int t t ;"
+      ],
+      "err_line": 40,
+      "err_msg": "expected initializer before ‘t’"
+    },
+    {
+      "mod_line": [
+        30,
+        40,
+        18
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= k ; i ++ ) cout << C [ i ] ;",
+        "long long int t t ;",
+        "long long int inverse ( long long int N ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        30,
+        40,
+        18,
+        19
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= k ; i ++ ) cout << C [ i ] ;",
+        "long long int t t ;",
+        "long long int inverse ( long long int N ) ;",
+        "return -= power ( N , MOD - 2 ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        30,
+        40,
+        19
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= k ; i ++ ) cout << C [ i ] ;",
+        "long long int t t ;",
+        "return -= power ( N , MOD - 2 ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "expected primary-expression before ‘-=’ token"
+    },
+    {
+      "mod_line": [
+        30,
+        18
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= k ; i ++ ) cout << C [ i ] ;",
+        "long long int inverse ( long long int N ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        30,
+        18,
+        19
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= k ; i ++ ) cout << C [ i ] ;",
+        "long long int inverse ( long long int N ) ;",
+        "return -= power ( N , MOD - 2 ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        30,
+        19
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= k ; i ++ ) cout << C [ i ] ;",
+        "return -= power ( N , MOD - 2 ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "expected primary-expression before ‘-=’ token"
+    },
+    {
+      "mod_line": [
+        31,
+        40
+      ],
+      "mod_code": [
+        "long long int prev_sum [ 1 ] ;",
+        "long long int t t ;"
+      ],
+      "err_line": 34,
+      "err_msg": "invalid conversion from ‘long long int*’ to ‘long long int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        31,
+        40,
+        18
+      ],
+      "mod_code": [
+        "long long int prev_sum [ 1 ] ;",
+        "long long int t t ;",
+        "long long int inverse ( long long int N ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        31,
+        40,
+        18,
+        19
+      ],
+      "mod_code": [
+        "long long int prev_sum [ 1 ] ;",
+        "long long int t t ;",
+        "long long int inverse ( long long int N ) ;",
+        "return -= power ( N , MOD - 2 ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        31,
+        40,
+        19
+      ],
+      "mod_code": [
+        "long long int prev_sum [ 1 ] ;",
+        "long long int t t ;",
+        "return -= power ( N , MOD - 2 ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "expected primary-expression before ‘-=’ token"
+    },
+    {
+      "mod_line": [
+        31,
+        18
+      ],
+      "mod_code": [
+        "long long int prev_sum [ 1 ] ;",
+        "long long int inverse ( long long int N ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        31,
+        18,
+        19
+      ],
+      "mod_code": [
+        "long long int prev_sum [ 1 ] ;",
+        "long long int inverse ( long long int N ) ;",
+        "return -= power ( N , MOD - 2 ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        31,
+        19
+      ],
+      "mod_code": [
+        "long long int prev_sum [ 1 ] ;",
+        "return -= power ( N , MOD - 2 ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "expected primary-expression before ‘-=’ token"
+    },
+    {
+      "mod_line": [
+        40,
+        18
+      ],
+      "mod_code": [
+        "long long int t t ;",
+        "long long int inverse ( long long int N ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        40,
+        18,
+        19
+      ],
+      "mod_code": [
+        "long long int t t ;",
+        "long long int inverse ( long long int N ) ;",
+        "return -= power ( N , MOD - 2 ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        40,
+        19
+      ],
+      "mod_code": [
+        "long long int t t ;",
+        "return -= power ( N , MOD - 2 ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "expected primary-expression before ‘-=’ token"
+    },
+    {
+      "mod_line": [
+        18,
+        19
+      ],
+      "mod_code": [
+        "long long int inverse ( long long int N ) ;",
+        "return -= power ( N , MOD - 2 ) ;"
+      ],
+      "err_line": 19,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    }
+  ]
+}

@@ -1,0 +1,1029 @@
+{
+  "meta": {
+    "index": 1679,
+    "hitid": "3J5XXLQDHM5HLYZRDOLKEJBZH9AV3F",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "17A",
+    "subid": "49021604"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare power with long long integers x , n , m as arguments , returning long long integer",
+      "code": "long long int power ( long long int x , long long int n , long long int m )",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "if n is 0 , return 1 from function",
+      "code": "if ( n == 0 ) return 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "if n is 1 return x from function",
+      "code": "if ( n == 1 ) return x ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "set x to x % m",
+      "code": "x %= m ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "if n % 2 is true , return ( x * ( power ( ( x * x ) % m , n / 2 , m ) % m ) ) % m",
+      "code": "if ( n % 2 ) return ( x * ( power ( ( x * x ) % m , n / 2 , m ) % m ) ) % m ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "return power ( ( x * x ) % m , n / 2 , m ) % m from function",
+      "code": "return power ( ( x * x ) % m , n / 2 , m ) % m ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 7,
+      "text": "create integer vector prime",
+      "code": "vector < int > prime ;",
+      "indent": 0
+    },
+    {
+      "line": 8,
+      "text": "declare Seive with integer as argument",
+      "code": "void Seive ( int n )",
+      "indent": 0
+    },
+    {
+      "line": 9,
+      "text": "create boolean vector is_prime initialized with n + 1 , true",
+      "code": "vector < bool > is_prime ( n + 1 , true ) ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "set is_prime [ 0 ] to is_prime [ 1 ] to false",
+      "code": "is_prime [ 0 ] = is_prime [ 1 ] = false ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "for i = 2 to i * i is less than or equal to n , incrementing i",
+      "code": "for ( int i = 2 ; i * i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "if is_prime [ i ] is true",
+      "code": "if ( is_prime [ i ] )",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "for j = i * i , to n inclusive , incrementing j by i , set is_prime [ j ] to false",
+      "code": "for ( int j = i * i ; j <= n ; j += i ) is_prime [ j ] = false ;",
+      "indent": 3
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "for i = 2 to n inclusive",
+      "code": "for ( int i = 2 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "if is_prime [ i ] is true , add element i to end of prime",
+      "code": "if ( is_prime [ i ] ) prime . push_back ( i ) ;",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 20,
+      "text": "create integers n , k , c with c = 0",
+      "code": "int n , k , c = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "read n read k",
+      "code": "cin >> n >> k ;",
+      "indent": 1
+    },
+    {
+      "line": 22,
+      "text": "run Seive with n as argument",
+      "code": "Seive ( n ) ;",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "for i = 0 to size of prime exclusive",
+      "code": "for ( long long int i = 0 ; i < prime . size ( ) ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "for j = 0 to i - 1 exclusive",
+      "code": "for ( long long int j = 0 ; j < i - 1 ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 25,
+      "text": "if prime [ j ] + prime [ j + 1 ] + 1 is prime [ i ]",
+      "code": "if ( prime [ j ] + prime [ j + 1 ] + 1 == prime [ i ] )",
+      "indent": 3
+    },
+    {
+      "line": 26,
+      "text": "increment c",
+      "code": "c ++ ;",
+      "indent": 4
+    },
+    {
+      "line": 27,
+      "text": "break loop",
+      "code": "break ;",
+      "indent": 4
+    },
+    {
+      "line": 28,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 29,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 30,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 31,
+      "text": "if c is greater than or equal to k",
+      "code": "if ( c >= k )",
+      "indent": 1
+    },
+    {
+      "line": 32,
+      "text": "print \" YES \\ n \"",
+      "code": "cout << \" YES\\n \" ;",
+      "indent": 2
+    },
+    {
+      "line": 33,
+      "text": "else",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 34,
+      "text": "print \" NO \\ n \"",
+      "code": "cout << \" NO\\n \" ;",
+      "indent": 2
+    },
+    {
+      "line": 35,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "if ( n % 2 ) return ( x * ( ( x * x ) % m , n / 2 , m ) % m ) ) % m ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "int Seive ( int x )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "long long int power ( long long int x , long long int m , long long int m )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int m’"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "int Seive ( int s )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "bool is_prime ( n + 1 , true ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expression list treated as compound expression in initializer [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i * i <= n ; i ++ )"
+      ],
+      "err_line": 11,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 16,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        23
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < prime . size ( ) ; i ++ )"
+      ],
+      "err_line": 23,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        24
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j < i - 1 ; j ++ )"
+      ],
+      "err_line": 24,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27
+      ],
+      "mod_code": [
+        "break break ;"
+      ],
+      "err_line": 27,
+      "err_msg": "expected ‘;’ before ‘break’"
+    },
+    {
+      "mod_line": [
+        4,
+        8
+      ],
+      "mod_code": [
+        "if ( n % 2 ) return ( x * ( ( x * x ) % m , n / 2 , m ) % m ) ) % m ;",
+        "int Seive ( int x )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        8,
+        9
+      ],
+      "mod_code": [
+        "if ( n % 2 ) return ( x * ( ( x * x ) % m , n / 2 , m ) % m ) ) % m ;",
+        "int Seive ( int x )",
+        "vector < bool > is_prime ( n + 1 ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        8,
+        9,
+        0
+      ],
+      "mod_code": [
+        "if ( n % 2 ) return ( x * ( ( x * x ) % m , n / 2 , m ) % m ) ) % m ;",
+        "int Seive ( int x )",
+        "vector < bool > is_prime ( n + 1 ) ;",
+        "long long int power ( long long int x , long long int m , long long int m )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int m’"
+    },
+    {
+      "mod_line": [
+        4,
+        8,
+        9,
+        16
+      ],
+      "mod_code": [
+        "if ( n % 2 ) return ( x * ( ( x * x ) % m , n / 2 , m ) % m ) ) % m ;",
+        "int Seive ( int x )",
+        "vector < bool > is_prime ( n + 1 ) ;",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        8,
+        9,
+        24
+      ],
+      "mod_code": [
+        "if ( n % 2 ) return ( x * ( ( x * x ) % m , n / 2 , m ) % m ) ) % m ;",
+        "int Seive ( int x )",
+        "vector < bool > is_prime ( n + 1 ) ;",
+        "for ( j = 0 ; j < i - 1 ; j ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        8,
+        0
+      ],
+      "mod_code": [
+        "if ( n % 2 ) return ( x * ( ( x * x ) % m , n / 2 , m ) % m ) ) % m ;",
+        "int Seive ( int x )",
+        "long long int power ( long long int x , long long int m , long long int m )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int m’"
+    },
+    {
+      "mod_line": [
+        4,
+        8,
+        0,
+        16
+      ],
+      "mod_code": [
+        "if ( n % 2 ) return ( x * ( ( x * x ) % m , n / 2 , m ) % m ) ) % m ;",
+        "int Seive ( int x )",
+        "long long int power ( long long int x , long long int m , long long int m )",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int m’"
+    },
+    {
+      "mod_line": [
+        4,
+        8,
+        0,
+        24
+      ],
+      "mod_code": [
+        "if ( n % 2 ) return ( x * ( ( x * x ) % m , n / 2 , m ) % m ) ) % m ;",
+        "int Seive ( int x )",
+        "long long int power ( long long int x , long long int m , long long int m )",
+        "for ( j = 0 ; j < i - 1 ; j ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int m’"
+    },
+    {
+      "mod_line": [
+        4,
+        8,
+        16
+      ],
+      "mod_code": [
+        "if ( n % 2 ) return ( x * ( ( x * x ) % m , n / 2 , m ) % m ) ) % m ;",
+        "int Seive ( int x )",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        8,
+        16,
+        24
+      ],
+      "mod_code": [
+        "if ( n % 2 ) return ( x * ( ( x * x ) % m , n / 2 , m ) % m ) ) % m ;",
+        "int Seive ( int x )",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "for ( j = 0 ; j < i - 1 ; j ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        8,
+        24
+      ],
+      "mod_code": [
+        "if ( n % 2 ) return ( x * ( ( x * x ) % m , n / 2 , m ) % m ) ) % m ;",
+        "int Seive ( int x )",
+        "for ( j = 0 ; j < i - 1 ; j ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        9
+      ],
+      "mod_code": [
+        "if ( n % 2 ) return ( x * ( ( x * x ) % m , n / 2 , m ) % m ) ) % m ;",
+        "vector < bool > is_prime ( n + 1 ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        9,
+        0
+      ],
+      "mod_code": [
+        "if ( n % 2 ) return ( x * ( ( x * x ) % m , n / 2 , m ) % m ) ) % m ;",
+        "vector < bool > is_prime ( n + 1 ) ;",
+        "long long int power ( long long int x , long long int m , long long int m )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int m’"
+    },
+    {
+      "mod_line": [
+        4,
+        9,
+        0,
+        16
+      ],
+      "mod_code": [
+        "if ( n % 2 ) return ( x * ( ( x * x ) % m , n / 2 , m ) % m ) ) % m ;",
+        "vector < bool > is_prime ( n + 1 ) ;",
+        "long long int power ( long long int x , long long int m , long long int m )",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int m’"
+    },
+    {
+      "mod_line": [
+        4,
+        9,
+        0,
+        24
+      ],
+      "mod_code": [
+        "if ( n % 2 ) return ( x * ( ( x * x ) % m , n / 2 , m ) % m ) ) % m ;",
+        "vector < bool > is_prime ( n + 1 ) ;",
+        "long long int power ( long long int x , long long int m , long long int m )",
+        "for ( j = 0 ; j < i - 1 ; j ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int m’"
+    },
+    {
+      "mod_line": [
+        4,
+        9,
+        16
+      ],
+      "mod_code": [
+        "if ( n % 2 ) return ( x * ( ( x * x ) % m , n / 2 , m ) % m ) ) % m ;",
+        "vector < bool > is_prime ( n + 1 ) ;",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        9,
+        16,
+        24
+      ],
+      "mod_code": [
+        "if ( n % 2 ) return ( x * ( ( x * x ) % m , n / 2 , m ) % m ) ) % m ;",
+        "vector < bool > is_prime ( n + 1 ) ;",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "for ( j = 0 ; j < i - 1 ; j ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        9,
+        24
+      ],
+      "mod_code": [
+        "if ( n % 2 ) return ( x * ( ( x * x ) % m , n / 2 , m ) % m ) ) % m ;",
+        "vector < bool > is_prime ( n + 1 ) ;",
+        "for ( j = 0 ; j < i - 1 ; j ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        0
+      ],
+      "mod_code": [
+        "if ( n % 2 ) return ( x * ( ( x * x ) % m , n / 2 , m ) % m ) ) % m ;",
+        "long long int power ( long long int x , long long int m , long long int m )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int m’"
+    },
+    {
+      "mod_line": [
+        4,
+        0,
+        16
+      ],
+      "mod_code": [
+        "if ( n % 2 ) return ( x * ( ( x * x ) % m , n / 2 , m ) % m ) ) % m ;",
+        "long long int power ( long long int x , long long int m , long long int m )",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int m’"
+    },
+    {
+      "mod_line": [
+        4,
+        0,
+        16,
+        24
+      ],
+      "mod_code": [
+        "if ( n % 2 ) return ( x * ( ( x * x ) % m , n / 2 , m ) % m ) ) % m ;",
+        "long long int power ( long long int x , long long int m , long long int m )",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "for ( j = 0 ; j < i - 1 ; j ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int m’"
+    },
+    {
+      "mod_line": [
+        4,
+        0,
+        24
+      ],
+      "mod_code": [
+        "if ( n % 2 ) return ( x * ( ( x * x ) % m , n / 2 , m ) % m ) ) % m ;",
+        "long long int power ( long long int x , long long int m , long long int m )",
+        "for ( j = 0 ; j < i - 1 ; j ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int m’"
+    },
+    {
+      "mod_line": [
+        4,
+        16
+      ],
+      "mod_code": [
+        "if ( n % 2 ) return ( x * ( ( x * x ) % m , n / 2 , m ) % m ) ) % m ;",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        16,
+        24
+      ],
+      "mod_code": [
+        "if ( n % 2 ) return ( x * ( ( x * x ) % m , n / 2 , m ) % m ) ) % m ;",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "for ( j = 0 ; j < i - 1 ; j ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        24
+      ],
+      "mod_code": [
+        "if ( n % 2 ) return ( x * ( ( x * x ) % m , n / 2 , m ) % m ) ) % m ;",
+        "for ( j = 0 ; j < i - 1 ; j ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        9
+      ],
+      "mod_code": [
+        "int Seive ( int x )",
+        "vector < bool > is_prime ( n + 1 ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        9,
+        0
+      ],
+      "mod_code": [
+        "int Seive ( int x )",
+        "vector < bool > is_prime ( n + 1 ) ;",
+        "long long int power ( long long int x , long long int m , long long int m )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int m’"
+    },
+    {
+      "mod_line": [
+        8,
+        9,
+        0,
+        16
+      ],
+      "mod_code": [
+        "int Seive ( int x )",
+        "vector < bool > is_prime ( n + 1 ) ;",
+        "long long int power ( long long int x , long long int m , long long int m )",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int m’"
+    },
+    {
+      "mod_line": [
+        8,
+        9,
+        0,
+        24
+      ],
+      "mod_code": [
+        "int Seive ( int x )",
+        "vector < bool > is_prime ( n + 1 ) ;",
+        "long long int power ( long long int x , long long int m , long long int m )",
+        "for ( j = 0 ; j < i - 1 ; j ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int m’"
+    },
+    {
+      "mod_line": [
+        8,
+        9,
+        16
+      ],
+      "mod_code": [
+        "int Seive ( int x )",
+        "vector < bool > is_prime ( n + 1 ) ;",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        9,
+        16,
+        24
+      ],
+      "mod_code": [
+        "int Seive ( int x )",
+        "vector < bool > is_prime ( n + 1 ) ;",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "for ( j = 0 ; j < i - 1 ; j ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        9,
+        24
+      ],
+      "mod_code": [
+        "int Seive ( int x )",
+        "vector < bool > is_prime ( n + 1 ) ;",
+        "for ( j = 0 ; j < i - 1 ; j ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        0
+      ],
+      "mod_code": [
+        "int Seive ( int x )",
+        "long long int power ( long long int x , long long int m , long long int m )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int m’"
+    },
+    {
+      "mod_line": [
+        8,
+        0,
+        16
+      ],
+      "mod_code": [
+        "int Seive ( int x )",
+        "long long int power ( long long int x , long long int m , long long int m )",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int m’"
+    },
+    {
+      "mod_line": [
+        8,
+        0,
+        16,
+        24
+      ],
+      "mod_code": [
+        "int Seive ( int x )",
+        "long long int power ( long long int x , long long int m , long long int m )",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "for ( j = 0 ; j < i - 1 ; j ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int m’"
+    },
+    {
+      "mod_line": [
+        8,
+        0,
+        24
+      ],
+      "mod_code": [
+        "int Seive ( int x )",
+        "long long int power ( long long int x , long long int m , long long int m )",
+        "for ( j = 0 ; j < i - 1 ; j ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int m’"
+    },
+    {
+      "mod_line": [
+        8,
+        16
+      ],
+      "mod_code": [
+        "int Seive ( int x )",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        16,
+        24
+      ],
+      "mod_code": [
+        "int Seive ( int x )",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "for ( j = 0 ; j < i - 1 ; j ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        24
+      ],
+      "mod_code": [
+        "int Seive ( int x )",
+        "for ( j = 0 ; j < i - 1 ; j ++ )"
+      ],
+      "err_line": 9,
+      "err_msg": "‘n’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9,
+        0
+      ],
+      "mod_code": [
+        "vector < bool > is_prime ( n + 1 ) ;",
+        "long long int power ( long long int x , long long int m , long long int m )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int m’"
+    },
+    {
+      "mod_line": [
+        9,
+        0,
+        16
+      ],
+      "mod_code": [
+        "vector < bool > is_prime ( n + 1 ) ;",
+        "long long int power ( long long int x , long long int m , long long int m )",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int m’"
+    },
+    {
+      "mod_line": [
+        9,
+        0,
+        16,
+        24
+      ],
+      "mod_code": [
+        "vector < bool > is_prime ( n + 1 ) ;",
+        "long long int power ( long long int x , long long int m , long long int m )",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "for ( j = 0 ; j < i - 1 ; j ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int m’"
+    },
+    {
+      "mod_line": [
+        9,
+        0,
+        24
+      ],
+      "mod_code": [
+        "vector < bool > is_prime ( n + 1 ) ;",
+        "long long int power ( long long int x , long long int m , long long int m )",
+        "for ( j = 0 ; j < i - 1 ; j ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int m’"
+    },
+    {
+      "mod_line": [
+        9,
+        16
+      ],
+      "mod_code": [
+        "vector < bool > is_prime ( n + 1 ) ;",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 16,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        16,
+        24
+      ],
+      "mod_code": [
+        "vector < bool > is_prime ( n + 1 ) ;",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "for ( j = 0 ; j < i - 1 ; j ++ )"
+      ],
+      "err_line": 16,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9,
+        24
+      ],
+      "mod_code": [
+        "vector < bool > is_prime ( n + 1 ) ;",
+        "for ( j = 0 ; j < i - 1 ; j ++ )"
+      ],
+      "err_line": 24,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        16
+      ],
+      "mod_code": [
+        "long long int power ( long long int x , long long int m , long long int m )",
+        "for ( i = 2 ; i <= n ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int m’"
+    },
+    {
+      "mod_line": [
+        0,
+        16,
+        24
+      ],
+      "mod_code": [
+        "long long int power ( long long int x , long long int m , long long int m )",
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "for ( j = 0 ; j < i - 1 ; j ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int m’"
+    },
+    {
+      "mod_line": [
+        0,
+        24
+      ],
+      "mod_code": [
+        "long long int power ( long long int x , long long int m , long long int m )",
+        "for ( j = 0 ; j < i - 1 ; j ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "redefinition of ‘long long int m’"
+    },
+    {
+      "mod_line": [
+        16,
+        24
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= n ; i ++ )",
+        "for ( j = 0 ; j < i - 1 ; j ++ )"
+      ],
+      "err_line": 16,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    }
+  ]
+}

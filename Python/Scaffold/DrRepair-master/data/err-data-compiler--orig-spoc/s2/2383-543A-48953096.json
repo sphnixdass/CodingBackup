@@ -1,0 +1,687 @@
+{
+  "meta": {
+    "index": 2383,
+    "hitid": "36D1BWBEHNV9AT9ZVW6O8DNUKHEM2O",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "543A",
+    "subid": "48953096"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create integers n , m , b , mod , create integer array a of size 501 , create 2d integer array d with size 501 by 501",
+      "code": "int n , m , b , mod , a [ 501 ] , d [ 501 ] [ 501 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "read n read m read b read mod",
+      "code": "cin >> n >> m >> b >> mod ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "for i = 1 to n inclusive , read a [ i ]",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) cin >> a [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "set d [ 0 ] [ 0 ] to 1",
+      "code": "d [ 0 ] [ 0 ] = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i = 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for j = 1 to m inclusive",
+      "code": "for ( int j = 1 ; j <= m ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "for k = a [ i ] to b inclusive , set d [ j ] [ k ] to ( d [ j ] [ k ] + d [ j - 1 ] [ k - a [ i ] ] ) % mod",
+      "code": "for ( int k = a [ i ] ; k <= b ; k ++ ) d [ j ] [ k ] = ( d [ j ] [ k ] + d [ j - 1 ] [ k - a [ i ] ] ) % mod ;",
+      "indent": 3
+    },
+    {
+      "line": 8,
+      "text": "create integer ans with ans = 0",
+      "code": "int ans = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "for i = 0 to b inclusive , set ans to ( ans + d [ m ] [ i ] ) % mod",
+      "code": "for ( int i = 0 ; i <= b ; i ++ ) ans = ( ans + d [ m ] [ i ] ) % mod ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "print ans print newline",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int n , m , a , a [ 501 ] [ 501 ] , d , mod ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int a [501][501]’"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int n , m , a [ 501 ] , d [ 501 ] , d , mod ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int d’"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "int d [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "ans = 0 ;"
+      ],
+      "err_line": 8,
+      "err_msg": "‘ans’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        0,
+        4
+      ],
+      "mod_code": [
+        "int n , m , a , a [ 501 ] [ 501 ] , d , mod ;",
+        "int d [ 0 ] [ 0 ] = 1 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int a [501][501]’"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        8
+      ],
+      "mod_code": [
+        "int n , m , a , a [ 501 ] [ 501 ] , d , mod ;",
+        "int d [ 0 ] [ 0 ] = 1 ;",
+        "ans = 0 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int a [501][501]’"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        8,
+        6
+      ],
+      "mod_code": [
+        "int n , m , a , a [ 501 ] [ 501 ] , d , mod ;",
+        "int d [ 0 ] [ 0 ] = 1 ;",
+        "ans = 0 ;",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int a [501][501]’"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        8,
+        5
+      ],
+      "mod_code": [
+        "int n , m , a , a [ 501 ] [ 501 ] , d , mod ;",
+        "int d [ 0 ] [ 0 ] = 1 ;",
+        "ans = 0 ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int a [501][501]’"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        6
+      ],
+      "mod_code": [
+        "int n , m , a , a [ 501 ] [ 501 ] , d , mod ;",
+        "int d [ 0 ] [ 0 ] = 1 ;",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int a [501][501]’"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        6,
+        5
+      ],
+      "mod_code": [
+        "int n , m , a , a [ 501 ] [ 501 ] , d , mod ;",
+        "int d [ 0 ] [ 0 ] = 1 ;",
+        "for ( j = 1 ; j <= m ; j ++ )",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int a [501][501]’"
+    },
+    {
+      "mod_line": [
+        0,
+        4,
+        5
+      ],
+      "mod_code": [
+        "int n , m , a , a [ 501 ] [ 501 ] , d , mod ;",
+        "int d [ 0 ] [ 0 ] = 1 ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int a [501][501]’"
+    },
+    {
+      "mod_line": [
+        0,
+        8
+      ],
+      "mod_code": [
+        "int n , m , a , a [ 501 ] [ 501 ] , d , mod ;",
+        "ans = 0 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int a [501][501]’"
+    },
+    {
+      "mod_line": [
+        0,
+        8,
+        6
+      ],
+      "mod_code": [
+        "int n , m , a , a [ 501 ] [ 501 ] , d , mod ;",
+        "ans = 0 ;",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int a [501][501]’"
+    },
+    {
+      "mod_line": [
+        0,
+        8,
+        6,
+        5
+      ],
+      "mod_code": [
+        "int n , m , a , a [ 501 ] [ 501 ] , d , mod ;",
+        "ans = 0 ;",
+        "for ( j = 1 ; j <= m ; j ++ )",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int a [501][501]’"
+    },
+    {
+      "mod_line": [
+        0,
+        8,
+        5
+      ],
+      "mod_code": [
+        "int n , m , a , a [ 501 ] [ 501 ] , d , mod ;",
+        "ans = 0 ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int a [501][501]’"
+    },
+    {
+      "mod_line": [
+        0,
+        6
+      ],
+      "mod_code": [
+        "int n , m , a , a [ 501 ] [ 501 ] , d , mod ;",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int a [501][501]’"
+    },
+    {
+      "mod_line": [
+        0,
+        6,
+        5
+      ],
+      "mod_code": [
+        "int n , m , a , a [ 501 ] [ 501 ] , d , mod ;",
+        "for ( j = 1 ; j <= m ; j ++ )",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int a [501][501]’"
+    },
+    {
+      "mod_line": [
+        0,
+        5
+      ],
+      "mod_code": [
+        "int n , m , a , a [ 501 ] [ 501 ] , d , mod ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int a [501][501]’"
+    },
+    {
+      "mod_line": [
+        4,
+        0
+      ],
+      "mod_code": [
+        "int d [ 0 ] [ 0 ] = 1 ;",
+        "int n , m , a [ 501 ] , d [ 501 ] , d , mod ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int d’"
+    },
+    {
+      "mod_line": [
+        4,
+        0,
+        8
+      ],
+      "mod_code": [
+        "int d [ 0 ] [ 0 ] = 1 ;",
+        "int n , m , a [ 501 ] , d [ 501 ] , d , mod ;",
+        "ans = 0 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int d’"
+    },
+    {
+      "mod_line": [
+        4,
+        0,
+        8,
+        6
+      ],
+      "mod_code": [
+        "int d [ 0 ] [ 0 ] = 1 ;",
+        "int n , m , a [ 501 ] , d [ 501 ] , d , mod ;",
+        "ans = 0 ;",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int d’"
+    },
+    {
+      "mod_line": [
+        4,
+        0,
+        8,
+        5
+      ],
+      "mod_code": [
+        "int d [ 0 ] [ 0 ] = 1 ;",
+        "int n , m , a [ 501 ] , d [ 501 ] , d , mod ;",
+        "ans = 0 ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int d’"
+    },
+    {
+      "mod_line": [
+        4,
+        0,
+        6
+      ],
+      "mod_code": [
+        "int d [ 0 ] [ 0 ] = 1 ;",
+        "int n , m , a [ 501 ] , d [ 501 ] , d , mod ;",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int d’"
+    },
+    {
+      "mod_line": [
+        4,
+        0,
+        6,
+        5
+      ],
+      "mod_code": [
+        "int d [ 0 ] [ 0 ] = 1 ;",
+        "int n , m , a [ 501 ] , d [ 501 ] , d , mod ;",
+        "for ( j = 1 ; j <= m ; j ++ )",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int d’"
+    },
+    {
+      "mod_line": [
+        4,
+        0,
+        5
+      ],
+      "mod_code": [
+        "int d [ 0 ] [ 0 ] = 1 ;",
+        "int n , m , a [ 501 ] , d [ 501 ] , d , mod ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int d’"
+    },
+    {
+      "mod_line": [
+        4,
+        8
+      ],
+      "mod_code": [
+        "int d [ 0 ] [ 0 ] = 1 ;",
+        "ans = 0 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        4,
+        8,
+        6
+      ],
+      "mod_code": [
+        "int d [ 0 ] [ 0 ] = 1 ;",
+        "ans = 0 ;",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        4,
+        8,
+        6,
+        5
+      ],
+      "mod_code": [
+        "int d [ 0 ] [ 0 ] = 1 ;",
+        "ans = 0 ;",
+        "for ( j = 1 ; j <= m ; j ++ )",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        4,
+        8,
+        5
+      ],
+      "mod_code": [
+        "int d [ 0 ] [ 0 ] = 1 ;",
+        "ans = 0 ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        4,
+        6
+      ],
+      "mod_code": [
+        "int d [ 0 ] [ 0 ] = 1 ;",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        4,
+        6,
+        5
+      ],
+      "mod_code": [
+        "int d [ 0 ] [ 0 ] = 1 ;",
+        "for ( j = 1 ; j <= m ; j ++ )",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        4,
+        5
+      ],
+      "mod_code": [
+        "int d [ 0 ] [ 0 ] = 1 ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        0,
+        8
+      ],
+      "mod_code": [
+        "int n , m , a [ 501 ] , d [ 501 ] , d , mod ;",
+        "ans = 0 ;"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int d’"
+    },
+    {
+      "mod_line": [
+        0,
+        8,
+        6
+      ],
+      "mod_code": [
+        "int n , m , a [ 501 ] , d [ 501 ] , d , mod ;",
+        "ans = 0 ;",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int d’"
+    },
+    {
+      "mod_line": [
+        0,
+        8,
+        6,
+        5
+      ],
+      "mod_code": [
+        "int n , m , a [ 501 ] , d [ 501 ] , d , mod ;",
+        "ans = 0 ;",
+        "for ( j = 1 ; j <= m ; j ++ )",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int d’"
+    },
+    {
+      "mod_line": [
+        0,
+        8,
+        5
+      ],
+      "mod_code": [
+        "int n , m , a [ 501 ] , d [ 501 ] , d , mod ;",
+        "ans = 0 ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int d’"
+    },
+    {
+      "mod_line": [
+        0,
+        6
+      ],
+      "mod_code": [
+        "int n , m , a [ 501 ] , d [ 501 ] , d , mod ;",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int d’"
+    },
+    {
+      "mod_line": [
+        0,
+        6,
+        5
+      ],
+      "mod_code": [
+        "int n , m , a [ 501 ] , d [ 501 ] , d , mod ;",
+        "for ( j = 1 ; j <= m ; j ++ )",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int d’"
+    },
+    {
+      "mod_line": [
+        0,
+        5
+      ],
+      "mod_code": [
+        "int n , m , a [ 501 ] , d [ 501 ] , d , mod ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 0,
+      "err_msg": "conflicting declaration ‘int d’"
+    },
+    {
+      "mod_line": [
+        8,
+        6
+      ],
+      "mod_code": [
+        "ans = 0 ;",
+        "for ( j = 1 ; j <= m ; j ++ )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        6,
+        5
+      ],
+      "mod_code": [
+        "ans = 0 ;",
+        "for ( j = 1 ; j <= m ; j ++ )",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        8,
+        5
+      ],
+      "mod_code": [
+        "ans = 0 ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        5
+      ],
+      "mod_code": [
+        "for ( j = 1 ; j <= m ; j ++ )",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    }
+  ]
+}

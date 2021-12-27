@@ -1,0 +1,805 @@
+{
+  "meta": {
+    "index": 2193,
+    "hitid": "3SNR5F7R92NF9QVO313XILP21YMEIF",
+    "workerid": "A1NBHCFZKJGHKW",
+    "probid": "102A",
+    "subid": "42222069"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "match = two dimensional bool array of sizes 105 and 105",
+      "code": "bool match [ 105 ] [ 105 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "n , m = int and c = int array of size 105",
+      "code": "int n , m , c [ 105 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "read n then m",
+      "code": "cin >> n >> m ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for i = 1 to n inclusive read c [ i ]",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) cin >> c [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i = 0 to m",
+      "code": "for ( int i = 0 ; i < m ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "f , t = int",
+      "code": "int f , t ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "read f then t",
+      "code": "cin >> f >> t ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "set match [ f ] [ t ] and match [ t ] [ f ] to 1",
+      "code": "match [ f ] [ t ] = match [ t ] [ f ] = 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "mini = int with mini = INT_MAX",
+      "code": "int mini = INT_MAX ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "for i = 1 to n inclusive",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "for j = 1 to n inclusive",
+      "code": "for ( int j = 1 ; j <= n ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "if match [ i ] [ j ] is 0 contniue",
+      "code": "if ( match [ i ] [ j ] == 0 ) continue ;",
+      "indent": 3
+    },
+    {
+      "line": 14,
+      "text": "for q = 1 to n inclusive",
+      "code": "for ( int q = 1 ; q <= n ; q ++ )",
+      "indent": 3
+    },
+    {
+      "line": 15,
+      "text": "if q is i or match [ j ] [ q ] is 0 continue",
+      "code": "if ( q == i || match [ j ] [ q ] == 0 ) continue ;",
+      "indent": 4
+    },
+    {
+      "line": 16,
+      "text": "if match [ q ] [ i ] set mini to min of mini , c [ i ] + c [ j ] + c [ q ]",
+      "code": "if ( match [ q ] [ i ] ) mini = min ( mini , c [ i ] + c [ j ] + c [ q ] ) ;",
+      "indent": 4
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "if mini is not INT_MAX",
+      "code": "if ( mini != INT_MAX )",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "print mini",
+      "code": "cout << mini << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 22,
+      "text": "else",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "print - 1",
+      "code": "cout << - 1 << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 24,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 25,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "int n , m [ 105 ] , m ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int m’"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < m ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "bool mini = INT_MAX ;"
+      ],
+      "err_line": 16,
+      "err_msg": "no matching function for call to ‘min(bool&, int)’"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 11,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "for ( j = 1 ; j <= n ; j ++ )"
+      ],
+      "err_line": 12,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "for ( q = 1 ; q <= n ; q ++ )"
+      ],
+      "err_line": 14,
+      "err_msg": "‘q’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        21
+      ],
+      "mod_code": [
+        "puts ( mini ) ;"
+      ],
+      "err_line": 21,
+      "err_msg": "invalid conversion from ‘int’ to ‘const char*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        22
+      ],
+      "mod_code": [
+        "n"
+      ],
+      "err_line": 23,
+      "err_msg": "expected ‘;’ before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        1,
+        13
+      ],
+      "mod_code": [
+        "int n , m [ 105 ] , m ;",
+        "if ( match [ i ] [ j ] == 0 )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int m’"
+    },
+    {
+      "mod_line": [
+        1,
+        13,
+        20
+      ],
+      "mod_code": [
+        "int n , m [ 105 ] , m ;",
+        "if ( match [ i ] [ j ] == 0 )",
+        "if ( mini )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int m’"
+    },
+    {
+      "mod_line": [
+        1,
+        13,
+        20,
+        16
+      ],
+      "mod_code": [
+        "int n , m [ 105 ] , m ;",
+        "if ( match [ i ] [ j ] == 0 )",
+        "if ( mini )",
+        "if ( match [ q ] [ i ] == min ( mini , c [ i ] + c [ j ] + c [ q ] ) ) mini = min ( mini , c [ q ] + c [ q ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int m’"
+    },
+    {
+      "mod_line": [
+        1,
+        13,
+        20,
+        21
+      ],
+      "mod_code": [
+        "int n , m [ 105 ] , m ;",
+        "if ( match [ i ] [ j ] == 0 )",
+        "if ( mini )",
+        "puts ( mini ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int m’"
+    },
+    {
+      "mod_line": [
+        1,
+        13,
+        20,
+        3
+      ],
+      "mod_code": [
+        "int n , m [ 105 ] , m ;",
+        "if ( match [ i ] [ j ] == 0 )",
+        "if ( mini )",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int m’"
+    },
+    {
+      "mod_line": [
+        1,
+        13,
+        16
+      ],
+      "mod_code": [
+        "int n , m [ 105 ] , m ;",
+        "if ( match [ i ] [ j ] == 0 )",
+        "if ( match [ q ] [ i ] == min ( mini , c [ i ] + c [ j ] + c [ q ] ) ) mini = min ( mini , c [ q ] + c [ q ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int m’"
+    },
+    {
+      "mod_line": [
+        1,
+        13,
+        16,
+        21
+      ],
+      "mod_code": [
+        "int n , m [ 105 ] , m ;",
+        "if ( match [ i ] [ j ] == 0 )",
+        "if ( match [ q ] [ i ] == min ( mini , c [ i ] + c [ j ] + c [ q ] ) ) mini = min ( mini , c [ q ] + c [ q ] ) ;",
+        "puts ( mini ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int m’"
+    },
+    {
+      "mod_line": [
+        1,
+        13,
+        16,
+        3
+      ],
+      "mod_code": [
+        "int n , m [ 105 ] , m ;",
+        "if ( match [ i ] [ j ] == 0 )",
+        "if ( match [ q ] [ i ] == min ( mini , c [ i ] + c [ j ] + c [ q ] ) ) mini = min ( mini , c [ q ] + c [ q ] ) ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int m’"
+    },
+    {
+      "mod_line": [
+        1,
+        13,
+        21
+      ],
+      "mod_code": [
+        "int n , m [ 105 ] , m ;",
+        "if ( match [ i ] [ j ] == 0 )",
+        "puts ( mini ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int m’"
+    },
+    {
+      "mod_line": [
+        1,
+        13,
+        21,
+        3
+      ],
+      "mod_code": [
+        "int n , m [ 105 ] , m ;",
+        "if ( match [ i ] [ j ] == 0 )",
+        "puts ( mini ) ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int m’"
+    },
+    {
+      "mod_line": [
+        1,
+        13,
+        3
+      ],
+      "mod_code": [
+        "int n , m [ 105 ] , m ;",
+        "if ( match [ i ] [ j ] == 0 )",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int m’"
+    },
+    {
+      "mod_line": [
+        1,
+        20
+      ],
+      "mod_code": [
+        "int n , m [ 105 ] , m ;",
+        "if ( mini )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int m’"
+    },
+    {
+      "mod_line": [
+        1,
+        20,
+        16
+      ],
+      "mod_code": [
+        "int n , m [ 105 ] , m ;",
+        "if ( mini )",
+        "if ( match [ q ] [ i ] == min ( mini , c [ i ] + c [ j ] + c [ q ] ) ) mini = min ( mini , c [ q ] + c [ q ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int m’"
+    },
+    {
+      "mod_line": [
+        1,
+        20,
+        16,
+        21
+      ],
+      "mod_code": [
+        "int n , m [ 105 ] , m ;",
+        "if ( mini )",
+        "if ( match [ q ] [ i ] == min ( mini , c [ i ] + c [ j ] + c [ q ] ) ) mini = min ( mini , c [ q ] + c [ q ] ) ;",
+        "puts ( mini ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int m’"
+    },
+    {
+      "mod_line": [
+        1,
+        20,
+        16,
+        3
+      ],
+      "mod_code": [
+        "int n , m [ 105 ] , m ;",
+        "if ( mini )",
+        "if ( match [ q ] [ i ] == min ( mini , c [ i ] + c [ j ] + c [ q ] ) ) mini = min ( mini , c [ q ] + c [ q ] ) ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int m’"
+    },
+    {
+      "mod_line": [
+        1,
+        20,
+        21
+      ],
+      "mod_code": [
+        "int n , m [ 105 ] , m ;",
+        "if ( mini )",
+        "puts ( mini ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int m’"
+    },
+    {
+      "mod_line": [
+        1,
+        20,
+        21,
+        3
+      ],
+      "mod_code": [
+        "int n , m [ 105 ] , m ;",
+        "if ( mini )",
+        "puts ( mini ) ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int m’"
+    },
+    {
+      "mod_line": [
+        1,
+        20,
+        3
+      ],
+      "mod_code": [
+        "int n , m [ 105 ] , m ;",
+        "if ( mini )",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int m’"
+    },
+    {
+      "mod_line": [
+        1,
+        16
+      ],
+      "mod_code": [
+        "int n , m [ 105 ] , m ;",
+        "if ( match [ q ] [ i ] == min ( mini , c [ i ] + c [ j ] + c [ q ] ) ) mini = min ( mini , c [ q ] + c [ q ] ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int m’"
+    },
+    {
+      "mod_line": [
+        1,
+        16,
+        21
+      ],
+      "mod_code": [
+        "int n , m [ 105 ] , m ;",
+        "if ( match [ q ] [ i ] == min ( mini , c [ i ] + c [ j ] + c [ q ] ) ) mini = min ( mini , c [ q ] + c [ q ] ) ;",
+        "puts ( mini ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int m’"
+    },
+    {
+      "mod_line": [
+        1,
+        16,
+        21,
+        3
+      ],
+      "mod_code": [
+        "int n , m [ 105 ] , m ;",
+        "if ( match [ q ] [ i ] == min ( mini , c [ i ] + c [ j ] + c [ q ] ) ) mini = min ( mini , c [ q ] + c [ q ] ) ;",
+        "puts ( mini ) ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int m’"
+    },
+    {
+      "mod_line": [
+        1,
+        16,
+        3
+      ],
+      "mod_code": [
+        "int n , m [ 105 ] , m ;",
+        "if ( match [ q ] [ i ] == min ( mini , c [ i ] + c [ j ] + c [ q ] ) ) mini = min ( mini , c [ q ] + c [ q ] ) ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int m’"
+    },
+    {
+      "mod_line": [
+        1,
+        21
+      ],
+      "mod_code": [
+        "int n , m [ 105 ] , m ;",
+        "puts ( mini ) ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int m’"
+    },
+    {
+      "mod_line": [
+        1,
+        21,
+        3
+      ],
+      "mod_code": [
+        "int n , m [ 105 ] , m ;",
+        "puts ( mini ) ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int m’"
+    },
+    {
+      "mod_line": [
+        1,
+        3
+      ],
+      "mod_code": [
+        "int n , m [ 105 ] , m ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘int m’"
+    },
+    {
+      "mod_line": [
+        13,
+        20,
+        16,
+        21
+      ],
+      "mod_code": [
+        "if ( match [ i ] [ j ] == 0 )",
+        "if ( mini )",
+        "if ( match [ q ] [ i ] == min ( mini , c [ i ] + c [ j ] + c [ q ] ) ) mini = min ( mini , c [ q ] + c [ q ] ) ;",
+        "puts ( mini ) ;"
+      ],
+      "err_line": 21,
+      "err_msg": "invalid conversion from ‘int’ to ‘const char*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        20,
+        21
+      ],
+      "mod_code": [
+        "if ( match [ i ] [ j ] == 0 )",
+        "if ( mini )",
+        "puts ( mini ) ;"
+      ],
+      "err_line": 21,
+      "err_msg": "invalid conversion from ‘int’ to ‘const char*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        20,
+        21,
+        3
+      ],
+      "mod_code": [
+        "if ( match [ i ] [ j ] == 0 )",
+        "if ( mini )",
+        "puts ( mini ) ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 21,
+      "err_msg": "invalid conversion from ‘int’ to ‘const char*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        16,
+        21
+      ],
+      "mod_code": [
+        "if ( match [ i ] [ j ] == 0 )",
+        "if ( match [ q ] [ i ] == min ( mini , c [ i ] + c [ j ] + c [ q ] ) ) mini = min ( mini , c [ q ] + c [ q ] ) ;",
+        "puts ( mini ) ;"
+      ],
+      "err_line": 21,
+      "err_msg": "invalid conversion from ‘int’ to ‘const char*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        16,
+        21,
+        3
+      ],
+      "mod_code": [
+        "if ( match [ i ] [ j ] == 0 )",
+        "if ( match [ q ] [ i ] == min ( mini , c [ i ] + c [ j ] + c [ q ] ) ) mini = min ( mini , c [ q ] + c [ q ] ) ;",
+        "puts ( mini ) ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 21,
+      "err_msg": "invalid conversion from ‘int’ to ‘const char*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        21
+      ],
+      "mod_code": [
+        "if ( match [ i ] [ j ] == 0 )",
+        "puts ( mini ) ;"
+      ],
+      "err_line": 21,
+      "err_msg": "invalid conversion from ‘int’ to ‘const char*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        21,
+        3
+      ],
+      "mod_code": [
+        "if ( match [ i ] [ j ] == 0 )",
+        "puts ( mini ) ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 21,
+      "err_msg": "invalid conversion from ‘int’ to ‘const char*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        20,
+        16,
+        21
+      ],
+      "mod_code": [
+        "if ( mini )",
+        "if ( match [ q ] [ i ] == min ( mini , c [ i ] + c [ j ] + c [ q ] ) ) mini = min ( mini , c [ q ] + c [ q ] ) ;",
+        "puts ( mini ) ;"
+      ],
+      "err_line": 21,
+      "err_msg": "invalid conversion from ‘int’ to ‘const char*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        20,
+        16,
+        21,
+        3
+      ],
+      "mod_code": [
+        "if ( mini )",
+        "if ( match [ q ] [ i ] == min ( mini , c [ i ] + c [ j ] + c [ q ] ) ) mini = min ( mini , c [ q ] + c [ q ] ) ;",
+        "puts ( mini ) ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 21,
+      "err_msg": "invalid conversion from ‘int’ to ‘const char*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        20,
+        21
+      ],
+      "mod_code": [
+        "if ( mini )",
+        "puts ( mini ) ;"
+      ],
+      "err_line": 21,
+      "err_msg": "invalid conversion from ‘int’ to ‘const char*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        20,
+        21,
+        3
+      ],
+      "mod_code": [
+        "if ( mini )",
+        "puts ( mini ) ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 21,
+      "err_msg": "invalid conversion from ‘int’ to ‘const char*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        16,
+        21
+      ],
+      "mod_code": [
+        "if ( match [ q ] [ i ] == min ( mini , c [ i ] + c [ j ] + c [ q ] ) ) mini = min ( mini , c [ q ] + c [ q ] ) ;",
+        "puts ( mini ) ;"
+      ],
+      "err_line": 21,
+      "err_msg": "invalid conversion from ‘int’ to ‘const char*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        16,
+        21,
+        3
+      ],
+      "mod_code": [
+        "if ( match [ q ] [ i ] == min ( mini , c [ i ] + c [ j ] + c [ q ] ) ) mini = min ( mini , c [ q ] + c [ q ] ) ;",
+        "puts ( mini ) ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 21,
+      "err_msg": "invalid conversion from ‘int’ to ‘const char*’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        21,
+        3
+      ],
+      "mod_code": [
+        "puts ( mini ) ;",
+        "while ( cin >> n >> m )"
+      ],
+      "err_line": 21,
+      "err_msg": "invalid conversion from ‘int’ to ‘const char*’ [-fpermissive]"
+    }
+  ]
+}

@@ -1,0 +1,323 @@
+{
+  "meta": {
+    "index": 826,
+    "hitid": "3X7837UUADS7RMMFF15ZIYCPWSM6JM",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "455A",
+    "subid": "49051582"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create long longs n , mx , x with mx = 0",
+      "code": "long long n , mx = 0 , x ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "create long long vectors dp , cnt , with dp initialized with 100005 , cnt initialized with 100005",
+      "code": "vector < long long > dp ( 100005 ) , cnt ( 100005 ) ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "for i = 0 to n exclusive , read x , increment cnt [ x ] , set mx to maximum of x and mx",
+      "code": "for ( long long i = 0 ; i < n ; i ++ ) cin >> x , cnt [ x ] ++ , mx = max ( x , mx ) ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "set dp [ 0 ] to 0 , set dp [ 1 ] to cnt [ 1 ]",
+      "code": "dp [ 0 ] = 0 , dp [ 1 ] = cnt [ 1 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = 2 to 100000 inclusive , set dp [ i ] to maximum of dp [ i - 1 ] and dp [ i - 2 ] + cnt [ i ] * i",
+      "code": "for ( long long i = 2 ; i <= 100000 ; i ++ ) { dp [ i ] = max ( dp [ i - 1 ] , dp [ i - 2 ] + cnt [ i ] * i ) ; }",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "print dp [ mx ] print newline",
+      "code": "cout << dp [ mx ] << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { cin >> x , cnt = min ( x , mx ) , mx ++ ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator=’ (operand types are ‘std::vector<long long int>’ and ‘const long long int’)"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "vector < long long > dp ( 100005 , cnt ) , cnt ( 100005 ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { cin >> x , cnt = x , cnt = max ( x , mx ) ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator=’ (operand types are ‘std::vector<long long int>’ and ‘long long int’)"
+    },
+    {
+      "mod_line": [
+        4,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { cin >> x , cnt = min ( x , mx ) , mx ++ ; }",
+        "vector < long long > dp ( 100005 , cnt ) , cnt ( 100005 ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        2,
+        5
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { cin >> x , cnt = min ( x , mx ) , mx ++ ; }",
+        "vector < long long > dp ( 100005 , cnt ) , cnt ( 100005 ) ;",
+        "dp [ 0 ] = cnt [ 1 ] = cnt [ 1 ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        2,
+        5,
+        1
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { cin >> x , cnt = min ( x , mx ) , mx ++ ; }",
+        "vector < long long > dp ( 100005 , cnt ) , cnt ( 100005 ) ;",
+        "dp [ 0 ] = cnt [ 1 ] = cnt [ 1 ] ;",
+        "long long n , mx , x = 0 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        2,
+        1
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { cin >> x , cnt = min ( x , mx ) , mx ++ ; }",
+        "vector < long long > dp ( 100005 , cnt ) , cnt ( 100005 ) ;",
+        "long long n , mx , x = 0 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        5
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { cin >> x , cnt = min ( x , mx ) , mx ++ ; }",
+        "dp [ 0 ] = cnt [ 1 ] = cnt [ 1 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator=’ (operand types are ‘std::vector<long long int>’ and ‘const long long int’)"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        1
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { cin >> x , cnt = min ( x , mx ) , mx ++ ; }",
+        "dp [ 0 ] = cnt [ 1 ] = cnt [ 1 ] ;",
+        "long long n , mx , x = 0 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator=’ (operand types are ‘std::vector<long long int>’ and ‘const long long int’)"
+    },
+    {
+      "mod_line": [
+        4,
+        1
+      ],
+      "mod_code": [
+        "for ( int i = 0 ; i < n ; i ++ ) { cin >> x , cnt = min ( x , mx ) , mx ++ ; }",
+        "long long n , mx , x = 0 ;"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator=’ (operand types are ‘std::vector<long long int>’ and ‘const long long int’)"
+    },
+    {
+      "mod_line": [
+        2,
+        5
+      ],
+      "mod_code": [
+        "vector < long long > dp ( 100005 , cnt ) , cnt ( 100005 ) ;",
+        "dp [ 0 ] = cnt [ 1 ] = cnt [ 1 ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        5,
+        1
+      ],
+      "mod_code": [
+        "vector < long long > dp ( 100005 , cnt ) , cnt ( 100005 ) ;",
+        "dp [ 0 ] = cnt [ 1 ] = cnt [ 1 ] ;",
+        "long long n , mx , x = 0 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        5,
+        1,
+        4
+      ],
+      "mod_code": [
+        "vector < long long > dp ( 100005 , cnt ) , cnt ( 100005 ) ;",
+        "dp [ 0 ] = cnt [ 1 ] = cnt [ 1 ] ;",
+        "long long n , mx , x = 0 ;",
+        "for ( int i = 0 ; i < n ; i ++ ) { cin >> x , cnt = x , cnt = max ( x , mx ) ; }"
+      ],
+      "err_line": 2,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        5,
+        4
+      ],
+      "mod_code": [
+        "vector < long long > dp ( 100005 , cnt ) , cnt ( 100005 ) ;",
+        "dp [ 0 ] = cnt [ 1 ] = cnt [ 1 ] ;",
+        "for ( int i = 0 ; i < n ; i ++ ) { cin >> x , cnt = x , cnt = max ( x , mx ) ; }"
+      ],
+      "err_line": 2,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        1
+      ],
+      "mod_code": [
+        "vector < long long > dp ( 100005 , cnt ) , cnt ( 100005 ) ;",
+        "long long n , mx , x = 0 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        1,
+        4
+      ],
+      "mod_code": [
+        "vector < long long > dp ( 100005 , cnt ) , cnt ( 100005 ) ;",
+        "long long n , mx , x = 0 ;",
+        "for ( int i = 0 ; i < n ; i ++ ) { cin >> x , cnt = x , cnt = max ( x , mx ) ; }"
+      ],
+      "err_line": 2,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        4
+      ],
+      "mod_code": [
+        "vector < long long > dp ( 100005 , cnt ) , cnt ( 100005 ) ;",
+        "for ( int i = 0 ; i < n ; i ++ ) { cin >> x , cnt = x , cnt = max ( x , mx ) ; }"
+      ],
+      "err_line": 2,
+      "err_msg": "‘cnt’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        1,
+        4
+      ],
+      "mod_code": [
+        "dp [ 0 ] = cnt [ 1 ] = cnt [ 1 ] ;",
+        "long long n , mx , x = 0 ;",
+        "for ( int i = 0 ; i < n ; i ++ ) { cin >> x , cnt = x , cnt = max ( x , mx ) ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator=’ (operand types are ‘std::vector<long long int>’ and ‘long long int’)"
+    },
+    {
+      "mod_line": [
+        5,
+        4
+      ],
+      "mod_code": [
+        "dp [ 0 ] = cnt [ 1 ] = cnt [ 1 ] ;",
+        "for ( int i = 0 ; i < n ; i ++ ) { cin >> x , cnt = x , cnt = max ( x , mx ) ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator=’ (operand types are ‘std::vector<long long int>’ and ‘long long int’)"
+    },
+    {
+      "mod_line": [
+        1,
+        4
+      ],
+      "mod_code": [
+        "long long n , mx , x = 0 ;",
+        "for ( int i = 0 ; i < n ; i ++ ) { cin >> x , cnt = x , cnt = max ( x , mx ) ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "no match for ‘operator=’ (operand types are ‘std::vector<long long int>’ and ‘long long int’)"
+    }
+  ]
+}

@@ -1,0 +1,2925 @@
+{
+  "meta": {
+    "index": 2024,
+    "hitid": "3UV0D2KX1MDD7XW5DNLZ620J8H04F8",
+    "workerid": "A1AYVATMT88U1W",
+    "probid": "1027A",
+    "subid": "48503959"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "the constant long integer value of mod = 998244353",
+      "code": "const long long int mod = 998244353 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "the constant long integer value of N = 100005",
+      "code": "const long long int N = 100005 ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "the constant long integer value of MAX = 1e6 + 3",
+      "code": "const long long int MAX = 1e6 + 3 ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "let modPow be a function that accepts long long int a , long long int b and returns a long integer value",
+      "code": "long long int modPow ( long long int a , long long int b )",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "the long integer value of res = 1",
+      "code": "long long int res = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "a is equal to a modulo mod",
+      "code": "a %= mod ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for b , b > > = 1",
+      "code": "for ( ; b ; b >>= 1 )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "if b & 1 is true , res is equal to res * a modulo mod",
+      "code": "if ( b & 1 ) res = res * a % mod ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "a is equal to a * a modulo mod",
+      "code": "a = a * a % mod ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "return the value of res",
+      "code": "return res ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 12,
+      "text": "let nCr be a function that accepts long long int n , long long int k and returns a long integer value",
+      "code": "long long int nCr ( long long int n , long long int k )",
+      "indent": 0
+    },
+    {
+      "line": 13,
+      "text": "the long integer value of res = 1",
+      "code": "long long int res = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "if n is less than k , return 0",
+      "code": "if ( n < k ) return 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "if k is greater than n - k , k is equal to n - k",
+      "code": "if ( k > n - k ) k = n - k ;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "for long integer i = 0 to k exclusive",
+      "code": "for ( long long int i = 0 ; i < k ; ++ i )",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "res is equal to ( res * ( n - i ) ) modulo mod",
+      "code": "res = ( res * ( n - i ) ) % mod ;",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "res is equal to ( res * modPow ( i + 1 , mod - 2 ) ) modulo mod",
+      "code": "res = ( res * modPow ( i + 1 , mod - 2 ) ) % mod ;",
+      "indent": 2
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "return the value of res",
+      "code": "return res ;",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 22,
+      "text": "create a set of long integers by name s",
+      "code": "set < long long int > s ;",
+      "indent": 0
+    },
+    {
+      "line": 23,
+      "text": "let Sieve be a void function",
+      "code": "void Sieve ( )",
+      "indent": 0
+    },
+    {
+      "line": 24,
+      "text": "prime = array of boolean values of length 1000009",
+      "code": "bool prime [ 1000009 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 25,
+      "text": "memset of prime , true , sizeof ( prime )",
+      "code": "memset ( prime , true , sizeof ( prime ) ) ;",
+      "indent": 1
+    },
+    {
+      "line": 26,
+      "text": "for long integer p = 2 , p * p < = 1000006 , increment p by 1",
+      "code": "for ( long long int p = 2 ; p * p <= 1000006 ; p ++ )",
+      "indent": 1
+    },
+    {
+      "line": 27,
+      "text": "if prime [ i ] is equal to true",
+      "code": "if ( prime [ p ] == true )",
+      "indent": 2
+    },
+    {
+      "line": 28,
+      "text": "for long integer i = p * 2 to 1000006 inclusive , increment i by p , prime [ i ] is equal to false",
+      "code": "for ( long long int i = p * 2 ; i <= 1000006 ; i += p ) prime [ i ] = false ;",
+      "indent": 3
+    },
+    {
+      "line": 29,
+      "text": "for long integer i = 2 to 1000006 exclusive , increment i by 1",
+      "code": "for ( long long int i = 2 ; i < 1000006 ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 30,
+      "text": "if prime [ i ] equals true , insert i into s",
+      "code": "if ( prime [ i ] == true ) s . insert ( i ) ;",
+      "indent": 2
+    },
+    {
+      "line": 31,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 32,
+      "text": "let factorial be a function that accepts long long int n and returns a long integer value",
+      "code": "long long int factorial ( long long int n )",
+      "indent": 0
+    },
+    {
+      "line": 33,
+      "text": "if n equals 1 , return 1",
+      "code": "if ( n == 1 ) return 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 34,
+      "text": "return the value of ( n * factorial ( n - 1 ) ) modulo mod",
+      "code": "return ( n * factorial ( n - 1 ) ) % mod ;",
+      "indent": 1
+    },
+    {
+      "line": 35,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 36,
+      "text": "let catalan be a function that accepts long long int n and returns a long integer value",
+      "code": "long long int catalan ( long long int n )",
+      "indent": 0
+    },
+    {
+      "line": 37,
+      "text": "return the value of ( nCr ( 2 * n , n ) * modPow ( n + 1 , mod - 2 ) ) modulo mod",
+      "code": "return ( nCr ( 2 * n , n ) * modPow ( n + 1 , mod - 2 ) ) % mod ;",
+      "indent": 1
+    },
+    {
+      "line": 38,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 39,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 40,
+      "text": "let t be a long integer",
+      "code": "long long int t ;",
+      "indent": 1
+    },
+    {
+      "line": 41,
+      "text": "read t",
+      "code": "cin >> t ;",
+      "indent": 1
+    },
+    {
+      "line": 42,
+      "text": "while t is decremented by 1",
+      "code": "while ( t -- )",
+      "indent": 1
+    },
+    {
+      "line": 43,
+      "text": "let n be a integer",
+      "code": "int n ;",
+      "indent": 2
+    },
+    {
+      "line": 44,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 2
+    },
+    {
+      "line": 45,
+      "text": "let s be a string",
+      "code": "string s ;",
+      "indent": 2
+    },
+    {
+      "line": 46,
+      "text": "read s",
+      "code": "cin >> s ;",
+      "indent": 2
+    },
+    {
+      "line": 47,
+      "text": "the integer value of f = 0",
+      "code": "int f = 0 ;",
+      "indent": 2
+    },
+    {
+      "line": 48,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( int i = 0 ; i < n ; i ++ )",
+      "indent": 2
+    },
+    {
+      "line": 49,
+      "text": "if s [ i ] is not equal to s [ n - 1 - i ]",
+      "code": "if ( s [ i ] != s [ n - 1 - i ] )",
+      "indent": 3
+    },
+    {
+      "line": 50,
+      "text": "f is equal to 1",
+      "code": "f = 1 ;",
+      "indent": 4
+    },
+    {
+      "line": 51,
+      "text": "stop",
+      "code": "break ;",
+      "indent": 4
+    },
+    {
+      "line": 52,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 53,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 54,
+      "text": "if f equals 0",
+      "code": "if ( f == 0 )",
+      "indent": 2
+    },
+    {
+      "line": 55,
+      "text": "print YES",
+      "code": "cout << \" YES \"",
+      "indent": 3
+    },
+    {
+      "line": 56,
+      "text": "print newline",
+      "code": "<< \" \\n \" ;",
+      "indent": 4
+    },
+    {
+      "line": 57,
+      "text": "proceed to next",
+      "code": "continue ;",
+      "indent": 3
+    },
+    {
+      "line": 58,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 59,
+      "text": "for i = 0 to n / 2 exclusive",
+      "code": "for ( int i = 0 ; i < n / 2 ; i ++ )",
+      "indent": 2
+    },
+    {
+      "line": 60,
+      "text": "if s [ i ] is not equal to s [ n - 1 - i ]",
+      "code": "if ( s [ i ] != s [ n - 1 - i ] )",
+      "indent": 3
+    },
+    {
+      "line": 61,
+      "text": "if s [ i ] - 1 is equal to s [ n - 1 - i ] + 1 or s [ i ] + 1 is equal to s [ n - 1 - i ] - 1",
+      "code": "if ( s [ i ] - 1 == s [ n - 1 - i ] + 1 || s [ i ] + 1 == s [ n - 1 - i ] - 1 )",
+      "indent": 4
+    },
+    {
+      "line": 62,
+      "text": "else do the following",
+      "code": "else",
+      "indent": 4
+    },
+    {
+      "line": 63,
+      "text": "f is equal to 0",
+      "code": "f = 0 ;",
+      "indent": 5
+    },
+    {
+      "line": 64,
+      "text": "stop",
+      "code": "break ;",
+      "indent": 5
+    },
+    {
+      "line": 65,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 4
+    },
+    {
+      "line": 66,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 67,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 68,
+      "text": "if f is true",
+      "code": "if ( f )",
+      "indent": 2
+    },
+    {
+      "line": 69,
+      "text": "print YES",
+      "code": "cout << \" YES \"",
+      "indent": 3
+    },
+    {
+      "line": 70,
+      "text": "print newline",
+      "code": "<< \" \\n \" ;",
+      "indent": 4
+    },
+    {
+      "line": 71,
+      "text": "else do the following",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 72,
+      "text": "print NO",
+      "code": "cout << \" NO \"",
+      "indent": 3
+    },
+    {
+      "line": 73,
+      "text": "print newline",
+      "code": "<< \" \\n \" ;",
+      "indent": 4
+    },
+    {
+      "line": 74,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 75,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        26
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }"
+      ],
+      "err_line": 27,
+      "err_msg": "name lookup of ‘p’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        27
+      ],
+      "mod_code": [
+        "if ( prime [ i ] == true )"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        55
+      ],
+      "mod_code": [
+        "cout << \" YES \" << endl ;"
+      ],
+      "err_line": 56,
+      "err_msg": "expected primary-expression before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        56
+      ],
+      "mod_code": [
+        "cout << endl ;"
+      ],
+      "err_line": 56,
+      "err_msg": "expected ‘;’ before ‘cout’"
+    },
+    {
+      "mod_line": [
+        69
+      ],
+      "mod_code": [
+        "cout << \" YES \" << endl ;"
+      ],
+      "err_line": 71,
+      "err_msg": "expected primary-expression before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        70
+      ],
+      "mod_code": [
+        "cout << endl ;"
+      ],
+      "err_line": 71,
+      "err_msg": "expected ‘;’ before ‘cout’"
+    },
+    {
+      "mod_line": [
+        72
+      ],
+      "mod_code": [
+        "cout << \" NO \" << endl ;"
+      ],
+      "err_line": 74,
+      "err_msg": "expected primary-expression before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        73
+      ],
+      "mod_code": [
+        "cout << endl ;"
+      ],
+      "err_line": 74,
+      "err_msg": "expected ‘;’ before ‘cout’"
+    },
+    {
+      "mod_line": [
+        17
+      ],
+      "mod_code": [
+        "res *= ( n - i ) ) % mod ;"
+      ],
+      "err_line": 17,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        18
+      ],
+      "mod_code": [
+        "res *= modPow ( i + 1 , mod - 2 ) ) % mod ;"
+      ],
+      "err_line": 18,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        23
+      ],
+      "mod_code": [
+        "void Sieve ( ) { }"
+      ],
+      "err_line": 24,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        25
+      ],
+      "mod_code": [
+        "memset ( true , true , sizeof ( prime ) ) ;"
+      ],
+      "err_line": 25,
+      "err_msg": "cannot convert ‘bool’ to ‘void*’ for argument ‘1’ to ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        27
+      ],
+      "mod_code": [
+        "if ( prime [ i ] == ' true ' )"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        41
+      ],
+      "mod_code": [
+        "cin . get ( t ) ;"
+      ],
+      "err_line": 41,
+      "err_msg": "invalid initialization of non-const reference of type ‘std::basic_istream<char>::char_type& {aka char&}’ from an rvalue of type ‘std::basic_istream<char>::char_type {aka char}’"
+    },
+    {
+      "mod_line": [
+        44
+      ],
+      "mod_code": [
+        "while ( cin >> n )"
+      ],
+      "err_line": 46,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘std::istream {aka std::basic_istream<char>}’ and ‘std::set<long long int>’)"
+    },
+    {
+      "mod_line": [
+        45
+      ],
+      "mod_code": [
+        "char s ;"
+      ],
+      "err_line": 49,
+      "err_msg": "invalid types ‘char[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        48
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 48,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        49
+      ],
+      "mod_code": [
+        "if ( s [ i ] ] != s [ n - 1 - i ] )"
+      ],
+      "err_line": 49,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        51
+      ],
+      "mod_code": [
+        "stop ;"
+      ],
+      "err_line": 51,
+      "err_msg": "‘stop’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        55
+      ],
+      "mod_code": [
+        "cout << \" YES\\n \" ;"
+      ],
+      "err_line": 56,
+      "err_msg": "expected primary-expression before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        56
+      ],
+      "mod_code": [
+        "cout << \" \\n \" ;"
+      ],
+      "err_line": 56,
+      "err_msg": "expected ‘;’ before ‘cout’"
+    },
+    {
+      "mod_line": [
+        57
+      ],
+      "mod_code": [
+        "to ;"
+      ],
+      "err_line": 57,
+      "err_msg": "‘to’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        59
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n / 2 ; i ++ )"
+      ],
+      "err_line": 59,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        60
+      ],
+      "mod_code": [
+        "if ( s [ i ] ] != s [ n - 1 - i ] )"
+      ],
+      "err_line": 60,
+      "err_msg": "expected ‘)’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        64
+      ],
+      "mod_code": [
+        "stop ;"
+      ],
+      "err_line": 65,
+      "err_msg": "‘stop’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        68
+      ],
+      "mod_code": [
+        "if ( f ) return ;"
+      ],
+      "err_line": 69,
+      "err_msg": "return-statement with no value, in function returning ‘int’ [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        69
+      ],
+      "mod_code": [
+        "cout << \" YES\\n \" ;"
+      ],
+      "err_line": 71,
+      "err_msg": "expected primary-expression before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        70
+      ],
+      "mod_code": [
+        "cout << \" \\n \" ;"
+      ],
+      "err_line": 71,
+      "err_msg": "expected ‘;’ before ‘cout’"
+    },
+    {
+      "mod_line": [
+        72
+      ],
+      "mod_code": [
+        "cout << \" NO\\n \" ;"
+      ],
+      "err_line": 74,
+      "err_msg": "expected primary-expression before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        73
+      ],
+      "mod_code": [
+        "cout << \" \\n \" ;"
+      ],
+      "err_line": 74,
+      "err_msg": "expected ‘;’ before ‘cout’"
+    },
+    {
+      "mod_line": [
+        26,
+        27
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "if ( prime [ i ] == true )"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        26,
+        27,
+        55
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "if ( prime [ i ] == true )",
+        "cout << \" YES \" << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        26,
+        27,
+        55,
+        56
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "if ( prime [ i ] == true )",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        26,
+        27,
+        55,
+        69
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "if ( prime [ i ] == true )",
+        "cout << \" YES \" << endl ;",
+        "cout << \" YES \" << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        26,
+        27,
+        55,
+        70
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "if ( prime [ i ] == true )",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        26,
+        27,
+        55,
+        72
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "if ( prime [ i ] == true )",
+        "cout << \" YES \" << endl ;",
+        "cout << \" NO \" << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        26,
+        27,
+        55,
+        73
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "if ( prime [ i ] == true )",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        26,
+        27,
+        56
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "if ( prime [ i ] == true )",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        26,
+        27,
+        56,
+        69
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "if ( prime [ i ] == true )",
+        "cout << endl ;",
+        "cout << \" YES \" << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        26,
+        27,
+        56,
+        70
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "if ( prime [ i ] == true )",
+        "cout << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        26,
+        27,
+        56,
+        72
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "if ( prime [ i ] == true )",
+        "cout << endl ;",
+        "cout << \" NO \" << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        26,
+        27,
+        56,
+        73
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "if ( prime [ i ] == true )",
+        "cout << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        26,
+        27,
+        69
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "if ( prime [ i ] == true )",
+        "cout << \" YES \" << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        26,
+        27,
+        69,
+        70
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "if ( prime [ i ] == true )",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        26,
+        27,
+        69,
+        72
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "if ( prime [ i ] == true )",
+        "cout << \" YES \" << endl ;",
+        "cout << \" NO \" << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        26,
+        27,
+        69,
+        73
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "if ( prime [ i ] == true )",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        26,
+        27,
+        70
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "if ( prime [ i ] == true )",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        26,
+        27,
+        70,
+        72
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "if ( prime [ i ] == true )",
+        "cout << endl ;",
+        "cout << \" NO \" << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        26,
+        27,
+        70,
+        73
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "if ( prime [ i ] == true )",
+        "cout << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        26,
+        27,
+        72
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "if ( prime [ i ] == true )",
+        "cout << \" NO \" << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        26,
+        27,
+        72,
+        73
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "if ( prime [ i ] == true )",
+        "cout << \" NO \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        26,
+        27,
+        73
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "if ( prime [ i ] == true )",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        26,
+        55
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "cout << \" YES \" << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "name lookup of ‘p’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        55,
+        56
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "name lookup of ‘p’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        55,
+        56,
+        69
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;",
+        "cout << \" YES \" << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "name lookup of ‘p’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        55,
+        56,
+        70
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "name lookup of ‘p’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        55,
+        56,
+        72
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;",
+        "cout << \" NO \" << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "name lookup of ‘p’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        55,
+        56,
+        73
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "name lookup of ‘p’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        55,
+        69
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "cout << \" YES \" << endl ;",
+        "cout << \" YES \" << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "name lookup of ‘p’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        55,
+        69,
+        70
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "cout << \" YES \" << endl ;",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "name lookup of ‘p’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        55,
+        69,
+        72
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "cout << \" YES \" << endl ;",
+        "cout << \" YES \" << endl ;",
+        "cout << \" NO \" << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "name lookup of ‘p’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        55,
+        69,
+        73
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "cout << \" YES \" << endl ;",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "name lookup of ‘p’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        55,
+        70
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "name lookup of ‘p’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        55,
+        70,
+        72
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;",
+        "cout << \" NO \" << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "name lookup of ‘p’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        55,
+        70,
+        73
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "name lookup of ‘p’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        55,
+        72
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "cout << \" YES \" << endl ;",
+        "cout << \" NO \" << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "name lookup of ‘p’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        55,
+        72,
+        73
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "cout << \" YES \" << endl ;",
+        "cout << \" NO \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "name lookup of ‘p’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        55,
+        73
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "name lookup of ‘p’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        56
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "name lookup of ‘p’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        56,
+        69
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "cout << endl ;",
+        "cout << \" YES \" << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "name lookup of ‘p’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        56,
+        69,
+        70
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "cout << endl ;",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "name lookup of ‘p’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        56,
+        69,
+        72
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "cout << endl ;",
+        "cout << \" YES \" << endl ;",
+        "cout << \" NO \" << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "name lookup of ‘p’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        56,
+        69,
+        73
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "cout << endl ;",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "name lookup of ‘p’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        56,
+        70
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "cout << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "name lookup of ‘p’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        56,
+        70,
+        72
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "cout << endl ;",
+        "cout << endl ;",
+        "cout << \" NO \" << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "name lookup of ‘p’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        56,
+        70,
+        73
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "cout << endl ;",
+        "cout << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "name lookup of ‘p’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        56,
+        72
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "cout << endl ;",
+        "cout << \" NO \" << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "name lookup of ‘p’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        56,
+        72,
+        73
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "cout << endl ;",
+        "cout << \" NO \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "name lookup of ‘p’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        56,
+        73
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "cout << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "name lookup of ‘p’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        69
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "cout << \" YES \" << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "name lookup of ‘p’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        69,
+        70
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "name lookup of ‘p’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        69,
+        70,
+        72
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;",
+        "cout << \" NO \" << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "name lookup of ‘p’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        69,
+        70,
+        73
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "name lookup of ‘p’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        69,
+        72
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "cout << \" YES \" << endl ;",
+        "cout << \" NO \" << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "name lookup of ‘p’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        69,
+        72,
+        73
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "cout << \" YES \" << endl ;",
+        "cout << \" NO \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "name lookup of ‘p’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        69,
+        73
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "name lookup of ‘p’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        70
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "name lookup of ‘p’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        70,
+        72
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "cout << endl ;",
+        "cout << \" NO \" << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "name lookup of ‘p’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        70,
+        72,
+        73
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "cout << endl ;",
+        "cout << \" NO \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "name lookup of ‘p’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        70,
+        73
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "cout << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "name lookup of ‘p’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        72
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "cout << \" NO \" << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "name lookup of ‘p’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        72,
+        73
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "cout << \" NO \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "name lookup of ‘p’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        26,
+        73
+      ],
+      "mod_code": [
+        "for ( long long p = 2 ; p * p <= 1000006 ; p ++ ) { p ++ ; }",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "name lookup of ‘p’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        27,
+        55
+      ],
+      "mod_code": [
+        "if ( prime [ i ] == true )",
+        "cout << \" YES \" << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27,
+        55,
+        56
+      ],
+      "mod_code": [
+        "if ( prime [ i ] == true )",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27,
+        55,
+        56,
+        69
+      ],
+      "mod_code": [
+        "if ( prime [ i ] == true )",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;",
+        "cout << \" YES \" << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27,
+        55,
+        56,
+        70
+      ],
+      "mod_code": [
+        "if ( prime [ i ] == true )",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27,
+        55,
+        56,
+        72
+      ],
+      "mod_code": [
+        "if ( prime [ i ] == true )",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;",
+        "cout << \" NO \" << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27,
+        55,
+        56,
+        73
+      ],
+      "mod_code": [
+        "if ( prime [ i ] == true )",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27,
+        55,
+        69
+      ],
+      "mod_code": [
+        "if ( prime [ i ] == true )",
+        "cout << \" YES \" << endl ;",
+        "cout << \" YES \" << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27,
+        55,
+        69,
+        70
+      ],
+      "mod_code": [
+        "if ( prime [ i ] == true )",
+        "cout << \" YES \" << endl ;",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27,
+        55,
+        69,
+        72
+      ],
+      "mod_code": [
+        "if ( prime [ i ] == true )",
+        "cout << \" YES \" << endl ;",
+        "cout << \" YES \" << endl ;",
+        "cout << \" NO \" << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27,
+        55,
+        69,
+        73
+      ],
+      "mod_code": [
+        "if ( prime [ i ] == true )",
+        "cout << \" YES \" << endl ;",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27,
+        55,
+        70
+      ],
+      "mod_code": [
+        "if ( prime [ i ] == true )",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27,
+        55,
+        70,
+        72
+      ],
+      "mod_code": [
+        "if ( prime [ i ] == true )",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;",
+        "cout << \" NO \" << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27,
+        55,
+        70,
+        73
+      ],
+      "mod_code": [
+        "if ( prime [ i ] == true )",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27,
+        55,
+        72
+      ],
+      "mod_code": [
+        "if ( prime [ i ] == true )",
+        "cout << \" YES \" << endl ;",
+        "cout << \" NO \" << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27,
+        55,
+        72,
+        73
+      ],
+      "mod_code": [
+        "if ( prime [ i ] == true )",
+        "cout << \" YES \" << endl ;",
+        "cout << \" NO \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27,
+        55,
+        73
+      ],
+      "mod_code": [
+        "if ( prime [ i ] == true )",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27,
+        56
+      ],
+      "mod_code": [
+        "if ( prime [ i ] == true )",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27,
+        56,
+        69
+      ],
+      "mod_code": [
+        "if ( prime [ i ] == true )",
+        "cout << endl ;",
+        "cout << \" YES \" << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27,
+        56,
+        69,
+        70
+      ],
+      "mod_code": [
+        "if ( prime [ i ] == true )",
+        "cout << endl ;",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27,
+        56,
+        69,
+        72
+      ],
+      "mod_code": [
+        "if ( prime [ i ] == true )",
+        "cout << endl ;",
+        "cout << \" YES \" << endl ;",
+        "cout << \" NO \" << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27,
+        56,
+        69,
+        73
+      ],
+      "mod_code": [
+        "if ( prime [ i ] == true )",
+        "cout << endl ;",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27,
+        56,
+        70
+      ],
+      "mod_code": [
+        "if ( prime [ i ] == true )",
+        "cout << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27,
+        56,
+        70,
+        72
+      ],
+      "mod_code": [
+        "if ( prime [ i ] == true )",
+        "cout << endl ;",
+        "cout << endl ;",
+        "cout << \" NO \" << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27,
+        56,
+        70,
+        73
+      ],
+      "mod_code": [
+        "if ( prime [ i ] == true )",
+        "cout << endl ;",
+        "cout << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27,
+        56,
+        72
+      ],
+      "mod_code": [
+        "if ( prime [ i ] == true )",
+        "cout << endl ;",
+        "cout << \" NO \" << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27,
+        56,
+        72,
+        73
+      ],
+      "mod_code": [
+        "if ( prime [ i ] == true )",
+        "cout << endl ;",
+        "cout << \" NO \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27,
+        56,
+        73
+      ],
+      "mod_code": [
+        "if ( prime [ i ] == true )",
+        "cout << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27,
+        69
+      ],
+      "mod_code": [
+        "if ( prime [ i ] == true )",
+        "cout << \" YES \" << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27,
+        69,
+        70
+      ],
+      "mod_code": [
+        "if ( prime [ i ] == true )",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27,
+        69,
+        70,
+        72
+      ],
+      "mod_code": [
+        "if ( prime [ i ] == true )",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;",
+        "cout << \" NO \" << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27,
+        69,
+        70,
+        73
+      ],
+      "mod_code": [
+        "if ( prime [ i ] == true )",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27,
+        69,
+        72
+      ],
+      "mod_code": [
+        "if ( prime [ i ] == true )",
+        "cout << \" YES \" << endl ;",
+        "cout << \" NO \" << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27,
+        69,
+        72,
+        73
+      ],
+      "mod_code": [
+        "if ( prime [ i ] == true )",
+        "cout << \" YES \" << endl ;",
+        "cout << \" NO \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27,
+        69,
+        73
+      ],
+      "mod_code": [
+        "if ( prime [ i ] == true )",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27,
+        70
+      ],
+      "mod_code": [
+        "if ( prime [ i ] == true )",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27,
+        70,
+        72
+      ],
+      "mod_code": [
+        "if ( prime [ i ] == true )",
+        "cout << endl ;",
+        "cout << \" NO \" << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27,
+        70,
+        72,
+        73
+      ],
+      "mod_code": [
+        "if ( prime [ i ] == true )",
+        "cout << endl ;",
+        "cout << \" NO \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27,
+        70,
+        73
+      ],
+      "mod_code": [
+        "if ( prime [ i ] == true )",
+        "cout << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27,
+        72
+      ],
+      "mod_code": [
+        "if ( prime [ i ] == true )",
+        "cout << \" NO \" << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27,
+        72,
+        73
+      ],
+      "mod_code": [
+        "if ( prime [ i ] == true )",
+        "cout << \" NO \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        27,
+        73
+      ],
+      "mod_code": [
+        "if ( prime [ i ] == true )",
+        "cout << endl ;"
+      ],
+      "err_line": 27,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        55,
+        56,
+        69
+      ],
+      "mod_code": [
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;",
+        "cout << \" YES \" << endl ;"
+      ],
+      "err_line": 71,
+      "err_msg": "expected primary-expression before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        55,
+        56,
+        69,
+        72
+      ],
+      "mod_code": [
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;",
+        "cout << \" YES \" << endl ;",
+        "cout << \" NO \" << endl ;"
+      ],
+      "err_line": 71,
+      "err_msg": "expected primary-expression before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        55,
+        56,
+        69,
+        73
+      ],
+      "mod_code": [
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 71,
+      "err_msg": "expected primary-expression before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        55,
+        56,
+        70
+      ],
+      "mod_code": [
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 71,
+      "err_msg": "expected ‘;’ before ‘cout’"
+    },
+    {
+      "mod_line": [
+        55,
+        56,
+        70,
+        72
+      ],
+      "mod_code": [
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;",
+        "cout << endl ;",
+        "cout << \" NO \" << endl ;"
+      ],
+      "err_line": 71,
+      "err_msg": "expected ‘;’ before ‘cout’"
+    },
+    {
+      "mod_line": [
+        55,
+        56,
+        70,
+        73
+      ],
+      "mod_code": [
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;",
+        "cout << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 71,
+      "err_msg": "expected ‘;’ before ‘cout’"
+    },
+    {
+      "mod_line": [
+        55,
+        56,
+        72
+      ],
+      "mod_code": [
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;",
+        "cout << \" NO \" << endl ;"
+      ],
+      "err_line": 74,
+      "err_msg": "expected primary-expression before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        55,
+        56,
+        73
+      ],
+      "mod_code": [
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 74,
+      "err_msg": "expected ‘;’ before ‘cout’"
+    },
+    {
+      "mod_line": [
+        55,
+        69
+      ],
+      "mod_code": [
+        "cout << \" YES \" << endl ;",
+        "cout << \" YES \" << endl ;"
+      ],
+      "err_line": 56,
+      "err_msg": "expected primary-expression before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        55,
+        69,
+        70
+      ],
+      "mod_code": [
+        "cout << \" YES \" << endl ;",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 56,
+      "err_msg": "expected primary-expression before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        55,
+        69,
+        70,
+        72
+      ],
+      "mod_code": [
+        "cout << \" YES \" << endl ;",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;",
+        "cout << \" NO \" << endl ;"
+      ],
+      "err_line": 56,
+      "err_msg": "expected primary-expression before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        55,
+        69,
+        70,
+        73
+      ],
+      "mod_code": [
+        "cout << \" YES \" << endl ;",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 56,
+      "err_msg": "expected primary-expression before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        55,
+        69,
+        72
+      ],
+      "mod_code": [
+        "cout << \" YES \" << endl ;",
+        "cout << \" YES \" << endl ;",
+        "cout << \" NO \" << endl ;"
+      ],
+      "err_line": 56,
+      "err_msg": "expected primary-expression before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        55,
+        69,
+        72,
+        73
+      ],
+      "mod_code": [
+        "cout << \" YES \" << endl ;",
+        "cout << \" YES \" << endl ;",
+        "cout << \" NO \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 56,
+      "err_msg": "expected primary-expression before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        55,
+        69,
+        73
+      ],
+      "mod_code": [
+        "cout << \" YES \" << endl ;",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 56,
+      "err_msg": "expected primary-expression before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        55,
+        70
+      ],
+      "mod_code": [
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 56,
+      "err_msg": "expected primary-expression before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        55,
+        70,
+        72
+      ],
+      "mod_code": [
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;",
+        "cout << \" NO \" << endl ;"
+      ],
+      "err_line": 56,
+      "err_msg": "expected primary-expression before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        55,
+        70,
+        72,
+        73
+      ],
+      "mod_code": [
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;",
+        "cout << \" NO \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 56,
+      "err_msg": "expected primary-expression before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        55,
+        70,
+        73
+      ],
+      "mod_code": [
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 56,
+      "err_msg": "expected primary-expression before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        55,
+        72
+      ],
+      "mod_code": [
+        "cout << \" YES \" << endl ;",
+        "cout << \" NO \" << endl ;"
+      ],
+      "err_line": 56,
+      "err_msg": "expected primary-expression before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        55,
+        72,
+        73
+      ],
+      "mod_code": [
+        "cout << \" YES \" << endl ;",
+        "cout << \" NO \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 56,
+      "err_msg": "expected primary-expression before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        55,
+        73
+      ],
+      "mod_code": [
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 56,
+      "err_msg": "expected primary-expression before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        56,
+        69
+      ],
+      "mod_code": [
+        "cout << endl ;",
+        "cout << \" YES \" << endl ;"
+      ],
+      "err_line": 56,
+      "err_msg": "expected ‘;’ before ‘cout’"
+    },
+    {
+      "mod_line": [
+        56,
+        69,
+        70
+      ],
+      "mod_code": [
+        "cout << endl ;",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 56,
+      "err_msg": "expected ‘;’ before ‘cout’"
+    },
+    {
+      "mod_line": [
+        56,
+        69,
+        70,
+        72
+      ],
+      "mod_code": [
+        "cout << endl ;",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;",
+        "cout << \" NO \" << endl ;"
+      ],
+      "err_line": 56,
+      "err_msg": "expected ‘;’ before ‘cout’"
+    },
+    {
+      "mod_line": [
+        56,
+        69,
+        70,
+        73
+      ],
+      "mod_code": [
+        "cout << endl ;",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 56,
+      "err_msg": "expected ‘;’ before ‘cout’"
+    },
+    {
+      "mod_line": [
+        56,
+        69,
+        72
+      ],
+      "mod_code": [
+        "cout << endl ;",
+        "cout << \" YES \" << endl ;",
+        "cout << \" NO \" << endl ;"
+      ],
+      "err_line": 56,
+      "err_msg": "expected ‘;’ before ‘cout’"
+    },
+    {
+      "mod_line": [
+        56,
+        69,
+        72,
+        73
+      ],
+      "mod_code": [
+        "cout << endl ;",
+        "cout << \" YES \" << endl ;",
+        "cout << \" NO \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 56,
+      "err_msg": "expected ‘;’ before ‘cout’"
+    },
+    {
+      "mod_line": [
+        56,
+        69,
+        73
+      ],
+      "mod_code": [
+        "cout << endl ;",
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 56,
+      "err_msg": "expected ‘;’ before ‘cout’"
+    },
+    {
+      "mod_line": [
+        56,
+        70
+      ],
+      "mod_code": [
+        "cout << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 56,
+      "err_msg": "expected ‘;’ before ‘cout’"
+    },
+    {
+      "mod_line": [
+        56,
+        70,
+        72
+      ],
+      "mod_code": [
+        "cout << endl ;",
+        "cout << endl ;",
+        "cout << \" NO \" << endl ;"
+      ],
+      "err_line": 56,
+      "err_msg": "expected ‘;’ before ‘cout’"
+    },
+    {
+      "mod_line": [
+        56,
+        70,
+        72,
+        73
+      ],
+      "mod_code": [
+        "cout << endl ;",
+        "cout << endl ;",
+        "cout << \" NO \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 56,
+      "err_msg": "expected ‘;’ before ‘cout’"
+    },
+    {
+      "mod_line": [
+        56,
+        70,
+        73
+      ],
+      "mod_code": [
+        "cout << endl ;",
+        "cout << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 56,
+      "err_msg": "expected ‘;’ before ‘cout’"
+    },
+    {
+      "mod_line": [
+        56,
+        72
+      ],
+      "mod_code": [
+        "cout << endl ;",
+        "cout << \" NO \" << endl ;"
+      ],
+      "err_line": 56,
+      "err_msg": "expected ‘;’ before ‘cout’"
+    },
+    {
+      "mod_line": [
+        56,
+        72,
+        73
+      ],
+      "mod_code": [
+        "cout << endl ;",
+        "cout << \" NO \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 56,
+      "err_msg": "expected ‘;’ before ‘cout’"
+    },
+    {
+      "mod_line": [
+        56,
+        73
+      ],
+      "mod_code": [
+        "cout << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 56,
+      "err_msg": "expected ‘;’ before ‘cout’"
+    },
+    {
+      "mod_line": [
+        69,
+        70,
+        72
+      ],
+      "mod_code": [
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;",
+        "cout << \" NO \" << endl ;"
+      ],
+      "err_line": 74,
+      "err_msg": "expected primary-expression before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        69,
+        70,
+        73
+      ],
+      "mod_code": [
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 74,
+      "err_msg": "expected ‘;’ before ‘cout’"
+    },
+    {
+      "mod_line": [
+        69,
+        72
+      ],
+      "mod_code": [
+        "cout << \" YES \" << endl ;",
+        "cout << \" NO \" << endl ;"
+      ],
+      "err_line": 71,
+      "err_msg": "expected primary-expression before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        69,
+        72,
+        73
+      ],
+      "mod_code": [
+        "cout << \" YES \" << endl ;",
+        "cout << \" NO \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 71,
+      "err_msg": "expected primary-expression before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        69,
+        73
+      ],
+      "mod_code": [
+        "cout << \" YES \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 71,
+      "err_msg": "expected primary-expression before ‘<<’ token"
+    },
+    {
+      "mod_line": [
+        70,
+        72
+      ],
+      "mod_code": [
+        "cout << endl ;",
+        "cout << \" NO \" << endl ;"
+      ],
+      "err_line": 71,
+      "err_msg": "expected ‘;’ before ‘cout’"
+    },
+    {
+      "mod_line": [
+        70,
+        72,
+        73
+      ],
+      "mod_code": [
+        "cout << endl ;",
+        "cout << \" NO \" << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 71,
+      "err_msg": "expected ‘;’ before ‘cout’"
+    },
+    {
+      "mod_line": [
+        70,
+        73
+      ],
+      "mod_code": [
+        "cout << endl ;",
+        "cout << endl ;"
+      ],
+      "err_line": 71,
+      "err_msg": "expected ‘;’ before ‘cout’"
+    }
+  ]
+}

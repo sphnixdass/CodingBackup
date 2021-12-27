@@ -1,0 +1,933 @@
+{
+  "meta": {
+    "index": 121,
+    "hitid": "3JMQI2OLFZZ2VLSF4M55HB3YNL8ND4",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "354A",
+    "subid": "47526811"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create long long array w with size 100005",
+      "code": "long long w [ 100005 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create long long arrays leftPreSum , rightPreSum with leftPreSum size 100005 , with rightPreSum size 100005",
+      "code": "long long leftPreSum [ 100005 ] , rightPreSum [ 100005 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "create long longs n , l , r , ql , qr",
+      "code": "long long n , l , r , ql , qr ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "read n read l read r read ql read qr",
+      "code": "cin >> n >> l >> r >> ql >> qr ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "set leftPreSum [ 0 ] to 0",
+      "code": "leftPreSum [ 0 ] = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "set rightPreSum [ n + 1 ] to 0",
+      "code": "rightPreSum [ n + 1 ] = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for i = 1 to n + 1 exclusive",
+      "code": "for ( long long i = 1 ; i < n + 1 ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "read w [ i ]",
+      "code": "cin >> w [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "set leftPreSum [ i ] to leftPreSum [ i - 1 ] + w [ i ]",
+      "code": "leftPreSum [ i ] = leftPreSum [ i - 1 ] + w [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "for i = n to 0 inclusive , decrementing i , set rightPreSum [ i ] to rightPreSum [ i + 1 ] + w [ i ]",
+      "code": "for ( long long i = n ; i >= 0 ; i -- ) { rightPreSum [ i ] = rightPreSum [ i + 1 ] + w [ i ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "create long longs ans , currentans with ans = LONG_LONG_MAX",
+      "code": "long long ans = LONG_LONG_MAX , currentans ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "for i = 0 to n + 1 exclusive",
+      "code": "for ( long long i = 0 ; i < n + 1 ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "set currentans to leftPreSum [ i ] * l + rightPreSum [ i + 1 ] * r",
+      "code": "currentans = leftPreSum [ i ] * l + rightPreSum [ i + 1 ] * r ;",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "if i is n / 2",
+      "code": "if ( i == n / 2 )",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "increment currentans by 0",
+      "code": "currentans += 0 ;",
+      "indent": 3
+    },
+    {
+      "line": 17,
+      "text": "else if i is less than n / 2",
+      "code": "else if ( i < n / 2 )",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "increment currentans by ( n - 2 * i - 1 ) * qr",
+      "code": "currentans += ( n - 2 * i - 1 ) * qr ;",
+      "indent": 3
+    },
+    {
+      "line": 19,
+      "text": "else if i is greater than n / 2",
+      "code": "else if ( i > n / 2 )",
+      "indent": 2
+    },
+    {
+      "line": 20,
+      "text": "increment currentans by ( 2 * i - n - 1 ) * ql",
+      "code": "currentans += ( 2 * i - n - 1 ) * ql ;",
+      "indent": 3
+    },
+    {
+      "line": 21,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 22,
+      "text": "set ans to minimum of ans and currentans",
+      "code": "ans = min ( ans , currentans ) ;",
+      "indent": 2
+    },
+    {
+      "line": 23,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "print ans print newline",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 25,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 26,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "long long leftPreSum [ 100005 ] [ 100005 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "incompatible types in assignment of ‘int’ to ‘long long int [100005]’"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "cin >> n read l >> r >> ql >> qr ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i < n + 1 ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid operands of types ‘long long int [100005]’ and ‘long long int’ to binary ‘operator>>’"
+    },
+    {
+      "mod_line": [
+        11
+      ],
+      "mod_code": [
+        "for ( i = n ; i >= 0 ; i -- ) { rightPreSum [ i ] = rightPreSum [ i + 1 ] + w [ i ] ; }"
+      ],
+      "err_line": 11,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n + 1 ; i ++ )"
+      ],
+      "err_line": 13,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        22
+      ],
+      "mod_code": [
+        "int ans = min ( ans , currentans ) ;"
+      ],
+      "err_line": 22,
+      "err_msg": "no matching function for call to ‘min(int&, long long int&)’"
+    },
+    {
+      "mod_line": [
+        12,
+        5,
+        8
+      ],
+      "mod_code": [
+        "long long ans , currentans = LONG_LONG_MAX ;",
+        "leftPreSum [ 0 ] = ' 0 ' ;",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid operands of types ‘long long int [100005]’ and ‘long long int’ to binary ‘operator>>’"
+    },
+    {
+      "mod_line": [
+        12,
+        5,
+        8,
+        4
+      ],
+      "mod_code": [
+        "long long ans , currentans = LONG_LONG_MAX ;",
+        "leftPreSum [ 0 ] = ' 0 ' ;",
+        "w >> w [ i ] ;",
+        "cin >> n read l >> r >> ql >> qr ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        12,
+        5,
+        8,
+        7
+      ],
+      "mod_code": [
+        "long long ans , currentans = LONG_LONG_MAX ;",
+        "leftPreSum [ 0 ] = ' 0 ' ;",
+        "w >> w [ i ] ;",
+        "for ( i = 1 ; i < n + 1 ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        5,
+        8,
+        1
+      ],
+      "mod_code": [
+        "long long ans , currentans = LONG_LONG_MAX ;",
+        "leftPreSum [ 0 ] = ' 0 ' ;",
+        "w >> w [ i ] ;",
+        "long long leftPreSum [ 100005 ] [ 100005 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "incompatible types in assignment of ‘char’ to ‘long long int [100005]’"
+    },
+    {
+      "mod_line": [
+        12,
+        5,
+        4
+      ],
+      "mod_code": [
+        "long long ans , currentans = LONG_LONG_MAX ;",
+        "leftPreSum [ 0 ] = ' 0 ' ;",
+        "cin >> n read l >> r >> ql >> qr ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        12,
+        5,
+        4,
+        7
+      ],
+      "mod_code": [
+        "long long ans , currentans = LONG_LONG_MAX ;",
+        "leftPreSum [ 0 ] = ' 0 ' ;",
+        "cin >> n read l >> r >> ql >> qr ;",
+        "for ( i = 1 ; i < n + 1 ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        12,
+        5,
+        4,
+        1
+      ],
+      "mod_code": [
+        "long long ans , currentans = LONG_LONG_MAX ;",
+        "leftPreSum [ 0 ] = ' 0 ' ;",
+        "cin >> n read l >> r >> ql >> qr ;",
+        "long long leftPreSum [ 100005 ] [ 100005 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        12,
+        5,
+        7
+      ],
+      "mod_code": [
+        "long long ans , currentans = LONG_LONG_MAX ;",
+        "leftPreSum [ 0 ] = ' 0 ' ;",
+        "for ( i = 1 ; i < n + 1 ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        5,
+        7,
+        1
+      ],
+      "mod_code": [
+        "long long ans , currentans = LONG_LONG_MAX ;",
+        "leftPreSum [ 0 ] = ' 0 ' ;",
+        "for ( i = 1 ; i < n + 1 ; i ++ )",
+        "long long leftPreSum [ 100005 ] [ 100005 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "incompatible types in assignment of ‘char’ to ‘long long int [100005]’"
+    },
+    {
+      "mod_line": [
+        12,
+        5,
+        1
+      ],
+      "mod_code": [
+        "long long ans , currentans = LONG_LONG_MAX ;",
+        "leftPreSum [ 0 ] = ' 0 ' ;",
+        "long long leftPreSum [ 100005 ] [ 100005 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "incompatible types in assignment of ‘char’ to ‘long long int [100005]’"
+    },
+    {
+      "mod_line": [
+        12,
+        8
+      ],
+      "mod_code": [
+        "long long ans , currentans = LONG_LONG_MAX ;",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid operands of types ‘long long int [100005]’ and ‘long long int’ to binary ‘operator>>’"
+    },
+    {
+      "mod_line": [
+        12,
+        8,
+        4
+      ],
+      "mod_code": [
+        "long long ans , currentans = LONG_LONG_MAX ;",
+        "w >> w [ i ] ;",
+        "cin >> n read l >> r >> ql >> qr ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        12,
+        8,
+        4,
+        7
+      ],
+      "mod_code": [
+        "long long ans , currentans = LONG_LONG_MAX ;",
+        "w >> w [ i ] ;",
+        "cin >> n read l >> r >> ql >> qr ;",
+        "for ( i = 1 ; i < n + 1 ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        12,
+        8,
+        4,
+        1
+      ],
+      "mod_code": [
+        "long long ans , currentans = LONG_LONG_MAX ;",
+        "w >> w [ i ] ;",
+        "cin >> n read l >> r >> ql >> qr ;",
+        "long long leftPreSum [ 100005 ] [ 100005 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        12,
+        8,
+        7
+      ],
+      "mod_code": [
+        "long long ans , currentans = LONG_LONG_MAX ;",
+        "w >> w [ i ] ;",
+        "for ( i = 1 ; i < n + 1 ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        8,
+        7,
+        1
+      ],
+      "mod_code": [
+        "long long ans , currentans = LONG_LONG_MAX ;",
+        "w >> w [ i ] ;",
+        "for ( i = 1 ; i < n + 1 ; i ++ )",
+        "long long leftPreSum [ 100005 ] [ 100005 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "incompatible types in assignment of ‘int’ to ‘long long int [100005]’"
+    },
+    {
+      "mod_line": [
+        12,
+        8,
+        1
+      ],
+      "mod_code": [
+        "long long ans , currentans = LONG_LONG_MAX ;",
+        "w >> w [ i ] ;",
+        "long long leftPreSum [ 100005 ] [ 100005 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "incompatible types in assignment of ‘int’ to ‘long long int [100005]’"
+    },
+    {
+      "mod_line": [
+        12,
+        4
+      ],
+      "mod_code": [
+        "long long ans , currentans = LONG_LONG_MAX ;",
+        "cin >> n read l >> r >> ql >> qr ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        12,
+        4,
+        7
+      ],
+      "mod_code": [
+        "long long ans , currentans = LONG_LONG_MAX ;",
+        "cin >> n read l >> r >> ql >> qr ;",
+        "for ( i = 1 ; i < n + 1 ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        12,
+        4,
+        7,
+        1
+      ],
+      "mod_code": [
+        "long long ans , currentans = LONG_LONG_MAX ;",
+        "cin >> n read l >> r >> ql >> qr ;",
+        "for ( i = 1 ; i < n + 1 ; i ++ )",
+        "long long leftPreSum [ 100005 ] [ 100005 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        12,
+        4,
+        1
+      ],
+      "mod_code": [
+        "long long ans , currentans = LONG_LONG_MAX ;",
+        "cin >> n read l >> r >> ql >> qr ;",
+        "long long leftPreSum [ 100005 ] [ 100005 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        12,
+        7
+      ],
+      "mod_code": [
+        "long long ans , currentans = LONG_LONG_MAX ;",
+        "for ( i = 1 ; i < n + 1 ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        12,
+        7,
+        1
+      ],
+      "mod_code": [
+        "long long ans , currentans = LONG_LONG_MAX ;",
+        "for ( i = 1 ; i < n + 1 ; i ++ )",
+        "long long leftPreSum [ 100005 ] [ 100005 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "incompatible types in assignment of ‘int’ to ‘long long int [100005]’"
+    },
+    {
+      "mod_line": [
+        12,
+        1
+      ],
+      "mod_code": [
+        "long long ans , currentans = LONG_LONG_MAX ;",
+        "long long leftPreSum [ 100005 ] [ 100005 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "incompatible types in assignment of ‘int’ to ‘long long int [100005]’"
+    },
+    {
+      "mod_line": [
+        5,
+        8
+      ],
+      "mod_code": [
+        "leftPreSum [ 0 ] = ' 0 ' ;",
+        "w >> w [ i ] ;"
+      ],
+      "err_line": 8,
+      "err_msg": "invalid operands of types ‘long long int [100005]’ and ‘long long int’ to binary ‘operator>>’"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        4
+      ],
+      "mod_code": [
+        "leftPreSum [ 0 ] = ' 0 ' ;",
+        "w >> w [ i ] ;",
+        "cin >> n read l >> r >> ql >> qr ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        4,
+        7
+      ],
+      "mod_code": [
+        "leftPreSum [ 0 ] = ' 0 ' ;",
+        "w >> w [ i ] ;",
+        "cin >> n read l >> r >> ql >> qr ;",
+        "for ( i = 1 ; i < n + 1 ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        4,
+        1
+      ],
+      "mod_code": [
+        "leftPreSum [ 0 ] = ' 0 ' ;",
+        "w >> w [ i ] ;",
+        "cin >> n read l >> r >> ql >> qr ;",
+        "long long leftPreSum [ 100005 ] [ 100005 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        7
+      ],
+      "mod_code": [
+        "leftPreSum [ 0 ] = ' 0 ' ;",
+        "w >> w [ i ] ;",
+        "for ( i = 1 ; i < n + 1 ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        7,
+        1
+      ],
+      "mod_code": [
+        "leftPreSum [ 0 ] = ' 0 ' ;",
+        "w >> w [ i ] ;",
+        "for ( i = 1 ; i < n + 1 ; i ++ )",
+        "long long leftPreSum [ 100005 ] [ 100005 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "incompatible types in assignment of ‘char’ to ‘long long int [100005]’"
+    },
+    {
+      "mod_line": [
+        5,
+        8,
+        1
+      ],
+      "mod_code": [
+        "leftPreSum [ 0 ] = ' 0 ' ;",
+        "w >> w [ i ] ;",
+        "long long leftPreSum [ 100005 ] [ 100005 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "incompatible types in assignment of ‘char’ to ‘long long int [100005]’"
+    },
+    {
+      "mod_line": [
+        5,
+        4
+      ],
+      "mod_code": [
+        "leftPreSum [ 0 ] = ' 0 ' ;",
+        "cin >> n read l >> r >> ql >> qr ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        5,
+        4,
+        7
+      ],
+      "mod_code": [
+        "leftPreSum [ 0 ] = ' 0 ' ;",
+        "cin >> n read l >> r >> ql >> qr ;",
+        "for ( i = 1 ; i < n + 1 ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        5,
+        4,
+        7,
+        1
+      ],
+      "mod_code": [
+        "leftPreSum [ 0 ] = ' 0 ' ;",
+        "cin >> n read l >> r >> ql >> qr ;",
+        "for ( i = 1 ; i < n + 1 ; i ++ )",
+        "long long leftPreSum [ 100005 ] [ 100005 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        5,
+        4,
+        1
+      ],
+      "mod_code": [
+        "leftPreSum [ 0 ] = ' 0 ' ;",
+        "cin >> n read l >> r >> ql >> qr ;",
+        "long long leftPreSum [ 100005 ] [ 100005 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        5,
+        7
+      ],
+      "mod_code": [
+        "leftPreSum [ 0 ] = ' 0 ' ;",
+        "for ( i = 1 ; i < n + 1 ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        7,
+        1
+      ],
+      "mod_code": [
+        "leftPreSum [ 0 ] = ' 0 ' ;",
+        "for ( i = 1 ; i < n + 1 ; i ++ )",
+        "long long leftPreSum [ 100005 ] [ 100005 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "incompatible types in assignment of ‘char’ to ‘long long int [100005]’"
+    },
+    {
+      "mod_line": [
+        5,
+        1
+      ],
+      "mod_code": [
+        "leftPreSum [ 0 ] = ' 0 ' ;",
+        "long long leftPreSum [ 100005 ] [ 100005 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "incompatible types in assignment of ‘char’ to ‘long long int [100005]’"
+    },
+    {
+      "mod_line": [
+        8,
+        4
+      ],
+      "mod_code": [
+        "w >> w [ i ] ;",
+        "cin >> n read l >> r >> ql >> qr ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        8,
+        4,
+        7
+      ],
+      "mod_code": [
+        "w >> w [ i ] ;",
+        "cin >> n read l >> r >> ql >> qr ;",
+        "for ( i = 1 ; i < n + 1 ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        8,
+        4,
+        7,
+        1
+      ],
+      "mod_code": [
+        "w >> w [ i ] ;",
+        "cin >> n read l >> r >> ql >> qr ;",
+        "for ( i = 1 ; i < n + 1 ; i ++ )",
+        "long long leftPreSum [ 100005 ] [ 100005 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        8,
+        4,
+        1
+      ],
+      "mod_code": [
+        "w >> w [ i ] ;",
+        "cin >> n read l >> r >> ql >> qr ;",
+        "long long leftPreSum [ 100005 ] [ 100005 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        8,
+        7
+      ],
+      "mod_code": [
+        "w >> w [ i ] ;",
+        "for ( i = 1 ; i < n + 1 ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        7,
+        1
+      ],
+      "mod_code": [
+        "w >> w [ i ] ;",
+        "for ( i = 1 ; i < n + 1 ; i ++ )",
+        "long long leftPreSum [ 100005 ] [ 100005 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "incompatible types in assignment of ‘int’ to ‘long long int [100005]’"
+    },
+    {
+      "mod_line": [
+        8,
+        1
+      ],
+      "mod_code": [
+        "w >> w [ i ] ;",
+        "long long leftPreSum [ 100005 ] [ 100005 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "incompatible types in assignment of ‘int’ to ‘long long int [100005]’"
+    },
+    {
+      "mod_line": [
+        4,
+        7
+      ],
+      "mod_code": [
+        "cin >> n read l >> r >> ql >> qr ;",
+        "for ( i = 1 ; i < n + 1 ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        4,
+        7,
+        1
+      ],
+      "mod_code": [
+        "cin >> n read l >> r >> ql >> qr ;",
+        "for ( i = 1 ; i < n + 1 ; i ++ )",
+        "long long leftPreSum [ 100005 ] [ 100005 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        4,
+        1
+      ],
+      "mod_code": [
+        "cin >> n read l >> r >> ql >> qr ;",
+        "long long leftPreSum [ 100005 ] [ 100005 ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected ‘;’ before ‘read’"
+    },
+    {
+      "mod_line": [
+        7,
+        1
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i < n + 1 ; i ++ )",
+        "long long leftPreSum [ 100005 ] [ 100005 ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "incompatible types in assignment of ‘int’ to ‘long long int [100005]’"
+    }
+  ]
+}

@@ -1,0 +1,689 @@
+{
+  "meta": {
+    "index": 2749,
+    "hitid": "30EV7DWJTVPXMBHE1162SLRDAJV6YR",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "454A",
+    "subid": "46408324"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "declare integer array sum size 60 = { 0 }",
+      "code": "int sum [ 60 ] = { 0 } ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "declare character array arr size 101 by 101",
+      "code": "char arr [ 101 ] [ 101 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "set bytes from arr to size of arr to value ' * '",
+      "code": "memset ( arr , ' * ' , sizeof ( arr ) ) ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "declare integer n , m = 0",
+      "code": "int n , m = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "for i = n / 2 to 0 inclusive , decrementing i",
+      "code": "for ( int i = n / 2 ; i >= 0 ; i -- )",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for j = m to n - m exclusive , let arr [ i ] [ j ] be ' D '",
+      "code": "for ( int j = m ; j < n - m ; j ++ ) { arr [ i ] [ j ] = ' D ' ; }",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "increment m",
+      "code": "m ++ ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "for i = n - 1 to n / 2 exclusive , decrementing i",
+      "code": "for ( int i = n - 1 ; i > n / 2 ; i -- )",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "for j = m - 1 to n - m + 1 exclusive , let arr [ i ] [ j ] be ' D '",
+      "code": "for ( int j = m - 1 ; j < n - m + 1 ; j ++ ) { arr [ i ] [ j ] = ' D ' ; }",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "decrement m",
+      "code": "m -- ;",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( int i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "for j = 0 to n exclusive , print arr [ i ] [ j ]",
+      "code": "for ( int j = 0 ; j < n ; j ++ ) cout << arr [ i ] [ j ] ;",
+      "indent": 2
+    },
+    {
+      "line": 16,
+      "text": "print newline",
+      "code": "cout << endl ;",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "char arr [ 101 ] [ j ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "int n , m , m ;"
+      ],
+      "err_line": 4,
+      "err_msg": "redeclaration of ‘int m’"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "cin >> N ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘N’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "for ( i = n / 2 ; i >= 0 ; i -- )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "for ( i = n - 1 ; i > n / 2 ; i -- )"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        6
+      ],
+      "mod_code": [
+        "memset ( arr , ' arr ' , sizeof ( arr ) ) ;",
+        "for ( int j = m - m ; j < n - m ; j ++ ) { arr [ i ] [ j ] = ' D ' ; }",
+        "for ( i = n / 2 ; i >= 0 ; i -- )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        6,
+        2
+      ],
+      "mod_code": [
+        "memset ( arr , ' arr ' , sizeof ( arr ) ) ;",
+        "for ( int j = m - m ; j < n - m ; j ++ ) { arr [ i ] [ j ] = ' D ' ; }",
+        "for ( i = n / 2 ; i >= 0 ; i -- )",
+        "char arr [ 101 ] [ j ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        6,
+        10
+      ],
+      "mod_code": [
+        "memset ( arr , ' arr ' , sizeof ( arr ) ) ;",
+        "for ( int j = m - m ; j < n - m ; j ++ ) { arr [ i ] [ j ] = ' D ' ; }",
+        "for ( i = n / 2 ; i >= 0 ; i -- )",
+        "for ( i = n - 1 ; i > n / 2 ; i -- )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        2
+      ],
+      "mod_code": [
+        "memset ( arr , ' arr ' , sizeof ( arr ) ) ;",
+        "for ( int j = m - m ; j < n - m ; j ++ ) { arr [ i ] [ j ] = ' D ' ; }",
+        "char arr [ 101 ] [ j ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        2,
+        10
+      ],
+      "mod_code": [
+        "memset ( arr , ' arr ' , sizeof ( arr ) ) ;",
+        "for ( int j = m - m ; j < n - m ; j ++ ) { arr [ i ] [ j ] = ' D ' ; }",
+        "char arr [ 101 ] [ j ] ;",
+        "for ( i = n - 1 ; i > n / 2 ; i -- )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        10
+      ],
+      "mod_code": [
+        "memset ( arr , ' arr ' , sizeof ( arr ) ) ;",
+        "for ( int j = m - m ; j < n - m ; j ++ ) { arr [ i ] [ j ] = ' D ' ; }",
+        "for ( i = n - 1 ; i > n / 2 ; i -- )"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        6
+      ],
+      "mod_code": [
+        "memset ( arr , ' arr ' , sizeof ( arr ) ) ;",
+        "for ( i = n / 2 ; i >= 0 ; i -- )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        6,
+        2
+      ],
+      "mod_code": [
+        "memset ( arr , ' arr ' , sizeof ( arr ) ) ;",
+        "for ( i = n / 2 ; i >= 0 ; i -- )",
+        "char arr [ 101 ] [ j ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        6,
+        2,
+        7
+      ],
+      "mod_code": [
+        "memset ( arr , ' arr ' , sizeof ( arr ) ) ;",
+        "for ( i = n / 2 ; i >= 0 ; i -- )",
+        "char arr [ 101 ] [ j ] ;",
+        "for ( int j = m - m ; j < n - m ; j ++ ) arr [ i ] [ j ] = ' D ' ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        6,
+        2,
+        10
+      ],
+      "mod_code": [
+        "memset ( arr , ' arr ' , sizeof ( arr ) ) ;",
+        "for ( i = n / 2 ; i >= 0 ; i -- )",
+        "char arr [ 101 ] [ j ] ;",
+        "for ( i = n - 1 ; i > n / 2 ; i -- )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        6,
+        7
+      ],
+      "mod_code": [
+        "memset ( arr , ' arr ' , sizeof ( arr ) ) ;",
+        "for ( i = n / 2 ; i >= 0 ; i -- )",
+        "for ( int j = m - m ; j < n - m ; j ++ ) arr [ i ] [ j ] = ' D ' ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        6,
+        7,
+        10
+      ],
+      "mod_code": [
+        "memset ( arr , ' arr ' , sizeof ( arr ) ) ;",
+        "for ( i = n / 2 ; i >= 0 ; i -- )",
+        "for ( int j = m - m ; j < n - m ; j ++ ) arr [ i ] [ j ] = ' D ' ;",
+        "for ( i = n - 1 ; i > n / 2 ; i -- )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        6,
+        10
+      ],
+      "mod_code": [
+        "memset ( arr , ' arr ' , sizeof ( arr ) ) ;",
+        "for ( i = n / 2 ; i >= 0 ; i -- )",
+        "for ( i = n - 1 ; i > n / 2 ; i -- )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        2
+      ],
+      "mod_code": [
+        "memset ( arr , ' arr ' , sizeof ( arr ) ) ;",
+        "char arr [ 101 ] [ j ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        2,
+        7
+      ],
+      "mod_code": [
+        "memset ( arr , ' arr ' , sizeof ( arr ) ) ;",
+        "char arr [ 101 ] [ j ] ;",
+        "for ( int j = m - m ; j < n - m ; j ++ ) arr [ i ] [ j ] = ' D ' ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        2,
+        7,
+        10
+      ],
+      "mod_code": [
+        "memset ( arr , ' arr ' , sizeof ( arr ) ) ;",
+        "char arr [ 101 ] [ j ] ;",
+        "for ( int j = m - m ; j < n - m ; j ++ ) arr [ i ] [ j ] = ' D ' ;",
+        "for ( i = n - 1 ; i > n / 2 ; i -- )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        2,
+        10
+      ],
+      "mod_code": [
+        "memset ( arr , ' arr ' , sizeof ( arr ) ) ;",
+        "char arr [ 101 ] [ j ] ;",
+        "for ( i = n - 1 ; i > n / 2 ; i -- )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3,
+        7,
+        10
+      ],
+      "mod_code": [
+        "memset ( arr , ' arr ' , sizeof ( arr ) ) ;",
+        "for ( int j = m - m ; j < n - m ; j ++ ) arr [ i ] [ j ] = ' D ' ;",
+        "for ( i = n - 1 ; i > n / 2 ; i -- )"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        3,
+        10
+      ],
+      "mod_code": [
+        "memset ( arr , ' arr ' , sizeof ( arr ) ) ;",
+        "for ( i = n - 1 ; i > n / 2 ; i -- )"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        7,
+        6
+      ],
+      "mod_code": [
+        "for ( int j = m - m ; j < n - m ; j ++ ) { arr [ i ] [ j ] = ' D ' ; }",
+        "for ( i = n / 2 ; i >= 0 ; i -- )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        6,
+        2
+      ],
+      "mod_code": [
+        "for ( int j = m - m ; j < n - m ; j ++ ) { arr [ i ] [ j ] = ' D ' ; }",
+        "for ( i = n / 2 ; i >= 0 ; i -- )",
+        "char arr [ 101 ] [ j ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        6,
+        2,
+        10
+      ],
+      "mod_code": [
+        "for ( int j = m - m ; j < n - m ; j ++ ) { arr [ i ] [ j ] = ' D ' ; }",
+        "for ( i = n / 2 ; i >= 0 ; i -- )",
+        "char arr [ 101 ] [ j ] ;",
+        "for ( i = n - 1 ; i > n / 2 ; i -- )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        6,
+        10
+      ],
+      "mod_code": [
+        "for ( int j = m - m ; j < n - m ; j ++ ) { arr [ i ] [ j ] = ' D ' ; }",
+        "for ( i = n / 2 ; i >= 0 ; i -- )",
+        "for ( i = n - 1 ; i > n / 2 ; i -- )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        2
+      ],
+      "mod_code": [
+        "for ( int j = m - m ; j < n - m ; j ++ ) { arr [ i ] [ j ] = ' D ' ; }",
+        "char arr [ 101 ] [ j ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        2,
+        10
+      ],
+      "mod_code": [
+        "for ( int j = m - m ; j < n - m ; j ++ ) { arr [ i ] [ j ] = ' D ' ; }",
+        "char arr [ 101 ] [ j ] ;",
+        "for ( i = n - 1 ; i > n / 2 ; i -- )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        10
+      ],
+      "mod_code": [
+        "for ( int j = m - m ; j < n - m ; j ++ ) { arr [ i ] [ j ] = ' D ' ; }",
+        "for ( i = n - 1 ; i > n / 2 ; i -- )"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        2
+      ],
+      "mod_code": [
+        "for ( i = n / 2 ; i >= 0 ; i -- )",
+        "char arr [ 101 ] [ j ] ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        2,
+        7
+      ],
+      "mod_code": [
+        "for ( i = n / 2 ; i >= 0 ; i -- )",
+        "char arr [ 101 ] [ j ] ;",
+        "for ( int j = m - m ; j < n - m ; j ++ ) arr [ i ] [ j ] = ' D ' ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        2,
+        7,
+        10
+      ],
+      "mod_code": [
+        "for ( i = n / 2 ; i >= 0 ; i -- )",
+        "char arr [ 101 ] [ j ] ;",
+        "for ( int j = m - m ; j < n - m ; j ++ ) arr [ i ] [ j ] = ' D ' ;",
+        "for ( i = n - 1 ; i > n / 2 ; i -- )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        2,
+        10
+      ],
+      "mod_code": [
+        "for ( i = n / 2 ; i >= 0 ; i -- )",
+        "char arr [ 101 ] [ j ] ;",
+        "for ( i = n - 1 ; i > n / 2 ; i -- )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        7
+      ],
+      "mod_code": [
+        "for ( i = n / 2 ; i >= 0 ; i -- )",
+        "for ( int j = m - m ; j < n - m ; j ++ ) arr [ i ] [ j ] = ' D ' ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        10
+      ],
+      "mod_code": [
+        "for ( i = n / 2 ; i >= 0 ; i -- )",
+        "for ( int j = m - m ; j < n - m ; j ++ ) arr [ i ] [ j ] = ' D ' ;",
+        "for ( i = n - 1 ; i > n / 2 ; i -- )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        10
+      ],
+      "mod_code": [
+        "for ( i = n / 2 ; i >= 0 ; i -- )",
+        "for ( i = n - 1 ; i > n / 2 ; i -- )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        7
+      ],
+      "mod_code": [
+        "char arr [ 101 ] [ j ] ;",
+        "for ( int j = m - m ; j < n - m ; j ++ ) arr [ i ] [ j ] = ' D ' ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        7,
+        10
+      ],
+      "mod_code": [
+        "char arr [ 101 ] [ j ] ;",
+        "for ( int j = m - m ; j < n - m ; j ++ ) arr [ i ] [ j ] = ' D ' ;",
+        "for ( i = n - 1 ; i > n / 2 ; i -- )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        2,
+        10
+      ],
+      "mod_code": [
+        "char arr [ 101 ] [ j ] ;",
+        "for ( i = n - 1 ; i > n / 2 ; i -- )"
+      ],
+      "err_line": 2,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        10
+      ],
+      "mod_code": [
+        "for ( int j = m - m ; j < n - m ; j ++ ) arr [ i ] [ j ] = ' D ' ;",
+        "for ( i = n - 1 ; i > n / 2 ; i -- )"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    }
+  ]
+}

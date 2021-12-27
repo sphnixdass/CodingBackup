@@ -1,0 +1,1155 @@
+{
+  "meta": {
+    "index": 916,
+    "hitid": "3NOEP8XAU4WGWC99B1J9F7BL3ILXPC",
+    "workerid": "A1R0Q9CUUBSM5F",
+    "probid": "213A",
+    "subid": "5194305"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create const int maxN = 300",
+      "code": "const int maxN = 300 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create int arrays c of size maxN and mark of size maxN",
+      "code": "int c [ maxN ] , mark [ maxN ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "create int vector need of size maxN and sp",
+      "code": "vector < int > need [ maxN ] , sp ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "declare dist taking in ints l and r and returning int",
+      "code": "int dist ( int l , int r )",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "if l is equal to r , return 0",
+      "code": "if ( l == r ) return 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "if l is equal to 1",
+      "code": "if ( l == 1 )",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "if r is equal to 2",
+      "code": "if ( r == 2 )",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "return 1",
+      "code": "return 1 ;",
+      "indent": 3
+    },
+    {
+      "line": 8,
+      "text": "else",
+      "code": "else",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "return 2",
+      "code": "return 2 ;",
+      "indent": 3
+    },
+    {
+      "line": 10,
+      "text": "if r is equal to 3 , return 1",
+      "code": "if ( r == 3 ) return 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "if l is equal to 3",
+      "code": "if ( l == 3 )",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "if r is equal to 2 , return 2",
+      "code": "if ( r == 2 ) return 2 ;",
+      "indent": 2
+    },
+    {
+      "line": 13,
+      "text": "if l is equal to 2 , return 2",
+      "code": "if ( l == 2 ) return 2 ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "return 1",
+      "code": "return 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 16,
+      "text": "declare solve taking in ints n and nowp and returning int",
+      "code": "int solve ( int n , int nowp )",
+      "indent": 0
+    },
+    {
+      "line": 17,
+      "text": "let ints ans = 0 , flag = 0 , mn = 9 , mc = - 1",
+      "code": "int ans = 0 , flag = 0 , mn = 9 , mc = - 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( int i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "if mark [ i ] is falsy , set flag to 1",
+      "code": "if ( ! mark [ i ] ) flag = 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 20,
+      "text": "if flag is falsy , return 0",
+      "code": "if ( ! flag ) return 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "create int vector nsp",
+      "code": "vector < int > nsp ;",
+      "indent": 1
+    },
+    {
+      "line": 22,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( int i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "if ! mark [ i ] is truthy",
+      "code": "if ( ! mark [ i ] )",
+      "indent": 2
+    },
+    {
+      "line": 24,
+      "text": "set flag to 1",
+      "code": "flag = 1 ;",
+      "indent": 3
+    },
+    {
+      "line": 25,
+      "text": "for j = 0 to size of need [ i ] exclusive",
+      "code": "for ( int j = 0 ; j < need [ i ] . size ( ) ; j ++ )",
+      "indent": 3
+    },
+    {
+      "line": 26,
+      "text": "if ! mark [ need [ i ] [ j ] ] is truthy , set flag to 0",
+      "code": "if ( ! mark [ need [ i ] [ j ] ] ) flag = 0 ;",
+      "indent": 4
+    },
+    {
+      "line": 27,
+      "text": "if flag is truthy , append i to nsp",
+      "code": "if ( flag ) nsp . push_back ( i ) ;",
+      "indent": 3
+    },
+    {
+      "line": 28,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 29,
+      "text": "for i = 0 to size of nsp exclusive",
+      "code": "for ( int i = 0 ; i < nsp . size ( ) ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 30,
+      "text": "if mc is not equal to c [ nsp [ i ] ] and the return value of dist ( nowp , c [ nsp [ i ] ] ) is less than mn",
+      "code": "if ( mc != c [ nsp [ i ] ] && dist ( nowp , c [ nsp [ i ] ] ) < mn )",
+      "indent": 2
+    },
+    {
+      "line": 31,
+      "text": "set mn to the return value of dist ( nowp , c [ nsp [ i ] ] )",
+      "code": "mn = dist ( nowp , c [ nsp [ i ] ] ) ;",
+      "indent": 3
+    },
+    {
+      "line": 32,
+      "text": "set mc to c [ nsp [ i ] ]",
+      "code": "mc = c [ nsp [ i ] ] ;",
+      "indent": 3
+    },
+    {
+      "line": 33,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 34,
+      "text": "for i = 0 to size of nsp exclusive",
+      "code": "for ( int i = 0 ; i < nsp . size ( ) ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 35,
+      "text": "if mc is equal to c [ nsp [ i ] ]",
+      "code": "if ( mc == c [ nsp [ i ] ] )",
+      "indent": 2
+    },
+    {
+      "line": 36,
+      "text": "set mark [ nsp [ i ] to 1",
+      "code": "mark [ nsp [ i ] ] = 1 ;",
+      "indent": 3
+    },
+    {
+      "line": 37,
+      "text": "increment ans",
+      "code": "ans ++ ;",
+      "indent": 3
+    },
+    {
+      "line": 38,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 39,
+      "text": "set ans to ans + mn + solve ( n , mc )",
+      "code": "ans = ans + mn + solve ( n , mc ) ;",
+      "indent": 1
+    },
+    {
+      "line": 40,
+      "text": "return ans",
+      "code": "return ans ;",
+      "indent": 1
+    },
+    {
+      "line": 41,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 42,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 43,
+      "text": "create ints n and mans = 99999999",
+      "code": "int n , mans = 99999999 ;",
+      "indent": 1
+    },
+    {
+      "line": 44,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 45,
+      "text": "for i = 0 to n exclusive , read c [ i ]",
+      "code": "for ( int i = 0 ; i < n ; i ++ ) cin >> c [ i ] ;",
+      "indent": 1
+    },
+    {
+      "line": 46,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( int i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 47,
+      "text": "let int k",
+      "code": "int k ;",
+      "indent": 2
+    },
+    {
+      "line": 48,
+      "text": "read k",
+      "code": "cin >> k ;",
+      "indent": 2
+    },
+    {
+      "line": 49,
+      "text": "if ! k is truthy , append i to sp",
+      "code": "if ( ! k ) sp . push_back ( i ) ;",
+      "indent": 2
+    },
+    {
+      "line": 50,
+      "text": "while k - - is truthy",
+      "code": "while ( k -- )",
+      "indent": 2
+    },
+    {
+      "line": 51,
+      "text": "let int l",
+      "code": "int l ;",
+      "indent": 3
+    },
+    {
+      "line": 52,
+      "text": "read l",
+      "code": "cin >> l ;",
+      "indent": 3
+    },
+    {
+      "line": 53,
+      "text": "reduce l by 1",
+      "code": "l -- ;",
+      "indent": 3
+    },
+    {
+      "line": 54,
+      "text": "append l to need [ i ]",
+      "code": "need [ i ] . push_back ( l ) ;",
+      "indent": 3
+    },
+    {
+      "line": 55,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 56,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 57,
+      "text": "print the size of sp",
+      "code": "cerr << sp . size ( ) << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 58,
+      "text": "for i = 0 to the size of sp exclusive",
+      "code": "for ( int i = 0 ; i < sp . size ( ) ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 59,
+      "text": "for j = 0 to n exclusive , set mark [ j ] to 0",
+      "code": "for ( int j = 0 ; j < n ; j ++ ) mark [ j ] = 0 ;",
+      "indent": 2
+    },
+    {
+      "line": 60,
+      "text": "set mark [ sp [ i ] ] to 1",
+      "code": "mark [ sp [ i ] ] = 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 61,
+      "text": "set mans to min ( mans , solve ( n , c [ sp [ i ] ] ) + 1 )",
+      "code": "mans = min ( mans , solve ( n , c [ sp [ i ] ] ) + 1 ) ;",
+      "indent": 2
+    },
+    {
+      "line": 62,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 63,
+      "text": "print mans",
+      "code": "cout << mans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 64,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 65,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "vector < int > need , sp ;"
+      ],
+      "err_line": 25,
+      "err_msg": "request for member ‘size’ in ‘need.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "vector < int > need ( maxN , sp ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "‘sp’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "int dist ( int l , int r ) ;"
+      ],
+      "err_line": 4,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "else if ( r == 2 )"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘}’ before ‘else’"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "int solve ( int n , int nowp ) ;"
+      ],
+      "err_line": 17,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        18
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 18,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        21
+      ],
+      "mod_code": [
+        "vector < int > :: nsp ;"
+      ],
+      "err_line": 21,
+      "err_msg": "‘nsp’ is not a member of ‘std::vector<int>’"
+    },
+    {
+      "mod_line": [
+        22
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 22,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        25
+      ],
+      "mod_code": [
+        "for ( j = 0 ; j < need [ i ] . size ( ) ; j ++ )"
+      ],
+      "err_line": 25,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        29
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < nsp . size ( ) ; i ++ )"
+      ],
+      "err_line": 29,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        31
+      ],
+      "mod_code": [
+        "mn = dist ( nowp , c [ nsp ] ] ) ;"
+      ],
+      "err_line": 31,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘int [300]’ and ‘std::vector<int>’)"
+    },
+    {
+      "mod_line": [
+        34
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < nsp . size ( ) ; i ++ )"
+      ],
+      "err_line": 34,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        35
+      ],
+      "mod_code": [
+        "if ( mc == c [ nsp ] ] )"
+      ],
+      "err_line": 35,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘int [300]’ and ‘std::vector<int>’)"
+    },
+    {
+      "mod_line": [
+        46
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 46,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        51
+      ],
+      "mod_code": [
+        "int n ;"
+      ],
+      "err_line": 52,
+      "err_msg": "‘l’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        54
+      ],
+      "mod_code": [
+        "need [ i ] . append ( l ) ;"
+      ],
+      "err_line": 54,
+      "err_msg": "‘class std::vector<int>’ has no member named ‘append’"
+    },
+    {
+      "mod_line": [
+        58
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < sp . size ( ) ; i ++ )"
+      ],
+      "err_line": 58,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        61
+      ],
+      "mod_code": [
+        "mans = min ( mans , solve ( n , c [ sp ] ] ) + 1 ) ;"
+      ],
+      "err_line": 61,
+      "err_msg": "no match for ‘operator[]’ (operand types are ‘int [300]’ and ‘std::vector<int>’)"
+    },
+    {
+      "mod_line": [
+        64
+      ],
+      "mod_code": [
+        "while ( cin >> n )"
+      ],
+      "err_line": 65,
+      "err_msg": "expected primary-expression before ‘}’ token"
+    },
+    {
+      "mod_line": [
+        2,
+        19
+      ],
+      "mod_code": [
+        "vector < int > need , sp ;",
+        "if ( mark [ i ] ) flag = 1 ;"
+      ],
+      "err_line": 25,
+      "err_msg": "request for member ‘size’ in ‘need.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        2,
+        19,
+        57
+      ],
+      "mod_code": [
+        "vector < int > need , sp ;",
+        "if ( mark [ i ] ) flag = 1 ;",
+        "cout << sp . size ( ) << endl ;"
+      ],
+      "err_line": 25,
+      "err_msg": "request for member ‘size’ in ‘need.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        2,
+        19,
+        57,
+        63
+      ],
+      "mod_code": [
+        "vector < int > need , sp ;",
+        "if ( mark [ i ] ) flag = 1 ;",
+        "cout << sp . size ( ) << endl ;",
+        "cout << mans ;"
+      ],
+      "err_line": 25,
+      "err_msg": "request for member ‘size’ in ‘need.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        2,
+        19,
+        57,
+        23
+      ],
+      "mod_code": [
+        "vector < int > need , sp ;",
+        "if ( mark [ i ] ) flag = 1 ;",
+        "cout << sp . size ( ) << endl ;",
+        "if ( ! ! mark [ i ] )"
+      ],
+      "err_line": 25,
+      "err_msg": "request for member ‘size’ in ‘need.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        2,
+        19,
+        57,
+        6
+      ],
+      "mod_code": [
+        "vector < int > need , sp ;",
+        "if ( mark [ i ] ) flag = 1 ;",
+        "cout << sp . size ( ) << endl ;",
+        "else if ( r == 2 )"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘}’ before ‘else’"
+    },
+    {
+      "mod_line": [
+        2,
+        19,
+        63
+      ],
+      "mod_code": [
+        "vector < int > need , sp ;",
+        "if ( mark [ i ] ) flag = 1 ;",
+        "cout << mans ;"
+      ],
+      "err_line": 25,
+      "err_msg": "request for member ‘size’ in ‘need.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        2,
+        19,
+        63,
+        23
+      ],
+      "mod_code": [
+        "vector < int > need , sp ;",
+        "if ( mark [ i ] ) flag = 1 ;",
+        "cout << mans ;",
+        "if ( ! ! mark [ i ] )"
+      ],
+      "err_line": 25,
+      "err_msg": "request for member ‘size’ in ‘need.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        2,
+        19,
+        63,
+        6
+      ],
+      "mod_code": [
+        "vector < int > need , sp ;",
+        "if ( mark [ i ] ) flag = 1 ;",
+        "cout << mans ;",
+        "else if ( r == 2 )"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘}’ before ‘else’"
+    },
+    {
+      "mod_line": [
+        2,
+        19,
+        23
+      ],
+      "mod_code": [
+        "vector < int > need , sp ;",
+        "if ( mark [ i ] ) flag = 1 ;",
+        "if ( ! ! mark [ i ] )"
+      ],
+      "err_line": 25,
+      "err_msg": "request for member ‘size’ in ‘need.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        2,
+        19,
+        23,
+        6
+      ],
+      "mod_code": [
+        "vector < int > need , sp ;",
+        "if ( mark [ i ] ) flag = 1 ;",
+        "if ( ! ! mark [ i ] )",
+        "else if ( r == 2 )"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘}’ before ‘else’"
+    },
+    {
+      "mod_line": [
+        2,
+        19,
+        6
+      ],
+      "mod_code": [
+        "vector < int > need , sp ;",
+        "if ( mark [ i ] ) flag = 1 ;",
+        "else if ( r == 2 )"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘}’ before ‘else’"
+    },
+    {
+      "mod_line": [
+        2,
+        57
+      ],
+      "mod_code": [
+        "vector < int > need , sp ;",
+        "cout << sp . size ( ) << endl ;"
+      ],
+      "err_line": 25,
+      "err_msg": "request for member ‘size’ in ‘need.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        2,
+        57,
+        63
+      ],
+      "mod_code": [
+        "vector < int > need , sp ;",
+        "cout << sp . size ( ) << endl ;",
+        "cout << mans ;"
+      ],
+      "err_line": 25,
+      "err_msg": "request for member ‘size’ in ‘need.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        2,
+        57,
+        63,
+        23
+      ],
+      "mod_code": [
+        "vector < int > need , sp ;",
+        "cout << sp . size ( ) << endl ;",
+        "cout << mans ;",
+        "if ( ! ! mark [ i ] )"
+      ],
+      "err_line": 25,
+      "err_msg": "request for member ‘size’ in ‘need.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        2,
+        57,
+        63,
+        6
+      ],
+      "mod_code": [
+        "vector < int > need , sp ;",
+        "cout << sp . size ( ) << endl ;",
+        "cout << mans ;",
+        "else if ( r == 2 )"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘}’ before ‘else’"
+    },
+    {
+      "mod_line": [
+        2,
+        57,
+        23
+      ],
+      "mod_code": [
+        "vector < int > need , sp ;",
+        "cout << sp . size ( ) << endl ;",
+        "if ( ! ! mark [ i ] )"
+      ],
+      "err_line": 25,
+      "err_msg": "request for member ‘size’ in ‘need.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        2,
+        57,
+        23,
+        6
+      ],
+      "mod_code": [
+        "vector < int > need , sp ;",
+        "cout << sp . size ( ) << endl ;",
+        "if ( ! ! mark [ i ] )",
+        "else if ( r == 2 )"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘}’ before ‘else’"
+    },
+    {
+      "mod_line": [
+        2,
+        57,
+        6
+      ],
+      "mod_code": [
+        "vector < int > need , sp ;",
+        "cout << sp . size ( ) << endl ;",
+        "else if ( r == 2 )"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘}’ before ‘else’"
+    },
+    {
+      "mod_line": [
+        2,
+        63
+      ],
+      "mod_code": [
+        "vector < int > need , sp ;",
+        "cout << mans ;"
+      ],
+      "err_line": 25,
+      "err_msg": "request for member ‘size’ in ‘need.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        2,
+        63,
+        23
+      ],
+      "mod_code": [
+        "vector < int > need , sp ;",
+        "cout << mans ;",
+        "if ( ! ! mark [ i ] )"
+      ],
+      "err_line": 25,
+      "err_msg": "request for member ‘size’ in ‘need.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        2,
+        63,
+        23,
+        6
+      ],
+      "mod_code": [
+        "vector < int > need , sp ;",
+        "cout << mans ;",
+        "if ( ! ! mark [ i ] )",
+        "else if ( r == 2 )"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘}’ before ‘else’"
+    },
+    {
+      "mod_line": [
+        2,
+        63,
+        6
+      ],
+      "mod_code": [
+        "vector < int > need , sp ;",
+        "cout << mans ;",
+        "else if ( r == 2 )"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘}’ before ‘else’"
+    },
+    {
+      "mod_line": [
+        2,
+        23
+      ],
+      "mod_code": [
+        "vector < int > need , sp ;",
+        "if ( ! ! mark [ i ] )"
+      ],
+      "err_line": 25,
+      "err_msg": "request for member ‘size’ in ‘need.std::vector<_Tp, _Alloc>::operator[]<int, std::allocator<int> >(((std::vector<int>::size_type)i))’, which is of non-class type ‘int’"
+    },
+    {
+      "mod_line": [
+        2,
+        23,
+        6
+      ],
+      "mod_code": [
+        "vector < int > need , sp ;",
+        "if ( ! ! mark [ i ] )",
+        "else if ( r == 2 )"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘}’ before ‘else’"
+    },
+    {
+      "mod_line": [
+        2,
+        6
+      ],
+      "mod_code": [
+        "vector < int > need , sp ;",
+        "else if ( r == 2 )"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘}’ before ‘else’"
+    },
+    {
+      "mod_line": [
+        19,
+        57,
+        63,
+        6
+      ],
+      "mod_code": [
+        "if ( mark [ i ] ) flag = 1 ;",
+        "cout << sp . size ( ) << endl ;",
+        "cout << mans ;",
+        "else if ( r == 2 )"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘}’ before ‘else’"
+    },
+    {
+      "mod_line": [
+        19,
+        57,
+        23,
+        6
+      ],
+      "mod_code": [
+        "if ( mark [ i ] ) flag = 1 ;",
+        "cout << sp . size ( ) << endl ;",
+        "if ( ! ! mark [ i ] )",
+        "else if ( r == 2 )"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘}’ before ‘else’"
+    },
+    {
+      "mod_line": [
+        19,
+        57,
+        6
+      ],
+      "mod_code": [
+        "if ( mark [ i ] ) flag = 1 ;",
+        "cout << sp . size ( ) << endl ;",
+        "else if ( r == 2 )"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘}’ before ‘else’"
+    },
+    {
+      "mod_line": [
+        19,
+        63,
+        23,
+        6
+      ],
+      "mod_code": [
+        "if ( mark [ i ] ) flag = 1 ;",
+        "cout << mans ;",
+        "if ( ! ! mark [ i ] )",
+        "else if ( r == 2 )"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘}’ before ‘else’"
+    },
+    {
+      "mod_line": [
+        19,
+        63,
+        6
+      ],
+      "mod_code": [
+        "if ( mark [ i ] ) flag = 1 ;",
+        "cout << mans ;",
+        "else if ( r == 2 )"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘}’ before ‘else’"
+    },
+    {
+      "mod_line": [
+        19,
+        23,
+        6
+      ],
+      "mod_code": [
+        "if ( mark [ i ] ) flag = 1 ;",
+        "if ( ! ! mark [ i ] )",
+        "else if ( r == 2 )"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘}’ before ‘else’"
+    },
+    {
+      "mod_line": [
+        19,
+        6
+      ],
+      "mod_code": [
+        "if ( mark [ i ] ) flag = 1 ;",
+        "else if ( r == 2 )"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘}’ before ‘else’"
+    },
+    {
+      "mod_line": [
+        57,
+        63,
+        23,
+        6
+      ],
+      "mod_code": [
+        "cout << sp . size ( ) << endl ;",
+        "cout << mans ;",
+        "if ( ! ! mark [ i ] )",
+        "else if ( r == 2 )"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘}’ before ‘else’"
+    },
+    {
+      "mod_line": [
+        57,
+        63,
+        6
+      ],
+      "mod_code": [
+        "cout << sp . size ( ) << endl ;",
+        "cout << mans ;",
+        "else if ( r == 2 )"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘}’ before ‘else’"
+    },
+    {
+      "mod_line": [
+        57,
+        23,
+        6
+      ],
+      "mod_code": [
+        "cout << sp . size ( ) << endl ;",
+        "if ( ! ! mark [ i ] )",
+        "else if ( r == 2 )"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘}’ before ‘else’"
+    },
+    {
+      "mod_line": [
+        57,
+        6
+      ],
+      "mod_code": [
+        "cout << sp . size ( ) << endl ;",
+        "else if ( r == 2 )"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘}’ before ‘else’"
+    },
+    {
+      "mod_line": [
+        63,
+        23,
+        6
+      ],
+      "mod_code": [
+        "cout << mans ;",
+        "if ( ! ! mark [ i ] )",
+        "else if ( r == 2 )"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘}’ before ‘else’"
+    },
+    {
+      "mod_line": [
+        63,
+        6
+      ],
+      "mod_code": [
+        "cout << mans ;",
+        "else if ( r == 2 )"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘}’ before ‘else’"
+    },
+    {
+      "mod_line": [
+        23,
+        6
+      ],
+      "mod_code": [
+        "if ( ! ! mark [ i ] )",
+        "else if ( r == 2 )"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘}’ before ‘else’"
+    }
+  ]
+}

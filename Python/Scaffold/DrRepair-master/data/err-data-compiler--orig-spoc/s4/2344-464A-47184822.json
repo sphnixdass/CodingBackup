@@ -1,0 +1,811 @@
+{
+  "meta": {
+    "index": 2344,
+    "hitid": "3NFWQRSHVE8TJDPP8ON0FRXMYM0FGX",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "464A",
+    "subid": "47184822"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create integers n and p",
+      "code": "int n , p ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "declare string s",
+      "code": "string s ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "relax is a bool function with int argument pos and char argument st",
+      "code": "bool relax ( int pos , char st )",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "loop i from st to p + ' a ' - 1 inclusive",
+      "code": "for ( char i = st ; i <= p + ' a ' - 1 ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "skip the rest of the loop if i = s [ pos - 1 ]",
+      "code": "if ( i == s [ pos - 1 ] ) { continue ; }",
+      "indent": 2
+    },
+    {
+      "line": 5,
+      "text": "skip the rest of the loop if i = s [ pos - 2 ]",
+      "code": "if ( i == s [ pos - 2 ] ) { continue ; }",
+      "indent": 2
+    },
+    {
+      "line": 6,
+      "text": "change s [ pos ] to i",
+      "code": "s [ pos ] = i ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "return true",
+      "code": "return true ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "return false",
+      "code": "return false ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 12,
+      "text": "read input to n , p and s",
+      "code": "cin >> n >> p >> s ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "for ed from n - 1 to 0 inclusive counting down",
+      "code": "for ( int ed = n - 1 ; ed >= 0 ; ed -- )",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "if relax ( ed , s [ ed ] + 1 ) is true",
+      "code": "if ( relax ( ed , s [ ed ] + 1 ) )",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "declare bool succ = true",
+      "code": "bool succ = true ;",
+      "indent": 3
+    },
+    {
+      "line": 16,
+      "text": "for ne from ed + 1 to n exclusive",
+      "code": "for ( int ne = ed + 1 ; ne < n ; ne ++ )",
+      "indent": 3
+    },
+    {
+      "line": 17,
+      "text": "if relax ( ne , ' a ' ) is false",
+      "code": "if ( ! relax ( ne , ' a ' ) )",
+      "indent": 4
+    },
+    {
+      "line": 18,
+      "text": "set succ to false",
+      "code": "succ = false ;",
+      "indent": 5
+    },
+    {
+      "line": 19,
+      "text": "stop the loop",
+      "code": "break ;",
+      "indent": 5
+    },
+    {
+      "line": 20,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 4
+    },
+    {
+      "line": 21,
+      "text": "if succ is true",
+      "code": "if ( succ )",
+      "indent": 3
+    },
+    {
+      "line": 22,
+      "text": "print s",
+      "code": "cout << s << endl ;",
+      "indent": 4
+    },
+    {
+      "line": 23,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 4
+    },
+    {
+      "line": 24,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 3
+    },
+    {
+      "line": 25,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 26,
+      "text": "print \" NO \\ n \"",
+      "code": "cout << \" NO\\n \" ;",
+      "indent": 1
+    },
+    {
+      "line": 27,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 28,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "for ( ; getline ( ed + 1 ) ; ++ n )"
+      ],
+      "err_line": 16,
+      "err_msg": "no matching function for call to ‘getline(int)’"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "string n ;"
+      ],
+      "err_line": 1,
+      "err_msg": "conflicting declaration ‘std::__cxx11::string n’"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "bool relax ( int pos , char st ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "for ( i = st ; i <= p + ' a ' - 1 ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "if ( i == s [ pos - 1 ] ) { rest ++ ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "‘rest’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "if ( i == s [ pos - 2 ] ) { rest ++ ; }"
+      ],
+      "err_line": 5,
+      "err_msg": "‘rest’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "s [ pos ] ] = i ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "cin >> n , p >> s ;"
+      ],
+      "err_line": 12,
+      "err_msg": "no match for ‘operator>>’ (operand types are ‘int’ and ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’)"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "for ( ed = n - 1 ; ed >= 0 ; ed -- )"
+      ],
+      "err_line": 13,
+      "err_msg": "‘ed’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "for ( int32_t ed = ed + 1 ; j < n ; n ++ )"
+      ],
+      "err_line": 16,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        16
+      ],
+      "mod_code": [
+        "if ( i == s [ pos - 1 ] )",
+        "if ( i == s [ pos - 2 ] )",
+        "for ( ; getline ( ed + 1 ) ; ++ n )"
+      ],
+      "err_line": 16,
+      "err_msg": "no matching function for call to ‘getline(int)’"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        16,
+        13
+      ],
+      "mod_code": [
+        "if ( i == s [ pos - 1 ] )",
+        "if ( i == s [ pos - 2 ] )",
+        "for ( ; getline ( ed + 1 ) ; ++ n )",
+        "for ( ed = n - 1 ; ed >= 0 ; ed -- )"
+      ],
+      "err_line": 13,
+      "err_msg": "‘ed’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        16,
+        6
+      ],
+      "mod_code": [
+        "if ( i == s [ pos - 1 ] )",
+        "if ( i == s [ pos - 2 ] )",
+        "for ( ; getline ( ed + 1 ) ; ++ n )",
+        "s [ pos ] ] = i ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        13
+      ],
+      "mod_code": [
+        "if ( i == s [ pos - 1 ] )",
+        "if ( i == s [ pos - 2 ] )",
+        "for ( ed = n - 1 ; ed >= 0 ; ed -- )"
+      ],
+      "err_line": 13,
+      "err_msg": "‘ed’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        13,
+        6
+      ],
+      "mod_code": [
+        "if ( i == s [ pos - 1 ] )",
+        "if ( i == s [ pos - 2 ] )",
+        "for ( ed = n - 1 ; ed >= 0 ; ed -- )",
+        "s [ pos ] ] = i ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        6
+      ],
+      "mod_code": [
+        "if ( i == s [ pos - 1 ] )",
+        "if ( i == s [ pos - 2 ] )",
+        "s [ pos ] ] = i ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        16
+      ],
+      "mod_code": [
+        "if ( i == s [ pos - 1 ] )",
+        "for ( ; getline ( ed + 1 ) ; ++ n )"
+      ],
+      "err_line": 16,
+      "err_msg": "no matching function for call to ‘getline(int)’"
+    },
+    {
+      "mod_line": [
+        4,
+        16,
+        13
+      ],
+      "mod_code": [
+        "if ( i == s [ pos - 1 ] )",
+        "for ( ; getline ( ed + 1 ) ; ++ n )",
+        "for ( ed = n - 1 ; ed >= 0 ; ed -- )"
+      ],
+      "err_line": 13,
+      "err_msg": "‘ed’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        16,
+        13,
+        6
+      ],
+      "mod_code": [
+        "if ( i == s [ pos - 1 ] )",
+        "for ( ; getline ( ed + 1 ) ; ++ n )",
+        "for ( ed = n - 1 ; ed >= 0 ; ed -- )",
+        "s [ pos ] ] = i ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        16,
+        6
+      ],
+      "mod_code": [
+        "if ( i == s [ pos - 1 ] )",
+        "for ( ; getline ( ed + 1 ) ; ++ n )",
+        "s [ pos ] ] = i ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        13
+      ],
+      "mod_code": [
+        "if ( i == s [ pos - 1 ] )",
+        "for ( ed = n - 1 ; ed >= 0 ; ed -- )"
+      ],
+      "err_line": 13,
+      "err_msg": "‘ed’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        13,
+        6
+      ],
+      "mod_code": [
+        "if ( i == s [ pos - 1 ] )",
+        "for ( ed = n - 1 ; ed >= 0 ; ed -- )",
+        "s [ pos ] ] = i ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        6
+      ],
+      "mod_code": [
+        "if ( i == s [ pos - 1 ] )",
+        "s [ pos ] ] = i ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        16
+      ],
+      "mod_code": [
+        "if ( i == s [ pos - 2 ] )",
+        "for ( ; getline ( ed + 1 ) ; ++ n )"
+      ],
+      "err_line": 16,
+      "err_msg": "no matching function for call to ‘getline(int)’"
+    },
+    {
+      "mod_line": [
+        5,
+        16,
+        4
+      ],
+      "mod_code": [
+        "if ( i == s [ pos - 2 ] )",
+        "for ( ; getline ( ed + 1 ) ; ++ n )",
+        "if ( i == s [ pos - 1 ] ) { rest ++ ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "‘rest’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        16,
+        4,
+        13
+      ],
+      "mod_code": [
+        "if ( i == s [ pos - 2 ] )",
+        "for ( ; getline ( ed + 1 ) ; ++ n )",
+        "if ( i == s [ pos - 1 ] ) { rest ++ ; }",
+        "for ( ed = n - 1 ; ed >= 0 ; ed -- )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘rest’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        16,
+        4,
+        6
+      ],
+      "mod_code": [
+        "if ( i == s [ pos - 2 ] )",
+        "for ( ; getline ( ed + 1 ) ; ++ n )",
+        "if ( i == s [ pos - 1 ] ) { rest ++ ; }",
+        "s [ pos ] ] = i ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘rest’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        16,
+        13
+      ],
+      "mod_code": [
+        "if ( i == s [ pos - 2 ] )",
+        "for ( ; getline ( ed + 1 ) ; ++ n )",
+        "for ( ed = n - 1 ; ed >= 0 ; ed -- )"
+      ],
+      "err_line": 13,
+      "err_msg": "‘ed’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        16,
+        13,
+        6
+      ],
+      "mod_code": [
+        "if ( i == s [ pos - 2 ] )",
+        "for ( ; getline ( ed + 1 ) ; ++ n )",
+        "for ( ed = n - 1 ; ed >= 0 ; ed -- )",
+        "s [ pos ] ] = i ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        16,
+        6
+      ],
+      "mod_code": [
+        "if ( i == s [ pos - 2 ] )",
+        "for ( ; getline ( ed + 1 ) ; ++ n )",
+        "s [ pos ] ] = i ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        4
+      ],
+      "mod_code": [
+        "if ( i == s [ pos - 2 ] )",
+        "if ( i == s [ pos - 1 ] ) { rest ++ ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "‘rest’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        4,
+        13
+      ],
+      "mod_code": [
+        "if ( i == s [ pos - 2 ] )",
+        "if ( i == s [ pos - 1 ] ) { rest ++ ; }",
+        "for ( ed = n - 1 ; ed >= 0 ; ed -- )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘rest’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        4,
+        13,
+        6
+      ],
+      "mod_code": [
+        "if ( i == s [ pos - 2 ] )",
+        "if ( i == s [ pos - 1 ] ) { rest ++ ; }",
+        "for ( ed = n - 1 ; ed >= 0 ; ed -- )",
+        "s [ pos ] ] = i ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘rest’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        4,
+        6
+      ],
+      "mod_code": [
+        "if ( i == s [ pos - 2 ] )",
+        "if ( i == s [ pos - 1 ] ) { rest ++ ; }",
+        "s [ pos ] ] = i ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘rest’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        13
+      ],
+      "mod_code": [
+        "if ( i == s [ pos - 2 ] )",
+        "for ( ed = n - 1 ; ed >= 0 ; ed -- )"
+      ],
+      "err_line": 13,
+      "err_msg": "‘ed’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        13,
+        6
+      ],
+      "mod_code": [
+        "if ( i == s [ pos - 2 ] )",
+        "for ( ed = n - 1 ; ed >= 0 ; ed -- )",
+        "s [ pos ] ] = i ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        6
+      ],
+      "mod_code": [
+        "if ( i == s [ pos - 2 ] )",
+        "s [ pos ] ] = i ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        4
+      ],
+      "mod_code": [
+        "for ( ; getline ( ed + 1 ) ; ++ n )",
+        "if ( i == s [ pos - 1 ] ) { rest ++ ; }"
+      ],
+      "err_line": 4,
+      "err_msg": "‘rest’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        4,
+        13
+      ],
+      "mod_code": [
+        "for ( ; getline ( ed + 1 ) ; ++ n )",
+        "if ( i == s [ pos - 1 ] ) { rest ++ ; }",
+        "for ( ed = n - 1 ; ed >= 0 ; ed -- )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘rest’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        4,
+        13,
+        6
+      ],
+      "mod_code": [
+        "for ( ; getline ( ed + 1 ) ; ++ n )",
+        "if ( i == s [ pos - 1 ] ) { rest ++ ; }",
+        "for ( ed = n - 1 ; ed >= 0 ; ed -- )",
+        "s [ pos ] ] = i ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘rest’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        4,
+        6
+      ],
+      "mod_code": [
+        "for ( ; getline ( ed + 1 ) ; ++ n )",
+        "if ( i == s [ pos - 1 ] ) { rest ++ ; }",
+        "s [ pos ] ] = i ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘rest’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        13
+      ],
+      "mod_code": [
+        "for ( ; getline ( ed + 1 ) ; ++ n )",
+        "for ( ed = n - 1 ; ed >= 0 ; ed -- )"
+      ],
+      "err_line": 13,
+      "err_msg": "‘ed’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        16,
+        13,
+        6
+      ],
+      "mod_code": [
+        "for ( ; getline ( ed + 1 ) ; ++ n )",
+        "for ( ed = n - 1 ; ed >= 0 ; ed -- )",
+        "s [ pos ] ] = i ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        16,
+        6
+      ],
+      "mod_code": [
+        "for ( ; getline ( ed + 1 ) ; ++ n )",
+        "s [ pos ] ] = i ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        4,
+        13
+      ],
+      "mod_code": [
+        "if ( i == s [ pos - 1 ] ) { rest ++ ; }",
+        "for ( ed = n - 1 ; ed >= 0 ; ed -- )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘rest’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        13,
+        6
+      ],
+      "mod_code": [
+        "if ( i == s [ pos - 1 ] ) { rest ++ ; }",
+        "for ( ed = n - 1 ; ed >= 0 ; ed -- )",
+        "s [ pos ] ] = i ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘rest’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        6
+      ],
+      "mod_code": [
+        "if ( i == s [ pos - 1 ] ) { rest ++ ; }",
+        "s [ pos ] ] = i ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘rest’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        6
+      ],
+      "mod_code": [
+        "for ( ed = n - 1 ; ed >= 0 ; ed -- )",
+        "s [ pos ] ] = i ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected ‘;’ before ‘]’ token"
+    }
+  ]
+}

@@ -1,0 +1,855 @@
+{
+  "meta": {
+    "index": 1273,
+    "hitid": "3XUY87HIVP8ZHXDS5EP8NM1SR9SMMN",
+    "workerid": "A24WRPQYGMQLGF",
+    "probid": "496A",
+    "subid": "48128263"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "n = integer",
+      "code": "int n ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "r [ n ] , d [ n - 1 ] = integer , s = integer = 0 , m = integer = 1000",
+      "code": "int r [ n ] , d [ n - 1 ] , s = 0 , m = 1000 ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "read r [ 0 ]",
+      "code": "cin >> r [ 0 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i = 1 to n exclusive",
+      "code": "for ( int i = 1 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "read r [ i ]",
+      "code": "cin >> r [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "d [ i ] = r [ i ] - r [ i - 1 ]",
+      "code": "d [ i ] = r [ i ] - r [ i - 1 ] ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "s = bigger value between s and d [ i ]",
+      "code": "s = max ( s , d [ i ] ) ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "for i = 2 to n exclusive , then m = bigger value between the lower value between m and d [ i ] + d [ i - 1 ] , and s",
+      "code": "for ( int i = 2 ; i < n ; i ++ ) m = max ( min ( m , d [ i ] + d [ i - 1 ] ) , s ) ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "print m",
+      "code": "cout << m << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i < n ; i ++ ) { m = max ( min ( m , d [ i ] + d [ i - 1 ] , s ) ; }"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "while ( cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘r’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "int r [ n ] , d [ n - 1 ] , s = 0 , s = 1000 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "redeclaration of ‘int s’"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "cin >> r [ i ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "int d [ i ] = r [ i ] - r [ i - 1 ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "s [ max ( s , d [ i ] ) ;"
+      ],
+      "err_line": 8,
+      "err_msg": "expected ‘]’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i < n ; i ++ ) { m = max ( m , d [ i ] + d [ i - 1 ] , s [ i ] ) ; }"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid types ‘int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        10,
+        6
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i < n ; i ++ ) { m = max ( min ( m , d [ i ] + d [ i - 1 ] , s ) ; }",
+        "while ( cin >> r [ i ] )"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        6,
+        7
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i < n ; i ++ ) { m = max ( min ( m , d [ i ] + d [ i - 1 ] , s ) ; }",
+        "while ( cin >> r [ i ] )",
+        "int d [ i ] = r [ i ] - r [ i - 1 ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        10,
+        6,
+        7,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i < n ; i ++ ) { m = max ( min ( m , d [ i ] + d [ i - 1 ] , s ) ; }",
+        "while ( cin >> r [ i ] )",
+        "int d [ i ] = r [ i ] - r [ i - 1 ] ;",
+        "cin >> r [ i ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        6,
+        7,
+        5
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i < n ; i ++ ) { m = max ( min ( m , d [ i ] + d [ i - 1 ] , s ) ; }",
+        "while ( cin >> r [ i ] )",
+        "int d [ i ] = r [ i ] - r [ i - 1 ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        10,
+        6,
+        7,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i < n ; i ++ ) { m = max ( min ( m , d [ i ] + d [ i - 1 ] , s ) ; }",
+        "while ( cin >> r [ i ] )",
+        "int d [ i ] = r [ i ] - r [ i - 1 ] ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘r’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        6,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i < n ; i ++ ) { m = max ( min ( m , d [ i ] + d [ i - 1 ] , s ) ; }",
+        "while ( cin >> r [ i ] )",
+        "cin >> r [ i ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        6,
+        4,
+        5
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i < n ; i ++ ) { m = max ( min ( m , d [ i ] + d [ i - 1 ] , s ) ; }",
+        "while ( cin >> r [ i ] )",
+        "cin >> r [ i ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        6,
+        4,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i < n ; i ++ ) { m = max ( min ( m , d [ i ] + d [ i - 1 ] , s ) ; }",
+        "while ( cin >> r [ i ] )",
+        "cin >> r [ i ] ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘r’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        6,
+        5
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i < n ; i ++ ) { m = max ( min ( m , d [ i ] + d [ i - 1 ] , s ) ; }",
+        "while ( cin >> r [ i ] )",
+        "for ( int i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        6,
+        5,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i < n ; i ++ ) { m = max ( min ( m , d [ i ] + d [ i - 1 ] , s ) ; }",
+        "while ( cin >> r [ i ] )",
+        "for ( int i = 1 ; i <= n ; i ++ )",
+        "while ( cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘r’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        6,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i < n ; i ++ ) { m = max ( min ( m , d [ i ] + d [ i - 1 ] , s ) ; }",
+        "while ( cin >> r [ i ] )",
+        "while ( cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘r’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        7
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i < n ; i ++ ) { m = max ( min ( m , d [ i ] + d [ i - 1 ] , s ) ; }",
+        "int d [ i ] = r [ i ] - r [ i - 1 ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        10,
+        7,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i < n ; i ++ ) { m = max ( min ( m , d [ i ] + d [ i - 1 ] , s ) ; }",
+        "int d [ i ] = r [ i ] - r [ i - 1 ] ;",
+        "cin >> r [ i ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        7,
+        4,
+        5
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i < n ; i ++ ) { m = max ( min ( m , d [ i ] + d [ i - 1 ] , s ) ; }",
+        "int d [ i ] = r [ i ] - r [ i - 1 ] ;",
+        "cin >> r [ i ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        7,
+        4,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i < n ; i ++ ) { m = max ( min ( m , d [ i ] + d [ i - 1 ] , s ) ; }",
+        "int d [ i ] = r [ i ] - r [ i - 1 ] ;",
+        "cin >> r [ i ] ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘r’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        7,
+        5
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i < n ; i ++ ) { m = max ( min ( m , d [ i ] + d [ i - 1 ] , s ) ; }",
+        "int d [ i ] = r [ i ] - r [ i - 1 ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        10,
+        7,
+        5,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i < n ; i ++ ) { m = max ( min ( m , d [ i ] + d [ i - 1 ] , s ) ; }",
+        "int d [ i ] = r [ i ] - r [ i - 1 ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ )",
+        "while ( cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘r’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        7,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i < n ; i ++ ) { m = max ( min ( m , d [ i ] + d [ i - 1 ] , s ) ; }",
+        "int d [ i ] = r [ i ] - r [ i - 1 ] ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘r’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        4
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i < n ; i ++ ) { m = max ( min ( m , d [ i ] + d [ i - 1 ] , s ) ; }",
+        "cin >> r [ i ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        4,
+        5
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i < n ; i ++ ) { m = max ( min ( m , d [ i ] + d [ i - 1 ] , s ) ; }",
+        "cin >> r [ i ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        4,
+        5,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i < n ; i ++ ) { m = max ( min ( m , d [ i ] + d [ i - 1 ] , s ) ; }",
+        "cin >> r [ i ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ )",
+        "while ( cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘r’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        4,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i < n ; i ++ ) { m = max ( min ( m , d [ i ] + d [ i - 1 ] , s ) ; }",
+        "cin >> r [ i ] ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘r’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        5
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i < n ; i ++ ) { m = max ( min ( m , d [ i ] + d [ i - 1 ] , s ) ; }",
+        "for ( int i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "expected ‘)’ before ‘;’ token"
+    },
+    {
+      "mod_line": [
+        10,
+        5,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i < n ; i ++ ) { m = max ( min ( m , d [ i ] + d [ i - 1 ] , s ) ; }",
+        "for ( int i = 1 ; i <= n ; i ++ )",
+        "while ( cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘r’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 2 ; i < n ; i ++ ) { m = max ( min ( m , d [ i ] + d [ i - 1 ] , s ) ; }",
+        "while ( cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘r’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        7
+      ],
+      "mod_code": [
+        "while ( cin >> r [ i ] )",
+        "int d [ i ] = r [ i ] - r [ i - 1 ] ;"
+      ],
+      "err_line": 7,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        4
+      ],
+      "mod_code": [
+        "while ( cin >> r [ i ] )",
+        "int d [ i ] = r [ i ] - r [ i - 1 ] ;",
+        "cin >> r [ i ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        4,
+        5
+      ],
+      "mod_code": [
+        "while ( cin >> r [ i ] )",
+        "int d [ i ] = r [ i ] - r [ i - 1 ] ;",
+        "cin >> r [ i ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        4,
+        2
+      ],
+      "mod_code": [
+        "while ( cin >> r [ i ] )",
+        "int d [ i ] = r [ i ] - r [ i - 1 ] ;",
+        "cin >> r [ i ] ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘r’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        5
+      ],
+      "mod_code": [
+        "while ( cin >> r [ i ] )",
+        "int d [ i ] = r [ i ] - r [ i - 1 ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        5,
+        2
+      ],
+      "mod_code": [
+        "while ( cin >> r [ i ] )",
+        "int d [ i ] = r [ i ] - r [ i - 1 ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ )",
+        "while ( cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘r’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        2
+      ],
+      "mod_code": [
+        "while ( cin >> r [ i ] )",
+        "int d [ i ] = r [ i ] - r [ i - 1 ] ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘r’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        4
+      ],
+      "mod_code": [
+        "while ( cin >> r [ i ] )",
+        "cin >> r [ i ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        4,
+        5
+      ],
+      "mod_code": [
+        "while ( cin >> r [ i ] )",
+        "cin >> r [ i ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        4,
+        5,
+        2
+      ],
+      "mod_code": [
+        "while ( cin >> r [ i ] )",
+        "cin >> r [ i ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ )",
+        "while ( cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘r’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        4,
+        2
+      ],
+      "mod_code": [
+        "while ( cin >> r [ i ] )",
+        "cin >> r [ i ] ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘r’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        5,
+        2
+      ],
+      "mod_code": [
+        "while ( cin >> r [ i ] )",
+        "for ( int i = 1 ; i <= n ; i ++ )",
+        "while ( cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘r’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        2
+      ],
+      "mod_code": [
+        "while ( cin >> r [ i ] )",
+        "while ( cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘r’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        4
+      ],
+      "mod_code": [
+        "int d [ i ] = r [ i ] - r [ i - 1 ] ;",
+        "cin >> r [ i ] ;"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        4,
+        5
+      ],
+      "mod_code": [
+        "int d [ i ] = r [ i ] - r [ i - 1 ] ;",
+        "cin >> r [ i ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        4,
+        5,
+        2
+      ],
+      "mod_code": [
+        "int d [ i ] = r [ i ] - r [ i - 1 ] ;",
+        "cin >> r [ i ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ )",
+        "while ( cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘r’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        4,
+        2
+      ],
+      "mod_code": [
+        "int d [ i ] = r [ i ] - r [ i - 1 ] ;",
+        "cin >> r [ i ] ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘r’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        5
+      ],
+      "mod_code": [
+        "int d [ i ] = r [ i ] - r [ i - 1 ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 7,
+      "err_msg": "array must be initialized with a brace-enclosed initializer"
+    },
+    {
+      "mod_line": [
+        7,
+        5,
+        2
+      ],
+      "mod_code": [
+        "int d [ i ] = r [ i ] - r [ i - 1 ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ )",
+        "while ( cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘r’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        2
+      ],
+      "mod_code": [
+        "int d [ i ] = r [ i ] - r [ i - 1 ] ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘r’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        5
+      ],
+      "mod_code": [
+        "cin >> r [ i ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        5,
+        2
+      ],
+      "mod_code": [
+        "cin >> r [ i ] ;",
+        "for ( int i = 1 ; i <= n ; i ++ )",
+        "while ( cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘r’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        4,
+        2
+      ],
+      "mod_code": [
+        "cin >> r [ i ] ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘r’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        2
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i <= n ; i ++ )",
+        "while ( cin >> n )"
+      ],
+      "err_line": 4,
+      "err_msg": "‘r’ was not declared in this scope"
+    }
+  ]
+}

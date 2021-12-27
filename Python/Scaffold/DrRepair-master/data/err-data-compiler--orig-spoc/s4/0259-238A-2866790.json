@@ -1,0 +1,865 @@
+{
+  "meta": {
+    "index": 259,
+    "hitid": "3VEI3XUCZRRWZGNX22DHQPPX215PRD",
+    "workerid": "AIWEXPJAU66D9",
+    "probid": "238A",
+    "subid": "2866790"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "new static constant int mod = 1000000009",
+      "code": "static const int mod = 1000000009 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "long long function power with int arguments a and m",
+      "code": "long long power ( int a , int m )",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "if m = 1",
+      "code": "if ( m == 1 )",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "return a",
+      "code": "return a ;",
+      "indent": 2
+    },
+    {
+      "line": 4,
+      "text": "else",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "create new long long k = power ( a , m / 2 ) % mod",
+      "code": "long long k = power ( a , m / 2 ) % mod ;",
+      "indent": 2
+    },
+    {
+      "line": 6,
+      "text": "set k to k squared if m is even , or k * k * a , if it is not",
+      "code": "k = ( m % 2 == 0 ? k * k : k * k * a ) ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "change k to the remainder of k divided by mod",
+      "code": "k %= mod ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "return k",
+      "code": "return k ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "DUMMY",
+      "code": "};",
+      "indent": 0
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 12,
+      "text": "declare ints n and m",
+      "code": "int n , m ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "read standard input to n and m",
+      "code": "cin >> n >> m ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "long long pointer * t to a new long long array with n elements",
+      "code": "long long * t = new long long [ n ] ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "create long long k with value = 2 in the power of m",
+      "code": "long long k = power ( 2 , m ) ;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "change the value of t [ 0 ] to k - 1",
+      "code": "t [ 0 ] = k - 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "for i = 1 to n exclusive , change the value of t [ i ] to t [ i - 1 ] - 1",
+      "code": "for ( int i = 1 ; i < n ; ++ i ) { t [ i ] = t [ i - 1 ] - 1 ; }",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "create long long variable result = t [ 0 ]",
+      "code": "long long result = t [ 0 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "in a for loop , change i from 1 to n exclusive , changing the value of result to ( ( result % mod ) * ( t [ i ] % mod ) ) % mod on each loop iteration",
+      "code": "for ( int i = 1 ; i < n ; ++ i ) { result = ( ( result % mod ) * ( t [ i ] % mod ) ) % mod ; }",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "print result",
+      "code": "cout << result << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "else"
+      ],
+      "err_line": 6,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "long long power ( int a , int m ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "else k = ( m % 2 ) ? k : k * k * a * k ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "cin >> n >> k ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "long long * t = new long long * [ n ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "cannot convert ‘long long int**’ to ‘long long int*’ in initialization"
+    },
+    {
+      "mod_line": [
+        16
+      ],
+      "mod_code": [
+        "t [ ' 0 ] = k - 1 ;"
+      ],
+      "err_line": 16,
+      "err_msg": "missing terminating ' character"
+    },
+    {
+      "mod_line": [
+        19
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i < n ; i ++ ) result [ i ] * ( ( result % mod ) % mod ) % mod ;"
+      ],
+      "err_line": 19,
+      "err_msg": "invalid types ‘long long int[int]’ for array subscript"
+    },
+    {
+      "mod_line": [
+        6,
+        15
+      ],
+      "mod_code": [
+        "else",
+        "long long k = pow ( 2 , m ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        6,
+        15,
+        5
+      ],
+      "mod_code": [
+        "else",
+        "long long k = pow ( 2 , m ) ;",
+        "long long k = __gcd ( a , m / 2 ) % mod ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        6,
+        15,
+        5,
+        13
+      ],
+      "mod_code": [
+        "else",
+        "long long k = pow ( 2 , m ) ;",
+        "long long k = __gcd ( a , m / 2 ) % mod ;",
+        "cin >> n >> k ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        6,
+        15,
+        5,
+        1
+      ],
+      "mod_code": [
+        "else",
+        "long long k = pow ( 2 , m ) ;",
+        "long long k = __gcd ( a , m / 2 ) % mod ;",
+        "long long power ( int a , int m ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        15,
+        5,
+        2
+      ],
+      "mod_code": [
+        "else",
+        "long long k = pow ( 2 , m ) ;",
+        "long long k = __gcd ( a , m / 2 ) % mod ;",
+        "if ( ! m )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        6,
+        15,
+        13
+      ],
+      "mod_code": [
+        "else",
+        "long long k = pow ( 2 , m ) ;",
+        "cin >> n >> k ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        6,
+        15,
+        13,
+        1
+      ],
+      "mod_code": [
+        "else",
+        "long long k = pow ( 2 , m ) ;",
+        "cin >> n >> k ;",
+        "long long power ( int a , int m ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        15,
+        13,
+        2
+      ],
+      "mod_code": [
+        "else",
+        "long long k = pow ( 2 , m ) ;",
+        "cin >> n >> k ;",
+        "if ( ! m )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        6,
+        15,
+        1
+      ],
+      "mod_code": [
+        "else",
+        "long long k = pow ( 2 , m ) ;",
+        "long long power ( int a , int m ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        15,
+        1,
+        2
+      ],
+      "mod_code": [
+        "else",
+        "long long k = pow ( 2 , m ) ;",
+        "long long power ( int a , int m ) ;",
+        "if ( ! m )"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        15,
+        2
+      ],
+      "mod_code": [
+        "else",
+        "long long k = pow ( 2 , m ) ;",
+        "if ( ! m )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        6,
+        5
+      ],
+      "mod_code": [
+        "else",
+        "long long k = __gcd ( a , m / 2 ) % mod ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        6,
+        5,
+        13
+      ],
+      "mod_code": [
+        "else",
+        "long long k = __gcd ( a , m / 2 ) % mod ;",
+        "cin >> n >> k ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        6,
+        5,
+        13,
+        1
+      ],
+      "mod_code": [
+        "else",
+        "long long k = __gcd ( a , m / 2 ) % mod ;",
+        "cin >> n >> k ;",
+        "long long power ( int a , int m ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        5,
+        13,
+        2
+      ],
+      "mod_code": [
+        "else",
+        "long long k = __gcd ( a , m / 2 ) % mod ;",
+        "cin >> n >> k ;",
+        "if ( ! m )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        6,
+        5,
+        1
+      ],
+      "mod_code": [
+        "else",
+        "long long k = __gcd ( a , m / 2 ) % mod ;",
+        "long long power ( int a , int m ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        5,
+        1,
+        2
+      ],
+      "mod_code": [
+        "else",
+        "long long k = __gcd ( a , m / 2 ) % mod ;",
+        "long long power ( int a , int m ) ;",
+        "if ( ! m )"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        5,
+        2
+      ],
+      "mod_code": [
+        "else",
+        "long long k = __gcd ( a , m / 2 ) % mod ;",
+        "if ( ! m )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        6,
+        13
+      ],
+      "mod_code": [
+        "else",
+        "cin >> n >> k ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        6,
+        13,
+        1
+      ],
+      "mod_code": [
+        "else",
+        "cin >> n >> k ;",
+        "long long power ( int a , int m ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        13,
+        1,
+        2
+      ],
+      "mod_code": [
+        "else",
+        "cin >> n >> k ;",
+        "long long power ( int a , int m ) ;",
+        "if ( ! m )"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        13,
+        2
+      ],
+      "mod_code": [
+        "else",
+        "cin >> n >> k ;",
+        "if ( ! m )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        6,
+        1
+      ],
+      "mod_code": [
+        "else",
+        "long long power ( int a , int m ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        1,
+        2
+      ],
+      "mod_code": [
+        "else",
+        "long long power ( int a , int m ) ;",
+        "if ( ! m )"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        2
+      ],
+      "mod_code": [
+        "else",
+        "if ( ! m )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘else’ without a previous ‘if’"
+    },
+    {
+      "mod_line": [
+        15,
+        5,
+        13
+      ],
+      "mod_code": [
+        "long long k = pow ( 2 , m ) ;",
+        "long long k = __gcd ( a , m / 2 ) % mod ;",
+        "cin >> n >> k ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        5,
+        13,
+        1
+      ],
+      "mod_code": [
+        "long long k = pow ( 2 , m ) ;",
+        "long long k = __gcd ( a , m / 2 ) % mod ;",
+        "cin >> n >> k ;",
+        "long long power ( int a , int m ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        15,
+        5,
+        13,
+        2
+      ],
+      "mod_code": [
+        "long long k = pow ( 2 , m ) ;",
+        "long long k = __gcd ( a , m / 2 ) % mod ;",
+        "cin >> n >> k ;",
+        "if ( ! m )"
+      ],
+      "err_line": 13,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        5,
+        1
+      ],
+      "mod_code": [
+        "long long k = pow ( 2 , m ) ;",
+        "long long k = __gcd ( a , m / 2 ) % mod ;",
+        "long long power ( int a , int m ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        15,
+        5,
+        1,
+        2
+      ],
+      "mod_code": [
+        "long long k = pow ( 2 , m ) ;",
+        "long long k = __gcd ( a , m / 2 ) % mod ;",
+        "long long power ( int a , int m ) ;",
+        "if ( ! m )"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        15,
+        13
+      ],
+      "mod_code": [
+        "long long k = pow ( 2 , m ) ;",
+        "cin >> n >> k ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        13,
+        1
+      ],
+      "mod_code": [
+        "long long k = pow ( 2 , m ) ;",
+        "cin >> n >> k ;",
+        "long long power ( int a , int m ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        15,
+        13,
+        1,
+        2
+      ],
+      "mod_code": [
+        "long long k = pow ( 2 , m ) ;",
+        "cin >> n >> k ;",
+        "long long power ( int a , int m ) ;",
+        "if ( ! m )"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        15,
+        13,
+        2
+      ],
+      "mod_code": [
+        "long long k = pow ( 2 , m ) ;",
+        "cin >> n >> k ;",
+        "if ( ! m )"
+      ],
+      "err_line": 13,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        1
+      ],
+      "mod_code": [
+        "long long k = pow ( 2 , m ) ;",
+        "long long power ( int a , int m ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        15,
+        1,
+        2
+      ],
+      "mod_code": [
+        "long long k = pow ( 2 , m ) ;",
+        "long long power ( int a , int m ) ;",
+        "if ( ! m )"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        13
+      ],
+      "mod_code": [
+        "long long k = __gcd ( a , m / 2 ) % mod ;",
+        "cin >> n >> k ;"
+      ],
+      "err_line": 13,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        13,
+        1
+      ],
+      "mod_code": [
+        "long long k = __gcd ( a , m / 2 ) % mod ;",
+        "cin >> n >> k ;",
+        "long long power ( int a , int m ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        13,
+        1,
+        2
+      ],
+      "mod_code": [
+        "long long k = __gcd ( a , m / 2 ) % mod ;",
+        "cin >> n >> k ;",
+        "long long power ( int a , int m ) ;",
+        "if ( ! m )"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        13,
+        2
+      ],
+      "mod_code": [
+        "long long k = __gcd ( a , m / 2 ) % mod ;",
+        "cin >> n >> k ;",
+        "if ( ! m )"
+      ],
+      "err_line": 13,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        1
+      ],
+      "mod_code": [
+        "long long k = __gcd ( a , m / 2 ) % mod ;",
+        "long long power ( int a , int m ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        1,
+        2
+      ],
+      "mod_code": [
+        "long long k = __gcd ( a , m / 2 ) % mod ;",
+        "long long power ( int a , int m ) ;",
+        "if ( ! m )"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        13,
+        1
+      ],
+      "mod_code": [
+        "cin >> n >> k ;",
+        "long long power ( int a , int m ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        13,
+        1,
+        2
+      ],
+      "mod_code": [
+        "cin >> n >> k ;",
+        "long long power ( int a , int m ) ;",
+        "if ( ! m )"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        13,
+        2
+      ],
+      "mod_code": [
+        "cin >> n >> k ;",
+        "if ( ! m )"
+      ],
+      "err_line": 13,
+      "err_msg": "‘k’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        2
+      ],
+      "mod_code": [
+        "long long power ( int a , int m ) ;",
+        "if ( ! m )"
+      ],
+      "err_line": 2,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    }
+  ]
+}

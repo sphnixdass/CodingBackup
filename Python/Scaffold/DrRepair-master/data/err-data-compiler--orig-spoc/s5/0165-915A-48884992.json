@@ -1,0 +1,877 @@
+{
+  "meta": {
+    "index": 165,
+    "hitid": "3Q7TKIAPOT4C7LPUS9PQ4JZ9IQDDLX",
+    "workerid": "AUD1I8FZAO4VF",
+    "probid": "915A",
+    "subid": "48884992"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "let n and k be ints",
+      "code": "int n , k ;",
+      "indent": 1
+    },
+    {
+      "line": 2,
+      "text": "read n and k",
+      "code": "cin >> n >> k ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "let a be a vector of ints with initial size n",
+      "code": "vector < int > a ( n ) ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "let exist be a vector of bools of initial length 105 with all values set to false",
+      "code": "vector < bool > exist ( 105 , false ) ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "for i = 0 to n exclusive",
+      "code": "for ( int i = 0 ; i < n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "read a [ i ]",
+      "code": "cin >> a [ i ] ;",
+      "indent": 2
+    },
+    {
+      "line": 7,
+      "text": "set exist [ a [ i ] ] to true",
+      "code": "exist [ a [ i ] ] = true ;",
+      "indent": 2
+    },
+    {
+      "line": 8,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "let mx be an int with value 0",
+      "code": "int mx = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "for i such that i greater than or equal to 1 and i * i less than or equal to k",
+      "code": "for ( int i = 1 ; i * i <= k ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "if k mod i is 0",
+      "code": "if ( k % i == 0 )",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "if exist [ i ] then set mx to max of mx and i",
+      "code": "if ( exist [ i ] ) mx = max ( mx , i ) ;",
+      "indent": 3
+    },
+    {
+      "line": 13,
+      "text": "if exist [ k / i ] then set mx to max of mx and k / i",
+      "code": "if ( exist [ k / i ] ) mx = max ( mx , k / i ) ;",
+      "indent": 3
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "print k / mx and newline",
+      "code": "cout << k / mx << ' \\n ' ;",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "if ( exist [ k / i ] == max ( mx , k / i ) )"
+      ],
+      "err_line": 14,
+      "err_msg": "expected primary-expression before ‘}’ token"
+    },
+    {
+      "mod_line": [
+        1
+      ],
+      "mod_code": [
+        "long long n , k ;"
+      ],
+      "err_line": 13,
+      "err_msg": "no matching function for call to ‘max(int&, long long int)’"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "int mx be 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected initializer before ‘be’"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "for ( ; i >= 1 && i * i <= k ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        1
+      ],
+      "mod_code": [
+        "if ( exist [ k / i ] == max ( mx , k / i ) )",
+        "long long n , k ;"
+      ],
+      "err_line": 13,
+      "err_msg": "no matching function for call to ‘max(int&, long long int)’"
+    },
+    {
+      "mod_line": [
+        13,
+        1,
+        5
+      ],
+      "mod_code": [
+        "if ( exist [ k / i ] == max ( mx , k / i ) )",
+        "long long n , k ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        1,
+        5,
+        6
+      ],
+      "mod_code": [
+        "if ( exist [ k / i ] == max ( mx , k / i ) )",
+        "long long n , k ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "cout << a [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        1,
+        5,
+        10
+      ],
+      "mod_code": [
+        "if ( exist [ k / i ] == max ( mx , k / i ) )",
+        "long long n , k ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( ; i >= 1 && i * i <= k ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        1,
+        5,
+        9
+      ],
+      "mod_code": [
+        "if ( exist [ k / i ] == max ( mx , k / i ) )",
+        "long long n , k ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int mx be 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        1,
+        6
+      ],
+      "mod_code": [
+        "if ( exist [ k / i ] == max ( mx , k / i ) )",
+        "long long n , k ;",
+        "cout << a [ i ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "no matching function for call to ‘max(int&, long long int)’"
+    },
+    {
+      "mod_line": [
+        13,
+        1,
+        6,
+        10
+      ],
+      "mod_code": [
+        "if ( exist [ k / i ] == max ( mx , k / i ) )",
+        "long long n , k ;",
+        "cout << a [ i ] ;",
+        "for ( ; i >= 1 && i * i <= k ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        1,
+        6,
+        9
+      ],
+      "mod_code": [
+        "if ( exist [ k / i ] == max ( mx , k / i ) )",
+        "long long n , k ;",
+        "cout << a [ i ] ;",
+        "int mx be 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected initializer before ‘be’"
+    },
+    {
+      "mod_line": [
+        13,
+        1,
+        10
+      ],
+      "mod_code": [
+        "if ( exist [ k / i ] == max ( mx , k / i ) )",
+        "long long n , k ;",
+        "for ( ; i >= 1 && i * i <= k ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        1,
+        10,
+        9
+      ],
+      "mod_code": [
+        "if ( exist [ k / i ] == max ( mx , k / i ) )",
+        "long long n , k ;",
+        "for ( ; i >= 1 && i * i <= k ; i ++ )",
+        "int mx be 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected initializer before ‘be’"
+    },
+    {
+      "mod_line": [
+        13,
+        1,
+        9
+      ],
+      "mod_code": [
+        "if ( exist [ k / i ] == max ( mx , k / i ) )",
+        "long long n , k ;",
+        "int mx be 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected initializer before ‘be’"
+    },
+    {
+      "mod_line": [
+        13,
+        5
+      ],
+      "mod_code": [
+        "if ( exist [ k / i ] == max ( mx , k / i ) )",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        5,
+        6
+      ],
+      "mod_code": [
+        "if ( exist [ k / i ] == max ( mx , k / i ) )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "cout << a [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        5,
+        6,
+        10
+      ],
+      "mod_code": [
+        "if ( exist [ k / i ] == max ( mx , k / i ) )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "cout << a [ i ] ;",
+        "for ( ; i >= 1 && i * i <= k ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        5,
+        6,
+        9
+      ],
+      "mod_code": [
+        "if ( exist [ k / i ] == max ( mx , k / i ) )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "cout << a [ i ] ;",
+        "int mx be 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        5,
+        10
+      ],
+      "mod_code": [
+        "if ( exist [ k / i ] == max ( mx , k / i ) )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( ; i >= 1 && i * i <= k ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        5,
+        10,
+        9
+      ],
+      "mod_code": [
+        "if ( exist [ k / i ] == max ( mx , k / i ) )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( ; i >= 1 && i * i <= k ; i ++ )",
+        "int mx be 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        5,
+        9
+      ],
+      "mod_code": [
+        "if ( exist [ k / i ] == max ( mx , k / i ) )",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int mx be 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        6
+      ],
+      "mod_code": [
+        "if ( exist [ k / i ] == max ( mx , k / i ) )",
+        "cout << a [ i ] ;"
+      ],
+      "err_line": 14,
+      "err_msg": "expected primary-expression before ‘}’ token"
+    },
+    {
+      "mod_line": [
+        13,
+        6,
+        10
+      ],
+      "mod_code": [
+        "if ( exist [ k / i ] == max ( mx , k / i ) )",
+        "cout << a [ i ] ;",
+        "for ( ; i >= 1 && i * i <= k ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        6,
+        10,
+        9
+      ],
+      "mod_code": [
+        "if ( exist [ k / i ] == max ( mx , k / i ) )",
+        "cout << a [ i ] ;",
+        "for ( ; i >= 1 && i * i <= k ; i ++ )",
+        "int mx be 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected initializer before ‘be’"
+    },
+    {
+      "mod_line": [
+        13,
+        6,
+        9
+      ],
+      "mod_code": [
+        "if ( exist [ k / i ] == max ( mx , k / i ) )",
+        "cout << a [ i ] ;",
+        "int mx be 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected initializer before ‘be’"
+    },
+    {
+      "mod_line": [
+        13,
+        10
+      ],
+      "mod_code": [
+        "if ( exist [ k / i ] == max ( mx , k / i ) )",
+        "for ( ; i >= 1 && i * i <= k ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        10,
+        9
+      ],
+      "mod_code": [
+        "if ( exist [ k / i ] == max ( mx , k / i ) )",
+        "for ( ; i >= 1 && i * i <= k ; i ++ )",
+        "int mx be 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected initializer before ‘be’"
+    },
+    {
+      "mod_line": [
+        13,
+        9
+      ],
+      "mod_code": [
+        "if ( exist [ k / i ] == max ( mx , k / i ) )",
+        "int mx be 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected initializer before ‘be’"
+    },
+    {
+      "mod_line": [
+        1,
+        5
+      ],
+      "mod_code": [
+        "long long n , k ;",
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        5,
+        6
+      ],
+      "mod_code": [
+        "long long n , k ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "cout << a [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        5,
+        6,
+        10
+      ],
+      "mod_code": [
+        "long long n , k ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "cout << a [ i ] ;",
+        "for ( ; i >= 1 && i * i <= k ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        5,
+        6,
+        9
+      ],
+      "mod_code": [
+        "long long n , k ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "cout << a [ i ] ;",
+        "int mx be 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        5,
+        10
+      ],
+      "mod_code": [
+        "long long n , k ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( ; i >= 1 && i * i <= k ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        5,
+        10,
+        9
+      ],
+      "mod_code": [
+        "long long n , k ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( ; i >= 1 && i * i <= k ; i ++ )",
+        "int mx be 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        5,
+        9
+      ],
+      "mod_code": [
+        "long long n , k ;",
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int mx be 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        1,
+        6
+      ],
+      "mod_code": [
+        "long long n , k ;",
+        "cout << a [ i ] ;"
+      ],
+      "err_line": 13,
+      "err_msg": "no matching function for call to ‘max(int&, long long int)’"
+    },
+    {
+      "mod_line": [
+        1,
+        6,
+        10
+      ],
+      "mod_code": [
+        "long long n , k ;",
+        "cout << a [ i ] ;",
+        "for ( ; i >= 1 && i * i <= k ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        1,
+        6,
+        10,
+        9
+      ],
+      "mod_code": [
+        "long long n , k ;",
+        "cout << a [ i ] ;",
+        "for ( ; i >= 1 && i * i <= k ; i ++ )",
+        "int mx be 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected initializer before ‘be’"
+    },
+    {
+      "mod_line": [
+        1,
+        6,
+        9
+      ],
+      "mod_code": [
+        "long long n , k ;",
+        "cout << a [ i ] ;",
+        "int mx be 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected initializer before ‘be’"
+    },
+    {
+      "mod_line": [
+        1,
+        10
+      ],
+      "mod_code": [
+        "long long n , k ;",
+        "for ( ; i >= 1 && i * i <= k ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        1,
+        10,
+        9
+      ],
+      "mod_code": [
+        "long long n , k ;",
+        "for ( ; i >= 1 && i * i <= k ; i ++ )",
+        "int mx be 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected initializer before ‘be’"
+    },
+    {
+      "mod_line": [
+        1,
+        9
+      ],
+      "mod_code": [
+        "long long n , k ;",
+        "int mx be 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected initializer before ‘be’"
+    },
+    {
+      "mod_line": [
+        5,
+        6
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "cout << a [ i ] ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        6,
+        10
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "cout << a [ i ] ;",
+        "for ( ; i >= 1 && i * i <= k ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        6,
+        10,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "cout << a [ i ] ;",
+        "for ( ; i >= 1 && i * i <= k ; i ++ )",
+        "int mx be 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        6,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "cout << a [ i ] ;",
+        "int mx be 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        10
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( ; i >= 1 && i * i <= k ; i ++ )"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        10,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( ; i >= 1 && i * i <= k ; i ++ )",
+        "int mx be 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "int mx be 0 ;"
+      ],
+      "err_line": 5,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6,
+        10
+      ],
+      "mod_code": [
+        "cout << a [ i ] ;",
+        "for ( ; i >= 1 && i * i <= k ; i ++ )"
+      ],
+      "err_line": 10,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        6,
+        10,
+        9
+      ],
+      "mod_code": [
+        "cout << a [ i ] ;",
+        "for ( ; i >= 1 && i * i <= k ; i ++ )",
+        "int mx be 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected initializer before ‘be’"
+    },
+    {
+      "mod_line": [
+        6,
+        9
+      ],
+      "mod_code": [
+        "cout << a [ i ] ;",
+        "int mx be 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected initializer before ‘be’"
+    },
+    {
+      "mod_line": [
+        10,
+        9
+      ],
+      "mod_code": [
+        "for ( ; i >= 1 && i * i <= k ; i ++ )",
+        "int mx be 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected initializer before ‘be’"
+    }
+  ]
+}

@@ -1,0 +1,1015 @@
+{
+  "meta": {
+    "index": 1665,
+    "hitid": "338GLSUI435W9IYG3OHH45GPLVLSFG",
+    "workerid": "A1APYLD4DUK33J",
+    "probid": "17A",
+    "subid": "42092982"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "create boolean array isprime with size 1000010",
+      "code": "bool isprime [ 1000010 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "create long long array prime with size 1000010",
+      "code": "long long prime [ 1000010 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "create long long array phi with size 1000010",
+      "code": "long long phi [ 1000010 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "create long long primesize",
+      "code": "long long primesize ;",
+      "indent": 0
+    },
+    {
+      "line": 4,
+      "text": "declare inline read with no arguments , returning long long",
+      "code": "inline long long read ( )",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "create register long long x , f with x = 0 , f = 0",
+      "code": "register long long x = 0 , f = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "create register character ch with ch = read character",
+      "code": "register char ch = getchar ( ) ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for run isdigit with argument ch is false , set ch to read character",
+      "code": "for ( ; ! isdigit ( ch ) ; ch = getchar ( ) )",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "if ch is ' - ' , set f to - 1",
+      "code": "if ( ch == ' - ' ) f = - 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 9,
+      "text": "for run isdigit with argument ch is true , set ch to read character , set x to x * 10 + ch - ' 0 '",
+      "code": "for ( ; isdigit ( ch ) ; ch = getchar ( ) ) x = x * 10 + ch - ' 0 ' ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "return x * f from function",
+      "code": "return x * f ;",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 12,
+      "text": "declare judge with argument long long x , returning boolean",
+      "code": "bool judge ( long long x )",
+      "indent": 0
+    },
+    {
+      "line": 13,
+      "text": "decrement x by 1",
+      "code": "x -= 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "create long long r with r = x / 2",
+      "code": "long long r = x / 2 ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "create long long i , j",
+      "code": "long long i , j ;",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "if isprime [ r ] is 1",
+      "code": "if ( isprime [ r ] == 1 )",
+      "indent": 1
+    },
+    {
+      "line": 17,
+      "text": "set i to r",
+      "code": "i = r ;",
+      "indent": 2
+    },
+    {
+      "line": 18,
+      "text": "else",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "set i to r - 1",
+      "code": "i = r - 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 20,
+      "text": "set j to r + 1",
+      "code": "j = r + 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 21,
+      "text": "while isprime [ i ] is 0 , decrement i",
+      "code": "while ( isprime [ i ] == 0 ) i -- ;",
+      "indent": 1
+    },
+    {
+      "line": 22,
+      "text": "while isprime [ j ] is 0 , increment j",
+      "code": "while ( isprime [ j ] == 0 ) j ++ ;",
+      "indent": 1
+    },
+    {
+      "line": 23,
+      "text": "if i + j is x",
+      "code": "if ( i + j == x )",
+      "indent": 1
+    },
+    {
+      "line": 24,
+      "text": "return 1 from function",
+      "code": "return 1 ;",
+      "indent": 2
+    },
+    {
+      "line": 25,
+      "text": "else",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 26,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 2
+    },
+    {
+      "line": 27,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 28,
+      "text": "declare getlist with argument long long listsize , returning void",
+      "code": "void getlist ( long long listsize )",
+      "indent": 0
+    },
+    {
+      "line": 29,
+      "text": "set bytes from isprime to size of isprime to value 1",
+      "code": "memset ( isprime , 1 , sizeof ( isprime ) ) ;",
+      "indent": 1
+    },
+    {
+      "line": 30,
+      "text": "set isprime [ 1 ] to 0",
+      "code": "isprime [ 1 ] = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 31,
+      "text": "for i = 2 to listsize inclusive",
+      "code": "for ( long long i = 2 ; i <= listsize ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 32,
+      "text": "if isprime [ i ] is true , set prime [ increment primesize ] to i",
+      "code": "if ( isprime [ i ] ) prime [ ++ primesize ] = i ;",
+      "indent": 2
+    },
+    {
+      "line": 33,
+      "text": "for j = 1 to j is less than or equal to primesize and i * prime [ j ] is less than or equal to listsize , incrementing j",
+      "code": "for ( long long j = 1 ; j <= primesize && i * prime [ j ] <= listsize ; j ++ )",
+      "indent": 2
+    },
+    {
+      "line": 34,
+      "text": "set isprime [ i * prime [ j ] ] to 0",
+      "code": "isprime [ i * prime [ j ] ] = 0 ;",
+      "indent": 3
+    },
+    {
+      "line": 35,
+      "text": "if i % prime [ j ] is 0 , break loop",
+      "code": "if ( i % prime [ j ] == 0 ) break ;",
+      "indent": 3
+    },
+    {
+      "line": 36,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 2
+    },
+    {
+      "line": 37,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 38,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 39,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 40,
+      "text": "run getlist with argument 10000",
+      "code": "getlist ( 10000 ) ;",
+      "indent": 1
+    },
+    {
+      "line": 41,
+      "text": "create long longs n , k , sum with n = result of run read , k = result of run read , sum = 0",
+      "code": "long long n = read ( ) , k = read ( ) , sum = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 42,
+      "text": "for i = 10 to n inclusive",
+      "code": "for ( long long i = 10 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 43,
+      "text": "if result of run judge with argument i is 1 and isprime [ i ] is 1 , increment sum",
+      "code": "if ( judge ( i ) == 1 && isprime [ i ] == 1 ) sum ++ ;",
+      "indent": 2
+    },
+    {
+      "line": 44,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 45,
+      "text": "if sum is greater than or equal to k",
+      "code": "if ( sum >= k )",
+      "indent": 1
+    },
+    {
+      "line": 46,
+      "text": "print \" YES \"",
+      "code": "puts ( \" YES \" ) ;",
+      "indent": 2
+    },
+    {
+      "line": 47,
+      "text": "else",
+      "code": "else",
+      "indent": 1
+    },
+    {
+      "line": 48,
+      "text": "print \" NO \"",
+      "code": "puts ( \" NO \" ) ;",
+      "indent": 2
+    },
+    {
+      "line": 49,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 50,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "register register register ch = getchar ( ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘ch’ does not name a type"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "for ( int isdigit ( ch ) )"
+      ],
+      "err_line": 9,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        4
+      ],
+      "mod_code": [
+        "inline long long read ( ) ;"
+      ],
+      "err_line": 5,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "for ( ; isdigit ( ch ) ; isdigit ( ) )"
+      ],
+      "err_line": 7,
+      "err_msg": "no matching function for call to ‘isdigit()’"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "for ( char isdigit ( ch ) )"
+      ],
+      "err_line": 9,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        12
+      ],
+      "mod_code": [
+        "bool judge ( long long x ) ;"
+      ],
+      "err_line": 13,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        28
+      ],
+      "mod_code": [
+        "void getlist ( long long listsize ) ;"
+      ],
+      "err_line": 29,
+      "err_msg": "expected unqualified-id before ‘{’ token"
+    },
+    {
+      "mod_line": [
+        29
+      ],
+      "mod_code": [
+        "memset ( isprime ) ;"
+      ],
+      "err_line": 29,
+      "err_msg": "too few arguments to function ‘void* memset(void*, int, size_t)’"
+    },
+    {
+      "mod_line": [
+        31
+      ],
+      "mod_code": [
+        "for ( i = 2 ; i <= listsize ; i ++ )"
+      ],
+      "err_line": 31,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        33
+      ],
+      "mod_code": [
+        "for ( j = 1 ; j <= primesize && i * prime [ j ] <= listsize ; j ++ )"
+      ],
+      "err_line": 33,
+      "err_msg": "‘j’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        34
+      ],
+      "mod_code": [
+        "isprime [ i * prime [ j ] ] to 0 ;"
+      ],
+      "err_line": 34,
+      "err_msg": "expected ‘;’ before ‘to’"
+    },
+    {
+      "mod_line": [
+        40
+      ],
+      "mod_code": [
+        "getlist ( 10000 10000 ) ;"
+      ],
+      "err_line": 40,
+      "err_msg": "expected ‘)’ before numeric constant"
+    },
+    {
+      "mod_line": [
+        41
+      ],
+      "mod_code": [
+        "long long n , k , sum = 0 , sum = 0 ;"
+      ],
+      "err_line": 41,
+      "err_msg": "redeclaration of ‘long long int sum’"
+    },
+    {
+      "mod_line": [
+        42
+      ],
+      "mod_code": [
+        "for ( i = 10 ; i <= n ; i ++ )"
+      ],
+      "err_line": 42,
+      "err_msg": "‘i’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        5,
+        6
+      ],
+      "mod_code": [
+        "register long long x = 0 , f = 0 ;",
+        "register register register ch = getchar ( ) ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘ch’ does not name a type"
+    },
+    {
+      "mod_line": [
+        5,
+        6,
+        7
+      ],
+      "mod_code": [
+        "register long long x = 0 , f = 0 ;",
+        "register register register ch = getchar ( ) ;",
+        "for ( ; isdigit ( ch ) ; isdigit ( ch ) )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘ch’ does not name a type"
+    },
+    {
+      "mod_line": [
+        5,
+        6,
+        7,
+        9
+      ],
+      "mod_code": [
+        "register long long x = 0 , f = 0 ;",
+        "register register register ch = getchar ( ) ;",
+        "for ( ; isdigit ( ch ) ; isdigit ( ch ) )",
+        "for ( int isdigit ( ch ) )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘ch’ does not name a type"
+    },
+    {
+      "mod_line": [
+        5,
+        6,
+        7,
+        32
+      ],
+      "mod_code": [
+        "register long long x = 0 , f = 0 ;",
+        "register register register ch = getchar ( ) ;",
+        "for ( ; isdigit ( ch ) ; isdigit ( ch ) )",
+        "if ( isprime [ i ] ) prime [ primesize ++ ] = i ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘ch’ does not name a type"
+    },
+    {
+      "mod_line": [
+        5,
+        6,
+        7,
+        41
+      ],
+      "mod_code": [
+        "register long long x = 0 , f = 0 ;",
+        "register register register ch = getchar ( ) ;",
+        "for ( ; isdigit ( ch ) ; isdigit ( ch ) )",
+        "long long n , k = read ( ) , sum = 0 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘ch’ does not name a type"
+    },
+    {
+      "mod_line": [
+        5,
+        6,
+        9
+      ],
+      "mod_code": [
+        "register long long x = 0 , f = 0 ;",
+        "register register register ch = getchar ( ) ;",
+        "for ( int isdigit ( ch ) )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘ch’ does not name a type"
+    },
+    {
+      "mod_line": [
+        5,
+        6,
+        9,
+        32
+      ],
+      "mod_code": [
+        "register long long x = 0 , f = 0 ;",
+        "register register register ch = getchar ( ) ;",
+        "for ( int isdigit ( ch ) )",
+        "if ( isprime [ i ] ) prime [ primesize ++ ] = i ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘ch’ does not name a type"
+    },
+    {
+      "mod_line": [
+        5,
+        6,
+        9,
+        41
+      ],
+      "mod_code": [
+        "register long long x = 0 , f = 0 ;",
+        "register register register ch = getchar ( ) ;",
+        "for ( int isdigit ( ch ) )",
+        "long long n , k = read ( ) , sum = 0 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘ch’ does not name a type"
+    },
+    {
+      "mod_line": [
+        5,
+        6,
+        32
+      ],
+      "mod_code": [
+        "register long long x = 0 , f = 0 ;",
+        "register register register ch = getchar ( ) ;",
+        "if ( isprime [ i ] ) prime [ primesize ++ ] = i ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘ch’ does not name a type"
+    },
+    {
+      "mod_line": [
+        5,
+        6,
+        32,
+        41
+      ],
+      "mod_code": [
+        "register long long x = 0 , f = 0 ;",
+        "register register register ch = getchar ( ) ;",
+        "if ( isprime [ i ] ) prime [ primesize ++ ] = i ;",
+        "long long n , k = read ( ) , sum = 0 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘ch’ does not name a type"
+    },
+    {
+      "mod_line": [
+        5,
+        6,
+        41
+      ],
+      "mod_code": [
+        "register long long x = 0 , f = 0 ;",
+        "register register register ch = getchar ( ) ;",
+        "long long n , k = read ( ) , sum = 0 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘ch’ does not name a type"
+    },
+    {
+      "mod_line": [
+        5,
+        7,
+        9
+      ],
+      "mod_code": [
+        "register long long x = 0 , f = 0 ;",
+        "for ( ; isdigit ( ch ) ; isdigit ( ch ) )",
+        "for ( int isdigit ( ch ) )"
+      ],
+      "err_line": 9,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        7,
+        9,
+        32
+      ],
+      "mod_code": [
+        "register long long x = 0 , f = 0 ;",
+        "for ( ; isdigit ( ch ) ; isdigit ( ch ) )",
+        "for ( int isdigit ( ch ) )",
+        "if ( isprime [ i ] ) prime [ primesize ++ ] = i ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        7,
+        9,
+        41
+      ],
+      "mod_code": [
+        "register long long x = 0 , f = 0 ;",
+        "for ( ; isdigit ( ch ) ; isdigit ( ch ) )",
+        "for ( int isdigit ( ch ) )",
+        "long long n , k = read ( ) , sum = 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        9
+      ],
+      "mod_code": [
+        "register long long x = 0 , f = 0 ;",
+        "for ( int isdigit ( ch ) )"
+      ],
+      "err_line": 9,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        9,
+        32
+      ],
+      "mod_code": [
+        "register long long x = 0 , f = 0 ;",
+        "for ( int isdigit ( ch ) )",
+        "if ( isprime [ i ] ) prime [ primesize ++ ] = i ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        9,
+        32,
+        41
+      ],
+      "mod_code": [
+        "register long long x = 0 , f = 0 ;",
+        "for ( int isdigit ( ch ) )",
+        "if ( isprime [ i ] ) prime [ primesize ++ ] = i ;",
+        "long long n , k = read ( ) , sum = 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        9,
+        41
+      ],
+      "mod_code": [
+        "register long long x = 0 , f = 0 ;",
+        "for ( int isdigit ( ch ) )",
+        "long long n , k = read ( ) , sum = 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        6,
+        7
+      ],
+      "mod_code": [
+        "register register register ch = getchar ( ) ;",
+        "for ( ; isdigit ( ch ) ; isdigit ( ch ) )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘ch’ does not name a type"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        9
+      ],
+      "mod_code": [
+        "register register register ch = getchar ( ) ;",
+        "for ( ; isdigit ( ch ) ; isdigit ( ch ) )",
+        "for ( int isdigit ( ch ) )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘ch’ does not name a type"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        9,
+        32
+      ],
+      "mod_code": [
+        "register register register ch = getchar ( ) ;",
+        "for ( ; isdigit ( ch ) ; isdigit ( ch ) )",
+        "for ( int isdigit ( ch ) )",
+        "if ( isprime [ i ] ) prime [ primesize ++ ] = i ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘ch’ does not name a type"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        9,
+        41
+      ],
+      "mod_code": [
+        "register register register ch = getchar ( ) ;",
+        "for ( ; isdigit ( ch ) ; isdigit ( ch ) )",
+        "for ( int isdigit ( ch ) )",
+        "long long n , k = read ( ) , sum = 0 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘ch’ does not name a type"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        32
+      ],
+      "mod_code": [
+        "register register register ch = getchar ( ) ;",
+        "for ( ; isdigit ( ch ) ; isdigit ( ch ) )",
+        "if ( isprime [ i ] ) prime [ primesize ++ ] = i ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘ch’ does not name a type"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        32,
+        41
+      ],
+      "mod_code": [
+        "register register register ch = getchar ( ) ;",
+        "for ( ; isdigit ( ch ) ; isdigit ( ch ) )",
+        "if ( isprime [ i ] ) prime [ primesize ++ ] = i ;",
+        "long long n , k = read ( ) , sum = 0 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘ch’ does not name a type"
+    },
+    {
+      "mod_line": [
+        6,
+        7,
+        41
+      ],
+      "mod_code": [
+        "register register register ch = getchar ( ) ;",
+        "for ( ; isdigit ( ch ) ; isdigit ( ch ) )",
+        "long long n , k = read ( ) , sum = 0 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘ch’ does not name a type"
+    },
+    {
+      "mod_line": [
+        6,
+        9
+      ],
+      "mod_code": [
+        "register register register ch = getchar ( ) ;",
+        "for ( int isdigit ( ch ) )"
+      ],
+      "err_line": 6,
+      "err_msg": "‘ch’ does not name a type"
+    },
+    {
+      "mod_line": [
+        6,
+        9,
+        32
+      ],
+      "mod_code": [
+        "register register register ch = getchar ( ) ;",
+        "for ( int isdigit ( ch ) )",
+        "if ( isprime [ i ] ) prime [ primesize ++ ] = i ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘ch’ does not name a type"
+    },
+    {
+      "mod_line": [
+        6,
+        9,
+        32,
+        41
+      ],
+      "mod_code": [
+        "register register register ch = getchar ( ) ;",
+        "for ( int isdigit ( ch ) )",
+        "if ( isprime [ i ] ) prime [ primesize ++ ] = i ;",
+        "long long n , k = read ( ) , sum = 0 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘ch’ does not name a type"
+    },
+    {
+      "mod_line": [
+        6,
+        9,
+        41
+      ],
+      "mod_code": [
+        "register register register ch = getchar ( ) ;",
+        "for ( int isdigit ( ch ) )",
+        "long long n , k = read ( ) , sum = 0 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘ch’ does not name a type"
+    },
+    {
+      "mod_line": [
+        6,
+        32
+      ],
+      "mod_code": [
+        "register register register ch = getchar ( ) ;",
+        "if ( isprime [ i ] ) prime [ primesize ++ ] = i ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘ch’ does not name a type"
+    },
+    {
+      "mod_line": [
+        6,
+        32,
+        41
+      ],
+      "mod_code": [
+        "register register register ch = getchar ( ) ;",
+        "if ( isprime [ i ] ) prime [ primesize ++ ] = i ;",
+        "long long n , k = read ( ) , sum = 0 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘ch’ does not name a type"
+    },
+    {
+      "mod_line": [
+        6,
+        41
+      ],
+      "mod_code": [
+        "register register register ch = getchar ( ) ;",
+        "long long n , k = read ( ) , sum = 0 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "‘ch’ does not name a type"
+    },
+    {
+      "mod_line": [
+        7,
+        9
+      ],
+      "mod_code": [
+        "for ( ; isdigit ( ch ) ; isdigit ( ch ) )",
+        "for ( int isdigit ( ch ) )"
+      ],
+      "err_line": 9,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        9,
+        32
+      ],
+      "mod_code": [
+        "for ( ; isdigit ( ch ) ; isdigit ( ch ) )",
+        "for ( int isdigit ( ch ) )",
+        "if ( isprime [ i ] ) prime [ primesize ++ ] = i ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        9,
+        32,
+        41
+      ],
+      "mod_code": [
+        "for ( ; isdigit ( ch ) ; isdigit ( ch ) )",
+        "for ( int isdigit ( ch ) )",
+        "if ( isprime [ i ] ) prime [ primesize ++ ] = i ;",
+        "long long n , k = read ( ) , sum = 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        7,
+        9,
+        41
+      ],
+      "mod_code": [
+        "for ( ; isdigit ( ch ) ; isdigit ( ch ) )",
+        "for ( int isdigit ( ch ) )",
+        "long long n , k = read ( ) , sum = 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        9,
+        32
+      ],
+      "mod_code": [
+        "for ( int isdigit ( ch ) )",
+        "if ( isprime [ i ] ) prime [ primesize ++ ] = i ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        9,
+        32,
+        41
+      ],
+      "mod_code": [
+        "for ( int isdigit ( ch ) )",
+        "if ( isprime [ i ] ) prime [ primesize ++ ] = i ;",
+        "long long n , k = read ( ) , sum = 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    },
+    {
+      "mod_line": [
+        9,
+        41
+      ],
+      "mod_code": [
+        "for ( int isdigit ( ch ) )",
+        "long long n , k = read ( ) , sum = 0 ;"
+      ],
+      "err_line": 9,
+      "err_msg": "expected ‘;’ before ‘)’ token"
+    }
+  ]
+}

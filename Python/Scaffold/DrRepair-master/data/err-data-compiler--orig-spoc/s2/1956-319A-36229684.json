@@ -1,0 +1,867 @@
+{
+  "meta": {
+    "index": 1956,
+    "hitid": "3LN50BUKPV5LWISKXIGL4DGYVMJLPB",
+    "workerid": "A1NBHCFZKJGHKW",
+    "probid": "319A",
+    "subid": "36229684"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "MAXN = const int with MAXN = 210",
+      "code": "const int MAXN = 210 ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "MOD = const long long with MOD = 1000 * 1000 * 1000 + 7",
+      "code": "const long long MOD = 1000 * 1000 * 1000 + 7 ;",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "in function stab taking a long long a and returning a long long",
+      "code": "long long stab ( long long a )",
+      "indent": 0
+    },
+    {
+      "line": 3,
+      "text": "return ( ( a mod MOD ) + MOD ) mod MOD",
+      "code": "return ( ( a % MOD ) + MOD ) % MOD ;",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    },
+    {
+      "line": 5,
+      "text": "n = int",
+      "code": "int n ;",
+      "indent": 0
+    },
+    {
+      "line": 6,
+      "text": "st2 = long long array of size MAXN",
+      "code": "long long st2 [ MAXN ] ;",
+      "indent": 0
+    },
+    {
+      "line": 7,
+      "text": "str = string",
+      "code": "string str ;",
+      "indent": 0
+    },
+    {
+      "line": 8,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 9,
+      "text": "set st2 [ 0 ] to 1",
+      "code": "st2 [ 0 ] = 1 ;",
+      "indent": 1
+    },
+    {
+      "line": 10,
+      "text": "for i = 1 to MAXN set st2 [ i ] to stab of st2 [ i - 1 ] * 2LL",
+      "code": "for ( int i = 1 ; i < MAXN ; ++ i ) { st2 [ i ] = stab ( st2 [ i - 1 ] * 2LL ) ; }",
+      "indent": 1
+    },
+    {
+      "line": 11,
+      "text": "read str",
+      "code": "cin >> str ;",
+      "indent": 1
+    },
+    {
+      "line": 12,
+      "text": "set n to size of str",
+      "code": "n = str . size ( ) ;",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "ans = long long with ans = 0",
+      "code": "long long ans = 0 ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "reverse str",
+      "code": "reverse ( str . begin ( ) , str . end ( ) ) ;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "for i = 0 to n",
+      "code": "for ( int i = 0 ; i < n ; ++ i )",
+      "indent": 1
+    },
+    {
+      "line": 16,
+      "text": "if str [ i ] - ' 0 ' equals 1 then set ans to stab of ans + st2 [ n + i - 1 ]",
+      "code": "if ( str [ i ] - ' 0 ' == 1 ) { ans = stab ( ans + st2 [ n + i - 1 ] ) ; }",
+      "indent": 2
+    },
+    {
+      "line": 17,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 18,
+      "text": "print ans",
+      "code": "cout << ans << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 19,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 20,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        7
+      ],
+      "mod_code": [
+        "string S ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘str’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        10
+      ],
+      "mod_code": [
+        "for ( int i = 1 ; i < MAXN ; i ++ ) st2 [ i ] = stab [ i - 1 ] * 2LL ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid operands of types ‘long long int(long long int)’ and ‘long long int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        14
+      ],
+      "mod_code": [
+        "reverse ( str . rbegin ( ) , str . end ( ) ) ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘reverse(std::__cxx11::basic_string<char>::reverse_iterator, std::__cxx11::basic_string<char>::iterator)’"
+    },
+    {
+      "mod_line": [
+        15
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        15,
+        7
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "string S ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘str’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        7,
+        14
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "string S ;",
+        "reverse ( str . rbegin ( ) , str . end ( ) ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘str’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        7,
+        14,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "string S ;",
+        "reverse ( str . rbegin ( ) , str . end ( ) ) ;",
+        "st2 [ 0 ] = ' 1 ' ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘str’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        7,
+        14,
+        5
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "string S ;",
+        "reverse ( str . rbegin ( ) , str . end ( ) ) ;",
+        "bool n ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘str’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        7,
+        14,
+        10
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "string S ;",
+        "reverse ( str . rbegin ( ) , str . end ( ) ) ;",
+        "for ( int i = 1 ; i < MAXN ; i ++ ) st2 [ i ] = stab [ i - 1 ] * 2LL ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid operands of types ‘long long int(long long int)’ and ‘long long int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        15,
+        7,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "string S ;",
+        "st2 [ 0 ] = ' 1 ' ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘str’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        7,
+        9,
+        5
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "string S ;",
+        "st2 [ 0 ] = ' 1 ' ;",
+        "bool n ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘str’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        7,
+        9,
+        10
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "string S ;",
+        "st2 [ 0 ] = ' 1 ' ;",
+        "for ( int i = 1 ; i < MAXN ; i ++ ) st2 [ i ] = stab [ i - 1 ] * 2LL ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid operands of types ‘long long int(long long int)’ and ‘long long int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        15,
+        7,
+        5
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "string S ;",
+        "bool n ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘str’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        15,
+        7,
+        5,
+        10
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "string S ;",
+        "bool n ;",
+        "for ( int i = 1 ; i < MAXN ; i ++ ) st2 [ i ] = stab [ i - 1 ] * 2LL ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid operands of types ‘long long int(long long int)’ and ‘long long int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        15,
+        7,
+        10
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "string S ;",
+        "for ( int i = 1 ; i < MAXN ; i ++ ) st2 [ i ] = stab [ i - 1 ] * 2LL ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid operands of types ‘long long int(long long int)’ and ‘long long int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        15,
+        14
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "reverse ( str . rbegin ( ) , str . end ( ) ) ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘reverse(std::__cxx11::basic_string<char>::reverse_iterator, std::__cxx11::basic_string<char>::iterator)’"
+    },
+    {
+      "mod_line": [
+        15,
+        14,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "reverse ( str . rbegin ( ) , str . end ( ) ) ;",
+        "st2 [ 0 ] = ' 1 ' ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘reverse(std::__cxx11::basic_string<char>::reverse_iterator, std::__cxx11::basic_string<char>::iterator)’"
+    },
+    {
+      "mod_line": [
+        15,
+        14,
+        9,
+        5
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "reverse ( str . rbegin ( ) , str . end ( ) ) ;",
+        "st2 [ 0 ] = ' 1 ' ;",
+        "bool n ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘reverse(std::__cxx11::basic_string<char>::reverse_iterator, std::__cxx11::basic_string<char>::iterator)’"
+    },
+    {
+      "mod_line": [
+        15,
+        14,
+        9,
+        10
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "reverse ( str . rbegin ( ) , str . end ( ) ) ;",
+        "st2 [ 0 ] = ' 1 ' ;",
+        "for ( int i = 1 ; i < MAXN ; i ++ ) st2 [ i ] = stab [ i - 1 ] * 2LL ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid operands of types ‘long long int(long long int)’ and ‘long long int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        15,
+        14,
+        5
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "reverse ( str . rbegin ( ) , str . end ( ) ) ;",
+        "bool n ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘reverse(std::__cxx11::basic_string<char>::reverse_iterator, std::__cxx11::basic_string<char>::iterator)’"
+    },
+    {
+      "mod_line": [
+        15,
+        14,
+        5,
+        10
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "reverse ( str . rbegin ( ) , str . end ( ) ) ;",
+        "bool n ;",
+        "for ( int i = 1 ; i < MAXN ; i ++ ) st2 [ i ] = stab [ i - 1 ] * 2LL ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid operands of types ‘long long int(long long int)’ and ‘long long int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        15,
+        14,
+        10
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "reverse ( str . rbegin ( ) , str . end ( ) ) ;",
+        "for ( int i = 1 ; i < MAXN ; i ++ ) st2 [ i ] = stab [ i - 1 ] * 2LL ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid operands of types ‘long long int(long long int)’ and ‘long long int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        15,
+        9
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "st2 [ 0 ] = ' 1 ' ;"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        15,
+        9,
+        5
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "st2 [ 0 ] = ' 1 ' ;",
+        "bool n ;"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        15,
+        9,
+        5,
+        10
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "st2 [ 0 ] = ' 1 ' ;",
+        "bool n ;",
+        "for ( int i = 1 ; i < MAXN ; i ++ ) st2 [ i ] = stab [ i - 1 ] * 2LL ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid operands of types ‘long long int(long long int)’ and ‘long long int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        15,
+        9,
+        10
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "st2 [ 0 ] = ' 1 ' ;",
+        "for ( int i = 1 ; i < MAXN ; i ++ ) st2 [ i ] = stab [ i - 1 ] * 2LL ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid operands of types ‘long long int(long long int)’ and ‘long long int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        15,
+        5
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "bool n ;"
+      ],
+      "err_line": 15,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        15,
+        5,
+        10
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "bool n ;",
+        "for ( int i = 1 ; i < MAXN ; i ++ ) st2 [ i ] = stab [ i - 1 ] * 2LL ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid operands of types ‘long long int(long long int)’ and ‘long long int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        15,
+        10
+      ],
+      "mod_code": [
+        "for ( i = 0 ; i < n ; i ++ )",
+        "for ( int i = 1 ; i < MAXN ; i ++ ) st2 [ i ] = stab [ i - 1 ] * 2LL ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid operands of types ‘long long int(long long int)’ and ‘long long int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        7,
+        14
+      ],
+      "mod_code": [
+        "string S ;",
+        "reverse ( str . rbegin ( ) , str . end ( ) ) ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘str’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        14,
+        9
+      ],
+      "mod_code": [
+        "string S ;",
+        "reverse ( str . rbegin ( ) , str . end ( ) ) ;",
+        "st2 [ 0 ] = ' 1 ' ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘str’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        14,
+        9,
+        5
+      ],
+      "mod_code": [
+        "string S ;",
+        "reverse ( str . rbegin ( ) , str . end ( ) ) ;",
+        "st2 [ 0 ] = ' 1 ' ;",
+        "bool n ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘str’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        14,
+        9,
+        10
+      ],
+      "mod_code": [
+        "string S ;",
+        "reverse ( str . rbegin ( ) , str . end ( ) ) ;",
+        "st2 [ 0 ] = ' 1 ' ;",
+        "for ( int i = 1 ; i < MAXN ; i ++ ) st2 [ i ] = stab [ i - 1 ] * 2LL ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid operands of types ‘long long int(long long int)’ and ‘long long int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        7,
+        14,
+        5
+      ],
+      "mod_code": [
+        "string S ;",
+        "reverse ( str . rbegin ( ) , str . end ( ) ) ;",
+        "bool n ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘str’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        14,
+        5,
+        10
+      ],
+      "mod_code": [
+        "string S ;",
+        "reverse ( str . rbegin ( ) , str . end ( ) ) ;",
+        "bool n ;",
+        "for ( int i = 1 ; i < MAXN ; i ++ ) st2 [ i ] = stab [ i - 1 ] * 2LL ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid operands of types ‘long long int(long long int)’ and ‘long long int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        7,
+        14,
+        10
+      ],
+      "mod_code": [
+        "string S ;",
+        "reverse ( str . rbegin ( ) , str . end ( ) ) ;",
+        "for ( int i = 1 ; i < MAXN ; i ++ ) st2 [ i ] = stab [ i - 1 ] * 2LL ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid operands of types ‘long long int(long long int)’ and ‘long long int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        7,
+        9
+      ],
+      "mod_code": [
+        "string S ;",
+        "st2 [ 0 ] = ' 1 ' ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘str’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        9,
+        5
+      ],
+      "mod_code": [
+        "string S ;",
+        "st2 [ 0 ] = ' 1 ' ;",
+        "bool n ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘str’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        9,
+        5,
+        10
+      ],
+      "mod_code": [
+        "string S ;",
+        "st2 [ 0 ] = ' 1 ' ;",
+        "bool n ;",
+        "for ( int i = 1 ; i < MAXN ; i ++ ) st2 [ i ] = stab [ i - 1 ] * 2LL ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid operands of types ‘long long int(long long int)’ and ‘long long int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        7,
+        9,
+        10
+      ],
+      "mod_code": [
+        "string S ;",
+        "st2 [ 0 ] = ' 1 ' ;",
+        "for ( int i = 1 ; i < MAXN ; i ++ ) st2 [ i ] = stab [ i - 1 ] * 2LL ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid operands of types ‘long long int(long long int)’ and ‘long long int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        7,
+        5
+      ],
+      "mod_code": [
+        "string S ;",
+        "bool n ;"
+      ],
+      "err_line": 11,
+      "err_msg": "‘str’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        7,
+        5,
+        10
+      ],
+      "mod_code": [
+        "string S ;",
+        "bool n ;",
+        "for ( int i = 1 ; i < MAXN ; i ++ ) st2 [ i ] = stab [ i - 1 ] * 2LL ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid operands of types ‘long long int(long long int)’ and ‘long long int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        7,
+        10
+      ],
+      "mod_code": [
+        "string S ;",
+        "for ( int i = 1 ; i < MAXN ; i ++ ) st2 [ i ] = stab [ i - 1 ] * 2LL ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid operands of types ‘long long int(long long int)’ and ‘long long int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        14,
+        9
+      ],
+      "mod_code": [
+        "reverse ( str . rbegin ( ) , str . end ( ) ) ;",
+        "st2 [ 0 ] = ' 1 ' ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘reverse(std::__cxx11::basic_string<char>::reverse_iterator, std::__cxx11::basic_string<char>::iterator)’"
+    },
+    {
+      "mod_line": [
+        14,
+        9,
+        5
+      ],
+      "mod_code": [
+        "reverse ( str . rbegin ( ) , str . end ( ) ) ;",
+        "st2 [ 0 ] = ' 1 ' ;",
+        "bool n ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘reverse(std::__cxx11::basic_string<char>::reverse_iterator, std::__cxx11::basic_string<char>::iterator)’"
+    },
+    {
+      "mod_line": [
+        14,
+        9,
+        5,
+        10
+      ],
+      "mod_code": [
+        "reverse ( str . rbegin ( ) , str . end ( ) ) ;",
+        "st2 [ 0 ] = ' 1 ' ;",
+        "bool n ;",
+        "for ( int i = 1 ; i < MAXN ; i ++ ) st2 [ i ] = stab [ i - 1 ] * 2LL ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid operands of types ‘long long int(long long int)’ and ‘long long int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        14,
+        9,
+        10
+      ],
+      "mod_code": [
+        "reverse ( str . rbegin ( ) , str . end ( ) ) ;",
+        "st2 [ 0 ] = ' 1 ' ;",
+        "for ( int i = 1 ; i < MAXN ; i ++ ) st2 [ i ] = stab [ i - 1 ] * 2LL ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid operands of types ‘long long int(long long int)’ and ‘long long int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        14,
+        5
+      ],
+      "mod_code": [
+        "reverse ( str . rbegin ( ) , str . end ( ) ) ;",
+        "bool n ;"
+      ],
+      "err_line": 14,
+      "err_msg": "no matching function for call to ‘reverse(std::__cxx11::basic_string<char>::reverse_iterator, std::__cxx11::basic_string<char>::iterator)’"
+    },
+    {
+      "mod_line": [
+        14,
+        5,
+        10
+      ],
+      "mod_code": [
+        "reverse ( str . rbegin ( ) , str . end ( ) ) ;",
+        "bool n ;",
+        "for ( int i = 1 ; i < MAXN ; i ++ ) st2 [ i ] = stab [ i - 1 ] * 2LL ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid operands of types ‘long long int(long long int)’ and ‘long long int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        14,
+        10
+      ],
+      "mod_code": [
+        "reverse ( str . rbegin ( ) , str . end ( ) ) ;",
+        "for ( int i = 1 ; i < MAXN ; i ++ ) st2 [ i ] = stab [ i - 1 ] * 2LL ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid operands of types ‘long long int(long long int)’ and ‘long long int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        9,
+        5,
+        10
+      ],
+      "mod_code": [
+        "st2 [ 0 ] = ' 1 ' ;",
+        "bool n ;",
+        "for ( int i = 1 ; i < MAXN ; i ++ ) st2 [ i ] = stab [ i - 1 ] * 2LL ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid operands of types ‘long long int(long long int)’ and ‘long long int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        9,
+        10
+      ],
+      "mod_code": [
+        "st2 [ 0 ] = ' 1 ' ;",
+        "for ( int i = 1 ; i < MAXN ; i ++ ) st2 [ i ] = stab [ i - 1 ] * 2LL ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid operands of types ‘long long int(long long int)’ and ‘long long int’ to binary ‘operator*’"
+    },
+    {
+      "mod_line": [
+        5,
+        10
+      ],
+      "mod_code": [
+        "bool n ;",
+        "for ( int i = 1 ; i < MAXN ; i ++ ) st2 [ i ] = stab [ i - 1 ] * 2LL ;"
+      ],
+      "err_line": 10,
+      "err_msg": "invalid operands of types ‘long long int(long long int)’ and ‘long long int’ to binary ‘operator*’"
+    }
+  ]
+}

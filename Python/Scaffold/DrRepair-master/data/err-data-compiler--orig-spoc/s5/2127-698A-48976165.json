@@ -1,0 +1,899 @@
+{
+  "meta": {
+    "index": 2127,
+    "hitid": "3RHLQY6EDTYG9DI9MHQ9I2XYW4F4DS",
+    "workerid": "A1EKVUFWL7OJMO",
+    "probid": "698A",
+    "subid": "48976165"
+  },
+  "lines": [
+    {
+      "line": 0,
+      "text": "dp = integer array of size [ 105 ] [ 3 ]",
+      "code": "int dp [ 105 ] [ 3 ] ;",
+      "indent": 0
+    },
+    {
+      "line": 1,
+      "text": "DUMMY",
+      "code": "int main() {",
+      "indent": 0
+    },
+    {
+      "line": 2,
+      "text": "myFile = ifstream with myFile = task . in",
+      "code": "ifstream myFile ( \" task.in \" ) ;",
+      "indent": 1
+    },
+    {
+      "line": 3,
+      "text": "if not myFile . fail ( ) , assert ( freopen ( \" task . in \" , \" r \" , stdin )",
+      "code": "if ( ! myFile . fail ( ) ) { assert ( freopen ( \" task.in \" , \" r \" , stdin ) ) ; }",
+      "indent": 1
+    },
+    {
+      "line": 4,
+      "text": "n = integer",
+      "code": "int n ;",
+      "indent": 1
+    },
+    {
+      "line": 5,
+      "text": "read n",
+      "code": "cin >> n ;",
+      "indent": 1
+    },
+    {
+      "line": 6,
+      "text": "arr = integer array of size n + 1",
+      "code": "int arr [ n + 1 ] ;",
+      "indent": 1
+    },
+    {
+      "line": 7,
+      "text": "for i = 1 to n , read arr [ i ]",
+      "code": "for ( int i = 1 ; i <= n ; i ++ ) { cin >> arr [ i ] ; }",
+      "indent": 1
+    },
+    {
+      "line": 8,
+      "text": "for i = 1 to n",
+      "code": "for ( int i = 1 ; i <= n ; i ++ )",
+      "indent": 1
+    },
+    {
+      "line": 9,
+      "text": "dp [ i ] [ 0 ] = max ( max ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 1 ] ) , dp [ i - 1 ] [ 2 ] )",
+      "code": "dp [ i ] [ 0 ] = max ( max ( dp [ i - 1 ] [ 0 ] , dp [ i - 1 ] [ 1 ] ) , dp [ i - 1 ] [ 2 ] ) ;",
+      "indent": 2
+    },
+    {
+      "line": 10,
+      "text": "if ( arr [ i ] is 1 or arr [ i ] is 3 ) , dp [ i ] [ 1 ] = max ( dp [ i - 1 ] [ 0 ] + 1 , dp [ i - 1 ] [ 2 ] + 1 )",
+      "code": "if ( arr [ i ] == 1 || arr [ i ] == 3 ) { dp [ i ] [ 1 ] = max ( dp [ i - 1 ] [ 0 ] + 1 , dp [ i - 1 ] [ 2 ] + 1 ) ; }",
+      "indent": 2
+    },
+    {
+      "line": 11,
+      "text": "if arr [ i ] is 2 or arr [ i ] is 3 , dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 0 ] + 1 , dp [ i - 1 ] [ 1 ] + 1 )",
+      "code": "if ( arr [ i ] == 2 || arr [ i ] == 3 ) { dp [ i ] [ 2 ] = max ( dp [ i - 1 ] [ 0 ] + 1 , dp [ i - 1 ] [ 1 ] + 1 ) ; }",
+      "indent": 2
+    },
+    {
+      "line": 12,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 1
+    },
+    {
+      "line": 13,
+      "text": "print n - max ( max ( dp [ n ] [ 0 ] , dp [ n ] [ 1 ] ) , dp [ n ] [ 2 ] )",
+      "code": "cout << n - max ( max ( dp [ n ] [ 0 ] , dp [ n ] [ 1 ] ) , dp [ n ] [ 2 ] ) << endl ;",
+      "indent": 1
+    },
+    {
+      "line": 14,
+      "text": "DUMMY",
+      "code": "return 0;",
+      "indent": 1
+    },
+    {
+      "line": 15,
+      "text": "DUMMY",
+      "code": "}",
+      "indent": 0
+    }
+  ],
+  "errors": [
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "ifstream myFile = 0.0 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conversion from ‘double’ to non-scalar type ‘std::ifstream {aka std::basic_ifstream<char>}’ requested"
+    },
+    {
+      "mod_line": [
+        3
+      ],
+      "mod_code": [
+        "if ( ! myFile . fail ( ) ) assert ( freopen ( \" 1.0 \" , \" r \" ) ) ;"
+      ],
+      "err_line": 3,
+      "err_msg": "too few arguments to function ‘FILE* freopen(const char*, const char*, FILE*)’"
+    },
+    {
+      "mod_line": [
+        13
+      ],
+      "mod_code": [
+        "cout << n - max ( dp [ n ] [ 0 ] , dp [ n ] [ 1 ] ) , dp [ n ] [ 2 ] << endl ;"
+      ],
+      "err_line": 13,
+      "err_msg": "invalid operands of types ‘int’ and ‘<unresolved overloaded function type>’ to binary ‘operator<<’"
+    },
+    {
+      "mod_line": [
+        0
+      ],
+      "mod_code": [
+        "int dp [ 105 ] [ 3 ] ] ;"
+      ],
+      "err_line": 0,
+      "err_msg": "expected initializer before ‘]’ token"
+    },
+    {
+      "mod_line": [
+        2
+      ],
+      "mod_code": [
+        "ifstream myFile = \" . \" ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conversion from ‘const char [2]’ to non-scalar type ‘std::ifstream {aka std::basic_ifstream<char>}’ requested"
+    },
+    {
+      "mod_line": [
+        5
+      ],
+      "mod_code": [
+        "while ( cin >> n )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘arr’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        6
+      ],
+      "mod_code": [
+        "int * arr + 1 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected initializer before ‘+’ token"
+    },
+    {
+      "mod_line": [
+        8
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        9
+      ],
+      "mod_code": [
+        "dp [ i ] [ 0 ] = max ( max ( dp [ i - 1 ] [ 0 ] ) , dp [ i - 1 ] [ 1 ] , dp [ i - 1 ] [ 2 ] ) ;"
+      ],
+      "err_line": 9,
+      "err_msg": "no matching function for call to ‘max(int&)’"
+    },
+    {
+      "mod_line": [
+        2,
+        3
+      ],
+      "mod_code": [
+        "ifstream myFile = 0.0 ;",
+        "if ( ! myFile . fail ( ) ) assert ( freopen ( \" 1.0 \" , \" r \" ) ) ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conversion from ‘double’ to non-scalar type ‘std::ifstream {aka std::basic_ifstream<char>}’ requested"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        13
+      ],
+      "mod_code": [
+        "ifstream myFile = 0.0 ;",
+        "if ( ! myFile . fail ( ) ) assert ( freopen ( \" 1.0 \" , \" r \" ) ) ;",
+        "cout << n - max ( dp [ n ] [ 0 ] , dp [ n ] [ 1 ] ) , dp [ n ] [ 2 ] << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conversion from ‘double’ to non-scalar type ‘std::ifstream {aka std::basic_ifstream<char>}’ requested"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        13,
+        8
+      ],
+      "mod_code": [
+        "ifstream myFile = 0.0 ;",
+        "if ( ! myFile . fail ( ) ) assert ( freopen ( \" 1.0 \" , \" r \" ) ) ;",
+        "cout << n - max ( dp [ n ] [ 0 ] , dp [ n ] [ 1 ] ) , dp [ n ] [ 2 ] << endl ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "conversion from ‘double’ to non-scalar type ‘std::ifstream {aka std::basic_ifstream<char>}’ requested"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        13,
+        5
+      ],
+      "mod_code": [
+        "ifstream myFile = 0.0 ;",
+        "if ( ! myFile . fail ( ) ) assert ( freopen ( \" 1.0 \" , \" r \" ) ) ;",
+        "cout << n - max ( dp [ n ] [ 0 ] , dp [ n ] [ 1 ] ) , dp [ n ] [ 2 ] << endl ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 2,
+      "err_msg": "conversion from ‘double’ to non-scalar type ‘std::ifstream {aka std::basic_ifstream<char>}’ requested"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        13,
+        6
+      ],
+      "mod_code": [
+        "ifstream myFile = 0.0 ;",
+        "if ( ! myFile . fail ( ) ) assert ( freopen ( \" 1.0 \" , \" r \" ) ) ;",
+        "cout << n - max ( dp [ n ] [ 0 ] , dp [ n ] [ 1 ] ) , dp [ n ] [ 2 ] << endl ;",
+        "int * arr + 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conversion from ‘double’ to non-scalar type ‘std::ifstream {aka std::basic_ifstream<char>}’ requested"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        8
+      ],
+      "mod_code": [
+        "ifstream myFile = 0.0 ;",
+        "if ( ! myFile . fail ( ) ) assert ( freopen ( \" 1.0 \" , \" r \" ) ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "conversion from ‘double’ to non-scalar type ‘std::ifstream {aka std::basic_ifstream<char>}’ requested"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        8,
+        5
+      ],
+      "mod_code": [
+        "ifstream myFile = 0.0 ;",
+        "if ( ! myFile . fail ( ) ) assert ( freopen ( \" 1.0 \" , \" r \" ) ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "while ( cin >> n )"
+      ],
+      "err_line": 2,
+      "err_msg": "conversion from ‘double’ to non-scalar type ‘std::ifstream {aka std::basic_ifstream<char>}’ requested"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        8,
+        6
+      ],
+      "mod_code": [
+        "ifstream myFile = 0.0 ;",
+        "if ( ! myFile . fail ( ) ) assert ( freopen ( \" 1.0 \" , \" r \" ) ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int * arr + 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conversion from ‘double’ to non-scalar type ‘std::ifstream {aka std::basic_ifstream<char>}’ requested"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        5
+      ],
+      "mod_code": [
+        "ifstream myFile = 0.0 ;",
+        "if ( ! myFile . fail ( ) ) assert ( freopen ( \" 1.0 \" , \" r \" ) ) ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 2,
+      "err_msg": "conversion from ‘double’ to non-scalar type ‘std::ifstream {aka std::basic_ifstream<char>}’ requested"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        5,
+        6
+      ],
+      "mod_code": [
+        "ifstream myFile = 0.0 ;",
+        "if ( ! myFile . fail ( ) ) assert ( freopen ( \" 1.0 \" , \" r \" ) ) ;",
+        "while ( cin >> n )",
+        "int * arr + 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conversion from ‘double’ to non-scalar type ‘std::ifstream {aka std::basic_ifstream<char>}’ requested"
+    },
+    {
+      "mod_line": [
+        2,
+        3,
+        6
+      ],
+      "mod_code": [
+        "ifstream myFile = 0.0 ;",
+        "if ( ! myFile . fail ( ) ) assert ( freopen ( \" 1.0 \" , \" r \" ) ) ;",
+        "int * arr + 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conversion from ‘double’ to non-scalar type ‘std::ifstream {aka std::basic_ifstream<char>}’ requested"
+    },
+    {
+      "mod_line": [
+        2,
+        13
+      ],
+      "mod_code": [
+        "ifstream myFile = 0.0 ;",
+        "cout << n - max ( dp [ n ] [ 0 ] , dp [ n ] [ 1 ] ) , dp [ n ] [ 2 ] << endl ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conversion from ‘double’ to non-scalar type ‘std::ifstream {aka std::basic_ifstream<char>}’ requested"
+    },
+    {
+      "mod_line": [
+        2,
+        13,
+        8
+      ],
+      "mod_code": [
+        "ifstream myFile = 0.0 ;",
+        "cout << n - max ( dp [ n ] [ 0 ] , dp [ n ] [ 1 ] ) , dp [ n ] [ 2 ] << endl ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "conversion from ‘double’ to non-scalar type ‘std::ifstream {aka std::basic_ifstream<char>}’ requested"
+    },
+    {
+      "mod_line": [
+        2,
+        13,
+        8,
+        5
+      ],
+      "mod_code": [
+        "ifstream myFile = 0.0 ;",
+        "cout << n - max ( dp [ n ] [ 0 ] , dp [ n ] [ 1 ] ) , dp [ n ] [ 2 ] << endl ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "while ( cin >> n )"
+      ],
+      "err_line": 2,
+      "err_msg": "conversion from ‘double’ to non-scalar type ‘std::ifstream {aka std::basic_ifstream<char>}’ requested"
+    },
+    {
+      "mod_line": [
+        2,
+        13,
+        8,
+        6
+      ],
+      "mod_code": [
+        "ifstream myFile = 0.0 ;",
+        "cout << n - max ( dp [ n ] [ 0 ] , dp [ n ] [ 1 ] ) , dp [ n ] [ 2 ] << endl ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int * arr + 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conversion from ‘double’ to non-scalar type ‘std::ifstream {aka std::basic_ifstream<char>}’ requested"
+    },
+    {
+      "mod_line": [
+        2,
+        13,
+        5
+      ],
+      "mod_code": [
+        "ifstream myFile = 0.0 ;",
+        "cout << n - max ( dp [ n ] [ 0 ] , dp [ n ] [ 1 ] ) , dp [ n ] [ 2 ] << endl ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 2,
+      "err_msg": "conversion from ‘double’ to non-scalar type ‘std::ifstream {aka std::basic_ifstream<char>}’ requested"
+    },
+    {
+      "mod_line": [
+        2,
+        13,
+        5,
+        6
+      ],
+      "mod_code": [
+        "ifstream myFile = 0.0 ;",
+        "cout << n - max ( dp [ n ] [ 0 ] , dp [ n ] [ 1 ] ) , dp [ n ] [ 2 ] << endl ;",
+        "while ( cin >> n )",
+        "int * arr + 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conversion from ‘double’ to non-scalar type ‘std::ifstream {aka std::basic_ifstream<char>}’ requested"
+    },
+    {
+      "mod_line": [
+        2,
+        13,
+        6
+      ],
+      "mod_code": [
+        "ifstream myFile = 0.0 ;",
+        "cout << n - max ( dp [ n ] [ 0 ] , dp [ n ] [ 1 ] ) , dp [ n ] [ 2 ] << endl ;",
+        "int * arr + 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conversion from ‘double’ to non-scalar type ‘std::ifstream {aka std::basic_ifstream<char>}’ requested"
+    },
+    {
+      "mod_line": [
+        2,
+        8
+      ],
+      "mod_code": [
+        "ifstream myFile = 0.0 ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 2,
+      "err_msg": "conversion from ‘double’ to non-scalar type ‘std::ifstream {aka std::basic_ifstream<char>}’ requested"
+    },
+    {
+      "mod_line": [
+        2,
+        8,
+        5
+      ],
+      "mod_code": [
+        "ifstream myFile = 0.0 ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "while ( cin >> n )"
+      ],
+      "err_line": 2,
+      "err_msg": "conversion from ‘double’ to non-scalar type ‘std::ifstream {aka std::basic_ifstream<char>}’ requested"
+    },
+    {
+      "mod_line": [
+        2,
+        8,
+        5,
+        6
+      ],
+      "mod_code": [
+        "ifstream myFile = 0.0 ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "while ( cin >> n )",
+        "int * arr + 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conversion from ‘double’ to non-scalar type ‘std::ifstream {aka std::basic_ifstream<char>}’ requested"
+    },
+    {
+      "mod_line": [
+        2,
+        8,
+        6
+      ],
+      "mod_code": [
+        "ifstream myFile = 0.0 ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int * arr + 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conversion from ‘double’ to non-scalar type ‘std::ifstream {aka std::basic_ifstream<char>}’ requested"
+    },
+    {
+      "mod_line": [
+        2,
+        5
+      ],
+      "mod_code": [
+        "ifstream myFile = 0.0 ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 2,
+      "err_msg": "conversion from ‘double’ to non-scalar type ‘std::ifstream {aka std::basic_ifstream<char>}’ requested"
+    },
+    {
+      "mod_line": [
+        2,
+        5,
+        6
+      ],
+      "mod_code": [
+        "ifstream myFile = 0.0 ;",
+        "while ( cin >> n )",
+        "int * arr + 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conversion from ‘double’ to non-scalar type ‘std::ifstream {aka std::basic_ifstream<char>}’ requested"
+    },
+    {
+      "mod_line": [
+        2,
+        6
+      ],
+      "mod_code": [
+        "ifstream myFile = 0.0 ;",
+        "int * arr + 1 ;"
+      ],
+      "err_line": 2,
+      "err_msg": "conversion from ‘double’ to non-scalar type ‘std::ifstream {aka std::basic_ifstream<char>}’ requested"
+    },
+    {
+      "mod_line": [
+        3,
+        13
+      ],
+      "mod_code": [
+        "if ( ! myFile . fail ( ) ) assert ( freopen ( \" 1.0 \" , \" r \" ) ) ;",
+        "cout << n - max ( dp [ n ] [ 0 ] , dp [ n ] [ 1 ] ) , dp [ n ] [ 2 ] << endl ;"
+      ],
+      "err_line": 3,
+      "err_msg": "too few arguments to function ‘FILE* freopen(const char*, const char*, FILE*)’"
+    },
+    {
+      "mod_line": [
+        3,
+        13,
+        8
+      ],
+      "mod_code": [
+        "if ( ! myFile . fail ( ) ) assert ( freopen ( \" 1.0 \" , \" r \" ) ) ;",
+        "cout << n - max ( dp [ n ] [ 0 ] , dp [ n ] [ 1 ] ) , dp [ n ] [ 2 ] << endl ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "too few arguments to function ‘FILE* freopen(const char*, const char*, FILE*)’"
+    },
+    {
+      "mod_line": [
+        3,
+        13,
+        8,
+        5
+      ],
+      "mod_code": [
+        "if ( ! myFile . fail ( ) ) assert ( freopen ( \" 1.0 \" , \" r \" ) ) ;",
+        "cout << n - max ( dp [ n ] [ 0 ] , dp [ n ] [ 1 ] ) , dp [ n ] [ 2 ] << endl ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "while ( cin >> n )"
+      ],
+      "err_line": 3,
+      "err_msg": "too few arguments to function ‘FILE* freopen(const char*, const char*, FILE*)’"
+    },
+    {
+      "mod_line": [
+        3,
+        13,
+        8,
+        6
+      ],
+      "mod_code": [
+        "if ( ! myFile . fail ( ) ) assert ( freopen ( \" 1.0 \" , \" r \" ) ) ;",
+        "cout << n - max ( dp [ n ] [ 0 ] , dp [ n ] [ 1 ] ) , dp [ n ] [ 2 ] << endl ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int * arr + 1 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "too few arguments to function ‘FILE* freopen(const char*, const char*, FILE*)’"
+    },
+    {
+      "mod_line": [
+        3,
+        13,
+        5
+      ],
+      "mod_code": [
+        "if ( ! myFile . fail ( ) ) assert ( freopen ( \" 1.0 \" , \" r \" ) ) ;",
+        "cout << n - max ( dp [ n ] [ 0 ] , dp [ n ] [ 1 ] ) , dp [ n ] [ 2 ] << endl ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 3,
+      "err_msg": "too few arguments to function ‘FILE* freopen(const char*, const char*, FILE*)’"
+    },
+    {
+      "mod_line": [
+        3,
+        13,
+        5,
+        6
+      ],
+      "mod_code": [
+        "if ( ! myFile . fail ( ) ) assert ( freopen ( \" 1.0 \" , \" r \" ) ) ;",
+        "cout << n - max ( dp [ n ] [ 0 ] , dp [ n ] [ 1 ] ) , dp [ n ] [ 2 ] << endl ;",
+        "while ( cin >> n )",
+        "int * arr + 1 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "too few arguments to function ‘FILE* freopen(const char*, const char*, FILE*)’"
+    },
+    {
+      "mod_line": [
+        3,
+        13,
+        6
+      ],
+      "mod_code": [
+        "if ( ! myFile . fail ( ) ) assert ( freopen ( \" 1.0 \" , \" r \" ) ) ;",
+        "cout << n - max ( dp [ n ] [ 0 ] , dp [ n ] [ 1 ] ) , dp [ n ] [ 2 ] << endl ;",
+        "int * arr + 1 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "too few arguments to function ‘FILE* freopen(const char*, const char*, FILE*)’"
+    },
+    {
+      "mod_line": [
+        3,
+        8
+      ],
+      "mod_code": [
+        "if ( ! myFile . fail ( ) ) assert ( freopen ( \" 1.0 \" , \" r \" ) ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 3,
+      "err_msg": "too few arguments to function ‘FILE* freopen(const char*, const char*, FILE*)’"
+    },
+    {
+      "mod_line": [
+        3,
+        8,
+        5
+      ],
+      "mod_code": [
+        "if ( ! myFile . fail ( ) ) assert ( freopen ( \" 1.0 \" , \" r \" ) ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "while ( cin >> n )"
+      ],
+      "err_line": 3,
+      "err_msg": "too few arguments to function ‘FILE* freopen(const char*, const char*, FILE*)’"
+    },
+    {
+      "mod_line": [
+        3,
+        8,
+        5,
+        6
+      ],
+      "mod_code": [
+        "if ( ! myFile . fail ( ) ) assert ( freopen ( \" 1.0 \" , \" r \" ) ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "while ( cin >> n )",
+        "int * arr + 1 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "too few arguments to function ‘FILE* freopen(const char*, const char*, FILE*)’"
+    },
+    {
+      "mod_line": [
+        3,
+        8,
+        6
+      ],
+      "mod_code": [
+        "if ( ! myFile . fail ( ) ) assert ( freopen ( \" 1.0 \" , \" r \" ) ) ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int * arr + 1 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "too few arguments to function ‘FILE* freopen(const char*, const char*, FILE*)’"
+    },
+    {
+      "mod_line": [
+        3,
+        5
+      ],
+      "mod_code": [
+        "if ( ! myFile . fail ( ) ) assert ( freopen ( \" 1.0 \" , \" r \" ) ) ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 3,
+      "err_msg": "too few arguments to function ‘FILE* freopen(const char*, const char*, FILE*)’"
+    },
+    {
+      "mod_line": [
+        3,
+        5,
+        6
+      ],
+      "mod_code": [
+        "if ( ! myFile . fail ( ) ) assert ( freopen ( \" 1.0 \" , \" r \" ) ) ;",
+        "while ( cin >> n )",
+        "int * arr + 1 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "too few arguments to function ‘FILE* freopen(const char*, const char*, FILE*)’"
+    },
+    {
+      "mod_line": [
+        3,
+        6
+      ],
+      "mod_code": [
+        "if ( ! myFile . fail ( ) ) assert ( freopen ( \" 1.0 \" , \" r \" ) ) ;",
+        "int * arr + 1 ;"
+      ],
+      "err_line": 3,
+      "err_msg": "too few arguments to function ‘FILE* freopen(const char*, const char*, FILE*)’"
+    },
+    {
+      "mod_line": [
+        13,
+        8
+      ],
+      "mod_code": [
+        "cout << n - max ( dp [ n ] [ 0 ] , dp [ n ] [ 1 ] ) , dp [ n ] [ 2 ] << endl ;",
+        "for ( i = 1 ; i <= n ; i ++ )"
+      ],
+      "err_line": 8,
+      "err_msg": "name lookup of ‘i’ changed for ISO ‘for’ scoping [-fpermissive]"
+    },
+    {
+      "mod_line": [
+        13,
+        8,
+        5
+      ],
+      "mod_code": [
+        "cout << n - max ( dp [ n ] [ 0 ] , dp [ n ] [ 1 ] ) , dp [ n ] [ 2 ] << endl ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "while ( cin >> n )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘arr’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        8,
+        5,
+        6
+      ],
+      "mod_code": [
+        "cout << n - max ( dp [ n ] [ 0 ] , dp [ n ] [ 1 ] ) , dp [ n ] [ 2 ] << endl ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "while ( cin >> n )",
+        "int * arr + 1 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected initializer before ‘+’ token"
+    },
+    {
+      "mod_line": [
+        13,
+        8,
+        6
+      ],
+      "mod_code": [
+        "cout << n - max ( dp [ n ] [ 0 ] , dp [ n ] [ 1 ] ) , dp [ n ] [ 2 ] << endl ;",
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int * arr + 1 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected initializer before ‘+’ token"
+    },
+    {
+      "mod_line": [
+        13,
+        5
+      ],
+      "mod_code": [
+        "cout << n - max ( dp [ n ] [ 0 ] , dp [ n ] [ 1 ] ) , dp [ n ] [ 2 ] << endl ;",
+        "while ( cin >> n )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘arr’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        13,
+        5,
+        6
+      ],
+      "mod_code": [
+        "cout << n - max ( dp [ n ] [ 0 ] , dp [ n ] [ 1 ] ) , dp [ n ] [ 2 ] << endl ;",
+        "while ( cin >> n )",
+        "int * arr + 1 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected initializer before ‘+’ token"
+    },
+    {
+      "mod_line": [
+        13,
+        6
+      ],
+      "mod_code": [
+        "cout << n - max ( dp [ n ] [ 0 ] , dp [ n ] [ 1 ] ) , dp [ n ] [ 2 ] << endl ;",
+        "int * arr + 1 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected initializer before ‘+’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        5
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "while ( cin >> n )"
+      ],
+      "err_line": 7,
+      "err_msg": "‘arr’ was not declared in this scope"
+    },
+    {
+      "mod_line": [
+        8,
+        5,
+        6
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "while ( cin >> n )",
+        "int * arr + 1 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected initializer before ‘+’ token"
+    },
+    {
+      "mod_line": [
+        8,
+        6
+      ],
+      "mod_code": [
+        "for ( i = 1 ; i <= n ; i ++ )",
+        "int * arr + 1 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected initializer before ‘+’ token"
+    },
+    {
+      "mod_line": [
+        5,
+        6
+      ],
+      "mod_code": [
+        "while ( cin >> n )",
+        "int * arr + 1 ;"
+      ],
+      "err_line": 6,
+      "err_msg": "expected initializer before ‘+’ token"
+    }
+  ]
+}
